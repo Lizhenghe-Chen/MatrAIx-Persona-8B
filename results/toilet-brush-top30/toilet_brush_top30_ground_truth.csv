@@ -1,0 +1,31 @@
+﻿id,asin,brand,rank,monthly_sales,monthly_revenue_usd,sales_growth_pct,category_rank,bsr
+P01,B00R55CIRQ,Clorox,1,40482,369195.84,22.0,Toilet Brushes & Holders #1,229
+P02,B0FMRH81TB,FORASTO,2,34024,516824.53,,Bathroom Accessory Sets #1,261
+P03,B07XGKZ2RC,MR.SIGA,3,25415,574115.9,17.0,Toilet Plungers & Holders #2,706
+P04,B08TM8F2WH,MR.SIGA,4,23513,456951.4,24.0,Toilet Brushes & Holders #2,515
+P05,B09TL4MLZ3,oshang,5,18600,185814.0,16.0,Toilet Brushes & Holders #5,814
+P06,B0B8C3D68Y,HAMITOR,6,15311,207524.3,-4.0,Toilet Brushes & Holders #4,735
+P07,B003M8GMRW,OXO,7,14249,285870.34,25.0,Toilet Brushes & Holders #7,1139
+P08,B099DYL32J,FAZMoss,8,13438,120807.62,34.0,Toilet Brushes & Holders #6,1069
+P09,B0DYJKB7GB,Holaloha,9,12576,111926.4,44.0,Toilet Brushes & Holders #10,1764
+P10,B0D8J1KF6X,Holaloha,10,11183,141912.27,46.0,Toilet Brushes & Holders #10,1657
+P11,B0D2C9BC6N,SetSail,11,10184,305118.25,,Toilet Brushes & Holders #19,3210
+P12,B0CGDHB2FC,LOVLOY,12,9882,159952.27,,Toilet Brushes & Holders #8,1453
+P13,B07TNHWFXJ,Sellemer,13,9749,107628.96,7.0,Toilet Brushes & Holders #14,2597
+P14,B0FCY9Y3JP,AONEZ,14,9584,287424.16,,Toilet Brushes & Holders #12,2217
+P15,B0CPXV2K34,HAMITOR,15,9504,94372.87,60.0,Toilet Brushes & Holders #14,2905
+P16,B0995KL5K4,uptronic,16,9270,172700.1,,Toilet Brushes & Holders #16,3064
+P17,B0GJPRYJLY,Holaloha,17,7550,50132.0,66.0,Toilet Brushes & Holders #13,2566
+P18,B088K29VNZ,MR.SIGA,18,7475,291450.25,17.0,Toilet Brushes & Holders #23,3285
+P19,B0FLYCVSTQ,SetSail,19,7045,239459.56,,Toilet Brushes & Holders #24,3027
+P20,B09JVFPZXK,uptronic,20,6614,85519.02,,Toilet Brushes & Holders #11,2543
+P21,B0GT4YY6XV,OSAMEDA,21,5160,108308.4,,Toilet Brushes & Holders #23,3811
+P22,B09BX6ZW69,Clorox,22,5023,118817.0,,Toilet Brushes & Holders #18,4593
+P23,B08RCJR77R,Wsedor,23,4874,131744.22,,Toilet Brushes & Holders #27,7818
+P24,B0GS645WC5,Dealsgogo,24,4581,45764.19,,Toilet Brushes & Holders #24,5945
+P25,B0G4QL1MJF,FORASTO,25,4559,119106.87,,Toilet Brushes & Holders #27,8067
+P26,B09G6D4GXP,HAMITOR,26,4185,98335.01,,Toilet Brushes & Holders #21,5027
+P27,B0D28YKSC8,Hohoky,27,3805,91586.35,0.0,Toilet Brushes & Holders #33,10173
+P28,B00BZP66HK,simplehuman,28,3342,116937.0,27.0,Toilet Brushes & Holders #37,8225
+P29,B0H4ZJLGV4,SAVEGA,29,2880,71971.2,1441.0,Toilet Brushes & Holders #36,13264
+P30,B0GQZ24NXP,HAMITOR,30,2768,163782.56,,Toilet Plungers & Holders #14,10919

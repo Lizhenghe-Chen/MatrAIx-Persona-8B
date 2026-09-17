@@ -1,0 +1,58 @@
+schemaVersion: "1.0"
+id: water_bottle_choice_v1
+title: "Water Bottle Shopping Choice Survey"
+description: "Which bottle the persona would actually buy from a 6-option shelf (plus 'none'), and why."
+questions:
+  - id: q_choice
+    prompt: "Which bottle would you buy for your daily use? Give a 2-3 sentence reason for your choice."
+    type: single_choice
+    construct: bottle_choice
+    required: true
+    askRationale: true
+    options:
+      - id: fuguang_316
+        label: "Fuguang 316 Basic Insulated Bottle (¥39.9) — budget pick"
+      - id: nalgene_sustain
+        label: "Nalgene Sustain Wide Mouth (≈¥119) — lightweight eco bottle"
+      - id: beijixiong_316
+        label: "Beijixiong 316 Insulated Bottle (¥129) — best value mid tier"
+      - id: mijia_bottle
+        label: "Mijia / Xiaomi Insulated Bottle (¥179) — brand value pick"
+      - id: zojirushi_sm_sz
+        label: "Zojirushi SM-SZ (≈¥229) — premium Japanese bottle"
+      - id: stanley_quencher
+        label: "Stanley Quencher H2.0 (≈¥319) — viral lifestyle tumbler"
+      - id: none_of_these
+        label: "None of these — I would not buy any of them"
+  - id: q_price_threshold
+    prompt: "The price of the bottle I chose feels acceptable for what it offers."
+    type: likert
+    construct: price_acceptance
+    required: true
+    minValue: 1
+    maxValue: 5
+  - id: q_feature_priority
+    prompt: "What mattered most in your choice?"
+    type: single_choice
+    construct: feature_priority
+    required: true
+    options:
+      - id: insulation
+        label: "Insulation / temperature performance"
+      - id: aesthetics
+        label: "Design and looks"
+      - id: price
+        label: "Price / value for money"
+      - id: brand
+        label: "Brand trust"
+      - id: capacity
+        label: "Capacity / size"
+      - id: eco
+        label: "Eco-friendliness / materials"
+  - id: q_purchase_likelihood
+    prompt: "I would realistically buy this bottle within the next 3 months."
+    type: likert
+    construct: purchase_intent
+    required: true
+    minValue: 1
+    maxValue: 5

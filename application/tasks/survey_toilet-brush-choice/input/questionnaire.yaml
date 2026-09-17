@@ -1,0 +1,66 @@
+schemaVersion: "1.0"
+id: toilet_brush_choice_v1
+title: "Toilet Brush Shopping Choice Survey"
+description: "Which toilet brush set the persona would actually buy from a 10-option shelf (plus 'none'), and why."
+questions:
+  - id: q_choice
+    prompt: "Which toilet brush set would you buy for your bathroom? Give a 2-3 sentence reason for your choice."
+    type: single_choice
+    construct: brush_choice
+    required: true
+    askRationale: true
+    options:
+      - id: clorox_under_rim
+        label: "Clorox Corner Toilet Brush with Under Rim Scrubber ($15.50) — corner caddy + under-rim scrubber"
+      - id: mdesign_compact
+        label: "mDesign Compact Freestanding Plastic Set (Bronze, $29.30) — stylish compact covered holder"
+      - id: boomjoy_tweezer
+        label: "BOOMJOY Silicone Set with Tweezers ($12.99) — built-in hair tweezers, light aluminum"
+      - id: sellemer_silicone
+        label: "Sellemer Silicone Set with Ventilated Holder ($12.99) — flexible head, quick-dry"
+      - id: oxo_hideaway
+        label: "OXO Good Grips Hideaway Compact ($19.97) — auto-open canister"
+      - id: ibergrif_silicone
+        label: "Ibergrif M34152 Silicone Quick-Dry Set ($13.90) — deep-clean silicone, replaceable head"
+      - id: ixo_stainless
+        label: "IXO 2-Pack 304 Stainless Steel Set (Blue, $28.60) — elegant stainless long handles"
+      - id: nacena_long
+        label: "nacena 2-Pack Extra Long Handle Set (Black, $23.50) — covered, space-saving, deep clean"
+      - id: asobeage_silicone
+        label: "Asobeage Silicone Quick-Dry Set (White, $25.70) — flexible nubbed head, non-slip handle"
+      - id: jiga_3pack
+        label: "JIGA 3-Pack Toilet Brush & Holder Set (White, $13.99) — 3 brushes, great value"
+      - id: none_of_these
+        label: "None of these — I would not buy any of them"
+  - id: q_price_threshold
+    prompt: "The price of the toilet brush set I chose feels acceptable for what it offers."
+    type: likert
+    construct: price_acceptance
+    required: true
+    minValue: 1
+    maxValue: 5
+  - id: q_feature_priority
+    prompt: "What mattered most in your choice?"
+    type: single_choice
+    construct: feature_priority
+    required: true
+    options:
+      - id: price
+        label: "Price / value for money"
+      - id: cleaning
+        label: "Cleaning performance / brush head design"
+      - id: hygiene
+        label: "Hygiene / quick-drying holder"
+      - id: design
+        label: "Design and looks"
+      - id: brand
+        label: "Brand trust"
+      - id: material
+        label: "Material quality / durability"
+  - id: q_purchase_likelihood
+    prompt: "I would realistically buy this toilet brush set within the next 3 months."
+    type: likert
+    construct: purchase_intent
+    required: true
+    minValue: 1
+    maxValue: 5

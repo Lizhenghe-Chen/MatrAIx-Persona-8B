@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="use-iframe" content="true">
+<meta name="html-box-height-mode" content="auto">
+<meta name="description" content="一条真实人格示例（wiki 来源，169 属性）">
+<title></title>
+<style>
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; background:#FFFFFF; color:#1A2B4A; width:100%; }
+  .card { border:1px solid #DDE0E4; border-radius:12px; padding:16px 18px; margin-bottom:12px; }
+  .h { font-size:14px; font-weight:700; margin-bottom:10px; color:#1A2B4A; }
+  .kpis { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:8px; }
+  @media (max-width:600px) { .kpis { grid-template-columns:repeat(2,1fr); } }
+  .kpi { background:#F4F6FA; border-radius:10px; padding:12px 8px; text-align:center; }
+  .kpi .v { font-size:20px; font-weight:800; color:#1A2B4A; font-family:ui-monospace,monospace; }
+  .kpi .k { font-size:11px; color:#758092; margin-top:2px; }
+  table { width:100%; border-collapse:collapse; font-size:12.5px; }
+  th { background:#EEF1F6; text-align:left; padding:7px 9px; color:#1A2B4A; }
+  td { padding:7px 9px; border-bottom:1px solid #DDE0E4; vertical-align:top; color:#334155; }
+  .bar-row { display:flex; align-items:center; gap:10px; margin:7px 0; font-size:12.5px; }
+  .bar-label { width:150px; flex:none; text-align:right; color:#758092; }
+  .bar-track { flex:1; background:#EEF1F6; border-radius:4px; height:16px; overflow:hidden; }
+  .bar-fill { height:100%; background:#1A2B4A; border-radius:4px; }
+  .bar-val { width:70px; flex:none; font-weight:700; color:#1A2B4A; }
+  .note { font-size:11.5px; color:#758092; margin-top:6px; }
+  ul { padding-left:18px; font-size:13px; color:#334155; }
+  li { margin:5px 0; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="h">parquet 解码示例（第 2 行，来源 wiki）</div>
+  <table>
+    <tr><th>维度</th><th>取值</th></tr>
+    <tr><td>age_bracket</td><td>45-54</td></tr>
+    <tr><td>region</td><td>Eastern Europe</td></tr>
+    <tr><td>gender_identity</td><td>Man</td></tr>
+    <tr><td>urbanicity</td><td>Nomadic / remote</td></tr>
+    <tr><td>socioeconomic_band</td><td>High income</td></tr>
+    <tr><td>economic_motivation</td><td>Premium-seeking</td></tr>
+    <tr><td>life_stage</td><td>Mid-life</td></tr>
+  </table>
+  <div class="note">grounding 证据：{"field_index": 0, "evidence": "c. 406 – 453", "confidence": 0.7, "assignment_type": "structured_claim"}——每个属性可回溯到来源文本。</div>
+</div>
+</body>
+</html>

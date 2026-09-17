@@ -1,0 +1,38 @@
+{
+  "hard_filter": {
+    "region": {
+      "North America": 1.0
+    }
+  },
+  "observed_review_style": {
+    "cog_verbosity": {
+      "Terse": 0.161,
+      "Concise": 0.407,
+      "Balanced": 0.292,
+      "Wordy": 0.117,
+      "Rambling": 0.019,
+      "missing": 0.003
+    }
+  },
+  "soft_or_conditional_only": {
+    "primary_language": "English",
+    "economic_motivation": {
+      "assign_only_when_price_evidence_exists": true
+    },
+    "pref_quality_vs_quantity": {
+      "assign_only_when_quality_evidence_exists": true
+    },
+    "lstyle_shopping_style": {
+      "assign_only_from_comparison_price_or_repeat_purchase": true
+    }
+  },
+  "missing_by_default": [
+    "age_bracket",
+    "gender_identity",
+    "urbanicity",
+    "socioeconomic_band",
+    "household_and_family_dimensions",
+    "political_and_religious_dimensions",
+    "personality_and_health_dimensions"
+  ]
+}

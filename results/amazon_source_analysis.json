@@ -1,0 +1,2334 @@
+{
+ "pool": {
+  "total": 200,
+  "count_label": "matraix-persona-dev-sample"
+ },
+ "src_overview": [
+  {
+   "source": "amazon",
+   "n": 29,
+   "avg_dims": 29.2
+  },
+  {
+   "source": "wiki",
+   "n": 29,
+   "avg_dims": 384.1
+  },
+  {
+   "source": "stackoverflow",
+   "n": 29,
+   "avg_dims": 70.8
+  },
+  {
+   "source": "gss",
+   "n": 29,
+   "avg_dims": 14.8
+  },
+  {
+   "source": "prism",
+   "n": 28,
+   "avg_dims": 190.2
+  },
+  {
+   "source": "real_human_survey",
+   "n": 28,
+   "avg_dims": 1272.8
+  },
+  {
+   "source": "synthetic",
+   "n": 28,
+   "avg_dims": 1290.0
+  }
+ ],
+ "amazon": {
+  "n": 29,
+  "avg_dims": 29.2,
+  "names": [
+   "Maya Patel",
+   "Quinn Santos",
+   "Maya Patel",
+   "Casey Brooks",
+   "Riley Chen",
+   "Noah Williams",
+   "Ethan Brooks",
+   "Casey Brooks",
+   "Riley Chen",
+   "Sam Okafor",
+   "Sienna Carter",
+   "Quinn Santos",
+   "Casey Brooks",
+   "Sam Okafor",
+   "Sam Okafor",
+   "Quinn Santos",
+   "Quinn Santos",
+   "Riley Chen",
+   "Casey Brooks",
+   "Maya Patel",
+   "Casey Brooks",
+   "Jordan Lee",
+   "Quinn Santos",
+   "Alex Rivera",
+   "Quinn Santos",
+   "Ava Martinez",
+   "Quinn Santos",
+   "Alex Rivera",
+   "Casey Brooks"
+  ],
+  "provenance": {
+   "parent_pool": "persona/datasets/matraix-persona-1m",
+   "hf_repo": "MatrAIx2026/MatrAIx_Persona_1M_Public_Release",
+   "origin_prefix": "amazon-*"
+  },
+  "dim_coverage": [
+   {
+    "dim": "att_online_reviews",
+    "label": "态度：在线评论",
+    "coverage": 18,
+    "pct": 62.0
+   },
+   {
+    "dim": "decision_style",
+    "label": "决策风格",
+    "coverage": 9,
+    "pct": 31.0
+   },
+   {
+    "dim": "trust_level",
+    "label": "信任级别",
+    "coverage": 8,
+    "pct": 28.0
+   },
+   {
+    "dim": "tech_savviness",
+    "label": "技术熟练度",
+    "coverage": 8,
+    "pct": 28.0
+   },
+   {
+    "dim": "time_pressure",
+    "label": "时间压力",
+    "coverage": 8,
+    "pct": 28.0
+   },
+   {
+    "dim": "att_brand_loyalty",
+    "label": "态度：品牌忠诚度",
+    "coverage": 8,
+    "pct": 28.0
+   },
+   {
+    "dim": "topic_fitness",
+    "label": "兴趣：健身",
+    "coverage": 7,
+    "pct": 24.0
+   },
+   {
+    "dim": "need_for_closure",
+    "label": "认知闭合需求",
+    "coverage": 7,
+    "pct": 24.0
+   },
+   {
+    "dim": "query_complexity",
+    "label": "提问复杂度",
+    "coverage": 7,
+    "pct": 24.0
+   },
+   {
+    "dim": "lstyle_frugality",
+    "label": "消费与储蓄",
+    "coverage": 7,
+    "pct": 24.0
+   },
+   {
+    "dim": "economic_motivation",
+    "label": "经济动机",
+    "coverage": 7,
+    "pct": 24.0
+   },
+   {
+    "dim": "cog_humor",
+    "label": "幽默风格",
+    "coverage": 6,
+    "pct": 21.0
+   },
+   {
+    "dim": "cog_patience",
+    "label": "耐心",
+    "coverage": 6,
+    "pct": 21.0
+   },
+   {
+    "dim": "cog_curiosity",
+    "label": "好奇心",
+    "coverage": 6,
+    "pct": 21.0
+   },
+   {
+    "dim": "cog_open_mindedness",
+    "label": "开放",
+    "coverage": 6,
+    "pct": 21.0
+   },
+   {
+    "dim": "cog_question_asking",
+    "label": "提问频率",
+    "coverage": 6,
+    "pct": 21.0
+   },
+   {
+    "dim": "att_new_technology",
+    "label": "态度：新技术",
+    "coverage": 6,
+    "pct": 21.0
+   },
+   {
+    "dim": "demo_parental_status",
+    "label": "家长身份",
+    "coverage": 6,
+    "pct": 21.0
+   },
+   {
+    "dim": "major_life_events",
+    "label": "生活重大事件",
+    "coverage": 6,
+    "pct": 21.0
+   },
+   {
+    "dim": "health_caregiver_status",
+    "label": "照护者身份",
+    "coverage": 6,
+    "pct": 21.0
+   },
+   {
+    "dim": "cog_detail_orientation",
+    "label": "细节导向",
+    "coverage": 5,
+    "pct": 17.0
+   },
+   {
+    "dim": "cog_abstraction",
+    "label": "抽象与具体",
+    "coverage": 5,
+    "pct": 17.0
+   },
+   {
+    "dim": "cog_optimism",
+    "label": "乐观",
+    "coverage": 5,
+    "pct": 17.0
+   },
+   {
+    "dim": "cog_feedback_receptiveness",
+    "label": "反馈接受度",
+    "coverage": 5,
+    "pct": 17.0
+   },
+   {
+    "dim": "cog_attention_span",
+    "label": "注意力持续时间",
+    "coverage": 5,
+    "pct": 17.0
+   },
+   {
+    "dim": "cog_big_picture_vs_detail",
+    "label": "大局与细节",
+    "coverage": 5,
+    "pct": 17.0
+   },
+   {
+    "dim": "emotional_state",
+    "label": "情绪状态",
+    "coverage": 5,
+    "pct": 17.0
+   },
+   {
+    "dim": "device_context",
+    "label": "设备上下文",
+    "coverage": 5,
+    "pct": 17.0
+   },
+   {
+    "dim": "topic_travel",
+    "label": "兴趣：旅行",
+    "coverage": 5,
+    "pct": 17.0
+   },
+   {
+    "dim": "trait_perspective",
+    "label": "性格：洞察力",
+    "coverage": 5,
+    "pct": 17.0
+   },
+   {
+    "dim": "trait_social_intelligence",
+    "label": "性格：社交智慧",
+    "coverage": 5,
+    "pct": 17.0
+   },
+   {
+    "dim": "risk_tolerance",
+    "label": "风险承受能力",
+    "coverage": 5,
+    "pct": 17.0
+   },
+   {
+    "dim": "lstyle_fashion_sense",
+    "label": "时尚感",
+    "coverage": 5,
+    "pct": 17.0
+   },
+   {
+    "dim": "health_chronic_condition",
+    "label": "慢性病",
+    "coverage": 5,
+    "pct": 17.0
+   },
+   {
+    "dim": "trait_empathy",
+    "label": "性格：同理心",
+    "coverage": 5,
+    "pct": 17.0
+   },
+   {
+    "dim": "trait_creativity",
+    "label": "性格：创造力",
+    "coverage": 5,
+    "pct": 17.0
+   },
+   {
+    "dim": "coding_tool_alternative_sensitivity",
+    "label": "编码工具替代敏感性",
+    "coverage": 5,
+    "pct": 17.0
+   },
+   {
+    "dim": "cog_formality",
+    "label": "正式程度",
+    "coverage": 4,
+    "pct": 14.0
+   },
+   {
+    "dim": "cog_directness",
+    "label": "表达直接程度",
+    "coverage": 4,
+    "pct": 14.0
+   },
+   {
+    "dim": "cog_skepticism",
+    "label": "怀疑",
+    "coverage": 4,
+    "pct": 14.0
+   },
+   {
+    "dim": "cog_assertiveness",
+    "label": "自信",
+    "coverage": 4,
+    "pct": 14.0
+   },
+   {
+    "dim": "cog_conflict_approach",
+    "label": "处理冲突的方式",
+    "coverage": 4,
+    "pct": 14.0
+   },
+   {
+    "dim": "cog_ambiguity_tolerance",
+    "label": "歧义容忍度",
+    "coverage": 4,
+    "pct": 14.0
+   },
+   {
+    "dim": "cog_perfectionism",
+    "label": "完美主义",
+    "coverage": 4,
+    "pct": 14.0
+   },
+   {
+    "dim": "cog_decision_speed",
+    "label": "决策速度",
+    "coverage": 4,
+    "pct": 14.0
+   },
+   {
+    "dim": "cog_confidence_calibration",
+    "label": "置信度校准",
+    "coverage": 4,
+    "pct": 14.0
+   },
+   {
+    "dim": "cog_visual_vs_verbal",
+    "label": "视觉思维与语言思维",
+    "coverage": 4,
+    "pct": 14.0
+   },
+   {
+    "dim": "cog_empathy_expression",
+    "label": "同理心表达",
+    "coverage": 4,
+    "pct": 14.0
+   },
+   {
+    "dim": "cog_storytelling",
+    "label": "讲故事倾向",
+    "coverage": 4,
+    "pct": 14.0
+   },
+   {
+    "dim": "cog_politeness",
+    "label": "礼貌程度",
+    "coverage": 4,
+    "pct": 14.0
+   },
+   {
+    "dim": "expertise_gap",
+    "label": "用户与模型的专业水平关系",
+    "coverage": 4,
+    "pct": 14.0
+   },
+   {
+    "dim": "big5_self_discipline",
+    "label": "自律",
+    "coverage": 4,
+    "pct": 14.0
+   },
+   {
+    "dim": "trait_leadership",
+    "label": "性格：领导力",
+    "coverage": 4,
+    "pct": 14.0
+   },
+   {
+    "dim": "demo_children_count",
+    "label": "子女情况",
+    "coverage": 4,
+    "pct": 14.0
+   },
+   {
+    "dim": "lifex_parenting_journey",
+    "label": "育儿经历",
+    "coverage": 4,
+    "pct": 14.0
+   },
+   {
+    "dim": "learning_style",
+    "label": "学习风格",
+    "coverage": 4,
+    "pct": 14.0
+   },
+   {
+    "dim": "val_fun_enjoyment",
+    "label": "价值观：乐趣与享受",
+    "coverage": 4,
+    "pct": 14.0
+   },
+   {
+    "dim": "val_beauty_aesthetics",
+    "label": "价值观：美与审美",
+    "coverage": 4,
+    "pct": 14.0
+   },
+   {
+    "dim": "region",
+    "label": "区域",
+    "coverage": 4,
+    "pct": 14.0
+   },
+   {
+    "dim": "topic_tea",
+    "label": "兴趣：茶",
+    "coverage": 4,
+    "pct": 14.0
+   },
+   {
+    "dim": "trait_forgiveness",
+    "label": "性格：宽恕",
+    "coverage": 4,
+    "pct": 14.0
+   },
+   {
+    "dim": "demo_employment_status",
+    "label": "就业状况",
+    "coverage": 4,
+    "pct": 14.0
+   },
+   {
+    "dim": "lifex_health_journey",
+    "label": "健康经历",
+    "coverage": 4,
+    "pct": 14.0
+   },
+   {
+    "dim": "trait_perseverance",
+    "label": "性格：毅力",
+    "coverage": 4,
+    "pct": 14.0
+   },
+   {
+    "dim": "trait_loyalty",
+    "label": "性格：忠诚",
+    "coverage": 4,
+    "pct": 14.0
+   },
+   {
+    "dim": "lstyle_household_size",
+    "label": "同住人数",
+    "coverage": 4,
+    "pct": 14.0
+   },
+   {
+    "dim": "skill_research",
+    "label": "技能：研究",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "att_consumerism",
+    "label": "态度：消费主义",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "cog_verbosity",
+    "label": "表达篇幅",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "cog_emotional_expressiveness",
+    "label": "情感表达",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "cog_numeracy_comfort",
+    "label": "数字与计算能力",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "cog_risk_framing",
+    "label": "风险框架",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "cog_use_of_jargon",
+    "label": "术语使用程度",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "topic_pets",
+    "label": "兴趣：宠物",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "lstyle_work_schedule",
+    "label": "工作安排",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "demo_marital_status",
+    "label": "婚姻状况",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "big5_self_efficacy",
+    "label": "自我效能感",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "big5_orderliness",
+    "label": "条理性",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "big5_dutifulness",
+    "label": "尽责",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "big5_cautiousness",
+    "label": "谨慎",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "big5_anxiety",
+    "label": "焦虑",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "bfi2_domain_conscientiousness",
+    "label": "BFI-2 责任心",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "bfi2_facet_trust",
+    "label": "BFI-2 信任",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "bfi2_facet_organization",
+    "label": "BFI-2 条理性",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "bfi2_facet_responsibility",
+    "label": "BFI-2 责任感",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "tone_expected",
+    "label": "期望语气",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "need_for_cognition",
+    "label": "认知需求",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "gender_identity",
+    "label": "性别认同",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "safety_sensitivity",
+    "label": "安全风险类型",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "urbanicity",
+    "label": "城乡类型",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "life_stage",
+    "label": "人生阶段",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "topic_home_improvement",
+    "label": "兴趣：家居改造",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "cult_united_states",
+    "label": "文化：美国",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "lstyle_coffee_ritual",
+    "label": "咖啡习惯",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "lstyle_hobby_intensity",
+    "label": "爱好强度",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "lstyle_commute_mode",
+    "label": "通勤方式",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "health_vision",
+    "label": "视力",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "health_dietary_restriction",
+    "label": "饮食限制",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "topic_spirituality",
+    "label": "兴趣：灵性",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "trait_teamwork",
+    "label": "性格：团队合作",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "trait_playfulness",
+    "label": "性格：活泼",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "lstyle_travel_freq",
+    "label": "旅行频率",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "trait_ambition",
+    "label": "性格：进取心",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "trait_discipline",
+    "label": "性格：自律",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "lstyle_pet_ownership",
+    "label": "养宠情况",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "trait_fairness",
+    "label": "性格：公平感",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "trait_humility",
+    "label": "性格：谦虚",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "lifex_geographic_mobility",
+    "label": "迁居经历",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "lifex_adversity_level",
+    "label": "逆境程度",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "schwartz_value_conformity",
+    "label": "施瓦茨价值观：遵从",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "domain_characteristics",
+    "label": "领域立场",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "att_homeownership",
+    "label": "态度：拥有住房",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "trait_love_of_learning",
+    "label": "性格：热爱学习",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "trait_kindness",
+    "label": "性格：善良",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "skill_critical_thinking",
+    "label": "技能：批判性思维",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "health_medication_use",
+    "label": "药物使用",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "skill_writing",
+    "label": "技能：写作",
+    "coverage": 3,
+    "pct": 10.0
+   },
+   {
+    "dim": "val_family",
+    "label": "价值观：家庭",
+    "coverage": 3,
+    "pct": 10.0
+   }
+  ],
+  "key_dims": [
+   {
+    "dim": "att_online_reviews",
+    "label": "态度：在线评论",
+    "coverage": 18,
+    "values": [
+     {
+      "value": "Positive",
+      "label": "持积极态度",
+      "n": 18
+     }
+    ]
+   },
+   {
+    "dim": "decision_style",
+    "label": "决策风格",
+    "coverage": 9,
+    "values": [
+     {
+      "value": "Analytical",
+      "label": "分析型",
+      "n": 9
+     }
+    ]
+   },
+   {
+    "dim": "trust_level",
+    "label": "信任级别",
+    "coverage": 8,
+    "values": [
+     {
+      "value": "Verifying",
+      "label": "核验中",
+      "n": 7
+     },
+     {
+      "value": "Trusting",
+      "label": "信任",
+      "n": 1
+     }
+    ]
+   },
+   {
+    "dim": "tech_savviness",
+    "label": "技术熟练度",
+    "coverage": 8,
+    "values": [
+     {
+      "value": "Comfortable",
+      "label": "使用熟练",
+      "n": 8
+     }
+    ]
+   },
+   {
+    "dim": "time_pressure",
+    "label": "时间压力",
+    "coverage": 8,
+    "values": [
+     {
+      "value": "No rush",
+      "label": "不着急",
+      "n": 7
+     },
+     {
+      "value": "Deadline",
+      "label": "有截止期限",
+      "n": 1
+     }
+    ]
+   },
+   {
+    "dim": "att_brand_loyalty",
+    "label": "态度：品牌忠诚度",
+    "coverage": 8,
+    "values": [
+     {
+      "value": "Positive",
+      "label": "持积极态度",
+      "n": 6
+     },
+     {
+      "value": "Neutral",
+      "label": "中立",
+      "n": 1
+     },
+     {
+      "value": "Skeptical",
+      "label": "持怀疑态度",
+      "n": 1
+     }
+    ]
+   },
+   {
+    "dim": "topic_fitness",
+    "label": "兴趣：健身",
+    "coverage": 7,
+    "values": [
+     {
+      "value": "Interested",
+      "label": "感兴趣",
+      "n": 5
+     },
+     {
+      "value": "Indifferent",
+      "label": "不太关注",
+      "n": 1
+     },
+     {
+      "value": "Passionate",
+      "label": "非常感兴趣",
+      "n": 1
+     }
+    ]
+   },
+   {
+    "dim": "need_for_closure",
+    "label": "认知闭合需求",
+    "coverage": 7,
+    "values": [
+     {
+      "value": "High",
+      "label": "高",
+      "n": 4
+     },
+     {
+      "value": "Average",
+      "label": "平均",
+      "n": 3
+     }
+    ]
+   },
+   {
+    "dim": "query_complexity",
+    "label": "提问复杂度",
+    "coverage": 7,
+    "values": [
+     {
+      "value": "Simple factual",
+      "label": "简单事实问答",
+      "n": 6
+     },
+     {
+      "value": "Multi-step",
+      "label": "需要多步处理",
+      "n": 1
+     }
+    ]
+   },
+   {
+    "dim": "lstyle_frugality",
+    "label": "消费与储蓄",
+    "coverage": 7,
+    "values": [
+     {
+      "value": "Balanced",
+      "label": "平衡",
+      "n": 5
+     },
+     {
+      "value": "Frugal saver",
+      "label": "节俭储蓄型",
+      "n": 2
+     }
+    ]
+   },
+   {
+    "dim": "economic_motivation",
+    "label": "经济动机",
+    "coverage": 7,
+    "values": [
+     {
+      "value": "Value-driven",
+      "label": "价值驱动",
+      "n": 7
+     }
+    ]
+   },
+   {
+    "dim": "cog_humor",
+    "label": "幽默风格",
+    "coverage": 6,
+    "values": [
+     {
+      "value": "Playful",
+      "label": "轻松活泼",
+      "n": 3
+     },
+     {
+      "value": "Serious",
+      "label": "严肃",
+      "n": 3
+     }
+    ]
+   },
+   {
+    "dim": "cog_patience",
+    "label": "耐心",
+    "coverage": 6,
+    "values": [
+     {
+      "value": "Moderate",
+      "label": "中等",
+      "n": 4
+     },
+     {
+      "value": "High",
+      "label": "高",
+      "n": 2
+     }
+    ]
+   },
+   {
+    "dim": "cog_curiosity",
+    "label": "好奇心",
+    "coverage": 6,
+    "values": [
+     {
+      "value": "Moderate",
+      "label": "中等",
+      "n": 5
+     },
+     {
+      "value": "High",
+      "label": "高",
+      "n": 1
+     }
+    ]
+   },
+   {
+    "dim": "cog_open_mindedness",
+    "label": "开放",
+    "coverage": 6,
+    "values": [
+     {
+      "value": "High",
+      "label": "高",
+      "n": 3
+     },
+     {
+      "value": "Moderate",
+      "label": "中等",
+      "n": 3
+     }
+    ]
+   },
+   {
+    "dim": "cog_question_asking",
+    "label": "提问频率",
+    "coverage": 6,
+    "values": [
+     {
+      "value": "Rarely asks",
+      "label": "很少提问",
+      "n": 5
+     },
+     {
+      "value": "Sometimes",
+      "label": "有时提问",
+      "n": 1
+     }
+    ]
+   },
+   {
+    "dim": "att_new_technology",
+    "label": "态度：新技术",
+    "coverage": 6,
+    "values": [
+     {
+      "value": "Positive",
+      "label": "持积极态度",
+      "n": 5
+     },
+     {
+      "value": "Skeptical",
+      "label": "持怀疑态度",
+      "n": 1
+     }
+    ]
+   },
+   {
+    "dim": "demo_parental_status",
+    "label": "家长身份",
+    "coverage": 6,
+    "values": [
+     {
+      "value": "Parent of minors",
+      "label": "未成年人家长",
+      "n": 3
+     },
+     {
+      "value": "Parent of adults",
+      "label": "成年子女的家长",
+      "n": 3
+     }
+    ]
+   },
+   {
+    "dim": "major_life_events",
+    "label": "生活重大事件",
+    "coverage": 6,
+    "values": [
+     {
+      "value": "Health journey",
+      "label": "健康经历",
+      "n": 4
+     },
+     {
+      "value": "Started a business",
+      "label": "创业",
+      "n": 1
+     },
+     {
+      "value": "Caregiving",
+      "label": "照护他人",
+      "n": 1
+     }
+    ]
+   },
+   {
+    "dim": "health_caregiver_status",
+    "label": "照护者身份",
+    "coverage": 6,
+    "values": [
+     {
+      "value": "Elder caregiver",
+      "label": "照护老人",
+      "n": 3
+     },
+     {
+      "value": "Child caregiver",
+      "label": "照护儿童",
+      "n": 3
+     }
+    ]
+   },
+   {
+    "dim": "cog_detail_orientation",
+    "label": "细节导向",
+    "coverage": 5,
+    "values": [
+     {
+      "value": "High",
+      "label": "高",
+      "n": 5
+     }
+    ]
+   },
+   {
+    "dim": "cog_abstraction",
+    "label": "抽象与具体",
+    "coverage": 5,
+    "values": [
+     {
+      "value": "Concrete",
+      "label": "具体",
+      "n": 4
+     },
+     {
+      "value": "Very concrete",
+      "label": "非常具体",
+      "n": 1
+     }
+    ]
+   },
+   {
+    "dim": "cog_optimism",
+    "label": "乐观",
+    "coverage": 5,
+    "values": [
+     {
+      "value": "High",
+      "label": "高",
+      "n": 3
+     },
+     {
+      "value": "Moderate",
+      "label": "中等",
+      "n": 2
+     }
+    ]
+   },
+   {
+    "dim": "cog_feedback_receptiveness",
+    "label": "反馈接受度",
+    "coverage": 5,
+    "values": [
+     {
+      "value": "High",
+      "label": "高",
+      "n": 4
+     },
+     {
+      "value": "Moderate",
+      "label": "中等",
+      "n": 1
+     }
+    ]
+   },
+   {
+    "dim": "cog_attention_span",
+    "label": "注意力持续时间",
+    "coverage": 5,
+    "values": [
+     {
+      "value": "Long",
+      "label": "长",
+      "n": 2
+     },
+     {
+      "value": "Average",
+      "label": "中等",
+      "n": 2
+     },
+     {
+      "value": "Short",
+      "label": "短",
+      "n": 1
+     }
+    ]
+   },
+   {
+    "dim": "cog_big_picture_vs_detail",
+    "label": "大局与细节",
+    "coverage": 5,
+    "values": [
+     {
+      "value": "Detail",
+      "label": "偏重细节",
+      "n": 5
+     }
+    ]
+   },
+   {
+    "dim": "emotional_state",
+    "label": "情绪状态",
+    "coverage": 5,
+    "values": [
+     {
+      "value": "Calm",
+      "label": "平静",
+      "n": 4
+     },
+     {
+      "value": "Excited",
+      "label": "兴奋",
+      "n": 1
+     }
+    ]
+   },
+   {
+    "dim": "device_context",
+    "label": "设备上下文",
+    "coverage": 5,
+    "values": [
+     {
+      "value": "Mobile, on-the-go",
+      "label": "移动端，随时使用",
+      "n": 3
+     },
+     {
+      "value": "Desktop, focused",
+      "label": "桌面端，专注使用",
+      "n": 2
+     }
+    ]
+   },
+   {
+    "dim": "topic_travel",
+    "label": "兴趣：旅行",
+    "coverage": 5,
+    "values": [
+     {
+      "value": "Interested",
+      "label": "感兴趣",
+      "n": 5
+     }
+    ]
+   },
+   {
+    "dim": "trait_perspective",
+    "label": "性格：洞察力",
+    "coverage": 5,
+    "values": [
+     {
+      "value": "Slight",
+      "label": "轻微",
+      "n": 4
+     },
+     {
+      "value": "Moderate",
+      "label": "中等",
+      "n": 1
+     }
+    ]
+   },
+   {
+    "dim": "trait_social_intelligence",
+    "label": "性格：社交智慧",
+    "coverage": 5,
+    "values": [
+     {
+      "value": "Slight",
+      "label": "轻微",
+      "n": 5
+     }
+    ]
+   },
+   {
+    "dim": "risk_tolerance",
+    "label": "风险承受能力",
+    "coverage": 5,
+    "values": [
+     {
+      "value": "Cautious",
+      "label": "谨慎",
+      "n": 3
+     },
+     {
+      "value": "Balanced",
+      "label": "平衡",
+      "n": 2
+     }
+    ]
+   },
+   {
+    "dim": "lstyle_fashion_sense",
+    "label": "时尚感",
+    "coverage": 5,
+    "values": [
+     {
+      "value": "Practical",
+      "label": "实用",
+      "n": 5
+     }
+    ]
+   },
+   {
+    "dim": "health_chronic_condition",
+    "label": "慢性病",
+    "coverage": 5,
+    "values": [
+     {
+      "value": "Managed",
+      "label": "病情受控",
+      "n": 4
+     },
+     {
+      "value": "Multiple",
+      "label": "多种慢性病",
+      "n": 1
+     }
+    ]
+   },
+   {
+    "dim": "trait_empathy",
+    "label": "性格：同理心",
+    "coverage": 5,
+    "values": [
+     {
+      "value": "Slight",
+      "label": "轻微",
+      "n": 5
+     }
+    ]
+   },
+   {
+    "dim": "trait_creativity",
+    "label": "性格：创造力",
+    "coverage": 5,
+    "values": [
+     {
+      "value": "Slight",
+      "label": "轻微",
+      "n": 3
+     },
+     {
+      "value": "Moderate",
+      "label": "中等",
+      "n": 1
+     },
+     {
+      "value": "Strong",
+      "label": "明显",
+      "n": 1
+     }
+    ]
+   },
+   {
+    "dim": "coding_tool_alternative_sensitivity",
+    "label": "编码工具替代敏感性",
+    "coverage": 5,
+    "values": [
+     {
+      "value": "Moderate concern",
+      "label": "中等顾虑",
+      "n": 3
+     },
+     {
+      "value": "Not a concern",
+      "label": "没有顾虑",
+      "n": 1
+     },
+     {
+      "value": "Major concern",
+      "label": "重大顾虑",
+      "n": 1
+     }
+    ]
+   }
+  ],
+  "list": [
+   {
+    "id": "0030",
+    "name": "Maya Patel",
+    "n_dims": 46,
+    "origin": "amazon-063a19d03eef",
+    "top": [
+     {
+      "label": "决策风格",
+      "value": "分析型"
+     },
+     {
+      "label": "信任级别",
+      "value": "核验中"
+     },
+     {
+      "label": "熟悉：摄影",
+      "value": "了解"
+     },
+     {
+      "label": "熟悉：航空",
+      "value": "略有了解"
+     },
+     {
+      "label": "技能：研究",
+      "value": "中等"
+     },
+     {
+      "label": "技能：解决问题",
+      "value": "中等"
+     }
+    ]
+   },
+   {
+    "id": "0031",
+    "name": "Quinn Santos",
+    "n_dims": 16,
+    "origin": "amazon-c8cf33c3a3db",
+    "top": [
+     {
+      "label": "技术熟练度",
+      "value": "使用熟练"
+     },
+     {
+      "label": "决策风格",
+      "value": "分析型"
+     },
+     {
+      "label": "情绪状态",
+      "value": "兴奋"
+     },
+     {
+      "label": "提问复杂度",
+      "value": "简单事实问答"
+     },
+     {
+      "label": "用户与模型的专业水平关系",
+      "value": "用户是新手，向专家请教"
+     },
+     {
+      "label": "时间压力",
+      "value": "有截止期限"
+     }
+    ]
+   },
+   {
+    "id": "0032",
+    "name": "Maya Patel",
+    "n_dims": 60,
+    "origin": "amazon-19c840f933dc",
+    "top": [
+     {
+      "label": "情绪状态",
+      "value": "平静"
+     },
+     {
+      "label": "提问复杂度",
+      "value": "简单事实问答"
+     },
+     {
+      "label": "态度：新技术",
+      "value": "持积极态度"
+     },
+     {
+      "label": "态度：在线评论",
+      "value": "持积极态度"
+     },
+     {
+      "label": "电影：动作",
+      "value": "喜欢"
+     },
+     {
+      "label": "电影：超级英雄",
+      "value": "喜欢"
+     }
+    ]
+   },
+   {
+    "id": "0033",
+    "name": "Casey Brooks",
+    "n_dims": 15,
+    "origin": "amazon-cf62fb5aacf4",
+    "top": [
+     {
+      "label": "学科专业",
+      "value": "电工作业"
+     },
+     {
+      "label": "风险承受能力",
+      "value": "谨慎"
+     },
+     {
+      "label": "决策风格",
+      "value": "分析型"
+     },
+     {
+      "label": "信任级别",
+      "value": "核验中"
+     },
+     {
+      "label": "兴趣：健身",
+      "value": "感兴趣"
+     },
+     {
+      "label": "兴趣：木工",
+      "value": "感兴趣"
+     }
+    ]
+   },
+   {
+    "id": "0034",
+    "name": "Riley Chen",
+    "n_dims": 34,
+    "origin": "amazon-dc7ae5c0bb02",
+    "top": [
+     {
+      "label": "技术熟练度",
+      "value": "使用熟练"
+     },
+     {
+      "label": "用户与模型的专业水平关系",
+      "value": "用户是新手，向专家请教"
+     },
+     {
+      "label": "期望语气",
+      "value": "详细"
+     },
+     {
+      "label": "模态偏好",
+      "value": "分步说明"
+     },
+     {
+      "label": "学习风格",
+      "value": "读写型"
+     },
+     {
+      "label": "媒体内容偏好",
+      "value": "以视频为主"
+     }
+    ]
+   },
+   {
+    "id": "0035",
+    "name": "Noah Williams",
+    "n_dims": 21,
+    "origin": "amazon-4e7bb4f55e55",
+    "top": [
+     {
+      "label": "区域",
+      "value": "北美"
+     },
+     {
+      "label": "性别认同",
+      "value": "女性"
+     },
+     {
+      "label": "语域／方言",
+      "value": "口语"
+     },
+     {
+      "label": "期望语气",
+      "value": "简洁"
+     },
+     {
+      "label": "安全风险类型",
+      "value": "无明显风险"
+     },
+     {
+      "label": "兴趣：历史",
+      "value": "感兴趣"
+     }
+    ]
+   },
+   {
+    "id": "0036",
+    "name": "Ethan Brooks",
+    "n_dims": 27,
+    "origin": "amazon-96332e6c00d1",
+    "top": [
+     {
+      "label": "年龄段",
+      "value": "65+"
+     },
+     {
+      "label": "区域",
+      "value": "北美"
+     },
+     {
+      "label": "城乡类型",
+      "value": "郊区"
+     },
+     {
+      "label": "语域／方言",
+      "value": "口语"
+     },
+     {
+      "label": "人生阶段",
+      "value": "中年"
+     },
+     {
+      "label": "生活重大事件",
+      "value": "健康经历"
+     }
+    ]
+   },
+   {
+    "id": "0037",
+    "name": "Casey Brooks",
+    "n_dims": 18,
+    "origin": "amazon-58cd333c7db8",
+    "top": [
+     {
+      "label": "职级",
+      "value": "已退休"
+     },
+     {
+      "label": "工作经验年数",
+      "value": "20+"
+     },
+     {
+      "label": "LinkedIn活动",
+      "value": "不活跃"
+     },
+     {
+      "label": "文化背景",
+      "value": "原住民"
+     },
+     {
+      "label": "技术熟练度",
+      "value": "使用熟练"
+     },
+     {
+      "label": "无障碍支持需求",
+      "value": "视觉"
+     }
+    ]
+   },
+   {
+    "id": "0038",
+    "name": "Riley Chen",
+    "n_dims": 22,
+    "origin": "amazon-e29e9a63113d",
+    "top": [
+     {
+      "label": "情绪状态",
+      "value": "平静"
+     },
+     {
+      "label": "提问复杂度",
+      "value": "简单事实问答"
+     },
+     {
+      "label": "时间压力",
+      "value": "不着急"
+     },
+     {
+      "label": "设备上下文",
+      "value": "桌面端，专注使用"
+     },
+     {
+      "label": "学习风格",
+      "value": "动手实践型"
+     },
+     {
+      "label": "技能：数据分析",
+      "value": "入门"
+     }
+    ]
+   },
+   {
+    "id": "0039",
+    "name": "Sam Okafor",
+    "n_dims": 24,
+    "origin": "amazon-7e98f9b6a136",
+    "top": [
+     {
+      "label": "经济动机",
+      "value": "价值驱动"
+     },
+     {
+      "label": "兴趣：健身",
+      "value": "感兴趣"
+     },
+     {
+      "label": "兴趣：育儿",
+      "value": "感兴趣"
+     },
+     {
+      "label": "兴趣：家居改造",
+      "value": "感兴趣"
+     },
+     {
+      "label": "兴趣：汽车",
+      "value": "感兴趣"
+     },
+     {
+      "label": "兴趣：文学",
+      "value": "感兴趣"
+     }
+    ]
+   },
+   {
+    "id": "0040",
+    "name": "Sienna Carter",
+    "n_dims": 61,
+    "origin": "amazon-1c71163add1b",
+    "top": [
+     {
+      "label": "区域",
+      "value": "北美"
+     },
+     {
+      "label": "城乡类型",
+      "value": "郊区"
+     },
+     {
+      "label": "生活重大事件",
+      "value": "健康经历"
+     },
+     {
+      "label": "风险承受能力",
+      "value": "平衡"
+     },
+     {
+      "label": "决策风格",
+      "value": "分析型"
+     },
+     {
+      "label": "时间压力",
+      "value": "不着急"
+     }
+    ]
+   },
+   {
+    "id": "0041",
+    "name": "Quinn Santos",
+    "n_dims": 59,
+    "origin": "amazon-b1c08d54f780",
+    "top": [
+     {
+      "label": "领域立场",
+      "value": "爱好者"
+     },
+     {
+      "label": "技术熟练度",
+      "value": "使用熟练"
+     },
+     {
+      "label": "风险承受能力",
+      "value": "谨慎"
+     },
+     {
+      "label": "决策风格",
+      "value": "分析型"
+     },
+     {
+      "label": "信任级别",
+      "value": "核验中"
+     },
+     {
+      "label": "时间压力",
+      "value": "不着急"
+     }
+    ]
+   },
+   {
+    "id": "0042",
+    "name": "Casey Brooks",
+    "n_dims": 28,
+    "origin": "amazon-65787f62ebe7",
+    "top": [
+     {
+      "label": "职能",
+      "value": "教学"
+     },
+     {
+      "label": "信任级别",
+      "value": "核验中"
+     },
+     {
+      "label": "安全风险类型",
+      "value": "无明显风险"
+     },
+     {
+      "label": "熟悉：政治学",
+      "value": "了解"
+     },
+     {
+      "label": "兴趣：旅行",
+      "value": "感兴趣"
+     },
+     {
+      "label": "兴趣：音乐",
+      "value": "感兴趣"
+     }
+    ]
+   },
+   {
+    "id": "0043",
+    "name": "Sam Okafor",
+    "n_dims": 16,
+    "origin": "amazon-33603c5f9ad5",
+    "top": [
+     {
+      "label": "最高教育程度",
+      "value": "本科／学士"
+     },
+     {
+      "label": "学习风格",
+      "value": "动手实践型"
+     },
+     {
+      "label": "运动：跑步",
+      "value": "参与"
+     },
+     {
+      "label": "时尚感",
+      "value": "实用"
+     },
+     {
+      "label": "反馈接受度",
+      "value": "高"
+     },
+     {
+      "label": "性格：善良",
+      "value": "中等"
+     }
+    ]
+   },
+   {
+    "id": "0044",
+    "name": "Sam Okafor",
+    "n_dims": 7,
+    "origin": "amazon-43fa0cb19894",
+    "top": [
+     {
+      "label": "熟悉：园艺",
+      "value": "了解"
+     },
+     {
+      "label": "熟悉：营养学",
+      "value": "略有了解"
+     },
+     {
+      "label": "态度：品牌忠诚度",
+      "value": "持积极态度"
+     },
+     {
+      "label": "态度：在线评论",
+      "value": "持积极态度"
+     },
+     {
+      "label": "态度：办公室工作",
+      "value": "持积极态度"
+     },
+     {
+      "label": "养宠情况",
+      "value": "狗"
+     }
+    ]
+   },
+   {
+    "id": "0045",
+    "name": "Quinn Santos",
+    "n_dims": 26,
+    "origin": "amazon-9d66ac092f13",
+    "top": [
+     {
+      "label": "领域",
+      "value": "技术工种"
+     },
+     {
+      "label": "学科专业",
+      "value": "电工作业"
+     },
+     {
+      "label": "生活重大事件",
+      "value": "创业"
+     },
+     {
+      "label": "技术熟练度",
+      "value": "使用熟练"
+     },
+     {
+      "label": "用户与模型的专业水平关系",
+      "value": "用户与模型水平相当"
+     },
+     {
+      "label": "信任级别",
+      "value": "核验中"
+     }
+    ]
+   },
+   {
+    "id": "0046",
+    "name": "Quinn Santos",
+    "n_dims": 41,
+    "origin": "amazon-042e1f50b4af",
+    "top": [
+     {
+      "label": "人生阶段",
+      "value": "年幼子女的家长"
+     },
+     {
+      "label": "生活重大事件",
+      "value": "健康经历"
+     },
+     {
+      "label": "技术熟练度",
+      "value": "使用熟练"
+     },
+     {
+      "label": "决策风格",
+      "value": "分析型"
+     },
+     {
+      "label": "兴趣：茶",
+      "value": "感兴趣"
+     },
+     {
+      "label": "态度：拥有住房",
+      "value": "持积极态度"
+     }
+    ]
+   },
+   {
+    "id": "0047",
+    "name": "Riley Chen",
+    "n_dims": 12,
+    "origin": "amazon-d04b667d1a94",
+    "top": [
+     {
+      "label": "情绪状态",
+      "value": "平静"
+     },
+     {
+      "label": "提问复杂度",
+      "value": "简单事实问答"
+     },
+     {
+      "label": "时间压力",
+      "value": "不着急"
+     },
+     {
+      "label": "先验上下文",
+      "value": "回访用户"
+     },
+     {
+      "label": "设备上下文",
+      "value": "移动端，随时使用"
+     },
+     {
+      "label": "态度：办公室工作",
+      "value": "非常热衷"
+     }
+    ]
+   },
+   {
+    "id": "0048",
+    "name": "Casey Brooks",
+    "n_dims": 31,
+    "origin": "amazon-afd45355d570",
+    "top": [
+     {
+      "label": "最高教育程度",
+      "value": "本科／学士"
+     },
+     {
+      "label": "风险承受能力",
+      "value": "谨慎"
+     },
+     {
+      "label": "兴趣：宠物",
+      "value": "感兴趣"
+     },
+     {
+      "label": "兴趣：摩托车",
+      "value": "感兴趣"
+     },
+     {
+      "label": "兴趣：骑行",
+      "value": "感兴趣"
+     },
+     {
+      "label": "兴趣：茶",
+      "value": "感兴趣"
+     }
+    ]
+   },
+   {
+    "id": "0049",
+    "name": "Maya Patel",
+    "n_dims": 9,
+    "origin": "amazon-f77f530fb841",
+    "top": [
+     {
+      "label": "技术熟练度",
+      "value": "使用熟练"
+     },
+     {
+      "label": "行业：零售",
+      "value": "有经验"
+     },
+     {
+      "label": "工作安排",
+      "value": "轮班"
+     },
+     {
+      "label": "阅读频率",
+      "value": "每周"
+     },
+     {
+      "label": "开放",
+      "value": "中等"
+     },
+     {
+      "label": "反馈接受度",
+      "value": "高"
+     }
+    ]
+   },
+   {
+    "id": "0050",
+    "name": "Casey Brooks",
+    "n_dims": 8,
+    "origin": "amazon-afd6599306ad",
+    "top": [
+     {
+      "label": "决策风格",
+      "value": "分析型"
+     },
+     {
+      "label": "态度：新技术",
+      "value": "持怀疑态度"
+     },
+     {
+      "label": "态度：品牌忠诚度",
+      "value": "持怀疑态度"
+     },
+     {
+      "label": "态度：在线评论",
+      "value": "持积极态度"
+     },
+     {
+      "label": "音乐：摇滚",
+      "value": "非常喜欢"
+     },
+     {
+      "label": "音乐：独立音乐",
+      "value": "非常喜欢"
+     }
+    ]
+   },
+   {
+    "id": "0051",
+    "name": "Jordan Lee",
+    "n_dims": 19,
+    "origin": "amazon-c9edcb364fdb",
+    "top": [
+     {
+      "label": "工作经验年数",
+      "value": "20+"
+     },
+     {
+      "label": "提问复杂度",
+      "value": "需要多步处理"
+     },
+     {
+      "label": "设备上下文",
+      "value": "桌面端，专注使用"
+     },
+     {
+      "label": "熟悉：供应链",
+      "value": "略有了解"
+     },
+     {
+      "label": "熟悉：物流",
+      "value": "略有了解"
+     },
+     {
+      "label": "熟悉：精益制造",
+      "value": "略有了解"
+     }
+    ]
+   },
+   {
+    "id": "0052",
+    "name": "Quinn Santos",
+    "n_dims": 22,
+    "origin": "amazon-cc4e49d56bb7",
+    "top": [
+     {
+      "label": "性别认同",
+      "value": "女性"
+     },
+     {
+      "label": "决策风格",
+      "value": "分析型"
+     },
+     {
+      "label": "用户与模型的专业水平关系",
+      "value": "用户是新手，向专家请教"
+     },
+     {
+      "label": "信任级别",
+      "value": "核验中"
+     },
+     {
+      "label": "安全风险类型",
+      "value": "无明显风险"
+     },
+     {
+      "label": "无障碍支持需求",
+      "value": "视觉"
+     }
+    ]
+   },
+   {
+    "id": "0053",
+    "name": "Alex Rivera",
+    "n_dims": 12,
+    "origin": "amazon-00547038e164",
+    "top": [
+     {
+      "label": "情绪状态",
+      "value": "平静"
+     },
+     {
+      "label": "提问复杂度",
+      "value": "简单事实问答"
+     },
+     {
+      "label": "态度：新技术",
+      "value": "持积极态度"
+     },
+     {
+      "label": "态度：在线评论",
+      "value": "持积极态度"
+     },
+     {
+      "label": "书籍：悬疑",
+      "value": "喜欢"
+     },
+     {
+      "label": "运动：高尔夫",
+      "value": "参与"
+     }
+    ]
+   },
+   {
+    "id": "0054",
+    "name": "Quinn Santos",
+    "n_dims": 27,
+    "origin": "amazon-52a9205b8db8",
+    "top": [
+     {
+      "label": "经济动机",
+      "value": "价值驱动"
+     },
+     {
+      "label": "兴趣：健身",
+      "value": "感兴趣"
+     },
+     {
+      "label": "自我效能感",
+      "value": "高"
+     },
+     {
+      "label": "条理性",
+      "value": "平均"
+     },
+     {
+      "label": "尽责",
+      "value": "平均"
+     },
+     {
+      "label": "自律",
+      "value": "平均"
+     }
+    ]
+   },
+   {
+    "id": "0055",
+    "name": "Ava Martinez",
+    "n_dims": 45,
+    "origin": "amazon-71592cf91fb6",
+    "top": [
+     {
+      "label": "年龄段",
+      "value": "45–54岁"
+     },
+     {
+      "label": "区域",
+      "value": "北美"
+     },
+     {
+      "label": "性别认同",
+      "value": "女性"
+     },
+     {
+      "label": "领域立场",
+      "value": "爱好者"
+     },
+     {
+      "label": "人生阶段",
+      "value": "中年"
+     },
+     {
+      "label": "生活重大事件",
+      "value": "健康经历"
+     }
+    ]
+   },
+   {
+    "id": "0056",
+    "name": "Quinn Santos",
+    "n_dims": 45,
+    "origin": "amazon-656066827cc2",
+    "top": [
+     {
+      "label": "城乡类型",
+      "value": "小城镇"
+     },
+     {
+      "label": "领域立场",
+      "value": "爱好者"
+     },
+     {
+      "label": "核心价值",
+      "value": "新奇"
+     },
+     {
+      "label": "信任级别",
+      "value": "信任"
+     },
+     {
+      "label": "时间压力",
+      "value": "不着急"
+     },
+     {
+      "label": "经济动机",
+      "value": "价值驱动"
+     }
+    ]
+   },
+   {
+    "id": "0057",
+    "name": "Alex Rivera",
+    "n_dims": 72,
+    "origin": "amazon-54e077ebadae",
+    "top": [
+     {
+      "label": "生活重大事件",
+      "value": "照护他人"
+     },
+     {
+      "label": "提问复杂度",
+      "value": "简单事实问答"
+     },
+     {
+      "label": "期望语气",
+      "value": "详细"
+     },
+     {
+      "label": "时间压力",
+      "value": "不着急"
+     },
+     {
+      "label": "先验上下文",
+      "value": "回访用户"
+     },
+     {
+      "label": "设备上下文",
+      "value": "移动端，随时使用"
+     }
+    ]
+   },
+   {
+    "id": "0058",
+    "name": "Casey Brooks",
+    "n_dims": 23,
+    "origin": "amazon-142941ed9c6c",
+    "top": [
+     {
+      "label": "领域",
+      "value": "艺术与人文"
+     },
+     {
+      "label": "职能",
+      "value": "教学"
+     },
+     {
+      "label": "技术熟练度",
+      "value": "使用熟练"
+     },
+     {
+      "label": "风险承受能力",
+      "value": "平衡"
+     },
+     {
+      "label": "决策风格",
+      "value": "分析型"
+     },
+     {
+      "label": "时间压力",
+      "value": "不着急"
+     }
+    ]
+   }
+  ]
+ }
+}

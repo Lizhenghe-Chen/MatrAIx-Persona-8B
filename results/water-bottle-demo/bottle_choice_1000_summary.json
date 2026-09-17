@@ -1,0 +1,1885 @@
+{
+  "n": 1000,
+  "products": {
+    "fuguang_316": {
+      "name": "富光 316 保温杯",
+      "price": 39.9,
+      "tier": "低"
+    },
+    "nalgene_sustain": {
+      "name": "Nalgene Sustain 32oz",
+      "price": 119.0,
+      "tier": "中"
+    },
+    "beijixiong_316": {
+      "name": "杯具熊 316 保温杯",
+      "price": 129.0,
+      "tier": "中"
+    },
+    "mijia_bottle": {
+      "name": "米家保温杯",
+      "price": 179.0,
+      "tier": "中高"
+    },
+    "zojirushi_sm_sz": {
+      "name": "象印 SM-SZ",
+      "price": 229.0,
+      "tier": "高"
+    },
+    "stanley_quencher": {
+      "name": "Stanley Quencher",
+      "price": 319.0,
+      "tier": "高"
+    },
+    "none_of_these": {
+      "name": "都不买",
+      "price": 0.0,
+      "tier": "无"
+    }
+  },
+  "market_share": {
+    "fuguang_316": {
+      "name": "富光 316 保温杯",
+      "price": 39.9,
+      "count": 219,
+      "share_pct": 21.9
+    },
+    "nalgene_sustain": {
+      "name": "Nalgene Sustain 32oz",
+      "price": 119.0,
+      "count": 0,
+      "share_pct": 0.0
+    },
+    "beijixiong_316": {
+      "name": "杯具熊 316 保温杯",
+      "price": 129.0,
+      "count": 702,
+      "share_pct": 70.2
+    },
+    "mijia_bottle": {
+      "name": "米家保温杯",
+      "price": 179.0,
+      "count": 0,
+      "share_pct": 0.0
+    },
+    "zojirushi_sm_sz": {
+      "name": "象印 SM-SZ",
+      "price": 229.0,
+      "count": 78,
+      "share_pct": 7.8
+    },
+    "stanley_quencher": {
+      "name": "Stanley Quencher",
+      "price": 319.0,
+      "count": 1,
+      "share_pct": 0.1
+    },
+    "none_of_these": {
+      "name": "都不买",
+      "price": 0.0,
+      "count": 0,
+      "share_pct": 0.0
+    }
+  },
+  "choice_x_econ": {
+    "Cost-sensitive": {
+      "fuguang_316": {
+        "count": 166,
+        "share_pct": 33.8
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 321,
+        "share_pct": 65.4
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 4,
+        "share_pct": 0.8
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "Indifferent": {
+      "fuguang_316": {
+        "count": 10,
+        "share_pct": 9.3
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 84,
+        "share_pct": 78.5
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 13,
+        "share_pct": 12.1
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "Premium-seeking": {
+      "fuguang_316": {
+        "count": 5,
+        "share_pct": 10.2
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 31,
+        "share_pct": 63.3
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 12,
+        "share_pct": 24.5
+      },
+      "stanley_quencher": {
+        "count": 1,
+        "share_pct": 2.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "Value-driven": {
+      "fuguang_316": {
+        "count": 38,
+        "share_pct": 10.8
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 266,
+        "share_pct": 75.4
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 49,
+        "share_pct": 13.9
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    }
+  },
+  "choice_x_age": {
+    "18-24": {
+      "fuguang_316": {
+        "count": 54,
+        "share_pct": 30.7
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 119,
+        "share_pct": 67.6
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 2,
+        "share_pct": 1.1
+      },
+      "stanley_quencher": {
+        "count": 1,
+        "share_pct": 0.6
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "25-34": {
+      "fuguang_316": {
+        "count": 22,
+        "share_pct": 21.0
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 78,
+        "share_pct": 74.3
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 5,
+        "share_pct": 4.8
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "35-44": {
+      "fuguang_316": {
+        "count": 22,
+        "share_pct": 16.7
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 102,
+        "share_pct": 77.3
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 8,
+        "share_pct": 6.1
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "45-54": {
+      "fuguang_316": {
+        "count": 38,
+        "share_pct": 20.8
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 134,
+        "share_pct": 73.2
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 11,
+        "share_pct": 6.0
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "55-64": {
+      "fuguang_316": {
+        "count": 34,
+        "share_pct": 19.2
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 129,
+        "share_pct": 72.9
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 14,
+        "share_pct": 7.9
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "65-74": {
+      "fuguang_316": {
+        "count": 33,
+        "share_pct": 23.6
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 94,
+        "share_pct": 67.1
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 13,
+        "share_pct": 9.3
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "75-84": {
+      "fuguang_316": {
+        "count": 12,
+        "share_pct": 20.3
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 30,
+        "share_pct": 50.8
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 17,
+        "share_pct": 28.8
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "85+": {
+      "fuguang_316": {
+        "count": 4,
+        "share_pct": 14.3
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 16,
+        "share_pct": 57.1
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 8,
+        "share_pct": 28.6
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    }
+  },
+  "choice_x_region": {
+    "South Asia": {
+      "fuguang_316": {
+        "count": 88,
+        "share_pct": 31.9
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 178,
+        "share_pct": 64.5
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 10,
+        "share_pct": 3.6
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "East Asia": {
+      "fuguang_316": {
+        "count": 50,
+        "share_pct": 24.5
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 136,
+        "share_pct": 66.7
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 18,
+        "share_pct": 8.8
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "Sub-Saharan Africa": {
+      "fuguang_316": {
+        "count": 44,
+        "share_pct": 22.7
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 144,
+        "share_pct": 74.2
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 6,
+        "share_pct": 3.1
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "Southeast Asia": {
+      "fuguang_316": {
+        "count": 11,
+        "share_pct": 12.4
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 76,
+        "share_pct": 85.4
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 2,
+        "share_pct": 2.2
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "Latin America": {
+      "fuguang_316": {
+        "count": 12,
+        "share_pct": 16.4
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 55,
+        "share_pct": 75.3
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 6,
+        "share_pct": 8.2
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "MENA": {
+      "fuguang_316": {
+        "count": 13,
+        "share_pct": 21.0
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 40,
+        "share_pct": 64.5
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 9,
+        "share_pct": 14.5
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "North America": {
+      "fuguang_316": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 38,
+        "share_pct": 71.7
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 14,
+        "share_pct": 26.4
+      },
+      "stanley_quencher": {
+        "count": 1,
+        "share_pct": 1.9
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "Western Europe": {
+      "fuguang_316": {
+        "count": 1,
+        "share_pct": 4.0
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 16,
+        "share_pct": 64.0
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 8,
+        "share_pct": 32.0
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "Eastern Europe": {
+      "fuguang_316": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 7,
+        "share_pct": 77.8
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 2,
+        "share_pct": 22.2
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "Oceania": {
+      "fuguang_316": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 5,
+        "share_pct": 71.4
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 2,
+        "share_pct": 28.6
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "Europe": {
+      "fuguang_316": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 1,
+        "share_pct": 50.0
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 1,
+        "share_pct": 50.0
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "Southern Europe": {
+      "fuguang_316": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 2,
+        "share_pct": 100.0
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "Caucasus": {
+      "fuguang_316": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 1,
+        "share_pct": 100.0
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "West Asia": {
+      "fuguang_316": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 1,
+        "share_pct": 100.0
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "unknown": {
+      "fuguang_316": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 1,
+        "share_pct": 100.0
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "Southern Africa": {
+      "fuguang_316": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 1,
+        "share_pct": 100.0
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    }
+  },
+  "choice_x_gender": {
+    "Woman": {
+      "fuguang_316": {
+        "count": 146,
+        "share_pct": 24.3
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 418,
+        "share_pct": 69.7
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 35,
+        "share_pct": 5.8
+      },
+      "stanley_quencher": {
+        "count": 1,
+        "share_pct": 0.2
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "Man": {
+      "fuguang_316": {
+        "count": 69,
+        "share_pct": 17.8
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 277,
+        "share_pct": 71.6
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 41,
+        "share_pct": 10.6
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "unknown": {
+      "fuguang_316": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 3,
+        "share_pct": 75.0
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 1,
+        "share_pct": 25.0
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "Non-binary": {
+      "fuguang_316": {
+        "count": 3,
+        "share_pct": 75.0
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 1,
+        "share_pct": 25.0
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "Self-described": {
+      "fuguang_316": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 3,
+        "share_pct": 100.0
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "Prefer not to say": {
+      "fuguang_316": {
+        "count": 1,
+        "share_pct": 50.0
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 1,
+        "share_pct": 50.0
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    }
+  },
+  "choice_x_life_stage": {
+    "Mid-life": {
+      "fuguang_316": {
+        "count": 49,
+        "share_pct": 15.6
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 219,
+        "share_pct": 69.7
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 46,
+        "share_pct": 14.6
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "Retirement": {
+      "fuguang_316": {
+        "count": 60,
+        "share_pct": 27.8
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 136,
+        "share_pct": 63.0
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 20,
+        "share_pct": 9.3
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "Early career": {
+      "fuguang_316": {
+        "count": 37,
+        "share_pct": 22.4
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 118,
+        "share_pct": 71.5
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 9,
+        "share_pct": 5.5
+      },
+      "stanley_quencher": {
+        "count": 1,
+        "share_pct": 0.6
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "Student": {
+      "fuguang_316": {
+        "count": 27,
+        "share_pct": 28.1
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 68,
+        "share_pct": 70.8
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 1,
+        "share_pct": 1.0
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "Career change": {
+      "fuguang_316": {
+        "count": 24,
+        "share_pct": 25.0
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 71,
+        "share_pct": 74.0
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 1,
+        "share_pct": 1.0
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "Empty nester": {
+      "fuguang_316": {
+        "count": 7,
+        "share_pct": 12.7
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 47,
+        "share_pct": 85.5
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 1,
+        "share_pct": 1.8
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "Parent of young kids": {
+      "fuguang_316": {
+        "count": 15,
+        "share_pct": 28.3
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 38,
+        "share_pct": 71.7
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "unknown": {
+      "fuguang_316": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 5,
+        "share_pct": 100.0
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    }
+  },
+  "choice_x_socio": {
+    "Low income": {
+      "fuguang_316": {
+        "count": 102,
+        "share_pct": 39.4
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 155,
+        "share_pct": 59.8
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 2,
+        "share_pct": 0.8
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "Lower-middle": {
+      "fuguang_316": {
+        "count": 63,
+        "share_pct": 25.1
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 185,
+        "share_pct": 73.7
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 3,
+        "share_pct": 1.2
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "Middle": {
+      "fuguang_316": {
+        "count": 39,
+        "share_pct": 18.4
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 167,
+        "share_pct": 78.8
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 6,
+        "share_pct": 2.8
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "Upper-middle": {
+      "fuguang_316": {
+        "count": 9,
+        "share_pct": 5.2
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 142,
+        "share_pct": 82.1
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 22,
+        "share_pct": 12.7
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "High income": {
+      "fuguang_316": {
+        "count": 6,
+        "share_pct": 6.5
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 43,
+        "share_pct": 46.2
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 43,
+        "share_pct": 46.2
+      },
+      "stanley_quencher": {
+        "count": 1,
+        "share_pct": 1.1
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "null": {
+      "fuguang_316": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 6,
+        "share_pct": 85.7
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 1,
+        "share_pct": 14.3
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    },
+    "unknown": {
+      "fuguang_316": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "nalgene_sustain": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "beijixiong_316": {
+        "count": 4,
+        "share_pct": 80.0
+      },
+      "mijia_bottle": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "zojirushi_sm_sz": {
+        "count": 1,
+        "share_pct": 20.0
+      },
+      "stanley_quencher": {
+        "count": 0,
+        "share_pct": 0.0
+      },
+      "none_of_these": {
+        "count": 0,
+        "share_pct": 0.0
+      }
+    }
+  },
+  "product_reviews": {
+    "fuguang_316": {
+      "n": 219,
+      "keywords": {
+        "材质/内胆": {
+          "n": 156,
+          "pct": 71.2
+        },
+        "保温性能": {
+          "n": 129,
+          "pct": 58.9
+        },
+        "价格/性价比": {
+          "n": 117,
+          "pct": 53.4
+        },
+        "外观/颜值": {
+          "n": 17,
+          "pct": 7.8
+        },
+        "容量": {
+          "n": 66,
+          "pct": 30.1
+        },
+        "品牌/信赖": {
+          "n": 88,
+          "pct": 40.2
+        },
+        "轻便/便携": {
+          "n": 8,
+          "pct": 3.7
+        },
+        "环保": {
+          "n": 9,
+          "pct": 4.1
+        }
+      }
+    },
+    "nalgene_sustain": {
+      "n": 0,
+      "keywords": {}
+    },
+    "beijixiong_316": {
+      "n": 702,
+      "keywords": {
+        "材质/内胆": {
+          "n": 687,
+          "pct": 97.9
+        },
+        "保温性能": {
+          "n": 493,
+          "pct": 70.2
+        },
+        "价格/性价比": {
+          "n": 442,
+          "pct": 63.0
+        },
+        "外观/颜值": {
+          "n": 52,
+          "pct": 7.4
+        },
+        "容量": {
+          "n": 424,
+          "pct": 60.4
+        },
+        "品牌/信赖": {
+          "n": 332,
+          "pct": 47.3
+        },
+        "轻便/便携": {
+          "n": 79,
+          "pct": 11.3
+        },
+        "环保": {
+          "n": 51,
+          "pct": 7.3
+        }
+      }
+    },
+    "mijia_bottle": {
+      "n": 0,
+      "keywords": {}
+    },
+    "zojirushi_sm_sz": {
+      "n": 78,
+      "keywords": {
+        "材质/内胆": {
+          "n": 7,
+          "pct": 9.0
+        },
+        "保温性能": {
+          "n": 71,
+          "pct": 91.0
+        },
+        "价格/性价比": {
+          "n": 49,
+          "pct": 62.8
+        },
+        "外观/颜值": {
+          "n": 5,
+          "pct": 6.4
+        },
+        "容量": {
+          "n": 51,
+          "pct": 65.4
+        },
+        "品牌/信赖": {
+          "n": 61,
+          "pct": 78.2
+        },
+        "轻便/便携": {
+          "n": 62,
+          "pct": 79.5
+        },
+        "环保": {
+          "n": 5,
+          "pct": 6.4
+        }
+      }
+    },
+    "stanley_quencher": {
+      "n": 1,
+      "keywords": {
+        "价格/性价比": {
+          "n": 1,
+          "pct": 100.0
+        },
+        "外观/颜值": {
+          "n": 1,
+          "pct": 100.0
+        },
+        "容量": {
+          "n": 1,
+          "pct": 100.0
+        },
+        "轻便/便携": {
+          "n": 1,
+          "pct": 100.0
+        }
+      }
+    },
+    "none_of_these": {
+      "n": 0,
+      "keywords": {}
+    }
+  },
+  "consideration": {
+    "fuguang_316": {
+      "votes": 219,
+      "considered_by": 189,
+      "went_to": {
+        "beijixiong_316": 189
+      },
+      "sample_rationales": [],
+      "core_fit": null
+    },
+    "nalgene_sustain": {
+      "votes": 0,
+      "considered_by": 83,
+      "went_to": {
+        "beijixiong_316": 77,
+        "fuguang_316": 4,
+        "zojirushi_sm_sz": 2
+      },
+      "sample_rationales": [
+        "At ¥129 it sits in the sweet spot for me: 316/316L stainless inner liner, triple heat blocking, and a tail-less vacuum build that should actually hold temperature, unlike",
+        "I am widowed, on a fixed income under $25k, and cost-sensitive, so ¥39.9 for a reliable 316 stainless steel insulated bottle is the sensible buy. My needs are basic: keep"
+      ],
+      "core_fit": null
+    },
+    "beijixiong_316": {
+      "votes": 702,
+      "considered_by": 0,
+      "went_to": {},
+      "sample_rationales": [],
+      "core_fit": null
+    },
+    "mijia_bottle": {
+      "votes": 0,
+      "considered_by": 107,
+      "went_to": {
+        "beijixiong_316": 107
+      },
+      "sample_rationales": [
+        "I want real insulation for daily tea and water, but I'm on a tight budget and can't justify paying ¥179-¥319 for a bottle. The Beijixiong at ¥129 gives me the 316/316L li",
+        "I want a proper insulated bottle for daily use, and the Beijixiong hits the sweet spot: real 316/316L stainless liner and triple heat blocking at ¥129, which is way less "
+      ],
+      "core_fit": null
+    },
+    "zojirushi_sm_sz": {
+      "votes": 78,
+      "considered_by": 294,
+      "went_to": {
+        "beijixiong_316": 291,
+        "fuguang_316": 3
+      },
+      "sample_rationales": [],
+      "core_fit": null
+    },
+    "stanley_quencher": {
+      "votes": 1,
+      "considered_by": 285,
+      "went_to": {
+        "beijixiong_316": 265,
+        "zojirushi_sm_sz": 15,
+        "fuguang_316": 5
+      },
+      "sample_rationales": [],
+      "core_fit": null
+    }
+  },
+  "price_threshold": {
+    "dist": {
+      "3": 23,
+      "4": 651,
+      "5": 326
+    },
+    "avg": 4.3
+  },
+  "price_sensitivity": {
+    "Value-driven": {
+      "n": 353,
+      "avg_threshold": 4.31,
+      "threshold_dist": {
+        "3": 7,
+        "4": 231,
+        "5": 115
+      }
+    },
+    "Cost-sensitive": {
+      "n": 491,
+      "avg_threshold": 4.31,
+      "threshold_dist": {
+        "3": 13,
+        "4": 312,
+        "5": 166
+      }
+    },
+    "Indifferent": {
+      "n": 107,
+      "avg_threshold": 4.26,
+      "threshold_dist": {
+        "3": 3,
+        "4": 73,
+        "5": 31
+      }
+    },
+    "Premium-seeking": {
+      "n": 49,
+      "avg_threshold": 4.29,
+      "threshold_dist": {
+        "4": 35,
+        "5": 14
+      }
+    }
+  },
+  "feature_priority": {
+    "insulation": 576,
+    "price": 418,
+    "brand": 5,
+    "capacity": 1
+  },
+  "purchase_likelihood": {
+    "3": 48,
+    "4": 857,
+    "5": 95
+  },
+  "chosen_price": {
+    "median": 129.0,
+    "p25": 129.0,
+    "p75": 129.0,
+    "avg": 117.5
+  },
+  "sample": {
+    "n": 1000,
+    "reward_rate": 1.0,
+    "age": {
+      "18-24": 176,
+      "25-34": 105,
+      "35-44": 132,
+      "45-54": 183,
+      "55-64": 177,
+      "65-74": 140,
+      "75-84": 59,
+      "85+": 28
+    },
+    "econ": {
+      "Cost-sensitive": 491,
+      "Indifferent": 107,
+      "Premium-seeking": 49,
+      "Value-driven": 353
+    },
+    "region": {
+      "Caucasus": 1,
+      "East Asia": 204,
+      "Eastern Europe": 9,
+      "Europe": 2,
+      "Latin America": 73,
+      "MENA": 62,
+      "North America": 53,
+      "Oceania": 7,
+      "South Asia": 276,
+      "Southeast Asia": 89,
+      "Southern Africa": 1,
+      "Southern Europe": 2,
+      "Sub-Saharan Africa": 194,
+      "West Asia": 1,
+      "Western Europe": 25,
+      "unknown": 1
+    },
+    "gender": {
+      "Man": 387,
+      "Non-binary": 4,
+      "Prefer not to say": 2,
+      "Self-described": 3,
+      "Woman": 600,
+      "unknown": 4
+    }
+  }
+}

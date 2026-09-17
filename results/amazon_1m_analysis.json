@@ -1,0 +1,1108 @@
+{
+ "n": 97915,
+ "populated": {
+  "min": 1,
+  "p25": 11,
+  "median": 20,
+  "mean": 25.3,
+  "p75": 35,
+  "max": 163
+ },
+ "review_count": {
+  "min": 30,
+  "p25": 35,
+  "median": 44,
+  "mean": 53.5,
+  "p75": 61,
+  "max": 720
+ },
+ "top_dims": [
+  {
+   "dim": "att_online_reviews",
+   "cat": "Worldview: Beliefs",
+   "label": "态度：在线评论",
+   "coverage_pct": 36.7
+  },
+  {
+   "dim": "tech_savviness",
+   "cat": "Expertise: Domains",
+   "label": "技术熟练度",
+   "coverage_pct": 30.0
+  },
+  {
+   "dim": "expertise_gap",
+   "cat": "Expertise: Domains",
+   "label": "用户与模型的专业水平关系",
+   "coverage_pct": 24.8
+  },
+  {
+   "dim": "trust_level",
+   "cat": "Worldview: Beliefs",
+   "label": "信任级别",
+   "coverage_pct": 22.7
+  },
+  {
+   "dim": "att_brand_loyalty",
+   "cat": "Worldview: Beliefs",
+   "label": "态度：品牌忠诚度",
+   "coverage_pct": 20.4
+  },
+  {
+   "dim": "emotional_state",
+   "cat": "State: Emotional",
+   "label": "情绪状态",
+   "coverage_pct": 19.6
+  },
+  {
+   "dim": "decision_style",
+   "cat": "Risk & Decision",
+   "label": "决策风格",
+   "coverage_pct": 19.0
+  },
+  {
+   "dim": "time_pressure",
+   "cat": "Behavior: Time",
+   "label": "时间压力",
+   "coverage_pct": 17.8
+  },
+  {
+   "dim": "query_complexity",
+   "cat": "State: Emotional",
+   "label": "提问复杂度",
+   "coverage_pct": 17.6
+  },
+  {
+   "dim": "trait_perspective",
+   "cat": "Personality: Character",
+   "label": "性格：洞察力",
+   "coverage_pct": 17.1
+  },
+  {
+   "dim": "trait_social_intelligence",
+   "cat": "Personality: Character",
+   "label": "性格：社交智慧",
+   "coverage_pct": 16.4
+  },
+  {
+   "dim": "need_for_closure",
+   "cat": "Risk & Decision",
+   "label": "认知闭合需求",
+   "coverage_pct": 16.4
+  },
+  {
+   "dim": "att_new_technology",
+   "cat": "Worldview: Beliefs",
+   "label": "态度：新技术",
+   "coverage_pct": 15.1
+  },
+  {
+   "dim": "lstyle_frugality",
+   "cat": "Interests: Culture",
+   "label": "消费与储蓄",
+   "coverage_pct": 15.1
+  },
+  {
+   "dim": "topic_cooking",
+   "cat": "Interests: Topics",
+   "label": "兴趣：烹饪",
+   "coverage_pct": 15.0
+  },
+  {
+   "dim": "trait_humility",
+   "cat": "Personality: Character",
+   "label": "性格：谦虚",
+   "coverage_pct": 14.9
+  },
+  {
+   "dim": "risk_tolerance",
+   "cat": "Risk & Decision",
+   "label": "风险承受能力",
+   "coverage_pct": 14.6
+  },
+  {
+   "dim": "economic_motivation",
+   "cat": "Values & Motivation",
+   "label": "经济动机",
+   "coverage_pct": 14.3
+  },
+  {
+   "dim": "trait_love_of_learning",
+   "cat": "Personality: Character",
+   "label": "性格：热爱学习",
+   "coverage_pct": 14.3
+  },
+  {
+   "dim": "topic_coffee",
+   "cat": "Interests: Topics",
+   "label": "兴趣：咖啡",
+   "coverage_pct": 14.0
+  },
+  {
+   "dim": "dev_professional_status",
+   "cat": "Developer: Professional Context",
+   "label": "开发者从业状态",
+   "coverage_pct": 13.8
+  },
+  {
+   "dim": "trait_perseverance",
+   "cat": "Personality: Character",
+   "label": "性格：毅力",
+   "coverage_pct": 13.7
+  },
+  {
+   "dim": "trait_kindness",
+   "cat": "Personality: Character",
+   "label": "性格：善良",
+   "coverage_pct": 13.5
+  },
+  {
+   "dim": "trait_self_regulation",
+   "cat": "Personality: Character",
+   "label": "性格：自律",
+   "coverage_pct": 13.5
+  },
+  {
+   "dim": "trait_forgiveness",
+   "cat": "Personality: Character",
+   "label": "性格：宽恕",
+   "coverage_pct": 13.3
+  },
+  {
+   "dim": "trait_creativity",
+   "cat": "Personality: Character",
+   "label": "性格：创造力",
+   "coverage_pct": 13.2
+  },
+  {
+   "dim": "trait_open_mindedness",
+   "cat": "Personality: Character",
+   "label": "性格：开放心态",
+   "coverage_pct": 13.2
+  },
+  {
+   "dim": "trait_empathy",
+   "cat": "Personality: Character",
+   "label": "性格：同理心",
+   "coverage_pct": 13.2
+  },
+  {
+   "dim": "trait_fairness",
+   "cat": "Personality: Character",
+   "label": "性格：公平感",
+   "coverage_pct": 12.9
+  },
+  {
+   "dim": "trait_resilience",
+   "cat": "Personality: Character",
+   "label": "性格：韧性",
+   "coverage_pct": 12.6
+  },
+  {
+   "dim": "lstyle_fashion_sense",
+   "cat": "Interests: Culture",
+   "label": "时尚感",
+   "coverage_pct": 12.5
+  },
+  {
+   "dim": "topic_technology",
+   "cat": "Interests: Topics",
+   "label": "兴趣：技术",
+   "coverage_pct": 12.3
+  },
+  {
+   "dim": "trait_generosity",
+   "cat": "Personality: Character",
+   "label": "性格：慷慨",
+   "coverage_pct": 12.2
+  },
+  {
+   "dim": "cog_feedback_receptiveness",
+   "cat": "Linguistic: Communication",
+   "label": "反馈接受度",
+   "coverage_pct": 12.1
+  },
+  {
+   "dim": "trait_discipline",
+   "cat": "Personality: Character",
+   "label": "性格：自律",
+   "coverage_pct": 12.0
+  },
+  {
+   "dim": "demo_parental_status",
+   "cat": "Demographic: Core",
+   "label": "家长身份",
+   "coverage_pct": 11.9
+  },
+  {
+   "dim": "lstyle_hobby_intensity",
+   "cat": "Interests: Culture",
+   "label": "爱好强度",
+   "coverage_pct": 11.7
+  },
+  {
+   "dim": "region",
+   "cat": "Demographic: Core",
+   "label": "区域",
+   "coverage_pct": 11.6
+  },
+  {
+   "dim": "trait_curiosity",
+   "cat": "Personality: Character",
+   "label": "性格：好奇心",
+   "coverage_pct": 11.6
+  },
+  {
+   "dim": "domain_characteristics",
+   "cat": "Personality: Character",
+   "label": "领域立场",
+   "coverage_pct": 11.4
+  }
+ ],
+ "dists": {
+  "age_bracket": {
+   "label": "年龄段",
+   "coverage_pct": 6.3,
+   "values": [
+    {
+     "value": "55-64",
+     "label": "55–64岁",
+     "n": 2649
+    },
+    {
+     "value": "Under 5",
+     "label": "5岁以下",
+     "n": 1130
+    },
+    {
+     "value": "35-44",
+     "label": "35–44岁",
+     "n": 881
+    },
+    {
+     "value": "45-54",
+     "label": "45–54岁",
+     "n": 749
+    },
+    {
+     "value": "25-34",
+     "label": "25–34岁",
+     "n": 452
+    },
+    {
+     "value": "18-24",
+     "label": "18–24岁",
+     "n": 247
+    },
+    {
+     "value": "13-17",
+     "label": "13–17岁",
+     "n": 20
+    }
+   ]
+  },
+  "gender_identity": {
+   "label": "性别认同",
+   "coverage_pct": 7.0,
+   "values": [
+    {
+     "value": "Woman",
+     "label": "女性",
+     "n": 5002
+    },
+    {
+     "value": "Man",
+     "label": "男性",
+     "n": 1855
+    },
+    {
+     "value": "Non-binary",
+     "label": "非二元",
+     "n": 8
+    },
+    {
+     "value": "Self-described",
+     "label": "自我描述",
+     "n": 7
+    }
+   ]
+  },
+  "region": {
+   "label": "区域",
+   "coverage_pct": 11.6,
+   "values": [
+    {
+     "value": "North America",
+     "label": "北美",
+     "n": 11185
+    },
+    {
+     "value": "Latin America",
+     "label": "拉丁美洲",
+     "n": 98
+    },
+    {
+     "value": "Western Europe",
+     "label": "西欧",
+     "n": 50
+    },
+    {
+     "value": "Oceania",
+     "label": "大洋洲",
+     "n": 21
+    },
+    {
+     "value": "East Asia",
+     "label": "东亚",
+     "n": 11
+    },
+    {
+     "value": "Southeast Asia",
+     "label": "东南亚",
+     "n": 11
+    },
+    {
+     "value": "MENA",
+     "label": "中东和北非",
+     "n": 6
+    },
+    {
+     "value": "South Asia",
+     "label": "南亚",
+     "n": 6
+    },
+    {
+     "value": "Eastern Europe",
+     "label": "东欧",
+     "n": 3
+    },
+    {
+     "value": "Sub-Saharan Africa",
+     "label": "撒哈拉以南非洲",
+     "n": 2
+    }
+   ]
+  },
+  "urbanicity": {
+   "label": "城乡类型",
+   "coverage_pct": 6.4,
+   "values": [
+    {
+     "value": "Suburban",
+     "label": "郊区",
+     "n": 4800
+    },
+    {
+     "value": "Dense urban",
+     "label": "高密度城区",
+     "n": 800
+    },
+    {
+     "value": "Rural",
+     "label": "乡村",
+     "n": 539
+    },
+    {
+     "value": "Small town",
+     "label": "小城镇",
+     "n": 90
+    },
+    {
+     "value": "Nomadic / remote",
+     "label": "游牧／偏远地区",
+     "n": 25
+    }
+   ]
+  },
+  "socioeconomic_band": {
+   "label": "社会经济水平",
+   "coverage_pct": 0.2,
+   "values": [
+    {
+     "value": "Lower-middle",
+     "label": "中低",
+     "n": 115
+    },
+    {
+     "value": "Middle",
+     "label": "中等",
+     "n": 47
+    },
+    {
+     "value": "Low income",
+     "label": "低收入",
+     "n": 16
+    },
+    {
+     "value": "Upper-middle",
+     "label": "中高",
+     "n": 9
+    }
+   ]
+  },
+  "highest_education": {
+   "label": "最高教育程度",
+   "coverage_pct": 3.4,
+   "values": [
+    {
+     "value": "Bachelor's",
+     "label": "本科／学士",
+     "n": 2001
+    },
+    {
+     "value": "Secondary",
+     "label": "中学",
+     "n": 507
+    },
+    {
+     "value": "Vocational / cert",
+     "label": "职业教育／职业证书",
+     "n": 357
+    },
+    {
+     "value": "Master's",
+     "label": "硕士",
+     "n": 347
+    },
+    {
+     "value": "Doctorate",
+     "label": "博士",
+     "n": 77
+    },
+    {
+     "value": "Primary",
+     "label": "小学",
+     "n": 3
+    },
+    {
+     "value": "No formal",
+     "label": "未接受正规教育",
+     "n": 1
+    }
+   ]
+  },
+  "att_online_reviews": {
+   "label": "态度：在线评论",
+   "coverage_pct": 36.7,
+   "values": [
+    {
+     "value": "Positive",
+     "label": "持积极态度",
+     "n": 35062
+    },
+    {
+     "value": "Skeptical",
+     "label": "持怀疑态度",
+     "n": 644
+    },
+    {
+     "value": "Enthusiast",
+     "label": "非常热衷",
+     "n": 215
+    },
+    {
+     "value": "Neutral",
+     "label": "中立",
+     "n": 7
+    }
+   ]
+  },
+  "att_brand_loyalty": {
+   "label": "态度：品牌忠诚度",
+   "coverage_pct": 20.4,
+   "values": [
+    {
+     "value": "Positive",
+     "label": "持积极态度",
+     "n": 13961
+    },
+    {
+     "value": "Skeptical",
+     "label": "持怀疑态度",
+     "n": 3344
+    },
+    {
+     "value": "Neutral",
+     "label": "中立",
+     "n": 2242
+    },
+    {
+     "value": "Enthusiast",
+     "label": "非常热衷",
+     "n": 442
+    }
+   ]
+  },
+  "economic_motivation": {
+   "label": "经济动机",
+   "coverage_pct": 14.3,
+   "values": [
+    {
+     "value": "Value-driven",
+     "label": "价值驱动",
+     "n": 12964
+    },
+    {
+     "value": "Cost-sensitive",
+     "label": "成本敏感",
+     "n": 1035
+    },
+    {
+     "value": "Indifferent",
+     "label": "无所谓",
+     "n": 7
+    },
+    {
+     "value": "Premium-seeking",
+     "label": "偏好高端产品",
+     "n": 2
+    }
+   ]
+  },
+  "decision_style": {
+   "label": "决策风格",
+   "coverage_pct": 19.0,
+   "values": [
+    {
+     "value": "Analytical",
+     "label": "分析型",
+     "n": 18316
+    },
+    {
+     "value": "Intuitive",
+     "label": "直觉型",
+     "n": 249
+    },
+    {
+     "value": "Deliberative",
+     "label": "审慎型",
+     "n": 68
+    },
+    {
+     "value": "Consensus-driven",
+     "label": "共识驱动型",
+     "n": 2
+    }
+   ]
+  },
+  "trust_level": {
+   "label": "信任级别",
+   "coverage_pct": 22.7,
+   "values": [
+    {
+     "value": "Verifying",
+     "label": "核验中",
+     "n": 17939
+    },
+    {
+     "value": "Trusting",
+     "label": "信任",
+     "n": 2350
+    },
+    {
+     "value": "Skeptical",
+     "label": "怀疑",
+     "n": 1931
+    }
+   ]
+  },
+  "tech_savviness": {
+   "label": "技术熟练度",
+   "coverage_pct": 30.0,
+   "values": [
+    {
+     "value": "Comfortable",
+     "label": "使用熟练",
+     "n": 26788
+    },
+    {
+     "value": "Cautious adopter",
+     "label": "谨慎采用",
+     "n": 1253
+    },
+    {
+     "value": "Reluctant",
+     "label": "不太愿意采用",
+     "n": 1074
+    },
+    {
+     "value": "Digital native",
+     "label": "数字原住民",
+     "n": 227
+    }
+   ]
+  },
+  "time_pressure": {
+   "label": "时间压力",
+   "coverage_pct": 17.8,
+   "values": [
+    {
+     "value": "No rush",
+     "label": "不着急",
+     "n": 14578
+    },
+    {
+     "value": "Deadline",
+     "label": "有截止期限",
+     "n": 1880
+    },
+    {
+     "value": "Moderate",
+     "label": "中等",
+     "n": 942
+    },
+    {
+     "value": "Emergency",
+     "label": "紧急",
+     "n": 10
+    }
+   ]
+  },
+  "lstyle_frugality": {
+   "label": "消费与储蓄",
+   "coverage_pct": 15.1,
+   "values": [
+    {
+     "value": "Balanced",
+     "label": "平衡",
+     "n": 11745
+    },
+    {
+     "value": "Frugal saver",
+     "label": "节俭储蓄型",
+     "n": 3060
+    },
+    {
+     "value": "Spender",
+     "label": "偏消费型",
+     "n": 7
+    }
+   ]
+  },
+  "query_complexity": {
+   "label": "提问复杂度",
+   "coverage_pct": 17.6,
+   "values": [
+    {
+     "value": "Simple factual",
+     "label": "简单事实问答",
+     "n": 17059
+    },
+    {
+     "value": "Multi-step",
+     "label": "需要多步处理",
+     "n": 108
+    },
+    {
+     "value": "Open-ended creative",
+     "label": "开放式创作任务",
+     "n": 91
+    },
+    {
+     "value": "Ambiguous / underspecified",
+     "label": "表述含糊或信息不足",
+     "n": 7
+    }
+   ]
+  },
+  "att_new_technology": {
+   "label": "态度：新技术",
+   "coverage_pct": 15.1,
+   "values": [
+    {
+     "value": "Positive",
+     "label": "持积极态度",
+     "n": 13475
+    },
+    {
+     "value": "Skeptical",
+     "label": "持怀疑态度",
+     "n": 575
+    },
+    {
+     "value": "Enthusiast",
+     "label": "非常热衷",
+     "n": 482
+    },
+    {
+     "value": "Neutral",
+     "label": "中立",
+     "n": 229
+    }
+   ]
+  },
+  "att_ai": {
+   "label": "态度：AI",
+   "coverage_pct": 5.8,
+   "values": [
+    {
+     "value": "Neutral",
+     "label": "中立",
+     "n": 3991
+    },
+    {
+     "value": "Positive",
+     "label": "持积极态度",
+     "n": 1375
+    },
+    {
+     "value": "Skeptical",
+     "label": "持怀疑态度",
+     "n": 256
+    },
+    {
+     "value": "Enthusiast",
+     "label": "非常热衷",
+     "n": 74
+    }
+   ]
+  },
+  "need_for_closure": {
+   "label": "认知闭合需求",
+   "coverage_pct": 16.4,
+   "values": [
+    {
+     "value": "High",
+     "label": "高",
+     "n": 11742
+    },
+    {
+     "value": "Average",
+     "label": "平均",
+     "n": 3125
+    },
+    {
+     "value": "Low",
+     "label": "低",
+     "n": 1159
+    },
+    {
+     "value": "Very high",
+     "label": "非常高",
+     "n": 25
+    },
+    {
+     "value": "Very low",
+     "label": "非常低",
+     "n": 1
+    }
+   ]
+  },
+  "cog_abstraction": {
+   "label": "抽象与具体",
+   "coverage_pct": 7.1,
+   "values": [
+    {
+     "value": "Concrete",
+     "label": "具体",
+     "n": 3495
+    },
+    {
+     "value": "Very concrete",
+     "label": "非常具体",
+     "n": 3359
+    },
+    {
+     "value": "Balanced",
+     "label": "平衡",
+     "n": 70
+    },
+    {
+     "value": "Abstract",
+     "label": "抽象",
+     "n": 8
+    },
+    {
+     "value": "Highly abstract",
+     "label": "高度抽象",
+     "n": 1
+    }
+   ]
+  },
+  "cog_detail_orientation": {
+   "label": "细节导向",
+   "coverage_pct": 7.0,
+   "values": [
+    {
+     "value": "High",
+     "label": "高",
+     "n": 4677
+    },
+    {
+     "value": "Moderate",
+     "label": "中等",
+     "n": 1338
+    },
+    {
+     "value": "Low",
+     "label": "低",
+     "n": 678
+    },
+    {
+     "value": "Very high",
+     "label": "非常高",
+     "n": 209
+    }
+   ]
+  },
+  "cog_question_asking": {
+   "label": "提问频率",
+   "coverage_pct": 8.6,
+   "values": [
+    {
+     "value": "Rarely asks",
+     "label": "很少提问",
+     "n": 7545
+    },
+    {
+     "value": "Sometimes",
+     "label": "有时提问",
+     "n": 813
+    },
+    {
+     "value": "Asks often",
+     "label": "经常提问",
+     "n": 93
+    },
+    {
+     "value": "Asks constantly",
+     "label": "不断提问",
+     "n": 2
+    }
+   ]
+  },
+  "register": {
+   "label": "语域／方言",
+   "coverage_pct": 11.1,
+   "values": [
+    {
+     "value": "Colloquial",
+     "label": "口语",
+     "n": 10675
+    },
+    {
+     "value": "Formal / standard",
+     "label": "正式/标准",
+     "n": 118
+    },
+    {
+     "value": "Technical jargon",
+     "label": "技术术语",
+     "n": 34
+    },
+    {
+     "value": "Code-switching",
+     "label": "语码转换",
+     "n": 1
+    }
+   ]
+  },
+  "tone_expected": {
+   "label": "期望语气",
+   "coverage_pct": 4.3,
+   "values": [
+    {
+     "value": "Detailed",
+     "label": "详细",
+     "n": 2530
+    },
+    {
+     "value": "Concise",
+     "label": "简洁",
+     "n": 1014
+    },
+    {
+     "value": "Warm / empathetic",
+     "label": "亲切、有同理心",
+     "n": 658
+    },
+    {
+     "value": "Blunt",
+     "label": "直白",
+     "n": 25
+    },
+    {
+     "value": "Playful",
+     "label": "轻松活泼",
+     "n": 9
+    },
+    {
+     "value": "Formal",
+     "label": "正式",
+     "n": 1
+    }
+   ]
+  },
+  "device_context": {
+   "label": "设备上下文",
+   "coverage_pct": 10.2,
+   "values": [
+    {
+     "value": "Mobile, on-the-go",
+     "label": "移动端，随时使用",
+     "n": 6324
+    },
+    {
+     "value": "Desktop, focused",
+     "label": "桌面端，专注使用",
+     "n": 3656
+    }
+   ]
+  },
+  "cog_humor": {
+   "label": "幽默风格",
+   "coverage_pct": 8.8,
+   "values": [
+    {
+     "value": "Serious",
+     "label": "严肃",
+     "n": 5193
+    },
+    {
+     "value": "Playful",
+     "label": "轻松活泼",
+     "n": 3179
+    },
+    {
+     "value": "Wholesome",
+     "label": "温和正向",
+     "n": 205
+    },
+    {
+     "value": "Sarcastic",
+     "label": "讽刺型",
+     "n": 47
+    },
+    {
+     "value": "Dry",
+     "label": "冷幽默",
+     "n": 40
+    }
+   ]
+  },
+  "cog_patience": {
+   "label": "耐心",
+   "coverage_pct": 8.6,
+   "values": [
+    {
+     "value": "Moderate",
+     "label": "中等",
+     "n": 4852
+    },
+    {
+     "value": "Low",
+     "label": "低",
+     "n": 1978
+    },
+    {
+     "value": "High",
+     "label": "高",
+     "n": 1595
+    }
+   ]
+  },
+  "cog_curiosity": {
+   "label": "好奇心",
+   "coverage_pct": 9.5,
+   "values": [
+    {
+     "value": "Moderate",
+     "label": "中等",
+     "n": 5479
+    },
+    {
+     "value": "High",
+     "label": "高",
+     "n": 2223
+    },
+    {
+     "value": "Low",
+     "label": "低",
+     "n": 1591
+    },
+    {
+     "value": "Very high",
+     "label": "非常高",
+     "n": 11
+    }
+   ]
+  },
+  "cog_open_mindedness": {
+   "label": "开放",
+   "coverage_pct": 10.0,
+   "values": [
+    {
+     "value": "Moderate",
+     "label": "中等",
+     "n": 7435
+    },
+    {
+     "value": "High",
+     "label": "高",
+     "n": 2134
+    },
+    {
+     "value": "Low",
+     "label": "低",
+     "n": 246
+    },
+    {
+     "value": "Very high",
+     "label": "非常高",
+     "n": 3
+    }
+   ]
+  },
+  "cog_skepticism": {
+   "label": "怀疑",
+   "coverage_pct": 7.2,
+   "values": [
+    {
+     "value": "Moderate",
+     "label": "中等",
+     "n": 3362
+    },
+    {
+     "value": "High",
+     "label": "高",
+     "n": 1978
+    },
+    {
+     "value": "Low",
+     "label": "低",
+     "n": 1644
+    },
+    {
+     "value": "Very high",
+     "label": "非常高",
+     "n": 22
+    }
+   ]
+  },
+  "att_risk_taking": {
+   "label": "态度：冒险",
+   "coverage_pct": 1.0,
+   "values": [
+    {
+     "value": "Skeptical",
+     "label": "持怀疑态度",
+     "n": 426
+    },
+    {
+     "value": "Positive",
+     "label": "持积极态度",
+     "n": 335
+    },
+    {
+     "value": "Neutral",
+     "label": "中立",
+     "n": 254
+    },
+    {
+     "value": "Enthusiast",
+     "label": "非常热衷",
+     "n": 9
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="use-iframe" content="true">
+<meta name="html-box-height-mode" content="auto">
+<meta name="description" content="数据画像：关键维度分布（按 2024 全球人口校准）">
+<title></title>
+<style>
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; background:#FFFFFF; color:#1A2B4A; width:100%; }
+  .card { border:1px solid #DDE0E4; border-radius:12px; padding:16px 18px; margin-bottom:12px; }
+  .h { font-size:14px; font-weight:700; margin-bottom:10px; color:#1A2B4A; }
+  .kpis { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:8px; }
+  @media (max-width:600px) { .kpis { grid-template-columns:repeat(2,1fr); } }
+  .kpi { background:#F4F6FA; border-radius:10px; padding:12px 8px; text-align:center; }
+  .kpi .v { font-size:20px; font-weight:800; color:#1A2B4A; font-family:ui-monospace,monospace; }
+  .kpi .k { font-size:11px; color:#758092; margin-top:2px; }
+  table { width:100%; border-collapse:collapse; font-size:12.5px; }
+  th { background:#EEF1F6; text-align:left; padding:7px 9px; color:#1A2B4A; }
+  td { padding:7px 9px; border-bottom:1px solid #DDE0E4; vertical-align:top; color:#334155; }
+  .bar-row { display:flex; align-items:center; gap:10px; margin:7px 0; font-size:12.5px; }
+  .bar-label { width:150px; flex:none; text-align:right; color:#758092; }
+  .bar-track { flex:1; background:#EEF1F6; border-radius:4px; height:16px; overflow:hidden; }
+  .bar-fill { height:100%; background:#1A2B4A; border-radius:4px; }
+  .bar-val { width:70px; flex:none; font-weight:700; color:#1A2B4A; }
+  .note { font-size:11.5px; color:#758092; margin-top:6px; }
+  ul { padding-left:18px; font-size:13px; color:#334155; }
+  li { margin:5px 0; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="h">地区分布（已知 874,653 行）</div>
+  <div class="bar-row"><div class="bar-label">North America</div><div class="bar-track"><div class="bar-fill" style="width:100.0%"></div></div><div class="bar-val">18.8%</div></div><div class="bar-row"><div class="bar-label">South Asia</div><div class="bar-track"><div class="bar-fill" style="width:97.9%"></div></div><div class="bar-val">18.4%</div></div><div class="bar-row"><div class="bar-label">East Asia</div><div class="bar-track"><div class="bar-fill" style="width:75.0%"></div></div><div class="bar-val">14.1%</div></div><div class="bar-row"><div class="bar-label">Sub-Saharan Africa</div><div class="bar-track"><div class="bar-fill" style="width:64.9%"></div></div><div class="bar-val">12.2%</div></div><div class="bar-row"><div class="bar-label">Western Europe</div><div class="bar-track"><div class="bar-fill" style="width:62.2%"></div></div><div class="bar-val">11.7%</div></div><div class="bar-row"><div class="bar-label">Latin America</div><div class="bar-track"><div class="bar-fill" style="width:36.2%"></div></div><div class="bar-val">6.8%</div></div><div class="bar-row"><div class="bar-label">Southeast Asia</div><div class="bar-track"><div class="bar-fill" style="width:34.0%"></div></div><div class="bar-val">6.4%</div></div><div class="bar-row"><div class="bar-label">MENA</div><div class="bar-track"><div class="bar-fill" style="width:28.7%"></div></div><div class="bar-val">5.4%</div></div><div class="bar-row"><div class="bar-label">Eastern Europe</div><div class="bar-track"><div class="bar-fill" style="width:26.1%"></div></div><div class="bar-val">4.9%</div></div><div class="bar-row"><div class="bar-label">Oceania</div><div class="bar-track"><div class="bar-fill" style="width:7.4%"></div></div><div class="bar-val">1.4%</div></div>
+  <div class="h" style="margin-top:14px">年龄分布（已知 704,641 行）</div>
+  <div class="bar-row"><div class="bar-label">25-34</div><div class="bar-track"><div class="bar-fill" style="width:100.0%"></div></div><div class="bar-val">14.5%</div></div><div class="bar-row"><div class="bar-label">5-12</div><div class="bar-track"><div class="bar-fill" style="width:89.7%"></div></div><div class="bar-val">13.0%</div></div><div class="bar-row"><div class="bar-label">35-44</div><div class="bar-track"><div class="bar-fill" style="width:91.7%"></div></div><div class="bar-val">13.3%</div></div><div class="bar-row"><div class="bar-label">45-54</div><div class="bar-track"><div class="bar-fill" style="width:79.3%"></div></div><div class="bar-val">11.5%</div></div><div class="bar-row"><div class="bar-label">18-24</div><div class="bar-track"><div class="bar-fill" style="width:73.1%"></div></div><div class="bar-val">10.6%</div></div><div class="bar-row"><div class="bar-label">55-64</div><div class="bar-track"><div class="bar-fill" style="width:72.4%"></div></div><div class="bar-val">10.5%</div></div><div class="bar-row"><div class="bar-label">Under 5</div><div class="bar-track"><div class="bar-fill" style="width:57.9%"></div></div><div class="bar-val">8.4%</div></div><div class="bar-row"><div class="bar-label">13-17</div><div class="bar-track"><div class="bar-fill" style="width:56.6%"></div></div><div class="bar-val">8.2%</div></div><div class="bar-row"><div class="bar-label">65-74</div><div class="bar-track"><div class="bar-fill" style="width:42.1%"></div></div><div class="bar-val">6.1%</div></div><div class="bar-row"><div class="bar-label">75-84</div><div class="bar-track"><div class="bar-fill" style="width:19.3%"></div></div><div class="bar-val">2.8%</div></div><div class="bar-row"><div class="bar-label">85+</div><div class="bar-track"><div class="bar-fill" style="width:7.6%"></div></div><div class="bar-val">1.1%</div></div>
+  <div class="note">性别（已知 774,736 行）：Man 49.8% / Woman 49.5% / 其他 0.7%；城乡（已知 582,321 行）：Rural 34.5% / Dense urban 24.5% / Suburban 21.0% / Small town 18.5% / Nomadic 1.5%。</div>
+</div>
+</body>
+</html>

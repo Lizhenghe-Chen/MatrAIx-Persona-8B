@@ -1,0 +1,2850 @@
+{
+  "arms": {
+    "anon-rating": {
+      "n": 1000,
+      "share": {
+        "P07": 77.3,
+        "P05": 0.3,
+        "P01": 18.4,
+        "P12": 1.3,
+        "P03": 1.6,
+        "P06": 0.5,
+        "P10": 0.1,
+        "P28": 0.3,
+        "P13": 0.1,
+        "P02": 0.1
+      },
+      "mean_chosen_price": 17.86,
+      "none_rate": 0.0,
+      "factor_rank": [
+        {
+          "factor": "hygiene",
+          "label_en": "Hygiene",
+          "label_zh": "卫生/速干",
+          "most_pct": 66.9,
+          "second_pct": 5.3
+        },
+        {
+          "factor": "cleaning",
+          "label_en": "Cleaning",
+          "label_zh": "清洁效果",
+          "most_pct": 13.8,
+          "second_pct": 5.3
+        },
+        {
+          "factor": "holder",
+          "label_en": "Storage",
+          "label_zh": "收纳设计",
+          "most_pct": 6.7,
+          "second_pct": 8.5
+        },
+        {
+          "factor": "price_value",
+          "label_en": "Price/value",
+          "label_zh": "价格/性价比",
+          "most_pct": 5.8,
+          "second_pct": 11.9
+        },
+        {
+          "factor": "reviews",
+          "label_en": "Ratings",
+          "label_zh": "评分评论",
+          "most_pct": 3.4,
+          "second_pct": 61.4
+        },
+        {
+          "factor": "function_combo",
+          "label_en": "Extra functions",
+          "label_zh": "附加功能(通厕/缝隙刷)",
+          "most_pct": 2.4,
+          "second_pct": 0.5
+        },
+        {
+          "factor": "design",
+          "label_en": "Design",
+          "label_zh": "外观设计",
+          "most_pct": 0.8,
+          "second_pct": 6.9
+        },
+        {
+          "factor": "pack",
+          "label_en": "Multi-pack",
+          "label_zh": "多件装价值",
+          "most_pct": 0.1,
+          "second_pct": 0.0
+        },
+        {
+          "factor": "material",
+          "label_en": "Material",
+          "label_zh": "材质耐用",
+          "most_pct": 0.1,
+          "second_pct": 0.2
+        }
+      ],
+      "likerts": {
+        "q_price_acceptance": 4.2,
+        "q_purchase_intent": 4.03,
+        "q_importance_price": 4.07,
+        "q_importance_function": 4.16,
+        "q_importance_appearance": 3.55,
+        "q_importance_hygiene": 4.73,
+        "q_importance_reviews": 4.37,
+        "q_importance_brand": 2.31,
+        "q_refill_acceptance": 2.36
+      }
+    },
+    "anon-norating": {
+      "n": 1000,
+      "share": {
+        "P13": 55.400000000000006,
+        "P12": 5.8999999999999995,
+        "P17": 4.7,
+        "P16": 0.8,
+        "P01": 12.3,
+        "P15": 6.3,
+        "P06": 5.0,
+        "P02": 3.0,
+        "P29": 0.2,
+        "P23": 0.7000000000000001,
+        "P28": 1.9,
+        "P03": 0.2,
+        "P07": 1.4000000000000001,
+        "P20": 0.2,
+        "P19": 0.5,
+        "P21": 0.4,
+        "P05": 0.4,
+        "P10": 0.2,
+        "P24": 0.2,
+        "P22": 0.1,
+        "P09": 0.2
+      },
+      "mean_chosen_price": 12.64,
+      "none_rate": 0.0,
+      "factor_rank": [
+        {
+          "factor": "hygiene",
+          "label_en": "Hygiene",
+          "label_zh": "卫生/速干",
+          "most_pct": 53.5,
+          "second_pct": 15.7
+        },
+        {
+          "factor": "cleaning",
+          "label_en": "Cleaning",
+          "label_zh": "清洁效果",
+          "most_pct": 25.4,
+          "second_pct": 35.6
+        },
+        {
+          "factor": "function_combo",
+          "label_en": "Extra functions",
+          "label_zh": "附加功能(通厕/缝隙刷)",
+          "most_pct": 8.0,
+          "second_pct": 2.0
+        },
+        {
+          "factor": "price_value",
+          "label_en": "Price/value",
+          "label_zh": "价格/性价比",
+          "most_pct": 6.8,
+          "second_pct": 31.9
+        },
+        {
+          "factor": "holder",
+          "label_en": "Storage",
+          "label_zh": "收纳设计",
+          "most_pct": 2.5,
+          "second_pct": 2.5
+        },
+        {
+          "factor": "material",
+          "label_en": "Material",
+          "label_zh": "材质耐用",
+          "most_pct": 2.3,
+          "second_pct": 3.2
+        },
+        {
+          "factor": "design",
+          "label_en": "Design",
+          "label_zh": "外观设计",
+          "most_pct": 1.2,
+          "second_pct": 8.7
+        },
+        {
+          "factor": "pack",
+          "label_en": "Multi-pack",
+          "label_zh": "多件装价值",
+          "most_pct": 0.3,
+          "second_pct": 0.4
+        }
+      ],
+      "likerts": {
+        "q_price_acceptance": 4.67,
+        "q_purchase_intent": 4.01,
+        "q_importance_price": 4.12,
+        "q_importance_function": 4.33,
+        "q_importance_appearance": 3.38,
+        "q_importance_hygiene": 4.59,
+        "q_importance_reviews": 3.5,
+        "q_importance_brand": 2.15,
+        "q_refill_acceptance": 2.17
+      }
+    },
+    "brand-rating": {
+      "n": 1000,
+      "share": {
+        "P07": 88.5,
+        "P03": 0.6,
+        "P01": 10.6,
+        "P12": 0.1,
+        "P28": 0.1,
+        "P04": 0.1
+      },
+      "mean_chosen_price": 18.78,
+      "none_rate": 0.0,
+      "factor_rank": [
+        {
+          "factor": "hygiene",
+          "label_en": "Hygiene",
+          "label_zh": "卫生/速干",
+          "most_pct": 44.1,
+          "second_pct": 15.8
+        },
+        {
+          "factor": "reviews",
+          "label_en": "Ratings",
+          "label_zh": "评分评论",
+          "most_pct": 21.0,
+          "second_pct": 52.2
+        },
+        {
+          "factor": "cleaning",
+          "label_en": "Cleaning",
+          "label_zh": "清洁效果",
+          "most_pct": 16.9,
+          "second_pct": 6.5
+        },
+        {
+          "factor": "holder",
+          "label_en": "Storage",
+          "label_zh": "收纳设计",
+          "most_pct": 10.8,
+          "second_pct": 11.8
+        },
+        {
+          "factor": "price_value",
+          "label_en": "Price/value",
+          "label_zh": "价格/性价比",
+          "most_pct": 4.0,
+          "second_pct": 6.2
+        },
+        {
+          "factor": "brand",
+          "label_en": "Brand",
+          "label_zh": "品牌信任",
+          "most_pct": 1.5,
+          "second_pct": 3.4
+        },
+        {
+          "factor": "function_combo",
+          "label_en": "Extra functions",
+          "label_zh": "附加功能(通厕/缝隙刷)",
+          "most_pct": 0.8,
+          "second_pct": 0.0
+        },
+        {
+          "factor": "design",
+          "label_en": "Design",
+          "label_zh": "外观设计",
+          "most_pct": 0.8,
+          "second_pct": 4.0
+        },
+        {
+          "factor": "material",
+          "label_en": "Material",
+          "label_zh": "材质耐用",
+          "most_pct": 0.1,
+          "second_pct": 0.1
+        }
+      ],
+      "likerts": {
+        "q_price_acceptance": 4.11,
+        "q_purchase_intent": 4.05,
+        "q_importance_price": 3.97,
+        "q_importance_function": 4.2,
+        "q_importance_appearance": 3.48,
+        "q_importance_hygiene": 4.71,
+        "q_importance_reviews": 4.5,
+        "q_importance_brand": 3.46,
+        "q_refill_acceptance": 2.25
+      }
+    },
+    "brand-norating": {
+      "n": 1000,
+      "share": {
+        "P07": 50.3,
+        "P01": 25.1,
+        "P28": 9.1,
+        "P13": 9.4,
+        "P17": 2.0,
+        "P15": 1.7999999999999998,
+        "P22": 1.4000000000000001,
+        "P05": 0.1,
+        "P06": 0.3,
+        "P12": 0.1,
+        "P03": 0.1,
+        "P20": 0.1,
+        "P29": 0.1,
+        "P23": 0.1
+      },
+      "mean_chosen_price": 17.4,
+      "none_rate": 0.0,
+      "factor_rank": [
+        {
+          "factor": "hygiene",
+          "label_en": "Hygiene",
+          "label_zh": "卫生/速干",
+          "most_pct": 30.4,
+          "second_pct": 13.7
+        },
+        {
+          "factor": "holder",
+          "label_en": "Storage",
+          "label_zh": "收纳设计",
+          "most_pct": 24.0,
+          "second_pct": 13.7
+        },
+        {
+          "factor": "cleaning",
+          "label_en": "Cleaning",
+          "label_zh": "清洁效果",
+          "most_pct": 22.5,
+          "second_pct": 17.1
+        },
+        {
+          "factor": "price_value",
+          "label_en": "Price/value",
+          "label_zh": "价格/性价比",
+          "most_pct": 8.1,
+          "second_pct": 21.5
+        },
+        {
+          "factor": "material",
+          "label_en": "Material",
+          "label_zh": "材质耐用",
+          "most_pct": 5.7,
+          "second_pct": 2.7
+        },
+        {
+          "factor": "brand",
+          "label_en": "Brand",
+          "label_zh": "品牌信任",
+          "most_pct": 4.6,
+          "second_pct": 16.3
+        },
+        {
+          "factor": "design",
+          "label_en": "Design",
+          "label_zh": "外观设计",
+          "most_pct": 3.0,
+          "second_pct": 14.3
+        },
+        {
+          "factor": "function_combo",
+          "label_en": "Extra functions",
+          "label_zh": "附加功能(通厕/缝隙刷)",
+          "most_pct": 1.7,
+          "second_pct": 0.5
+        }
+      ],
+      "likerts": {
+        "q_price_acceptance": 4.33,
+        "q_purchase_intent": 4.03,
+        "q_importance_price": 4.05,
+        "q_importance_function": 4.25,
+        "q_importance_appearance": 3.49,
+        "q_importance_hygiene": 4.48,
+        "q_importance_reviews": 3.58,
+        "q_importance_brand": 3.55,
+        "q_refill_acceptance": 2.19
+      }
+    }
+  },
+  "n_personas_shared": 1000,
+  "effects": {
+    "P01": {
+      "pid": "P01",
+      "brand": "Clorox",
+      "price": 8.99,
+      "s_anon_rating": 18.4,
+      "s_anon_none": 12.3,
+      "s_brand_rating": 10.6,
+      "s_brand_none": 25.1,
+      "brand_effect_pp": 2.5,
+      "rating_effect_pp": -4.2,
+      "interaction_pp": -20.6,
+      "gt_rank": 1,
+      "gt_monthly_sales": 40482.0,
+      "gt_monthly_revenue": 369195.84
+    },
+    "P02": {
+      "pid": "P02",
+      "brand": "FORASTO",
+      "price": 14.99,
+      "s_anon_rating": 0.1,
+      "s_anon_none": 3.0,
+      "s_brand_rating": 0,
+      "s_brand_none": 0,
+      "brand_effect_pp": -1.55,
+      "rating_effect_pp": -1.45,
+      "interaction_pp": 2.9,
+      "gt_rank": 2,
+      "gt_monthly_sales": 34024.0,
+      "gt_monthly_revenue": 516824.53
+    },
+    "P03": {
+      "pid": "P03",
+      "brand": "MR.SIGA",
+      "price": 23.99,
+      "s_anon_rating": 1.6,
+      "s_anon_none": 0.2,
+      "s_brand_rating": 0.6,
+      "s_brand_none": 0.1,
+      "brand_effect_pp": -0.55,
+      "rating_effect_pp": 0.95,
+      "interaction_pp": -0.9,
+      "gt_rank": 3,
+      "gt_monthly_sales": 25415.0,
+      "gt_monthly_revenue": 574115.9
+    },
+    "P04": {
+      "pid": "P04",
+      "brand": "MR.SIGA",
+      "price": 19.99,
+      "s_anon_rating": 0,
+      "s_anon_none": 0,
+      "s_brand_rating": 0.1,
+      "s_brand_none": 0,
+      "brand_effect_pp": 0.05,
+      "rating_effect_pp": 0.05,
+      "interaction_pp": 0.1,
+      "gt_rank": 4,
+      "gt_monthly_sales": 23513.0,
+      "gt_monthly_revenue": 456951.4
+    },
+    "P05": {
+      "pid": "P05",
+      "brand": "oshang",
+      "price": 9.99,
+      "s_anon_rating": 0.3,
+      "s_anon_none": 0.4,
+      "s_brand_rating": 0,
+      "s_brand_none": 0.1,
+      "brand_effect_pp": -0.3,
+      "rating_effect_pp": -0.1,
+      "interaction_pp": 0.0,
+      "gt_rank": 5,
+      "gt_monthly_sales": 18600.0,
+      "gt_monthly_revenue": 185814.0
+    },
+    "P06": {
+      "pid": "P06",
+      "brand": "HAMITOR",
+      "price": 12.73,
+      "s_anon_rating": 0.5,
+      "s_anon_none": 5.0,
+      "s_brand_rating": 0,
+      "s_brand_none": 0.3,
+      "brand_effect_pp": -2.6,
+      "rating_effect_pp": -2.4,
+      "interaction_pp": 4.2,
+      "gt_rank": 6,
+      "gt_monthly_sales": 15311.0,
+      "gt_monthly_revenue": 207524.3
+    },
+    "P07": {
+      "pid": "P07",
+      "brand": "OXO",
+      "price": 19.9,
+      "s_anon_rating": 77.3,
+      "s_anon_none": 1.4,
+      "s_brand_rating": 88.5,
+      "s_brand_none": 50.3,
+      "brand_effect_pp": 30.05,
+      "rating_effect_pp": 57.05,
+      "interaction_pp": -37.7,
+      "gt_rank": 7,
+      "gt_monthly_sales": 14249.0,
+      "gt_monthly_revenue": 285870.34
+    },
+    "P08": {
+      "pid": "P08",
+      "brand": "FAZMoss",
+      "price": 8.99,
+      "s_anon_rating": 0,
+      "s_anon_none": 0,
+      "s_brand_rating": 0,
+      "s_brand_none": 0,
+      "brand_effect_pp": 0.0,
+      "rating_effect_pp": 0.0,
+      "interaction_pp": 0,
+      "gt_rank": 8,
+      "gt_monthly_sales": 13438.0,
+      "gt_monthly_revenue": 120807.62
+    },
+    "P09": {
+      "pid": "P09",
+      "brand": "Holaloha",
+      "price": 8.99,
+      "s_anon_rating": 0,
+      "s_anon_none": 0.2,
+      "s_brand_rating": 0,
+      "s_brand_none": 0,
+      "brand_effect_pp": -0.1,
+      "rating_effect_pp": -0.1,
+      "interaction_pp": 0.2,
+      "gt_rank": 9,
+      "gt_monthly_sales": 12576.0,
+      "gt_monthly_revenue": 111926.4
+    },
+    "P10": {
+      "pid": "P10",
+      "brand": "Holaloha",
+      "price": 12.99,
+      "s_anon_rating": 0.1,
+      "s_anon_none": 0.2,
+      "s_brand_rating": 0,
+      "s_brand_none": 0,
+      "brand_effect_pp": -0.15,
+      "rating_effect_pp": -0.05,
+      "interaction_pp": 0.1,
+      "gt_rank": 10,
+      "gt_monthly_sales": 11183.0,
+      "gt_monthly_revenue": 141912.27
+    },
+    "P11": {
+      "pid": "P11",
+      "brand": "SetSail",
+      "price": 29.99,
+      "s_anon_rating": 0,
+      "s_anon_none": 0,
+      "s_brand_rating": 0,
+      "s_brand_none": 0,
+      "brand_effect_pp": 0.0,
+      "rating_effect_pp": 0.0,
+      "interaction_pp": 0,
+      "gt_rank": 11,
+      "gt_monthly_sales": 10184.0,
+      "gt_monthly_revenue": 305118.25
+    },
+    "P12": {
+      "pid": "P12",
+      "brand": "LOVLOY",
+      "price": 15.29,
+      "s_anon_rating": 1.3,
+      "s_anon_none": 5.9,
+      "s_brand_rating": 0.1,
+      "s_brand_none": 0.1,
+      "brand_effect_pp": -3.5,
+      "rating_effect_pp": -2.3,
+      "interaction_pp": 4.6,
+      "gt_rank": 12,
+      "gt_monthly_sales": 9882.0,
+      "gt_monthly_revenue": 159952.27
+    },
+    "P13": {
+      "pid": "P13",
+      "brand": "Sellemer",
+      "price": 11.99,
+      "s_anon_rating": 0.1,
+      "s_anon_none": 55.4,
+      "s_brand_rating": 0,
+      "s_brand_none": 9.4,
+      "brand_effect_pp": -23.05,
+      "rating_effect_pp": -32.35,
+      "interaction_pp": 45.9,
+      "gt_rank": 13,
+      "gt_monthly_sales": 9749.0,
+      "gt_monthly_revenue": 107628.96
+    },
+    "P14": {
+      "pid": "P14",
+      "brand": "AONEZ",
+      "price": 29.99,
+      "s_anon_rating": 0,
+      "s_anon_none": 0,
+      "s_brand_rating": 0,
+      "s_brand_none": 0,
+      "brand_effect_pp": 0.0,
+      "rating_effect_pp": 0.0,
+      "interaction_pp": 0,
+      "gt_rank": 14,
+      "gt_monthly_sales": 9584.0,
+      "gt_monthly_revenue": 287424.16
+    },
+    "P15": {
+      "pid": "P15",
+      "brand": "HAMITOR",
+      "price": 11.99,
+      "s_anon_rating": 0,
+      "s_anon_none": 6.3,
+      "s_brand_rating": 0,
+      "s_brand_none": 1.8,
+      "brand_effect_pp": -2.25,
+      "rating_effect_pp": -4.05,
+      "interaction_pp": 4.5,
+      "gt_rank": 15,
+      "gt_monthly_sales": 9504.0,
+      "gt_monthly_revenue": 94372.87
+    },
+    "P16": {
+      "pid": "P16",
+      "brand": "uptronic",
+      "price": 19.99,
+      "s_anon_rating": 0,
+      "s_anon_none": 0.8,
+      "s_brand_rating": 0,
+      "s_brand_none": 0,
+      "brand_effect_pp": -0.4,
+      "rating_effect_pp": -0.4,
+      "interaction_pp": 0.8,
+      "gt_rank": 16,
+      "gt_monthly_sales": 9270.0,
+      "gt_monthly_revenue": 172700.1
+    },
+    "P17": {
+      "pid": "P17",
+      "brand": "Holaloha",
+      "price": 6.99,
+      "s_anon_rating": 0,
+      "s_anon_none": 4.7,
+      "s_brand_rating": 0,
+      "s_brand_none": 2.0,
+      "brand_effect_pp": -1.35,
+      "rating_effect_pp": -3.35,
+      "interaction_pp": 2.7,
+      "gt_rank": 17,
+      "gt_monthly_sales": 7550.0,
+      "gt_monthly_revenue": 50132.0
+    },
+    "P18": {
+      "pid": "P18",
+      "brand": "MR.SIGA",
+      "price": 38.99,
+      "s_anon_rating": 0,
+      "s_anon_none": 0,
+      "s_brand_rating": 0,
+      "s_brand_none": 0,
+      "brand_effect_pp": 0.0,
+      "rating_effect_pp": 0.0,
+      "interaction_pp": 0,
+      "gt_rank": 18,
+      "gt_monthly_sales": 7475.0,
+      "gt_monthly_revenue": 291450.25
+    },
+    "P19": {
+      "pid": "P19",
+      "brand": "SetSail",
+      "price": 33.99,
+      "s_anon_rating": 0,
+      "s_anon_none": 0.5,
+      "s_brand_rating": 0,
+      "s_brand_none": 0,
+      "brand_effect_pp": -0.25,
+      "rating_effect_pp": -0.25,
+      "interaction_pp": 0.5,
+      "gt_rank": 19,
+      "gt_monthly_sales": 7045.0,
+      "gt_monthly_revenue": 239459.56
+    },
+    "P20": {
+      "pid": "P20",
+      "brand": "uptronic",
+      "price": 11.69,
+      "s_anon_rating": 0,
+      "s_anon_none": 0.2,
+      "s_brand_rating": 0,
+      "s_brand_none": 0.1,
+      "brand_effect_pp": -0.05,
+      "rating_effect_pp": -0.15,
+      "interaction_pp": 0.1,
+      "gt_rank": 20,
+      "gt_monthly_sales": 6614.0,
+      "gt_monthly_revenue": 85519.02
+    },
+    "P21": {
+      "pid": "P21",
+      "brand": "OSAMEDA",
+      "price": 20.99,
+      "s_anon_rating": 0,
+      "s_anon_none": 0.4,
+      "s_brand_rating": 0,
+      "s_brand_none": 0,
+      "brand_effect_pp": -0.2,
+      "rating_effect_pp": -0.2,
+      "interaction_pp": 0.4,
+      "gt_rank": 21,
+      "gt_monthly_sales": 5160.0,
+      "gt_monthly_revenue": 108308.4
+    },
+    "P22": {
+      "pid": "P22",
+      "brand": "Clorox",
+      "price": 22.4,
+      "s_anon_rating": 0,
+      "s_anon_none": 0.1,
+      "s_brand_rating": 0,
+      "s_brand_none": 1.4,
+      "brand_effect_pp": 0.65,
+      "rating_effect_pp": -0.75,
+      "interaction_pp": -1.3,
+      "gt_rank": 22,
+      "gt_monthly_sales": 5023.0,
+      "gt_monthly_revenue": 118817.0
+    },
+    "P23": {
+      "pid": "P23",
+      "brand": "Wsedor",
+      "price": 29.99,
+      "s_anon_rating": 0,
+      "s_anon_none": 0.7,
+      "s_brand_rating": 0,
+      "s_brand_none": 0.1,
+      "brand_effect_pp": -0.3,
+      "rating_effect_pp": -0.4,
+      "interaction_pp": 0.6,
+      "gt_rank": 23,
+      "gt_monthly_sales": 4874.0,
+      "gt_monthly_revenue": 131744.22
+    },
+    "P24": {
+      "pid": "P24",
+      "brand": "Dealsgogo",
+      "price": 9.99,
+      "s_anon_rating": 0,
+      "s_anon_none": 0.2,
+      "s_brand_rating": 0,
+      "s_brand_none": 0,
+      "brand_effect_pp": -0.1,
+      "rating_effect_pp": -0.1,
+      "interaction_pp": 0.2,
+      "gt_rank": 24,
+      "gt_monthly_sales": 4581.0,
+      "gt_monthly_revenue": 45764.19
+    },
+    "P25": {
+      "pid": "P25",
+      "brand": "FORASTO",
+      "price": 26.99,
+      "s_anon_rating": 0,
+      "s_anon_none": 0,
+      "s_brand_rating": 0,
+      "s_brand_none": 0,
+      "brand_effect_pp": 0.0,
+      "rating_effect_pp": 0.0,
+      "interaction_pp": 0,
+      "gt_rank": 25,
+      "gt_monthly_sales": 4559.0,
+      "gt_monthly_revenue": 119106.87
+    },
+    "P26": {
+      "pid": "P26",
+      "brand": "HAMITOR",
+      "price": 23.99,
+      "s_anon_rating": 0,
+      "s_anon_none": 0,
+      "s_brand_rating": 0,
+      "s_brand_none": 0,
+      "brand_effect_pp": 0.0,
+      "rating_effect_pp": 0.0,
+      "interaction_pp": 0,
+      "gt_rank": 26,
+      "gt_monthly_sales": 4185.0,
+      "gt_monthly_revenue": 98335.01
+    },
+    "P27": {
+      "pid": "P27",
+      "brand": "Hohoky",
+      "price": 26.99,
+      "s_anon_rating": 0,
+      "s_anon_none": 0,
+      "s_brand_rating": 0,
+      "s_brand_none": 0,
+      "brand_effect_pp": 0.0,
+      "rating_effect_pp": 0.0,
+      "interaction_pp": 0,
+      "gt_rank": 27,
+      "gt_monthly_sales": 3805.0,
+      "gt_monthly_revenue": 91586.35
+    },
+    "P28": {
+      "pid": "P28",
+      "brand": "simplehuman",
+      "price": 34.99,
+      "s_anon_rating": 0.3,
+      "s_anon_none": 1.9,
+      "s_brand_rating": 0.1,
+      "s_brand_none": 9.1,
+      "brand_effect_pp": 3.5,
+      "rating_effect_pp": -5.3,
+      "interaction_pp": -7.4,
+      "gt_rank": 28,
+      "gt_monthly_sales": 3342.0,
+      "gt_monthly_revenue": 116937.0
+    },
+    "P29": {
+      "pid": "P29",
+      "brand": "SAVEGA",
+      "price": 24.99,
+      "s_anon_rating": 0,
+      "s_anon_none": 0.2,
+      "s_brand_rating": 0,
+      "s_brand_none": 0.1,
+      "brand_effect_pp": -0.05,
+      "rating_effect_pp": -0.15,
+      "interaction_pp": 0.1,
+      "gt_rank": 29,
+      "gt_monthly_sales": 2880.0,
+      "gt_monthly_revenue": 71971.2
+    },
+    "P30": {
+      "pid": "P30",
+      "brand": "HAMITOR",
+      "price": 59.99,
+      "s_anon_rating": 0,
+      "s_anon_none": 0,
+      "s_brand_rating": 0,
+      "s_brand_none": 0,
+      "brand_effect_pp": 0.0,
+      "rating_effect_pp": 0.0,
+      "interaction_pp": 0,
+      "gt_rank": 30,
+      "gt_monthly_sales": 2768.0,
+      "gt_monthly_revenue": 163782.56
+    }
+  },
+  "brand_levels": [
+    {
+      "brand": "OXO",
+      "n": 1,
+      "share_anon": 39.35,
+      "share_brand": 69.4,
+      "share_rating": 82.9,
+      "share_norating": 25.85,
+      "s_anon_rating": 77.3,
+      "s_anon_none": 1.4,
+      "s_brand_rating": 88.5,
+      "s_brand_none": 50.3,
+      "brand_effect_pp": 30.05,
+      "rating_effect_pp": 57.05
+    },
+    {
+      "brand": "Clorox",
+      "n": 2,
+      "share_anon": 7.7,
+      "share_brand": 9.28,
+      "share_rating": 7.25,
+      "share_norating": 9.72,
+      "s_anon_rating": 18.4,
+      "s_anon_none": 12.4,
+      "s_brand_rating": 10.6,
+      "s_brand_none": 26.5,
+      "brand_effect_pp": 1.58,
+      "rating_effect_pp": -2.47
+    },
+    {
+      "brand": "Sellemer",
+      "n": 1,
+      "share_anon": 27.75,
+      "share_brand": 4.7,
+      "share_rating": 0.05,
+      "share_norating": 32.4,
+      "s_anon_rating": 0.1,
+      "s_anon_none": 55.4,
+      "s_brand_rating": 0,
+      "s_brand_none": 9.4,
+      "brand_effect_pp": -23.05,
+      "rating_effect_pp": -32.35
+    },
+    {
+      "brand": "simplehuman",
+      "n": 1,
+      "share_anon": 1.1,
+      "share_brand": 4.6,
+      "share_rating": 0.2,
+      "share_norating": 5.5,
+      "s_anon_rating": 0.3,
+      "s_anon_none": 1.9,
+      "s_brand_rating": 0.1,
+      "s_brand_none": 9.1,
+      "brand_effect_pp": 3.5,
+      "rating_effect_pp": -5.3
+    },
+    {
+      "brand": "Holaloha",
+      "n": 3,
+      "share_anon": 0.87,
+      "share_brand": 0.33,
+      "share_rating": 0.02,
+      "share_norating": 1.18,
+      "s_anon_rating": 0.1,
+      "s_anon_none": 5.1000000000000005,
+      "s_brand_rating": 0,
+      "s_brand_none": 2.0,
+      "brand_effect_pp": -0.54,
+      "rating_effect_pp": -1.16
+    },
+    {
+      "brand": "HAMITOR",
+      "n": 4,
+      "share_anon": 1.48,
+      "share_brand": 0.26,
+      "share_rating": 0.06,
+      "share_norating": 1.68,
+      "s_anon_rating": 0.5,
+      "s_anon_none": 11.3,
+      "s_brand_rating": 0,
+      "s_brand_none": 2.1,
+      "brand_effect_pp": -1.22,
+      "rating_effect_pp": -1.62
+    },
+    {
+      "brand": "MR.SIGA",
+      "n": 3,
+      "share_anon": 0.3,
+      "share_brand": 0.13,
+      "share_rating": 0.38,
+      "share_norating": 0.05,
+      "s_anon_rating": 1.6,
+      "s_anon_none": 0.2,
+      "s_brand_rating": 0.7,
+      "s_brand_none": 0.1,
+      "brand_effect_pp": -0.17,
+      "rating_effect_pp": 0.33
+    },
+    {
+      "brand": "LOVLOY",
+      "n": 1,
+      "share_anon": 3.6,
+      "share_brand": 0.1,
+      "share_rating": 0.7,
+      "share_norating": 3.0,
+      "s_anon_rating": 1.3,
+      "s_anon_none": 5.9,
+      "s_brand_rating": 0.1,
+      "s_brand_none": 0.1,
+      "brand_effect_pp": -3.5,
+      "rating_effect_pp": -2.3
+    },
+    {
+      "brand": "oshang",
+      "n": 1,
+      "share_anon": 0.35,
+      "share_brand": 0.05,
+      "share_rating": 0.15,
+      "share_norating": 0.25,
+      "s_anon_rating": 0.3,
+      "s_anon_none": 0.4,
+      "s_brand_rating": 0,
+      "s_brand_none": 0.1,
+      "brand_effect_pp": -0.3,
+      "rating_effect_pp": -0.1
+    },
+    {
+      "brand": "Wsedor",
+      "n": 1,
+      "share_anon": 0.35,
+      "share_brand": 0.05,
+      "share_rating": 0.0,
+      "share_norating": 0.4,
+      "s_anon_rating": 0,
+      "s_anon_none": 0.7,
+      "s_brand_rating": 0,
+      "s_brand_none": 0.1,
+      "brand_effect_pp": -0.3,
+      "rating_effect_pp": -0.4
+    },
+    {
+      "brand": "SAVEGA",
+      "n": 1,
+      "share_anon": 0.1,
+      "share_brand": 0.05,
+      "share_rating": 0.0,
+      "share_norating": 0.15,
+      "s_anon_rating": 0,
+      "s_anon_none": 0.2,
+      "s_brand_rating": 0,
+      "s_brand_none": 0.1,
+      "brand_effect_pp": -0.05,
+      "rating_effect_pp": -0.15
+    },
+    {
+      "brand": "uptronic",
+      "n": 2,
+      "share_anon": 0.25,
+      "share_brand": 0.03,
+      "share_rating": 0.0,
+      "share_norating": 0.28,
+      "s_anon_rating": 0,
+      "s_anon_none": 1.0,
+      "s_brand_rating": 0,
+      "s_brand_none": 0.1,
+      "brand_effect_pp": -0.22,
+      "rating_effect_pp": -0.28
+    },
+    {
+      "brand": "FORASTO",
+      "n": 2,
+      "share_anon": 0.78,
+      "share_brand": 0.0,
+      "share_rating": 0.03,
+      "share_norating": 0.75,
+      "s_anon_rating": 0.1,
+      "s_anon_none": 3.0,
+      "s_brand_rating": 0,
+      "s_brand_none": 0,
+      "brand_effect_pp": -0.78,
+      "rating_effect_pp": -0.72
+    },
+    {
+      "brand": "FAZMoss",
+      "n": 1,
+      "share_anon": 0.0,
+      "share_brand": 0.0,
+      "share_rating": 0.0,
+      "share_norating": 0.0,
+      "s_anon_rating": 0,
+      "s_anon_none": 0,
+      "s_brand_rating": 0,
+      "s_brand_none": 0,
+      "brand_effect_pp": 0.0,
+      "rating_effect_pp": 0.0
+    },
+    {
+      "brand": "SetSail",
+      "n": 2,
+      "share_anon": 0.12,
+      "share_brand": 0.0,
+      "share_rating": 0.0,
+      "share_norating": 0.12,
+      "s_anon_rating": 0,
+      "s_anon_none": 0.5,
+      "s_brand_rating": 0,
+      "s_brand_none": 0,
+      "brand_effect_pp": -0.12,
+      "rating_effect_pp": -0.12
+    },
+    {
+      "brand": "AONEZ",
+      "n": 1,
+      "share_anon": 0.0,
+      "share_brand": 0.0,
+      "share_rating": 0.0,
+      "share_norating": 0.0,
+      "s_anon_rating": 0,
+      "s_anon_none": 0,
+      "s_brand_rating": 0,
+      "s_brand_none": 0,
+      "brand_effect_pp": 0.0,
+      "rating_effect_pp": 0.0
+    },
+    {
+      "brand": "OSAMEDA",
+      "n": 1,
+      "share_anon": 0.2,
+      "share_brand": 0.0,
+      "share_rating": 0.0,
+      "share_norating": 0.2,
+      "s_anon_rating": 0,
+      "s_anon_none": 0.4,
+      "s_brand_rating": 0,
+      "s_brand_none": 0,
+      "brand_effect_pp": -0.2,
+      "rating_effect_pp": -0.2
+    },
+    {
+      "brand": "Dealsgogo",
+      "n": 1,
+      "share_anon": 0.1,
+      "share_brand": 0.0,
+      "share_rating": 0.0,
+      "share_norating": 0.1,
+      "s_anon_rating": 0,
+      "s_anon_none": 0.2,
+      "s_brand_rating": 0,
+      "s_brand_none": 0,
+      "brand_effect_pp": -0.1,
+      "rating_effect_pp": -0.1
+    },
+    {
+      "brand": "Hohoky",
+      "n": 1,
+      "share_anon": 0.0,
+      "share_brand": 0.0,
+      "share_rating": 0.0,
+      "share_norating": 0.0,
+      "s_anon_rating": 0,
+      "s_anon_none": 0,
+      "s_brand_rating": 0,
+      "s_brand_none": 0,
+      "brand_effect_pp": 0.0,
+      "rating_effect_pp": 0.0
+    }
+  ],
+  "persona_stability": {
+    "rating_effect": {
+      "n": 1000,
+      "same_pct": 5.1
+    },
+    "rating_effect_brand": {
+      "n": 1000,
+      "same_pct": 52.3
+    },
+    "brand_effect_anon": {
+      "n": 1000,
+      "same_pct": 12.7
+    },
+    "brand_effect_rating": {
+      "n": 1000,
+      "same_pct": 71.9
+    }
+  },
+  "segments_exclusive": {
+    "price_driven": {
+      "n": 40,
+      "pct": 4.0,
+      "mean_price": 8.99,
+      "top_choices": [
+        {
+          "pid": "P01",
+          "pct": 100.0,
+          "brand": "Clorox"
+        }
+      ]
+    },
+    "function_driven": {
+      "n": 177,
+      "pct": 17.7,
+      "mean_price": 16.56,
+      "top_choices": [
+        {
+          "pid": "P07",
+          "pct": 64.4,
+          "brand": "OXO"
+        },
+        {
+          "pid": "P01",
+          "pct": 31.6,
+          "brand": "Clorox"
+        },
+        {
+          "pid": "P03",
+          "pct": 3.4,
+          "brand": "MR.SIGA"
+        },
+        {
+          "pid": "P12",
+          "pct": 0.6,
+          "brand": "LOVLOY"
+        }
+      ]
+    },
+    "hygiene_driven": {
+      "n": 441,
+      "pct": 44.1,
+      "mean_price": 19.9,
+      "top_choices": [
+        {
+          "pid": "P07",
+          "pct": 100.0,
+          "brand": "OXO"
+        }
+      ]
+    },
+    "design_driven": {
+      "n": 8,
+      "pct": 0.8,
+      "mean_price": 21.79,
+      "top_choices": [
+        {
+          "pid": "P07",
+          "pct": 87.5,
+          "brand": "OXO"
+        },
+        {
+          "pid": "P28",
+          "pct": 12.5,
+          "brand": "simplehuman"
+        }
+      ]
+    },
+    "brand_driven": {
+      "n": 15,
+      "pct": 1.5,
+      "mean_price": 18.45,
+      "top_choices": [
+        {
+          "pid": "P07",
+          "pct": 86.7,
+          "brand": "OXO"
+        },
+        {
+          "pid": "P01",
+          "pct": 13.3,
+          "brand": "Clorox"
+        }
+      ]
+    },
+    "reviews_driven": {
+      "n": 319,
+      "pct": 31.9,
+      "mean_price": 19.63,
+      "top_choices": [
+        {
+          "pid": "P07",
+          "pct": 97.2,
+          "brand": "OXO"
+        },
+        {
+          "pid": "P01",
+          "pct": 2.5,
+          "brand": "Clorox"
+        },
+        {
+          "pid": "P04",
+          "pct": 0.3,
+          "brand": "MR.SIGA"
+        }
+      ]
+    }
+  },
+  "segments_exclusive_assigned_pct": 100.0,
+  "segments": {
+    "price_driven": {
+      "n": 73,
+      "pct": 7.3,
+      "mean_price": 9.29,
+      "top_choices": [
+        {
+          "pid": "P01",
+          "pct": 97.3,
+          "brand": "Clorox"
+        },
+        {
+          "pid": "P07",
+          "pct": 2.7,
+          "brand": "OXO"
+        }
+      ]
+    },
+    "function_driven": {
+      "n": 214,
+      "pct": 21.4,
+      "mean_price": 16.88,
+      "top_choices": [
+        {
+          "pid": "P07",
+          "pct": 68.2,
+          "brand": "OXO"
+        },
+        {
+          "pid": "P01",
+          "pct": 28.5,
+          "brand": "Clorox"
+        },
+        {
+          "pid": "P03",
+          "pct": 2.8,
+          "brand": "MR.SIGA"
+        },
+        {
+          "pid": "P12",
+          "pct": 0.5,
+          "brand": "LOVLOY"
+        }
+      ]
+    },
+    "design_driven": {
+      "n": 40,
+      "pct": 4.0,
+      "mean_price": 20.28,
+      "top_choices": [
+        {
+          "pid": "P07",
+          "pct": 97.5,
+          "brand": "OXO"
+        },
+        {
+          "pid": "P28",
+          "pct": 2.5,
+          "brand": "simplehuman"
+        }
+      ]
+    },
+    "hygiene_driven": {
+      "n": 729,
+      "pct": 72.9,
+      "mean_price": 19.89,
+      "top_choices": [
+        {
+          "pid": "P07",
+          "pct": 99.9,
+          "brand": "OXO"
+        },
+        {
+          "pid": "P12",
+          "pct": 0.1,
+          "brand": "LOVLOY"
+        }
+      ]
+    },
+    "brand_driven": {
+      "n": 18,
+      "pct": 1.8,
+      "mean_price": 18.69,
+      "top_choices": [
+        {
+          "pid": "P07",
+          "pct": 88.9,
+          "brand": "OXO"
+        },
+        {
+          "pid": "P01",
+          "pct": 11.1,
+          "brand": "Clorox"
+        }
+      ]
+    },
+    "reviews_driven": {
+      "n": 517,
+      "pct": 51.7,
+      "mean_price": 19.14,
+      "top_choices": [
+        {
+          "pid": "P07",
+          "pct": 91.9,
+          "brand": "OXO"
+        },
+        {
+          "pid": "P01",
+          "pct": 7.2,
+          "brand": "Clorox"
+        },
+        {
+          "pid": "P03",
+          "pct": 0.8,
+          "brand": "MR.SIGA"
+        },
+        {
+          "pid": "P12",
+          "pct": 0.2,
+          "brand": "LOVLOY"
+        }
+      ]
+    }
+  },
+  "rationale_signals": {
+    "anon-rating": {
+      "brand_mention": 0.0,
+      "rating_mention": 98.7,
+      "price_mention": 70.7,
+      "hygiene_mention": 38.4,
+      "function_mention": 62.4,
+      "look_mention": 49.1
+    },
+    "anon-norating": {
+      "brand_mention": 0.0,
+      "rating_mention": 3.6,
+      "price_mention": 94.9,
+      "hygiene_mention": 45.3,
+      "function_mention": 72.5,
+      "look_mention": 61.3
+    },
+    "brand-rating": {
+      "brand_mention": 96.6,
+      "rating_mention": 98.2,
+      "price_mention": 68.8,
+      "hygiene_mention": 35.7,
+      "function_mention": 42.7,
+      "look_mention": 49.3
+    },
+    "brand-norating": {
+      "brand_mention": 82.9,
+      "rating_mention": 2.9,
+      "price_mention": 86.4,
+      "hygiene_mention": 45.1,
+      "function_mention": 62.8,
+      "look_mention": 59.6
+    }
+  },
+  "pref_dist": {
+    "q_badge_effect": {
+      "anon-rating": {
+        "neutral": 33.4,
+        "yes_somewhat": 60.8,
+        "unlikely": 4.1,
+        "yes_strongly": 1.1,
+        "no_effect": 0.6
+      },
+      "anon-norating": {
+        "yes_somewhat": 59.2,
+        "neutral": 32.2,
+        "unlikely": 7.1,
+        "yes_strongly": 0.8,
+        "no_effect": 0.7
+      },
+      "brand-rating": {
+        "yes_somewhat": 67.8,
+        "neutral": 26.8,
+        "unlikely": 4.1,
+        "yes_strongly": 1.3
+      },
+      "brand-norating": {
+        "yes_somewhat": 68.9,
+        "neutral": 23.8,
+        "yes_strongly": 1.1,
+        "no_effect": 0.7,
+        "unlikely": 5.5
+      }
+    },
+    "q_switch_trigger": {
+      "anon-rating": {
+        "better_rating": 22.2,
+        "better_value": 1.9,
+        "better_function": 50.4,
+        "nothing": 15.6,
+        "better_look": 5.1,
+        "lower_price": 4.8
+      },
+      "anon-norating": {
+        "better_rating": 27.9,
+        "better_function": 56.0,
+        "better_look": 4.0,
+        "lower_price": 4.1,
+        "nothing": 6.2,
+        "better_value": 1.8
+      },
+      "brand-rating": {
+        "better_function": 49.8,
+        "better_value": 2.2,
+        "better_rating": 20.8,
+        "lower_price": 4.4,
+        "nothing": 20.1,
+        "better_look": 2.7
+      },
+      "brand-norating": {
+        "better_function": 50.8,
+        "better_rating": 23.2,
+        "lower_price": 6.4,
+        "nothing": 9.7,
+        "better_look": 8.4,
+        "better_value": 1.5
+      }
+    },
+    "q_material_pref": {
+      "anon-rating": {
+        "nylon_bristles": 98.2,
+        "disposable_sponge": 0.3,
+        "silicone": 1.5
+      },
+      "anon-norating": {
+        "silicone": 56.4,
+        "nylon_bristles": 42.6,
+        "stainless_steel": 0.6,
+        "disposable_sponge": 0.4
+      },
+      "brand-rating": {
+        "nylon_bristles": 98.6,
+        "silicone": 1.4
+      },
+      "brand-norating": {
+        "nylon_bristles": 88.7,
+        "silicone": 10.6,
+        "disposable_sponge": 0.1,
+        "stainless_steel": 0.6
+      }
+    },
+    "q_format_pref": {
+      "anon-rating": {
+        "single_brush_set": 96.7,
+        "disposable_system": 0.3,
+        "brush_plunger_combo": 3.0
+      },
+      "anon-norating": {
+        "single_brush_set": 89.8,
+        "brush_plunger_combo": 9.8,
+        "disposable_system": 0.4
+      },
+      "brand-rating": {
+        "single_brush_set": 99.3,
+        "brush_plunger_combo": 0.7
+      },
+      "brand-norating": {
+        "single_brush_set": 98.2,
+        "brush_plunger_combo": 1.7,
+        "disposable_system": 0.1
+      }
+    },
+    "q_pack_pref": {
+      "anon-rating": {
+        "single": 99.9,
+        "three_or_more": 0.1
+      },
+      "anon-norating": {
+        "single": 97.0,
+        "two_pack": 2.3,
+        "three_or_more": 0.7
+      },
+      "brand-rating": {
+        "single": 100.0
+      },
+      "brand-norating": {
+        "single": 98.5,
+        "two_pack": 1.5
+      }
+    }
+  },
+  "pref_dist_avg": {
+    "q_badge_effect": {
+      "neutral": 29.0,
+      "yes_somewhat": 64.2,
+      "unlikely": 5.2,
+      "yes_strongly": 1.1,
+      "no_effect": 0.5
+    },
+    "q_switch_trigger": {
+      "better_rating": 23.5,
+      "better_value": 1.9,
+      "better_function": 51.8,
+      "nothing": 12.9,
+      "better_look": 5.1,
+      "lower_price": 4.9
+    },
+    "q_material_pref": {
+      "nylon_bristles": 82.0,
+      "disposable_sponge": 0.2,
+      "silicone": 17.5,
+      "stainless_steel": 0.3
+    },
+    "q_format_pref": {
+      "single_brush_set": 96.0,
+      "disposable_system": 0.2,
+      "brush_plunger_combo": 3.8
+    },
+    "q_pack_pref": {
+      "single": 98.8,
+      "three_or_more": 0.2,
+      "two_pack": 0.9
+    }
+  },
+  "gt_correlation": {
+    "anon-rating": {
+      "share_vs_rank": -0.282,
+      "share_vs_sales": 0.312
+    },
+    "anon-norating": {
+      "share_vs_rank": -0.328,
+      "share_vs_sales": 0.351
+    },
+    "brand-rating": {
+      "share_vs_rank": -0.429,
+      "share_vs_sales": 0.543
+    },
+    "brand-norating": {
+      "share_vs_rank": -0.115,
+      "share_vs_sales": 0.192
+    }
+  },
+  "rank_compare": {
+    "anon-rating": [
+      {
+        "pid": "P04",
+        "brand": "MR.SIGA",
+        "gt_rank": 4,
+        "sim_rank": 30,
+        "delta": 26,
+        "share": 0
+      },
+      {
+        "pid": "P08",
+        "brand": "FAZMoss",
+        "gt_rank": 8,
+        "sim_rank": 30,
+        "delta": 22,
+        "share": 0
+      },
+      {
+        "pid": "P09",
+        "brand": "Holaloha",
+        "gt_rank": 9,
+        "sim_rank": 30,
+        "delta": 21,
+        "share": 0
+      },
+      {
+        "pid": "P28",
+        "brand": "simplehuman",
+        "gt_rank": 28,
+        "sim_rank": 7,
+        "delta": -21,
+        "share": 0.3
+      },
+      {
+        "pid": "P11",
+        "brand": "SetSail",
+        "gt_rank": 11,
+        "sim_rank": 30,
+        "delta": 19,
+        "share": 0
+      },
+      {
+        "pid": "P14",
+        "brand": "AONEZ",
+        "gt_rank": 14,
+        "sim_rank": 30,
+        "delta": 16,
+        "share": 0
+      },
+      {
+        "pid": "P15",
+        "brand": "HAMITOR",
+        "gt_rank": 15,
+        "sim_rank": 30,
+        "delta": 15,
+        "share": 0
+      },
+      {
+        "pid": "P16",
+        "brand": "uptronic",
+        "gt_rank": 16,
+        "sim_rank": 30,
+        "delta": 14,
+        "share": 0
+      },
+      {
+        "pid": "P17",
+        "brand": "Holaloha",
+        "gt_rank": 17,
+        "sim_rank": 30,
+        "delta": 13,
+        "share": 0
+      },
+      {
+        "pid": "P18",
+        "brand": "MR.SIGA",
+        "gt_rank": 18,
+        "sim_rank": 30,
+        "delta": 12,
+        "share": 0
+      },
+      {
+        "pid": "P19",
+        "brand": "SetSail",
+        "gt_rank": 19,
+        "sim_rank": 30,
+        "delta": 11,
+        "share": 0
+      },
+      {
+        "pid": "P20",
+        "brand": "uptronic",
+        "gt_rank": 20,
+        "sim_rank": 30,
+        "delta": 10,
+        "share": 0
+      },
+      {
+        "pid": "P21",
+        "brand": "OSAMEDA",
+        "gt_rank": 21,
+        "sim_rank": 30,
+        "delta": 9,
+        "share": 0
+      },
+      {
+        "pid": "P02",
+        "brand": "FORASTO",
+        "gt_rank": 2,
+        "sim_rank": 10,
+        "delta": 8,
+        "share": 0.1
+      },
+      {
+        "pid": "P12",
+        "brand": "LOVLOY",
+        "gt_rank": 12,
+        "sim_rank": 4,
+        "delta": -8,
+        "share": 1.3
+      },
+      {
+        "pid": "P22",
+        "brand": "Clorox",
+        "gt_rank": 22,
+        "sim_rank": 30,
+        "delta": 8,
+        "share": 0
+      },
+      {
+        "pid": "P23",
+        "brand": "Wsedor",
+        "gt_rank": 23,
+        "sim_rank": 30,
+        "delta": 7,
+        "share": 0
+      },
+      {
+        "pid": "P07",
+        "brand": "OXO",
+        "gt_rank": 7,
+        "sim_rank": 1,
+        "delta": -6,
+        "share": 77.3
+      },
+      {
+        "pid": "P24",
+        "brand": "Dealsgogo",
+        "gt_rank": 24,
+        "sim_rank": 30,
+        "delta": 6,
+        "share": 0
+      },
+      {
+        "pid": "P25",
+        "brand": "FORASTO",
+        "gt_rank": 25,
+        "sim_rank": 30,
+        "delta": 5,
+        "share": 0
+      },
+      {
+        "pid": "P13",
+        "brand": "Sellemer",
+        "gt_rank": 13,
+        "sim_rank": 9,
+        "delta": -4,
+        "share": 0.1
+      },
+      {
+        "pid": "P26",
+        "brand": "HAMITOR",
+        "gt_rank": 26,
+        "sim_rank": 30,
+        "delta": 4,
+        "share": 0
+      },
+      {
+        "pid": "P27",
+        "brand": "Hohoky",
+        "gt_rank": 27,
+        "sim_rank": 30,
+        "delta": 3,
+        "share": 0
+      },
+      {
+        "pid": "P10",
+        "brand": "Holaloha",
+        "gt_rank": 10,
+        "sim_rank": 8,
+        "delta": -2,
+        "share": 0.1
+      },
+      {
+        "pid": "P01",
+        "brand": "Clorox",
+        "gt_rank": 1,
+        "sim_rank": 2,
+        "delta": 1,
+        "share": 18.4
+      },
+      {
+        "pid": "P05",
+        "brand": "oshang",
+        "gt_rank": 5,
+        "sim_rank": 6,
+        "delta": 1,
+        "share": 0.3
+      },
+      {
+        "pid": "P06",
+        "brand": "HAMITOR",
+        "gt_rank": 6,
+        "sim_rank": 5,
+        "delta": -1,
+        "share": 0.5
+      },
+      {
+        "pid": "P29",
+        "brand": "SAVEGA",
+        "gt_rank": 29,
+        "sim_rank": 30,
+        "delta": 1,
+        "share": 0
+      },
+      {
+        "pid": "P03",
+        "brand": "MR.SIGA",
+        "gt_rank": 3,
+        "sim_rank": 3,
+        "delta": 0,
+        "share": 1.6
+      },
+      {
+        "pid": "P30",
+        "brand": "HAMITOR",
+        "gt_rank": 30,
+        "sim_rank": 30,
+        "delta": 0,
+        "share": 0
+      }
+    ],
+    "anon-norating": [
+      {
+        "pid": "P04",
+        "brand": "MR.SIGA",
+        "gt_rank": 4,
+        "sim_rank": 30,
+        "delta": 26,
+        "share": 0
+      },
+      {
+        "pid": "P08",
+        "brand": "FAZMoss",
+        "gt_rank": 8,
+        "sim_rank": 30,
+        "delta": 22,
+        "share": 0
+      },
+      {
+        "pid": "P28",
+        "brand": "simplehuman",
+        "gt_rank": 28,
+        "sim_rank": 8,
+        "delta": -20,
+        "share": 1.9
+      },
+      {
+        "pid": "P11",
+        "brand": "SetSail",
+        "gt_rank": 11,
+        "sim_rank": 30,
+        "delta": 19,
+        "share": 0
+      },
+      {
+        "pid": "P14",
+        "brand": "AONEZ",
+        "gt_rank": 14,
+        "sim_rank": 30,
+        "delta": 16,
+        "share": 0
+      },
+      {
+        "pid": "P29",
+        "brand": "SAVEGA",
+        "gt_rank": 29,
+        "sim_rank": 15,
+        "delta": -14,
+        "share": 0.2
+      },
+      {
+        "pid": "P03",
+        "brand": "MR.SIGA",
+        "gt_rank": 3,
+        "sim_rank": 16,
+        "delta": 13,
+        "share": 0.2
+      },
+      {
+        "pid": "P13",
+        "brand": "Sellemer",
+        "gt_rank": 13,
+        "sim_rank": 1,
+        "delta": -12,
+        "share": 55.4
+      },
+      {
+        "pid": "P15",
+        "brand": "HAMITOR",
+        "gt_rank": 15,
+        "sim_rank": 3,
+        "delta": -12,
+        "share": 6.3
+      },
+      {
+        "pid": "P18",
+        "brand": "MR.SIGA",
+        "gt_rank": 18,
+        "sim_rank": 30,
+        "delta": 12,
+        "share": 0
+      },
+      {
+        "pid": "P23",
+        "brand": "Wsedor",
+        "gt_rank": 23,
+        "sim_rank": 11,
+        "delta": -12,
+        "share": 0.7
+      },
+      {
+        "pid": "P09",
+        "brand": "Holaloha",
+        "gt_rank": 9,
+        "sim_rank": 20,
+        "delta": 11,
+        "share": 0.2
+      },
+      {
+        "pid": "P17",
+        "brand": "Holaloha",
+        "gt_rank": 17,
+        "sim_rank": 6,
+        "delta": -11,
+        "share": 4.7
+      },
+      {
+        "pid": "P05",
+        "brand": "oshang",
+        "gt_rank": 5,
+        "sim_rank": 14,
+        "delta": 9,
+        "share": 0.4
+      },
+      {
+        "pid": "P10",
+        "brand": "Holaloha",
+        "gt_rank": 10,
+        "sim_rank": 18,
+        "delta": 8,
+        "share": 0.2
+      },
+      {
+        "pid": "P12",
+        "brand": "LOVLOY",
+        "gt_rank": 12,
+        "sim_rank": 4,
+        "delta": -8,
+        "share": 5.9
+      },
+      {
+        "pid": "P21",
+        "brand": "OSAMEDA",
+        "gt_rank": 21,
+        "sim_rank": 13,
+        "delta": -8,
+        "share": 0.4
+      },
+      {
+        "pid": "P19",
+        "brand": "SetSail",
+        "gt_rank": 19,
+        "sim_rank": 12,
+        "delta": -7,
+        "share": 0.5
+      },
+      {
+        "pid": "P16",
+        "brand": "uptronic",
+        "gt_rank": 16,
+        "sim_rank": 10,
+        "delta": -6,
+        "share": 0.8
+      },
+      {
+        "pid": "P02",
+        "brand": "FORASTO",
+        "gt_rank": 2,
+        "sim_rank": 7,
+        "delta": 5,
+        "share": 3.0
+      },
+      {
+        "pid": "P24",
+        "brand": "Dealsgogo",
+        "gt_rank": 24,
+        "sim_rank": 19,
+        "delta": -5,
+        "share": 0.2
+      },
+      {
+        "pid": "P25",
+        "brand": "FORASTO",
+        "gt_rank": 25,
+        "sim_rank": 30,
+        "delta": 5,
+        "share": 0
+      },
+      {
+        "pid": "P26",
+        "brand": "HAMITOR",
+        "gt_rank": 26,
+        "sim_rank": 30,
+        "delta": 4,
+        "share": 0
+      },
+      {
+        "pid": "P20",
+        "brand": "uptronic",
+        "gt_rank": 20,
+        "sim_rank": 17,
+        "delta": -3,
+        "share": 0.2
+      },
+      {
+        "pid": "P27",
+        "brand": "Hohoky",
+        "gt_rank": 27,
+        "sim_rank": 30,
+        "delta": 3,
+        "share": 0
+      },
+      {
+        "pid": "P07",
+        "brand": "OXO",
+        "gt_rank": 7,
+        "sim_rank": 9,
+        "delta": 2,
+        "share": 1.4
+      },
+      {
+        "pid": "P01",
+        "brand": "Clorox",
+        "gt_rank": 1,
+        "sim_rank": 2,
+        "delta": 1,
+        "share": 12.3
+      },
+      {
+        "pid": "P06",
+        "brand": "HAMITOR",
+        "gt_rank": 6,
+        "sim_rank": 5,
+        "delta": -1,
+        "share": 5.0
+      },
+      {
+        "pid": "P22",
+        "brand": "Clorox",
+        "gt_rank": 22,
+        "sim_rank": 21,
+        "delta": -1,
+        "share": 0.1
+      },
+      {
+        "pid": "P30",
+        "brand": "HAMITOR",
+        "gt_rank": 30,
+        "sim_rank": 30,
+        "delta": 0,
+        "share": 0
+      }
+    ],
+    "brand-rating": [
+      {
+        "pid": "P02",
+        "brand": "FORASTO",
+        "gt_rank": 2,
+        "sim_rank": 30,
+        "delta": 28,
+        "share": 0
+      },
+      {
+        "pid": "P05",
+        "brand": "oshang",
+        "gt_rank": 5,
+        "sim_rank": 30,
+        "delta": 25,
+        "share": 0
+      },
+      {
+        "pid": "P06",
+        "brand": "HAMITOR",
+        "gt_rank": 6,
+        "sim_rank": 30,
+        "delta": 24,
+        "share": 0
+      },
+      {
+        "pid": "P28",
+        "brand": "simplehuman",
+        "gt_rank": 28,
+        "sim_rank": 5,
+        "delta": -23,
+        "share": 0.1
+      },
+      {
+        "pid": "P08",
+        "brand": "FAZMoss",
+        "gt_rank": 8,
+        "sim_rank": 30,
+        "delta": 22,
+        "share": 0
+      },
+      {
+        "pid": "P09",
+        "brand": "Holaloha",
+        "gt_rank": 9,
+        "sim_rank": 30,
+        "delta": 21,
+        "share": 0
+      },
+      {
+        "pid": "P10",
+        "brand": "Holaloha",
+        "gt_rank": 10,
+        "sim_rank": 30,
+        "delta": 20,
+        "share": 0
+      },
+      {
+        "pid": "P11",
+        "brand": "SetSail",
+        "gt_rank": 11,
+        "sim_rank": 30,
+        "delta": 19,
+        "share": 0
+      },
+      {
+        "pid": "P13",
+        "brand": "Sellemer",
+        "gt_rank": 13,
+        "sim_rank": 30,
+        "delta": 17,
+        "share": 0
+      },
+      {
+        "pid": "P14",
+        "brand": "AONEZ",
+        "gt_rank": 14,
+        "sim_rank": 30,
+        "delta": 16,
+        "share": 0
+      },
+      {
+        "pid": "P15",
+        "brand": "HAMITOR",
+        "gt_rank": 15,
+        "sim_rank": 30,
+        "delta": 15,
+        "share": 0
+      },
+      {
+        "pid": "P16",
+        "brand": "uptronic",
+        "gt_rank": 16,
+        "sim_rank": 30,
+        "delta": 14,
+        "share": 0
+      },
+      {
+        "pid": "P17",
+        "brand": "Holaloha",
+        "gt_rank": 17,
+        "sim_rank": 30,
+        "delta": 13,
+        "share": 0
+      },
+      {
+        "pid": "P18",
+        "brand": "MR.SIGA",
+        "gt_rank": 18,
+        "sim_rank": 30,
+        "delta": 12,
+        "share": 0
+      },
+      {
+        "pid": "P19",
+        "brand": "SetSail",
+        "gt_rank": 19,
+        "sim_rank": 30,
+        "delta": 11,
+        "share": 0
+      },
+      {
+        "pid": "P20",
+        "brand": "uptronic",
+        "gt_rank": 20,
+        "sim_rank": 30,
+        "delta": 10,
+        "share": 0
+      },
+      {
+        "pid": "P21",
+        "brand": "OSAMEDA",
+        "gt_rank": 21,
+        "sim_rank": 30,
+        "delta": 9,
+        "share": 0
+      },
+      {
+        "pid": "P12",
+        "brand": "LOVLOY",
+        "gt_rank": 12,
+        "sim_rank": 4,
+        "delta": -8,
+        "share": 0.1
+      },
+      {
+        "pid": "P22",
+        "brand": "Clorox",
+        "gt_rank": 22,
+        "sim_rank": 30,
+        "delta": 8,
+        "share": 0
+      },
+      {
+        "pid": "P23",
+        "brand": "Wsedor",
+        "gt_rank": 23,
+        "sim_rank": 30,
+        "delta": 7,
+        "share": 0
+      },
+      {
+        "pid": "P07",
+        "brand": "OXO",
+        "gt_rank": 7,
+        "sim_rank": 1,
+        "delta": -6,
+        "share": 88.5
+      },
+      {
+        "pid": "P24",
+        "brand": "Dealsgogo",
+        "gt_rank": 24,
+        "sim_rank": 30,
+        "delta": 6,
+        "share": 0
+      },
+      {
+        "pid": "P25",
+        "brand": "FORASTO",
+        "gt_rank": 25,
+        "sim_rank": 30,
+        "delta": 5,
+        "share": 0
+      },
+      {
+        "pid": "P26",
+        "brand": "HAMITOR",
+        "gt_rank": 26,
+        "sim_rank": 30,
+        "delta": 4,
+        "share": 0
+      },
+      {
+        "pid": "P27",
+        "brand": "Hohoky",
+        "gt_rank": 27,
+        "sim_rank": 30,
+        "delta": 3,
+        "share": 0
+      },
+      {
+        "pid": "P04",
+        "brand": "MR.SIGA",
+        "gt_rank": 4,
+        "sim_rank": 6,
+        "delta": 2,
+        "share": 0.1
+      },
+      {
+        "pid": "P01",
+        "brand": "Clorox",
+        "gt_rank": 1,
+        "sim_rank": 2,
+        "delta": 1,
+        "share": 10.6
+      },
+      {
+        "pid": "P29",
+        "brand": "SAVEGA",
+        "gt_rank": 29,
+        "sim_rank": 30,
+        "delta": 1,
+        "share": 0
+      },
+      {
+        "pid": "P03",
+        "brand": "MR.SIGA",
+        "gt_rank": 3,
+        "sim_rank": 3,
+        "delta": 0,
+        "share": 0.6
+      },
+      {
+        "pid": "P30",
+        "brand": "HAMITOR",
+        "gt_rank": 30,
+        "sim_rank": 30,
+        "delta": 0,
+        "share": 0
+      }
+    ],
+    "brand-norating": [
+      {
+        "pid": "P02",
+        "brand": "FORASTO",
+        "gt_rank": 2,
+        "sim_rank": 30,
+        "delta": 28,
+        "share": 0
+      },
+      {
+        "pid": "P04",
+        "brand": "MR.SIGA",
+        "gt_rank": 4,
+        "sim_rank": 30,
+        "delta": 26,
+        "share": 0
+      },
+      {
+        "pid": "P28",
+        "brand": "simplehuman",
+        "gt_rank": 28,
+        "sim_rank": 4,
+        "delta": -24,
+        "share": 9.1
+      },
+      {
+        "pid": "P08",
+        "brand": "FAZMoss",
+        "gt_rank": 8,
+        "sim_rank": 30,
+        "delta": 22,
+        "share": 0
+      },
+      {
+        "pid": "P09",
+        "brand": "Holaloha",
+        "gt_rank": 9,
+        "sim_rank": 30,
+        "delta": 21,
+        "share": 0
+      },
+      {
+        "pid": "P10",
+        "brand": "Holaloha",
+        "gt_rank": 10,
+        "sim_rank": 30,
+        "delta": 20,
+        "share": 0
+      },
+      {
+        "pid": "P11",
+        "brand": "SetSail",
+        "gt_rank": 11,
+        "sim_rank": 30,
+        "delta": 19,
+        "share": 0
+      },
+      {
+        "pid": "P14",
+        "brand": "AONEZ",
+        "gt_rank": 14,
+        "sim_rank": 30,
+        "delta": 16,
+        "share": 0
+      },
+      {
+        "pid": "P29",
+        "brand": "SAVEGA",
+        "gt_rank": 29,
+        "sim_rank": 13,
+        "delta": -16,
+        "share": 0.1
+      },
+      {
+        "pid": "P22",
+        "brand": "Clorox",
+        "gt_rank": 22,
+        "sim_rank": 7,
+        "delta": -15,
+        "share": 1.4
+      },
+      {
+        "pid": "P16",
+        "brand": "uptronic",
+        "gt_rank": 16,
+        "sim_rank": 30,
+        "delta": 14,
+        "share": 0
+      },
+      {
+        "pid": "P17",
+        "brand": "Holaloha",
+        "gt_rank": 17,
+        "sim_rank": 5,
+        "delta": -12,
+        "share": 2.0
+      },
+      {
+        "pid": "P18",
+        "brand": "MR.SIGA",
+        "gt_rank": 18,
+        "sim_rank": 30,
+        "delta": 12,
+        "share": 0
+      },
+      {
+        "pid": "P19",
+        "brand": "SetSail",
+        "gt_rank": 19,
+        "sim_rank": 30,
+        "delta": 11,
+        "share": 0
+      },
+      {
+        "pid": "P13",
+        "brand": "Sellemer",
+        "gt_rank": 13,
+        "sim_rank": 3,
+        "delta": -10,
+        "share": 9.4
+      },
+      {
+        "pid": "P15",
+        "brand": "HAMITOR",
+        "gt_rank": 15,
+        "sim_rank": 6,
+        "delta": -9,
+        "share": 1.8
+      },
+      {
+        "pid": "P21",
+        "brand": "OSAMEDA",
+        "gt_rank": 21,
+        "sim_rank": 30,
+        "delta": 9,
+        "share": 0
+      },
+      {
+        "pid": "P23",
+        "brand": "Wsedor",
+        "gt_rank": 23,
+        "sim_rank": 14,
+        "delta": -9,
+        "share": 0.1
+      },
+      {
+        "pid": "P03",
+        "brand": "MR.SIGA",
+        "gt_rank": 3,
+        "sim_rank": 11,
+        "delta": 8,
+        "share": 0.1
+      },
+      {
+        "pid": "P20",
+        "brand": "uptronic",
+        "gt_rank": 20,
+        "sim_rank": 12,
+        "delta": -8,
+        "share": 0.1
+      },
+      {
+        "pid": "P07",
+        "brand": "OXO",
+        "gt_rank": 7,
+        "sim_rank": 1,
+        "delta": -6,
+        "share": 50.3
+      },
+      {
+        "pid": "P24",
+        "brand": "Dealsgogo",
+        "gt_rank": 24,
+        "sim_rank": 30,
+        "delta": 6,
+        "share": 0
+      },
+      {
+        "pid": "P25",
+        "brand": "FORASTO",
+        "gt_rank": 25,
+        "sim_rank": 30,
+        "delta": 5,
+        "share": 0
+      },
+      {
+        "pid": "P05",
+        "brand": "oshang",
+        "gt_rank": 5,
+        "sim_rank": 9,
+        "delta": 4,
+        "share": 0.1
+      },
+      {
+        "pid": "P26",
+        "brand": "HAMITOR",
+        "gt_rank": 26,
+        "sim_rank": 30,
+        "delta": 4,
+        "share": 0
+      },
+      {
+        "pid": "P27",
+        "brand": "Hohoky",
+        "gt_rank": 27,
+        "sim_rank": 30,
+        "delta": 3,
+        "share": 0
+      },
+      {
+        "pid": "P06",
+        "brand": "HAMITOR",
+        "gt_rank": 6,
+        "sim_rank": 8,
+        "delta": 2,
+        "share": 0.3
+      },
+      {
+        "pid": "P12",
+        "brand": "LOVLOY",
+        "gt_rank": 12,
+        "sim_rank": 10,
+        "delta": -2,
+        "share": 0.1
+      },
+      {
+        "pid": "P01",
+        "brand": "Clorox",
+        "gt_rank": 1,
+        "sim_rank": 2,
+        "delta": 1,
+        "share": 25.1
+      },
+      {
+        "pid": "P30",
+        "brand": "HAMITOR",
+        "gt_rank": 30,
+        "sim_rank": 30,
+        "delta": 0,
+        "share": 0
+      }
+    ]
+  },
+  "category_structure": [
+    {
+      "category": "单刷套装",
+      "n_sku": 15,
+      "gt_sales_share": 53.2,
+      "sim_share": 99.3,
+      "sim_est_monthly_revenue": 292704.0,
+      "gt_monthly_revenue": 2850004.0,
+      "mean_price": 19.15
+    },
+    {
+      "category": "刷+搋2合1",
+      "n_sku": 10,
+      "gt_sales_share": 31.9,
+      "sim_share": 0.7,
+      "sim_est_monthly_revenue": 3605.0,
+      "gt_monthly_revenue": 2429447.0,
+      "mean_price": 27.86
+    },
+    {
+      "category": "一次性刷头",
+      "n_sku": 2,
+      "gt_sales_share": 6.7,
+      "sim_share": 0.0,
+      "sim_est_monthly_revenue": 0.0,
+      "gt_monthly_revenue": 277400.0,
+      "mean_price": 18.49
+    },
+    {
+      "category": "硅胶刷",
+      "n_sku": 2,
+      "gt_sales_share": 4.3,
+      "sim_share": 0.0,
+      "sim_est_monthly_revenue": 0.0,
+      "gt_monthly_revenue": 153393.0,
+      "mean_price": 10.99
+    },
+    {
+      "category": "浮石棒",
+      "n_sku": 1,
+      "gt_sales_share": 4.0,
+      "sim_share": 0.0,
+      "sim_est_monthly_revenue": 0.0,
+      "gt_monthly_revenue": 120808.0,
+      "mean_price": 8.99
+    }
+  ],
+  "price_band": [
+    {
+      "band": "$0-10",
+      "n_sku": 6,
+      "gt_sales_share": 28.9,
+      "sim_share": 10.6
+    },
+    {
+      "band": "$10-15",
+      "n_sku": 6,
+      "gt_sales_share": 25.6,
+      "sim_share": 0.0
+    },
+    {
+      "band": "$15-25",
+      "n_sku": 9,
+      "gt_sales_share": 29.6,
+      "sim_share": 89.3
+    },
+    {
+      "band": "$25-35",
+      "n_sku": 7,
+      "gt_sales_share": 12.9,
+      "sim_share": 0.1
+    },
+    {
+      "band": "$35+",
+      "n_sku": 2,
+      "gt_sales_share": 3.0,
+      "sim_share": 0.0
+    }
+  ],
+  "revenue_potential": [
+    {
+      "pid": "P07",
+      "brand": "OXO",
+      "price": 19.9,
+      "share": 88.5,
+      "sim_monthly_revenue": 252995.0,
+      "gt_monthly_revenue": 285870.0
+    },
+    {
+      "pid": "P01",
+      "brand": "Clorox",
+      "price": 8.99,
+      "share": 10.6,
+      "sim_monthly_revenue": 39135.0,
+      "gt_monthly_revenue": 369196.0
+    },
+    {
+      "pid": "P03",
+      "brand": "MR.SIGA",
+      "price": 23.99,
+      "share": 0.6,
+      "sim_monthly_revenue": 3445.0,
+      "gt_monthly_revenue": 574116.0
+    },
+    {
+      "pid": "P04",
+      "brand": "MR.SIGA",
+      "price": 19.99,
+      "share": 0.1,
+      "sim_monthly_revenue": 457.0,
+      "gt_monthly_revenue": 456951.0
+    },
+    {
+      "pid": "P12",
+      "brand": "LOVLOY",
+      "price": 15.29,
+      "share": 0.1,
+      "sim_monthly_revenue": 160.0,
+      "gt_monthly_revenue": 159952.0
+    },
+    {
+      "pid": "P28",
+      "brand": "simplehuman",
+      "price": 34.99,
+      "share": 0.1,
+      "sim_monthly_revenue": 117.0,
+      "gt_monthly_revenue": 116937.0
+    },
+    {
+      "pid": "P02",
+      "brand": "FORASTO",
+      "price": 14.99,
+      "share": 0,
+      "sim_monthly_revenue": 0.0,
+      "gt_monthly_revenue": 516825.0
+    },
+    {
+      "pid": "P05",
+      "brand": "oshang",
+      "price": 9.99,
+      "share": 0,
+      "sim_monthly_revenue": 0.0,
+      "gt_monthly_revenue": 185814.0
+    },
+    {
+      "pid": "P06",
+      "brand": "HAMITOR",
+      "price": 12.73,
+      "share": 0,
+      "sim_monthly_revenue": 0.0,
+      "gt_monthly_revenue": 207524.0
+    },
+    {
+      "pid": "P08",
+      "brand": "FAZMoss",
+      "price": 8.99,
+      "share": 0,
+      "sim_monthly_revenue": 0.0,
+      "gt_monthly_revenue": 120808.0
+    },
+    {
+      "pid": "P09",
+      "brand": "Holaloha",
+      "price": 8.99,
+      "share": 0,
+      "sim_monthly_revenue": 0.0,
+      "gt_monthly_revenue": 111926.0
+    },
+    {
+      "pid": "P10",
+      "brand": "Holaloha",
+      "price": 12.99,
+      "share": 0,
+      "sim_monthly_revenue": 0.0,
+      "gt_monthly_revenue": 141912.0
+    },
+    {
+      "pid": "P11",
+      "brand": "SetSail",
+      "price": 29.99,
+      "share": 0,
+      "sim_monthly_revenue": 0.0,
+      "gt_monthly_revenue": 305118.0
+    },
+    {
+      "pid": "P13",
+      "brand": "Sellemer",
+      "price": 11.99,
+      "share": 0,
+      "sim_monthly_revenue": 0.0,
+      "gt_monthly_revenue": 107629.0
+    },
+    {
+      "pid": "P14",
+      "brand": "AONEZ",
+      "price": 29.99,
+      "share": 0,
+      "sim_monthly_revenue": 0.0,
+      "gt_monthly_revenue": 287424.0
+    },
+    {
+      "pid": "P15",
+      "brand": "HAMITOR",
+      "price": 11.99,
+      "share": 0,
+      "sim_monthly_revenue": 0.0,
+      "gt_monthly_revenue": 94373.0
+    },
+    {
+      "pid": "P16",
+      "brand": "uptronic",
+      "price": 19.99,
+      "share": 0,
+      "sim_monthly_revenue": 0.0,
+      "gt_monthly_revenue": 172700.0
+    },
+    {
+      "pid": "P17",
+      "brand": "Holaloha",
+      "price": 6.99,
+      "share": 0,
+      "sim_monthly_revenue": 0.0,
+      "gt_monthly_revenue": 50132.0
+    },
+    {
+      "pid": "P18",
+      "brand": "MR.SIGA",
+      "price": 38.99,
+      "share": 0,
+      "sim_monthly_revenue": 0.0,
+      "gt_monthly_revenue": 291450.0
+    },
+    {
+      "pid": "P19",
+      "brand": "SetSail",
+      "price": 33.99,
+      "share": 0,
+      "sim_monthly_revenue": 0.0,
+      "gt_monthly_revenue": 239460.0
+    },
+    {
+      "pid": "P20",
+      "brand": "uptronic",
+      "price": 11.69,
+      "share": 0,
+      "sim_monthly_revenue": 0.0,
+      "gt_monthly_revenue": 85519.0
+    },
+    {
+      "pid": "P21",
+      "brand": "OSAMEDA",
+      "price": 20.99,
+      "share": 0,
+      "sim_monthly_revenue": 0.0,
+      "gt_monthly_revenue": 108308.0
+    },
+    {
+      "pid": "P22",
+      "brand": "Clorox",
+      "price": 22.4,
+      "share": 0,
+      "sim_monthly_revenue": 0.0,
+      "gt_monthly_revenue": 118817.0
+    },
+    {
+      "pid": "P23",
+      "brand": "Wsedor",
+      "price": 29.99,
+      "share": 0,
+      "sim_monthly_revenue": 0.0,
+      "gt_monthly_revenue": 131744.0
+    },
+    {
+      "pid": "P24",
+      "brand": "Dealsgogo",
+      "price": 9.99,
+      "share": 0,
+      "sim_monthly_revenue": 0.0,
+      "gt_monthly_revenue": 45764.0
+    },
+    {
+      "pid": "P25",
+      "brand": "FORASTO",
+      "price": 26.99,
+      "share": 0,
+      "sim_monthly_revenue": 0.0,
+      "gt_monthly_revenue": 119107.0
+    },
+    {
+      "pid": "P26",
+      "brand": "HAMITOR",
+      "price": 23.99,
+      "share": 0,
+      "sim_monthly_revenue": 0.0,
+      "gt_monthly_revenue": 98335.0
+    },
+    {
+      "pid": "P27",
+      "brand": "Hohoky",
+      "price": 26.99,
+      "share": 0,
+      "sim_monthly_revenue": 0.0,
+      "gt_monthly_revenue": 91586.0
+    },
+    {
+      "pid": "P29",
+      "brand": "SAVEGA",
+      "price": 24.99,
+      "share": 0,
+      "sim_monthly_revenue": 0.0,
+      "gt_monthly_revenue": 71971.0
+    },
+    {
+      "pid": "P30",
+      "brand": "HAMITOR",
+      "price": 59.99,
+      "share": 0,
+      "sim_monthly_revenue": 0.0,
+      "gt_monthly_revenue": 163783.0
+    }
+  ],
+  "n_total_trials": 4000
+}

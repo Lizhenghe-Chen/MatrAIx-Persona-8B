@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazon 数据源全景分析报告 · MatrAIx Persona 1M</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b1220'/%3E%3Ccircle cx='11' cy='12' r='4' fill='%235b8cff'/%3E%3Cpath d='M5 26c1-6 4-9 12-9s11 3 12 9' fill='none' stroke='%23ffb454' stroke-width='2.4'/%3E%3Ccircle cx='24' cy='9' r='2.6' fill='%23ffb454'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --bg:#0b1220; --panel:#111a2e; --panel2:#0e1626; --line:#1f2c47;
+    --txt:#e6edf7; --sub:#93a5c4; --dim:#5f7399;
+    --blue:#5b8cff; --amber:#ffb454; --green:#4ade80; --red:#f87171;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--txt);font-family:'Noto Sans SC',-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;line-height:1.65;}
+  .wrap{max-width:1180px;margin:0 auto;padding:32px 20px 56px;}
+  code{font-family:'SF Mono',Menlo,Consolas,monospace;font-size:.9em;background:#0d1730;border:1px solid var(--line);border-radius:5px;padding:1px 6px;color:#ffd9a0;overflow-wrap:anywhere;}
+  .mono{font-family:'SF Mono',Menlo,Consolas,monospace;}
+
+  .hero{border:1px solid var(--line);border-radius:16px;padding:30px 30px 26px;background:radial-gradient(1200px 400px at 20% -10%,#16264d 0%,transparent 60%),var(--panel);position:relative;overflow:hidden;}
+  .hero .tag{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.12em;color:var(--amber);border:1px solid #4a3a1f;background:#1b1722;border-radius:999px;padding:3px 12px;font-weight:500;}
+  .hero h1{font-size:30px;font-weight:700;margin:14px 0 8px;}
+  .hero h1 span{color:var(--amber);}
+  .hero p.sub{color:var(--sub);font-size:14px;max-width:860px;}
+  .metrics{display:flex;flex-wrap:wrap;gap:14px;margin-top:22px;}
+  .metric{flex:1 1 160px;min-width:150px;border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:var(--panel2);}
+  .metric .num{font-size:25px;font-weight:700;color:var(--blue);line-height:1.2;}
+  .metric .num small{font-size:13px;color:var(--sub);font-weight:400;}
+  .metric .cap{font-size:12px;color:var(--dim);margin-top:4px;}
+
+  section{margin-top:34px;}
+  .sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:14px;flex-wrap:wrap;}
+  .sec-head .idx{font-size:12px;font-weight:700;color:var(--amber);border:1px solid #4a3a1f;border-radius:6px;padding:2px 8px;background:#141c2e;}
+  .sec-head h2{font-size:19px;font-weight:700;}
+  .sec-head .note{font-size:12px;color:var(--dim);margin-left:auto;}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media(max-width:820px){.grid2{grid-template-columns:1fr;}}
+  .card{border:1px solid var(--line);border-radius:14px;padding:18px 20px;background:var(--panel);}
+  .card h3{font-size:15px;font-weight:700;margin-bottom:6px;}
+  .card p{font-size:14px;color:var(--sub);}
+  .card .hl{color:var(--txt);font-weight:500;}
+
+  .chartbox{border:1px solid var(--line);border-radius:14px;padding:16px;background:var(--panel);}
+  .chartbox h3{font-size:15px;font-weight:700;margin-bottom:2px;}
+  .chartbox .csub{font-size:12px;color:var(--dim);margin-bottom:10px;}
+  .chart{width:100%;height:340px;}
+  .chart.tall{height:440px;}
+  .grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;}
+  .mini{height:250px;}
+
+  .insights{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;}
+  .insight{border-left:3px solid var(--blue);border-radius:10px;background:var(--panel2);border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 16px;}
+  .insight.amber{border-left-color:var(--amber);}
+  .insight .t{font-size:13px;font-weight:700;color:var(--amber);}
+  .insight.amber .t{color:var(--blue);}
+  .insight .d{font-size:13px;color:var(--sub);margin-top:4px;}
+
+  table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:13px;}
+  .tbl{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel);}
+  .tbl th{background:#16213c;text-align:left;padding:10px 12px;font-size:12.5px;color:var(--sub);font-weight:500;border-bottom:1px solid var(--line);}
+  .tbl td{padding:9px 12px;border-bottom:1px solid #16213c;vertical-align:top;}
+  .tbl tr:last-child td{border-bottom:none;}
+  .tbl tr:hover td{background:#131d33;}
+  .src-flag{display:inline-block;padding:1px 8px;border-radius:999px;font-size:11.5px;font-weight:500;}
+  .f-amazon{background:#33270f;color:var(--amber);}
+  .f-other{background:#15203a;color:var(--blue);}
+  .ok{color:var(--green);}
+  .warn{color:var(--amber);}
+
+  .cmd{background:#0a1120;border:1px solid var(--line);border-radius:12px;padding:16px 18px;font-family:'SF Mono',Menlo,Consolas,monospace;font-size:12.8px;color:#cfe0ff;overflow-x:auto;line-height:1.8;}
+  .cmd .c{color:var(--amber);}
+  .cmd .cm{color:var(--dim);}
+
+  footer{margin-top:40px;border-top:1px solid var(--line);padding-top:16px;font-size:12px;color:var(--dim);}
+  @media(max-width:640px){
+    .wrap{padding:20px 14px 40px;}
+    .hero{padding:22px 18px;}
+    .hero h1{font-size:24px;}
+    .chart{height:300px;}
+    .tbl table{min-width:640px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ===================== HERO ===================== -->
+  <div class="hero">
+    <span class="tag">SOURCE ANALYSIS · MatrAIx Persona 1M · FULL-SCALE</span>
+    <h1>Amazon 数据源：<span>97,915 人全景</span>画像报告</h1>
+    <p class="sub">直接解码本地 <code>matraix-persona-1m</code> release（999,847 行 parquet）中的全部 <code>source: amazon</code> 记录，逐一还原 1,290 维属性并统计值分布。解码口径经官方 <code>populated_attribute_count</code> 逐行核对（25.32 = 25.32，完全一致）。</p>
+    <div class="metrics">
+      <div class="metric"><div class="num">97,915 <small>人</small></div><div class="cap">1M 中 Amazon 来源全部记录</div></div>
+      <div class="metric"><div class="num">25.3 <small>维/人</small></div><div class="cap">中位 20 · P75 35 · 稀疏聚焦</div></div>
+      <div class="metric"><div class="num">44 <small>条/人</small></div><div class="cap">评论量中位（均值 53.5）</div></div>
+      <div class="metric"><div class="num">9.8% <small></small></div><div class="cap">占 1M 的份额（全量保留）</div></div>
+    </div>
+  </div>
+
+  <!-- ===================== 1 数据源背景 ===================== -->
+  <section>
+    <div class="sec-head"><span class="idx">01</span><h2>数据源是什么</h2></div>
+    <div class="grid2">
+      <div class="card">
+        <h3>官方定义（ProductSpec）</h3>
+        <p><span class="hl">Amazon Review</span> —— “按时间排序的评论历史”。由 <span class="hl">Qwen3.6 medium_b</span> 提取并经过 schema sanitizer 清洗，翻译到 1,290 字段契约。原始 <span class="hl">100,000 条</span>，经质量过滤与 MinHash 去重后 <span class="hl">97,915 条全部保留</span> 进入 1M coreset（官方规则：All retained rows，不抽样）。</p>
+      </div>
+      <div class="card">
+        <h3>记录级证据（metadata）</h3>
+        <p>每行 parquet 自带 <code>metadata_json</code>，本报告全量读取了全部 97,915 行——这是真实消费者行为痕迹，而非问卷或百科文本：</p>
+        <p style="margin-top:8px;line-height:2;">
+          · <code>user_id</code> — Amazon 用户 ID<br>
+          · <code>review_count</code> — 该用户评论条数（中位 44、最多 720）<br>
+          · <code>user_bucket</code> — 用户分桶<br>
+          · <code>prompt_variant: medium_b</code> — 提取配置
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 2 1M 构成 ===================== -->
+  <section>
+    <div class="sec-head"><span class="idx">02</span><h2>在 1M coreset 中的位置</h2><span class="note">实读 10 个 parquet 分片逐行统计</span></div>
+    <div class="chartbox">
+      <h3>1M 来源构成（999,847 行）</h3>
+      <div class="csub">amazon 97,915（9.8%）—— 五大人类接地来源中排行第三</div>
+      <div id="chart-src" class="chart" style="height:380px;"></div>
+    </div>
+  </section>
+
+  <!-- ===================== 3 人口统计 ===================== -->
+  <section>
+    <div class="sec-head"><span class="idx">03</span><h2>人口统计分布</h2><span class="note">覆盖率普遍 &lt;12% —— 评论历史很少直接透露人口学信息，属文本推断的自然局限</span></div>
+    <div class="grid4">
+      <div class="chartbox"><h3>年龄段</h3><div class="csub">覆盖 6.3% · 55+ 占已标注 61.8%</div><div id="ch-age" class="mini"></div></div>
+      <div class="chartbox"><h3>性别</h3><div class="csub">覆盖 7.0% · 女性占 72.9%</div><div id="ch-gender" class="mini"></div></div>
+      <div class="chartbox"><h3>区域</h3><div class="csub">覆盖 11.6% · 北美占 98.5%</div><div id="ch-region" class="mini"></div></div>
+      <div class="chartbox"><h3>城乡</h3><div class="csub">覆盖 6.4% · 郊区为主</div><div id="ch-urban" class="mini"></div></div>
+    </div>
+  </section>
+
+  <!-- ===================== 4 态度与决策 ===================== -->
+  <section>
+    <div class="sec-head"><span class="idx">04</span><h2>核心态度与决策分布</h2><span class="note">100% 堆叠 · 悬停查看人数</span></div>
+    <div class="chartbox">
+      <h3>10 个代表性维度 · 已标注取值占比</h3>
+      <div class="csub">在线评论积极 97.6% · 价值驱动 92.5% · 分析型 98.3% · 核验型 80.8% · 口语化 98.6%</div>
+      <div id="chart-vals" class="chart tall"></div>
+    </div>
+  </section>
+
+  <!-- ===================== 5 维度覆盖 ===================== -->
+  <section>
+    <div class="sec-head"><span class="idx">05</span><h2>维度覆盖 Top 15</h2><span class="note">覆盖率 = 有值人数 / 97,915</span></div>
+    <div class="chartbox">
+      <h3>哪些维度最常被提取</h3>
+      <div class="csub">集中于态度（Worldview）、决策（Risk &amp; Decision）、行为（Behavior）三类，而非人口统计</div>
+      <div id="chart-dims" class="chart tall"></div>
+    </div>
+  </section>
+
+  <!-- ===================== 6 画像洞察 ===================== -->
+  <section>
+    <div class="sec-head"><span class="idx">06</span><h2>画像洞察（全量证据）</h2></div>
+    <div class="insights">
+      <div class="insight"><div class="t">真实活跃评论者</div><div class="d">评论量中位 44 条、均值 53.5、最多 720 条——这不是问卷受访者，而是持续写评论的 Amazon 用户。</div></div>
+      <div class="insight amber"><div class="t">信任评论生态</div><div class="d">在线评论态度 97.6% 积极（35,062/35,928），仅 1.8% 怀疑——天然适合评价采纳、口碑传播类场景。</div></div>
+      <div class="insight"><div class="t">价值驱动 + 成本敏感</div><div class="d">经济动机 92.5% 价值驱动、另有 7.4% 成本敏感；消费储蓄 99.9% 平衡或节俭——性价比是主线。</div></div>
+      <div class="insight amber"><div class="t">分析型 + 核验型</div><div class="d">决策风格 98.3% 分析型；信任级别 80.8% 核验中（17,939）——会查证、会对比的谨慎消费者。</div></div>
+      <div class="insight"><div class="t">口语化、移动端</div><div class="d">语域 98.6% 口语（10,675）；设备上下文移动 63.4%（6,324）——用生活语言、在路上提问。</div></div>
+      <div class="insight amber"><div class="t">认知：具体、细节、少提问</div><div class="d">抽象度 98.9% 具体或非常具体；细节导向高；提问频率 89.3% 很少提问——要直接可操作的答案。</div></div>
+      <div class="insight"><div class="t">AI 态度：中立为主</div><div class="d">att_ai 覆盖 5.8%，其中 70.1% 中立、24.1% 积极——对 AI 不狂热也不排斥，适合做中立基线人群。</div></div>
+      <div class="insight amber"><div class="t">人口学：稀疏、偏年长且偏北美</div><div class="d">年龄/性别/区域覆盖率均 &lt;12%；已标注样本 72.9% 女性、98.5% 北美；年龄偏年长——55+ 占已标注的 61.8%（55–64 岁 2,649、65+ 1,130）——抽样时需按需补充分层。</div></div>
+    </div>
+  </section>
+
+  <!-- ===================== 7 示例 vs 全景 ===================== -->
+  <section>
+    <div class="sec-head"><span class="idx">07</span><h2>29 人示例 vs 97,915 人全景</h2><span class="note">dev-sample 是 1M 的展示子集，其画像代表性如何？</span></div>
+    <div class="tbl" style="overflow-x:auto;">
+      <table>
+        <colgroup><col style="width:24%"><col style="width:20%"><col style="width:24%"><col style="width:32%"></colgroup>
+        <thead><tr><th>维度</th><th>dev-sample 29 人</th><th>1M 全景 97,915 人</th><th>一致性</th></tr></thead>
+        <tbody>
+          <tr><td>人均维度覆盖</td><td class="mono">29.2</td><td class="mono">25.3（中位 20）</td><td class="ok">接近 · 示例略高</td></tr>
+          <tr><td>在线评论积极</td><td class="mono">100%（18/18）</td><td class="mono">97.6%</td><td class="ok">一致</td></tr>
+          <tr><td>价值驱动</td><td class="mono">100%（7/7）</td><td class="mono">92.5%</td><td class="ok">一致</td></tr>
+          <tr><td>分析型决策</td><td class="mono">100%（9/9）</td><td class="mono">98.3%</td><td class="ok">一致</td></tr>
+          <tr><td>核验型信任</td><td class="mono">87.5%（7/8）</td><td class="mono">80.8%</td><td class="ok">一致</td></tr>
+          <tr><td>女性占比</td><td class="mono">21%（约）</td><td class="mono">72.9%</td><td class="warn">偏差 · 示例抽取偏男性</td></tr>
+          <tr><td>维度主题</td><td>消费决策 + 认知风格</td><td>态度/决策/行为三大类</td><td class="ok">一致</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===================== 8 使用 ===================== -->
+  <section>
+    <div class="sec-head"><span class="idx">08</span><h2>在 MatrAIx 中使用 Amazon 人群</h2></div>
+    <div class="card">
+      <h3>直接调用 1M 中的全部 amazon</h3>
+      <div class="cmd" style="margin-top:10px;">
+<span class="cm"># 1M 池 · 仅 amazon 来源 · 随机抽 100 人 · 生成 Job Recipe YAML</span><br>
+uv run python application/scripts/generate_application_job.py \<br>
+&nbsp;&nbsp;--task application/tasks/example-survey_product-feedback \<br>
+&nbsp;&nbsp;--execution-mode auto \<br>
+&nbsp;&nbsp;<span class="c">--dataset persona/datasets/matraix-persona-1m</span> \<br>
+&nbsp;&nbsp;<span class="c">--sources amazon</span> --sample-size 100 --seed 42
+      </div>
+      <p style="margin-top:10px;">也可在 Playground 人群配置区：数据集切换为 <code>matraix-persona-1m</code>，来源筛选只勾 Amazon。注意：amazon 人口统计覆盖稀疏且偏北美/女性/年长，做均衡样本时建议叠加 <code>--stratify dimensions.age_bracket</code> 或维度过滤补充分层。</p>
+    </div>
+  </section>
+
+  <footer>
+    数据口径：分析对象为本地 <code>matraix-persona-1m/release</code>（persona-1m-0003/0004 分片）中全部 97,915 行 <code>source: amazon</code>；属性按 persona_codes.schema.json（nibble 低位优先 + null_bitmap 反相 + code 直索引）解码，并应用 <code>attribute_overrides</code>（1,130 条 age_bracket 修正为 65+，原始编码误标 Under 5）；中文标签取自 <code>dimensions.labels.zh-Hans.json</code>；来源规模取自 release/manifest.json / audit.json / README（Amazon Reviews 2023，McAuley Lab）并经逐行复算。覆盖率 = 该维度有值人数 / 97,915。解码正确性三重官方验证：① 与官方 <code>_unpack_nibbles</code> / <code>decode_persona_1m.py</code> 逐位一致；② validation-subset 权威真值 persona_0001 全 96 维度匹配、0 差异；③ 官方预解码 sample.parquet 97 个 amazon 行 2,005 个非空单元格 100% 匹配。官方明示"human-grounded ≠ verified"（模型提取可含噪声）且真实源保留自身分布、不具人群代表性。生成时间：2026-09-17。图表由 ECharts 渲染，数据为一次性本地快照。
+  </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+<script>
+/* ===== 数据（来自 results/amazon_1m_analysis.json 本地快照，已按 manifest 复算） ===== */
+const SRCS = [
+  {s:"synthetic", name:"合成 synthetic", n:400000}, {s:"wiki", name:"Wikipedia", n:323438},
+  {s:"stackoverflow", name:"Stack Overflow", n:113120}, {s:"amazon", name:"Amazon Review", n:97915},
+  {s:"gss", name:"GSS", n:63532}, {s:"prism", name:"PRISM", n:1487}, {s:"real_human_survey", name:"Real Human Survey", n:355}
+];
+const DEMO = {
+  "年龄": [["55–64 岁",2649],["65+",1130],["35–44 岁",881],["45–54 岁",749],["25–34 岁",452],["18–24 岁",247],["13–17 岁",20]],
+  "性别": [["女性",5002],["男性",1855],["非二元",8],["自我描述",7]],
+  "区域": [["北美",11185],["拉丁美洲",98],["西欧",50],["大洋洲",21]],
+  "城乡": [["郊区",4800],["高密度城区",800],["乡村",539],["小城镇",90]]
+};
+const VALS = [
+  {dim:"态度：在线评论（36.7%）", items:[["持积极态度",35062,"#ffb454"],["持怀疑态度",644,"#f87171"],["非常热衷",215,"#5b8cff"],["中立",7,"#94a3b8"]]},
+  {dim:"技术熟练度（30.0%）", items:[["使用熟练",26788,"#4ade80"],["谨慎采用",1253,"#f87171"],["不太愿意采用",1074,"#94a3b8"],["数字原住民",227,"#5b8cff"]]},
+  {dim:"信任级别（22.7%）", items:[["核验中",17939,"#5b8cff"],["信任",2350,"#4ade80"],["怀疑",1931,"#f87171"]]},
+  {dim:"品牌忠诚度（20.4%）", items:[["持积极态度",13961,"#ffb454"],["持怀疑态度",3344,"#f87171"],["中立",2242,"#94a3b8"],["非常热衷",442,"#5b8cff"]]},
+  {dim:"决策风格（19.0%）", items:[["分析型",18316,"#4ade80"],["直觉型",249,"#94a3b8"],["审慎型",68,"#5b8cff"]]},
+  {dim:"时间压力（17.8%）", items:[["不着急",14578,"#5b8cff"],["有截止期限",1880,"#f87171"],["中等",942,"#94a3b8"]]},
+  {dim:"提问复杂度（17.6%）", items:[["简单事实问答",17059,"#4ade80"],["多步处理",108,"#5b8cff"],["开放式创作",91,"#94a3b8"]]},
+  {dim:"消费与储蓄（15.1%）", items:[["平衡",11745,"#5b8cff"],["节俭储蓄型",3060,"#ffb454"]]},
+  {dim:"经济动机（14.3%）", items:[["价值驱动",12964,"#4ade80"],["成本敏感",1035,"#ffb454"]]},
+  {dim:"认知闭合需求（16.4%）", items:[["高",11742,"#5b8cff"],["平均",3125,"#94a3b8"],["低",1159,"#f87171"]]}
+];
+const DIMS = [
+  ["态度：在线评论",36.7],["技术熟练度",30.0],["专业水平关系",24.8],["信任级别",22.7],
+  ["态度：品牌忠诚",20.4],["情绪状态",19.6],["决策风格",19.0],["时间压力",17.8],
+  ["提问复杂度",17.6],["性格：洞察力",17.1],["性格：社交智慧",16.4],["认知闭合需求",16.4],
+  ["态度：新技术",15.1],["消费与储蓄",15.1],["兴趣：烹饪",15.0]
+];
+
+const AXIS = {axisLine:{lineStyle:{color:"#2a3a5e"}},axisLabel:{color:"#93a5c4",fontSize:11},splitLine:{lineStyle:{color:"#16213c"}}};
+const dark = {backgroundColor:"transparent",textStyle:{color:"#e6edf7"}};
+function init(id){ return echarts.init(document.getElementById(id), null, {renderer:"canvas"}); }
+
+/* 图1：1M 构成环形 */
+(function(){
+  const ch = init("chart-src");
+  const data = SRCS.map(r=>({name:r.name, value:r.n,
+    itemStyle:{color:r.s==="amazon"?"#ffb454":r.s==="synthetic"?"#2f4a7a":"#22355c"}}));
+  ch.setOption(Object.assign({}, dark, {
+    tooltip:{trigger:"item",backgroundColor:"#0d1730",borderColor:"#2a3a5e",textStyle:{color:"#e6edf7",fontSize:12},
+      formatter:function(p){return p.name+"：<b>"+p.value.toLocaleString()+"</b> 行（"+(p.value/999847*100).toFixed(1)+"%）";}},
+    legend:{orient:"vertical",right:0,top:"middle",textStyle:{color:"#93a5c4",fontSize:12},
+      formatter:function(n){const hit=SRCS.find(x=>x.name===n);return hit?n+"  "+(hit.n/999847*100).toFixed(1)+"%":n;}},
+    series:[{type:"pie",radius:["38%","68%"],center:["38%","50%"],avoidLabelOverlap:true,
+      itemStyle:{borderColor:"#0b1220",borderWidth:2},
+      label:{show:false}, emphasis:{label:{show:false}},
+      data:data}]
+  }));
+})();
+
+/* 人口统计 4 小图 */
+(function(){
+  const map = {"ch-age":"年龄","ch-gender":"性别","ch-region":"区域","ch-urban":"城乡"};
+  Object.keys(map).forEach(function(id){
+    const ch = init(id);
+    const items = DEMO[map[id]];
+    const max = items[0][1];
+    ch.setOption(Object.assign({}, dark, {
+      tooltip:{trigger:"axis",axisPointer:{type:"shadow"},backgroundColor:"#0d1730",borderColor:"#2a3a5e",textStyle:{color:"#e6edf7",fontSize:12},
+        formatter:function(ps){const p=ps[0];return p.name+"：<b>"+p.value.toLocaleString()+"</b> 人";}},
+      grid:{left:6,right:34,top:4,bottom:4,containLabel:true},
+      xAxis:Object.assign({type:"value",max:max*1.12,show:false},AXIS),
+      yAxis:Object.assign({type:"category",inverse:true,data:items.map(x=>x[0]),axisLabel:{color:"#c6d5f5",fontSize:11.5},axisLine:{show:false}},AXIS),
+      series:[{type:"bar",barWidth:12,data:items.map(x=>({value:x[1],itemStyle:{color:"#5b8cff"}})),
+        label:{show:true,position:"right",color:"#9fb3d1",fontSize:10.5,formatter:function(p){return p.value.toLocaleString();}}}]
+    }));
+  });
+})();
+
+/* 图：态度决策堆叠 */
+(function(){
+  const ch = init("chart-vals");
+  const dims = VALS.map(v=>v.dim);
+  const maxLen = Math.max(...VALS.map(v=>v.items.length));
+  const series = [];
+  for(let i=0;i<maxLen;i++){
+    series.push({name:"v"+i,type:"bar",stack:"t",barWidth:16,
+      data:VALS.map(v=>v.items[i]?{value:v.items[i][1],itemStyle:{color:v.items[i][2]}}:0),
+      label:{show:false}});
+  }
+  ch.setOption(Object.assign({}, dark, {
+    tooltip:{trigger:"axis",axisPointer:{type:"shadow"},backgroundColor:"#0d1730",borderColor:"#2a3a5e",textStyle:{color:"#e6edf7",fontSize:12},
+      formatter:function(ps){
+        const idx = ps[0].dataIndex; const v = VALS[idx];
+        const lines = v.items.map(it=>`<span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:${it[2]};margin-right:6px;"></span>${it[0]}：<b>${it[1].toLocaleString()}</b>（${(it[1]/(v.items.reduce((a,b)=>a+b[1],0))*100).toFixed(1)}%）`).join("<br>");
+        return v.dim+"<br>"+lines;
+      }},
+    grid:{left:8,right:30,top:8,bottom:8,containLabel:true},
+    legend:{show:false},
+    xAxis:Object.assign({type:"value",max:36000,show:false},AXIS),
+    yAxis:Object.assign({type:"category",inverse:true,data:dims,axisLabel:{color:"#c6d5f5",fontSize:12.5},axisLine:{show:false}},AXIS),
+    series:series
+  }));
+})();
+
+/* 图：维度覆盖 */
+(function(){
+  const ch = init("chart-dims");
+  const data = DIMS.map(d=>({name:d[0], value:d[1], itemStyle:{color:d[1]>=20?"#ffb454":"#5b8cff"}})).reverse();
+  ch.setOption(Object.assign({}, dark, {
+    tooltip:{trigger:"axis",axisPointer:{type:"shadow"},backgroundColor:"#0d1730",borderColor:"#2a3a5e",textStyle:{color:"#e6edf7",fontSize:12},
+      formatter:function(ps){const p=ps[0];return p.name+"：<b>"+p.value+"%</b>（约 "+(p.value/100*97915).toLocaleString()+" 人）";}},
+    grid:{left:8,right:50,top:8,bottom:8,containLabel:true},
+    xAxis:Object.assign({type:"value",max:40,axisLabel:{color:"#93a5c4",fontSize:11,formatter:function(v){return v+"%";}}},AXIS),
+    yAxis:Object.assign({type:"category",data:data.map(d=>d.name),axisLabel:{color:"#c6d5f5",fontSize:12},axisLine:{show:false}},AXIS),
+    series:[{type:"bar",data:data,barWidth:13,
+      label:{show:true,position:"right",color:"#9fb3d1",fontSize:11,formatter:function(p){return p.value+"%";}}}]
+  }));
+})();
+
+window.addEventListener("resize", function(){
+  ["chart-src","ch-age","ch-gender","ch-region","ch-urban","chart-vals","chart-dims"].forEach(id=>{
+    const el=document.getElementById(id); if(el&&el._echarts) el._echarts.resize();
+  });
+});
+</script>
+</body>
+</html>

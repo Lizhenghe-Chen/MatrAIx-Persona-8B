@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazon 数据源分析报告 · MatrAIx Persona 8B</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b1220'/%3E%3Ccircle cx='11' cy='12' r='4' fill='%235b8cff'/%3E%3Cpath d='M5 26c1-6 4-9 12-9s11 3 12 9' fill='none' stroke='%23ffb454' stroke-width='2.4'/%3E%3Ccircle cx='24' cy='9' r='2.6' fill='%23ffb454'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --bg:#0b1220; --panel:#111a2e; --panel2:#0e1626; --line:#1f2c47;
+    --txt:#e6edf7; --sub:#93a5c4; --dim:#5f7399;
+    --blue:#5b8cff; --amber:#ffb454; --green:#4ade80; --red:#f87171;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--txt);font-family:'Noto Sans SC',-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;line-height:1.65;}
+  .wrap{max-width:1180px;margin:0 auto;padding:32px 20px 56px;}
+  code{font-family:'SF Mono',Menlo,Consolas,monospace;font-size:.9em;background:#0d1730;border:1px solid var(--line);border-radius:5px;padding:1px 6px;color:#ffd9a0;overflow-wrap:anywhere;}
+  .mono{font-family:'SF Mono',Menlo,Consolas,monospace;}
+
+  /* hero */
+  .hero{border:1px solid var(--line);border-radius:16px;padding:30px 30px 26px;background:radial-gradient(1200px 400px at 20% -10%,#16264d 0%,transparent 60%),var(--panel);position:relative;overflow:hidden;}
+  .hero .tag{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.12em;color:var(--amber);border:1px solid #4a3a1f;background:#1b1722;border-radius:999px;padding:3px 12px;font-weight:500;}
+  .hero h1{font-size:30px;font-weight:700;margin:14px 0 8px;letter-spacing:.01em;}
+  .hero h1 span{color:var(--amber);}
+  .hero p.sub{color:var(--sub);font-size:14px;max-width:820px;}
+  .metrics{display:flex;flex-wrap:wrap;gap:14px;margin-top:22px;}
+  .metric{flex:1 1 160px;min-width:140px;border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:var(--panel2);}
+  .metric .num{font-size:26px;font-weight:700;color:var(--blue);line-height:1.2;}
+  .metric .num small{font-size:14px;color:var(--sub);font-weight:400;}
+  .metric .cap{font-size:12px;color:var(--dim);margin-top:4px;}
+
+  /* section */
+  section{margin-top:34px;}
+  .sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:14px;}
+  .sec-head .idx{font-size:12px;font-weight:700;color:var(--amber);border:1px solid #4a3a1f;border-radius:6px;padding:2px 8px;background:#141c2e;}
+  .sec-head h2{font-size:19px;font-weight:700;}
+  .sec-head .note{font-size:12px;color:var(--dim);margin-left:auto;}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media(max-width:820px){.grid2{grid-template-columns:1fr;}}
+  .card{border:1px solid var(--line);border-radius:14px;padding:18px 20px;background:var(--panel);}
+  .card h3{font-size:15px;font-weight:700;margin-bottom:6px;}
+  .card p{font-size:14px;color:var(--sub);}
+  .card .hl{color:var(--txt);font-weight:500;}
+
+  .chartbox{border:1px solid var(--line);border-radius:14px;padding:16px;background:var(--panel);}
+  .chartbox h3{font-size:15px;font-weight:700;margin-bottom:2px;}
+  .chartbox .csub{font-size:12px;color:var(--dim);margin-bottom:10px;}
+  .chart{width:100%;height:340px;}
+  .chart.tall{height:420px;}
+
+  /* insights */
+  .insights{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;}
+  .insight{border-left:3px solid var(--blue);border-radius:10px;background:var(--panel2);border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 16px;}
+  .insight.amber{border-left-color:var(--amber);}
+  .insight .t{font-size:13px;font-weight:700;color:var(--amber);}
+  .insight.amber .t{color:var(--blue);}
+  .insight .d{font-size:13px;color:var(--sub);margin-top:4px;}
+
+  /* table */
+  table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:13px;}
+  .tbl{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel);}
+  .tbl th{background:#16213c;text-align:left;padding:10px 12px;font-size:12.5px;color:var(--sub);font-weight:500;border-bottom:1px solid var(--line);}
+  .tbl td{padding:9px 12px;border-bottom:1px solid #16213c;vertical-align:top;}
+  .tbl tr:last-child td{border-bottom:none;}
+  .tbl tr:hover td{background:#131d33;}
+  .src-flag{display:inline-block;padding:1px 8px;border-radius:999px;font-size:11.5px;font-weight:500;}
+  .f-amazon{background:#33270f;color:var(--amber);}
+  .f-other{background:#15203a;color:var(--blue);}
+
+  /* persona list */
+  .searchbar{display:flex;gap:10px;margin-bottom:12px;flex-wrap:wrap;}
+  .searchbar input{flex:1 1 260px;background:var(--panel2);border:1px solid var(--line);color:var(--txt);border-radius:9px;padding:9px 14px;font-size:16px;outline:none;}
+  .searchbar input:focus{border-color:var(--blue);}
+  .searchbar .count{font-size:12.5px;color:var(--dim);align-self:center;}
+
+  /* usage */
+  .cmd{background:#0a1120;border:1px solid var(--line);border-radius:12px;padding:16px 18px;font-family:'SF Mono',Menlo,Consolas,monospace;font-size:12.8px;color:#cfe0ff;overflow-x:auto;line-height:1.8;}
+  .cmd .c{color:var(--amber);}
+  .cmd .cm{color:var(--dim);}
+
+  footer{margin-top:40px;border-top:1px solid var(--line);padding-top:16px;font-size:12px;color:var(--dim);}
+  @media(max-width:640px){
+    .wrap{padding:20px 14px 40px;}
+    .hero{padding:22px 18px;}
+    .hero h1{font-size:24px;}
+    .chart{height:300px;}
+    .tbl table{min-width:600px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ===================== HERO ===================== -->
+  <div class="hero">
+    <span class="tag">SOURCE ANALYSIS · MatrAIx Persona 8B</span>
+    <h1>Amazon 数据源：<span>消费决策人群</span>画像报告</h1>
+    <p class="sub">基于仓库内 <code>matraix-persona-dev-sample</code> 池的 29 个 <code>source: amazon</code> persona 逐一解析，结合官方管道元数据（<code>persona/post_process/dataset_statistics/profile_datasets.py</code>）与 1,290 维 schema 中文标签，统计维度覆盖与值分布。</p>
+    <div class="metrics">
+      <div class="metric"><div class="num">29 <small>人</small></div><div class="cap">Amazon 来源 persona</div></div>
+      <div class="metric"><div class="num">29.2 <small>维/人</small></div><div class="cap">平均维度覆盖（稀疏聚焦）</div></div>
+      <div class="metric"><div class="num">100,000 <small>条</small></div><div class="cap">原始 Amazon Review 记录（全量）</div></div>
+      <div class="metric"><div class="num">100% <small></small></div><div class="cap">源自 Persona 1M（origin: amazon-*）</div></div>
+    </div>
+  </div>
+
+  <!-- ===================== 1 数据源背景 ===================== -->
+  <section>
+    <div class="sec-head"><span class="idx">01</span><h2>数据源是什么</h2></div>
+    <div class="grid2">
+      <div class="card">
+        <h3>官方定义（ProductSpec）</h3>
+        <p><span class="hl">Amazon Review</span> —— “按时间排序的评论历史”（chronological review histories）。由 <span class="hl">Qwen3.6 medium_b</span> 提取并经过 schema sanitizer 清洗，翻译到 1,290 字段契约；规模 <span class="hl">100,000 条、全量保留</span>，最终由 256 个 bucket 组装（167 续写 + 89 源桶）。</p>
+      </div>
+      <div class="card">
+        <h3>数据性质与溯源</h3>
+        <p>与 GSS（调查问卷）、Wiki（百科人物）、StackOverflow（开发者调查）不同，Amazon 源是<span class="hl">真实世界的消费者行为痕迹</span>——商品评论历史。本池 29 人全部带 <code>provenance</code>：父池 <span class="hl">matraix-persona-1m</span>、HF 仓库 <code>MatrAIx2026/MatrAIx_Persona_1M_Public_Release</code>、原始 ID 前缀 <code>amazon-*</code>。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 2 池子构成 ===================== -->
+  <section>
+    <div class="sec-head"><span class="idx">02</span><h2>在 7 大来源中的位置</h2><span class="note">n 均约 28–29 人；关键差异在“人均维度覆盖”</span></div>
+    <div class="chartbox">
+      <h3>人均维度覆盖对比（对数刻度）</h3>
+      <div class="csub">amazon 29.2 维 vs synthetic 1,290 维 —— 真实痕迹数据的“稀疏但聚焦”特征</div>
+      <div id="chart-src" class="chart tall"></div>
+    </div>
+  </section>
+
+  <!-- ===================== 3 维度覆盖 ===================== -->
+  <section>
+    <div class="sec-head"><span class="idx">03</span><h2>Amazon 画像的维度覆盖</h2><span class="note">覆盖率 ≥ 21%（6/29 人）的维度</span></div>
+    <div class="chartbox">
+      <h3>Top 维度 · 覆盖人数</h3>
+      <div class="csub">高度集中在消费决策、态度与认知风格，而非人口统计</div>
+      <div id="chart-dims" class="chart"></div>
+    </div>
+  </section>
+
+  <!-- ===================== 4 值分布 ===================== -->
+  <section>
+    <div class="sec-head"><span class="idx">04</span><h2>核心维度的取值分布</h2><span class="note">100% 堆叠 · 悬停查看人数</span></div>
+    <div class="chartbox">
+      <h3>8 个代表性维度 · 已标注取值占比</h3>
+      <div class="csub">Amazon 评论者的典型画像：在线评论积极、价值驱动、分析型决策、核验型信任</div>
+      <div id="chart-vals" class="chart"></div>
+    </div>
+  </section>
+
+  <!-- ===================== 5 画像洞察 ===================== -->
+  <section>
+    <div class="sec-head"><span class="idx">05</span><h2>画像洞察</h2></div>
+    <div class="insights">
+      <div class="insight"><div class="t">评论者：在线评论 100% 积极</div><div class="d">覆盖 18/29 人，全部持积极态度（Positive）——天然适合电商评价、评论采纳类场景模拟。</div></div>
+      <div class="insight amber"><div class="t">决策：分析型 + 核验型信任</div><div class="d">decision_style 全为 Analytical；trust_level 以 Verifying（核验中）为主——会查证、会对比的谨慎消费者。</div></div>
+      <div class="insight"><div class="t">动机：价值驱动 + 节俭倾向</div><div class="d">economic_motivation 全为 Value-driven；消费储蓄偏 Balanced / Frugal saver——价格敏感、看重性价比。</div></div>
+      <div class="insight amber"><div class="t">技术：熟练但新事物谨慎</div><div class="d">tech_savviness 全为 Comfortable；att_new_technology 积极为主、少量 Skeptical——会用但不盲从。</div></div>
+      <div class="insight"><div class="t">时间：不赶时间、问题简单</div><div class="d">time_pressure 多为 No rush；query_complexity 以 Simple factual 为主——从容、直接的具体问题。</div></div>
+      <div class="insight amber"><div class="t">认知：具体、细节、低提问</div><div class="d">cog_abstraction 偏 Concrete、细节导向 High、提问频率 Rarely asks——表达直接、看重可操作信息。</div></div>
+      <div class="insight"><div class="t">生活：健康事件与照护角色</div><div class="d">major_life_events 以 Health journey 为主；照护者身份（老人/儿童）各 3 人——健康与家庭场景覆盖。</div></div>
+      <div class="insight amber"><div class="t">人口学：稀疏但真实</div><div class="d">region 以北美为主，偶见年龄/性别/城乡——文本提取的自然后果，不构成均衡样本，抽样时需自行分层。</div></div>
+    </div>
+  </section>
+
+  <!-- ===================== 6 来源对比 ===================== -->
+  <section>
+    <div class="sec-head"><span class="idx">06</span><h2>来源对比</h2></div>
+    <div class="tbl" style="overflow-x:auto;">
+      <table>
+        <colgroup><col style="width:15%"><col style="width:30%"><col style="width:16%"><col style="width:12%"><col style="width:27%"></colgroup>
+        <thead><tr><th>来源</th><th>原始数据</th><th>处理规模</th><th>人均维度</th><th>画像特征</th></tr></thead>
+        <tbody id="src-tbl-body"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===================== 7 29 人清单 ===================== -->
+  <section>
+    <div class="sec-head"><span class="idx">07</span><h2>29 个 Amazon persona 明细</h2><span class="note">输入过滤 · 点击表头无操作</span></div>
+    <div class="searchbar">
+      <input id="search" type="text" placeholder="按名字 / ID / 维度过滤，如 Quinn、0050、决策风格">
+      <span class="count" id="list-count">29 / 29</span>
+    </div>
+    <div class="tbl" style="overflow-x:auto;">
+      <table>
+        <colgroup><col style="width:8%"><col style="width:13%"><col style="width:8%"><col style="width:22%"><col style="width:49%"></colgroup>
+        <thead><tr><th>ID</th><th>名字</th><th>维度数</th><th>原始 ID</th><th>代表维度（前 6 项）</th></tr></thead>
+        <tbody id="persona-tbl-body"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===================== 8 使用 ===================== -->
+  <section>
+    <div class="sec-head"><span class="idx">08</span><h2>在 MatrAIx 中只使用 Amazon 人群</h2></div>
+    <div class="card">
+      <h3>CLI 一行命令</h3>
+      <div class="cmd" style="margin-top:10px;">
+<span class="cm"># 仅 amazon 来源 · 随机抽 10 人 · 生成 Job Recipe YAML</span><br>
+uv run python application/scripts/generate_application_job.py \<br>
+&nbsp;&nbsp;--task application/tasks/example-survey_product-feedback \<br>
+&nbsp;&nbsp;--execution-mode auto \<br>
+&nbsp;&nbsp;<span class="c">--sources amazon</span> --sample-size 10 --seed 42
+      </div>
+      <p style="margin-top:10px;">也可写入任务级 <code>persona_strategy.json</code> 的 <code>"sources": ["amazon"]</code>，或在 Playground 来源筛选（Sources chips）中只勾选 Amazon。想用更大规模的 Amazon 人群，导入官方 Persona 1M 后加 <code>--dataset persona/datasets/matraix-persona-1m</code>。</p>
+    </div>
+  </section>
+
+  <footer>
+    数据口径：分析对象为 <code>matraix-persona-dev-sample</code>（200 个 persona）中 29 个 <code>source: amazon</code> persona；维度中文标签取自 <code>persona/schema/labels/dimensions.labels.zh-Hans.json</code>；原始数据定义取自 <code>profile_datasets.py</code> 的 ProductSpec。覆盖率 = 该维度出现人数 / 29。生成时间：2026-09-17。图表由 ECharts 渲染，数据为一次性本地快照。
+  </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+<script>
+/* ===== 数据（来自 results/amazon_source_analysis.json 的本地快照） ===== */
+const SRCS = [
+  {s:"synthetic", n:28, dims:1290.0, label:"合成 (synthetic)"},
+  {s:"real_human_survey", n:28, dims:1272.8, label:"真实人类调查"},
+  {s:"wiki", n:29, dims:384.1, label:"Wikipedia"},
+  {s:"prism", n:28, dims:190.2, label:"PRISM"},
+  {s:"stackoverflow", n:29, dims:70.8, label:"Stack Overflow"},
+  {s:"amazon", n:29, dims:29.2, label:"Amazon Review"},
+  {s:"gss", n:29, dims:14.8, label:"GSS"},
+];
+const SRCTABLE = [
+  {s:"amazon", flag:"amazon", raw:"Amazon 商品评论历史", scale:"100,000（全量）", dims:"29.2", feat:"消费决策、评论态度、认知风格"},
+  {s:"wiki", raw:"Wikipedia 人物档案", scale:"212 万（抽样）", dims:"384.1", feat:"职业、行业、文化背景"},
+  {s:"stackoverflow", raw:"2023–2025 开发者调查", scale:"113,335（全量）", dims:"70.8", feat:"开发者角色、经验、AI 态度"},
+  {s:"gss", raw:"NORC 综合社会调查 1972–2024", scale:"75,699（全量）", dims:"14.8", feat:"人口统计（婚姻、子女、就业）"},
+  {s:"prism", raw:"PRISM 参与者调查", scale:"1,500（全量）", dims:"190.2", feat:"人口 + 心理综合"},
+  {s:"real_human_survey", raw:"真实人类调查", scale:"—", dims:"1272.8", feat:"接近全维度"},
+  {s:"synthetic", raw:"依赖感知合成生成", scale:"—", dims:"1290.0", feat:"全 1,290 维覆盖"},
+];
+const DIMS = [
+  ["态度：在线评论",18],["决策风格",9],["信任级别",8],["技术熟练度",8],["时间压力",8],["态度：品牌忠诚度",8],
+  ["兴趣：健身",7],["认知闭合需求",7],["提问复杂度",7],["消费与储蓄",7],["经济动机",7],
+  ["幽默风格",6],["耐心",6],["好奇心",6],["开放",6],["提问频率",6],["态度：新技术",6],["家长身份",6],["生活重大事件",6],["照护者身份",6]
+];
+const VALS = [
+  {dim:"态度：在线评论", items:[["持积极态度",18,"#ffb454"]]},
+  {dim:"经济动机", items:[["价值驱动",7,"#5b8cff"]]},
+  {dim:"决策风格", items:[["分析型",9,"#4ade80"]]},
+  {dim:"信任级别", items:[["核验中",7,"#5b8cff"],["信任",1,"#f87171"]]},
+  {dim:"技术熟练度", items:[["使用熟练",8,"#4ade80"]]},
+  {dim:"时间压力", items:[["不着急",7,"#5b8cff"],["有截止期限",1,"#f87171"]]},
+  {dim:"品牌忠诚度", items:[["积极",6,"#ffb454"],["中立",1,"#94a3b8"],["怀疑",1,"#f87171"]]},
+  {dim:"消费与储蓄", items:[["平衡",5,"#5b8cff"],["节俭储蓄型",2,"#ffb454"]]}
+];
+const PERSONAS = [
+  ["0030","Maya Patel",46,"amazon-063a19d03eef"],["0031","Quinn Santos",16,"amazon-c8cf33c3a3db"],
+  ["0032","Maya Patel",60,"amazon-19c840f933dc"],["0033","Casey Brooks",15,"amazon-cf62fb5aacf4"],
+  ["0034","Riley Chen",34,"amazon-dc7ae5c0bb02"],["0035","Noah Williams",21,"amazon-4e7bb4f55e55"],
+  ["0036","Ethan Brooks",27,"amazon-96332e6c00d1"],["0037","Casey Brooks",18,"amazon-58cd333c7db8"],
+  ["0038","Riley Chen",22,"amazon-e29e9a63113d"],["0039","Sam Okafor",24,"amazon-7e98f9b6a136"],
+  ["0040","Sienna Carter",61,"amazon-1c71163add1b"],["0041","Quinn Santos",59,"amazon-b1c08d54f780"],
+  ["0042","Casey Brooks",28,"amazon-65787f62ebe7"],["0043","Sam Okafor",16,"amazon-33603c5f9ad5"],
+  ["0044","Sam Okafor",7,"amazon-43fa0cb19894"],["0045","Quinn Santos",26,"amazon-9d66ac092f13"],
+  ["0046","Quinn Santos",41,"amazon-042e1f50b4af"],["0047","Riley Chen",12,"amazon-d04b667d1a94"],
+  ["0048","Casey Brooks",31,"amazon-afd45355d570"],["0049","Maya Patel",9,"amazon-f77f530fb841"],
+  ["0050","Casey Brooks",8,"amazon-afd6599306ad"],["0051","Jordan Lee",19,"amazon-c9edcb364fdb"],
+  ["0052","Quinn Santos",22,"amazon-cc4e49d56bb7"],["0053","Alex Rivera",12,"amazon-00547038e164"],
+  ["0054","Quinn Santos",27,"amazon-52a9205b8db8"],["0055","Ava Martinez",45,"amazon-71592cf91fb6"],
+  ["0056","Quinn Santos",45,"amazon-656066827cc2"],["0057","Alex Rivera",72,"amazon-54e077ebadae"],
+  ["0058","Casey Brooks",23,"amazon-142941ed9c6c"]
+];
+const PTOPS = {
+ "0030":["决策风格=分析型","信任级别=核验中","熟悉摄影=了解","技能研究=中等","技能解决问题=中等"],
+ "0031":["技术熟练度=使用熟练","决策风格=分析型","情绪状态=兴奋","提问=简单事实","时间压力=有截止期限"],
+ "0032":["情绪状态=平静","提问=简单事实","态度新技术=积极","态度在线评论=积极","电影动作=喜欢"],
+ "0033":["学科=电工作业","风险=谨慎","决策风格=分析型","信任=核验中","兴趣健身=感兴趣"],
+ "0034":["技术熟练度=使用熟练","期望语气=详细","模态偏好=分步说明","学习风格=读写型","媒体=视频为主"],
+ "0035":["区域=北美","性别=女性","语域=口语","期望语气=简洁","兴趣历史=感兴趣"],
+ "0036":["年龄段=65+","区域=北美","城乡=郊区","人生阶段=中年","事件=健康经历"],
+ "0037":["职级=已退休","经验=20+年","LinkedIn=不活跃","文化=原住民","无障碍=视觉"],
+ "0038":["情绪=平静","提问=简单事实","时间压力=不着急","设备=桌面专注","学习=动手实践"],
+ "0039":["经济动机=价值驱动","兴趣健身=感兴趣","兴趣育儿=感兴趣","兴趣家居=感兴趣","兴趣汽车=感兴趣"],
+ "0040":["区域=北美","城乡=郊区","事件=健康经历","风险=平衡","决策=分析型"],
+ "0041":["领域立场=爱好者","技术=使用熟练","风险=谨慎","决策=分析型","信任=核验中"],
+ "0042":["职能=教学","信任=核验中","安全=无明显风险","兴趣旅行=感兴趣","兴趣音乐=感兴趣"],
+ "0043":["教育=本科","学习=动手实践","运动跑步=参与","时尚=实用","反馈=高"],
+ "0044":["熟悉园艺=了解","态度品牌=积极","态度在线评论=积极","养宠=狗"],
+ "0045":["领域=技术工种","学科=电工作业","事件=创业","技术=使用熟练","信任=核验中"],
+ "0046":["人生阶段=年幼子女家长","事件=健康经历","技术=使用熟练","决策=分析型","兴趣茶=感兴趣"],
+ "0047":["情绪=平静","提问=简单事实","时间=不着急","设备=移动端","先验=回访用户"],
+ "0048":["教育=本科","风险=谨慎","兴趣宠物=感兴趣","兴趣摩托=感兴趣","兴趣骑行=感兴趣"],
+ "0049":["技术=使用熟练","行业零售=有经验","工作=轮班","阅读=每周","开放=中等"],
+ "0050":["决策=分析型","态度新技术=怀疑","态度品牌=怀疑","态度在线评论=积极","音乐摇滚=非常喜欢"],
+ "0051":["经验=20+年","提问=多步处理","设备=桌面专注","熟悉供应链=略有了解","熟悉物流=略有了解"],
+ "0052":["性别=女性","决策=分析型","信任=核验中","安全=无明显风险","无障碍=视觉"],
+ "0053":["情绪=平静","提问=简单事实","态度新技术=积极","态度在线评论=积极","书籍悬疑=喜欢"],
+ "0054":["经济动机=价值驱动","兴趣健身=感兴趣","自我效能=高","条理=平均","尽责=平均"],
+ "0055":["年龄=45–54","区域=北美","性别=女性","领域立场=爱好者","人生阶段=中年"],
+ "0056":["城乡=小城镇","领域=爱好者","核心价值=新奇","信任=信任","时间=不着急"],
+ "0057":["事件=照护他人","提问=简单事实","期望=详细","时间=不着急","设备=移动端"],
+ "0058":["领域=艺术人文","职能=教学","技术=使用熟练","风险=平衡","决策=分析型"]
+};
+
+/* ===== 渲染表格 ===== */
+(function(){
+  const tb = document.getElementById("src-tbl-body");
+  tb.innerHTML = SRCTABLE.map(r =>
+    `<tr><td><span class="src-flag ${r.flag==="amazon"?"f-amazon":"f-other"}">${r.s}</span></td><td>${r.raw}</td><td>${r.scale}</td><td class="mono">${r.dims}</td><td>${r.feat}</td></tr>`
+  ).join("");
+
+  const pb = document.getElementById("persona-tbl-body");
+  const names = {};
+  PERSONAS.forEach(p=>{names[p[0]]=p;});
+  const rows = PERSONAS.map(p=>{
+    const tops = (PTOPS[p[0]]||[]).slice(0,4).map(t=>`<span class="mono" style="font-size:11px;color:#9fb3d1;">${t}</span>`).join(" · ");
+    return `<tr><td class="mono">${p[0]}</td><td>${p[1]}</td><td class="mono">${p[2]}</td><td class="mono" style="font-size:11px;color:#7f95bd;">${p[3]}</td><td>${tops||"—"}</td></tr>`;
+  }).join("");
+  pb.innerHTML = rows;
+  const cnt = document.getElementById("list-count");
+  document.getElementById("search").addEventListener("input", function(e){
+    const q = e.target.value.trim().toLowerCase();
+    let n = 0;
+    pb.innerHTML = PERSONAS.filter(p=>{
+      const hit = !q || p.join(" ").toLowerCase().includes(q) || (PTOPS[p[0]]||[]).join(" ").toLowerCase().includes(q);
+      if(hit) n++;
+      return hit;
+    }).map(p=>{
+      const tops = (PTOPS[p[0]]||[]).slice(0,4).map(t=>`<span class="mono" style="font-size:11px;color:#9fb3d1;">${t}</span>`).join(" · ");
+      return `<tr><td class="mono">${p[0]}</td><td>${p[1]}</td><td class="mono">${p[2]}</td><td class="mono" style="font-size:11px;color:#7f95bd;">${p[3]}</td><td>${tops||"—"}</td></tr>`;
+    }).join("");
+    cnt.textContent = n + " / " + PERSONAS.length;
+  });
+})();
+
+/* ===== ECharts ===== */
+const AXIS = {axisLine:{lineStyle:{color:"#2a3a5e"}},axisLabel:{color:"#93a5c4",fontSize:11},splitLine:{lineStyle:{color:"#16213c"}}};
+const dark = {backgroundColor:"transparent",textStyle:{color:"#e6edf7"}};
+
+function init(id){ const el=document.getElementById(id); return echarts.init(el, null, {renderer:"canvas"}); }
+
+/* 图1：人均维度 */
+(function(){
+  const ch = init("chart-src");
+  const data = SRCS.map(r=>({value:r.dims, n:r.n, name:r.label, itemStyle:{color:r.s==="amazon"?"#ffb454":"#27406e"}}));
+  ch.setOption(Object.assign({}, dark, {
+    tooltip:{trigger:"axis", axisPointer:{type:"shadow"}, backgroundColor:"#0d1730", borderColor:"#2a3a5e", textStyle:{color:"#e6edf7",fontSize:12},
+      formatter:function(ps){const p=ps[0];const d=p.data;return `${d.name}<br>人均维度：<b>${d.value}</b><br>池内人数：${d.n}`;}},
+    grid:{left:8,right:40,top:10,bottom:8,containLabel:true},
+    xAxis:Object.assign({type:"value",logBase:10,axisLabel:{color:"#93a5c4",fontSize:11,formatter:function(v){return v>=1000?(v/1000)+"k":v;}}},AXIS),
+    yAxis:Object.assign({type:"category",inverse:true,data:data.map(d=>d.name),axisLabel:{color:"#e6edf7",fontSize:12.5},axisLine:{show:false}},AXIS),
+    series:[{type:"bar",data:data,barWidth:20,label:{show:true,position:"right",color:"#e6edf7",fontSize:11.5,formatter:function(p){return p.value;}}}]
+  }));
+})();
+
+/* 图2：维度覆盖 */
+(function(){
+  const ch = init("chart-dims");
+  const data = DIMS.map(d=>({name:d[0], value:d[1], itemStyle:{color:d[1]>=8?"#ffb454":"#5b8cff"}})).reverse();
+  ch.setOption(Object.assign({}, dark, {
+    tooltip:{trigger:"axis",axisPointer:{type:"shadow"},backgroundColor:"#0d1730",borderColor:"#2a3a5e",textStyle:{color:"#e6edf7",fontSize:12},
+      formatter:function(ps){const p=ps[0];return `${p.name}<br>覆盖人数：<b>${p.value}</b> / 29（${Math.round(p.value/29*100)}%）`;}},
+    grid:{left:8,right:46,top:8,bottom:8,containLabel:true},
+    xAxis:Object.assign({type:"value",max:20,axisLabel:{color:"#93a5c4",fontSize:11}},AXIS),
+    yAxis:Object.assign({type:"category",inverse:false,data:data.map(d=>d.name),axisLabel:{color:"#c6d5f5",fontSize:12},axisLine:{show:false}},AXIS),
+    series:[{type:"bar",data:data,barWidth:12,label:{show:true,position:"right",color:"#9fb3d1",fontSize:11}}]
+  }));
+})();
+
+/* 图3：值分布 100% 堆叠 */
+(function(){
+  const ch = init("chart-vals");
+  const dims = VALS.map(v=>v.dim);
+  const series = [];
+  const maxLen = Math.max(...VALS.map(v=>v.items.length));
+  for(let i=0;i<maxLen;i++){
+    series.push({name:"v"+i,type:"bar",stack:"t",barWidth:18,
+      data:VALS.map(v=>v.items[i]?{value:v.items[i][1],itemStyle:{color:v.items[i][2]}}:0),
+      label:{show:false}});
+  }
+  ch.setOption(Object.assign({}, dark, {
+    tooltip:{trigger:"axis",axisPointer:{type:"shadow"},backgroundColor:"#0d1730",borderColor:"#2a3a5e",textStyle:{color:"#e6edf7",fontSize:12},
+      formatter:function(ps){
+        const idx = ps[0].dataIndex;
+        const v = VALS[idx];
+        const lines = v.items.map(it=>`<span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:${it[2]};margin-right:6px;"></span>${it[0]}：<b>${it[1]}</b> 人`).join("<br>");
+        return `${v.dim}<br>${lines}`;
+      }},
+    grid:{left:8,right:30,top:8,bottom:8,containLabel:true},
+    legend:{show:false},
+    xAxis:Object.assign({type:"value",max:18,show:false},AXIS),
+    yAxis:Object.assign({type:"category",inverse:true,data:dims,axisLabel:{color:"#c6d5f5",fontSize:12.5},axisLine:{show:false}},AXIS),
+    series:series
+  }));
+})();
+
+window.addEventListener("resize", function(){
+  ["chart-src","chart-dims","chart-vals"].forEach(id=>{const el=document.getElementById(id); if(el&&el._echarts) el._echarts.resize();});
+});
+</script>
+</body>
+</html>

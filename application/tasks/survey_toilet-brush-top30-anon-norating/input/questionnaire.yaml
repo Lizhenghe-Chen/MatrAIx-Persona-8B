@@ -1,0 +1,284 @@
+schemaVersion: '1.0'
+id: toilet_brush_top30_anon_norating_v1
+title: Toilet Brush Top30 Shopping Choice Survey (30 options)
+description: Which toilet brush set the persona would actually buy from a 30-option
+  shelf (plus 'none'), which factors drive the decision, and how price / brand / ratings
+  shape the choice.
+questions:
+- id: q_choice
+  prompt: Which toilet brush set would you buy for your bathroom? Give a 2-3 sentence
+    reason for your choice.
+  type: single_choice
+  construct: brush_choice
+  required: true
+  askRationale: true
+  options:
+  - id: P01
+    label: P01 — Corner Toilet Bowl Brush with Under Rim Scrubber (White) ($8.99)
+  - id: P02
+    label: P02 — 2-in-1 Toilet Brush & Plunger Set (Light Gray) ($14.99)
+  - id: P03
+    label: P03 — Toilet Plunger and Bowl Brush Combo (Black) ($23.99)
+  - id: P04
+    label: P04 — Toilet Bowl Brush and Holder (Black) ($19.99)
+  - id: P05
+    label: P05 — Disposable Toilet Brush System with 14 Refills (White) ($9.99)
+  - id: P06
+    label: P06 — Toilet Bowl Brush Holder Set with S-Shaped Bristles (Gray) ($12.73)
+  - id: P07
+    label: P07 — Compact Toilet Brush with Automatic Canister Door (White) ($19.90)
+  - id: P08
+    label: P08 — 2-Pack Pumice Stone Toilet Cleaner with Extra Long Handle (Gray)
+      ($8.99)
+  - id: P09
+    label: P09 — Toilet Brush and Holder Set, 2-Pack (White) ($8.99)
+  - id: P10
+    label: P10 — Toilet Brush and Holder Set, 3-Pack with 3 Replacement Heads (White)
+      ($12.99)
+  - id: P11
+    label: P11 — 2-Pack Toilet Brush and Plunger Set, Semi-Hidden (Black) ($29.99)
+  - id: P12
+    label: P12 — Toilet Plunger and Brush Set with Ventilated Holder (Gray) ($15.29)
+  - id: P13
+    label: P13 — Silicone Toilet Brush with Ventilated Holder (Pearl White) ($11.99)
+  - id: P14
+    label: P14 — Toilet Brush and Holder, 3-Pack Compact (Black) ($29.99)
+  - id: P15
+    label: P15 — Toilet Bowl Brush Holder Set, Curved Design (White) ($11.99)
+  - id: P16
+    label: P16 — Toilet Brush and Holder, 2-Pack, Extra Long Handle (Bronze) ($19.99)
+  - id: P17
+    label: P17 — Toilet Brush and Holder Set with Crevice Brushes (White) ($6.99)
+  - id: P18
+    label: P18 — Toilet Plunger and Brush Combo, 2-Set (Black) ($38.99)
+  - id: P19
+    label: P19 — Toilet Brush and Holder with Self-Closing Lid, 4-Pack (White) ($33.99)
+  - id: P20
+    label: P20 — Toilet Brush with Extra Long Handle and Covered Holder (Brown) ($11.69)
+  - id: P21
+    label: P21 — 3-in-1 Toilet Brush and Plunger Set with Crevice Brushes, 2-Pack
+      (Black) ($20.99)
+  - id: P22
+    label: P22 — Toilet Plunger and Bowl Brush Combo Set with Caddy, 2-Pack (White/Gray)
+      ($22.40)
+  - id: P23
+    label: P23 — Toilet Brush and Holder, 2-Pack, 304 Stainless Steel Long Handle
+      (Silver) ($29.99)
+  - id: P24
+    label: P24 — Wall-Mounted Silicone Toilet Brush for RVs (Gray) ($9.99)
+  - id: P25
+    label: P25 — 2-in-1 Toilet Brush and Plunger Set with Cleaning Gloves, 2-Pack
+      (Cream White) ($26.99)
+  - id: P26
+    label: P26 — Toilet Bowl Brush Holder Set, 2-Pack, Modern Design (White) ($23.99)
+  - id: P27
+    label: P27 — Disposable Toilet Brush Cleaning System with 50 Refill Pads (White)
+      ($26.99)
+  - id: P28
+    label: P28 — Toilet Brush with Stainless Steel Caddy (White) ($34.99)
+  - id: P29
+    label: P29 — 2-in-1 Toilet Bowl Brush and Plunger Set with Gold Caddy ($24.99)
+  - id: P30
+    label: P30 — 2-in-1 Toilet Plunger and Brush Set, Stainless Steel with Gold Accents
+      ($59.99)
+  - id: none_of_these
+    label: None of these — I would not buy any of them
+- id: q_price_acceptance
+  prompt: The price of the product I chose is acceptable for what it offers.
+  type: likert
+  construct: price_acceptance
+  required: true
+  minValue: 1
+  maxValue: 5
+- id: q_purchase_intent
+  prompt: I would realistically buy this toilet brush set within the next 3 months.
+  type: likert
+  construct: purchase_intent
+  required: true
+  minValue: 1
+  maxValue: 5
+- id: q_factor_most
+  prompt: What mattered MOST in your choice?
+  type: single_choice
+  construct: factor_most
+  required: true
+  options:
+  - id: price_value
+    label: Price / value for money
+  - id: cleaning
+    label: Cleaning performance (brush head, under-rim / deep cleaning)
+  - id: hygiene
+    label: Hygiene (disposable heads, quick-drying holder)
+  - id: design
+    label: Design / looks / color
+  - id: brand
+    label: Brand trust
+  - id: material
+    label: Material quality / durability
+  - id: holder
+    label: Holder / storage design (caddy, hidden, wall-mount)
+  - id: pack
+    label: Pack size / multi-pack value
+  - id: reviews
+    label: Ratings and reviews
+  - id: function_combo
+    label: Extra functions (plunger combo, crevice tools)
+- id: q_factor_second
+  prompt: What was your SECOND most important factor?
+  type: single_choice
+  construct: factor_second
+  required: true
+  options:
+  - id: price_value
+    label: Price / value for money
+  - id: cleaning
+    label: Cleaning performance (brush head, under-rim / deep cleaning)
+  - id: hygiene
+    label: Hygiene (disposable heads, quick-drying holder)
+  - id: design
+    label: Design / looks / color
+  - id: brand
+    label: Brand trust
+  - id: material
+    label: Material quality / durability
+  - id: holder
+    label: Holder / storage design (caddy, hidden, wall-mount)
+  - id: pack
+    label: Pack size / multi-pack value
+  - id: reviews
+    label: Ratings and reviews
+  - id: function_combo
+    label: Extra functions (plunger combo, crevice tools)
+- id: q_importance_price
+  prompt: Price / value for money is important to me when choosing a toilet brush.
+  type: likert
+  construct: importance_price
+  required: true
+  minValue: 1
+  maxValue: 5
+- id: q_importance_function
+  prompt: Cleaning function (brush head design, deep / under-rim cleaning) is important
+    to me.
+  type: likert
+  construct: importance_function
+  required: true
+  minValue: 1
+  maxValue: 5
+- id: q_importance_appearance
+  prompt: Appearance / design / color of the set matters to me.
+  type: likert
+  construct: importance_appearance
+  required: true
+  minValue: 1
+  maxValue: 5
+- id: q_importance_hygiene
+  prompt: Hygiene and quick-drying holder design matter to me.
+  type: likert
+  construct: importance_hygiene
+  required: true
+  minValue: 1
+  maxValue: 5
+- id: q_importance_reviews
+  prompt: Ratings and review counts influence my purchase decision.
+  type: likert
+  construct: importance_reviews
+  required: true
+  minValue: 1
+  maxValue: 5
+- id: q_importance_brand
+  prompt: Brand trust matters to me when buying a toilet brush.
+  type: likert
+  construct: importance_brand
+  required: true
+  minValue: 1
+  maxValue: 5
+- id: q_material_pref
+  prompt: Which brush head material do you prefer?
+  type: single_choice
+  construct: material_pref
+  required: true
+  options:
+  - id: silicone
+    label: Silicone (gentle, won't scratch)
+  - id: nylon_bristles
+    label: Nylon bristles (classic, tough)
+  - id: disposable_sponge
+    label: Disposable sponge heads (hygienic)
+  - id: pumice_stone
+    label: Pumice stone (hard-water stains)
+  - id: stainless_steel
+    label: Stainless steel construction
+  - id: no_preference
+    label: No strong preference
+- id: q_format_pref
+  prompt: Which product format do you prefer?
+  type: single_choice
+  construct: format_pref
+  required: true
+  options:
+  - id: single_brush_set
+    label: Single toilet brush + holder
+  - id: brush_plunger_combo
+    label: Brush + plunger combo
+  - id: disposable_system
+    label: Disposable head system
+  - id: pumice_cleaner
+    label: Pumice stone cleaner
+  - id: no_preference
+    label: No strong preference
+- id: q_pack_pref
+  prompt: Which pack size do you prefer?
+  type: single_choice
+  construct: pack_pref
+  required: true
+  options:
+  - id: single
+    label: Single (1 set)
+  - id: two_pack
+    label: 2-pack
+  - id: three_or_more
+    label: 3-pack or more
+  - id: no_preference
+    label: No strong preference
+- id: q_refill_acceptance
+  prompt: For a disposable-head system, I would accept buying replacement heads regularly.
+  type: likert
+  construct: refill_acceptance
+  required: true
+  minValue: 1
+  maxValue: 5
+- id: q_badge_effect
+  prompt: If one product on the shelf carried an "Amazon's Choice" badge, would it
+    influence you?
+  type: single_choice
+  construct: badge_effect
+  required: true
+  options:
+  - id: yes_strongly
+    label: Yes, a lot
+  - id: yes_somewhat
+    label: Yes, somewhat
+  - id: neutral
+    label: Neutral
+  - id: unlikely
+    label: Probably not
+  - id: no_effect
+    label: No, it wouldn't affect me
+- id: q_switch_trigger
+  prompt: What would most likely make you switch to a different option on this shelf?
+  type: single_choice
+  construct: switch_trigger
+  required: true
+  options:
+  - id: lower_price
+    label: A lower price
+  - id: better_rating
+    label: A higher rating / more reviews
+  - id: better_look
+    label: Better looks / design
+  - id: better_function
+    label: Better cleaning function / features
+  - id: better_value
+    label: Better value (multi-pack, refills)
+  - id: nothing
+    label: Nothing — I'm confident in my choice

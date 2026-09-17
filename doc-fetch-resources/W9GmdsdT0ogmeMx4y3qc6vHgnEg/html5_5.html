@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="use-iframe" content="true">
+<meta name="html-box-height-mode" content="auto">
+<meta name="description" content="数据结构：4-bit 打包 + 倒排索引">
+<title></title>
+<style>
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; background:#FFFFFF; color:#1A2B4A; width:100%; }
+  .card { border:1px solid #DDE0E4; border-radius:12px; padding:16px 18px; margin-bottom:12px; }
+  .h { font-size:14px; font-weight:700; margin-bottom:10px; color:#1A2B4A; }
+  .kpis { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:8px; }
+  @media (max-width:600px) { .kpis { grid-template-columns:repeat(2,1fr); } }
+  .kpi { background:#F4F6FA; border-radius:10px; padding:12px 8px; text-align:center; }
+  .kpi .v { font-size:20px; font-weight:800; color:#1A2B4A; font-family:ui-monospace,monospace; }
+  .kpi .k { font-size:11px; color:#758092; margin-top:2px; }
+  table { width:100%; border-collapse:collapse; font-size:12.5px; }
+  th { background:#EEF1F6; text-align:left; padding:7px 9px; color:#1A2B4A; }
+  td { padding:7px 9px; border-bottom:1px solid #DDE0E4; vertical-align:top; color:#334155; }
+  .bar-row { display:flex; align-items:center; gap:10px; margin:7px 0; font-size:12.5px; }
+  .bar-label { width:150px; flex:none; text-align:right; color:#758092; }
+  .bar-track { flex:1; background:#EEF1F6; border-radius:4px; height:16px; overflow:hidden; }
+  .bar-fill { height:100%; background:#1A2B4A; border-radius:4px; }
+  .bar-val { width:70px; flex:none; font-weight:700; color:#1A2B4A; }
+  .note { font-size:11.5px; color:#758092; margin-top:6px; }
+  ul { padding-left:18px; font-size:13px; color:#334155; }
+  li { margin:5px 0; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="h">存储与读取方式</div>
+  <table>
+    <tr><th>层</th><th>说明</th></tr>
+    <tr><td>Parquet 分片</td><td>10 个 Zstd 分片（9×100,000 + 1×99,847），共 4.17 GB</td></tr>
+    <tr><td>属性编码</td><td>每人 1,290 维 → 645 字节 4-bit 打包（每维 ≤16 取值）</td></tr>
+    <tr><td>缺失位图</td><td>null_bitmap 置位 = 该维缺失；行稀疏，缺失不插补</td></tr>
+    <tr><td>证据链</td><td>grounding 逐字段记录证据原文、置信度、赋值类型</td></tr>
+    <tr><td>倒排索引</td><td>postings.sqlite（2.6 GB）：10,617 个「维度=取值」→ 全局行号，免扫全量筛选</td></tr>
+  </table>
+  <div class="note">官方提供 pyarrow 解码示例（persona_codes.schema.json 为 1,290 字段码本）。</div>
+</div>
+</body>
+</html>
