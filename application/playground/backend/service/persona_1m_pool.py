@@ -21,7 +21,8 @@ import yaml
 from matraix.persona_display_name import assign_cohort_display_names, synthetic_display_name
 
 PRODUCTION_1M_POOL = "persona/datasets/matraix-persona-1m"
-PRODUCTION_1M_LABEL = "matraix-persona-1m"
+#: 界面展示名。池 id（目录名）属于数据层标识，保持不变。
+PRODUCTION_1M_LABEL = "amazon百万买家"
 PRODUCTION_1M_KIND = "production"
 PRODUCTION_1M_COUNT = 1_000_000
 HF_1M_REPO = "MatrAIx2026/MatrAIx_Persona_1M_Public_Release"

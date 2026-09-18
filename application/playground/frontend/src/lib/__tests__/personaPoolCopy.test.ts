@@ -6,6 +6,7 @@ import type { PersonaPoolCatalog } from "../types";
 import {
   classifyPersonaPoolSampleError,
   personaPoolEmptyState,
+  poolSlugLabel,
 } from "../personaPoolCopy";
 
 describe("persona-pool presentation state", () => {
@@ -20,7 +21,7 @@ describe("persona-pool presentation state", () => {
     });
   });
 
-  it("keeps the pool identifier as data and lets the English ICU catalog form the empty sentence", () => {
+  it("maps internal pool ids to business display names", () => {
     const state = personaPoolEmptyState({
       pool: "persona/datasets/matraix-persona-dev-sample",
     } as PersonaPoolCatalog);
@@ -31,13 +32,14 @@ describe("persona-pool presentation state", () => {
 
     expect(state).toEqual({
       code: "persona_pool_empty",
-      pool: "matraix persona dev sample",
+      pool: "Amazon 买家 200",
     });
     expect(
       intl.formatMessage(
         { id: "catalog.personaStore.emptyPool" },
         { pool: state.pool },
       ),
-    ).toBe("matraix persona dev sample is empty or could not be loaded.");
+    ).toBe("Amazon 买家 200 is empty or could not be loaded.");
+    expect(poolSlugLabel("persona/datasets/validation-subset")).toBe("validation subset");
   });
 });

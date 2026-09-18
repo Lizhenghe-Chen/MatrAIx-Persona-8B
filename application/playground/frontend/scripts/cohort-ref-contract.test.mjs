@@ -104,12 +104,8 @@ test("artifact paths stay inside complete rich messages", () => {
 test("batch progress, completion, and cancellation copy uses the active locale", () => {
   const hook = read("src/components/cockpit/setup/useCockpitBatchJob.ts");
   const messages = JSON.parse(read("src/i18n/messages/en-US.json"));
-  const cockpits = [
-    "src/components/cockpit/PlaygroundCockpit.tsx",
-    "src/components/cockpit/OsAppEvalCockpit.tsx",
-    "src/components/cockpit/SurveyEvalCockpit.tsx",
-    "src/components/cockpit/WebEvalCockpit.tsx",
-  ].map(read);
+  // Cross-border e-commerce platform: only the survey cockpit is active.
+  const cockpits = ["src/components/cockpit/SurveyEvalCockpit.tsx"].map(read);
 
   assert.doesNotMatch(hook, /Batch stopped\. Reset|All \$\{total\}|Everyone finished/);
   assert.ok(
@@ -121,13 +117,8 @@ test("batch progress, completion, and cancellation copy uses the active locale",
   assert.match(messages["eval.progress.batchAllFinished"], /\{total, plural,/);
 });
 
-test("all four cockpits localize stable client run errors at the view boundary", () => {
-  const cockpits = [
-    "src/components/cockpit/PlaygroundCockpit.tsx",
-    "src/components/cockpit/OsAppEvalCockpit.tsx",
-    "src/components/cockpit/SurveyEvalCockpit.tsx",
-    "src/components/cockpit/WebEvalCockpit.tsx",
-  ].map(read);
+test("the survey cockpit localizes stable client run errors at the view boundary", () => {
+  const cockpits = ["src/components/cockpit/SurveyEvalCockpit.tsx"].map(read);
 
   assert.ok(
     cockpits.every(

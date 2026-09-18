@@ -6,7 +6,7 @@ import { takePersonaHandoff, peekPersonaHandoff } from "@/lib/personaHandoffStor
 import { useUrlState } from "@/lib/useUrlState";
 import type { HarborCockpitTaskKind } from "@/lib/harborCockpitMappers";
 import type { ConfigOptionsResponse, PlaygroundPersona, TaskPersonaStrategy } from "@/lib/types";
-import { PERSONA_BENCH_POOL } from "@/lib/types";
+import { PERSONA_AMAZON_BUYER_POOL_1000 } from "@/lib/types";
 import { personaModelProviderLabel } from "@/lib/personaAgentCatalog";
 
 import {
@@ -40,7 +40,7 @@ function applyPersonaHandoffToSetup(
     selectedPersonaIds: ids,
     selectedCount: ids.length,
     useEntirePool: false,
-    personaPool: sanitizePersonaPool(handoff.pool) || base.personaPool || PERSONA_BENCH_POOL,
+    personaPool: sanitizePersonaPool(handoff.pool) || base.personaPool || PERSONA_AMAZON_BUYER_POOL_1000,
     samplingMode: ids.length > 1 ? "random" : "single",
     useTaskDefaultStrategy: false,
     taskDefaultStrategyDismissed: true,
@@ -79,7 +79,7 @@ export function useSetupPersonaSampling(
   const [seed] = useState(42);
   const [parallelTrials, setParallelTrials] = useState(initial.parallelTrials);
   const [personaPool, setPersonaPool] = useState(
-    sanitizePersonaPool(initial.personaPool) || PERSONA_BENCH_POOL,
+    sanitizePersonaPool(initial.personaPool) || PERSONA_AMAZON_BUYER_POOL_1000,
   );
   const [persona, setPersona] = useState<PlaygroundPersona | null>(null);
   const [taskPersonaStrategy, setTaskPersonaStrategy] = useState<TaskPersonaStrategy | null>(null);
@@ -106,7 +106,7 @@ export function useSetupPersonaSampling(
   };
   const lastDurablePersonaPoolRef = useRef(
     isTaskStrategyFillPool(initial.personaPool)
-      ? PERSONA_BENCH_POOL
+      ? PERSONA_AMAZON_BUYER_POOL_1000
       : sanitizePersonaPool(initial.personaPool),
   );
   const { state: urlState, setState: setUrlState } = useUrlState();
@@ -204,7 +204,7 @@ export function useSetupPersonaSampling(
       setUseTaskDefaultStrategyState(false);
       if (isTaskStrategyFillPool(personaPool)) {
         setPersonaPool(
-          sanitizePersonaPool(lastDurablePersonaPoolRef.current) || PERSONA_BENCH_POOL,
+          sanitizePersonaPool(lastDurablePersonaPoolRef.current) || PERSONA_AMAZON_BUYER_POOL_1000,
         );
         setSelectedPersonaIds([]);
         setSelectedCount(0);
@@ -238,6 +238,15 @@ export function useSetupPersonaSampling(
   useEffect(() => {
     setTaskPersonaStrategy(strategyQuery.data ?? null);
   }, [strategyQuery.data]);
+
+  // 后端只列出「已配置凭据」的模型（见 backend/service/config.available_persona_models）：
+  // 缓存里可能留着现在调用不了的模型，选项一到就把选择收敛到可用集合，避免下拉框出现列表外的值。
+  useEffect(() => {
+    const offered = options?.knobs.find((knob) => knob.key === "personaModel")?.options;
+    if (!offered || offered.length === 0) return;
+    if (offered.some((option) => option.value === personaModel)) return;
+    setPersonaModel(options?.environment.personaModel ?? offered[0].value);
+  }, [options, personaModel]);
 
   useEffect(() => {
     if (!isTaskStrategyFillPool(personaPool)) {

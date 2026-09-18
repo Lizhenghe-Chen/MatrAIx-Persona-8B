@@ -1491,5 +1491,6 @@
   "personaSetup.synth.customDimsNote": "タスク計画で宣言されたカスタム属性（{count}）— 自動的に付与されます。",
   "personaSetup.synth.sizeFromCells": "コホート数はセル×セルごとで決まります。",
   "personaSetup.progress.independentDataset": "独立",
-  "personaSetup.progress.waiting": "待機中…"
+  "personaSetup.progress.waiting": "待機中…",
+  "taskSetup.domain.ecommerce": "越境EC"
 }

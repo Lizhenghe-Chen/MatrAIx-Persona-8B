@@ -289,6 +289,31 @@ def _fake_recbot():
                 sys.modules[name] = module
 
 
+@pytest.fixture(autouse=True)
+def _no_model_discovery(monkeypatch):
+    """Keep the suite offline: model discovery degrades to the static catalog.
+
+    ``/api/config/options`` asks every configured provider for its ``/models``
+    list (see :mod:`backend.service.persona_model_discovery`). Tests must not
+    touch the network, so the HTTP boundary itself is stubbed to fail — the
+    documented degradation — unless a test stubs it again with a canned payload
+    (see ``test_persona_model_discovery``).
+    """
+    import urllib.error
+
+    from backend.service import persona_model_discovery
+
+    def _offline(*args: Any, **kwargs: Any):
+        raise urllib.error.URLError("offline: tests must stub the model-list fetch")
+
+    monkeypatch.setattr(persona_model_discovery.urllib.request, "urlopen", _offline)
+    persona_model_discovery.clear_cache()
+    try:
+        yield
+    finally:
+        persona_model_discovery.clear_cache()
+
+
 # --------------------------------------------------------------------------- #
 # Catalog fixtures
 # --------------------------------------------------------------------------- #

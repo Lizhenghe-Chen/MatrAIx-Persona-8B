@@ -8,6 +8,10 @@ from pathlib import Path
 REPO_ROOT_ENV = "MATRIX_REPO_ROOT"
 PERSONA_DATA_DIR_ENV = "MATRIX_PLAYGROUND_DATA_DIR"
 
+# The cross-border e-commerce platform browses Amazon buyer personas by
+# default. Override via MATRIX_PLAYGROUND_DATA_DIR when another pool is needed.
+DEFAULT_PERSONA_DATASET = "persona/datasets/amazon-buyer-n1000"
+
 
 def repo_root_from(start: Path | None = None) -> Path | None:
     override = os.environ.get(REPO_ROOT_ENV, "").strip()
@@ -36,6 +40,6 @@ def persona_data_dir(start: Path | None = None) -> Path:
 
     repo_root = repo_root_from(start)
     if repo_root is not None:
-        return repo_root / "persona" / "datasets" / "matraix-persona-dev-sample"
+        return repo_root / DEFAULT_PERSONA_DATASET
 
-    return Path(__file__).resolve().parents[4] / "persona" / "datasets" / "matraix-persona-dev-sample"
+    return Path(__file__).resolve().parents[4] / DEFAULT_PERSONA_DATASET

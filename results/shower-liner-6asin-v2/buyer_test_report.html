@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>浴帘内衬买家产品测试报告 · A 产品（AmazerBath）视角</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+<style>
+  :root{
+    --our:#c0392b; --our-bg:#fdecea; --ink:#1f2937; --sub:#6b7280;
+    --line:#e5e7eb; --card:#ffffff; --bg:#f7f8fa; --good:#1e7e34; --warn:#b8860b;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+       color:var(--ink);background:var(--bg);line-height:1.7;font-size:15px}
+  .wrap{max-width:980px;margin:0 auto;padding:28px 22px 60px}
+  header{background:linear-gradient(135deg,#1f2937,#374151);color:#fff;border-radius:14px;
+         padding:26px 28px;margin-bottom:22px}
+  header h1{margin:0 0 6px;font-size:23px}
+  header p{margin:4px 0;color:#cbd5e1;font-size:13.5px}
+  .badge-our{display:inline-block;background:var(--our);color:#fff;font-size:12px;
+        padding:2px 10px;border-radius:20px;margin-right:8px;font-weight:600}
+  h2{font-size:19px;border-left:5px solid var(--our);padding-left:11px;margin:34px 0 14px}
+  h3{font-size:15.5px;margin:20px 0 8px;color:#111827}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:12px 0}
+  .kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:14px 0}
+  .kpi{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .kpi .num{font-size:24px;font-weight:700}
+  .kpi .lbl{font-size:12.5px;color:var(--sub)}
+  .our{color:var(--our);font-weight:700}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0}
+  th,td{border:1px solid var(--line);padding:8px 10px;text-align:left}
+  th{background:#f3f4f6;font-weight:600}
+  tr.our-row{background:var(--our-bg)}
+  .tag{display:inline-block;font-size:11.5px;padding:1px 8px;border-radius:4px;margin-right:4px}
+  .tag.keep{background:#e6f4ea;color:var(--good)}
+  .tag.fix{background:#fdecea;color:var(--our)}
+  .tag.test{background:#fff4e0;color:var(--warn)}
+  .tag.act{background:#fdecea;color:var(--our);font-weight:600}
+  .quote{background:#f9fafb;border-left:3px solid #d1d5db;padding:9px 14px;margin:8px 0;
+         font-size:13.5px;color:#374151;border-radius:0 8px 8px 0}
+  .note{font-size:12.5px;color:var(--sub)}
+  .chart{width:100%;height:340px}
+  ul{margin:6px 0 6px 0;padding-left:22px}
+  li{margin:4px 0}
+  .concl li{margin:7px 0}
+  .muted{color:var(--sub)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1><span class="badge-our">我方产品 A</span>浴帘内衬买家产品测试报告</h1>
+  <p>测试对象：6 款亚马逊美国站 Shower Curtain Liner ｜ 样本：1,000 名美国亚马逊买家</p>
+  <p>我方产品 = A（AmazerBath Rainbow Emerald）；B / C / D / E / F 均为竞品</p>
+</header>
+
+<!-- 0 核心结论 -->
+<h2>0. 核心结论</h2>
+<div class="card concl">
+<ul>
+  <li><b>最终赢家是竞品 C（LQFMEHOT），63.2% 选择率；我方 A 排第三，16.6%。</b>
+      C 以 $7.09 + 4.6★ + 近千条评价的"低价高分"组合胜出；我方 A 与竞品 B（18.7%）基本接近，
+      两者合计约 35%，C 一家占去近三分之二。</li>
+  <li><b>我方 A 真正被验证的优势是"评价证据"。</b>选择 A 的 166 人中，<b>76% 最看重评价数与评价内容</b>，
+      仅 5% 最看重价格——A 吸引的是"看重 4,156 条评价、4.5★、BPA-free 材质"的证据导向买家。</li>
+  <li><b>A 最需要先解决的不是产品，而是"买不了"。</b>未选 A 的 834 人中，<b>27% 明确提到 A 无购买按钮 /
+      无法配送</b>（采集时 A 页面为 no featured offer）。这是一个可直接修复的硬伤。</li>
+  <li><b>价格是 A 最集中的负面提及：83.4% 未选 A 的人认为 $18.99 太贵。</b>
+      但这是"提及频率高"，不等同于"价格直接导致流失"——选择 A 的人群恰恰对价格不敏感。</li>
+  <li><b>搜索结果展示位置对购买决策只有轻微影响。</b>90.5% 的人选择"一点点"，8.6%"中等"，
+      <b>无人选择"很大"或"极其严重"</b>。位置不是这组买家的决策杠杆。</li>
+</ul>
+</div>
+
+<!-- 1 WHO -->
+<h2>1. 这些买家是谁 ｜ WHO</h2>
+<div class="kpi-row">
+  <div class="kpi"><div class="num">1,000</div><div class="lbl">有效样本（人）</div></div>
+  <div class="kpi"><div class="num">美国</div><div class="lbl">站点 / 地区</div></div>
+  <div class="kpi"><div class="num">英语</div><div class="lbl">主要语言</div></div>
+  <div class="kpi"><div class="num">55%</div><div class="lbl">最看重"价格/性价比"</div></div>
+</div>
+<div class="card">
+<ul>
+  <li>这是 1,000 名亚马逊美国站买家画像，在"买浴帘内衬"情境下做选择。</li>
+  <li>从选择行为看，整体是<b>价格敏感型</b>：55% 的人把"价格/性价比"列为第一考量，
+      21.9% 看重评价数量，17.2% 看重星级评分。</li>
+  <li>人群在年龄、性别、收入、家庭结构等维度<b>当前数据未覆盖</b>，本报告不做进一步画像推断。</li>
+</ul>
+<p class="note">说明：本测试为模拟购物情境下的选择与反馈，不等同于真实下单行为。</p>
+</div>
+
+<!-- 2 DID WHAT -->
+<h2>2. 他们做了什么 ｜ DID WHAT</h2>
+<div class="card">
+<p>每位买家看到 6 款浴帘内衬的产品卡片，信息包含：品牌、价格、材质、外观与设计、卖点、星级与评价数、库存状态。然后：</p>
+<ul>
+  <li><b>选出 1 款</b>自己真正会购买的内衬（可选"都不买"），并给出理由；</li>
+  <li>对<b>其余 5 款分别说明拒绝原因</b>（多选，如太贵、评价太少、不喜欢外观、缺货等）；</li>
+  <li>评价各 listing 要素（标题/图片/价格/评价等）的重要性；</li>
+  <li>回答一道新题：<b>搜索结果展示位置对购买决策的影响程度</b>（完全没有 / 一点点 / 中等 / 很大 / 极其严重）。</li>
+</ul>
+<p class="note">A–F 与产品的对应关系见下表，全文以字母 A–F 标记，方便对照。</p>
+<table>
+<tr><th>标记</th><th>品牌</th><th>价格</th><th>评分</th><th>评价数</th><th>库存状态</th></tr>
+<tr class="our-row"><td><b class="our">A（我方）</b></td><td>AmazerBath</td><td>$18.99</td><td>4.5★</td><td>4,156</td><td>无购买按钮/仅配送通知</td></tr>
+<tr><td>B</td><td>jssablo</td><td>$7.19</td><td>4.4★</td><td>1,872</td><td>有货</td></tr>
+<tr><td>C（冠军）</td><td>LQFMEHOT</td><td>$7.09</td><td>4.6★</td><td>974</td><td>有货</td></tr>
+<tr><td>D</td><td>Laumyasof</td><td>$9.99</td><td>4.4★</td><td>16</td><td>新品上架</td></tr>
+<tr><td>E</td><td>Dependable</td><td>$9.99</td><td>4.3★</td><td>116</td><td>仅剩 10 件</td></tr>
+<tr><td>F</td><td>MuuXii</td><td>—</td><td>4.4★</td><td>10</td><td>当前无货</td></tr>
+</table>
+</div>
+
+<!-- 3 CHOSE WHAT -->
+<h2>3. 最后大家选了谁 ｜ CHOSE WHAT</h2>
+<div id="chart-choice" class="chart"></div>
+<div class="card">
+<table>
+<tr><th>产品</th><th>选择人数</th><th>选择率</th><th>相对我方 A</th></tr>
+<tr class="our-row"><td><b class="our">A（我方）</b></td><td>166</td><td><b>16.6%</b></td><td>—</td></tr>
+<tr><td>B（竞品）</td><td>187</td><td>18.7%</td><td>+2.1 个百分点</td></tr>
+<tr style="background:#e6f4ea"><td><b>C（竞品，第1）</b></td><td>632</td><td><b>63.2%</b></td><td>+46.6 个百分点</td></tr>
+<tr><td>E（竞品）</td><td>15</td><td>1.5%</td><td>−15.1 个百分点</td></tr>
+<tr><td>D / F</td><td>0</td><td>0%</td><td>—</td></tr>
+</table>
+<ul>
+  <li>当前选择领先的是竞品 C，一家独大；我方 A 与竞品 B 处于第二梯队，差距很小（21 人 / 2.1 个百分点）。</li>
+  <li>D（仅 16 条评价）和 F（无货、无价格）没有任何人选择——评价太少、无货是直接出局的原因。</li>
+  <li class="note">以上为描述性比例，未做统计显著性检验；E 仅 15 人，不单独下结论。</li>
+</ul>
+</div>
+
+<!-- 4 WHY -->
+<h2>4. 为什么选 / 为什么不选 ｜ WHY & WHAT MATTERS</h2>
+
+<h3>4.1 为什么选择了我方 A</h3>
+<div class="card">
+<p>选择 A 的 166 人，最看重的因素分布：</p>
+<div id="chart-amotivation" class="chart" style="height:260px"></div>
+<ul>
+  <li><b>76% 最看重评价（reviews）</b>，16% 最看重材质，仅 5% 最看重价格。</li>
+  <li>他们选择 A 的核心理由是：4,156 条评价 + 4.5★ 给出的"耐用、靠谱"证据，以及 BPA-free、无味 EVA、黄铜气眼、加重底等"用得住"的配置。</li>
+</ul>
+<div class="quote">"我被便宜薄内衬用坏、发霉坑过，所以宁愿多花一点，选有 4,156 条评价、4.5★ 的那款……BPA-free、无味、黄铜气眼、加重底。"（选 A 用户）</div>
+<div class="quote">"每天挂在潮湿浴室、直接碰水的东西，4,156 条评价和 4.5★ 让我确信它真的耐用。"（选 A 用户）</div>
+</div>
+
+<h3>4.2 为什么没有选择我方 A</h3>
+<div class="card">
+<p>在未选 A 的 834 人中，对 A 给出的拒绝原因（多选，按提及比例）：</p>
+<div id="chart-areject" class="chart" style="height:300px"></div>
+<ul>
+  <li><b>太贵：83.4%</b>——$18.99 明显高于 C/B 的 $7 价位，是最集中的负面提及。</li>
+  <li><b>无购买按钮/配送问题：27.0%</b>——采集时 A 页面显示 no featured offer、无法配送。这是"想买也买不了"的硬门槛。</li>
+  <li>不喜欢外观 27.0%、透明度不符 20.3%（A 为祖母绿半透明，部分人想要更透/更不透）。</li>
+</ul>
+<p class="note">注意：83.4% 是"提及频率"高；它说明价格是未选 A 人群最常被提到的顾虑，但本测试没有设置价格实验，
+不能直接断言"降价多少会带来多少选择率提升"。</p>
+</div>
+
+<h3>4.3 用户真正关注什么</h3>
+<div class="card">
+<p>把"高关注"和"与选择 A 的关联"分开看：</p>
+<table>
+<tr><th>因素</th><th>总体第一考量</th><th>选 A 的人第一考量</th><th>含义</th></tr>
+<tr><td>价格/性价比</td><td>55.0%</td><td><b class="our">仅 5%</b></td><td>大盘是价格驱动；但 A 的核心客群不看价格</td></tr>
+<tr><td>评价数量/内容</td><td>21.9%</td><td><b class="our">76%</b></td><td>A 相对竞品最大的关联优势</td></tr>
+<tr><td>星级评分</td><td>17.2%</td><td>2%</td><td>大盘在意评分；C 用 4.6★ 拉票</td></tr>
+<tr><td>材质/磁铁/外观等</td><td>合计约 6%</td><td>材质 16%</td><td>次要因素</td></tr>
+</table>
+<ul>
+  <li><b>高关联优势：</b>"评价证据"与是否选 A 关系最明显——选 A 的人把评价放第一位的比例（76%）远高于大盘（21.9%）。</li>
+  <li><b>大盘门槛：</b>价格/性价比是基础门槛（55%），A 的高价在大盘中天然吃亏，但 A 吸引的恰是越过这个门槛的人。</li>
+</ul>
+</div>
+
+<h3>4.4 竞品为什么赢</h3>
+<div class="card">
+<ul>
+  <li><b>竞品 C（63.2%）：</b>$7.09 全场最低价 + 4.6★ 全场最高 + 近千条评价 + 有货。它同时踩中了"价格（63% 的人选 C 最看重价格）"和"评分（26%）"两个大盘杠杆。</li>
+  <li><b>竞品 B（18.7%）：</b>$7.19、4.4★、1,872 条评价、有货，是"低价 + 评价更厚"的稳妥选择；选 B 的人 71% 最看重价格。</li>
+  <li>相对我方 A，C/B 具体赢在：<b>价格低约 63%</b>，且页面可直接下单；A 输在价格和"买不了"，而不是评价或评分（A 的评价数 4,156 全场最高）。</li>
+</ul>
+</div>
+
+<!-- 5 WHAT ABOUT US -->
+<h2>5. 这对我方 A 意味着什么 ｜ WHAT ABOUT US</h2>
+<div class="card">
+<h3><span class="tag keep">KEEP</span> 已被验证的优势</h3>
+<ul>
+  <li><b>评价资产：</b>4,156 条评价、4.5★ 是 A 相对所有竞品最厚的信任状，且被选 A 人群（76%）明确消费。应继续积累并在 listing 前置。</li>
+  <li><b>高端客群成立：</b>选 A 的人仅 5% 看价格，说明"耐用 + BPA-free + 黄铜气眼"的高端定位有真实买单人群，不必盲目降价跟随 C。</li>
+</ul>
+<h3><span class="tag fix">FIX</span> 有较充分证据的问题</h3>
+<ul>
+  <li><b>购买按钮缺失（27.0% 未选者提及）：</b>这是把有意向用户直接挡在门外的硬门槛，优先级高于一切价格讨论。</li>
+  <li><b>高价在大盘中的接受度：</b>83.4% 未选者嫌贵。这不一定是"降价"问题，而是"价值没有被价格敏感人群看到"。</li>
+</ul>
+<h3><span class="tag test">TEST</span> 出现信号但证据不足</h3>
+<ul>
+  <li>A 的祖母绿外观/半透明度被 20%–27% 未选者提及"不符合"，但样本与场景有限，是否影响转化需在下一轮验证。</li>
+  <li>因 availability 放弃的 27% 中，有多少在"能买到"后会回来，当前数据无法回答。</li>
+</ul>
+</div>
+
+<!-- 展示位置 -->
+<h2>附：搜索结果展示位置的影响</h2>
+<div id="chart-position" class="chart" style="height:300px"></div>
+<div class="card">
+<ul>
+  <li><b>90.5% 选"一点点"，8.6%"中等"，0.9%"完全没有"，无人选"很大/极其严重"。</b></li>
+  <li>无论最终选 A、B 还是 C，这个分布几乎一致——说明这组买家承认位置有点用，但不会让位置替他们做决定。</li>
+  <li><b>对 A 的含义：</b>在"价格、评价、能否买到"这三件事没解决前，纠结搜索排名位次的投入产出比很低；位置是结果，不是杠杆。</li>
+</ul>
+</div>
+
+<!-- 6 WHAT SHOULD WE DO -->
+<h2>6. 下一步应该做什么 ｜ WHAT SHOULD WE DO</h2>
+<div class="card">
+<h3><span class="tag act">ACT · 优先行动</span></h3>
+<ul>
+  <li><b>先恢复 A 的 Featured Offer / 可下单状态。</b>
+      <br><b>为什么：</b>27.0% 未选者因"无购买按钮/无法配送"直接放弃——这是当前唯一"用户想买却买不到"的环节，修复它不需要改动产品或定价。
+      <br><b>依据：</b>4.2 节 availability 提及率 27.0%；产品卡片库存状态记录。</li>
+  <li><b>Listing 前置"4,156 条评价 + 4.5★ + BPA-free"的信任状，而不是再强调低价。</b>
+      <br><b>为什么：</b>选 A 的人 76% 由评价驱动、仅 5% 看价格——A 的客群要的是"靠谱耐用"，把信任状和材质卖点放在首图/标题/首条 bullet，比降价更能守住这批人。
+      <br><b>依据：</b>4.1 节选 A 人群动机分布。</li>
+</ul>
+<h3><span class="tag test">TEST · 优先验证</span></h3>
+<ul>
+  <li><b>验证"价格带"策略：</b>测试一款 $9.99 左右的引流款（共享 A 的评价资产与材质故事），看能否把价格敏感人群（大盘 55%）接进来，同时不动 $18.99 高端款。
+      <br><b>为什么：</b>83.4% 嫌贵，但 A 的核心客群不看价格——用变体/新链接覆盖价格带，比直接降 A 价更安全。
+      <br><b>依据：</b>4.2 价格提及率 + 4.3 价格与选 A 的反向关系。</li>
+  <li><b>验证"能买到后"的转化率：</b>恢复购买按钮后，复测 A 的选择率，量化 27% availability 流失中可回收的部分。</li>
+</ul>
+<h3><span class="tag test">WATCH · 持续观察，暂不优先投入</span></h3>
+<ul>
+  <li><b>搜索结果排名位次：</b>无人认为位置"很大/极其严重"，在价格与购买按钮解决前，不建议把预算投在卡位排名上。</li>
+  <li><b>祖母绿外观/透明度：</b>约两成提及，但样本有限，且未与"是否选 A"直接挂钩，暂不为此改款。</li>
+</ul>
+</div>
+
+<p class="note" style="margin-top:24px">
+数据来源：MatrAIx 1,000 名美国亚马逊买家模拟购物测试（2026-09）。
+本报告所有比例均基于对应题项有效回答人数；E 产品 n=15 仅作参考；未做统计显著性检验，相关不等于因果。
+</p>
+
+</div>
+
+<script>
+const A_COL='#c0392b', GREY='#9ca3af', C_COL='#1e7e34';
+// 选择分布
+echarts.init(document.getElementById('chart-choice')).setOption({
+  title:{text:'1,000 名买家最终选择分布',left:'center',textStyle:{fontSize:15}},
+  tooltip:{trigger:'axis'},
+  grid:{left:50,right:30,bottom:40,top:50},
+  xAxis:{type:'category',data:['A 我方','B','C','E','D','F']},
+  yAxis:{type:'value',max:70,axisLabel:{formatter:'{value}%'}},
+  series:[{type:'bar',barWidth:'55%',
+    data:[
+      {value:16.6,itemStyle:{color:A_COL}},
+      {value:18.7,itemStyle:{color:GREY}},
+      {value:63.2,itemStyle:{color:C_COL}},
+      {value:1.5,itemStyle:{color:GREY}},
+      {value:0,itemStyle:{color:GREY}},
+      {value:0,itemStyle:{color:GREY}}],
+    label:{show:true,position:'top',formatter:'{c}%'}}]
+});
+// 选A动机
+echarts.init(document.getElementById('chart-amotivation')).setOption({
+  title:{text:'选择我方 A 的 166 人：第一考量因素',left:'center',textStyle:{fontSize:14}},
+  tooltip:{},
+  series:[{type:'pie',radius:['40%','68%'],
+    data:[
+      {value:76,name:'评价（reviews）',itemStyle:{color:A_COL}},
+      {value:16,name:'材质安全',itemStyle:{color:'#e67e22'}},
+      {value:5,name:'价格/性价比',itemStyle:{color:GREY}},
+      {value:3,name:'其他',itemStyle:{color:'#d1d5db'}}],
+    label:{formatter:'{b}\n{c}%'}}]
+});
+// A 被拒原因
+echarts.init(document.getElementById('chart-areject')).setOption({
+  title:{text:'未选我方 A 的 834 人：拒绝原因提及率（多选）',left:'center',textStyle:{fontSize:14}},
+  tooltip:{},
+  grid:{left:160,right:40,top:50,bottom:30},
+  xAxis:{type:'value',max:90,axisLabel:{formatter:'{value}%'}},
+  yAxis:{type:'category',data:['透明度不符','不喜欢外观','无购买按钮/配送','价格太贵']},
+  series:[{type:'bar',barWidth:'50%',
+    data:[
+      {value:20.3,itemStyle:{color:GREY}},
+      {value:27.0,itemStyle:{color:GREY}},
+      {value:27.0,itemStyle:{color:'#e67e22'}},
+      {value:83.4,itemStyle:{color:A_COL}}],
+    label:{show:true,position:'right',formatter:'{c}%'}}]
+});
+// 展示位置
+echarts.init(document.getElementById('chart-position')).setOption({
+  title:{text:'搜索结果展示位置，对购买决策的影响程度（n=1000）',left:'center',textStyle:{fontSize:14}},
+  tooltip:{},
+  series:[{type:'pie',radius:['42%','70%'],
+    data:[
+      {value:0.9,name:'完全没有',itemStyle:{color:'#d1d5db'}},
+      {value:90.5,name:'一点点',itemStyle:{color:'#5b8ff9'}},
+      {value:8.6,name:'中等',itemStyle:{color:'#e67e22'}},
+      {value:0,name:'很大 / 极其严重',itemStyle:{color:A_COL}}],
+    label:{formatter:'{b}\n{c}%'}}]
+});
+</script>
+</body>
+</html>

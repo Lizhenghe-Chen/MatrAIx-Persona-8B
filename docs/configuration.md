@@ -122,6 +122,13 @@ The **persona LLM** is separate from the chat sidecar backend (e.g., `MATRIX_CHA
 
 ### Supported model providers
 
+Playground 的模型下拉列表不是静态清单：它只列出**已配置凭据的 provider**，并只保留该
+provider 的 `GET {base}/models` 实际返回的 id（见 `application/playground/backend/service/persona_model_discovery.py`），
+因此账号里调用不到的模型不会出现，厂商发布新模型也无需改代码（目录里的 id 保留人工标签）。
+发现失败（无网/无 key）自动退化为内置目录子集；凭据全部为空时列出完整目录，便于看清
+“要配什么”（`/api/preflight` 会指出缺哪个 key）。缓存与 base 覆盖见
+`application/playground/.env.local.example`。
+
 - **Anthropic:** `anthropic/claude-haiku-4-5`, `anthropic/claude-sonnet-4-6`, etc.
 - **OpenAI:** `openai/gpt-4o-mini`, `openai/gpt-4o`, etc.
 - **Google Gemini:** `google/gemini-2.5-pro` (with `persona-gemini-cli`)

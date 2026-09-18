@@ -108,7 +108,7 @@
   "catalog.taskGallery.searchPlaceholder": "Search title, domain, path, or tags…",
   "catalog.taskGallery.searchTasks": "Search tasks",
   "catalog.taskGallery.showing": "Showing {shown} of {total} tasks",
-  "catalog.taskGallery.subtitle": "All survey, chatbot, web, and OS-app tasks — search, filter, then open one in Playground.",
+  "catalog.taskGallery.subtitle": "Browse cross-border e-commerce buyer surveys — search, filter, then open one in the workbench.",
   "catalog.taskGallery.tasks": "Tasks",
   "catalog.taskGallery.title": "Browse tasks",
   "catalog.taskGallery.tryAgain": "Try again",
@@ -1356,7 +1356,7 @@
   "shell.footer.connected": "Connected",
   "shell.footer.finishingSetup": "Finishing setup",
   "shell.home.personas": "personas",
-  "shell.home.subtitle": "Simulate real users across surveys, AI chatbots, web, and native os-app with evaluation reporting",
+  "shell.home.subtitle": "Simulate Amazon buyers and cross-border shoppers with evaluation reporting",
   "shell.home.title": "Planetary-scale",
   "shell.home.titleAccent": "digital humans",
   "shell.nav.application": "Application",
@@ -1491,5 +1491,6 @@
   "personaSetup.synth.customDimsNote": "Custom attributes ({count}) declared by the task plan — stamped automatically.",
   "personaSetup.synth.sizeFromCells": "Cohort size is fixed by cells × per-cell.",
   "personaSetup.progress.independentDataset": "Independent",
-  "personaSetup.progress.waiting": "Waiting…"
+  "personaSetup.progress.waiting": "Waiting…",
+  "taskSetup.domain.ecommerce": "E-Commerce"
 }

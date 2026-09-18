@@ -7,7 +7,7 @@ name = "application/survey-price-sensitivity-hasbro-gaming-candy-land"
 [metadata]
 difficulty = "easy"
 type = "survey"
-domain = "commerce"
+domain = "e-commerce"
 tags = [ "price sensitivity", "toys and games", "retail", "product perturbation",]
 
 [verifier]

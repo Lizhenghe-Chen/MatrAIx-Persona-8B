@@ -18,6 +18,7 @@ import {
 import { createLatestRequestGuard, loadRegisteredLocale } from "./loader";
 import { getLocaleDefinition, isUiLocale, type UiLocale } from "./registry";
 import { SOURCE_LOCALE, SOURCE_MESSAGES, withEnglishFallback } from "./source";
+import { brandNeutral, EMBED_LOCALE, IS_EMBEDDED } from "@/lib/embedMode";
 import type {
   MessageCatalog,
   MessageKey,
@@ -39,13 +40,13 @@ export interface I18nContextValue {
 
 const I18nContext = createContext<I18nContextValue | null>(null);
 
-function readStoredLocale(): UiLocale {
-  if (typeof window === "undefined") return SOURCE_LOCALE;
+function readStoredLocale(): UiLocale | null {
+  if (typeof window === "undefined") return null;
   try {
     const stored = window.localStorage.getItem(STORAGE_KEY);
-    return isUiLocale(stored) ? stored : SOURCE_LOCALE;
+    return isUiLocale(stored) ? stored : null;
   } catch {
-    return SOURCE_LOCALE;
+    return null;
   }
 }
 
@@ -69,13 +70,21 @@ function makeIntl(locale: UiLocale, messages: MessageCatalog): IntlShape {
     {
       locale,
       defaultLocale: SOURCE_LOCALE,
-      messages: withEnglishFallback(messages),
+      messages: withEnglishFallback(scrubBrand(messages)),
       onError: (error) => {
         if (import.meta.env.DEV) console.error(error);
       },
     },
     intlCache,
   );
+}
+
+/** 嵌入宿主时不出现本产品品牌（只清洗展示文案，键名不变）。 */
+function scrubBrand(catalog: MessageCatalog): MessageCatalog {
+  if (!IS_EMBEDDED) return catalog;
+  return Object.fromEntries(
+    Object.entries(catalog).map(([key, text]) => [key, brandNeutral(text)]),
+  ) as MessageCatalog;
 }
 
 export function I18nProvider({ children }: { children: ReactNode }) {
@@ -104,7 +113,8 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   }, []);
 
   useEffect(() => {
-    const storedLocale = readStoredLocale();
+    // 宿主嵌入时默认跟随宿主的界面语言（宿主为中文控制台）。
+    const storedLocale = readStoredLocale() ?? EMBED_LOCALE ?? SOURCE_LOCALE;
     if (storedLocale !== SOURCE_LOCALE) void setLocale(storedLocale);
   }, [setLocale]);
 
@@ -114,7 +124,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   const t = useCallback<I18nContextValue["t"]>(
     (key, values) =>
       intl.formatMessage(
-        { id: key, defaultMessage: SOURCE_MESSAGES[key] },
+        { id: key, defaultMessage: brandNeutral(SOURCE_MESSAGES[key]) },
         values,
       ) as string,
     [intl],
@@ -122,7 +132,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   const rich = useCallback<I18nContextValue["rich"]>(
     (key, values) =>
       intl.formatMessage(
-        { id: key, defaultMessage: SOURCE_MESSAGES[key] },
+        { id: key, defaultMessage: brandNeutral(SOURCE_MESSAGES[key]) },
         values,
       ) as ReactNode,
     [intl],

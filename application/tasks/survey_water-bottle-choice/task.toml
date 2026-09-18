@@ -7,7 +7,7 @@ name = "application/survey-water-bottle-choice"
 [metadata]
 difficulty = "easy"
 type = "survey"
-domain = "commerce"
+domain = "e-commerce"
 tags = [ "consumer goods", "bottles", "choice", "price sensitivity", "shopping simulation",]
 
 [verifier]

@@ -143,7 +143,8 @@ uv run python scripts/aggregate_bottle_results.py
 `grep DEEPSEEK_API_KEY .env`，确认非空；运行时报 `Credential: DEEPSEEK_API_KEY missing` 即未加载。
 
 **③ 想换模型？**
-任务与 job 配置均支持 `deepseek/deepseek-chat`（当前）与 `dashscope/deepseek-v4-pro`，
+任务与 job 配置均支持 `deepseek/deepseek-v4-pro`、`deepseek/deepseek-flash`（官方账号只有这两个 id，
+`deepseek-chat` 是映射到 flash 的旧别名）与 `dashscope/deepseek-v4-pro`，
 改 job YAML 里的 `model_name` 即可。
 
 **④ 跑一半断网/超预算？**

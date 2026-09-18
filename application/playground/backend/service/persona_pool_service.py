@@ -728,6 +728,21 @@ class PersonaPoolService:
         kind = str(raw.get("kind") or "").strip()
         return kind or None
 
+    def _dataset_display_label(self, path: Path) -> str:
+        """Human-friendly dataset label.
+
+        Amazon-buyer datasets use a readable localized label (``amazon-buyer-n20``
+        → ``Amazon 买家 20``); everything else falls back to the folder name.
+        """
+        try:
+            raw = self._read_json(path / "manifest.json")
+        except Exception:  # noqa: BLE001
+            raw = {}
+        name = str(raw.get("name") or "").strip()
+        if name:
+            return name
+        return path.name
+
     def _dataset_entry(self, *, pool: str, label: str, kind: str, path: Path) -> dict[str, Any]:
         return {
             "pool": pool,
@@ -769,7 +784,7 @@ class PersonaPoolService:
                 label = (
                     _generated_pool_label(child.name, child)
                     if child.name.startswith(f"{GENERATED_POOL_PREFIX}-")
-                    else child.name
+                    else self._dataset_display_label(child)
                 )
                 by_pool[pool] = self._dataset_entry(
                     pool=pool, label=label, kind=kind, path=child

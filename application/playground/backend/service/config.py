@@ -18,7 +18,7 @@ The module imports only the stdlib so it is safe to import anywhere.
 from __future__ import annotations
 
 import os
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Tuple
 
 PERSONA_MODEL_ENV = "MATRIX_PERSONA_MODEL"
 HARBOR_PERSONA_MODEL_ENV = "MATRIX_HARBOR_PERSONA_MODEL"
@@ -83,9 +83,14 @@ PERSONA_MODEL_KNOB_META: Dict[str, Dict[str, str]] = {
         "label": "DeepSeek V4 Pro",
         "description": "DeepSeek official API flagship.",
     },
-    "deepseek/deepseek-chat": {
-        "label": "DeepSeek Chat",
-        "description": "DeepSeek official API chat alias.",
+    # The official DeepSeek account serves exactly ``deepseek-v4-pro`` and
+    # ``deepseek-flash`` (``GET https://api.deepseek.com/models``). The legacy
+    # ``deepseek-chat`` id still resolves to ``deepseek-flash`` server-side, but
+    # is not listed here: offering both would put the same model in the picker
+    # twice, and the canonical id is what operators should pin.
+    "deepseek/deepseek-flash": {
+        "label": "DeepSeek V4 Flash",
+        "description": "DeepSeek official API V4-series fast tier.",
     },
     "zai/glm-5": {
         "label": "GLM 5",
@@ -168,6 +173,77 @@ PERSONA_MODEL_KNOB_META: Dict[str, Dict[str, str]] = {
 PERSONA_MODEL_OPTIONS = list(PERSONA_MODEL_KNOB_META.keys())
 DEFAULT_HARBOR_PERSONA_MODEL = DEFAULT_PERSONA_MODEL
 HARBOR_PERSONA_MODEL_OPTIONS = PERSONA_MODEL_OPTIONS
+
+#: Persona-model provider prefix → credential env vars. The picker only offers
+#: models whose provider credentials this deployment actually has, so it cannot
+#: advertise a model that every run would reject (same signals as
+#: :func:`api.app.preflight_checks`).
+PERSONA_MODEL_PROVIDER_KEYS: Dict[str, Tuple[str, ...]] = {
+    "anthropic": ("ANTHROPIC_API_KEY", "CLAUDE_API_KEY"),
+    "openai": ("OPENAI_API_KEY",),
+    "gemini": ("GEMINI_API_KEY", "GOOGLE_API_KEY"),
+    "xai": ("XAI_API_KEY",),
+    "deepseek": ("DEEPSEEK_API_KEY",),
+    "zai": ("ZAI_API_KEY",),
+    "dashscope": ("DASHSCOPE_API_KEY",),
+    "openrouter": ("OPENROUTER_API_KEY",),
+}
+
+
+def persona_model_label(model_id: str) -> str:
+    """选项标签：目录里有人工标签就用它，否则直接显示模型 id。
+
+    后者用于 :func:`available_persona_models` 从 provider ``/models`` 发现到、
+    目录里还没有的模型 —— 宁可直接给 id，也不去猜广品名（
+    ``deepseek-v5-pro`` 猜成 "DeepSeek V5 Pro" 只是看着好）。
+    """
+    meta = PERSONA_MODEL_KNOB_META.get(model_id)
+    if meta:
+        return str(meta.get("label") or model_id)
+    return model_id
+
+
+def available_persona_models() -> List[str]:
+    """Persona models this deployment can actually call, in picker order.
+
+    Two filters, in order:
+
+    1. Only providers with configured credentials (:data:`PERSONA_MODEL_PROVIDER_KEYS`).
+    2. Only models the provider itself reports — each configured provider is asked
+       for its ``{base}/models`` list (see :mod:`backend.service.persona_model_discovery`),
+       so a model the account cannot call never shows up, and a newly released one
+       shows up without a code change. Catalog ids keep the hand-written labels,
+       ordering and descriptions; ids the catalog does not know are appended.
+
+    Degrades instead of failing: an unreachable provider contributes its catalog
+    subset, and when *no* provider credential is configured the full catalog is
+    returned so the picker still shows what to enable (``/api/preflight`` reports
+    the missing keys).
+    """
+    configured = [
+        provider
+        for provider, env_names in PERSONA_MODEL_PROVIDER_KEYS.items()
+        if any(os.environ.get(name) for name in env_names)
+    ]
+    if not configured:
+        return list(PERSONA_MODEL_OPTIONS)
+
+    # 局部导入：discovery 依赖本模块的凭据表，模块级导入会形成环。
+    from . import persona_model_discovery
+
+    reported = persona_model_discovery.discovered_models(configured)
+    ordered: List[str] = []
+    for provider in configured:
+        known = [m for m in PERSONA_MODEL_OPTIONS if m.split("/", 1)[0] == provider]
+        discovered = [
+            "{}/{}".format(provider, bare) for bare in reported.get(provider, [])
+        ]
+        if discovered:
+            ordered.extend([m for m in known if m in discovered])
+            ordered.extend([m for m in discovered if m not in known])
+        else:
+            ordered.extend(known)
+    return ordered or list(PERSONA_MODEL_OPTIONS)
 RUNTIME_OPTIONS = ("local", "harbor")
 EXECUTION_PLANE_OPTIONS = ("harbor", "remote")
 
@@ -178,6 +254,7 @@ __all__ = [
     "DEFAULT_HARBOR_PERSONA_MODEL",
     "PERSONA_MODEL_KNOB_META",
     "PERSONA_MODEL_OPTIONS",
+    "PERSONA_MODEL_PROVIDER_KEYS",
     "HARBOR_PERSONA_MODEL_OPTIONS",
     "PERSONA_MODEL_ENV",
     "HARBOR_PERSONA_MODEL_ENV",
@@ -186,6 +263,8 @@ __all__ = [
     "REMOTE_RUNNER_API_URL_ENV",
     "RUNTIME_OPTIONS",
     "EXECUTION_PLANE_OPTIONS",
+    "available_persona_models",
+    "persona_model_label",
     "persona_model",
     "harbor_persona_model",
     "playground_runtime",
@@ -195,12 +274,24 @@ __all__ = [
 
 
 def persona_model() -> str:
-    """Return the persona-agent model currently configured."""
-    return (
+    """Return the persona-agent model currently configured.
+
+    An explicit ``MATRIX_PERSONA_MODEL`` / ``MATRIX_HARBOR_PERSONA_MODEL`` always
+    wins — an operator may stage a model before adding its key, and preflight
+    reports the gap. Without an explicit setting the product default is used when
+    its provider is configured, otherwise the first available model: a deployment
+    with only DeepSeek credentials must not default to a model it cannot call.
+    """
+    configured = (
         os.environ.get(PERSONA_MODEL_ENV, "").strip()
         or os.environ.get(HARBOR_PERSONA_MODEL_ENV, "").strip()
-        or DEFAULT_PERSONA_MODEL
     )
+    if configured:
+        return configured
+    available = available_persona_models()
+    if DEFAULT_PERSONA_MODEL in available:
+        return DEFAULT_PERSONA_MODEL
+    return available[0]
 
 
 def harbor_persona_model() -> str:
@@ -442,7 +533,7 @@ class ConfigManager:
             value_meta = value_meta if isinstance(value_meta, dict) else {}
             option_views: List[Dict[str, str]] = []
             allowed_values = (
-                PERSONA_MODEL_OPTIONS
+                available_persona_models()
                 if key == "personaModel"
                 else self.ALLOWED.get(key, [])
             )
@@ -452,7 +543,7 @@ class ConfigManager:
                 option_views.append(
                     {
                         "value": value,
-                        "label": str(vm.get("label", value)),
+                        "label": str(vm.get("label") or persona_model_label(value)),
                         "description": str(vm.get("description", "")),
                     }
                 )

@@ -10,6 +10,7 @@ import { FOCUS_RING, Sym } from "./cockpit/cockpitShared";
 import { MatrAIxLogo } from "./studio/MatrAIxLogo";
 import { useTheme } from "@/hooks/useTheme";
 import { useI18n } from "@/i18n/I18nProvider";
+import { IS_EMBEDDED } from "@/lib/embedMode";
 
 export type StudioMode = "home" | "playground";
 
@@ -82,6 +83,11 @@ export function TopBar({
     },
   ];
 
+  // 嵌入宿主时外壳由宿主提供：不露出本产品字标，也不在界面上给「Home」落地页入口。
+  const visibleNav = IS_EMBEDDED
+    ? nav.filter((item) => item.key !== "home")
+    : nav;
+
   const glass = variant === "glass";
 
   return (
@@ -92,15 +98,20 @@ export function TopBar({
     >
       <div className="grid h-14 grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-3 px-5">
         <div className="flex min-w-0 items-center justify-start">
-          <MatrAIxLogo size="md" onClick={onOpenHome} />
+          {IS_EMBEDDED ? null : (
+            <MatrAIxLogo size="md" onClick={onOpenHome} />
+          )}
         </div>
 
         <nav
           className="nasa-glass-pill hidden items-center rounded-full p-1 backdrop-blur md:flex"
           aria-label={t("shell.nav.application")}
         >
-          <div className="grid grid-cols-5 items-center">
-            {nav.map(({ key, label, active, onClick }) => (
+          <div
+            className="grid items-center"
+            style={{ gridTemplateColumns: `repeat(${visibleNav.length}, minmax(0, 1fr))` }}
+          >
+            {visibleNav.map(({ key, label, active, onClick }) => (
               <button
                 key={key}
                 type="button"
@@ -124,19 +135,21 @@ export function TopBar({
 
           <LocalePopover />
 
-          <button
-            type="button"
-            onClick={toggle}
-            aria-label={
-              nextIsLight
-                ? t("shell.theme.switchToLight")
-                : t("shell.theme.switchToDark")
-            }
-            title={t("shell.theme.toggle")}
-            className={`nasa-glass-pill grid h-9 w-9 flex-none place-items-center rounded-full text-text-variant transition hover:bg-surface-high/40 hover:text-text-main active:scale-95 ${FOCUS_RING}`}
-          >
-            <Sym name={nextIsLight ? "light_mode" : "dark_mode"} size={18} />
-          </button>
+          {!IS_EMBEDDED && (
+            <button
+              type="button"
+              onClick={toggle}
+              aria-label={
+                nextIsLight
+                  ? t("shell.theme.switchToLight")
+                  : t("shell.theme.switchToDark")
+              }
+              title={t("shell.theme.toggle")}
+              className={`nasa-glass-pill grid h-9 w-9 flex-none place-items-center rounded-full text-text-variant transition hover:bg-surface-high/40 hover:text-text-main active:scale-95 ${FOCUS_RING}`}
+            >
+              <Sym name={nextIsLight ? "light_mode" : "dark_mode"} size={18} />
+            </button>
+          )}
         </div>
       </div>
     </header>

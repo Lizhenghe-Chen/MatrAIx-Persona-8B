@@ -7,7 +7,7 @@ name = "application/survey-toilet-brush-choice"
 [metadata]
 difficulty = "easy"
 type = "survey"
-domain = "commerce"
+domain = "e-commerce"
 tags = [ "consumer goods", "toilet brush", "choice", "price sensitivity", "shopping simulation",]
 
 [verifier]

@@ -18,6 +18,14 @@ Dark-first, restrained "mission control". Authoritative tokens live in `src/inde
 - `.glow` — cyan glow, reserved for the single primary CTA per view.
 - `.custom-scrollbar`, `.animate-rb-pulse`, `.animate-rb-spin`.
 
+## Layout
+- Shell: `TopBar` (h-14) + one full-viewport view; the page itself never scrolls (`h-screen`, `overflow-hidden`).
+- Cockpit (`CockpitSetupShell`) is the one responsive surface:
+  - **≥ xl (1280px)** — three columns side by side (3/6/3 of 12); each rail scrolls internally, no page scroll.
+  - **< xl** — the two side rails sit side by side on top (2 columns ≥ sm, stacked below sm) and the center pipeline spans the full width underneath; the grid becomes the scroll container.
+  - Keep a rail ≥ ~300px: below that the selects, `w-[4.25rem]` labels and persona/task cards start truncating (measured at 936px in a 3-column trial).
+  - Each stacked rail needs a **definite height** (`h-[520px]` etc.). Auto rows would split the viewport into thirds, and `overflow-hidden` would then clip the contents unreachably.
+
 ## Components & motion
 - Icons: Material Symbols via the `<Sym>` primitive (lucide migration is a planned follow-up). Keep one icon family.
 - Every interactive element needs default/hover/focus/active/disabled/loading; `:focus-visible` ring is tokenized globally (`FOCUS_RING`).

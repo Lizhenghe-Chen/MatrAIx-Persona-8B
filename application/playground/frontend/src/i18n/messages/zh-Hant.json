@@ -1491,5 +1491,6 @@
   "personaSetup.synth.customDimsNote": "任務方案宣告的自訂屬性（{count}）— 將自動寫入。",
   "personaSetup.synth.sizeFromCells": "世代規模由 儲存格 × 每格 決定。",
   "personaSetup.progress.independentDataset": "獨立資料集",
-  "personaSetup.progress.waiting": "等待中…"
+  "personaSetup.progress.waiting": "等待中…",
+  "taskSetup.domain.ecommerce": "跨境電商"
 }

@@ -7,7 +7,7 @@ name = "application/survey_toilet-brush-top30-anon-rating"
 [metadata]
 difficulty = "easy"
 type = "survey"
-domain = "commerce"
+domain = "e-commerce"
 tags = [ "consumer goods", "toilet brush", "choice", "price sensitivity", "shopping simulation", "factorial experiment",]
 
 [verifier]

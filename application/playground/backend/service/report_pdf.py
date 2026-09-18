@@ -984,8 +984,10 @@ def build_batch_report_pdf(
             if not isinstance(trial, dict):
                 continue
             persona = trial.get("personaName") or trial.get("personaId") or "-"
-            status = "done" if trial.get("completed") else "pending"
-            if trial.get("error") or trial.get("succeeded") is False:
+            # succeeded = completed && error is None（见 harbor_job_service）：
+            # 未完成的行 succeeded 必为 false，不能据此判成 failed。
+            status = "done" if trial.get("completed") else "running"
+            if trial.get("error"):
                 status = "failed"
             name = _safe(trial.get("trialName") or "trial", limit=48)
             line = f"{_safe(persona, limit=28)}  {status}  {name}"

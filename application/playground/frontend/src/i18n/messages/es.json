@@ -1491,5 +1491,6 @@
   "personaSetup.synth.customDimsNote": "Atributos personalizados ({count}) declarados por el plan de tarea: se aplican automáticamente.",
   "personaSetup.synth.sizeFromCells": "El tamaño del cohorte lo fijan celdas × por celda.",
   "personaSetup.progress.independentDataset": "Independiente",
-  "personaSetup.progress.waiting": "Esperando…"
+  "personaSetup.progress.waiting": "Esperando…",
+  "taskSetup.domain.ecommerce": "Comercio electrónico"
 }

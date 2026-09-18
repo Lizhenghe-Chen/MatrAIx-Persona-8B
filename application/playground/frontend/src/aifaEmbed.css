@@ -1,0 +1,52 @@
+/* ===========================================================================
+   AIFA Claw 嵌入主题（宿主用 iframe 挂载本 SPA：`?embed=aifa`）
+   ---------------------------------------------------------------------------
+   只覆盖设计令牌，不动组件样式：令牌取自宿主 aifa-claw/frontend/src/styles.css
+   的 `:root`（蓝 #2065d1 + 12px 圆角 + Inter/中文栈），改宿主配色时同步这里即可。
+   选择器带上 :root.light 以压过 index.css 的 `:root.light` 亮色档；独立访问
+   （无 data-embed）时本文件不生效。
+   =========================================================================== */
+:root.light[data-embed="aifa"] {
+  /* 表面：宿主是白卡片 + #f4f7fb 页面底 */
+  --surface-lowest: 255 255 255;
+  --surface-dim: 244 247 251;
+  --surface-low: 247 249 252;
+  --surface: 255 255 255;
+  --surface-high: 241 246 255;
+  --field: 247 249 252;
+
+  /* 描边 */
+  --outline: 226 232 240;
+  --outline-dim: 238 241 246;
+
+  /* 品牌色 = 宿主主色 */
+  --primary: 32 101 209;
+  --primary-dim: 23 79 167;
+  --primary-light: 74 134 232;
+  --primary-glow: 145 183 245;
+  --on-primary: 255 255 255;
+  --secondary: 22 133 104;
+  --secondary-dim: 18 108 85;
+  --accent: 32 101 209;
+  --accent-dim: 23 79 167;
+
+  /* 文本 */
+  --text-main: 28 42 58;
+  --text-variant: 64 84 106;
+  --text-dim: 101 117 137;
+
+  /* 状态 / 评分 */
+  --danger: 194 65 75;
+  --warn: 176 107 18;
+  --score-low: 194 65 75;
+  --score-mid: 176 107 18;
+  --score-high: 22 133 104;
+
+  /* 字体与圆角 */
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --display: "Inter", system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-md: 12px;
+  --radius-lg: 14px;
+}

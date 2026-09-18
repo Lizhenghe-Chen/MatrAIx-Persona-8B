@@ -269,7 +269,9 @@ export function fmtRunDateFriendly(
 /** Title-case a snake/lower domain token for a pill (`beauty_product` → `Beauty product`). */
 export function fmtDomain(domain: string | null | undefined): string {
   if (!domain) return "-";
-  const spaced = domain.replace(/_/g, " ");
+  const trimmed = domain.trim();
+  if (trimmed.toLowerCase() === "e-commerce") return "E-Commerce";
+  const spaced = trimmed.replace(/_/g, " ");
   return spaced.charAt(0).toUpperCase() + spaced.slice(1);
 }
 

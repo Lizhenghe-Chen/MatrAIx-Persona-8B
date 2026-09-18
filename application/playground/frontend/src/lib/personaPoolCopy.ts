@@ -1,8 +1,17 @@
 import type { PersonaPoolCatalog } from "./types";
 
+/**
+ * 展示名覆盖：pool 路径是数据层标识（磁盘目录、API 参数、缓存键都靠它），
+ * 界面上只出现业务名，不出现内部代号。
+ */
+const POOL_DISPLAY_NAMES: Record<string, string> = {
+  "matraix-persona-dev-sample": "Amazon 买家 200",
+  "matraix-persona-1m": "amazon百万买家",
+};
+
 export function poolSlugLabel(poolPath: string): string {
   const slug = poolPath.split("/").filter(Boolean).pop() ?? poolPath;
-  return slug.replace(/-/g, " ");
+  return POOL_DISPLAY_NAMES[slug] ?? slug.replace(/-/g, " ");
 }
 
 export interface PersonaPoolEmptyState {

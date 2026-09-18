@@ -6,6 +6,7 @@ import { flushSync } from "react-dom";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 
 import { api, ApiError } from "@/lib/api";
+import { IS_EMBEDDED } from "@/lib/embedMode";
 import { useI18n } from "@/i18n/I18nProvider";
 import type { MessageKey } from "@/i18n/types";
 import { SOURCE_MESSAGES } from "@/i18n/source";
@@ -375,10 +376,13 @@ function contextPriority(context: AggregationContext, category: ReportingCategor
 }
 
 function trialStatus(trial: HarborTrialRow): "done" | "failed" | "running" | "pending" {
-  if (trial.error || trial.succeeded === false) return "failed";
-  if (trial.completed) return "done";
-  if (trial.completed === false) return "running";
-  return "pending";
+  // 后端语义（backend/service/harbor_job_service._job_detail）：
+  //   succeeded = completed && error is None
+  // 因此**未完成**的行 succeeded 恒为 false（error 仍为 null）——那是“还没跑完”，
+  // 不能当失败；否则一个 1000 人的运行中作业会把未开跑的条目全部标成失败。
+  if (trial.error) return "failed";
+  if (!trial.completed) return "running";
+  return trial.succeeded === false ? "failed" : "done";
 }
 
 function trialStatusLabel(status: ReturnType<typeof trialStatus>, t?: ReportTranslate): string {
@@ -5867,7 +5871,9 @@ export function HarborJobDetail({ jobName, onBack, onOpenTrial }: HarborJobDetai
   return (
     <StudioPageFrame>
       <StudioPageHeader
-        eyebrow={`MatrAIx · ${t("reports.page.runsTab")}`}
+        eyebrow={
+          IS_EMBEDDED ? t("reports.page.runsTab") : `MatrAIx · ${t("reports.page.runsTab")}`
+        }
         title={jobName}
         subtitle={
           launch?.configPath

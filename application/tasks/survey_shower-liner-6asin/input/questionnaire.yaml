@@ -1,0 +1,508 @@
+schemaVersion: '1.0'
+id: shower_liner_6asin_v1
+title: Shower Curtain Liner Shopping Choice Survey (6 ASINs + None)
+description: Which shower curtain liner the persona would actually buy from a 6-option shelf (plus 'none'), why the other
+  5 were rejected, search-page browse/buy tolerance, and how listing-optimization elements (title/images/bullets/A+/attributes/price/reviews/brand
+  trust) shape the decision; stock/availability is held constant and excluded as a factor.
+questions:
+- id: q_choice
+  prompt: Which shower curtain liner would you buy for your bathroom? Give a 2-3 sentence reason for your choice.
+  type: single_choice
+  construct: liner_choice
+  required: true
+  askRationale: true
+  options:
+  - id: A
+    label: A — AmazerBath AmazerBath Rainbow Emerald EVA Shower Curtain Liner (72" x 72") ($18.99)
+  - id: B
+    label: B — jssablo jssablo Blue Cube 3D EVA Shower Curtain Liner, 72" x 72", Magnetic ($7.19)
+  - id: C
+    label: C — LQFMEHOT LQFMEHOT EVA Blue Water-Wave Shower Curtain Liner, 72" x 72", Art Deco ($7.09)
+  - id: D
+    label: D — Laumyasof Laumyasof 2-Pack Green 3D Pebble EVA Shower Curtain Liner, 72" x 72" ($9.99)
+  - id: E
+    label: E — Dependable Industries Essentials Dependable Industries EVA Black Shower Curtain Liner, 72" x 72", Modern ($9.99)
+  - id: F
+    label: F — MuuXii MuuXii EVA Clear Polka-Dot Shower Curtain Liner, 71" x 71", with Hooks (Not shown on listing)
+  - id: none_of_these
+    label: None of these — I would not buy any of them
+- id: q_reject_A
+  prompt: Why did you NOT choose Option A (AmazerBath, $18.99)? Select ALL that apply. If this is the one you chose, select
+    'This is the one I chose'.
+  type: multi_choice
+  construct: reject_A
+  required: true
+  options:
+  - id: already_chosen
+    label: This is the one I chose
+  - id: price_too_high
+    label: Price is too high for a liner
+  - id: price_suspicious
+    label: Price seems cheap — I worry about quality
+  - id: look
+    label: I don't like the look / color / texture
+  - id: material
+    label: Material (EVA etc.) is not convincing / I worry about safety
+  - id: rating
+    label: Rating is not high enough
+  - id: few_reviews
+    label: Too few reviews — not enough evidence
+  - id: review_concern
+    label: Review comments raised doubts
+  - id: brand
+    label: Brand is unfamiliar / not trustworthy enough
+  - id: size
+    label: Size / fit is unclear or unusual (71x71, 72x72)
+  - id: missing_magnet
+    label: Missing magnet / weighted hem I want
+  - id: transparency
+    label: Transparency or light-blocking is not what I want
+  - id: pack
+    label: Pack size is not what I want (single vs 2-pack)
+  - id: info_incomplete
+    label: Product info is incomplete (description / images / specs)
+  - id: other
+    label: Other reason
+- id: q_reject_B
+  prompt: Why did you NOT choose Option B (jssablo, $7.19)? Select ALL that apply. If this is the one you chose, select 'This
+    is the one I chose'.
+  type: multi_choice
+  construct: reject_B
+  required: true
+  options:
+  - id: already_chosen
+    label: This is the one I chose
+  - id: price_too_high
+    label: Price is too high for a liner
+  - id: price_suspicious
+    label: Price seems cheap — I worry about quality
+  - id: look
+    label: I don't like the look / color / texture
+  - id: material
+    label: Material (EVA etc.) is not convincing / I worry about safety
+  - id: rating
+    label: Rating is not high enough
+  - id: few_reviews
+    label: Too few reviews — not enough evidence
+  - id: review_concern
+    label: Review comments raised doubts
+  - id: brand
+    label: Brand is unfamiliar / not trustworthy enough
+  - id: size
+    label: Size / fit is unclear or unusual (71x71, 72x72)
+  - id: missing_magnet
+    label: Missing magnet / weighted hem I want
+  - id: transparency
+    label: Transparency or light-blocking is not what I want
+  - id: pack
+    label: Pack size is not what I want (single vs 2-pack)
+  - id: info_incomplete
+    label: Product info is incomplete (description / images / specs)
+  - id: other
+    label: Other reason
+- id: q_reject_C
+  prompt: Why did you NOT choose Option C (LQFMEHOT, $7.09)? Select ALL that apply. If this is the one you chose, select 'This
+    is the one I chose'.
+  type: multi_choice
+  construct: reject_C
+  required: true
+  options:
+  - id: already_chosen
+    label: This is the one I chose
+  - id: price_too_high
+    label: Price is too high for a liner
+  - id: price_suspicious
+    label: Price seems cheap — I worry about quality
+  - id: look
+    label: I don't like the look / color / texture
+  - id: material
+    label: Material (EVA etc.) is not convincing / I worry about safety
+  - id: rating
+    label: Rating is not high enough
+  - id: few_reviews
+    label: Too few reviews — not enough evidence
+  - id: review_concern
+    label: Review comments raised doubts
+  - id: brand
+    label: Brand is unfamiliar / not trustworthy enough
+  - id: size
+    label: Size / fit is unclear or unusual (71x71, 72x72)
+  - id: missing_magnet
+    label: Missing magnet / weighted hem I want
+  - id: transparency
+    label: Transparency or light-blocking is not what I want
+  - id: pack
+    label: Pack size is not what I want (single vs 2-pack)
+  - id: info_incomplete
+    label: Product info is incomplete (description / images / specs)
+  - id: other
+    label: Other reason
+- id: q_reject_D
+  prompt: Why did you NOT choose Option D (Laumyasof, $9.99)? Select ALL that apply. If this is the one you chose, select
+    'This is the one I chose'.
+  type: multi_choice
+  construct: reject_D
+  required: true
+  options:
+  - id: already_chosen
+    label: This is the one I chose
+  - id: price_too_high
+    label: Price is too high for a liner
+  - id: price_suspicious
+    label: Price seems cheap — I worry about quality
+  - id: look
+    label: I don't like the look / color / texture
+  - id: material
+    label: Material (EVA etc.) is not convincing / I worry about safety
+  - id: rating
+    label: Rating is not high enough
+  - id: few_reviews
+    label: Too few reviews — not enough evidence
+  - id: review_concern
+    label: Review comments raised doubts
+  - id: brand
+    label: Brand is unfamiliar / not trustworthy enough
+  - id: size
+    label: Size / fit is unclear or unusual (71x71, 72x72)
+  - id: missing_magnet
+    label: Missing magnet / weighted hem I want
+  - id: transparency
+    label: Transparency or light-blocking is not what I want
+  - id: pack
+    label: Pack size is not what I want (single vs 2-pack)
+  - id: info_incomplete
+    label: Product info is incomplete (description / images / specs)
+  - id: other
+    label: Other reason
+- id: q_reject_E
+  prompt: Why did you NOT choose Option E (Dependable Industries Essentials, $9.99)? Select ALL that apply. If this is the
+    one you chose, select 'This is the one I chose'.
+  type: multi_choice
+  construct: reject_E
+  required: true
+  options:
+  - id: already_chosen
+    label: This is the one I chose
+  - id: price_too_high
+    label: Price is too high for a liner
+  - id: price_suspicious
+    label: Price seems cheap — I worry about quality
+  - id: look
+    label: I don't like the look / color / texture
+  - id: material
+    label: Material (EVA etc.) is not convincing / I worry about safety
+  - id: rating
+    label: Rating is not high enough
+  - id: few_reviews
+    label: Too few reviews — not enough evidence
+  - id: review_concern
+    label: Review comments raised doubts
+  - id: brand
+    label: Brand is unfamiliar / not trustworthy enough
+  - id: size
+    label: Size / fit is unclear or unusual (71x71, 72x72)
+  - id: missing_magnet
+    label: Missing magnet / weighted hem I want
+  - id: transparency
+    label: Transparency or light-blocking is not what I want
+  - id: pack
+    label: Pack size is not what I want (single vs 2-pack)
+  - id: info_incomplete
+    label: Product info is incomplete (description / images / specs)
+  - id: other
+    label: Other reason
+- id: q_reject_F
+  prompt: Why did you NOT choose Option F (MuuXii, Not shown on listing)? Select ALL that apply. If this is the one you chose,
+    select 'This is the one I chose'.
+  type: multi_choice
+  construct: reject_F
+  required: true
+  options:
+  - id: already_chosen
+    label: This is the one I chose
+  - id: price_too_high
+    label: Price is too high for a liner
+  - id: price_suspicious
+    label: Price seems cheap — I worry about quality
+  - id: look
+    label: I don't like the look / color / texture
+  - id: material
+    label: Material (EVA etc.) is not convincing / I worry about safety
+  - id: rating
+    label: Rating is not high enough
+  - id: few_reviews
+    label: Too few reviews — not enough evidence
+  - id: review_concern
+    label: Review comments raised doubts
+  - id: brand
+    label: Brand is unfamiliar / not trustworthy enough
+  - id: size
+    label: Size / fit is unclear or unusual (71x71, 72x72)
+  - id: missing_magnet
+    label: Missing magnet / weighted hem I want
+  - id: transparency
+    label: Transparency or light-blocking is not what I want
+  - id: pack
+    label: Pack size is not what I want (single vs 2-pack)
+  - id: info_incomplete
+    label: Product info is incomplete (description / images / specs)
+  - id: other
+    label: Other reason
+- id: q_page_browse
+  prompt: On Amazon, how far into the search results would you still click in and BROWSE a shower curtain liner?
+  type: single_choice
+  construct: page_browse
+  required: true
+  options:
+  - id: page1
+    label: Page 1 only
+  - id: page2
+    label: I would go to page 2
+  - id: page3
+    label: I would go to page 3
+  - id: page4_5
+    label: I would go to pages 4–5
+  - id: beyond
+    label: I might even go past page 5
+  - id: unsure
+    label: Not sure
+- id: q_page_buy
+  prompt: On Amazon, how far into the search results would you still consider BUYING a shower curtain liner?
+  type: single_choice
+  construct: page_buy
+  required: true
+  options:
+  - id: page1
+    label: Page 1 only
+  - id: page2
+    label: I would go to page 2
+  - id: page3
+    label: I would go to page 3
+  - id: page4_5
+    label: I would go to pages 4–5
+  - id: beyond
+    label: I might even go past page 5
+  - id: unsure
+    label: Not sure
+- id: q_factor_most
+  prompt: What mattered MOST in your choice?
+  type: single_choice
+  construct: factor_most
+  required: true
+  options:
+  - id: price_value
+    label: Price / value for money
+  - id: material
+    label: Material safety (EVA, odor-free, eco-friendly)
+  - id: waterproof
+    label: Waterproof / anti-mold / quick-dry
+  - id: magnet
+    label: Magnet / weighted hem (stays against the tub)
+  - id: transparency
+    label: Transparency / light filtering
+  - id: appearance
+    label: Look / color / texture
+  - id: size_fit
+    label: Size fit (72x72 etc.)
+  - id: rating
+    label: Star rating
+  - id: reviews
+    label: Review count / review content
+  - id: brand
+    label: Brand trust
+  - id: pack
+    label: Pack size / multi-pack value
+  - id: listing
+    label: Listing completeness (title / images / bullets / specs)
+- id: q_factor_second
+  prompt: What was your SECOND most important factor?
+  type: single_choice
+  construct: factor_second
+  required: true
+  options:
+  - id: price_value
+    label: Price / value for money
+  - id: material
+    label: Material safety (EVA, odor-free, eco-friendly)
+  - id: waterproof
+    label: Waterproof / anti-mold / quick-dry
+  - id: magnet
+    label: Magnet / weighted hem (stays against the tub)
+  - id: transparency
+    label: Transparency / light filtering
+  - id: appearance
+    label: Look / color / texture
+  - id: size_fit
+    label: Size fit (72x72 etc.)
+  - id: rating
+    label: Star rating
+  - id: reviews
+    label: Review count / review content
+  - id: brand
+    label: Brand trust
+  - id: pack
+    label: Pack size / multi-pack value
+  - id: listing
+    label: Listing completeness (title / images / bullets / specs)
+- id: q_importance_title
+  prompt: A complete, clear product TITLE (size, material, key feature) matters to me.
+  type: likert
+  construct: q_importance_title
+  required: true
+  minValue: 1
+  maxValue: 5
+- id: q_importance_image
+  prompt: CLEAR MAIN IMAGES that show the real look & effect matter to me.
+  type: likert
+  construct: q_importance_image
+  required: true
+  minValue: 1
+  maxValue: 5
+- id: q_importance_bullets
+  prompt: Selling-point BULLETS (5 bullets) that explain benefits matter to me.
+  type: likert
+  construct: q_importance_bullets
+  required: true
+  minValue: 1
+  maxValue: 5
+- id: q_importance_aplus
+  prompt: A+ content / product video / brand story pages influence my decision.
+  type: likert
+  construct: q_importance_aplus
+  required: true
+  minValue: 1
+  maxValue: 5
+- id: q_importance_attr
+  prompt: Complete ATTRIBUTES / size & spec tables (dimensions, material, weight) matter to me.
+  type: likert
+  construct: q_importance_attr
+  required: true
+  minValue: 1
+  maxValue: 5
+- id: q_importance_price
+  prompt: PRICE and value for money matter to me.
+  type: likert
+  construct: q_importance_price
+  required: true
+  minValue: 1
+  maxValue: 5
+- id: q_importance_reviews
+  prompt: RATINGS + review count + review content influence my decision.
+  type: likert
+  construct: q_importance_reviews
+  required: true
+  minValue: 1
+  maxValue: 5
+- id: q_importance_trust
+  prompt: Brand trust and safety certifications (BPA-free / PVC-free / odor-free) matter to me.
+  type: likert
+  construct: q_importance_trust
+  required: true
+  minValue: 1
+  maxValue: 5
+- id: q_listing_redline
+  prompt: Which of the following would make you EXCLUDE a shower curtain liner immediately? Select all that apply.
+  type: multi_choice
+  construct: listing_redline
+  required: true
+  options:
+  - id: no_price
+    label: No price shown
+  - id: low_rating
+    label: Rating below 4.0
+  - id: few_reviews
+    label: Fewer than ~50 reviews
+  - id: no_size
+    label: No size / dimensions information
+  - id: material_unclear
+    label: Material not clearly stated
+  - id: blur_image
+    label: Main image is blurry / looks fake
+  - id: no_bullets
+    label: No selling-point bullets / thin description
+  - id: no_aplus
+    label: No A+ content / video / rich media
+  - id: brand_unfamiliar
+    label: Brand is completely unfamiliar
+  - id: none
+    label: None of the above would make me exclude a product
+- id: q_material_pref
+  prompt: Which liner material do you prefer?
+  type: single_choice
+  construct: material_pref
+  required: true
+  options:
+  - id: eva
+    label: EVA (flexible, odor-free, lightweight)
+  - id: peva
+    label: PEVA (chlorine-free alternative)
+  - id: pvc
+    label: PVC (heavier, classic)
+  - id: polyester
+    label: Polyester / fabric (machine-washable)
+  - id: cloth
+    label: Cloth / cotton blend
+  - id: no_preference
+    label: No strong preference
+- id: q_transparency_pref
+  prompt: Which transparency level do you prefer for a liner?
+  type: single_choice
+  construct: transparency_pref
+  required: true
+  options:
+  - id: fully_transparent
+    label: Fully transparent (lets light through)
+  - id: semi
+    label: Semi-transparent / light-filtering
+  - id: blackout
+    label: Opaque / blackout
+  - id: no_preference
+    label: No strong preference
+- id: q_badge_effect
+  prompt: If one liner on the shelf carried an "Amazon's Choice" or "Best Seller" badge, would it influence you?
+  type: single_choice
+  construct: badge_effect
+  required: true
+  options:
+  - id: yes_strongly
+    label: Yes, a lot
+  - id: yes_somewhat
+    label: Yes, somewhat
+  - id: neutral
+    label: Neutral
+  - id: unlikely
+    label: Probably not
+  - id: no_effect
+    label: No, it wouldn't affect me
+- id: q_switch_trigger
+  prompt: What would most likely make you switch to a different option on this shelf?
+  type: single_choice
+  construct: switch_trigger
+  required: true
+  options:
+  - id: lower_price
+    label: A lower price
+  - id: better_rating
+    label: A higher rating / more reviews
+  - id: better_look
+    label: Better looks / design
+  - id: better_function
+    label: Better function / features (magnets, waterproof, quick-dry)
+  - id: better_value
+    label: Better value (2-pack, hooks included)
+  - id: nothing
+    label: Nothing — I'm confident in my choice
+- id: q_price_acceptance
+  prompt: The price of the liner I chose is acceptable for what it offers.
+  type: likert
+  construct: price_acceptance
+  required: true
+  minValue: 1
+  maxValue: 5
+- id: q_purchase_intent
+  prompt: I would realistically buy this shower curtain liner within the next 3 months.
+  type: likert
+  construct: purchase_intent
+  required: true
+  minValue: 1
+  maxValue: 5

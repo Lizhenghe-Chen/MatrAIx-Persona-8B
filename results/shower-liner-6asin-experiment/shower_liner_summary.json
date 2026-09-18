@@ -1,0 +1,440 @@
+{
+  "meta": {
+    "survey_a": {
+      "id": "shower_liner_6asin_v1",
+      "n": 1000,
+      "job": "survey-shower-liner-6asin-n1000"
+    },
+    "survey_b": {
+      "id": "shower_liner_6asin_journey_v1",
+      "n": 1000,
+      "job": "survey-shower-liner-journey-n1000"
+    },
+    "products": {
+      "A": {
+        "brand": "AmazerBath",
+        "price": 18.99,
+        "rating": 4.5,
+        "reviews": 4156,
+        "avail": "no featured offer"
+      },
+      "B": {
+        "brand": "jssablo",
+        "price": 7.19,
+        "rating": 4.4,
+        "reviews": 1872,
+        "avail": "in stock"
+      },
+      "C": {
+        "brand": "LQFMEHOT",
+        "price": 7.09,
+        "rating": 4.6,
+        "reviews": 974,
+        "avail": "in stock"
+      },
+      "D": {
+        "brand": "Laumyasof",
+        "price": 9.99,
+        "rating": 4.4,
+        "reviews": 16,
+        "avail": "new listing"
+      },
+      "E": {
+        "brand": "Dependable",
+        "price": 9.99,
+        "rating": 4.3,
+        "reviews": 116,
+        "avail": "only 10 left"
+      },
+      "F": {
+        "brand": "MuuXii",
+        "price": null,
+        "rating": 4.4,
+        "reviews": 10,
+        "avail": "unavailable"
+      }
+    },
+    "note": "all percentages are % of person-answers; multi-choice sums may exceed 100%"
+  },
+  "choice": {
+    "share_pct": {
+      "B": 17.9,
+      "C": 60.0,
+      "A": 20.8,
+      "E": 1.3
+    },
+    "reject_top_reasons": {
+      "A": [
+        [
+          "price_too_high",
+          792
+        ],
+        [
+          "look",
+          238
+        ],
+        [
+          "availability",
+          237
+        ],
+        [
+          "transparency",
+          180
+        ],
+        [
+          "brand",
+          21
+        ],
+        [
+          "material",
+          3
+        ],
+        [
+          "pack",
+          3
+        ],
+        [
+          "few_reviews",
+          2
+        ]
+      ],
+      "B": [
+        [
+          "look",
+          669
+        ],
+        [
+          "price_suspicious",
+          409
+        ],
+        [
+          "brand",
+          250
+        ],
+        [
+          "rating",
+          192
+        ],
+        [
+          "few_reviews",
+          181
+        ],
+        [
+          "material",
+          56
+        ],
+        [
+          "review_concern",
+          24
+        ],
+        [
+          "transparency",
+          16
+        ]
+      ],
+      "C": [
+        [
+          "brand",
+          360
+        ],
+        [
+          "price_suspicious",
+          257
+        ],
+        [
+          "look",
+          210
+        ],
+        [
+          "few_reviews",
+          186
+        ],
+        [
+          "material",
+          25
+        ],
+        [
+          "review_concern",
+          24
+        ],
+        [
+          "transparency",
+          7
+        ],
+        [
+          "rating",
+          3
+        ]
+      ],
+      "D": [
+        [
+          "few_reviews",
+          982
+        ],
+        [
+          "material",
+          821
+        ],
+        [
+          "pack",
+          455
+        ],
+        [
+          "look",
+          86
+        ],
+        [
+          "brand",
+          59
+        ],
+        [
+          "rating",
+          12
+        ],
+        [
+          "price_suspicious",
+          5
+        ],
+        [
+          "info_incomplete",
+          3
+        ]
+      ],
+      "E": [
+        [
+          "look",
+          925
+        ],
+        [
+          "availability",
+          596
+        ],
+        [
+          "few_reviews",
+          466
+        ],
+        [
+          "rating",
+          207
+        ],
+        [
+          "transparency",
+          179
+        ],
+        [
+          "brand",
+          51
+        ],
+        [
+          "review_concern",
+          24
+        ],
+        [
+          "material",
+          4
+        ]
+      ],
+      "F": [
+        [
+          "few_reviews",
+          967
+        ],
+        [
+          "availability",
+          897
+        ],
+        [
+          "size",
+          310
+        ],
+        [
+          "transparency",
+          45
+        ],
+        [
+          "material",
+          22
+        ],
+        [
+          "info_incomplete",
+          15
+        ],
+        [
+          "brand",
+          13
+        ],
+        [
+          "missing_magnet",
+          7
+        ]
+      ]
+    },
+    "page_browse_pct": {
+      "page2": 95.4,
+      "page3": 2.0,
+      "page1": 2.6
+    },
+    "page_buy_pct": {
+      "page1": 97.7,
+      "page2": 2.3
+    },
+    "factor_most_pct": {
+      "price_value": 52.2,
+      "reviews": 25.8,
+      "rating": 15.0,
+      "material": 3.8,
+      "magnet": 2.1,
+      "appearance": 1.1
+    },
+    "factor_second_pct": {
+      "reviews": 40.8,
+      "price_value": 27.6,
+      "material": 14.8,
+      "magnet": 4.2,
+      "rating": 11.2,
+      "appearance": 1.1,
+      "transparency": 0.1,
+      "brand": 0.1,
+      "waterproof": 0.1
+    },
+    "importance_mean_1to5": {
+      "title": 3.97,
+      "image": 4.32,
+      "bullets": 3.86,
+      "aplus": 1.99,
+      "attr": 4.07,
+      "price": 4.55,
+      "reviews": 4.88,
+      "trust": 4.12
+    },
+    "redline_pct": {
+      "unavailable": 100.0,
+      "no_price": 91.6,
+      "low_rating": 82.0,
+      "few_reviews": 69.1,
+      "blur_image": 94.0,
+      "no_size": 89.6,
+      "material_unclear": 97.3,
+      "no_bullets": 12.8,
+      "brand_unfamiliar": 0.6,
+      "none": 0.1
+    },
+    "material_pref_pct": {
+      "eva": 100.0
+    },
+    "transparency_pref_pct": {
+      "semi": 96.9,
+      "fully_transparent": 1.8,
+      "blackout": 1.3
+    },
+    "badge_effect_pct": {
+      "yes_somewhat": 91.1,
+      "unlikely": 4.9,
+      "neutral": 2.2,
+      "no_effect": 0.1,
+      "yes_strongly": 1.7
+    },
+    "switch_trigger_pct": {
+      "lower_price": 7.6,
+      "better_rating": 64.9,
+      "better_function": 15.5,
+      "better_value": 6.3,
+      "nothing": 5.1,
+      "better_look": 0.6
+    },
+    "price_accept_mean": 4.78
+  },
+  "journey": {
+    "first_click_pct": {
+      "A": 65.5,
+      "C": 26.3,
+      "B": 8.2
+    },
+    "click_info_pct": {
+      "material_safety": 99.8,
+      "reviews": 99.5,
+      "specs": 61.3,
+      "delivery": 26.0,
+      "more_images": 6.7,
+      "bullets": 5.1,
+      "description": 0.2
+    },
+    "buy_decision_pct": {
+      "likely_buy": 66.2,
+      "undecided": 22.7,
+      "not_buy": 10.4,
+      "buy_now": 0.7
+    },
+    "buy_yes_pct": 6.7,
+    "consider_other_pct": {
+      "yes": 99.7,
+      "maybe": 0.2,
+      "no": 0.1
+    },
+    "next_choice_pct": {
+      "C": 71.8,
+      "B": 26.1,
+      "A": 1.9,
+      "D": 0.1,
+      "none_of_these": 0.1
+    },
+    "fallback_pct": {
+      "A": 21.1,
+      "C": 72.5,
+      "B": 6.4
+    },
+    "page_search_pct": {
+      "page1": 79.0,
+      "page2": 21.0
+    },
+    "overall_factor_pct": {
+      "reviews": 53.3,
+      "material": 10.1,
+      "price_value": 22.1,
+      "rating": 13.6,
+      "appearance": 0.8,
+      "listing": 0.1
+    },
+    "first_to_fallback_pct": {
+      "A": {
+        "A": 23.4,
+        "C": 73.9,
+        "B": 2.7
+      },
+      "C": {
+        "B": 11.0,
+        "C": 70.3,
+        "A": 18.6
+      },
+      "B": {
+        "C": 68.3,
+        "B": 20.7,
+        "A": 11.0
+      }
+    },
+    "sample_first_click_reasons": [
+      "The emerald-green semi-transparent liner with brass grommets and weighted stones looks higher-end than the others, and 4.5 stars with over 4,000 reviews makes it feel like the safest, most reliable option to click first.",
+      "The emerald green EVA with brass grommets looks more upscale than the blue and black options, and a 4.5-star rating with over 4,000 reviews signals it's a proven, reliable product. The higher price is worth investigating if the quality holds up.",
+      "The LQFMEHOT liner stands out with the highest star rating (4.6) among the affordable options, plus a distinctive Art-Deco water-wave texture that reads as more considered than a plain liner. At $7.09 with 974 reviews, it looks like a strong value without the reliability risk of the very-low-review listings.",
+      "The emerald-green EVA with brass grommets and weighted stones looks the most upscale and distinctive in the thumbnails, and the 4.5★ with 4,156 reviews signals it's a proven, reliable pick.",
+      "The Art-Deco water-wave pattern catches my eye as more interesting than a plain liner, and at $7.09 with a 4.6-star rating and nearly 1,000 reviews it looks like the best combination of looks and proven reliability.",
+      "The emerald-green EVA liner with brass grommets stands out visually and the 4.5★ with over 4,000 reviews signals reliability, which matters to me since I have reduced dexterity and want something that installs easily and holds up."
+    ],
+    "sample_fallback_reasons": [
+      "If nothing else worked out, I'd buy the AmazerBath because its 4,156 reviews and 4.5-star rating give me the most confidence in quality and durability. The BPA-free, odor-free EVA and weighted bottom also fit my preference for a safer, low-maintenance liner, even at the higher price.",
+      "It has the best combination of rating (4.6) and review volume (974) among the affordable options, plus magnets and a tear-proof header for durability. The Art-Deco wave look is inoffensive, and at $7.09 the risk is minimal if it disappoints.",
+      "If nothing fully won me over, the jssablo Blue Cube is the safest pick: a low $7.19 price, 1,872 reviews at 4.4 stars, a health-conscious 70% EVA material, and magnets plus metal grommets covering the practical basics. It balances value, reliability, and appearance better than the alternatives. The AmazerBath is nicer but the higher price and unclear availability make it a riskier forced choice.",
+      "If I had to pick one, the AmazerBath wins on the strongest review base (4,156 reviews at 4.5★) and the eco-friendly BPA-free EVA with weighted stones and brass grommets, which best fits my health and quality priorities. It costs more, but for a chronic-condition household the material safety and proven reliability justify the price.",
+      "If nothing else won me over, I'd go back to the LQFMEHOT: it has the highest rating of the group at 4.6 stars, a healthy review count, odor-free EVA, magnets and a low $7.09 price. The look is a bit decorative for my taste, but functionally and financially it's the safest pick.",
+      "If nothing else worked out, I'd buy the LQFMEHOT because it's in stock, inexpensive at $7.09, and has the best rating (4.6★) with a reliable review count, and its EVA material and magnets fit what I need."
+    ],
+    "sample_buy_reasons": [
+      "It has strong reviews and the eco-friendly, odor-free EVA material I want, but the page only shows a delivery notice with no featured offer, so I'd add it to my cart and check other options before committing.",
+      "Strong reviews and a solid material story make it a real contender, but the page showing no featured offer and only a delivery notice makes me want to check availability before committing. I'd cart it and see if the other options beat it on price.",
+      "It's cheap, well-rated at 4.6 with a solid review base, and the EVA material and magnets match what I want, so it's cart-worthy. But with several similar options clustered in price, I'd add it and quickly compare before committing.",
+      "The material and design check my boxes and the review volume gives me confidence, but the missing featured offer and delivery notice make me want to compare a cheaper option before committing.",
+      "The price, rating and review count all look solid, but since it's a cheap everyday item I'd still add it to my cart and glance at one or two alternatives before committing.",
+      "The material and weighted bottom look good, but the page shows a delivery notice with no featured offer, so I'd add it to my cart and compare while checking availability."
+    ]
+  }
+}

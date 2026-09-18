@@ -30,6 +30,7 @@ import {
 } from "./taskAvailability";
 import {
   CHIP_TEXT_CLASS,
+  domainDisplayLabel,
   taskCardTagKey,
   taskCardTagLabel,
 } from "./taskCardLabels";
@@ -111,14 +112,6 @@ const ESTIMATED_CARD_HEIGHT = 132;
 /** Sentinel for the "no domain filter" dropdown entry. */
 const ALL_DOMAINS = "__all__";
 
-function formatDomainLabel(domain: string): string {
-  return domain
-    .split(/[-_/]/)
-    .filter(Boolean)
-    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-    .join(" ");
-}
-
 export function TaskSelectionRail({
   taskType,
   chatTasks,
@@ -181,7 +174,7 @@ export function TaskSelectionRail({
       },
       ...domainOptions.map((domain) => ({
         value: domain,
-        label: `${formatDomainLabel(domain)} · ${counts.get(domain) ?? 0}`,
+        label: `${domainDisplayLabel(t, domain)} · ${counts.get(domain) ?? 0}`,
       })),
     ];
   }, [cards, domainOptions, t]);

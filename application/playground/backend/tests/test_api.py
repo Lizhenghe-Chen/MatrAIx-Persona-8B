@@ -11,7 +11,21 @@ import pytest
 pytest.importorskip("fastapi")
 pytest.importorskip("pydantic")
 
-from backend.service.config import PERSONA_MODEL_OPTIONS
+from backend.service.config import (
+    HARBOR_PERSONA_MODEL_ENV,
+    PERSONA_MODEL_ENV,
+    PERSONA_MODEL_OPTIONS,
+    PERSONA_MODEL_PROVIDER_KEYS,
+)
+
+
+def _clear_provider_credentials(monkeypatch) -> None:
+    """Drop every provider credential + explicit model pin (see test_config)."""
+    for env_names in PERSONA_MODEL_PROVIDER_KEYS.values():
+        for name in env_names:
+            monkeypatch.delenv(name, raising=False)
+    monkeypatch.delenv(PERSONA_MODEL_ENV, raising=False)
+    monkeypatch.delenv(HARBOR_PERSONA_MODEL_ENV, raising=False)
 
 
 def test_health(client):
@@ -361,7 +375,8 @@ def test_preflight_smart_attribute_embed_optional(client, monkeypatch):
     assert body["ready"] is True
 
 
-def test_config_options(client):
+def test_config_options(client, monkeypatch):
+    _clear_provider_credentials(monkeypatch)
     resp = client.get("/api/config/options")
     assert resp.status_code == 200
     body = resp.json()

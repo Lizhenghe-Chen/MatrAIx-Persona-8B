@@ -9,6 +9,7 @@ import { toPng } from "html-to-image";
 import { jsPDF } from "jspdf";
 import type { I18nContextValue } from "@/i18n/I18nProvider";
 
+import { IS_EMBEDDED } from "./embedMode";
 import { usageMetaLines, type LlmUsageView } from "./llmUsage";
 
 const A4_WIDTH_MM = 210;
@@ -24,6 +25,8 @@ const WASH = { r: 245, g: 249, b: 252 };
 const CHIP_BG = { r: 232, g: 242, b: 250 };
 const SOFT = { r: 248, g: 250, b: 252 };
 const PAGE_BOTTOM = A4_HEIGHT_MM - 14;
+/** 报告署名（水印 / 脚注 / 文档元数据）：嵌入宿主时不出现本产品品牌。 */
+const SIGNATURE = IS_EMBEDDED ? "" : "MatrAIx";
 
 type ReportTranslate = I18nContextValue["t"];
 
@@ -239,10 +242,12 @@ function drawWatermark(pdf: jsPDF): void {
   pdf.setFont("helvetica", "bold");
   pdf.setFontSize(48);
   pdf.setTextColor(BRAND.r, BRAND.g, BRAND.b);
-  pdf.text("MatrAIx", A4_WIDTH_MM / 2, A4_HEIGHT_MM / 2 + 8, {
-    align: "center",
-    angle: 32,
-  });
+  if (SIGNATURE) {
+    pdf.text(SIGNATURE, A4_WIDTH_MM / 2, A4_HEIGHT_MM / 2 + 8, {
+      align: "center",
+      angle: 32,
+    });
+  }
   pdf.restoreGraphicsState();
 }
 
@@ -410,7 +415,7 @@ function drawContentFooter(
   pdf.text(
     t
       ? t("reports.pdf.confidentialReport")
-      : "MatrAIx  |  Confidential evaluation report",
+      : `${SIGNATURE ? `${SIGNATURE}  |  ` : ""}Confidential evaluation report`,
     SIDE_MM,
     y,
   );
@@ -972,12 +977,12 @@ export async function exportBatchReportPdf(
     pdf.setProperties({
       title: t
         ? t("reports.pdf.documentTitle", { jobName: meta.jobName })
-        : `MatrAIx Persona-Task Batch Report - ${meta.jobName}`,
+        : `${SIGNATURE ? `${SIGNATURE} ` : ""}Persona-Task Batch Report - ${meta.jobName}`,
       subject: t ? t("reports.pdf.documentSubject") : "Playground batch report",
-      author: "MatrAIx",
-      creator: "MatrAIx Playground",
+      author: SIGNATURE,
+      creator: SIGNATURE ? `${SIGNATURE} Playground` : "",
       keywords: [
-        "MatrAIx",
+        SIGNATURE,
         "persona",
         "task",
         "batch report",

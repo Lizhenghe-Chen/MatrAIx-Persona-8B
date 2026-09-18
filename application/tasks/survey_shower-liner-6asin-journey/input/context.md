@@ -1,0 +1,24 @@
+# Product brief — Amazon "Shower Curtain Liner" Search Journey (6 results on page 1)
+
+You are shopping on **Amazon.com** for a **shower curtain liner**. You type "shower curtain liner" into the search bar. **Page 1 of the search results shows exactly these 6 products**, each as a normal search-result card: main image, title, brand, price, star rating with review count, and a few key selling points. The table below is what those six cards contain.
+
+**Controlled shelf — read carefully:** all 6 listings are **equally in stock, normally buyable, with the same delivery terms**. There are no stock warnings, "only X left" notices, unavailable items, buy-box differences, coupons or badges on any card, and you must NOT imagine any — **stock, availability, delivery and buy-box state are removed from this experiment and must never influence your answers.** Base every decision only on the product and listing information shown: image/look, title, brand, price, material, selling points, star rating and review count.
+
+**You will relive a real click journey** and give the reason at every decision point:
+1. On the search page — which card you click into **first**, and what drew your eye.
+2. On that product page — which information you inspect, and whether you buy it there; if not, what holds you back.
+3. Back on the search page — whether you open a **2nd / 3rd** product, which one, and whether you buy there.
+4. If you clicked through all of them and still did not order — which one you would most want to buy anyway, and what blocks you.
+
+Ratings and review counts are from the product pages (Sep 2026). Listings with very few reviews are flagged as having a less reliable rating — that is review evidence, not a stock signal.
+
+| Option | Product | Material | Look & design (from the main image) | Key selling points | Price (USD) | Rating |
+|---|---|---|---|---|---|---|
+| A | AmazerBath — AmazerBath Rainbow Emerald EVA Shower Curtain Liner (72" x 72") | 100% EVA, crystal-clear, silky touch; 100% brass grommets | Semi-transparent emerald-green EVA liner with natural drape, 12 brass grommets, weighted bottom stones; photographed in a bright modern bathroom. | Luxury soft-touch EVA; eco-friendly, BPA-free, odor-free; 12 rustproof brass grommets; reinforced double-layered header; weighted bottom keeps it in place; waterproof & quick-drying; wipe-clean care | $18.99 | 4.5★ · 4,156 reviews |
+| B | jssablo — jssablo Blue Cube 3D EVA Shower Curtain Liner, 72" x 72", Magnetic | 70% EVA (healthier than PEVA/PVC) | Gradient blue liner with 3D cube-embossed texture (deep blue fading to clear), metal grommets, weighted hem; shown in a light-modern bathroom. | 3D cube texture looks premium; 12 metal grommets for easy install & tear resistance; 3 magnets at bottom keep liner against the tub; waterproof; wipe/rinse to clean | $7.19 | 4.4★ · 1,872 reviews |
+| C | LQFMEHOT — LQFMEHOT EVA Blue Water-Wave Shower Curtain Liner, 72" x 72", Art Deco | EVA, lightweight | Gradient blue liner with water-ripple texture (deep blue to light transparent), metal grommets, weighted hem; shown with white tub and dark tiles. | Art-Deco wave pattern; waterproof smooth surface; 3 heavy magnets at bottom; tear-proof header film + anti-rust metal buttons; easy rinse-and-wipe care; odor-free EVA | $7.09 | 4.6★ · 974 reviews |
+| D | Laumyasof — Laumyasof 2-Pack Green 3D Pebble EVA Shower Curtain Liner, 72" x 72" | 3.2-gauge EVA (thin, lightweight) | Semi-transparent green liner with 3D pebble texture; '2 PACK' badge on the image; shown against white tiles and a tub. | 2-pack value; 3D pebble design; 12 rust-proof metal grommets; 3 magnets at weighted hem; water-repellent quick-dry surface; easy care | $9.99 | 4.4★ · 16 reviews (very few — rating less reliable) |
+| E | Dependable Industries Essentials — Dependable Industries EVA Black Shower Curtain Liner, 72" x 72", Modern | EVA, PVC-free | Plain solid-black liner with silver metal grommets on a white studio background; minimal, no pattern. | Water-resistant EVA contains spray; 3 weighted magnets at bottom; reinforced metal grommets; easy wipe-clean; standard 72x72 fits most tubs; PVC-free | $9.99 | 4.3★ · 116 reviews |
+| F | MuuXii — MuuXii EVA Clear Polka-Dot Shower Curtain Liner, 71" x 71", with Hooks | EVA plastic, waterproof | Clear blue-tinted liner with subtle polka-dot pattern, white hooks included; shown in a bright modern bathroom. | Completely transparent — lets light through; 3 magnets at bottom add weight; includes 12 plastic hooks; rinse-off easy care; lightweight | $7.99 | 4.4★ · 10 reviews (very few — rating less reliable) |
+
+Notes: prices are USD prices shown on the Amazon search cards for this experiment (Sep 2026). "Look & design" is a short objective description of each official main image. Use only the details in this brief — do not invent other product facts, stock conditions, badges or discounts.

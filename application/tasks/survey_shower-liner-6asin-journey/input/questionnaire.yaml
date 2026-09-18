@@ -1,0 +1,894 @@
+schemaVersion: '1.0'
+id: shower_liner_6asin_journey_v1
+title: Amazon Shower Curtain Liner Click-Journey Survey (6 results)
+description: 'Simulates the Amazon search-to-purchase journey across 6 shower curtain liner results: first click + drivers
+  on the search page, product-page information inspection, buy/not-buy decisions and concerns at the 1st/2nd/3rd click, fallback
+  favorite after clicking through all, per-product final attitude, search-page tolerance, decision factors, and listing-optimization
+  importance/red-lines. Stock, availability, delivery and buy-box state are held identical and excluded as factors; one missing
+  source price is filled with a controlled assumed price.'
+questions:
+- id: q_first_click
+  prompt: 'STAGE 1 — Search results page: which of the 6 product cards would you click into FIRST? Give a 1-2 sentence reason
+    (what on the card made you click).'
+  type: single_choice
+  construct: first_click
+  required: true
+  options:
+  - id: A
+    label: A — AmazerBath AmazerBath Rainbow Emerald EVA Shower Curtain Liner (72" x 72") ($18.99)
+  - id: B
+    label: B — jssablo jssablo Blue Cube 3D EVA Shower Curtain Liner, 72" x 72", Magnetic ($7.19)
+  - id: C
+    label: C — LQFMEHOT LQFMEHOT EVA Blue Water-Wave Shower Curtain Liner, 72" x 72", Art Deco ($7.09)
+  - id: D
+    label: D — Laumyasof Laumyasof 2-Pack Green 3D Pebble EVA Shower Curtain Liner, 72" x 72" ($9.99)
+  - id: E
+    label: E — Dependable Industries Essentials Dependable Industries EVA Black Shower Curtain Liner, 72" x 72", Modern ($9.99)
+  - id: F
+    label: F — MuuXii MuuXii EVA Clear Polka-Dot Shower Curtain Liner, 71" x 71", with Hooks ($7.99)
+  - id: none_of_these
+    label: None of these cards — I would not click any of them
+  askRationale: true
+- id: q_click_drivers
+  prompt: On the search-result card, what specifically made you want to click it first? Select all that apply.
+  type: multi_choice
+  construct: click_drivers
+  required: true
+  options:
+  - id: main_image
+    label: The main image / lifestyle photo caught my eye
+  - id: color_pattern
+    label: Its color / pattern / 3D texture stood out
+  - id: price
+    label: The price looked attractive on the card
+  - id: star_rating
+    label: Its star rating looked high
+  - id: review_count
+    label: It had a lot of reviews (social proof)
+  - id: title_keyword
+    label: The title named a feature I want (magnetic, odor-free, etc.)
+  - id: brand
+    label: I recognized / trusted the brand name
+  - id: pack_value
+    label: Multi-pack or hooks-included value on the card
+  - id: magnets
+    label: Magnets / weighted hem selling point
+  - id: material_word
+    label: Material wording (EVA, BPA-free, PVC-free, odor-free)
+  - id: right_size
+    label: Size (72x72 etc.) clearly fits my bathroom
+  - id: imagine_look
+    label: I could picture it looking good in my bathroom
+  - id: other
+    label: Something else (explain in your reason)
+- id: q_detail_info
+  prompt: STAGE 2 — You are now on that product's detail page. Which information do you actively inspect before deciding?
+    Select all that apply.
+  type: multi_choice
+  construct: detail_info
+  required: true
+  options:
+  - id: reviews_photos
+    label: Customer reviews with photos / videos
+  - id: negative_reviews
+    label: Negative reviews / complaints — checking for problems
+  - id: bullets
+    label: The 5 bullet selling points
+  - id: size_specs
+    label: Size / gauge / spec table
+  - id: material_cert
+    label: Material composition & safety certifications
+  - id: main_video
+    label: Main-image video / product demo
+  - id: aplus
+    label: A+ brand content / comparison charts
+  - id: qa
+    label: Customer questions & answers (Q&A)
+  - id: price_deal
+    label: Price, coupons, multi-buy discounts
+  - id: delivery_returns
+    label: Delivery time & return policy
+  - id: seller
+    label: Seller / store information
+  - id: zoom_images
+    label: Zooming the images to judge real look & quality
+- id: q_detail_top
+  prompt: Which single piece of product-page information most influences whether you buy it?
+  type: single_choice
+  construct: detail_top
+  required: true
+  options:
+  - id: reviews_photos
+    label: Customer reviews with photos / videos
+  - id: negative_reviews
+    label: Negative reviews / complaints — checking for problems
+  - id: bullets
+    label: The 5 bullet selling points
+  - id: size_specs
+    label: Size / gauge / spec table
+  - id: material_cert
+    label: Material composition & safety certifications
+  - id: main_video
+    label: Main-image video / product demo
+  - id: aplus
+    label: A+ brand content / comparison charts
+  - id: qa
+    label: Customer questions & answers (Q&A)
+  - id: price_deal
+    label: Price, coupons, multi-buy discounts
+  - id: delivery_returns
+    label: Delivery time & return policy
+  - id: seller
+    label: Seller / store information
+  - id: zoom_images
+    label: Zooming the images to judge real look & quality
+- id: q_buy_first
+  prompt: After inspecting this first product page, what do you do?
+  type: single_choice
+  construct: buy_first
+  required: true
+  options:
+  - id: buy_now
+    label: Buy it now — I would place the order on this product
+  - id: add_cart
+    label: Add it to cart, but keep comparing the others
+  - id: not_buy
+    label: Not buy it — go back to the search results
+- id: q_notbuy_first
+  prompt: If you would NOT order this first product, what concerns or reasons hold you back? Select all that apply. If you
+    would buy it, select 'I have no real concern'.
+  type: multi_choice
+  construct: notbuy_first
+  required: true
+  options:
+  - id: no_concern
+    label: I have no real concern — I would buy this one
+  - id: price_too_high
+    label: Price is too high for a liner
+  - id: price_suspicious
+    label: Price seems too cheap — I worry about quality / smell
+  - id: look
+    label: I don't like the look / color / pattern
+  - id: material
+    label: Material is not convincing / I worry about safety or plastic smell
+  - id: rating
+    label: Star rating is not high enough
+  - id: few_reviews
+    label: Too few reviews — not enough evidence
+  - id: review_concern
+    label: Review comments / photos raised doubts (mold, tearing, etc.)
+  - id: brand
+    label: Brand is unfamiliar / not trustworthy enough
+  - id: size
+    label: Size / fit is unclear or unusual (71x71 vs 72x72)
+  - id: missing_magnet
+    label: Missing magnets / weighted hem I want
+  - id: transparency
+    label: Transparency / light-blocking is wrong for my bathroom
+  - id: pack
+    label: Pack size is wrong (I want single / 2-pack)
+  - id: info_incomplete
+    label: Product page info is incomplete (images / bullets / specs)
+  - id: want_compare
+    label: Nothing wrong — I just want to compare other options first
+  - id: other
+    label: Other concern (explain in your reason)
+- id: q_consider_more
+  prompt: STAGE 3 — You leave the first product page and return to the search results. Do you open another product?
+  type: single_choice
+  construct: consider_more
+  required: true
+  options:
+  - id: yes_more
+    label: Yes — I would go back and open another result
+  - id: no_ordered
+    label: No — I would order the first product now
+  - id: no_leave
+    label: No — I would leave Amazon without buying anything
+- id: q_second_click
+  prompt: Which product do you click into SECOND? Pick an option DIFFERENT from your first click, and give a 1-sentence reason.
+    If you already ordered or would not open another, choose the matching skip/none option.
+  type: single_choice
+  construct: second_click
+  required: true
+  options:
+  - id: A
+    label: A — AmazerBath Emerald EVA ($18.99)
+  - id: B
+    label: B — jssablo Blue Cube 3D Magnetic ($7.19)
+  - id: C
+    label: C — LQFMEHOT Blue Water-Wave ($7.09)
+  - id: D
+    label: D — Laumyasof 2-Pack Green Pebble ($9.99)
+  - id: E
+    label: E — Dependable Solid Black ($9.99)
+  - id: F
+    label: F — MuuXii Clear Polka-Dot with Hooks ($7.99)
+  - id: none_more
+    label: None — I would not open any other product
+  - id: skip_ordered
+    label: Skip — I already ordered an earlier product
+  askRationale: true
+- id: q_buy_second
+  prompt: After inspecting this second product page, what do you do? (Skip if you already ordered earlier.)
+  type: single_choice
+  construct: buy_second
+  required: true
+  options:
+  - id: skip_ordered
+    label: Skip — I already ordered an earlier product
+  - id: buy_now
+    label: Buy it now — I would place the order on this product
+  - id: add_cart
+    label: Add it to cart, but keep comparing the others
+  - id: not_buy
+    label: Not buy it — go back to the search results
+- id: q_notbuy_second
+  prompt: If you would NOT order the second product, what concerns hold you back? Select all that apply. Skip if you already
+    ordered.
+  type: multi_choice
+  construct: notbuy_second
+  required: true
+  options:
+  - id: skip_ordered
+    label: Skip — I already ordered an earlier product
+  - id: no_concern
+    label: I have no real concern — I would buy this one
+  - id: price_too_high
+    label: Price is too high for a liner
+  - id: price_suspicious
+    label: Price seems too cheap — I worry about quality / smell
+  - id: look
+    label: I don't like the look / color / pattern
+  - id: material
+    label: Material is not convincing / I worry about safety or plastic smell
+  - id: rating
+    label: Star rating is not high enough
+  - id: few_reviews
+    label: Too few reviews — not enough evidence
+  - id: review_concern
+    label: Review comments / photos raised doubts (mold, tearing, etc.)
+  - id: brand
+    label: Brand is unfamiliar / not trustworthy enough
+  - id: size
+    label: Size / fit is unclear or unusual (71x71 vs 72x72)
+  - id: missing_magnet
+    label: Missing magnets / weighted hem I want
+  - id: transparency
+    label: Transparency / light-blocking is wrong for my bathroom
+  - id: pack
+    label: Pack size is wrong (I want single / 2-pack)
+  - id: info_incomplete
+    label: Product page info is incomplete (images / bullets / specs)
+  - id: want_compare
+    label: Nothing wrong — I just want to compare other options first
+  - id: other
+    label: Other concern (explain in your reason)
+- id: q_third_click
+  prompt: If you still have not ordered, which product do you click into THIRD? Pick an option DIFFERENT from your first two
+    clicks, and give a 1-sentence reason; otherwise choose skip/none.
+  type: single_choice
+  construct: third_click
+  required: true
+  options:
+  - id: A
+    label: A — AmazerBath Emerald EVA ($18.99)
+  - id: B
+    label: B — jssablo Blue Cube 3D Magnetic ($7.19)
+  - id: C
+    label: C — LQFMEHOT Blue Water-Wave ($7.09)
+  - id: D
+    label: D — Laumyasof 2-Pack Green Pebble ($9.99)
+  - id: E
+    label: E — Dependable Solid Black ($9.99)
+  - id: F
+    label: F — MuuXii Clear Polka-Dot with Hooks ($7.99)
+  - id: none_more
+    label: None — I would not open any other product
+  - id: skip_ordered
+    label: Skip — I already ordered an earlier product
+  askRationale: true
+- id: q_buy_third
+  prompt: After inspecting this third product page, what do you do? (Skip if you already ordered earlier.)
+  type: single_choice
+  construct: buy_third
+  required: true
+  options:
+  - id: skip_ordered
+    label: Skip — I already ordered an earlier product
+  - id: buy_now
+    label: Buy it now — I would place the order on this product
+  - id: add_cart
+    label: Add it to cart, but keep comparing the others
+  - id: not_buy
+    label: Not buy it — go back to the search results
+- id: q_notbuy_third
+  prompt: If you would NOT order the third product, what concerns hold you back? Select all that apply. Skip if you already
+    ordered.
+  type: multi_choice
+  construct: notbuy_third
+  required: true
+  options:
+  - id: skip_ordered
+    label: Skip — I already ordered an earlier product
+  - id: no_concern
+    label: I have no real concern — I would buy this one
+  - id: price_too_high
+    label: Price is too high for a liner
+  - id: price_suspicious
+    label: Price seems too cheap — I worry about quality / smell
+  - id: look
+    label: I don't like the look / color / pattern
+  - id: material
+    label: Material is not convincing / I worry about safety or plastic smell
+  - id: rating
+    label: Star rating is not high enough
+  - id: few_reviews
+    label: Too few reviews — not enough evidence
+  - id: review_concern
+    label: Review comments / photos raised doubts (mold, tearing, etc.)
+  - id: brand
+    label: Brand is unfamiliar / not trustworthy enough
+  - id: size
+    label: Size / fit is unclear or unusual (71x71 vs 72x72)
+  - id: missing_magnet
+    label: Missing magnets / weighted hem I want
+  - id: transparency
+    label: Transparency / light-blocking is wrong for my bathroom
+  - id: pack
+    label: Pack size is wrong (I want single / 2-pack)
+  - id: info_incomplete
+    label: Product page info is incomplete (images / bullets / specs)
+  - id: want_compare
+    label: Nothing wrong — I just want to compare other options first
+  - id: other
+    label: Other concern (explain in your reason)
+- id: q_fallback
+  prompt: STAGE 4 — Imagine you have clicked through ALL 6 products and ended up ordering none. Looking back, which ONE would
+    you most want to buy anyway? Give a 1-2 sentence reason.
+  type: single_choice
+  construct: fallback_favorite
+  required: true
+  options:
+  - id: A
+    label: A — AmazerBath ($18.99)
+  - id: B
+    label: B — jssablo ($7.19)
+  - id: C
+    label: C — LQFMEHOT ($7.09)
+  - id: D
+    label: D — Laumyasof ($9.99)
+  - id: E
+    label: E — Dependable Industries Essentials ($9.99)
+  - id: F
+    label: F — MuuXii ($7.99)
+  - id: none_of_these
+    label: None — even after looking at all 6, I would not want any of them
+  askRationale: true
+- id: q_fallback_blocker
+  prompt: What stops you from actually ordering that favorite product? Select all that apply. If you would in fact order it,
+    select 'Nothing blocks me'.
+  type: multi_choice
+  construct: fallback_blocker
+  required: true
+  options:
+  - id: no_blocker
+    label: Nothing blocks me — I would actually order it
+  - id: price
+    label: Price / value hesitation
+  - id: reviews_trust
+    label: Too few / mixed reviews — not enough trust
+  - id: brand
+    label: Unknown brand / seller
+  - id: timing
+    label: I am just browsing — not ready to buy yet
+  - id: look_compromise
+    label: Its look is only a compromise, not what I love
+  - id: size
+    label: Size / fit uncertainty
+  - id: material
+    label: Material / smell / safety uncertainty
+  - id: info_gap
+    label: The listing did not answer one of my questions
+  - id: other
+    label: Other (explain in your reason)
+- id: q_reject_A
+  prompt: 'FINAL ATTITUDE toward Option A (AmazerBath, $18.99): if you did NOT finally order it, select every reason that
+    applies. If you finally ordered it, select ''This is the one I finally ordered''; if it is your favorite but you held
+    off, select that option.'
+  type: multi_choice
+  construct: reject_A
+  required: true
+  options:
+  - id: final_purchase
+    label: This is the one I finally ordered
+  - id: fallback_favorite
+    label: This is my favorite, but I held off ordering
+  - id: price_too_high
+    label: Price is too high for a liner
+  - id: price_suspicious
+    label: Price seems too cheap — I worry about quality / smell
+  - id: look
+    label: I don't like the look / color / pattern
+  - id: material
+    label: Material is not convincing / I worry about safety or smell
+  - id: rating
+    label: Star rating is not high enough
+  - id: few_reviews
+    label: Too few reviews — not enough evidence
+  - id: review_concern
+    label: Review comments / photos raised doubts
+  - id: brand
+    label: Brand is unfamiliar / not trustworthy enough
+  - id: size
+    label: Size / fit is unclear or unusual (71x71, 72x72)
+  - id: missing_magnet
+    label: Missing magnets / weighted hem I want
+  - id: transparency
+    label: Transparency / light-blocking is wrong for my bathroom
+  - id: pack
+    label: Pack size is wrong (single vs 2-pack)
+  - id: info_incomplete
+    label: Product page info is incomplete
+  - id: other
+    label: Other reason
+- id: q_reject_B
+  prompt: 'FINAL ATTITUDE toward Option B (jssablo, $7.19): if you did NOT finally order it, select every reason that applies.
+    If you finally ordered it, select ''This is the one I finally ordered''; if it is your favorite but you held off, select
+    that option.'
+  type: multi_choice
+  construct: reject_B
+  required: true
+  options:
+  - id: final_purchase
+    label: This is the one I finally ordered
+  - id: fallback_favorite
+    label: This is my favorite, but I held off ordering
+  - id: price_too_high
+    label: Price is too high for a liner
+  - id: price_suspicious
+    label: Price seems too cheap — I worry about quality / smell
+  - id: look
+    label: I don't like the look / color / pattern
+  - id: material
+    label: Material is not convincing / I worry about safety or smell
+  - id: rating
+    label: Star rating is not high enough
+  - id: few_reviews
+    label: Too few reviews — not enough evidence
+  - id: review_concern
+    label: Review comments / photos raised doubts
+  - id: brand
+    label: Brand is unfamiliar / not trustworthy enough
+  - id: size
+    label: Size / fit is unclear or unusual (71x71, 72x72)
+  - id: missing_magnet
+    label: Missing magnets / weighted hem I want
+  - id: transparency
+    label: Transparency / light-blocking is wrong for my bathroom
+  - id: pack
+    label: Pack size is wrong (single vs 2-pack)
+  - id: info_incomplete
+    label: Product page info is incomplete
+  - id: other
+    label: Other reason
+- id: q_reject_C
+  prompt: 'FINAL ATTITUDE toward Option C (LQFMEHOT, $7.09): if you did NOT finally order it, select every reason that applies.
+    If you finally ordered it, select ''This is the one I finally ordered''; if it is your favorite but you held off, select
+    that option.'
+  type: multi_choice
+  construct: reject_C
+  required: true
+  options:
+  - id: final_purchase
+    label: This is the one I finally ordered
+  - id: fallback_favorite
+    label: This is my favorite, but I held off ordering
+  - id: price_too_high
+    label: Price is too high for a liner
+  - id: price_suspicious
+    label: Price seems too cheap — I worry about quality / smell
+  - id: look
+    label: I don't like the look / color / pattern
+  - id: material
+    label: Material is not convincing / I worry about safety or smell
+  - id: rating
+    label: Star rating is not high enough
+  - id: few_reviews
+    label: Too few reviews — not enough evidence
+  - id: review_concern
+    label: Review comments / photos raised doubts
+  - id: brand
+    label: Brand is unfamiliar / not trustworthy enough
+  - id: size
+    label: Size / fit is unclear or unusual (71x71, 72x72)
+  - id: missing_magnet
+    label: Missing magnets / weighted hem I want
+  - id: transparency
+    label: Transparency / light-blocking is wrong for my bathroom
+  - id: pack
+    label: Pack size is wrong (single vs 2-pack)
+  - id: info_incomplete
+    label: Product page info is incomplete
+  - id: other
+    label: Other reason
+- id: q_reject_D
+  prompt: 'FINAL ATTITUDE toward Option D (Laumyasof, $9.99): if you did NOT finally order it, select every reason that applies.
+    If you finally ordered it, select ''This is the one I finally ordered''; if it is your favorite but you held off, select
+    that option.'
+  type: multi_choice
+  construct: reject_D
+  required: true
+  options:
+  - id: final_purchase
+    label: This is the one I finally ordered
+  - id: fallback_favorite
+    label: This is my favorite, but I held off ordering
+  - id: price_too_high
+    label: Price is too high for a liner
+  - id: price_suspicious
+    label: Price seems too cheap — I worry about quality / smell
+  - id: look
+    label: I don't like the look / color / pattern
+  - id: material
+    label: Material is not convincing / I worry about safety or smell
+  - id: rating
+    label: Star rating is not high enough
+  - id: few_reviews
+    label: Too few reviews — not enough evidence
+  - id: review_concern
+    label: Review comments / photos raised doubts
+  - id: brand
+    label: Brand is unfamiliar / not trustworthy enough
+  - id: size
+    label: Size / fit is unclear or unusual (71x71, 72x72)
+  - id: missing_magnet
+    label: Missing magnets / weighted hem I want
+  - id: transparency
+    label: Transparency / light-blocking is wrong for my bathroom
+  - id: pack
+    label: Pack size is wrong (single vs 2-pack)
+  - id: info_incomplete
+    label: Product page info is incomplete
+  - id: other
+    label: Other reason
+- id: q_reject_E
+  prompt: 'FINAL ATTITUDE toward Option E (Dependable Industries Essentials, $9.99): if you did NOT finally order it, select
+    every reason that applies. If you finally ordered it, select ''This is the one I finally ordered''; if it is your favorite
+    but you held off, select that option.'
+  type: multi_choice
+  construct: reject_E
+  required: true
+  options:
+  - id: final_purchase
+    label: This is the one I finally ordered
+  - id: fallback_favorite
+    label: This is my favorite, but I held off ordering
+  - id: price_too_high
+    label: Price is too high for a liner
+  - id: price_suspicious
+    label: Price seems too cheap — I worry about quality / smell
+  - id: look
+    label: I don't like the look / color / pattern
+  - id: material
+    label: Material is not convincing / I worry about safety or smell
+  - id: rating
+    label: Star rating is not high enough
+  - id: few_reviews
+    label: Too few reviews — not enough evidence
+  - id: review_concern
+    label: Review comments / photos raised doubts
+  - id: brand
+    label: Brand is unfamiliar / not trustworthy enough
+  - id: size
+    label: Size / fit is unclear or unusual (71x71, 72x72)
+  - id: missing_magnet
+    label: Missing magnets / weighted hem I want
+  - id: transparency
+    label: Transparency / light-blocking is wrong for my bathroom
+  - id: pack
+    label: Pack size is wrong (single vs 2-pack)
+  - id: info_incomplete
+    label: Product page info is incomplete
+  - id: other
+    label: Other reason
+- id: q_reject_F
+  prompt: 'FINAL ATTITUDE toward Option F (MuuXii, $7.99): if you did NOT finally order it, select every reason that applies.
+    If you finally ordered it, select ''This is the one I finally ordered''; if it is your favorite but you held off, select
+    that option.'
+  type: multi_choice
+  construct: reject_F
+  required: true
+  options:
+  - id: final_purchase
+    label: This is the one I finally ordered
+  - id: fallback_favorite
+    label: This is my favorite, but I held off ordering
+  - id: price_too_high
+    label: Price is too high for a liner
+  - id: price_suspicious
+    label: Price seems too cheap — I worry about quality / smell
+  - id: look
+    label: I don't like the look / color / pattern
+  - id: material
+    label: Material is not convincing / I worry about safety or smell
+  - id: rating
+    label: Star rating is not high enough
+  - id: few_reviews
+    label: Too few reviews — not enough evidence
+  - id: review_concern
+    label: Review comments / photos raised doubts
+  - id: brand
+    label: Brand is unfamiliar / not trustworthy enough
+  - id: size
+    label: Size / fit is unclear or unusual (71x71, 72x72)
+  - id: missing_magnet
+    label: Missing magnets / weighted hem I want
+  - id: transparency
+    label: Transparency / light-blocking is wrong for my bathroom
+  - id: pack
+    label: Pack size is wrong (single vs 2-pack)
+  - id: info_incomplete
+    label: Product page info is incomplete
+  - id: other
+    label: Other reason
+- id: q_page_browse
+  prompt: On Amazon, how far into the search results would you still click in and BROWSE a shower curtain liner?
+  type: single_choice
+  construct: page_browse
+  required: true
+  options:
+  - id: page1
+    label: Page 1 only
+  - id: page2
+    label: I would go to page 2
+  - id: page3
+    label: I would go to page 3
+  - id: page4_5
+    label: I would go to pages 4–5
+  - id: beyond
+    label: I might even go past page 5
+  - id: unsure
+    label: Not sure
+- id: q_page_buy
+  prompt: On Amazon, how far into the search results would you still place an ORDER for a shower curtain liner?
+  type: single_choice
+  construct: page_buy
+  required: true
+  options:
+  - id: page1
+    label: Page 1 only
+  - id: page2
+    label: I would go to page 2
+  - id: page3
+    label: I would go to page 3
+  - id: page4_5
+    label: I would go to pages 4–5
+  - id: beyond
+    label: I might even go past page 5
+  - id: unsure
+    label: Not sure
+- id: q_factor_most
+  prompt: Across this whole journey, what mattered MOST in your decision?
+  type: single_choice
+  construct: factor_most
+  required: true
+  options:
+  - id: price_value
+    label: Price / value for money
+  - id: material
+    label: Material safety (EVA, odor-free, eco-friendly)
+  - id: waterproof
+    label: Waterproof / anti-mold / quick-dry
+  - id: magnet
+    label: Magnet / weighted hem (stays against the tub)
+  - id: transparency
+    label: Transparency / light filtering
+  - id: appearance
+    label: Look / color / texture
+  - id: size_fit
+    label: Size fit (72x72 etc.)
+  - id: rating
+    label: Star rating
+  - id: reviews
+    label: Review count / review content
+  - id: brand
+    label: Brand trust
+  - id: pack
+    label: Pack size / multi-pack / hooks-included value
+  - id: listing
+    label: Listing completeness (title / images / bullets / specs)
+- id: q_factor_second
+  prompt: What was your SECOND most important factor?
+  type: single_choice
+  construct: factor_second
+  required: true
+  options:
+  - id: price_value
+    label: Price / value for money
+  - id: material
+    label: Material safety (EVA, odor-free, eco-friendly)
+  - id: waterproof
+    label: Waterproof / anti-mold / quick-dry
+  - id: magnet
+    label: Magnet / weighted hem (stays against the tub)
+  - id: transparency
+    label: Transparency / light filtering
+  - id: appearance
+    label: Look / color / texture
+  - id: size_fit
+    label: Size fit (72x72 etc.)
+  - id: rating
+    label: Star rating
+  - id: reviews
+    label: Review count / review content
+  - id: brand
+    label: Brand trust
+  - id: pack
+    label: Pack size / multi-pack / hooks-included value
+  - id: listing
+    label: Listing completeness (title / images / bullets / specs)
+- id: q_importance_title
+  prompt: A complete, clear product TITLE (size, material, key feature) matters to me.
+  type: likert
+  construct: q_importance_title
+  required: true
+  minValue: 1
+  maxValue: 5
+- id: q_importance_image
+  prompt: CLEAR MAIN IMAGES that show the real look & effect matter to me.
+  type: likert
+  construct: q_importance_image
+  required: true
+  minValue: 1
+  maxValue: 5
+- id: q_importance_bullets
+  prompt: Selling-point BULLETS that explain benefits matter to me.
+  type: likert
+  construct: q_importance_bullets
+  required: true
+  minValue: 1
+  maxValue: 5
+- id: q_importance_aplus
+  prompt: A+ content / product video / brand story pages influence my decision.
+  type: likert
+  construct: q_importance_aplus
+  required: true
+  minValue: 1
+  maxValue: 5
+- id: q_importance_attr
+  prompt: Complete ATTRIBUTES / size & spec tables matter to me.
+  type: likert
+  construct: q_importance_attr
+  required: true
+  minValue: 1
+  maxValue: 5
+- id: q_importance_price
+  prompt: PRICE and value for money matter to me.
+  type: likert
+  construct: q_importance_price
+  required: true
+  minValue: 1
+  maxValue: 5
+- id: q_importance_reviews
+  prompt: RATINGS + review count + review photos influence my decision.
+  type: likert
+  construct: q_importance_reviews
+  required: true
+  minValue: 1
+  maxValue: 5
+- id: q_importance_trust
+  prompt: Brand trust and safety certifications (BPA-free / PVC-free / odor-free) matter to me.
+  type: likert
+  construct: q_importance_trust
+  required: true
+  minValue: 1
+  maxValue: 5
+- id: q_listing_redline
+  prompt: Which listing problems would make you EXCLUDE a shower curtain liner immediately? Select all that apply.
+  type: multi_choice
+  construct: listing_redline
+  required: true
+  options:
+  - id: low_rating
+    label: Rating below 4.0
+  - id: few_reviews
+    label: Fewer than ~50 reviews
+  - id: no_size
+    label: No size / dimensions information
+  - id: material_unclear
+    label: Material not clearly stated
+  - id: blur_image
+    label: Main image is blurry / looks fake / doesn't show the real product
+  - id: no_bullets
+    label: No selling-point bullets / thin description
+  - id: no_aplus
+    label: No A+ content / video / rich media
+  - id: brand_unfamiliar
+    label: Brand is completely unfamiliar
+  - id: mismatch_title
+    label: Title / images mismatch or keyword-stuffed title
+  - id: none
+    label: None of the above would make me exclude a product
+- id: q_material_pref
+  prompt: Which liner material do you personally prefer?
+  type: single_choice
+  construct: material_pref
+  required: true
+  options:
+  - id: eva
+    label: EVA (flexible, odor-free, lightweight)
+  - id: peva
+    label: PEVA (chlorine-free alternative)
+  - id: pvc
+    label: PVC (heavier, classic)
+  - id: polyester
+    label: Polyester / fabric (machine-washable)
+  - id: cloth
+    label: Cloth / cotton blend
+  - id: no_preference
+    label: No strong preference
+- id: q_transparency_pref
+  prompt: Which transparency level do you prefer for a liner?
+  type: single_choice
+  construct: transparency_pref
+  required: true
+  options:
+  - id: fully_transparent
+    label: Fully transparent (lets light through)
+  - id: semi
+    label: Semi-transparent / light-filtering
+  - id: blackout
+    label: Opaque / blackout
+  - id: no_preference
+    label: No strong preference
+- id: q_badge_effect
+  prompt: Hypothetically, if one result carried an "Amazon's Choice" or "Best Seller" badge, would it change what you click?
+  type: single_choice
+  construct: badge_effect
+  required: true
+  options:
+  - id: yes_strongly
+    label: Yes, a lot
+  - id: yes_somewhat
+    label: Yes, somewhat
+  - id: neutral
+    label: Neutral
+  - id: unlikely
+    label: Probably not
+  - id: no_effect
+    label: No, it wouldn't affect me
+- id: q_switch_trigger
+  prompt: What would most likely make you switch from your first click to a different product?
+  type: single_choice
+  construct: switch_trigger
+  required: true
+  options:
+  - id: lower_price
+    label: A lower price
+  - id: better_rating
+    label: A higher rating / more reviews
+  - id: better_look
+    label: Better looks / design
+  - id: better_function
+    label: Better function / features (magnets, waterproof, quick-dry)
+  - id: better_value
+    label: Better value (2-pack, hooks included)
+  - id: better_listing
+    label: A clearer, more complete product page
+  - id: nothing
+    label: Nothing — I'd stick with my pick
+- id: q_price_acceptance
+  prompt: The price of the product I most want is acceptable for what it offers.
+  type: likert
+  construct: price_acceptance
+  required: true
+  minValue: 1
+  maxValue: 5
+- id: q_purchase_intent
+  prompt: I would realistically buy a shower curtain liner like this within the next 3 months.
+  type: likert
+  construct: purchase_intent
+  required: true
+  minValue: 1
+  maxValue: 5

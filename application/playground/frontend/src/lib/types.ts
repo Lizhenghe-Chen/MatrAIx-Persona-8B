@@ -1166,6 +1166,27 @@ export interface TaskDetail {
 export const PERSONA_BENCH_POOL = "persona/datasets/matraix-persona-dev-sample";
 /** Production 1M coreset (HF MatrAIx_Persona_1M_Public_Release). */
 export const PERSONA_PRODUCTION_1M_POOL = "persona/datasets/matraix-persona-1m";
+/** Cross-border e-commerce Amazon buyer pools (20 / 100 / 1000 personas). */
+export const PERSONA_AMAZON_BUYER_POOL_20 = "persona/datasets/amazon-buyer-n20";
+export const PERSONA_AMAZON_BUYER_POOL_100 = "persona/datasets/amazon-buyer-n100";
+export const PERSONA_AMAZON_BUYER_POOL_1000 = "persona/datasets/amazon-buyer-n1000";
+
+/**
+ * The platform's persona catalog is dedicated to cross-border e-commerce:
+ * the three Amazon buyer pools plus the Global 1M production pool. All other
+ * dev / validation datasets are hidden from the sampling UI. Amazon-derived
+ * saved cohorts (amazon-buyer pools' ``cohorts/cohort-…`` folders) stay visible.
+ */
+export function isEcommercePersonaPool(pool: string): boolean {
+  return (
+    pool === PERSONA_PRODUCTION_1M_POOL ||
+    pool === PERSONA_AMAZON_BUYER_POOL_20 ||
+    pool === PERSONA_AMAZON_BUYER_POOL_100 ||
+    pool === PERSONA_AMAZON_BUYER_POOL_1000 ||
+    pool.startsWith("persona/datasets/amazon-buyer-")
+  );
+}
+
 export const PERSONA_SAMPLE_SIZE_MAX_DEV = 500;
 export const PERSONA_GENERATE_COUNT_DEFAULT = 2000;
 export const PERSONA_GENERATE_COUNT_MAX = 5000;

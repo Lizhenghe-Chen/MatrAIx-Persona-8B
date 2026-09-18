@@ -45,7 +45,12 @@ import type {
   PersonaPoolCatalog,
   PersonaPoolPersonaCard,
 } from "@/lib/types";
-import { PERSONA_BENCH_POOL, PERSONA_PRODUCTION_1M_POOL } from "@/lib/types";
+import {
+  PERSONA_AMAZON_BUYER_POOL_1000,
+  PERSONA_BENCH_POOL,
+  PERSONA_PRODUCTION_1M_POOL,
+  isEcommercePersonaPool,
+} from "@/lib/types";
 
 /** Page size when loading a full small pool (API max per request). */
 const PERSONA_POOL_PAGE = 50;
@@ -154,7 +159,7 @@ export function PersonaStoreContent({
   onOpenInPlayground,
 }: PersonaStoreContentProps) {
   const { t, locale } = useI18n();
-  const [pool, setPool] = useState(PERSONA_BENCH_POOL);
+  const [pool, setPool] = useState(PERSONA_AMAZON_BUYER_POOL_1000);
   const [query, setQuery] = useState("");
   const [searchTier, setSearchTier] = useState<"keyword" | "keyword_and_embed">(
     "keyword",
@@ -337,7 +342,9 @@ export function PersonaStoreContent({
   });
 
   const datasetOptions = useMemo<CockpitSelectOption[]>(() => {
-    const listed = datasetsQuery.data?.datasets ?? [];
+    const listed = (datasetsQuery.data?.datasets ?? []).filter((item) =>
+      isEcommercePersonaPool(item.pool),
+    );
     const options: CockpitSelectOption[] = listed.map((item) => {
       const unavailable =
         item.kind === "production" && item.available === false;

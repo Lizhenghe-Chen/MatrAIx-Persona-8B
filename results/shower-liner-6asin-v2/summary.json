@@ -1,0 +1,270 @@
+{
+  "n": 1000,
+  "products": {
+    "A": {
+      "brand": "AmazerBath",
+      "price": 18.99,
+      "rating": 4.5,
+      "reviews": 4156,
+      "avail_zh": "无购买按钮/仅配送通知"
+    },
+    "B": {
+      "brand": "jssablo",
+      "price": 7.19,
+      "rating": 4.4,
+      "reviews": 1872,
+      "avail_zh": "有货"
+    },
+    "C": {
+      "brand": "LQFMEHOT",
+      "price": 7.09,
+      "rating": 4.6,
+      "reviews": 974,
+      "avail_zh": "有货"
+    },
+    "D": {
+      "brand": "Laumyasof",
+      "price": 9.99,
+      "rating": 4.4,
+      "reviews": 16,
+      "avail_zh": "新品上架"
+    },
+    "E": {
+      "brand": "Dependable",
+      "price": 9.99,
+      "rating": 4.3,
+      "reviews": 116,
+      "avail_zh": "仅剩10件"
+    },
+    "F": {
+      "brand": "MuuXii",
+      "price": null,
+      "rating": 4.4,
+      "reviews": 10,
+      "avail_zh": "当前无货"
+    }
+  },
+  "choice_pct": {
+    "C": 63.2,
+    "B": 18.7,
+    "A": 16.6,
+    "E": 1.5
+  },
+  "display_position_influence_pct": {
+    "slightly": 90.5,
+    "moderately": 8.6,
+    "not_at_all": 0.9
+  },
+  "page_browse_pct": {
+    "page2": 95.7,
+    "page3": 2.8,
+    "page1": 1.5
+  },
+  "page_buy_pct": {
+    "page1": 96.4,
+    "page2": 3.6
+  },
+  "factor_most_pct": {
+    "price_value": 55.0,
+    "reviews": 21.9,
+    "rating": 17.2,
+    "material": 2.8,
+    "magnet": 1.9,
+    "appearance": 1.0,
+    "waterproof": 0.2
+  },
+  "reject_top": {
+    "A": [
+      [
+        "price_too_high",
+        834,
+        83.4
+      ],
+      [
+        "look",
+        270,
+        27.0
+      ],
+      [
+        "availability",
+        225,
+        22.5
+      ],
+      [
+        "transparency",
+        203,
+        20.3
+      ],
+      [
+        "brand",
+        26,
+        2.6
+      ],
+      [
+        "material",
+        5,
+        0.5
+      ]
+    ],
+    "B": [
+      [
+        "look",
+        674,
+        67.4
+      ],
+      [
+        "price_suspicious",
+        388,
+        38.8
+      ],
+      [
+        "brand",
+        242,
+        24.2
+      ],
+      [
+        "rating",
+        168,
+        16.8
+      ],
+      [
+        "few_reviews",
+        162,
+        16.2
+      ],
+      [
+        "material",
+        46,
+        4.6
+      ]
+    ],
+    "C": [
+      [
+        "brand",
+        334,
+        33.4
+      ],
+      [
+        "price_suspicious",
+        247,
+        24.7
+      ],
+      [
+        "look",
+        192,
+        19.2
+      ],
+      [
+        "few_reviews",
+        166,
+        16.6
+      ],
+      [
+        "review_concern",
+        12,
+        1.2
+      ],
+      [
+        "material",
+        9,
+        0.9
+      ]
+    ],
+    "D": [
+      [
+        "few_reviews",
+        991,
+        99.1
+      ],
+      [
+        "material",
+        797,
+        79.7
+      ],
+      [
+        "pack",
+        475,
+        47.5
+      ],
+      [
+        "look",
+        88,
+        8.8
+      ],
+      [
+        "brand",
+        46,
+        4.6
+      ],
+      [
+        "rating",
+        13,
+        1.3
+      ]
+    ],
+    "E": [
+      [
+        "look",
+        939,
+        93.9
+      ],
+      [
+        "availability",
+        577,
+        57.7
+      ],
+      [
+        "few_reviews",
+        500,
+        50.0
+      ],
+      [
+        "rating",
+        201,
+        20.1
+      ],
+      [
+        "transparency",
+        158,
+        15.8
+      ],
+      [
+        "brand",
+        35,
+        3.5
+      ]
+    ],
+    "F": [
+      [
+        "few_reviews",
+        977,
+        97.7
+      ],
+      [
+        "availability",
+        932,
+        93.2
+      ],
+      [
+        "size",
+        339,
+        33.9
+      ],
+      [
+        "transparency",
+        43,
+        4.3
+      ],
+      [
+        "info_incomplete",
+        14,
+        1.4
+      ],
+      [
+        "material",
+        12,
+        1.2
+      ]
+    ]
+  }
+}

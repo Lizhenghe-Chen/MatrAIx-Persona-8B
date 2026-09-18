@@ -13,7 +13,9 @@
     <script>
       (function () {
         try {
-          var t = localStorage.getItem("playground-theme");
+          // 被宿主（AIFA Claw）以 ?embed= 嵌入时恒为浅色，与宿主控制台一致（见 src/lib/embedMode.ts）。
+          var embedded = /[?&]embed=/.test(location.search);
+          var t = embedded ? "light" : localStorage.getItem("playground-theme");
           if (t !== "dark") {
             document.documentElement.classList.add("light");
           }

@@ -10,7 +10,7 @@ import {
 } from "@/lib/dimensionLabels";
 import { personaDisplayId, personaPrimaryName } from "@/lib/personaDisplay";
 import {
-  PERSONA_BENCH_POOL,
+  PERSONA_AMAZON_BUYER_POOL_1000,
   type PersonaDimensionGroup,
   type PersonaPoolPersonaCard,
 } from "@/lib/types";
@@ -216,7 +216,7 @@ function TaxonomyTree({
 
 export function BenchPersonaDetailPanel({
   persona,
-  pool = PERSONA_BENCH_POOL,
+  pool = PERSONA_AMAZON_BUYER_POOL_1000,
   onClose,
   onUse,
   useLabel,
@@ -227,7 +227,7 @@ export function BenchPersonaDetailPanel({
   const { t } = useI18n();
   const labels = useDimensionLabels();
   const personaId = persona?.personaId ?? null;
-  const activePool = pool?.trim() || PERSONA_BENCH_POOL;
+  const activePool = pool?.trim() || PERSONA_AMAZON_BUYER_POOL_1000;
   const detailQuery = useQuery({
     queryKey: ["persona-pool-detail", activePool, personaId],
     queryFn: () => api.getPersonaPoolPersona(personaId!, activePool),

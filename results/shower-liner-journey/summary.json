@@ -1,0 +1,1020 @@
+{
+  "n": 1000,
+  "pass_rate": 1.0,
+  "first_click": {
+    "A": 94.2,
+    "B": 3.0,
+    "C": 2.6,
+    "E": 0.2
+  },
+  "second_click_dist": {
+    "C": 56.8,
+    "B": 38.3,
+    "A": 3.5,
+    "E": 0.5,
+    "D": 0.1
+  },
+  "third_click_dist": {
+    "B": 38.4,
+    "C": 33.1,
+    "E": 23.9,
+    "A": 1.8,
+    "D": 1.2,
+    "F": 0.8
+  },
+  "final_buy": {
+    "none": 97.7,
+    "C": 0.9,
+    "A": 0.9,
+    "B": 0.5
+  },
+  "fallback_favorite": {
+    "A": 83.5,
+    "C": 7.0,
+    "B": 6.8,
+    "E": 0.4
+  },
+  "final_ordered_n": {
+    "A": 9,
+    "B": 42,
+    "C": 35,
+    "D": 8,
+    "E": 8,
+    "F": 8
+  },
+  "held_back_favorite_n": {
+    "A": 826,
+    "B": 48,
+    "C": 49,
+    "D": 0,
+    "E": 4,
+    "F": 0
+  },
+  "alignment": [
+    {
+      "option": "A",
+      "first_click_pct": 94.2,
+      "final_buy_pct": 0.9,
+      "fallback_fav_pct": 83.5,
+      "final_ordered_n": 9,
+      "held_back_fav_n": 826
+    },
+    {
+      "option": "B",
+      "first_click_pct": 3.0,
+      "final_buy_pct": 0.5,
+      "fallback_fav_pct": 6.8,
+      "final_ordered_n": 42,
+      "held_back_fav_n": 48
+    },
+    {
+      "option": "C",
+      "first_click_pct": 2.6,
+      "final_buy_pct": 0.9,
+      "fallback_fav_pct": 7.0,
+      "final_ordered_n": 35,
+      "held_back_fav_n": 49
+    },
+    {
+      "option": "D",
+      "first_click_pct": 0,
+      "final_buy_pct": 0,
+      "fallback_fav_pct": 0,
+      "final_ordered_n": 8,
+      "held_back_fav_n": 0
+    },
+    {
+      "option": "E",
+      "first_click_pct": 0.2,
+      "final_buy_pct": 0,
+      "fallback_fav_pct": 0.4,
+      "final_ordered_n": 8,
+      "held_back_fav_n": 4
+    },
+    {
+      "option": "F",
+      "first_click_pct": 0,
+      "final_buy_pct": 0,
+      "fallback_fav_pct": 0,
+      "final_ordered_n": 8,
+      "held_back_fav_n": 0
+    }
+  ],
+  "funnel_not_buy_first3_pct": 97.7,
+  "buy_first_decisions": {
+    "not_buy": 75.3,
+    "add_cart": 23.9,
+    "buy_now": 0.8
+  },
+  "buy_second_decisions": {
+    "not_buy": 81.7,
+    "add_cart": 17.5
+  },
+  "buy_third_decisions": {
+    "not_buy": 87.9,
+    "add_cart": 9.8,
+    "buy_now": 1.5
+  },
+  "consider_more": {
+    "yes_more": 97.7
+  },
+  "click_drivers": {
+    "review_count": {
+      "n": 975,
+      "pct": 97.5
+    },
+    "material_word": {
+      "n": 970,
+      "pct": 97.0
+    },
+    "imagine_look": {
+      "n": 921,
+      "pct": 92.1
+    },
+    "star_rating": {
+      "n": 917,
+      "pct": 91.7
+    },
+    "main_image": {
+      "n": 906,
+      "pct": 90.6
+    },
+    "color_pattern": {
+      "n": 765,
+      "pct": 76.5
+    },
+    "magnets": {
+      "n": 615,
+      "pct": 61.5
+    },
+    "right_size": {
+      "n": 268,
+      "pct": 26.8
+    },
+    "title_keyword": {
+      "n": 91,
+      "pct": 9.1
+    },
+    "price": {
+      "n": 51,
+      "pct": 5.1
+    },
+    "brand": {
+      "n": 10,
+      "pct": 1.0
+    }
+  },
+  "detail_info": {
+    "reviews_photos": {
+      "n": 999,
+      "pct": 99.9
+    },
+    "negative_reviews": {
+      "n": 992,
+      "pct": 99.2
+    },
+    "bullets": {
+      "n": 992,
+      "pct": 99.2
+    },
+    "material_cert": {
+      "n": 992,
+      "pct": 99.2
+    },
+    "zoom_images": {
+      "n": 988,
+      "pct": 98.8
+    },
+    "size_specs": {
+      "n": 970,
+      "pct": 97.0
+    },
+    "qa": {
+      "n": 648,
+      "pct": 64.8
+    },
+    "price_deal": {
+      "n": 271,
+      "pct": 27.1
+    },
+    "delivery_returns": {
+      "n": 41,
+      "pct": 4.1
+    },
+    "seller": {
+      "n": 1,
+      "pct": 0.1
+    },
+    "aplus": {
+      "n": 1,
+      "pct": 0.1
+    }
+  },
+  "detail_top": {
+    "negative_reviews": 78.5,
+    "reviews_photos": 18.2,
+    "material_cert": 1.0
+  },
+  "notbuy_first": {
+    "want_compare": {
+      "n": 985,
+      "pct": 98.5
+    },
+    "price_too_high": {
+      "n": 931,
+      "pct": 93.1
+    },
+    "transparency": {
+      "n": 47,
+      "pct": 4.7
+    },
+    "material": {
+      "n": 31,
+      "pct": 3.1
+    },
+    "price_suspicious": {
+      "n": 27,
+      "pct": 2.7
+    },
+    "no_concern": {
+      "n": 8,
+      "pct": 0.8
+    },
+    "few_reviews": {
+      "n": 7,
+      "pct": 0.7
+    },
+    "brand": {
+      "n": 7,
+      "pct": 0.7
+    },
+    "review_concern": {
+      "n": 4,
+      "pct": 0.4
+    },
+    "rating": {
+      "n": 1,
+      "pct": 0.1
+    },
+    "other": {
+      "n": 1,
+      "pct": 0.1
+    },
+    "look": {
+      "n": 1,
+      "pct": 0.1
+    }
+  },
+  "notbuy_second": {
+    "want_compare": {
+      "n": 875,
+      "pct": 87.5
+    },
+    "price_suspicious": {
+      "n": 735,
+      "pct": 73.5
+    },
+    "material": {
+      "n": 528,
+      "pct": 52.8
+    },
+    "brand": {
+      "n": 299,
+      "pct": 29.9
+    },
+    "look": {
+      "n": 219,
+      "pct": 21.9
+    },
+    "few_reviews": {
+      "n": 162,
+      "pct": 16.2
+    },
+    "transparency": {
+      "n": 63,
+      "pct": 6.3
+    },
+    "price_too_high": {
+      "n": 35,
+      "pct": 3.5
+    },
+    "review_concern": {
+      "n": 35,
+      "pct": 3.5
+    },
+    "skip_ordered": {
+      "n": 8,
+      "pct": 0.8
+    },
+    "missing_magnet": {
+      "n": 2,
+      "pct": 0.2
+    },
+    "size": {
+      "n": 1,
+      "pct": 0.1
+    },
+    "info_incomplete": {
+      "n": 1,
+      "pct": 0.1
+    },
+    "no_concern": {
+      "n": 1,
+      "pct": 0.1
+    }
+  },
+  "notbuy_third": {
+    "want_compare": {
+      "n": 785,
+      "pct": 78.5
+    },
+    "price_suspicious": {
+      "n": 471,
+      "pct": 47.1
+    },
+    "few_reviews": {
+      "n": 398,
+      "pct": 39.8
+    },
+    "material": {
+      "n": 395,
+      "pct": 39.5
+    },
+    "brand": {
+      "n": 363,
+      "pct": 36.3
+    },
+    "look": {
+      "n": 361,
+      "pct": 36.1
+    },
+    "transparency": {
+      "n": 152,
+      "pct": 15.2
+    },
+    "rating": {
+      "n": 43,
+      "pct": 4.3
+    },
+    "no_concern": {
+      "n": 29,
+      "pct": 2.9
+    },
+    "review_concern": {
+      "n": 24,
+      "pct": 2.4
+    },
+    "info_incomplete": {
+      "n": 24,
+      "pct": 2.4
+    },
+    "price_too_high": {
+      "n": 17,
+      "pct": 1.7
+    },
+    "skip_ordered": {
+      "n": 10,
+      "pct": 1.0
+    },
+    "size": {
+      "n": 9,
+      "pct": 0.9
+    },
+    "missing_magnet": {
+      "n": 2,
+      "pct": 0.2
+    },
+    "pack": {
+      "n": 1,
+      "pct": 0.1
+    }
+  },
+  "fallback_blocker": {
+    "price": {
+      "n": 851,
+      "pct": 85.1
+    },
+    "timing": {
+      "n": 641,
+      "pct": 64.1
+    },
+    "reviews_trust": {
+      "n": 135,
+      "pct": 13.5
+    },
+    "look_compromise": {
+      "n": 95,
+      "pct": 9.5
+    },
+    "info_gap": {
+      "n": 93,
+      "pct": 9.3
+    },
+    "material": {
+      "n": 76,
+      "pct": 7.6
+    },
+    "no_blocker": {
+      "n": 38,
+      "pct": 3.8
+    },
+    "brand": {
+      "n": 23,
+      "pct": 2.3
+    },
+    "other": {
+      "n": 1,
+      "pct": 0.1
+    }
+  },
+  "reject_reasons": {
+    "A": {
+      "price_too_high": {
+        "n": 988,
+        "pct": 98.8
+      },
+      "fallback_favorite": {
+        "n": 826,
+        "pct": 82.6
+      },
+      "transparency": {
+        "n": 48,
+        "pct": 4.8
+      },
+      "look": {
+        "n": 31,
+        "pct": 3.1
+      },
+      "final_purchase": {
+        "n": 9,
+        "pct": 0.9
+      },
+      "pack": {
+        "n": 5,
+        "pct": 0.5
+      },
+      "missing_magnet": {
+        "n": 4,
+        "pct": 0.4
+      },
+      "material": {
+        "n": 4,
+        "pct": 0.4
+      },
+      "other": {
+        "n": 3,
+        "pct": 0.3
+      },
+      "info_incomplete": {
+        "n": 1,
+        "pct": 0.1
+      },
+      "brand": {
+        "n": 1,
+        "pct": 0.1
+      }
+    },
+    "B": {
+      "price_suspicious": {
+        "n": 781,
+        "pct": 78.1
+      },
+      "material": {
+        "n": 583,
+        "pct": 58.3
+      },
+      "look": {
+        "n": 478,
+        "pct": 47.8
+      },
+      "brand": {
+        "n": 384,
+        "pct": 38.4
+      },
+      "transparency": {
+        "n": 67,
+        "pct": 6.7
+      },
+      "fallback_favorite": {
+        "n": 48,
+        "pct": 4.8
+      },
+      "final_purchase": {
+        "n": 42,
+        "pct": 4.2
+      },
+      "review_concern": {
+        "n": 39,
+        "pct": 3.9
+      },
+      "few_reviews": {
+        "n": 39,
+        "pct": 3.9
+      },
+      "rating": {
+        "n": 7,
+        "pct": 0.7
+      },
+      "info_incomplete": {
+        "n": 3,
+        "pct": 0.3
+      },
+      "size": {
+        "n": 1,
+        "pct": 0.1
+      }
+    },
+    "C": {
+      "price_suspicious": {
+        "n": 760,
+        "pct": 76.0
+      },
+      "brand": {
+        "n": 556,
+        "pct": 55.6
+      },
+      "material": {
+        "n": 454,
+        "pct": 45.4
+      },
+      "few_reviews": {
+        "n": 348,
+        "pct": 34.8
+      },
+      "look": {
+        "n": 189,
+        "pct": 18.9
+      },
+      "fallback_favorite": {
+        "n": 49,
+        "pct": 4.9
+      },
+      "transparency": {
+        "n": 39,
+        "pct": 3.9
+      },
+      "final_purchase": {
+        "n": 35,
+        "pct": 3.5
+      },
+      "review_concern": {
+        "n": 29,
+        "pct": 2.9
+      },
+      "info_incomplete": {
+        "n": 11,
+        "pct": 1.1
+      },
+      "size": {
+        "n": 2,
+        "pct": 0.2
+      },
+      "missing_magnet": {
+        "n": 1,
+        "pct": 0.1
+      }
+    },
+    "D": {
+      "few_reviews": {
+        "n": 992,
+        "pct": 99.2
+      },
+      "material": {
+        "n": 866,
+        "pct": 86.6
+      },
+      "pack": {
+        "n": 763,
+        "pct": 76.3
+      },
+      "brand": {
+        "n": 184,
+        "pct": 18.4
+      },
+      "look": {
+        "n": 33,
+        "pct": 3.3
+      },
+      "price_suspicious": {
+        "n": 23,
+        "pct": 2.3
+      },
+      "rating": {
+        "n": 12,
+        "pct": 1.2
+      },
+      "final_purchase": {
+        "n": 8,
+        "pct": 0.8
+      },
+      "info_incomplete": {
+        "n": 4,
+        "pct": 0.4
+      },
+      "transparency": {
+        "n": 3,
+        "pct": 0.3
+      },
+      "review_concern": {
+        "n": 3,
+        "pct": 0.3
+      },
+      "size": {
+        "n": 2,
+        "pct": 0.2
+      }
+    },
+    "E": {
+      "few_reviews": {
+        "n": 906,
+        "pct": 90.6
+      },
+      "look": {
+        "n": 857,
+        "pct": 85.7
+      },
+      "brand": {
+        "n": 539,
+        "pct": 53.9
+      },
+      "transparency": {
+        "n": 253,
+        "pct": 25.3
+      },
+      "material": {
+        "n": 80,
+        "pct": 8.0
+      },
+      "rating": {
+        "n": 78,
+        "pct": 7.8
+      },
+      "review_concern": {
+        "n": 15,
+        "pct": 1.5
+      },
+      "info_incomplete": {
+        "n": 12,
+        "pct": 1.2
+      },
+      "final_purchase": {
+        "n": 8,
+        "pct": 0.8
+      },
+      "fallback_favorite": {
+        "n": 4,
+        "pct": 0.4
+      },
+      "missing_magnet": {
+        "n": 2,
+        "pct": 0.2
+      },
+      "price_too_high": {
+        "n": 1,
+        "pct": 0.1
+      }
+    },
+    "F": {
+      "few_reviews": {
+        "n": 992,
+        "pct": 99.2
+      },
+      "size": {
+        "n": 991,
+        "pct": 99.1
+      },
+      "material": {
+        "n": 374,
+        "pct": 37.4
+      },
+      "look": {
+        "n": 348,
+        "pct": 34.8
+      },
+      "brand": {
+        "n": 211,
+        "pct": 21.1
+      },
+      "transparency": {
+        "n": 152,
+        "pct": 15.2
+      },
+      "final_purchase": {
+        "n": 8,
+        "pct": 0.8
+      },
+      "price_suspicious": {
+        "n": 6,
+        "pct": 0.6
+      },
+      "rating": {
+        "n": 6,
+        "pct": 0.6
+      },
+      "pack": {
+        "n": 2,
+        "pct": 0.2
+      },
+      "info_incomplete": {
+        "n": 1,
+        "pct": 0.1
+      },
+      "review_concern": {
+        "n": 1,
+        "pct": 0.1
+      }
+    }
+  },
+  "reject_top": {
+    "few_reviews": {
+      "n": 3277,
+      "pct": 327.7
+    },
+    "material": {
+      "n": 2361,
+      "pct": 236.1
+    },
+    "look": {
+      "n": 1936,
+      "pct": 193.6
+    },
+    "brand": {
+      "n": 1875,
+      "pct": 187.5
+    },
+    "price_suspicious": {
+      "n": 1570,
+      "pct": 157.0
+    },
+    "size": {
+      "n": 996,
+      "pct": 99.6
+    },
+    "price_too_high": {
+      "n": 989,
+      "pct": 98.9
+    },
+    "pack": {
+      "n": 770,
+      "pct": 77.0
+    },
+    "transparency": {
+      "n": 562,
+      "pct": 56.2
+    },
+    "rating": {
+      "n": 103,
+      "pct": 10.3
+    },
+    "review_concern": {
+      "n": 87,
+      "pct": 8.7
+    },
+    "info_incomplete": {
+      "n": 32,
+      "pct": 3.2
+    },
+    "missing_magnet": {
+      "n": 7,
+      "pct": 0.7
+    },
+    "other": {
+      "n": 3,
+      "pct": 0.3
+    }
+  },
+  "page_browse": {
+    "page2": {
+      "n": 939,
+      "pct": 93.9
+    },
+    "page1": {
+      "n": 59,
+      "pct": 5.9
+    },
+    "page3": {
+      "n": 2,
+      "pct": 0.2
+    }
+  },
+  "page_buy": {
+    "page1": {
+      "n": 992,
+      "pct": 99.2
+    },
+    "page2": {
+      "n": 8,
+      "pct": 0.8
+    }
+  },
+  "factor_most": {
+    "reviews": {
+      "n": 605,
+      "pct": 60.5
+    },
+    "price_value": {
+      "n": 184,
+      "pct": 18.4
+    },
+    "material": {
+      "n": 178,
+      "pct": 17.8
+    },
+    "appearance": {
+      "n": 23,
+      "pct": 2.3
+    },
+    "rating": {
+      "n": 8,
+      "pct": 0.8
+    },
+    "magnet": {
+      "n": 1,
+      "pct": 0.1
+    },
+    "brand": {
+      "n": 1,
+      "pct": 0.1
+    }
+  },
+  "factor_second": {
+    "price_value": {
+      "n": 360,
+      "pct": 36.0
+    },
+    "material": {
+      "n": 321,
+      "pct": 32.1
+    },
+    "reviews": {
+      "n": 299,
+      "pct": 29.9
+    },
+    "appearance": {
+      "n": 15,
+      "pct": 1.5
+    },
+    "magnet": {
+      "n": 4,
+      "pct": 0.4
+    },
+    "rating": {
+      "n": 1,
+      "pct": 0.1
+    }
+  },
+  "listing_redline": {
+    "material_unclear": {
+      "n": 992,
+      "pct": 99.2
+    },
+    "blur_image": {
+      "n": 992,
+      "pct": 99.2
+    },
+    "low_rating": {
+      "n": 991,
+      "pct": 99.1
+    },
+    "no_size": {
+      "n": 927,
+      "pct": 92.7
+    },
+    "few_reviews": {
+      "n": 820,
+      "pct": 82.0
+    },
+    "mismatch_title": {
+      "n": 624,
+      "pct": 62.4
+    },
+    "no_bullets": {
+      "n": 273,
+      "pct": 27.3
+    },
+    "brand_unfamiliar": {
+      "n": 3,
+      "pct": 0.3
+    }
+  },
+  "material_pref": {
+    "eva": {
+      "n": 1000,
+      "pct": 100.0
+    }
+  },
+  "transparency_pref": {
+    "semi": {
+      "n": 980,
+      "pct": 98.0
+    },
+    "fully_transparent": {
+      "n": 11,
+      "pct": 1.1
+    },
+    "blackout": {
+      "n": 9,
+      "pct": 0.9
+    }
+  },
+  "badge_effect": {
+    "yes_somewhat": {
+      "n": 643,
+      "pct": 64.3
+    },
+    "unlikely": {
+      "n": 309,
+      "pct": 30.9
+    },
+    "neutral": {
+      "n": 33,
+      "pct": 3.3
+    },
+    "yes_strongly": {
+      "n": 8,
+      "pct": 0.8
+    },
+    "no_effect": {
+      "n": 7,
+      "pct": 0.7
+    }
+  },
+  "switch_trigger": {
+    "better_rating": {
+      "n": 703,
+      "pct": 70.3
+    },
+    "better_value": {
+      "n": 180,
+      "pct": 18.0
+    },
+    "lower_price": {
+      "n": 53,
+      "pct": 5.3
+    },
+    "better_function": {
+      "n": 47,
+      "pct": 4.7
+    },
+    "better_look": {
+      "n": 15,
+      "pct": 1.5
+    },
+    "better_listing": {
+      "n": 2,
+      "pct": 0.2
+    }
+  },
+  "likert_means": {
+    "q_importance_title": 4.02,
+    "q_importance_image": 4.85,
+    "q_importance_bullets": 3.98,
+    "q_importance_aplus": 2.04,
+    "q_importance_attr": 4.01,
+    "q_importance_price": 4.3,
+    "q_importance_reviews": 4.98,
+    "q_importance_trust": 4.49,
+    "q_price_acceptance": 3.21,
+    "q_purchase_intent": 3.9
+  },
+  "quotes_first_click": {
+    "A": [
+      "The emerald-green semi-transparent look with the bright bathroom photo caught my eye right away, and the 4.5 stars with over 4,000 reviews made it feel like the safest place to start.",
+      "The emerald-green semi-transparent look with brass grommets and a weighted bottom caught my eye, and 4,156 reviews at 4.5 stars makes it feel like the safe, well-tested pick."
+    ],
+    "B": [
+      "The gradient blue 3D cube texture caught my eye and at $7.19 with 4.4 stars and 1,872 reviews it looks like a strong value pick.",
+      "The 3D cube texture in gradient blue stood out on the shelf, and at $7.19 with 1,872 reviews it's a low-risk click with decent social proof."
+    ],
+    "C": [
+      "LQFMEHOT has the highest star rating on the shelf (4.6 with 974 reviews) and the lowest price — a combination that tells me other buyers found it acceptable, which is what I want before wasting time on a page.",
+      "The Art-Deco water-wave blue pattern caught my eye immediately and at $7.09 with a 4.6-star rating from nearly a thousand reviewers, it looked like the best balance of style, evidence and price on the shelf."
+    ],
+    "D": [],
+    "E": [
+      "Solid black, no pattern, PVC-free EVA — it's the plainest, most practical-looking one and black hides mildew stains better than clear or green.",
+      "Solid black, plain, PVC-free EVA — no pattern to clash with my bathroom, and I just want a liner that does its job and disappears. I'd click it first to check the specs."
+    ],
+    "F": []
+  },
+  "quotes_fallback": {
+    "A": [
+      "If I had to pick one, it would be the AmazerBath — it has by far the most reviews and looks the most substantial and pleasant, so it feels like the least risky purchase.",
+      "It is the only one that reads as a genuinely nicer liner — soft-touch BPA-free EVA, brass grommets, weighted hem — with enough reviews behind it that I trust it."
+    ],
+    "B": [
+      "If I somehow ended up ordering nothing, jssablo is still the one I'd want: it has the best combination of real review evidence, magnets, a look I like, and a price I'm comfortable with.",
+      "If I somehow ended up ordering nothing, the jssablo Blue Cube is the one I'd most want — 1,872 reviews at 4.4 stars is real evidence at a $7.19 price, with EVA material and bottom magnets covering the features I care abo"
+    ],
+    "C": [
+      "The LQFMEHOT has the best rating (4.6 stars) among the affordable liners and the blue water-wave design would look nice in my bathroom, so it is the one I would most likely come back to.",
+      "The LQFMEHOT has the highest rating (4.6★) with nearly 1,000 reviews and magnets at the lowest price, so it's the one I'd most want if I had to pick one."
+    ],
+    "D": [],
+    "E": [
+      "The plain black EVA liner is the one I would actually live with — no weird tint, PVC-free, magnets at the hem, and a sane price. The only thing holding me back is that 116 reviews is not much of a track record.",
+      "It's the plainest, most functional option and matches what I actually want — a no-fuss PVC-free liner that stays against the tub. The low review count and 4.3 rating are what keep me from pulling the trigger."
+    ],
+    "F": []
+  }
+}

@@ -1491,5 +1491,6 @@
   "personaSetup.synth.customDimsNote": "작업 계획이 선언한 사용자 지정 속성({count}) — 자동으로 적용됩니다.",
   "personaSetup.synth.sizeFromCells": "코호트 규모는 셀 × 셀당으로 정해집니다.",
   "personaSetup.progress.independentDataset": "독립",
-  "personaSetup.progress.waiting": "대기 중…"
+  "personaSetup.progress.waiting": "대기 중…",
+  "taskSetup.domain.ecommerce": "이커머스"
 }

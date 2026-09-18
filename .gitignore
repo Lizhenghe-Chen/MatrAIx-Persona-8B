@@ -315,3 +315,4 @@ environment/runtime/harbor/viewer/static/assets/*.map
 **/.playground_sidecar/
 site/
 .cache/
+persona/

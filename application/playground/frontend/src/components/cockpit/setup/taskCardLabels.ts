@@ -1,4 +1,5 @@
 import type { ToneChipTone } from "./ToneChip";
+import type { MessageKey, MessageValues } from "@/i18n/types";
 
 export type TaskKind = "example" | "task";
 
@@ -10,6 +11,26 @@ const TASK_KIND_MESSAGE_KEYS: Record<TaskKind, TaskKindMessageKey> = {
   example: "cockpitSetup.taskKind.example",
   task: "cockpitSetup.taskKind.task",
 };
+
+/**
+ * Localized domain display labels. Domain values are stable English slugs
+ * (e.g. ``e-commerce``); this map resolves them to the UI label per locale.
+ * Unknown domains fall back to ``formatChipLabel``.
+ */
+export function domainDisplayLabel(
+  t: (key: MessageKey, values?: MessageValues) => string,
+  domain?: string | null,
+): string {
+  const value = (domain ?? "").trim();
+  if (!value) return "";
+  if (value.toLowerCase() === "e-commerce") {
+    const localized = t("taskSetup.domain.ecommerce");
+    if (localized && localized !== "taskSetup.domain.ecommerce") {
+      return localized;
+    }
+  }
+  return formatChipLabel(value);
+}
 
 /** Example tasks live under ``application/tasks/example-*`` folders. */
 export function inferTaskKindFromPath(taskPath?: string): TaskKind {
@@ -30,11 +51,12 @@ export type TaskCardTag =
 
 export function taskCardTagLabel(
   tag: TaskCardTag,
-  t: (key: TaskKindMessageKey) => string,
+  t: (key: MessageKey, values?: MessageValues) => string,
 ): string {
-  return tag.taskKind
-    ? t(TASK_KIND_MESSAGE_KEYS[tag.taskKind])
-    : formatChipLabel(tag.label);
+  if (tag.taskKind) {
+    return t(TASK_KIND_MESSAGE_KEYS[tag.taskKind]);
+  }
+  return domainDisplayLabel(t, tag.label);
 }
 
 export function taskCardTagKey(tag: TaskCardTag): string {

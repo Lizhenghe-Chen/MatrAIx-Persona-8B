@@ -1,0 +1,381 @@
+{
+  "meta": {
+    "survey_a": {
+      "id": "shower_liner_6asin_v2",
+      "n": 1000,
+      "job": "survey-shower-liner-6asin-v2-n1000"
+    },
+    "products": {
+      "A": {
+        "brand": "AmazerBath",
+        "price": 18.99,
+        "rating": 4.5,
+        "reviews": 4156,
+        "avail": "配送受限/无Featured Offer"
+      },
+      "B": {
+        "brand": "jssablo",
+        "price": 7.19,
+        "rating": 4.4,
+        "reviews": 1872,
+        "avail": "现货"
+      },
+      "C": {
+        "brand": "LQFMEHOT",
+        "price": 7.09,
+        "rating": 4.6,
+        "reviews": 974,
+        "avail": "现货"
+      },
+      "D": {
+        "brand": "Laumyasof",
+        "price": 9.99,
+        "rating": 4.4,
+        "reviews": 16,
+        "avail": "新品"
+      },
+      "E": {
+        "brand": "Dependable",
+        "price": 9.99,
+        "rating": 4.3,
+        "reviews": 116,
+        "avail": "仅剩10件"
+      },
+      "F": {
+        "brand": "MuuXii",
+        "price": null,
+        "rating": 4.4,
+        "reviews": 10,
+        "avail": "缺货"
+      }
+    },
+    "note": "all percentages are % of person-answers; multi-choice sums may exceed 100%"
+  },
+  "choice": {
+    "share_pct": {
+      "C": 63.2,
+      "B": 18.7,
+      "A": 16.6,
+      "E": 1.5
+    },
+    "reject_top_reasons": {
+      "A": [
+        [
+          "price_too_high",
+          834
+        ],
+        [
+          "look",
+          270
+        ],
+        [
+          "availability",
+          225
+        ],
+        [
+          "transparency",
+          203
+        ],
+        [
+          "brand",
+          26
+        ],
+        [
+          "material",
+          5
+        ],
+        [
+          "rating",
+          4
+        ],
+        [
+          "pack",
+          3
+        ]
+      ],
+      "B": [
+        [
+          "look",
+          674
+        ],
+        [
+          "price_suspicious",
+          388
+        ],
+        [
+          "brand",
+          242
+        ],
+        [
+          "rating",
+          168
+        ],
+        [
+          "few_reviews",
+          162
+        ],
+        [
+          "material",
+          46
+        ],
+        [
+          "review_concern",
+          32
+        ],
+        [
+          "transparency",
+          10
+        ]
+      ],
+      "C": [
+        [
+          "brand",
+          334
+        ],
+        [
+          "price_suspicious",
+          247
+        ],
+        [
+          "look",
+          192
+        ],
+        [
+          "few_reviews",
+          166
+        ],
+        [
+          "review_concern",
+          12
+        ],
+        [
+          "material",
+          9
+        ],
+        [
+          "transparency",
+          7
+        ],
+        [
+          "rating",
+          6
+        ]
+      ],
+      "D": [
+        [
+          "few_reviews",
+          991
+        ],
+        [
+          "material",
+          797
+        ],
+        [
+          "pack",
+          475
+        ],
+        [
+          "look",
+          88
+        ],
+        [
+          "brand",
+          46
+        ],
+        [
+          "rating",
+          13
+        ],
+        [
+          "info_incomplete",
+          4
+        ],
+        [
+          "transparency",
+          1
+        ]
+      ],
+      "E": [
+        [
+          "look",
+          939
+        ],
+        [
+          "availability",
+          577
+        ],
+        [
+          "few_reviews",
+          500
+        ],
+        [
+          "rating",
+          201
+        ],
+        [
+          "transparency",
+          158
+        ],
+        [
+          "brand",
+          35
+        ],
+        [
+          "review_concern",
+          25
+        ],
+        [
+          "material",
+          3
+        ]
+      ],
+      "F": [
+        [
+          "few_reviews",
+          977
+        ],
+        [
+          "availability",
+          932
+        ],
+        [
+          "size",
+          339
+        ],
+        [
+          "transparency",
+          43
+        ],
+        [
+          "info_incomplete",
+          14
+        ],
+        [
+          "material",
+          12
+        ],
+        [
+          "brand",
+          12
+        ],
+        [
+          "price_suspicious",
+          9
+        ]
+      ]
+    },
+    "page_browse_pct": {
+      "page2": 95.7,
+      "page3": 2.8,
+      "page1": 1.5
+    },
+    "page_buy_pct": {
+      "page1": 96.4,
+      "page2": 3.6
+    },
+    "factor_most_pct": {
+      "price_value": 55.0,
+      "reviews": 21.9,
+      "rating": 17.2,
+      "material": 2.8,
+      "magnet": 1.9,
+      "appearance": 1.0,
+      "waterproof": 0.2
+    },
+    "factor_second_pct": {
+      "reviews": 41.1,
+      "price_value": 27.3,
+      "material": 12.8,
+      "rating": 11.2,
+      "magnet": 6.4,
+      "appearance": 1.1,
+      "brand": 0.1
+    },
+    "importance_mean_1to5": {
+      "title": 3.98,
+      "image": 4.33,
+      "bullets": 3.86,
+      "aplus": 1.99,
+      "attr": 4.1,
+      "price": 4.61,
+      "reviews": 4.89,
+      "trust": 4.09
+    },
+    "redline_pct": {
+      "unavailable": 100.0,
+      "material_unclear": 98.7,
+      "blur_image": 96.2,
+      "no_price": 91.7,
+      "no_size": 91.3,
+      "low_rating": 83.3,
+      "few_reviews": 64.1,
+      "no_bullets": 11.1,
+      "brand_unfamiliar": 0.1
+    },
+    "material_pref_pct": {
+      "eva": 100.0
+    },
+    "transparency_pref_pct": {
+      "semi": 97.7,
+      "blackout": 1.4,
+      "fully_transparent": 0.9
+    },
+    "badge_effect_pct": {
+      "yes_somewhat": 91.3,
+      "neutral": 3.9,
+      "unlikely": 3.8,
+      "yes_strongly": 0.9,
+      "no_effect": 0.1
+    },
+    "switch_trigger_pct": {
+      "better_rating": 66.3,
+      "better_function": 15.1,
+      "lower_price": 8.1,
+      "nothing": 5.2,
+      "better_value": 4.9,
+      "better_look": 0.4
+    },
+    "price_accept_mean": 4.84,
+    "display_position_influence_pct": {
+      "slightly": 90.5,
+      "moderately": 8.6,
+      "not_at_all": 0.9
+    }
+  },
+  "sample_choice_why": {
+    "A": [
+      "I'll go with the AmazerBath Rainbow Emerald liner. It has the strongest review base (4.5★, 4,156 reviews), a luxury soft-touch EVA material that's BPA-free and odor-free, and the weighted bottom plus reinforced header suggest it will actually hold up. The emerald-green semi-transparent look is pretty and the price is fair for a liner I'll use every day.",
+      "I'm cautious about anything that hangs in a steamy bathroom and touches water daily, so the AmazerBath's 4,156 reviews at 4.5 stars give me the evidence I need that it actually holds up. It's BPA-free and odor-free with brass grommets and a weighted hem, which addresses the durability and chemical-smell worries I have with cheap liners. At $18.99 it costs more, but I'd rather pay once for a liner I trust than replace a $7 one twice a year.",
+      "I'm a cautious, detail-oriented shopper and I weight evidence heavily, so the 4,156 reviews at 4.5 stars on Option A give me the confidence the others can't. It's also the only liner with fully documented specs I care about — BPA-free odor-free EVA, brass grommets, reinforced header, weighted hem — and the emerald semi-transparent look suits my bathroom. The higher price is worth it to me for a product this well-proven.",
+      "I want a liner I can trust to last and stay in place, and AmazerBath has the strongest evidence base with 4,156 reviews at 4.5 stars, plus brass grommets, a weighted hem, and BPA-free odor-free EVA. The $18.99 price is higher than the others, but for something that hangs in a humid bathroom daily I'd rather pay once for proven quality than gamble on a $7 liner with an unfamiliar brand.",
+      "It's the only one with a large, credible review base (4.5 stars, 4,156 reviews) and the materials/selling points are clearly spelled out — BPA-free EVA, odor-free, rustproof brass grommets, weighted hem. I'd rather pay a bit more for something I trust to hold up and not smell like plastic.",
+      "I value quality and health, and AmazerBath's BPA-free, odor-free EVA with a reinforced header, brass grommets, and weighted hem reads as the most trustworthy, well-made option. Its 4.5 stars from over 4,100 reviews give me the evidence I need, and the emerald semi-transparent look fits my aesthetic even at a higher price."
+    ],
+    "B": [
+      "It's cheap, has solid reviews (4.4★, 1,872), and EVA is my preferred material. The 3D cube texture and magnets at the bottom are exactly the features I want, and it's actually in stock.",
+      "It has a strong 4.4-star rating with nearly 1,900 reviews, so I trust it more than the cheaper, thinly-reviewed options. The 3D blue cube look is fun and modern, and at $7.19 it's a great value with magnets to keep it against the tub.",
+      "I want a liner that's cheap, well-reviewed, and actually stays put against the tub. The jssablo at $7.19 has 1,872 reviews at 4.4 stars, the magnets at the bottom keep it from billowing, and it's EVA so no plastic smell. Good value without gambling on a brand-new listing.",
+      "I want an EVA liner with magnets to hold it against the tub, and this one has 12 metal grommets, a weighted hem, and a decent 4.4 rating with nearly 1,900 reviews. At $7.19 it's a solid value without being suspiciously cheap, and it's in stock.",
+      "The jssablo Blue Cube liner has a strong 4.4 rating across 1,872 reviews, a reasonable $7.19 price, EVA material, magnets and weighted hem, and it is in stock. The 3D cube look is more appealing to me than a plain or overly patterned liner, and it gives me confidence without paying premium AmazerBath pricing.",
+      "It hits the sweet spot for me: strong 4.4★ rating with a solid 1,872 reviews, so I trust it, and at $7.19 it's a low-risk buy. The 3D cube texture looks nicer than a plain liner, and it has the magnets and weighted hem I want to keep it against the tub."
+    ],
+    "C": [
+      "I want a waterproof, odor-free EVA liner with magnets that stays put, and Option C has the highest rating (4.6) with a solid review count near 1,000 at the lowest price ($7.09). The Art-Deco wave look is understated and tidy enough, and it's in stock.",
+      "I want a liner that's odor-free EVA, stays put with magnets, and looks nice without spending much — and this one at $7.09 has a strong 4.6 rating with nearly a thousand reviews. The Art-Deco wave pattern suits my taste, and the tear-proof header and anti-rust grommets suggest it will hold up.",
+      "It has the highest rating (4.6★) with a solid ~974 reviews, comes in at the lowest price ($7.09), and includes the weighted magnets I want so the liner stays against the tub. The blue water-wave texture looks nice without being loud, and EVA is the material I trust for odor-free, quick-dry care.",
+      "It has the highest rating (4.6) with a solid review count near 1,000, and the price of $7.09 is very reasonable for a liner. EVA material with magnets, a tear-proof header, and anti-rust grommets covers everything I actually need, and the wave pattern is a pleasant, understated look.",
+      "I want a cheap, no-fuss liner that stays put against the tub, and this one has 3 heavy magnets plus a weighted hem. The 4.6 rating with nearly a thousand reviews gives me confidence it'll actually hold up, and at $7.09 I don't mind replacing it down the road.",
+      "It has the highest rating (4.6) among the affordable options with a solid review count (974), and the Art-Deco water-wave look fits my modern bathroom. At $7.09 with magnets, a tear-proof header and odor-free EVA, it's the best combination of value and design for me."
+    ],
+    "D": [],
+    "E": [
+      "I want a simple, solid liner without a busy pattern, and E is a plain black PVC-free EVA at a fair $9.99 with magnets, metal grommets and a decent 4.3★ from 116 reviews. A is nicer but I can't justify nearly $19 on a liner, and the two ultra-cheap blue ones feel like a quality gamble to me.",
+      "I want a plain, solid liner that just does its job without a lot of fuss or pattern. The black EVA is PVC-free, has the weighted magnets I want, and the price is reasonable at $9.99. The rating is decent and it's a straightforward, no-nonsense option.",
+      "I want a plain, opaque liner — I don't need a decorative pattern in a liner, and solid black keeps the tub area looking clean and hides any discoloration. The EVA is PVC-free, it has the weighted magnets I need, and at $9.99 the price is reasonable for something I'll replace every year or so.",
+      "I want a plain, opaque liner that hides the tub mess and looks tidy without a busy pattern. The Dependable Industries black EVA liner is PVC-free, has the weighted magnets I want, a solid 4.3 rating, and at $9.99 the price is fair — though the low stock makes me want to order soon.",
+      "I want a plain, modern liner that stays put and wipes clean, and this one has weighted magnets at the bottom plus a solid black look that hides water spots and soap scum. The EVA is PVC-free, it's a fair $9.99, and the reviews are solid enough for me to trust it.",
+      "I want a plain, opaque black liner with a weighted magnetic hem, and EVA/PVC-free construction matters to me since it's in a steamy bathroom my kid uses. The 4.3★ across 116 reviews is enough evidence for a $10 liner, and the look is clean and minimal rather than a loud gradient or 3D pattern."
+    ],
+    "F": []
+  }
+}

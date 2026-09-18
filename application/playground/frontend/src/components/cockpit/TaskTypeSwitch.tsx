@@ -1,11 +1,9 @@
 /**
  * TaskTypeSwitch: the application-type segmented control.
  *
- * Ports the mockup's "Application type" switch (`app-redesign-v3.html:106-112`):
- * a `.hud` micro-label above a compact `inline-flex` segmented control
- * (Chatbot / Survey / Website / AppWorld). It is a self-contained, header-embeddable block
- * (no full-width bar) so each cockpit can drop it into the top-right of its
- * "Configure a simulation" header.
+ * The cross-border e-commerce platform runs survey-based buyer simulation tasks
+ * only, so the control is a single-segment "问卷 / Survey" switch. Chatbot /
+ * web / OS-app types are hidden for this product.
  *
  * Shared primitive: Survey/Web cockpits render the same control. Props are
  * unchanged (`value` / `onChange` / `disabled`); `showLabel` + `className` are
@@ -27,9 +25,6 @@ export interface TaskTypeSwitchProps {
 
 const OPTIONS: ReadonlyArray<{ value: PlaygroundTaskType; icon: string }> = [
   { value: "survey", icon: "fact_check" },
-  { value: "chatbot", icon: "forum" },
-  { value: "web", icon: "language" },
-  { value: "os-app", icon: "apps" },
 ];
 
 type Translate = ReturnType<typeof useI18n>["t"];

@@ -11,6 +11,7 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useI18n } from "@/i18n/I18nProvider";
 import { api, ApiError } from "@/lib/api";
 import {
+  PERSONA_AMAZON_BUYER_POOL_1000,
   PERSONA_BENCH_POOL,
   PERSONA_CARD_PREVIEW_LIMIT,
   PERSONA_GENERATE_COUNT_MAX,
@@ -18,6 +19,7 @@ import {
   PERSONA_SAMPLE_SIZE_MAX_DEV,
   PERSONA_SAMPLE_SIZE_MAX_PRODUCTION,
   PERSONA_UI_ID_LIST_MAX,
+  isEcommercePersonaPool,
   type PersonaPoolGenerateProgress,
   type PersonaPoolGenerateResult,
   type PersonaPoolPersonaCard,
@@ -992,7 +994,7 @@ export function PersonaSamplingRail({
   const [strategySummaryOpen, setStrategySummaryOpen] = useState(true);
 
   const queryClient = useQueryClient();
-  const activePool = personaPool?.trim() || PERSONA_BENCH_POOL;
+  const activePool = personaPool?.trim() || PERSONA_AMAZON_BUYER_POOL_1000;
   const sourcePool = datasetSourcePool(activePool);
   const isBenchPool = sourcePool === PERSONA_BENCH_POOL;
   const isProduction1m = sourcePool === PERSONA_PRODUCTION_1M_POOL;
@@ -1059,7 +1061,7 @@ export function PersonaSamplingRail({
   const lockedCohortQuery = useQuery({
     queryKey: [
       "persona-pool-locked-cohort",
-      personaPool ?? PERSONA_BENCH_POOL,
+      personaPool ?? PERSONA_AMAZON_BUYER_POOL_1000,
       previewPersonaIds.join(","),
     ],
     queryFn: () =>
@@ -1633,7 +1635,9 @@ export function PersonaSamplingRail({
   }, [applyGeneratedPool, t, taskPath]);
 
   const datasetOptions = useMemo<CockpitSelectOption[]>(() => {
-    const listed = datasetsQuery.data?.datasets ?? [];
+    const listed = (datasetsQuery.data?.datasets ?? []).filter((item) =>
+      isEcommercePersonaPool(item.pool),
+    );
     const options: CockpitSelectOption[] = listed.map((item) => {
       const unavailable =
         item.kind === "production" && item.available === false;
@@ -1648,17 +1652,16 @@ export function PersonaSamplingRail({
       };
     });
     if (!options.some((opt) => opt.value === sourcePool)) {
-      const slug =
-        sourcePool.split("/").filter(Boolean).pop() ||
-        "matraix-persona-dev-sample";
+      // 当前池不在下拉里（如非电商目录）时补一条：展示名走 poolSlugLabel，
+      // 不把内部 pool 路径暴露到界面上。
       options.unshift({
         value: sourcePool,
-        label: slug,
+        label: poolSlugLabel(sourcePool),
       });
     }
     if (options.length === 0) {
       return [
-        { value: PERSONA_BENCH_POOL, label: "matraix-persona-dev-sample" },
+        { value: PERSONA_AMAZON_BUYER_POOL_1000, label: "Amazon 买家 1000" },
       ];
     }
     return options;

@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Markdown } from "@/components/Markdown";
 import { useI18n } from "@/i18n/I18nProvider";
 import { api, ApiError } from "@/lib/api";
-import { PERSONA_BENCH_POOL, type PersonaPoolPersonaCard } from "@/lib/types";
+import { PERSONA_AMAZON_BUYER_POOL_1000, type PersonaPoolPersonaCard } from "@/lib/types";
 import { RailInsetModal } from "./RailInsetModal";
 
 export interface BenchPersonaDetailModalProps {
@@ -17,13 +17,13 @@ export interface BenchPersonaDetailModalProps {
 export function BenchPersonaDetailModal({
   open,
   persona,
-  pool = PERSONA_BENCH_POOL,
+  pool = PERSONA_AMAZON_BUYER_POOL_1000,
   onClose,
   onUse,
 }: BenchPersonaDetailModalProps) {
   const { t } = useI18n();
   const personaId = persona?.personaId ?? null;
-  const activePool = pool?.trim() || PERSONA_BENCH_POOL;
+  const activePool = pool?.trim() || PERSONA_AMAZON_BUYER_POOL_1000;
   const detailQuery = useQuery({
     queryKey: ["persona-pool-detail", activePool, personaId],
     queryFn: () => api.getPersonaPoolPersona(personaId!, activePool),

@@ -5,10 +5,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 
 import {
-  chatbotEvalTaskCards,
-  osAppTaskCards,
   surveyHarborTaskCards,
-  webEvalTaskCards,
 } from "./cockpit/setup/cockpitTaskCards";
 import { TaskDetailModal } from "./cockpit/setup/TaskDetailModal";
 import type { TaskCardModel } from "./cockpit/setup/TaskSelectionRail";
@@ -32,22 +29,15 @@ import { StudioGlassPanel } from "./studio/StudioShell";
 import { useI18n, type I18nContextValue } from "@/i18n/I18nProvider";
 import { taskTransportLabel } from "./cockpit/setup/taskCardPresentation";
 import {
-  listChatbotEvalTasks,
-  listOsAppEvalTasks,
   listSurveyHarborTasks,
-  listWebEvalTasks,
 } from "@/lib/api";
-import { OS_APP_TAB_LABEL } from "@/lib/personaAgentCatalog";
-import type { ChatbotEvalTask } from "@/lib/types";
 
 type TypeFilter = "all" | PlaygroundTaskType;
 
+// Cross-border e-commerce platform: survey-based buyer simulation tasks only.
 const TYPE_FILTERS: ReadonlyArray<TypeFilter> = [
   "all",
   "survey",
-  "chatbot",
-  "web",
-  "os-app",
 ];
 
 function typeFilterLabel(value: TypeFilter, t: I18nContextValue["t"]): string {
@@ -123,46 +113,13 @@ export function TaskGalleryContent({
     refetchOnWindowFocus: false,
     retry: 1,
   });
-  const chatbotQuery = useQuery({
-    queryKey: ["chatbot-eval-tasks"],
-    queryFn: listChatbotEvalTasks,
-    staleTime: 60_000,
-    refetchOnWindowFocus: false,
-    retry: 1,
-  });
-  const webQuery = useQuery({
-    queryKey: ["web-eval-tasks"],
-    queryFn: listWebEvalTasks,
-    staleTime: 10 * 60_000,
-    refetchOnWindowFocus: false,
-    retry: 1,
-  });
-  const osAppQuery = useQuery({
-    queryKey: ["os-app-eval-tasks"],
-    queryFn: listOsAppEvalTasks,
-    staleTime: 10 * 60_000,
-    refetchOnWindowFocus: false,
-    retry: 1,
-  });
 
+  // Cross-border e-commerce platform: only survey-based buyer simulation tasks
+  // are shown in the gallery (chatbot / web / OS-app catalogs are not loaded).
   const allCards = useMemo(() => {
     const surveyTasks = surveyQuery.data?.tasks ?? [];
-    const chatbotTasks: ChatbotEvalTask[] = chatbotQuery.data?.tasks ?? [];
-    const webTasks = webQuery.data?.tasks ?? [];
-    const osAppTasks = osAppQuery.data?.tasks ?? [];
-
-    return [
-      ...surveyHarborTaskCards(surveyTasks),
-      ...chatbotEvalTaskCards(chatbotTasks),
-      ...webEvalTaskCards(webTasks),
-      ...osAppTaskCards(osAppTasks),
-    ];
-  }, [
-    chatbotQuery.data?.tasks,
-    osAppQuery.data?.tasks,
-    surveyQuery.data?.tasks,
-    webQuery.data?.tasks,
-  ]);
+    return surveyHarborTaskCards(surveyTasks);
+  }, [surveyQuery.data?.tasks]);
 
   const filtered = useMemo(() => {
     const q = debouncedQuery.toLowerCase();
@@ -173,18 +130,8 @@ export function TaskGalleryContent({
     });
   }, [allCards, debouncedQuery, typeFilter]);
 
-  const loading =
-    (surveyQuery.isLoading ||
-      chatbotQuery.isLoading ||
-      webQuery.isLoading ||
-      osAppQuery.isLoading) &&
-    allCards.length === 0;
-  const allFailed =
-    surveyQuery.isError &&
-    chatbotQuery.isError &&
-    webQuery.isError &&
-    osAppQuery.isError &&
-    allCards.length === 0;
+  const loading = surveyQuery.isLoading && allCards.length === 0;
+  const allFailed = surveyQuery.isError && allCards.length === 0;
 
   function handleOpen(card: TaskCardModel) {
     onOpenInPlayground(card.taskType, card.id);
@@ -263,9 +210,6 @@ export function TaskGalleryContent({
         <CatalogError
           onRetry={() => {
             void surveyQuery.refetch();
-            void chatbotQuery.refetch();
-            void webQuery.refetch();
-            void osAppQuery.refetch();
           }}
         />
       ) : filtered.length === 0 ? (
@@ -351,9 +295,7 @@ function GalleryTaskCard({
           )}
           <div className="mt-2.5 flex flex-wrap items-center gap-1.5">
             <ToneChip tone="primary" className={CHIP_TEXT_CLASS}>
-              {card.taskType === "os-app"
-                ? OS_APP_TAB_LABEL
-                : formatChipLabel(card.taskType)}
+              {formatChipLabel(card.taskType)}
             </ToneChip>
             {card.transport && (
               <ToneChip

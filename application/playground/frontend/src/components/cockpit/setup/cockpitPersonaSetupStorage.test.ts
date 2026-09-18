@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import {
+  PERSONA_AMAZON_BUYER_POOL_1000,
   PERSONA_BENCH_POOL,
   PERSONA_PRODUCTION_1M_POOL,
   type TaskPersonaStrategy,
@@ -130,7 +131,7 @@ describe("resolveTaskHydrateSetup", () => {
     expect(applied.selectedPersonaIds).toEqual([]);
     expect(applied.samplingMode).toBe("stratified");
     expect(applied.sampleSize).toBe(20);
-    expect(applied.personaPool).toBe(PERSONA_BENCH_POOL);
+    expect(applied.personaPool).toBe(PERSONA_AMAZON_BUYER_POOL_1000);
   });
 
   it("does not paste leftover ids onto the strategy pool", () => {
@@ -152,7 +153,7 @@ describe("resolveTaskHydrateSetup", () => {
     });
 
     expect(applied.selectedPersonaIds).toEqual([]);
-    expect(applied.personaPool).toBe(PERSONA_BENCH_POOL);
+    expect(applied.personaPool).toBe(PERSONA_AMAZON_BUYER_POOL_1000);
     expect(applied.useTaskDefaultStrategy).toBe(true);
   });
 
@@ -223,7 +224,7 @@ describe("resolveTaskHydrateSetup", () => {
       fallbackPersonaModel: MODEL,
     });
 
-    expect(applied.personaPool).toBe(PERSONA_BENCH_POOL);
+    expect(applied.personaPool).toBe(PERSONA_AMAZON_BUYER_POOL_1000);
     expect(applied.selectedPersonaIds).toEqual([]);
     expect(applied.useTaskDefaultStrategy).toBe(true);
   });

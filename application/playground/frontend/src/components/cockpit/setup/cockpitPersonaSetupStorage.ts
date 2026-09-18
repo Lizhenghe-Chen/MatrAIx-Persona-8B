@@ -1,6 +1,6 @@
 import type { HarborCockpitTaskKind } from "@/lib/harborCockpitMappers";
 import type { TaskPersonaStrategy } from "@/lib/types";
-import { PERSONA_BENCH_POOL, PERSONA_CARD_PREVIEW_LIMIT, PERSONA_UI_ID_LIST_MAX } from "@/lib/types";
+import { PERSONA_AMAZON_BUYER_POOL_1000, PERSONA_CARD_PREVIEW_LIMIT, PERSONA_UI_ID_LIST_MAX } from "@/lib/types";
 
 import { readCockpitBatch } from "./cockpitBatchStorage";
 import {
@@ -25,17 +25,17 @@ export function isTaskStrategyFillPool(pool: string | null | undefined): boolean
 /** Drop legacy / ephemeral pools that must not sticky-restore as Dataset. */
 export function sanitizePersonaPool(pool: string | null | undefined): string {
   const text = (pool ?? "").trim();
-  if (!text) return PERSONA_BENCH_POOL;
+  if (!text) return PERSONA_AMAZON_BUYER_POOL_1000;
   // Allow launch caches next to their source dataset; drop leftover synthetic pools.
   if (/persona\/datasets\/[^/]+\/cohorts\/cohort-/.test(text)) {
     return text;
   }
   if (text.includes("/_generated/")) {
-    return PERSONA_BENCH_POOL;
+    return PERSONA_AMAZON_BUYER_POOL_1000;
   }
   // Old cockpit / task setups still point at the removed bench-dev-sample path.
   if (text === LEGACY_BENCH_DEV_SAMPLE || text.endsWith("/bench-dev-sample")) {
-    return PERSONA_BENCH_POOL;
+    return PERSONA_AMAZON_BUYER_POOL_1000;
   }
   return text;
 }
@@ -234,7 +234,7 @@ function normalizeRecord(
         ? record.personaModel
         : fallbackPersonaModel,
     personaPool: sanitizePersonaPool(
-      typeof record.personaPool === "string" ? record.personaPool : PERSONA_BENCH_POOL,
+      typeof record.personaPool === "string" ? record.personaPool : PERSONA_AMAZON_BUYER_POOL_1000,
     ),
     // Legacy entries omit this flag — prefer task default until the user turns it off.
     useTaskDefaultStrategy:
@@ -257,7 +257,7 @@ export function defaultPersonaSetup(fallbackPersonaModel: string): CockpitPerson
     perCell: 1,
     parallelTrials: 2,
     personaModel: fallbackPersonaModel,
-    personaPool: PERSONA_BENCH_POOL,
+    personaPool: PERSONA_AMAZON_BUYER_POOL_1000,
     useTaskDefaultStrategy: false,
   };
 }
@@ -276,7 +276,7 @@ export function scrubTaskStrategyFillForCustomMode(
   const fallbackPool =
     durablePool && !isTaskStrategyFillPool(durablePool)
       ? sanitizePersonaPool(durablePool)
-      : PERSONA_BENCH_POOL;
+      : PERSONA_AMAZON_BUYER_POOL_1000;
   return {
     ...defaults,
     personaPool: fallbackPool,
@@ -489,7 +489,7 @@ export function readCockpitPersonaSetup(
       ...defaultPersonaSetup(fallbackPersonaModel),
       selectedPersonaIds: batch.personaIds,
       selectedCount: batch.selectedCount || batch.personaIds.length,
-      personaPool: sanitizePersonaPool(batch.personaPool || PERSONA_BENCH_POOL),
+      personaPool: sanitizePersonaPool(batch.personaPool || PERSONA_AMAZON_BUYER_POOL_1000),
     };
   }
 

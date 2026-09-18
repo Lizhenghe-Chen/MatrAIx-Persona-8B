@@ -3,7 +3,7 @@
  *
  * Routes: Persona World · Task Gallery · Home · Playground · Runs.
  */
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 import { useQuery } from "@tanstack/react-query";
 
 import { useI18n } from "@/i18n/I18nProvider";
@@ -17,13 +17,16 @@ import { TaskGalleryView } from "@/components/TaskGalleryView";
 import { AppFooter } from "@/components/AppFooter";
 
 import { api } from "@/lib/api";
+import { IS_EMBEDDED } from "@/lib/embedMode";
 import { writePersonaHandoff } from "@/lib/personaHandoffStorage";
 import { useUrlState } from "@/lib/useUrlState";
-import type { ConfigOptionsResponse, Domain } from "@/lib/types";
+import type { ConfigOptionsResponse } from "@/lib/types";
 
 function parseMode(value: string | null): StudioMode {
   if (value === "playground") return "playground";
-  return "home";
+  if (value === "home") return "home";
+  // 嵌入宿主时默认进 Playground 工作台：宿主的入口不该落到本产品落地页。
+  return IS_EMBEDDED ? "playground" : "home";
 }
 
 export default function App() {
@@ -38,8 +41,6 @@ export default function App() {
     urlState.view === "runs" ||
     activeHarborJobId !== null ||
     activeHarborTrialId !== null;
-
-  const [, setPlaygroundDomain] = useState<Domain>("movie");
 
   const optionsQuery = useQuery<ConfigOptionsResponse>({
     queryKey: ["config", "options"],
@@ -181,10 +182,8 @@ export default function App() {
             <div className="hidden min-h-0 flex-1">
               <PlaygroundCockpit
                 options={optionsQuery.data ?? null}
-                onOpenRuns={openRunsList}
                 onOpenHarborJob={openHarborJob}
                 onOpenHarborTrial={openHarborTrial}
-                onDomainChange={setPlaygroundDomain}
               />
             </div>
             <RunsView
@@ -236,10 +235,8 @@ export default function App() {
       <div className="flex min-h-0 flex-1 flex-col overflow-hidden">
         <PlaygroundCockpit
           options={optionsQuery.data ?? null}
-          onOpenRuns={openRunsList}
           onOpenHarborJob={openHarborJob}
           onOpenHarborTrial={openHarborTrial}
-          onDomainChange={setPlaygroundDomain}
         />
       </div>
     </div>
