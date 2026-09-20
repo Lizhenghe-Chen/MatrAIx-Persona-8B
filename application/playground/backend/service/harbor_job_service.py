@@ -1144,23 +1144,32 @@ class HarborJobService:
         self._remove_job_dir(job_name, job_dir)
 
     def _cancel_local_coordinator(self, job_name: str) -> None:
-        """Cancel this process's coordinator for ``job_name`` and let it drain."""
+        """Cancel this process's coordinator for ``job_name`` and let it drain.
+
+        Raises instead of returning when the coordinator is still registered after
+        the drain timeout: the caller is about to delete the job tree, and a live
+        coordinator would keep dispatching and writing into the directory it just
+        lost.
+        """
         with self._guard:
             coordinator = self._local_runs.get(job_name)
         if coordinator is None:
             return
         coordinator.cancel()
-        self._await_local_stop(job_name)
+        if not self._await_local_stop(job_name):
+            raise ValueError(
+                "Job is still stopping; retry in a moment: {}".format(job_name)
+            )
 
-    def _await_local_stop(self, job_name: str, timeout: float = 30.0) -> None:
-        """Wait for the cancelled coordinator to release its trial dirs."""
+    def _await_local_stop(self, job_name: str, timeout: float = 30.0) -> bool:
+        """Wait for the cancelled coordinator to unregister; ``False`` on timeout."""
         deadline = time.monotonic() + timeout
         while True:
             with self._guard:
                 if job_name not in self._local_runs:
-                    return
+                    return True
             if time.monotonic() >= deadline:
-                return
+                return False
             time.sleep(0.2)
 
     def _remove_job_dir(self, job_name: str, job_dir: Path) -> None:
@@ -1793,7 +1802,10 @@ class HarborJobService:
         resume: bool = False,
     ) -> None:
         with self._guard:
-            record = self._launches[job_name]
+            record = self._launches.get(job_name)
+            if record is None:
+                # ``delete_job`` dropped this job before the task was scheduled.
+                return
             record.status = "running"
 
         env = self._build_harbor_launch_env(
@@ -1827,6 +1839,12 @@ class HarborJobService:
                 resume=resume,
             )
             with self._guard:
+                # ``delete_job`` drops the launch record *before* it deletes the
+                # tree, so a missing record here means the job was deleted while
+                # this task was being scheduled: dispatching now would recreate a
+                # job the caller believes is gone.
+                if job_name not in self._launches:
+                    return
                 self._local_runs[job_name] = coordinator
             self._run_with_trial_host_scoring(job_name, coordinator.run)
             status = "cancelled" if coordinator.cancel_event.is_set() else "completed"
@@ -3091,6 +3109,10 @@ class HarborJobService:
         self._rehydrate_launch_record(job_name, meta)
 
         if meta.get("useLocalDistributed"):
+            # ``resume=True`` replays the persisted per-trial plan: the trials that
+            # already succeeded stay skipped and only the deleted failures are
+            # dispatched again. Re-planning here would fabricate a new random
+            # cohort and re-run everything, contradicting this method's contract.
             self._executor.submit(
                 self._run_local_distributed,
                 job_name,
@@ -3102,6 +3124,7 @@ class HarborJobService:
                 meta.get("chatApplicationContext"),
                 meta.get("chatMaxTurns"),
                 meta.get("trialProfile"),
+                resume=True,
             )
         else:
             dispatch_kwargs = (

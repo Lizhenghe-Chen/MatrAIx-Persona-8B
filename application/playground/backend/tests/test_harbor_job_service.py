@@ -561,6 +561,50 @@ def test_resume_local_distributed_replays_launch_meta(tmp_path, monkeypatch):
     service.shutdown()
 
 
+def test_retry_failed_local_batch_replays_the_persisted_plan(tmp_path, monkeypatch):
+    """A local retry reuses the cohort plan instead of planning a new one.
+
+    Without ``resume=True`` the coordinator would materialize fresh random trial
+    names for every task/agent and re-run the trials that already succeeded.
+    """
+    repo = tmp_path
+    job_dir, configs_dir = _interrupted_local_job(repo)
+    (repo / "configs" / "jobs" / "pg-survey-interrupted.yaml").write_text(
+        "job_name: pg-survey-interrupted\n", encoding="utf-8"
+    )
+    for trial_name, payload in (
+        ("trial-ok", {}),
+        ("trial-fail", {"exception_info": {"exception_message": "boom"}}),
+    ):
+        trial_dir = job_dir / trial_name
+        trial_dir.mkdir(parents=True)
+        (trial_dir / "result.json").write_text(json.dumps(payload), encoding="utf-8")
+    monkeypatch.setattr("playground.harbor.playground._repo_root", lambda: repo)
+
+    service = HarborJobService(
+        repo_root=repo,
+        jobs_dir=repo / "jobs",
+        generated_configs_dir=configs_dir,
+        command_runner=lambda command, *, cwd, env: 0,
+        harbor_command=("echo", "harbor"),
+    )
+    service._executor = _FakeExecutor()
+
+    assert service.retry_failed("pg-survey-interrupted") == {
+        "jobName": "pg-survey-interrupted",
+        "retried": 1,
+    }
+
+    fn, args, kwargs = service._executor.calls[0]
+    assert fn.__name__ == "_run_local_distributed"
+    assert args[0] == "pg-survey-interrupted"
+    assert kwargs["resume"] is True
+    # Only the failed trial was removed; the succeeded one must not be re-run.
+    assert (job_dir / "trial-ok").is_dir()
+    assert not (job_dir / "trial-fail").exists()
+    service.shutdown()
+
+
 def test_local_coordinator_cancel_stops_dispatch(tmp_path):
     """Cancelling during a run stops dispatching and finalizes as cancelled."""
     from backend.service.local_distributed_harbor import LocalDistributedHarborCoordinator
@@ -710,6 +754,63 @@ def test_delete_job_reports_a_tree_that_stays_locked(tmp_path, monkeypatch):
     # The job is still listed so the caller can retry once the handle closes.
     assert job_dir.exists()
     assert [row["jobName"] for row in service.list_jobs()] == ["pg-survey-locked"]
+    service.shutdown()
+
+
+def test_delete_job_aborts_when_the_coordinator_never_drains(tmp_path, monkeypatch):
+    """A coordinator outliving the drain window blocks the delete.
+
+    Deleting anyway would remove the tree under a live coordinator, which keeps
+    dispatching trials for a job the caller believes is gone.
+    """
+    jobs_dir = tmp_path / "jobs"
+    job_dir = jobs_dir / "pg-survey-stuck"
+    (job_dir / "trial-a").mkdir(parents=True)
+
+    service = HarborJobService(
+        repo_root=tmp_path,
+        jobs_dir=jobs_dir,
+        generated_configs_dir=tmp_path / "configs",
+        command_runner=lambda command, *, cwd, env: 0,
+        harbor_command=("echo", "harbor"),
+    )
+
+    class _StuckCoordinator:
+        cancelled = False
+
+        def cancel(self) -> None:
+            self.cancelled = True
+            # A real coordinator unregisters once its pool drains; this one never does.
+
+    coordinator = _StuckCoordinator()
+    service._local_runs["pg-survey-stuck"] = coordinator
+    monkeypatch.setattr(service, "_await_local_stop", lambda name, timeout=30.0: False)
+
+    with pytest.raises(ValueError, match="still stopping"):
+        service.delete_job("pg-survey-stuck")
+
+    assert coordinator.cancelled is True
+    # Nothing was removed: the caller retries once the batch has drained.
+    assert job_dir.exists()
+    assert service.get_job("pg-survey-stuck") is not None
+    service.shutdown()
+
+
+def test_local_run_is_ignored_when_the_job_was_deleted_while_scheduling(tmp_path):
+    """A task that starts after ``delete_job`` must not recreate the job."""
+    jobs_dir = tmp_path / "jobs"
+    service = HarborJobService(
+        repo_root=tmp_path,
+        jobs_dir=jobs_dir,
+        generated_configs_dir=tmp_path / "configs",
+        command_runner=lambda command, *, cwd, env: 0,
+        harbor_command=("echo", "harbor"),
+    )
+
+    # No launch record: ``delete_job`` removed it before this task was scheduled.
+    service._run_local_distributed("pg-survey-deleted", {"n_concurrent_trials": 1})
+
+    assert not (jobs_dir / "pg-survey-deleted").exists()
     service.shutdown()
 
 
