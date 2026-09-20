@@ -77,9 +77,20 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
       data && typeof data === "object" && "detail" in data
         ? (data as { detail: unknown }).detail
         : data;
+    // A string `detail` is already a readable message. Otherwise the raw body is
+    // all we have (FastAPI answers plain text "Internal Server Error" for
+    // unhandled exceptions) and the status is what makes it actionable.
+    const snippet = text.trim().slice(0, 300);
+    const statusLabel = `HTTP ${response.status}${
+      response.statusText ? ` ${response.statusText}` : ""
+    }`;
     const message =
-      typeof detail === "string" ? detail : text.trim() || response.statusText;
-    throw new ApiError(response.status, message || `HTTP ${response.status}`, detail);
+      typeof detail === "string"
+        ? detail
+        : snippet
+          ? `${statusLabel}: ${snippet}`
+          : statusLabel;
+    throw new ApiError(response.status, message, detail);
   }
   return data as T;
 }
