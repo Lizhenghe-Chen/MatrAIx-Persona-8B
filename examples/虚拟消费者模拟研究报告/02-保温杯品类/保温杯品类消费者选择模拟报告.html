@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>保温杯虚拟消费者模拟 · 领导汇报版</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%2312355B'/%3E%3Cpath%20d='M10%2020c0-2.2%202.7-3.4%206-3.4s6%201.2%206%203.4'%20stroke='%23fff'%20stroke-width='2.4'%20fill='none'%20stroke-linecap='round'/%3E%3Cpath%20d='M13%2013l3%203%203-3'%20stroke='%23F59E0B'%20stroke-width='2.4'%20fill='none'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Sans+SC:wght@400;500;700;800&display=swap">
+<style>
+:root{--ink:#1C2733;--muted:#5B6B7C;--line:#E4E9EF;--bg:#F4F6F9;--card:#FFFFFF;--navy:#12355B;--blue:#2563EB;--teal:#0E7C7B}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+.wrap{max-width:1000px;margin:0 auto;padding:28px 20px 64px}
+.hero{background:linear-gradient(135deg,#12355B 0%,#1E4E8C 55%,#2563EB 100%);border-radius:16px;color:#fff;padding:34px 36px 30px;position:relative;overflow:hidden}
+.hero .tag{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);padding:3px 12px;border-radius:999px;font-size:12px;letter-spacing:.5px;margin-bottom:14px}
+.hero h1{font-size:28px;font-weight:800;letter-spacing:.3px}
+.hero p.sub{margin-top:8px;font-size:14px;opacity:.9}
+.hero .meta{margin-top:16px;font-size:12px;opacity:.75}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:18px 0 6px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;box-shadow:0 1px 2px rgba(16,42,67,.05)}
+.kpi .v{font-size:26px;font-weight:800;color:var(--navy)}
+.kpi .l{font-size:12px;color:var(--muted);margin-top:2px}
+h2{font-size:19px;font-weight:800;color:var(--navy);margin:34px 0 4px;display:flex;align-items:center;gap:10px}
+h3{font-size:15px;font-weight:700;color:var(--navy)}
+h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:var(--navy);color:#fff;font-size:13px;flex:none}
+h2+hr{border:none;border-top:3px solid var(--navy);width:44px;margin:6px 0 18px}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:6px}
+.pcard{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.pcard img{width:100%;height:150px;object-fit:cover;background:#fff;border-bottom:1px solid var(--line)}
+.pcard .pn{font-size:13.5px;font-weight:700;color:var(--navy);padding:10px 12px 0}
+.pcard .pp{font-size:12px;color:var(--muted);padding:2px 12px 0}
+.pcard .pl{font-size:12px;color:#33414F;padding:6px 12px 0;line-height:1.5}
+.pcard .ps{font-size:10.5px;color:#9AA7B4;padding:6px 12px 10px;margin-top:auto}
+.pcard .ps a{color:#9AA7B4;text-decoration:none;border-bottom:1px dotted #C3CBD6}
+@media(max-width:760px){.pgrid{grid-template-columns:repeat(2,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-top:14px}
+.card p{font-size:14px;color:#33414F;margin:6px 0}
+.flow{display:flex;flex-wrap:wrap;gap:0;align-items:stretch;margin-top:6px}
+.step{flex:1 1 140px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 14px 12px;position:relative;min-width:140px}
+.step .n{font-size:11px;color:var(--blue);font-weight:700;letter-spacing:1px}
+.step .t{font-weight:700;font-size:14px;margin-top:2px}
+.step .d{font-size:12px;color:var(--muted);margin-top:3px}
+.arrow{align-self:center;color:#9AA7B4;font-size:20px;padding:0 6px;flex:none}
+table{width:100%;border-collapse:collapse;font-size:14px;table-layout:fixed}
+th,td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-size:12px;color:var(--muted);font-weight:600;background:#F8FAFC}
+.col{width:100%}
+.chart{width:100%;height:auto;display:block}
+.lbl{font-size:12.5px;fill:#33414F}
+.val{font-size:13px;font-weight:700;fill:var(--navy)}
+.seg{font-size:11px;fill:#fff;font-weight:600}
+.seg2{font-size:11px;fill:var(--muted)}
+.ax{font-size:11px;fill:var(--muted)}
+.grid{stroke:var(--line);stroke-width:1}
+.legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px;font-size:12px;color:#33414F}
+.lg i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.revgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:6px}
+.rcard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 14px 10px}
+.rcard .rname{font-size:14px;font-weight:700;color:var(--navy)}
+.rcard .rsub{font-size:11.5px;color:var(--muted);margin:2px 0 8px}
+.red{color:#DC2626}
+.quote{background:#F6F8FB;border-left:3px solid var(--blue);border-radius:6px;padding:8px 12px;margin:8px 0;font-size:13px;color:#33414F;font-style:normal}
+.quote::before{content:"“";color:var(--blue);font-weight:800}
+.quote::after{content:"”";color:var(--blue);font-weight:800}
+@media(max-width:760px){.grid2{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:22px}.revgrid{grid-template-columns:1fr}}
+ul.concl{margin:8px 0 2px;padding-left:0;list-style:none}
+ul.concl li{background:#F6F8FB;border-left:4px solid var(--blue);border-radius:8px;padding:10px 14px;margin:10px 0;font-size:14px;line-height:1.7}
+ul.concl b{color:var(--navy)}
+.note{background:#FFF7E6;border:1px solid #F2DCA0;border-radius:12px;padding:16px 18px;margin-top:14px;font-size:13.5px;color:#6B5317}
+.note b{color:#8A6414}
+.muted{color:var(--muted);font-size:12px}
+.foot{margin-top:36px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="hero">
+  <span class="tag">AI 虚拟消费者模拟 · 概念验证 Demo</span>
+  <h1>1000 个虚拟消费者，如何挑选保温杯？</h1>
+  <p class="sub">用 MatrAIx 人格库（100 万人格）× DeepSeek 大模型，模拟全球 1000 名消费者在 6 款真实保温杯之间做「购物式选择」，并汇总出份额、分群偏好与价格敏感度。</p>
+  <div class="meta">数据来源：AI 模拟（非真实市场调研）· 生成日期 2026-09-16 · 模型 deepseek-chat</div>
+</div>
+
+<div class="kpis">
+  <div class="kpi"><div class="v">1,000</div><div class="l">虚拟消费者完成选购</div></div>
+  <div class="kpi"><div class="v">100%</div><div class="l">有效回答率（全部通过校验）</div></div>
+  <div class="kpi"><div class="v">约 ¥4.5</div><div class="l">总成本（约 $0.63，人均不到 1 分钱）</div></div>
+  <div class="kpi"><div class="v">约 34 分钟</div><div class="l">从采样到出报告</div></div>
+</div>
+
+<h2><span class="no">1</span>这是什么？为什么值得看？</h2><hr>
+<div class="card">
+  <p>传统做法：新品上市前想摸底市场，要招募真人、设计问卷、等几周、花几万块。<b>这个 Demo 把这件事压缩成一次大模型模拟</b>：让 1000 个「虚拟消费者」（由 100 万人格画像库按全球人口口径抽样产生）像真人逛电商一样，在 6 款真实在售保温杯里挑选，并写下购买理由。</p>
+  <p>它可以快速回答三个问题：<b>谁会买什么（份额）、不同人群怎么选（分群偏好）、价格是否接受（价格敏感度）</b>——并且每一票的理由都可回溯、可复核。</p>
+</div>
+
+<h2><span class="no">2</span>怎么做到的（5 步）</h2><hr>
+<div class="flow">
+  <div class="step"><div class="n">STEP 1</div><div class="t">人格库抽样</div><div class="d">从 100 万人格中按全球人口口径随机抽取 1000 人（覆盖各年龄段、9 大地区、4 类消费心态）</div></div>
+  <div class="arrow">→</div>
+  <div class="step"><div class="n">STEP 2</div><div class="t">摆出货架</div><div class="d">6 款真实保温杯，给出价格、容量、材质、卖点，像电商商品页</div></div>
+  <div class="arrow">→</div>
+  <div class="step"><div class="n">STEP 3</div><div class="t">扮演选购</div><div class="d">DeepSeek 大模型以每人的人格扮演「我」，读货架、权衡、投票并写理由</div></div>
+  <div class="arrow">→</div>
+  <div class="step"><div class="n">STEP 4</div><div class="t">质量校验</div><div class="d">官方校验器检查选项是否合法、理由是否充分，不合格重跑</div></div>
+  <div class="arrow">→</div>
+  <div class="step"><div class="n">STEP 5</div><div class="t">聚合出报告</div><div class="d">汇总 1000 票 → 市场份额、分群偏好、价格敏感度 → 本报告</div></div>
+</div>
+
+<h2><span class="no">3</span>货架：6 款真实在售保温杯</h2><hr>
+<div class="pgrid"><div class="pcard"><img src="assets/fuguang.jpg" alt="富光 316 保温杯"><div class="pn">富光 316 保温杯</div><div class="pp">39.9 元 · 低档</div><div class="pl">哑光黑极简柱体，实用耐看</div><div class="ps">图源：<a href="http://cu.manmanbuy.com/dingyue/brand/fuguang/12" target="_blank" rel="noopener">慢慢买</a></div></div><div class="pcard"><img src="assets/beijixiong.jpg" alt="杯具熊 316 保温杯"><div class="pn">杯具熊 316 保温杯</div><div class="pp">129.0 元 · 中档</div><div class="pl">奶油白圆润萌系，年轻向</div><div class="ps">图源：<a href="https://mobile-phone.taobao.com/chanpin/548a182504270b53b3c8eaa55250c7f65d212d1b0f15954128e003423f225065.html" target="_blank" rel="noopener">淘宝·杯具熊官方</a></div></div><div class="pcard"><img src="assets/nalgene.jpg" alt="Nalgene Sustain 32oz"><div class="pn">Nalgene Sustain 32oz</div><div class="pp">119.0 元 · 中档</div><div class="pl">半透明宽口，户外粗犷风</div><div class="ps">图源：<a href="https://www.prfo.com/fr/products/nalgene-wide-mouth-sustain-32oz-bottle-2" target="_blank" rel="noopener">PRFO Sports</a></div></div><div class="pcard"><img src="assets/mijia.jpg" alt="米家保温杯"><div class="pn">米家保温杯</div><div class="pp">179.0 元 · 中高档</div><div class="pl">米家极简白，现代简洁</div><div class="ps">图源：<a href="https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?origin_type=old_h5&id=3762454771076825787" target="_blank" rel="noopener">抖音电商·米家</a></div></div><div class="pcard"><img src="assets/zojirushi.jpg" alt="象印 SM-SZ"><div class="pn">象印 SM-SZ</div><div class="pp">229.0 元 · 高档</div><div class="pl">日系流线细身，质感精致</div><div class="ps">图源：<a href="https://m.suning.com/product/0000000000/000000012213093530.html" target="_blank" rel="noopener">苏宁易购</a></div></div><div class="pcard"><img src="assets/stanley.jpg" alt="Stanley Quencher"><div class="pn">Stanley Quencher</div><div class="pp">319.0 元 · 高档</div><div class="pl">大块头双色+侧把手，网红风</div><div class="ps">图源：<a href="https://www.allure.com/gallery/best-gifts-for-women" target="_blank" rel="noopener">Allure</a></div></div></div>
+<div class="card">
+  <table>
+    <colgroup><col style="width:26%"><col style="width:14%"><col style="width:14%"><col style="width:46%"></colgroup>
+    <tr><th>商品</th><th>参考价</th><th>价位档</th><th>一句话定位</th></tr>
+    <tr><td><b>富光 316 保温杯</b></td><td>39.9 元</td><td>低</td><td class="muted">富光 316 保温杯，大众预算</td></tr><tr><td><b>杯具熊 316 保温杯</b></td><td>129.0 元</td><td>中</td><td class="muted">杯具熊 316 保温杯，中端主流</td></tr><tr><td><b>Nalgene Sustain 32oz</b></td><td>119.0 元</td><td>中</td><td class="muted">Nalgene Sustain 32oz，中端主流</td></tr><tr><td><b>米家保温杯</b></td><td>179.0 元</td><td>中高</td><td class="muted">米家保温杯，中高端</td></tr><tr><td><b>象印 SM-SZ</b></td><td>229.0 元</td><td>高</td><td class="muted">象印 SM-SZ，高端旗舰</td></tr><tr><td><b>Stanley Quencher</b></td><td>319.0 元</td><td>高</td><td class="muted">Stanley Quencher，高端旗舰</td></tr>
+    <tr><td><b>都不买</b></td><td>—</td><td>—</td><td class="muted">若 6 款都不合适则选择放弃购买（本次无人选择）</td></tr>
+  </table>
+  <div class="muted" style="margin-top:10px">商品图来自公开电商/媒体页面，仅作展示；本次模拟货架额外补充了每款的外观描述，让虚拟消费者也能"看得到"设计颜值。</div>
+</div>
+
+<h2><span class="no">4</span>核心结果</h2><hr>
+<div class="card">
+  <ul class="concl"><li><b>冠军商品：</b>「杯具熊 316 保温杯」（¥129）以 45.0% 的份额胜出——但加入外观描述后优势明显收窄（V1 为 70.2%），预算款富光与高端象印同步回暖，货架更接近真实电商的多元选择。</li><li><b>价格分层：</b>预算款富光（¥39.9）占 36.0%，高端象印（¥229）占 19.0%，网红款 Stanley（¥319）本次 0 票。</li><li><b>购买意愿：</b>93.7% 的人表示 3 个月内会真实购买（4-5 分）；购买决策最看重价格与保温，合计占 98.2%。</li><li><b>分群差异：</b>省钱优先人群选富光达 53.6%（全人群近 1.5 倍），高端优先人群选象印 42.9%，75 岁以上长者选象印 47.5%（85+ 更达 67.9%），18-24 岁近六成选杯具熊——不同画像的消费逻辑清晰可辨。</li><li><b>成本：</b>全量 1000 人模拟仅花费约 $0.63（约 ¥4.5），耗时约 34 分钟，人均不到 1 分钱。</li></ul>
+</div>
+
+<div class="card">
+  <h2 style="margin-top:0">优化效果：货架加「外观描述」改变了什么？（V1 → V2）</h2>
+  <svg viewBox="0 0 680 250" xmlns="http://www.w3.org/2000/svg" class="chart" role="img" aria-label="V1 vs V2 份额对比"><line x1="46" y1="216.0" x2="668" y2="216.0" class="grid"/><text x="38" y="220.0" text-anchor="end" class="ax">0</text><line x1="46" y1="165.0" x2="668" y2="165.0" class="grid"/><text x="38" y="169.0" text-anchor="end" class="ax">18</text><line x1="46" y1="114.0" x2="668" y2="114.0" class="grid"/><text x="38" y="118.0" text-anchor="end" class="ax">35</text><line x1="46" y1="63.0" x2="668" y2="63.0" class="grid"/><text x="38" y="67.0" text-anchor="end" class="ax">53</text><line x1="46" y1="12.0" x2="668" y2="12.0" class="grid"/><text x="38" y="16.0" text-anchor="end" class="ax">70</text><rect x="63.8" y="12.0" width="41.4" height="204.0" rx="3" fill="#9AA7B4"/><text x="84.5" y="6.0" text-anchor="middle" class="val">70</text><rect x="108.2" y="85.2" width="41.4" height="130.8" rx="3" fill="#2563EB"/><text x="128.9" y="79.2" text-anchor="middle" class="val">45</text><text x="123.8" y="238.0" text-anchor="middle" class="ax">杯具熊</text><rect x="219.3" y="152.4" width="41.4" height="63.6" rx="3" fill="#9AA7B4"/><text x="240.0" y="146.4" text-anchor="middle" class="val">22</text><rect x="263.7" y="111.4" width="41.4" height="104.6" rx="3" fill="#2563EB"/><text x="284.4" y="105.4" text-anchor="middle" class="val">36</text><text x="279.2" y="238.0" text-anchor="middle" class="ax">富光</text><rect x="374.8" y="193.3" width="41.4" height="22.7" rx="3" fill="#9AA7B4"/><text x="395.5" y="187.3" text-anchor="middle" class="val">8</text><rect x="419.2" y="160.8" width="41.4" height="55.2" rx="3" fill="#2563EB"/><text x="439.9" y="154.8" text-anchor="middle" class="val">19</text><text x="434.8" y="238.0" text-anchor="middle" class="ax">象印</text><rect x="530.3" y="215.7" width="41.4" height="0.3" rx="3" fill="#9AA7B4"/><rect x="574.7" y="216.0" width="41.4" height="0.0" rx="3" fill="#2563EB"/><text x="590.2" y="238.0" text-anchor="middle" class="ax">Stanley</text></svg>
+  <div class="legend"><span class="lg"><i style="background:#9AA7B4"></i>V1 纯参数货架</span><span class="lg"><i style="background:#2563EB"></i>V2 加外观描述</span></div>
+  <div class="muted" style="margin-top:10px">同一批 1000 个虚拟消费者、同一价格——只把货架从「价格+参数」升级为「价格+参数+外观」：
+  杯具熊从一家独大（70.2%）回落到 45.0%，富光与象印明显回暖；「设计颜值」从 0 票变成有人在意（8 票）。
+  说明虚拟消费者和真人一样，看得见外观后，会做出更真实的权衡。</div>
+</div>
+
+<div class="card">
+  <h2 style="margin-top:0">市场份额：1000 票投给了谁？</h2>
+  <svg viewBox="0 0 680 348" xmlns="http://www.w3.org/2000/svg" class="chart" role="img" aria-label="市场份额"><g><text x="158" y="68" text-anchor="end" class="lbl">杯具熊 ¥129</text><rect x="170" y="54" width="420" height="26" rx="4" fill="#2563EB"/><text x="598" y="73" class="val">450 人</text></g><g><text x="158" y="112" text-anchor="end" class="lbl">富光 ¥39.9</text><rect x="170" y="98" width="336" height="26" rx="4" fill="#7C98B3"/><text x="514" y="117" class="val">360 人</text></g><g><text x="158" y="156" text-anchor="end" class="lbl">象印 ¥229</text><rect x="170" y="142" width="177" height="26" rx="4" fill="#F59E0B"/><text x="355" y="161" class="val">190 人</text></g><g><text x="158" y="200" text-anchor="end" class="lbl">Stanley ¥319</text><rect x="170" y="186" width="0" height="26" rx="4" fill="#DC2626"/><text x="178" y="205" class="val">0 人</text></g><g><text x="158" y="244" text-anchor="end" class="lbl">Nalgene ¥119</text><rect x="170" y="230" width="0" height="26" rx="4" fill="#10B981"/><text x="178" y="249" class="val">0 人</text></g><g><text x="158" y="288" text-anchor="end" class="lbl">米家 ¥179</text><rect x="170" y="274" width="0" height="26" rx="4" fill="#64748B"/><text x="178" y="293" class="val">0 人</text></g><g><text x="158" y="332" text-anchor="end" class="lbl">都不买</text><rect x="170" y="318" width="0" height="26" rx="4" fill="#CBD5E1"/><text x="178" y="337" class="val">0 人</text></g></svg>
+  <div class="legend"><span class="lg"><i style="background:#2563EB"></i>杯具熊 316 保温杯</span><span class="lg"><i style="background:#7C98B3"></i>富光 316 保温杯</span><span class="lg"><i style="background:#F59E0B"></i>象印 SM-SZ</span></div>
+</div>
+
+<div class="card">
+  <h2 style="margin-top:0">为什么有商品 0 票？——「考虑过，但放弃了」（证据可回溯）</h2>
+  <table>
+    <colgroup><col style="width:30%"><col style="width:14%"><col style="width:20%"><col style="width:36%"></colgroup>
+    <tr><th>商品</th><th>最终得票</th><th>被多少人考虑过*</th><th>考虑过的人最终选了谁</th></tr>
+    <tr><td><b>Stanley Quencher</b></td><td><b class="red">0 票</b></td><td>157 人</td><td class="muted">杯具熊 ¥129 136人 → 象印 ¥229 17人 → 富光 ¥39.9 4人</td></tr><tr><td><b>米家保温杯</b></td><td><b class="red">0 票</b></td><td>69 人</td><td class="muted">杯具熊 ¥129 69人</td></tr><tr><td><b>Nalgene Sustain 32oz</b></td><td><b class="red">0 票</b></td><td>42 人</td><td class="muted">杯具熊 ¥129 37人 → 富光 ¥39.9 3人 → 象印 ¥229 2人</td></tr><tr><td><b>富光 316 保温杯</b></td><td>360 票</td><td>84 人</td><td class="muted">杯具熊 ¥129 84人</td></tr><tr><td><b>杯具熊 316 保温杯</b></td><td>450 票</td><td>3 人</td><td class="muted">象印 ¥229 3人</td></tr><tr><td><b>象印 SM-SZ</b></td><td>190 票</td><td>153 人</td><td class="muted">杯具熊 ¥129 151人 → 富光 ¥39.9 2人</td></tr>
+  </table>
+  <div class="muted" style="margin-top:8px">*「考虑过」= 购买理由里明确提到该商品但最终选了别的。已核对：问卷 7 个选项完整、票数与原始数据逐行一致——0 票是模型真实决定，不是统计错误。</div>
+
+  <h3 style="margin:16px 0 6px">以 Stanley 为例：连「最该买它的人」也放弃了</h3>
+  <p style="font-size:14px">在 1000 人里，<b>157 人</b>认真比较过 Stanley；其中 <b>36 人</b>属于「高收入 / 18-24 岁 / 北美」——最匹配网红杯的人群，最终：杯具熊 ¥129 28人 → 象印 ¥229 8人，<b>0 人选择 Stanley</b>。</p>
+  <blockquote class="quote">I need one bottle that does everything for a daily commute and long work days, and insulated steel matters to me because I drink hot tea more than cold water. The Beijixi…</blockquote><blockquote class="quote">I want a bottle that actually keeps my tea hot, and 316/316L stainless with triple heat blocking at ¥129 is the best value on this shelf. The Fuguang is cheaper but only …</blockquote>
+  <div class="muted" style="margin-top:10px">为什么是 0 票：本实验场景是「保温杯」，全球样本以价值敏感人群为主；纯文字货架下 ¥319 的「网红溢价」是减分项。方法局限：① 模型看不到商品实图（Stanley 的颜值冲击力无法感知）——这正是 V3「看图选购」要解决的；② 随机样本未筛「潮流敏感」人格，可定向补充验证。结论：0 票 ≠ 没市场，只说明「在当前货架文案 + 场景下」它不成立。</div>
+</div>
+
+<div class="grid2">
+  <div class="card">
+    <h2 style="margin-top:0">分群偏好 · 年龄段（份额 %）</h2>
+    <svg viewBox="0 0 680 408" xmlns="http://www.w3.org/2000/svg" class="chart" role="img" aria-label="分群偏好-年龄"><text x="138" y="68" text-anchor="end" class="lbl">18-24</text><rect x="150.0" y="54" width="313.0" height="26" rx="3" fill="#2563EB"/><text x="306.5" y="73" text-anchor="middle" class="seg">60%</text><rect x="463.0" y="54" width="195.0" height="26" rx="3" fill="#7C98B3"/><text x="560.5" y="73" text-anchor="middle" class="seg">38%</text><rect x="658.0" y="54" width="12.0" height="26" rx="3" fill="#F59E0B"/><text x="676" y="73" class="seg2">n=176</text><text x="138" y="114" text-anchor="end" class="lbl">25-34</text><rect x="150.0" y="100" width="287.0" height="26" rx="3" fill="#2563EB"/><text x="293.5" y="119" text-anchor="middle" class="seg">55%</text><rect x="437.0" y="100" width="173.2" height="26" rx="3" fill="#7C98B3"/><text x="523.6" y="119" text-anchor="middle" class="seg">33%</text><rect x="610.2" y="100" width="59.3" height="26" rx="3" fill="#F59E0B"/><text x="639.8" y="119" text-anchor="middle" class="seg">11%</text><text x="676" y="119" class="seg2">n=105</text><text x="138" y="160" text-anchor="end" class="lbl">35-44</text><rect x="150.0" y="146" width="240.2" height="26" rx="3" fill="#2563EB"/><text x="270.1" y="165" text-anchor="middle" class="seg">46%</text><rect x="390.2" y="146" width="177.3" height="26" rx="3" fill="#7C98B3"/><text x="478.9" y="165" text-anchor="middle" class="seg">34%</text><rect x="567.6" y="146" width="102.4" height="26" rx="3" fill="#F59E0B"/><text x="618.8" y="165" text-anchor="middle" class="seg">20%</text><text x="676" y="165" class="seg2">n=132</text><text x="138" y="206" text-anchor="end" class="lbl">45-54</text><rect x="150.0" y="192" width="275.6" height="26" rx="3" fill="#2563EB"/><text x="287.8" y="211" text-anchor="middle" class="seg">53%</text><rect x="425.6" y="192" width="159.1" height="26" rx="3" fill="#7C98B3"/><text x="505.2" y="211" text-anchor="middle" class="seg">31%</text><rect x="584.7" y="192" width="85.3" height="26" rx="3" fill="#F59E0B"/><text x="627.4" y="211" text-anchor="middle" class="seg">16%</text><text x="676" y="211" class="seg2">n=183</text><text x="138" y="252" text-anchor="end" class="lbl">55-64</text><rect x="150.0" y="238" width="188.2" height="26" rx="3" fill="#2563EB"/><text x="244.1" y="257" text-anchor="middle" class="seg">36%</text><rect x="338.2" y="238" width="214.2" height="26" rx="3" fill="#7C98B3"/><text x="445.4" y="257" text-anchor="middle" class="seg">41%</text><rect x="552.5" y="238" width="117.5" height="26" rx="3" fill="#F59E0B"/><text x="611.2" y="257" text-anchor="middle" class="seg">23%</text><text x="676" y="257" class="seg2">n=177</text><text x="138" y="298" text-anchor="end" class="lbl">65-74</text><rect x="150.0" y="284" width="178.4" height="26" rx="3" fill="#2563EB"/><text x="239.2" y="303" text-anchor="middle" class="seg">34%</text><rect x="328.4" y="284" width="226.7" height="26" rx="3" fill="#7C98B3"/><text x="441.7" y="303" text-anchor="middle" class="seg">44%</text><rect x="555.1" y="284" width="114.9" height="26" rx="3" fill="#F59E0B"/><text x="612.5" y="303" text-anchor="middle" class="seg">22%</text><text x="676" y="303" class="seg2">n=140</text><text x="138" y="344" text-anchor="end" class="lbl">75-84</text><rect x="150.0" y="330" width="105.6" height="26" rx="3" fill="#2563EB"/><text x="202.8" y="349" text-anchor="middle" class="seg">20%</text><rect x="255.6" y="330" width="167.4" height="26" rx="3" fill="#7C98B3"/><text x="339.3" y="349" text-anchor="middle" class="seg">32%</text><rect x="423.0" y="330" width="247.0" height="26" rx="3" fill="#F59E0B"/><text x="546.5" y="349" text-anchor="middle" class="seg">48%</text><text x="676" y="349" class="seg2">n=59</text><text x="138" y="390" text-anchor="end" class="lbl">85+</text><rect x="150.0" y="376" width="74.4" height="26" rx="3" fill="#2563EB"/><text x="187.2" y="395" text-anchor="middle" class="seg">14%</text><rect x="224.4" y="376" width="93.1" height="26" rx="3" fill="#7C98B3"/><text x="270.9" y="395" text-anchor="middle" class="seg">18%</text><rect x="317.4" y="376" width="353.1" height="26" rx="3" fill="#F59E0B"/><text x="494.0" y="395" text-anchor="middle" class="seg">68%</text><text x="676" y="395" class="seg2">n=28</text></svg>
+    <div class="muted">75 岁以上明显更倾向象印（47.5%，85+ 达 67.9%）；18-24 岁近六成选杯具熊，看重可爱外观。</div>
+  </div>
+  <div class="card">
+    <h2 style="margin-top:0">分群偏好 · 消费心态（份额 %）</h2>
+    <svg viewBox="0 0 680 224" xmlns="http://www.w3.org/2000/svg" class="chart" role="img" aria-label="分群偏好-消费心态"><text x="138" y="68" text-anchor="end" class="lbl">省钱优先</text><rect x="150.0" y="54" width="228.8" height="26" rx="3" fill="#2563EB"/><text x="264.4" y="73" text-anchor="middle" class="seg">44%</text><rect x="378.8" y="54" width="278.7" height="26" rx="3" fill="#7C98B3"/><text x="518.2" y="73" text-anchor="middle" class="seg">54%</text><rect x="657.5" y="54" width="12.5" height="26" rx="3" fill="#F59E0B"/><text x="676" y="73" class="seg2">n=491</text><text x="138" y="114" text-anchor="end" class="lbl">性价比优先</text><rect x="150.0" y="100" width="238.7" height="26" rx="3" fill="#2563EB"/><text x="269.3" y="119" text-anchor="middle" class="seg">46%</text><rect x="388.7" y="100" width="103.0" height="26" rx="3" fill="#7C98B3"/><text x="440.2" y="119" text-anchor="middle" class="seg">20%</text><rect x="491.6" y="100" width="178.4" height="26" rx="3" fill="#F59E0B"/><text x="580.8" y="119" text-anchor="middle" class="seg">34%</text><text x="676" y="119" class="seg2">n=353</text><text x="138" y="160" text-anchor="end" class="lbl">无所谓</text><rect x="150.0" y="146" width="242.8" height="26" rx="3" fill="#2563EB"/><text x="271.4" y="165" text-anchor="middle" class="seg">47%</text><rect x="392.8" y="146" width="101.9" height="26" rx="3" fill="#7C98B3"/><text x="443.8" y="165" text-anchor="middle" class="seg">20%</text><rect x="494.8" y="146" width="174.7" height="26" rx="3" fill="#F59E0B"/><text x="582.1" y="165" text-anchor="middle" class="seg">34%</text><text x="676" y="165" class="seg2">n=107</text><text x="138" y="206" text-anchor="end" class="lbl">高端优先</text><rect x="150.0" y="192" width="233.5" height="26" rx="3" fill="#2563EB"/><text x="266.7" y="211" text-anchor="middle" class="seg">45%</text><rect x="383.5" y="192" width="63.4" height="26" rx="3" fill="#7C98B3"/><text x="415.2" y="211" text-anchor="middle" class="seg">12%</text><rect x="446.9" y="192" width="223.1" height="26" rx="3" fill="#F59E0B"/><text x="558.5" y="211" text-anchor="middle" class="seg">43%</text><text x="676" y="211" class="seg2">n=49</text></svg>
+    <div class="muted">省钱优先人群选富光 53.6%（是高端人群的 4 倍以上）；高端人群里象印占 42.9%。</div>
+  </div>
+</div>
+
+<div class="card">
+  <h2 style="margin-top:0">分群偏好 · 地区（Top 8，份额 %）</h2>
+  <svg viewBox="0 0 680 408" xmlns="http://www.w3.org/2000/svg" class="chart" role="img" aria-label="分群偏好-地区"><text x="138" y="68" text-anchor="end" class="lbl">South Asia</text><rect x="150.0" y="54" width="231.9" height="26" rx="3" fill="#2563EB"/><text x="266.0" y="73" text-anchor="middle" class="seg">45%</text><rect x="381.9" y="54" width="239.2" height="26" rx="3" fill="#7C98B3"/><text x="501.5" y="73" text-anchor="middle" class="seg">46%</text><rect x="621.1" y="54" width="48.9" height="26" rx="3" fill="#F59E0B"/><text x="645.6" y="73" text-anchor="middle" class="seg">9%</text><text x="676" y="73" class="seg2">n=276</text><text x="138" y="114" text-anchor="end" class="lbl">East Asia</text><rect x="150.0" y="100" width="275.1" height="26" rx="3" fill="#2563EB"/><text x="287.5" y="119" text-anchor="middle" class="seg">53%</text><rect x="425.1" y="100" width="191.4" height="26" rx="3" fill="#7C98B3"/><text x="520.8" y="119" text-anchor="middle" class="seg">37%</text><rect x="616.4" y="100" width="53.6" height="26" rx="3" fill="#F59E0B"/><text x="643.2" y="119" text-anchor="middle" class="seg">10%</text><text x="676" y="119" class="seg2">n=204</text><text x="138" y="160" text-anchor="end" class="lbl">Sub-Saharan Africa</text><rect x="150.0" y="146" width="249.1" height="26" rx="3" fill="#2563EB"/><text x="274.5" y="165" text-anchor="middle" class="seg">48%</text><rect x="399.1" y="146" width="206.4" height="26" rx="3" fill="#7C98B3"/><text x="502.3" y="165" text-anchor="middle" class="seg">40%</text><rect x="605.5" y="146" width="64.5" height="26" rx="3" fill="#F59E0B"/><text x="637.8" y="165" text-anchor="middle" class="seg">12%</text><text x="676" y="165" class="seg2">n=194</text><text x="138" y="206" text-anchor="end" class="lbl">Southeast Asia</text><rect x="150.0" y="192" width="268.8" height="26" rx="3" fill="#2563EB"/><text x="284.4" y="211" text-anchor="middle" class="seg">52%</text><rect x="418.8" y="192" width="192.9" height="26" rx="3" fill="#7C98B3"/><text x="515.3" y="211" text-anchor="middle" class="seg">37%</text><rect x="611.8" y="192" width="58.2" height="26" rx="3" fill="#F59E0B"/><text x="640.9" y="211" text-anchor="middle" class="seg">11%</text><text x="676" y="211" class="seg2">n=89</text><text x="138" y="252" text-anchor="end" class="lbl">Latin America</text><rect x="150.0" y="238" width="277.7" height="26" rx="3" fill="#2563EB"/><text x="288.8" y="257" text-anchor="middle" class="seg">53%</text><rect x="427.7" y="238" width="156.5" height="26" rx="3" fill="#7C98B3"/><text x="505.9" y="257" text-anchor="middle" class="seg">30%</text><rect x="584.2" y="238" width="85.3" height="26" rx="3" fill="#F59E0B"/><text x="626.8" y="257" text-anchor="middle" class="seg">16%</text><text x="676" y="257" class="seg2">n=73</text><text x="138" y="298" text-anchor="end" class="lbl">MENA</text><rect x="150.0" y="284" width="209.6" height="26" rx="3" fill="#2563EB"/><text x="254.8" y="303" text-anchor="middle" class="seg">40%</text><rect x="359.6" y="284" width="168.0" height="26" rx="3" fill="#7C98B3"/><text x="443.5" y="303" text-anchor="middle" class="seg">32%</text><rect x="527.5" y="284" width="142.5" height="26" rx="3" fill="#F59E0B"/><text x="598.8" y="303" text-anchor="middle" class="seg">27%</text><text x="676" y="303" class="seg2">n=62</text><text x="138" y="344" text-anchor="end" class="lbl">North America</text><rect x="150.0" y="330" width="78.5" height="26" rx="3" fill="#2563EB"/><text x="189.3" y="349" text-anchor="middle" class="seg">15%</text><rect x="228.5" y="330" width="19.8" height="26" rx="3" fill="#7C98B3"/><rect x="248.3" y="330" width="421.7" height="26" rx="3" fill="#F59E0B"/><text x="459.1" y="349" text-anchor="middle" class="seg">81%</text><text x="676" y="349" class="seg2">n=53</text><text x="138" y="390" text-anchor="end" class="lbl">Western Europe</text><rect x="150.0" y="376" width="83.2" height="26" rx="3" fill="#2563EB"/><text x="191.6" y="395" text-anchor="middle" class="seg">16%</text><rect x="233.2" y="376" width="20.8" height="26" rx="3" fill="#7C98B3"/><rect x="254.0" y="376" width="416.0" height="26" rx="3" fill="#F59E0B"/><text x="462.0" y="395" text-anchor="middle" class="seg">80%</text><text x="676" y="395" class="seg2">n=25</text></svg>
+  <div class="muted">地区差异非常鲜明：北美/西欧 80%+ 选象印（高端日系品牌），新兴市场（南亚/东亚/撒哈拉以南）则是富光+杯具熊双雄——购买力与品牌认知的地区差异在模拟里真实可见。</div>
+</div>
+
+<div class="grid2">
+  <div class="card">
+    <h2 style="margin-top:0">分群偏好 · 性别（份额 %）</h2>
+    <svg viewBox="0 0 680 132" xmlns="http://www.w3.org/2000/svg" class="chart" role="img" aria-label="分群偏好-性别"><text x="138" y="68" text-anchor="end" class="lbl">女性</text><rect x="150.0" y="54" width="263.6" height="26" rx="3" fill="#2563EB"/><text x="281.8" y="73" text-anchor="middle" class="seg">51%</text><rect x="413.6" y="54" width="195.0" height="26" rx="3" fill="#7C98B3"/><text x="511.1" y="73" text-anchor="middle" class="seg">38%</text><rect x="608.6" y="54" width="61.4" height="26" rx="3" fill="#F59E0B"/><text x="639.3" y="73" text-anchor="middle" class="seg">12%</text><text x="676" y="73" class="seg2">n=600</text><text x="138" y="114" text-anchor="end" class="lbl">男性</text><rect x="150.0" y="100" width="186.7" height="26" rx="3" fill="#2563EB"/><text x="243.3" y="119" text-anchor="middle" class="seg">36%</text><rect x="336.7" y="100" width="176.3" height="26" rx="3" fill="#7C98B3"/><text x="424.8" y="119" text-anchor="middle" class="seg">34%</text><rect x="513.0" y="100" width="157.0" height="26" rx="3" fill="#F59E0B"/><text x="591.5" y="119" text-anchor="middle" class="seg">30%</text><text x="676" y="119" class="seg2">n=387</text></svg>
+    <div class="muted">女性更偏爱杯具熊萌系外观（51%），男性更接受高端象印（30%）。</div>
+  </div>
+  <div class="card">
+    <h2 style="margin-top:0">分群偏好 · 人生阶段（份额 %）</h2>
+    <svg viewBox="0 0 680 362" xmlns="http://www.w3.org/2000/svg" class="chart" role="img" aria-label="分群偏好-人生阶段"><text x="138" y="68" text-anchor="end" class="lbl">中年</text><rect x="150.0" y="54" width="210.1" height="26" rx="3" fill="#2563EB"/><text x="255.0" y="73" text-anchor="middle" class="seg">40%</text><rect x="360.1" y="54" width="132.6" height="26" rx="3" fill="#7C98B3"/><text x="426.4" y="73" text-anchor="middle" class="seg">26%</text><rect x="492.7" y="54" width="177.3" height="26" rx="3" fill="#F59E0B"/><text x="581.3" y="73" text-anchor="middle" class="seg">34%</text><text x="676" y="73" class="seg2">n=314</text><text x="138" y="114" text-anchor="end" class="lbl">退休</text><rect x="150.0" y="100" width="149.2" height="26" rx="3" fill="#2563EB"/><text x="224.6" y="119" text-anchor="middle" class="seg">29%</text><rect x="299.2" y="100" width="243.4" height="26" rx="3" fill="#7C98B3"/><text x="420.9" y="119" text-anchor="middle" class="seg">47%</text><rect x="542.6" y="100" width="127.4" height="26" rx="3" fill="#F59E0B"/><text x="606.3" y="119" text-anchor="middle" class="seg">24%</text><text x="676" y="119" class="seg2">n=216</text><text x="138" y="160" text-anchor="end" class="lbl">职场初期</text><rect x="150.0" y="146" width="283.4" height="26" rx="3" fill="#2563EB"/><text x="291.7" y="165" text-anchor="middle" class="seg">54%</text><rect x="433.4" y="146" width="176.3" height="26" rx="3" fill="#7C98B3"/><text x="521.5" y="165" text-anchor="middle" class="seg">34%</text><rect x="609.7" y="146" width="59.8" height="26" rx="3" fill="#F59E0B"/><text x="639.6" y="165" text-anchor="middle" class="seg">12%</text><text x="676" y="165" class="seg2">n=165</text><text x="138" y="206" text-anchor="end" class="lbl">学生</text><rect x="150.0" y="192" width="308.9" height="26" rx="3" fill="#2563EB"/><text x="304.4" y="211" text-anchor="middle" class="seg">59%</text><rect x="458.9" y="192" width="200.2" height="26" rx="3" fill="#7C98B3"/><text x="559.0" y="211" text-anchor="middle" class="seg">38%</text><rect x="659.1" y="192" width="10.9" height="26" rx="3" fill="#F59E0B"/><text x="676" y="211" class="seg2">n=96</text><text x="138" y="252" text-anchor="end" class="lbl">职业转型</text><rect x="150.0" y="238" width="260.0" height="26" rx="3" fill="#2563EB"/><text x="280.0" y="257" text-anchor="middle" class="seg">50%</text><rect x="410.0" y="238" width="238.2" height="26" rx="3" fill="#7C98B3"/><text x="529.1" y="257" text-anchor="middle" class="seg">46%</text><rect x="648.2" y="238" width="21.8" height="26" rx="3" fill="#F59E0B"/><text x="676" y="257" class="seg2">n=96</text><text x="138" y="298" text-anchor="end" class="lbl">空巢期</text><rect x="150.0" y="284" width="321.4" height="26" rx="3" fill="#2563EB"/><text x="310.7" y="303" text-anchor="middle" class="seg">62%</text><rect x="471.4" y="284" width="179.4" height="26" rx="3" fill="#7C98B3"/><text x="561.1" y="303" text-anchor="middle" class="seg">34%</text><rect x="650.8" y="284" width="18.7" height="26" rx="3" fill="#F59E0B"/><text x="676" y="303" class="seg2">n=55</text><text x="138" y="344" text-anchor="end" class="lbl">带娃家长</text><rect x="150.0" y="330" width="294.3" height="26" rx="3" fill="#2563EB"/><text x="297.2" y="349" text-anchor="middle" class="seg">57%</text><rect x="444.3" y="330" width="215.8" height="26" rx="3" fill="#7C98B3"/><text x="552.2" y="349" text-anchor="middle" class="seg">42%</text><rect x="660.1" y="330" width="9.9" height="26" rx="3" fill="#F59E0B"/><text x="676" y="349" class="seg2">n=53</text></svg>
+    <div class="muted">学生/带娃家长选杯具熊超 55%；退休人群转向富光（47%）与象印（25%）双峰。</div>
+  </div>
+</div>
+
+<div class="card">
+  <h2 style="margin-top:0">分群偏好 · 收入层级（份额 %）</h2>
+  <svg viewBox="0 0 680 270" xmlns="http://www.w3.org/2000/svg" class="chart" role="img" aria-label="分群偏好-收入层级"><text x="138" y="68" text-anchor="end" class="lbl">低收入</text><rect x="150.0" y="54" width="188.8" height="26" rx="3" fill="#2563EB"/><text x="244.4" y="73" text-anchor="middle" class="seg">36%</text><rect x="338.8" y="54" width="329.2" height="26" rx="3" fill="#7C98B3"/><text x="503.3" y="73" text-anchor="middle" class="seg">63%</text><rect x="667.9" y="54" width="3.0" height="26" rx="3" fill="#F59E0B"/><text x="676" y="73" class="seg2">n=259</text><text x="138" y="114" text-anchor="end" class="lbl">中低收入</text><rect x="150.0" y="100" width="288.1" height="26" rx="3" fill="#2563EB"/><text x="294.0" y="119" text-anchor="middle" class="seg">55%</text><rect x="438.1" y="100" width="223.6" height="26" rx="3" fill="#7C98B3"/><text x="549.9" y="119" text-anchor="middle" class="seg">43%</text><rect x="661.7" y="100" width="8.3" height="26" rx="3" fill="#F59E0B"/><text x="676" y="119" class="seg2">n=251</text><text x="138" y="160" text-anchor="end" class="lbl">中等收入</text><rect x="150.0" y="146" width="311.5" height="26" rx="3" fill="#2563EB"/><text x="305.7" y="165" text-anchor="middle" class="seg">60%</text><rect x="461.5" y="146" width="134.7" height="26" rx="3" fill="#7C98B3"/><text x="528.8" y="165" text-anchor="middle" class="seg">26%</text><rect x="596.2" y="146" width="73.8" height="26" rx="3" fill="#F59E0B"/><text x="633.1" y="165" text-anchor="middle" class="seg">14%</text><text x="676" y="165" class="seg2">n=212</text><text x="138" y="206" text-anchor="end" class="lbl">中高收入</text><rect x="150.0" y="192" width="231.4" height="26" rx="3" fill="#2563EB"/><text x="265.7" y="211" text-anchor="middle" class="seg">44%</text><rect x="381.4" y="192" width="57.2" height="26" rx="3" fill="#7C98B3"/><text x="410.0" y="211" text-anchor="middle" class="seg">11%</text><rect x="438.6" y="192" width="231.4" height="26" rx="3" fill="#F59E0B"/><text x="554.3" y="211" text-anchor="middle" class="seg">44%</text><text x="676" y="211" class="seg2">n=173</text><text x="138" y="252" text-anchor="end" class="lbl">高收入</text><rect x="150.0" y="238" width="39.0" height="26" rx="3" fill="#2563EB"/><text x="169.5" y="257" text-anchor="middle" class="seg">8%</text><rect x="189.0" y="238" width="72.8" height="26" rx="3" fill="#7C98B3"/><text x="225.4" y="257" text-anchor="middle" class="seg">14%</text><rect x="261.8" y="238" width="408.2" height="26" rx="3" fill="#F59E0B"/><text x="465.9" y="257" text-anchor="middle" class="seg">78%</text><text x="676" y="257" class="seg2">n=93</text></svg>
+  <div class="muted">收入梯度是全部维度里最清晰的：低收入人群 63% 选富光（¥39.9），高收入人群 78% 选象印（¥229）——价格与品质的取舍随收入连续变化。</div>
+</div>
+
+<div class="card">
+  <h2 style="margin-top:0">商品评价画像（购买理由里的关键词提及率）</h2>
+  <div class="revgrid"><div class="rcard"><div class="rname">杯具熊 316 保温杯</div><div class="rsub">被选 450 人 · 理由提到率</div><svg viewBox="0 0 320 190" xmlns="http://www.w3.org/2000/svg" class="chart" role="img" aria-label=""><g><text x="74" y="68" text-anchor="end" class="lbl">材质</text><rect x="86" y="54" width="138" height="26" rx="4" fill="#2563EB"/><text x="232" y="73" class="val">96%</text></g><g><text x="74" y="98" text-anchor="end" class="lbl">保温</text><rect x="86" y="84" width="99" height="26" rx="4" fill="#2563EB"/><text x="193" y="103" class="val">69%</text></g><g><text x="74" y="128" text-anchor="end" class="lbl">容量</text><rect x="86" y="114" width="94" height="26" rx="4" fill="#2563EB"/><text x="188" y="133" class="val">66%</text></g><g><text x="74" y="158" text-anchor="end" class="lbl">价格划算</text><rect x="86" y="144" width="90" height="26" rx="4" fill="#2563EB"/><text x="184" y="163" class="val">63%</text></g><g><text x="74" y="188" text-anchor="end" class="lbl">外观</text><rect x="86" y="174" width="66" height="26" rx="4" fill="#2563EB"/><text x="160" y="193" class="val">46%</text></g></svg></div><div class="rcard"><div class="rname">富光 316 保温杯</div><div class="rsub">被选 360 人 · 理由提到率</div><svg viewBox="0 0 320 190" xmlns="http://www.w3.org/2000/svg" class="chart" role="img" aria-label=""><g><text x="74" y="68" text-anchor="end" class="lbl">材质</text><rect x="86" y="54" width="91" height="26" rx="4" fill="#0E7C7B"/><text x="185" y="73" class="val">64%</text></g><g><text x="74" y="98" text-anchor="end" class="lbl">保温</text><rect x="86" y="84" width="84" height="26" rx="4" fill="#0E7C7B"/><text x="178" y="103" class="val">59%</text></g><g><text x="74" y="128" text-anchor="end" class="lbl">价格划算</text><rect x="86" y="114" width="81" height="26" rx="4" fill="#0E7C7B"/><text x="175" y="133" class="val">57%</text></g><g><text x="74" y="158" text-anchor="end" class="lbl">外观</text><rect x="86" y="144" width="59" height="26" rx="4" fill="#0E7C7B"/><text x="153" y="163" class="val">41%</text></g><g><text x="74" y="188" text-anchor="end" class="lbl">品牌信赖</text><rect x="86" y="174" width="54" height="26" rx="4" fill="#0E7C7B"/><text x="148" y="193" class="val">38%</text></g></svg></div><div class="rcard"><div class="rname">象印 SM-SZ</div><div class="rsub">被选 190 人 · 理由提到率</div><svg viewBox="0 0 320 190" xmlns="http://www.w3.org/2000/svg" class="chart" role="img" aria-label=""><g><text x="74" y="68" text-anchor="end" class="lbl">保温</text><rect x="86" y="54" width="117" height="26" rx="4" fill="#F59E0B"/><text x="211" y="73" class="val">82%</text></g><g><text x="74" y="98" text-anchor="end" class="lbl">轻便</text><rect x="86" y="84" width="107" height="26" rx="4" fill="#F59E0B"/><text x="201" y="103" class="val">75%</text></g><g><text x="74" y="128" text-anchor="end" class="lbl">品牌信赖</text><rect x="86" y="114" width="105" height="26" rx="4" fill="#F59E0B"/><text x="199" y="133" class="val">73%</text></g><g><text x="74" y="158" text-anchor="end" class="lbl">价格划算</text><rect x="86" y="144" width="90" height="26" rx="4" fill="#F59E0B"/><text x="184" y="163" class="val">63%</text></g><g><text x="74" y="188" text-anchor="end" class="lbl">外观</text><rect x="86" y="174" width="78" height="26" rx="4" fill="#F59E0B"/><text x="172" y="193" class="val">55%</text></g></svg></div></div>
+  <div class="muted" style="margin-top:10px">每票都附带购买理由（中英文），以上是各商品被选者理由里的关键词画像：杯具熊「材质+保温+容量」全能，富光「材质+保温+划算」，象印「保温+轻便+品牌信赖」——虚拟消费者选它的原因看得见、可回溯。</div>
+</div>
+
+<div class="grid2">
+  <div class="card">
+    <h2 style="margin-top:0">购买意向（1-5 分）</h2>
+    <svg viewBox="0 0 680 250" xmlns="http://www.w3.org/2000/svg" class="chart" role="img" aria-label="购买意向"><line x1="46" y1="216.0" x2="668" y2="216.0" class="grid"/><text x="38" y="220.0" text-anchor="end" class="ax">0</text><line x1="46" y1="165.0" x2="668" y2="165.0" class="grid"/><text x="38" y="169.0" text-anchor="end" class="ax">210</text><line x1="46" y1="114.0" x2="668" y2="114.0" class="grid"/><text x="38" y="118.0" text-anchor="end" class="ax">420</text><line x1="46" y1="63.0" x2="668" y2="63.0" class="grid"/><text x="38" y="67.0" text-anchor="end" class="ax">630</text><line x1="46" y1="12.0" x2="668" y2="12.0" class="grid"/><text x="38" y="16.0" text-anchor="end" class="ax">840</text><rect x="80.2" y="215.8" width="87.1" height="0.2" rx="4" fill="#2563EB"/><text x="123.8" y="208.8" text-anchor="middle" class="val">1</text><text x="123.8" y="238.0" text-anchor="middle" class="ax">2</text><rect x="235.7" y="200.9" width="87.1" height="15.1" rx="4" fill="#2563EB"/><text x="279.2" y="193.9" text-anchor="middle" class="val">62</text><text x="279.2" y="238.0" text-anchor="middle" class="ax">3</text><rect x="391.2" y="12.0" width="87.1" height="204.0" rx="4" fill="#2563EB"/><text x="434.8" y="5.0" text-anchor="middle" class="val">840</text><text x="434.8" y="238.0" text-anchor="middle" class="ax">4</text><rect x="546.7" y="192.4" width="87.1" height="23.6" rx="4" fill="#2563EB"/><text x="590.2" y="185.4" text-anchor="middle" class="val">97</text><text x="590.2" y="238.0" text-anchor="middle" class="ax">5</text></svg>
+    <div class="muted">93.7% 的人给出 4-5 分，即「3 个月内会真实购买」。</div>
+  </div>
+  <div class="card">
+    <h2 style="margin-top:0">最看重什么（选择理由）</h2>
+    <svg viewBox="0 0 680 250" xmlns="http://www.w3.org/2000/svg" class="chart" role="img" aria-label="最看重属性"><line x1="46" y1="216.0" x2="668" y2="216.0" class="grid"/><text x="38" y="220.0" text-anchor="end" class="ax">0</text><line x1="46" y1="165.0" x2="668" y2="165.0" class="grid"/><text x="38" y="169.0" text-anchor="end" class="ax">124</text><line x1="46" y1="114.0" x2="668" y2="114.0" class="grid"/><text x="38" y="118.0" text-anchor="end" class="ax">248</text><line x1="46" y1="63.0" x2="668" y2="63.0" class="grid"/><text x="38" y="67.0" text-anchor="end" class="ax">373</text><line x1="46" y1="12.0" x2="668" y2="12.0" class="grid"/><text x="38" y="16.0" text-anchor="end" class="ax">497</text><rect x="73.4" y="16.9" width="69.7" height="199.1" rx="4" fill="#2563EB"/><text x="108.2" y="9.9" text-anchor="middle" class="val">485</text><text x="108.2" y="238.0" text-anchor="middle" class="ax">保温性能</text><rect x="197.8" y="12.0" width="69.7" height="204.0" rx="4" fill="#2563EB"/><text x="232.6" y="5.0" text-anchor="middle" class="val">497</text><text x="232.6" y="238.0" text-anchor="middle" class="ax">价格</text><rect x="322.2" y="211.9" width="69.7" height="4.1" rx="4" fill="#2563EB"/><text x="357.0" y="204.9" text-anchor="middle" class="val">10</text><text x="357.0" y="238.0" text-anchor="middle" class="ax">品牌</text><rect x="446.6" y="216.0" width="69.7" height="0.0" rx="4" fill="#2563EB"/><text x="481.4" y="209.0" text-anchor="middle" class="val">0</text><text x="481.4" y="238.0" text-anchor="middle" class="ax">容量</text><rect x="571.0" y="212.7" width="69.7" height="3.3" rx="4" fill="#2563EB"/><text x="605.8" y="205.7" text-anchor="middle" class="val">8</text><text x="605.8" y="238.0" text-anchor="middle" class="ax">设计颜值</text></svg>
+    <div class="muted">价格与保温合计占 98%；「设计颜值」从 V1 的 0 票变为 8 票——美学维度已被激活。</div>
+  </div>
+</div>
+
+<h2><span class="no">5</span>样本构成（全球分层校验）</h2><hr>
+<div class="grid2">
+  <div class="card">
+    <h2 style="margin-top:0">年龄段分布</h2>
+    <svg viewBox="0 0 680 250" xmlns="http://www.w3.org/2000/svg" class="chart" role="img" aria-label="样本年龄构成"><line x1="46" y1="216.0" x2="668" y2="216.0" class="grid"/><text x="38" y="220.0" text-anchor="end" class="ax">0</text><line x1="46" y1="165.0" x2="668" y2="165.0" class="grid"/><text x="38" y="169.0" text-anchor="end" class="ax">46</text><line x1="46" y1="114.0" x2="668" y2="114.0" class="grid"/><text x="38" y="118.0" text-anchor="end" class="ax">92</text><line x1="46" y1="63.0" x2="668" y2="63.0" class="grid"/><text x="38" y="67.0" text-anchor="end" class="ax">137</text><line x1="46" y1="12.0" x2="668" y2="12.0" class="grid"/><text x="38" y="16.0" text-anchor="end" class="ax">183</text><rect x="63.1" y="12.0" width="43.5" height="204.0" rx="4" fill="#2563EB"/><text x="84.9" y="5.0" text-anchor="middle" class="val">183</text><text x="84.9" y="238.0" text-anchor="middle" class="ax">45-54</text><rect x="140.9" y="18.7" width="43.5" height="197.3" rx="4" fill="#2563EB"/><text x="162.6" y="11.7" text-anchor="middle" class="val">177</text><text x="162.6" y="238.0" text-anchor="middle" class="ax">55-64</text><rect x="218.6" y="19.8" width="43.5" height="196.2" rx="4" fill="#2563EB"/><text x="240.4" y="12.8" text-anchor="middle" class="val">176</text><text x="240.4" y="238.0" text-anchor="middle" class="ax">18-24</text><rect x="296.4" y="59.9" width="43.5" height="156.1" rx="4" fill="#2563EB"/><text x="318.1" y="52.9" text-anchor="middle" class="val">140</text><text x="318.1" y="238.0" text-anchor="middle" class="ax">65-74</text><rect x="374.1" y="68.9" width="43.5" height="147.1" rx="4" fill="#2563EB"/><text x="395.9" y="61.9" text-anchor="middle" class="val">132</text><text x="395.9" y="238.0" text-anchor="middle" class="ax">35-44</text><rect x="451.9" y="99.0" width="43.5" height="117.0" rx="4" fill="#2563EB"/><text x="473.6" y="92.0" text-anchor="middle" class="val">105</text><text x="473.6" y="238.0" text-anchor="middle" class="ax">25-34</text><rect x="529.6" y="150.2" width="43.5" height="65.8" rx="4" fill="#2563EB"/><text x="551.4" y="143.2" text-anchor="middle" class="val">59</text><text x="551.4" y="238.0" text-anchor="middle" class="ax">75-84</text><rect x="607.4" y="184.8" width="43.5" height="31.2" rx="4" fill="#2563EB"/><text x="629.1" y="177.8" text-anchor="middle" class="val">28</text><text x="629.1" y="238.0" text-anchor="middle" class="ax">85+</text></svg>
+  </div>
+  <div class="card">
+    <h2 style="margin-top:0">地区分布（Top 8）</h2>
+    <svg viewBox="0 0 680 392" xmlns="http://www.w3.org/2000/svg" class="chart" role="img" aria-label="样本地区构成"><g><text x="158" y="68" text-anchor="end" class="lbl">South Asia</text><rect x="170" y="54" width="420" height="26" rx="4" fill="#2E6FDB"/><text x="598" y="73" class="val">276 人</text></g><g><text x="158" y="112" text-anchor="end" class="lbl">East Asia</text><rect x="170" y="98" width="310" height="26" rx="4" fill="#2E6FDB"/><text x="488" y="117" class="val">204 人</text></g><g><text x="158" y="156" text-anchor="end" class="lbl">Sub-Saharan Africa</text><rect x="170" y="142" width="295" height="26" rx="4" fill="#2E6FDB"/><text x="473" y="161" class="val">194 人</text></g><g><text x="158" y="200" text-anchor="end" class="lbl">Southeast Asia</text><rect x="170" y="186" width="135" height="26" rx="4" fill="#2E6FDB"/><text x="313" y="205" class="val">89 人</text></g><g><text x="158" y="244" text-anchor="end" class="lbl">Latin America</text><rect x="170" y="230" width="111" height="26" rx="4" fill="#2E6FDB"/><text x="289" y="249" class="val">73 人</text></g><g><text x="158" y="288" text-anchor="end" class="lbl">MENA</text><rect x="170" y="274" width="94" height="26" rx="4" fill="#2E6FDB"/><text x="272" y="293" class="val">62 人</text></g><g><text x="158" y="332" text-anchor="end" class="lbl">North America</text><rect x="170" y="318" width="80" height="26" rx="4" fill="#2E6FDB"/><text x="258" y="337" class="val">53 人</text></g><g><text x="158" y="376" text-anchor="end" class="lbl">Western Europe</text><rect x="170" y="362" width="38" height="26" rx="4" fill="#2E6FDB"/><text x="216" y="381" class="val">25 人</text></g></svg>
+  </div>
+</div>
+<div class="card">
+  <p>消费心态：省钱优先 491 人 · 性价比优先 353 人 · 无所谓 107 人 · 高端优先 49 人 —— 四个群体均有足够样本量做分群对比。</p>
+</div>
+
+<h2><span class="no">6</span>怎么看这份结果（重要说明）</h2><hr>
+<div class="card">
+  <p><b>1. 这是「AI 模拟」，不是真实调研。</b> 每个选择都有画像依据和可追溯理由，但代表的是"这类人最可能的偏好"，不等同于真实市场数据。</p>
+  <p><b>2. 结果受货架信息影响。</b> 本次 V2 验证了这一点：同一批消费者、同一价格，只加「外观描述」就让杯具熊份额从 70.2% 降到 45.0%——货架文案与展示方式会显著改变模拟结论，正式决策建议做多组对照。</p>
+  <p><b>3. 价格接受度普遍偏高（4.36/5）。</b> 这道题的区分度有限；真正的价格敏感体现在选择行为上（如省钱人群更爱富光）。</p>
+  <p><b>4. 适合的用途。</b> 新品/竞品快速试水、人群分层假设验证、定价敏感度预判——用 1 小时和一杯咖啡的钱换取初步方向。</p>
+</div>
+
+<div class="foot">
+  <span>MatrAIx-Persona-8B × DeepSeek · 保温杯购物式选择 Demo</span>
+  <span>完整复现步骤见 <b>DEMO_REPRODUCE.md</b> · 明细数据见 results/bottle_choice_1000_raw.csv</span>
+</div>
+
+</div>
+</body>
+</html>
