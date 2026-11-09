@@ -1,0 +1,3581 @@
+{
+  "cross_task_gain": false,
+  "surveys": {
+    "origin": {
+      "matched": 240,
+      "training": 708,
+      "cards": {},
+      "opt_out_pct": {},
+      "cells": {
+        "P0+B1": {
+          "tv_pp": 13.96518530063912,
+          "metrics": {
+            "China": {
+              "human_pct": [
+                27.41028375215447,
+                72.58971624784552
+              ],
+              "predicted_pct": [
+                42.410250219638016,
+                57.58974978036194
+              ],
+              "tv_pp": 14.999966467483558,
+              "tasks": 989
+            },
+            "United States": {
+              "human_pct": [
+                70.2254960545677,
+                29.77450394543229
+              ],
+              "predicted_pct": [
+                64.19954073180722,
+                35.80045926819276
+              ],
+              "tv_pp": 6.025955322760476,
+              "tasks": 989
+            },
+            "cheaper": {
+              "human_pct": [
+                74.18283204877076,
+                25.817167951229237
+              ],
+              "predicted_pct": [
+                64.22717753736354,
+                35.772822462636384
+              ],
+              "tv_pp": 9.955654511407182,
+              "tasks": 1760
+            },
+            "higher-rated": {
+              "human_pct": [
+                69.27860011060156,
+                30.721399889398427
+              ],
+              "predicted_pct": [
+                94.15776501150694,
+                5.842234988493264
+              ],
+              "tv_pp": 24.87916490090527,
+              "tasks": 1762
+            }
+          },
+          "individual_pct": {
+            "person_mean": 73.305890227577,
+            "overall": 73.30589022757718,
+            "accuracy/1 pound of coffee": 71.99480223325598,
+            "accuracy/96 oz laundry detergent": 72.3487991004394,
+            "accuracy/12-inch non-stick skillet": 72.79459619366914,
+            "accuracy/4 rolls of paper towels": 75.59984577512813,
+            "accuracy/Washing Machine": 77.76496413867045,
+            "accuracy/Roll of black duct tape": 73.1192031952404,
+            "accuracy/1 pound of cheese": 70.82298433320585,
+            "accuracy/Cell phone screen protector": 69.30077533196666,
+            "accuracy/1 pound of butter": 70.85700106630519,
+            "accuracy/Small bottle of super glue": 76.27286985543192,
+            "accuracy/Microwave": 78.75997339314294,
+            "accuracy/Toaster": 69.86773445072087
+          },
+          "individual_ci95": {
+            "person_mean": [
+              71.00100401606427,
+              75.69835104306115
+            ],
+            "overall": [
+              71.00100401606427,
+              75.6983510430612
+            ],
+            "accuracy/1 pound of coffee": [
+              64.68166700678812,
+              79.23816369724591
+            ],
+            "accuracy/96 oz laundry detergent": [
+              64.89977778766999,
+              79.70045736005665
+            ],
+            "accuracy/12-inch non-stick skillet": [
+              65.10137316526962,
+              79.74260693506743
+            ],
+            "accuracy/4 rolls of paper towels": [
+              68.6443654313802,
+              82.74132754869305
+            ],
+            "accuracy/Washing Machine": [
+              70.87008273676149,
+              84.8644001665374
+            ],
+            "accuracy/Roll of black duct tape": [
+              65.8033105284179,
+              80.34390187471796
+            ],
+            "accuracy/1 pound of cheese": [
+              63.20444817911171,
+              78.48358621645471
+            ],
+            "accuracy/Cell phone screen protector": [
+              61.21664116715809,
+              77.20820201803923
+            ],
+            "accuracy/1 pound of butter": [
+              64.05049860859218,
+              77.63587527895343
+            ],
+            "accuracy/Small bottle of super glue": [
+              69.38859842836979,
+              82.87502816740661
+            ],
+            "accuracy/Microwave": [
+              71.72605423180686,
+              85.25566439028847
+            ],
+            "accuracy/Toaster": [
+              62.72075052638218,
+              77.05923839060017
+            ]
+          },
+          "concentration": null
+        },
+        "P0+B3": {
+          "tv_pp": 11.278548194144108,
+          "metrics": {
+            "China": {
+              "human_pct": [
+                27.41028375215447,
+                72.58971624784552
+              ],
+              "predicted_pct": [
+                40.037757613557915,
+                59.962242386442085
+              ],
+              "tv_pp": 12.627473861403434,
+              "tasks": 989
+            },
+            "United States": {
+              "human_pct": [
+                70.2254960545677,
+                29.77450394543229
+              ],
+              "predicted_pct": [
+                67.60171892078777,
+                32.39828107921219
+              ],
+              "tv_pp": 2.6237771337799116,
+              "tasks": 989
+            },
+            "cheaper": {
+              "human_pct": [
+                74.18283204877076,
+                25.817167951229237
+              ],
+              "predicted_pct": [
+                65.54665585469692,
+                34.45334414530302
+              ],
+              "tv_pp": 8.636176194073814,
+              "tasks": 1760
+            },
+            "higher-rated": {
+              "human_pct": [
+                69.27860011060156,
+                30.721399889398427
+              ],
+              "predicted_pct": [
+                90.50536569792091,
+                9.494634302079236
+              ],
+              "tv_pp": 21.22676558731927,
+              "tasks": 1762
+            }
+          },
+          "individual_pct": {
+            "person_mean": 73.6505187416332,
+            "overall": 73.6505187416334,
+            "accuracy/1 pound of coffee": 70.99251228577508,
+            "accuracy/96 oz laundry detergent": 74.42868994645133,
+            "accuracy/12-inch non-stick skillet": 71.1024553791538,
+            "accuracy/4 rolls of paper towels": 73.64731935423262,
+            "accuracy/Washing Machine": 77.49756372256435,
+            "accuracy/Roll of black duct tape": 74.78433797356224,
+            "accuracy/1 pound of cheese": 73.53260276215936,
+            "accuracy/Cell phone screen protector": 68.69904643079919,
+            "accuracy/1 pound of butter": 74.3288646865127,
+            "accuracy/Small bottle of super glue": 73.37114460470374,
+            "accuracy/Microwave": 79.0821971380915,
+            "accuracy/Toaster": 72.29113432475368
+          },
+          "individual_ci95": {
+            "person_mean": [
+              71.08492511713521,
+              76.09975736278447
+            ],
+            "overall": [
+              71.08492511713528,
+              76.09975736278452
+            ],
+            "accuracy/1 pound of coffee": [
+              64.11387192911758,
+              78.12613828683098
+            ],
+            "accuracy/96 oz laundry detergent": [
+              67.14791463143558,
+              81.66314671471163
+            ],
+            "accuracy/12-inch non-stick skillet": [
+              63.20868284717844,
+              78.35442103741131
+            ],
+            "accuracy/4 rolls of paper towels": [
+              66.29742521336108,
+              80.83614759954288
+            ],
+            "accuracy/Washing Machine": [
+              70.3986926706237,
+              84.55614565398751
+            ],
+            "accuracy/Roll of black duct tape": [
+              67.65249419035102,
+              81.51045347594304
+            ],
+            "accuracy/1 pound of cheese": [
+              66.39879942732206,
+              80.96625009453058
+            ],
+            "accuracy/Cell phone screen protector": [
+              60.40298549032375,
+              76.96610683624016
+            ],
+            "accuracy/1 pound of butter": [
+              67.36537648284217,
+              80.89877896459568
+            ],
+            "accuracy/Small bottle of super glue": [
+              66.3087309009666,
+              80.22739942996124
+            ],
+            "accuracy/Microwave": [
+              72.2276698380109,
+              85.8422063724306
+            ],
+            "accuracy/Toaster": [
+              65.02128659010553,
+              79.02529297353041
+            ]
+          },
+          "concentration": null
+        },
+        "P1+B1": {
+          "tv_pp": 14.041629463266396,
+          "metrics": {
+            "China": {
+              "human_pct": [
+                27.41028375215447,
+                72.58971624784552
+              ],
+              "predicted_pct": [
+                43.20671455110022,
+                56.793285448899724
+              ],
+              "tv_pp": 15.796430798945774,
+              "tasks": 989
+            },
+            "United States": {
+              "human_pct": [
+                70.2254960545677,
+                29.77450394543229
+              ],
+              "predicted_pct": [
+                61.814994140042714,
+                38.18500585995721
+              ],
+              "tv_pp": 8.410501914524957,
+              "tasks": 989
+            },
+            "cheaper": {
+              "human_pct": [
+                74.18283204877076,
+                25.817167951229237
+              ],
+              "predicted_pct": [
+                66.44556752839286,
+                33.55443247160701
+              ],
+              "tv_pp": 7.73726452037784,
+              "tasks": 1760
+            },
+            "higher-rated": {
+              "human_pct": [
+                69.27860011060156,
+                30.721399889398427
+              ],
+              "predicted_pct": [
+                93.50092072981865,
+                6.499079270181478
+              ],
+              "tv_pp": 24.222320619217015,
+              "tasks": 1762
+            }
+          },
+          "individual_pct": {
+            "person_mean": 73.3982039268184,
+            "overall": 73.39820392681864,
+            "accuracy/1 pound of coffee": 69.95678082431722,
+            "accuracy/96 oz laundry detergent": 74.54970551735003,
+            "accuracy/12-inch non-stick skillet": 74.20635703250817,
+            "accuracy/4 rolls of paper towels": 76.18214352799264,
+            "accuracy/Washing Machine": 76.42593885196526,
+            "accuracy/Roll of black duct tape": 74.28800614983524,
+            "accuracy/1 pound of cheese": 72.52101643102776,
+            "accuracy/Cell phone screen protector": 65.96453079048182,
+            "accuracy/1 pound of butter": 71.49980216345972,
+            "accuracy/Small bottle of super glue": 74.60313213768549,
+            "accuracy/Microwave": 77.7618820005949,
+            "accuracy/Toaster": 72.52577269122685
+          },
+          "individual_ci95": {
+            "person_mean": [
+              70.83496207050423,
+              75.78147311468095
+            ],
+            "overall": [
+              70.83496207050429,
+              75.78147311468099
+            ],
+            "accuracy/1 pound of coffee": [
+              62.620538068994605,
+              77.1876735091694
+            ],
+            "accuracy/96 oz laundry detergent": [
+              67.28394757003878,
+              81.75041909881317
+            ],
+            "accuracy/12-inch non-stick skillet": [
+              66.91378475915667,
+              80.91732890021855
+            ],
+            "accuracy/4 rolls of paper towels": [
+              69.52669863106657,
+              82.84901746205864
+            ],
+            "accuracy/Washing Machine": [
+              69.10829730779231,
+              83.26148695084213
+            ],
+            "accuracy/Roll of black duct tape": [
+              67.12427550745464,
+              81.07696054475028
+            ],
+            "accuracy/1 pound of cheese": [
+              65.1071630921062,
+              79.99118939400093
+            ],
+            "accuracy/Cell phone screen protector": [
+              57.94065212597765,
+              74.46699704703961
+            ],
+            "accuracy/1 pound of butter": [
+              64.410246935237,
+              78.47359329074419
+            ],
+            "accuracy/Small bottle of super glue": [
+              67.72976602045563,
+              81.45346331455575
+            ],
+            "accuracy/Microwave": [
+              70.73571943268172,
+              84.33478445660977
+            ],
+            "accuracy/Toaster": [
+              65.19023273427922,
+              79.54073367602062
+            ]
+          },
+          "concentration": null
+        },
+        "P1+B3": {
+          "tv_pp": 10.33711773099355,
+          "metrics": {
+            "China": {
+              "human_pct": [
+                27.41028375215447,
+                72.58971624784552
+              ],
+              "predicted_pct": [
+                38.51772864146365,
+                61.4822713585363
+              ],
+              "tv_pp": 11.107444889309198,
+              "tasks": 989
+            },
+            "United States": {
+              "human_pct": [
+                70.2254960545677,
+                29.77450394543229
+              ],
+              "predicted_pct": [
+                68.51378961596517,
+                31.48621038403478
+              ],
+              "tv_pp": 1.7117064386025116,
+              "tasks": 989
+            },
+            "cheaper": {
+              "human_pct": [
+                74.18283204877076,
+                25.817167951229237
+              ],
+              "predicted_pct": [
+                66.11363031372653,
+                33.88636968627334
+              ],
+              "tv_pp": 8.069201735044166,
+              "tasks": 1760
+            },
+            "higher-rated": {
+              "human_pct": [
+                69.27860011060156,
+                30.721399889398427
+              ],
+              "predicted_pct": [
+                89.73871797161996,
+                10.261282028380178
+              ],
+              "tv_pp": 20.460117861018322,
+              "tasks": 1762
+            }
+          },
+          "individual_pct": {
+            "person_mean": 73.91705711735834,
+            "overall": 73.91705711735854,
+            "accuracy/1 pound of coffee": 75.15996190852296,
+            "accuracy/96 oz laundry detergent": 76.60079945697252,
+            "accuracy/12-inch non-stick skillet": 71.4278670742529,
+            "accuracy/4 rolls of paper towels": 74.13503903405125,
+            "accuracy/Washing Machine": 74.08171729740107,
+            "accuracy/Roll of black duct tape": 74.4481024081283,
+            "accuracy/1 pound of cheese": 72.43026366068004,
+            "accuracy/Cell phone screen protector": 64.89261206666042,
+            "accuracy/1 pound of butter": 75.41763628925692,
+            "accuracy/Small bottle of super glue": 74.76164519160336,
+            "accuracy/Microwave": 77.96778431064494,
+            "accuracy/Toaster": 75.1107108008705
+          },
+          "individual_ci95": {
+            "person_mean": [
+              71.23398524654172,
+              76.48095995091477
+            ],
+            "overall": [
+              71.23398524654175,
+              76.48095995091482
+            ],
+            "accuracy/1 pound of coffee": [
+              67.96514415922165,
+              82.09182219656789
+            ],
+            "accuracy/96 oz laundry detergent": [
+              69.13320003077642,
+              83.33258541300408
+            ],
+            "accuracy/12-inch non-stick skillet": [
+              63.85491407688403,
+              78.57629033712269
+            ],
+            "accuracy/4 rolls of paper towels": [
+              66.8810754728113,
+              81.19424449669748
+            ],
+            "accuracy/Washing Machine": [
+              66.66843415839476,
+              81.18108704386987
+            ],
+            "accuracy/Roll of black duct tape": [
+              67.39110489109429,
+              81.51004101863052
+            ],
+            "accuracy/1 pound of cheese": [
+              65.14664715334717,
+              79.84824268127115
+            ],
+            "accuracy/Cell phone screen protector": [
+              56.49878764860339,
+              73.51219100555474
+            ],
+            "accuracy/1 pound of butter": [
+              68.72335774031842,
+              81.91123320731452
+            ],
+            "accuracy/Small bottle of super glue": [
+              67.61316011309304,
+              81.49491728327175
+            ],
+            "accuracy/Microwave": [
+              70.92189445220845,
+              84.44372787725003
+            ],
+            "accuracy/Toaster": [
+              67.60496072040607,
+              82.11176213956837
+            ]
+          },
+          "concentration": null
+        },
+        "统计基线": {
+          "tv_pp": 2.618437467441329,
+          "metrics": {
+            "China": {
+              "human_pct": [
+                27.41028375215447,
+                72.58971624784552
+              ],
+              "predicted_pct": [
+                30.171104358366037,
+                69.82889564163402
+              ],
+              "tv_pp": 2.760820606211528,
+              "tasks": 989
+            },
+            "United States": {
+              "human_pct": [
+                70.2254960545677,
+                29.77450394543229
+              ],
+              "predicted_pct": [
+                69.2801072124123,
+                30.71989278758765
+              ],
+              "tv_pp": 0.9453888421553813,
+              "tasks": 989
+            },
+            "cheaper": {
+              "human_pct": [
+                74.18283204877076,
+                25.817167951229237
+              ],
+              "predicted_pct": [
+                68.53123135476582,
+                31.468768645234295
+              ],
+              "tv_pp": 5.651600694005002,
+              "tasks": 1760
+            },
+            "higher-rated": {
+              "human_pct": [
+                69.27860011060156,
+                30.721399889398427
+              ],
+              "predicted_pct": [
+                70.39453983799507,
+                29.605460162005127
+              ],
+              "tv_pp": 1.1159397273934057,
+              "tasks": 1762
+            }
+          },
+          "individual_pct": {
+            "person_mean": 78.73488398036592,
+            "overall": 78.73488398036625,
+            "accuracy/1 pound of coffee": 74.51247049980715,
+            "accuracy/96 oz laundry detergent": 82.30155846114808,
+            "accuracy/12-inch non-stick skillet": 76.88689478355178,
+            "accuracy/4 rolls of paper towels": 83.24155635304302,
+            "accuracy/Washing Machine": 78.00370246729982,
+            "accuracy/Roll of black duct tape": 77.03571249519533,
+            "accuracy/1 pound of cheese": 78.76316938697514,
+            "accuracy/Cell phone screen protector": 79.30630068621322,
+            "accuracy/1 pound of butter": 80.49834689128365,
+            "accuracy/Small bottle of super glue": 75.54885980958356,
+            "accuracy/Microwave": 81.86789494971092,
+            "accuracy/Toaster": 77.18851675265708
+          },
+          "individual_ci95": {
+            "person_mean": [
+              76.29894229696565,
+              80.99915634761267
+            ],
+            "overall": [
+              76.29894229696576,
+              80.9991563476128
+            ],
+            "accuracy/1 pound of coffee": [
+              67.65416586581088,
+              81.05043824353149
+            ],
+            "accuracy/96 oz laundry detergent": [
+              75.78998077126171,
+              88.51508536330128
+            ],
+            "accuracy/12-inch non-stick skillet": [
+              70.09588470665948,
+              83.31567765700117
+            ],
+            "accuracy/4 rolls of paper towels": [
+              77.2421391419642,
+              89.05360534858808
+            ],
+            "accuracy/Washing Machine": [
+              71.1609351262024,
+              84.7080598147001
+            ],
+            "accuracy/Roll of black duct tape": [
+              70.35003174298271,
+              83.96072363226638
+            ],
+            "accuracy/1 pound of cheese": [
+              72.2217816272546,
+              85.21491423788711
+            ],
+            "accuracy/Cell phone screen protector": [
+              72.0248825822567,
+              86.12370121774873
+            ],
+            "accuracy/1 pound of butter": [
+              73.82569808241563,
+              86.68424422459171
+            ],
+            "accuracy/Small bottle of super glue": [
+              68.41873315789556,
+              82.61627505239088
+            ],
+            "accuracy/Microwave": [
+              75.62957241007116,
+              87.94975526050558
+            ],
+            "accuracy/Toaster": [
+              70.17411477868619,
+              83.75319722943856
+            ]
+          },
+          "concentration": null
+        }
+      },
+      "comparisons": [
+        {
+          "reference": "P0+B1",
+          "candidate": "P1+B3",
+          "gain_pp": 3.6280675696455713,
+          "ci95": [
+            1.645858592235764,
+            5.307781461361066
+          ],
+          "accuracy_gain_pp": 0.6111668897813445,
+          "accuracy_ci95": [
+            -1.2517911925479843,
+            2.345564898482812
+          ],
+          "passes": true
+        },
+        {
+          "reference": "P0+B1",
+          "candidate": "P1+B1",
+          "gain_pp": -0.0764441626272756,
+          "ci95": [
+            -1.4885792063890602,
+            1.2495744937306659
+          ],
+          "accuracy_gain_pp": 0.09231369924140154,
+          "accuracy_ci95": [
+            -1.3404032797858143,
+            1.525854808121364
+          ],
+          "passes": false
+        },
+        {
+          "reference": "P0+B3",
+          "candidate": "P1+B3",
+          "gain_pp": 0.9414304631505583,
+          "ci95": [
+            -0.9310630467047424,
+            2.6502806552293614
+          ],
+          "accuracy_gain_pp": 0.2665383757251334,
+          "accuracy_ci95": [
+            -1.6008826974565036,
+            1.9779918284248308
+          ],
+          "passes": false
+        },
+        {
+          "reference": "P0+B1",
+          "candidate": "P0+B3",
+          "gain_pp": 2.686637106495013,
+          "ci95": [
+            0.9525333781157026,
+            4.310378710850925
+          ],
+          "accuracy_gain_pp": 0.3446285140562111,
+          "accuracy_ci95": [
+            -1.4035691376617732,
+            1.9702295292280034
+          ],
+          "passes": true
+        },
+        {
+          "reference": "P1+B1",
+          "candidate": "P1+B3",
+          "gain_pp": 3.704511732272847,
+          "ci95": [
+            1.8715813177631877,
+            5.359758124224921
+          ],
+          "accuracy_gain_pp": 0.5188531905399429,
+          "accuracy_ci95": [
+            -1.2769299419901892,
+            2.282994477911649
+          ],
+          "passes": true
+        },
+        {
+          "reference": "统计基线",
+          "candidate": "P1+B3",
+          "gain_pp": -7.718680263552221,
+          "ci95": [
+            -9.134513604132309,
+            -6.0304885703632145
+          ],
+          "accuracy_gain_pp": -4.817826863007582,
+          "accuracy_ci95": [
+            -6.900531989067385,
+            -2.7833591309683285
+          ],
+          "passes": false
+        }
+      ]
+    },
+    "packaging": {
+      "matched": 240,
+      "training": 1003,
+      "cards": {
+        "2:1": [
+          {
+            "packaging": "Can",
+            "water_conserving": "Yes",
+            "energy_conserving": "Yes",
+            "waste_reduction": "Yes",
+            "local": "No",
+            "price": "$9.99"
+          },
+          {
+            "packaging": "Bottle",
+            "water_conserving": "Yes",
+            "energy_conserving": "No",
+            "waste_reduction": "No",
+            "local": "Yes",
+            "price": "$8.49"
+          }
+        ],
+        "2:2": [
+          {
+            "packaging": "Bottle",
+            "water_conserving": "No",
+            "energy_conserving": "No",
+            "waste_reduction": "Yes",
+            "local": "Yes",
+            "price": "$6.99"
+          },
+          {
+            "packaging": "Can",
+            "water_conserving": "Yes",
+            "energy_conserving": "Yes",
+            "waste_reduction": "No",
+            "local": "No",
+            "price": "$9.99"
+          }
+        ],
+        "2:3": [
+          {
+            "packaging": "Can",
+            "water_conserving": "Yes",
+            "energy_conserving": "Yes",
+            "waste_reduction": "No",
+            "local": "No",
+            "price": "$8.49"
+          },
+          {
+            "packaging": "Bottle",
+            "water_conserving": "No",
+            "energy_conserving": "No",
+            "waste_reduction": "Yes",
+            "local": "Yes",
+            "price": "$6.99"
+          }
+        ],
+        "2:4": [
+          {
+            "packaging": "Bottle",
+            "water_conserving": "Yes",
+            "energy_conserving": "No",
+            "waste_reduction": "No",
+            "local": "No",
+            "price": "$11.49"
+          },
+          {
+            "packaging": "Can",
+            "water_conserving": "No",
+            "energy_conserving": "Yes",
+            "waste_reduction": "Yes",
+            "local": "Yes",
+            "price": "$11.49"
+          }
+        ],
+        "2:5": [
+          {
+            "packaging": "Can",
+            "water_conserving": "No",
+            "energy_conserving": "Yes",
+            "waste_reduction": "No",
+            "local": "Yes",
+            "price": "$8.49"
+          },
+          {
+            "packaging": "Bottle",
+            "water_conserving": "Yes",
+            "energy_conserving": "No",
+            "waste_reduction": "Yes",
+            "local": "No",
+            "price": "$8.49"
+          }
+        ],
+        "2:6": [
+          {
+            "packaging": "Can",
+            "water_conserving": "No",
+            "energy_conserving": "No",
+            "waste_reduction": "Yes",
+            "local": "Yes",
+            "price": "$6.99"
+          },
+          {
+            "packaging": "Bottle",
+            "water_conserving": "Yes",
+            "energy_conserving": "Yes",
+            "waste_reduction": "No",
+            "local": "No",
+            "price": "$9.99"
+          }
+        ],
+        "2:7": [
+          {
+            "packaging": "Bottle",
+            "water_conserving": "Yes",
+            "energy_conserving": "No",
+            "waste_reduction": "Yes",
+            "local": "No",
+            "price": "$9.99"
+          },
+          {
+            "packaging": "Can",
+            "water_conserving": "No",
+            "energy_conserving": "Yes",
+            "waste_reduction": "No",
+            "local": "Yes",
+            "price": "$6.99"
+          }
+        ],
+        "2:8": [
+          {
+            "packaging": "Bottle",
+            "water_conserving": "No",
+            "energy_conserving": "Yes",
+            "waste_reduction": "No",
+            "local": "Yes",
+            "price": "$11.49"
+          },
+          {
+            "packaging": "Can",
+            "water_conserving": "No",
+            "energy_conserving": "No",
+            "waste_reduction": "Yes",
+            "local": "No",
+            "price": "$11.49"
+          }
+        ],
+        "1:1": [
+          {
+            "packaging": "Bottle",
+            "water_conserving": "No",
+            "energy_conserving": "No",
+            "waste_reduction": "No",
+            "local": "No",
+            "price": "$6.99"
+          },
+          {
+            "packaging": "Can",
+            "water_conserving": "Yes",
+            "energy_conserving": "Yes",
+            "waste_reduction": "Yes",
+            "local": "Yes",
+            "price": "$9.99"
+          }
+        ],
+        "1:2": [
+          {
+            "packaging": "Bottle",
+            "water_conserving": "Yes",
+            "energy_conserving": "Yes",
+            "waste_reduction": "Yes",
+            "local": "No",
+            "price": "$8.49"
+          },
+          {
+            "packaging": "Can",
+            "water_conserving": "Yes",
+            "energy_conserving": "No",
+            "waste_reduction": "No",
+            "local": "Yes",
+            "price": "$11.49"
+          }
+        ],
+        "1:3": [
+          {
+            "packaging": "Can",
+            "water_conserving": "Yes",
+            "energy_conserving": "No",
+            "waste_reduction": "No",
+            "local": "Yes",
+            "price": "$8.49"
+          },
+          {
+            "packaging": "Bottle",
+            "water_conserving": "No",
+            "energy_conserving": "Yes",
+            "waste_reduction": "Yes",
+            "local": "No",
+            "price": "$6.99"
+          }
+        ],
+        "1:4": [
+          {
+            "packaging": "Can",
+            "water_conserving": "No",
+            "energy_conserving": "Yes",
+            "waste_reduction": "Yes",
+            "local": "No",
+            "price": "$11.49"
+          },
+          {
+            "packaging": "Bottle",
+            "water_conserving": "No",
+            "energy_conserving": "No",
+            "waste_reduction": "No",
+            "local": "Yes",
+            "price": "$11.49"
+          }
+        ],
+        "1:5": [
+          {
+            "packaging": "Bottle",
+            "water_conserving": "No",
+            "energy_conserving": "Yes",
+            "waste_reduction": "Yes",
+            "local": "Yes",
+            "price": "$9.99"
+          },
+          {
+            "packaging": "Can",
+            "water_conserving": "Yes",
+            "energy_conserving": "No",
+            "waste_reduction": "No",
+            "local": "No",
+            "price": "$8.49"
+          }
+        ],
+        "1:6": [
+          {
+            "packaging": "Bottle",
+            "water_conserving": "Yes",
+            "energy_conserving": "Yes",
+            "waste_reduction": "No",
+            "local": "Yes",
+            "price": "$11.49"
+          },
+          {
+            "packaging": "Can",
+            "water_conserving": "No",
+            "energy_conserving": "No",
+            "waste_reduction": "Yes",
+            "local": "No",
+            "price": "$8.49"
+          }
+        ],
+        "1:7": [
+          {
+            "packaging": "Can",
+            "water_conserving": "No",
+            "energy_conserving": "No",
+            "waste_reduction": "No",
+            "local": "No",
+            "price": "$6.99"
+          },
+          {
+            "packaging": "Bottle",
+            "water_conserving": "Yes",
+            "energy_conserving": "Yes",
+            "waste_reduction": "Yes",
+            "local": "Yes",
+            "price": "$9.99"
+          }
+        ],
+        "1:8": [
+          {
+            "packaging": "Can",
+            "water_conserving": "Yes",
+            "energy_conserving": "No",
+            "waste_reduction": "Yes",
+            "local": "Yes",
+            "price": "$9.99"
+          },
+          {
+            "packaging": "Bottle",
+            "water_conserving": "No",
+            "energy_conserving": "Yes",
+            "waste_reduction": "No",
+            "local": "No",
+            "price": "$6.99"
+          }
+        ]
+      },
+      "opt_out_pct": {
+        "human": 32.0618706429141,
+        "P0+B1": 10.332591014717586,
+        "P0+B3": 10.397463206816743,
+        "P1+B1": 7.532597469661981,
+        "P1+B3": 8.687064291247369,
+        "统计基线": 32.204300213228656
+      },
+      "cells": {
+        "P0+B1": {
+          "tv_pp": 36.89623535538203,
+          "metrics": {
+            "1:1": {
+              "human_pct": [
+                55.6382116815202,
+                23.139623382681524,
+                21.22216493579828
+              ],
+              "predicted_pct": [
+                84.47619749085442,
+                2.199798679138741,
+                13.324003830006633
+              ],
+              "tv_pp": 28.83798580933432,
+              "tasks": 128
+            },
+            "1:2": {
+              "human_pct": [
+                67.14787262772826,
+                7.9128919005180345,
+                24.939235471753708
+              ],
+              "predicted_pct": [
+                92.84819916034468,
+                0.0,
+                7.151800839655302
+              ],
+              "tv_pp": 25.700326532616437,
+              "tasks": 128
+            },
+            "1:3": {
+              "human_pct": [
+                9.987478824482583,
+                68.8198178291719,
+                21.192703346345528
+              ],
+              "predicted_pct": [
+                46.703984679973495,
+                47.87508286072028,
+                5.420932459306183
+              ],
+              "tv_pp": 36.71650585549094,
+              "tasks": 128
+            },
+            "1:4": {
+              "human_pct": [
+                34.101789791559256,
+                25.226485968918027,
+                40.671724239522725
+              ],
+              "predicted_pct": [
+                33.26213449215587,
+                30.875745746483023,
+                35.86211976136111
+              ],
+              "tv_pp": 5.649259777565002,
+              "tasks": 128
+            },
+            "1:5": {
+              "human_pct": [
+                41.761803049274484,
+                31.600009820529827,
+                26.63818713019569
+              ],
+              "predicted_pct": [
+                50.52908104392231,
+                41.21430851194414,
+                8.25661044413346
+              ],
+              "tv_pp": 18.381576686062186,
+              "tasks": 128
+            },
+            "1:6": {
+              "human_pct": [
+                27.868208489848033,
+                39.0022341705335,
+                33.12955733961848
+              ],
+              "predicted_pct": [
+                21.78193513540056,
+                62.372640003928105,
+                15.845424860671226
+              ],
+              "tv_pp": 23.370405833394667,
+              "tasks": 128
+            },
+            "1:7": {
+              "human_pct": [
+                28.73732537870421,
+                42.57936215658832,
+                28.683312464707477
+              ],
+              "predicted_pct": [
+                64.2974638481745,
+                27.1169379588029,
+                8.585598193022511
+              ],
+              "tv_pp": 35.56013846947034,
+              "tasks": 128
+            },
+            "1:8": {
+              "human_pct": [
+                21.408755002332395,
+                54.80346664702558,
+                23.78777835064203
+              ],
+              "predicted_pct": [
+                62.512582553828786,
+                32.06648498686504,
+                5.420932459306183
+              ],
+              "tv_pp": 41.103827551496394,
+              "tasks": 128
+            },
+            "2:1": {
+              "human_pct": [
+                20.46611669253177,
+                44.20485175202156,
+                35.32903155544667
+              ],
+              "predicted_pct": [
+                18.10013885485583,
+                72.95597484276725,
+                8.943886302376864
+              ],
+              "tv_pp": 28.75112309074571,
+              "tasks": 112
+            },
+            "2:2": {
+              "human_pct": [
+                58.270031854937486,
+                12.303629284761353,
+                29.426338860301154
+              ],
+              "predicted_pct": [
+                97.6476353834843,
+                0.0,
+                2.3523646165155614
+              ],
+              "tv_pp": 39.37760352854688,
+              "tasks": 112
+            },
+            "2:3": {
+              "human_pct": [
+                18.056576547142573,
+                51.35451550545888,
+                30.588907947398543
+              ],
+              "predicted_pct": [
+                25.48395001225194,
+                73.38342998720356,
+                1.132620000544529
+              ],
+              "tv_pp": 29.456287946854033,
+              "tasks": 112
+            },
+            "2:4": {
+              "human_pct": [
+                24.258760107816723,
+                25.982193906722216,
+                49.75904598546106
+              ],
+              "predicted_pct": [
+                0.38117019249094714,
+                89.90715783168598,
+                9.711671975822915
+              ],
+              "tv_pp": 63.92496392496384,
+              "tasks": 112
+            },
+            "2:5": {
+              "human_pct": [
+                13.147648996705593,
+                49.995916033651866,
+                36.85643496964254
+              ],
+              "predicted_pct": [
+                91.54891230362914,
+                7.318467695826185,
+                1.132620000544529
+              ],
+              "tv_pp": 78.40126330692362,
+              "tasks": 112
+            },
+            "2:6": {
+              "human_pct": [
+                37.346510931416596,
+                31.30768602466714,
+                31.34580304391626
+              ],
+              "predicted_pct": [
+                98.86737999945532,
+                0.0,
+                1.1326200005445282
+              ],
+              "tv_pp": 61.5208690680388,
+              "tasks": 112
+            },
+            "2:7": {
+              "human_pct": [
+                30.145116937569767,
+                38.47913093196114,
+                31.37575213046911
+              ],
+              "predicted_pct": [
+                0.7514498080535812,
+                98.11593019140174,
+                1.1326200005445282
+              ],
+              "tv_pp": 59.636799259440686,
+              "tasks": 112
+            },
+            "2:8": {
+              "human_pct": [
+                34.177353045277606,
+                13.831032698957218,
+                51.991614255765185
+              ],
+              "predicted_pct": [
+                35.79188107489999,
+                26.167333714503542,
+                38.04078521059655
+              ],
+              "tv_pp": 13.950829045168673,
+              "tasks": 112
+            }
+          },
+          "individual_pct": {
+            "person_mean": 37.36638264910921,
+            "overall": 37.36638264910942,
+            "accuracy/All": 37.36638264910942,
+            "recall/All/2": 43.14120150176222,
+            "recall/All/1": 59.96027297579006,
+            "recall/All/0": 7.912180832590943
+          },
+          "individual_ci95": {
+            "person_mean": [
+              33.826478989155696,
+              40.831772043635425
+            ],
+            "overall": [
+              33.826478989155746,
+              40.83177204363548
+            ],
+            "accuracy/All": [
+              33.826478989155746,
+              40.83177204363548
+            ],
+            "recall/All/2": [
+              38.47450419012443,
+              48.15705807257587
+            ],
+            "recall/All/1": [
+              55.082523454789374,
+              64.90638265688457
+            ],
+            "recall/All/0": [
+              5.562784771279381,
+              10.765331625721572
+            ]
+          },
+          "concentration": {
+            "95": 3,
+            "99": 0,
+            "100": 0
+          }
+        },
+        "P0+B3": {
+          "tv_pp": 37.96135442891503,
+          "metrics": {
+            "1:1": {
+              "human_pct": [
+                55.6382116815202,
+                23.139623382681524,
+                21.22216493579828
+              ],
+              "predicted_pct": [
+                89.50185362500298,
+                3.299698018708112,
+                7.198448356288825
+              ],
+              "tv_pp": 33.863641943482826,
+              "tasks": 128
+            },
+            "1:2": {
+              "human_pct": [
+                67.14787262772826,
+                7.9128919005180345,
+                24.939235471753708
+              ],
+              "predicted_pct": [
+                91.17379882644663,
+                0.0,
+                8.826201173553311
+              ],
+              "tv_pp": 24.025926198718402,
+              "tasks": 128
+            },
+            "1:3": {
+              "human_pct": [
+                9.987478824482583,
+                68.8198178291719,
+                21.192703346345528
+              ],
+              "predicted_pct": [
+                49.591220446343094,
+                46.84392722987401,
+                3.5648523237828704
+              ],
+              "tv_pp": 39.60374162186052,
+              "tasks": 128
+            },
+            "1:4": {
+              "human_pct": [
+                34.101789791559256,
+                25.226485968918027,
+                40.671724239522725
+              ],
+              "predicted_pct": [
+                21.5757040092313,
+                38.80336844172742,
+                39.620927549041255
+              ],
+              "tv_pp": 13.576882472809412,
+              "tasks": 128
+            },
+            "1:5": {
+              "human_pct": [
+                41.761803049274484,
+                31.600009820529827,
+                26.63818713019569
+              ],
+              "predicted_pct": [
+                61.307112518720366,
+                31.253836144459974,
+                7.439051336819616
+              ],
+              "tv_pp": 19.545309469445904,
+              "tasks": 128
+            },
+            "1:6": {
+              "human_pct": [
+                27.868208489848033,
+                39.0022341705335,
+                33.12955733961848
+              ],
+              "predicted_pct": [
+                17.37006211485108,
+                64.82286219341523,
+                17.807075691733555
+              ],
+              "tv_pp": 25.820628022881802,
+              "tasks": 128
+            },
+            "1:7": {
+              "human_pct": [
+                28.73732537870421,
+                42.57936215658832,
+                28.683312464707477
+              ],
+              "predicted_pct": [
+                72.20053521887498,
+                22.039724043112148,
+                5.759740738012816
+              ],
+              "tv_pp": 43.4632098401708,
+              "tasks": 128
+            },
+            "1:8": {
+              "human_pct": [
+                21.408755002332395,
+                54.80346664702558,
+                23.78777835064203
+              ],
+              "predicted_pct": [
+                59.78493039699493,
+                34.9758169453242,
+                5.23925265768088
+              ],
+              "tv_pp": 38.37617539466254,
+              "tasks": 128
+            },
+            "2:1": {
+              "human_pct": [
+                20.46611669253177,
+                44.20485175202156,
+                35.32903155544667
+              ],
+              "predicted_pct": [
+                27.354406599689657,
+                67.2166408015464,
+                5.428952598763917
+              ],
+              "tv_pp": 29.90007895668274,
+              "tasks": 112
+            },
+            "2:2": {
+              "human_pct": [
+                58.270031854937486,
+                12.303629284761353,
+                29.426338860301154
+              ],
+              "predicted_pct": [
+                92.13155816929383,
+                2.4394892319420642,
+                5.428952598763917
+              ],
+              "tv_pp": 33.86152631435643,
+              "tasks": 112
+            },
+            "2:3": {
+              "human_pct": [
+                18.056576547142573,
+                51.35451550545888,
+                30.588907947398543
+              ],
+              "predicted_pct": [
+                30.09066405292825,
+                67.61414685942982,
+                2.295189087641917
+              ],
+              "tv_pp": 28.293718859756623,
+              "tasks": 112
+            },
+            "2:4": {
+              "human_pct": [
+                24.258760107816723,
+                25.982193906722216,
+                49.75904598546106
+              ],
+              "predicted_pct": [
+                0.3757249040267907,
+                89.20743826404191,
+                10.416836831931166
+              ],
+              "tv_pp": 63.22524435731975,
+              "tasks": 112
+            },
+            "2:5": {
+              "human_pct": [
+                13.147648996705593,
+                49.995916033651866,
+                36.85643496964254
+              ],
+              "predicted_pct": [
+                94.88415148792487,
+                2.8206594244330123,
+                2.295189087641917
+              ],
+              "tv_pp": 81.73650249121937,
+              "tasks": 112
+            },
+            "2:6": {
+              "human_pct": [
+                37.346510931416596,
+                31.30768602466714,
+                31.34580304391626
+              ],
+              "predicted_pct": [
+                97.70481091235787,
+                0.0,
+                2.295189087641915
+              ],
+              "tv_pp": 60.358299980941375,
+              "tasks": 112
+            },
+            "2:7": {
+              "human_pct": [
+                30.145116937569767,
+                38.47913093196114,
+                31.37575213046911
+              ],
+              "predicted_pct": [
+                0.3757249040267906,
+                96.94791581584013,
+                2.6763592801328624
+              ],
+              "tv_pp": 58.46878488387911,
+              "tasks": 112
+            },
+            "2:8": {
+              "human_pct": [
+                34.177353045277606,
+                13.831032698957218,
+                51.991614255765185
+              ],
+              "predicted_pct": [
+                39.54368482670373,
+                21.72670097198399,
+                38.72961420131234
+              ],
+              "tv_pp": 13.262000054452876,
+              "tasks": 112
+            }
+          },
+          "individual_pct": {
+            "person_mean": 38.30622256648593,
+            "overall": 38.30622256648612,
+            "accuracy/All": 38.30622256648612,
+            "recall/All/2": 42.22764474222344,
+            "recall/All/1": 60.49668613684185,
+            "recall/All/0": 11.294990462097536
+          },
+          "individual_ci95": {
+            "person_mean": [
+              34.883439839917386,
+              41.74301655693261
+            ],
+            "overall": [
+              34.88343983991742,
+              41.743016556932645
+            ],
+            "accuracy/All": [
+              34.88343983991742,
+              41.743016556932645
+            ],
+            "recall/All/2": [
+              37.32526596545628,
+              47.16795326942871
+            ],
+            "recall/All/1": [
+              56.1720264166493,
+              65.0928614015209
+            ],
+            "recall/All/0": [
+              7.249522375998686,
+              16.557979833126467
+            ]
+          },
+          "concentration": {
+            "95": 2,
+            "99": 0,
+            "100": 0
+          }
+        },
+        "P1+B1": {
+          "tv_pp": 38.54969840573787,
+          "metrics": {
+            "1:1": {
+              "human_pct": [
+                55.6382116815202,
+                23.139623382681524,
+                21.22216493579828
+              ],
+              "predicted_pct": [
+                90.77852250128889,
+                1.3871498367336905,
+                7.834327661977364
+              ],
+              "tv_pp": 35.14031081976872,
+              "tasks": 128
+            },
+            "1:2": {
+              "human_pct": [
+                67.14787262772826,
+                7.9128919005180345,
+                24.939235471753708
+              ],
+              "predicted_pct": [
+                93.9480984999141,
+                0.0,
+                6.05190150008593
+              ],
+              "tv_pp": 26.800225872185823,
+              "tasks": 128
+            },
+            "1:3": {
+              "human_pct": [
+                9.987478824482583,
+                68.8198178291719,
+                21.192703346345528
+              ],
+              "predicted_pct": [
+                39.49817092632151,
+                54.44992757359254,
+                6.051901500085931
+              ],
+              "tv_pp": 29.51069210183894,
+              "tasks": 128
+            },
+            "1:4": {
+              "human_pct": [
+                34.101789791559256,
+                25.226485968918027,
+                40.671724239522725
+              ],
+              "predicted_pct": [
+                48.42994279541378,
+                29.098229849500385,
+                22.471827355085804
+              ],
+              "tv_pp": 18.199896884436907,
+              "tasks": 128
+            },
+            "1:5": {
+              "human_pct": [
+                41.761803049274484,
+                31.600009820529827,
+                26.63818713019569
+              ],
+              "predicted_pct": [
+                45.265277061697496,
+                48.68282143821649,
+                6.0519015000859255
+              ],
+              "tv_pp": 20.58628563010972,
+              "tasks": 128
+            },
+            "1:6": {
+              "human_pct": [
+                27.868208489848033,
+                39.0022341705335,
+                33.12955733961848
+              ],
+              "predicted_pct": [
+                22.09619208956324,
+                65.52994034028129,
+                12.373867570155397
+              ],
+              "tv_pp": 26.527706169747827,
+              "tasks": 128
+            },
+            "1:7": {
+              "human_pct": [
+                28.73732537870421,
+                42.57936215658832,
+                28.683312464707477
+              ],
+              "predicted_pct": [
+                70.70781468660228,
+                22.901475534605108,
+                6.390709778792564
+              ],
+              "tv_pp": 41.9704893078981,
+              "tasks": 128
+            },
+            "1:8": {
+              "human_pct": [
+                21.408755002332395,
+                54.80346664702558,
+                23.78777835064203
+              ],
+              "predicted_pct": [
+                63.46026368122561,
+                30.48783481868847,
+                6.05190150008593
+              ],
+              "tv_pp": 42.05150867889322,
+              "tasks": 128
+            },
+            "2:1": {
+              "human_pct": [
+                20.46611669253177,
+                44.20485175202156,
+                35.32903155544667
+              ],
+              "predicted_pct": [
+                42.76729559748432,
+                51.098586947643476,
+                6.134117454872168
+              ],
+              "tv_pp": 29.194914100574483,
+              "tasks": 112
+            },
+            "2:2": {
+              "human_pct": [
+                58.270031854937486,
+                12.303629284761353,
+                29.426338860301154
+              ],
+              "predicted_pct": [
+                92.16695254431085,
+                1.595469519997823,
+                6.237577935691144
+              ],
+              "tv_pp": 33.89692068937345,
+              "tasks": 112
+            },
+            "2:3": {
+              "human_pct": [
+                18.056576547142573,
+                51.35451550545888,
+                30.588907947398543
+              ],
+              "predicted_pct": [
+                45.66963434887969,
+                52.03517656347838,
+                2.295189087641917
+              ],
+              "tv_pp": 28.293718859756623,
+              "tasks": 112
+            },
+            "2:4": {
+              "human_pct": [
+                24.258760107816723,
+                25.982193906722216,
+                49.75904598546106
+              ],
+              "predicted_pct": [
+                2.357809904979717,
+                91.05066840915879,
+                6.591521685861303
+              ],
+              "tv_pp": 65.06847450243667,
+              "tasks": 112
+            },
+            "2:5": {
+              "human_pct": [
+                13.147648996705593,
+                49.995916033651866,
+                36.85643496964254
+              ],
+              "predicted_pct": [
+                93.06270249666457,
+                5.8046775027907085,
+                1.132620000544529
+              ],
+              "tv_pp": 79.91505349995907,
+              "tasks": 112
+            },
+            "2:6": {
+              "human_pct": [
+                37.346510931416596,
+                31.30768602466714,
+                31.34580304391626
+              ],
+              "predicted_pct": [
+                98.02336028751103,
+                1.2197446159710315,
+                0.7568950965177376
+              ],
+              "tv_pp": 60.67684935609453,
+              "tasks": 112
+            },
+            "2:7": {
+              "human_pct": [
+                30.145116937569767,
+                38.47913093196114,
+                31.37575213046911
+              ],
+              "predicted_pct": [
+                11.873451496093002,
+                85.45563451223819,
+                2.670913991668706
+              ],
+              "tv_pp": 46.976503580277104,
+              "tasks": 112
+            },
+            "2:8": {
+              "human_pct": [
+                34.177353045277606,
+                13.831032698957218,
+                51.991614255765185
+              ],
+              "predicted_pct": [
+                41.70001905850966,
+                38.29399112417983,
+                20.005989817310557
+              ],
+              "tv_pp": 31.98562443845465,
+              "tasks": 112
+            }
+          },
+          "individual_pct": {
+            "person_mean": 37.21533694810225,
+            "overall": 37.215336948102454,
+            "accuracy/All": 37.215336948102454,
+            "recall/All/2": 38.395577429449716,
+            "recall/All/1": 63.98902590123313,
+            "recall/All/0": 8.514654144080213
+          },
+          "individual_ci95": {
+            "person_mean": [
+              33.849373870384724,
+              40.48416117996385
+            ],
+            "overall": [
+              33.84937387038478,
+              40.48416117996391
+            ],
+            "accuracy/All": [
+              33.84937387038478,
+              40.48416117996391
+            ],
+            "recall/All/2": [
+              34.141114224015624,
+              42.70027603645568
+            ],
+            "recall/All/1": [
+              59.57585061153654,
+              68.32398086369969
+            ],
+            "recall/All/0": [
+              4.473873453357965,
+              14.019058223918432
+            ]
+          },
+          "concentration": {
+            "95": 1,
+            "99": 0,
+            "100": 0
+          }
+        },
+        "P1+B3": {
+          "tv_pp": 38.951377742606546,
+          "metrics": {
+            "1:1": {
+              "human_pct": [
+                55.6382116815202,
+                23.139623382681524,
+                21.22216493579828
+              ],
+              "predicted_pct": [
+                88.78741008077371,
+                3.586948515872432,
+                7.6256414033537165
+              ],
+              "tv_pp": 33.149198399253585,
+              "tasks": 128
+            },
+            "1:2": {
+              "human_pct": [
+                67.14787262772826,
+                7.9128919005180345,
+                24.939235471753708
+              ],
+              "predicted_pct": [
+                92.83837863052707,
+                0.0,
+                7.161621369472885
+              ],
+              "tv_pp": 25.69050600279884,
+              "tasks": 128
+            },
+            "1:3": {
+              "human_pct": [
+                9.987478824482583,
+                68.8198178291719,
+                21.192703346345528
+              ],
+              "predicted_pct": [
+                42.6260096732219,
+                51.9997053841054,
+                5.374284942672659
+              ],
+              "tv_pp": 32.63853084873934,
+              "tasks": 128
+            },
+            "1:4": {
+              "human_pct": [
+                34.101789791559256,
+                25.226485968918027,
+                40.671724239522725
+              ],
+              "predicted_pct": [
+                37.74520635388281,
+                25.891826864059325,
+                36.36296678205787
+              ],
+              "tv_pp": 4.308757457464857,
+              "tasks": 128
+            },
+            "1:5": {
+              "human_pct": [
+                41.761803049274484,
+                31.600009820529827,
+                26.63818713019569
+              ],
+              "predicted_pct": [
+                39.24038201860992,
+                52.50300753725654,
+                8.25661044413346
+              ],
+              "tv_pp": 20.90299771672675,
+              "tasks": 128
+            },
+            "1:6": {
+              "human_pct": [
+                27.868208489848033,
+                39.0022341705335,
+                33.12955733961848
+              ],
+              "predicted_pct": [
+                18.958532812845245,
+                62.82929464044577,
+                18.21217254670888
+              ],
+              "tv_pp": 23.827060469912325,
+              "tasks": 128
+            },
+            "1:7": {
+              "human_pct": [
+                28.73732537870421,
+                42.57936215658832,
+                28.683312464707477
+              ],
+              "predicted_pct": [
+                82.48508507033932,
+                12.427880484152112,
+                5.087034445508336
+              ],
+              "tv_pp": 53.74775969163523,
+              "tasks": 128
+            },
+            "1:8": {
+              "human_pct": [
+                21.408755002332395,
+                54.80346664702558,
+                23.78777835064203
+              ],
+              "predicted_pct": [
+                56.57361714664506,
+                36.95219857111291,
+                6.474184282242029
+              ],
+              "tv_pp": 35.16486214431267,
+              "tasks": 128
+            },
+            "2:1": {
+              "human_pct": [
+                20.46611669253177,
+                44.20485175202156,
+                35.32903155544667
+              ],
+              "predicted_pct": [
+                41.85793242397017,
+                53.85934819897077,
+                4.282719377059
+              ],
+              "tv_pp": 31.046312178387637,
+              "tasks": 112
+            },
+            "2:2": {
+              "human_pct": [
+                58.270031854937486,
+                12.303629284761353,
+                29.426338860301154
+              ],
+              "predicted_pct": [
+                87.7045386479348,
+                4.416128944430835,
+                7.879332407634297
+              ],
+              "tv_pp": 29.43450679299734,
+              "tasks": 112
+            },
+            "2:3": {
+              "human_pct": [
+                18.056576547142573,
+                51.35451550545888,
+                30.588907947398543
+              ],
+              "predicted_pct": [
+                54.73603964170001,
+                43.34449617468486,
+                1.919464183615126
+              ],
+              "tv_pp": 36.67946309455743,
+              "tasks": 112
+            },
+            "2:4": {
+              "human_pct": [
+                24.258760107816723,
+                25.982193906722216,
+                49.75904598546106
+              ],
+              "predicted_pct": [
+                3.076587982248356,
+                90.72122845707734,
+                6.202183560674124
+              ],
+              "tv_pp": 64.73903455035521,
+              "tasks": 112
+            },
+            "2:5": {
+              "human_pct": [
+                13.147648996705593,
+                49.995916033651866,
+                36.85643496964254
+              ],
+              "predicted_pct": [
+                95.72272591140498,
+                3.8961038961038974,
+                0.3811701924909473
+              ],
+              "tv_pp": 82.57507691469948,
+              "tasks": 112
+            },
+            "2:6": {
+              "human_pct": [
+                37.346510931416596,
+                31.30768602466714,
+                31.34580304391626
+              ],
+              "predicted_pct": [
+                98.39908519153781,
+                1.2197446159710315,
+                0.381170192490947
+              ],
+              "tv_pp": 61.05257426012132,
+              "tasks": 112
+            },
+            "2:7": {
+              "human_pct": [
+                30.145116937569767,
+                38.47913093196114,
+                31.37575213046911
+              ],
+              "predicted_pct": [
+                4.584932886819675,
+                92.27585831359393,
+                3.1392087995861564
+              ],
+              "tv_pp": 53.79672738163291,
+              "tasks": 112
+            },
+            "2:8": {
+              "human_pct": [
+                34.177353045277606,
+                13.831032698957218,
+                51.991614255765185
+              ],
+              "predicted_pct": [
+                40.79337852922762,
+                41.683683193117176,
+                17.522938277655257
+              ],
+              "tv_pp": 34.46867597810995,
+              "tasks": 112
+            }
+          },
+          "individual_pct": {
+            "person_mean": 36.623095791376194,
+            "overall": 36.623095791376386,
+            "accuracy/All": 36.623095791376386,
+            "recall/All/2": 40.4878429858784,
+            "recall/All/1": 61.81633134698211,
+            "recall/All/0": 6.600027179247134
+          },
+          "individual_ci95": {
+            "person_mean": [
+              32.842616350374385,
+              40.48801397495482
+            ],
+            "overall": [
+              32.84261635037446,
+              40.48801397495485
+            ],
+            "accuracy/All": [
+              32.84261635037446,
+              40.48801397495485
+            ],
+            "recall/All/2": [
+              35.54439476536328,
+              45.55690067788369
+            ],
+            "recall/All/1": [
+              56.24301785273978,
+              67.19912278134991
+            ],
+            "recall/All/0": [
+              3.9418030098890315,
+              9.570885479056397
+            ]
+          },
+          "concentration": {
+            "95": 2,
+            "99": 0,
+            "100": 0
+          }
+        },
+        "统计基线": {
+          "tv_pp": 7.321383261245421,
+          "metrics": {
+            "1:1": {
+              "human_pct": [
+                55.6382116815202,
+                23.139623382681524,
+                21.22216493579828
+              ],
+              "predicted_pct": [
+                51.54312264368058,
+                19.504801381533447,
+                28.952075974785974
+              ],
+              "tv_pp": 7.729911038987694,
+              "tasks": 128
+            },
+            "1:2": {
+              "human_pct": [
+                67.14787262772826,
+                7.9128919005180345,
+                24.939235471753708
+              ],
+              "predicted_pct": [
+                59.02726476726363,
+                11.016199430205702,
+                29.956535802530592
+              ],
+              "tv_pp": 8.120607860464588,
+              "tasks": 128
+            },
+            "1:3": {
+              "human_pct": [
+                9.987478824482583,
+                68.8198178291719,
+                21.192703346345528
+              ],
+              "predicted_pct": [
+                12.717737056037256,
+                63.738652616717715,
+                23.54361032724502
+              ],
+              "tv_pp": 5.081165212454168,
+              "tasks": 128
+            },
+            "1:4": {
+              "human_pct": [
+                34.101789791559256,
+                25.226485968918027,
+                40.671724239522725
+              ],
+              "predicted_pct": [
+                26.584354721138293,
+                33.80424739006213,
+                39.61139788879949
+              ],
+              "tv_pp": 8.577761421144153,
+              "tasks": 128
+            },
+            "1:5": {
+              "human_pct": [
+                41.761803049274484,
+                31.600009820529827,
+                26.63818713019569
+              ],
+              "predicted_pct": [
+                49.19803826159422,
+                19.038918732141894,
+                31.763043006263807
+              ],
+              "tv_pp": 12.561091088387895,
+              "tasks": 128
+            },
+            "1:6": {
+              "human_pct": [
+                27.868208489848033,
+                39.0022341705335,
+                33.12955733961848
+              ],
+              "predicted_pct": [
+                32.93256140579022,
+                30.99866893196396,
+                36.06876966224576
+              ],
+              "tv_pp": 8.003565238569498,
+              "tasks": 128
+            },
+            "1:7": {
+              "human_pct": [
+                28.73732537870421,
+                42.57936215658832,
+                28.683312464707477
+              ],
+              "predicted_pct": [
+                25.231364051840416,
+                44.206386176306516,
+                30.56224977185304
+              ],
+              "tv_pp": 3.505961326863777,
+              "tasks": 128
+            },
+            "1:8": {
+              "human_pct": [
+                21.408755002332395,
+                54.80346664702558,
+                23.78777835064203
+              ],
+              "predicted_pct": [
+                16.16530524960463,
+                56.26554696265824,
+                27.56914778773708
+              ],
+              "tv_pp": 5.24344975272774,
+              "tasks": 128
+            },
+            "2:1": {
+              "human_pct": [
+                20.46611669253177,
+                44.20485175202156,
+                35.32903155544667
+              ],
+              "predicted_pct": [
+                25.056167028387677,
+                39.36188881416866,
+                35.581944157443644
+              ],
+              "tv_pp": 4.842962937852893,
+              "tasks": 112
+            },
+            "2:2": {
+              "human_pct": [
+                58.270031854937486,
+                12.303629284761353,
+                29.426338860301154
+              ],
+              "predicted_pct": [
+                57.036834840445515,
+                14.836213226160682,
+                28.12695193339377
+              ],
+              "tv_pp": 2.532583941399344,
+              "tasks": 112
+            },
+            "2:3": {
+              "human_pct": [
+                18.056576547142573,
+                51.35451550545888,
+                30.588907947398543
+              ],
+              "predicted_pct": [
+                17.707739406389557,
+                55.10876980484465,
+                27.183490788765813
+              ],
+              "tv_pp": 3.7542542993857593,
+              "tasks": 112
+            },
+            "2:4": {
+              "human_pct": [
+                24.258760107816723,
+                25.982193906722216,
+                49.75904598546106
+              ],
+              "predicted_pct": [
+                34.56369364215342,
+                23.726323914887125,
+                41.709982442959415
+              ],
+              "tv_pp": 10.304933534336717,
+              "tasks": 112
+            },
+            "2:5": {
+              "human_pct": [
+                13.147648996705593,
+                49.995916033651866,
+                36.85643496964254
+              ],
+              "predicted_pct": [
+                19.349974092346343,
+                49.92854575250982,
+                30.721480155143897
+              ],
+              "tv_pp": 6.202325095640722,
+              "tasks": 112
+            },
+            "2:6": {
+              "human_pct": [
+                37.346510931416596,
+                31.30768602466714,
+                31.34580304391626
+              ],
+              "predicted_pct": [
+                30.628987958750386,
+                36.90534821430484,
+                32.46566382694477
+              ],
+              "tv_pp": 6.71752297266621,
+              "tasks": 112
+            },
+            "2:7": {
+              "human_pct": [
+                30.145116937569767,
+                38.47913093196114,
+                31.37575213046911
+              ],
+              "predicted_pct": [
+                42.069037881568036,
+                25.969183919076492,
+                31.961778199355418
+              ],
+              "tv_pp": 12.50994701288461,
+              "tasks": 112
+            },
+            "2:8": {
+              "human_pct": [
+                34.177353045277606,
+                13.831032698957218,
+                51.991614255765185
+              ],
+              "predicted_pct": [
+                37.23142982285764,
+                22.23104536753816,
+                40.5375248096042
+              ],
+              "tv_pp": 11.454089446160982,
+              "tasks": 112
+            }
+          },
+          "individual_pct": {
+            "person_mean": 51.07603924606248,
+            "overall": 51.076039246062734,
+            "accuracy/All": 51.076039246062734,
+            "recall/All/2": 58.23786481381914,
+            "recall/All/1": 56.293389973843034,
+            "recall/All/0": 37.89089042233529
+          },
+          "individual_ci95": {
+            "person_mean": [
+              46.93278385618383,
+              54.781762361218696
+            ],
+            "overall": [
+              46.932783856183924,
+              54.781762361218775
+            ],
+            "accuracy/All": [
+              46.932783856183924,
+              54.781762361218775
+            ],
+            "recall/All/2": [
+              53.63518229450662,
+              62.68691905601015
+            ],
+            "recall/All/1": [
+              51.362051600165806,
+              60.93039108144837
+            ],
+            "recall/All/0": [
+              31.68858418118392,
+              44.09585805337172
+            ]
+          },
+          "concentration": {
+            "95": 0,
+            "99": 0,
+            "100": 0
+          }
+        }
+      },
+      "comparisons": [
+        {
+          "reference": "P0+B1",
+          "candidate": "P1+B3",
+          "gain_pp": -2.055142387224514,
+          "ci95": [
+            -5.26943131618763,
+            1.4146055883193738
+          ],
+          "accuracy_gain_pp": -0.7432868577330183,
+          "accuracy_ci95": [
+            -3.880591595662285,
+            2.4320657436095963
+          ],
+          "passes": false
+        },
+        {
+          "reference": "P0+B1",
+          "candidate": "P1+B1",
+          "gain_pp": -1.653463050355839,
+          "ci95": [
+            -5.014084587337043,
+            2.2384864257491373
+          ],
+          "accuracy_gain_pp": -0.15104570100696435,
+          "accuracy_ci95": [
+            -2.993629776658928,
+            2.922032339271875
+          ],
+          "passes": false
+        },
+        {
+          "reference": "P0+B3",
+          "candidate": "P1+B3",
+          "gain_pp": -0.9900233136915162,
+          "ci95": [
+            -4.470875296236975,
+            2.404555510117162
+          ],
+          "accuracy_gain_pp": -1.6831267751097343,
+          "accuracy_ci95": [
+            -4.921580493157765,
+            1.3476471727343151
+          ],
+          "passes": false
+        },
+        {
+          "reference": "P0+B1",
+          "candidate": "P0+B3",
+          "gain_pp": -1.0651190735329976,
+          "ci95": [
+            -3.985384045923465,
+            2.588715860448279
+          ],
+          "accuracy_gain_pp": 0.939839917376716,
+          "accuracy_ci95": [
+            -2.0393670926930074,
+            3.8027772398657493
+          ],
+          "passes": false
+        },
+        {
+          "reference": "P1+B1",
+          "candidate": "P1+B3",
+          "gain_pp": -0.40167933686867485,
+          "ci95": [
+            -3.6460601778791633,
+            2.856960559011929
+          ],
+          "accuracy_gain_pp": -0.5922411567260539,
+          "accuracy_ci95": [
+            -3.7822061386522066,
+            2.414060482829842
+          ],
+          "passes": false
+        },
+        {
+          "reference": "统计基线",
+          "candidate": "P1+B3",
+          "gain_pp": -31.629994481361123,
+          "ci95": [
+            -35.38029371456429,
+            -24.64790142685505
+          ],
+          "accuracy_gain_pp": -14.452943454686284,
+          "accuracy_ci95": [
+            -19.61451878388846,
+            -9.158597986057316
+          ],
+          "passes": false
+        }
+      ]
+    },
+    "pew": {
+      "matched": 240,
+      "training": 5575,
+      "cards": {},
+      "opt_out_pct": {},
+      "cells": {
+        "P0+B1": {
+          "tv_pp": 20.029542670797323,
+          "metrics": {
+            "ONLSHOP1_a": {
+              "human_pct": [
+                74.65634445426517,
+                25.343655545734826
+              ],
+              "predicted_pct": [
+                85.79386490862055,
+                14.20613509137943
+              ],
+              "tv_pp": 11.137520454355393,
+              "tasks": 238
+            },
+            "ONLSHOP1_b": {
+              "human_pct": [
+                31.40932749112377,
+                68.59067250887622
+              ],
+              "predicted_pct": [
+                41.95364487493794,
+                58.04635512506208
+              ],
+              "tv_pp": 10.54431738381416,
+              "tasks": 237
+            },
+            "ONLSHOP1_c": {
+              "human_pct": [
+                82.9512728832934,
+                17.048727116706612
+              ],
+              "predicted_pct": [
+                88.58858519999514,
+                11.411414800004854
+              ],
+              "tv_pp": 5.6373123167017525,
+              "tasks": 238
+            },
+            "ONLSHOP3": {
+              "human_pct": [
+                44.82311994279408,
+                51.388697675014924,
+                3.788182382190989
+              ],
+              "predicted_pct": [
+                80.30740927118642,
+                19.69259072881356,
+                0.0
+              ],
+              "tv_pp": 35.484289328392336,
+              "tasks": 169
+            },
+            "ONLSHOP4": {
+              "human_pct": [
+                32.996345116354036,
+                62.301123917176135,
+                4.702530966469814
+              ],
+              "predicted_pct": [
+                73.52705681952042,
+                26.47294318047952,
+                0.0
+              ],
+              "tv_pp": 40.53071170316641,
+              "tasks": 169
+            },
+            "SHOP4": {
+              "human_pct": [
+                40.04062810891428,
+                59.95937189108573
+              ],
+              "predicted_pct": [
+                56.883732947268165,
+                43.116267052731864
+              ],
+              "tv_pp": 16.843104838353877,
+              "tasks": 238
+            }
+          },
+          "individual_pct": {
+            "person_mean": 63.07107386736403,
+            "overall": 61.75571223483015,
+            "accuracy/ONLSHOP1_a": 64.19787261278451,
+            "recall/ONLSHOP1_a/1": 83.48123852489874,
+            "accuracy/ONLSHOP1_b": 54.33949697274025,
+            "recall/ONLSHOP1_b/2": 59.02881663406896,
+            "accuracy/ONLSHOP1_c": 82.02312061815736,
+            "recall/ONLSHOP1_c/1": 92.56215930375066,
+            "accuracy/SHOP4": 63.43180480794397,
+            "recall/SHOP4/1": 75.36865518187173,
+            "accuracy/ONLSHOP3": 51.444880745344236,
+            "recall/ONLSHOP3/2": 25.04882995857207,
+            "accuracy/ONLSHOP4": 49.24677620961924,
+            "recall/ONLSHOP4/2": 31.180505468685926,
+            "recall/ONLSHOP1_a/2": 7.39369118068982,
+            "recall/SHOP4/2": 55.46042399557669,
+            "recall/ONLSHOP4/1": 90.37658793546525,
+            "recall/ONLSHOP3/1": 86.05517263419797,
+            "recall/ONLSHOP1_b/1": 44.099112511451665,
+            "recall/ONLSHOP1_c/2": 30.745000676901075,
+            "recall/ONLSHOP4/3": 0.0,
+            "recall/ONLSHOP3/3": 0.0
+          },
+          "individual_ci95": {
+            "person_mean": [
+              57.613443239274325,
+              68.35942278028368
+            ],
+            "overall": [
+              56.6919078068783,
+              66.77400622724818
+            ],
+            "accuracy/ONLSHOP1_a": [
+              54.46283775668228,
+              74.30014376097562
+            ],
+            "recall/ONLSHOP1_a/1": [
+              74.48925516821491,
+              90.09939727064466
+            ],
+            "accuracy/ONLSHOP1_b": [
+              42.991349555203776,
+              64.52746528410347
+            ],
+            "recall/ONLSHOP1_b/2": [
+              49.54617775362007,
+              68.22212857650516
+            ],
+            "accuracy/ONLSHOP1_c": [
+              73.99308372198456,
+              88.35440166424411
+            ],
+            "recall/ONLSHOP1_c/1": [
+              90.06620110455117,
+              95.01687878240213
+            ],
+            "accuracy/SHOP4": [
+              52.118765471032845,
+              74.07045076399066
+            ],
+            "recall/SHOP4/1": [
+              64.98815087303898,
+              83.55707650658373
+            ],
+            "accuracy/ONLSHOP3": [
+              38.82490149660844,
+              62.90958769246939
+            ],
+            "recall/ONLSHOP3/2": [
+              17.420509533727284,
+              35.27268426765417
+            ],
+            "accuracy/ONLSHOP4": [
+              36.80395218051554,
+              62.490141726757514
+            ],
+            "recall/ONLSHOP4/2": [
+              18.808160951164407,
+              47.3658488714639
+            ],
+            "recall/ONLSHOP1_a/2": [
+              2.0825180335396505,
+              17.186823718753
+            ],
+            "recall/SHOP4/2": [
+              41.20384058037595,
+              69.85401359607673
+            ],
+            "recall/ONLSHOP4/1": [
+              82.37200434292434,
+              95.69230565648913
+            ],
+            "recall/ONLSHOP3/1": [
+              68.02563400075178,
+              98.60916824960029
+            ],
+            "recall/ONLSHOP1_b/1": [
+              21.204907675058468,
+              64.01527215358098
+            ],
+            "recall/ONLSHOP1_c/2": [
+              18.326402847151037,
+              49.047671125324264
+            ],
+            "recall/ONLSHOP4/3": [
+              0.0,
+              0.0
+            ],
+            "recall/ONLSHOP3/3": [
+              0.0,
+              0.0
+            ]
+          },
+          "concentration": {
+            "95": 0,
+            "99": 0,
+            "100": 0
+          }
+        },
+        "P0+B3": {
+          "tv_pp": 26.220062287238317,
+          "metrics": {
+            "ONLSHOP1_a": {
+              "human_pct": [
+                74.65634445426517,
+                25.343655545734826
+              ],
+              "predicted_pct": [
+                84.22096430525205,
+                15.77903569474796
+              ],
+              "tv_pp": 9.564619850986878,
+              "tasks": 238
+            },
+            "ONLSHOP1_b": {
+              "human_pct": [
+                31.40932749112377,
+                68.59067250887622
+              ],
+              "predicted_pct": [
+                51.72056472855432,
+                48.2794352714457
+              ],
+              "tv_pp": 20.31123723743054,
+              "tasks": 237
+            },
+            "ONLSHOP1_c": {
+              "human_pct": [
+                82.9512728832934,
+                17.048727116706612
+              ],
+              "predicted_pct": [
+                90.27394040244529,
+                9.726059597554674
+              ],
+              "tv_pp": 7.322667519151921,
+              "tasks": 238
+            },
+            "ONLSHOP3": {
+              "human_pct": [
+                44.82311994279408,
+                51.388697675014924,
+                3.788182382190989
+              ],
+              "predicted_pct": [
+                87.29526418193845,
+                12.704735818061533,
+                0.0
+              ],
+              "tv_pp": 42.47214423914437,
+              "tasks": 169
+            },
+            "ONLSHOP4": {
+              "human_pct": [
+                32.996345116354036,
+                62.301123917176135,
+                4.702530966469814
+              ],
+              "predicted_pct": [
+                80.16250644441416,
+                19.837493555585798,
+                0.0
+              ],
+              "tv_pp": 47.166161328060134,
+              "tasks": 169
+            },
+            "SHOP4": {
+              "human_pct": [
+                40.04062810891428,
+                59.95937189108573
+              ],
+              "predicted_pct": [
+                70.52417165757032,
+                29.475828342429672
+              ],
+              "tv_pp": 30.483543548656055,
+              "tasks": 238
+            }
+          },
+          "individual_pct": {
+            "person_mean": 62.46470696018702,
+            "overall": 60.89687971199182,
+            "accuracy/ONLSHOP1_a": 75.99389186957382,
+            "recall/ONLSHOP1_a/1": 90.32802343524455,
+            "accuracy/ONLSHOP1_b": 45.49152024845771,
+            "recall/ONLSHOP1_b/2": 45.4592627158667,
+            "accuracy/ONLSHOP1_c": 81.96461760650396,
+            "recall/ONLSHOP1_c/1": 93.54276643264042,
+            "accuracy/SHOP4": 54.49506825552854,
+            "recall/SHOP4/1": 81.24231698494363,
+            "accuracy/ONLSHOP3": 55.448025603657065,
+            "recall/ONLSHOP3/2": 22.14477693964301,
+            "accuracy/ONLSHOP4": 46.8276650743512,
+            "recall/ONLSHOP4/2": 25.80861403932076,
+            "recall/ONLSHOP1_a/2": 33.768970461203395,
+            "recall/SHOP4/2": 36.63336281177353,
+            "recall/ONLSHOP4/1": 93.18792233497477,
+            "recall/ONLSHOP3/1": 98.31558621439076,
+            "recall/ONLSHOP1_b/1": 45.5619632038033,
+            "recall/ONLSHOP1_c/2": 25.630665154471387,
+            "recall/ONLSHOP4/3": 0.0,
+            "recall/ONLSHOP3/3": 0.0
+          },
+          "individual_ci95": {
+            "person_mean": [
+              58.23914049298259,
+              66.90405676521077
+            ],
+            "overall": [
+              57.13114423890743,
+              64.93247568603348
+            ],
+            "accuracy/ONLSHOP1_a": [
+              66.06532010980432,
+              85.01735413579321
+            ],
+            "recall/ONLSHOP1_a/1": [
+              85.08735762956019,
+              94.72716050124583
+            ],
+            "accuracy/ONLSHOP1_b": [
+              34.802362652236205,
+              57.487414683570066
+            ],
+            "recall/ONLSHOP1_b/2": [
+              33.11980244191996,
+              57.51206622914211
+            ],
+            "accuracy/ONLSHOP1_c": [
+              73.77316190597787,
+              88.71423386912105
+            ],
+            "recall/ONLSHOP1_c/1": [
+              89.77450570087623,
+              96.91282738950756
+            ],
+            "accuracy/SHOP4": [
+              44.8631925644578,
+              64.92267732950617
+            ],
+            "recall/SHOP4/1": [
+              72.26146113991999,
+              89.37310613089224
+            ],
+            "accuracy/ONLSHOP3": [
+              41.49903371440549,
+              67.57640477032226
+            ],
+            "recall/ONLSHOP3/2": [
+              14.90042413571495,
+              31.496014433691176
+            ],
+            "accuracy/ONLSHOP4": [
+              33.60477025093241,
+              60.13660619720647
+            ],
+            "recall/ONLSHOP4/2": [
+              14.419970099053664,
+              40.00238177930943
+            ],
+            "recall/ONLSHOP1_a/2": [
+              13.088001036870098,
+              57.793971553081946
+            ],
+            "recall/SHOP4/2": [
+              26.969756050223204,
+              49.50207132996562
+            ],
+            "recall/ONLSHOP4/1": [
+              86.50161028422563,
+              97.46378925204233
+            ],
+            "recall/ONLSHOP3/1": [
+              95.34852436689458,
+              100.0
+            ],
+            "recall/ONLSHOP1_b/1": [
+              24.182902510405405,
+              66.83365459374184
+            ],
+            "recall/ONLSHOP1_c/2": [
+              12.000525030727127,
+              44.242059054219716
+            ],
+            "recall/ONLSHOP4/3": [
+              0.0,
+              0.0
+            ],
+            "recall/ONLSHOP3/3": [
+              0.0,
+              0.0
+            ]
+          },
+          "concentration": {
+            "95": 0,
+            "99": 0,
+            "100": 0
+          }
+        },
+        "P1+B1": {
+          "tv_pp": 25.009738047542367,
+          "metrics": {
+            "ONLSHOP1_a": {
+              "human_pct": [
+                74.65634445426517,
+                25.343655545734826
+              ],
+              "predicted_pct": [
+                98.64140281471035,
+                1.3585971852897025
+              ],
+              "tv_pp": 23.985058360445148,
+              "tasks": 238
+            },
+            "ONLSHOP1_b": {
+              "human_pct": [
+                31.40932749112377,
+                68.59067250887622
+              ],
+              "predicted_pct": [
+                55.66628130574881,
+                44.33371869425121
+              ],
+              "tv_pp": 24.256953814625028,
+              "tasks": 237
+            },
+            "ONLSHOP1_c": {
+              "human_pct": [
+                82.9512728832934,
+                17.048727116706612
+              ],
+              "predicted_pct": [
+                96.17437567048623,
+                3.8256243295137935
+              ],
+              "tv_pp": 13.22310278719283,
+              "tasks": 238
+            },
+            "ONLSHOP3": {
+              "human_pct": [
+                44.82311994279408,
+                51.388697675014924,
+                3.788182382190989
+              ],
+              "predicted_pct": [
+                86.78047473998393,
+                13.21952526001606,
+                0.0
+              ],
+              "tv_pp": 41.95735479718985,
+              "tasks": 169
+            },
+            "ONLSHOP4": {
+              "human_pct": [
+                32.996345116354036,
+                62.301123917176135,
+                4.702530966469814
+              ],
+              "predicted_pct": [
+                73.48520081456228,
+                26.51479918543769,
+                0.0
+              ],
+              "tv_pp": 40.488855698208255,
+              "tasks": 169
+            },
+            "SHOP4": {
+              "human_pct": [
+                40.04062810891428,
+                59.95937189108573
+              ],
+              "predicted_pct": [
+                46.18773093650736,
+                53.81226906349268
+              ],
+              "tv_pp": 6.147102827593065,
+              "tasks": 238
+            }
+          },
+          "individual_pct": {
+            "person_mean": 62.98550289988306,
+            "overall": 62.000375071995556,
+            "accuracy/ONLSHOP1_a": 73.29774726897544,
+            "recall/ONLSHOP1_a/1": 98.1801986218037,
+            "accuracy/ONLSHOP1_b": 47.10017828752205,
+            "recall/ONLSHOP1_b/2": 43.755635639001625,
+            "accuracy/ONLSHOP1_c": 81.92071250899475,
+            "recall/ONLSHOP1_c/1": 97.07286908626182,
+            "accuracy/SHOP4": 66.84099761337512,
+            "recall/SHOP4/1": 66.26938582786852,
+            "accuracy/ONLSHOP3": 55.40745774294983,
+            "recall/ONLSHOP3/2": 22.606183438253183,
+            "accuracy/ONLSHOP4": 39.98208056353913,
+            "recall/ONLSHOP4/2": 25.27038407510007,
+            "recall/ONLSHOP1_a/2": 0.0,
+            "recall/SHOP4/2": 67.22271767154588,
+            "recall/ONLSHOP4/1": 73.45767290617707,
+            "recall/ONLSHOP3/1": 97.69608750103643,
+            "recall/ONLSHOP1_b/1": 54.40388224493607,
+            "recall/ONLSHOP1_c/2": 8.197280465813412,
+            "recall/ONLSHOP4/3": 0.0,
+            "recall/ONLSHOP3/3": 0.0
+          },
+          "individual_ci95": {
+            "person_mean": [
+              58.865697302817324,
+              67.55233080907567
+            ],
+            "overall": [
+              58.14690974924348,
+              66.13722737586056
+            ],
+            "accuracy/ONLSHOP1_a": [
+              63.69344287520277,
+              83.15571757535014
+            ],
+            "recall/ONLSHOP1_a/1": [
+              96.29654983858816,
+              99.63001232393036
+            ],
+            "accuracy/ONLSHOP1_b": [
+              35.64232537645792,
+              59.02882899954411
+            ],
+            "recall/ONLSHOP1_b/2": [
+              32.005702437535966,
+              56.65854081425136
+            ],
+            "accuracy/ONLSHOP1_c": [
+              74.17166576461862,
+              88.2419991715748
+            ],
+            "recall/ONLSHOP1_c/1": [
+              95.1118044205666,
+              98.70270116094096
+            ],
+            "accuracy/SHOP4": [
+              55.67463391509329,
+              76.51671579987253
+            ],
+            "recall/SHOP4/1": [
+              54.40954242579486,
+              76.79442146853533
+            ],
+            "accuracy/ONLSHOP3": [
+              41.26904098965295,
+              67.32383824682083
+            ],
+            "recall/ONLSHOP3/2": [
+              15.19680042566777,
+              32.156023531058786
+            ],
+            "accuracy/ONLSHOP4": [
+              29.199902883599737,
+              52.58244964184942
+            ],
+            "recall/ONLSHOP4/2": [
+              17.44147946438414,
+              37.04394600137548
+            ],
+            "recall/ONLSHOP1_a/2": [
+              0.0,
+              0.0
+            ],
+            "recall/SHOP4/2": [
+              54.22082595986028,
+              80.42440563155128
+            ],
+            "recall/ONLSHOP4/1": [
+              54.43022675040152,
+              89.37212006029623
+            ],
+            "recall/ONLSHOP3/1": [
+              94.28454342499968,
+              99.77910472933283
+            ],
+            "recall/ONLSHOP1_b/1": [
+              33.26079921232992,
+              72.11315487110964
+            ],
+            "recall/ONLSHOP1_c/2": [
+              2.5314391174675372,
+              17.81699637938679
+            ],
+            "recall/ONLSHOP4/3": [
+              0.0,
+              0.0
+            ],
+            "recall/ONLSHOP3/3": [
+              0.0,
+              0.0
+            ]
+          },
+          "concentration": {
+            "95": 2,
+            "99": 0,
+            "100": 0
+          }
+        },
+        "P1+B3": {
+          "tv_pp": 29.659251081428348,
+          "metrics": {
+            "ONLSHOP1_a": {
+              "human_pct": [
+                74.65634445426517,
+                25.343655545734826
+              ],
+              "predicted_pct": [
+                91.19904647260721,
+                8.800953527392812
+              ],
+              "tv_pp": 16.542702018342027,
+              "tasks": 238
+            },
+            "ONLSHOP1_b": {
+              "human_pct": [
+                31.40932749112377,
+                68.59067250887622
+              ],
+              "predicted_pct": [
+                66.19312500908394,
+                33.80687499091606
+              ],
+              "tv_pp": 34.78379751796017,
+              "tasks": 237
+            },
+            "ONLSHOP1_c": {
+              "human_pct": [
+                82.9512728832934,
+                17.048727116706612
+              ],
+              "predicted_pct": [
+                97.58066349421154,
+                2.419336505788471
+              ],
+              "tv_pp": 14.629390610918136,
+              "tasks": 238
+            },
+            "ONLSHOP3": {
+              "human_pct": [
+                44.82311994279408,
+                51.388697675014924,
+                3.788182382190989
+              ],
+              "predicted_pct": [
+                86.05957650269302,
+                13.940423497306956,
+                0.0
+              ],
+              "tv_pp": 41.23645655989895,
+              "tasks": 169
+            },
+            "ONLSHOP4": {
+              "human_pct": [
+                32.996345116354036,
+                62.301123917176135,
+                4.702530966469814
+              ],
+              "predicted_pct": [
+                74.87349902461837,
+                25.126500975381582,
+                0.0
+              ],
+              "tv_pp": 41.87715390826435,
+              "tasks": 169
+            },
+            "SHOP4": {
+              "human_pct": [
+                40.04062810891428,
+                59.95937189108573
+              ],
+              "predicted_pct": [
+                68.92663398210075,
+                31.07336601789926
+              ],
+              "tv_pp": 28.88600587318647,
+              "tasks": 238
+            }
+          },
+          "individual_pct": {
+            "person_mean": 62.14017336352778,
+            "overall": 61.13203348577544,
+            "accuracy/ONLSHOP1_a": 78.44579120280252,
+            "recall/ONLSHOP1_a/1": 96.64361628238741,
+            "accuracy/ONLSHOP1_b": 42.94687522823519,
+            "recall/ONLSHOP1_b/2": 33.054365170540855,
+            "accuracy/ONLSHOP1_c": 82.71674914826578,
+            "recall/ONLSHOP1_c/1": 98.4003498990607,
+            "accuracy/SHOP4": 55.381663748412684,
+            "recall/SHOP4/1": 80.35454097322422,
+            "accuracy/ONLSHOP3": 55.89642184266321,
+            "recall/ONLSHOP3/2": 23.78335117332158,
+            "accuracy/ONLSHOP4": 45.97284952218133,
+            "recall/ONLSHOP4/2": 27.61735007297332,
+            "recall/ONLSHOP1_a/2": 24.83935329141793,
+            "recall/SHOP4/2": 38.7048764801172,
+            "recall/ONLSHOP4/1": 87.18217102269324,
+            "recall/ONLSHOP3/1": 97.43736595524314,
+            "recall/ONLSHOP1_b/1": 64.54981842559678,
+            "recall/ONLSHOP1_c/2": 6.407553935859398,
+            "recall/ONLSHOP4/3": 0.0,
+            "recall/ONLSHOP3/3": 0.0
+          },
+          "individual_ci95": {
+            "person_mean": [
+              57.98466489920841,
+              66.27302748020975
+            ],
+            "overall": [
+              57.28081416771837,
+              64.91732050893566
+            ],
+            "accuracy/ONLSHOP1_a": [
+              68.73298205481667,
+              87.22544262096729
+            ],
+            "recall/ONLSHOP1_a/1": [
+              93.83401468082054,
+              98.8810055528845
+            ],
+            "accuracy/ONLSHOP1_b": [
+              31.363762608534337,
+              54.97216741449879
+            ],
+            "recall/ONLSHOP1_b/2": [
+              22.33550024579196,
+              45.10100852388535
+            ],
+            "accuracy/ONLSHOP1_c": [
+              74.73770615552928,
+              89.17594971925932
+            ],
+            "recall/ONLSHOP1_c/1": [
+              96.79846918190755,
+              99.59645276423676
+            ],
+            "accuracy/SHOP4": [
+              44.85515541657853,
+              65.89561413124527
+            ],
+            "recall/SHOP4/1": [
+              71.22889296995882,
+              88.45716090028776
+            ],
+            "accuracy/ONLSHOP3": [
+              42.01368200003393,
+              68.13942611571078
+            ],
+            "recall/ONLSHOP3/2": [
+              16.47616070824595,
+              33.55871087559254
+            ],
+            "accuracy/ONLSHOP4": [
+              32.99308589486656,
+              59.5859020401626
+            ],
+            "recall/ONLSHOP4/2": [
+              16.039412954189668,
+              42.04854027008829
+            ],
+            "recall/ONLSHOP1_a/2": [
+              4.585973205197712,
+              48.352819663106274
+            ],
+            "recall/SHOP4/2": [
+              26.803541927034747,
+              52.46613976985664
+            ],
+            "recall/ONLSHOP4/1": [
+              74.15033741231711,
+              95.55899806233184
+            ],
+            "recall/ONLSHOP3/1": [
+              93.97856798118512,
+              99.50115428419896
+            ],
+            "recall/ONLSHOP1_b/1": [
+              44.15135973233774,
+              81.40500511444604
+            ],
+            "recall/ONLSHOP1_c/2": [
+              1.119618841944317,
+              14.572786578025475
+            ],
+            "recall/ONLSHOP4/3": [
+              0.0,
+              0.0
+            ],
+            "recall/ONLSHOP3/3": [
+              0.0,
+              0.0
+            ]
+          },
+          "concentration": {
+            "95": 1,
+            "99": 0,
+            "100": 0
+          }
+        },
+        "统计基线": {
+          "tv_pp": 2.3782602879276493,
+          "metrics": {
+            "ONLSHOP1_a": {
+              "human_pct": [
+                74.65634445426517,
+                25.343655545734826
+              ],
+              "predicted_pct": [
+                72.01013371600469,
+                27.989866283995312
+              ],
+              "tv_pp": 2.646210738260482,
+              "tasks": 238
+            },
+            "ONLSHOP1_b": {
+              "human_pct": [
+                31.40932749112377,
+                68.59067250887622
+              ],
+              "predicted_pct": [
+                30.27638963576569,
+                69.72361036423432
+              ],
+              "tv_pp": 1.1329378553580876,
+              "tasks": 237
+            },
+            "ONLSHOP1_c": {
+              "human_pct": [
+                82.9512728832934,
+                17.048727116706612
+              ],
+              "predicted_pct": [
+                79.49032913871477,
+                20.50967086128523
+              ],
+              "tv_pp": 3.4609437445786235,
+              "tasks": 238
+            },
+            "ONLSHOP3": {
+              "human_pct": [
+                44.82311994279408,
+                51.388697675014924,
+                3.788182382190989
+              ],
+              "predicted_pct": [
+                40.54184023920357,
+                51.76466915693094,
+                7.693490603865513
+              ],
+              "tv_pp": 4.281279703590524,
+              "tasks": 169
+            },
+            "ONLSHOP4": {
+              "human_pct": [
+                32.996345116354036,
+                62.301123917176135,
+                4.702530966469814
+              ],
+              "predicted_pct": [
+                30.703164582831675,
+                62.50163932335639,
+                6.7951960938119536
+              ],
+              "tv_pp": 2.2931805335223783,
+              "tasks": 169
+            },
+            "SHOP4": {
+              "human_pct": [
+                40.04062810891428,
+                59.95937189108573
+              ],
+              "predicted_pct": [
+                40.49563726117007,
+                59.50436273882992
+              ],
+              "tv_pp": 0.4550091522558003,
+              "tasks": 238
+            }
+          },
+          "individual_pct": {
+            "person_mean": 67.28718634256616,
+            "overall": 66.6446504713042,
+            "accuracy/ONLSHOP1_a": 74.65634445426514,
+            "recall/ONLSHOP1_a/1": 100.0,
+            "accuracy/ONLSHOP1_b": 68.59067250887621,
+            "recall/ONLSHOP1_b/2": 100.0,
+            "accuracy/ONLSHOP1_c": 82.95127288329337,
+            "recall/ONLSHOP1_c/1": 100.0,
+            "accuracy/SHOP4": 59.95937189108568,
+            "recall/SHOP4/1": 0.0,
+            "accuracy/ONLSHOP3": 44.89154033844249,
+            "recall/ONLSHOP3/2": 54.754103696996616,
+            "accuracy/ONLSHOP4": 62.30112391717617,
+            "recall/ONLSHOP4/2": 100.0,
+            "recall/ONLSHOP1_a/2": 0.0,
+            "recall/SHOP4/2": 100.0,
+            "recall/ONLSHOP4/1": 0.0,
+            "recall/ONLSHOP3/1": 37.37829840116289,
+            "recall/ONLSHOP1_b/1": 0.0,
+            "recall/ONLSHOP1_c/2": 0.0,
+            "recall/ONLSHOP4/3": 0.0,
+            "recall/ONLSHOP3/3": 0.0
+          },
+          "individual_ci95": {
+            "person_mean": [
+              63.30541325849361,
+              71.63446915047011
+            ],
+            "overall": [
+              62.673286872066036,
+              70.77849890199676
+            ],
+            "accuracy/ONLSHOP1_a": [
+              65.38429169174707,
+              84.15046949399743
+            ],
+            "recall/ONLSHOP1_a/1": [
+              100.0,
+              100.0
+            ],
+            "accuracy/ONLSHOP1_b": [
+              57.55744110887852,
+              79.75290841815388
+            ],
+            "recall/ONLSHOP1_b/2": [
+              99.99999999999999,
+              100.00000000000001
+            ],
+            "accuracy/ONLSHOP1_c": [
+              75.08006764916068,
+              89.32812828116766
+            ],
+            "recall/ONLSHOP1_c/1": [
+              100.0,
+              100.0
+            ],
+            "accuracy/SHOP4": [
+              50.731232614528096,
+              68.7448740517894
+            ],
+            "recall/SHOP4/1": [
+              0.0,
+              0.0
+            ],
+            "accuracy/ONLSHOP3": [
+              32.39036405366543,
+              58.80066904251843
+            ],
+            "recall/ONLSHOP3/2": [
+              41.1849575105574,
+              70.32558556078644
+            ],
+            "accuracy/ONLSHOP4": [
+              48.65426131966223,
+              74.65053454346356
+            ],
+            "recall/ONLSHOP4/2": [
+              99.99999999999999,
+              100.00000000000001
+            ],
+            "recall/ONLSHOP1_a/2": [
+              0.0,
+              0.0
+            ],
+            "recall/SHOP4/2": [
+              99.99999999999999,
+              100.00000000000001
+            ],
+            "recall/ONLSHOP4/1": [
+              0.0,
+              0.0
+            ],
+            "recall/ONLSHOP3/1": [
+              17.57426108423941,
+              54.67299786828744
+            ],
+            "recall/ONLSHOP1_b/1": [
+              0.0,
+              0.0
+            ],
+            "recall/ONLSHOP1_c/2": [
+              0.0,
+              0.0
+            ],
+            "recall/ONLSHOP4/3": [
+              0.0,
+              0.0
+            ],
+            "recall/ONLSHOP3/3": [
+              0.0,
+              0.0
+            ]
+          },
+          "concentration": {
+            "95": 0,
+            "99": 0,
+            "100": 0
+          }
+        }
+      },
+      "comparisons": [
+        {
+          "reference": "P0+B1",
+          "candidate": "P1+B3",
+          "gain_pp": -9.629708410631025,
+          "ci95": [
+            -15.830194334845187,
+            -2.3846110158694938
+          ],
+          "accuracy_gain_pp": -0.9309005038362486,
+          "accuracy_ci95": [
+            -5.79916264970101,
+            4.098713706780699
+          ],
+          "passes": false
+        },
+        {
+          "reference": "P0+B1",
+          "candidate": "P1+B1",
+          "gain_pp": -4.980195376745044,
+          "ci95": [
+            -10.534570294766098,
+            0.15929034844846243
+          ],
+          "accuracy_gain_pp": -0.08557096748096882,
+          "accuracy_ci95": [
+            -4.085826176236336,
+            3.3669103553392508
+          ],
+          "passes": false
+        },
+        {
+          "reference": "P0+B3",
+          "candidate": "P1+B3",
+          "gain_pp": -3.4391887941900308,
+          "ci95": [
+            -6.7546943359053335,
+            -0.17781746852115538
+          ],
+          "accuracy_gain_pp": -0.32453359665924353,
+          "accuracy_ci95": [
+            -3.5043934012956184,
+            2.5265045006168383
+          ],
+          "passes": false
+        },
+        {
+          "reference": "P0+B1",
+          "candidate": "P0+B3",
+          "gain_pp": -6.190519616440994,
+          "ci95": [
+            -13.792563756761513,
+            0.5796953752231931
+          ],
+          "accuracy_gain_pp": -0.606366907177005,
+          "accuracy_ci95": [
+            -4.306191830121782,
+            3.2582199978063655
+          ],
+          "passes": false
+        },
+        {
+          "reference": "P1+B1",
+          "candidate": "P1+B3",
+          "gain_pp": -4.649513033885981,
+          "ci95": [
+            -9.497765545620005,
+            0.17496188566416862
+          ],
+          "accuracy_gain_pp": -0.8453295363552797,
+          "accuracy_ci95": [
+            -4.432894427930091,
+            2.7697325276639027
+          ],
+          "passes": false
+        },
+        {
+          "reference": "统计基线",
+          "candidate": "P1+B3",
+          "gain_pp": -27.2809907935007,
+          "ci95": [
+            -30.310944656906752,
+            -17.16599110724241
+          ],
+          "accuracy_gain_pp": -5.147012979038379,
+          "accuracy_ci95": [
+            -12.18147691793321,
+            1.443779383810692
+          ],
+          "passes": false
+        }
+      ]
+    }
+  }
+}

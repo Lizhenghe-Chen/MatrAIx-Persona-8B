@@ -1,0 +1,24 @@
+{
+  "survey": "anes",
+  "arm": "C",
+  "id": "dag-20261109-32985",
+  "answers": {
+    "V241273": "3",
+    "V241270": "1",
+    "V241267": "1",
+    "V241282": "3",
+    "V241276": "1",
+    "V241264": "3"
+  },
+  "errors": [],
+  "usage": {
+    "n_input_tokens": 815,
+    "n_output_tokens": 829,
+    "n_cache_tokens": 0,
+    "cost_usd": 0.0012392999999999998,
+    "request_id": "6edfd726-24ef-4e71-9b84-2b43b68eeaa0",
+    "model": "deepseek-flash",
+    "provider": "deepseek",
+    "cost_source": "estimated"
+  }
+}

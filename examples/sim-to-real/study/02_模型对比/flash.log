@@ -1,0 +1,24 @@
+Traceback (most recent call last):
+  File "/Volumes/DoggyChen/GitProjects/MatrAIx-Persona-8B/examples/sim-to-real/optimize.py", line 230, in <module>
+    main()
+  File "/Volumes/DoggyChen/GitProjects/MatrAIx-Persona-8B/examples/sim-to-real/optimize.py", line 216, in main
+    dump(path, manifest)
+  File "/Volumes/DoggyChen/GitProjects/MatrAIx-Persona-8B/examples/sim-to-real/experiment.py", line 67, in dump
+    temporary.replace(path)
+  File "/Users/bunnychen/.local/share/uv/python/cpython-3.12.12-macos-aarch64-none/lib/python3.12/pathlib.py", line 1376, in replace
+    os.replace(self, target)
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/bunnychen/Documents/MatrAIx问卷对照实验/02_模型对比/manifest.json.tmp' -> '/Users/bunnychen/Documents/MatrAIx问卷对照实验/02_模型对比/manifest.json'
+02_模型对比/pilot: 3 pending of 3
+pilot: 3/3 valid
+02_模型对比/formal: 2160 pending of 2160
+02_模型对比/formal: 200/2160 processed
+02_模型对比/formal: 400/2160 processed
+02_模型对比/formal: 600/2160 processed
+02_模型对比/formal: 800/2160 processed
+02_模型对比/formal: 1000/2160 processed
+02_模型对比/formal: 1200/2160 processed
+02_模型对比/formal: 1400/2160 processed
+02_模型对比/formal: 1600/2160 processed
+02_模型对比/formal: 1800/2160 processed
+02_模型对比/formal: 2000/2160 processed
+formal: 2160/2160 valid

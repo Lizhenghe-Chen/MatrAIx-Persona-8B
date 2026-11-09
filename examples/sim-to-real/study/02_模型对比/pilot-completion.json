@@ -1,0 +1,38 @@
+{
+  "anes/flash-C": [
+    0,
+    1
+  ],
+  "anes/pro-C": [
+    0,
+    1
+  ],
+  "anes/qwen-C": [
+    1,
+    1
+  ],
+  "pew/flash-C": [
+    0,
+    1
+  ],
+  "pew/pro-C": [
+    0,
+    1
+  ],
+  "pew/qwen-C": [
+    1,
+    1
+  ],
+  "shed/flash-C": [
+    0,
+    1
+  ],
+  "shed/pro-C": [
+    0,
+    1
+  ],
+  "shed/qwen-C": [
+    1,
+    1
+  ]
+}

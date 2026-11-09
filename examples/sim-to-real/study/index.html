@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MatrAIx 真人对照研究总报告</title>
+<style>
+:root{--ink:#17332b;--green:#196550;--muted:#4a6259;--paper:#f5f5ec;--card:#fffefa;--line:#d5dfd5;--purple:#644f94}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 system-ui,"PingFang SC","Microsoft YaHei",sans-serif}
+.wrap{width:min(1060px,calc(100% - 34px));margin:auto}header{background:var(--ink);color:white;padding:48px 0 35px}header p{color:#d8e7df;max-width:65ch}header a{color:#d1eddb}a{color:var(--green);text-underline-offset:3px}
+h1,h2,h3{line-height:1.25}h1{font-size:clamp(2rem,5vw,3.5rem);margin:.25em 0}h2{font-size:clamp(1.4rem,3vw,2rem);margin:0 0 .65em}h3{font-size:1.13rem}nav{display:flex;gap:8px 20px;flex-wrap:wrap;margin-top:20px}
+main{padding-bottom:50px}section{padding:30px 0;border-bottom:1px solid var(--line)}p{margin:.6em 0 1em}
+.kicker{font-size:.82rem;font-weight:700;letter-spacing:.12em;color:#bde5cd}.summary{font-size:1.12rem}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.card,.panel{background:var(--card);border:1px solid var(--line);padding:13px 16px;border-radius:12px}.card h3{margin:.25em 0}.card p{margin:.4em 0}.number{font-size:1.8rem;font-weight:730;font-variant-numeric:tabular-nums}.hint,small{color:var(--muted)}
+.scroll{overflow:auto;margin:12px 0}table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}th,td{text-align:right;padding:8px 12px;border-bottom:1px solid var(--line);white-space:nowrap}th:first-child,td:first-child{text-align:left}thead{background:#e4eee4}caption{text-align:left;font-weight:700;margin-bottom:6px}
+details{margin:.8em 0}summary{cursor:pointer;font-weight:650}label{font-weight:650}select{font:inherit;max-width:100%;margin:5px 0;padding:5px 8px}
+.barline{display:grid;grid-template-columns:8.5rem 1fr;gap:10px;align-items:center;margin:6px 0;font-variant-numeric:tabular-nums}.track{height:12px;background:#dce7dd;border-radius:8px}.track b{display:block;height:100%;background:var(--green);border-radius:8px}.track.model b{background:var(--purple)}li{margin:.5em 0}
+@media(max-width:650px){.cards{grid-template-columns:1fr}header{padding:30px 0}section{padding:24px 0}.barline{grid-template-columns:7.2rem 1fr}.card,.panel{padding:10px 12px}}
+@media print{header{background:white;color:var(--ink);padding:12px 0}header p,header a,.kicker{color:var(--ink)}nav,select{display:none}.panel,.card{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<div class="kicker">MatrAIx · 真人问卷与北美电商 · 2026 年 11 月</div>
+<h1>虚拟消费者能替代真人问卷吗？</h1>
+<p class="summary">本轮结果支持把模拟用于比较部分商品方案、提出待验证的假设。模型仍会明显高估购买倾向，已有同题真人数据时，简单统计在这些回测里更接近真人。</p>
+<nav aria-label="目录"><a href="#conclusions">核心结论</a><a href="#source">画像从哪来</a><a href="#stages">四项实验</a><a href="#examples">逐题示例</a><a href="#use">如何解读</a><a href="#references">数据与复算</a></nav>
+</div></header>
+<main class="wrap">
+<section id="conclusions">
+<h2>先看三个结果</h2>
+<div class="cards">
+<div class="card"><div class="number">25,920</div><h3>份正式模拟答卷</h3><p>覆盖四项实验、六份真人调查或商品选择数据。数字是模拟答卷次数，同一个人或画像可能在多组重复作答。</p></div>
+<div class="card"><div class="number">3.63 个百分点</div><h3>商品选择的分布误差下降</h3><p>给模型真实收入和事先测量的文化态度后，部分商品偏好更接近真人。对具体个人的预测没有明确改善。</p></div>
+<div class="card"><div class="number">32.1% 对 8.7%</div><h3>真人拒买与模型拒买</h3><p>同样两款商品，约三分之一的真人选「都不买」，模型不到一成。这个偏差会直接影响对产品吸引力的判断。</p></div>
+</div>
+</section>
+<section id="source">
+<h2>画像从哪里来，论文验证了什么</h2>
+<p>MatrAIx 有两类画像。<strong>合成画像</strong>按资料支持的概率和字段约束抽取，比如年龄会影响学历字段的抽样。<strong>真人来源画像</strong>由模型从原有资料或志愿者问卷中提取并转成统一字段。资料直接写明的内容可以摘录，部分属性由资料推断，缺少依据时可以留空。源数据、提取值和推断值的证据强度不同。<a href="https://arxiv.org/html/2608.04205v1#S3">MatrAIx 论文第 3 节</a> · <a href="https://matraix.ai/">项目说明</a></p>
+<p>论文做了任务执行、不同模型下的人格差异、角色是否遵守设定、提取质量等验证，其中提取质量包含人工评审。我们关心的是另一个具体问题：<strong>用相同问题去问模型，得到的选择比例是否接近已有真人问卷</strong>。下面四项是本项目的独立回测。<a href="https://arxiv.org/html/2608.04205v1#S6">MatrAIx 论文第 6 节</a></p>
+<p>首轮检查公开 Persona 1M 的 40 万条合成记录时，北美标签只有 3 条，无法按预设人群抽样。首轮和换模型实验因此使用同一套 MatrAIx 生成规则，先固定北美再抽样。之后的两项实验直接使用调查中实际测得的匿名受访者背景。<a href="01_首轮归档/coverage.json">公开版覆盖检查</a> · <a href="01_首轮归档/dag-coverage.json">北美合成画像抽样记录</a></p>
+</section>
+<section id="stages">
+<h2>四项实验分别回答了什么</h2>
+<p class="hint">下表的「分布误差」用百分点表示，越低越接近真人。比如真人 60% 选「是」，模型 80% 选「是」，误差就是 20 个百分点。选品主任务单独比较四种明确的选择倾向，再取平均。各实验的题目与参照样本不同，分数适合在同一张表内比较。</p>
+
+<h3>首轮 · 给合成画像加人格，答卷会更像真人吗？</h3>
+<p>10,800 份模拟答卷。使用 DeepSeek Flash，让同一批北美合成画像回答消费应对、网络诈骗风险、公共支出三份问卷。四项人格是决策风格、风险容忍度、核心价值观和尽责性。加入人格后，公共支出误差降得最多，消费小幅改善，诈骗风险几乎没有变化。</p>
+<div class="scroll"><table><thead><tr><th>问卷</th><th>只有情境</th><th>加年龄学历</th><th>再加人格</th><th>加入人格后的改善及区间</th></tr></thead><tbody><tr><td>消费应对</td><td>29.72</td><td>27.13</td><td>25.69</td><td>+1.44［+0.47，+2.43］</td></tr><tr><td>诈骗风险</td><td>34.51</td><td>34.19</td><td>34.39</td><td>-0.21［-0.54，+0.12］</td></tr><tr><td>公共支出</td><td>37.67</td><td>34.67</td><td>19.17</td><td>+15.50［+14.18，+16.73］</td></tr><tr><td>三份问卷等权</td><td>33.97</td><td>32.00</td><td>26.42</td><td>+5.58［+5.00，+6.16］</td></tr></tbody></table></div>
+<p class="hint">仍有题目接近全票。例如「物价上涨后是否改买便宜商品」，真人约 62% 选「是」，加人格的模拟接近 100%。<a href="01_首轮归档/results.json">首轮分群与逐题数据</a></p>
+
+<h3>换模型 · 同样的问题交给三个模型，结果有多大变化？</h3>
+<p>6,480 份答卷。统一关闭思考模式，让 Flash、Pro 和 Qwen 回答相同问卷。只有共同情境时，Pro 最接近真人。加上四项人格后，三个模型的综合误差很接近。即使是表现最好的 Pro 设置，电话和短信诈骗题仍给出 100%「重大问题」，真人是 68.3%。<a href="02_模型对比/report.md">同设置的三模型对照</a></p>
+<div class="scroll"><table><thead><tr><th>输入背景</th><th>DeepSeek Flash</th><th>DeepSeek Pro</th><th>内网 Qwen</th></tr></thead><tbody><tr><td>只有共同情境</td><td>33.82</td><td>21.97</td><td>26.92</td></tr><tr><td>加年龄学历</td><td>31.91</td><td>23.02</td><td>28.18</td></tr><tr><td>再加四项合成人格</td><td>23.39</td><td>23.38</td><td>24.27</td></tr></tbody></table></div>
+
+<h3>优化 · 给模型贴题的真人背景，是否更有用？</h3>
+<p>5,760 份答卷。用内网 Qwen 比较两种写法和四档背景。两种写法分别是请模型扮演受访者，以及请它预测这位受访者会怎么答。背景从年龄学历逐步加到收入、上网活动或政治立场等实测信息。<strong>贴题信息带来的收益最大</strong>。两版提示下加贴题信息，误差分别下降 5.60 和 5.27 个百分点。再加随机配对的合成人格，收益未达到门槛。</p>
+<div class="scroll"><table><thead><tr><th>输入背景</th><th>扮演受访者</th><th>预测这位受访者</th></tr></thead><tbody><tr><td>基础年龄学历</td><td>28.96</td><td>25.99</td></tr><tr><td>更细年龄学历</td><td>26.89</td><td>24.05</td></tr><tr><td>贴题真人背景</td><td>21.29</td><td>18.79</td></tr><tr><td>贴题背景＋合成人格</td><td>19.56</td><td>18.65</td></tr><tr><td>按年龄学历查真人历史比例</td><td>3.64</td><td>—</td></tr></tbody></table></div>
+<p class="hint">统计对照用同一调查中另外一批真人的回答，按年龄和学历计算比例。它在已有同题数据的情况下是直接可比较的参照。<a href="04_综合报告/MatrAIx%20优化实验交互报告.html">三份问卷的逐题交互报告</a></p>
+
+<h3>电商复验 · 能猜中买哪款、要不要买、怎样网购吗？</h3>
+<p>2,880 份答卷。产地实验给出同类商品的两款、价格和评分。包装实验允许两款都不买。Pew 网购调查问购物设备、线上或到店、是否看达人内容后购买。优化设置在<strong>商品相对选择</strong>中通过门槛，逐人正确率仅提高约 0.61 个百分点，区间跨过零。拒买没有明确改善，网购题的分布误差明确上升。</p>
+<div class="scroll"><table><thead><tr><th>任务</th><th>原角色提示＋基础背景</th><th>预测提示＋贴题背景</th><th>改善及 95% 区间</th><th>统计对照</th></tr></thead><tbody><tr><td>商品产地、价格与评分</td><td>13.97</td><td>10.34</td><td>+3.63［+1.65，+5.31］</td><td>2.62</td></tr><tr><td>包装、价格与拒买</td><td>36.90</td><td>38.95</td><td>-2.06［-5.27，+1.41］</td><td>7.32</td></tr><tr><td>网购习惯</td><td>20.03</td><td>29.66</td><td>-9.63［-15.83，-2.38］</td><td>2.38</td></tr></tbody></table></div>
+<p class="hint">数字相加可能因四舍五入略有差异。区间衡量同一批画像或受访者重新抽样时，差值可能有多大波动。<a href="06_北美电商选品/report.html">电商选品详情与逐题对照</a></p>
+</section>
+<section id="examples">
+<h2>四个具体题目，比平均分更直观</h2>
+<div class="panel">
+<label for="example">选择一个题目</label><br><select id="example"></select>
+<div id="bars" aria-live="polite"></div>
+</div>
+<noscript><p>电话短信诈骗、拒买与达人购物的逐题结果仍可在上面的详情报告查阅。</p></noscript>
+</section>
+<section id="use">
+<h2>这组证据能支持哪些判断</h2>
+<ul>
+<li><strong>筛候选商品。</strong> 有具体商品属性和贴题真人背景时，模型可用于提出「哪款更受偏好」的待验证假设。商品制造地偏好与是否通过跨境平台购买要分别检验。</li>
+<li><strong>预估买家规模。</strong> 本次模型明显低估「都不买」，也高估看达人内容后曾经购买的人数。用这些比例推算销量或转化会把这两类偏差带进去。</li>
+<li><strong>已有同题真人数据。</strong> 优先以留出真人数据的统计模型为参照。三项电商任务及通用问卷的比较都显示，这个参照更接近实际选项分布。</li>
+</ul>
+<p class="hint">这些是公开问卷的历史回测，模型可能曾见过题目或汇总数据。商品二选一和包装选择是问卷场景，网购习惯是自报。对新商品的点击、加购、购买和退货需要独立行为数据。</p>
+</section>
+<section id="references">
+<h2>来源与复算</h2>
+<ul>
+<li>通用问卷。<a href="https://www.federalreserve.gov/consumerscommunities/shed_data.htm">美联储 SHED 2025</a> · <a href="https://www.pewresearch.org/dataset/american-trends-panel-wave-168/">Pew Wave 168</a> · <a href="https://electionstudies.org/data-center/2024-time-series-study/">ANES 2024</a></li>
+<li>电商问卷。<a href="https://itemresponsewarehouse.org/tables/bankert_2023_consumer_origin/">美国商品产地与价格</a> · <a href="https://data.mendeley.com/datasets/4z748jnnjs/2">Purdue 包装与价格</a> · <a href="https://www.pewresearch.org/internet/dataset/american-trends-panel-wave-111/">Pew Wave 111</a></li>
+<li>项目材料。<a href="00_导航/从这里开始.md">归档目录</a> · <a href="调研与决策.md">调研与决策记录</a> · <a href="05_优化记录/优化文档.md">已验证的优化做法</a> · <a href="数据/实验数据索引.md">数据与复算入口</a></li>
+</ul>
+<p class="hint">Pew Research Center bears no responsibility for the analyses or interpretations of the data presented here. The opinions expressed herein, including any implications for policy, are those of the author and not of Pew Research Center.</p>
+</section>
+</main>
+<script id="examples-data" type="application/json">[{"title": "包装测试 · 两款商品都不买", "series": [["真人", 32.0618706429141], ["优化设置", 8.687064291247369], ["统计对照", 32.204300213228656]], "note": "同样的两款商品，模型拒买得太少。它只识别出约 7% 真正拒买的答卷。"}, {"title": "商品选择 · 两款中选中国产", "series": [["真人", 27.41028375215447], ["优化前", 42.410250219638016], ["优化后", 38.51772864146365]], "note": "只看恰好一款是中国产品的题。优化缩小了差距，模型仍高估中国产品的选择率。"}, {"title": "Pew 网购 · 看达人内容后曾购买", "series": [["真人", 32.996345116354036], ["优化设置", 74.87349902461837]], "note": "只有原调查符合跳题条件的人参与比较。这是自报购物经历。"}, {"title": "Pew 诈骗 · 电话和短信诈骗是重大问题", "series": [["真人", 68.26317025798137], ["仅给情境的 Pro", 100.0]], "note": "同样题目在真人中有分歧，综合误差最低的模型设置在这题仍给出全票。"}]</script>
+<script>
+const examples=JSON.parse(document.getElementById("examples-data").textContent);
+const select=document.getElementById("example"), bars=document.getElementById("bars");
+examples.forEach((x,i)=>select.add(new Option(x.title,i)));
+function show(){
+  const x=examples[Number(select.value)];
+  bars.replaceChildren();
+  for(const [i,[label,value]] of x.series.entries()){
+    const row=document.createElement("div"), labelEl=document.createElement("span"), track=document.createElement("div"), bar=document.createElement("b");
+    row.className="barline"; labelEl.textContent=label+" "+value.toFixed(1)+"%";track.className=i?"track model":"track";
+    track.setAttribute("aria-hidden","true");bar.style.width=value+"%";track.append(bar);row.append(labelEl,track);bars.append(row);
+  }
+  const p=document.createElement("p");p.textContent=x.note;p.className="hint";bars.append(p);
+}
+select.addEventListener("change",show);show();
+</script>
+</body></html>

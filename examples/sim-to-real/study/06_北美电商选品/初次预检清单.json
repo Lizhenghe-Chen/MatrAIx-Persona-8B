@@ -1,0 +1,84 @@
+{
+  "seed": 20261109,
+  "model": "Qwen/Qwen3.8-27B",
+  "parameters": {
+    "temperature": 0.7,
+    "top_p": 1,
+    "max_tokens": 768,
+    "response_format": {
+      "type": "json_object"
+    }
+  },
+  "thinking": false,
+  "source": {
+    "origin-appendix.docx": "ff6065511c0373f0245e90ea015ff434c4be1443430b042dbc434dc4ff7722e6",
+    "origin.csv": "be189c75b6fb67aeb6fbed2fe7106a853fef1e1b259902f8b9f77c44aa26d3a0",
+    "packaging.csv": "cd749cc7e33b95d682305c8b078b05b0a49df2b874c939abfc4de574f7d39a49",
+    "pew.zip": "1acebad0a92a7944c59049621094cd7d964d4c7fbdae984ab3a8df11d3d32d78"
+  },
+  "prompt_code_sha256": "0b7360478f2bc1a472f5ff804a0682f42a38bc35bb5e8a4dac50081986c17cd3",
+  "original_prompt_code_sha256": "368b56ae1534d973f1c9905fb6be3f986fa9cea1e15c25f306e3980429df91e4",
+  "groups": {
+    "origin": {
+      "formal": {
+        "18–64|Below associate degree": 72,
+        "18–64|Associate degree or higher": 60,
+        "65+|Below associate degree": 48,
+        "65+|Associate degree or higher": 60
+      },
+      "pilot": {
+        "18–64|Below associate degree": 12,
+        "18–64|Associate degree or higher": 12,
+        "65+|Below associate degree": 12,
+        "65+|Associate degree or higher": 12
+      },
+      "training": {
+        "18–64|Below associate degree": 311,
+        "18–64|Associate degree or higher": 384,
+        "65+|Below associate degree": 6,
+        "65+|Associate degree or higher": 7
+      }
+    },
+    "packaging": {
+      "formal": {
+        "18–64|Below associate degree": 60,
+        "18–64|Associate degree or higher": 60,
+        "65+|Below associate degree": 60,
+        "65+|Associate degree or higher": 60
+      },
+      "pilot": {
+        "18–64|Below associate degree": 12,
+        "18–64|Associate degree or higher": 12,
+        "65+|Below associate degree": 12,
+        "65+|Associate degree or higher": 12
+      },
+      "training": {
+        "18–64|Below associate degree": 493,
+        "18–64|Associate degree or higher": 376,
+        "65+|Below associate degree": 68,
+        "65+|Associate degree or higher": 66
+      }
+    },
+    "pew": {
+      "formal": {
+        "18–64|Below associate degree": 60,
+        "18–64|Associate degree or higher": 60,
+        "65+|Below associate degree": 60,
+        "65+|Associate degree or higher": 60
+      },
+      "pilot": {
+        "18–64|Below associate degree": 12,
+        "18–64|Associate degree or higher": 12,
+        "65+|Below associate degree": 12,
+        "65+|Associate degree or higher": 12
+      },
+      "training": {
+        "18–64|Below associate degree": 1678,
+        "18–64|Associate degree or higher": 2873,
+        "65+|Below associate degree": 469,
+        "65+|Associate degree or higher": 555
+      }
+    }
+  },
+  "input_hash": "f0605149d253112667e3b04b3966da8a57bba9a9ddfd55999c8a21ba9f9553f4"
+}

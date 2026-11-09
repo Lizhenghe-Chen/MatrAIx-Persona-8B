@@ -1,0 +1,10 @@
+{
+  "model": "deepseek/deepseek-flash",
+  "temperature": 0.7,
+  "cohort": "309496e6175b49750f34f14bd29c9d707dd09ca2adc3cf47d7536c30e034e3bd",
+  "reference": "33cf7c10380efe3ecfaaea27ef19ee18d9432a33620319b9191ebc1b43c46939",
+  "cohort_source": "native-dag-pinned-region",
+  "instruments": "4f85ec8bd3f7f908d1ccd07dcdd3e96d225f021f670d95086e49ca2a8c7589ff",
+  "runner": "845d6aa8e60db47f3f3fbc5047e1f5b73045d0e2f5f947153ed39b2894d71d78",
+  "seed": 20261109
+}

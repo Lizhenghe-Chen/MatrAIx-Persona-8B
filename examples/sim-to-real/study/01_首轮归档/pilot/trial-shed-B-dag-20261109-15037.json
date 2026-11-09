@@ -1,0 +1,25 @@
+{
+  "survey": "shed",
+  "arm": "B",
+  "id": "dag-20261109-15037",
+  "answers": {
+    "INF3_a": "1",
+    "INF3_b": "1",
+    "INF3_c": "1",
+    "INF3_d": "0",
+    "INF3_e": "1",
+    "INF3_f": "0",
+    "INF5": "0"
+  },
+  "errors": [],
+  "usage": {
+    "n_input_tokens": 845,
+    "n_output_tokens": 361,
+    "n_cache_tokens": 640,
+    "cost_usd": 0.00049854,
+    "request_id": "1313c2f6-5ebb-4442-9ae2-aaed2e913df8",
+    "model": "deepseek-flash",
+    "provider": "deepseek",
+    "cost_source": "estimated"
+  }
+}

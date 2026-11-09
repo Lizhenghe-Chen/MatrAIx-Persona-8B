@@ -1,0 +1,33 @@
+{
+  "inputs": {
+    "数据/shed.zip": "a4ab3f7d042f16d63626b1af9aeb6f0b8a0b39e412fa94b87265bc67fe26de14",
+    "数据/pew.zip": "c0ddd883c995d24c262d6569ce22a9fe9aa1ad8fe7af1d96d0b48e1f664e1cdb",
+    "数据/anes.zip": "31082da127f1ebcfb1d2736ba650d52cd67a4a6ab13fbe639c2db2515779773c",
+    "01_首轮归档/cohort.json": "309496e6175b49750f34f14bd29c9d707dd09ca2adc3cf47d7536c30e034e3bd",
+    "01_首轮归档/reference.json": "33cf7c10380efe3ecfaaea27ef19ee18d9432a33620319b9191ebc1b43c46939"
+  },
+  "source": {
+    "optimize.py": "368b56ae1534d973f1c9905fb6be3f986fa9cea1e15c25f306e3980429df91e4",
+    "instruments.py": "4f85ec8bd3f7f908d1ccd07dcdd3e96d225f021f670d95086e49ca2a8c7589ff",
+    "experiment.py": "845d6aa8e60db47f3f3fbc5047e1f5b73045d0e2f5f947153ed39b2894d71d78"
+  },
+  "seed": 20261109,
+  "models": {
+    "flash": "deepseek-flash",
+    "pro": "deepseek-v4-pro",
+    "qwen": "Qwen/Qwen3.8-27B"
+  },
+  "params": {
+    "temperature": 0.7,
+    "top_p": 1,
+    "max_tokens": 768,
+    "response_format": {
+      "type": "json_object"
+    }
+  },
+  "thinking": false,
+  "local_url": "http://10.120.47.101:8000/v1/chat/completions",
+  "count": 5760,
+  "pilot": 384,
+  "plan_hash": "0e4d87c132b2b120b467b15894b96c4486e244af93dd74d9513b81f56a0fc674"
+}

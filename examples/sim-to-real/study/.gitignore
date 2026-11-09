@@ -1,0 +1,13 @@
+# Login-bound survey archives and local person-level run artifacts.
+**/pew.zip
+**/checkpoints.sqlite*
+/03_提示与背景/sample-index.json
+/03_提示与背景/trials.zip
+/06_北美电商选品/sample-index.json
+/06_北美电商选品/trials.zip
+# Author materials whose redistribution terms have not been confirmed.
+/06_北美电商选品/数据/origin-appendix.docx
+# Laptop-specific shared drive path. The official release manifest is tracked.
+/数据/persona-1m-path.txt
+# Run logs are small and contain only execution metadata.
+!*.log

@@ -1,0 +1,30 @@
+{
+  "anes.zip": {
+    "sha256": "31082da127f1ebcfb1d2736ba650d52cd67a4a6ab13fbe639c2db2515779773c",
+    "bytes": 6516359
+  },
+  "persona-1m-official-manifest.json": {
+    "sha256": "b8582f8fcc6f7023bc46a7d675854c8ce8e44ad886095de9d66005866fdb63a3",
+    "bytes": 2692
+  },
+  "persona-1m-path.txt": {
+    "sha256": "277e48330a91d81f75144d97afae9ae864e5ae05a57526a8c42e665489324044",
+    "bytes": 80
+  },
+  "pew.zip": {
+    "sha256": "c0ddd883c995d24c262d6569ce22a9fe9aa1ad8fe7af1d96d0b48e1f664e1cdb",
+    "bytes": 3716968
+  },
+  "shed-codebook.pdf": {
+    "sha256": "3094d147be4fe60214b1c2550537d1b9d931559d3f804be7976b24e43e27311e",
+    "bytes": 849070
+  },
+  "shed-questionnaire.html": {
+    "sha256": "dbbdb0ba6d92eb5a6ab37bc81d97837205bba22cd58bf2d42ca36d5b5d373ecf",
+    "bytes": 159558
+  },
+  "shed.zip": {
+    "sha256": "a4ab3f7d042f16d63626b1af9aeb6f0b8a0b39e412fa94b87265bc67fe26de14",
+    "bytes": 4676794
+  }
+}

@@ -1,0 +1,5017 @@
+{
+  "missing_conditions": [],
+  "completion": {
+    "anes/flash-A": [
+      240,
+      240
+    ],
+    "anes/flash-B": [
+      240,
+      240
+    ],
+    "anes/flash-C": [
+      240,
+      240
+    ],
+    "anes/pro-A": [
+      240,
+      240
+    ],
+    "anes/pro-B": [
+      240,
+      240
+    ],
+    "anes/pro-C": [
+      240,
+      240
+    ],
+    "anes/qwen-A": [
+      240,
+      240
+    ],
+    "anes/qwen-B": [
+      240,
+      240
+    ],
+    "anes/qwen-C": [
+      240,
+      240
+    ],
+    "pew/flash-A": [
+      240,
+      240
+    ],
+    "pew/flash-B": [
+      240,
+      240
+    ],
+    "pew/flash-C": [
+      240,
+      240
+    ],
+    "pew/pro-A": [
+      240,
+      240
+    ],
+    "pew/pro-B": [
+      240,
+      240
+    ],
+    "pew/pro-C": [
+      240,
+      240
+    ],
+    "pew/qwen-A": [
+      240,
+      240
+    ],
+    "pew/qwen-B": [
+      240,
+      240
+    ],
+    "pew/qwen-C": [
+      240,
+      240
+    ],
+    "shed/flash-A": [
+      240,
+      240
+    ],
+    "shed/flash-B": [
+      240,
+      240
+    ],
+    "shed/flash-C": [
+      240,
+      240
+    ],
+    "shed/pro-A": [
+      240,
+      240
+    ],
+    "shed/pro-B": [
+      240,
+      240
+    ],
+    "shed/pro-C": [
+      240,
+      240
+    ],
+    "shed/qwen-A": [
+      240,
+      240
+    ],
+    "shed/qwen-B": [
+      240,
+      240
+    ],
+    "shed/qwen-C": [
+      240,
+      240
+    ]
+  },
+  "surveys": {
+    "shed": {
+      "flash-A": {
+        "tv_pp": 31.061045297278202,
+        "n": 240,
+        "items": {
+          "INF3_a": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nSwitched to cheaper products",
+            "tv_pp": 37.83464353220574,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 62.16535646779426,
+                "predicted_pct": 100.0
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 37.83464353220573,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 100.0,
+            "human_top_pct": 62.16535646779426,
+            "top_option": "1"
+          },
+          "INF3_b": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nUsed less or stopped using products",
+            "tv_pp": 40.330843704904154,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 59.66915629509584,
+                "predicted_pct": 100.0
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 40.330843704904154,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 100.0,
+            "human_top_pct": 59.66915629509584,
+            "top_option": "1"
+          },
+          "INF3_c": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nReduced savings",
+            "tv_pp": 38.935683806052545,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 41.064316193947455,
+                "predicted_pct": 80.0
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 58.93568380605254,
+                "predicted_pct": 20.0
+              }
+            },
+            "top_pct": 80.0,
+            "human_top_pct": 58.93568380605254,
+            "top_option": "1"
+          },
+          "INF3_d": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nIncreased borrowing",
+            "tv_pp": 15.847819658336027,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 15.847819658336027,
+                "predicted_pct": 0.0
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 84.15218034166398,
+                "predicted_pct": 100.0
+              }
+            },
+            "top_pct": 100.0,
+            "human_top_pct": 84.15218034166398,
+            "top_option": "0"
+          },
+          "INF3_e": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nDelayed a major purchase",
+            "tv_pp": 54.42089396790386,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 45.57910603209614,
+                "predicted_pct": 100.0
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 54.42089396790385,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 100.0,
+            "human_top_pct": 54.42089396790385,
+            "top_option": "1"
+          },
+          "INF3_f": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nWorked more or got another job",
+            "tv_pp": 15.365391159762364,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 17.032057826429043,
+                "predicted_pct": 1.6666666666666667
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 82.96794217357099,
+                "predicted_pct": 98.33333333333334
+              }
+            },
+            "top_pct": 98.33333333333334,
+            "human_top_pct": 82.96794217357099,
+            "top_option": "0"
+          },
+          "INF5": {
+            "question": "In the past 12 months, did you make any large purchases sooner than you had planned because you expected prices to increase?",
+            "tv_pp": 14.692041251782728,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 17.608707918449397,
+                "predicted_pct": 2.9166666666666665
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 82.3912920815506,
+                "predicted_pct": 97.08333333333333
+              }
+            },
+            "top_pct": 97.08333333333333,
+            "human_top_pct": 82.3912920815506,
+            "top_option": "0"
+          }
+        },
+        "concentration": {
+          "95": 6,
+          "99": 4,
+          "100": 4
+        },
+        "human_concentration": {
+          "95": 0,
+          "99": 0,
+          "100": 0
+        },
+        "patterns": {
+          "distinct": 5,
+          "top_share_pct": 76.25,
+          "repeat_share_pct": 100.0
+        }
+      },
+      "flash-B": {
+        "tv_pp": 29.358740849501313,
+        "n": 240,
+        "items": {
+          "INF3_a": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nSwitched to cheaper products",
+            "tv_pp": 37.83464353220574,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 62.16535646779426,
+                "predicted_pct": 100.0
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 37.83464353220573,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 100.0,
+            "human_top_pct": 62.16535646779426,
+            "top_option": "1"
+          },
+          "INF3_b": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nUsed less or stopped using products",
+            "tv_pp": 39.96564207403189,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 59.66915629509584,
+                "predicted_pct": 99.63479836912774
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 40.330843704904154,
+                "predicted_pct": 0.3652016308722625
+              }
+            },
+            "top_pct": 99.63479836912774,
+            "human_top_pct": 59.66915629509584,
+            "top_option": "1"
+          },
+          "INF3_c": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nReduced savings",
+            "tv_pp": 37.42268164578538,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 41.064316193947455,
+                "predicted_pct": 78.48699783973284
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 58.93568380605254,
+                "predicted_pct": 21.51300216026716
+              }
+            },
+            "top_pct": 78.48699783973284,
+            "human_top_pct": 58.93568380605254,
+            "top_option": "1"
+          },
+          "INF3_d": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nIncreased borrowing",
+            "tv_pp": 15.847819658336027,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 15.847819658336027,
+                "predicted_pct": 0.0
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 84.15218034166398,
+                "predicted_pct": 100.0
+              }
+            },
+            "top_pct": 100.0,
+            "human_top_pct": 84.15218034166398,
+            "top_option": "0"
+          },
+          "INF3_e": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nDelayed a major purchase",
+            "tv_pp": 54.42089396790386,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 45.57910603209614,
+                "predicted_pct": 100.0
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 54.42089396790385,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 100.0,
+            "human_top_pct": 54.42089396790385,
+            "top_option": "1"
+          },
+          "INF3_f": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nWorked more or got another job",
+            "tv_pp": 4.181458666744307,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 17.032057826429043,
+                "predicted_pct": 12.850599159684725
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 82.96794217357099,
+                "predicted_pct": 87.14940084031528
+              }
+            },
+            "top_pct": 87.14940084031528,
+            "human_top_pct": 82.96794217357099,
+            "top_option": "0"
+          },
+          "INF5": {
+            "question": "In the past 12 months, did you make any large purchases sooner than you had planned because you expected prices to increase?",
+            "tv_pp": 15.838046401501996,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 17.608707918449397,
+                "predicted_pct": 1.770661516947399
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 82.3912920815506,
+                "predicted_pct": 98.2293384830526
+              }
+            },
+            "top_pct": 98.2293384830526,
+            "human_top_pct": 82.3912920815506,
+            "top_option": "0"
+          }
+        },
+        "concentration": {
+          "95": 5,
+          "99": 4,
+          "100": 3
+        },
+        "human_concentration": {
+          "95": 0,
+          "99": 0,
+          "100": 0
+        },
+        "patterns": {
+          "distinct": 6,
+          "top_share_pct": 59.166666666666664,
+          "repeat_share_pct": 100.0
+        }
+      },
+      "flash-C": {
+        "tv_pp": 21.787903399702767,
+        "n": 240,
+        "items": {
+          "INF3_a": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nSwitched to cheaper products",
+            "tv_pp": 37.83464353220574,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 62.16535646779426,
+                "predicted_pct": 100.0
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 37.83464353220573,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 100.0,
+            "human_top_pct": 62.16535646779426,
+            "top_option": "1"
+          },
+          "INF3_b": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nUsed less or stopped using products",
+            "tv_pp": 37.16395374281518,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 59.66915629509584,
+                "predicted_pct": 96.83311003791101
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 40.330843704904154,
+                "predicted_pct": 3.1668899620889728
+              }
+            },
+            "top_pct": 96.83311003791101,
+            "human_top_pct": 59.66915629509584,
+            "top_option": "1"
+          },
+          "INF3_c": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nReduced savings",
+            "tv_pp": 0.17071939680834425,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 41.064316193947455,
+                "predicted_pct": 40.89359679713912
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 58.93568380605254,
+                "predicted_pct": 59.10640320286089
+              }
+            },
+            "top_pct": 59.10640320286089,
+            "human_top_pct": 58.93568380605254,
+            "top_option": "0"
+          },
+          "INF3_d": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nIncreased borrowing",
+            "tv_pp": 14.922923333898314,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 15.847819658336027,
+                "predicted_pct": 0.9248963244377162
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 84.15218034166398,
+                "predicted_pct": 99.07510367556229
+              }
+            },
+            "top_pct": 99.07510367556229,
+            "human_top_pct": 84.15218034166398,
+            "top_option": "0"
+          },
+          "INF3_e": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nDelayed a major purchase",
+            "tv_pp": 53.49599764346614,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 45.57910603209614,
+                "predicted_pct": 99.07510367556229
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 54.42089396790385,
+                "predicted_pct": 0.9248963244377162
+              }
+            },
+            "top_pct": 99.07510367556229,
+            "human_top_pct": 54.42089396790385,
+            "top_option": "1"
+          },
+          "INF3_f": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nWorked more or got another job",
+            "tv_pp": 3.049622975290392,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 17.032057826429043,
+                "predicted_pct": 13.982434851138636
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 82.96794217357099,
+                "predicted_pct": 86.01756514886137
+              }
+            },
+            "top_pct": 86.01756514886137,
+            "human_top_pct": 82.96794217357099,
+            "top_option": "0"
+          },
+          "INF5": {
+            "question": "In the past 12 months, did you make any large purchases sooner than you had planned because you expected prices to increase?",
+            "tv_pp": 5.877463173435257,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 17.608707918449397,
+                "predicted_pct": 11.731244745014143
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 82.3912920815506,
+                "predicted_pct": 88.26875525498586
+              }
+            },
+            "top_pct": 88.26875525498586,
+            "human_top_pct": 82.3912920815506,
+            "top_option": "0"
+          }
+        },
+        "concentration": {
+          "95": 4,
+          "99": 3,
+          "100": 1
+        },
+        "human_concentration": {
+          "95": 0,
+          "99": 0,
+          "100": 0
+        },
+        "patterns": {
+          "distinct": 13,
+          "top_share_pct": 54.166666666666664,
+          "repeat_share_pct": 98.75
+        }
+      },
+      "pro-A": {
+        "tv_pp": 12.756176368197417,
+        "n": 240,
+        "items": {
+          "INF3_a": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nSwitched to cheaper products",
+            "tv_pp": 24.084643532205728,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 62.16535646779426,
+                "predicted_pct": 86.25
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 37.83464353220573,
+                "predicted_pct": 13.749999999999998
+              }
+            },
+            "top_pct": 86.25,
+            "human_top_pct": 62.16535646779426,
+            "top_option": "1"
+          },
+          "INF3_b": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nUsed less or stopped using products",
+            "tv_pp": 4.080843704904153,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 59.66915629509584,
+                "predicted_pct": 63.74999999999999
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 40.330843704904154,
+                "predicted_pct": 36.25000000000001
+              }
+            },
+            "top_pct": 63.74999999999999,
+            "human_top_pct": 59.66915629509584,
+            "top_option": "1"
+          },
+          "INF3_c": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nReduced savings",
+            "tv_pp": 4.352350472719207,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 41.064316193947455,
+                "predicted_pct": 45.416666666666664
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 58.93568380605254,
+                "predicted_pct": 54.58333333333334
+              }
+            },
+            "top_pct": 54.58333333333334,
+            "human_top_pct": 58.93568380605254,
+            "top_option": "0"
+          },
+          "INF3_d": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nIncreased borrowing",
+            "tv_pp": 10.014486325002691,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 15.847819658336027,
+                "predicted_pct": 5.833333333333333
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 84.15218034166398,
+                "predicted_pct": 94.16666666666667
+              }
+            },
+            "top_pct": 94.16666666666667,
+            "human_top_pct": 84.15218034166398,
+            "top_option": "0"
+          },
+          "INF3_e": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nDelayed a major purchase",
+            "tv_pp": 32.75422730123719,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 45.57910603209614,
+                "predicted_pct": 78.33333333333333
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 54.42089396790385,
+                "predicted_pct": 21.666666666666668
+              }
+            },
+            "top_pct": 78.33333333333333,
+            "human_top_pct": 54.42089396790385,
+            "top_option": "1"
+          },
+          "INF3_f": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nWorked more or got another job",
+            "tv_pp": 10.782057826429028,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 17.032057826429043,
+                "predicted_pct": 6.25
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 82.96794217357099,
+                "predicted_pct": 93.75
+              }
+            },
+            "top_pct": 93.75,
+            "human_top_pct": 82.96794217357099,
+            "top_option": "0"
+          },
+          "INF5": {
+            "question": "In the past 12 months, did you make any large purchases sooner than you had planned because you expected prices to increase?",
+            "tv_pp": 3.2246254148839375,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 17.608707918449397,
+                "predicted_pct": 20.833333333333332
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 82.3912920815506,
+                "predicted_pct": 79.16666666666666
+              }
+            },
+            "top_pct": 79.16666666666666,
+            "human_top_pct": 82.3912920815506,
+            "top_option": "0"
+          }
+        },
+        "concentration": {
+          "95": 0,
+          "99": 0,
+          "100": 0
+        },
+        "human_concentration": {
+          "95": 0,
+          "99": 0,
+          "100": 0
+        },
+        "patterns": {
+          "distinct": 14,
+          "top_share_pct": 22.5,
+          "repeat_share_pct": 99.16666666666667
+        }
+      },
+      "pro-B": {
+        "tv_pp": 22.70312278529651,
+        "n": 240,
+        "items": {
+          "INF3_a": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nSwitched to cheaper products",
+            "tv_pp": 36.7880133308106,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 62.16535646779426,
+                "predicted_pct": 98.95336979860487
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 37.83464353220573,
+                "predicted_pct": 1.046630201395137
+              }
+            },
+            "top_pct": 98.95336979860487,
+            "human_top_pct": 62.16535646779426,
+            "top_option": "1"
+          },
+          "INF3_b": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nUsed less or stopped using products",
+            "tv_pp": 20.7325858870091,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 59.66915629509584,
+                "predicted_pct": 80.40174218210495
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 40.330843704904154,
+                "predicted_pct": 19.598257817895064
+              }
+            },
+            "top_pct": 80.40174218210495,
+            "human_top_pct": 59.66915629509584,
+            "top_option": "1"
+          },
+          "INF3_c": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nReduced savings",
+            "tv_pp": 19.63912876452085,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 41.064316193947455,
+                "predicted_pct": 60.70344495846831
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 58.93568380605254,
+                "predicted_pct": 39.2965550415317
+              }
+            },
+            "top_pct": 60.70344495846831,
+            "human_top_pct": 58.93568380605254,
+            "top_option": "1"
+          },
+          "INF3_d": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nIncreased borrowing",
+            "tv_pp": 15.364070123602472,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 15.847819658336027,
+                "predicted_pct": 0.48374953473355187
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 84.15218034166398,
+                "predicted_pct": 99.51625046526644
+              }
+            },
+            "top_pct": 99.51625046526644,
+            "human_top_pct": 84.15218034166398,
+            "top_option": "0"
+          },
+          "INF3_e": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nDelayed a major purchase",
+            "tv_pp": 49.31371314452699,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 45.57910603209614,
+                "predicted_pct": 94.89281917662315
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 54.42089396790385,
+                "predicted_pct": 5.107180823376864
+              }
+            },
+            "top_pct": 94.89281917662315,
+            "human_top_pct": 54.42089396790385,
+            "top_option": "1"
+          },
+          "INF3_f": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nWorked more or got another job",
+            "tv_pp": 16.548308291695474,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 17.032057826429043,
+                "predicted_pct": 0.48374953473355187
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 82.96794217357099,
+                "predicted_pct": 99.51625046526644
+              }
+            },
+            "top_pct": 99.51625046526644,
+            "human_top_pct": 82.96794217357099,
+            "top_option": "0"
+          },
+          "INF5": {
+            "question": "In the past 12 months, did you make any large purchases sooner than you had planned because you expected prices to increase?",
+            "tv_pp": 0.5360399549100989,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 17.608707918449397,
+                "predicted_pct": 17.072667963539306
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 82.3912920815506,
+                "predicted_pct": 82.92733203646071
+              }
+            },
+            "top_pct": 82.92733203646071,
+            "human_top_pct": 82.3912920815506,
+            "top_option": "0"
+          }
+        },
+        "concentration": {
+          "95": 3,
+          "99": 2,
+          "100": 0
+        },
+        "human_concentration": {
+          "95": 0,
+          "99": 0,
+          "100": 0
+        },
+        "patterns": {
+          "distinct": 13,
+          "top_share_pct": 37.5,
+          "repeat_share_pct": 98.75
+        }
+      },
+      "pro-C": {
+        "tv_pp": 23.34649882439165,
+        "n": 240,
+        "items": {
+          "INF3_a": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nSwitched to cheaper products",
+            "tv_pp": 37.45488884775291,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 62.16535646779426,
+                "predicted_pct": 99.62024531554718
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 37.83464353220573,
+                "predicted_pct": 0.37975468445281974
+              }
+            },
+            "top_pct": 99.62024531554718,
+            "human_top_pct": 62.16535646779426,
+            "top_option": "1"
+          },
+          "INF3_b": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nUsed less or stopped using products",
+            "tv_pp": 25.693915778392572,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 59.66915629509584,
+                "predicted_pct": 85.36307207348842
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 40.330843704904154,
+                "predicted_pct": 14.636927926511586
+              }
+            },
+            "top_pct": 85.36307207348842,
+            "human_top_pct": 59.66915629509584,
+            "top_option": "1"
+          },
+          "INF3_c": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nReduced savings",
+            "tv_pp": 8.120081136416255,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 41.064316193947455,
+                "predicted_pct": 49.184397330363716
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 58.93568380605254,
+                "predicted_pct": 50.81560266963629
+              }
+            },
+            "top_pct": 50.81560266963629,
+            "human_top_pct": 58.93568380605254,
+            "top_option": "0"
+          },
+          "INF3_d": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nIncreased borrowing",
+            "tv_pp": 15.044657210855734,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 15.847819658336027,
+                "predicted_pct": 0.8031624474802953
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 84.15218034166398,
+                "predicted_pct": 99.19683755251971
+              }
+            },
+            "top_pct": 99.19683755251971,
+            "human_top_pct": 84.15218034166398,
+            "top_option": "0"
+          },
+          "INF3_e": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nDelayed a major purchase",
+            "tv_pp": 46.980170960918,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 45.57910603209614,
+                "predicted_pct": 92.55927699301415
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 54.42089396790385,
+                "predicted_pct": 7.4407230069858485
+              }
+            },
+            "top_pct": 92.55927699301415,
+            "human_top_pct": 54.42089396790385,
+            "top_option": "1"
+          },
+          "INF3_f": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nWorked more or got another job",
+            "tv_pp": 15.425732931468433,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 17.032057826429043,
+                "predicted_pct": 1.6063248949605906
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 82.96794217357099,
+                "predicted_pct": 98.3936751050394
+              }
+            },
+            "top_pct": 98.3936751050394,
+            "human_top_pct": 82.96794217357099,
+            "top_option": "0"
+          },
+          "INF5": {
+            "question": "In the past 12 months, did you make any large purchases sooner than you had planned because you expected prices to increase?",
+            "tv_pp": 14.706044904937626,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 17.608707918449397,
+                "predicted_pct": 32.31475282338703
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 82.3912920815506,
+                "predicted_pct": 67.68524717661299
+              }
+            },
+            "top_pct": 67.68524717661299,
+            "human_top_pct": 82.3912920815506,
+            "top_option": "0"
+          }
+        },
+        "concentration": {
+          "95": 3,
+          "99": 2,
+          "100": 0
+        },
+        "human_concentration": {
+          "95": 0,
+          "99": 0,
+          "100": 0
+        },
+        "patterns": {
+          "distinct": 15,
+          "top_share_pct": 28.75,
+          "repeat_share_pct": 98.33333333333333
+        }
+      },
+      "qwen-A": {
+        "tv_pp": 26.684747796768857,
+        "n": 240,
+        "items": {
+          "INF3_a": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nSwitched to cheaper products",
+            "tv_pp": 37.83464353220574,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 62.16535646779426,
+                "predicted_pct": 100.0
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 37.83464353220573,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 100.0,
+            "human_top_pct": 62.16535646779426,
+            "top_option": "1"
+          },
+          "INF3_b": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nUsed less or stopped using products",
+            "tv_pp": 39.49751037157082,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 59.66915629509584,
+                "predicted_pct": 99.16666666666667
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 40.330843704904154,
+                "predicted_pct": 0.8333333333333334
+              }
+            },
+            "top_pct": 99.16666666666667,
+            "human_top_pct": 59.66915629509584,
+            "top_option": "1"
+          },
+          "INF3_c": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nReduced savings",
+            "tv_pp": 13.519017139385877,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 41.064316193947455,
+                "predicted_pct": 54.58333333333334
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 58.93568380605254,
+                "predicted_pct": 45.41666666666667
+              }
+            },
+            "top_pct": 54.58333333333334,
+            "human_top_pct": 58.93568380605254,
+            "top_option": "1"
+          },
+          "INF3_d": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nIncreased borrowing",
+            "tv_pp": 10.431152991669359,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 15.847819658336027,
+                "predicted_pct": 5.416666666666667
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 84.15218034166398,
+                "predicted_pct": 94.58333333333333
+              }
+            },
+            "top_pct": 94.58333333333333,
+            "human_top_pct": 84.15218034166398,
+            "top_option": "0"
+          },
+          "INF3_e": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nDelayed a major purchase",
+            "tv_pp": 54.004227301237194,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 45.57910603209614,
+                "predicted_pct": 99.58333333333333
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 54.42089396790385,
+                "predicted_pct": 0.4166666666666667
+              }
+            },
+            "top_pct": 99.58333333333333,
+            "human_top_pct": 54.42089396790385,
+            "top_option": "1"
+          },
+          "INF3_f": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nWorked more or got another job",
+            "tv_pp": 14.9487244930957,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 17.032057826429043,
+                "predicted_pct": 2.0833333333333335
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 82.96794217357099,
+                "predicted_pct": 97.91666666666667
+              }
+            },
+            "top_pct": 97.91666666666667,
+            "human_top_pct": 82.96794217357099,
+            "top_option": "0"
+          },
+          "INF5": {
+            "question": "In the past 12 months, did you make any large purchases sooner than you had planned because you expected prices to increase?",
+            "tv_pp": 16.557958748217278,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 17.608707918449397,
+                "predicted_pct": 34.166666666666664
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 82.3912920815506,
+                "predicted_pct": 65.83333333333331
+              }
+            },
+            "top_pct": 65.83333333333331,
+            "human_top_pct": 82.3912920815506,
+            "top_option": "0"
+          }
+        },
+        "concentration": {
+          "95": 4,
+          "99": 3,
+          "100": 1
+        },
+        "human_concentration": {
+          "95": 0,
+          "99": 0,
+          "100": 0
+        },
+        "patterns": {
+          "distinct": 13,
+          "top_share_pct": 34.583333333333336,
+          "repeat_share_pct": 97.5
+        }
+      },
+      "qwen-B": {
+        "tv_pp": 25.884833955450823,
+        "n": 240,
+        "items": {
+          "INF3_a": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nSwitched to cheaper products",
+            "tv_pp": 37.59117577829089,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 62.16535646779426,
+                "predicted_pct": 99.75653224608516
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 37.83464353220573,
+                "predicted_pct": 0.24346775391484166
+              }
+            },
+            "top_pct": 99.75653224608516,
+            "human_top_pct": 62.16535646779426,
+            "top_option": "1"
+          },
+          "INF3_b": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nUsed less or stopped using products",
+            "tv_pp": 39.2384247853835,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 59.66915629509584,
+                "predicted_pct": 98.90758108047935
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 40.330843704904154,
+                "predicted_pct": 1.0924189195206557
+              }
+            },
+            "top_pct": 98.90758108047935,
+            "human_top_pct": 59.66915629509584,
+            "top_option": "1"
+          },
+          "INF3_c": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nReduced savings",
+            "tv_pp": 23.59529419511338,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 41.064316193947455,
+                "predicted_pct": 64.65961038906084
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 58.93568380605254,
+                "predicted_pct": 35.34038961093917
+              }
+            },
+            "top_pct": 64.65961038906084,
+            "human_top_pct": 58.93568380605254,
+            "top_option": "1"
+          },
+          "INF3_d": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nIncreased borrowing",
+            "tv_pp": 1.0913223847111921,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 15.847819658336027,
+                "predicted_pct": 14.756497273624833
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 84.15218034166398,
+                "predicted_pct": 85.24350272637517
+              }
+            },
+            "top_pct": 85.24350272637517,
+            "human_top_pct": 84.15218034166398,
+            "top_option": "0"
+          },
+          "INF3_e": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nDelayed a major purchase",
+            "tv_pp": 53.11624295901331,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 45.57910603209614,
+                "predicted_pct": 98.69534899110947
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 54.42089396790385,
+                "predicted_pct": 1.3046510088905359
+              }
+            },
+            "top_pct": 98.69534899110947,
+            "human_top_pct": 54.42089396790385,
+            "top_option": "1"
+          },
+          "INF3_f": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nWorked more or got another job",
+            "tv_pp": 4.820284492237794,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 17.032057826429043,
+                "predicted_pct": 12.211773334191237
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 82.96794217357099,
+                "predicted_pct": 87.78822666580876
+              }
+            },
+            "top_pct": 87.78822666580876,
+            "human_top_pct": 82.96794217357099,
+            "top_option": "0"
+          },
+          "INF5": {
+            "question": "In the past 12 months, did you make any large purchases sooner than you had planned because you expected prices to increase?",
+            "tv_pp": 21.741093093405674,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 17.608707918449397,
+                "predicted_pct": 39.34980101185507
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 82.3912920815506,
+                "predicted_pct": 60.65019898814493
+              }
+            },
+            "top_pct": 60.65019898814493,
+            "human_top_pct": 82.3912920815506,
+            "top_option": "0"
+          }
+        },
+        "concentration": {
+          "95": 3,
+          "99": 1,
+          "100": 0
+        },
+        "human_concentration": {
+          "95": 0,
+          "99": 0,
+          "100": 0
+        },
+        "patterns": {
+          "distinct": 21,
+          "top_share_pct": 25.833333333333332,
+          "repeat_share_pct": 96.66666666666667
+        }
+      },
+      "qwen-C": {
+        "tv_pp": 24.00374214008329,
+        "n": 240,
+        "items": {
+          "INF3_a": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nSwitched to cheaper products",
+            "tv_pp": 36.8639584896425,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 62.16535646779426,
+                "predicted_pct": 99.02931495743677
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 37.83464353220573,
+                "predicted_pct": 0.9706850425632352
+              }
+            },
+            "top_pct": 99.02931495743677,
+            "human_top_pct": 62.16535646779426,
+            "top_option": "1"
+          },
+          "INF3_b": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nUsed less or stopped using products",
+            "tv_pp": 37.78717618118284,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 59.66915629509584,
+                "predicted_pct": 97.45633247627869
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 40.330843704904154,
+                "predicted_pct": 2.5436675237213113
+              }
+            },
+            "top_pct": 97.45633247627869,
+            "human_top_pct": 59.66915629509584,
+            "top_option": "1"
+          },
+          "INF3_c": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nReduced savings",
+            "tv_pp": 4.831422324909537,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 41.064316193947455,
+                "predicted_pct": 45.895738518857
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 58.93568380605254,
+                "predicted_pct": 54.10426148114301
+              }
+            },
+            "top_pct": 54.10426148114301,
+            "human_top_pct": 58.93568380605254,
+            "top_option": "0"
+          },
+          "INF3_d": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nIncreased borrowing",
+            "tv_pp": 7.62061681483429,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 15.847819658336027,
+                "predicted_pct": 8.227202843501738
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 84.15218034166398,
+                "predicted_pct": 91.77279715649827
+              }
+            },
+            "top_pct": 91.77279715649827,
+            "human_top_pct": 84.15218034166398,
+            "top_option": "0"
+          },
+          "INF3_e": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nDelayed a major purchase",
+            "tv_pp": 53.81541055621288,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 45.57910603209614,
+                "predicted_pct": 99.39451658830902
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 54.42089396790385,
+                "predicted_pct": 0.6054834116909726
+              }
+            },
+            "top_pct": 99.39451658830902,
+            "human_top_pct": 54.42089396790385,
+            "top_option": "1"
+          },
+          "INF3_f": {
+            "question": "Did you take any of the following actions because of increases in prices over the past 12 months?\nWorked more or got another job",
+            "tv_pp": 2.565873440556837,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 17.032057826429043,
+                "predicted_pct": 14.466184385872188
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 82.96794217357099,
+                "predicted_pct": 85.5338156141278
+              }
+            },
+            "top_pct": 85.5338156141278,
+            "human_top_pct": 82.96794217357099,
+            "top_option": "0"
+          },
+          "INF5": {
+            "question": "In the past 12 months, did you make any large purchases sooner than you had planned because you expected prices to increase?",
+            "tv_pp": 24.541737173244133,
+            "options": {
+              "1": {
+                "label": "Yes",
+                "human_pct": 17.608707918449397,
+                "predicted_pct": 42.150445091693534
+              },
+              "0": {
+                "label": "No",
+                "human_pct": 82.3912920815506,
+                "predicted_pct": 57.84955490830648
+              }
+            },
+            "top_pct": 57.84955490830648,
+            "human_top_pct": 82.3912920815506,
+            "top_option": "0"
+          }
+        },
+        "concentration": {
+          "95": 3,
+          "99": 2,
+          "100": 0
+        },
+        "human_concentration": {
+          "95": 0,
+          "99": 0,
+          "100": 0
+        },
+        "patterns": {
+          "distinct": 21,
+          "top_share_pct": 30.416666666666668,
+          "repeat_share_pct": 96.66666666666667
+        }
+      }
+    },
+    "pew": {
+      "flash-A": {
+        "tv_pp": 31.82449124690413,
+        "n": 240,
+        "items": {
+          "OSCAM_PROB": {
+            "question": "How much of a problem do you think online scams and attacks are for people in the United States?",
+            "tv_pp": 20.42900948574939,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 79.57099051425061,
+                "predicted_pct": 100.0
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 19.372100285912946,
+                "predicted_pct": 0.0
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 1.0569091998364426,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 100.0,
+            "human_top_pct": 79.57099051425061,
+            "top_option": "1"
+          },
+          "OSCAM_PLAT_a": {
+            "question": "How much of a problem do you think online scams and attacks are on each of the following?\nText messages and phone calls",
+            "tv_pp": 31.736829742018617,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 68.26317025798137,
+                "predicted_pct": 100.0
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 24.453102856953514,
+                "predicted_pct": 0.0
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 2.42523465837621,
+                "predicted_pct": 0.0
+              },
+              "4": {
+                "label": "Not sure",
+                "human_pct": 4.858492226688896,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 100.0,
+            "human_top_pct": 68.26317025798137,
+            "top_option": "1"
+          },
+          "OSCAM_PLAT_b": {
+            "question": "How much of a problem do you think online scams and attacks are on each of the following?\nEmails",
+            "tv_pp": 35.212106251020224,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 64.78789374897977,
+                "predicted_pct": 100.0
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 26.70370893380524,
+                "predicted_pct": 0.0
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 2.481145007608699,
+                "predicted_pct": 0.0
+              },
+              "4": {
+                "label": "Not sure",
+                "human_pct": 6.0272523096062915,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 100.0,
+            "human_top_pct": 64.78789374897977,
+            "top_option": "1"
+          },
+          "OSCAM_PLAT_c": {
+            "question": "How much of a problem do you think online scams and attacks are on each of the following?\nSocial media sites or apps",
+            "tv_pp": 38.07062805403667,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 61.92937194596334,
+                "predicted_pct": 100.0
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 25.384826011610585,
+                "predicted_pct": 0.0
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 1.613769534473785,
+                "predicted_pct": 0.0
+              },
+              "4": {
+                "label": "Not sure",
+                "human_pct": 11.072032507952297,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 100.0,
+            "human_top_pct": 61.92937194596334,
+            "top_option": "1"
+          },
+          "OSCAM_PLAT_d": {
+            "question": "How much of a problem do you think online scams and attacks are on each of the following?\nShopping sites or apps",
+            "tv_pp": 33.673882701695774,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 50.49278396497089,
+                "predicted_pct": 84.16666666666667
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 34.86386883258979,
+                "predicted_pct": 15.833333333333332
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 3.0539727917629382,
+                "predicted_pct": 0.0
+              },
+              "4": {
+                "label": "Not sure",
+                "human_pct": 11.58937441067638,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 84.16666666666667,
+            "human_top_pct": 50.49278396497089,
+            "top_option": "1"
+          }
+        },
+        "concentration": {
+          "95": 4,
+          "99": 4,
+          "100": 4
+        },
+        "human_concentration": {
+          "95": 0,
+          "99": 0,
+          "100": 0
+        },
+        "patterns": {
+          "distinct": 2,
+          "top_share_pct": 84.16666666666667,
+          "repeat_share_pct": 100.0
+        }
+      },
+      "flash-B": {
+        "tv_pp": 33.538698873255335,
+        "n": 240,
+        "items": {
+          "OSCAM_PROB": {
+            "question": "How much of a problem do you think online scams and attacks are for people in the United States?",
+            "tv_pp": 20.42900948574939,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 79.57099051425061,
+                "predicted_pct": 100.0
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 19.372100285912946,
+                "predicted_pct": 0.0
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 1.0569091998364426,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 100.0,
+            "human_top_pct": 79.57099051425061,
+            "top_option": "1"
+          },
+          "OSCAM_PLAT_a": {
+            "question": "How much of a problem do you think online scams and attacks are on each of the following?\nText messages and phone calls",
+            "tv_pp": 31.736829742018617,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 68.26317025798137,
+                "predicted_pct": 100.0
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 24.453102856953514,
+                "predicted_pct": 0.0
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 2.42523465837621,
+                "predicted_pct": 0.0
+              },
+              "4": {
+                "label": "Not sure",
+                "human_pct": 4.858492226688896,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 100.0,
+            "human_top_pct": 68.26317025798137,
+            "top_option": "1"
+          },
+          "OSCAM_PLAT_b": {
+            "question": "How much of a problem do you think online scams and attacks are on each of the following?\nEmails",
+            "tv_pp": 35.212106251020224,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 64.78789374897977,
+                "predicted_pct": 100.0
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 26.70370893380524,
+                "predicted_pct": 0.0
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 2.481145007608699,
+                "predicted_pct": 0.0
+              },
+              "4": {
+                "label": "Not sure",
+                "human_pct": 6.0272523096062915,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 100.0,
+            "human_top_pct": 64.78789374897977,
+            "top_option": "1"
+          },
+          "OSCAM_PLAT_c": {
+            "question": "How much of a problem do you think online scams and attacks are on each of the following?\nSocial media sites or apps",
+            "tv_pp": 38.07062805403667,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 61.92937194596334,
+                "predicted_pct": 100.0
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 25.384826011610585,
+                "predicted_pct": 0.0
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 1.613769534473785,
+                "predicted_pct": 0.0
+              },
+              "4": {
+                "label": "Not sure",
+                "human_pct": 11.072032507952297,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 100.0,
+            "human_top_pct": 61.92937194596334,
+            "top_option": "1"
+          },
+          "OSCAM_PLAT_d": {
+            "question": "How much of a problem do you think online scams and attacks are on each of the following?\nShopping sites or apps",
+            "tv_pp": 42.24492083345178,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 50.49278396497089,
+                "predicted_pct": 92.73770479842267
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 34.86386883258979,
+                "predicted_pct": 7.262295201577331
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 3.0539727917629382,
+                "predicted_pct": 0.0
+              },
+              "4": {
+                "label": "Not sure",
+                "human_pct": 11.58937441067638,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 92.73770479842267,
+            "human_top_pct": 50.49278396497089,
+            "top_option": "1"
+          }
+        },
+        "concentration": {
+          "95": 4,
+          "99": 4,
+          "100": 4
+        },
+        "human_concentration": {
+          "95": 0,
+          "99": 0,
+          "100": 0
+        },
+        "patterns": {
+          "distinct": 2,
+          "top_share_pct": 94.16666666666667,
+          "repeat_share_pct": 100.0
+        }
+      },
+      "flash-C": {
+        "tv_pp": 31.478689803402055,
+        "n": 240,
+        "items": {
+          "OSCAM_PROB": {
+            "question": "How much of a problem do you think online scams and attacks are for people in the United States?",
+            "tv_pp": 20.42900948574939,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 79.57099051425061,
+                "predicted_pct": 100.0
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 19.372100285912946,
+                "predicted_pct": 0.0
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 1.0569091998364426,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 100.0,
+            "human_top_pct": 79.57099051425061,
+            "top_option": "1"
+          },
+          "OSCAM_PLAT_a": {
+            "question": "How much of a problem do you think online scams and attacks are on each of the following?\nText messages and phone calls",
+            "tv_pp": 31.736829742018617,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 68.26317025798137,
+                "predicted_pct": 100.0
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 24.453102856953514,
+                "predicted_pct": 0.0
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 2.42523465837621,
+                "predicted_pct": 0.0
+              },
+              "4": {
+                "label": "Not sure",
+                "human_pct": 4.858492226688896,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 100.0,
+            "human_top_pct": 68.26317025798137,
+            "top_option": "1"
+          },
+          "OSCAM_PLAT_b": {
+            "question": "How much of a problem do you think online scams and attacks are on each of the following?\nEmails",
+            "tv_pp": 35.212106251020224,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 64.78789374897977,
+                "predicted_pct": 100.0
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 26.70370893380524,
+                "predicted_pct": 0.0
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 2.481145007608699,
+                "predicted_pct": 0.0
+              },
+              "4": {
+                "label": "Not sure",
+                "human_pct": 6.0272523096062915,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 100.0,
+            "human_top_pct": 64.78789374897977,
+            "top_option": "1"
+          },
+          "OSCAM_PLAT_c": {
+            "question": "How much of a problem do you think online scams and attacks are on each of the following?\nSocial media sites or apps",
+            "tv_pp": 38.07062805403667,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 61.92937194596334,
+                "predicted_pct": 100.0
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 25.384826011610585,
+                "predicted_pct": 0.0
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 1.613769534473785,
+                "predicted_pct": 0.0
+              },
+              "4": {
+                "label": "Not sure",
+                "human_pct": 11.072032507952297,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 100.0,
+            "human_top_pct": 61.92937194596334,
+            "top_option": "1"
+          },
+          "OSCAM_PLAT_d": {
+            "question": "How much of a problem do you think online scams and attacks are on each of the following?\nShopping sites or apps",
+            "tv_pp": 31.94487548418539,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 50.49278396497089,
+                "predicted_pct": 82.43765944915627
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 34.86386883258979,
+                "predicted_pct": 17.562340550843718
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 3.0539727917629382,
+                "predicted_pct": 0.0
+              },
+              "4": {
+                "label": "Not sure",
+                "human_pct": 11.58937441067638,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 82.43765944915627,
+            "human_top_pct": 50.49278396497089,
+            "top_option": "1"
+          }
+        },
+        "concentration": {
+          "95": 4,
+          "99": 4,
+          "100": 4
+        },
+        "human_concentration": {
+          "95": 0,
+          "99": 0,
+          "100": 0
+        },
+        "patterns": {
+          "distinct": 2,
+          "top_share_pct": 84.16666666666667,
+          "repeat_share_pct": 100.0
+        }
+      },
+      "pro-A": {
+        "tv_pp": 27.68505081371951,
+        "n": 240,
+        "items": {
+          "OSCAM_PROB": {
+            "question": "How much of a problem do you think online scams and attacks are for people in the United States?",
+            "tv_pp": 20.42900948574939,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 79.57099051425061,
+                "predicted_pct": 100.0
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 19.372100285912946,
+                "predicted_pct": 0.0
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 1.0569091998364426,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 100.0,
+            "human_top_pct": 79.57099051425061,
+            "top_option": "1"
+          },
+          "OSCAM_PLAT_a": {
+            "question": "How much of a problem do you think online scams and attacks are on each of the following?\nText messages and phone calls",
+            "tv_pp": 31.736829742018617,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 68.26317025798137,
+                "predicted_pct": 100.0
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 24.453102856953514,
+                "predicted_pct": 0.0
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 2.42523465837621,
+                "predicted_pct": 0.0
+              },
+              "4": {
+                "label": "Not sure",
+                "human_pct": 4.858492226688896,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 100.0,
+            "human_top_pct": 68.26317025798137,
+            "top_option": "1"
+          },
+          "OSCAM_PLAT_b": {
+            "question": "How much of a problem do you think online scams and attacks are on each of the following?\nEmails",
+            "tv_pp": 34.79543958435356,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 64.78789374897977,
+                "predicted_pct": 99.58333333333333
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 26.70370893380524,
+                "predicted_pct": 0.4166666666666667
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 2.481145007608699,
+                "predicted_pct": 0.0
+              },
+              "4": {
+                "label": "Not sure",
+                "human_pct": 6.0272523096062915,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 99.58333333333333,
+            "human_top_pct": 64.78789374897977,
+            "top_option": "1"
+          },
+          "OSCAM_PLAT_c": {
+            "question": "How much of a problem do you think online scams and attacks are on each of the following?\nSocial media sites or apps",
+            "tv_pp": 36.82062805403666,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 61.92937194596334,
+                "predicted_pct": 98.75
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 25.384826011610585,
+                "predicted_pct": 1.25
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 1.613769534473785,
+                "predicted_pct": 0.0
+              },
+              "4": {
+                "label": "Not sure",
+                "human_pct": 11.072032507952297,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 98.75,
+            "human_top_pct": 61.92937194596334,
+            "top_option": "1"
+          },
+          "OSCAM_PLAT_d": {
+            "question": "How much of a problem do you think online scams and attacks are on each of the following?\nShopping sites or apps",
+            "tv_pp": 14.643347202439319,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 50.49278396497089,
+                "predicted_pct": 64.16666666666666
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 34.86386883258979,
+                "predicted_pct": 35.833333333333336
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 3.0539727917629382,
+                "predicted_pct": 0.0
+              },
+              "4": {
+                "label": "Not sure",
+                "human_pct": 11.58937441067638,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 64.16666666666666,
+            "human_top_pct": 50.49278396497089,
+            "top_option": "1"
+          }
+        },
+        "concentration": {
+          "95": 4,
+          "99": 3,
+          "100": 2
+        },
+        "human_concentration": {
+          "95": 0,
+          "99": 0,
+          "100": 0
+        },
+        "patterns": {
+          "distinct": 4,
+          "top_share_pct": 64.16666666666667,
+          "repeat_share_pct": 99.58333333333333
+        }
+      },
+      "pro-B": {
+        "tv_pp": 28.904730809245812,
+        "n": 240,
+        "items": {
+          "OSCAM_PROB": {
+            "question": "How much of a problem do you think online scams and attacks are for people in the United States?",
+            "tv_pp": 20.42900948574939,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 79.57099051425061,
+                "predicted_pct": 100.0
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 19.372100285912946,
+                "predicted_pct": 0.0
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 1.0569091998364426,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 100.0,
+            "human_top_pct": 79.57099051425061,
+            "top_option": "1"
+          },
+          "OSCAM_PLAT_a": {
+            "question": "How much of a problem do you think online scams and attacks are on each of the following?\nText messages and phone calls",
+            "tv_pp": 31.736829742018617,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 68.26317025798137,
+                "predicted_pct": 100.0
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 24.453102856953514,
+                "predicted_pct": 0.0
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 2.42523465837621,
+                "predicted_pct": 0.0
+              },
+              "4": {
+                "label": "Not sure",
+                "human_pct": 4.858492226688896,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 100.0,
+            "human_top_pct": 68.26317025798137,
+            "top_option": "1"
+          },
+          "OSCAM_PLAT_b": {
+            "question": "How much of a problem do you think online scams and attacks are on each of the following?\nEmails",
+            "tv_pp": 34.37988308507408,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 64.78789374897977,
+                "predicted_pct": 99.16777683405384
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 26.70370893380524,
+                "predicted_pct": 0.8322231659461398
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 2.481145007608699,
+                "predicted_pct": 0.0
+              },
+              "4": {
+                "label": "Not sure",
+                "human_pct": 6.0272523096062915,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 99.16777683405384,
+            "human_top_pct": 64.78789374897977,
+            "top_option": "1"
+          },
+          "OSCAM_PLAT_c": {
+            "question": "How much of a problem do you think online scams and attacks are on each of the following?\nSocial media sites or apps",
+            "tv_pp": 36.40396138736999,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 61.92937194596334,
+                "predicted_pct": 98.33333333333331
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 25.384826011610585,
+                "predicted_pct": 1.6666666666666667
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 1.613769534473785,
+                "predicted_pct": 0.0
+              },
+              "4": {
+                "label": "Not sure",
+                "human_pct": 11.072032507952297,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 98.33333333333331,
+            "human_top_pct": 61.92937194596334,
+            "top_option": "1"
+          },
+          "OSCAM_PLAT_d": {
+            "question": "How much of a problem do you think online scams and attacks are on each of the following?\nShopping sites or apps",
+            "tv_pp": 21.573970346017,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 50.49278396497089,
+                "predicted_pct": 72.06675431098789
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 34.86386883258979,
+                "predicted_pct": 27.933245689012104
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 3.0539727917629382,
+                "predicted_pct": 0.0
+              },
+              "4": {
+                "label": "Not sure",
+                "human_pct": 11.58937441067638,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 72.06675431098789,
+            "human_top_pct": 50.49278396497089,
+            "top_option": "1"
+          }
+        },
+        "concentration": {
+          "95": 4,
+          "99": 3,
+          "100": 2
+        },
+        "human_concentration": {
+          "95": 0,
+          "99": 0,
+          "100": 0
+        },
+        "patterns": {
+          "distinct": 4,
+          "top_share_pct": 77.08333333333333,
+          "repeat_share_pct": 99.58333333333333
+        }
+      },
+      "pro-C": {
+        "tv_pp": 28.823730566390054,
+        "n": 240,
+        "items": {
+          "OSCAM_PROB": {
+            "question": "How much of a problem do you think online scams and attacks are for people in the United States?",
+            "tv_pp": 20.42900948574939,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 79.57099051425061,
+                "predicted_pct": 100.0
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 19.372100285912946,
+                "predicted_pct": 0.0
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 1.0569091998364426,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 100.0,
+            "human_top_pct": 79.57099051425061,
+            "top_option": "1"
+          },
+          "OSCAM_PLAT_a": {
+            "question": "How much of a problem do you think online scams and attacks are on each of the following?\nText messages and phone calls",
+            "tv_pp": 31.736829742018617,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 68.26317025798137,
+                "predicted_pct": 100.0
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 24.453102856953514,
+                "predicted_pct": 0.0
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 2.42523465837621,
+                "predicted_pct": 0.0
+              },
+              "4": {
+                "label": "Not sure",
+                "human_pct": 4.858492226688896,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 100.0,
+            "human_top_pct": 68.26317025798137,
+            "top_option": "1"
+          },
+          "OSCAM_PLAT_b": {
+            "question": "How much of a problem do you think online scams and attacks are on each of the following?\nEmails",
+            "tv_pp": 34.37988308507408,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 64.78789374897977,
+                "predicted_pct": 99.16777683405384
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 26.70370893380524,
+                "predicted_pct": 0.8322231659461398
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 2.481145007608699,
+                "predicted_pct": 0.0
+              },
+              "4": {
+                "label": "Not sure",
+                "human_pct": 6.0272523096062915,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 99.16777683405384,
+            "human_top_pct": 64.78789374897977,
+            "top_option": "1"
+          },
+          "OSCAM_PLAT_c": {
+            "question": "How much of a problem do you think online scams and attacks are on each of the following?\nSocial media sites or apps",
+            "tv_pp": 35.82733799148449,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 61.92937194596334,
+                "predicted_pct": 97.75670993744782
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 25.384826011610585,
+                "predicted_pct": 2.24329006255217
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 1.613769534473785,
+                "predicted_pct": 0.0
+              },
+              "4": {
+                "label": "Not sure",
+                "human_pct": 11.072032507952297,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 97.75670993744782,
+            "human_top_pct": 61.92937194596334,
+            "top_option": "1"
+          },
+          "OSCAM_PLAT_d": {
+            "question": "How much of a problem do you think online scams and attacks are on each of the following?\nShopping sites or apps",
+            "tv_pp": 21.7455925276237,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 50.49278396497089,
+                "predicted_pct": 72.2383764925946
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 34.86386883258979,
+                "predicted_pct": 27.761623507405403
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 3.0539727917629382,
+                "predicted_pct": 0.0
+              },
+              "4": {
+                "label": "Not sure",
+                "human_pct": 11.58937441067638,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 72.2383764925946,
+            "human_top_pct": 50.49278396497089,
+            "top_option": "1"
+          }
+        },
+        "concentration": {
+          "95": 4,
+          "99": 3,
+          "100": 2
+        },
+        "human_concentration": {
+          "95": 0,
+          "99": 0,
+          "100": 0
+        },
+        "patterns": {
+          "distinct": 4,
+          "top_share_pct": 74.16666666666667,
+          "repeat_share_pct": 99.58333333333333
+        }
+      },
+      "qwen-A": {
+        "tv_pp": 28.366940940047023,
+        "n": 240,
+        "items": {
+          "OSCAM_PROB": {
+            "question": "How much of a problem do you think online scams and attacks are for people in the United States?",
+            "tv_pp": 20.42900948574939,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 79.57099051425061,
+                "predicted_pct": 100.0
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 19.372100285912946,
+                "predicted_pct": 0.0
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 1.0569091998364426,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 100.0,
+            "human_top_pct": 79.57099051425061,
+            "top_option": "1"
+          },
+          "OSCAM_PLAT_a": {
+            "question": "How much of a problem do you think online scams and attacks are on each of the following?\nText messages and phone calls",
+            "tv_pp": 30.486829742018625,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 68.26317025798137,
+                "predicted_pct": 98.75
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 24.453102856953514,
+                "predicted_pct": 1.25
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 2.42523465837621,
+                "predicted_pct": 0.0
+              },
+              "4": {
+                "label": "Not sure",
+                "human_pct": 4.858492226688896,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 98.75,
+            "human_top_pct": 68.26317025798137,
+            "top_option": "1"
+          },
+          "OSCAM_PLAT_b": {
+            "question": "How much of a problem do you think online scams and attacks are on each of the following?\nEmails",
+            "tv_pp": 35.212106251020224,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 64.78789374897977,
+                "predicted_pct": 100.0
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 26.70370893380524,
+                "predicted_pct": 0.0
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 2.481145007608699,
+                "predicted_pct": 0.0
+              },
+              "4": {
+                "label": "Not sure",
+                "human_pct": 6.0272523096062915,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 100.0,
+            "human_top_pct": 64.78789374897977,
+            "top_option": "1"
+          },
+          "OSCAM_PLAT_c": {
+            "question": "How much of a problem do you think online scams and attacks are on each of the following?\nSocial media sites or apps",
+            "tv_pp": 20.153961387369993,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 61.92937194596334,
+                "predicted_pct": 82.08333333333333
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 25.384826011610585,
+                "predicted_pct": 17.916666666666668
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 1.613769534473785,
+                "predicted_pct": 0.0
+              },
+              "4": {
+                "label": "Not sure",
+                "human_pct": 11.072032507952297,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 82.08333333333333,
+            "human_top_pct": 61.92937194596334,
+            "top_option": "1"
+          },
+          "OSCAM_PLAT_d": {
+            "question": "How much of a problem do you think online scams and attacks are on each of the following?\nShopping sites or apps",
+            "tv_pp": 35.55279783407688,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 50.49278396497089,
+                "predicted_pct": 29.583333333333332
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 34.86386883258979,
+                "predicted_pct": 70.41666666666666
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 3.0539727917629382,
+                "predicted_pct": 0.0
+              },
+              "4": {
+                "label": "Not sure",
+                "human_pct": 11.58937441067638,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 70.41666666666666,
+            "human_top_pct": 50.49278396497089,
+            "top_option": "2"
+          }
+        },
+        "concentration": {
+          "95": 3,
+          "99": 2,
+          "100": 2
+        },
+        "human_concentration": {
+          "95": 0,
+          "99": 0,
+          "100": 0
+        },
+        "patterns": {
+          "distinct": 6,
+          "top_share_pct": 52.083333333333336,
+          "repeat_share_pct": 99.16666666666667
+        }
+      },
+      "qwen-B": {
+        "tv_pp": 27.583765109052614,
+        "n": 240,
+        "items": {
+          "OSCAM_PROB": {
+            "question": "How much of a problem do you think online scams and attacks are for people in the United States?",
+            "tv_pp": 20.42900948574939,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 79.57099051425061,
+                "predicted_pct": 100.0
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 19.372100285912946,
+                "predicted_pct": 0.0
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 1.0569091998364426,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 100.0,
+            "human_top_pct": 79.57099051425061,
+            "top_option": "1"
+          },
+          "OSCAM_PLAT_a": {
+            "question": "How much of a problem do you think online scams and attacks are on each of the following?\nText messages and phone calls",
+            "tv_pp": 31.736829742018617,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 68.26317025798137,
+                "predicted_pct": 100.0
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 24.453102856953514,
+                "predicted_pct": 0.0
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 2.42523465837621,
+                "predicted_pct": 0.0
+              },
+              "4": {
+                "label": "Not sure",
+                "human_pct": 4.858492226688896,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 100.0,
+            "human_top_pct": 68.26317025798137,
+            "top_option": "1"
+          },
+          "OSCAM_PLAT_b": {
+            "question": "How much of a problem do you think online scams and attacks are on each of the following?\nEmails",
+            "tv_pp": 34.37988308507408,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 64.78789374897977,
+                "predicted_pct": 99.16777683405384
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 26.70370893380524,
+                "predicted_pct": 0.8322231659461398
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 2.481145007608699,
+                "predicted_pct": 0.0
+              },
+              "4": {
+                "label": "Not sure",
+                "human_pct": 6.0272523096062915,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 99.16777683405384,
+            "human_top_pct": 64.78789374897977,
+            "top_option": "1"
+          },
+          "OSCAM_PLAT_c": {
+            "question": "How much of a problem do you think online scams and attacks are on each of the following?\nSocial media sites or apps",
+            "tv_pp": 12.685802042426072,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 61.92937194596334,
+                "predicted_pct": 65.01746191375396
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 25.384826011610585,
+                "predicted_pct": 34.98253808624603
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 1.613769534473785,
+                "predicted_pct": 0.0
+              },
+              "4": {
+                "label": "Not sure",
+                "human_pct": 11.072032507952297,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 65.01746191375396,
+            "human_top_pct": 61.92937194596334,
+            "top_option": "1"
+          },
+          "OSCAM_PLAT_d": {
+            "question": "How much of a problem do you think online scams and attacks are on each of the following?\nShopping sites or apps",
+            "tv_pp": 38.687301189994926,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 50.49278396497089,
+                "predicted_pct": 26.448829977415283
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 34.86386883258979,
+                "predicted_pct": 73.55117002258471
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 3.0539727917629382,
+                "predicted_pct": 0.0
+              },
+              "4": {
+                "label": "Not sure",
+                "human_pct": 11.58937441067638,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 73.55117002258471,
+            "human_top_pct": 50.49278396497089,
+            "top_option": "2"
+          }
+        },
+        "concentration": {
+          "95": 3,
+          "99": 3,
+          "100": 2
+        },
+        "human_concentration": {
+          "95": 0,
+          "99": 0,
+          "100": 0
+        },
+        "patterns": {
+          "distinct": 5,
+          "top_share_pct": 37.083333333333336,
+          "repeat_share_pct": 99.58333333333333
+        }
+      },
+      "qwen-C": {
+        "tv_pp": 25.592699365527317,
+        "n": 240,
+        "items": {
+          "OSCAM_PROB": {
+            "question": "How much of a problem do you think online scams and attacks are for people in the United States?",
+            "tv_pp": 20.3094891512606,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 79.57099051425061,
+                "predicted_pct": 99.88047966551122
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 19.372100285912946,
+                "predicted_pct": 0.11952033448879709
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 1.0569091998364426,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 99.88047966551122,
+            "human_top_pct": 79.57099051425061,
+            "top_option": "1"
+          },
+          "OSCAM_PLAT_a": {
+            "question": "How much of a problem do you think online scams and attacks are on each of the following?\nText messages and phone calls",
+            "tv_pp": 31.04068601164432,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 68.26317025798137,
+                "predicted_pct": 99.3038562696257
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 24.453102856953514,
+                "predicted_pct": 0.6961437303743009
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 2.42523465837621,
+                "predicted_pct": 0.0
+              },
+              "4": {
+                "label": "Not sure",
+                "human_pct": 4.858492226688896,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 99.3038562696257,
+            "human_top_pct": 68.26317025798137,
+            "top_option": "1"
+          },
+          "OSCAM_PLAT_b": {
+            "question": "How much of a problem do you think online scams and attacks are on each of the following?\nEmails",
+            "tv_pp": 34.00254264575025,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 64.78789374897977,
+                "predicted_pct": 98.79043639473002
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 26.70370893380524,
+                "predicted_pct": 1.2095636052699599
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 2.481145007608699,
+                "predicted_pct": 0.0
+              },
+              "4": {
+                "label": "Not sure",
+                "human_pct": 6.0272523096062915,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 98.79043639473002,
+            "human_top_pct": 64.78789374897977,
+            "top_option": "1"
+          },
+          "OSCAM_PLAT_c": {
+            "question": "How much of a problem do you think online scams and attacks are on each of the following?\nSocial media sites or apps",
+            "tv_pp": 12.566281707937282,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 61.92937194596334,
+                "predicted_pct": 70.4111357509931
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 25.384826011610585,
+                "predicted_pct": 29.4693439145181
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 1.613769534473785,
+                "predicted_pct": 0.0
+              },
+              "4": {
+                "label": "Not sure",
+                "human_pct": 11.072032507952297,
+                "predicted_pct": 0.11952033448879709
+              }
+            },
+            "top_pct": 70.4111357509931,
+            "human_top_pct": 61.92937194596334,
+            "top_option": "1"
+          },
+          "OSCAM_PLAT_d": {
+            "question": "How much of a problem do you think online scams and attacks are on each of the following?\nShopping sites or apps",
+            "tv_pp": 30.044497311044125,
+            "options": {
+              "1": {
+                "label": "Major problem",
+                "human_pct": 50.49278396497089,
+                "predicted_pct": 34.97211352187728
+              },
+              "2": {
+                "label": "Minor problem",
+                "human_pct": 34.86386883258979,
+                "predicted_pct": 64.90836614363391
+              },
+              "3": {
+                "label": "Not a problem",
+                "human_pct": 3.0539727917629382,
+                "predicted_pct": 0.11952033448879709
+              },
+              "4": {
+                "label": "Not sure",
+                "human_pct": 11.58937441067638,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 64.90836614363391,
+            "human_top_pct": 50.49278396497089,
+            "top_option": "2"
+          }
+        },
+        "concentration": {
+          "95": 3,
+          "99": 2,
+          "100": 0
+        },
+        "human_concentration": {
+          "95": 0,
+          "99": 0,
+          "100": 0
+        },
+        "patterns": {
+          "distinct": 9,
+          "top_share_pct": 33.75,
+          "repeat_share_pct": 97.91666666666667
+        }
+      }
+    },
+    "anes": {
+      "flash-A": {
+        "tv_pp": 38.58167849032578,
+        "n": 240,
+        "items": {
+          "V241264": {
+            "question": "Should federal spending on public schools be increased, decreased, or kept the same?",
+            "tv_pp": 28.174040218097517,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 70.99262644856915,
+                "predicted_pct": 99.16666666666667
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 7.724863254507089,
+                "predicted_pct": 0.0
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 21.28251029692377,
+                "predicted_pct": 0.8333333333333334
+              }
+            },
+            "top_pct": 99.16666666666667,
+            "human_top_pct": 70.99262644856915,
+            "top_option": "1"
+          },
+          "V241267": {
+            "question": "Should federal spending on tightening border security to prevent illegal immigration be increased, decreased, or kept the same?",
+            "tv_pp": 32.488804842013444,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 65.42786182465323,
+                "predicted_pct": 97.91666666666667
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 9.523073388347633,
+                "predicted_pct": 0.0
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 25.049064786999136,
+                "predicted_pct": 2.083333333333333
+              }
+            },
+            "top_pct": 97.91666666666667,
+            "human_top_pct": 65.42786182465323,
+            "top_option": "1"
+          },
+          "V241270": {
+            "question": "Should federal spending on dealing with crime be increased, decreased, or kept the same?",
+            "tv_pp": 33.77380036468461,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 63.30953296864873,
+                "predicted_pct": 97.08333333333333
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 6.472882274870627,
+                "predicted_pct": 1.6666666666666667
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 30.217584756480655,
+                "predicted_pct": 1.25
+              }
+            },
+            "top_pct": 97.08333333333333,
+            "human_top_pct": 63.30953296864873,
+            "top_option": "1"
+          },
+          "V241273": {
+            "question": "Should federal spending on welfare programs be increased, decreased, or kept the same?",
+            "tv_pp": 55.27451233346451,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 32.641263958344496,
+                "predicted_pct": 2.0833333333333335
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 28.049915041786694,
+                "predicted_pct": 3.3333333333333335
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 39.30882099986883,
+                "predicted_pct": 94.58333333333333
+              }
+            },
+            "top_pct": 94.58333333333333,
+            "human_top_pct": 39.30882099986883,
+            "top_option": "3"
+          },
+          "V241276": {
+            "question": "Should federal spending on building and repairing highways be increased, decreased, or kept the same?",
+            "tv_pp": 38.37161405730149,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 59.54505260936518,
+                "predicted_pct": 97.91666666666666
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 4.571505619672845,
+                "predicted_pct": 0.4166666666666667
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 35.88344177096199,
+                "predicted_pct": 1.6666666666666667
+              }
+            },
+            "top_pct": 97.91666666666666,
+            "human_top_pct": 59.54505260936518,
+            "top_option": "1"
+          },
+          "V241282": {
+            "question": "Should federal spending on protecting the environment be increased, decreased, or kept the same?",
+            "tv_pp": 43.40729912639309,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 56.592700873606915,
+                "predicted_pct": 100.0
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 13.34542306551171,
+                "predicted_pct": 0.0
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 30.06187606088139,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 100.0,
+            "human_top_pct": 56.592700873606915,
+            "top_option": "1"
+          }
+        },
+        "concentration": {
+          "95": 5,
+          "99": 2,
+          "100": 1
+        },
+        "human_concentration": {
+          "95": 0,
+          "99": 0,
+          "100": 0
+        },
+        "patterns": {
+          "distinct": 13,
+          "top_share_pct": 89.16666666666667,
+          "repeat_share_pct": 97.5
+        }
+      },
+      "flash-B": {
+        "tv_pp": 32.8200025622938,
+        "n": 240,
+        "items": {
+          "V241264": {
+            "question": "Should federal spending on public schools be increased, decreased, or kept the same?",
+            "tv_pp": 28.383042729509576,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 70.99262644856915,
+                "predicted_pct": 99.37566917807872
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 7.724863254507089,
+                "predicted_pct": 0.0
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 21.28251029692377,
+                "predicted_pct": 0.6243308219212798
+              }
+            },
+            "top_pct": 99.37566917807872,
+            "human_top_pct": 70.99262644856915,
+            "top_option": "1"
+          },
+          "V241267": {
+            "question": "Should federal spending on tightening border security to prevent illegal immigration be increased, decreased, or kept the same?",
+            "tv_pp": 11.511592282965513,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 65.42786182465323,
+                "predicted_pct": 76.93945410761874
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 9.523073388347633,
+                "predicted_pct": 0.0
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 25.049064786999136,
+                "predicted_pct": 23.060545892381256
+              }
+            },
+            "top_pct": 76.93945410761874,
+            "human_top_pct": 65.42786182465323,
+            "top_option": "1"
+          },
+          "V241270": {
+            "question": "Should federal spending on dealing with crime be increased, decreased, or kept the same?",
+            "tv_pp": 32.34912224521197,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 63.30953296864873,
+                "predicted_pct": 95.65865521386068
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 6.472882274870627,
+                "predicted_pct": 1.3686152091768198
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 30.217584756480655,
+                "predicted_pct": 2.9727295769624846
+              }
+            },
+            "top_pct": 95.65865521386068,
+            "human_top_pct": 63.30953296864873,
+            "top_option": "1"
+          },
+          "V241273": {
+            "question": "Should federal spending on welfare programs be increased, decreased, or kept the same?",
+            "tv_pp": 43.375296942466136,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 32.641263958344496,
+                "predicted_pct": 12.544820426993967
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 28.049915041786694,
+                "predicted_pct": 4.771061630671074
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 39.30882099986883,
+                "predicted_pct": 82.68411794233495
+              }
+            },
+            "top_pct": 82.68411794233495,
+            "human_top_pct": 39.30882099986883,
+            "top_option": "3"
+          },
+          "V241276": {
+            "question": "Should federal spending on building and repairing highways be increased, decreased, or kept the same?",
+            "tv_pp": 37.89366204721652,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 59.54505260936518,
+                "predicted_pct": 97.4387146565817
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 4.571505619672845,
+                "predicted_pct": 0.0
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 35.88344177096199,
+                "predicted_pct": 2.5612853434182967
+              }
+            },
+            "top_pct": 97.4387146565817,
+            "human_top_pct": 59.54505260936518,
+            "top_option": "1"
+          },
+          "V241282": {
+            "question": "Should federal spending on protecting the environment be increased, decreased, or kept the same?",
+            "tv_pp": 43.40729912639309,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 56.592700873606915,
+                "predicted_pct": 100.0
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 13.34542306551171,
+                "predicted_pct": 0.0
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 30.06187606088139,
+                "predicted_pct": 0.0
+              }
+            },
+            "top_pct": 100.0,
+            "human_top_pct": 56.592700873606915,
+            "top_option": "1"
+          }
+        },
+        "concentration": {
+          "95": 4,
+          "99": 2,
+          "100": 1
+        },
+        "human_concentration": {
+          "95": 0,
+          "99": 0,
+          "100": 0
+        },
+        "patterns": {
+          "distinct": 14,
+          "top_share_pct": 66.66666666666667,
+          "repeat_share_pct": 98.33333333333333
+        }
+      },
+      "flash-C": {
+        "tv_pp": 16.910774317104952,
+        "n": 240,
+        "items": {
+          "V241264": {
+            "question": "Should federal spending on public schools be increased, decreased, or kept the same?",
+            "tv_pp": 7.687329984320599,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 70.99262644856915,
+                "predicted_pct": 70.7946605601468
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 7.724863254507089,
+                "predicted_pct": 0.23549915860884515
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 21.28251029692377,
+                "predicted_pct": 28.96984028124437
+              }
+            },
+            "top_pct": 70.7946605601468,
+            "human_top_pct": 70.99262644856915,
+            "top_option": "1"
+          },
+          "V241267": {
+            "question": "Should federal spending on tightening border security to prevent illegal immigration be increased, decreased, or kept the same?",
+            "tv_pp": 10.527093848060732,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 65.42786182465323,
+                "predicted_pct": 63.93505158502286
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 9.523073388347633,
+                "predicted_pct": 0.4887897799172737
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 25.049064786999136,
+                "predicted_pct": 35.57615863505987
+              }
+            },
+            "top_pct": 63.93505158502286,
+            "human_top_pct": 65.42786182465323,
+            "top_option": "1"
+          },
+          "V241270": {
+            "question": "Should federal spending on dealing with crime be increased, decreased, or kept the same?",
+            "tv_pp": 26.951112671117293,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 63.30953296864873,
+                "predicted_pct": 90.26064563976603
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 6.472882274870627,
+                "predicted_pct": 1.7965923719608403
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 30.217584756480655,
+                "predicted_pct": 7.94276198827315
+              }
+            },
+            "top_pct": 90.26064563976603,
+            "human_top_pct": 63.30953296864873,
+            "top_option": "1"
+          },
+          "V241273": {
+            "question": "Should federal spending on welfare programs be increased, decreased, or kept the same?",
+            "tv_pp": 22.095790270179663,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 32.641263958344496,
+                "predicted_pct": 21.839200390922013
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 28.049915041786694,
+                "predicted_pct": 16.756188339029503
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 39.30882099986883,
+                "predicted_pct": 61.404611270048484
+              }
+            },
+            "top_pct": 61.404611270048484,
+            "human_top_pct": 39.30882099986883,
+            "top_option": "3"
+          },
+          "V241276": {
+            "question": "Should federal spending on building and repairing highways be increased, decreased, or kept the same?",
+            "tv_pp": 17.555206556795344,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 59.54505260936518,
+                "predicted_pct": 77.10025916616051
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 4.571505619672845,
+                "predicted_pct": 0.11774957930442258
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 35.88344177096199,
+                "predicted_pct": 22.781991254535054
+              }
+            },
+            "top_pct": 77.10025916616051,
+            "human_top_pct": 59.54505260936518,
+            "top_option": "1"
+          },
+          "V241282": {
+            "question": "Should federal spending on protecting the environment be increased, decreased, or kept the same?",
+            "tv_pp": 16.648112572156084,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 56.592700873606915,
+                "predicted_pct": 73.24081344576298
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 13.34542306551171,
+                "predicted_pct": 0.11774957930442258
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 30.06187606088139,
+                "predicted_pct": 26.64143697493258
+              }
+            },
+            "top_pct": 73.24081344576298,
+            "human_top_pct": 56.592700873606915,
+            "top_option": "1"
+          }
+        },
+        "concentration": {
+          "95": 0,
+          "99": 0,
+          "100": 0
+        },
+        "human_concentration": {
+          "95": 0,
+          "99": 0,
+          "100": 0
+        },
+        "patterns": {
+          "distinct": 40,
+          "top_share_pct": 24.583333333333332,
+          "repeat_share_pct": 92.5
+        }
+      },
+      "pro-A": {
+        "tv_pp": 25.456678490325782,
+        "n": 240,
+        "items": {
+          "V241264": {
+            "question": "Should federal spending on public schools be increased, decreased, or kept the same?",
+            "tv_pp": 21.507373551430856,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 70.99262644856915,
+                "predicted_pct": 92.5
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 7.724863254507089,
+                "predicted_pct": 0.4166666666666667
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 21.28251029692377,
+                "predicted_pct": 7.083333333333333
+              }
+            },
+            "top_pct": 92.5,
+            "human_top_pct": 70.99262644856915,
+            "top_option": "1"
+          },
+          "V241267": {
+            "question": "Should federal spending on tightening border security to prevent illegal immigration be increased, decreased, or kept the same?",
+            "tv_pp": 27.9054715086801,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 65.42786182465323,
+                "predicted_pct": 93.33333333333333
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 9.523073388347633,
+                "predicted_pct": 1.25
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 25.049064786999136,
+                "predicted_pct": 5.416666666666667
+              }
+            },
+            "top_pct": 93.33333333333333,
+            "human_top_pct": 65.42786182465323,
+            "top_option": "1"
+          },
+          "V241270": {
+            "question": "Should federal spending on dealing with crime be increased, decreased, or kept the same?",
+            "tv_pp": 28.357133698017943,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 63.30953296864873,
+                "predicted_pct": 91.66666666666667
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 6.472882274870627,
+                "predicted_pct": 1.25
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 30.217584756480655,
+                "predicted_pct": 7.083333333333333
+              }
+            },
+            "top_pct": 91.66666666666667,
+            "human_top_pct": 63.30953296864873,
+            "top_option": "1"
+          },
+          "V241273": {
+            "question": "Should federal spending on welfare programs be increased, decreased, or kept the same?",
+            "tv_pp": 30.691179000131186,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 32.641263958344496,
+                "predicted_pct": 17.916666666666668
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 28.049915041786694,
+                "predicted_pct": 12.083333333333332
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 39.30882099986883,
+                "predicted_pct": 70.0
+              }
+            },
+            "top_pct": 70.0,
+            "human_top_pct": 39.30882099986883,
+            "top_option": "3"
+          },
+          "V241276": {
+            "question": "Should federal spending on building and repairing highways be increased, decreased, or kept the same?",
+            "tv_pp": 15.038280723968162,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 59.54505260936518,
+                "predicted_pct": 74.58333333333333
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 4.571505619672845,
+                "predicted_pct": 1.6666666666666667
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 35.88344177096199,
+                "predicted_pct": 23.75
+              }
+            },
+            "top_pct": 74.58333333333333,
+            "human_top_pct": 59.54505260936518,
+            "top_option": "1"
+          },
+          "V241282": {
+            "question": "Should federal spending on protecting the environment be increased, decreased, or kept the same?",
+            "tv_pp": 29.240632459726427,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 56.592700873606915,
+                "predicted_pct": 85.83333333333334
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 13.34542306551171,
+                "predicted_pct": 1.6666666666666667
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 30.06187606088139,
+                "predicted_pct": 12.5
+              }
+            },
+            "top_pct": 85.83333333333334,
+            "human_top_pct": 56.592700873606915,
+            "top_option": "1"
+          }
+        },
+        "concentration": {
+          "95": 0,
+          "99": 0,
+          "100": 0
+        },
+        "human_concentration": {
+          "95": 0,
+          "99": 0,
+          "100": 0
+        },
+        "patterns": {
+          "distinct": 28,
+          "top_share_pct": 40.833333333333336,
+          "repeat_share_pct": 94.16666666666667
+        }
+      },
+      "pro-B": {
+        "tv_pp": 17.441331349209566,
+        "n": 240,
+        "items": {
+          "V241264": {
+            "question": "Should federal spending on public schools be increased, decreased, or kept the same?",
+            "tv_pp": 11.11868468950789,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 70.99262644856915,
+                "predicted_pct": 82.11131113807704
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 7.724863254507089,
+                "predicted_pct": 1.6666666666666667
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 21.28251029692377,
+                "predicted_pct": 16.222022195256297
+              }
+            },
+            "top_pct": 82.11131113807704,
+            "human_top_pct": 70.99262644856915,
+            "top_option": "1"
+          },
+          "V241267": {
+            "question": "Should federal spending on tightening border security to prevent illegal immigration be increased, decreased, or kept the same?",
+            "tv_pp": 28.43420101724663,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 65.42786182465323,
+                "predicted_pct": 93.86206284189986
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 9.523073388347633,
+                "predicted_pct": 3.8569118094721118
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 25.049064786999136,
+                "predicted_pct": 2.2810253486280327
+              }
+            },
+            "top_pct": 93.86206284189986,
+            "human_top_pct": 65.42786182465323,
+            "top_option": "1"
+          },
+          "V241270": {
+            "question": "Should federal spending on dealing with crime be increased, decreased, or kept the same?",
+            "tv_pp": 32.02410141424029,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 63.30953296864873,
+                "predicted_pct": 95.33363438288902
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 6.472882274870627,
+                "predicted_pct": 1.413376045358238
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 30.217584756480655,
+                "predicted_pct": 3.2529895717527477
+              }
+            },
+            "top_pct": 95.33363438288902,
+            "human_top_pct": 63.30953296864873,
+            "top_option": "1"
+          },
+          "V241273": {
+            "question": "Should federal spending on welfare programs be increased, decreased, or kept the same?",
+            "tv_pp": 14.275759050291981,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 32.641263958344496,
+                "predicted_pct": 18.365504908052507
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 28.049915041786694,
+                "predicted_pct": 32.123995890465515
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 39.30882099986883,
+                "predicted_pct": 49.510499201481984
+              }
+            },
+            "top_pct": 49.510499201481984,
+            "human_top_pct": 39.30882099986883,
+            "top_option": "3"
+          },
+          "V241276": {
+            "question": "Should federal spending on building and repairing highways be increased, decreased, or kept the same?",
+            "tv_pp": 10.376013385906418,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 59.54505260936518,
+                "predicted_pct": 69.92106599527159
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 4.571505619672845,
+                "predicted_pct": 1.6666666666666667
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 35.88344177096199,
+                "predicted_pct": 28.412267338061742
+              }
+            },
+            "top_pct": 69.92106599527159,
+            "human_top_pct": 59.54505260936518,
+            "top_option": "1"
+          },
+          "V241282": {
+            "question": "Should federal spending on protecting the environment be increased, decreased, or kept the same?",
+            "tv_pp": 8.41922853806419,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 56.592700873606915,
+                "predicted_pct": 65.0119294116711
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 13.34542306551171,
+                "predicted_pct": 5.8346002887960395
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 30.06187606088139,
+                "predicted_pct": 29.153470299532863
+              }
+            },
+            "top_pct": 65.0119294116711,
+            "human_top_pct": 56.592700873606915,
+            "top_option": "1"
+          }
+        },
+        "concentration": {
+          "95": 1,
+          "99": 0,
+          "100": 0
+        },
+        "human_concentration": {
+          "95": 0,
+          "99": 0,
+          "100": 0
+        },
+        "patterns": {
+          "distinct": 37,
+          "top_share_pct": 29.583333333333332,
+          "repeat_share_pct": 94.16666666666667
+        }
+      },
+      "pro-C": {
+        "tv_pp": 17.970140869642027,
+        "n": 240,
+        "items": {
+          "V241264": {
+            "question": "Should federal spending on public schools be increased, decreased, or kept the same?",
+            "tv_pp": 18.82339308128648,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 70.99262644856915,
+                "predicted_pct": 58.86393690303412
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 7.724863254507089,
+                "predicted_pct": 1.030159718755636
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 21.28251029692377,
+                "predicted_pct": 40.10590337821024
+              }
+            },
+            "top_pct": 58.86393690303412,
+            "human_top_pct": 70.99262644856915,
+            "top_option": "1"
+          },
+          "V241267": {
+            "question": "Should federal spending on tightening border security to prevent illegal immigration be increased, decreased, or kept the same?",
+            "tv_pp": 17.354459354777397,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 65.42786182465323,
+                "predicted_pct": 82.78232117943062
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 9.523073388347633,
+                "predicted_pct": 3.783923066349108
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 25.049064786999136,
+                "predicted_pct": 13.433755754220265
+              }
+            },
+            "top_pct": 82.78232117943062,
+            "human_top_pct": 65.42786182465323,
+            "top_option": "1"
+          },
+          "V241270": {
+            "question": "Should federal spending on dealing with crime be increased, decreased, or kept the same?",
+            "tv_pp": 22.41293307755272,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 63.30953296864873,
+                "predicted_pct": 85.72246604620145
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 6.472882274870627,
+                "predicted_pct": 1.8695811150838446
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 30.217584756480655,
+                "predicted_pct": 12.407952838714708
+              }
+            },
+            "top_pct": 85.72246604620145,
+            "human_top_pct": 63.30953296864873,
+            "top_option": "1"
+          },
+          "V241273": {
+            "question": "Should federal spending on welfare programs be increased, decreased, or kept the same?",
+            "tv_pp": 19.463880251217073,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 32.641263958344496,
+                "predicted_pct": 13.17738370712741
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 28.049915041786694,
+                "predicted_pct": 31.093041942532214
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 39.30882099986883,
+                "predicted_pct": 55.72957435034037
+              }
+            },
+            "top_pct": 55.72957435034037,
+            "human_top_pct": 39.30882099986883,
+            "top_option": "3"
+          },
+          "V241276": {
+            "question": "Should federal spending on building and repairing highways be increased, decreased, or kept the same?",
+            "tv_pp": 13.217995884508804,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 59.54505260936518,
+                "predicted_pct": 50.07131707419076
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 4.571505619672845,
+                "predicted_pct": 0.8272452703384577
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 35.88344177096199,
+                "predicted_pct": 49.10143765547079
+              }
+            },
+            "top_pct": 50.07131707419076,
+            "human_top_pct": 59.54505260936518,
+            "top_option": "1"
+          },
+          "V241282": {
+            "question": "Should federal spending on protecting the environment be increased, decreased, or kept the same?",
+            "tv_pp": 16.54818356850969,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 56.592700873606915,
+                "predicted_pct": 45.72395901363055
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 13.34542306551171,
+                "predicted_pct": 7.665981356978385
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 30.06187606088139,
+                "predicted_pct": 46.610059629391074
+              }
+            },
+            "top_pct": 46.610059629391074,
+            "human_top_pct": 56.592700873606915,
+            "top_option": "3"
+          }
+        },
+        "concentration": {
+          "95": 0,
+          "99": 0,
+          "100": 0
+        },
+        "human_concentration": {
+          "95": 0,
+          "99": 0,
+          "100": 0
+        },
+        "patterns": {
+          "distinct": 42,
+          "top_share_pct": 16.25,
+          "repeat_share_pct": 92.5
+        }
+      },
+      "qwen-A": {
+        "tv_pp": 25.71224820558355,
+        "n": 240,
+        "items": {
+          "V241264": {
+            "question": "Should federal spending on public schools be increased, decreased, or kept the same?",
+            "tv_pp": 16.92404021809752,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 70.99262644856915,
+                "predicted_pct": 87.91666666666667
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 7.724863254507089,
+                "predicted_pct": 0.0
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 21.28251029692377,
+                "predicted_pct": 12.083333333333332
+              }
+            },
+            "top_pct": 87.91666666666667,
+            "human_top_pct": 70.99262644856915,
+            "top_option": "1"
+          },
+          "V241267": {
+            "question": "Should federal spending on tightening border security to prevent illegal immigration be increased, decreased, or kept the same?",
+            "tv_pp": 31.23880484201343,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 65.42786182465323,
+                "predicted_pct": 96.66666666666666
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 9.523073388347633,
+                "predicted_pct": 0.4166666666666667
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 25.049064786999136,
+                "predicted_pct": 2.9166666666666665
+              }
+            },
+            "top_pct": 96.66666666666666,
+            "human_top_pct": 65.42786182465323,
+            "top_option": "1"
+          },
+          "V241270": {
+            "question": "Should federal spending on dealing with crime be increased, decreased, or kept the same?",
+            "tv_pp": 25.857133698017943,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 63.30953296864873,
+                "predicted_pct": 89.16666666666666
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 6.472882274870627,
+                "predicted_pct": 1.6666666666666667
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 30.217584756480655,
+                "predicted_pct": 9.166666666666668
+              }
+            },
+            "top_pct": 89.16666666666666,
+            "human_top_pct": 63.30953296864873,
+            "top_option": "1"
+          },
+          "V241273": {
+            "question": "Should federal spending on welfare programs be increased, decreased, or kept the same?",
+            "tv_pp": 30.55793062501116,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 32.641263958344496,
+                "predicted_pct": 2.083333333333333
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 28.049915041786694,
+                "predicted_pct": 53.333333333333336
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 39.30882099986883,
+                "predicted_pct": 44.583333333333336
+              }
+            },
+            "top_pct": 53.333333333333336,
+            "human_top_pct": 39.30882099986883,
+            "top_option": "2"
+          },
+          "V241276": {
+            "question": "Should federal spending on building and repairing highways be increased, decreased, or kept the same?",
+            "tv_pp": 32.12161405730149,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 59.54505260936518,
+                "predicted_pct": 91.66666666666666
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 4.571505619672845,
+                "predicted_pct": 0.4166666666666667
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 35.88344177096199,
+                "predicted_pct": 7.916666666666666
+              }
+            },
+            "top_pct": 91.66666666666666,
+            "human_top_pct": 59.54505260936518,
+            "top_option": "1"
+          },
+          "V241282": {
+            "question": "Should federal spending on protecting the environment be increased, decreased, or kept the same?",
+            "tv_pp": 17.573965793059752,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 56.592700873606915,
+                "predicted_pct": 74.16666666666666
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 13.34542306551171,
+                "predicted_pct": 2.083333333333333
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 30.06187606088139,
+                "predicted_pct": 23.75
+              }
+            },
+            "top_pct": 74.16666666666666,
+            "human_top_pct": 56.592700873606915,
+            "top_option": "1"
+          }
+        },
+        "concentration": {
+          "95": 1,
+          "99": 0,
+          "100": 0
+        },
+        "human_concentration": {
+          "95": 0,
+          "99": 0,
+          "100": 0
+        },
+        "patterns": {
+          "distinct": 30,
+          "top_share_pct": 30.0,
+          "repeat_share_pct": 93.75
+        }
+      },
+      "qwen-B": {
+        "tv_pp": 31.06404521470991,
+        "n": 240,
+        "items": {
+          "V241264": {
+            "question": "Should federal spending on public schools be increased, decreased, or kept the same?",
+            "tv_pp": 11.375354619728986,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 70.99262644856915,
+                "predicted_pct": 82.36798106829814
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 7.724863254507089,
+                "predicted_pct": 0.3532487379132677
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 21.28251029692377,
+                "predicted_pct": 17.278770193788603
+              }
+            },
+            "top_pct": 82.36798106829814,
+            "human_top_pct": 70.99262644856915,
+            "top_option": "1"
+          },
+          "V241267": {
+            "question": "Should federal spending on tightening border security to prevent illegal immigration be increased, decreased, or kept the same?",
+            "tv_pp": 33.99818352631674,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 65.42786182465323,
+                "predicted_pct": 99.42604535096997
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 9.523073388347633,
+                "predicted_pct": 0.11774957930442258
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 25.049064786999136,
+                "predicted_pct": 0.4562050697256066
+              }
+            },
+            "top_pct": 99.42604535096997,
+            "human_top_pct": 65.42786182465323,
+            "top_option": "1"
+          },
+          "V241270": {
+            "question": "Should federal spending on dealing with crime be increased, decreased, or kept the same?",
+            "tv_pp": 32.21657941841546,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 63.30953296864873,
+                "predicted_pct": 95.52611238706419
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 6.472882274870627,
+                "predicted_pct": 1.0449529662477193
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 30.217584756480655,
+                "predicted_pct": 3.4289346466880906
+              }
+            },
+            "top_pct": 95.52611238706419,
+            "human_top_pct": 63.30953296864873,
+            "top_option": "1"
+          },
+          "V241273": {
+            "question": "Should federal spending on welfare programs be increased, decreased, or kept the same?",
+            "tv_pp": 46.265684579526855,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 32.641263958344496,
+                "predicted_pct": 1.165700760759642
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 28.049915041786694,
+                "predicted_pct": 74.31559962131354
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 39.30882099986883,
+                "predicted_pct": 24.518699617926824
+              }
+            },
+            "top_pct": 74.31559962131354,
+            "human_top_pct": 39.30882099986883,
+            "top_option": "2"
+          },
+          "V241276": {
+            "question": "Should federal spending on building and repairing highways be increased, decreased, or kept the same?",
+            "tv_pp": 34.29880563436261,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 59.54505260936518,
+                "predicted_pct": 93.84385824372778
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 4.571505619672845,
+                "predicted_pct": 2.122871736392273
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 35.88344177096199,
+                "predicted_pct": 4.03327001987995
+              }
+            },
+            "top_pct": 93.84385824372778,
+            "human_top_pct": 59.54505260936518,
+            "top_option": "1"
+          },
+          "V241282": {
+            "question": "Should federal spending on protecting the environment be increased, decreased, or kept the same?",
+            "tv_pp": 28.229663509908796,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 56.592700873606915,
+                "predicted_pct": 28.36303736369811
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 13.34542306551171,
+                "predicted_pct": 14.461163972087048
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 30.06187606088139,
+                "predicted_pct": 57.17579866421484
+              }
+            },
+            "top_pct": 57.17579866421484,
+            "human_top_pct": 56.592700873606915,
+            "top_option": "3"
+          }
+        },
+        "concentration": {
+          "95": 2,
+          "99": 1,
+          "100": 0
+        },
+        "human_concentration": {
+          "95": 0,
+          "99": 0,
+          "100": 0
+        },
+        "patterns": {
+          "distinct": 34,
+          "top_share_pct": 31.25,
+          "repeat_share_pct": 92.91666666666667
+        }
+      },
+      "qwen-C": {
+        "tv_pp": 23.219543033262635,
+        "n": 240,
+        "items": {
+          "V241264": {
+            "question": "Should federal spending on public schools be increased, decreased, or kept the same?",
+            "tv_pp": 7.9732053158206915,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 70.99262644856915,
+                "predicted_pct": 66.61287914309543
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 7.724863254507089,
+                "predicted_pct": 4.131405244160118
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 21.28251029692377,
+                "predicted_pct": 29.25571561274446
+              }
+            },
+            "top_pct": 66.61287914309543,
+            "human_top_pct": 70.99262644856915,
+            "top_option": "1"
+          },
+          "V241267": {
+            "question": "Should federal spending on tightening border security to prevent illegal immigration be increased, decreased, or kept the same?",
+            "tv_pp": 28.652289806861052,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 65.42786182465323,
+                "predicted_pct": 94.08015163151428
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 9.523073388347633,
+                "predicted_pct": 1.784416245971089
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 25.049064786999136,
+                "predicted_pct": 4.135432122514626
+              }
+            },
+            "top_pct": 94.08015163151428,
+            "human_top_pct": 65.42786182465323,
+            "top_option": "1"
+          },
+          "V241270": {
+            "question": "Should federal spending on dealing with crime be increased, decreased, or kept the same?",
+            "tv_pp": 23.8806289635798,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 63.30953296864873,
+                "predicted_pct": 87.19016193222853
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 6.472882274870627,
+                "predicted_pct": 1.6992513768583337
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 30.217584756480655,
+                "predicted_pct": 11.110586690913143
+              }
+            },
+            "top_pct": 87.19016193222853,
+            "human_top_pct": 63.30953296864873,
+            "top_option": "1"
+          },
+          "V241273": {
+            "question": "Should federal spending on welfare programs be increased, decreased, or kept the same?",
+            "tv_pp": 28.398992760161125,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 32.641263958344496,
+                "predicted_pct": 12.388338483690452
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 28.049915041786694,
+                "predicted_pct": 56.44890780194781
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 39.30882099986883,
+                "predicted_pct": 31.162753714361735
+              }
+            },
+            "top_pct": 56.44890780194781,
+            "human_top_pct": 39.30882099986883,
+            "top_option": "2"
+          },
+          "V241276": {
+            "question": "Should federal spending on building and repairing highways be increased, decreased, or kept the same?",
+            "tv_pp": 13.228241882675634,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 59.54505260936518,
+                "predicted_pct": 72.7732944920408
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 4.571505619672845,
+                "predicted_pct": 2.882743600317559
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 35.88344177096199,
+                "predicted_pct": 24.34396190764164
+              }
+            },
+            "top_pct": 72.7732944920408,
+            "human_top_pct": 59.54505260936518,
+            "top_option": "1"
+          },
+          "V241282": {
+            "question": "Should federal spending on protecting the environment be increased, decreased, or kept the same?",
+            "tv_pp": 37.18389947047751,
+            "options": {
+              "1": {
+                "label": "Increased",
+                "human_pct": 56.592700873606915,
+                "predicted_pct": 19.4088014031294
+              },
+              "2": {
+                "label": "Decreased",
+                "human_pct": 13.34542306551171,
+                "predicted_pct": 14.92298437852249
+              },
+              "3": {
+                "label": "Kept the same",
+                "human_pct": 30.06187606088139,
+                "predicted_pct": 65.66821421834813
+              }
+            },
+            "top_pct": 65.66821421834813,
+            "human_top_pct": 56.592700873606915,
+            "top_option": "3"
+          }
+        },
+        "concentration": {
+          "95": 0,
+          "99": 0,
+          "100": 0
+        },
+        "human_concentration": {
+          "95": 0,
+          "99": 0,
+          "100": 0
+        },
+        "patterns": {
+          "distinct": 58,
+          "top_share_pct": 17.916666666666668,
+          "repeat_share_pct": 88.75
+        }
+      }
+    }
+  },
+  "overall": {
+    "flash-A": {
+      "tv_pp": 33.8224050115027
+    },
+    "flash-B": {
+      "tv_pp": 31.90581409501682
+    },
+    "flash-C": {
+      "tv_pp": 23.392455840069925
+    },
+    "pro-A": {
+      "tv_pp": 21.96596855741424
+    },
+    "pro-B": {
+      "tv_pp": 23.016394981250627
+    },
+    "pro-C": {
+      "tv_pp": 23.380123420141242
+    },
+    "qwen-A": {
+      "tv_pp": 26.921312314133143
+    },
+    "qwen-B": {
+      "tv_pp": 28.177548093071113
+    },
+    "qwen-C": {
+      "tv_pp": 24.27199484629108
+    }
+  },
+  "paired": {
+    "shed": {
+      "18–64|Below bachelor's degree": 60,
+      "18–64|Bachelor's degree or higher": 60,
+      "65+|Below bachelor's degree": 60,
+      "65+|Bachelor's degree or higher": 60
+    },
+    "pew": {
+      "18–64|Below bachelor's degree": 60,
+      "18–64|Bachelor's degree or higher": 60,
+      "65+|Below bachelor's degree": 60,
+      "65+|Bachelor's degree or higher": 60
+    },
+    "anes": {
+      "18–64|Below bachelor's degree": 60,
+      "18–64|Bachelor's degree or higher": 60,
+      "65+|Below bachelor's degree": 60,
+      "65+|Bachelor's degree or higher": 60
+    }
+  },
+  "comparisons": [
+    {
+      "reference": "flash-A",
+      "candidate": "pro-A",
+      "overall": {
+        "gain_pp": 11.856436454088467,
+        "ci95": [
+          10.463095217674363,
+          13.013097844085125
+        ]
+      },
+      "surveys": {
+        "shed": {
+          "gain_pp": 18.304868929080783,
+          "ci95": [
+            15.507249881461734,
+            20.56677369098554
+          ]
+        },
+        "pew": {
+          "gain_pp": 4.139440433184621,
+          "ci95": [
+            2.8333333333333357,
+            4.97277376651796
+          ]
+        },
+        "anes": {
+          "gain_pp": 13.124999999999996,
+          "ci95": [
+            10.625000000000004,
+            15.833333333333332
+          ]
+        }
+      },
+      "meets_threshold": true
+    },
+    {
+      "reference": "flash-B",
+      "candidate": "pro-B",
+      "overall": {
+        "gain_pp": 8.889419113766186,
+        "ci95": [
+          7.53554473922589,
+          10.036032461389238
+        ]
+      },
+      "surveys": {
+        "shed": {
+          "gain_pp": 6.655618064204802,
+          "ci95": [
+            4.404999506763611,
+            8.653460244349382
+          ]
+        },
+        "pew": {
+          "gain_pp": 4.633968064009522,
+          "ci95": [
+            2.7908899327948067,
+            6.333151923046803
+          ]
+        },
+        "anes": {
+          "gain_pp": 15.378671213084235,
+          "ci95": [
+            12.440607852941024,
+            17.880616227984078
+          ]
+        }
+      },
+      "meets_threshold": true
+    },
+    {
+      "reference": "flash-C",
+      "candidate": "pro-C",
+      "overall": {
+        "gain_pp": 0.01233241992868154,
+        "ci95": [
+          -1.4555531570189741,
+          2.1247901641037634
+        ]
+      },
+      "surveys": {
+        "shed": {
+          "gain_pp": -1.5585954246888818,
+          "ci95": [
+            -3.585821637091523,
+            1.3202973185104452
+          ]
+        },
+        "pew": {
+          "gain_pp": 2.654959237012001,
+          "ci95": [
+            0.7968136847298057,
+            4.5170648853185815
+          ]
+        },
+        "anes": {
+          "gain_pp": -1.0593665525370746,
+          "ci95": [
+            -4.899466239194896,
+            3.9170882945879972
+          ]
+        }
+      },
+      "meets_threshold": false
+    },
+    {
+      "reference": "flash-A",
+      "candidate": "qwen-A",
+      "overall": {
+        "gain_pp": 6.9010926973695605,
+        "ci95": [
+          5.741039787316655,
+          8.009095342872207
+        ]
+      },
+      "surveys": {
+        "shed": {
+          "gain_pp": 4.376297500509345,
+          "ci95": [
+            2.6501070243188707,
+            5.98344035765221
+          ]
+        },
+        "pew": {
+          "gain_pp": 3.457550306857108,
+          "ci95": [
+            1.7908836401904402,
+            5.1242169735237795
+          ]
+        },
+        "anes": {
+          "gain_pp": 12.86943028474223,
+          "ci95": [
+            10.577763618075561,
+            15.16109695140889
+          ]
+        }
+      },
+      "meets_threshold": true
+    },
+    {
+      "reference": "flash-B",
+      "candidate": "qwen-B",
+      "overall": {
+        "gain_pp": 3.7282660019457006,
+        "ci95": [
+          2.5258296575790373,
+          4.6657782573125965
+        ]
+      },
+      "surveys": {
+        "shed": {
+          "gain_pp": 3.47390689405049,
+          "ci95": [
+            1.3900466974728525,
+            5.174774171178474
+          ]
+        },
+        "pew": {
+          "gain_pp": 5.954933764202721,
+          "ci95": [
+            4.123938660337537,
+            7.576277991161644
+          ]
+        },
+        "anes": {
+          "gain_pp": 1.755957347583891,
+          "ci95": [
+            -0.4315299357580251,
+            3.5884100993758175
+          ]
+        }
+      },
+      "meets_threshold": true
+    },
+    {
+      "reference": "flash-C",
+      "candidate": "qwen-C",
+      "overall": {
+        "gain_pp": -0.8795390062211558,
+        "ci95": [
+          -2.054301074993472,
+          0.8084677289003271
+        ]
+      },
+      "surveys": {
+        "shed": {
+          "gain_pp": -2.215838740380523,
+          "ci95": [
+            -3.856690571382606,
+            0.14350670015028733
+          ]
+        },
+        "pew": {
+          "gain_pp": 5.885990437874739,
+          "ci95": [
+            3.872575327929259,
+            7.89863140804903
+          ]
+        },
+        "anes": {
+          "gain_pp": -6.308768716157683,
+          "ci95": [
+            -9.285531049659573,
+            -2.57178889756962
+          ]
+        }
+      },
+      "meets_threshold": false
+    },
+    {
+      "reference": "pro-A",
+      "candidate": "qwen-A",
+      "overall": {
+        "gain_pp": -4.955343756718906,
+        "ci95": [
+          -6.33613088965527,
+          -3.337064926196224
+        ]
+      },
+      "surveys": {
+        "shed": {
+          "gain_pp": -13.92857142857144,
+          "ci95": [
+            -16.607854467249176,
+            -10.892857142857148
+          ]
+        },
+        "pew": {
+          "gain_pp": -0.681890126327513,
+          "ci95": [
+            -2.0152234596608416,
+            0.9847765403391513
+          ]
+        },
+        "anes": {
+          "gain_pp": -0.25556971525776717,
+          "ci95": [
+            -3.45001415970221,
+            2.7074413167079827
+          ]
+        }
+      },
+      "meets_threshold": false
+    },
+    {
+      "reference": "pro-B",
+      "candidate": "qwen-B",
+      "overall": {
+        "gain_pp": -5.161153111820486,
+        "ci95": [
+          -6.497313308117846,
+          -3.7935316722348578
+        ]
+      },
+      "surveys": {
+        "shed": {
+          "gain_pp": -3.181711170154312,
+          "ci95": [
+            -5.431344617332479,
+            -0.8670391407318228
+          ]
+        },
+        "pew": {
+          "gain_pp": 1.3209657001931987,
+          "ci95": [
+            -0.7696154491794275,
+            3.3833225090021024
+          ]
+        },
+        "anes": {
+          "gain_pp": -13.622713865500344,
+          "ci95": [
+            -16.489967326818537,
+            -10.742087707463186
+          ]
+        }
+      },
+      "meets_threshold": false
+    },
+    {
+      "reference": "pro-C",
+      "candidate": "qwen-C",
+      "overall": {
+        "gain_pp": -0.8918714261498373,
+        "ci95": [
+          -2.590066501028293,
+          0.69046660086213
+        ]
+      },
+      "surveys": {
+        "shed": {
+          "gain_pp": -0.6572433156916411,
+          "ci95": [
+            -3.1607666145328452,
+            1.6695537354621621
+          ]
+        },
+        "pew": {
+          "gain_pp": 3.2310312008627378,
+          "ci95": [
+            0.9864869120344578,
+            5.4497348112337525
+          ]
+        },
+        "anes": {
+          "gain_pp": -5.2494021636206085,
+          "ci95": [
+            -9.010300864504368,
+            -1.583528046431171
+          ]
+        }
+      },
+      "meets_threshold": false
+    },
+    {
+      "reference": "flash-A",
+      "candidate": "flash-B",
+      "overall": {
+        "gain_pp": 1.9165909164858874,
+        "ci95": [
+          1.1177544903554484,
+          2.633603151501197
+        ]
+      },
+      "surveys": {
+        "shed": {
+          "gain_pp": 1.7023044477768892,
+          "ci95": [
+            0.29372077489756093,
+            2.971568746703315
+          ]
+        },
+        "pew": {
+          "gain_pp": -1.7142076263512038,
+          "ci95": [
+            -2.8917986745641633,
+            -0.5562764505658457
+          ]
+        },
+        "anes": {
+          "gain_pp": 5.761675928031977,
+          "ci95": [
+            4.2955675953367995,
+            7.123621842309972
+          ]
+        }
+      },
+      "meets_threshold": false
+    },
+    {
+      "reference": "pro-A",
+      "candidate": "pro-B",
+      "overall": {
+        "gain_pp": -1.0504264238363934,
+        "ci95": [
+          -2.8190219361833817,
+          0.5816579298695391
+        ]
+      },
+      "surveys": {
+        "shed": {
+          "gain_pp": -9.946946417099094,
+          "ci95": [
+            -13.058738615368618,
+            -7.0024438353497045
+          ]
+        },
+        "pew": {
+          "gain_pp": -1.2196799955263025,
+          "ci95": [
+            -2.7195318718057777,
+            0.5014912844380306
+          ]
+        },
+        "anes": {
+          "gain_pp": 8.015347141116216,
+          "ci95": [
+            4.296254002914274,
+            11.3240598266829
+          ]
+        }
+      },
+      "meets_threshold": false
+    },
+    {
+      "reference": "qwen-A",
+      "candidate": "qwen-B",
+      "overall": {
+        "gain_pp": -1.2562357789379728,
+        "ci95": [
+          -2.653525089439403,
+          -0.08163967544467617
+        ]
+      },
+      "surveys": {
+        "shed": {
+          "gain_pp": 0.799913841318034,
+          "ci95": [
+            -1.499139135839223,
+            2.8773936555362543
+          ]
+        },
+        "pew": {
+          "gain_pp": 0.7831758309944092,
+          "ci95": [
+            -1.1199098274173354,
+            2.5283443328523454
+          ]
+        },
+        "anes": {
+          "gain_pp": -5.351797009126361,
+          "ci95": [
+            -7.928267010388997,
+            -3.1756738337051695
+          ]
+        }
+      },
+      "meets_threshold": false
+    },
+    {
+      "reference": "flash-B",
+      "candidate": "flash-C",
+      "overall": {
+        "gain_pp": 8.513358254946892,
+        "ci95": [
+          7.089294478326273,
+          9.357841400173397
+        ]
+      },
+      "surveys": {
+        "shed": {
+          "gain_pp": 7.570837449798546,
+          "ci95": [
+            5.262704875485625,
+            8.908887513408262
+          ]
+        },
+        "pew": {
+          "gain_pp": 2.0600090698532796,
+          "ci95": [
+            0.6469020692079666,
+            3.3778146919966607
+          ]
+        },
+        "anes": {
+          "gain_pp": 15.90922824518885,
+          "ci95": [
+            12.98332552619052,
+            17.847047194371992
+          ]
+        }
+      },
+      "meets_threshold": true
+    },
+    {
+      "reference": "pro-B",
+      "candidate": "pro-C",
+      "overall": {
+        "gain_pp": -0.3637284388906134,
+        "ci95": [
+          -2.116173043974264,
+          1.6969347276774074
+        ]
+      },
+      "surveys": {
+        "shed": {
+          "gain_pp": -0.6433760390951377,
+          "ci95": [
+            -3.49187231668706,
+            2.5812404649232827
+          ]
+        },
+        "pew": {
+          "gain_pp": 0.08100024285575813,
+          "ci95": [
+            -1.9878907162811787,
+            2.2177189180323627
+          ]
+        },
+        "anes": {
+          "gain_pp": -0.5288095204324605,
+          "ci95": [
+            -4.863802944275072,
+            4.35598247634323
+          ]
+        }
+      },
+      "meets_threshold": false
+    },
+    {
+      "reference": "qwen-B",
+      "candidate": "qwen-C",
+      "overall": {
+        "gain_pp": 3.9055532467800353,
+        "ci95": [
+          2.4445974882255546,
+          5.446326013862251
+        ]
+      },
+      "surveys": {
+        "shed": {
+          "gain_pp": 1.8810918153675331,
+          "ci95": [
+            -0.6082596418236315,
+            4.405403394083202
+          ]
+        },
+        "pew": {
+          "gain_pp": 1.9910657435252972,
+          "ci95": [
+            -0.20150572013563933,
+            4.475421141770908
+          ]
+        },
+        "anes": {
+          "gain_pp": 7.844502181447275,
+          "ci95": [
+            5.250499467014176,
+            10.62780874446954
+          ]
+        }
+      },
+      "meets_threshold": true
+    }
+  ]
+}

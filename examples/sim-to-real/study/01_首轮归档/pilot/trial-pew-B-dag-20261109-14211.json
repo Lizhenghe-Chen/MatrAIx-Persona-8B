@@ -1,0 +1,23 @@
+{
+  "survey": "pew",
+  "arm": "B",
+  "id": "dag-20261109-14211",
+  "answers": {
+    "OSCAM_PROB": "1",
+    "OSCAM_PLAT_b": "1",
+    "OSCAM_PLAT_d": "1",
+    "OSCAM_PLAT_c": "1",
+    "OSCAM_PLAT_a": "1"
+  },
+  "errors": [],
+  "usage": {
+    "n_input_tokens": 852,
+    "n_output_tokens": 169,
+    "n_cache_tokens": 128,
+    "cost_usd": 0.00042076799999999997,
+    "request_id": "9114e071-0a39-42b6-a51d-9215f075ab19",
+    "model": "deepseek-flash",
+    "provider": "deepseek",
+    "cost_source": "estimated"
+  }
+}

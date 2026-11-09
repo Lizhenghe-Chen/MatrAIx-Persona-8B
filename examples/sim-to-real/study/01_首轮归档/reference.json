@@ -1,0 +1,784 @@
+{
+  "shed": {
+    "sha256": "a4ab3f7d042f16d63626b1af9aeb6f0b8a0b39e412fa94b87265bc67fe26de14",
+    "input_rows": 12934,
+    "positive_weight_rows": 12934,
+    "matched_rows": 12934,
+    "stratum_count": {
+      "65+|Below bachelor's degree": 2270,
+      "65+|Bachelor's degree or higher": 1371,
+      "18–64|Below bachelor's degree": 5240,
+      "18–64|Bachelor's degree or higher": 4053
+    },
+    "stratum_weight": {
+      "18–64|Below bachelor's degree": 0.48189746848817705,
+      "18–64|Bachelor's degree or higher": 0.29024972084013106,
+      "65+|Below bachelor's degree": 0.15481248449723933,
+      "65+|Bachelor's degree or higher": 0.07304032617445248
+    },
+    "columns": {
+      "age": "ppage",
+      "education": "ppeducat",
+      "weight": "weight",
+      "items": {
+        "INF3_a": "INF3_a",
+        "INF3_b": "INF3_b",
+        "INF3_c": "INF3_c",
+        "INF3_d": "INF3_d",
+        "INF3_e": "INF3_e",
+        "INF3_f": "INF3_f",
+        "INF5": "INF5"
+      },
+      "imputation_flags": {
+        "INF3_a": "INF3_a_iflag",
+        "INF3_b": "INF3_b_iflag",
+        "INF3_c": "INF3_c_iflag",
+        "INF3_d": "INF3_d_iflag",
+        "INF3_e": "INF3_e_iflag",
+        "INF3_f": "INF3_f_iflag",
+        "INF5": "INF5_iflag"
+      }
+    },
+    "items": {
+      "INF3_a": {
+        "18–64|Below bachelor's degree": {
+          "valid": 5213,
+          "weight": 6195.364100000006,
+          "distribution": {
+            "1": 0.6660590618071988,
+            "0": 0.3339409381928013
+          }
+        },
+        "18–64|Bachelor's degree or higher": {
+          "valid": 4040,
+          "weight": 3741.329399999994,
+          "distribution": {
+            "1": 0.6255120706559552,
+            "0": 0.37448792934404473
+          }
+        },
+        "65+|Below bachelor's degree": {
+          "valid": 2261,
+          "weight": 1994.5971999999974,
+          "distribution": {
+            "1": 0.5469813654606557,
+            "0": 0.45301863453934443
+          }
+        },
+        "65+|Bachelor's degree or higher": {
+          "valid": 1370,
+          "weight": 944.0701999999994,
+          "distribution": {
+            "1": 0.47272056675446394,
+            "0": 0.5272794332455361
+          }
+        }
+      },
+      "INF3_b": {
+        "18–64|Below bachelor's degree": {
+          "valid": 5215,
+          "weight": 6199.710700000006,
+          "distribution": {
+            "1": 0.637639704704286,
+            "0": 0.362360295295714
+          }
+        },
+        "18–64|Bachelor's degree or higher": {
+          "valid": 4038,
+          "weight": 3739.8306999999913,
+          "distribution": {
+            "1": 0.6208367400160655,
+            "0": 0.3791632599839345
+          }
+        },
+        "65+|Below bachelor's degree": {
+          "valid": 2261,
+          "weight": 1994.6964999999982,
+          "distribution": {
+            "1": 0.5026205239744492,
+            "0": 0.4973794760255508
+          }
+        },
+        "65+|Bachelor's degree or higher": {
+          "valid": 1369,
+          "weight": 943.480299999999,
+          "distribution": {
+            "1": 0.4307926726186019,
+            "0": 0.5692073273813981
+          }
+        }
+      },
+      "INF3_c": {
+        "18–64|Below bachelor's degree": {
+          "valid": 5206,
+          "weight": 6191.3580999999995,
+          "distribution": {
+            "1": 0.45680820820233325,
+            "0": 0.5431917917976667
+          }
+        },
+        "18–64|Bachelor's degree or higher": {
+          "valid": 4039,
+          "weight": 3741.2494999999994,
+          "distribution": {
+            "1": 0.40090058147685703,
+            "0": 0.599099418523143
+          }
+        },
+        "65+|Below bachelor's degree": {
+          "valid": 2248,
+          "weight": 1983.0466999999994,
+          "distribution": {
+            "1": 0.3523791446767239,
+            "0": 0.6476208553232762
+          }
+        },
+        "65+|Bachelor's degree or higher": {
+          "valid": 1369,
+          "weight": 943.341999999998,
+          "distribution": {
+            "1": 0.2687702869160925,
+            "0": 0.7312297130839076
+          }
+        }
+      },
+      "INF3_d": {
+        "18–64|Below bachelor's degree": {
+          "valid": 5211,
+          "weight": 6194.20509999999,
+          "distribution": {
+            "1": 0.21881175681444623,
+            "0": 0.7811882431855538
+          }
+        },
+        "18–64|Bachelor's degree or higher": {
+          "valid": 4029,
+          "weight": 3732.0775999999946,
+          "distribution": {
+            "1": 0.12592345346731287,
+            "0": 0.8740765465326872
+          }
+        },
+        "65+|Below bachelor's degree": {
+          "valid": 2255,
+          "weight": 1990.8086999999998,
+          "distribution": {
+            "1": 0.08061472707046144,
+            "0": 0.9193852729295385
+          }
+        },
+        "65+|Bachelor's degree or higher": {
+          "valid": 1368,
+          "weight": 942.8586999999973,
+          "distribution": {
+            "1": 0.05537648430247305,
+            "0": 0.944623515697527
+          }
+        }
+      },
+      "INF3_e": {
+        "18–64|Below bachelor's degree": {
+          "valid": 5210,
+          "weight": 6194.798299999998,
+          "distribution": {
+            "1": 0.5211274433261209,
+            "0": 0.47887255667387907
+          }
+        },
+        "18–64|Bachelor's degree or higher": {
+          "valid": 4040,
+          "weight": 3742.138499999996,
+          "distribution": {
+            "1": 0.47455619293620455,
+            "0": 0.5254438070637955
+          }
+        },
+        "65+|Below bachelor's degree": {
+          "valid": 2261,
+          "weight": 1995.1182000000008,
+          "distribution": {
+            "1": 0.30892680944918427,
+            "0": 0.6910731905508157
+          }
+        },
+        "65+|Bachelor's degree or higher": {
+          "valid": 1371,
+          "weight": 944.702599999998,
+          "distribution": {
+            "1": 0.2631845196572978,
+            "0": 0.7368154803427022
+          }
+        }
+      },
+      "INF3_f": {
+        "18–64|Below bachelor's degree": {
+          "valid": 5203,
+          "weight": 6185.252299999989,
+          "distribution": {
+            "1": 0.23858310517098852,
+            "0": 0.7614168948290115
+          }
+        },
+        "18–64|Bachelor's degree or higher": {
+          "valid": 4035,
+          "weight": 3737.169099999989,
+          "distribution": {
+            "1": 0.16408826670433552,
+            "0": 0.8359117332956645
+          }
+        },
+        "65+|Below bachelor's degree": {
+          "valid": 2252,
+          "weight": 1987.2148999999997,
+          "distribution": {
+            "1": 0.03155597313607099,
+            "0": 0.968444026863929
+          }
+        },
+        "65+|Bachelor's degree or higher": {
+          "valid": 1370,
+          "weight": 944.2232999999966,
+          "distribution": {
+            "1": 0.039869806220626136,
+            "0": 0.9601301937793739
+          }
+        }
+      },
+      "INF5": {
+        "18–64|Below bachelor's degree": {
+          "valid": 5210,
+          "weight": 6194.348399999982,
+          "distribution": {
+            "1": 0.16438823492718002,
+            "0": 0.83561176507282
+          }
+        },
+        "18–64|Bachelor's degree or higher": {
+          "valid": 4048,
+          "weight": 3749.6933999999997,
+          "distribution": {
+            "1": 0.2176675564994194,
+            "0": 0.7823324435005806
+          }
+        },
+        "65+|Below bachelor's degree": {
+          "valid": 2259,
+          "weight": 1990.9398999999999,
+          "distribution": {
+            "1": 0.13964183449234208,
+            "0": 0.8603581655076579
+          }
+        },
+        "65+|Bachelor's degree or higher": {
+          "valid": 1370,
+          "weight": 944.0915999999975,
+          "distribution": {
+            "1": 0.16455532492821703,
+            "0": 0.835444675071783
+          }
+        }
+      }
+    }
+  },
+  "pew": {
+    "sha256": "c0ddd883c995d24c262d6569ce22a9fe9aa1ad8fe7af1d96d0b48e1f664e1cdb",
+    "input_rows": 9397,
+    "positive_weight_rows": 9397,
+    "matched_rows": 9341,
+    "stratum_count": {
+      "65+|Below bachelor's degree": 1597,
+      "18–64|Bachelor's degree or higher": 3263,
+      "65+|Bachelor's degree or higher": 1278,
+      "18–64|Below bachelor's degree": 3203
+    },
+    "stratum_weight": {
+      "18–64|Below bachelor's degree": 0.49933389956768387,
+      "18–64|Bachelor's degree or higher": 0.2742618368380241,
+      "65+|Below bachelor's degree": 0.15469206290101375,
+      "65+|Bachelor's degree or higher": 0.07171220069327826
+    },
+    "columns": {
+      "age": "F_AGECAT",
+      "education": "F_EDUCCAT2",
+      "weight": "WEIGHT_W168",
+      "items": {
+        "OSCAM_PROB": "OSCAM_PROB_W168",
+        "OSCAM_PLAT_a": "OSCAM_PLAT_a_W168",
+        "OSCAM_PLAT_b": "OSCAM_PLAT_b_W168",
+        "OSCAM_PLAT_c": "OSCAM_PLAT_c_W168",
+        "OSCAM_PLAT_d": "OSCAM_PLAT_d_W168"
+      },
+      "imputation_flags": {}
+    },
+    "items": {
+      "OSCAM_PROB": {
+        "18–64|Below bachelor's degree": {
+          "valid": 3200,
+          "weight": 4655.46964507143,
+          "distribution": {
+            "1": 0.7840716928711167,
+            "2": 0.19932921851808968,
+            "3": 0.016599088610793723
+          }
+        },
+        "18–64|Bachelor's degree or higher": {
+          "valid": 3260,
+          "weight": 2555.981305693711,
+          "distribution": {
+            "1": 0.7522688078616969,
+            "2": 0.24348180380336454,
+            "3": 0.004249388334938426
+          }
+        },
+        "65+|Below bachelor's degree": {
+          "valid": 1591,
+          "weight": 1435.2696890163575,
+          "distribution": {
+            "1": 0.8792304521185887,
+            "2": 0.11414520449942264,
+            "3": 0.006624343381988626
+          }
+        },
+        "65+|Bachelor's degree or higher": {
+          "valid": 1275,
+          "weight": 667.4486903076852,
+          "distribution": {
+            "1": 0.8636424184195669,
+            "2": 0.13516395729787037,
+            "3": 0.0011936242825627255
+          }
+        }
+      },
+      "OSCAM_PLAT_a": {
+        "18–64|Below bachelor's degree": {
+          "valid": 3196,
+          "weight": 4643.011812999755,
+          "distribution": {
+            "1": 0.6866176189111138,
+            "2": 0.23962424353584358,
+            "3": 0.028052804203773336,
+            "4": 0.045705333349269225
+          }
+        },
+        "18–64|Bachelor's degree or higher": {
+          "valid": 3260,
+          "weight": 2552.928191873398,
+          "distribution": {
+            "1": 0.7026356565153778,
+            "2": 0.26136055189328766,
+            "3": 0.013627167602531748,
+            "4": 0.022376623988802823
+          }
+        },
+        "65+|Below bachelor's degree": {
+          "valid": 1594,
+          "weight": 1441.0959609012239,
+          "distribution": {
+            "1": 0.6436809658679936,
+            "2": 0.23013835103742078,
+            "3": 0.03672448387852785,
+            "4": 0.0894561992160577
+          }
+        },
+        "65+|Bachelor's degree or higher": {
+          "valid": 1276,
+          "weight": 668.2399404525395,
+          "distribution": {
+            "1": 0.6625138311394178,
+            "2": 0.24536744338183614,
+            "3": 0.011541646691783496,
+            "4": 0.08057707878696266
+          }
+        }
+      },
+      "OSCAM_PLAT_b": {
+        "18–64|Below bachelor's degree": {
+          "valid": 3199,
+          "weight": 4654.478542827445,
+          "distribution": {
+            "1": 0.6496173459661054,
+            "2": 0.26359654061980314,
+            "3": 0.030564146952640675,
+            "4": 0.056221966461450765
+          }
+        },
+        "18–64|Bachelor's degree or higher": {
+          "valid": 3256,
+          "weight": 2549.976376954789,
+          "distribution": {
+            "1": 0.6778432546578618,
+            "2": 0.28707654495722496,
+            "3": 0.010865406031949576,
+            "4": 0.02421479435296375
+          }
+        },
+        "65+|Below bachelor's degree": {
+          "valid": 1593,
+          "weight": 1439.7786916875068,
+          "distribution": {
+            "1": 0.5902012263806414,
+            "2": 0.24849364060635062,
+            "3": 0.033707294012583267,
+            "4": 0.1275978390004247
+          }
+        },
+        "65+|Bachelor's degree or higher": {
+          "valid": 1276,
+          "weight": 668.0833485366236,
+          "distribution": {
+            "1": 0.6456987507740135,
+            "2": 0.25448219492951885,
+            "3": 0.01879159063198875,
+            "4": 0.08102746366447901
+          }
+        }
+      },
+      "OSCAM_PLAT_c": {
+        "18–64|Below bachelor's degree": {
+          "valid": 3196,
+          "weight": 4643.1894977659185,
+          "distribution": {
+            "1": 0.6519389335973375,
+            "2": 0.25513907904936356,
+            "3": 0.01719822595762765,
+            "4": 0.07572376139567132
+          }
+        },
+        "18–64|Bachelor's degree or higher": {
+          "valid": 3252,
+          "weight": 2546.1095502444778,
+          "distribution": {
+            "1": 0.606162521619105,
+            "2": 0.2983312903513144,
+            "3": 0.012206641136309909,
+            "4": 0.08329954689327063
+          }
+        },
+        "65+|Below bachelor's degree": {
+          "valid": 1593,
+          "weight": 1437.8736573846825,
+          "distribution": {
+            "1": 0.5595893154525022,
+            "2": 0.2001415257536385,
+            "3": 0.02197430447694123,
+            "4": 0.2182948543169181
+          }
+        },
+        "65+|Bachelor's degree or higher": {
+          "valid": 1273,
+          "weight": 666.7277670110453,
+          "distribution": {
+            "1": 0.5708525729304126,
+            "2": 0.19081100782861704,
+            "3": 0.01117666533439874,
+            "4": 0.22715975390657164
+          }
+        }
+      },
+      "OSCAM_PLAT_d": {
+        "18–64|Below bachelor's degree": {
+          "valid": 3192,
+          "weight": 4643.562587552783,
+          "distribution": {
+            "1": 0.5496958612448328,
+            "2": 0.3306115047790465,
+            "3": 0.028163881001633865,
+            "4": 0.09152875297448688
+          }
+        },
+        "18–64|Bachelor's degree or higher": {
+          "valid": 3254,
+          "weight": 2547.796186209591,
+          "distribution": {
+            "1": 0.4421434024984813,
+            "2": 0.4250290766822507,
+            "3": 0.03347950914161014,
+            "4": 0.09934801167765785
+          }
+        },
+        "65+|Below bachelor's degree": {
+          "valid": 1593,
+          "weight": 1439.9976583176385,
+          "distribution": {
+            "1": 0.4820206375744595,
+            "2": 0.29143238856500936,
+            "3": 0.03497164638420468,
+            "4": 0.19157532747632647
+          }
+        },
+        "65+|Bachelor's degree or higher": {
+          "valid": 1273,
+          "weight": 666.3010837585209,
+          "distribution": {
+            "1": 0.4825132830960196,
+            "2": 0.30580542864906585,
+            "3": 0.026278108327300924,
+            "4": 0.1854031799276137
+          }
+        }
+      }
+    }
+  },
+  "anes": {
+    "sha256": "31082da127f1ebcfb1d2736ba650d52cd67a4a6ab13fbe639c2db2515779773c",
+    "input_rows": 5521,
+    "positive_weight_rows": 2063,
+    "matched_rows": 1927,
+    "stratum_count": {
+      "18–64|Bachelor's degree or higher": 643,
+      "65+|Bachelor's degree or higher": 213,
+      "18–64|Below bachelor's degree": 785,
+      "65+|Below bachelor's degree": 286
+    },
+    "stratum_weight": {
+      "18–64|Below bachelor's degree": 0.5036528377969254,
+      "18–64|Bachelor's degree or higher": 0.27372304183536394,
+      "65+|Below bachelor's degree": 0.15197437278505715,
+      "65+|Bachelor's degree or higher": 0.07064974758265355
+    },
+    "columns": {
+      "age": "V241458x",
+      "education": "V241465x",
+      "weight": "V240102a",
+      "items": {
+        "V241264": "V241264",
+        "V241267": "V241267",
+        "V241270": "V241270",
+        "V241273": "V241273",
+        "V241276": "V241276",
+        "V241282": "V241282"
+      },
+      "imputation_flags": {}
+    },
+    "items": {
+      "V241264": {
+        "18–64|Below bachelor's degree": {
+          "valid": 782,
+          "weight": 971.3757733656097,
+          "distribution": {
+            "1": 0.7434398352286313,
+            "2": 0.07405453774112333,
+            "3": 0.18250562703024537
+          }
+        },
+        "18–64|Bachelor's degree or higher": {
+          "valid": 643,
+          "weight": 530.8095721415224,
+          "distribution": {
+            "1": 0.7399015579350989,
+            "2": 0.06715863573913967,
+            "3": 0.19293980632576133
+          }
+        },
+        "65+|Below bachelor's degree": {
+          "valid": 285,
+          "weight": 293.74290888709527,
+          "distribution": {
+            "1": 0.6186003352324067,
+            "2": 0.08736438782014024,
+            "3": 0.29403527694745313
+          }
+        },
+        "65+|Bachelor's degree or higher": {
+          "valid": 213,
+          "weight": 137.00550028525174,
+          "distribution": {
+            "1": 0.5519829758685747,
+            "2": 0.11729886269159842,
+            "3": 0.33071816143982685
+          }
+        }
+      },
+      "V241267": {
+        "18–64|Below bachelor's degree": {
+          "valid": 783,
+          "weight": 972.3134387935489,
+          "distribution": {
+            "1": 0.6409206347586823,
+            "2": 0.09365319898691783,
+            "3": 0.2654261662543998
+          }
+        },
+        "18–64|Bachelor's degree or higher": {
+          "valid": 642,
+          "weight": 530.549413578006,
+          "distribution": {
+            "1": 0.5789843597547766,
+            "2": 0.15157464891073,
+            "3": 0.2694409913344935
+          }
+        },
+        "65+|Below bachelor's degree": {
+          "valid": 285,
+          "weight": 293.7429088870954,
+          "distribution": {
+            "1": 0.8088769457051787,
+            "2": 0.027988324785882795,
+            "3": 0.1631347295089385
+          }
+        },
+        "65+|Bachelor's degree or higher": {
+          "valid": 213,
+          "weight": 137.0055002852517,
+          "distribution": {
+            "1": 0.7091910788161025,
+            "2": 0.03240557847376915,
+            "3": 0.2584033427101284
+          }
+        }
+      },
+      "V241270": {
+        "18–64|Below bachelor's degree": {
+          "valid": 782,
+          "weight": 970.4533978618465,
+          "distribution": {
+            "1": 0.6454059208945389,
+            "2": 0.07323139086410037,
+            "3": 0.28136268824136085
+          }
+        },
+        "18–64|Bachelor's degree or higher": {
+          "valid": 642,
+          "weight": 530.3771982078134,
+          "distribution": {
+            "1": 0.5516944371161897,
+            "2": 0.08575645073008246,
+            "3": 0.36254911215372787
+          }
+        },
+        "65+|Below bachelor's degree": {
+          "valid": 285,
+          "weight": 293.7429088870953,
+          "distribution": {
+            "1": 0.730892256490678,
+            "2": 0.018333208258819372,
+            "3": 0.2507745352505026
+          }
+        },
+        "65+|Bachelor's degree or higher": {
+          "valid": 213,
+          "weight": 137.00550028525174,
+          "distribution": {
+            "1": 0.6513367032125358,
+            "2": 0.02257330519673982,
+            "3": 0.3260899915907244
+          }
+        }
+      },
+      "V241273": {
+        "18–64|Below bachelor's degree": {
+          "valid": 783,
+          "weight": 972.3134387935488,
+          "distribution": {
+            "1": 0.34694772492469755,
+            "2": 0.2794245089593286,
+            "3": 0.3736277661159739
+          }
+        },
+        "18–64|Bachelor's degree or higher": {
+          "valid": 643,
+          "weight": 530.8095721415223,
+          "distribution": {
+            "1": 0.36242139061393236,
+            "2": 0.26892417309393235,
+            "3": 0.36865443629213535
+          }
+        },
+        "65+|Below bachelor's degree": {
+          "valid": 285,
+          "weight": 293.7429088870953,
+          "distribution": {
+            "1": 0.23222158692260067,
+            "2": 0.2826845479089225,
+            "3": 0.4850938651684768
+          }
+        },
+        "65+|Bachelor's degree or higher": {
+          "valid": 213,
+          "weight": 137.00550028525174,
+          "distribution": {
+            "1": 0.24311397384797542,
+            "2": 0.32828593316132276,
+            "3": 0.42860009299070173
+          }
+        }
+      },
+      "V241276": {
+        "18–64|Below bachelor's degree": {
+          "valid": 781,
+          "weight": 971.0556012088114,
+          "distribution": {
+            "1": 0.5723442293289595,
+            "2": 0.06383515018394671,
+            "3": 0.3638206204870939
+          }
+        },
+        "18–64|Bachelor's degree or higher": {
+          "valid": 643,
+          "weight": 530.8095721415223,
+          "distribution": {
+            "1": 0.5945745368405126,
+            "2": 0.039672952973686,
+            "3": 0.36575251018580135
+          }
+        },
+        "65+|Below bachelor's degree": {
+          "valid": 285,
+          "weight": 293.74290888709527,
+          "distribution": {
+            "1": 0.6243369486618546,
+            "2": 0.01663000035463891,
+            "3": 0.3590330509835064
+          }
+        },
+        "65+|Bachelor's degree or higher": {
+          "valid": 213,
+          "weight": 137.0055002852517,
+          "distribution": {
+            "1": 0.7006820719415451,
+            "2": 0.003053384850015698,
+            "3": 0.2962645432084392
+          }
+        }
+      },
+      "V241282": {
+        "18–64|Below bachelor's degree": {
+          "valid": 782,
+          "weight": 971.3757733656098,
+          "distribution": {
+            "1": 0.5292686618899587,
+            "2": 0.1395825655935419,
+            "3": 0.3311487725164994
+          }
+        },
+        "18–64|Bachelor's degree or higher": {
+          "valid": 643,
+          "weight": 530.8095721415223,
+          "distribution": {
+            "1": 0.644028033970689,
+            "2": 0.11525729816262589,
+            "3": 0.24071466786668524
+          }
+        },
+        "65+|Below bachelor's degree": {
+          "valid": 285,
+          "weight": 293.74290888709527,
+          "distribution": {
+            "1": 0.5265661449349733,
+            "2": 0.14031328698679632,
+            "3": 0.33312056807823043
+          }
+        },
+        "65+|Bachelor's degree or higher": {
+          "valid": 213,
+          "weight": 137.00550028525174,
+          "distribution": {
+            "1": 0.6076350631330659,
+            "2": 0.14579965253790397,
+            "3": 0.24656528432903013
+          }
+        }
+      }
+    }
+  }
+}

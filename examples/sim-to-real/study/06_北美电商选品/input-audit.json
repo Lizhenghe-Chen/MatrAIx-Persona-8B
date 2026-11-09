@@ -1,0 +1,53 @@
+{
+  "origin": {
+    "eligible": 996,
+    "audited_payloads": 1152,
+    "valid_target_counts": {
+      "1": 240,
+      "2": 240,
+      "3": 240,
+      "4": 240,
+      "5": 240,
+      "6": 240,
+      "7": 240,
+      "8": 240,
+      "9": 240,
+      "10": 240
+    },
+    "split_ids_disjoint": true,
+    "local_endpoint_only": true,
+    "same_item_order": true
+  },
+  "packaging": {
+    "eligible": 1291,
+    "audited_payloads": 1152,
+    "valid_target_counts": {
+      "1": 240,
+      "2": 240,
+      "3": 240,
+      "4": 240,
+      "5": 240,
+      "6": 240,
+      "7": 240,
+      "8": 240
+    },
+    "split_ids_disjoint": true,
+    "local_endpoint_only": true,
+    "same_item_order": true
+  },
+  "pew": {
+    "eligible": 5863,
+    "audited_payloads": 1152,
+    "valid_target_counts": {
+      "ONLSHOP1_a": 238,
+      "ONLSHOP1_b": 237,
+      "ONLSHOP1_c": 238,
+      "SHOP4": 238,
+      "ONLSHOP3": 169,
+      "ONLSHOP4": 169
+    },
+    "split_ids_disjoint": true,
+    "local_endpoint_only": true,
+    "same_item_order": true
+  }
+}
