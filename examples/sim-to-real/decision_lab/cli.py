@@ -53,6 +53,12 @@ def main():
             parser.error('--output required')
         with args.output.open('x') as f:
             json.dump(result, f, ensure_ascii=False, indent=2)
+    elif args.command == 'report':
+        from .report import render
+        if not args.output:
+            parser.error('--output required')
+        with args.output.open('x') as f:
+            f.write(render(doc))
     elif args.command == 'verify':
         for item in doc['files']:
             import hashlib

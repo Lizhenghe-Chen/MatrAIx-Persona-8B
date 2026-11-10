@@ -15,7 +15,7 @@ python -m decision_lab verify --input archive.json
 python -m unittest decision_lab.test_core
 ```
 
-`score` 已支持本地概率评分；`run` 已接入冻结配置与SQLite检查点；`report` 当前明确返回未实现，不会生成模拟成绩。`freeze` 拒绝覆盖已有划分，且要求五项审查全部通过。未通过审查不能以演示数据代替正式实验。
+`score` 已支持本地概率评分；`run` 已接入冻结配置与SQLite检查点；`report` 已支持聚合结果的离线HTML初版，不会自动推断实验成功。`freeze` 拒绝覆盖已有划分，且要求五项审查全部通过。未通过审查不能以演示数据代替正式实验。
 
 标准化输入的每条记录包含 person（仅本地）、task、stratum、question、options、context、background、answer（仅评分侧）。background 必须由数据适配器按核准映射产生，不能将原始记录直接送入API。request_payload 只构造明确允许的字段；字段名检查只是附加防护，不能替代内容与来源审查。
 
@@ -49,3 +49,5 @@ python -m unittest decision_lab.test_core
 ## 校准候选
 
 `calibration.py`在开发集上选择概率温度与统计/LLM凸组合；显式拒绝测试标记及已知测试人员重叠。温度处理保留零概率，不默认补出模型未给出的质量。若混合权重选为0，报告必须写“统计基线被选中”，不能记为LLM优化成功。候选网格仍需在正式方案中冻结。
+
+报告模块具备中文指标解释、方案汇总表和逐题真人/模型分布条形图。当前仅通过合成输入的内容测试，尚无真实结果报告，也尚未完成浏览器视觉验收、置信区间及完整分群展示；不能视为最终交付。
