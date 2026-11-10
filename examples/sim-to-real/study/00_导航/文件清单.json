@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 458,
-  "git_bytes": 78545754,
+  "git_file_count": 459,
+  "git_bytes": 78547150,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -298,6 +298,12 @@
       "path": "decision_lab/swiss-pilot-protocol.json",
       "bytes": 1617,
       "sha256": "91f0b98f7ddbea91c821d3ca261bb16e0c2e0d14dd0ef1f6ecbe7209818de107",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/swiss-pilot-result.json",
+      "bytes": 1396,
+      "sha256": "28c72c2f173d427316adccacf1b517d0e0a9411f010d2fd2d1ac5db815a54618",
       "storage": "git"
     },
     {

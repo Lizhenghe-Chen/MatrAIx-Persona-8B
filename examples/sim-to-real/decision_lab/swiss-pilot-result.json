@@ -1,0 +1,54 @@
+{
+  "purpose": "Technical validity only; no prediction score calculated",
+  "expected_people": 24,
+  "expected_calls": 72,
+  "passed": true,
+  "conditions": {
+    "basic": {
+      "completed": 24,
+      "failed": 0,
+      "pending": 0,
+      "identities": [
+        {
+          "model": "deepseek-v4-pro",
+          "system_fingerprint": "a307abda487cd1b463329ccb945ce396"
+        }
+      ],
+      "prompt_tokens": 7850,
+      "completion_tokens": 387,
+      "total_call_seconds": 25.241719666169956,
+      "reserved_cost_usd": 0.1580568
+    },
+    "none": {
+      "completed": 24,
+      "failed": 0,
+      "pending": 0,
+      "identities": [
+        {
+          "model": "deepseek-v4-pro",
+          "system_fingerprint": "a307abda487cd1b463329ccb945ce396"
+        }
+      ],
+      "prompt_tokens": 7376,
+      "completion_tokens": 393,
+      "total_call_seconds": 25.590223376173526,
+      "reserved_cost_usd": 0.15560028
+    },
+    "rich": {
+      "completed": 24,
+      "failed": 0,
+      "pending": 0,
+      "identities": [
+        {
+          "model": "deepseek-v4-pro",
+          "system_fingerprint": "a307abda487cd1b463329ccb945ce396"
+        }
+      ],
+      "prompt_tokens": 8768,
+      "completion_tokens": 402,
+      "total_call_seconds": 26.478073830716312,
+      "reserved_cost_usd": 0.1617594
+    }
+  },
+  "cost_note": "Reserved cost is a conservative cap, not actual billing."
+}
