@@ -1,0 +1,14 @@
+{
+  "price": {
+    "baseline": "recent",
+    "model_weight": 0.162531295877934
+  },
+  "spend": {
+    "baseline": "recent",
+    "model_weight": 0.0
+  },
+  "repeat": {
+    "baseline": "recent",
+    "model_weight": 0.0
+  }
+}

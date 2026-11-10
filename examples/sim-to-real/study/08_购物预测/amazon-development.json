@@ -1,0 +1,35 @@
+{
+  "development_people": 60,
+  "frozen_test_people": 500,
+  "categories": [
+    "ABIS_BOOK",
+    "Unknown category",
+    "PET_FOOD",
+    "SHIRT",
+    "NUTRITIONAL_SUPPLEMENT",
+    "GIFT_CARD",
+    "ELECTRONIC_CABLE",
+    "MEDICATION",
+    "HEALTH_PERSONAL_CARE",
+    "PANTS",
+    "VEGETABLE",
+    "FOOD",
+    "Other"
+  ],
+  "development_only": {
+    "population": {
+      "brier": 0.10577480339518347,
+      "mean_category_prevalence_error_pp": 7.681126647319688
+    },
+    "history": {
+      "brier": 0.08743519006637732,
+      "mean_category_prevalence_error_pp": 5.957129341593969
+    },
+    "recent": {
+      "brier": 0.0848229264123268,
+      "mean_category_prevalence_error_pp": 6.026771693111722
+    }
+  },
+  "primary_baseline": "recent",
+  "prediction_date": "2022-10-01"
+}

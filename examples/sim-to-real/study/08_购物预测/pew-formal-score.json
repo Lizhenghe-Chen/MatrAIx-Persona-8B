@@ -1,0 +1,3125 @@
+{
+  "stage": "formal",
+  "requested": 240,
+  "complete": {
+    "basic_choice": 240,
+    "rich_choice": 240,
+    "basic_probability": 240,
+    "rich_probability": 240
+  },
+  "common_people": 240,
+  "questions": 13,
+  "summaries": {
+    "basic_choice": {
+      "tv_pp": 41.7114496849739,
+      "brier": 1.05808320330377,
+      "accuracy": 0.47095839834811487,
+      "concentration_counts": {
+        "0.95": 5,
+        "0.99": 0,
+        "1": 0
+      }
+    },
+    "rich_choice": {
+      "tv_pp": 43.411770535773535,
+      "brier": 1.021177109634729,
+      "accuracy": 0.48941144518263546,
+      "concentration_counts": {
+        "0.95": 5,
+        "0.99": 1,
+        "1": 0
+      }
+    },
+    "basic_probability": {
+      "tv_pp": 18.636454559538752,
+      "brier": 0.6479088713507584,
+      "accuracy": 0.4722765682394311,
+      "concentration_counts": {
+        "0.95": 0,
+        "0.99": 0,
+        "1": 0
+      }
+    },
+    "rich_probability": {
+      "tv_pp": 18.076963109681422,
+      "brier": 0.6538282052743097,
+      "accuracy": 0.45640172380377203,
+      "concentration_counts": {
+        "0.95": 0,
+        "0.99": 0,
+        "1": 0
+      }
+    },
+    "rich_probability_argmax": {
+      "tv_pp": 44.16689213818434,
+      "brier": 1.0871965523924556,
+      "accuracy": 0.45640172380377203,
+      "concentration_counts": {
+        "0.95": 4,
+        "0.99": 1,
+        "1": 0
+      }
+    },
+    "statistics": {
+      "tv_pp": 4.512760244189486,
+      "brier": 0.5856658038380689,
+      "accuracy": 0.4986387715893391,
+      "concentration_counts": {
+        "0.95": 0,
+        "0.99": 0,
+        "1": 0
+      }
+    }
+  },
+  "contrasts": [
+    {
+      "from": "basic_choice",
+      "to": "rich_choice",
+      "tv_improvement_pp": -1.7003208507996348,
+      "tv_95_interval": [
+        -3.770508638078514,
+        0.42587758051794405
+      ],
+      "brier_improvement": 0.03690609366904085,
+      "brier_95_interval": [
+        0.004949474418085964,
+        0.06810418496790063
+      ]
+    },
+    {
+      "from": "basic_probability",
+      "to": "rich_probability",
+      "tv_improvement_pp": 0.5594914498573296,
+      "tv_95_interval": [
+        -0.3409607329886358,
+        1.3122884972908213
+      ],
+      "brier_improvement": -0.005919333923551373,
+      "brier_95_interval": [
+        -0.016365384524412583,
+        0.0041631388767383
+      ]
+    },
+    {
+      "from": "basic_choice",
+      "to": "basic_probability",
+      "tv_improvement_pp": 23.074995125435148,
+      "tv_95_interval": [
+        20.13237555560294,
+        25.670085485454972
+      ],
+      "brier_improvement": 0.41017433195301156,
+      "brier_95_interval": [
+        0.3710515467621505,
+        0.44938594204334276
+      ]
+    },
+    {
+      "from": "rich_choice",
+      "to": "rich_probability",
+      "tv_improvement_pp": 25.334807426092112,
+      "tv_95_interval": [
+        22.537988335190157,
+        27.76631055584538
+      ],
+      "brier_improvement": 0.36734890436041934,
+      "brier_95_interval": [
+        0.3330786622619502,
+        0.4066119086673681
+      ]
+    },
+    {
+      "from": "rich_probability_argmax",
+      "to": "rich_probability",
+      "tv_improvement_pp": 26.089929028502915,
+      "tv_95_interval": [
+        22.97895047825795,
+        28.639173487968687
+      ],
+      "brier_improvement": 0.43336834711814587,
+      "brier_95_interval": [
+        0.3969371080936454,
+        0.46913015336898345
+      ]
+    },
+    {
+      "from": "statistics",
+      "to": "rich_probability",
+      "tv_improvement_pp": -13.564202865491936,
+      "tv_95_interval": [
+        -14.391622548377923,
+        -8.911435614159064
+      ],
+      "brier_improvement": -0.06816240143624086,
+      "brier_95_interval": [
+        -0.08737390740823783,
+        -0.04960059730439541
+      ]
+    }
+  ],
+  "items": {
+    "basic_choice": [
+      {
+        "question": "SHOP6A",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to look at or try out the product in person?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.28779417587426315,
+          0.5422756236412064,
+          0.16592489789886283,
+          0.004005302585667593
+        ],
+        "simulated": [
+          0.08912578530246937,
+          0.9017952306335202,
+          0.00907898406401054,
+          0.0
+        ],
+        "tv_pp": 35.95196069923137,
+        "brier": 0.9363564123696272,
+        "accuracy": 0.5318217938151865,
+        "max_share": 0.9017952306335202,
+        "recall": [
+          0.09568763343278969,
+          0.9299393670398406,
+          0.0,
+          0.0
+        ],
+        "valid_real_people": 237
+      },
+      {
+        "question": "SHOP6B",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to read ratings or reviews that other people have posted online?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.44212078182172815,
+          0.4167675275368304,
+          0.1081882234215563,
+          0.03292346721988525
+        ],
+        "simulated": [
+          0.2934760721407265,
+          0.666682626007773,
+          0.039841301851500074,
+          0.0
+        ],
+        "tv_pp": 24.991509847094285,
+        "brier": 1.0832870939117363,
+        "accuracy": 0.4583564530441318,
+        "max_share": 0.666682626007773,
+        "recall": [
+          0.3573272062711823,
+          0.6883465726249759,
+          0.12472864100374638,
+          0.0
+        ],
+        "valid_real_people": 239
+      },
+      {
+        "question": "SHOP6C",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to buy online, without having to make a trip to the store?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.08466021874076819,
+          0.3770215501264727,
+          0.3919941351863648,
+          0.14632409594639434
+        ],
+        "simulated": [
+          0.04768717694807048,
+          0.805646576722545,
+          0.1466662463293841,
+          0.0
+        ],
+        "tv_pp": 42.86250265960725,
+        "brier": 1.309698043116971,
+        "accuracy": 0.3451509784415144,
+        "max_share": 0.805646576722545,
+        "recall": [
+          0.0,
+          0.7864848250790778,
+          0.12405606659429493,
+          0.0
+        ],
+        "valid_real_people": 240
+      },
+      {
+        "question": "SHOP6D",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to compare prices from a number of different sellers?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.40956110315508965,
+          0.45313040802125165,
+          0.1313145724718492,
+          0.005993916351809467
+        ],
+        "simulated": [
+          0.16883803940445122,
+          0.8172760192082622,
+          0.01388594138728636,
+          0.0
+        ],
+        "tv_pp": 36.41456111870106,
+        "brier": 1.1863493731246528,
+        "accuracy": 0.4068253134376733,
+        "max_share": 0.8172760192082622,
+        "recall": [
+          0.11339814293197961,
+          0.795315958812924,
+          0.0,
+          0.0
+        ],
+        "valid_real_people": 239
+      },
+      {
+        "question": "SHOP6E",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to be able to ask questions about what it is that you’re buying?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.43756134200083907,
+          0.4188267313937314,
+          0.14230996639538138,
+          0.0013019602100479291
+        ],
+        "simulated": [
+          0.01621305938736989,
+          0.9751692199488047,
+          0.008617720663825386,
+          0.0
+        ],
+        "tv_pp": 55.634248855507316,
+        "brier": 1.1458120439870514,
+        "accuracy": 0.4270939780064742,
+        "max_share": 0.9751692199488047,
+        "recall": [
+          0.023428183936104772,
+          0.9952629074453304,
+          0.0,
+          0.0
+        ],
+        "valid_real_people": 239
+      },
+      {
+        "question": "SHOP6F",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to get advice or recommendations from people you know?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.2820765175499944,
+          0.5375427866588468,
+          0.1676432543457421,
+          0.012737441445416527
+        ],
+        "simulated": [
+          0.030333031424158982,
+          0.9586085059266438,
+          0.011058462649197378,
+          0.0
+        ],
+        "tv_pp": 42.10657192677969,
+        "brier": 0.9559601380032945,
+        "accuracy": 0.5220199309983526,
+        "max_share": 0.9586085059266438,
+        "recall": [
+          0.017255779617715527,
+          0.9528325818098513,
+          0.02961168673407015,
+          0.0
+        ],
+        "valid_real_people": 236
+      },
+      {
+        "question": "SHOP6G",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to buy from a store or seller that you are familiar with?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.35102226419059573,
+          0.5369774355004138,
+          0.07828475923717117,
+          0.03371554107181909
+        ],
+        "simulated": [
+          0.015045278347040211,
+          0.9734857254138163,
+          0.011468996239143518,
+          0.0
+        ],
+        "tv_pp": 43.650828991340234,
+        "brier": 0.9280191546268275,
+        "accuracy": 0.5359904226865861,
+        "max_share": 0.9734857254138163,
+        "recall": [
+          0.027146480370479897,
+          0.9743925111356097,
+          0.04131853905211633,
+          0.0
+        ],
+        "valid_real_people": 240
+      },
+      {
+        "question": "SHOP7A",
+        "question_text": "Consumers today can access lots of customer reviews and ratings about products and services they might want to buy. How much do you think these ratings and reviews help to ensure that the products and services people buy are safe?",
+        "options": [
+          "A lot",
+          "Some",
+          "A little",
+          "Not at all"
+        ],
+        "real": [
+          0.39444118212139095,
+          0.38427211680450485,
+          0.20423013174669216,
+          0.01705656932741194
+        ],
+        "simulated": [
+          0.0070926528304986695,
+          0.9406148079240999,
+          0.05229253924540166,
+          0.0
+        ],
+        "tv_pp": 55.634269111959476,
+        "brier": 1.2881458668838932,
+        "accuracy": 0.3559270665580533,
+        "max_share": 0.9406148079240999,
+        "recall": [
+          0.0,
+          0.9043418873444351,
+          0.04119712953846471,
+          0.0
+        ],
+        "valid_real_people": 240
+      },
+      {
+        "question": "SHOP7B",
+        "question_text": "Consumers today can access lots of customer reviews and ratings about products and services they might want to buy. How much do you think these ratings and reviews help to make consumers feel confident about what they are buying?",
+        "options": [
+          "A lot",
+          "Some",
+          "A little",
+          "Not at all"
+        ],
+        "real": [
+          0.4526651931100056,
+          0.46507746625762175,
+          0.07639677200405494,
+          0.005860568628317697
+        ],
+        "simulated": [
+          0.04226878435475678,
+          0.9577312156452431,
+          0.0,
+          0.0
+        ],
+        "tv_pp": 49.26537493876214,
+        "brier": 1.0822973992025064,
+        "accuracy": 0.4588513003987466,
+        "max_share": 0.9577312156452431,
+        "recall": [
+          0.03195922791819676,
+          0.9555063458511022,
+          0.0,
+          0.0
+        ],
+        "valid_real_people": 239
+      },
+      {
+        "question": "SHOP7C",
+        "question_text": "Consumers today can access lots of customer reviews and ratings about products and services they might want to buy. How much do you think these ratings and reviews help to make companies be accountable to their customers?",
+        "options": [
+          "A lot",
+          "Some",
+          "A little",
+          "Not at all"
+        ],
+        "real": [
+          0.47032113594692854,
+          0.38679558051550145,
+          0.1354576655967272,
+          0.007425617940842767
+        ],
+        "simulated": [
+          0.015511904838585647,
+          0.9824736190498666,
+          0.002014476111547555,
+          0.0
+        ],
+        "tv_pp": 59.56780385343653,
+        "brier": 1.246872223237993,
+        "accuracy": 0.37656388838100324,
+        "max_share": 0.9824736190498666,
+        "recall": [
+          0.004400240071874652,
+          0.9681971080767081,
+          0.0,
+          0.0
+        ],
+        "valid_real_people": 240
+      },
+      {
+        "question": "SHOP12",
+        "question_text": "How often do you read customer ratings or reviews that other people have posted online when buying something for the first time?",
+        "options": [
+          "Always or almost always",
+          "Sometimes",
+          "Never"
+        ],
+        "real": [
+          0.5091572486981871,
+          0.44046433248755057,
+          0.05037841881426238
+        ],
+        "simulated": [
+          0.2463697909629692,
+          0.7308393528208779,
+          0.02279085621615274
+        ],
+        "tv_pp": 29.037502033332746,
+        "brier": 1.1355632651228422,
+        "accuracy": 0.4322183674385787,
+        "max_share": 0.7308393528208779,
+        "recall": [
+          0.2382979850150711,
+          0.7058170164703865,
+          0.0
+        ],
+        "valid_real_people": 239
+      },
+      {
+        "question": "SHOP20B",
+        "question_text": "Do you ever use a cell phone while you are inside a physical store to see if you can find a better price online for something you want to buy?",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "real": [
+          0.5154918399126872,
+          0.4845081600873128
+        ],
+        "simulated": [
+          0.8742929546816974,
+          0.12570704531830254
+        ],
+        "tv_pp": 35.88011147690102,
+        "brier": 0.7839999354441444,
+        "accuracy": 0.6080000322779276,
+        "max_share": 0.8742929546816974,
+        "recall": [
+          0.9677988569531137,
+          0.22519253096193334
+        ],
+        "valid_real_people": 238
+      },
+      {
+        "question": "SHOP20C",
+        "question_text": "Do you ever use a cell phone while you are inside a physical store to look up reviews or other information online about a product you want to buy?",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "real": [
+          0.5683336701115074,
+          0.4316663298884927
+        ],
+        "simulated": [
+          0.8808496740315839,
+          0.1191503259684161
+        ],
+        "tv_pp": 31.251600392007656,
+        "brier": 0.6727206939174704,
+        "accuracy": 0.6636396530412646,
+        "max_share": 0.8808496740315839,
+        "recall": [
+          0.979022584537372,
+          0.2484051848027753
+        ],
+        "valid_real_people": 240
+      }
+    ],
+    "rich_choice": [
+      {
+        "question": "SHOP6A",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to look at or try out the product in person?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.28779417587426315,
+          0.5422756236412064,
+          0.16592489789886283,
+          0.004005302585667593
+        ],
+        "simulated": [
+          0.0916043720009558,
+          0.8961672050053697,
+          0.012228422993674569,
+          0.0
+        ],
+        "tv_pp": 35.38915813641632,
+        "brier": 0.9132882875022359,
+        "accuracy": 0.5433558562488819,
+        "max_share": 0.8961672050053697,
+        "recall": [
+          0.1505361084970119,
+          0.9221001630261543,
+          0.0,
+          0.0
+        ],
+        "valid_real_people": 237
+      },
+      {
+        "question": "SHOP6B",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to read ratings or reviews that other people have posted online?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.44212078182172815,
+          0.4167675275368304,
+          0.1081882234215563,
+          0.03292346721988525
+        ],
+        "simulated": [
+          0.24295549161731048,
+          0.7249484307350132,
+          0.03209607764767593,
+          0.0
+        ],
+        "tv_pp": 30.81809031981831,
+        "brier": 0.9847074900062166,
+        "accuracy": 0.5076462549968916,
+        "max_share": 0.7249484307350132,
+        "recall": [
+          0.34075021740109346,
+          0.8108410644749425,
+          0.17618624471510627,
+          0.0
+        ],
+        "valid_real_people": 239
+      },
+      {
+        "question": "SHOP6C",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to buy online, without having to make a trip to the store?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.08466021874076819,
+          0.3770215501264727,
+          0.3919941351863648,
+          0.14632409594639434
+        ],
+        "simulated": [
+          0.048541658295182526,
+          0.8052885411514387,
+          0.14616980055337872,
+          0.0
+        ],
+        "tv_pp": 42.826699102496605,
+        "brier": 1.2333894288359935,
+        "accuracy": 0.3833052855820031,
+        "max_share": 0.8052885411514387,
+        "recall": [
+          0.1383332972325381,
+          0.841585693638172,
+          0.13851741831194403,
+          0.0
+        ],
+        "valid_real_people": 240
+      },
+      {
+        "question": "SHOP6D",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to compare prices from a number of different sellers?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.40956110315508965,
+          0.45313040802125165,
+          0.1313145724718492,
+          0.005993916351809467
+        ],
+        "simulated": [
+          0.11388725620422753,
+          0.88087045393322,
+          0.0052422898625524555,
+          0.0
+        ],
+        "tv_pp": 42.774004591196835,
+        "brier": 1.0265162431245263,
+        "accuracy": 0.4867418784377367,
+        "max_share": 0.88087045393322,
+        "recall": [
+          0.15704265659590114,
+          0.9322334305582557,
+          0.0,
+          0.0
+        ],
+        "valid_real_people": 239
+      },
+      {
+        "question": "SHOP6E",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to be able to ask questions about what it is that you’re buying?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.43756134200083907,
+          0.4188267313937314,
+          0.14230996639538138,
+          0.0013019602100479291
+        ],
+        "simulated": [
+          0.03109983653794199,
+          0.9629045408529288,
+          0.005995622609129283,
+          0.0
+        ],
+        "tv_pp": 54.407780945919725,
+        "brier": 1.127997635021685,
+        "accuracy": 0.43600118248915737,
+        "max_share": 0.9629045408529288,
+        "recall": [
+          0.04226707420209326,
+          0.9863394806328478,
+          0.030928291055635805,
+          0.0
+        ],
+        "valid_real_people": 239
+      },
+      {
+        "question": "SHOP6F",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to get advice or recommendations from people you know?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.2820765175499944,
+          0.5375427866588468,
+          0.1676432543457421,
+          0.012737441445416527
+        ],
+        "simulated": [
+          0.022264664774042008,
+          0.9650541051076925,
+          0.012681230118265479,
+          0.0
+        ],
+        "tv_pp": 42.75113184488457,
+        "brier": 0.9375061491855978,
+        "accuracy": 0.531246925407201,
+        "max_share": 0.9650541051076925,
+        "recall": [
+          0.010623685508787077,
+          0.970624996898045,
+          0.0387594931116374,
+          0.0
+        ],
+        "valid_real_people": 236
+      },
+      {
+        "question": "SHOP6G",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to buy from a store or seller that you are familiar with?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.35102226419059573,
+          0.5369774355004138,
+          0.07828475923717117,
+          0.03371554107181909
+        ],
+        "simulated": [
+          0.01535486082059388,
+          0.9722808428071522,
+          0.012364296372253628,
+          0.0
+        ],
+        "tv_pp": 43.53034073067384,
+        "brier": 0.9221773175866301,
+        "accuracy": 0.5389113412066846,
+        "max_share": 0.9722808428071522,
+        "recall": [
+          0.012707588240615993,
+          0.975990377079302,
+          0.13241255582752604,
+          0.0
+        ],
+        "valid_real_people": 240
+      },
+      {
+        "question": "SHOP7A",
+        "question_text": "Consumers today can access lots of customer reviews and ratings about products and services they might want to buy. How much do you think these ratings and reviews help to ensure that the products and services people buy are safe?",
+        "options": [
+          "A lot",
+          "Some",
+          "A little",
+          "Not at all"
+        ],
+        "real": [
+          0.39444118212139095,
+          0.38427211680450485,
+          0.20423013174669216,
+          0.01705656932741194
+        ],
+        "simulated": [
+          0.0,
+          0.9721180164460969,
+          0.027881983553903228,
+          0.0
+        ],
+        "tv_pp": 58.78458996415918,
+        "brier": 1.2364010624382658,
+        "accuracy": 0.38179946878086696,
+        "max_share": 0.9721180164460969,
+        "recall": [
+          0.0,
+          0.9667834410131212,
+          0.05039192465476398,
+          0.0
+        ],
+        "valid_real_people": 240
+      },
+      {
+        "question": "SHOP7B",
+        "question_text": "Consumers today can access lots of customer reviews and ratings about products and services they might want to buy. How much do you think these ratings and reviews help to make consumers feel confident about what they are buying?",
+        "options": [
+          "A lot",
+          "Some",
+          "A little",
+          "Not at all"
+        ],
+        "real": [
+          0.4526651931100056,
+          0.46507746625762175,
+          0.07639677200405494,
+          0.005860568628317697
+        ],
+        "simulated": [
+          0.06826197692900988,
+          0.9317380230709902,
+          0.0,
+          0.0
+        ],
+        "tv_pp": 46.66605568133684,
+        "brier": 1.088725287110395,
+        "accuracy": 0.4556373564448024,
+        "max_share": 0.9317380230709902,
+        "recall": [
+          0.06147045244642333,
+          0.9198721788438656,
+          0.0,
+          0.0
+        ],
+        "valid_real_people": 239
+      },
+      {
+        "question": "SHOP7C",
+        "question_text": "Consumers today can access lots of customer reviews and ratings about products and services they might want to buy. How much do you think these ratings and reviews help to make companies be accountable to their customers?",
+        "options": [
+          "A lot",
+          "Some",
+          "A little",
+          "Not at all"
+        ],
+        "real": [
+          0.47032113594692854,
+          0.38679558051550145,
+          0.1354576655967272,
+          0.007425617940842767
+        ],
+        "simulated": [
+          0.0018044361486683695,
+          0.9954430662467478,
+          0.002752497604583564,
+          0.0
+        ],
+        "tv_pp": 60.86474857312465,
+        "brier": 1.22279996667166,
+        "accuracy": 0.3886000166641697,
+        "max_share": 0.9954430662467478,
+        "recall": [
+          0.003836604419308903,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "valid_real_people": 240
+      },
+      {
+        "question": "SHOP12",
+        "question_text": "How often do you read customer ratings or reviews that other people have posted online when buying something for the first time?",
+        "options": [
+          "Always or almost always",
+          "Sometimes",
+          "Never"
+        ],
+        "real": [
+          0.5091572486981871,
+          0.44046433248755057,
+          0.05037841881426238
+        ],
+        "simulated": [
+          0.18852503698698347,
+          0.7922526298748532,
+          0.01922233313816308
+        ],
+        "tv_pp": 35.17882973873028,
+        "brier": 1.0295366535659105,
+        "accuracy": 0.4852316732170446,
+        "max_share": 0.7922526298748532,
+        "recall": [
+          0.23235424059495652,
+          0.8330454937863347,
+          0.0
+        ],
+        "valid_real_people": 239
+      },
+      {
+        "question": "SHOP20B",
+        "question_text": "Do you ever use a cell phone while you are inside a physical store to see if you can find a better price online for something you want to buy?",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "real": [
+          0.5154918399126872,
+          0.4845081600873128
+        ],
+        "simulated": [
+          0.892745488985621,
+          0.10725451101437883
+        ],
+        "tv_pp": 37.72536490729339,
+        "brier": 0.8670211101145228,
+        "accuracy": 0.5664894449427386,
+        "max_share": 0.892745488985621,
+        "recall": [
+          0.9454337570175154,
+          0.16331212668937486
+        ],
+        "valid_real_people": 238
+      },
+      {
+        "question": "SHOP20C",
+        "question_text": "Do you ever use a cell phone while you are inside a physical store to look up reviews or other information online about a product you want to buy?",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "real": [
+          0.5683336701115074,
+          0.4316663298884927
+        ],
+        "simulated": [
+          0.8946958944015623,
+          0.1053041055984376
+        ],
+        "tv_pp": 32.6362224290055,
+        "brier": 0.685235794087836,
+        "accuracy": 0.6573821029560818,
+        "max_share": 0.8946958944015623,
+        "recall": [
+          0.9856988300986342,
+          0.22511894603085797
+        ],
+        "valid_real_people": 240
+      }
+    ],
+    "basic_probability": [
+      {
+        "question": "SHOP6A",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to look at or try out the product in person?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.28779417587426315,
+          0.5422756236412064,
+          0.16592489789886283,
+          0.004005302585667593
+        ],
+        "simulated": [
+          0.2378832191518432,
+          0.45353891452342887,
+          0.22505768251349834,
+          0.08352018381122983
+        ],
+        "tv_pp": 13.864766584019762,
+        "brier": 0.6250947129354079,
+        "accuracy": 0.5056077214827547,
+        "max_share": 0.45353891452342887,
+        "recall": [
+          0.07874394395963052,
+          0.8751822790908311,
+          0.050358065232524604,
+          0.0
+        ],
+        "valid_real_people": 237
+      },
+      {
+        "question": "SHOP6B",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to read ratings or reviews that other people have posted online?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.44212078182172815,
+          0.4167675275368304,
+          0.1081882234215563,
+          0.03292346721988525
+        ],
+        "simulated": [
+          0.2539885100993761,
+          0.4684847039868306,
+          0.2028553935177853,
+          0.07467139239600784
+        ],
+        "tv_pp": 18.81322717223519,
+        "brier": 0.6608465928856802,
+        "accuracy": 0.41014064656161586,
+        "max_share": 0.4684847039868306,
+        "recall": [
+          0.062352086810766365,
+          0.8706773783967139,
+          0.18212180857431495,
+          0.0
+        ],
+        "valid_real_people": 239
+      },
+      {
+        "question": "SHOP6C",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to buy online, without having to make a trip to the store?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.08466021874076819,
+          0.3770215501264727,
+          0.3919941351863648,
+          0.14632409594639434
+        ],
+        "simulated": [
+          0.16502094665028585,
+          0.4203084807000769,
+          0.29185034673401633,
+          0.12282022591562047
+        ],
+        "tv_pp": 12.36476584831221,
+        "brier": 0.7202442914699978,
+        "accuracy": 0.4151745882161246,
+        "max_share": 0.4203084807000769,
+        "recall": [
+          0.02171232156913416,
+          0.8573179060334984,
+          0.21892811137008006,
+          0.02932228438885246
+        ],
+        "valid_real_people": 240
+      },
+      {
+        "question": "SHOP6D",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to compare prices from a number of different sellers?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.40956110315508965,
+          0.45313040802125165,
+          0.1313145724718492,
+          0.005993916351809467
+        ],
+        "simulated": [
+          0.2402019941657614,
+          0.4842181638954684,
+          0.20747421877076574,
+          0.0681056231680043
+        ],
+        "tv_pp": 16.935910898932818,
+        "brier": 0.6712507388385874,
+        "accuracy": 0.4342404245125955,
+        "max_share": 0.4842181638954684,
+        "recall": [
+          0.007951240752364688,
+          0.9328752654923066,
+          0.06297668063394764,
+          0.0
+        ],
+        "valid_real_people": 239
+      },
+      {
+        "question": "SHOP6E",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to be able to ask questions about what it is that you’re buying?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.43756134200083907,
+          0.4188267313937314,
+          0.14230996639538138,
+          0.0013019602100479291
+        ],
+        "simulated": [
+          0.19758352164398918,
+          0.4793108243600564,
+          0.24189738617311968,
+          0.08120826782283454
+        ],
+        "tv_pp": 23.99778203568499,
+        "brier": 0.7018896184987045,
+        "accuracy": 0.4252240375471783,
+        "max_share": 0.4793108243600564,
+        "recall": [
+          0.036889729424546866,
+          0.9519151582403664,
+          0.07304480499479432,
+          0.0
+        ],
+        "valid_real_people": 239
+      },
+      {
+        "question": "SHOP6F",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to get advice or recommendations from people you know?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.2820765175499944,
+          0.5375427866588468,
+          0.1676432543457421,
+          0.012737441445416527
+        ],
+        "simulated": [
+          0.16835681702921695,
+          0.46209901703402445,
+          0.27540380541195214,
+          0.09414036052480647
+        ],
+        "tv_pp": 18.91634701455999,
+        "brier": 0.6519972583135878,
+        "accuracy": 0.5112639827596523,
+        "max_share": 0.46209901703402445,
+        "recall": [
+          0.0,
+          0.9098969068364642,
+          0.1321583977415603,
+          0.0
+        ],
+        "valid_real_people": 236
+      },
+      {
+        "question": "SHOP6G",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to buy from a store or seller that you are familiar with?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.35102226419059573,
+          0.5369774355004138,
+          0.07828475923717117,
+          0.03371554107181909
+        ],
+        "simulated": [
+          0.16974753797294523,
+          0.4507888186970851,
+          0.2797677725270237,
+          0.09969587080294588
+        ],
+        "tv_pp": 26.746334302097925,
+        "brier": 0.6869408283834053,
+        "accuracy": 0.47827682382727715,
+        "max_share": 0.4507888186970851,
+        "recall": [
+          0.012223033100693151,
+          0.863589577687976,
+          0.13103636545834485,
+          0.0
+        ],
+        "valid_real_people": 240
+      },
+      {
+        "question": "SHOP7A",
+        "question_text": "Consumers today can access lots of customer reviews and ratings about products and services they might want to buy. How much do you think these ratings and reviews help to ensure that the products and services people buy are safe?",
+        "options": [
+          "A lot",
+          "Some",
+          "A little",
+          "Not at all"
+        ],
+        "real": [
+          0.39444118212139095,
+          0.38427211680450485,
+          0.20423013174669216,
+          0.01705656932741194
+        ],
+        "simulated": [
+          0.1419246311908421,
+          0.47533746744444666,
+          0.2804118743412616,
+          0.10232602702344949
+        ],
+        "tv_pp": 25.251655093054882,
+        "brier": 0.7452336408784141,
+        "accuracy": 0.38388683915429217,
+        "max_share": 0.47533746744444666,
+        "recall": [
+          0.0,
+          0.9674671063592696,
+          0.059326242172308176,
+          0.0
+        ],
+        "valid_real_people": 240
+      },
+      {
+        "question": "SHOP7B",
+        "question_text": "Consumers today can access lots of customer reviews and ratings about products and services they might want to buy. How much do you think these ratings and reviews help to make consumers feel confident about what they are buying?",
+        "options": [
+          "A lot",
+          "Some",
+          "A little",
+          "Not at all"
+        ],
+        "real": [
+          0.4526651931100056,
+          0.46507746625762175,
+          0.07639677200405494,
+          0.005860568628317697
+        ],
+        "simulated": [
+          0.2525647028977539,
+          0.513586797506135,
+          0.17149059976167635,
+          0.062357899834434516
+        ],
+        "tv_pp": 20.01004902122516,
+        "brier": 0.6245402228838736,
+        "accuracy": 0.47592490348585076,
+        "max_share": 0.513586797506135,
+        "recall": [
+          0.031054629175335677,
+          0.9930981122129752,
+          0.0,
+          0.0
+        ],
+        "valid_real_people": 239
+      },
+      {
+        "question": "SHOP7C",
+        "question_text": "Consumers today can access lots of customer reviews and ratings about products and services they might want to buy. How much do you think these ratings and reviews help to make companies be accountable to their customers?",
+        "options": [
+          "A lot",
+          "Some",
+          "A little",
+          "Not at all"
+        ],
+        "real": [
+          0.47032113594692854,
+          0.38679558051550145,
+          0.1354576655967272,
+          0.007425617940842767
+        ],
+        "simulated": [
+          0.17753197794629896,
+          0.5029517739247741,
+          0.23574384019342884,
+          0.08377240793549759
+        ],
+        "tv_pp": 29.278915800062933,
+        "brier": 0.7398498646195572,
+        "accuracy": 0.3891526962607375,
+        "max_share": 0.5029517739247741,
+        "recall": [
+          0.0,
+          1.0,
+          0.017401124807905195,
+          0.0
+        ],
+        "valid_real_people": 240
+      },
+      {
+        "question": "SHOP12",
+        "question_text": "How often do you read customer ratings or reviews that other people have posted online when buying something for the first time?",
+        "options": [
+          "Always or almost always",
+          "Sometimes",
+          "Never"
+        ],
+        "real": [
+          0.5091572486981871,
+          0.44046433248755057,
+          0.05037841881426238
+        ],
+        "simulated": [
+          0.2922286005257125,
+          0.54964753112345,
+          0.15812386835083742
+        ],
+        "tv_pp": 21.692864817247454,
+        "brier": 0.6242816473309154,
+        "accuracy": 0.4756196177218135,
+        "max_share": 0.54964753112345,
+        "recall": [
+          0.11591785480188647,
+          0.9363232649866853,
+          0.08301570175086077
+        ],
+        "valid_real_people": 239
+      },
+      {
+        "question": "SHOP20B",
+        "question_text": "Do you ever use a cell phone while you are inside a physical store to see if you can find a better price online for something you want to buy?",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "real": [
+          0.5154918399126872,
+          0.4845081600873128
+        ],
+        "simulated": [
+          0.587688366756116,
+          0.412311633243884
+        ],
+        "tv_pp": 7.219652684342881,
+        "brier": 0.5214379323149456,
+        "accuracy": 0.569265338440129,
+        "max_share": 0.587688366756116,
+        "recall": [
+          0.839836376396069,
+          0.28139162717413535
+        ],
+        "valid_real_people": 238
+      },
+      {
+        "question": "SHOP20C",
+        "question_text": "Do you ever use a cell phone while you are inside a physical store to look up reviews or other information online about a product you want to buy?",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "real": [
+          0.5683336701115074,
+          0.4316663298884927
+        ],
+        "simulated": [
+          0.6401500501337828,
+          0.3598499498662171
+        ],
+        "tv_pp": 7.18163800222755,
+        "brier": 0.44920797820678043,
+        "accuracy": 0.665817767142583,
+        "max_share": 0.6401500501337828,
+        "recall": [
+          0.9733955013265693,
+          0.2608596538736557
+        ],
+        "valid_real_people": 240
+      }
+    ],
+    "rich_probability": [
+      {
+        "question": "SHOP6A",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to look at or try out the product in person?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.28779417587426315,
+          0.5422756236412064,
+          0.16592489789886283,
+          0.004005302585667593
+        ],
+        "simulated": [
+          0.2350834898531754,
+          0.4640463316993535,
+          0.22122666936785895,
+          0.07964350907961248
+        ],
+        "tv_pp": 13.093997796294083,
+        "brier": 0.6152534935901331,
+        "accuracy": 0.5293227173291603,
+        "max_share": 0.4640463316993535,
+        "recall": [
+          0.05586197235010724,
+          0.9464669711459069,
+          0.0,
+          0.0
+        ],
+        "valid_real_people": 237
+      },
+      {
+        "question": "SHOP6B",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to read ratings or reviews that other people have posted online?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.44212078182172815,
+          0.4167675275368304,
+          0.1081882234215563,
+          0.03292346721988525
+        ],
+        "simulated": [
+          0.24800865073989617,
+          0.47463606674101466,
+          0.205452470555743,
+          0.07190281196334607
+        ],
+        "tv_pp": 19.411213108183187,
+        "brier": 0.6773948308752386,
+        "accuracy": 0.3962278787521095,
+        "max_share": 0.47463606674101466,
+        "recall": [
+          0.05866874698493406,
+          0.8621754089599255,
+          0.10132796920631698,
+          0.0
+        ],
+        "valid_real_people": 239
+      },
+      {
+        "question": "SHOP6C",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to buy online, without having to make a trip to the store?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.08466021874076819,
+          0.3770215501264727,
+          0.3919941351863648,
+          0.14632409594639434
+        ],
+        "simulated": [
+          0.15886148383685883,
+          0.41274252214204293,
+          0.3013666612255259,
+          0.12702933279557224
+        ],
+        "tv_pp": 10.992223711166092,
+        "brier": 0.7337696002408655,
+        "accuracy": 0.3852554920666684,
+        "max_share": 0.41274252214204293,
+        "recall": [
+          0.0,
+          0.7901260534017636,
+          0.22286288180380476,
+          0.0
+        ],
+        "valid_real_people": 240
+      },
+      {
+        "question": "SHOP6D",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to compare prices from a number of different sellers?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.40956110315508965,
+          0.45313040802125165,
+          0.1313145724718492,
+          0.005993916351809467
+        ],
+        "simulated": [
+          0.24139552206401063,
+          0.4813376668500961,
+          0.21074825831113547,
+          0.06651855277475795
+        ],
+        "tv_pp": 16.81655810910791,
+        "brier": 0.6847562687199591,
+        "accuracy": 0.43558523202445737,
+        "max_share": 0.4813376668500961,
+        "recall": [
+          0.020939089283742215,
+          0.942354315577776,
+          0.0,
+          0.0
+        ],
+        "valid_real_people": 239
+      },
+      {
+        "question": "SHOP6E",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to be able to ask questions about what it is that you’re buying?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.43756134200083907,
+          0.4188267313937314,
+          0.14230996639538138,
+          0.0013019602100479291
+        ],
+        "simulated": [
+          0.19435918778669936,
+          0.4727545655557631,
+          0.24965401432512038,
+          0.08323223233241737
+        ],
+        "tv_pp": 24.320215421413995,
+        "brier": 0.7170553691856816,
+        "accuracy": 0.3897828511049114,
+        "max_share": 0.4727545655557631,
+        "recall": [
+          0.0,
+          0.9306541867751121,
+          0.0,
+          0.0
+        ],
+        "valid_real_people": 239
+      },
+      {
+        "question": "SHOP6F",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to get advice or recommendations from people you know?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.2820765175499944,
+          0.5375427866588468,
+          0.1676432543457421,
+          0.012737441445416527
+        ],
+        "simulated": [
+          0.17594315917494877,
+          0.47073554533184797,
+          0.26395523682881283,
+          0.08936605866439015
+        ],
+        "tv_pp": 17.294059970204444,
+        "brier": 0.660488968333966,
+        "accuracy": 0.4714488928738368,
+        "max_share": 0.47073554533184797,
+        "recall": [
+          0.008401153947245577,
+          0.8572426185936015,
+          0.04935801691369955,
+          0.0
+        ],
+        "valid_real_people": 236
+      },
+      {
+        "question": "SHOP6G",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to buy from a store or seller that you are familiar with?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.35102226419059573,
+          0.5369774355004138,
+          0.07828475923717117,
+          0.03371554107181909
+        ],
+        "simulated": [
+          0.18307435093126345,
+          0.46918316284751593,
+          0.25921539218273726,
+          0.08852709403848306
+        ],
+        "tv_pp": 23.57421859122301,
+        "brier": 0.6750722213215492,
+        "accuracy": 0.48704028734606564,
+        "max_share": 0.46918316284751593,
+        "recall": [
+          0.005496375370816969,
+          0.8999871044390929,
+          0.023480558812780983,
+          0.0
+        ],
+        "valid_real_people": 240
+      },
+      {
+        "question": "SHOP7A",
+        "question_text": "Consumers today can access lots of customer reviews and ratings about products and services they might want to buy. How much do you think these ratings and reviews help to ensure that the products and services people buy are safe?",
+        "options": [
+          "A lot",
+          "Some",
+          "A little",
+          "Not at all"
+        ],
+        "real": [
+          0.39444118212139095,
+          0.38427211680450485,
+          0.20423013174669216,
+          0.01705656932741194
+        ],
+        "simulated": [
+          0.14875720081429242,
+          0.48264229001523035,
+          0.2727133396973935,
+          0.09588716947308377
+        ],
+        "tv_pp": 24.56839813070986,
+        "brier": 0.7654580879918637,
+        "accuracy": 0.36411032876438376,
+        "max_share": 0.48264229001523035,
+        "recall": [
+          0.0,
+          0.9422269763624541,
+          0.009982728943269525,
+          0.0
+        ],
+        "valid_real_people": 240
+      },
+      {
+        "question": "SHOP7B",
+        "question_text": "Consumers today can access lots of customer reviews and ratings about products and services they might want to buy. How much do you think these ratings and reviews help to make consumers feel confident about what they are buying?",
+        "options": [
+          "A lot",
+          "Some",
+          "A little",
+          "Not at all"
+        ],
+        "real": [
+          0.4526651931100056,
+          0.46507746625762175,
+          0.07639677200405494,
+          0.005860568628317697
+        ],
+        "simulated": [
+          0.25155989658074673,
+          0.5132933532946706,
+          0.17499300885709523,
+          0.06015374126748702
+        ],
+        "tv_pp": 20.11052965292587,
+        "brier": 0.6340456920438853,
+        "accuracy": 0.46954071185892965,
+        "max_share": 0.5132933532946706,
+        "recall": [
+          0.03055267335886856,
+          0.9798595140287389,
+          0.0,
+          0.0
+        ],
+        "valid_real_people": 239
+      },
+      {
+        "question": "SHOP7C",
+        "question_text": "Consumers today can access lots of customer reviews and ratings about products and services they might want to buy. How much do you think these ratings and reviews help to make companies be accountable to their customers?",
+        "options": [
+          "A lot",
+          "Some",
+          "A little",
+          "Not at all"
+        ],
+        "real": [
+          0.47032113594692854,
+          0.38679558051550145,
+          0.1354576655967272,
+          0.007425617940842767
+        ],
+        "simulated": [
+          0.17785929587135813,
+          0.5008629291970969,
+          0.24080948211850492,
+          0.08046829281304031
+        ],
+        "tv_pp": 29.24618400755705,
+        "brier": 0.7369410307676859,
+        "accuracy": 0.3921330469186991,
+        "max_share": 0.5008629291970969,
+        "recall": [
+          0.011348557390369956,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "valid_real_people": 240
+      },
+      {
+        "question": "SHOP12",
+        "question_text": "How often do you read customer ratings or reviews that other people have posted online when buying something for the first time?",
+        "options": [
+          "Always or almost always",
+          "Sometimes",
+          "Never"
+        ],
+        "real": [
+          0.5091572486981871,
+          0.44046433248755057,
+          0.05037841881426238
+        ],
+        "simulated": [
+          0.2836332819476191,
+          0.5603327435137442,
+          0.15603397453863668
+        ],
+        "tv_pp": 22.552396675056798,
+        "brier": 0.638544768694488,
+        "accuracy": 0.4356232946902199,
+        "max_share": 0.5603327435137442,
+        "recall": [
+          0.06649959302895846,
+          0.9121386573915193,
+          0.0
+        ],
+        "valid_real_people": 239
+      },
+      {
+        "question": "SHOP20B",
+        "question_text": "Do you ever use a cell phone while you are inside a physical store to see if you can find a better price online for something you want to buy?",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "real": [
+          0.5154918399126872,
+          0.4845081600873128
+        ],
+        "simulated": [
+          0.5809716701192622,
+          0.4190283298807378
+        ],
+        "tv_pp": 6.547983020657499,
+        "brier": 0.49651925594576934,
+        "accuracy": 0.5229036236200978,
+        "max_share": 0.5809716701192622,
+        "recall": [
+          0.808361768636037,
+          0.21919079375607434
+        ],
+        "valid_real_people": 238
+      },
+      {
+        "question": "SHOP20C",
+        "question_text": "Do you ever use a cell phone while you are inside a physical store to look up reviews or other information online about a product you want to buy?",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "real": [
+          0.5683336701115074,
+          0.4316663298884927
+        ],
+        "simulated": [
+          0.6330590924250942,
+          0.36694090757490566
+        ],
+        "tv_pp": 6.472542231358691,
+        "brier": 0.4644670808549408,
+        "accuracy": 0.6542480520994957,
+        "max_share": 0.6330590924250942,
+        "recall": [
+          0.9213795764825748,
+          0.30254158545352233
+        ],
+        "valid_real_people": 240
+      }
+    ],
+    "rich_probability_argmax": [
+      {
+        "question": "SHOP6A",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to look at or try out the product in person?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.28779417587426315,
+          0.5422756236412064,
+          0.16592489789886283,
+          0.004005302585667593
+        ],
+        "simulated": [
+          0.04708042707153446,
+          0.9320570841870124,
+          0.020862488741453713,
+          0.0
+        ],
+        "tv_pp": 38.97814605458056,
+        "brier": 0.9413545653416795,
+        "accuracy": 0.5293227173291603,
+        "max_share": 0.9320570841870124,
+        "recall": [
+          0.05586197235010724,
+          0.9464669711459069,
+          0.0,
+          0.0
+        ],
+        "valid_real_people": 237
+      },
+      {
+        "question": "SHOP6B",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to read ratings or reviews that other people have posted online?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.44212078182172815,
+          0.4167675275368304,
+          0.1081882234215563,
+          0.03292346721988525
+        ],
+        "simulated": [
+          0.07696363952801098,
+          0.8874854965194757,
+          0.03555086395251359,
+          0.0
+        ],
+        "tv_pp": 47.07179689826452,
+        "brier": 1.2075442424957807,
+        "accuracy": 0.3962278787521095,
+        "max_share": 0.8874854965194757,
+        "recall": [
+          0.05866874698493406,
+          0.8621754089599255,
+          0.10132796920631698,
+          0.0
+        ],
+        "valid_real_people": 239
+      },
+      {
+        "question": "SHOP6C",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to buy online, without having to make a trip to the store?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.08466021874076819,
+          0.3770215501264727,
+          0.3919941351863648,
+          0.14632409594639434
+        ],
+        "simulated": [
+          0.011707707384238698,
+          0.7619468225249152,
+          0.22297679988009236,
+          0.003368670210753259
+        ],
+        "tv_pp": 38.49252723984428,
+        "brier": 1.2294890158666627,
+        "accuracy": 0.3852554920666684,
+        "max_share": 0.7619468225249152,
+        "recall": [
+          0.0,
+          0.7901260534017636,
+          0.22286288180380476,
+          0.0
+        ],
+        "valid_real_people": 240
+      },
+      {
+        "question": "SHOP6D",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to compare prices from a number of different sellers?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.40956110315508965,
+          0.45313040802125165,
+          0.1313145724718492,
+          0.005993916351809467
+        ],
+        "simulated": [
+          0.056273447294120475,
+          0.9275030410257384,
+          0.016223511680141186,
+          0.0
+        ],
+        "tv_pp": 47.43726330044867,
+        "brier": 1.1288295359510852,
+        "accuracy": 0.43558523202445737,
+        "max_share": 0.9275030410257384,
+        "recall": [
+          0.020939089283742215,
+          0.942354315577776,
+          0.0,
+          0.0
+        ],
+        "valid_real_people": 239
+      },
+      {
+        "question": "SHOP6E",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to be able to ask questions about what it is that you’re buying?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.43756134200083907,
+          0.4188267313937314,
+          0.14230996639538138,
+          0.0013019602100479291
+        ],
+        "simulated": [
+          0.01581993991131577,
+          0.9544274406321394,
+          0.029752619456544567,
+          0.0
+        ],
+        "tv_pp": 53.5600709238408,
+        "brier": 1.2204342977901768,
+        "accuracy": 0.3897828511049114,
+        "max_share": 0.9544274406321394,
+        "recall": [
+          0.0,
+          0.9306541867751121,
+          0.0,
+          0.0
+        ],
+        "valid_real_people": 239
+      },
+      {
+        "question": "SHOP6F",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to get advice or recommendations from people you know?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.2820765175499944,
+          0.5375427866588468,
+          0.1676432543457421,
+          0.012737441445416527
+        ],
+        "simulated": [
+          0.019299095167459156,
+          0.9047881262182975,
+          0.07591277861424361,
+          0.0
+        ],
+        "tv_pp": 36.724533955945056,
+        "brier": 1.0571022142523263,
+        "accuracy": 0.4714488928738368,
+        "max_share": 0.9047881262182975,
+        "recall": [
+          0.008401153947245577,
+          0.8572426185936015,
+          0.04935801691369955,
+          0.0
+        ],
+        "valid_real_people": 236
+      },
+      {
+        "question": "SHOP6G",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to buy from a store or seller that you are familiar with?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.35102226419059573,
+          0.5369774355004138,
+          0.07828475923717117,
+          0.03371554107181909
+        ],
+        "simulated": [
+          0.013634115641835996,
+          0.9350097873192748,
+          0.051356097038889346,
+          0.0
+        ],
+        "tv_pp": 39.80323518188608,
+        "brier": 1.0259194253078685,
+        "accuracy": 0.48704028734606564,
+        "max_share": 0.9350097873192748,
+        "recall": [
+          0.005496375370816969,
+          0.8999871044390929,
+          0.023480558812780983,
+          0.0
+        ],
+        "valid_real_people": 240
+      },
+      {
+        "question": "SHOP7A",
+        "question_text": "Consumers today can access lots of customer reviews and ratings about products and services they might want to buy. How much do you think these ratings and reviews help to ensure that the products and services people buy are safe?",
+        "options": [
+          "A lot",
+          "Some",
+          "A little",
+          "Not at all"
+        ],
+        "real": [
+          0.39444118212139095,
+          0.38427211680450485,
+          0.20423013174669216,
+          0.01705656932741194
+        ],
+        "simulated": [
+          0.0,
+          0.9707145094230634,
+          0.029285490576936503,
+          0.0
+        ],
+        "tv_pp": 58.644239261855844,
+        "brier": 1.271779342471232,
+        "accuracy": 0.36411032876438376,
+        "max_share": 0.9707145094230634,
+        "recall": [
+          0.0,
+          0.9422269763624541,
+          0.009982728943269525,
+          0.0
+        ],
+        "valid_real_people": 240
+      },
+      {
+        "question": "SHOP7B",
+        "question_text": "Consumers today can access lots of customer reviews and ratings about products and services they might want to buy. How much do you think these ratings and reviews help to make consumers feel confident about what they are buying?",
+        "options": [
+          "A lot",
+          "Some",
+          "A little",
+          "Not at all"
+        ],
+        "real": [
+          0.4526651931100056,
+          0.46507746625762175,
+          0.07639677200405494,
+          0.005860568628317697
+        ],
+        "simulated": [
+          0.02319701797073039,
+          0.9768029820292695,
+          0.0,
+          0.0
+        ],
+        "tv_pp": 51.172551577164796,
+        "brier": 1.0609185762821405,
+        "accuracy": 0.46954071185892965,
+        "max_share": 0.9768029820292695,
+        "recall": [
+          0.03055267335886856,
+          0.9798595140287389,
+          0.0,
+          0.0
+        ],
+        "valid_real_people": 239
+      },
+      {
+        "question": "SHOP7C",
+        "question_text": "Consumers today can access lots of customer reviews and ratings about products and services they might want to buy. How much do you think these ratings and reviews help to make companies be accountable to their customers?",
+        "options": [
+          "A lot",
+          "Some",
+          "A little",
+          "Not at all"
+        ],
+        "real": [
+          0.47032113594692854,
+          0.38679558051550145,
+          0.1354576655967272,
+          0.007425617940842767
+        ],
+        "simulated": [
+          0.005337466403197708,
+          0.9902769930934686,
+          0.004385540503333425,
+          0.0
+        ],
+        "tv_pp": 60.348141257796726,
+        "brier": 1.2157339061626014,
+        "accuracy": 0.3921330469186991,
+        "max_share": 0.9902769930934686,
+        "recall": [
+          0.011348557390369956,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "valid_real_people": 240
+      },
+      {
+        "question": "SHOP12",
+        "question_text": "How often do you read customer ratings or reviews that other people have posted online when buying something for the first time?",
+        "options": [
+          "Always or almost always",
+          "Sometimes",
+          "Never"
+        ],
+        "real": [
+          0.5091572486981871,
+          0.44046433248755057,
+          0.05037841881426238
+        ],
+        "simulated": [
+          0.07100058314242016,
+          0.9239280863084379,
+          0.005071330549141868
+        ],
+        "tv_pp": 48.34637538208874,
+        "brier": 1.12875341061956,
+        "accuracy": 0.4356232946902199,
+        "max_share": 0.9239280863084379,
+        "recall": [
+          0.06649959302895846,
+          0.9121386573915193,
+          0.0
+        ],
+        "valid_real_people": 239
+      },
+      {
+        "question": "SHOP20B",
+        "question_text": "Do you ever use a cell phone while you are inside a physical store to see if you can find a better price online for something you want to buy?",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "real": [
+          0.5154918399126872,
+          0.4845081600873128
+        ],
+        "simulated": [
+          0.7950123273257442,
+          0.20498767267425566
+        ],
+        "tv_pp": 27.952048741305706,
+        "brier": 0.9541927527598042,
+        "accuracy": 0.5229036236200978,
+        "max_share": 0.7950123273257442,
+        "recall": [
+          0.808361768636037,
+          0.21919079375607434
+        ],
+        "valid_real_people": 238
+      },
+      {
+        "question": "SHOP20C",
+        "question_text": "Do you ever use a cell phone while you are inside a physical store to look up reviews or other information online about a product you want to buy?",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "real": [
+          0.5683336701115074,
+          0.4316663298884927
+        ],
+        "simulated": [
+          0.8247203503252525,
+          0.17527964967474702
+        ],
+        "tv_pp": 25.63866802137454,
+        "brier": 0.6915038958010084,
+        "accuracy": 0.6542480520994957,
+        "max_share": 0.8247203503252525,
+        "recall": [
+          0.9213795764825748,
+          0.30254158545352233
+        ],
+        "valid_real_people": 240
+      }
+    ],
+    "statistics": [
+      {
+        "question": "SHOP6A",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to look at or try out the product in person?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.28779417587426315,
+          0.5422756236412064,
+          0.16592489789886283,
+          0.004005302585667593
+        ],
+        "simulated": [
+          0.2671903985454983,
+          0.5126216940689178,
+          0.1903944844708126,
+          0.02979342291477148
+        ],
+        "tv_pp": 5.0257706901053565,
+        "brier": 0.5975731919406145,
+        "accuracy": 0.5422756236412063,
+        "max_share": 0.5126216940689178,
+        "recall": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "valid_real_people": 237
+      },
+      {
+        "question": "SHOP6B",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to read ratings or reviews that other people have posted online?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.44212078182172815,
+          0.4167675275368304,
+          0.1081882234215563,
+          0.03292346721988525
+        ],
+        "simulated": [
+          0.3650048318873265,
+          0.47344854360050875,
+          0.11890308548052722,
+          0.04264353903163743
+        ],
+        "tv_pp": 7.711594993440156,
+        "brier": 0.6165452084178671,
+        "accuracy": 0.4672026960450429,
+        "max_share": 0.47344854360050875,
+        "recall": [
+          0.19550490791237496,
+          0.9136170362389615,
+          0.0,
+          0.0
+        ],
+        "valid_real_people": 239
+      },
+      {
+        "question": "SHOP6C",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to buy online, without having to make a trip to the store?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.08466021874076819,
+          0.3770215501264727,
+          0.3919941351863648,
+          0.14632409594639434
+        ],
+        "simulated": [
+          0.1154427645306236,
+          0.3629669981055091,
+          0.37062885542121976,
+          0.15096138194264772
+        ],
+        "tv_pp": 3.541983178610871,
+        "brier": 0.6958858049220215,
+        "accuracy": 0.3254061397592509,
+        "max_share": 0.37062885542121976,
+        "recall": [
+          0.0,
+          0.29172491441725734,
+          0.5495479166103534,
+          0.0
+        ],
+        "valid_real_people": 240
+      },
+      {
+        "question": "SHOP6D",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to compare prices from a number of different sellers?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.40956110315508965,
+          0.45313040802125165,
+          0.1313145724718492,
+          0.005993916351809467
+        ],
+        "simulated": [
+          0.43736034259382445,
+          0.4458196339756188,
+          0.101549528849275,
+          0.015270494581282107
+        ],
+        "tv_pp": 3.7075817668207245,
+        "brier": 0.5986552963632698,
+        "accuracy": 0.5013470904281231,
+        "max_share": 0.4458196339756188,
+        "recall": [
+          0.4497857959377454,
+          0.6998698786189088,
+          0.0,
+          0.0
+        ],
+        "valid_real_people": 239
+      },
+      {
+        "question": "SHOP6E",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to be able to ask questions about what it is that you’re buying?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.43756134200083907,
+          0.4188267313937314,
+          0.14230996639538138,
+          0.0013019602100479291
+        ],
+        "simulated": [
+          0.4103059984674402,
+          0.43583831913087656,
+          0.1315390763782606,
+          0.022316606023422083
+        ],
+        "tv_pp": 3.8026233550519493,
+        "brier": 0.6094922862971321,
+        "accuracy": 0.44393595731356067,
+        "max_share": 0.43583831913087656,
+        "recall": [
+          0.4416794689043326,
+          0.5985150358750835,
+          0.0,
+          0.0
+        ],
+        "valid_real_people": 239
+      },
+      {
+        "question": "SHOP6F",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to get advice or recommendations from people you know?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.2820765175499944,
+          0.5375427866588468,
+          0.1676432543457421,
+          0.012737441445416527
+        ],
+        "simulated": [
+          0.22792050543306838,
+          0.5575330971195486,
+          0.1844886230268491,
+          0.030057774420533957
+        ],
+        "tv_pp": 5.415601211692611,
+        "brier": 0.6068981855901602,
+        "accuracy": 0.5375427866588468,
+        "max_share": 0.5575330971195486,
+        "recall": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "valid_real_people": 236
+      },
+      {
+        "question": "SHOP6G",
+        "question_text": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to buy from a store or seller that you are familiar with?",
+        "options": [
+          "Extremely important",
+          "Somewhat important",
+          "Not too important",
+          "Not important at all"
+        ],
+        "real": [
+          0.35102226419059573,
+          0.5369774355004138,
+          0.07828475923717117,
+          0.03371554107181909
+        ],
+        "simulated": [
+          0.32123148636233123,
+          0.524097675803637,
+          0.1299256682315115,
+          0.024745169602520215
+        ],
+        "tv_pp": 5.164090899434025,
+        "brier": 0.5806546177576087,
+        "accuracy": 0.5369774355004139,
+        "max_share": 0.524097675803637,
+        "recall": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "valid_real_people": 240
+      },
+      {
+        "question": "SHOP7A",
+        "question_text": "Consumers today can access lots of customer reviews and ratings about products and services they might want to buy. How much do you think these ratings and reviews help to ensure that the products and services people buy are safe?",
+        "options": [
+          "A lot",
+          "Some",
+          "A little",
+          "Not at all"
+        ],
+        "real": [
+          0.39444118212139095,
+          0.38427211680450485,
+          0.20423013174669216,
+          0.01705656932741194
+        ],
+        "simulated": [
+          0.39677991364267096,
+          0.43365241805443344,
+          0.13240383199157593,
+          0.03716383631131947
+        ],
+        "tv_pp": 7.182629975511618,
+        "brier": 0.6535688246370951,
+        "accuracy": 0.42623142393417635,
+        "max_share": 0.43365241805443344,
+        "recall": [
+          0.46951454450648217,
+          0.6272522554595807,
+          0.0,
+          0.0
+        ],
+        "valid_real_people": 240
+      },
+      {
+        "question": "SHOP7B",
+        "question_text": "Consumers today can access lots of customer reviews and ratings about products and services they might want to buy. How much do you think these ratings and reviews help to make consumers feel confident about what they are buying?",
+        "options": [
+          "A lot",
+          "Some",
+          "A little",
+          "Not at all"
+        ],
+        "real": [
+          0.4526651931100056,
+          0.46507746625762175,
+          0.07639677200405494,
+          0.005860568628317697
+        ],
+        "simulated": [
+          0.4676829602639084,
+          0.4347738908259761,
+          0.07695386234706075,
+          0.02058928656305429
+        ],
+        "tv_pp": 3.030357543164542,
+        "brier": 0.5712456999777996,
+        "accuracy": 0.5083534963740775,
+        "max_share": 0.4676829602639084,
+        "recall": [
+          0.7385280246814262,
+          0.37423349461549277,
+          0.0,
+          0.0
+        ],
+        "valid_real_people": 239
+      },
+      {
+        "question": "SHOP7C",
+        "question_text": "Consumers today can access lots of customer reviews and ratings about products and services they might want to buy. How much do you think these ratings and reviews help to make companies be accountable to their customers?",
+        "options": [
+          "A lot",
+          "Some",
+          "A little",
+          "Not at all"
+        ],
+        "real": [
+          0.47032113594692854,
+          0.38679558051550145,
+          0.1354576655967272,
+          0.007425617940842767
+        ],
+        "simulated": [
+          0.4349552196995261,
+          0.40975883098220595,
+          0.11422804809557165,
+          0.04105790122269552
+        ],
+        "tv_pp": 5.659553374855762,
+        "brier": 0.6181417242955184,
+        "accuracy": 0.47247994738034155,
+        "max_share": 0.4349552196995261,
+        "recall": [
+          0.7593986525671313,
+          0.2981386455210025,
+          0.0,
+          0.0
+        ],
+        "valid_real_people": 240
+      },
+      {
+        "question": "SHOP12",
+        "question_text": "How often do you read customer ratings or reviews that other people have posted online when buying something for the first time?",
+        "options": [
+          "Always or almost always",
+          "Sometimes",
+          "Never"
+        ],
+        "real": [
+          0.5091572486981871,
+          0.44046433248755057,
+          0.05037841881426238
+        ],
+        "simulated": [
+          0.4717005386813218,
+          0.4682169084706147,
+          0.060082552848063076
+        ],
+        "tv_pp": 3.7456710016865085,
+        "brier": 0.5528999625370857,
+        "accuracy": 0.4758615054212527,
+        "max_share": 0.4717005386813218,
+        "recall": [
+          0.5127397925792608,
+          0.4876588352124706,
+          0.0
+        ],
+        "valid_real_people": 239
+      },
+      {
+        "question": "SHOP20B",
+        "question_text": "Do you ever use a cell phone while you are inside a physical store to see if you can find a better price online for something you want to buy?",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "real": [
+          0.5154918399126872,
+          0.4845081600873128
+        ],
+        "simulated": [
+          0.5176305991380911,
+          0.48236940086190877
+        ],
+        "tv_pp": 0.21387592254039356,
+        "brier": 0.4650388199107555,
+        "accuracy": 0.6419463893446486,
+        "max_share": 0.5176305991380911,
+        "recall": [
+          0.7697755152663569,
+          0.5059427536082827
+        ],
+        "valid_real_people": 238
+      },
+      {
+        "question": "SHOP20C",
+        "question_text": "Do you ever use a cell phone while you are inside a physical store to look up reviews or other information online about a product you want to buy?",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "real": [
+          0.5683336701115074,
+          0.4316663298884927
+        ],
+        "simulated": [
+          0.5236881774960194,
+          0.4763118225039807
+        ],
+        "tv_pp": 4.4645492615488,
+        "brier": 0.44705582724796833,
+        "accuracy": 0.6027435388604677,
+        "max_share": 0.5236881774960194,
+        "recall": [
+          0.5865757066903577,
+          0.6240301733713389
+        ],
+        "valid_real_people": 240
+      }
+    ]
+  },
+  "calibration": {
+    "basic_choice": [
+      {
+        "mean_probability": 0.0,
+        "observed_frequency": 0.21259531855479422,
+        "weight": 9.166666666666666
+      },
+      {
+        "mean_probability": 1.0,
+        "observed_frequency": 0.4916198904124485,
+        "weight": 3.8333333333333335
+      }
+    ],
+    "rich_choice": [
+      {
+        "mean_probability": 0.0,
+        "observed_frequency": 0.20687370291785193,
+        "weight": 9.166666666666666
+      },
+      {
+        "mean_probability": 1.0,
+        "observed_frequency": 0.5053020147616585,
+        "weight": 3.833333333333333
+      }
+    ],
+    "basic_probability": [
+      {
+        "mean_probability": 0.049555518086405716,
+        "observed_frequency": 0.03498851078542016,
+        "weight": 1.302362893962674
+      },
+      {
+        "mean_probability": 0.1250793129595133,
+        "observed_frequency": 0.16589411201715626,
+        "weight": 3.1771243161961658
+      },
+      {
+        "mean_probability": 0.2266551252013177,
+        "observed_frequency": 0.26256635234021747,
+        "weight": 2.5901363147520255
+      },
+      {
+        "mean_probability": 0.3248242690032234,
+        "observed_frequency": 0.3089460752712792,
+        "weight": 1.603136140102404
+      },
+      {
+        "mean_probability": 0.43077426569476385,
+        "observed_frequency": 0.42101042720320786,
+        "weight": 1.6847964822508437
+      },
+      {
+        "mean_probability": 0.5221811722551026,
+        "observed_frequency": 0.4663727275679468,
+        "weight": 1.6388616258982867
+      },
+      {
+        "mean_probability": 0.6210987988008562,
+        "observed_frequency": 0.6008535647483279,
+        "weight": 0.5468431234928397
+      },
+      {
+        "mean_probability": 0.7216546784922641,
+        "observed_frequency": 0.6258832082335596,
+        "weight": 0.33642006298693344
+      },
+      {
+        "mean_probability": 0.8230828002544491,
+        "observed_frequency": 0.594510005504866,
+        "weight": 0.11262975173675152
+      },
+      {
+        "mean_probability": 0.8999999999999999,
+        "observed_frequency": 0.7289411694429263,
+        "weight": 0.007689288621075121
+      }
+    ],
+    "rich_probability": [
+      {
+        "mean_probability": 0.049859617762635575,
+        "observed_frequency": 0.029495685518246995,
+        "weight": 1.4097943747522037
+      },
+      {
+        "mean_probability": 0.1252493982046289,
+        "observed_frequency": 0.18312112698895644,
+        "weight": 3.0750811080576086
+      },
+      {
+        "mean_probability": 0.2264742114276402,
+        "observed_frequency": 0.25139527909404513,
+        "weight": 2.5440922233085788
+      },
+      {
+        "mean_probability": 0.32377226803771625,
+        "observed_frequency": 0.331021264116891,
+        "weight": 1.571380729196323
+      },
+      {
+        "mean_probability": 0.43111863739448586,
+        "observed_frequency": 0.41512260247768784,
+        "weight": 1.7308070944274807
+      },
+      {
+        "mean_probability": 0.5251636800192313,
+        "observed_frequency": 0.4556159753469628,
+        "weight": 1.723886341100898
+      },
+      {
+        "mean_probability": 0.6194185616056808,
+        "observed_frequency": 0.5619765078293173,
+        "weight": 0.5143556448121918
+      },
+      {
+        "mean_probability": 0.7222328358115399,
+        "observed_frequency": 0.601874994572086,
+        "weight": 0.3213146437778256
+      },
+      {
+        "mean_probability": 0.8226966426262499,
+        "observed_frequency": 0.758644068039135,
+        "weight": 0.09807444346884876
+      },
+      {
+        "mean_probability": 0.9,
+        "observed_frequency": 0.7247597076138725,
+        "weight": 0.011213397098039202
+      }
+    ],
+    "rich_probability_argmax": [
+      {
+        "mean_probability": 0.0,
+        "observed_frequency": 0.22030231318003538,
+        "weight": 9.166666666666666
+      },
+      {
+        "mean_probability": 1.0,
+        "observed_frequency": 0.4731901206564371,
+        "weight": 3.833333333333333
+      }
+    ],
+    "statistics": [
+      {
+        "mean_probability": 0.04096186888570527,
+        "observed_frequency": 0.028910237791573153,
+        "weight": 3.189365922180083
+      },
+      {
+        "mean_probability": 0.14007291274137793,
+        "observed_frequency": 0.14406654201665575,
+        "weight": 2.011303008086417
+      },
+      {
+        "mean_probability": 0.24819509823727093,
+        "observed_frequency": 0.2631935130557437,
+        "weight": 0.9958032537186278
+      },
+      {
+        "mean_probability": 0.3509254027918387,
+        "observed_frequency": 0.4010481884154194,
+        "weight": 1.823923150055443
+      },
+      {
+        "mean_probability": 0.4543434169154522,
+        "observed_frequency": 0.4367714498221263,
+        "weight": 2.7835508253900767
+      },
+      {
+        "mean_probability": 0.5328205581890708,
+        "observed_frequency": 0.5286589806054683,
+        "weight": 1.5565881470179082
+      },
+      {
+        "mean_probability": 0.6535772989554947,
+        "observed_frequency": 0.5987223785206751,
+        "weight": 0.38820080031278453
+      },
+      {
+        "mean_probability": 0.7270664781827662,
+        "observed_frequency": 0.6998123209299569,
+        "weight": 0.20811739278155716
+      },
+      {
+        "mean_probability": 0.8028936123727288,
+        "observed_frequency": 0.9513656574417092,
+        "weight": 0.043147500457102105
+      }
+    ]
+  },
+  "subgroups": {
+    "basic_choice": [
+      {
+        "field": "Age group",
+        "group": "18-29",
+        "questions": 13,
+        "people": 35,
+        "tv_pp": 42.20319652638016
+      },
+      {
+        "field": "Age group",
+        "group": "30-49",
+        "questions": 13,
+        "people": 72,
+        "tv_pp": 44.04432173129456
+      },
+      {
+        "field": "Age group",
+        "group": "50-64",
+        "questions": 13,
+        "people": 78,
+        "tv_pp": 42.705573768142976
+      },
+      {
+        "field": "Age group",
+        "group": "65+",
+        "questions": 13,
+        "people": 55,
+        "tv_pp": 36.26719495680427
+      },
+      {
+        "field": "Education",
+        "group": "College graduate+",
+        "questions": 13,
+        "people": 125,
+        "tv_pp": 37.374803377367684
+      },
+      {
+        "field": "Education",
+        "group": "H.S. graduate or less",
+        "questions": 13,
+        "people": 34,
+        "tv_pp": 44.9355115125846
+      },
+      {
+        "field": "Education",
+        "group": "Some college",
+        "questions": 13,
+        "people": 81,
+        "tv_pp": 42.85427803513024
+      }
+    ],
+    "rich_choice": [
+      {
+        "field": "Age group",
+        "group": "18-29",
+        "questions": 13,
+        "people": 35,
+        "tv_pp": 41.69514744638608
+      },
+      {
+        "field": "Age group",
+        "group": "30-49",
+        "questions": 13,
+        "people": 72,
+        "tv_pp": 45.761965619313045
+      },
+      {
+        "field": "Age group",
+        "group": "50-64",
+        "questions": 13,
+        "people": 78,
+        "tv_pp": 44.45886828972164
+      },
+      {
+        "field": "Age group",
+        "group": "65+",
+        "questions": 13,
+        "people": 55,
+        "tv_pp": 40.813249353517485
+      },
+      {
+        "field": "Education",
+        "group": "College graduate+",
+        "questions": 13,
+        "people": 125,
+        "tv_pp": 40.45314669166907
+      },
+      {
+        "field": "Education",
+        "group": "H.S. graduate or less",
+        "questions": 13,
+        "people": 34,
+        "tv_pp": 45.34802137758098
+      },
+      {
+        "field": "Education",
+        "group": "Some college",
+        "questions": 13,
+        "people": 81,
+        "tv_pp": 44.276738348058466
+      }
+    ],
+    "basic_probability": [
+      {
+        "field": "Age group",
+        "group": "18-29",
+        "questions": 13,
+        "people": 35,
+        "tv_pp": 21.854221622435148
+      },
+      {
+        "field": "Age group",
+        "group": "30-49",
+        "questions": 13,
+        "people": 72,
+        "tv_pp": 20.351120374068195
+      },
+      {
+        "field": "Age group",
+        "group": "50-64",
+        "questions": 13,
+        "people": 78,
+        "tv_pp": 19.120983322304678
+      },
+      {
+        "field": "Age group",
+        "group": "65+",
+        "questions": 13,
+        "people": 55,
+        "tv_pp": 19.663111761361257
+      },
+      {
+        "field": "Education",
+        "group": "College graduate+",
+        "questions": 13,
+        "people": 125,
+        "tv_pp": 14.343263543324067
+      },
+      {
+        "field": "Education",
+        "group": "H.S. graduate or less",
+        "questions": 13,
+        "people": 34,
+        "tv_pp": 21.39641812533877
+      },
+      {
+        "field": "Education",
+        "group": "Some college",
+        "questions": 13,
+        "people": 81,
+        "tv_pp": 22.892523880749614
+      }
+    ],
+    "rich_probability": [
+      {
+        "field": "Age group",
+        "group": "18-29",
+        "questions": 13,
+        "people": 35,
+        "tv_pp": 19.846306544015327
+      },
+      {
+        "field": "Age group",
+        "group": "30-49",
+        "questions": 13,
+        "people": 72,
+        "tv_pp": 21.236166041985975
+      },
+      {
+        "field": "Age group",
+        "group": "50-64",
+        "questions": 13,
+        "people": 78,
+        "tv_pp": 18.16192622811746
+      },
+      {
+        "field": "Age group",
+        "group": "65+",
+        "questions": 13,
+        "people": 55,
+        "tv_pp": 19.75187862232398
+      },
+      {
+        "field": "Education",
+        "group": "College graduate+",
+        "questions": 13,
+        "people": 125,
+        "tv_pp": 13.799298582297013
+      },
+      {
+        "field": "Education",
+        "group": "H.S. graduate or less",
+        "questions": 13,
+        "people": 34,
+        "tv_pp": 21.764304577806268
+      },
+      {
+        "field": "Education",
+        "group": "Some college",
+        "questions": 13,
+        "people": 81,
+        "tv_pp": 22.366866316430237
+      }
+    ],
+    "rich_probability_argmax": [
+      {
+        "field": "Age group",
+        "group": "18-29",
+        "questions": 13,
+        "people": 35,
+        "tv_pp": 45.72127063635911
+      },
+      {
+        "field": "Age group",
+        "group": "30-49",
+        "questions": 13,
+        "people": 72,
+        "tv_pp": 46.268950876478925
+      },
+      {
+        "field": "Age group",
+        "group": "50-64",
+        "questions": 13,
+        "people": 78,
+        "tv_pp": 42.3657749253365
+      },
+      {
+        "field": "Age group",
+        "group": "65+",
+        "questions": 13,
+        "people": 55,
+        "tv_pp": 40.00896507188868
+      },
+      {
+        "field": "Education",
+        "group": "College graduate+",
+        "questions": 13,
+        "people": 125,
+        "tv_pp": 41.202209712199014
+      },
+      {
+        "field": "Education",
+        "group": "H.S. graduate or less",
+        "questions": 13,
+        "people": 34,
+        "tv_pp": 45.13544393713638
+      },
+      {
+        "field": "Education",
+        "group": "Some college",
+        "questions": 13,
+        "people": 81,
+        "tv_pp": 46.17669244980921
+      }
+    ],
+    "statistics": [
+      {
+        "field": "Age group",
+        "group": "18-29",
+        "questions": 13,
+        "people": 35,
+        "tv_pp": 11.109791965989434
+      },
+      {
+        "field": "Age group",
+        "group": "30-49",
+        "questions": 13,
+        "people": 72,
+        "tv_pp": 7.660173759901062
+      },
+      {
+        "field": "Age group",
+        "group": "50-64",
+        "questions": 13,
+        "people": 78,
+        "tv_pp": 6.561270212996373
+      },
+      {
+        "field": "Age group",
+        "group": "65+",
+        "questions": 13,
+        "people": 55,
+        "tv_pp": 11.4571684413145
+      },
+      {
+        "field": "Education",
+        "group": "College graduate+",
+        "questions": 13,
+        "people": 125,
+        "tv_pp": 4.428075373272744
+      },
+      {
+        "field": "Education",
+        "group": "H.S. graduate or less",
+        "questions": 13,
+        "people": 34,
+        "tv_pp": 10.529922528492962
+      },
+      {
+        "field": "Education",
+        "group": "Some college",
+        "questions": 13,
+        "people": 81,
+        "tv_pp": 7.8073389532809
+      }
+    ]
+  }
+}

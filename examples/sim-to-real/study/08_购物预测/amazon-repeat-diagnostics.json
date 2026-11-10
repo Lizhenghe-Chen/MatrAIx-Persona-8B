@@ -1,0 +1,127 @@
+{
+  "accounts": 500,
+  "observed_repeat_rate": 0.6,
+  "results": {
+    "model": {
+      "mean_prediction": 0.6145571999999999,
+      "brier_two_options": 0.3679285496888889,
+      "aggregate_squared_bias": 0.00042382414367999634,
+      "forecast_dispersion": 0.32367544554520883,
+      "alignment_credit": 0.43617072,
+      "auc": 0.8182416666666666,
+      "calibration": [
+        {
+          "accounts": 99,
+          "prediction": 0.004219528619528619,
+          "observed": 0.1919191919191919
+        },
+        {
+          "accounts": 25,
+          "prediction": 0.13699866666666666,
+          "observed": 0.36
+        },
+        {
+          "accounts": 21,
+          "prediction": 0.2278904761904762,
+          "observed": 0.47619047619047616
+        },
+        {
+          "accounts": 8,
+          "prediction": 0.326025,
+          "observed": 0.375
+        },
+        {
+          "accounts": 3,
+          "prediction": 0.4000000000000001,
+          "observed": 0.3333333333333333
+        },
+        {
+          "accounts": 64,
+          "prediction": 0.5028765625,
+          "observed": 0.453125
+        },
+        {
+          "accounts": 29,
+          "prediction": 0.6397827586206898,
+          "observed": 0.4827586206896552
+        },
+        {
+          "accounts": 13,
+          "prediction": 0.7269230769230769,
+          "observed": 0.7692307692307693
+        },
+        {
+          "accounts": 13,
+          "prediction": 0.827246153846154,
+          "observed": 0.5384615384615384
+        },
+        {
+          "accounts": 225,
+          "prediction": 0.9951111111111111,
+          "observed": 0.88
+        }
+      ]
+    },
+    "recent": {
+      "mean_prediction": 0.582122097011269,
+      "brier_two_options": 0.330794758830549,
+      "aggregate_squared_bias": 0.0006392388305489487,
+      "forecast_dispersion": 0.18807552,
+      "alignment_credit": 0.33791999999999994,
+      "auc": 0.8211333333333334,
+      "calibration": [
+        {
+          "accounts": 89,
+          "prediction": 0.09892209701126899,
+          "observed": 0.19101123595505617
+        },
+        {
+          "accounts": 68,
+          "prediction": 0.29892209701126893,
+          "observed": 0.39705882352941174
+        },
+        {
+          "accounts": 81,
+          "prediction": 0.498922097011269,
+          "observed": 0.4074074074074074
+        },
+        {
+          "accounts": 70,
+          "prediction": 0.6989220970112691,
+          "observed": 0.7
+        },
+        {
+          "accounts": 192,
+          "prediction": 0.898922097011269,
+          "observed": 0.90625
+        }
+      ]
+    },
+    "seasonal": {
+      "mean_prediction": 0.5122034950187817,
+      "brier_two_options": 0.3850688970182786,
+      "aggregate_squared_bias": 0.01541645257383417,
+      "forecast_dispersion": 0.16538577777777783,
+      "alignment_credit": 0.27573333333333333,
+      "auc": 0.769625,
+      "calibration": [
+        {
+          "accounts": 176,
+          "prediction": 0.16487016168544827,
+          "observed": 0.2897727272727273
+        },
+        {
+          "accounts": 127,
+          "prediction": 0.4982034950187814,
+          "observed": 0.6456692913385826
+        },
+        {
+          "accounts": 197,
+          "prediction": 0.831536828352115,
+          "observed": 0.8477157360406091
+        }
+      ]
+    }
+  },
+  "scope": "Descriptive diagnosis on already-scored independent accounts; no refitting"
+}

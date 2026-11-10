@@ -1,0 +1,214 @@
+{
+  "dataset_digests_verified": true,
+  "source_sha256": {
+    "pew_zip": "d777de8e589da651e86c09fd8fb7fc14439c8a03632a9ad6864d5abb57792ca8",
+    "shoes_replication_archive": "520a10dbfce3467c20f15e1c32cf2dc79a768702bc682a91145b2fd37489df09",
+    "amazon_purchase_csv_gzip": "a0d3862f25aa358207e28b28924d95dd28ca40b0b2ad0e5695322f570d345918"
+  },
+  "frozen_input_sha256": {
+    "pew-freeze.json": "0c7608f1108e940ab4c68ab27082699040ccf94a506023a9ac99517b72365425",
+    "shoes-freeze.json": "aadb94b19670cf1213ce83e97bd1af9d407e45e23c203214d38a051b7d9d7698",
+    "amazon-freeze.json": "a7f09b68960d23dfa86ee20ecb5b230899f57f7d850e9eac0f56c04f8ecefbe5",
+    "amazon-mix-freeze.json": "c8f12499290782a612ed14a1a407be22642b6a34267bbf2c786d63e79c5882fe"
+  },
+  "survey_runner_digests_verified": true,
+  "all_splits_disjoint": true,
+  "amazon_cutoff_verified": true,
+  "forecast_format_verified": true,
+  "cohort_counts": {
+    "pew": {
+      "pilot": 48,
+      "formal": 240,
+      "reference": 4029
+    },
+    "shoes": {
+      "development": 48,
+      "test": 240,
+      "reference": 2785
+    },
+    "amazon": {
+      "test": 500,
+      "development": 60,
+      "reference": 4082
+    }
+  },
+  "completion": {
+    "pew": {
+      "formal": {
+        "expected_per_arm": 240,
+        "valid": {
+          "basic_choice": 240,
+          "rich_choice": 240,
+          "basic_probability": 240,
+          "rich_probability": 240
+        },
+        "saved_by_arm": {
+          "basic_choice": 240,
+          "rich_choice": 240,
+          "basic_probability": 240,
+          "rich_probability": 240
+        },
+        "failed_attempts_in_current_checkpoints": {
+          "ValueError: probability values": 1,
+          "ValueError: probability length": 1
+        },
+        "all_arms_pass_98_pct": true
+      },
+      "pilot": {
+        "expected_per_arm": 48,
+        "valid": {
+          "basic_choice": 48,
+          "rich_choice": 48,
+          "basic_probability": 48,
+          "rich_probability": 48,
+          "reverse_probability": 48,
+          "shuffle_probability": 48
+        },
+        "saved_by_arm": {
+          "basic_choice": 48,
+          "rich_choice": 48,
+          "basic_probability": 48,
+          "rich_probability": 48,
+          "reverse_probability": 48,
+          "shuffle_probability": 48
+        },
+        "failed_attempts_in_current_checkpoints": {
+          "ValueError: invalid option": 51
+        },
+        "all_arms_pass_98_pct": true
+      }
+    },
+    "shoes": {
+      "development": {
+        "expected_per_arm": 48,
+        "valid": {
+          "basic_choice": 48,
+          "rich_choice": 48,
+          "basic_probability": 48,
+          "rich_probability": 48,
+          "attitude_probability": 48
+        },
+        "saved_by_arm": {
+          "basic_choice": 48,
+          "rich_choice": 48,
+          "basic_probability": 48,
+          "rich_probability": 48,
+          "attitude_probability": 48
+        },
+        "failed_attempts_in_current_checkpoints": {
+          "ValueError: probability sum": 6
+        },
+        "all_arms_pass_98_pct": true
+      },
+      "test": {
+        "expected_per_arm": 240,
+        "valid": {
+          "basic_choice": 240,
+          "rich_choice": 240,
+          "basic_probability": 240,
+          "rich_probability": 240,
+          "attitude_probability": 240
+        },
+        "saved_by_arm": {
+          "basic_choice": 240,
+          "rich_choice": 240,
+          "basic_probability": 240,
+          "rich_probability": 240,
+          "attitude_probability": 240
+        },
+        "failed_attempts_in_current_checkpoints": {
+          "ValueError: probability sum": 24,
+          "ValueError: invalid option": 2
+        },
+        "all_arms_pass_98_pct": true
+      }
+    },
+    "amazon_category": {
+      "development": {
+        "expected_per_arm": 60,
+        "valid": {
+          "history_only": 60,
+          "historical_anchor": 60
+        },
+        "saved_by_arm": {
+          "history_only": 60,
+          "historical_anchor": 60
+        },
+        "failed_attempts_in_current_checkpoints": {},
+        "all_arms_pass_98_pct": true
+      },
+      "test": {
+        "expected_per_arm": 500,
+        "valid": {
+          "history_only": 500,
+          "historical_anchor": 500
+        },
+        "saved_by_arm": {
+          "history_only": 500,
+          "historical_anchor": 500
+        },
+        "failed_attempts_in_current_checkpoints": {},
+        "all_arms_pass_98_pct": true
+      }
+    },
+    "amazon_mix": {
+      "development": {
+        "expected_per_arm": 60,
+        "valid": {
+          "forecast": 60
+        },
+        "saved_by_arm": {
+          "forecast": 60
+        },
+        "failed_attempts_in_current_checkpoints": {
+          "probability sum": 1
+        },
+        "all_arms_pass_98_pct": true
+      },
+      "test": {
+        "expected_per_arm": 500,
+        "valid": {
+          "forecast": 500
+        },
+        "saved_by_arm": {
+          "forecast": 500
+        },
+        "failed_attempts_in_current_checkpoints": {
+          "probability sum": 26
+        },
+        "all_arms_pass_98_pct": true
+      }
+    }
+  },
+  "independent_score_verification": {
+    "pew": {
+      "source": "pew-formal-score.json",
+      "completion_gate": true,
+      "score_exists": true,
+      "coverage_matches": true,
+      "scored_people": 240
+    },
+    "shoes": {
+      "source": "shoes-test-score.json",
+      "completion_gate": true,
+      "score_exists": true,
+      "coverage_matches": true,
+      "scored_people": 240
+    },
+    "amazon_category": {
+      "source": "amazon-test-score.json",
+      "completion_gate": true,
+      "score_exists": true,
+      "coverage_matches": true,
+      "scored_people": 500
+    },
+    "amazon_mix": {
+      "source": "amazon-mix-test-score.json",
+      "completion_gate": true,
+      "score_exists": true,
+      "coverage_matches": true,
+      "scored_people": 500
+    }
+  },
+  "all_independent_scores_verified": true
+}
