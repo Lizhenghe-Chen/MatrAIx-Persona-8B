@@ -140,17 +140,17 @@
     },
     "revalidation_report.py": {
       "path": "../../revalidation_report.py",
-      "sha256": "b89f8ecf3c5fea77b9d67e987c8aac22972254750da852dff500c4aa4fb210eb"
+      "sha256": "de916b30bc758f50a4e023e497b166cb0ff1fd57234df7e63a36fda4f12352d7"
     },
     "revalidation_charts.js": {
       "path": "../../revalidation_charts.js",
-      "sha256": "6aab18edd6b01d142e002861b615b8a6a175157aa638691578facbdf28a4dc83"
+      "sha256": "0250eabb56fc3bb8a35bee4b2501d7cb662746e6d181d0ea856e2fc79600d539"
     },
     "revalidation_archive.py": {
       "path": "../../revalidation_archive.py",
       "sha256": "9b2c125b1a29893cb740b2f80531781b03f1e9cc82f3713ecab7b35d797a8480"
     }
   },
-  "report_sha256": "7ba828c2ef787cdf7716508b7d2483a63e38a122cac45ae108f28000613f9b7a",
-  "canonical_report_sha256": "d9308d864a16b750ac2c8baa58cff67b99b946d299dc9dbc8eb26d72f5aa168a"
+  "report_sha256": "d9187dc7362022c28d7333665f4e9df7de7adcdcf2347c102094fdc09e25ebf8",
+  "canonical_report_sha256": "2b5c4cbee510d00fc0a431a5ddd57531354604c77dcadd10f1a4e5a6e6080411"
 }

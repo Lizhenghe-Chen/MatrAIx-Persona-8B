@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 311,
-  "git_bytes": 43584521,
+  "git_file_count": 312,
+  "git_bytes": 43587775,
   "local_only_file_count": 30,
   "local_only_bytes": 629391967,
   "external_large_source": {
@@ -18,8 +18,8 @@
   "files": [
     {
       "path": "README.md",
-      "bytes": 5710,
-      "sha256": "5633225eacd2d4410d885a81363b33ab8ace54ec759cac5f12c777380bc8b56e",
+      "bytes": 5929,
+      "sha256": "72bb956fa67c5ab501a0340ff1ee0fe03727ab91d865ac9af818af85e03222bc",
       "storage": "git"
     },
     {
@@ -84,8 +84,8 @@
     },
     {
       "path": "report_smoke_check.cjs",
-      "bytes": 13543,
-      "sha256": "92d488244d332f55247314f2e909e195a21c84a85ab6454e730866cd40d30ecc",
+      "bytes": 15271,
+      "sha256": "03257a90e151f2a0fc943a3e4d538b8848815ceec8d601bcb3c8a5ae1c43dc74",
       "storage": "git"
     },
     {
@@ -192,12 +192,18 @@
     },
     {
       "path": "retail_reader_report.py",
-      "bytes": 13215,
-      "sha256": "247b62901b907d083a91e58a01c8122a1e8e4a07946dc7f547f6d5afbae2e05d",
+      "bytes": 13220,
+      "sha256": "76245ac449b36892f79ecc79c033a37b701252296e2e56649d8d5b8419d1d667",
       "storage": "git"
     },
     {
       "path": "retail_reader_template.html",
+      "bytes": 733,
+      "sha256": "06cb3cf7f29cf232a39d7cfb9455bf386dc9626219452d24e1c2ca8a73cfcb85",
+      "storage": "git"
+    },
+    {
+      "path": "retail_reader_template.html.tmpl",
       "bytes": 66552,
       "sha256": "ff46facf6b82e996a3138c06659fe71f0f7e373dcb5c4073bd8dcd514c2ea39a",
       "storage": "git"
@@ -246,14 +252,14 @@
     },
     {
       "path": "revalidation_charts.js",
-      "bytes": 7808,
-      "sha256": "6aab18edd6b01d142e002861b615b8a6a175157aa638691578facbdf28a4dc83",
+      "bytes": 7841,
+      "sha256": "0250eabb56fc3bb8a35bee4b2501d7cb662746e6d181d0ea856e2fc79600d539",
       "storage": "git"
     },
     {
       "path": "revalidation_report.py",
-      "bytes": 22532,
-      "sha256": "b89f8ecf3c5fea77b9d67e987c8aac22972254750da852dff500c4aa4fb210eb",
+      "bytes": 22537,
+      "sha256": "de916b30bc758f50a4e023e497b166cb0ff1fd57234df7e63a36fda4f12352d7",
       "storage": "git"
     },
     {
@@ -1597,8 +1603,8 @@
     },
     {
       "path": "study/08_购物预测/README.md",
-      "bytes": 8801,
-      "sha256": "1d0c2a53dc3f777cb1eb29d5a268e09e98e976533d803292202601c9ebffba55",
+      "bytes": 8806,
+      "sha256": "a59de686e78810789c2bf2b1862e3509b25549844f869e927729122346b5480a",
       "storage": "git"
     },
     {
@@ -1651,8 +1657,8 @@
     },
     {
       "path": "study/08_购物预测/index.html",
-      "bytes": 540554,
-      "sha256": "7ba828c2ef787cdf7716508b7d2483a63e38a122cac45ae108f28000613f9b7a",
+      "bytes": 540587,
+      "sha256": "d9187dc7362022c28d7333665f4e9df7de7adcdcf2347c102094fdc09e25ebf8",
       "storage": "git"
     },
     {
@@ -1748,7 +1754,7 @@
     {
       "path": "study/08_购物预测/报告展示核验.json",
       "bytes": 6531,
-      "sha256": "cf679a50bcb77908b2fcee231212d6ac4f2be2740a33677c7680becb6bdb1de2",
+      "sha256": "f47d47b9dac0d5fa20631bf156de0071f85315d16a9e46ba9e7b5438d8a95247",
       "storage": "git"
     },
     {
@@ -1904,8 +1910,8 @@
     },
     {
       "path": "study/10_匹配与商品复验/index.html",
-      "bytes": 152917,
-      "sha256": "47532dac66a4dc8e48cce223652422430d8d8cfa600884894f054443b662dbf4",
+      "bytes": 152950,
+      "sha256": "8b24894741f56c2293bd59ec1627014fc8a9ac1f53f7c159686586538a29d6a2",
       "storage": "git"
     },
     {
@@ -1940,8 +1946,8 @@
     },
     {
       "path": "study/10_匹配与商品复验/report-checks.json",
-      "bytes": 662,
-      "sha256": "3bbc47d7901b196fd111a5edcdb9eca9c0f5745113493e71e956852f61f23c03",
+      "bytes": 1089,
+      "sha256": "ece539d22e7183194c7c1ee89a52e0f68486b45d0deaf71e8f2f638f2dd63f2d",
       "storage": "git"
     },
     {
@@ -2002,8 +2008,8 @@
     },
     {
       "path": "study/index.html",
-      "bytes": 540874,
-      "sha256": "d9308d864a16b750ac2c8baa58cff67b99b946d299dc9dbc8eb26d72f5aa168a",
+      "bytes": 540907,
+      "sha256": "2b5c4cbee510d00fc0a431a5ddd57531354604c77dcadd10f1a4e5a6e6080411",
       "storage": "git"
     },
     {

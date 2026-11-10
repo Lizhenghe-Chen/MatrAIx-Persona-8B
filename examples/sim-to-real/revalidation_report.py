@@ -135,7 +135,7 @@ def section():
 
 
 def write_standalone(fragment):
-    template=(ROOT/'retail_reader_template.html').read_text()
+    template=(ROOT/'retail_reader_template.html.tmpl').read_text()
     css=re.search(r'<style>(.*?)</style>',template,re.S).group(1)
     page=f'''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MatrAIx 第六轮：匹配与商品复验</title><style>{css}</style><script src="../08_购物预测/vendor/echarts.min.js"></script></head><body><main><p><a href="../index.html">返回全部实验报告</a></p>{fragment}</main></body></html>'''
     (OUT/'index.html').write_text(page)

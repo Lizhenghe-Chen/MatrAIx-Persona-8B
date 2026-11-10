@@ -159,7 +159,7 @@ def build():
         'AMAZON_TABLE': table(['要预测什么', '近期历史', '直接用模型', '统计与模型组合', '组合比历史减少的误差', '95% 区间'], amazon_rows,
                               '逐账户平方误差原值，只在同一行比较；正的改善表示组合更好'),
     }
-    page = (ROOT / 'retail_reader_template.html').read_text()
+    page = (ROOT / 'retail_reader_template.html.tmpl').read_text()
     matching = matching_section()
     write_standalone(matching, re.search(r'<style>(.*?)</style>', page, re.S).group(1))
     page = page.replace('{{MATCHING_REVIEW}}', matching)

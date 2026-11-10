@@ -8,7 +8,7 @@
 
 逐人样本、真实答案、预测和运行失败详情存入忽略目录 `本机运行/`。发布的 JSON 只包含总体及逐题汇总。
 
-从仓库根目录运行 `.venv/bin/python examples/sim-to-real/retail_report.py`，统一生成主报告、旧入口兼容页面与两份技术附录。Python 需 3.10 以上，主项目环境为 3.12；报告生成仅用标准库与聚合结果。阅读版主模板为 `retail_reader_template.html`，历史章节与图表为 `retail_history_template.html`、`retail_history_charts.js`。重构日期为 2026-11-10。
+从仓库根目录运行 `.venv/bin/python examples/sim-to-real/retail_report.py`，统一生成主报告、旧入口兼容页面与两份技术附录。Python 需 3.10 以上，主项目环境为 3.12；报告生成仅用标准库与聚合结果。阅读版主模板为 `retail_reader_template.html.tmpl`，历史章节与图表为 `retail_history_template.html`、`retail_history_charts.js`。重构日期为 2026-11-10。
 
 ## 冻结与调整记录
 

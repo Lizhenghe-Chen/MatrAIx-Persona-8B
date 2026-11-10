@@ -6,7 +6,7 @@
     1425,
     1425
   ],
-  "networkRequests": 4,
+  "networkRequests": 5,
   "consoleErrors": 0,
   "allSelectorsVerified": true,
   "questionByComparisonViewsVerified": 52,
@@ -20,5 +20,16 @@
   "unit_checks_passed": 6,
   "portable_synthetic_scores_recomputed": true,
   "desktop_mobile_screenshots_inspected": true,
-  "git_only_report_rebuild_and_inventory_verified": true
+  "git_only_report_rebuild_and_inventory_verified": true,
+  "failedRequests": [],
+  "legacyTemplateRedirectVerified": true,
+  "unexpandedPlaceholders": 0,
+  "sidebarWidth": 581,
+  "display_fixes": [
+    "Legacy template URL redirects to rendered report and preserves anchor",
+    "Template source uses .html.tmpl extension",
+    "Horizontal-chart unit centered below axis to prevent clipping"
+  ],
+  "chart_container_widths_match": true,
+  "horizontal_axis_labels_within_chart": true
 }
