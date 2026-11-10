@@ -6,7 +6,9 @@ import hashlib
 import math
 from collections import defaultdict
 
+from data_sources import survey_source
 from experiment import AGES, DATES, EDUCATION, SHED_EDUCATION, STRATA, TRAITS, age_band, column, numeric
+from data_sources import survey_source
 from experiment import read_json, read_table
 from instruments import ITEMS
 from optimize import P1, draw, task_text
@@ -56,8 +58,8 @@ def background_value(raw, mapping):
     return raw.strip() if raw.strip() not in {"", "Refused", "Not asked", "Don't know"} else "Unknown"
 
 
-def read_people(study, survey):
-    rows = read_table(study / "数据" / f"{survey}.zip")
+def read_people(survey):
+    rows = read_table(survey_source(survey))
     header = {name.lower(): name for name in rows[0]}
     wave = 168 if survey == "pew" else None
     pid, age, edu, weight, threshold = DEMOGRAPHICS[survey]
@@ -147,7 +149,7 @@ def profile_jobs(study):
     dag = read_json(study / "01_首轮归档" / "cohort.json")
     jobs, pilot, result = [], [], {}
     for survey in ITEMS:
-        people = read_people(study, survey)
+        people = read_people(survey)
         formal = draw(people, 60, survey, "respondents")
         formal_ids = {row["id"] for row in formal}
         remaining = [row for row in people if row["id"] not in formal_ids]

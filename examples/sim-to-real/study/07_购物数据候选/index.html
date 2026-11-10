@@ -57,7 +57,7 @@
 <dt>真人背景</dt><dd>公开表含年龄组、性别、学历、就业、所在省等背景，可与同一人的电商回答对应。</dd>
 <dt>年龄限制</dt><dd><strong>覆盖 15 岁及以上，最年轻组是 15–24 岁，不能严格拆出 18–24 岁。</strong>如果坚持成年人实验，可选 25 岁及以上作为明确的新范围；不能无声地把全部样本当作成年人。</dd>
 <dt>其他限制</dt><dd>自报行为，不是平台订单；加拿大结果不能直接代表美国。问卷跳题必须保留。公共表有合并字段，支出还可能经插补；正式实验需按公共代码本确认字段，不能把原问卷每一项都假定为独立公开。</dd></dl>
-<p class="sources"><a href="https://www150.statcan.gc.ca/n1/pub/56m0003x/56m0003x2020001-eng.htm">官方数据入口</a><a href="https://www150.statcan.gc.ca/n1/pub/56m0003x/2020001/2022.zip">2022 官方 ZIP</a><a href="本机数据/CIUS2022_Codebook_PUMF.pdf">已核对的本机代码本</a><a href="本机数据/CIUS2022_Quest_E.pdf">已核对的本机原问卷</a></p>
+<p class="sources"><a href="https://www150.statcan.gc.ca/n1/pub/56m0003x/56m0003x2020001-eng.htm">官方数据入口</a><a href="https://www150.statcan.gc.ca/n1/pub/56m0003x/2020001/2022.zip">2022 官方 ZIP</a><a href="file:///Volumes/%E5%85%83%E5%AE%87%E5%AE%99%E8%81%94%E5%90%88%E5%88%9B%E6%96%B0%E5%AE%9E%E9%AA%8C%E5%AE%A4/%E5%AE%9E%E9%AA%8C%E6%95%B0%E6%8D%AE/MatrAIx%E5%A4%9A%E5%9C%B0%E5%8C%BA%E9%80%89%E5%93%81%E6%BA%90%E6%95%B0%E6%8D%AE/08_%E8%B4%AD%E7%89%A9%E7%A0%94%E7%A9%B6%E4%B8%8E%E5%80%99%E9%80%89/CIUS2022_Codebook_PUMF.pdf">共享盘代码本</a><a href="file:///Volumes/%E5%85%83%E5%AE%87%E5%AE%99%E8%81%94%E5%90%88%E5%88%9B%E6%96%B0%E5%AE%9E%E9%AA%8C%E5%AE%A4/%E5%AE%9E%E9%AA%8C%E6%95%B0%E6%8D%AE/MatrAIx%E5%A4%9A%E5%9C%B0%E5%8C%BA%E9%80%89%E5%93%81%E6%BA%90%E6%95%B0%E6%8D%AE/08_%E8%B4%AD%E7%89%A9%E7%A0%94%E7%A9%B6%E4%B8%8E%E5%80%99%E9%80%89/CIUS2022_Quest_E.pdf">共享盘原问卷</a></p>
 </article>
 
 <article id="amazon" data-tags="north downloaded">
@@ -154,7 +154,7 @@
 <div class="callout">现在可以决定下一轮采用哪些数据。接收和核验数据不等于实验开跑：尚未抽取评估样本、生成模型答卷或调用模型接口。</div>
 
 <h2>本地归档与核验记录</h2>
-<p>本页、<a href="下载与核验清单.json">下载与核验清单</a>及目录忽略规则可以随项目 Git 管理。已下载文件保存在本目录的 <code>本机数据/</code>，约 574 MB（十进制），其中加拿大官方 ZIP 约 397 MB。下载数据暂不进入 Git；保留来源链接、下载日期、原文件及保存文件的 SHA-256，便于以后确认版本。共享盘来源文件保留。项目 study 根目录另有一份相同 Pew ZIP，校验一致后已归档到本机数据子目录。新增接收材料的逐文件哈希见<a href="本次接收文件清单.json">本次接收文件清单</a>。</p>
+<p>现在从 <a href="file:///Volumes/%E5%85%83%E5%AE%87%E5%AE%99%E8%81%94%E5%90%88%E5%88%9B%E6%96%B0%E5%AE%9E%E9%AA%8C%E5%AE%A4/%E5%AE%9E%E9%AA%8C%E6%95%B0%E6%8D%AE/MatrAIx%E5%A4%9A%E5%9C%B0%E5%8C%BA%E9%80%89%E5%93%81%E6%BA%90%E6%95%B0%E6%8D%AE/README.md">共享盘数据源总索引</a> 查找已下载原件、官网和现行位置。<a href="下载与核验清单.json">下载与核验清单</a>及<a href="本次接收文件清单.json">接收清单</a>保留历史路径和校验值。</p>
 <p>既有四份 CSV 已检查读取、列名、人数及行数；加拿大包核对官方问卷与字典。本次补充材料核对了 Amazon 记录与问卷关联、年份范围，Pew 人数、购物字段、权重和访谈模式，以及运动鞋原包的重复答题处理、第一波关联和关键字段。<strong>尚未完成正式实验需要的逐题答案映射、所有样本排除规则、各层人数和信息泄漏检查。</strong>不能将“已下载”写成“已通过实验验收”。</p>
 <footer>本清单结合用户提供的两份资料并独立核对官方页面、原论文、公开复制文件和本机数据。表中的推荐顺序是针对本次 MatrAIx 购物验证目标的判断，不是数据集的客观排行榜。<br><a href="../index.html">返回已有实验总报告</a></footer>
 </main>

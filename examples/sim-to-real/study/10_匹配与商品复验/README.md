@@ -34,6 +34,8 @@
 
 ## 文件与复算
 
+原始数据统一从[共享盘数据源总索引](file:///Volumes/%E5%85%83%E5%AE%87%E5%AE%99%E8%81%94%E5%90%88%E5%88%9B%E6%96%B0%E5%AE%9E%E9%AA%8C%E5%AE%A4/%E5%AE%9E%E9%AA%8C%E6%95%B0%E6%8D%AE/MatrAIx%E5%A4%9A%E5%9C%B0%E5%8C%BA%E9%80%89%E5%93%81%E6%BA%90%E6%95%B0%E6%8D%AE/README.md)读取。共享盘挂载位置不同的电脑可设置 `MATRAIX_DATA_ROOT`，指向包含 README.md 的总目录。 冻结样本与运行检查点保留在本轮原目录。
+
 | 文件 | 用途 |
 |---|---|
 | `protocol.json`、`analysis-seal.json` | 冻结方案、输入哈希、运行和评分代码指纹 |

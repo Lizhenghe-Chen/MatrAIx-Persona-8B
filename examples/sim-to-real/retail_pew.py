@@ -13,11 +13,12 @@ import zipfile
 import httpx
 import pyreadstat
 
+from data_sources import data_root
 from optimize import MODELS, P1, request_for
 
 STUDY = Path(__file__).parent / "study"
 RUN = STUDY / "08_购物预测" / "本机运行"
-SOURCE = next((STUDY / "07_购物数据候选/本机数据/Pew_Wave13").glob("*.zip"))
+SOURCE = data_root() / "08_购物研究与候选/Pew_Wave13/American-Trends-Panel-Wave-13-Dec-15.zip"
 SEED = 20261109
 IMPORTANCE = "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to"
 REVIEWS = "Consumers today can access lots of customer reviews and ratings about products and services they might want to buy. How much do you think these ratings and reviews help to"

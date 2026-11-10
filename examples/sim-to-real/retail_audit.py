@@ -5,7 +5,8 @@ import json
 import math
 import sqlite3
 
-from retail_amazon import RUN, SOURCE as AMAZON_SOURCE, STUDY
+from data_sources import data_root, frozen_code_matches
+from retail_amazon import RUN, SOURCE as AMAZON_SOURCE
 
 
 def read(name):
@@ -60,8 +61,8 @@ def audit():
     mix = read("amazon-mix-freeze.json")
     for data,key in [(pew,"splits"),(amazon,"split"),(shoes,"split"),(mix,"split")]:
         partition(data,key)
-    sources = STUDY / "07_购物数据候选/本机数据"
-    assert digest(next((sources/"Pew_Wave13").glob("*.zip"))) == pew["dataset_sha256"]
+    sources = data_root() / "08_购物研究与候选"
+    assert digest(sources/"Pew_Wave13/American-Trends-Panel-Wave-13-Dec-15.zip") == pew["dataset_sha256"]
     assert digest(AMAZON_SOURCE)==amazon["source_gzip_sha256"]
     assert digest(sources/"Horiuchi2021_Conjoint_SDB/ReplicationPackage_v2.tar.gz")==shoes["source_sha256"]
     assert all(mix["split"][p]==amazon["split"][p] for p in mix["split"])
@@ -110,7 +111,8 @@ def audit():
         readiness[task] = row
     runner = RUN.parent.parent.parent
     protocol = read("shoes-model-protocol.json")
-    assert digest(runner/"retail_pew.py") == pew["runner_sha256"] == protocol["decoder_sha256"]
+    assert pew["runner_sha256"] == protocol["decoder_sha256"]
+    assert frozen_code_matches("retail_pew.py", pew["runner_sha256"], digest(runner/"retail_pew.py"))
     assert digest(runner/"retail_shoes_model.py") == protocol["runner_sha256"]
     assert digest(RUN/"shoes-freeze.json") == protocol["cohort_sha256"]
     dataset_digests = {"pew_zip":pew["dataset_sha256"],"shoes_replication_archive":shoes["source_sha256"],

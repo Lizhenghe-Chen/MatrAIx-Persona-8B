@@ -16,6 +16,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from zipfile import ZipFile
 
+from data_sources import data_root, survey_source
 from instruments import DATES, ITEMS, PEW_INTRO
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -744,7 +745,7 @@ def main():
     try:
         if args.command == "reference":
             summaries = {
-                name: human_reference(name, output / "input" / f"{name}.zip")
+                name: human_reference(name, survey_source(name))
                 for name in ITEMS
             }
             dump(output / "reference.json", summaries)
@@ -766,12 +767,7 @@ def main():
                 )
             )
         elif args.command == "sample":
-            pointer = output / "input" / "persona-1m-path.txt"
-            release = args.release or (
-                Path(pointer.read_text().strip())
-                if pointer.exists()
-                else output / "input" / "persona-1m"
-            )
+            release = args.release or data_root() / "09_MatrAIx画像/Persona-1M发行版"
             sample_cohort(release, output)
         elif args.command == "sample-dag":
             sample_dag(output)

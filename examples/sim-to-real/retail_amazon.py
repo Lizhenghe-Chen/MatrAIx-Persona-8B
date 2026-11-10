@@ -7,9 +7,11 @@ import json
 from pathlib import Path
 import random
 
+from data_sources import data_root
+
 STUDY = Path(__file__).parent / "study"
 RUN = STUDY / "08_购物预测/本机运行"
-SOURCE = STUDY / "07_购物数据候选/本机数据/Open_eCommerce_1.0/amazon-purchases.csv.gz"
+SOURCE = data_root() / "08_购物研究与候选/Open_eCommerce_1.0/amazon-purchases.csv.gz"
 SEED = 20261109
 CUTOFF = "2022-10-01"
 START = "2020-01-01"

@@ -16,6 +16,7 @@ from pathlib import Path
 
 import httpx
 
+from data_sources import frozen_code_matches, survey_source
 from experiment import ROOT, SEED, STRATA, dump, profile_prompt, read_json, sha256, survey_instrument
 from instruments import ITEMS
 
@@ -43,13 +44,13 @@ def draw(rows, n, *key):
 
 
 def source_manifest(study):
-    data = study / "数据"
     archive = study / "01_首轮归档"
-    sources = [data / f"{survey}.zip" for survey in ITEMS]
-    sources += [archive / "cohort.json", archive / "reference.json"]
+    # Preserve the keys in historical manifests; the physical files moved.
+    sources = {f"数据/{survey}.zip": survey_source(survey) for survey in ITEMS}
+    sources.update({f"01_首轮归档/{name}": archive / name for name in ("cohort.json", "reference.json")})
     paths = [Path(__file__), Path(__file__).with_name("instruments.py"),
              Path(__file__).with_name("experiment.py")]
-    return {"inputs": {str(path.relative_to(study)): sha256(path) for path in sources},
+    return {"inputs": {name: sha256(path) for name, path in sources.items()},
             "source": {path.name: sha256(path) for path in paths}}
 
 
@@ -211,9 +212,17 @@ def main():
         "plan_hash": hashlib.sha256(json.dumps([jobs, pilot, data], sort_keys=True).encode()).hexdigest(),
     }
     path = destination / "manifest.json"
-    if path.exists() and read_json(path) != manifest:
-        raise ValueError("Experiment inputs changed. Use a fresh run directory.")
-    dump(path, manifest)
+    if path.exists():
+        saved = read_json(path)
+        if saved["source"].keys() == manifest["source"].keys() and all(
+            frozen_code_matches(name, saved["source"][name], digest)
+            for name, digest in manifest["source"].items()
+        ):
+            manifest["source"] = saved["source"]
+        if saved != manifest:
+            raise ValueError("Experiment inputs changed. Use a fresh run directory.")
+    else:
+        dump(path, manifest)
     if args.action == "score":
         from optimize_score import score
         score(args.experiment, args.study, destination, jobs, data)

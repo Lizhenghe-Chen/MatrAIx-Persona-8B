@@ -54,6 +54,8 @@ python retail_report.py
 
 ## 运行环境与复算细节
 
+原始数据统一从[共享盘数据源总索引](file:///Volumes/%E5%85%83%E5%AE%87%E5%AE%99%E8%81%94%E5%90%88%E5%88%9B%E6%96%B0%E5%AE%9E%E9%AA%8C%E5%AE%A4/%E5%AE%9E%E9%AA%8C%E6%95%B0%E6%8D%AE/MatrAIx%E5%A4%9A%E5%9C%B0%E5%8C%BA%E9%80%89%E5%93%81%E6%BA%90%E6%95%B0%E6%8D%AE/README.md)读取。共享盘挂载位置不同的电脑可设置 `MATRAIX_DATA_ROOT`，指向包含 README.md 的总目录。 冻结样本与运行检查点保留在本轮原目录。
+
 - 模型 ID 为 `Qwen/Qwen3.8-27B`，关闭思考，温度 0.7、top_p 1。Pew 和 Amazon 最多输出 768 token，运动鞋最多 1,536 token。每次请求最多尝试三次，逐组保留有效记录及失败原因。
 - 执行和主评分环境为 Python 3.12.12、httpx 0.28.1、NumPy 2.5.4、pyreadstat 1.3.7。运动鞋统计评分环境为 Python 3.12.12、pandas 3.0.3、pyreadr 0.5.9、scikit-learn 1.9.1、NumPy 2.5.0。
 - 区间以受访者或账户为重抽样单位，使用 2,000 次配对重抽样。运动鞋按原四个设计在组内重抽。校准与组合系数在重抽时保持冻结，因此区间反映评估样本波动。

@@ -4,7 +4,7 @@
 
 ## 输入目录
 
-在同一个实验目录下准备 `input/shed.zip`、`input/pew.zip` 和 `input/anes.zip`，每个 ZIP 保留官方 CSV。把 Persona 1M 的正式发布目录写入 `input/persona-1m-path.txt`，或在抽样时传入 `--release`。程序校验全部十个分片的 SHA-256 和总行数。真人逐人数据只在本地统计阶段读取，模型请求不包含这些数据。
+原始数据统一从[共享盘数据源总索引](file:///Volumes/%E5%85%83%E5%AE%87%E5%AE%99%E8%81%94%E5%90%88%E5%88%9B%E6%96%B0%E5%AE%9E%E9%AA%8C%E5%AE%A4/%E5%AE%9E%E9%AA%8C%E6%95%B0%E6%8D%AE/MatrAIx%E5%A4%9A%E5%9C%B0%E5%8C%BA%E9%80%89%E5%93%81%E6%BA%90%E6%95%B0%E6%8D%AE/README.md)读取。共享盘挂载位置不同的电脑可设置 `MATRAIX_DATA_ROOT`，指向包含 README.md 的总目录。 首轮调查 ZIP 位于 [00_历史通用问卷](file:///Volumes/%E5%85%83%E5%AE%87%E5%AE%99%E8%81%94%E5%90%88%E5%88%9B%E6%96%B0%E5%AE%9E%E9%AA%8C%E5%AE%A4/%E5%AE%9E%E9%AA%8C%E6%95%B0%E6%8D%AE/MatrAIx%E5%A4%9A%E5%9C%B0%E5%8C%BA%E9%80%89%E5%93%81%E6%BA%90%E6%95%B0%E6%8D%AE/00_%E5%8E%86%E5%8F%B2%E9%80%9A%E7%94%A8%E9%97%AE%E5%8D%B7)。Persona 1M 默认读取 [发行版](file:///Volumes/%E5%85%83%E5%AE%87%E5%AE%99%E8%81%94%E5%90%88%E5%88%9B%E6%96%B0%E5%AE%9E%E9%AA%8C%E5%AE%A4/%E5%AE%9E%E9%AA%8C%E6%95%B0%E6%8D%AE/MatrAIx%E5%A4%9A%E5%9C%B0%E5%8C%BA%E9%80%89%E5%93%81%E6%BA%90%E6%95%B0%E6%8D%AE/09_MatrAIx%E7%94%BB%E5%83%8F/Persona-1M%E5%8F%91%E8%A1%8C%E7%89%88)，也可用 `sample --release <目录>` 指定其他发行版。历史正式运行使用冻结的 DAG 画像，重建这批画像用 `sample-dag`。
 
 - SHED 使用 2025 public use CSV。年龄来自 `ppage`，学历来自 `ppeducat`，使用 `weight`，逐题剔除有插补标记的答案。 [数据及变量字典](https://www.federalreserve.gov/consumerscommunities/shed_data.htm) · [问卷](https://www.federalreserve.gov/publications/2026-supplemental-appendixes-report-economic-well-being-us-households-2025-appendix-a.htm)
 - Pew 使用 Wave 168。用 `F_AGECAT`、`F_EDUCCAT2` 和 `WEIGHT_W168`，保留题目显式提供的“不确定”。 [数据](https://www.pewresearch.org/dataset/american-trends-panel-wave-168/) · [问卷](https://www.pewresearch.org/wp-content/uploads/sites/20/2025/07/PI_2025.07.31_Scams_Questionnaire.pdf)
@@ -18,7 +18,7 @@
 ```sh
 uv sync --locked --python 3.12
 uv run --no-sync python examples/sim-to-real/experiment.py --work-dir "$study" reference
-uv run --no-sync python examples/sim-to-real/experiment.py --work-dir "$study" sample
+uv run --no-sync python examples/sim-to-real/experiment.py --work-dir "$study" sample-dag
 uv run --no-sync python examples/sim-to-real/experiment.py --work-dir "$study" pilot --model "$model"
 uv run --no-sync python examples/sim-to-real/experiment.py --work-dir "$study" formal --model "$model"
 uv run --no-sync python examples/sim-to-real/experiment.py --work-dir "$study" score

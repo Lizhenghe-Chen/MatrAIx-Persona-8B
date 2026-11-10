@@ -13,6 +13,7 @@ from zipfile import ZipFile
 
 import numpy as np
 
+from data_sources import frozen_code_matches, shopping_sources, survey_source
 from experiment import ITEMS, STRATA, SEED, human_reference, stable_seed
 from optimize import draw
 from optimize_profiles import read_people
@@ -58,10 +59,11 @@ def verify_sources():
     for folder in ('02_模型对比', '03_提示与背景'):
         manifest = read(STUDY/folder/'manifest.json')
         for name, checksum in manifest['inputs'].items():
-            assert sha(STUDY/name) == checksum
+            source = survey_source(Path(name).stem) if name.startswith("数据/") else STUDY/name
+            assert sha(source) == checksum
         audit = read(STUDY/folder/'input-audit.json')
         for name in ('experiment.py','instruments.py','optimize.py','optimize_profiles.py'):
-            assert sha(ROOT/name) == audit['source_hashes'][name]
+            assert frozen_code_matches(name, audit['source_hashes'][name], sha(ROOT/name))
         # Score/report code had a separately recorded analysis revision;
         # do not compare it to the older input-preflight code revision.
         analysis = read(STUDY/folder/'analysis-source-sha256.json')
@@ -75,7 +77,7 @@ def cohort_audit():
     cohort = read(STUDY / "01_首轮归档/cohort.json")
     refs = read(STUDY / "01_首轮归档/reference.json")
     for survey in ITEMS:
-        close(human_reference(survey, STUDY / f"数据/{survey}.zip"), refs[survey])
+        close(human_reference(survey, survey_source(survey)), refs[survey])
     first = []
     with ZipFile(STUDY / "01_首轮归档/formal-trials.zip") as z:
         for name in z.namelist():
@@ -169,7 +171,7 @@ def real_profile_audit():
     predictions = {(r['survey'],r['condition'],r['id']):r['answers'] for r in raw}
     result = {}
     for survey in ITEMS:
-        people = read_people(STUDY,survey)
+        people = read_people(survey)
         formal = draw(people,60,survey,'respondents')
         selected = {p['id'] for p in formal}
         assert selected == set(saved[survey]['formal'])
@@ -226,12 +228,14 @@ def real_profile_audit():
 
 def shopping_audit():
     import shopping
+
+    sources=shopping_sources()
     folder=STUDY/'06_北美电商选品'
     saved=read(folder/'sample-index.json')
     result={}
     for survey in shopping.SURVEYS:
-        people=(shopping.pew_people(folder/'数据/pew.zip') if survey=='pew' else
-                shopping.product_people(folder/f'数据/{survey}.csv',survey))
+        people=(shopping.pew_people(sources['pew.zip']) if survey=='pew' else
+                shopping.product_people(sources[f'{survey}.csv'],survey))
         ds=shopping.split(people,survey)
         assert saved[survey]=={k:[p['id'] for p in rows] for k,rows in ds.items()}
         ids=[p['id'] for group in ds.values() for p in group]

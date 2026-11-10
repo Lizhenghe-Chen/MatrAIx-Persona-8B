@@ -9,9 +9,10 @@ import tempfile
 
 import pyreadr
 
-from retail_amazon import RUN, STUDY, SEED
+from data_sources import data_root
+from retail_amazon import RUN, SEED
 
-SOURCE = STUDY / "07_购物数据候选/本机数据/Horiuchi2021_Conjoint_SDB/ReplicationPackage_v2.tar.gz"
+SOURCE = data_root() / "08_购物研究与候选/Horiuchi2021_Conjoint_SDB/ReplicationPackage_v2.tar.gz"
 DESIGNS = {"treat random": "A", "control random": "B", "treat constrained": "C", "control constrained": "D"}
 BACKGROUND = {
     "Q2.4": "Age group", "Q2.12": "Education", "Q2.5": "Gender", "Q2.13": "Household income",

@@ -15,6 +15,7 @@ from zipfile import ZipFile
 import httpx
 
 from experiment import SEED, dump, sha256, stable_seed
+from data_sources import frozen_code_matches, shopping_sources
 from optimize import MODELS, P1, PARAMS, request_for
 
 SURVEYS = ("origin", "packaging", "pew")
@@ -251,13 +252,13 @@ def main():
     parser.add_argument("study", type=Path)
     args = parser.parse_args()
     study = args.study
-    source = study / "数据"
-    people = {s: product_people(source / f"{s}.csv", s) for s in SURVEYS[:2]}
-    if (source / "pew.zip").exists():
-        people["pew"] = pew_people(source / "pew.zip")
+    sources = shopping_sources()
+    people = {s: product_people(sources[f"{s}.csv"], s) for s in SURVEYS[:2]}
+    if sources["pew.zip"].is_file():
+        people["pew"] = pew_people(sources["pew.zip"])
     datasets = {s: split(rows, s) for s, rows in people.items()}
     manifest = {"seed": SEED, "model": MODELS["qwen"], "parameters": PARAMS, "thinking": False,
-                "source": {p.name: sha256(p) for p in sorted(source.iterdir()) if p.is_file()},
+                "source": {name: sha256(path) for name, path in sources.items() if path.is_file()},
                 "prompt_code_sha256": sha256(Path(__file__)),
                 "original_prompt_code_sha256": sha256(Path(__file__).with_name("optimize.py")),
                 "groups": {s: {k: dict(Counter(p["stratum"] for p in rows)) for k, rows in ds.items()}
@@ -266,9 +267,15 @@ def main():
                     (s, p["id"], c, prompt(s, p, c)) for s, ds in datasets.items() for part in ("pilot", "formal")
                     for p in ds[part] for c in CONDITIONS], sort_keys=True).encode()).hexdigest()}
     path = study / "manifest.json"
-    if path.exists() and json.loads(path.read_text()) != manifest:
-        raise ValueError("Frozen experiment inputs changed")
-    dump(path, manifest)
+    if path.exists():
+        saved = json.loads(path.read_text())
+        for field, name in (("prompt_code_sha256", "shopping.py"), ("original_prompt_code_sha256", "optimize.py")):
+            if frozen_code_matches(name, saved[field], manifest[field]):
+                manifest[field] = saved[field]
+        if saved != manifest:
+            raise ValueError("Frozen experiment inputs changed")
+    else:
+        dump(path, manifest)
     dump(study / "sample-index.json", {s: {k: [p["id"] for p in rows] for k, rows in ds.items()}
                                       for s, ds in datasets.items()})
     if args.stage == "score":

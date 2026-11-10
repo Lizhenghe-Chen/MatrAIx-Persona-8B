@@ -10,12 +10,11 @@
 
 ## 数据保存范围
 
-| 随 Git 保存 | 在项目本机工作副本保存 |
+| 位置 | 内容 |
 |---|---|
-| 代码、模型配置、样本生成记录、汇总指标、报告、输入及输出哈希、执行日志 | 三份 Pew 原始 ZIP、含真人伪编号的样本索引和模型答卷、SQLite 检查点 |
-| 美联储 SHED、ANES 公共使用版本、Bankert 商品选择公开数据及作者 CC0 原始数据、Purdue 公开选择数据 | Bankert 的出版方问卷补充文件，以及本机共享盘路径 |
-| 两项纯合成画像实验的模拟答卷 | Persona 1M 多 GB 分片在共享盘，本项目保存发行清单，路径见本机 `数据/persona-1m-path.txt` |
-| 运动鞋、T 恤、循环产品、无人机配送公开清洗表，Amazon 公开受访者表，相关问卷及加拿大问卷和代码本 | Amazon 购买记录压缩表、加拿大完整包、运动鞋完整复制包；均超过本次普通 Git 单文件 20 MiB 上限 |
+| 共享盘数据源总库 | 历史真人调查、商品选择、完整运动鞋复算包、Amazon 购买明细、加拿大完整包、多地区选品数据和 Persona 1M |
+| 随 Git 保存 | 代码、冻结方案、合成答卷、小型公开来源副本、汇总结果、报告和校验值 |
+| 项目本机运行目录 | 带真人伪编号的样本索引、逐人模型答卷和 SQLite 检查点 |
 
 Pew ATP 有独立的使用条款，官方下载需要账户。复算时取得相应版本并核对清单。真人逐人关联材料按原实验约定保留在本机。同批实验的独立共享盘来源也保留作为来源副本。[Pew 数据获取与条款](https://www.pewresearch.org/short-reads/2021/10/22/how-to-access-pew-research-center-survey-data/) · [ANES 使用条款](https://electionstudies.org/data-center/) · [Bankert 作者数据](https://doi.org/10.7910/DVN/3TGWGG) · [Purdue 作者数据](https://doi.org/10.17632/4z748jnnjs.2)
 
@@ -31,9 +30,9 @@ study="$PWD/examples/sim-to-real/study"
 | 实验 | 评分文件与重算方式 |
 |---|---|
 | 首轮 Flash | 把 [冻结画像](01_首轮归档/cohort.json) 和 [真人参照](01_首轮归档/reference.json) 复制到一个临时实验目录，并在该目录解压 [正式答卷](01_首轮归档/formal-trials.zip) 得到 `formal/`。运行 `experiment.py --work-dir <临时实验目录> score`。 |
-| 三模型与背景优化 | 在数据根目录准备两轮清单指定的数据和本机检查点。运行 `optimize.py models score --study "$study"` 或 `optimize.py profiles score --study "$study"`。 |
+| 三模型与背景优化 | 挂载共享盘总库，并恢复本机检查点。运行 `optimize.py models score --study "$study"` 或 `optimize.py profiles score --study "$study"`。 |
 | 北美电商选品 | 使用 `pyreadstat==1.3.7` 读 SPSS，数据和检查点见[电商索引](06_北美电商选品/数据索引.md)。运行 `shopping.py score "$study/06_北美电商选品"`。 |
 | 匹配与商品内部复验 | [第六轮记录](10_匹配与商品复验/README.md)提供三次生成、字段修正及复算命令；纯合成答卷可仅凭 Git 归档重新评分。 |
 | 购物预测及补充分析 | [第五轮记录](08_购物预测/README.md)列出各项开发、正式评分、校准和运动鞋输入对齐复算命令。公开汇总随 Git，逐人运行材料另在本机。 |
 
-三份 Pew 文件分别放在 `数据/pew.zip`（Wave 168）、`06_北美电商选品/数据/pew.zip`（Wave 111）和 `07_购物数据候选/本机数据/Pew_Wave13/American-Trends-Panel-Wave-13-Dec-15.zip`（Wave 13）。源调查文件和历史答卷的哈希见各轮 `manifest.json` 或 `output-sha256.json`。本机材料的路径也是重算程序读取的路径，Git 会忽略这些文件。
+原始数据统一从[共享盘数据源总索引](file:///Volumes/%E5%85%83%E5%AE%87%E5%AE%99%E8%81%94%E5%90%88%E5%88%9B%E6%96%B0%E5%AE%9E%E9%AA%8C%E5%AE%A4/%E5%AE%9E%E9%AA%8C%E6%95%B0%E6%8D%AE/MatrAIx%E5%A4%9A%E5%9C%B0%E5%8C%BA%E9%80%89%E5%93%81%E6%BA%90%E6%95%B0%E6%8D%AE/README.md)读取。共享盘挂载位置不同的电脑可设置 `MATRAIX_DATA_ROOT`，指向包含 README.md 的总目录。 三份 Pew 源包分别为 [Wave 168](file:///Volumes/%E5%85%83%E5%AE%87%E5%AE%99%E8%81%94%E5%90%88%E5%88%9B%E6%96%B0%E5%AE%9E%E9%AA%8C%E5%AE%A4/%E5%AE%9E%E9%AA%8C%E6%95%B0%E6%8D%AE/MatrAIx%E5%A4%9A%E5%9C%B0%E5%8C%BA%E9%80%89%E5%93%81%E6%BA%90%E6%95%B0%E6%8D%AE/00_%E5%8E%86%E5%8F%B2%E9%80%9A%E7%94%A8%E9%97%AE%E5%8D%B7/Pew-W168.zip)、[Wave 111](file:///Volumes/%E5%85%83%E5%AE%87%E5%AE%99%E8%81%94%E5%90%88%E5%88%9B%E6%96%B0%E5%AE%9E%E9%AA%8C%E5%AE%A4/%E5%AE%9E%E9%AA%8C%E6%95%B0%E6%8D%AE/MatrAIx%E5%A4%9A%E5%9C%B0%E5%8C%BA%E9%80%89%E5%93%81%E6%BA%90%E6%95%B0%E6%8D%AE/06_%E5%8E%86%E5%8F%B2%E5%8C%97%E7%BE%8E%E7%94%B5%E5%95%86/Pew-W111.zip) 和 [Wave 13](file:///Volumes/%E5%85%83%E5%AE%87%E5%AE%99%E8%81%94%E5%90%88%E5%88%9B%E6%96%B0%E5%AE%9E%E9%AA%8C%E5%AE%A4/%E5%AE%9E%E9%AA%8C%E6%95%B0%E6%8D%AE/MatrAIx%E5%A4%9A%E5%9C%B0%E5%8C%BA%E9%80%89%E5%93%81%E6%BA%90%E6%95%B0%E6%8D%AE/08_%E8%B4%AD%E7%89%A9%E7%A0%94%E7%A9%B6%E4%B8%8E%E5%80%99%E9%80%89/Pew_Wave13/American-Trends-Panel-Wave-13-Dec-15.zip)。实验输出仍写入原运行目录。旧清单记录的文件名和哈希用于核验历史输入。若浅克隆缺少迁移前版本，先获取完整历史再对照旧清单。

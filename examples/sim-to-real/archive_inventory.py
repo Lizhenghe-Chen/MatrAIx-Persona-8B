@@ -9,6 +9,8 @@ import json
 from pathlib import Path
 import subprocess
 
+from data_sources import DATA_ROOT_ENV, DEFAULT_DATA_ROOT
+
 ROOT = Path(__file__).resolve().parent
 REPO = ROOT.parents[1]
 OUTPUT = ROOT / "study/00_导航/文件清单.json"
@@ -36,7 +38,7 @@ def local_reason(path: Path) -> str:
     if "origin-appendix.docx" in relative:
         return "出版方补充文件；未确认独立再分发条款"
     if "persona-1m-path.txt" in relative:
-        return "此电脑共享盘路径；发行清单另随 Git 保存"
+        return "旧版兼容路径；当前脚本从数据总库解析"
     if "02_模型对比/checkpoints.sqlite" in relative:
         return "可变检查点；同轮纯合成答卷已另存 ZIP 随 Git 保存"
     if "本机运行/" in relative or path.name in {
@@ -87,7 +89,9 @@ def write() -> None:
         "external_large_source": {
             "dataset": "MatrAIx Persona 1M",
             "version_manifest": "study/数据/persona-1m-official-manifest.json",
-            "local_path_file": "study/数据/persona-1m-path.txt",
+            "default_data_root": str(DEFAULT_DATA_ROOT),
+            "root_override_env": DATA_ROOT_ENV,
+            "release_path": "09_MatrAIx画像/Persona-1M发行版",
             "note": "多 GB 分片留在共享盘，不计入本目录体积；实际实验冻结画像已随 Git 保存",
         },
         "files": rows,

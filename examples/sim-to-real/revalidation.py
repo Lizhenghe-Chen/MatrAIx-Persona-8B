@@ -118,6 +118,8 @@ def make_pool():
 def prepare():
     from retail_pew import dataset, ITEMS, SOURCE
     from shopping import product_people,split,STRATA as PRODUCT_STRATA
+    from data_sources import frozen_code_matches, shopping_sources
+    sources=shopping_sources()
     people,options=dataset()
     eligible=[]
     for p in people.values():
@@ -170,7 +172,7 @@ def prepare():
         assert list(r['coarse']['background'].values())[:2]==list(r['matched']['background'].values())[:2]
     products={};overlap={}
     for survey in ('origin','packaging'):
-        persons=product_people(STUDY/f'06_北美电商选品/数据/{survey}.csv',survey)
+        persons=product_people(sources[f'{survey}.csv'],survey)
         ds=split(persons,survey)
         saved=read(STUDY/'06_北美电商选品/sample-index.json')[survey]
         assert all([r['id'] for r in ds[k]]==saved[k] for k in ds)
@@ -209,10 +211,15 @@ def prepare():
                          'uncertainty':'Intervals conditional on three generated repetitions and fixed reference; not full survey-design or deployment uncertainty',
                          'adoption':'Gain >= 2pp and bootstrap lower bound > 0 and positive gain in all three repetitions; tasks reported separately',
                          'completion':'>=98% in every cell and repetition, comparisons on common completed IDs; never route real profiles to cloud'},
-              'source_sha256':{'pew13':digest(SOURCE),**{s:digest(STUDY/f'06_北美电商选品/数据/{s}.csv') for s in ('origin','packaging')}},
+              'source_sha256':{'pew13':digest(SOURCE),**{s:digest(sources[f'{s}.csv']) for s in ('origin','packaging')}},
               'runner_sha256':digest(Path(__file__))}
     frozen(LOCAL/'freeze.json',data)
-    frozen(OUT/'protocol.json',protocol)
+    protocol_path=OUT/'protocol.json'
+    if protocol_path.exists():
+        previous=read(protocol_path)['runner_sha256']
+        if frozen_code_matches('revalidation.py',previous,protocol['runner_sha256']):
+            protocol['runner_sha256']=previous
+    frozen(protocol_path,protocol)
     frozen(OUT/'synthetic-cohorts.json',cohorts)
     print(json.dumps({'frozen':True,'human_reference_n':len(eligible),'formal_requests':protocol['formal_requests'],
                       'pilot_requests':protocol['pilot_requests'],'minimum_reference_cell':min(counts.values())}))
@@ -329,7 +336,8 @@ def request_body(job):
 
 async def run(phase,only,credentials):
     data=read(LOCAL/'freeze.json');protocol=read(OUT/'protocol.json')
-    assert digest(Path(__file__))==protocol['runner_sha256'],'Runner changed after freeze'
+    from data_sources import frozen_code_matches
+    assert frozen_code_matches('revalidation.py',protocol['runner_sha256'],digest(Path(__file__))),'Runner changed after freeze'
     checked=preflight(data);write(OUT/'input-checks.json',checked)
     secrets=read(Path(credentials)) if credentials else {}
     provider_key=os.environ.get('DEEPSEEK_API_KEY') or secrets.get('DEEPSEEK_API_KEY')
