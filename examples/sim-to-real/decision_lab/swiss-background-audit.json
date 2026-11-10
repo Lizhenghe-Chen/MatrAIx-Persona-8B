@@ -1,0 +1,31 @@
+{
+  "scope": "Unweighted participant background audit; no test-answer evaluation",
+  "people": 3413,
+  "published_N": 3413,
+  "sample_size_matches": true,
+  "paper": "https://doi.org/10.1016/j.jclepro.2024.143968",
+  "background": {
+    "age": {
+      "missing": 0,
+      "min": 19.0,
+      "max": 94.0
+    },
+    "Education": {
+      "missing": 122,
+      "min": 1.0,
+      "max": 8.0
+    },
+    "w7_q40x1": {
+      "missing": 382,
+      "min": 1.0,
+      "max": 10.0
+    },
+    "w8_q2": {
+      "missing": 0,
+      "min": 1.0,
+      "max": 3.0
+    }
+  },
+  "author_script_note": "summary_stats.R loads an external weights RData, but shown svydesign call does not supply weights. Need compare published appendix before concluding exact replication.",
+  "not_available_in_public_archive": "sep_w8_research_weighted.RData referenced by author script"
+}

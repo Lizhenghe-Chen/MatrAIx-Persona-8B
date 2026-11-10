@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 428,
-  "git_bytes": 78440803,
+  "git_file_count": 429,
+  "git_bytes": 78442317,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -175,6 +175,12 @@
       "storage": "git"
     },
     {
+      "path": "decision_lab/swiss-background-audit.json",
+      "bytes": 852,
+      "sha256": "88bbbc55fa825c1b0455905a19046b54e1780b4beaa479cd67f6aa255e5c19e6",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/swiss_appliances.py",
       "bytes": 3346,
       "sha256": "231cfcb4f6dea9d55aedfdb7874d94bfa602a014bdc0d0341533bc2d0d0cebf4",
@@ -224,8 +230,8 @@
     },
     {
       "path": "decision_lab/数据审查发现.md",
-      "bytes": 3061,
-      "sha256": "9f79e0267650a6942eb0371d6bdb201848a0526d3ecaa2f32cb5685c7629d2e3",
+      "bytes": 3723,
+      "sha256": "c0829e4e3f42de4f8600fe57dbf16528b76a5f75c2c6d5e8bf4e480cff0fbf7c",
       "storage": "git"
     },
     {
