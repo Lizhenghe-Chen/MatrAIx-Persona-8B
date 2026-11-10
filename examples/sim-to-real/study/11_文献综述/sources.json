@@ -22,7 +22,8 @@
         "version": "2024版本",
         "note": "初版综述引用相对重测85%；现改用v3各输入条件分开报告"
       }
-    ]
+    ],
+    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法"
   },
   {
     "factor": "行为数据专项训练",
@@ -44,7 +45,8 @@
       "batch_size": 32,
       "weight_decay": 0.01
     },
-    "limitations": "这是特定行为数据训练配方，不是参数消融得出的通用最优设置；未验证电商成交。"
+    "limitations": "这是特定行为数据训练配方，不是参数消融得出的通用最优设置；未验证电商成交。",
+    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法"
   },
   {
     "factor": "实验效应与幅度",
@@ -60,7 +62,8 @@
     "locator": "出版页摘要",
     "human_comparator": "见finding；未报告的细节待核对",
     "parameters": {},
-    "limitations": "分开检查排序、方向、绝对幅度。不要沿用旧预印本的476个效应数字。"
+    "limitations": "分开检查排序、方向、绝对幅度。不要沿用旧预印本的476个效应数字。",
+    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法"
   },
   {
     "factor": "人口背景条件化",
@@ -76,7 +79,8 @@
     "locator": "论文摘要",
     "human_comparator": "见finding；未报告的细节待核对",
     "parameters": {},
-    "limitations": "这是早期正面证据，不能推出任意人口标签、任意模型或题材都有效。"
+    "limitations": "这是早期正面证据，不能推出任意人口标签、任意模型或题材都有效。",
+    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法"
   },
   {
     "factor": "选项顺序与测量偏差",
@@ -92,7 +96,8 @@
     "locator": "会议页与摘要检索",
     "human_comparator": "见finding；未报告的细节待核对",
     "parameters": {},
-    "limitations": "顺序随机化是诊断工具，不等于修正后就像真人。需把显示位置映射回原答案。"
+    "limitations": "顺序随机化是诊断工具，不等于修正后就像真人。需把显示位置映射回原答案。",
+    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法"
   },
   {
     "factor": "人格线索和刻板印象",
@@ -108,7 +113,8 @@
     "locator": "论文摘要",
     "human_comparator": "见finding；未报告的细节待核对",
     "parameters": {},
-    "limitations": "应检查反常见组合和少数群体；生成性格不能代替本人测量。"
+    "limitations": "应检查反常见组合和少数群体；生成性格不能代替本人测量。",
+    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法"
   },
   {
     "factor": "温度与专项微调",
@@ -129,7 +135,8 @@
       "generation": "对比贪心T=0与T=1并扫描温度；最多8输出token",
       "checkpoint": "训练3轮，部分实验按验证损失回退1轮"
     },
-    "limitations": "受访者留出不等于新商品留出；不合法数字生成被排除评分。文中calibrated sampling指T=1，不代表经真人概率校准。"
+    "limitations": "受访者留出不等于新商品留出；不合法数字生成被排除评分。文中calibrated sampling指T=1，不代表经真人概率校准。",
+    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法"
   },
   {
     "factor": "心理量表的统计结构",
@@ -145,7 +152,8 @@
     "locator": "论文摘要",
     "human_comparator": "见finding；未报告的细节待核对",
     "parameters": {},
-    "limitations": "不能只比均值，还要核对方差、相关和量表结构；具体效应待全文提取。"
+    "limitations": "不能只比均值，还要核对方差、相关和量表结构；具体效应待全文提取。",
+    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法"
   },
   {
     "factor": "检索与异质性",
@@ -161,7 +169,8 @@
     "locator": "论文摘要，待全文核验",
     "human_comparator": "见finding；未报告的细节待核对",
     "parameters": {},
-    "limitations": "检索内容需排除待测答案；低分歧题上的成功不能代表高分歧题。"
+    "limitations": "检索内容需排除待测答案；低分歧题上的成功不能代表高分歧题。",
+    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法"
   },
   {
     "factor": "跨文化泛化",
@@ -177,7 +186,8 @@
     "locator": "出版摘要与方法检索，待全文核验",
     "human_comparator": "见finding；未报告的细节待核对",
     "parameters": {},
-    "limitations": "美国英语样本的成功不能直接外推到跨境市场；需要按国家和语言分别验证。"
+    "limitations": "美国英语样本的成功不能直接外推到跨境市场；需要按国家和语言分别验证。",
+    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法"
   },
   {
     "factor": "本人历史参照",
@@ -193,7 +203,8 @@
     "locator": "出版摘要与结果检索，待全文核验",
     "human_comparator": "见finding；未报告的细节待核对",
     "parameters": {},
-    "limitations": "可借鉴评估设计，不能将情绪结果当作商品购买证据。"
+    "limitations": "可借鉴评估设计，不能将情绪结果当作商品购买证据。",
+    "project_relevance": "支持：跨任务的方法或提示敏感性证据"
   },
   {
     "factor": "线索表达方式",
@@ -209,7 +220,8 @@
     "locator": "论文摘要，待全文核验",
     "human_comparator": "见finding；未报告的细节待核对",
     "parameters": {},
-    "limitations": "名字、直接标签和叙述不要混为同一条件；这是提示敏感性证据，不等于真人决策验证。"
+    "limitations": "名字、直接标签和叙述不要混为同一条件；这是提示敏感性证据，不等于真人决策验证。",
+    "project_relevance": "支持：跨任务的方法或提示敏感性证据"
   },
   {
     "id": "R13",
@@ -228,7 +240,8 @@
       "mapping": "6组参考语句；映射温度T=1、epsilon=0；与生成温度不同"
     },
     "checked_on": "2026-11-10",
-    "evidence_type": "研究设计及核验范围见各字段"
+    "evidence_type": "研究设计及核验范围见各字段",
+    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法"
   },
   {
     "id": "R14",
@@ -244,7 +257,8 @@
     "implication": "结合综述的因素与实验设计讨论使用，不直接照搬收益。",
     "parameters": {},
     "checked_on": "2026-11-10",
-    "evidence_type": "研究设计及核验范围见各字段"
+    "evidence_type": "研究设计及核验范围见各字段",
+    "project_relevance": "支持：真人信息采集质量；需再验证是否改善未见选择预测"
   },
   {
     "id": "R15",
@@ -263,7 +277,8 @@
       "temperature": "追问/改写0.7，分类0；其他为Ollama默认，不能声称全参数冻结"
     },
     "checked_on": "2026-11-10",
-    "evidence_type": "研究设计及核验范围见各字段"
+    "evidence_type": "研究设计及核验范围见各字段",
+    "project_relevance": "支持：真人信息采集质量；需再验证是否改善未见选择预测"
   },
   {
     "id": "R16",
@@ -279,7 +294,8 @@
     "implication": "结合综述的因素与实验设计讨论使用，不直接照搬收益。",
     "parameters": {},
     "checked_on": "2026-11-10",
-    "evidence_type": "研究设计及核验范围见各字段"
+    "evidence_type": "研究设计及核验范围见各字段",
+    "project_relevance": "支持：真人信息采集质量；需再验证是否改善未见选择预测"
   },
   {
     "id": "R17",
@@ -295,7 +311,8 @@
     "implication": "结合综述的因素与实验设计讨论使用，不直接照搬收益。",
     "parameters": {},
     "checked_on": "2026-11-10",
-    "evidence_type": "研究设计及核验范围见各字段"
+    "evidence_type": "研究设计及核验范围见各字段",
+    "project_relevance": "辅助：语言可辨识性，不构成决策预测有效证据"
   },
   {
     "id": "R18",
@@ -315,7 +332,8 @@
       "scope": "base/instruct对照及其他模型族复验，具体版本见附录"
     },
     "checked_on": "2026-11-10",
-    "evidence_type": "研究设计及核验范围见各字段"
+    "evidence_type": "研究设计及核验范围见各字段",
+    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法"
   },
   {
     "id": "R19",
@@ -331,7 +349,8 @@
     "implication": "结合综述的因素与实验设计讨论使用，不直接照搬收益。",
     "parameters": {},
     "checked_on": "2026-11-10",
-    "evidence_type": "研究设计及核验范围见各字段"
+    "evidence_type": "研究设计及核验范围见各字段",
+    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法"
   },
   {
     "id": "R20",
@@ -347,7 +366,8 @@
     "implication": "结合综述的因素与实验设计讨论使用，不直接照搬收益。",
     "parameters": {},
     "checked_on": "2026-11-10",
-    "evidence_type": "研究设计及核验范围见各字段"
+    "evidence_type": "研究设计及核验范围见各字段",
+    "project_relevance": "支持：跨任务的方法或提示敏感性证据"
   },
   {
     "id": "R21",
@@ -363,7 +383,8 @@
     "implication": "结合综述的因素与实验设计讨论使用，不直接照搬收益。",
     "parameters": {},
     "checked_on": "2026-11-10",
-    "evidence_type": "研究设计及核验范围见各字段"
+    "evidence_type": "研究设计及核验范围见各字段",
+    "project_relevance": "支持：真人信息采集质量；需再验证是否改善未见选择预测"
   },
   {
     "id": "R22",
@@ -379,7 +400,8 @@
     "implication": "结合综述的因素与实验设计讨论使用，不直接照搬收益。",
     "parameters": {},
     "checked_on": "2026-11-10",
-    "evidence_type": "研究设计及核验范围见各字段"
+    "evidence_type": "研究设计及核验范围见各字段",
+    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法"
   },
   {
     "id": "R23",
@@ -395,6 +417,7 @@
     "implication": "结合综述的因素与实验设计讨论使用，不直接照搬收益。",
     "parameters": {},
     "checked_on": "2026-11-10",
-    "evidence_type": "研究设计及核验范围见各字段"
+    "evidence_type": "研究设计及核验范围见各字段",
+    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法"
   }
 ]
