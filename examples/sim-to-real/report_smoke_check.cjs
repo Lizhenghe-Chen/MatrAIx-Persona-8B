@@ -21,6 +21,12 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
   await send('Emulation.setDeviceMetricsOverride',{width:1440,height:1080,deviceScaleFactor:1,mobile:false});await send('Page.navigate',{url});
   for(let i=0;i<100;i++){if(await run("document.readyState==='complete' && window.reportCharts?.length===22"))break;await wait(100)}
   assert.equal(await run('window.reportCharts.length'),22);assert.deepEqual(errors,[]);
+  assert.equal(await run("document.querySelectorAll('.chart-guide').length"),22);
+  assert.ok(await run("document.querySelector('#final-answer').textContent.includes('官方 8B')"));
+  assert.ok(await run("document.querySelector('#profile-truth').textContent.includes('不是该真人的测量')"));
+  assert.ok(await run("document.querySelector('#closing').textContent.includes('内网 Qwen')"));
+  assert.ok(await run("document.querySelector('#model-decision').textContent.includes('21.97')"));
+  assert.ok(await run("explainChartTooltip('个百分点')([{axisValueLabel:'读图检查',seriesName:'同龄同学历真人比例',value:4.51}]).includes('不用大模型')"));
   assert.ok(requests.every(u=>u.startsWith('file:')||u.startsWith('data:')),JSON.stringify(requests));
   const result=await run(`(()=>{const data=JSON.parse(document.querySelector('#report-data').textContent);return {charts:window.reportCharts.length,questionOptions:document.querySelector('#surveyQuestion').options.length,average:data.pew.summaries.rich_probability.tv_pp,summary:document.querySelector('#surveyDetail').textContent,tableRows:document.querySelectorAll('#surveyAllTable tbody tr').length,overflow:[document.documentElement.clientWidth,document.documentElement.scrollWidth]}})()`);
   assert.equal(result.questionOptions,13);assert.equal(result.tableRows,14);assert.match(result.summary,/240 名有效受访者/);assert.equal(result.overflow[0],result.overflow[1]);assert.ok(result.overflow[0]>1000);
@@ -60,13 +66,28 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
   for(const d of ['treat constrained','control constrained','treat random','control random','all'])await run(change('shoeDesign',d));
   for(const task of ['spend','repeat','price'])await run(change('amazonTask',task));
   async function screenshot(name,selector){let params={format:'png'};if(selector){const rect=await run(`(()=>{const r=document.querySelector(${JSON.stringify(selector)}).getBoundingClientRect();return {x:r.x+scrollX,y:r.y+scrollY,width:r.width,height:Math.min(r.height,1500),scale:1}})()`);params={...params,clip:rect,captureBeyondViewport:true}}const r=await send('Page.captureScreenshot',params);fs.writeFileSync(path.join(dir,name+'.png'),Buffer.from(r.result.data,'base64'))}
+  await run("document.querySelector('#openTerms').click()");
+  assert.equal(await run("document.querySelector('#termDialog').open"),true);
+  await run("{const q=document.querySelector('#termSearch');q.value='年龄学统计';q.dispatchEvent(new Event('input'))}");
+  assert.equal(await run("document.querySelector('#termList h3').textContent"),'同龄同学历真人比例');
+  await run("{const q=document.querySelector('#termSearch');q.value='历史统计';q.dispatchEvent(new Event('input'))}");
+  assert.ok(await run("document.querySelector('#termList').textContent.includes('不一定是更早年份')"));
+  await screenshot('desktop-glossary');
+  await send('Input.dispatchKeyEvent',{type:'keyDown',key:'Escape',code:'Escape',windowsVirtualKeyCode:27});
+  await send('Input.dispatchKeyEvent',{type:'keyUp',key:'Escape',code:'Escape',windowsVirtualKeyCode:27});
+  assert.equal(await run("document.querySelector('#termDialog').open"),false);
+  await screenshot('desktop-conclusion','#final-answer');await screenshot('desktop-provenance','#profile-truth');await screenshot('desktop-closing','#closing');
   await screenshot('desktop-top');await screenshot('desktop-models','#models');await screenshot('desktop-history','#history-details');await screenshot('desktop-parity','#input-parity');await screenshot('desktop-survey','#survey');await screenshot('desktop-shoes','#shoes');await screenshot('desktop-method','#method');
   await send('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true});await wait(200);
   assert.deepEqual(await run('[document.documentElement.clientWidth,document.documentElement.scrollWidth]'),[390,390]);
   await screenshot('mobile-top');await screenshot('mobile-history','#history-details');await screenshot('mobile-models','#models');await screenshot('mobile-survey','#survey');await screenshot('mobile-factors','#decisions');
+  await run("document.querySelector('[data-explain=probability]').click()");
+  assert.equal(await run("document.querySelector('#termDialog').open"),true);
+  assert.ok(await run("(()=>{const r=document.querySelector('#termDialog').getBoundingClientRect();return r.left>=0&&r.right<=390})()"));
+  await screenshot('mobile-glossary');await run("document.querySelector('#closeTerms').click()");
   // Every chart must have a non-empty SVG and an option object after switching.
   assert.equal(await run("[...document.querySelectorAll('.chart')].filter(x=>x.querySelector('svg')).length"),22);
   assert.deepEqual(errors,[]);
-  console.log(JSON.stringify({folder:dir,...result,networkRequests:requests.length,consoleErrors:errors.length,allSelectorsVerified:true,questionByComparisonViewsVerified:52,mobileWidth:390},null,2));
+  console.log(JSON.stringify({folder:dir,...result,networkRequests:requests.length,consoleErrors:errors.length,allSelectorsVerified:true,questionByComparisonViewsVerified:52,mobileWidth:390,contextualChartGuides:22,glossarySearchAndKeyboardVerified:true},null,2));
  }finally{socket?.close();chrome.kill()}
 })().catch(e=>{console.error(e);process.exitCode=1});

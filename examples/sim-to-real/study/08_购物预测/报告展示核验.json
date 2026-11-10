@@ -60,6 +60,45 @@
       "sha256": "4f6c62e1839c862554b35940ac0524ea97c3e6dd650a52ce0d67a54821df161e"
     }
   },
-  "report_sha256": "75c18b70dc246e5492511a42ad378206983321d79c82e83bfd101dbcbc966433",
-  "canonical_report_sha256": "a8c19eaa3296ff3e0a68d414b7e872fe853b92b9e8d3a400638bfeabb41241f4"
+  "explanation_scope": "核对画像来源、统计方法、模型选择与结论边界；没有重新运行或修改评分",
+  "explanation_sources": {
+    "optimize_profiles.py": {
+      "path": "../../optimize_profiles.py",
+      "sha256": "505ab2da789f21166d5f3740aa3046aeafcb4d12fc38c84ba5eed215aa69ede4"
+    },
+    "shopping.py": {
+      "path": "../../shopping.py",
+      "sha256": "9da37dd296258cee91985d8b2449d16f7c3c2e7ef71cf8aef9e7f9da9654de1f"
+    },
+    "retail_pew.py": {
+      "path": "../../retail_pew.py",
+      "sha256": "6aa7864b803cc1b5593437d38de2a00a9fd10c86ce2699a5873ee3e7ddb1d33a"
+    },
+    "retail_pew_score.py": {
+      "path": "../../retail_pew_score.py",
+      "sha256": "12f84da67466fe4f91b8af80a308f2cc2b5fff153b6af5c13e94d5c683736284"
+    },
+    "retail_pew_calibration.py": {
+      "path": "../../retail_pew_calibration.py",
+      "sha256": "7db5379d6279ee38f3b1ce14fa209ec37f7d1b768176a60793cb114196dc5023"
+    },
+    "retail_shoes_prepare.py": {
+      "path": "../../retail_shoes_prepare.py",
+      "sha256": "ad324efe01c0a70bfc17192096c0f48b3cf4a337f3a1acd90b6290848cbeac5b"
+    },
+    "retail_shoes_score.py": {
+      "path": "../../retail_shoes_score.py",
+      "sha256": "3a23b463dfa290c77b1cd75eacc2689009234ae1e2586a479867dee1044a4f04"
+    },
+    "retail_amazon.py": {
+      "path": "../../retail_amazon.py",
+      "sha256": "08c74d74fc88e3714c235996205bd28a3590158d7105cabfa1794fe43ea2fa5b"
+    },
+    "retail_amazon_mix.py": {
+      "path": "../../retail_amazon_mix.py",
+      "sha256": "1bf19e22beb158354b5f18f63c3dd891164a9e66a9c39a7e998da45e4d699cdf"
+    }
+  },
+  "report_sha256": "878837e9144119a3cd86b5c0d013fa539530033bc64ceece8de26281d242ad81",
+  "canonical_report_sha256": "9b9b9154f48962afe43d85a2e6bf80820cbc595cec940b11bcbae84a0211de88"
 }

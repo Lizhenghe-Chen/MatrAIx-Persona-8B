@@ -2,6 +2,8 @@
 
 [五轮实验统一报告](../index.html)按研究过程覆盖全部已完成实验，包含早期模型、人格、提示和电商数据。本目录原来的 [index.html](index.html) 同步展示完整报告，保留旧入口可用。图表使用本地 ECharts，支持离线切换。
 
+阅读版现在从[最终判断](../index.html#final-answer)开始，单列[真实与合成画像的来源](../index.html#profile-truth)，并在结尾给出[按用途区分的采用建议](../index.html#closing)。每张图有方法解释，右下角术语查询支持原名称与新名称。来源与结论模板为 `retail_reader_guidance.html`、`retail_reader_conclusions.html`；交互解释来自 `retail_reader_glossary.js`。本次只重组说明，未重跑或修改评分。
+
 [第五轮完整技术图表](technical-details.html)保留开发集、正式评估、分组、概率校准和诊断视图；[前四轮技术附录](../historical-details.html)保留历史细节。既有评分不修改，本次新增的输入对齐统计分析单独保存方案和结果，未新增模型请求。报告输入清单与校验值见[报告展示核验](报告展示核验.json)。
 
 逐人样本、真实答案、预测和运行失败详情存入忽略目录 `本机运行/`。发布的 JSON 只包含总体及逐题汇总。

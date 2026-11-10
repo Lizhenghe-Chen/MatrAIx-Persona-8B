@@ -36,6 +36,9 @@ def interval(bounds, digits=2):
 def build():
     from study.build_report import build_history, FOLDERS
     history = build_history()
+    for stage in history:
+        if 'historical-stratum' in stage['labels']:
+            stage['labels']['historical-stratum'] = '同龄同学历真人比例'
     data = {key: json.loads((BASE / name).read_text()) for key, name in FILES.items()}
     data['history'] = history
     extra_files = {f'history_{i}': '../' + folder + '/results.json' for i, folder in enumerate(FOLDERS)}
@@ -55,8 +58,8 @@ def build():
         'attitude_probability': '再加实测态度 → 保留各项概率',
         'rich_probability_argmax': '已有概率 → 只取最高的一项',
         'calibrated_rating': '用开发样本修正单选评分',
-        'statistics': '历史真人统计方法',
-        'blend': '历史统计与模型组合',
+        'statistics': '真人数据参照（按任务分别建立）',
+        'blend': '真人数据参照与模型组合',
     }
     data['names'] = names
     contexts = [
@@ -101,6 +104,21 @@ def build():
                             f'{gain:+.6f}', interval(ci, 6)])
     data['sources'] = {key: {'path': name, 'sha256': hashlib.sha256((BASE / name).read_bytes()).hexdigest()}
                        for key, name in {**FILES, **extra_files}.items()}
+    model_scores = history[1]['overall']['scores']
+    model_rows = [
+        [label, *[f"{model_scores[model + '-' + arm]['error']:.2f}" for arm in 'ABC'], advice]
+        for model, label, advice in (
+            ('flash', 'DeepSeek Flash', '少量信息下误差较大，不设为该条件的默认预测方法'),
+            ('pro', 'DeepSeek Pro', '情境／年龄学历输入时优先评估；人格输入下无明确领先'),
+            ('qwen', '内网 Qwen', '继续用于真人数据优化实验；满足内网约定，不代表精度排名第一'),
+        )
+    ]
+    explanation_files = ('optimize_profiles.py', 'shopping.py', 'retail_pew.py',
+                         'retail_pew_score.py', 'retail_pew_calibration.py',
+                         'retail_shoes_prepare.py', 'retail_shoes_score.py',
+                         'retail_amazon.py', 'retail_amazon_mix.py')
+    explanation_sources = {name: {'path': '../../' + name,
+        'sha256': hashlib.sha256((ROOT / name).read_bytes()).hexdigest()} for name in explanation_files}
     token = {
         'PAYLOAD': json.dumps(data, ensure_ascii=False).replace('<', '\\u003c'),
         'PEW_BEFORE': f"{pew['summaries']['rich_choice']['tv_pp']:.2f}",
@@ -109,6 +127,11 @@ def build():
         'SHOE_BEFORE': f"{shoes['summary']['rich_choice']['tv_pp']:.2f}",
         'SHOE_AFTER': f"{shoes['summary']['rich_probability']['tv_pp']:.2f}",
         'SHOE_STAT': f"{shoes['summary']['statistics']['tv_pp']:.2f}",
+        'FLASH_CONTEXT': f"{model_scores['flash-A']['error']:.2f}",
+        'PRO_CONTEXT': f"{model_scores['pro-A']['error']:.2f}",
+        'QWEN_CONTEXT': f"{model_scores['qwen-A']['error']:.2f}",
+        'MODEL_TABLE': table(['固定模型', '只给共同情境', '再加年龄学历', '再加四项合成人格', '采用建议'], model_rows,
+                             '同 240 条合成画像；三问卷等权分布误差，单位为百分点，越低越好。横向只比较同一列的模型。'),
         'CHANGE_TABLE': table(['任务', '只改什么', '改前 → 改后', '差距减少', '95% 区间', '判断'], changes,
                               '同一批人配对比较；分布差距和改善幅度均为百分点'),
         'SETTING_TABLE': table(['方法', '购物问卷差距', '运动鞋差距'], settings,
@@ -117,6 +140,9 @@ def build():
                               '逐账户平方误差原值，只在同一行比较；正的改善表示组合更好'),
     }
     page = (ROOT / 'retail_reader_template.html').read_text()
+    page = page.replace('{{GUIDANCE}}', (ROOT / 'retail_reader_guidance.html').read_text())
+    page = page.replace('{{CONCLUSIONS}}', (ROOT / 'retail_reader_conclusions.html').read_text())
+    page = page.replace('{{GLOSSARY_SCRIPT}}', (ROOT / 'retail_reader_glossary.js').read_text())
     page = page.replace('{{HISTORY}}', (ROOT / 'retail_history_template.html').read_text())
     page = page.replace('{{HISTORY_SCRIPT}}', (ROOT / 'retail_history_charts.js').read_text())
     for key, value in token.items():
@@ -136,6 +162,8 @@ def build():
         'report': 'index.html', 'canonical_report': '../index.html',
         'scope': '五轮正式实验统一汇报；新增运动鞋输入对齐的事后统计对照，未新增 LLM 请求或重选样本',
         'sources': data['sources'],
+        'explanation_scope': '核对画像来源、统计方法、模型选择与结论边界；没有重新运行或修改评分',
+        'explanation_sources': explanation_sources,
         'report_sha256': hashlib.sha256(page.encode()).hexdigest(),
         'canonical_report_sha256': hashlib.sha256(root_page.encode()).hexdigest(),
     }
