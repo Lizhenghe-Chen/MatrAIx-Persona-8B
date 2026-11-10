@@ -23,7 +23,18 @@
         "note": "初版综述引用相对重测85%；现改用v3各输入条件分开报告"
       }
     ],
-    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法"
+    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法",
+    "title_zh": "根据真人自述预测个体选择",
+    "full_text": {
+      "status": "正文已下载",
+      "checked_on": "2026-11-10",
+      "topic": "个体决策与画像匹配",
+      "files": [
+        "全文资料/本机全文/个体决策与画像匹配/R01_根据真人自述预测个体选择_正文.pdf"
+      ],
+      "reading_status": "全文定点核验：正文及补充材料",
+      "note": "下载与文件检查不代表完成方法、结果和附录的研究核验。"
+    }
   },
   {
     "factor": "行为数据专项训练",
@@ -46,7 +57,19 @@
       "weight_decay": 0.01
     },
     "limitations": "这是特定行为数据训练配方，不是参数消融得出的通用最优设置；未验证电商成交。",
-    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法"
+    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法",
+    "title_zh": "学习真人认知与行为的基础模型",
+    "full_text": {
+      "status": "正文已下载",
+      "checked_on": "2026-11-10",
+      "topic": "个体决策与画像匹配",
+      "files": [
+        "全文资料/个体决策与画像匹配/R02_学习真人认知与行为的基础模型_正文.pdf",
+        "全文资料/本机全文/个体决策与画像匹配/R02_学习真人认知与行为的基础模型_补充材料.pdf"
+      ],
+      "reading_status": "全文定点核验：正文Model overview、Methods和扩展图",
+      "note": "下载与文件检查不代表完成方法、结果和附录的研究核验。"
+    }
   },
   {
     "factor": "实验效应与幅度",
@@ -63,7 +86,19 @@
     "human_comparator": "见finding；未报告的细节待核对",
     "parameters": {},
     "limitations": "分开检查排序、方向、绝对幅度。不要沿用旧预印本的476个效应数字。",
-    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法"
+    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法",
+    "title_zh": "预测社会科学实验结果",
+    "full_text": {
+      "status": "仅取得补充材料，正文待获取",
+      "checked_on": "2026-11-10",
+      "topic": "个体决策与画像匹配",
+      "files": [
+        "全文资料/本机全文/个体决策与画像匹配/R03_预测社会科学实验结果_补充材料.pdf"
+      ],
+      "reading_status": "出版页摘要",
+      "note": "下载与文件检查不代表完成方法、结果和附录的研究核验。",
+      "action": "请从 Nature 正式页下载正文 PDF；作者公开稿入口 https://osf.io/preprints/psyarxiv/3svep_v1 当前返回 403。补充材料已取得，不等于正文已取得。"
+    }
   },
   {
     "factor": "人口背景条件化",
@@ -80,7 +115,18 @@
     "human_comparator": "见finding；未报告的细节待核对",
     "parameters": {},
     "limitations": "这是早期正面证据，不能推出任意人口标签、任意模型或题材都有效。",
-    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法"
+    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法",
+    "title_zh": "由人口背景生成模拟调查样本",
+    "full_text": {
+      "status": "正文已下载",
+      "checked_on": "2026-11-10",
+      "topic": "个体决策与画像匹配",
+      "files": [
+        "全文资料/个体决策与画像匹配/R04_由人口背景生成模拟调查样本_正文.pdf"
+      ],
+      "reading_status": "论文摘要",
+      "note": "下载与文件检查不代表完成方法、结果和附录的研究核验。"
+    }
   },
   {
     "factor": "选项顺序与测量偏差",
@@ -97,7 +143,19 @@
     "human_comparator": "见finding；未报告的细节待核对",
     "parameters": {},
     "limitations": "顺序随机化是诊断工具，不等于修正后就像真人。需把显示位置映射回原答案。",
-    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法"
+    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法",
+    "title_zh": "问卷选项顺序与标签偏差",
+    "full_text": {
+      "status": "正文已下载",
+      "checked_on": "2026-11-10",
+      "topic": "回答分布与评估",
+      "files": [
+        "全文资料/本机全文/回答分布与评估/R05_问卷选项顺序与标签偏差_正文.pdf",
+        "全文资料/本机全文/回答分布与评估/R05_问卷选项顺序与标签偏差_官方补充包.zip"
+      ],
+      "reading_status": "会议页与摘要检索",
+      "note": "下载与文件检查不代表完成方法、结果和附录的研究核验。"
+    }
   },
   {
     "factor": "人格线索和刻板印象",
@@ -114,7 +172,18 @@
     "human_comparator": "见finding；未报告的细节待核对",
     "parameters": {},
     "limitations": "应检查反常见组合和少数群体；生成性格不能代替本人测量。",
-    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法"
+    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法",
+    "title_zh": "画像提示带来的偏差",
+    "full_text": {
+      "status": "正文已下载",
+      "checked_on": "2026-11-10",
+      "topic": "个体决策与画像匹配",
+      "files": [
+        "全文资料/个体决策与画像匹配/R06_画像提示带来的偏差_正文.pdf"
+      ],
+      "reading_status": "论文摘要",
+      "note": "下载与文件检查不代表完成方法、结果和附录的研究核验。"
+    }
   },
   {
     "factor": "温度与专项微调",
@@ -136,7 +205,18 @@
       "checkpoint": "训练3轮，部分实验按验证损失回退1轮"
     },
     "limitations": "受访者留出不等于新商品留出；不合法数字生成被排除评分。文中calibrated sampling指T=1，不代表经真人概率校准。",
-    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法"
+    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法",
+    "title_zh": "对齐目标人群的信念和偏好",
+    "full_text": {
+      "status": "正文已下载",
+      "checked_on": "2026-11-10",
+      "topic": "个体决策与画像匹配",
+      "files": [
+        "全文资料/本机全文/个体决策与画像匹配/R07_对齐目标人群的信念和偏好_正文.pdf"
+      ],
+      "reading_status": "全文定点核验：§4、§6.1–6.4及附录",
+      "note": "下载与文件检查不代表完成方法、结果和附录的研究核验。"
+    }
   },
   {
     "factor": "心理量表的统计结构",
@@ -153,7 +233,18 @@
     "human_comparator": "见finding；未报告的细节待核对",
     "parameters": {},
     "limitations": "不能只比均值，还要核对方差、相关和量表结构；具体效应待全文提取。",
-    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法"
+    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法",
+    "title_zh": "心理测量中的真人模拟局限",
+    "full_text": {
+      "status": "正文已下载",
+      "checked_on": "2026-11-10",
+      "topic": "回答分布与评估",
+      "files": [
+        "全文资料/回答分布与评估/R08_心理测量中的真人模拟局限_正文.pdf"
+      ],
+      "reading_status": "论文摘要",
+      "note": "下载与文件检查不代表完成方法、结果和附录的研究核验。"
+    }
   },
   {
     "factor": "检索与异质性",
@@ -170,7 +261,18 @@
     "human_comparator": "见finding；未报告的细节待核对",
     "parameters": {},
     "limitations": "检索内容需排除待测答案；低分歧题上的成功不能代表高分歧题。",
-    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法"
+    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法",
+    "title_zh": "数字画像能否复现真人调查",
+    "full_text": {
+      "status": "正文已下载",
+      "checked_on": "2026-11-10",
+      "topic": "个体决策与画像匹配",
+      "files": [
+        "全文资料/本机全文/个体决策与画像匹配/R09_数字画像能否复现真人调查_正文.pdf"
+      ],
+      "reading_status": "论文摘要，待全文核验",
+      "note": "下载与文件检查不代表完成方法、结果和附录的研究核验。 当前取得 v3，原证据结论未自动升级。"
+    }
   },
   {
     "factor": "跨文化泛化",
@@ -187,7 +289,19 @@
     "human_comparator": "见finding；未报告的细节待核对",
     "parameters": {},
     "limitations": "美国英语样本的成功不能直接外推到跨境市场；需要按国家和语言分别验证。",
-    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法"
+    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法",
+    "title_zh": "跨74国经济偏好的模拟局限",
+    "full_text": {
+      "status": "正文已下载",
+      "checked_on": "2026-11-10",
+      "topic": "个体决策与画像匹配",
+      "files": [
+        "全文资料/本机全文/个体决策与画像匹配/R10_跨74国经济偏好的模拟局限_正文.pdf",
+        "全文资料/本机全文/个体决策与画像匹配/R10_跨74国经济偏好的模拟局限_补充材料.pdf"
+      ],
+      "reading_status": "出版摘要与方法检索，待全文核验",
+      "note": "下载与文件检查不代表完成方法、结果和附录的研究核验。"
+    }
   },
   {
     "factor": "本人历史参照",
@@ -204,7 +318,19 @@
     "human_comparator": "见finding；未报告的细节待核对",
     "parameters": {},
     "limitations": "可借鉴评估设计，不能将情绪结果当作商品购买证据。",
-    "project_relevance": "支持：跨任务的方法或提示敏感性证据"
+    "project_relevance": "支持：跨任务的方法或提示敏感性证据",
+    "title_zh": "模型高估真人幸福感",
+    "full_text": {
+      "status": "正文已下载",
+      "checked_on": "2026-11-10",
+      "topic": "回答分布与评估",
+      "files": [
+        "全文资料/本机全文/回答分布与评估/R11_模型高估真人幸福感_正文.pdf",
+        "全文资料/本机全文/回答分布与评估/R11_模型高估真人幸福感_补充材料.pdf"
+      ],
+      "reading_status": "出版摘要与结果检索，待全文核验",
+      "note": "下载与文件检查不代表完成方法、结果和附录的研究核验。"
+    }
   },
   {
     "factor": "线索表达方式",
@@ -221,7 +347,18 @@
     "human_comparator": "见finding；未报告的细节待核对",
     "parameters": {},
     "limitations": "名字、直接标签和叙述不要混为同一条件；这是提示敏感性证据，不等于真人决策验证。",
-    "project_relevance": "支持：跨任务的方法或提示敏感性证据"
+    "project_relevance": "支持：跨任务的方法或提示敏感性证据",
+    "title_zh": "同一画像的不同线索与个性化",
+    "full_text": {
+      "status": "正文已下载",
+      "checked_on": "2026-11-10",
+      "topic": "个体决策与画像匹配",
+      "files": [
+        "全文资料/个体决策与画像匹配/R12_同一画像的不同线索与个性化_正文.pdf"
+      ],
+      "reading_status": "论文摘要，待全文核验",
+      "note": "下载与文件检查不代表完成方法、结果和附录的研究核验。"
+    }
   },
   {
     "id": "R13",
@@ -241,7 +378,18 @@
     },
     "checked_on": "2026-11-10",
     "evidence_type": "研究设计及核验范围见各字段",
-    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法"
+    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法",
+    "title_zh": "还原消费者购买意愿分布",
+    "full_text": {
+      "status": "正文已下载",
+      "checked_on": "2026-11-10",
+      "topic": "消费与商品选择",
+      "files": [
+        "全文资料/消费与商品选择/R13_还原消费者购买意愿分布_正文.pdf"
+      ],
+      "reading_status": "全文§3–4、附录A/C/D",
+      "note": "下载与文件检查不代表完成方法、结果和附录的研究核验。"
+    }
   },
   {
     "id": "R14",
@@ -258,7 +406,18 @@
     "parameters": {},
     "checked_on": "2026-11-10",
     "evidence_type": "研究设计及核验范围见各字段",
-    "project_relevance": "支持：真人信息采集质量；需再验证是否改善未见选择预测"
+    "project_relevance": "支持：真人信息采集质量；需再验证是否改善未见选择预测",
+    "title_zh": "AI自适应访谈与真人访谈",
+    "full_text": {
+      "status": "正文已下载",
+      "checked_on": "2026-11-10",
+      "topic": "访谈与背景信息采集",
+      "files": [
+        "全文资料/访谈与背景信息采集/R14_AI自适应访谈与真人访谈_正文.pdf"
+      ],
+      "reading_status": "全文PDF §3–5、Table 1、Limitations",
+      "note": "下载与文件检查不代表完成方法、结果和附录的研究核验。"
+    }
   },
   {
     "id": "R15",
@@ -278,7 +437,18 @@
     },
     "checked_on": "2026-11-10",
     "evidence_type": "研究设计及核验范围见各字段",
-    "project_relevance": "支持：真人信息采集质量；需再验证是否改善未见选择预测"
+    "project_relevance": "支持：真人信息采集质量；需再验证是否改善未见选择预测",
+    "title_zh": "AI与真人聊天访谈对比",
+    "full_text": {
+      "status": "正文已下载",
+      "checked_on": "2026-11-10",
+      "topic": "访谈与背景信息采集",
+      "files": [
+        "全文资料/访谈与背景信息采集/R15_AI与真人聊天访谈对比_正文.pdf"
+      ],
+      "reading_status": "全文System Design、Experimental Design、Results",
+      "note": "下载与文件检查不代表完成方法、结果和附录的研究核验。"
+    }
   },
   {
     "id": "R16",
@@ -295,7 +465,18 @@
     "parameters": {},
     "checked_on": "2026-11-10",
     "evidence_type": "研究设计及核验范围见各字段",
-    "project_relevance": "支持：真人信息采集质量；需再验证是否改善未见选择预测"
+    "project_relevance": "支持：真人信息采集质量；需再验证是否改善未见选择预测",
+    "title_zh": "AI访谈提问能力评估",
+    "full_text": {
+      "status": "正文已下载",
+      "checked_on": "2026-11-10",
+      "topic": "访谈与背景信息采集",
+      "files": [
+        "全文资料/访谈与背景信息采集/R16_AI访谈提问能力评估_正文.pdf"
+      ],
+      "reading_status": "出版摘要和参考PDF摘要；全文正文访问受限",
+      "note": "下载与文件检查不代表完成方法、结果和附录的研究核验。"
+    }
   },
   {
     "id": "R17",
@@ -312,7 +493,19 @@
     "parameters": {},
     "checked_on": "2026-11-10",
     "evidence_type": "研究设计及核验范围见各字段",
-    "project_relevance": "辅助：语言可辨识性，不构成决策预测有效证据"
+    "project_relevance": "辅助：语言可辨识性，不构成决策预测有效证据",
+    "title_zh": "图灵测试与聊天真人感",
+    "full_text": {
+      "status": "正文已下载",
+      "checked_on": "2026-11-10",
+      "topic": "访谈与背景信息采集",
+      "files": [
+        "全文资料/本机全文/访谈与背景信息采集/R17_图灵测试与聊天真人感_正式版正文网页.html",
+        "全文资料/本机全文/访谈与背景信息采集/R17_图灵测试与聊天真人感_旧预印本正文.pdf"
+      ],
+      "reading_status": "出版页摘要；2025 v1 Methods/Results",
+      "note": "下载与文件检查不代表完成方法、结果和附录的研究核验。"
+    }
   },
   {
     "id": "R18",
@@ -333,7 +526,18 @@
     },
     "checked_on": "2026-11-10",
     "evidence_type": "研究设计及核验范围见各字段",
-    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法"
+    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法",
+    "title_zh": "能描述概率却不能按概率选择",
+    "full_text": {
+      "status": "正文已下载",
+      "checked_on": "2026-11-10",
+      "topic": "回答分布与评估",
+      "files": [
+        "全文资料/回答分布与评估/R18_能描述概率却不能按概率选择_正文.pdf"
+      ],
+      "reading_status": "全文§3–5、附录A/B/N/Q",
+      "note": "下载与文件检查不代表完成方法、结果和附录的研究核验。"
+    }
   },
   {
     "id": "R19",
@@ -350,7 +554,18 @@
     "parameters": {},
     "checked_on": "2026-11-10",
     "evidence_type": "研究设计及核验范围见各字段",
-    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法"
+    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法",
+    "title_zh": "谨慎使用模型替代真人",
+    "full_text": {
+      "status": "正文已下载",
+      "checked_on": "2026-11-10",
+      "topic": "回答分布与评估",
+      "files": [
+        "全文资料/本机全文/回答分布与评估/R19_谨慎使用模型替代真人_正文网页.html"
+      ],
+      "reading_status": "PMC正文检索片段；出版直链访问受限",
+      "note": "下载与文件检查不代表完成方法、结果和附录的研究核验。"
+    }
   },
   {
     "id": "R20",
@@ -367,7 +582,18 @@
     "parameters": {},
     "checked_on": "2026-11-10",
     "evidence_type": "研究设计及核验范围见各字段",
-    "project_relevance": "支持：跨任务的方法或提示敏感性证据"
+    "project_relevance": "支持：跨任务的方法或提示敏感性证据",
+    "title_zh": "消费者研究中的合成样本指南",
+    "full_text": {
+      "status": "正文已下载",
+      "checked_on": "2026-11-10",
+      "topic": "消费与商品选择",
+      "files": [
+        "全文资料/消费与商品选择/R20_消费者研究中的合成样本指南_正文.pdf"
+      ],
+      "reading_status": "大学库作者论文的检索条目",
+      "note": "下载与文件检查不代表完成方法、结果和附录的研究核验。"
+    }
   },
   {
     "id": "R21",
@@ -384,7 +610,17 @@
     "parameters": {},
     "checked_on": "2026-11-10",
     "evidence_type": "研究设计及核验范围见各字段",
-    "project_relevance": "支持：真人信息采集质量；需再验证是否改善未见选择预测"
+    "project_relevance": "支持：真人信息采集质量；需再验证是否改善未见选择预测",
+    "title_zh": "AI访谈与固定问卷随机对照",
+    "full_text": {
+      "status": "正文待获取",
+      "checked_on": "2026-11-10",
+      "topic": "访谈与背景信息采集",
+      "files": [],
+      "reading_status": "出版全文Abstract、Recruitment、Results、Data Availability",
+      "note": "下载与文件检查不代表完成方法、结果和附录的研究核验。",
+      "action": "请在出版页下载正文及 Supplementary Material；当前直接下载返回 403。网页读取工具可读正文，但尚未保存可独立查看的完整文件。"
+    }
   },
   {
     "id": "R22",
@@ -401,7 +637,18 @@
     "parameters": {},
     "checked_on": "2026-11-10",
     "evidence_type": "研究设计及核验范围见各字段",
-    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法"
+    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法",
+    "title_zh": "跨领域合成用户失效基准",
+    "full_text": {
+      "status": "正文已下载",
+      "checked_on": "2026-11-10",
+      "topic": "回答分布与评估",
+      "files": [
+        "全文资料/本机全文/回答分布与评估/R22_跨领域合成用户失效基准_正文.pdf"
+      ],
+      "reading_status": "v2摘要与数据代码声明，待方法全文复核",
+      "note": "下载与文件检查不代表完成方法、结果和附录的研究核验。"
+    }
   },
   {
     "id": "R23",
@@ -418,6 +665,17 @@
     "parameters": {},
     "checked_on": "2026-11-10",
     "evidence_type": "研究设计及核验范围见各字段",
-    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法"
+    "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法",
+    "title_zh": "模型经济偏好与真人选择",
+    "full_text": {
+      "status": "正文已下载",
+      "checked_on": "2026-11-10",
+      "topic": "个体决策与画像匹配",
+      "files": [
+        "全文资料/本机全文/个体决策与画像匹配/R23_模型经济偏好与真人选择_正文.pdf"
+      ],
+      "reading_status": "PDF摘要、引言和研究设计概览",
+      "note": "下载与文件检查不代表完成方法、结果和附录的研究核验。"
+    }
   }
 ]

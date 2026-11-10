@@ -5,17 +5,17 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 328,
-  "git_bytes": 43843291,
-  "local_only_file_count": 30,
-  "local_only_bytes": 629391967,
+  "git_file_count": 345,
+  "git_bytes": 76852941,
+  "local_only_file_count": 46,
+  "local_only_bytes": 704423915,
   "external_large_source": {
     "dataset": "MatrAIx Persona 1M",
     "version_manifest": "study/数据/persona-1m-official-manifest.json",
-    "note": "多 GB 分片留在共享盘，不计入本目录体积；实际实验冻结画像已随 Git 保存",
     "default_data_root": "/Volumes/元宇宙联合创新实验室/实验数据/MatrAIx多地区选品源数据",
     "root_override_env": "MATRAIX_DATA_ROOT",
-    "release_path": "09_MatrAIx画像/Persona-1M发行版"
+    "release_path": "09_MatrAIx画像/Persona-1M发行版",
+    "note": "多 GB 分片留在共享盘，不计入本目录体积；实际实验冻结画像已随 Git 保存"
   },
   "files": [
     {
@@ -26,8 +26,8 @@
     },
     {
       "path": "archive_inventory.py",
-      "bytes": 5374,
-      "sha256": "f55a78131beac9171a27affd035671b08b33064b6a4575cb43aa983fbb01e738",
+      "bytes": 5539,
+      "sha256": "1febfbcf56265fabdfe1aa9327afcb5e8282effd31d806f4180778b12bee2185",
       "storage": "git"
     },
     {
@@ -2034,26 +2034,240 @@
     },
     {
       "path": "study/11_文献综述/README.md",
-      "bytes": 824,
-      "sha256": "4ae91dcd4f01b56585df84a5fc9de12550f388d825b1b50abc70f6c799f9e5a3",
+      "bytes": 1512,
+      "sha256": "6aac8581e7e3a6b55ed516ce65f10494bf6950d779c08f64804106df1ce670a6",
       "storage": "git"
     },
     {
       "path": "study/11_文献综述/build.py",
-      "bytes": 3247,
-      "sha256": "c1e079c5917334391644d69c706a7f35513d0e89fa5949d5715d6923999eb3f0",
+      "bytes": 3621,
+      "sha256": "e9f148ccfb4f1864bd3f6d74ff0e9f3d67db7a656e2f21076fea405e832b1ed0",
+      "storage": "git"
+    },
+    {
+      "path": "study/11_文献综述/fulltext_library.py",
+      "bytes": 5769,
+      "sha256": "523530c6afbb65540eb7b512b3d9df1fc6e6de5db999487af9b292e8e18923ef",
       "storage": "git"
     },
     {
       "path": "study/11_文献综述/index.html",
-      "bytes": 965,
-      "sha256": "c55d105d4501704e7e58bfaeb3c6f8b0aec2338dcd86c6d75c8e0988314d5a10",
+      "bytes": 1062,
+      "sha256": "d48dd0a225ace511066d6e7c38d7807785bb809e94ed4da0acc3638c7f32cd38",
+      "storage": "git"
+    },
+    {
+      "path": "study/11_文献综述/manage_fulltexts.py",
+      "bytes": 3440,
+      "sha256": "de80292526de79418cdd2c12681dc18bba37f6a1658d1da25069449a0bebe881",
       "storage": "git"
     },
     {
       "path": "study/11_文献综述/sources.json",
-      "bytes": 25149,
-      "sha256": "4df4bb93989317757e2c52f9b09118a74bb6f994441a3975a2697f8c041bf205",
+      "bytes": 37260,
+      "sha256": "dbf3d03e9b618008c8565562cde4dd60f1db2984aa0103727b5381fe27016326",
+      "storage": "git"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/.gitignore",
+      "bytes": 91,
+      "sha256": "6844206a24e9b5609978c27ba879b45a2af64cc01713021eff4047d666c0ad43",
+      "storage": "git"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/个体决策与画像匹配/R02_学习真人认知与行为的基础模型_正文.pdf",
+      "bytes": 7639742,
+      "sha256": "5428a577578b46b384cf24bac38925337b381134b50186ac2388513eeb7beede",
+      "storage": "git"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/个体决策与画像匹配/R04_由人口背景生成模拟调查样本_正文.pdf",
+      "bytes": 3204201,
+      "sha256": "391f94c0c8bd2f9bed2aa77420e203f863e527296a9ad4412318b1b33d55aeef",
+      "storage": "git"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/个体决策与画像匹配/R06_画像提示带来的偏差_正文.pdf",
+      "bytes": 528093,
+      "sha256": "0928e7b25a4f9c42f07a291ca0232f4734dc800ccb69ae474c47e5b8b90690b5",
+      "storage": "git"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/个体决策与画像匹配/R12_同一画像的不同线索与个性化_正文.pdf",
+      "bytes": 2555708,
+      "sha256": "cb3a5fb711f2f8f6774718bc1f8e2ff089603edad51a2e018d96edf5c704f0a2",
+      "storage": "git"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/全文索引.md",
+      "bytes": 40592,
+      "sha256": "c322ec65aecd4951556292187af07ffc45507cc5010babbf16c98287e20b327b",
+      "storage": "git"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/回答分布与评估/R08_心理测量中的真人模拟局限_正文.pdf",
+      "bytes": 3855898,
+      "sha256": "25775b6449ec34d8023f6121fada00cb0d53d21a0510aeb1b85b42a514f2ef9d",
+      "storage": "git"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/回答分布与评估/R18_能描述概率却不能按概率选择_正文.pdf",
+      "bytes": 2796712,
+      "sha256": "f5f5741eaedbab378b69064e2003396af68e2d88a7f682944a7e2de2f45f9a7d",
+      "storage": "git"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/文件索引.json",
+      "bytes": 23219,
+      "sha256": "c98033fe59fc0871f8f46770e124c4f1d5de65f8ec0f126825fc52a9bd92f0d1",
+      "storage": "git"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/本机全文/个体决策与画像匹配/R01_根据真人自述预测个体选择_正文.pdf",
+      "bytes": 3563209,
+      "sha256": "1ee1f32c2ba92eae7a91f28d204b9041a0f1cfb9ffc7201b3c52ac464f4e1fe2",
+      "storage": "local_only",
+      "reason": "论文或附件；再分发用途受限或许可尚未确认，全文索引随 Git"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/本机全文/个体决策与画像匹配/R02_学习真人认知与行为的基础模型_补充材料.pdf",
+      "bytes": 886538,
+      "sha256": "c279c489ad0d0fbb3bc654e15310d7a223586bdcf21848b7e92b3fb2db1a18e6",
+      "storage": "local_only",
+      "reason": "论文或附件；再分发用途受限或许可尚未确认，全文索引随 Git"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/本机全文/个体决策与画像匹配/R03_预测社会科学实验结果_补充材料.pdf",
+      "bytes": 4034654,
+      "sha256": "c747529d8031695b101963aec3cdff8669dadc47fed569112a004ce1a719f001",
+      "storage": "local_only",
+      "reason": "论文或附件；再分发用途受限或许可尚未确认，全文索引随 Git"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/本机全文/个体决策与画像匹配/R07_对齐目标人群的信念和偏好_正文.pdf",
+      "bytes": 809805,
+      "sha256": "020615d45b94cda376e7c55dc2a73b16b43040528c61c4cc8d5f2f51c58b3bb0",
+      "storage": "local_only",
+      "reason": "论文或附件；再分发用途受限或许可尚未确认，全文索引随 Git"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/本机全文/个体决策与画像匹配/R09_数字画像能否复现真人调查_正文.pdf",
+      "bytes": 5971557,
+      "sha256": "d4d246b8e723200e8f00057f6478ee603ae84ce7ef6be047e413747e4af039c1",
+      "storage": "local_only",
+      "reason": "论文或附件；再分发用途受限或许可尚未确认，全文索引随 Git"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/本机全文/个体决策与画像匹配/R10_跨74国经济偏好的模拟局限_正文.pdf",
+      "bytes": 6631274,
+      "sha256": "6b334d7eae8fc4ff2d1f19b27eea51b97aa85659640edd86e27295370f1aeec3",
+      "storage": "local_only",
+      "reason": "论文或附件；再分发用途受限或许可尚未确认，全文索引随 Git"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/本机全文/个体决策与画像匹配/R10_跨74国经济偏好的模拟局限_补充材料.pdf",
+      "bytes": 19907959,
+      "sha256": "4d2f4e42f4484403c269a6ec0b7a1547498eaf3453a4709dacf22613020191dc",
+      "storage": "local_only",
+      "reason": "论文或附件；再分发用途受限或许可尚未确认，全文索引随 Git"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/本机全文/个体决策与画像匹配/R23_模型经济偏好与真人选择_正文.pdf",
+      "bytes": 1735549,
+      "sha256": "0a7480ae47c91924d1086d15f2163eae16e12cea60a4205a3047573229188393",
+      "storage": "local_only",
+      "reason": "论文或附件；再分发用途受限或许可尚未确认，全文索引随 Git"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/本机全文/回答分布与评估/R05_问卷选项顺序与标签偏差_官方补充包.zip",
+      "bytes": 13000579,
+      "sha256": "c348622c242c354d33d74ccd5aee85ae040ef387cd0489e603b22b335c894c01",
+      "storage": "local_only",
+      "reason": "论文或附件；再分发用途受限或许可尚未确认，全文索引随 Git"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/本机全文/回答分布与评估/R05_问卷选项顺序与标签偏差_正文.pdf",
+      "bytes": 1619683,
+      "sha256": "3615460101103a946ca4f113e520b98050cb5ed532387b61c1cfd889f68062d6",
+      "storage": "local_only",
+      "reason": "论文或附件；再分发用途受限或许可尚未确认，全文索引随 Git"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/本机全文/回答分布与评估/R11_模型高估真人幸福感_正文.pdf",
+      "bytes": 2035275,
+      "sha256": "65badb2a833919b083b9b547047498c7f1bd1dd491e1b386406ac20c5315dbf5",
+      "storage": "local_only",
+      "reason": "论文或附件；再分发用途受限或许可尚未确认，全文索引随 Git"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/本机全文/回答分布与评估/R11_模型高估真人幸福感_补充材料.pdf",
+      "bytes": 497178,
+      "sha256": "ec7dd92ea968d44d3a6c0dcad84a6a61c4b6f315a30e751c8397b18c81eb5253",
+      "storage": "local_only",
+      "reason": "论文或附件；再分发用途受限或许可尚未确认，全文索引随 Git"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/本机全文/回答分布与评估/R19_谨慎使用模型替代真人_正文网页.html",
+      "bytes": 208798,
+      "sha256": "89aa456380124964c1aa0e000fddeae2dc1d501e2f488643365c336c65b70c72",
+      "storage": "local_only",
+      "reason": "论文或附件；再分发用途受限或许可尚未确认，全文索引随 Git"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/本机全文/回答分布与评估/R22_跨领域合成用户失效基准_正文.pdf",
+      "bytes": 791674,
+      "sha256": "f7d1257effebc967625abb331cf0b93586fa8bf63204b2b566153b2e32b3e38c",
+      "storage": "local_only",
+      "reason": "论文或附件；再分发用途受限或许可尚未确认，全文索引随 Git"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/本机全文/访谈与背景信息采集/R17_图灵测试与聊天真人感_旧预印本正文.pdf",
+      "bytes": 13130382,
+      "sha256": "cdd3d13ec265eedb2877d1fd524329c7adb9564a2c064ddd384f2bebf110ce44",
+      "storage": "local_only",
+      "reason": "论文或附件；再分发用途受限或许可尚未确认，全文索引随 Git"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/本机全文/访谈与背景信息采集/R17_图灵测试与聊天真人感_正式版正文网页.html",
+      "bytes": 207834,
+      "sha256": "a90abf063d7d8e8cc97a6259052427ac5feff3b2a43def7147ccb4032417a6bd",
+      "storage": "local_only",
+      "reason": "论文或附件；再分发用途受限或许可尚未确认，全文索引随 Git"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/消费与商品选择/R13_还原消费者购买意愿分布_正文.pdf",
+      "bytes": 4226945,
+      "sha256": "c96402dfd3461467858a7c64b2654985e095dde6de002008dda6b6b694e3b1c6",
+      "storage": "git"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/消费与商品选择/R20_消费者研究中的合成样本指南_正文.pdf",
+      "bytes": 3259631,
+      "sha256": "2e2207489d3c6988e5240788fd1b7742f0ac732f8d5fef0ae132c782f3f1643e",
+      "storage": "git"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/获取记录.json",
+      "bytes": 11230,
+      "sha256": "3d29034903663292c7e92610497d7c889b4a6d777369cc5e6d183d2e03c608bc",
+      "storage": "git"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/访谈与背景信息采集/R14_AI自适应访谈与真人访谈_正文.pdf",
+      "bytes": 1733799,
+      "sha256": "ceaba7dfba10646ac101ae753ff7bd2e0c30b5972d7c6c8bdcfe39f453a7fd0a",
+      "storage": "git"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/访谈与背景信息采集/R15_AI与真人聊天访谈对比_正文.pdf",
+      "bytes": 1192695,
+      "sha256": "62191c5a1568cb42d945951742d2c0880a49b3522faa83585833c7c3efe79299",
+      "storage": "git"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/访谈与背景信息采集/R16_AI访谈提问能力评估_正文.pdf",
+      "bytes": 1913014,
+      "sha256": "5b3d6e76d6abb4665907dd6bf9386262eeae0ab17f10b21c0133eef199201531",
       "storage": "git"
     },
     {
@@ -2064,20 +2278,20 @@
     },
     {
       "path": "study/11_文献综述/文献证据卡.md",
-      "bytes": 24447,
-      "sha256": "2ab9ab98bc73f3082beb3f9072b1c09e60318f318f86ffe7b00edde0b27a6c46",
+      "bytes": 28082,
+      "sha256": "7c318e554ce3ee992819dc15ed639793a3955a4423ca66d5a33d8ba6f0fc3ba2",
       "storage": "git"
     },
     {
       "path": "study/11_文献综述/检索与更新记录.md",
-      "bytes": 6763,
-      "sha256": "25cc485a633eaafc2d4abfde3f8c7eb79a96b5d96da3f7b1ca2a1cadb0a94103",
+      "bytes": 8325,
+      "sha256": "01daa7a3d866fd27f1c5f4b5468ddc43e628bf3bdf6611486ee54bb1b4dfdb26",
       "storage": "git"
     },
     {
       "path": "study/11_文献综述/综述.md",
-      "bytes": 19116,
-      "sha256": "05547812cab76083a622abe95b737e4d2a37c1db04dc51874e0de5c92c225688",
+      "bytes": 19355,
+      "sha256": "eb7605bfe513f9653829fac29052ef49bcebf06a49896d852abe2a35cb00a888",
       "storage": "git"
     },
     {
@@ -2145,7 +2359,7 @@
       "bytes": 80,
       "sha256": "277e48330a91d81f75144d97afae9ae864e5ae05a57526a8c42e665489324044",
       "storage": "local_only",
-      "reason": "此电脑共享盘路径；发行清单另随 Git 保存"
+      "reason": "旧版兼容路径；当前脚本从数据总库解析"
     },
     {
       "path": "study/数据/pew.zip",

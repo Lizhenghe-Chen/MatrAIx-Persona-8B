@@ -31,6 +31,8 @@ def git_paths(*args: str) -> set[Path]:
 
 def local_reason(path: Path) -> str:
     relative = path.relative_to(ROOT).as_posix()
+    if "11_文献综述/全文资料/本机全文/" in relative:
+        return "论文或附件；再分发用途受限或许可尚未确认，全文索引随 Git"
     if path.stat().st_size > LIMIT:
         return "大型原始下载包；保留本机和获取来源"
     if "pew.zip" in relative or "Pew_Wave13/" in relative:

@@ -1,0 +1,427 @@
+{
+  "checked_on": "2026-11-10",
+  "note": "网络获取尝试记录；HTTP 200不等于取得全文。实际归档以文件索引为准。额外下载的同行评审文件及报告规范表未纳入正文资料库。",
+  "attempts": [
+    {
+      "id": "R01",
+      "url": "https://arxiv.org/pdf/2411.10109v3",
+      "status": 200,
+      "pdf": true,
+      "bytes": 3563209,
+      "phase": "results"
+    },
+    {
+      "id": "R02",
+      "url": "https://www.nature.com/articles/s41586-025-09215-4",
+      "status": 200,
+      "pdf": false,
+      "bytes": 577946,
+      "phase": "results"
+    },
+    {
+      "id": "R03",
+      "url": "https://www.nature.com/articles/s41586-026-10742-x",
+      "status": 200,
+      "pdf": false,
+      "bytes": 381304,
+      "phase": "results"
+    },
+    {
+      "id": "R04",
+      "url": "https://arxiv.org/pdf/2209.06899",
+      "status": 200,
+      "pdf": true,
+      "bytes": 3204201,
+      "phase": "results"
+    },
+    {
+      "id": "R05",
+      "url": "https://proceedings.nips.cc/paper_files/paper/2024/file/515c62809e0a29729d7eec26e2916fc0-Paper-Conference.pdf",
+      "status": 200,
+      "pdf": true,
+      "bytes": 1619683,
+      "phase": "results"
+    },
+    {
+      "id": "R06",
+      "url": "https://aclanthology.org/2024.findings-acl.586.pdf",
+      "status": 200,
+      "pdf": true,
+      "bytes": 528093,
+      "phase": "results"
+    },
+    {
+      "id": "R07",
+      "url": "https://arxiv.org/pdf/2403.20252",
+      "status": 200,
+      "pdf": true,
+      "bytes": 809805,
+      "phase": "results"
+    },
+    {
+      "id": "R08",
+      "url": "https://arxiv.org/pdf/2405.07248",
+      "status": 200,
+      "pdf": true,
+      "bytes": 3855898,
+      "phase": "results"
+    },
+    {
+      "id": "R09",
+      "url": "https://arxiv.org/pdf/2605.10659",
+      "status": 200,
+      "pdf": true,
+      "bytes": 5971557,
+      "phase": "results"
+    },
+    {
+      "id": "R10",
+      "url": "https://www.nature.com/articles/s41562-026-02611-4",
+      "status": 200,
+      "pdf": false,
+      "bytes": 538356,
+      "phase": "results"
+    },
+    {
+      "id": "R11",
+      "url": "https://www.nature.com/articles/s44482-026-00049-z",
+      "status": 200,
+      "pdf": false,
+      "bytes": 422093,
+      "phase": "results"
+    },
+    {
+      "id": "R12",
+      "url": "https://aclanthology.org/2026.acl-long.2079.pdf",
+      "status": 200,
+      "pdf": true,
+      "bytes": 2555708,
+      "phase": "results"
+    },
+    {
+      "id": "R13",
+      "url": "https://arxiv.org/pdf/2510.08338v2",
+      "status": 200,
+      "pdf": true,
+      "bytes": 4226945,
+      "phase": "results"
+    },
+    {
+      "id": "R14",
+      "url": "https://aclanthology.org/2025.latechclfl-1.17.pdf",
+      "status": 200,
+      "pdf": true,
+      "bytes": 1733799,
+      "phase": "results"
+    },
+    {
+      "id": "R15",
+      "url": "https://arxiv.org/pdf/2610.23149v1",
+      "status": 200,
+      "pdf": true,
+      "bytes": 1192695,
+      "phase": "results"
+    },
+    {
+      "id": "R16",
+      "url": "https://www.nature.com/articles/s41598-026-46517-7",
+      "status": 200,
+      "pdf": false,
+      "bytes": 501584,
+      "phase": "results"
+    },
+    {
+      "id": "R17",
+      "url": "https://arxiv.org/pdf/2503.23674v1",
+      "status": 200,
+      "pdf": true,
+      "bytes": 13130382,
+      "phase": "results"
+    },
+    {
+      "id": "R18",
+      "url": "https://arxiv.org/pdf/2607.25292v1",
+      "status": 200,
+      "pdf": true,
+      "bytes": 2796712,
+      "phase": "results"
+    },
+    {
+      "id": "R19",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12184514/",
+      "status": 200,
+      "pdf": false,
+      "bytes": 208798,
+      "phase": "results"
+    },
+    {
+      "id": "R20",
+      "url": "https://epub.ub.uni-muenchen.de/116232/1/Psychology_and_Marketing_-_2024_-_Sarstedt_-_Using_large_language_models_to_generate_silicon_samples_in_consumer_and.pdf",
+      "status": 200,
+      "pdf": true,
+      "bytes": 3259631,
+      "phase": "results"
+    },
+    {
+      "id": "R21",
+      "url": "https://academic.oup.com/poq/advance-article/doi/10.1093/poq/nfag063/8762750",
+      "error": "HTTP Error 403: Forbidden",
+      "phase": "results"
+    },
+    {
+      "id": "R22",
+      "url": "https://arxiv.org/pdf/2607.26348v2",
+      "status": 200,
+      "pdf": true,
+      "bytes": 791674,
+      "phase": "results"
+    },
+    {
+      "id": "R23",
+      "url": "https://www.federalreserve.gov/econres/feds/files/2026006pap.pdf",
+      "status": 200,
+      "pdf": true,
+      "bytes": 1735549,
+      "phase": "results"
+    },
+    {
+      "id": "R02",
+      "url": "https://www.nature.com/articles/s41586-025-09215-4.pdf",
+      "status": 200,
+      "pdf": true,
+      "bytes": 7639742,
+      "phase": "extra"
+    },
+    {
+      "id": "R02",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-025-09215-4/MediaObjects/41586_2025_9215_MOESM1_ESM.pdf",
+      "status": 200,
+      "pdf": true,
+      "bytes": 886538,
+      "phase": "extra"
+    },
+    {
+      "id": "R02",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-025-09215-4/MediaObjects/41586_2025_9215_MOESM2_ESM.pdf",
+      "status": 200,
+      "pdf": true,
+      "bytes": 1663172,
+      "phase": "extra"
+    },
+    {
+      "id": "R03",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-026-10742-x/MediaObjects/41586_2026_10742_MOESM1_ESM.pdf",
+      "status": 200,
+      "pdf": true,
+      "bytes": 4034654,
+      "phase": "extra"
+    },
+    {
+      "id": "R03",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-026-10742-x/MediaObjects/41586_2026_10742_MOESM2_ESM.pdf",
+      "status": 200,
+      "pdf": true,
+      "bytes": 1653279,
+      "phase": "extra"
+    },
+    {
+      "id": "R03",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-026-10742-x/MediaObjects/41586_2026_10742_MOESM3_ESM.pdf",
+      "status": 200,
+      "pdf": true,
+      "bytes": 1523405,
+      "phase": "extra"
+    },
+    {
+      "id": "R10",
+      "url": "https://www.nature.com/articles/s41562-026-02611-4.pdf",
+      "status": 200,
+      "pdf": true,
+      "bytes": 6631274,
+      "phase": "extra"
+    },
+    {
+      "id": "R10",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41562-026-02611-4/MediaObjects/41562_2026_2611_MOESM1_ESM.pdf",
+      "status": 200,
+      "pdf": true,
+      "bytes": 19907959,
+      "phase": "extra"
+    },
+    {
+      "id": "R10",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41562-026-02611-4/MediaObjects/41562_2026_2611_MOESM2_ESM.pdf",
+      "status": 200,
+      "pdf": true,
+      "bytes": 2282066,
+      "phase": "extra"
+    },
+    {
+      "id": "R10",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41562-026-02611-4/MediaObjects/41562_2026_2611_MOESM3_ESM.pdf",
+      "status": 200,
+      "pdf": true,
+      "bytes": 18905384,
+      "phase": "extra"
+    },
+    {
+      "id": "R11",
+      "url": "https://www.nature.com/articles/s44482-026-00049-z.pdf",
+      "status": 200,
+      "pdf": true,
+      "bytes": 2035275,
+      "phase": "extra"
+    },
+    {
+      "id": "R11",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs44482-026-00049-z/MediaObjects/44482_2026_49_MOESM1_ESM.pdf",
+      "status": 200,
+      "pdf": true,
+      "bytes": 497178,
+      "phase": "extra"
+    },
+    {
+      "id": "R16",
+      "url": "https://www.nature.com/articles/s41598-026-46517-7.pdf",
+      "status": 200,
+      "pdf": true,
+      "bytes": 1913014,
+      "phase": "extra"
+    },
+    {
+      "id": "R19",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12184514/pdf/pnas.202501660.pdf",
+      "error": "not PDF/ZIP: text/html; charset=utf-8",
+      "phase": "extra"
+    },
+    {
+      "id": "R19",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/instance/12184514/bin/pnas.2501660122.sapp.pdf",
+      "error": "not PDF/ZIP: text/html; charset=utf-8",
+      "phase": "extra"
+    },
+    {
+      "id": "R05",
+      "url": "https://proceedings.nips.cc/paper_files/paper/2024/file/515c62809e0a29729d7eec26e2916fc0-Supplemental-Conference.zip",
+      "status": 200,
+      "pdf": false,
+      "bytes": 13000579,
+      "phase": "extra"
+    },
+    {
+      "id": "R01",
+      "url": "https://arxiv.org/abs/2411.10109v3",
+      "phase": "meta"
+    },
+    {
+      "id": "R04",
+      "url": "https://arxiv.org/abs/2209.06899",
+      "phase": "meta"
+    },
+    {
+      "id": "R06",
+      "url": "https://aclanthology.org/2024.findings-acl.586/",
+      "phase": "meta"
+    },
+    {
+      "id": "R07",
+      "url": "https://arxiv.org/abs/2403.20252",
+      "phase": "meta"
+    },
+    {
+      "id": "R08",
+      "url": "https://arxiv.org/abs/2405.07248",
+      "phase": "meta"
+    },
+    {
+      "id": "R09",
+      "url": "https://arxiv.org/abs/2605.10659",
+      "phase": "meta"
+    },
+    {
+      "id": "R12",
+      "url": "https://aclanthology.org/2026.acl-long.2079/",
+      "phase": "meta"
+    },
+    {
+      "id": "R13",
+      "url": "https://arxiv.org/abs/2510.08338v2",
+      "phase": "meta"
+    },
+    {
+      "id": "R14",
+      "url": "https://aclanthology.org/2025.latechclfl-1.17/",
+      "phase": "meta"
+    },
+    {
+      "id": "R15",
+      "url": "https://arxiv.org/abs/2610.23149v1",
+      "phase": "meta"
+    },
+    {
+      "id": "R18",
+      "url": "https://arxiv.org/abs/2607.25292v1",
+      "phase": "meta"
+    },
+    {
+      "id": "R22",
+      "url": "https://arxiv.org/abs/2607.26348v2",
+      "phase": "meta"
+    },
+    {
+      "id": "R17-formal",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13214042/",
+      "phase": "meta"
+    },
+    {
+      "id": "R03-author",
+      "url": "https://t.co/PbaA7hq4FE",
+      "error": "403 Client Error: Forbidden for url: https://osf.io/preprints/psyarxiv/3svep_v1",
+      "phase": "meta"
+    },
+    {
+      "id": "R03-author",
+      "url": "https://osf.io/preprints/psyarxiv/3svep_v1/download",
+      "error": "403 Client Error: Forbidden for url: https://osf.io/preprints/psyarxiv/3svep_v1/download",
+      "phase": "last"
+    },
+    {
+      "id": "R21-main",
+      "url": "https://doi.org/10.1093/poq/nfag063",
+      "error": "403 Client Error: Forbidden for url: https://academic.oup.com/poq/advance-article/doi/10.1093/poq/nfag063/8762750",
+      "phase": "last"
+    },
+    {
+      "id": "R17",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13214042/pdf/pnas.202524472.pdf",
+      "status": 200,
+      "pdf": false,
+      "bytes": 1816,
+      "phase": "last"
+    },
+    {
+      "id": "R17",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/instance/13214042/bin/pnas.2524472123.sapp.pdf",
+      "status": 200,
+      "pdf": false,
+      "bytes": 1816,
+      "phase": "last"
+    },
+    {
+      "id": "R19",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12184514/pdf/pnas.202501660.pdf",
+      "status": 200,
+      "pdf": false,
+      "bytes": 1817,
+      "phase": "last"
+    },
+    {
+      "id": "R19",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/instance/12184514/bin/pnas.2501660122.sapp.pdf",
+      "status": 200,
+      "pdf": false,
+      "bytes": 1817,
+      "phase": "last"
+    }
+  ]
+}
