@@ -8,18 +8,23 @@ from .core import probabilities
 def build_request(payload, config):
     if config['model'] != 'deepseek-v4-pro':
         raise ValueError('This experiment freezes DeepSeek Pro')
+    mode=config.get('output_mode','probabilities')
+    if mode not in ('probabilities','single_choice'):
+        raise ValueError('Unknown output mode')
+    instruction=("Return JSON with only a probabilities array, in the supplied option order. Nonnegative probabilities must sum to 1."
+                 if mode=='probabilities' else
+                 "Return JSON with only a choice integer: the zero-based index of the single selected option in the supplied option order.")
     return {'model': config['model'], 'temperature': config['temperature'],
             'top_p': config['top_p'], 'max_tokens': config['max_tokens'],
             'thinking': {'type': 'disabled'}, 'response_format': {'type':'json_object'},
             'messages': [
                 {'role':'system','content':
                  'Predict this respondent\'s choice in the supplied context using only the provided background. '
-                 'Do not invent personal experiences. Return JSON with only a probabilities array, in the supplied '
-                 'option order. Nonnegative probabilities must sum to 1. Do not include explanations.'},
+                 'Do not invent personal experiences. '+instruction+' Do not include explanations.'},
                 {'role':'user','content':json.dumps(payload,ensure_ascii=False)}]}
 
 
-def parse_response(response, option_count, expected_identity=None):
+def parse_response(response, option_count, expected_identity=None, output_mode="probabilities"):
     identity = {'model':response.get('model'), 'system_fingerprint':response.get('system_fingerprint')}
     if not identity['model']:
         raise ValueError('Server omitted model identity')
@@ -30,9 +35,18 @@ def parse_response(response, option_count, expected_identity=None):
     if choice['finish_reason'] != 'stop' or msg.get('reasoning_content') or msg.get('tool_calls'):
         raise ValueError('Unexpected truncated, thinking or tool response')
     result=json.loads(msg['content'])
-    if set(result) != {'probabilities'}:
-        raise ValueError('Unexpected response fields')
-    return {'probabilities':probabilities(result['probabilities'],option_count),
+    if output_mode == 'single_choice':
+        selected=result.get('choice')
+        if set(result)!={'choice'} or type(selected) is not int or not 0<=selected<option_count:
+            raise ValueError('Invalid single-choice response')
+        values=[int(i==selected) for i in range(option_count)]
+    elif output_mode == 'probabilities':
+        if set(result)!={'probabilities'}:
+            raise ValueError('Unexpected response fields')
+        values=probabilities(result['probabilities'],option_count)
+    else:
+        raise ValueError('Unknown output mode')
+    return {'probabilities':values, 'output_mode':output_mode,
             'identity':identity,'usage':response.get('usage',{})}
 
 

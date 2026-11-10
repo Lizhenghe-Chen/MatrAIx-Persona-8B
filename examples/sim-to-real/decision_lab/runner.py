@@ -56,7 +56,7 @@ def run(study, seal, config, database, phase, transport=send):
                 start=time.monotonic()
                 try:
                     raw=transport(body,config['endpoint'])
-                    result=parse_response(raw,n,expected)
+                    result=parse_response(raw,n,expected,config.get('output_mode','probabilities'))
                 except Exception as exc:
                     # Persist only error type, never request content, headers or server body.
                     db.execute('UPDATE calls SET status=?,error=?,elapsed=? WHERE job=?',('failed',type(exc).__name__,time.monotonic()-start,job));db.commit()

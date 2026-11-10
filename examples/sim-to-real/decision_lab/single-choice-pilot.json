@@ -1,0 +1,24 @@
+{
+  "probabilities": [
+    1,
+    0,
+    0
+  ],
+  "output_mode": "single_choice",
+  "identity": {
+    "model": "deepseek-v4-pro",
+    "system_fingerprint": "a307abda487cd1b463329ccb945ce396"
+  },
+  "usage": {
+    "prompt_tokens": 125,
+    "completion_tokens": 6,
+    "total_tokens": 131,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 125
+  },
+  "purpose": "Synthetic single-choice format verification; not predictive performance",
+  "seconds": 1.177800708101131
+}
