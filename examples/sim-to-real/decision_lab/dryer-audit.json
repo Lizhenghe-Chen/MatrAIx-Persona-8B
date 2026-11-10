@@ -1,0 +1,49 @@
+{
+  "status": "not_admitted_pending_sample_and_display_reconciliation",
+  "source": "https://zenodo.org/records/10046247",
+  "files": {
+    "Tumbledrier_DCE.dta": {
+      "bytes": 172664480,
+      "sha256": "5bbb5ffa8ae05451f02e69ecb5cfe12166c5167bd0d185eee1872c1cf464f198"
+    },
+    "Tumbledrier_DCE_wide.dta": {
+      "bytes": 12264977,
+      "sha256": "a2777204b222518f952fec8b9fff94ffdb6a9b8595f11a737ccd2df925c6860e"
+    }
+  },
+  "alternative_rows": 60648,
+  "people": 2527,
+  "choice_tasks": 20216,
+  "tasks_per_person": {
+    "8": 2527
+  },
+  "alternatives": {
+    "0": "Neither",
+    "1": "Tumble dryer 1",
+    "2": "Tumble dryer 2"
+  },
+  "people_by_survey_version": {
+    "USA": 657,
+    "UK": 655,
+    "CAN": 634,
+    "IRE": 581
+  },
+  "wide_people": 2539,
+  "shared_people": 2525,
+  "only_long_people": 2,
+  "only_wide_people": 14,
+  "shared_background_mismatches": {
+    "Age": 0,
+    "Education": 0,
+    "Treatment": 0,
+    "CountryVersion": 0,
+    "Tumbledrier_usage": 0
+  },
+  "structural_errors": [],
+  "pending": [
+    "Explain 14 wide-only and 2 long-only respondents; do not assume a simple exclusion filter.",
+    "Verify country/treatment-specific displayed energy information against original choice cards.",
+    "Reproduce author descriptive statistics and freeze background timing whitelist."
+  ],
+  "privacy": "Only aggregate audit counts and source hashes exported; respondent identifiers stay in source files."
+}

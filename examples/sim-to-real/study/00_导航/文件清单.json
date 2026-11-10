@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 431,
-  "git_bytes": 78445975,
+  "git_file_count": 433,
+  "git_bytes": 78451294,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -94,6 +94,18 @@
       "path": "decision_lab/deepseek-pro.json",
       "bytes": 445,
       "sha256": "42bd9cbe9b9b846f14c9883bc2ff7342ab902e23d155c4928d861f981f9b95d5",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/dryer-audit.json",
+      "bytes": 1442,
+      "sha256": "00433b6e8150a6aaf4b7ebbc26c692a77dc3a8272dd099ddc3050ea1e14ea87a",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/dryer_audit.py",
+      "bytes": 3115,
+      "sha256": "6f47b997e55264826e8167beb934cda4174c131a2e162bc3cf3820aa70fe9a24",
       "storage": "git"
     },
     {
@@ -242,8 +254,8 @@
     },
     {
       "path": "decision_lab/数据审查发现.md",
-      "bytes": 3723,
-      "sha256": "c0829e4e3f42de4f8600fe57dbf16528b76a5f75c2c6d5e8bf4e480cff0fbf7c",
+      "bytes": 4485,
+      "sha256": "1c5b2f432f9cc548d9573ebfd4d2e4994eee529e0d5bccf2e35834c5421905ad",
       "storage": "git"
     },
     {
