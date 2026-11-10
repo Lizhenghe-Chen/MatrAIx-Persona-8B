@@ -89,15 +89,15 @@
     "project_relevance": "主要：人群或个体回答、选择、决策及其验证方法",
     "title_zh": "预测社会科学实验结果",
     "full_text": {
-      "status": "仅取得补充材料，正文待获取",
+      "status": "正文已下载",
       "checked_on": "2026-11-10",
       "topic": "个体决策与画像匹配",
       "files": [
-        "全文资料/本机全文/个体决策与画像匹配/R03_预测社会科学实验结果_补充材料.pdf"
+        "全文资料/本机全文/个体决策与画像匹配/R03_预测社会科学实验结果_补充材料.pdf",
+        "全文资料/本机全文/个体决策与画像匹配/R03_预测社会科学实验结果_正文.pdf"
       ],
       "reading_status": "出版页摘要",
-      "note": "下载与文件检查不代表完成方法、结果和附录的研究核验。",
-      "action": "请从 Nature 正式页下载正文 PDF；作者公开稿入口 https://osf.io/preprints/psyarxiv/3svep_v1 当前返回 403。补充材料已取得，不等于正文已取得。"
+      "note": "用户提供正式版PDF，已核对标题、DOI、页数和许可；研究方法与结果的阅读核验深度未自动升级。"
     }
   },
   {
@@ -613,13 +613,15 @@
     "project_relevance": "支持：真人信息采集质量；需再验证是否改善未见选择预测",
     "title_zh": "AI访谈与固定问卷随机对照",
     "full_text": {
-      "status": "正文待获取",
+      "status": "正文已下载",
       "checked_on": "2026-11-10",
       "topic": "访谈与背景信息采集",
-      "files": [],
+      "files": [
+        "全文资料/访谈与背景信息采集/R21_AI访谈与固定问卷随机对照_正文.pdf"
+      ],
       "reading_status": "出版全文Abstract、Recruitment、Results、Data Availability",
-      "note": "下载与文件检查不代表完成方法、结果和附录的研究核验。",
-      "action": "请在出版页下载正文及 Supplementary Material；当前直接下载返回 403。网页读取工具可读正文，但尚未保存可独立查看的完整文件。"
+      "note": "用户提供正式版PDF，已核对标题、DOI、页数和许可；研究方法与结果的阅读核验深度未自动升级。",
+      "pending_materials": "独立Supplementary Material尚未取得；不影响正文已完整保存的状态。"
     }
   },
   {

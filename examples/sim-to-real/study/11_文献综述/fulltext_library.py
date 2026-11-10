@@ -15,7 +15,7 @@ def build_index(records):
     lines = [
         '# 本地全文资料库：从这里找论文', '',
         '[返回综述](../综述.md) · [文献证据卡](../文献证据卡.md)', '',
-        f'核对日期：2026-11-10。23项研究中，**{available}项已取得正文，2项待获取**。',
+        f'核对日期：2026-11-10。23项研究中，**{available}项已取得正文，{len(records) - available}项待获取**。',
         f'共保存{len(files)}个文件，占用 **{total:.2f} MiB**（约{total * 1.048576:.1f} MB）。', '',
         '**如何使用：** 先按下面的中文主题找研究，点击“本地正文”打开文件；',
         '需要了解研究是否可信，再打开对应的证据卡。论文保持原文，中文名称是阅读导引，不是官方译名。', '',
@@ -23,12 +23,17 @@ def build_index(records):
         '只检查文件能否解析，不等于已核对所有实验、图表和附录，也不等于独立复现。', '',
         'PDF可离线阅读。两份PMC正文网页保存了完整HTML，但图片和网站样式可能仍需联网。',
         '本轮没有把摘要、登录页、浏览器验证页当成全文保存。', '',
-        '## 尚需人工获取的两项', '',
+        '## 正文与补充材料的获取状态', '',
     ]
     for r in records:
         if r['full_text']['status'] != '正文已下载':
             lines += [f"- **[{r['title_zh']}]({r['url']})**：{r['full_text']['action']}"]
-    lines += ['', '下载后提供文件路径即可继续入库。不要因为403或验证页就直接购买；先用自己的浏览器检查访问情况。', '',
+    if available == len(records):
+        lines += ['全部23项研究均已取得正文。', '']
+    for r in records:
+        if r['full_text'].get('pending_materials'):
+            lines += [f"- **[{r['title_zh']}]({r['url']})**：{r['full_text']['pending_materials']}"]
+    lines += ['', '正文齐全不代表所有独立附件均已齐全，也不代表所有研究结论已经完成复核。', '',
               '## 按研究问题查找', '']
     for group in dict.fromkeys(r['full_text']['topic'] for r in records):
         lines += [f'### {group}', '', '| 研究 | 本地正文 | 状态与阅读范围 |', '| --- | --- | --- |']

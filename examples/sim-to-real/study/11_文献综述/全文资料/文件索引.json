@@ -486,6 +486,44 @@
       "unchanged_download": true,
       "validation": "PDF 已解析，首尾页对象可读；未作逐页视觉核查",
       "note": ""
+    },
+    {
+      "source_id": "R03",
+      "role": "正文",
+      "path": "全文资料/本机全文/个体决策与画像匹配/R03_预测社会科学实验结果_正文.pdf",
+      "download_url": "https://www.nature.com/articles/s41586-026-10742-x",
+      "version": "Nature 656, 115–122 (2026)，正式出版版，含扩展图表",
+      "downloaded_on": "2026-11-10",
+      "bytes": 8460736,
+      "sha256": "58031269a5520ff532c348542a955c2196ed39bc9e0e511486aeb6b8060eeaeb",
+      "pages": 17,
+      "storage": "local_only",
+      "license": "Springer Nature 独占许可；未取得再分发授权",
+      "license_url": "",
+      "license_evidence_url": "https://www.nature.com/articles/s41586-026-10742-x",
+      "unchanged_download": true,
+      "validation": "PDF已解析，标题与DOI对应，首尾页对象可读；未作逐页视觉核查",
+      "acquisition_method": "用户手动下载后提供，原始文件字节不变",
+      "note": "许可依据见PDF第8页；保存本机，不随Git分发。"
+    },
+    {
+      "source_id": "R21",
+      "role": "正文",
+      "path": "全文资料/访谈与背景信息采集/R21_AI访谈与固定问卷随机对照_正文.pdf",
+      "download_url": "https://doi.org/10.1093/poq/nfag063",
+      "version": "Public Opinion Quarterly, nfag063 (2026)，正式在线发表版",
+      "downloaded_on": "2026-11-10",
+      "bytes": 1472114,
+      "sha256": "a6fe66e0a8503d3df606074a54436865e678e6fd1c9b9d33f03b37d80fe52052",
+      "pages": 29,
+      "storage": "git",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_evidence_url": "https://doi.org/10.1093/poq/nfag063",
+      "unchanged_download": true,
+      "validation": "PDF已解析，标题与DOI对应，首尾页对象可读；未作逐页视觉核查",
+      "acquisition_method": "用户手动下载后提供，原始文件字节不变",
+      "note": "许可依据见PDF第1页；独立补充材料尚未取得。"
     }
   ]
 }

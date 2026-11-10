@@ -5,10 +5,10 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 345,
-  "git_bytes": 76852941,
-  "local_only_file_count": 46,
-  "local_only_bytes": 704423915,
+  "git_file_count": 346,
+  "git_bytes": 78330203,
+  "local_only_file_count": 47,
+  "local_only_bytes": 712884651,
   "external_large_source": {
     "dataset": "MatrAIx Persona 1M",
     "version_manifest": "study/数据/persona-1m-official-manifest.json",
@@ -2034,8 +2034,8 @@
     },
     {
       "path": "study/11_文献综述/README.md",
-      "bytes": 1512,
-      "sha256": "6aac8581e7e3a6b55ed516ce65f10494bf6950d779c08f64804106df1ce670a6",
+      "bytes": 1558,
+      "sha256": "38b5eaf1f7b78692c79d69330e8237ff10dca4f983af60cc6708e42a2f13eb17",
       "storage": "git"
     },
     {
@@ -2046,8 +2046,8 @@
     },
     {
       "path": "study/11_文献综述/fulltext_library.py",
-      "bytes": 5769,
-      "sha256": "523530c6afbb65540eb7b512b3d9df1fc6e6de5db999487af9b292e8e18923ef",
+      "bytes": 6044,
+      "sha256": "dc9a09e00d194101b51363a804e925dae4955a2f0b94c346c83ed2aeb47a24ae",
       "storage": "git"
     },
     {
@@ -2064,8 +2064,8 @@
     },
     {
       "path": "study/11_文献综述/sources.json",
-      "bytes": 37260,
-      "sha256": "dbf3d03e9b618008c8565562cde4dd60f1db2984aa0103727b5381fe27016326",
+      "bytes": 37289,
+      "sha256": "749f1c4b91d05038ba5bd56a4d424ed6941dfe5d3d097b2265492d26a745a3bc",
       "storage": "git"
     },
     {
@@ -2100,8 +2100,8 @@
     },
     {
       "path": "study/11_文献综述/全文资料/全文索引.md",
-      "bytes": 40592,
-      "sha256": "c322ec65aecd4951556292187af07ffc45507cc5010babbf16c98287e20b327b",
+      "bytes": 42224,
+      "sha256": "f430d2fc08a5815bf72a71aa5da7e78ab19c636fbd7d576e52ff78da89d0a52c",
       "storage": "git"
     },
     {
@@ -2118,8 +2118,8 @@
     },
     {
       "path": "study/11_文献综述/全文资料/文件索引.json",
-      "bytes": 23219,
-      "sha256": "c98033fe59fc0871f8f46770e124c4f1d5de65f8ec0f126825fc52a9bd92f0d1",
+      "bytes": 25226,
+      "sha256": "59f8b2cc095e2671981095ac4a1212a18d52cfd0403ffe5b6e1dc1030cf2a8ea",
       "storage": "git"
     },
     {
@@ -2133,6 +2133,13 @@
       "path": "study/11_文献综述/全文资料/本机全文/个体决策与画像匹配/R02_学习真人认知与行为的基础模型_补充材料.pdf",
       "bytes": 886538,
       "sha256": "c279c489ad0d0fbb3bc654e15310d7a223586bdcf21848b7e92b3fb2db1a18e6",
+      "storage": "local_only",
+      "reason": "论文或附件；再分发用途受限或许可尚未确认，全文索引随 Git"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/本机全文/个体决策与画像匹配/R03_预测社会科学实验结果_正文.pdf",
+      "bytes": 8460736,
+      "sha256": "58031269a5520ff532c348542a955c2196ed39bc9e0e511486aeb6b8060eeaeb",
       "storage": "local_only",
       "reason": "论文或附件；再分发用途受限或许可尚未确认，全文索引随 Git"
     },
@@ -2248,8 +2255,8 @@
     },
     {
       "path": "study/11_文献综述/全文资料/获取记录.json",
-      "bytes": 11230,
-      "sha256": "3d29034903663292c7e92610497d7c889b4a6d777369cc5e6d183d2e03c608bc",
+      "bytes": 11603,
+      "sha256": "db3375d64ea0c80ef854f50509607e0e1e35236d326e3e8899d8fa2fff3e1d5c",
       "storage": "git"
     },
     {
@@ -2271,6 +2278,12 @@
       "storage": "git"
     },
     {
+      "path": "study/11_文献综述/全文资料/访谈与背景信息采集/R21_AI访谈与固定问卷随机对照_正文.pdf",
+      "bytes": 1472114,
+      "sha256": "a6fe66e0a8503d3df606074a54436865e678e6fd1c9b9d33f03b37d80fe52052",
+      "storage": "git"
+    },
+    {
       "path": "study/11_文献综述/参数与实验建议.md",
       "bytes": 2585,
       "sha256": "59423ef2a76d6d31f11d986651723f7ed02458c971c7578fa0b435dbacea8a53",
@@ -2278,20 +2291,20 @@
     },
     {
       "path": "study/11_文献综述/文献证据卡.md",
-      "bytes": 28082,
-      "sha256": "7c318e554ce3ee992819dc15ed639793a3955a4423ca66d5a33d8ba6f0fc3ba2",
+      "bytes": 28058,
+      "sha256": "bd3fe2fe5ded39286f284aed5524496990e237939cfc6b3bcef27dd2aa8edcee",
       "storage": "git"
     },
     {
       "path": "study/11_文献综述/检索与更新记录.md",
-      "bytes": 8325,
-      "sha256": "01daa7a3d866fd27f1c5f4b5468ddc43e628bf3bdf6611486ee54bb1b4dfdb26",
+      "bytes": 9092,
+      "sha256": "09102ac346525ae2f40a275ff27e8475f7c123e6f11aeb8151ef6d60719095fc",
       "storage": "git"
     },
     {
       "path": "study/11_文献综述/综述.md",
-      "bytes": 19355,
-      "sha256": "eb7605bfe513f9653829fac29052ef49bcebf06a49896d852abe2a35cb00a888",
+      "bytes": 19398,
+      "sha256": "8cb43442cb9d2519ba4727c842e44bdc4a8972a7c15dee37f512232596ef17e6",
       "storage": "git"
     },
     {

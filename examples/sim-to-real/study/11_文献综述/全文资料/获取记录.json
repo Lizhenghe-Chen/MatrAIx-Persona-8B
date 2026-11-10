@@ -422,6 +422,20 @@
       "pdf": false,
       "bytes": 1817,
       "phase": "last"
+    },
+    {
+      "id": "R03",
+      "phase": "user_supplied_pdf",
+      "status": "已核对并归档",
+      "original_filename": "s41586-026-10742-x.pdf",
+      "checked_on": "2026-11-10"
+    },
+    {
+      "id": "R21",
+      "phase": "user_supplied_pdf",
+      "status": "已核对并归档",
+      "original_filename": "nfag063.pdf",
+      "checked_on": "2026-11-10"
     }
   ]
 }
