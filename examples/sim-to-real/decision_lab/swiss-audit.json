@@ -1,0 +1,67 @@
+{
+  "status": "structural_checks_passed_not_admitted",
+  "source_sha256": "64256f01e46b177a9417795e92705bb2b6e7e33d983f20068aa5c1e24e4cdd73",
+  "rows": 27304,
+  "people": 3413,
+  "choice_cards": 13652,
+  "tasks_per_person": {
+    "4": 3413
+  },
+  "decoded_attributes": {
+    "Smartphone": {
+      "people": 1145,
+      "prices_CHF": [
+        180,
+        550,
+        920,
+        1300
+      ],
+      "duration_years": [
+        2,
+        4,
+        8
+      ]
+    },
+    "TV": {
+      "people": 1150,
+      "prices_CHF": [
+        250,
+        850,
+        1900,
+        3100
+      ],
+      "duration_years": [
+        2,
+        8,
+        15
+      ]
+    },
+    "Washing machine": {
+      "people": 1118,
+      "prices_CHF": [
+        470,
+        890,
+        1650,
+        3200
+      ],
+      "duration_years": [
+        5,
+        10,
+        15
+      ]
+    }
+  },
+  "errors": [],
+  "mapping_evidence": "data_structuring_ce_paper.R lines 185–197 map composite values to smartphone/television/washing machine; lines 223–226 label product assignment.",
+  "pending": [
+    "original questionnaire language and instructions",
+    "background measurement timing and white list",
+    "author descriptive statistics",
+    "cloud-use license review"
+  ],
+  "excluded_pending_review": [
+    "choice-derived ce_index and ce_category",
+    "same-wave stated attribute importance",
+    "willingness-to-pay fields"
+  ]
+}
