@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "checked_on": "2026-11-10",
+  "synthetic_only": true,
+  "identity": {
+    "model": "deepseek-v4-pro",
+    "system_fingerprint": "a307abda487cd1b463329ccb945ce396"
+  },
+  "usage": {
+    "prompt_tokens": 126,
+    "completion_tokens": 17,
+    "total_tokens": 143,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 126
+  },
+  "seconds": 1.13,
+  "probabilities": [
+    0.7,
+    0.3
+  ],
+  "note": "Format compatibility only, not decision accuracy or formal protocol freeze."
+}

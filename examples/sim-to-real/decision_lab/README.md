@@ -37,3 +37,9 @@ python -m unittest decision_lab.test_core
 ## 商品统计参照
 
 `baselines.py` 实现正则化条件Logit。输入是同一选择卡的商品特征矩阵，可包含经审查的背景交互项；不能把位置编号当商品特征。缩放只用训练数据，惩罚参数只用开发集选择。按人归一化重复任务，测试集不得参与选择。该模块通过人工构造数据验证，尚未在正式研究上生成结果。
+
+## 端点技术试跑
+
+2026-11-10已用纯合成题验证DeepSeek Pro：返回模型标识为 `deepseek-v4-pro`，关闭思考、JSON概率输出通过。具体服务指纹和token用量见 `endpoint-pilot.json`。这只证明接口兼容，不是正式实验成绩或正式冻结。
+
+本机凭据由用户配置在 `~/.config/matraix-decision-lab/credentials.json`，变量名 `DEEPSEEK_API_KEY`，文件权限0600；不随Git分发、不写入请求日志。实际调用仍从进程变量读取，运行器需显式加载本机凭据。
