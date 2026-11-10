@@ -1,0 +1,63 @@
+{
+  "status": "development_and_input_diagnostics_only",
+  "test_outcomes_scored": false,
+  "input_sha256": "0d6bef972b86aad44345ce049814c92c64c721d12e8cf2a954e1fe8777e1723b",
+  "background_shuffle_coverage": {
+    "train": {
+      "people": 868,
+      "singleton_people": 39,
+      "content_changed_people": 784
+    },
+    "development": {
+      "people": 292,
+      "singleton_people": 72,
+      "content_changed_people": 214
+    },
+    "test": {
+      "people": 292,
+      "singleton_people": 60,
+      "content_changed_people": 219
+    }
+  },
+  "development_baselines": {
+    "none": {
+      "penalty": 0.001,
+      "development_brier": 0.5294752127784202,
+      "feature_count": 48,
+      "background_fields": []
+    },
+    "basic": {
+      "penalty": 0.01,
+      "development_brier": 0.528634724265886,
+      "feature_count": 162,
+      "background_fields": [
+        "age_band",
+        "education"
+      ]
+    },
+    "rich": {
+      "penalty": 0.1,
+      "development_brier": 0.53910902271661,
+      "feature_count": 222,
+      "background_fields": [
+        "age_band",
+        "education",
+        "weekly_dryer_use",
+        "household_size"
+      ]
+    }
+  },
+  "interpretation": [
+    "Development-set differences are not formal evidence or AI results.",
+    "Report full-cohort shuffled arm and actual-content-changed subset separately; use paired comparisons on the same subset.",
+    "Singletons and equal-valued donor blocks are not active information perturbations.",
+    "Do not use these target-development scores to select cold-start prompts."
+  ],
+  "formal_scale_estimate": {
+    "test_people": 292,
+    "tasks_per_person": 8,
+    "calls_per_full_test_arm": 2336,
+    "five_arm_test_calls": 11680,
+    "note": "Planning count only; formal protocol and cost caps still require freezing."
+  }
+}

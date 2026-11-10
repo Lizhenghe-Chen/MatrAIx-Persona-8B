@@ -1,0 +1,25 @@
+{
+  "version": "dryer-text-formal-v1",
+  "scope": "One study, four national survey versions, restricted to reconstructable conditions. Not four independent replications.",
+  "eligible_conditions": ["IRE_C", "UK_C", "CAN_C", "USA_C", "IRE_T1", "UK_T1", "CAN_T1"],
+  "split": {"seed": 20261109, "train_people": 868, "development_people": 292, "test_people": 292, "tasks_per_person": 8},
+  "backgrounds": {"none": [], "basic": ["age_band", "education"], "rich": ["age_band", "education", "weekly_dryer_use", "household_size"]},
+  "cold_start": {
+    "main": "rich_probabilities",
+    "diagnostic": "rich_single_choice",
+    "selection_basis": "User-approved probability/background hypotheses and fixed pilot prompt, not target-development outcomes. No target answers in model context.",
+    "comparators": ["none_probabilities", "basic_probabilities", "shuffled_rich_probabilities"],
+    "argmax_diagnostic": "Use same rich probability vectors; report tied maxima, deterministic first-index argmax and position limitation. No extra call."
+  },
+  "calibrated": {
+    "main": "development-selected temperature and convex blend of rich probability output and rich statistical baseline",
+    "temperature_grid": [0.5, 1, 2, 4], "llm_weight_grid": [0, 0.25, 0.5, 0.75, 1],
+    "selection": "Training fits statistical parameters; development selects regularization and probability calibration; test scored once after all selections freeze. Weight zero means statistics-only, not AI improvement."
+  },
+  "execution": {"calls_per_unit": 2336, "units": 6, "maximum_calls": 14016, "conservative_usd_cap_per_unit": 20, "maximum_reserved_usd": 120, "order": ["rich_development", "none_test", "basic_test", "rich_test", "shuffled_test", "single_test"]},
+  "sample_rationale": "Use all eligible held-out respondents, not a favorable subsample. Pilot validates cost/format only; no power claim. A small effect may remain inconclusive at 292 test people.",
+  "primary_scoring": "Person-averaged multiclass Brier; paired respondent bootstrap 2000 within country-treatment strata; relative improvement >=2% and positive 95% interval. Distribution errors by exact choice card, separately; country subgroups descriptive.",
+  "shuffle_policy": "Preserve country-treatment, split, exact age and education labels; shuffle whole household/use blocks. Report all people and separately the 219 test people with actual changed content. No causal-personality claim.",
+  "leakage": "Inputs whitelist only; no targets, weights or identifiers transmitted. Test outcomes are not used to alter model or configuration.",
+  "limitations": ["Text replaces original graphical format.", "Financial comfort omitted pending timing clarity; rich means richer than basic, not a complete profile.", "Stable demographic retrospective-measurement assumption retained.", "Excluded information conditions limit generalization.", "Other independent studies and synthetic-persona validation remain required for overall project completion."]
+}

@@ -30,7 +30,11 @@ def shuffled_background(rows, basic_fields, additional_fields, assignments, seed
     for row in result:
         donor=persons[donors[row['person']]][1]
         for field in additional_fields:row['background'][field]=donor.get(field,'unknown')
+    content_changed=[person for person in persons if any(
+        persons[person][1].get(field,'unknown') != persons[donors[person]][1].get(field,'unknown')
+        for field in additional_fields)]
     return result,{'donors':donors,'unshuffled_singletons':unchanged,
+                   'content_changed_people':content_changed,
                    'people':len(persons),'shuffled_people':len(persons)-len(unchanged)}
 
 

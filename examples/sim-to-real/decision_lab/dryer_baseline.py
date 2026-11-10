@@ -1,6 +1,7 @@
 """Development-only choice baselines using the same displayed information as AI."""
 import argparse
 import json
+import os
 import re
 from pathlib import Path
 import numpy as np
@@ -65,4 +66,5 @@ def develop(source):
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('source');p.add_argument('--output',type=Path,required=True);a=p.parse_args()
     result=develop(a.source)
-    with a.output.open('x') as f:json.dump(result,f,ensure_ascii=False,indent=2)
+    fd=os.open(a.output,os.O_WRONLY|os.O_CREAT|os.O_EXCL,0o600)
+    with os.fdopen(fd,'w') as f:json.dump(result,f,ensure_ascii=False,indent=2)

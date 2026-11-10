@@ -21,3 +21,8 @@ class ConditionsTests(unittest.TestCase):
         reordered=permute_options(row,[2,0,1])
         self.assertEqual(reordered['answer'],2)
         self.assertEqual(restore_probabilities([.1,.2,.7],[2,0,1]),[.2,.7,.1])
+    def test_same_block_values_not_counted_as_changed(self):
+        rows=[{'person':p,'stratum':'s','background':{'age':20,'income':1}} for p in ['a','b']]
+        _,audit=shuffled_background(rows,['age'],['income'],{'a':'test','b':'test'})
+        self.assertEqual(audit['shuffled_people'],2)
+        self.assertEqual(audit['content_changed_people'],[])
