@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 456,
-  "git_bytes": 78538965,
+  "git_file_count": 458,
+  "git_bytes": 78545754,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -44,8 +44,8 @@
     },
     {
       "path": "decision_lab/README.md",
-      "bytes": 8388,
-      "sha256": "61e3a8613129b4c3e67d181c87d124c1bd74b5c479ca7dde2133d788a6b26584",
+      "bytes": 8968,
+      "sha256": "958da8c696b4e189493de6d445933fd437b216861dafeaac24f41b75d2917336",
       "storage": "git"
     },
     {
@@ -236,8 +236,8 @@
     },
     {
       "path": "decision_lab/pilot_summary.py",
-      "bytes": 2046,
-      "sha256": "064145ddc50fbc65d02b8532f2a021e2c3670533a5227d8047e0a8bbc956e4a4",
+      "bytes": 2521,
+      "sha256": "67d09c7095e8144899e0ba77176d254629589667e6758fb98807ab9fb25a4f18",
       "storage": "git"
     },
     {
@@ -295,6 +295,12 @@
       "storage": "git"
     },
     {
+      "path": "decision_lab/swiss-pilot-protocol.json",
+      "bytes": 1617,
+      "sha256": "91f0b98f7ddbea91c821d3ca261bb16e0c2e0d14dd0ef1f6ecbe7209818de107",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/swiss-supplement-audit.json",
       "bytes": 2125,
       "sha256": "a5762c6b0d572025a0b2a9cc67dc2dc14b068e92b4f5f9c321396d77b4f4ae4e",
@@ -310,6 +316,12 @@
       "path": "decision_lab/swiss_appliances.py",
       "bytes": 3346,
       "sha256": "231cfcb4f6dea9d55aedfdb7874d94bfa602a014bdc0d0341533bc2d0d0cebf4",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/technical_pilot.py",
+      "bytes": 4117,
+      "sha256": "97eb38bf6ff7acec0b7a2135c29629aaeb458f6fa2a0d82edc881280dedf86f3",
       "storage": "git"
     },
     {

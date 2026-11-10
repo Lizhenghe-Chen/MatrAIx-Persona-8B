@@ -1,0 +1,20 @@
+{
+  "version": "swiss-author-english-pilot-v1",
+  "seed": 20261109,
+  "people_per_stratum": 8,
+  "expected_people": 24,
+  "conditions": {
+    "none": {"background_fields": []},
+    "basic": {"background_fields": ["age_years", "education"]},
+    "rich": {"background_fields": ["age_years", "education", "household_monthly_income", "political_self_placement"]}
+  },
+  "admission_evidence": {
+    "license_cloud_use": "Author replication data DOI 10.7910/DVN/YKVLTR CC0; user permits necessary anonymous measured background at official endpoint. No IDs or raw records transmitted.",
+    "question_mapping": "Original appendix A.1.2 and A.3 inspected; source choice/background keys and product-specific values verified by swiss-audit.json. Author-English text rendering is explicitly a distinct condition; original visual layout and individual language not reconstructed.",
+    "background_timing": "Age before choice in wave 8. Education, household income and political self-placement from wave 7 per appendix A.1.1. Post-choice policies and choice-derived indexes excluded.",
+    "author_statistics": "swiss-supplement-audit.json reproduces education/income/sex counts and age quartiles; 3413 respondents and four paired choices per person.",
+    "leakage_review": "Request payload constructs only original question, options, context and named background fields. Answer, weight, local linkage and derived fields excluded. Training people only; no scoring."
+  },
+  "max_cost_usd_per_condition": 1.0,
+  "purpose": "Technical validation only. 24 training people, one task each, three conditions; no prediction scoring."
+}
