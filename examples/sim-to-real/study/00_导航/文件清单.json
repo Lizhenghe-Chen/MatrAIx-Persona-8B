@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 319,
-  "git_bytes": 43750156,
+  "git_file_count": 322,
+  "git_bytes": 43782308,
   "local_only_file_count": 30,
   "local_only_bytes": 629391967,
   "external_large_source": {
@@ -2023,6 +2023,24 @@
       "sha256": "76a8dd8f5c0b40d21db810493642954d32621081778d6f350eab588e32db0401",
       "storage": "local_only",
       "reason": "真人样本、预测关联或运行检查点；按原约定仅本机复算"
+    },
+    {
+      "path": "study/11_文献综述/build.py",
+      "bytes": 12168,
+      "sha256": "c08dee92d26377502f52f71c095efc950e93e4d5aced9d9e656a2f4fe451420b",
+      "storage": "git"
+    },
+    {
+      "path": "study/11_文献综述/index.html",
+      "bytes": 13058,
+      "sha256": "93711f2e3365074f47748bde151665c086a607b3739e1573af88836117b18946",
+      "storage": "git"
+    },
+    {
+      "path": "study/11_文献综述/sources.json",
+      "bytes": 6926,
+      "sha256": "35d55c9261e84233d1e534c79403591462d37d9327405f65084960b16929cef1",
+      "storage": "git"
     },
     {
       "path": "study/README.md",

@@ -1,0 +1,134 @@
+[
+  {
+    "factor": "访谈提供本人信息",
+    "title": "Generative Agent Simulations of 1,000 People",
+    "version": "2024，预印本",
+    "url": "https://arxiv.org/abs/2411.10109",
+    "finding": "1,052名真人；用生活访谈构建对应代理，比较问卷、人格及实验表现。GSS表现达到真人两周后重复自身答案表现的85%，不是答对率85%。",
+    "implication": "本人经历是值得优先研究的信息来源；不能直接外推为访谈能预测购物成交。",
+    "checked": "论文摘要及Stanford机构解读",
+    "id": "R01",
+    "checked_on": "2026-11-10"
+  },
+  {
+    "factor": "行为数据专项训练",
+    "title": "A foundation model to predict and capture human cognition",
+    "version": "2025，Nature",
+    "url": "https://www.nature.com/articles/s41586-025-09215-4",
+    "finding": "Centaur以人类行为数据微调，对照基础模型和认知模型，并检查未训练过的任务。",
+    "implication": "值得比较同一底座训练前后；行为任务上的收益不能直接等同电商转化率收益。",
+    "checked": "出版页与扩展图说明",
+    "id": "R02",
+    "checked_on": "2026-11-10"
+  },
+  {
+    "factor": "实验效应与幅度",
+    "title": "Large language models can predict the results of social science experiments",
+    "version": "2026，Nature",
+    "url": "https://www.nature.com/articles/s41586-026-10742-x",
+    "finding": "正式发表版涉及70项实验、469个效应和119,330名参与者；预测与真实效应相关，但系统高估效应大小。",
+    "implication": "分开检查排序、方向、绝对幅度。不要沿用旧预印本的476个效应数字。",
+    "checked": "出版页摘要",
+    "id": "R03",
+    "checked_on": "2026-11-10"
+  },
+  {
+    "factor": "人口背景条件化",
+    "title": "Out of One, Many: Using Language Models to Simulate Human Samples",
+    "version": "2022，所查为预印本版本",
+    "url": "https://arxiv.org/abs/2209.06899",
+    "finding": "报告GPT-3在特定人口背景条件下可重现一些人群回答分布。",
+    "implication": "这是早期正面证据，不能推出任意人口标签、任意模型或题材都有效。",
+    "checked": "论文摘要",
+    "id": "R04",
+    "checked_on": "2026-11-10"
+  },
+  {
+    "factor": "选项顺序与测量偏差",
+    "title": "Questioning the Survey Responses of Large Language Models",
+    "version": "2024，NeurIPS",
+    "url": "https://proceedings.nips.cc/paper_files/paper/2024/hash/515c62809e0a29729d7eec26e2916fc0-Abstract-Conference.html",
+    "finding": "研究问卷回答中的系统偏差；随机化答案顺序后，模型可能趋向均匀分布。",
+    "implication": "顺序随机化是诊断工具，不等于修正后就像真人。需把显示位置映射回原答案。",
+    "checked": "会议页与摘要检索",
+    "id": "R05",
+    "checked_on": "2026-11-10"
+  },
+  {
+    "factor": "人格线索和刻板印象",
+    "title": "Evaluating Large Language Model Biases in Persona-Steered Generation",
+    "version": "2024，Findings of ACL",
+    "url": "https://aclanthology.org/2024.findings-acl.586/",
+    "finding": "不符合常见刻板组合的人设更难驱动模型，模型有时回到人口标签通常对应的立场。",
+    "implication": "应检查反常见组合和少数群体；生成性格不能代替本人测量。",
+    "checked": "论文摘要",
+    "id": "R06",
+    "checked_on": "2026-11-10"
+  },
+  {
+    "factor": "温度与专项微调",
+    "title": "Using LLMs to Model the Beliefs and Preferences of Targeted Populations",
+    "version": "2024，预印本",
+    "url": "https://arxiv.org/abs/2403.20252",
+    "finding": "在电动车偏好调查中比较两类微调方法，分别评价人群统计和逐人回答，并研究温度的权衡。",
+    "implication": "温度应按目标选；摘要不足以支持任何通用最优数值。优先补读方法与附录。",
+    "checked": "论文摘要",
+    "id": "R07",
+    "checked_on": "2026-11-10"
+  },
+  {
+    "factor": "心理量表的统计结构",
+    "title": "Limited Ability of LLMs to Simulate Human Psychological Behaviours: a Psychometric Analysis",
+    "version": "2024，预印本",
+    "url": "https://arxiv.org/abs/2405.07248",
+    "finding": "用GPT-3.5、GPT-4及一般或真人人口背景人设回答标准化心理测量。",
+    "implication": "不能只比均值，还要核对方差、相关和量表结构；具体效应待全文提取。",
+    "checked": "论文摘要",
+    "id": "R08",
+    "checked_on": "2026-11-10"
+  },
+  {
+    "factor": "检索与异质性",
+    "title": "When Can Digital Personas Reliably Approximate Human Survey Findings?",
+    "version": "2026，预印本",
+    "url": "https://arxiv.org/abs/2605.10659",
+    "finding": "比较四类代理结构、三个模型和两类预测任务；摘要报告检索增强较有收益，少见及主观回答更难预测。",
+    "implication": "检索内容需排除待测答案；低分歧题上的成功不能代表高分歧题。",
+    "checked": "论文摘要，待全文核验",
+    "id": "R09",
+    "checked_on": "2026-11-10"
+  },
+  {
+    "factor": "跨文化泛化",
+    "title": "Simulated responses from large language models are weak proxies for human economic preferences across 74 countries",
+    "version": "2026，Nature Human Behaviour",
+    "url": "https://www.nature.com/articles/s41562-026-02611-4",
+    "finding": "跨74国对照经济偏好，按个体、人口、国家与文化层面评估，并拆分人设信息。",
+    "implication": "美国英语样本的成功不能直接外推到跨境市场；需要按国家和语言分别验证。",
+    "checked": "出版摘要与方法检索，待全文核验",
+    "id": "R10",
+    "checked_on": "2026-11-10"
+  },
+  {
+    "factor": "本人历史参照",
+    "title": "Large language models rate human happiness higher than humans do",
+    "version": "2026，出版论文",
+    "url": "https://www.nature.com/articles/s44482-026-00049-z",
+    "finding": "从数字痕迹预测情绪时存在偏积极倾向；本人历史自报构成强参照。",
+    "implication": "可借鉴评估设计，不能将情绪结果当作商品购买证据。",
+    "checked": "出版摘要与结果检索，待全文核验",
+    "id": "R11",
+    "checked_on": "2026-11-10"
+  },
+  {
+    "factor": "线索表达方式",
+    "title": "One Persona, Many Cues, Different Results: How Sociodemographic Cues Impact LLM Personalization",
+    "version": "2026，ACL",
+    "url": "https://aclanthology.org/2026.acl-long.2079/",
+    "finding": "同一人口特征用不同线索传达，可能改变人格诱导结果。",
+    "implication": "名字、直接标签和叙述不要混为同一条件；这是提示敏感性证据，不等于真人决策验证。",
+    "checked": "论文摘要，待全文核验",
+    "id": "R12",
+    "checked_on": "2026-11-10"
+  }
+]
