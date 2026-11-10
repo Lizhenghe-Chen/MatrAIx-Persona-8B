@@ -2,109 +2,131 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MatrAIx 真人对照研究总报告</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MatrAIx 真人对照实验｜从平均分到每一道题</title>
 <style>
-:root{--ink:#17332b;--green:#196550;--muted:#4a6259;--paper:#f5f5ec;--card:#fffefa;--line:#d5dfd5;--purple:#644f94}
-*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 system-ui,"PingFang SC","Microsoft YaHei",sans-serif}
-.wrap{width:min(1060px,calc(100% - 34px));margin:auto}header{background:var(--ink);color:white;padding:48px 0 35px}header p{color:#d8e7df;max-width:65ch}header a{color:#d1eddb}a{color:var(--green);text-underline-offset:3px}
-h1,h2,h3{line-height:1.25}h1{font-size:clamp(2rem,5vw,3.5rem);margin:.25em 0}h2{font-size:clamp(1.4rem,3vw,2rem);margin:0 0 .65em}h3{font-size:1.13rem}nav{display:flex;gap:8px 20px;flex-wrap:wrap;margin-top:20px}
-main{padding-bottom:50px}section{padding:30px 0;border-bottom:1px solid var(--line)}p{margin:.6em 0 1em}
-.kicker{font-size:.82rem;font-weight:700;letter-spacing:.12em;color:#bde5cd}.summary{font-size:1.12rem}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.card,.panel{background:var(--card);border:1px solid var(--line);padding:13px 16px;border-radius:12px}.card h3{margin:.25em 0}.card p{margin:.4em 0}.number{font-size:1.8rem;font-weight:730;font-variant-numeric:tabular-nums}.hint,small{color:var(--muted)}
-.scroll{overflow:auto;margin:12px 0}table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}th,td{text-align:right;padding:8px 12px;border-bottom:1px solid var(--line);white-space:nowrap}th:first-child,td:first-child{text-align:left}thead{background:#e4eee4}caption{text-align:left;font-weight:700;margin-bottom:6px}
-details{margin:.8em 0}summary{cursor:pointer;font-weight:650}label{font-weight:650}select{font:inherit;max-width:100%;margin:5px 0;padding:5px 8px}
-.barline{display:grid;grid-template-columns:8.5rem 1fr;gap:10px;align-items:center;margin:6px 0;font-variant-numeric:tabular-nums}.track{height:12px;background:#dce7dd;border-radius:8px}.track b{display:block;height:100%;background:var(--green);border-radius:8px}.track.model b{background:var(--purple)}li{margin:.5em 0}
-@media(max-width:650px){.cards{grid-template-columns:1fr}header{padding:30px 0}section{padding:24px 0}.barline{grid-template-columns:7.2rem 1fr}.card,.panel{padding:10px 12px}}
-@media print{header{background:white;color:var(--ink);padding:12px 0}header p,header a,.kicker{color:var(--ink)}nav,select{display:none}.panel,.card{break-inside:avoid}}
+:root{color-scheme:light;--ink:#18283d;--muted:#485870;--line:#d9e1ea;--accent:#23558d;--surface:#fff}
+*{box-sizing:border-box}body{margin:0;background:#f2f5f8;color:var(--ink);font:16px/1.7 system-ui,sans-serif}
+.wrap{width:min(1120px,calc(100% - 32px));margin-inline:auto}header{background:#142943;color:#fff;padding:38px 0 30px}
+header p{max-width:760px}main{padding:22px 0 56px}h1,h2,h3,h4,h5{line-height:1.3}h1{font-size:clamp(29px,5vw,46px);margin:.2em 0}
+h2{font-size:clamp(23px,4vw,32px);margin:0 0 .6em}h3{font-size:21px}h4{font-size:19px;margin:1.5em 0 .55em}
+h5{font-size:18px;margin:1em 0 .4em}p{margin:.55em 0 1em}.eyebrow{letter-spacing:.1em;color:#c5dbf6}
+a,.text-button{color:#174f86}a:hover,.text-button:hover{text-decoration-thickness:2px}nav{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:18px}nav a{color:#fff}
+section{background:var(--surface);border:1px solid var(--line);border-radius:15px;padding:clamp(14px,3vw,28px);margin:0 0 20px;scroll-margin-top:16px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,235px),1fr));gap:14px}.card{background:#edf4fb;padding:14px 16px;border-radius:10px}
+.card h3{margin:.35em 0;font-size:17px}.card p{margin:0}.number{font-size:24px;font-weight:750;line-height:1.2;font-variant-numeric:tabular-nums}
+.muted{color:var(--muted);font-size:.92rem}.callout{background:#edf4fb;border-left:4px solid #356ba3;padding:10px 14px}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;font-size:.91rem}
+th,td{padding:.5em .65em;text-align:right;vertical-align:middle;border-bottom:1px solid var(--line)}
+thead th{background:#eef3f8;color:#273e57;min-width:94px;line-height:1.35}
+th:first-child,td:first-child{text-align:left;min-width:132px}tbody th{font-weight:600}
+.scroll{overflow:auto;border:1px solid var(--line);border-radius:8px;margin:10px 0 16px}
+select{font:inherit;max-width:100%;padding:.25em .45em;border:1px solid #8c9bb0;border-radius:6px;background:#fff;color:inherit}
+:focus-visible{outline:3px solid #1669b9;outline-offset:2px}
+.text-button{font:inherit;background:transparent;border:0;padding:0;text-align:left;text-decoration:underline;cursor:pointer}
+.heat{display:block;padding:.2em .45em;border-radius:4px}details{border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin:12px 0}
+summary{cursor:pointer;font-weight:650}.bars{margin-top:10px}
+.bar-row{display:grid;grid-template-columns:minmax(140px,36%) minmax(44px,1fr) 3.6em;gap:8px;align-items:center;margin:5px 0}
+.series-label{font-size:.89rem;line-height:1.32}.track,.stack{background:#eaf0f5;min-width:0;height:19px;border-radius:5px;overflow:hidden}
+.track b{display:block;height:100%}.model{background:#3269a6}.baseline{background:#567367}.old-setting{background:#71839c}
+.distribution{grid-template-columns:minmax(140px,36%) minmax(44px,1fr);margin:7px 0}
+.stack{display:flex;height:23px}.stack span{flex-shrink:0;text-align:center;font-size:.77rem;line-height:23px;overflow:hidden;font-weight:650}
+.option-0{background:#2867a6;color:#fff}.option-1{background:#e5a044;color:#17253a}
+.option-2{background:#397665;color:#fff}.option-3{background:#b7c1ce;color:#18283d}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;list-style:none;padding:0;font-size:.92rem}.legend i{display:inline-block;width:.8em;height:.8em;margin-right:.35em;border-radius:2px}
+.interval{position:relative;width:112px;height:22px;margin:auto;background:#f0f4f8}
+.interval:before{content:"";position:absolute;height:100%;left:50%;border-left:1px dashed #556c85}
+.whisker{position:absolute;top:10px;height:3px;background:#4a6684}
+.whisker.gain{background:#287559}.whisker.loss{background:#9c4336}
+.point{position:absolute;top:7px;width:8px;height:8px;border-radius:100%;transform:translateX(-50%);background:#203855}
+.original{white-space:pre-line}
+@media(max-width:560px){.wrap{width:calc(100% - 20px)}.bar-row{grid-template-columns:minmax(101px,40%) 1fr 3em;gap:5px}.distribution{grid-template-columns:minmax(101px,40%) 1fr}.stack span{font-size:.66rem}th,td{padding:.42em}.interval{width:82px}}
 </style>
 </head>
 <body>
 <header><div class="wrap">
-<div class="kicker">MatrAIx · 真人问卷与北美电商 · 2026 年 11 月</div>
-<h1>虚拟消费者能替代真人问卷吗？</h1>
-<p class="summary">本轮结果支持把模拟用于比较部分商品方案、提出待验证的假设。模型仍会明显高估购买倾向，已有同题真人数据时，简单统计在这些回测里更接近真人。</p>
-<nav aria-label="目录"><a href="#conclusions">核心结论</a><a href="#source">画像从哪来</a><a href="#stages">四项实验</a><a href="#examples">逐题示例</a><a href="#use">如何解读</a><a href="#references">数据与复算</a></nav>
+<div class="eyebrow">MatrAIx 研究汇报 · 真人问卷与商品选择回测</div>
+<h1>模型在哪些题上更像真人？</h1>
+<p>四项实验、六份真人调查或商品选择数据、25,920 份正式模拟答卷。既看所有题的平均差距，也看每道题里模型高估或漏掉了哪些选项。</p>
+<nav aria-label="报告目录"><a href="#summary">先看结论</a><a href="#personas">合成人格</a><a href="#models">更换模型</a><a href="#profiles">提示和背景</a><a href="#shopping">电商复验</a><a href="#method">统计口径与来源</a></nav>
 </div></header>
 <main class="wrap">
-<section id="conclusions">
-<h2>先看三个结果</h2>
+<noscript><section>请开启 JavaScript 查看交互图表。此页面可完全离线使用。文字结论和来源仍可直接阅读。</section></noscript>
+<section id="summary">
+<h2>结论</h2>
 <div class="cards">
-<div class="card"><div class="number">25,920</div><h3>份正式模拟答卷</h3><p>覆盖四项实验、六份真人调查或商品选择数据。数字是模拟答卷次数，同一个人或画像可能在多组重复作答。</p></div>
-<div class="card"><div class="number">@@ORIGIN_GAIN@@ 个百分点</div><h3>商品选择的分布误差下降</h3><p>给模型真实收入和事先测量的文化态度后，部分商品偏好更接近真人。对具体个人的预测没有明确改善。</p></div>
-<div class="card"><div class="number">@@REJECT_HUMAN@@% 对 @@REJECT_MODEL@@%</div><h3>真人拒买与模型拒买</h3><p>同样两款商品，约三分之一的真人选「都不买」，模型不到一成。这个偏差会直接影响对产品吸引力的判断。</p></div>
+<div class="card"><div class="number">28.96 → 18.79</div><h3>通用问卷更接近真人</h3><p>从角色扮演加粗分年龄学历，改为预测受访者加贴题背景。平均误差下降 10.17 个百分点，真人统计对照的误差为 3.64。</p></div>
+<div class="card"><div class="number">13.97 → 10.34</div><h3>商品二选一改善</h3><p>选品分布误差下降 3.63 个百分点。逐人预测仅提高约 0.61 个百分点，95% 区间跨过零。</p></div>
+<div class="card"><div class="number">32.1% 对 8.7%</div><h3>模型把「不买」估得太低</h3><p>同一批包装选择卡上，约三分之一真人拒买，优化设置不到一成。网购习惯也未复现通用问卷的改善。</p></div>
 </div>
+<p class="callout"><strong>业务解读。</strong> 这组数据支持用模型初步探索两款商品的相对吸引力。拒买率偏差较大，且实验没有观测实际下单，所以不足以用这些模拟比例估算销量或转化。</p>
+<p><strong>怎么看图。</strong> 每轮先用柱状图看各设置的平均误差。逐题总表把所有题放在同一个视图里。点题名即可看真人和各设置的选项占比，堆叠条上每种颜色代表一个选项。误差越低越好，选项比例本身则没有高低好坏之分。</p>
 </section>
-<section id="source">
-<h2>画像从哪里来，论文验证了什么</h2>
-<p>MatrAIx 有两类画像。<strong>合成画像</strong>按资料支持的概率和字段约束抽取，比如年龄会影响学历字段的抽样。<strong>真人来源画像</strong>由模型从原有资料或志愿者问卷中提取并转成统一字段。资料直接写明的内容可以摘录，部分属性由资料推断，缺少依据时可以留空。源数据、提取值和推断值的证据强度不同。<a href="https://arxiv.org/html/2608.04205v1#S3">MatrAIx 论文第 3 节</a> · <a href="https://matraix.ai/">项目说明</a></p>
-<p>论文做了任务执行、不同模型下的人格差异、角色是否遵守设定、提取质量等验证，其中提取质量包含人工评审。我们关心的是另一个具体问题：<strong>用相同问题去问模型，得到的选择比例是否接近已有真人问卷</strong>。下面四项是本项目的独立回测。<a href="https://arxiv.org/html/2608.04205v1#S6">MatrAIx 论文第 6 节</a></p>
-<p>首轮检查公开 Persona 1M 的 40 万条合成记录时，北美标签只有 3 条，无法按预设人群抽样。首轮和换模型实验因此使用同一套 MatrAIx 生成规则，先固定北美再抽样。之后的两项实验直接使用调查中实际测得的匿名受访者背景。<a href="01_首轮归档/coverage.json">公开版覆盖检查</a> · <a href="01_首轮归档/dag-coverage.json">北美合成画像抽样记录</a></p>
+<section id="personas">
+<h2>一、加入四项合成人格有用吗？</h2>
+<p>同一批 1,200 条北美合成画像，用 DeepSeek Flash 回答三份问卷。每份问卷运行三种输入，共 10,800 份答卷。四项人格是决策风格、风险容忍度、核心价值观和尽责性。</p>
+<p><strong>主要改善来自公共支出。</strong> 在已有年龄学历的基础上，加入人格后，公共支出误差下降 <strong>15.50</strong> 点，消费应对下降 <strong>1.44</strong> 点，网络诈骗误差增加 <strong>0.21</strong> 点且区间跨零。三份问卷等权的改善为 <strong>5.58</strong> 点。改买便宜商品这道题，真人约 62% 选「是」，加人格后仍有约 99.9% 模拟答案选「是」。</p>
+<div class="experiment-charts"></div>
 </section>
-<section id="stages">
-<h2>四项实验分别回答了什么</h2>
-<p class="hint">下表的「分布误差」用百分点表示，越低越接近真人。比如真人 60% 选「是」，模型 80% 选「是」，误差就是 20 个百分点。选品主任务单独比较四种明确的选择倾向，再取平均。各实验的题目与参照样本不同，分数适合在同一张表内比较。</p>
-
-<h3>首轮 · 给合成画像加人格，答卷会更像真人吗？</h3>
-<p>10,800 份模拟答卷。使用 DeepSeek Flash，让同一批北美合成画像回答消费应对、网络诈骗风险、公共支出三份问卷。四项人格是决策风格、风险容忍度、核心价值观和尽责性。加入人格后，公共支出误差降得最多，消费小幅改善，诈骗风险几乎没有变化。</p>
-@@ROUND1@@
-<p class="hint">仍有题目接近全票。例如「物价上涨后是否改买便宜商品」，真人约 62% 选「是」，加人格的模拟接近 100%。<a href="01_首轮归档/results.json">首轮分群与逐题数据</a></p>
-
-<h3>换模型 · 同样的问题交给三个模型，结果有多大变化？</h3>
-<p>6,480 份答卷。统一关闭思考模式，让 Flash、Pro 和 Qwen 回答相同问卷。只有共同情境时，Pro 最接近真人。加上四项人格后，三个模型的综合误差很接近。即使是表现最好的 Pro 设置，电话和短信诈骗题仍给出 100%「重大问题」，真人是 68.3%。<a href="02_模型对比/report.md">同设置的三模型对照</a></p>
-@@MODELS@@
-
-<h3>优化 · 给模型贴题的真人背景，是否更有用？</h3>
-<p>5,760 份答卷。用内网 Qwen 比较两种写法和四档背景。两种写法分别是请模型扮演受访者，以及请它预测这位受访者会怎么答。背景从年龄学历逐步加到收入、上网活动或政治立场等实测信息。<strong>贴题信息带来的收益最大</strong>。两版提示下加贴题信息，误差分别下降 5.60 和 5.27 个百分点。再加随机配对的合成人格，收益未达到门槛。</p>
-@@PROFILES@@
-<p class="hint">统计对照用同一调查中另外一批真人的回答，按年龄和学历计算比例。它在已有同题数据的情况下是直接可比较的参照。<a href="04_综合报告/MatrAIx%20优化实验交互报告.html">三份问卷的逐题交互报告</a></p>
-
-<h3>电商复验 · 能猜中买哪款、要不要买、怎样网购吗？</h3>
-<p>2,880 份答卷。产地实验给出同类商品的两款、价格和评分。包装实验允许两款都不买。Pew 网购调查问购物设备、线上或到店、是否看达人内容后购买。优化设置在<strong>商品相对选择</strong>中通过门槛，逐人正确率仅提高约 0.61 个百分点，区间跨过零。拒买没有明确改善，网购题的分布误差明确上升。</p>
-@@SHOPPING@@
-<p class="hint">数字相加可能因四舍五入略有差异。区间衡量同一批画像或受访者重新抽样时，差值可能有多大波动。<a href="06_北美电商选品/report.html">电商选品详情与逐题对照</a></p>
+<section id="models">
+<h2>二、同样的输入，换模型能改善多少？</h2>
+<p>用同一批 240 条合成画像，比较三个模型和三种输入，共 6,480 份答卷。三个模型均关闭思考，首轮配置不同，因此换模型的结论只来自本轮内部比较。</p>
+<p><strong>只给情境时，换模型带来的差异大。加完背景后，差距缩小。</strong> 仅给情境，DeepSeek Pro 的平均误差为 <strong>21.97</strong>，Flash 为 <strong>33.82</strong>。加入四项合成人格后，两者分别为 <strong>23.38</strong> 和 <strong>23.39</strong>，差值的区间跨零。同为仅给情境，Flash 有 9 道题答成全票，Pro 有 2 道。即使是综合误差最低的 Pro 设置，也把电话和短信诈骗答成 100%「重大问题」，真人为 68.3%。</p>
+<div class="experiment-charts"></div>
 </section>
-<section id="examples">
-<h2>四个具体题目，比平均分更直观</h2>
-<div class="panel">
-<label for="example">选择一个题目</label><br><select id="example"></select>
-<div id="bars" aria-live="polite"></div>
-</div>
-<noscript><p>电话短信诈骗、拒买与达人购物的逐题结果仍可在上面的详情报告查阅。</p></noscript>
-</section>
-<section id="use">
-<h2>这组证据能支持哪些判断</h2>
+<section id="profiles">
+<h2>三、换提示和补背景，各自有多大作用？</h2>
+<p>每份问卷抽取 240 名匿名真人，用内网 Qwen 预测他们当时怎么答。两种提示与四档背景交叉，共 5,760 份答卷。贴题背景举例包括收入和就业、上网行为、政治立场等。合成人格是同层随机配对的画像属性，受访者本人没有测量这些人格。</p>
 <ul>
-<li><strong>筛候选商品。</strong> 有具体商品属性和贴题真人背景时，模型可用于提出「哪款更受偏好」的待验证假设。商品制造地偏好与是否通过跨境平台购买要分别检验。</li>
-<li><strong>预估买家规模。</strong> 本次模型明显低估「都不买」，也高估看达人内容后曾经购买的人数。用这些比例推算销量或转化会把这两类偏差带进去。</li>
-<li><strong>已有同题真人数据。</strong> 优先以留出真人数据的统计模型为参照。三项电商任务及通用问卷的比较都显示，这个参照更接近实际选项分布。</li>
+<li><strong>只换提示。</strong> 固定贴题背景，把「扮演受访者」换成「预测受访者」，平均误差下降 <strong>2.50</strong> 点，95% 区间为 <strong>0.54 至 4.04</strong>。按问卷拆开，消费应对方向最明确，另两份区间跨零。</li>
+<li><strong>只补贴题背景。</strong> 在预测提示下，从细分年龄学历扩展到贴题真人信息，平均误差下降 <strong>5.27</strong> 点，区间为 <strong>2.39 至 7.29</strong>。</li>
+<li><strong>再补随机配对的合成人格。</strong> 在预测提示下仅改善 <strong>0.13</strong> 点，区间为 <strong>−1.32 至 2.13</strong>。这次测试未显示它在已有贴题真人背景时带来稳定收益。</li>
 </ul>
-<p class="hint">这些是公开问卷的历史回测，模型可能曾见过题目或汇总数据。商品二选一和包装选择是问卷场景，网购习惯是自报。对新商品的点击、加购、购买和退货需要独立行为数据。</p>
+<p>真人统计对照用同份问卷中其他受访者估计年龄、学历分层内的选项比例。它适用于已有同题历史数据的场景，比较的是这种可用数据条件下的预测表现。</p>
+<div class="experiment-charts"></div>
 </section>
-<section id="references">
-<h2>来源与复算</h2>
+<section id="shopping">
+<h2>四、通用问卷的优化，在电商问题上复现了吗？</h2>
+<p>用内网 Qwen 在三项任务上分别测试。每项 240 名评估受访者，四种设置共 2,880 份答卷。各项任务分别评分，跨任务按原门槛判断是否复现。</p>
 <ul>
-<li>通用问卷。<a href="https://www.federalreserve.gov/consumerscommunities/shed_data.htm">美联储 SHED 2025</a> · <a href="https://www.pewresearch.org/dataset/american-trends-panel-wave-168/">Pew Wave 168</a> · <a href="https://electionstudies.org/data-center/2024-time-series-study/">ANES 2024</a></li>
-<li>电商问卷。<a href="https://itemresponsewarehouse.org/tables/bankert_2023_consumer_origin/">美国商品产地与价格</a> · <a href="https://data.mendeley.com/datasets/4z748jnnjs/2">Purdue 包装与价格</a> · <a href="https://www.pewresearch.org/internet/dataset/american-trends-panel-wave-111/">Pew Wave 111</a></li>
-<li>项目材料。<a href="00_导航/从这里开始.md">归档目录</a> · <a href="调研与决策.md">调研与决策记录</a> · <a href="05_优化记录/优化文档.md">已验证的优化做法</a> · <a href="数据/实验数据索引.md">数据与复算入口</a></li>
+<li><strong>商品二选一。</strong> 优化组合改善 <strong>3.63</strong> 点，95% 区间 <strong>1.65 至 5.31</strong>。固定预测提示时，加贴题背景改善 3.70 点，区间在零以上。固定背景只换提示，两种背景下的区间都跨零。高评分款仍被高估约 20.5 点。</li>
+<li><strong>包装与拒买。</strong> 平均误差由 36.90 升到 38.95，差值区间跨零。更直接的业务偏差是拒买率从真人的 32.1% 被估成 8.7%。在实际拒买的选择中，优化组合识别出约 6.6%。</li>
+<li><strong>网购习惯。</strong> 平均误差由 20.03 升到 29.66，恶化 <strong>9.63</strong> 点，95% 区间 <strong>2.38 至 15.83</strong>。在符合原跳题条件且有效作答的人里，约 33.0% 真人说曾看达人内容后购买，优化设置为 74.9%。</li>
 </ul>
-<p class="hint">Pew Research Center bears no responsibility for the analyses or interpretations of the data presented here. The opinions expressed herein, including any implications for policy, are those of the author and not of Pew Research Center.</p>
+<p class="callout">只有商品二选一通过预设改善门槛。三项任务的真人统计对照都比该优化组合更接近真人分布。</p>
+<div id="shopping-overview"></div>
+<div class="experiment-charts"></div>
+<p><a href="06_北美电商选品/report.html">电商完整评分附录</a> · <a href="06_北美电商选品/固定方案.md">冻结执行方案</a></p>
+</section>
+<section id="method">
+<h2>统计口径与来源</h2>
+<h3>同一个分数代表什么</h3>
+<ul>
+<li><strong>分布误差。</strong> 逐个选项计算真人与预测占比的绝对差，求和后除以二，单位为百分点。真人有 60% 选「是」、预测有 80% 选「是」时，误差为 20 点。电商产地题按中国产、美国产、更便宜和评分更高四种明确选择倾向分别计算，再等权平均。同一道商品选择可能贡献给多个倾向。</li>
+<li><strong>平均分。</strong> 通用问卷主口径是每份问卷内题目等权，三份问卷再等权。总表另列每道题等权的平均，直接用 18 道题求平均，题量较多的问卷影响较大。两种口径各有明确的分母。三项电商任务分别有四种倾向、16 张固定选择卡和六道问卷题，按原方案分别给分。</li>
+<li><strong>个人匹配和选项集中。</strong> 「与真人答案相同」衡量个体预测。通用真人背景实验先算各题加权正确率再平均，电商先按人计算答对比例再加权。集中题数用来识别接近全票的题。统计对照在分布评分时用估计概率，在个人匹配时用概率最高的选项。</li>
+<li><strong>不确定性。</strong> 95% 区间来自 2,000 次分层配对重抽样。前两轮真人分布固定，重抽合成画像。后两轮重抽真人及对应预测。区间描述这批评估样本的波动。通用优化的推荐条件还要求改善至少 2 点、区间高于零、至少两份问卷点估计改善且其余没有明确退化。逐题差距为描述性结果。</li>
+</ul>
+<h3>哪些人在比较，背景如何构成</h3>
+<ul>
+<li>首轮与换模型用官方加权真人分布作参照。只给情境的模拟组不按真人年龄学历构成重新加权，加入人口背景的组会按构成加权。人口背景组之间可用相同口径对照。</li>
+<li>通用真人背景实验比较同一批有效真人答案和模型预测。电商用共同完成人群，商品实验按原研究样本的分层构成校正，网购使用官方权重并校正抽样构成。原始问卷跳题照执行，Pew 网购组限于同一设备题分流路径，达人题只问符合社交媒体条件的人。</li>
+<li>电商实际执行使用两年制学位或调查中可比档位作分层界线。产地四层实际配额为 72、60、48、60，合计 240。包装和网购四层各 60。贴题背景分别为产地的收入与前测文化态度、包装的收入与地区、Pew 网购的收入与上网频率。三项分别用 708、1,003、5,575 名其他真人估计统计对照。<a href="06_北美电商选品/manifest.json">核对实际样本清单</a></li>
+</ul>
+<h3>画像来源与验证边界</h3>
+<p>MatrAIx 的合成画像按字段条件和概率抽样。真人来源画像则由模型从原始资料或志愿者问卷中抽取或推断。首轮检查公开版 40 万条合成记录时，北美标签只有 3 条，因此前两轮用同套生成规则固定北美后抽样。项目论文做了任务执行、角色遵循和提取质量等验证。本报告另用真人同题数据回测模拟选择。公开题目或统计结果可能曾被模型见过。<a href="https://arxiv.org/html/2608.04205v1">MatrAIx 论文</a> · <a href="01_首轮归档/coverage.json">公开数据覆盖核对</a> · <a href="01_首轮归档/dag-coverage.json">画像生成记录</a></p>
+<p>题目范围只覆盖本次所选的美国调查。商品产地偏好、问卷拒买和自报购物习惯各有不同含义。跨境平台真实点击、加购、下单与退货需单独用行为数据验证。</p>
+<ul>
+<li>通用调查。<a href="https://www.federalreserve.gov/consumerscommunities/shed_data.htm">美联储 SHED 2025</a> · <a href="https://www.pewresearch.org/dataset/american-trends-panel-wave-168/">Pew 网络诈骗调查</a> · <a href="https://electionstudies.org/data-center/2024-time-series-study/">ANES 公共支出调查</a></li>
+<li>电商调查。<a href="https://itemresponsewarehouse.org/tables/bankert_2023_consumer_origin/">Bankert 商品产地选择</a> · <a href="https://data.mendeley.com/datasets/4z748jnnjs/2">Purdue 包装定价实验</a> · <a href="https://www.pewresearch.org/wp-content/uploads/2022/11/online-shopping-methodology-topline.pdf">Pew 网购原题及方法</a></li>
+<li>复算材料。<a href="README.md">档案与复算方式</a> · <a href="05_优化记录/优化文档.md">优化记录</a> · <a href="数据/实验数据索引.md">数据版本与来源</a></li>
+</ul>
+<p class="muted">Pew Research Center bears no responsibility for the analyses or interpretations of the data presented here. The opinions expressed herein, including any implications for policy, are those of the author and not of Pew Research Center.</p>
 </section>
 </main>
-<script id="examples-data" type="application/json">@@EXAMPLES@@</script>
+<script id="report-data" type="application/json">@@DATA@@</script>
 <script>
-const examples=JSON.parse(document.getElementById("examples-data").textContent);
-const select=document.getElementById("example"), bars=document.getElementById("bars");
-examples.forEach((x,i)=>select.add(new Option(x.title,i)));
-function show(){
-  const x=examples[Number(select.value)];
-  bars.replaceChildren();
-  for(const [i,[label,value]] of x.series.entries()){
-    const row=document.createElement("div"), labelEl=document.createElement("span"), track=document.createElement("div"), bar=document.createElement("b");
-    row.className="barline"; labelEl.textContent=label+" "+value.toFixed(1)+"%";track.className=i?"track model":"track";
-    track.setAttribute("aria-hidden","true");bar.style.width=value+"%";track.append(bar);row.append(labelEl,track);bars.append(row);
-  }
-  const p=document.createElement("p");p.textContent=x.note;p.className="hint";bars.append(p);
-}
-select.addEventListener("change",show);show();
+@@SCRIPT@@
 </script>
-</body></html>
+</body>
+</html>
