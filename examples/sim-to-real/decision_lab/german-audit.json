@@ -210,9 +210,9 @@
     "interleaved attitudes unless task-specific timing is reconstructed"
   ],
   "pending": [
-    "extract and cross-check all profile attributes against workbook",
     "randomized information text and sequence",
     "author descriptive statistics",
     "background whitelist and timing approval"
-  ]
+  ],
+  "card_attributes": "german-cards.json: 36 profile appearances independently match original PDF and workbook"
 }

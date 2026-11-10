@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 418,
-  "git_bytes": 78397951,
+  "git_file_count": 420,
+  "git_bytes": 78417444,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -98,8 +98,20 @@
     },
     {
       "path": "decision_lab/german-audit.json",
-      "bytes": 3778,
-      "sha256": "8682cd6b13adb8764f1fb4a7238169649706f5ec18f932ffa25678d6bf061d24",
+      "bytes": 3819,
+      "sha256": "b3d0eb4f23401b7aa7dc2e38f3c6db6caf1be97f0484d39b5a9cdde23353819c",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/german-cards.json",
+      "bytes": 16332,
+      "sha256": "63050ccd645dfb4ed14f1dbf083fafde07112bce3116497bb80f9139b6f7df00",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/german_cards.py",
+      "bytes": 3120,
+      "sha256": "63202a788abd0c8470a1fcb01a46da41f66ffd519de05ebaead5ea7a242b08f8",
       "storage": "git"
     },
     {

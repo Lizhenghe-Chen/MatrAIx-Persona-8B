@@ -1,0 +1,526 @@
+{
+  "status": "all_36_profile_appearances_cross_checked",
+  "cards": [
+    {
+      "task": "Choice01",
+      "page": 5,
+      "question_de": "Welches dieser Produkte würden Sie kaufen?",
+      "product_de": "Kirschtomaten (250 g)",
+      "options": [
+        {
+          "profile": 12,
+          "biobased": true,
+          "biodegradable": true,
+          "extra_days": 3,
+          "packaging_price_eur": 0.3,
+          "text_de": "Verpackung: Biokunststoff; Biologisch abbaubar; Produkt hält 3 Tage länger; Preis Verpackung: 0,30 EUR"
+        },
+        {
+          "profile": 1,
+          "biobased": true,
+          "biodegradable": false,
+          "extra_days": 5,
+          "packaging_price_eur": 0.45,
+          "text_de": "Verpackung: Biokunststoff; Nicht biologisch abbaubar; Produkt hält 5 Tage länger; Preis Verpackung: 0,45 EUR"
+        },
+        {
+          "profile": 11,
+          "biobased": false,
+          "biodegradable": false,
+          "extra_days": 3,
+          "packaging_price_eur": 0.3,
+          "text_de": "Verpackung: Konventioneller Kunststoff; Nicht biologisch abbaubar; Produkt hält 3 Tage länger; Preis Verpackung: 0,30 EUR"
+        },
+        {
+          "profile": null,
+          "no_buy": true,
+          "text_de": "Keines dieser 3 Produkte"
+        }
+      ],
+      "source_codes": [
+        1,
+        2,
+        3,
+        0
+      ]
+    },
+    {
+      "task": "Choice02",
+      "page": 6,
+      "question_de": "Welches dieser Produkte würden Sie kaufen?",
+      "product_de": "Kirschtomaten (250 g)",
+      "options": [
+        {
+          "profile": 2,
+          "biobased": false,
+          "biodegradable": true,
+          "extra_days": 5,
+          "packaging_price_eur": 0.3,
+          "text_de": "Verpackung: Konventioneller Kunststoff; Biologisch abbaubar; Produkt hält 5 Tage länger; Preis Verpackung: 0,30 EUR"
+        },
+        {
+          "profile": 3,
+          "biobased": false,
+          "biodegradable": false,
+          "extra_days": 7,
+          "packaging_price_eur": 0.6,
+          "text_de": "Verpackung: Konventioneller Kunststoff; Nicht biologisch abbaubar; Produkt hält 7 Tage länger; Preis Verpackung: 0,60 EUR"
+        },
+        {
+          "profile": 4,
+          "biobased": true,
+          "biodegradable": true,
+          "extra_days": 7,
+          "packaging_price_eur": 0.45,
+          "text_de": "Verpackung: Biokunststoff; Biologisch abbaubar; Produkt hält 7 Tage länger; Preis Verpackung: 0,45 EUR"
+        },
+        {
+          "profile": null,
+          "no_buy": true,
+          "text_de": "Keines dieser 3 Produkte"
+        }
+      ],
+      "source_codes": [
+        1,
+        2,
+        3,
+        0
+      ]
+    },
+    {
+      "task": "Choice03",
+      "page": 7,
+      "question_de": "Welches dieser Produkte würden Sie kaufen?",
+      "product_de": "Kirschtomaten (250 g)",
+      "options": [
+        {
+          "profile": 7,
+          "biobased": true,
+          "biodegradable": false,
+          "extra_days": 7,
+          "packaging_price_eur": 0.3,
+          "text_de": "Verpackung: Biokunststoff; Nicht biologisch abbaubar; Produkt hält 7 Tage länger; Preis Verpackung: 0,30 EUR"
+        },
+        {
+          "profile": 6,
+          "biobased": false,
+          "biodegradable": false,
+          "extra_days": 3,
+          "packaging_price_eur": 0.45,
+          "text_de": "Verpackung: Konventioneller Kunststoff; Nicht biologisch abbaubar; Produkt hält 3 Tage länger; Preis Verpackung: 0,45 EUR"
+        },
+        {
+          "profile": 5,
+          "biobased": false,
+          "biodegradable": true,
+          "extra_days": 7,
+          "packaging_price_eur": 0.45,
+          "text_de": "Verpackung: Konventioneller Kunststoff; Biologisch abbaubar; Produkt hält 7 Tage länger; Preis Verpackung: 0,45 EUR"
+        },
+        {
+          "profile": null,
+          "no_buy": true,
+          "text_de": "Keines dieser 3 Produkte"
+        }
+      ],
+      "source_codes": [
+        1,
+        2,
+        3,
+        0
+      ]
+    },
+    {
+      "task": "Choice04",
+      "page": 8,
+      "question_de": "Welches dieser Produkte würden Sie kaufen?",
+      "product_de": "Kirschtomaten (250 g)",
+      "options": [
+        {
+          "profile": 8,
+          "biobased": false,
+          "biodegradable": true,
+          "extra_days": 5,
+          "packaging_price_eur": 0.6,
+          "text_de": "Verpackung: Konventioneller Kunststoff; Biologisch abbaubar; Produkt hält 5 Tage länger; Preis Verpackung: 0,60 EUR"
+        },
+        {
+          "profile": 9,
+          "biobased": true,
+          "biodegradable": true,
+          "extra_days": 3,
+          "packaging_price_eur": 0.6,
+          "text_de": "Verpackung: Biokunststoff; Biologisch abbaubar; Produkt hält 3 Tage länger; Preis Verpackung: 0,60 EUR"
+        },
+        {
+          "profile": 10,
+          "biobased": true,
+          "biodegradable": false,
+          "extra_days": 5,
+          "packaging_price_eur": 0.6,
+          "text_de": "Verpackung: Biokunststoff; Nicht biologisch abbaubar; Produkt hält 5 Tage länger; Preis Verpackung: 0,60 EUR"
+        },
+        {
+          "profile": null,
+          "no_buy": true,
+          "text_de": "Keines dieser 3 Produkte"
+        }
+      ],
+      "source_codes": [
+        1,
+        2,
+        3,
+        0
+      ]
+    },
+    {
+      "task": "Choice05",
+      "page": 10,
+      "question_de": "Welches dieser Produkte würden Sie kaufen?",
+      "product_de": "Kirschtomaten (250 g)",
+      "options": [
+        {
+          "profile": 1,
+          "biobased": true,
+          "biodegradable": false,
+          "extra_days": 5,
+          "packaging_price_eur": 0.45,
+          "text_de": "Verpackung: Biokunststoff; Nicht biologisch abbaubar; Produkt hält 5 Tage länger; Preis Verpackung: 0,45 EUR"
+        },
+        {
+          "profile": 12,
+          "biobased": true,
+          "biodegradable": true,
+          "extra_days": 3,
+          "packaging_price_eur": 0.3,
+          "text_de": "Verpackung: Biokunststoff; Biologisch abbaubar; Produkt hält 3 Tage länger; Preis Verpackung: 0,30 EUR"
+        },
+        {
+          "profile": 2,
+          "biobased": false,
+          "biodegradable": true,
+          "extra_days": 5,
+          "packaging_price_eur": 0.3,
+          "text_de": "Verpackung: Konventioneller Kunststoff; Biologisch abbaubar; Produkt hält 5 Tage länger; Preis Verpackung: 0,30 EUR"
+        },
+        {
+          "profile": null,
+          "no_buy": true,
+          "text_de": "Keines dieser 3 Produkte"
+        }
+      ],
+      "source_codes": [
+        1,
+        2,
+        3,
+        0
+      ]
+    },
+    {
+      "task": "Choice06",
+      "page": 11,
+      "question_de": "Welches dieser Produkte würden Sie kaufen?",
+      "product_de": "Kirschtomaten (250 g)",
+      "options": [
+        {
+          "profile": 5,
+          "biobased": false,
+          "biodegradable": true,
+          "extra_days": 7,
+          "packaging_price_eur": 0.45,
+          "text_de": "Verpackung: Konventioneller Kunststoff; Biologisch abbaubar; Produkt hält 7 Tage länger; Preis Verpackung: 0,45 EUR"
+        },
+        {
+          "profile": 4,
+          "biobased": true,
+          "biodegradable": true,
+          "extra_days": 7,
+          "packaging_price_eur": 0.45,
+          "text_de": "Verpackung: Biokunststoff; Biologisch abbaubar; Produkt hält 7 Tage länger; Preis Verpackung: 0,45 EUR"
+        },
+        {
+          "profile": 3,
+          "biobased": false,
+          "biodegradable": false,
+          "extra_days": 7,
+          "packaging_price_eur": 0.6,
+          "text_de": "Verpackung: Konventioneller Kunststoff; Nicht biologisch abbaubar; Produkt hält 7 Tage länger; Preis Verpackung: 0,60 EUR"
+        },
+        {
+          "profile": null,
+          "no_buy": true,
+          "text_de": "Keines dieser 3 Produkte"
+        }
+      ],
+      "source_codes": [
+        1,
+        2,
+        3,
+        0
+      ]
+    },
+    {
+      "task": "Choice07",
+      "page": 12,
+      "question_de": "Welches dieser Produkte würden Sie kaufen?",
+      "product_de": "Kirschtomaten (250 g)",
+      "options": [
+        {
+          "profile": 6,
+          "biobased": false,
+          "biodegradable": false,
+          "extra_days": 3,
+          "packaging_price_eur": 0.45,
+          "text_de": "Verpackung: Konventioneller Kunststoff; Nicht biologisch abbaubar; Produkt hält 3 Tage länger; Preis Verpackung: 0,45 EUR"
+        },
+        {
+          "profile": 7,
+          "biobased": true,
+          "biodegradable": false,
+          "extra_days": 7,
+          "packaging_price_eur": 0.3,
+          "text_de": "Verpackung: Biokunststoff; Nicht biologisch abbaubar; Produkt hält 7 Tage länger; Preis Verpackung: 0,30 EUR"
+        },
+        {
+          "profile": 8,
+          "biobased": false,
+          "biodegradable": true,
+          "extra_days": 5,
+          "packaging_price_eur": 0.6,
+          "text_de": "Verpackung: Konventioneller Kunststoff; Biologisch abbaubar; Produkt hält 5 Tage länger; Preis Verpackung: 0,60 EUR"
+        },
+        {
+          "profile": null,
+          "no_buy": true,
+          "text_de": "Keines dieser 3 Produkte"
+        }
+      ],
+      "source_codes": [
+        1,
+        2,
+        3,
+        0
+      ]
+    },
+    {
+      "task": "Choice08",
+      "page": 13,
+      "question_de": "Welches dieser Produkte würden Sie kaufen?",
+      "product_de": "Kirschtomaten (250 g)",
+      "options": [
+        {
+          "profile": 11,
+          "biobased": false,
+          "biodegradable": false,
+          "extra_days": 3,
+          "packaging_price_eur": 0.3,
+          "text_de": "Verpackung: Konventioneller Kunststoff; Nicht biologisch abbaubar; Produkt hält 3 Tage länger; Preis Verpackung: 0,30 EUR"
+        },
+        {
+          "profile": 10,
+          "biobased": true,
+          "biodegradable": false,
+          "extra_days": 5,
+          "packaging_price_eur": 0.6,
+          "text_de": "Verpackung: Biokunststoff; Nicht biologisch abbaubar; Produkt hält 5 Tage länger; Preis Verpackung: 0,60 EUR"
+        },
+        {
+          "profile": 9,
+          "biobased": true,
+          "biodegradable": true,
+          "extra_days": 3,
+          "packaging_price_eur": 0.6,
+          "text_de": "Verpackung: Biokunststoff; Biologisch abbaubar; Produkt hält 3 Tage länger; Preis Verpackung: 0,60 EUR"
+        },
+        {
+          "profile": null,
+          "no_buy": true,
+          "text_de": "Keines dieser 3 Produkte"
+        }
+      ],
+      "source_codes": [
+        1,
+        2,
+        3,
+        0
+      ]
+    },
+    {
+      "task": "Choice09",
+      "page": 15,
+      "question_de": "Welches dieser Produkte würden Sie kaufen?",
+      "product_de": "Kirschtomaten (250 g)",
+      "options": [
+        {
+          "profile": 3,
+          "biobased": false,
+          "biodegradable": false,
+          "extra_days": 7,
+          "packaging_price_eur": 0.6,
+          "text_de": "Verpackung: Konventioneller Kunststoff; Nicht biologisch abbaubar; Produkt hält 7 Tage länger; Preis Verpackung: 0,60 EUR"
+        },
+        {
+          "profile": 2,
+          "biobased": false,
+          "biodegradable": true,
+          "extra_days": 5,
+          "packaging_price_eur": 0.3,
+          "text_de": "Verpackung: Konventioneller Kunststoff; Biologisch abbaubar; Produkt hält 5 Tage länger; Preis Verpackung: 0,30 EUR"
+        },
+        {
+          "profile": 1,
+          "biobased": true,
+          "biodegradable": false,
+          "extra_days": 5,
+          "packaging_price_eur": 0.45,
+          "text_de": "Verpackung: Biokunststoff; Nicht biologisch abbaubar; Produkt hält 5 Tage länger; Preis Verpackung: 0,45 EUR"
+        },
+        {
+          "profile": null,
+          "no_buy": true,
+          "text_de": "Keines dieser 3 Produkte"
+        }
+      ],
+      "source_codes": [
+        1,
+        2,
+        3,
+        0
+      ]
+    },
+    {
+      "task": "Choice10",
+      "page": 16,
+      "question_de": "Welches dieser Produkte würden Sie kaufen?",
+      "product_de": "Kirschtomaten (250 g)",
+      "options": [
+        {
+          "profile": 4,
+          "biobased": true,
+          "biodegradable": true,
+          "extra_days": 7,
+          "packaging_price_eur": 0.45,
+          "text_de": "Verpackung: Biokunststoff; Biologisch abbaubar; Produkt hält 7 Tage länger; Preis Verpackung: 0,45 EUR"
+        },
+        {
+          "profile": 5,
+          "biobased": false,
+          "biodegradable": true,
+          "extra_days": 7,
+          "packaging_price_eur": 0.45,
+          "text_de": "Verpackung: Konventioneller Kunststoff; Biologisch abbaubar; Produkt hält 7 Tage länger; Preis Verpackung: 0,45 EUR"
+        },
+        {
+          "profile": 6,
+          "biobased": false,
+          "biodegradable": false,
+          "extra_days": 3,
+          "packaging_price_eur": 0.45,
+          "text_de": "Verpackung: Konventioneller Kunststoff; Nicht biologisch abbaubar; Produkt hält 3 Tage länger; Preis Verpackung: 0,45 EUR"
+        },
+        {
+          "profile": null,
+          "no_buy": true,
+          "text_de": "Keines dieser 3 Produkte"
+        }
+      ],
+      "source_codes": [
+        1,
+        2,
+        3,
+        0
+      ]
+    },
+    {
+      "task": "Choice11",
+      "page": 17,
+      "question_de": "Welches dieser Produkte würden Sie kaufen?",
+      "product_de": "Kirschtomaten (250 g)",
+      "options": [
+        {
+          "profile": 9,
+          "biobased": true,
+          "biodegradable": true,
+          "extra_days": 3,
+          "packaging_price_eur": 0.6,
+          "text_de": "Verpackung: Biokunststoff; Biologisch abbaubar; Produkt hält 3 Tage länger; Preis Verpackung: 0,60 EUR"
+        },
+        {
+          "profile": 8,
+          "biobased": false,
+          "biodegradable": true,
+          "extra_days": 5,
+          "packaging_price_eur": 0.6,
+          "text_de": "Verpackung: Konventioneller Kunststoff; Biologisch abbaubar; Produkt hält 5 Tage länger; Preis Verpackung: 0,60 EUR"
+        },
+        {
+          "profile": 7,
+          "biobased": true,
+          "biodegradable": false,
+          "extra_days": 7,
+          "packaging_price_eur": 0.3,
+          "text_de": "Verpackung: Biokunststoff; Nicht biologisch abbaubar; Produkt hält 7 Tage länger; Preis Verpackung: 0,30 EUR"
+        },
+        {
+          "profile": null,
+          "no_buy": true,
+          "text_de": "Keines dieser 3 Produkte"
+        }
+      ],
+      "source_codes": [
+        1,
+        2,
+        3,
+        0
+      ]
+    },
+    {
+      "task": "Choice12",
+      "page": 18,
+      "question_de": "Welches dieser Produkte würden Sie kaufen?",
+      "product_de": "Kirschtomaten (250 g)",
+      "options": [
+        {
+          "profile": 10,
+          "biobased": true,
+          "biodegradable": false,
+          "extra_days": 5,
+          "packaging_price_eur": 0.6,
+          "text_de": "Verpackung: Biokunststoff; Nicht biologisch abbaubar; Produkt hält 5 Tage länger; Preis Verpackung: 0,60 EUR"
+        },
+        {
+          "profile": 11,
+          "biobased": false,
+          "biodegradable": false,
+          "extra_days": 3,
+          "packaging_price_eur": 0.3,
+          "text_de": "Verpackung: Konventioneller Kunststoff; Nicht biologisch abbaubar; Produkt hält 3 Tage länger; Preis Verpackung: 0,30 EUR"
+        },
+        {
+          "profile": 12,
+          "biobased": true,
+          "biodegradable": true,
+          "extra_days": 3,
+          "packaging_price_eur": 0.3,
+          "text_de": "Verpackung: Biokunststoff; Biologisch abbaubar; Produkt hält 3 Tage länger; Preis Verpackung: 0,30 EUR"
+        },
+        {
+          "profile": null,
+          "no_buy": true,
+          "text_de": "Keines dieser 3 Produkte"
+        }
+      ],
+      "source_codes": [
+        1,
+        2,
+        3,
+        0
+      ]
+    }
+  ],
+  "sources": {
+    "XLSTAT_V4_final.xlsm": "224b00c2c29c23f4ade3c29c92413d21bf59509f88682b8e656074e39a6910f0",
+    "survey_original.pdf": "5a61142e42410971dd23f40680310afa3af31c809db14d81d29260c6086e604d"
+  },
+  "note": "Public card attributes only; not a full respondent prompt. Original instructions and treatment text must also be included before model execution."
+}
