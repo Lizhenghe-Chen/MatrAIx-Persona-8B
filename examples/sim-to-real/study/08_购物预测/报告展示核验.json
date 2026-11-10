@@ -29,7 +29,7 @@
     },
     "audit": {
       "path": "运行核验.json",
-      "sha256": "9f9bb04dc04043ad1fd3db49a7b470a89460283820bacdd2118c6e7b090c3074"
+      "sha256": "da8bdcd648b523e1a89eebd48233e3baee544dd11823a7f49e1e6b8bce3e686e"
     },
     "receipt": {
       "path": "../07_购物数据候选/本次接收核验.json",
@@ -51,6 +51,10 @@
       "path": "../06_北美电商选品/results.json",
       "sha256": "967e367e8a765ac9b2e600d3775a5ab138f6ea9b57ddd3db547f8fbc5b10c406"
     },
+    "matching_audit": {
+      "path": "../09_方法审查/audit-results.json",
+      "sha256": "64440d52d29b6cfda5e0d6e8601994468e8a4e7f9f45f0bee2dc51e49a98e48e"
+    },
     "input_parity": {
       "path": "shoes-input-parity-score.json",
       "sha256": "b24cefff626e91952adf5396f0fe65bda7466a53d98546c332cf08257475ff9c"
@@ -60,7 +64,7 @@
       "sha256": "4f6c62e1839c862554b35940ac0524ea97c3e6dd650a52ce0d67a54821df161e"
     }
   },
-  "explanation_scope": "核对画像来源、统计方法、模型选择与结论边界；没有重新运行或修改评分",
+  "explanation_scope": "新增画像匹配审查、412 个逐题分数独立复算及相同权重敏感性分析；历史冻结分数不变，未新增模型请求",
   "explanation_sources": {
     "optimize_profiles.py": {
       "path": "../../optimize_profiles.py",
@@ -97,8 +101,16 @@
     "retail_amazon_mix.py": {
       "path": "../../retail_amazon_mix.py",
       "sha256": "1bf19e22beb158354b5f18f63c3dd891164a9e66a9c39a7e998da45e4d699cdf"
+    },
+    "audit_matching.py": {
+      "path": "../../audit_matching.py",
+      "sha256": "0624288c72bffcff994415fffd134c97646744f356ef9b2c2109e313eba39470"
+    },
+    "retail_matching_review.py": {
+      "path": "../../retail_matching_review.py",
+      "sha256": "3a5259462cf2f83ee7f9e76a9e41f1dd8debfe04e04e13270a90a6dadfba6512"
     }
   },
-  "report_sha256": "878837e9144119a3cd86b5c0d013fa539530033bc64ceece8de26281d242ad81",
-  "canonical_report_sha256": "9b9b9154f48962afe43d85a2e6bf80820cbc595cec940b11bcbae84a0211de88"
+  "report_sha256": "4d5f78337ce1a9e7eb5c1cc49b5fcd64d481b06191ab3a144b6a78779e101797",
+  "canonical_report_sha256": "8b45a7f105ea94fb0de9848de6f1f7c01638e6d2ead2bae89ce5baed07a11c17"
 }

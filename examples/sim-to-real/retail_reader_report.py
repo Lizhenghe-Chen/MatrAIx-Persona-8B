@@ -35,6 +35,7 @@ def interval(bounds, digits=2):
 
 def build():
     from study.build_report import build_history, FOLDERS
+    from retail_matching_review import section as matching_section, write_standalone
     history = build_history()
     for stage in history:
         if 'historical-stratum' in stage['labels']:
@@ -42,13 +43,14 @@ def build():
     data = {key: json.loads((BASE / name).read_text()) for key, name in FILES.items()}
     data['history'] = history
     extra_files = {f'history_{i}': '../' + folder + '/results.json' for i, folder in enumerate(FOLDERS)}
+    extra_files['matching_audit'] = '../09_方法审查/audit-results.json'
     parity_file = BASE / 'shoes-input-parity-score.json'
     assert parity_file.exists(), 'The unified narrative requires the supplemental input-parity result.'
     if parity_file.exists():
         data['inputParity'] = json.loads(parity_file.read_text())
         extra_files['input_parity'] = parity_file.name
         extra_files['input_parity_protocol'] = 'shoes-input-parity-protocol.json'
-    assert data['audit']['all_independent_scores_verified']
+    assert data['audit']['all_score_artifacts_and_coverage_verified']
     pew, shoes, cal, cat, mix = (data[k] for k in ('pew', 'shoes', 'calibration', 'category', 'mix'))
     names = {
         'basic_choice': '年龄学历 → 选一个答案',
@@ -116,7 +118,7 @@ def build():
     explanation_files = ('optimize_profiles.py', 'shopping.py', 'retail_pew.py',
                          'retail_pew_score.py', 'retail_pew_calibration.py',
                          'retail_shoes_prepare.py', 'retail_shoes_score.py',
-                         'retail_amazon.py', 'retail_amazon_mix.py')
+                         'retail_amazon.py', 'retail_amazon_mix.py', 'audit_matching.py', 'retail_matching_review.py')
     explanation_sources = {name: {'path': '../../' + name,
         'sha256': hashlib.sha256((ROOT / name).read_bytes()).hexdigest()} for name in explanation_files}
     token = {
@@ -140,6 +142,9 @@ def build():
                               '逐账户平方误差原值，只在同一行比较；正的改善表示组合更好'),
     }
     page = (ROOT / 'retail_reader_template.html').read_text()
+    matching = matching_section()
+    write_standalone(matching, re.search(r'<style>(.*?)</style>', page, re.S).group(1))
+    page = page.replace('{{MATCHING_REVIEW}}', matching)
     page = page.replace('{{GUIDANCE}}', (ROOT / 'retail_reader_guidance.html').read_text())
     page = page.replace('{{CONCLUSIONS}}', (ROOT / 'retail_reader_conclusions.html').read_text())
     page = page.replace('{{GLOSSARY_SCRIPT}}', (ROOT / 'retail_reader_glossary.js').read_text())
@@ -162,7 +167,7 @@ def build():
         'report': 'index.html', 'canonical_report': '../index.html',
         'scope': '五轮正式实验统一汇报；新增运动鞋输入对齐的事后统计对照，未新增 LLM 请求或重选样本',
         'sources': data['sources'],
-        'explanation_scope': '核对画像来源、统计方法、模型选择与结论边界；没有重新运行或修改评分',
+        'explanation_scope': '新增画像匹配审查、412 个逐题分数独立复算及相同权重敏感性分析；历史冻结分数不变，未新增模型请求',
         'explanation_sources': explanation_sources,
         'report_sha256': hashlib.sha256(page.encode()).hexdigest(),
         'canonical_report_sha256': hashlib.sha256(root_page.encode()).hexdigest(),

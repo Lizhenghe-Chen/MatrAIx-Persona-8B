@@ -8,6 +8,7 @@
 <article><b>什么最接近真人？现在怎么用？</b><p><strong>已有同题答案或购买记录时，优先建立真人数据参照。</strong>购物问卷中，按同龄同学历的其他真人答案算比例，误差为 <strong>{{PEW_STAT}}</strong>；用真人数据修正模型后为 <strong>5.43</strong>，仍未超过该参照。实际购买的四类任务，直接使用模型均不如近期购买记录。模型适合保留为待验证的补充，不应直接代替真人调查或行为验证。<a href="#closing">最终采用建议</a></p></article>
 </div>
 <p class="note">上述误差越低越好；每个前后比较均来自同一轮、同一批评估对象，不能跨任务相加。这里的“原始方案”特指本项目首轮采用的“MatrAIx 原生合成画像 + 问卷提示 + DeepSeek Flash”，本实验没有单独评测 MatrAIx 官方 8B 模型权重。结论不等于整个项目或所有大模型都无效。</p>
+<div class="callout warn"><strong>新增审查：</strong>早期只匹配年龄、学历，没有完成收入、性别、购物经历与人格的完整匹配，不能把结果当作充分匹配后的性能上限。统一两组汇总权重后，“Qwen 加年龄学历会明确变差”应改为“平均变化方向尚不明确”。<a href="#matching-audit">查看匹配范围、具体问题与复算证据</a>。</div>
 </section>
 
 <section class="section" id="profile-truth">

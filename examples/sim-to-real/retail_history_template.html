@@ -39,7 +39,7 @@
 </section>
 
 <section class="section" id="models"><p class="section-label">第二轮 · 同一批画像更换模型</p><h2>换更强的模型能改善部分结果，收益取决于给它什么信息</h2>
-<p>从冻结画像中抽取 240 条，Flash、Pro、Qwen 都重新回答三份问卷的三种输入，共 6,480 份正式答卷。三个模型都关闭思考，温度 0.7。首轮样本与思考设置不同，因此这轮的模型差异只在本轮内部解释。</p>
+<p class="note">本节保留冻结分数。同一列换模型可直接比较；从“只给情境”到“加年龄学历”同时变了汇总权重，画像作用应改看<a href="#matching-audit">相同权重复算</a>。</p><p>从冻结画像中抽取 240 条，Flash、Pro、Qwen 都重新回答三份问卷的三种输入，共 6,480 份正式答卷。三个模型都关闭思考，温度 0.7。首轮样本与思考设置不同，因此这轮的模型差异只在本轮内部解释。</p>
 <div id="model-decision"><h3>模型选择：按已测条件推荐，不作通用排名</h3>{{MODEL_TABLE}}<p>同样只给情境时，Pro 相对 Flash 改善 11.86 个百分点，95% 区间 10.46–13.01；只给年龄学历时改善 8.89 点，区间 7.54–10.04。全部人格输入时仅改善 0.01 点，区间 −1.46 至 2.12，差异不明确。</p><p><strong>因此：</strong>不建议将 Flash 在“少量信息、强制单选”下的结果直接用于消费者结论；可优先用 Pro 做这类合成测试。真人背景继续在内网 Qwen 验证优化方案。后续更好的概率输出没有在三模型间重跑，不能声称 Pro 或 Qwen 已经全面胜出，也不能说某个模型任何场景都不能用。</p><p class="note">运行记录中的模型 ID 为 deepseek-flash、deepseek-v4-pro、Qwen/Qwen3.8-27B；判断仅对应本次固定版本、非思考模式与输入。不是对官方 MatrAIx 8B 权重的评测。</p></div><label for="historyScope1">平均值范围</label><select id="historyScope1"></select><div id="historyOverview1" class="chart medium" role="img" aria-label="相同输入条件下三个模型的误差"></div><details><summary>查看三模型 × 三种输入的准确数值</summary><div id="historyTable1"></div></details>
 <div class="two"><div class="callout"><strong>只有共同情境时：</strong><p>Flash 误差 <strong>33.82</strong>，Pro 为 <strong>21.97</strong>，改善 <strong>11.86</strong> 点；Qwen 为 <strong>26.92</strong>。换模型确实产生了差异。</p></div><div class="callout warn"><strong>加入年龄学历和人格后：</strong><p>Flash <strong>23.39</strong>，Pro <strong>23.38</strong>，Qwen <strong>24.27</strong>。模型间差异的区间跨零，不能宣称 Pro 在所有设置都更好。</p></div></div>
 <p>仅给情境时，Flash 有 9 道题完全一致，Pro 有 2 道。但 Pro 仍把电话短信诈骗题答成 100%“重大问题”，真人为 68.3%。所以换模型改善了一部分问题，却没有解决回答过度集中。</p>

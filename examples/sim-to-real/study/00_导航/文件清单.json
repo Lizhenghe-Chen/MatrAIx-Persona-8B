@@ -5,8 +5,8 @@
   "scope": "实验代码、五轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 283,
-  "git_bytes": 41978716,
+  "git_file_count": 287,
+  "git_bytes": 42169267,
   "local_only_file_count": 28,
   "local_only_bytes": 591160603,
   "external_large_source": {
@@ -26,6 +26,12 @@
       "path": "archive_inventory.py",
       "bytes": 5211,
       "sha256": "d8a7c4d72b3e33bdf4782100ae57d8a968bd50e31a070cbe508bc9d67b35c3b5",
+      "storage": "git"
+    },
+    {
+      "path": "audit_matching.py",
+      "bytes": 17834,
+      "sha256": "0624288c72bffcff994415fffd134c97646744f356ef9b2c2109e313eba39470",
       "storage": "git"
     },
     {
@@ -78,8 +84,8 @@
     },
     {
       "path": "report_smoke_check.cjs",
-      "bytes": 9939,
-      "sha256": "647812099fe792155b32db8998a6ce05a3d6733fe691dcab256605358f8b6267",
+      "bytes": 10374,
+      "sha256": "7029e223092323d767cf55fc4e2bb03c2feb0e39c0efa5d890590d3573859002",
       "storage": "git"
     },
     {
@@ -114,8 +120,8 @@
     },
     {
       "path": "retail_audit.py",
-      "bytes": 7634,
-      "sha256": "8d37678641ab87b449bc1583081d1dca23cd69fee042d319e890c992243cfefd",
+      "bytes": 7819,
+      "sha256": "31d14c41ff81d8c0ba2f13a20c90976e9930e33316dac8cb640f30b08f9918ff",
       "storage": "git"
     },
     {
@@ -126,14 +132,20 @@
     },
     {
       "path": "retail_history_charts.js",
-      "bytes": 8767,
-      "sha256": "0438e51ff59e59ea29ed67a8fc93c7bcdffffe4a9098cfeaa34528f8eb38c94f",
+      "bytes": 9122,
+      "sha256": "02d754d690d07325e597c019983235660bd6ca1cc0f5064aad2635a65af7e8e9",
       "storage": "git"
     },
     {
       "path": "retail_history_template.html",
-      "bytes": 20950,
-      "sha256": "df47354880dbebbe3463e69c7baa529ffbc020d99a26f16b711c8a162397d908",
+      "bytes": 21177,
+      "sha256": "cfbf21cd6e40d6916ea5460de4e3f58b50e437ddda4cbc7b68344a2048501fcc",
+      "storage": "git"
+    },
+    {
+      "path": "retail_matching_review.py",
+      "bytes": 13221,
+      "sha256": "3a5259462cf2f83ee7f9e76a9e41f1dd8debfe04e04e13270a90a6dadfba6512",
       "storage": "git"
     },
     {
@@ -162,8 +174,8 @@
     },
     {
       "path": "retail_reader_conclusions.html",
-      "bytes": 4096,
-      "sha256": "409decfa1f13d74f54db952dd334258f05793a3028854b8fbe97ab2c1dabae6e",
+      "bytes": 4532,
+      "sha256": "fe2baf63ae4c4f370ff3ee8df82c63acdf2a533a37f662a796dd403b1eb336ad",
       "storage": "git"
     },
     {
@@ -174,26 +186,26 @@
     },
     {
       "path": "retail_reader_guidance.html",
-      "bytes": 11214,
-      "sha256": "cd848ef2c8427f09b2b761b35fd7e3d618978b16eb067c4824c73b82439d448a",
+      "bytes": 11635,
+      "sha256": "c1a626116cc00490e806969823276e78f5aa97aea6200ed2180008bff462842b",
       "storage": "git"
     },
     {
       "path": "retail_reader_report.py",
-      "bytes": 10555,
-      "sha256": "0847c5bdf953d6e8db8f73e012bfa866b29b88b5813650a36dbc198abbcc6c09",
+      "bytes": 10995,
+      "sha256": "848357b9ed27ce41a3323efdfba0865c103e79e69466ea9716f30ff10aa7855d",
       "storage": "git"
     },
     {
       "path": "retail_reader_template.html",
-      "bytes": 66352,
-      "sha256": "7d29d577e204588a24c4d63bebe7cd9b1b423c629008637586e0e39e206908b9",
+      "bytes": 66423,
+      "sha256": "316e3f7ce9e3b2112153413a0b5dcc654a8c5b899f4c1ce48f6e7cae24c29836",
       "storage": "git"
     },
     {
       "path": "retail_report.py",
-      "bytes": 35299,
-      "sha256": "7cea3f5bb03dce31f59017ab07e1a22a9c4585842730210fc09abc0c0454fe66",
+      "bytes": 35319,
+      "sha256": "4bfae49a24a949ef24cf213f1f3560d80b5d6de447b140667a8b8269128684a3",
       "storage": "git"
     },
     {
@@ -246,8 +258,8 @@
     },
     {
       "path": "study/00_导航/从这里开始.md",
-      "bytes": 4137,
-      "sha256": "14dfff78393cb29f44be4b0f996a976cfbb76fcf826ed9ebdb226059a50a22d6",
+      "bytes": 4473,
+      "sha256": "5dff48116d3189ea6a3f1f34d7b2228dc8909792ac38939d7407e12b58645f1c",
       "storage": "git"
     },
     {
@@ -1204,8 +1216,8 @@
     },
     {
       "path": "study/05_优化记录/优化文档.md",
-      "bytes": 16471,
-      "sha256": "0eb9f3faa3d9efb79f05069584d0426dc984e3418f184513378a1983dfdebb4d",
+      "bytes": 17599,
+      "sha256": "093ff52af57d48f426f21bc56f1009f5150f43bb514b1cf33035eaca1c9633bd",
       "storage": "git"
     },
     {
@@ -1609,8 +1621,8 @@
     },
     {
       "path": "study/08_购物预测/index.html",
-      "bytes": 379804,
-      "sha256": "878837e9144119a3cd86b5c0d013fa539530033bc64ceece8de26281d242ad81",
+      "bytes": 394382,
+      "sha256": "4d5f78337ce1a9e7eb5c1cc49b5fcd64d481b06191ab3a144b6a78779e101797",
       "storage": "git"
     },
     {
@@ -1705,8 +1717,8 @@
     },
     {
       "path": "study/08_购物预测/报告展示核验.json",
-      "bytes": 4197,
-      "sha256": "85178c1351e1acb4fc57fc501aaf9e75c7e3b8245cbce3219fcafdc252e9ae4f",
+      "bytes": 4738,
+      "sha256": "f500f4abc703fe3ee7225680f19830daff5e8ee4256d006da79a025bd42f5fb7",
       "storage": "git"
     },
     {
@@ -1802,8 +1814,20 @@
     },
     {
       "path": "study/08_购物预测/运行核验.json",
-      "bytes": 5962,
-      "sha256": "9f9bb04dc04043ad1fd3db49a7b470a89460283820bacdd2118c6e7b090c3074",
+      "bytes": 6136,
+      "sha256": "da8bdcd648b523e1a89eebd48233e3baee544dd11823a7f49e1e6b8bce3e686e",
+      "storage": "git"
+    },
+    {
+      "path": "study/09_方法审查/audit-results.json",
+      "bytes": 104751,
+      "sha256": "64440d52d29b6cfda5e0d6e8601994468e8a4e7f9f45f0bee2dc51e49a98e48e",
+      "storage": "git"
+    },
+    {
+      "path": "study/09_方法审查/index.html",
+      "bytes": 20835,
+      "sha256": "27e74771bce49f5feb60b039b07edbc49a87dcfcfd02169d1f0cf794be0d9409",
       "storage": "git"
     },
     {
@@ -1826,8 +1850,8 @@
     },
     {
       "path": "study/index.html",
-      "bytes": 380157,
-      "sha256": "9b9b9154f48962afe43d85a2e6bf80820cbc595cec940b11bcbae84a0211de88",
+      "bytes": 394720,
+      "sha256": "8b45a7f105ea94fb0de9848de6f1f7c01638e6d2ead2bae89ce5baed07a11c17",
       "storage": "git"
     },
     {

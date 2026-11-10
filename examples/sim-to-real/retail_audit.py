@@ -117,14 +117,15 @@ def audit():
                        "amazon_purchase_csv_gzip":amazon["source_gzip_sha256"]}
     frozen_digests = {name:digest(RUN/name) for name in
                       ("pew-freeze.json","shoes-freeze.json","amazon-freeze.json","amazon-mix-freeze.json")}
-    output = {"dataset_digests_verified":True,"source_sha256":dataset_digests,"frozen_input_sha256":frozen_digests,
+    output = {"verification_scope":"Source hashes, split membership, forecast format, completion and score-file coverage; does not independently recalculate numeric scores.",
+              "dataset_digests_verified":True,"source_sha256":dataset_digests,"frozen_input_sha256":frozen_digests,
               "survey_runner_digests_verified":True,"all_splits_disjoint":True,"amazon_cutoff_verified":True,
               "forecast_format_verified":True,"cohort_counts":{
                   "pew":{k:len(v) for k,v in pew["splits"].items()},
                   "shoes":{k:len(v) for k,v in shoes["split"].items()},
                   "amazon":{k:len(v) for k,v in amazon["split"].items()},
-              },"completion":runs,"independent_score_verification":readiness,
-              "all_independent_scores_verified":all(row["completion_gate"] and row["score_exists"] and row["coverage_matches"]
+              },"completion":runs,"score_artifact_coverage_checks":readiness,
+              "all_score_artifacts_and_coverage_verified":all(row["completion_gate"] and row["score_exists"] and row["coverage_matches"]
                                                    for row in readiness.values())}
     path=RUN.parent/"运行核验.json"
     path.write_text(json.dumps(output,ensure_ascii=False,indent=2)+"\n")

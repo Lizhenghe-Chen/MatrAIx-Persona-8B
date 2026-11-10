@@ -58,11 +58,11 @@ def main():
                        "适用于模拟单题比例。每题独立抽样无法恢复同一个人各题答案间的关联。</p>")
     ready = BASE / "运行核验.json"
     audit = json.loads(ready.read_text()) if ready.exists() else {}
-    title = "购物预测实验报告" if audit.get("all_independent_scores_verified") else "购物预测实验 · 阶段报告"
+    title = "购物预测实验报告" if audit.get("all_score_artifacts_and_coverage_verified") else "购物预测实验 · 阶段报告"
     scope_names = {"pew":"Pew 网购问卷", "shoes":"美国运动鞋", "amazon_category":"Amazon 品类购买",
                    "amazon_mix":"Amazon 价格、支出与复购"}
     progress = []
-    for key, check in audit.get("independent_score_verification", {}).items():
+    for key, check in audit.get("score_artifact_coverage_checks", {}).items():
         phase = "formal" if key == "pew" else "test"
         run = audit["completion"][key][phase]
         actual = min(run["valid"].values())
@@ -71,7 +71,7 @@ def main():
         status = "通过" if all(check[k] for k in ("completion_gate","score_exists","coverage_matches")) else "等待评估"
         progress.append(f"<tr><td>{scope_names[key]}</td><td>{actual}/{expected}</td><td>{errors}</td><td>{status}</td></tr>")
     decisions = ""
-    if audit.get("all_independent_scores_verified"):
+    if audit.get("all_score_artifacts_and_coverage_verified"):
         decisions = """<section><h2>按用途选择方法</h2>
 <div style="overflow:auto"><table><thead><tr><th>要回答的问题</th><th>采用的方式</th><th>验收重点</th></tr></thead>
 <tbody>

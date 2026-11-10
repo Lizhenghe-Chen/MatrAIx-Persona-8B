@@ -1,0 +1,2780 @@
+{
+  "audit_date": "2026-11-10",
+  "scope": "Read-only recomputation and source/profile matching audit; not a new LLM experiment",
+  "bootstrap_scope": "Synthetic weighting sensitivity only: 2000 paired draws of the same IDs within four strata, synchronized across surveys; human reference fixed",
+  "input_version_checks": {
+    "02_模型对比": {
+      "original_input_files_and_profile_code_verified": true,
+      "scoring_code_matches_recorded_analysis_revision": true
+    },
+    "03_提示与背景": {
+      "original_input_files_and_profile_code_verified": true,
+      "scoring_code_matches_recorded_analysis_revision": true
+    }
+  },
+  "synthetic": {
+    "source": "native-dag-pinned-region",
+    "pins": {
+      "region": "North America"
+    },
+    "source_reference_reproduced": true,
+    "raw_formal_counts": {
+      "18–64|Below bachelor's degree": 300,
+      "18–64|Bachelor's degree or higher": 300,
+      "65+|Below bachelor's degree": 300,
+      "65+|Bachelor's degree or higher": 300
+    },
+    "model_subset_counts": {
+      "18–64|Below bachelor's degree": 60,
+      "18–64|Bachelor's degree or higher": 60,
+      "65+|Below bachelor's degree": 60,
+      "65+|Bachelor's degree or higher": 60
+    },
+    "target_stratum_pct": {
+      "shed": {
+        "18–64|Below bachelor's degree": 48.189746848817705,
+        "18–64|Bachelor's degree or higher": 29.024972084013108,
+        "65+|Below bachelor's degree": 15.481248449723934,
+        "65+|Bachelor's degree or higher": 7.304032617445248
+      },
+      "pew": {
+        "18–64|Below bachelor's degree": 49.93338995676839,
+        "18–64|Bachelor's degree or higher": 27.426183683802407,
+        "65+|Below bachelor's degree": 15.469206290101376,
+        "65+|Bachelor's degree or higher": 7.171220069327826
+      },
+      "anes": {
+        "18–64|Below bachelor's degree": 50.36528377969254,
+        "18–64|Bachelor's degree or higher": 27.372304183536393,
+        "65+|Below bachelor's degree": 15.197437278505715,
+        "65+|Bachelor's degree or higher": 7.064974758265355
+      }
+    },
+    "rounds": {
+      "first": {
+        "answer_sheets": 10800,
+        "item_scores_recomputed": 54,
+        "max_original_score_difference_pp": 2.0605739337042905e-13,
+        "overall": {
+          "A": {
+            "original": 33.96503829981498,
+            "common_population_weight": 33.941818496941885,
+            "common_valid_item_weight": 33.94176811686139
+          },
+          "B": {
+            "original": 31.99500103917921,
+            "common_population_weight": 31.99500103917921,
+            "common_valid_item_weight": 31.989301420981974
+          },
+          "C": {
+            "original": 26.417415226540072,
+            "common_population_weight": 26.417415226540072,
+            "common_valid_item_weight": 26.416484590111605
+          }
+        },
+        "surveys": {
+          "shed": {
+            "A": {
+              "mean_tv_pp": {
+                "original": 29.72227849554872,
+                "common_population_weight": 29.842410513247184,
+                "common_valid_item_weight": 29.841975919579586
+              },
+              "items": {
+                "INF3_a": {
+                  "original": 37.83464353220553,
+                  "common_population_weight": 37.83464353220555,
+                  "common_valid_item_weight": 37.83464353220553
+                },
+                "INF3_b": {
+                  "original": 40.16417703823729,
+                  "common_population_weight": 40.137343891010545,
+                  "common_valid_item_weight": 40.137236388146036
+                },
+                "INF3_c": {
+                  "original": 26.48098286061401,
+                  "common_population_weight": 27.158788123171902,
+                  "common_valid_item_weight": 27.15551685787474
+                },
+                "INF3_d": {
+                  "original": 15.764486325002498,
+                  "common_population_weight": 15.823472882944356,
+                  "common_valid_item_weight": 15.823380509591905
+                },
+                "INF3_e": {
+                  "original": 54.42089396790366,
+                  "common_population_weight": 54.42089396790366,
+                  "common_valid_item_weight": 54.42089396790366
+                },
+                "INF3_f": {
+                  "original": 16.1987244930955,
+                  "common_population_weight": 16.29796077187749,
+                  "common_valid_item_weight": 16.298314663402543
+                },
+                "INF5": {
+                  "original": 17.19204125178254,
+                  "common_population_weight": 17.223770423616795,
+                  "common_valid_item_weight": 17.223845517932656
+                }
+              }
+            },
+            "B": {
+              "mean_tv_pp": {
+                "original": 27.126765895844528,
+                "common_population_weight": 27.126765895844528,
+                "common_valid_item_weight": 27.115477539248815
+              },
+              "items": {
+                "INF3_a": {
+                  "original": 37.83464353220555,
+                  "common_population_weight": 37.83464353220555,
+                  "common_valid_item_weight": 37.83464353220553
+                },
+                "INF3_b": {
+                  "original": 40.33084370490397,
+                  "common_population_weight": 40.33084370490397,
+                  "common_valid_item_weight": 40.330843704903955
+                },
+                "INF3_c": {
+                  "original": 23.591873965808315,
+                  "common_population_weight": 23.591873965808315,
+                  "common_valid_item_weight": 23.538727699921573
+                },
+                "INF3_d": {
+                  "original": 15.141617184511306,
+                  "common_population_weight": 15.141617184511306,
+                  "common_valid_item_weight": 15.141773139539467
+                },
+                "INF3_e": {
+                  "original": 54.42089396790366,
+                  "common_population_weight": 54.42089396790366,
+                  "common_valid_item_weight": 54.42089396790366
+                },
+                "INF3_f": {
+                  "original": 1.5043509814581635,
+                  "common_population_weight": 1.5043509814581635,
+                  "common_valid_item_weight": 1.4779359708167503
+                },
+                "INF5": {
+                  "original": 17.063137934120736,
+                  "common_population_weight": 17.063137934120736,
+                  "common_valid_item_weight": 17.06352475945075
+                }
+              }
+            },
+            "C": {
+              "mean_tv_pp": {
+                "original": 25.68700391080345,
+                "common_population_weight": 25.68700391080345,
+                "common_valid_item_weight": 25.68539912857359
+              },
+              "items": {
+                "INF3_a": {
+                  "original": 37.71354684986734,
+                  "common_population_weight": 37.71354684986734,
+                  "common_valid_item_weight": 37.71334208840161
+                },
+                "INF3_b": {
+                  "original": 39.531860479319576,
+                  "common_population_weight": 39.531860479319576,
+                  "common_valid_item_weight": 39.53111050372241
+                },
+                "INF3_c": {
+                  "original": 29.523947570607845,
+                  "common_population_weight": 29.523947570607845,
+                  "common_valid_item_weight": 29.531744894687623
+                },
+                "INF3_d": {
+                  "original": 11.922563934525737,
+                  "common_population_weight": 11.922563934525737,
+                  "common_valid_item_weight": 11.923602119316529
+                },
+                "INF3_e": {
+                  "original": 48.34706833088008,
+                  "common_population_weight": 48.34706833088008,
+                  "common_valid_item_weight": 48.34702760887554
+                },
+                "INF3_f": {
+                  "original": 3.382874802824504,
+                  "common_population_weight": 3.382874802824504,
+                  "common_valid_item_weight": 3.3662314054424507
+                },
+                "INF5": {
+                  "original": 9.387165407599062,
+                  "common_population_weight": 9.387165407599062,
+                  "common_valid_item_weight": 9.384735279568982
+                }
+              }
+            }
+          },
+          "pew": {
+            "A": {
+              "mean_tv_pp": {
+                "original": 34.507824580237276,
+                "common_population_weight": 34.495796478736985,
+                "common_valid_item_weight": 34.49588406521588
+              },
+              "items": {
+                "OSCAM_PROB": {
+                  "original": 20.429009485749198,
+                  "common_population_weight": 20.42900948574919,
+                  "common_valid_item_weight": 20.429009485749198
+                },
+                "OSCAM_PLAT_a": {
+                  "original": 31.736829742018426,
+                  "common_population_weight": 31.73682974201842,
+                  "common_valid_item_weight": 31.736829742018426
+                },
+                "OSCAM_PLAT_b": {
+                  "original": 35.21210625102003,
+                  "common_population_weight": 35.212106251020025,
+                  "common_valid_item_weight": 35.21210625102002
+                },
+                "OSCAM_PLAT_c": {
+                  "original": 38.07062805403647,
+                  "common_population_weight": 38.07062805403646,
+                  "common_valid_item_weight": 38.07062805403648
+                },
+                "OSCAM_PLAT_d": {
+                  "original": 47.090549368362254,
+                  "common_population_weight": 47.03040886086082,
+                  "common_valid_item_weight": 47.030846793255286
+                }
+              }
+            },
+            "B": {
+              "mean_tv_pp": {
+                "original": 34.18843237016978,
+                "common_population_weight": 34.18843237016978,
+                "common_valid_item_weight": 34.18866311627535
+              },
+              "items": {
+                "OSCAM_PROB": {
+                  "original": 20.42900948574919,
+                  "common_population_weight": 20.42900948574919,
+                  "common_valid_item_weight": 20.429009485749198
+                },
+                "OSCAM_PLAT_a": {
+                  "original": 31.73682974201842,
+                  "common_population_weight": 31.73682974201842,
+                  "common_valid_item_weight": 31.736829742018426
+                },
+                "OSCAM_PLAT_b": {
+                  "original": 35.212106251020025,
+                  "common_population_weight": 35.212106251020025,
+                  "common_valid_item_weight": 35.21210625102002
+                },
+                "OSCAM_PLAT_c": {
+                  "original": 38.01906403306946,
+                  "common_population_weight": 38.01906403306946,
+                  "common_valid_item_weight": 38.019057540606596
+                },
+                "OSCAM_PLAT_d": {
+                  "original": 45.545152338991784,
+                  "common_population_weight": 45.545152338991784,
+                  "common_valid_item_weight": 45.54631256198251
+                }
+              }
+            },
+            "C": {
+              "mean_tv_pp": {
+                "original": 34.39367616652056,
+                "common_population_weight": 34.39367616652056,
+                "common_valid_item_weight": 34.39368718239329
+              },
+              "items": {
+                "OSCAM_PROB": {
+                  "original": 20.42900948574919,
+                  "common_population_weight": 20.42900948574919,
+                  "common_valid_item_weight": 20.429009485749198
+                },
+                "OSCAM_PLAT_a": {
+                  "original": 31.73682974201842,
+                  "common_population_weight": 31.73682974201842,
+                  "common_valid_item_weight": 31.736829742018426
+                },
+                "OSCAM_PLAT_b": {
+                  "original": 35.212106251020025,
+                  "common_population_weight": 35.212106251020025,
+                  "common_valid_item_weight": 35.21210625102002
+                },
+                "OSCAM_PLAT_c": {
+                  "original": 38.07062805403646,
+                  "common_population_weight": 38.07062805403646,
+                  "common_valid_item_weight": 38.07062805403648
+                },
+                "OSCAM_PLAT_d": {
+                  "original": 46.519807299778684,
+                  "common_population_weight": 46.519807299778684,
+                  "common_valid_item_weight": 46.51986237914236
+                }
+              }
+            }
+          },
+          "anes": {
+            "A": {
+              "mean_tv_pp": {
+                "original": 37.665011823658936,
+                "common_population_weight": 37.487248498841474,
+                "common_valid_item_weight": 37.48744436578869
+              },
+              "items": {
+                "V241264": {
+                  "original": 29.00737355143066,
+                  "common_population_weight": 29.00737355143066,
+                  "common_valid_item_weight": 29.00737355143066
+                },
+                "V241267": {
+                  "original": 32.15547150867992,
+                  "common_population_weight": 31.92658619934286,
+                  "common_valid_item_weight": 31.92719078023979
+                },
+                "V241270": {
+                  "original": 35.52380036468442,
+                  "common_population_weight": 35.345746305583525,
+                  "common_valid_item_weight": 35.34746418375661
+                },
+                "V241273": {
+                  "original": 52.52451233346436,
+                  "common_population_weight": 52.54032769468794,
+                  "common_valid_item_weight": 52.54083252125707
+                },
+                "V241276": {
+                  "original": 33.37161405730134,
+                  "common_population_weight": 32.69615811561095,
+                  "common_valid_item_weight": 32.69450603165511
+                },
+                "V241282": {
+                  "original": 43.40729912639289,
+                  "common_population_weight": 43.40729912639289,
+                  "common_valid_item_weight": 43.40729912639289
+                }
+              }
+            },
+            "B": {
+              "mean_tv_pp": {
+                "original": 34.669804851523324,
+                "common_population_weight": 34.669804851523324,
+                "common_valid_item_weight": 34.663763607421764
+              },
+              "items": {
+                "V241264": {
+                  "original": 27.031706705224924,
+                  "common_population_weight": 27.031706705224924,
+                  "common_valid_item_weight": 27.031797406470936
+                },
+                "V241267": {
+                  "original": 30.145469674259008,
+                  "common_population_weight": 30.145469674259008,
+                  "common_valid_item_weight": 30.13477902871678
+                },
+                "V241270": {
+                  "original": 35.41309283611939,
+                  "common_population_weight": 35.41309283611939,
+                  "common_valid_item_weight": 35.409083466444116
+                },
+                "V241273": {
+                  "original": 47.58146810664938,
+                  "common_population_weight": 47.58146810664938,
+                  "common_valid_item_weight": 47.57110436468729
+                },
+                "V241276": {
+                  "original": 34.31812689152302,
+                  "common_population_weight": 34.31812689152302,
+                  "common_valid_item_weight": 34.3063989766172
+                },
+                "V241282": {
+                  "original": 33.52896489536422,
+                  "common_population_weight": 33.52896489536422,
+                  "common_valid_item_weight": 33.52941840159425
+                }
+              }
+            },
+            "C": {
+              "mean_tv_pp": {
+                "original": 19.17156560229621,
+                "common_population_weight": 19.17156560229621,
+                "common_valid_item_weight": 19.17036745936792
+              },
+              "items": {
+                "V241264": {
+                  "original": 20.374744286318148,
+                  "common_population_weight": 20.374744286318148,
+                  "common_valid_item_weight": 20.371947889008705
+                },
+                "V241267": {
+                  "original": 15.140508489827736,
+                  "common_population_weight": 15.140508489827736,
+                  "common_valid_item_weight": 15.132540957814214
+                },
+                "V241270": {
+                  "original": 32.31957544281186,
+                  "common_population_weight": 32.31957544281186,
+                  "common_valid_item_weight": 32.31541893256581
+                },
+                "V241273": {
+                  "original": 8.69867680579139,
+                  "common_population_weight": 8.69867680579139,
+                  "common_valid_item_weight": 8.703475320220079
+                },
+                "V241276": {
+                  "original": 24.134067396521804,
+                  "common_population_weight": 24.134067396521804,
+                  "common_valid_item_weight": 24.126208413525518
+                },
+                "V241282": {
+                  "original": 14.36182119250632,
+                  "common_population_weight": 14.36182119250632,
+                  "common_valid_item_weight": 14.372613243073202
+                }
+              }
+            }
+          }
+        },
+        "comparisons": [
+          {
+            "before": "A",
+            "after": "B",
+            "methods": {
+              "original": {
+                "gain_pp": 1.970037260635768,
+                "ci95": [
+                  1.6252752723675197,
+                  2.266187180630577
+                ],
+                "surveys": {
+                  "shed": {
+                    "gain_pp": 2.5955125997041932,
+                    "ci95": [
+                      1.9678346598251297,
+                      3.102657145241648
+                    ]
+                  },
+                  "pew": {
+                    "gain_pp": 0.3193922100674982,
+                    "ci95": [
+                      0.019663920609774625,
+                      0.6304404938660012
+                    ]
+                  },
+                  "anes": {
+                    "gain_pp": 2.9952069721356125,
+                    "ci95": [
+                      2.2906550886231294,
+                      3.6835968747347207
+                    ]
+                  }
+                },
+                "optimization_threshold": false
+              },
+              "common_population_weight": {
+                "gain_pp": 1.946817457762671,
+                "ci95": [
+                  1.5812040869656716,
+                  2.2763552707628927
+                ],
+                "surveys": {
+                  "shed": {
+                    "gain_pp": 2.7156446174026563,
+                    "ci95": [
+                      2.072437651456763,
+                      3.2503199873492097
+                    ]
+                  },
+                  "pew": {
+                    "gain_pp": 0.30736410856720653,
+                    "ci95": [
+                      -0.027669504498933507,
+                      0.6384778988497012
+                    ]
+                  },
+                  "anes": {
+                    "gain_pp": 2.81744364731815,
+                    "ci95": [
+                      2.0233704566669406,
+                      3.5495063441034076
+                    ]
+                  }
+                },
+                "optimization_threshold": false
+              },
+              "common_valid_item_weight": {
+                "gain_pp": 1.9524666958794097,
+                "ci95": [
+                  1.586469503996071,
+                  2.279800430893841
+                ],
+                "surveys": {
+                  "shed": {
+                    "gain_pp": 2.7264983803307707,
+                    "ci95": [
+                      2.083675881145789,
+                      3.258328176323089
+                    ]
+                  },
+                  "pew": {
+                    "gain_pp": 0.3072209489405324,
+                    "ci95": [
+                      -0.027692270031991838,
+                      0.6381906932817855
+                    ]
+                  },
+                  "anes": {
+                    "gain_pp": 2.823680758366926,
+                    "ci95": [
+                      2.030388108730351,
+                      3.5568636818743466
+                    ]
+                  }
+                },
+                "optimization_threshold": false
+              }
+            }
+          },
+          {
+            "before": "B",
+            "after": "C",
+            "methods": {
+              "original": {
+                "gain_pp": 5.577585812639138,
+                "ci95": [
+                  5.0044418504322135,
+                  6.163770490973484
+                ],
+                "surveys": {
+                  "shed": {
+                    "gain_pp": 1.439761985041077,
+                    "ci95": [
+                      0.46901281355435137,
+                      2.4349716698217145
+                    ]
+                  },
+                  "pew": {
+                    "gain_pp": -0.2052437963507785,
+                    "ci95": [
+                      -0.5402062931808225,
+                      0.12063520421357184
+                    ]
+                  },
+                  "anes": {
+                    "gain_pp": 15.498239249227115,
+                    "ci95": [
+                      14.179039565561936,
+                      16.730677138555926
+                    ]
+                  }
+                },
+                "optimization_threshold": true
+              },
+              "common_population_weight": {
+                "gain_pp": 5.577585812639138,
+                "ci95": [
+                  5.0044418504322135,
+                  6.163770490973484
+                ],
+                "surveys": {
+                  "shed": {
+                    "gain_pp": 1.439761985041077,
+                    "ci95": [
+                      0.46901281355435137,
+                      2.4349716698217145
+                    ]
+                  },
+                  "pew": {
+                    "gain_pp": -0.2052437963507785,
+                    "ci95": [
+                      -0.5402062931808225,
+                      0.12063520421357184
+                    ]
+                  },
+                  "anes": {
+                    "gain_pp": 15.498239249227115,
+                    "ci95": [
+                      14.179039565561936,
+                      16.730677138555926
+                    ]
+                  }
+                },
+                "optimization_threshold": true
+              },
+              "common_valid_item_weight": {
+                "gain_pp": 5.572816830870376,
+                "ci95": [
+                  5.000592521005376,
+                  6.159454605582652
+                ],
+                "surveys": {
+                  "shed": {
+                    "gain_pp": 1.4300784106752253,
+                    "ci95": [
+                      0.4662374045476722,
+                      2.4249658803807157
+                    ]
+                  },
+                  "pew": {
+                    "gain_pp": -0.205024066117943,
+                    "ci95": [
+                      -0.5402568327457358,
+                      0.12085991956753195
+                    ]
+                  },
+                  "anes": {
+                    "gain_pp": 15.493396148053844,
+                    "ci95": [
+                      14.176820716377764,
+                      16.72852515548265
+                    ]
+                  }
+                },
+                "optimization_threshold": true
+              }
+            }
+          }
+        ]
+      },
+      "models": {
+        "answer_sheets": 6480,
+        "item_scores_recomputed": 162,
+        "max_original_score_difference_pp": 7.815970093361102e-14,
+        "overall": {
+          "flash-A": {
+            "original": 33.822405011502774,
+            "common_population_weight": 34.047288998731,
+            "common_valid_item_weight": 34.04692643693823
+          },
+          "flash-B": {
+            "original": 31.90581409501688,
+            "common_population_weight": 31.90581409501688,
+            "common_valid_item_weight": 31.90235364235363
+          },
+          "flash-C": {
+            "original": 23.39245584006997,
+            "common_population_weight": 23.39245584006997,
+            "common_valid_item_weight": 23.394394168917714
+          },
+          "pro-A": {
+            "original": 21.965968557414282,
+            "common_population_weight": 21.833220766923787,
+            "common_valid_item_weight": 21.83382638480457
+          },
+          "pro-B": {
+            "original": 23.016394981250684,
+            "common_population_weight": 23.016394981250684,
+            "common_valid_item_weight": 23.019206539019034
+          },
+          "pro-C": {
+            "original": 23.380123420141288,
+            "common_population_weight": 23.380123420141288,
+            "common_valid_item_weight": 23.377635517079014
+          },
+          "qwen-A": {
+            "original": 26.92131231413319,
+            "common_population_weight": 27.26923192918547,
+            "common_valid_item_weight": 27.269010220321473
+          },
+          "qwen-B": {
+            "original": 28.177548093071167,
+            "common_population_weight": 28.177548093071167,
+            "common_valid_item_weight": 28.170439871455653
+          },
+          "qwen-C": {
+            "original": 24.271994846291122,
+            "common_population_weight": 24.271994846291122,
+            "common_valid_item_weight": 24.265690243151624
+          }
+        },
+        "surveys": {
+          "shed": {
+            "flash-A": {
+              "mean_tv_pp": {
+                "original": 31.061045297278266,
+                "common_population_weight": 31.141813779308844,
+                "common_valid_item_weight": 31.14259177989697
+              },
+              "items": {
+                "INF3_a": {
+                  "original": 37.8346435322058,
+                  "common_population_weight": 37.83464353220582,
+                  "common_valid_item_weight": 37.8346435322058
+                },
+                "INF3_b": {
+                  "original": 40.330843704904225,
+                  "common_population_weight": 40.33084370490423,
+                  "common_valid_item_weight": 40.330843704904225
+                },
+                "INF3_c": {
+                  "original": 38.93568380605259,
+                  "common_population_weight": 38.75255174167681,
+                  "common_valid_item_weight": 38.7592948059251
+                },
+                "INF3_d": {
+                  "original": 15.847819658336093,
+                  "common_population_weight": 15.847819658336103,
+                  "common_valid_item_weight": 15.847819658336093
+                },
+                "INF3_e": {
+                  "original": 54.42089396790393,
+                  "common_population_weight": 54.42089396790393,
+                  "common_valid_item_weight": 54.42089396790393
+                },
+                "INF3_f": {
+                  "original": 15.365391159762432,
+                  "common_population_weight": 16.408835388061437,
+                  "common_valid_item_weight": 16.40709835251877
+                },
+                "INF5": {
+                  "original": 14.692041251782795,
+                  "common_population_weight": 14.397108462073554,
+                  "common_valid_item_weight": 14.397548437484847
+                }
+              }
+            },
+            "flash-B": {
+              "mean_tv_pp": {
+                "original": 29.35874084950138,
+                "common_population_weight": 29.35874084950138,
+                "common_valid_item_weight": 29.358252044489692
+              },
+              "items": {
+                "INF3_a": {
+                  "original": 37.83464353220582,
+                  "common_population_weight": 37.83464353220582,
+                  "common_valid_item_weight": 37.8346435322058
+                },
+                "INF3_b": {
+                  "original": 39.96564207403196,
+                  "common_population_weight": 39.96564207403196,
+                  "common_valid_item_weight": 39.964520927317736
+                },
+                "INF3_c": {
+                  "original": 37.422681645785424,
+                  "common_population_weight": 37.422681645785424,
+                  "common_valid_item_weight": 37.4031599055156
+                },
+                "INF3_d": {
+                  "original": 15.847819658336103,
+                  "common_population_weight": 15.847819658336103,
+                  "common_valid_item_weight": 15.847819658336093
+                },
+                "INF3_e": {
+                  "original": 54.42089396790393,
+                  "common_population_weight": 54.42089396790393,
+                  "common_valid_item_weight": 54.42089396790393
+                },
+                "INF3_f": {
+                  "original": 4.181458666744351,
+                  "common_population_weight": 4.181458666744351,
+                  "common_valid_item_weight": 4.2001095660533965
+                },
+                "INF5": {
+                  "original": 15.838046401502062,
+                  "common_population_weight": 15.838046401502062,
+                  "common_valid_item_weight": 15.836616754095267
+                }
+              }
+            },
+            "flash-C": {
+              "mean_tv_pp": {
+                "original": 21.787903399702827,
+                "common_population_weight": 21.787903399702827,
+                "common_valid_item_weight": 21.79371300437146
+              },
+              "items": {
+                "INF3_a": {
+                  "original": 37.83464353220582,
+                  "common_population_weight": 37.83464353220582,
+                  "common_valid_item_weight": 37.8346435322058
+                },
+                "INF3_b": {
+                  "original": 37.16395374281525,
+                  "common_population_weight": 37.16395374281525,
+                  "common_valid_item_weight": 37.159751160988584
+                },
+                "INF3_c": {
+                  "original": 0.17071939680835535,
+                  "common_population_weight": 0.17071939680835535,
+                  "common_valid_item_weight": 0.19824204060678863
+                },
+                "INF3_d": {
+                  "original": 14.92292333389838,
+                  "common_population_weight": 14.92292333389838,
+                  "common_valid_item_weight": 14.9228466809267
+                },
+                "INF3_e": {
+                  "original": 53.49599764346621,
+                  "common_population_weight": 53.49599764346621,
+                  "common_valid_item_weight": 53.49681288038957
+                },
+                "INF3_f": {
+                  "original": 3.0496229752904433,
+                  "common_population_weight": 3.0496229752904433,
+                  "common_valid_item_weight": 3.0638199777235724
+                },
+                "INF5": {
+                  "original": 5.877463173435318,
+                  "common_population_weight": 5.877463173435318,
+                  "common_valid_item_weight": 5.879874757759234
+                }
+              }
+            },
+            "pro-A": {
+              "mean_tv_pp": {
+                "original": 12.756176368197448,
+                "common_population_weight": 12.206853631757719,
+                "common_valid_item_weight": 12.205808020024774
+              },
+              "items": {
+                "INF3_a": {
+                  "original": 24.084643532205785,
+                  "common_population_weight": 24.111244849647488,
+                  "common_valid_item_weight": 24.108566916623957
+                },
+                "INF3_b": {
+                  "original": 4.080843704904172,
+                  "common_population_weight": 3.010804241330484,
+                  "common_valid_item_weight": 3.0134865429808673
+                },
+                "INF3_c": {
+                  "original": 4.352350472719207,
+                  "common_population_weight": 0.25264007855702875,
+                  "common_valid_item_weight": 0.25457969323266216
+                },
+                "INF3_d": {
+                  "original": 10.014486325002759,
+                  "common_population_weight": 9.51406254228444,
+                  "common_valid_item_weight": 9.515399532278728
+                },
+                "INF3_e": {
+                  "original": 32.75422730123723,
+                  "common_population_weight": 32.20908566125233,
+                  "common_valid_item_weight": 32.21065359652345
+                },
+                "INF3_f": {
+                  "original": 10.782057826429096,
+                  "common_population_weight": 10.576566833420022,
+                  "common_valid_item_weight": 10.579488449264495
+                },
+                "INF5": {
+                  "original": 3.224625414883893,
+                  "common_population_weight": 5.773571215812239,
+                  "common_valid_item_weight": 5.758481409269245
+                }
+              }
+            },
+            "pro-B": {
+              "mean_tv_pp": {
+                "original": 22.703122785296568,
+                "common_population_weight": 22.703122785296568,
+                "common_valid_item_weight": 22.701648877669793
+              },
+              "items": {
+                "INF3_a": {
+                  "original": 36.788013330810664,
+                  "common_population_weight": 36.788013330810664,
+                  "common_valid_item_weight": 36.78826451381261
+                },
+                "INF3_b": {
+                  "original": 20.73258588700914,
+                  "common_population_weight": 20.73258588700914,
+                  "common_valid_item_weight": 20.732141713325184
+                },
+                "INF3_c": {
+                  "original": 19.639128764520873,
+                  "common_population_weight": 19.639128764520873,
+                  "common_valid_item_weight": 19.63683729862076
+                },
+                "INF3_d": {
+                  "original": 15.364070123602538,
+                  "common_population_weight": 15.364070123602538,
+                  "common_valid_item_weight": 15.364137429014432
+                },
+                "INF3_e": {
+                  "original": 49.31371314452706,
+                  "common_population_weight": 49.31371314452706,
+                  "common_valid_item_weight": 49.31230172415461
+                },
+                "INF3_f": {
+                  "original": 16.54830829169554,
+                  "common_population_weight": 16.54830829169554,
+                  "common_valid_item_weight": 16.54748623777828
+                },
+                "INF5": {
+                  "original": 0.5360399549101447,
+                  "common_population_weight": 0.5360399549101447,
+                  "common_valid_item_weight": 0.5303732269826875
+                }
+              }
+            },
+            "pro-C": {
+              "mean_tv_pp": {
+                "original": 23.346498824391695,
+                "common_population_weight": 23.346498824391695,
+                "common_valid_item_weight": 23.34510978728155
+              },
+              "items": {
+                "INF3_a": {
+                  "original": 37.45488884775298,
+                  "common_population_weight": 37.45488884775298,
+                  "common_valid_item_weight": 37.45424417578854
+                },
+                "INF3_b": {
+                  "original": 25.69391577839263,
+                  "common_population_weight": 25.69391577839263,
+                  "common_valid_item_weight": 25.691037912291044
+                },
+                "INF3_c": {
+                  "original": 8.120081136416255,
+                  "common_population_weight": 8.120081136416255,
+                  "common_valid_item_weight": 8.105507244501368
+                },
+                "INF3_d": {
+                  "original": 15.0446572108558,
+                  "common_population_weight": 15.0446572108558,
+                  "common_valid_item_weight": 15.045042424646319
+                },
+                "INF3_e": {
+                  "original": 46.98017096091807,
+                  "common_population_weight": 46.98017096091807,
+                  "common_valid_item_weight": 46.979786446136686
+                },
+                "INF3_f": {
+                  "original": 15.4257329314685,
+                  "common_population_weight": 15.4257329314685,
+                  "common_valid_item_weight": 15.428064293882143
+                },
+                "INF5": {
+                  "original": 14.70604490493761,
+                  "common_population_weight": 14.70604490493761,
+                  "common_valid_item_weight": 14.712086013724779
+                }
+              }
+            },
+            "qwen-A": {
+              "mean_tv_pp": {
+                "original": 26.684747796768896,
+                "common_population_weight": 27.42579455625317,
+                "common_valid_item_weight": 27.422941819712605
+              },
+              "items": {
+                "INF3_a": {
+                  "original": 37.8346435322058,
+                  "common_population_weight": 37.83464353220582,
+                  "common_valid_item_weight": 37.8346435322058
+                },
+                "INF3_b": {
+                  "original": 39.49751037157089,
+                  "common_population_weight": 39.72536029321325,
+                  "common_valid_item_weight": 39.724717820480585
+                },
+                "INF3_c": {
+                  "original": 13.519017139385884,
+                  "common_population_weight": 17.681028931635634,
+                  "common_valid_item_weight": 17.669704127685282
+                },
+                "INF3_d": {
+                  "original": 10.431152991669425,
+                  "common_population_weight": 11.17754323585498,
+                  "common_valid_item_weight": 11.17696545338859
+                },
+                "INF3_e": {
+                  "original": 54.004227301237265,
+                  "common_population_weight": 54.16287316040853,
+                  "common_valid_item_weight": 54.16266149174081
+                },
+                "INF3_f": {
+                  "original": 14.948724493095767,
+                  "common_population_weight": 15.788798922789905,
+                  "common_valid_item_weight": 15.78728961429356
+                },
+                "INF5": {
+                  "original": 16.55795874821725,
+                  "common_population_weight": 15.610313817664029,
+                  "common_valid_item_weight": 15.60461069819359
+                }
+              }
+            },
+            "qwen-B": {
+              "mean_tv_pp": {
+                "original": 25.884833955450862,
+                "common_population_weight": 25.884833955450862,
+                "common_valid_item_weight": 25.884078387685133
+              },
+              "items": {
+                "INF3_a": {
+                  "original": 37.59117577829096,
+                  "common_population_weight": 37.59117577829096,
+                  "common_valid_item_weight": 37.59023091409684
+                },
+                "INF3_b": {
+                  "original": 39.238424785383565,
+                  "common_population_weight": 39.238424785383565,
+                  "common_valid_item_weight": 39.23628745036527
+                },
+                "INF3_c": {
+                  "original": 23.595294195113397,
+                  "common_population_weight": 23.595294195113397,
+                  "common_valid_item_weight": 23.56256859124636
+                },
+                "INF3_d": {
+                  "original": 1.091322384711249,
+                  "common_population_weight": 1.091322384711249,
+                  "common_valid_item_weight": 1.0973978558958584
+                },
+                "INF3_e": {
+                  "original": 53.11624295901339,
+                  "common_population_weight": 53.11624295901339,
+                  "common_valid_item_weight": 53.11630549758899
+                },
+                "INF3_f": {
+                  "original": 4.820284492237844,
+                  "common_population_weight": 4.820284492237844,
+                  "common_valid_item_weight": 4.834959921298708
+                },
+                "INF5": {
+                  "original": 21.74109309340566,
+                  "common_population_weight": 21.74109309340566,
+                  "common_valid_item_weight": 21.75079848330389
+                }
+              }
+            },
+            "qwen-C": {
+              "mean_tv_pp": {
+                "original": 24.003742140083336,
+                "common_population_weight": 24.003742140083336,
+                "common_valid_item_weight": 24.003716505513417
+              },
+              "items": {
+                "INF3_a": {
+                  "original": 36.86395848964257,
+                  "common_population_weight": 36.86395848964257,
+                  "common_valid_item_weight": 36.861517386022726
+                },
+                "INF3_b": {
+                  "original": 37.787176181182915,
+                  "common_population_weight": 37.787176181182915,
+                  "common_valid_item_weight": 37.78423257468086
+                },
+                "INF3_c": {
+                  "original": 4.831422324909535,
+                  "common_population_weight": 4.831422324909535,
+                  "common_valid_item_weight": 4.800700865484053
+                },
+                "INF3_d": {
+                  "original": 7.620616814834351,
+                  "common_population_weight": 7.620616814834351,
+                  "common_valid_item_weight": 7.623090751080575
+                },
+                "INF3_e": {
+                  "original": 53.81541055621295,
+                  "common_population_weight": 53.81541055621295,
+                  "common_valid_item_weight": 53.81426595827723
+                },
+                "INF3_f": {
+                  "original": 2.5658734405568886,
+                  "common_population_weight": 2.5658734405568886,
+                  "common_valid_item_weight": 2.5792483890727524
+                },
+                "INF5": {
+                  "original": 24.541737173244115,
+                  "common_population_weight": 24.541737173244115,
+                  "common_valid_item_weight": 24.56295961397574
+                }
+              }
+            }
+          },
+          "pew": {
+            "flash-A": {
+              "mean_tv_pp": {
+                "original": 31.8244912469042,
+                "common_population_weight": 32.192815116991184,
+                "common_valid_item_weight": 32.19274635788598
+              },
+              "items": {
+                "OSCAM_PROB": {
+                  "original": 20.429009485749457,
+                  "common_population_weight": 20.429009485749457,
+                  "common_valid_item_weight": 20.429009485749457
+                },
+                "OSCAM_PLAT_a": {
+                  "original": 31.736829742018685,
+                  "common_population_weight": 31.736829742018685,
+                  "common_valid_item_weight": 31.736829742018674
+                },
+                "OSCAM_PLAT_b": {
+                  "original": 35.212106251020295,
+                  "common_population_weight": 35.212106251020295,
+                  "common_valid_item_weight": 35.21210625102028
+                },
+                "OSCAM_PLAT_c": {
+                  "original": 38.07062805403673,
+                  "common_population_weight": 38.07062805403673,
+                  "common_valid_item_weight": 38.07062805403673
+                },
+                "OSCAM_PLAT_d": {
+                  "original": 33.67388270169582,
+                  "common_population_weight": 35.51550205213078,
+                  "common_valid_item_weight": 35.515158256604785
+                }
+              }
+            },
+            "flash-B": {
+              "mean_tv_pp": {
+                "original": 33.5386988732554,
+                "common_population_weight": 33.5386988732554,
+                "common_valid_item_weight": 33.53905404628675
+              },
+              "items": {
+                "OSCAM_PROB": {
+                  "original": 20.429009485749457,
+                  "common_population_weight": 20.429009485749457,
+                  "common_valid_item_weight": 20.429009485749457
+                },
+                "OSCAM_PLAT_a": {
+                  "original": 31.736829742018685,
+                  "common_population_weight": 31.736829742018685,
+                  "common_valid_item_weight": 31.736829742018674
+                },
+                "OSCAM_PLAT_b": {
+                  "original": 35.212106251020295,
+                  "common_population_weight": 35.212106251020295,
+                  "common_valid_item_weight": 35.21210625102028
+                },
+                "OSCAM_PLAT_c": {
+                  "original": 38.07062805403673,
+                  "common_population_weight": 38.07062805403673,
+                  "common_valid_item_weight": 38.07062805403673
+                },
+                "OSCAM_PLAT_d": {
+                  "original": 42.244920833451836,
+                  "common_population_weight": 42.244920833451836,
+                  "common_valid_item_weight": 42.2466966986086
+                }
+              }
+            },
+            "flash-C": {
+              "mean_tv_pp": {
+                "original": 31.47868980340212,
+                "common_population_weight": 31.47868980340212,
+                "common_valid_item_weight": 31.479281865293167
+              },
+              "items": {
+                "OSCAM_PROB": {
+                  "original": 20.429009485749457,
+                  "common_population_weight": 20.429009485749457,
+                  "common_valid_item_weight": 20.429009485749457
+                },
+                "OSCAM_PLAT_a": {
+                  "original": 31.736829742018685,
+                  "common_population_weight": 31.736829742018685,
+                  "common_valid_item_weight": 31.736829742018674
+                },
+                "OSCAM_PLAT_b": {
+                  "original": 35.212106251020295,
+                  "common_population_weight": 35.212106251020295,
+                  "common_valid_item_weight": 35.21210625102028
+                },
+                "OSCAM_PLAT_c": {
+                  "original": 38.07062805403673,
+                  "common_population_weight": 38.07062805403673,
+                  "common_valid_item_weight": 38.07062805403673
+                },
+                "OSCAM_PLAT_d": {
+                  "original": 31.94487548418543,
+                  "common_population_weight": 31.94487548418543,
+                  "common_valid_item_weight": 31.9478357936407
+                }
+              }
+            },
+            "pro-A": {
+              "mean_tv_pp": {
+                "original": 27.685050813719567,
+                "common_population_weight": 27.81211771681721,
+                "common_valid_item_weight": 27.81215809510985
+              },
+              "items": {
+                "OSCAM_PROB": {
+                  "original": 20.429009485749457,
+                  "common_population_weight": 20.429009485749457,
+                  "common_valid_item_weight": 20.429009485749457
+                },
+                "OSCAM_PLAT_a": {
+                  "original": 31.736829742018685,
+                  "common_population_weight": 31.736829742018685,
+                  "common_valid_item_weight": 31.736829742018674
+                },
+                "OSCAM_PLAT_b": {
+                  "original": 34.79543958435363,
+                  "common_population_weight": 34.95428614618527,
+                  "common_valid_item_weight": 34.95442267311823
+                },
+                "OSCAM_PLAT_c": {
+                  "original": 36.82062805403673,
+                  "common_population_weight": 37.2361845533162,
+                  "common_valid_item_weight": 37.23662031092101
+                },
+                "OSCAM_PLAT_d": {
+                  "original": 14.643347202439335,
+                  "common_population_weight": 14.704278656816419,
+                  "common_valid_item_weight": 14.703908263741894
+                }
+              }
+            },
+            "pro-B": {
+              "mean_tv_pp": {
+                "original": 28.904730809245883,
+                "common_population_weight": 28.904730809245883,
+                "common_valid_item_weight": 28.905270574244316
+              },
+              "items": {
+                "OSCAM_PROB": {
+                  "original": 20.429009485749457,
+                  "common_population_weight": 20.429009485749457,
+                  "common_valid_item_weight": 20.429009485749457
+                },
+                "OSCAM_PLAT_a": {
+                  "original": 31.736829742018685,
+                  "common_population_weight": 31.736829742018685,
+                  "common_valid_item_weight": 31.736829742018674
+                },
+                "OSCAM_PLAT_b": {
+                  "original": 34.379883085074155,
+                  "common_population_weight": 34.379883085074155,
+                  "common_valid_item_weight": 34.37907358349385
+                },
+                "OSCAM_PLAT_c": {
+                  "original": 36.40396138737007,
+                  "common_population_weight": 36.40396138737007,
+                  "common_valid_item_weight": 36.403961387370074
+                },
+                "OSCAM_PLAT_d": {
+                  "original": 21.57397034601702,
+                  "common_population_weight": 21.57397034601702,
+                  "common_valid_item_weight": 21.577478672589518
+                }
+              }
+            },
+            "pro-C": {
+              "mean_tv_pp": {
+                "original": 28.823730566390118,
+                "common_population_weight": 28.823730566390118,
+                "common_valid_item_weight": 28.824394919157168
+              },
+              "items": {
+                "OSCAM_PROB": {
+                  "original": 20.429009485749457,
+                  "common_population_weight": 20.429009485749457,
+                  "common_valid_item_weight": 20.429009485749457
+                },
+                "OSCAM_PLAT_a": {
+                  "original": 31.736829742018685,
+                  "common_population_weight": 31.736829742018685,
+                  "common_valid_item_weight": 31.736829742018674
+                },
+                "OSCAM_PLAT_b": {
+                  "original": 34.379883085074155,
+                  "common_population_weight": 34.379883085074155,
+                  "common_valid_item_weight": 34.37907358349385
+                },
+                "OSCAM_PLAT_c": {
+                  "original": 35.82733799148456,
+                  "common_population_weight": 35.82733799148456,
+                  "common_valid_item_weight": 35.82780621140376
+                },
+                "OSCAM_PLAT_d": {
+                  "original": 21.74559252762373,
+                  "common_population_weight": 21.74559252762373,
+                  "common_valid_item_weight": 21.74925557312012
+                }
+              }
+            },
+            "qwen-A": {
+              "mean_tv_pp": {
+                "original": 28.366940940047073,
+                "common_population_weight": 28.656131430927097,
+                "common_valid_item_weight": 28.656399264514125
+              },
+              "items": {
+                "OSCAM_PROB": {
+                  "original": 20.429009485749457,
+                  "common_population_weight": 20.429009485749457,
+                  "common_valid_item_weight": 20.429009485749457
+                },
+                "OSCAM_PLAT_a": {
+                  "original": 30.48682974201869,
+                  "common_population_weight": 29.95286307563761,
+                  "common_valid_item_weight": 29.953922986258963
+                },
+                "OSCAM_PLAT_b": {
+                  "original": 35.212106251020295,
+                  "common_population_weight": 35.212106251020295,
+                  "common_valid_item_weight": 35.21210625102028
+                },
+                "OSCAM_PLAT_c": {
+                  "original": 20.153961387370035,
+                  "common_population_weight": 22.869371959941702,
+                  "common_valid_item_weight": 22.868938689858357
+                },
+                "OSCAM_PLAT_d": {
+                  "original": 35.55279783407691,
+                  "common_population_weight": 34.817306382286425,
+                  "common_valid_item_weight": 34.81801890968358
+                }
+              }
+            },
+            "qwen-B": {
+              "mean_tv_pp": {
+                "original": 27.58376510905267,
+                "common_population_weight": 27.58376510905267,
+                "common_valid_item_weight": 27.583911565182934
+              },
+              "items": {
+                "OSCAM_PROB": {
+                  "original": 20.429009485749457,
+                  "common_population_weight": 20.429009485749457,
+                  "common_valid_item_weight": 20.429009485749457
+                },
+                "OSCAM_PLAT_a": {
+                  "original": 31.736829742018685,
+                  "common_population_weight": 31.736829742018685,
+                  "common_valid_item_weight": 31.736829742018674
+                },
+                "OSCAM_PLAT_b": {
+                  "original": 34.379883085074155,
+                  "common_population_weight": 34.379883085074155,
+                  "common_valid_item_weight": 34.37907358349385
+                },
+                "OSCAM_PLAT_c": {
+                  "original": 12.685802042426102,
+                  "common_population_weight": 12.685802042426102,
+                  "common_valid_item_weight": 12.685802042426106
+                },
+                "OSCAM_PLAT_d": {
+                  "original": 38.68730118999495,
+                  "common_population_weight": 38.68730118999495,
+                  "common_valid_item_weight": 38.68884297222659
+                }
+              }
+            },
+            "qwen-C": {
+              "mean_tv_pp": {
+                "original": 25.592699365527363,
+                "common_population_weight": 25.592699365527363,
+                "common_valid_item_weight": 25.591956526559525
+              },
+              "items": {
+                "OSCAM_PROB": {
+                  "original": 20.309489151260657,
+                  "common_population_weight": 20.309489151260657,
+                  "common_valid_item_weight": 20.30957699054534
+                },
+                "OSCAM_PLAT_a": {
+                  "original": 31.040686011644386,
+                  "common_population_weight": 31.040686011644386,
+                  "common_valid_item_weight": 31.040198405850965
+                },
+                "OSCAM_PLAT_b": {
+                  "original": 34.002542645750324,
+                  "common_population_weight": 34.002542645750324,
+                  "common_valid_item_weight": 34.001820165739574
+                },
+                "OSCAM_PLAT_c": {
+                  "original": 12.56628170793731,
+                  "common_population_weight": 12.56628170793731,
+                  "common_valid_item_weight": 12.566238362105059
+                },
+                "OSCAM_PLAT_d": {
+                  "original": 30.04449731104414,
+                  "common_population_weight": 30.04449731104414,
+                  "common_valid_item_weight": 30.041948708556692
+                }
+              }
+            }
+          },
+          "anes": {
+            "flash-A": {
+              "mean_tv_pp": {
+                "original": 38.58167849032584,
+                "common_population_weight": 38.80723809989295,
+                "common_valid_item_weight": 38.805441173031724
+              },
+              "items": {
+                "V241264": {
+                  "original": 28.174040218097584,
+                  "common_population_weight": 28.77187439282207,
+                  "common_valid_item_weight": 28.771108340662447
+                },
+                "V241267": {
+                  "original": 32.4888048420135,
+                  "common_population_weight": 32.62956831713998,
+                  "common_valid_item_weight": 32.62482918626441
+                },
+                "V241270": {
+                  "original": 33.773800364684675,
+                  "common_population_weight": 33.474883277322434,
+                  "common_valid_item_weight": 33.47534915793745
+                },
+                "V241273": {
+                  "original": 55.27451233346458,
+                  "common_population_weight": 56.56618332185863,
+                  "common_valid_item_weight": 56.563158082182916
+                },
+                "V241276": {
+                  "original": 38.371614057301564,
+                  "common_population_weight": 37.99362016382144,
+                  "common_valid_item_weight": 37.99090314474994
+                },
+                "V241282": {
+                  "original": 43.407299126393156,
+                  "common_population_weight": 43.407299126393156,
+                  "common_valid_item_weight": 43.407299126393156
+                }
+              }
+            },
+            "flash-B": {
+              "mean_tv_pp": {
+                "original": 32.82000256229386,
+                "common_population_weight": 32.82000256229386,
+                "common_valid_item_weight": 32.80975483628446
+              },
+              "items": {
+                "V241264": {
+                  "original": 28.38304272950964,
+                  "common_population_weight": 28.38304272950964,
+                  "common_valid_item_weight": 28.382682960159578
+                },
+                "V241267": {
+                  "original": 11.511592282965545,
+                  "common_population_weight": 11.511592282965545,
+                  "common_valid_item_weight": 11.455673143987061
+                },
+                "V241270": {
+                  "original": 32.34912224521204,
+                  "common_population_weight": 32.34912224521204,
+                  "common_valid_item_weight": 32.33530322431149
+                },
+                "V241273": {
+                  "original": 43.37529694246618,
+                  "common_population_weight": 43.37529694246618,
+                  "common_valid_item_weight": 43.387802993464206
+                },
+                "V241276": {
+                  "original": 37.893662047216594,
+                  "common_population_weight": 37.893662047216594,
+                  "common_valid_item_weight": 37.88976756939127
+                },
+                "V241282": {
+                  "original": 43.407299126393156,
+                  "common_population_weight": 43.407299126393156,
+                  "common_valid_item_weight": 43.407299126393156
+                }
+              }
+            },
+            "flash-C": {
+              "mean_tv_pp": {
+                "original": 16.91077431710497,
+                "common_population_weight": 16.91077431710497,
+                "common_valid_item_weight": 16.910187637088516
+              },
+              "items": {
+                "V241264": {
+                  "original": 7.687329984320577,
+                  "common_population_weight": 7.687329984320577,
+                  "common_valid_item_weight": 7.683978991128177
+                },
+                "V241267": {
+                  "original": 10.527093848060714,
+                  "common_population_weight": 10.527093848060714,
+                  "common_valid_item_weight": 10.531209569401737
+                },
+                "V241270": {
+                  "original": 26.95111267111734,
+                  "common_population_weight": 26.95111267111734,
+                  "common_valid_item_weight": 26.94035777523842
+                },
+                "V241273": {
+                  "original": 22.095790270179677,
+                  "common_population_weight": 22.095790270179677,
+                  "common_valid_item_weight": 22.097605600842904
+                },
+                "V241276": {
+                  "original": 17.555206556795383,
+                  "common_population_weight": 17.555206556795383,
+                  "common_valid_item_weight": 17.550154867868283
+                },
+                "V241282": {
+                  "original": 16.64811257215612,
+                  "common_population_weight": 16.64811257215612,
+                  "common_valid_item_weight": 16.657819018051566
+                }
+              }
+            },
+            "pro-A": {
+              "mean_tv_pp": {
+                "original": 25.456678490325825,
+                "common_population_weight": 25.480690952196436,
+                "common_valid_item_weight": 25.483513039279085
+              },
+              "items": {
+                "V241264": {
+                  "original": 21.507373551430913,
+                  "common_population_weight": 20.66186409210783,
+                  "common_valid_item_weight": 20.665574854650284
+                },
+                "V241267": {
+                  "original": 27.90547150868016,
+                  "common_population_weight": 27.522255182077572,
+                  "common_valid_item_weight": 27.524695191329094
+                },
+                "V241270": {
+                  "original": 28.357133698018,
+                  "common_population_weight": 28.380540497427415,
+                  "common_valid_item_weight": 28.38313662625246
+                },
+                "V241273": {
+                  "original": 30.691179000131207,
+                  "common_population_weight": 33.05910889961975,
+                  "common_valid_item_weight": 33.05516801741117
+                },
+                "V241276": {
+                  "original": 15.038280723968189,
+                  "common_population_weight": 13.331130201672492,
+                  "common_valid_item_weight": 13.339977090058259
+                },
+                "V241282": {
+                  "original": 29.240632459726474,
+                  "common_population_weight": 29.92924684027355,
+                  "common_valid_item_weight": 29.932526455973225
+                }
+              }
+            },
+            "pro-B": {
+              "mean_tv_pp": {
+                "original": 17.4413313492096,
+                "common_population_weight": 17.4413313492096,
+                "common_valid_item_weight": 17.450700165142983
+              },
+              "items": {
+                "V241264": {
+                  "original": 11.11868468950794,
+                  "common_population_weight": 11.11868468950794,
+                  "common_valid_item_weight": 11.13557919584836
+                },
+                "V241267": {
+                  "original": 28.434201017246686,
+                  "common_population_weight": 28.434201017246686,
+                  "common_valid_item_weight": 28.425963017272014
+                },
+                "V241270": {
+                  "original": 32.024101414240356,
+                  "common_population_weight": 32.024101414240356,
+                  "common_valid_item_weight": 32.01827416584315
+                },
+                "V241273": {
+                  "original": 14.275759050291988,
+                  "common_population_weight": 14.275759050291988,
+                  "common_valid_item_weight": 14.276105046680957
+                },
+                "V241276": {
+                  "original": 10.376013385906447,
+                  "common_population_weight": 10.376013385906447,
+                  "common_valid_item_weight": 10.389798918635048
+                },
+                "V241282": {
+                  "original": 8.419228538064212,
+                  "common_population_weight": 8.419228538064212,
+                  "common_valid_item_weight": 8.458480646578368
+                }
+              }
+            },
+            "pro-C": {
+              "mean_tv_pp": {
+                "original": 17.970140869642048,
+                "common_population_weight": 17.970140869642048,
+                "common_valid_item_weight": 17.963401844798323
+              },
+              "items": {
+                "V241264": {
+                  "original": 18.82339308128647,
+                  "common_population_weight": 18.82339308128647,
+                  "common_valid_item_weight": 18.806210183088687
+                },
+                "V241267": {
+                  "original": 17.354459354777447,
+                  "common_population_weight": 17.354459354777447,
+                  "common_valid_item_weight": 17.341255575259297
+                },
+                "V241270": {
+                  "original": 22.412933077552776,
+                  "common_population_weight": 22.412933077552776,
+                  "common_valid_item_weight": 22.406971975826917
+                },
+                "V241273": {
+                  "original": 19.463880251217088,
+                  "common_population_weight": 19.463880251217088,
+                  "common_valid_item_weight": 19.465581823651934
+                },
+                "V241276": {
+                  "original": 13.217995884508804,
+                  "common_population_weight": 13.217995884508804,
+                  "common_valid_item_weight": 13.22533354442703
+                },
+                "V241282": {
+                  "original": 16.54818356850969,
+                  "common_population_weight": 16.54818356850969,
+                  "common_valid_item_weight": 16.535057966536083
+                }
+              }
+            },
+            "qwen-A": {
+              "mean_tv_pp": {
+                "original": 25.71224820558359,
+                "common_population_weight": 25.725769800376145,
+                "common_valid_item_weight": 25.727689576737685
+              },
+              "items": {
+                "V241264": {
+                  "original": 16.92404021809757,
+                  "common_population_weight": 16.65943910067179,
+                  "common_valid_item_weight": 16.667230416168174
+                },
+                "V241267": {
+                  "original": 31.238804842013508,
+                  "common_population_weight": 31.577260332434687,
+                  "common_valid_item_weight": 31.578018072304108
+                },
+                "V241270": {
+                  "original": 25.857133698017996,
+                  "common_population_weight": 25.597755013714696,
+                  "common_valid_item_weight": 25.59965281207088
+                },
+                "V241273": {
+                  "original": 30.557930625011153,
+                  "common_population_weight": 29.932261446932433,
+                  "common_valid_item_weight": 29.932318326046627
+                },
+                "V241276": {
+                  "original": 32.12161405730155,
+                  "common_population_weight": 31.28780799768318,
+                  "common_valid_item_weight": 31.293011345860933
+                },
+                "V241282": {
+                  "original": 17.573965793059788,
+                  "common_population_weight": 19.300094910820086,
+                  "common_valid_item_weight": 19.295906487975362
+                }
+              }
+            },
+            "qwen-B": {
+              "mean_tv_pp": {
+                "original": 31.06404521470996,
+                "common_population_weight": 31.06404521470996,
+                "common_valid_item_weight": 31.043329661498888
+              },
+              "items": {
+                "V241264": {
+                  "original": 11.375354619729036,
+                  "common_population_weight": 11.375354619729036,
+                  "common_valid_item_weight": 11.386827011824233
+                },
+                "V241267": {
+                  "original": 33.99818352631681,
+                  "common_population_weight": 33.99818352631681,
+                  "common_valid_item_weight": 33.99674251788823
+                },
+                "V241270": {
+                  "original": 32.21657941841553,
+                  "common_population_weight": 32.21657941841553,
+                  "common_valid_item_weight": 32.20186291218104
+                },
+                "V241273": {
+                  "original": 46.26568457952689,
+                  "common_population_weight": 46.26568457952689,
+                  "common_valid_item_weight": 46.23950221072704
+                },
+                "V241276": {
+                  "original": 34.29880563436267,
+                  "common_population_weight": 34.29880563436267,
+                  "common_valid_item_weight": 34.28763416031936
+                },
+                "V241282": {
+                  "original": 28.22966350990881,
+                  "common_population_weight": 28.22966350990881,
+                  "common_valid_item_weight": 28.147409156053417
+                }
+              }
+            },
+            "qwen-C": {
+              "mean_tv_pp": {
+                "original": 23.219543033262664,
+                "common_population_weight": 23.219543033262664,
+                "common_valid_item_weight": 23.201397697381932
+              },
+              "items": {
+                "V241264": {
+                  "original": 7.973205315820669,
+                  "common_population_weight": 7.973205315820669,
+                  "common_valid_item_weight": 7.969113134501871
+                },
+                "V241267": {
+                  "original": 28.65228980686112,
+                  "common_population_weight": 28.65228980686112,
+                  "common_valid_item_weight": 28.64151947930188
+                },
+                "V241270": {
+                  "original": 23.880628963579845,
+                  "common_population_weight": 23.880628963579845,
+                  "common_valid_item_weight": 23.861353228627724
+                },
+                "V241273": {
+                  "original": 28.39899276016114,
+                  "common_population_weight": 28.39899276016114,
+                  "common_valid_item_weight": 28.38248766533734
+                },
+                "V241276": {
+                  "original": 13.228241882675661,
+                  "common_population_weight": 13.228241882675661,
+                  "common_valid_item_weight": 13.207711560813879
+                },
+                "V241282": {
+                  "original": 37.18389947047754,
+                  "common_population_weight": 37.18389947047754,
+                  "common_valid_item_weight": 37.1462011157089
+                }
+              }
+            }
+          }
+        },
+        "comparisons": [
+          {
+            "before": "flash-A",
+            "after": "flash-B",
+            "methods": {
+              "original": {
+                "gain_pp": 1.9165909164858899,
+                "ci95": [
+                  1.117754490355453,
+                  2.6336031515012017
+                ],
+                "surveys": {
+                  "shed": {
+                    "gain_pp": 1.7023044477768856,
+                    "ci95": [
+                      0.29372077489754717,
+                      2.971568746703329
+                    ]
+                  },
+                  "pew": {
+                    "gain_pp": -1.7142076263512003,
+                    "ci95": [
+                      -2.8917986745641424,
+                      -0.556276450565846
+                    ]
+                  },
+                  "anes": {
+                    "gain_pp": 5.761675928031984,
+                    "ci95": [
+                      4.295567595336814,
+                      7.123621842309986
+                    ]
+                  }
+                },
+                "optimization_threshold": false
+              },
+              "common_population_weight": {
+                "gain_pp": 2.1414749037141134,
+                "ci95": [
+                  1.3810092923002357,
+                  2.8610738762936747
+                ],
+                "surveys": {
+                  "shed": {
+                    "gain_pp": 1.7830729298074637,
+                    "ci95": [
+                      0.3115007979387084,
+                      3.101016717771264
+                    ]
+                  },
+                  "pew": {
+                    "gain_pp": -1.3458837562642145,
+                    "ci95": [
+                      -2.509070251064926,
+                      -0.2304650724374614
+                    ]
+                  },
+                  "anes": {
+                    "gain_pp": 5.987235537599091,
+                    "ci95": [
+                      4.568880137687844,
+                      7.346357506944397
+                    ]
+                  }
+                },
+                "optimization_threshold": false
+              },
+              "common_valid_item_weight": {
+                "gain_pp": 2.1445727945845903,
+                "ci95": [
+                  1.3847683118121608,
+                  2.865348968125671
+                ],
+                "surveys": {
+                  "shed": {
+                    "gain_pp": 1.7843397354072792,
+                    "ci95": [
+                      0.3139399908543985,
+                      3.103815885844287
+                    ]
+                  },
+                  "pew": {
+                    "gain_pp": -1.3463076884007705,
+                    "ci95": [
+                      -2.509389546154509,
+                      -0.23098132281437742
+                    ]
+                  },
+                  "anes": {
+                    "gain_pp": 5.995686336747262,
+                    "ci95": [
+                      4.573827145978268,
+                      7.352547408854837
+                    ]
+                  }
+                },
+                "optimization_threshold": false
+              }
+            }
+          },
+          {
+            "before": "flash-B",
+            "after": "flash-C",
+            "methods": {
+              "original": {
+                "gain_pp": 8.513358254946906,
+                "ci95": [
+                  7.089294478326279,
+                  9.357841400173408
+                ],
+                "surveys": {
+                  "shed": {
+                    "gain_pp": 7.570837449798553,
+                    "ci95": [
+                      5.262704875485625,
+                      8.908887513408258
+                    ]
+                  },
+                  "pew": {
+                    "gain_pp": 2.0600090698532796,
+                    "ci95": [
+                      0.6469020692079666,
+                      3.377814691996657
+                    ]
+                  },
+                  "anes": {
+                    "gain_pp": 15.909228245188888,
+                    "ci95": [
+                      12.983325526190534,
+                      17.847047194372
+                    ]
+                  }
+                },
+                "optimization_threshold": true
+              },
+              "common_population_weight": {
+                "gain_pp": 8.513358254946906,
+                "ci95": [
+                  7.089294478326279,
+                  9.357841400173408
+                ],
+                "surveys": {
+                  "shed": {
+                    "gain_pp": 7.570837449798553,
+                    "ci95": [
+                      5.262704875485625,
+                      8.908887513408258
+                    ]
+                  },
+                  "pew": {
+                    "gain_pp": 2.0600090698532796,
+                    "ci95": [
+                      0.6469020692079666,
+                      3.377814691996657
+                    ]
+                  },
+                  "anes": {
+                    "gain_pp": 15.909228245188888,
+                    "ci95": [
+                      12.983325526190534,
+                      17.847047194372
+                    ]
+                  }
+                },
+                "optimization_threshold": true
+              },
+              "common_valid_item_weight": {
+                "gain_pp": 8.50795947343592,
+                "ci95": [
+                  7.085988317571313,
+                  9.355923408000457
+                ],
+                "surveys": {
+                  "shed": {
+                    "gain_pp": 7.56453904011823,
+                    "ci95": [
+                      5.264416047748608,
+                      8.902701391621708
+                    ]
+                  },
+                  "pew": {
+                    "gain_pp": 2.0597721809935834,
+                    "ci95": [
+                      0.6469392883481662,
+                      3.377370593512789
+                    ]
+                  },
+                  "anes": {
+                    "gain_pp": 15.899567199195946,
+                    "ci95": [
+                      12.981780731677652,
+                      17.836333534333253
+                    ]
+                  }
+                },
+                "optimization_threshold": true
+              }
+            }
+          },
+          {
+            "before": "pro-A",
+            "after": "pro-B",
+            "methods": {
+              "original": {
+                "gain_pp": -1.0504264238364047,
+                "ci95": [
+                  -2.819021936183388,
+                  0.5816579298695322
+                ],
+                "surveys": {
+                  "shed": {
+                    "gain_pp": -9.94694641709912,
+                    "ci95": [
+                      -13.058738615368622,
+                      -7.002443835349722
+                    ]
+                  },
+                  "pew": {
+                    "gain_pp": -1.2196799955263167,
+                    "ci95": [
+                      -2.719531871805781,
+                      0.5014912844380308
+                    ]
+                  },
+                  "anes": {
+                    "gain_pp": 8.015347141116223,
+                    "ci95": [
+                      4.296254002914271,
+                      11.32405982668291
+                    ]
+                  }
+                },
+                "optimization_threshold": false
+              },
+              "common_population_weight": {
+                "gain_pp": -1.1831742143268962,
+                "ci95": [
+                  -2.8274061230554515,
+                  0.815743978483962
+                ],
+                "surveys": {
+                  "shed": {
+                    "gain_pp": -10.496269153538849,
+                    "ci95": [
+                      -13.145362406231,
+                      -6.87218071825979
+                    ]
+                  },
+                  "pew": {
+                    "gain_pp": -1.0926130924286745,
+                    "ci95": [
+                      -2.531985420198587,
+                      0.7688460539941925
+                    ]
+                  },
+                  "anes": {
+                    "gain_pp": 8.039359602986835,
+                    "ci95": [
+                      3.6951382023381867,
+                      11.95481293834199
+                    ]
+                  }
+                },
+                "optimization_threshold": false
+              },
+              "common_valid_item_weight": {
+                "gain_pp": -1.1853801542144609,
+                "ci95": [
+                  -2.827342997758501,
+                  0.8162663486733641
+                ],
+                "surveys": {
+                  "shed": {
+                    "gain_pp": -10.49584085764502,
+                    "ci95": [
+                      -13.14461035814456,
+                      -6.873492105505824
+                    ]
+                  },
+                  "pew": {
+                    "gain_pp": -1.093112479134465,
+                    "ci95": [
+                      -2.532572180167947,
+                      0.7691943609394646
+                    ]
+                  },
+                  "anes": {
+                    "gain_pp": 8.032812874136102,
+                    "ci95": [
+                      3.695100223788319,
+                      11.947968331275256
+                    ]
+                  }
+                },
+                "optimization_threshold": false
+              }
+            }
+          },
+          {
+            "before": "pro-B",
+            "after": "pro-C",
+            "methods": {
+              "original": {
+                "gain_pp": -0.36372843889060275,
+                "ci95": [
+                  -2.116173043974262,
+                  1.6969347276774167
+                ],
+                "surveys": {
+                  "shed": {
+                    "gain_pp": -0.6433760390951271,
+                    "ci95": [
+                      -3.49187231668706,
+                      2.5812404649232796
+                    ]
+                  },
+                  "pew": {
+                    "gain_pp": 0.08100024285576524,
+                    "ci95": [
+                      -1.9878907162811787,
+                      2.217718918032359
+                    ]
+                  },
+                  "anes": {
+                    "gain_pp": -0.5288095204324463,
+                    "ci95": [
+                      -4.863802944275067,
+                      4.355982476343237
+                    ]
+                  }
+                },
+                "optimization_threshold": false
+              },
+              "common_population_weight": {
+                "gain_pp": -0.36372843889060275,
+                "ci95": [
+                  -2.116173043974262,
+                  1.6969347276774167
+                ],
+                "surveys": {
+                  "shed": {
+                    "gain_pp": -0.6433760390951271,
+                    "ci95": [
+                      -3.49187231668706,
+                      2.5812404649232796
+                    ]
+                  },
+                  "pew": {
+                    "gain_pp": 0.08100024285576524,
+                    "ci95": [
+                      -1.9878907162811787,
+                      2.217718918032359
+                    ]
+                  },
+                  "anes": {
+                    "gain_pp": -0.5288095204324463,
+                    "ci95": [
+                      -4.863802944275067,
+                      4.355982476343237
+                    ]
+                  }
+                },
+                "optimization_threshold": false
+              },
+              "common_valid_item_weight": {
+                "gain_pp": -0.3584289780599832,
+                "ci95": [
+                  -2.108905525227315,
+                  1.6987951380215172
+                ],
+                "surveys": {
+                  "shed": {
+                    "gain_pp": -0.6434609096117576,
+                    "ci95": [
+                      -3.4946010177386593,
+                      2.57666304581205
+                    ]
+                  },
+                  "pew": {
+                    "gain_pp": 0.08087565508714789,
+                    "ci95": [
+                      -1.9886223355870698,
+                      2.217549926745981
+                    ]
+                  },
+                  "anes": {
+                    "gain_pp": -0.5127016796553399,
+                    "ci95": [
+                      -4.842555696356916,
+                      4.365050870070084
+                    ]
+                  }
+                },
+                "optimization_threshold": false
+              }
+            }
+          },
+          {
+            "before": "qwen-A",
+            "after": "qwen-B",
+            "methods": {
+              "original": {
+                "gain_pp": -1.2562357789379774,
+                "ci95": [
+                  -2.6535250894394076,
+                  -0.08163967544468437
+                ],
+                "surveys": {
+                  "shed": {
+                    "gain_pp": 0.799913841318034,
+                    "ci95": [
+                      -1.4991391358392265,
+                      2.8773936555362685
+                    ]
+                  },
+                  "pew": {
+                    "gain_pp": 0.7831758309944021,
+                    "ci95": [
+                      -1.119909827417332,
+                      2.5283443328523525
+                    ]
+                  },
+                  "anes": {
+                    "gain_pp": -5.3517970091263685,
+                    "ci95": [
+                      -7.928267010388994,
+                      -3.17567383370518
+                    ]
+                  }
+                },
+                "optimization_threshold": false
+              },
+              "common_population_weight": {
+                "gain_pp": -0.9083161638856936,
+                "ci95": [
+                  -2.407084444113364,
+                  0.3386373801227411
+                ],
+                "surveys": {
+                  "shed": {
+                    "gain_pp": 1.5409606008023076,
+                    "ci95": [
+                      -0.7720634571776367,
+                      3.691006505441061
+                    ]
+                  },
+                  "pew": {
+                    "gain_pp": 1.0723663218744264,
+                    "ci95": [
+                      -0.9770929117614877,
+                      2.8375951516013864
+                    ]
+                  },
+                  "anes": {
+                    "gain_pp": -5.338275414333815,
+                    "ci95": [
+                      -8.353436622036646,
+                      -2.7152665975433976
+                    ]
+                  }
+                },
+                "optimization_threshold": false
+              },
+              "common_valid_item_weight": {
+                "gain_pp": -0.9014296511341797,
+                "ci95": [
+                  -2.401304144503835,
+                  0.34525260275994346
+                ],
+                "surveys": {
+                  "shed": {
+                    "gain_pp": 1.5388634320274726,
+                    "ci95": [
+                      -0.7728741675405395,
+                      3.686283644085603
+                    ]
+                  },
+                  "pew": {
+                    "gain_pp": 1.072487699331191,
+                    "ci95": [
+                      -0.9762856986312289,
+                      2.8380475226187203
+                    ]
+                  },
+                  "anes": {
+                    "gain_pp": -5.315640084761203,
+                    "ci95": [
+                      -8.324665942849629,
+                      -2.6960261576533466
+                    ]
+                  }
+                },
+                "optimization_threshold": false
+              }
+            }
+          },
+          {
+            "before": "qwen-B",
+            "after": "qwen-C",
+            "methods": {
+              "original": {
+                "gain_pp": 3.9055532467800433,
+                "ci95": [
+                  2.4445974882255506,
+                  5.446326013862255
+                ],
+                "surveys": {
+                  "shed": {
+                    "gain_pp": 1.881091815367526,
+                    "ci95": [
+                      -0.6082596418236351,
+                      4.405403394083207
+                    ]
+                  },
+                  "pew": {
+                    "gain_pp": 1.9910657435253079,
+                    "ci95": [
+                      -0.2015057201356428,
+                      4.475421141770904
+                    ]
+                  },
+                  "anes": {
+                    "gain_pp": 7.844502181447297,
+                    "ci95": [
+                      5.250499467014173,
+                      10.627808744469549
+                    ]
+                  }
+                },
+                "optimization_threshold": true
+              },
+              "common_population_weight": {
+                "gain_pp": 3.9055532467800433,
+                "ci95": [
+                  2.4445974882255506,
+                  5.446326013862255
+                ],
+                "surveys": {
+                  "shed": {
+                    "gain_pp": 1.881091815367526,
+                    "ci95": [
+                      -0.6082596418236351,
+                      4.405403394083207
+                    ]
+                  },
+                  "pew": {
+                    "gain_pp": 1.9910657435253079,
+                    "ci95": [
+                      -0.2015057201356428,
+                      4.475421141770904
+                    ]
+                  },
+                  "anes": {
+                    "gain_pp": 7.844502181447297,
+                    "ci95": [
+                      5.250499467014173,
+                      10.627808744469549
+                    ]
+                  }
+                },
+                "optimization_threshold": true
+              },
+              "common_valid_item_weight": {
+                "gain_pp": 3.904749628304027,
+                "ci95": [
+                  2.4422302402313503,
+                  5.443257671057123
+                ],
+                "surveys": {
+                  "shed": {
+                    "gain_pp": 1.8803618821717158,
+                    "ci95": [
+                      -0.6119951575422187,
+                      4.403413795297307
+                    ]
+                  },
+                  "pew": {
+                    "gain_pp": 1.9919550386234093,
+                    "ci95": [
+                      -0.20077529047884166,
+                      4.476029310436033
+                    ]
+                  },
+                  "anes": {
+                    "gain_pp": 7.841931964116956,
+                    "ci95": [
+                      5.246116668998988,
+                      10.624004904957088
+                    ]
+                  }
+                },
+                "optimization_threshold": true
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "real_profiles": {
+    "shed": {
+      "eligible_people": 12934,
+      "formal": 240,
+      "formal_matches_raw_source_draw": true,
+      "formal_pilot_overlap": 0,
+      "pilot_in_statistics_training": 48,
+      "trait_match_is_same_stratum_random_assignment": true,
+      "truth_weight_prompt_invariance": true,
+      "effective_sample_size_before_item_missingness": 157.51693129360729,
+      "unknown_background_cells": 2,
+      "item_scores_recomputed": 56,
+      "max_score_difference_pp": 4.263256414560601e-14
+    },
+    "pew": {
+      "eligible_people": 9341,
+      "formal": 240,
+      "formal_matches_raw_source_draw": true,
+      "formal_pilot_overlap": 0,
+      "pilot_in_statistics_training": 0,
+      "trait_match_is_same_stratum_random_assignment": true,
+      "truth_weight_prompt_invariance": true,
+      "effective_sample_size_before_item_missingness": 116.35119907546488,
+      "unknown_background_cells": 1,
+      "item_scores_recomputed": 40,
+      "max_score_difference_pp": 4.618527782440651e-14
+    },
+    "anes": {
+      "eligible_people": 1927,
+      "formal": 240,
+      "formal_matches_raw_source_draw": true,
+      "formal_pilot_overlap": 0,
+      "pilot_in_statistics_training": 0,
+      "trait_match_is_same_stratum_random_assignment": true,
+      "truth_weight_prompt_invariance": true,
+      "effective_sample_size_before_item_missingness": 97.66735769085577,
+      "unknown_background_cells": 57,
+      "item_scores_recomputed": 48,
+      "max_score_difference_pp": 4.263256414560601e-14
+    }
+  },
+  "shopping": {
+    "origin": {
+      "source_draw_and_partitions_reproduced": true,
+      "splits_disjoint": true,
+      "truth_weight_prompt_invariance": true,
+      "counts": {
+        "formal": 240,
+        "pilot": 48,
+        "training": 708
+      },
+      "formal_strata": {
+        "18–64|Below associate degree": 72,
+        "18–64|Associate degree or higher": 60,
+        "65+|Below associate degree": 48,
+        "65+|Associate degree or higher": 60
+      }
+    },
+    "packaging": {
+      "source_draw_and_partitions_reproduced": true,
+      "splits_disjoint": true,
+      "truth_weight_prompt_invariance": true,
+      "counts": {
+        "formal": 240,
+        "pilot": 48,
+        "training": 1003
+      },
+      "formal_strata": {
+        "18–64|Below associate degree": 60,
+        "18–64|Associate degree or higher": 60,
+        "65+|Below associate degree": 60,
+        "65+|Associate degree or higher": 60
+      }
+    },
+    "pew": {
+      "source_draw_and_partitions_reproduced": true,
+      "splits_disjoint": true,
+      "truth_weight_prompt_invariance": true,
+      "counts": {
+        "formal": 240,
+        "pilot": 48,
+        "training": 5575
+      },
+      "formal_strata": {
+        "18–64|Below associate degree": 60,
+        "18–64|Associate degree or higher": 60,
+        "65+|Below associate degree": 60,
+        "65+|Associate degree or higher": 60
+      }
+    }
+  },
+  "later": {
+    "pew13": {
+      "margins_against_eligible_source": {
+        "Age group": {
+          "distance_pp": 1.7193372881033915,
+          "categories": [
+            {
+              "label": "18-29",
+              "source_pct": 25.89444789924224,
+              "evaluated_pct": 27.61378518734563
+            },
+            {
+              "label": "30-49",
+              "source_pct": 36.195255261803965,
+              "evaluated_pct": 35.80904331155377
+            },
+            {
+              "label": "50-64",
+              "source_pct": 25.12529844465807,
+              "evaluated_pct": 23.943020675955506
+            },
+            {
+              "label": "65+",
+              "source_pct": 12.72345741839831,
+              "evaluated_pct": 12.634150825145085
+            },
+            {
+              "label": "Unknown",
+              "source_pct": 0.06154097589740953,
+              "evaluated_pct": 0.0
+            }
+          ]
+        },
+        "Education": {
+          "distance_pp": 0.7523745125587317,
+          "categories": [
+            {
+              "label": "College graduate+",
+              "source_pct": 32.29914598952927,
+              "evaluated_pct": 31.546771476970537
+            },
+            {
+              "label": "H.S. graduate or less",
+              "source_pct": 33.88101644738318,
+              "evaluated_pct": 33.98571290109324
+            },
+            {
+              "label": "Some college",
+              "source_pct": 33.819837563087546,
+              "evaluated_pct": 34.46751562193622
+            }
+          ]
+        },
+        "Income": {
+          "distance_pp": 9.90786300052491,
+          "categories": [
+            {
+              "label": "$150,000 or more",
+              "source_pct": 8.163808947402476,
+              "evaluated_pct": 6.859900495192549
+            },
+            {
+              "label": "(VOL) Don't know/Refused",
+              "source_pct": 1.3535574169044529,
+              "evaluated_pct": 2.1620900951360627
+            },
+            {
+              "label": "10 to under $20,000",
+              "source_pct": 9.580385860628844,
+              "evaluated_pct": 8.321523817243733
+            },
+            {
+              "label": "100 to under $150,000 [OR]",
+              "source_pct": 11.097216989817674,
+              "evaluated_pct": 7.996510167490258
+            },
+            {
+              "label": "20 to under $30,000",
+              "source_pct": 11.506915841159644,
+              "evaluated_pct": 16.066092291256957
+            },
+            {
+              "label": "30 to under $40,000",
+              "source_pct": 10.47998521888583,
+              "evaluated_pct": 15.020139091081822
+            },
+            {
+              "label": "40 to under $50,000",
+              "source_pct": 9.05836108551247,
+              "evaluated_pct": 8.998206004079302
+            },
+            {
+              "label": "50 to under $75,000",
+              "source_pct": 16.059903068506838,
+              "evaluated_pct": 15.205525865843716
+            },
+            {
+              "label": "75 to under $100,000",
+              "source_pct": 12.85795716476289,
+              "evaluated_pct": 10.840679666743416
+            },
+            {
+              "label": "Less than $10,000",
+              "source_pct": 9.841908406418884,
+              "evaluated_pct": 8.529332505932196
+            }
+          ]
+        },
+        "Sex": {
+          "distance_pp": 2.0080155812610383,
+          "categories": [
+            {
+              "label": "Female",
+              "source_pct": 51.86602386536225,
+              "evaluated_pct": 53.87403944662329
+            },
+            {
+              "label": "Male",
+              "source_pct": 48.13397613463775,
+              "evaluated_pct": 46.12596055337671
+            }
+          ]
+        },
+        "Region": {
+          "distance_pp": 3.843121359962513,
+          "categories": [
+            {
+              "label": "Midwest",
+              "source_pct": 21.808382901388647,
+              "evaluated_pct": 23.503752165005956
+            },
+            {
+              "label": "Northeast",
+              "source_pct": 18.31480557771069,
+              "evaluated_pct": 16.74045667564159
+            },
+            {
+              "label": "South",
+              "source_pct": 35.90834392284747,
+              "evaluated_pct": 38.05609601919267
+            },
+            {
+              "label": "West",
+              "source_pct": 23.96846759805319,
+              "evaluated_pct": 21.699695140159783
+            }
+          ]
+        }
+      },
+      "item_scores_recomputed": 52,
+      "max_score_difference_pp": 3.552713678800501e-14
+    },
+    "shoes": {
+      "background_stimuli_answers_and_splits_reproduced_from_source": true,
+      "margins_against_eligible_source": {
+        "Age group": {
+          "distance_pp": 3.7280344939798225,
+          "categories": [
+            {
+              "label": "18-20 years old",
+              "source_pct": 1.8874064432150992,
+              "evaluated_pct": 0.8333333333333334
+            },
+            {
+              "label": "21-25 years old",
+              "source_pct": 11.975268467295802,
+              "evaluated_pct": 10.0
+            },
+            {
+              "label": "26-35 years old",
+              "source_pct": 37.97591929710381,
+              "evaluated_pct": 41.25
+            },
+            {
+              "label": "36-45 years old",
+              "source_pct": 23.071916693784576,
+              "evaluated_pct": 22.5
+            },
+            {
+              "label": "46-55 years old",
+              "source_pct": 14.54604620891637,
+              "evaluated_pct": 15.0
+            },
+            {
+              "label": "56 years old or older",
+              "source_pct": 10.543442889684346,
+              "evaluated_pct": 10.416666666666668
+            }
+          ]
+        },
+        "Education": {
+          "distance_pp": 4.882037097299055,
+          "categories": [
+            {
+              "label": "2 year college degree",
+              "source_pct": 12.040351448096324,
+              "evaluated_pct": 13.333333333333334
+            },
+            {
+              "label": "4 year college degree",
+              "source_pct": 39.668076797917344,
+              "evaluated_pct": 35.41666666666667
+            },
+            {
+              "label": "Graduate degree",
+              "source_pct": 16.40091116173121,
+              "evaluated_pct": 19.583333333333332
+            },
+            {
+              "label": "High school",
+              "source_pct": 8.948909860071591,
+              "evaluated_pct": 9.166666666666666
+            },
+            {
+              "label": "Less than high school",
+              "source_pct": 0.22779043280182232,
+              "evaluated_pct": 0.4166666666666667
+            },
+            {
+              "label": "Some college, no degree",
+              "source_pct": 22.71396029938171,
+              "evaluated_pct": 22.083333333333332
+            }
+          ]
+        },
+        "Gender": {
+          "distance_pp": 5.8382145568933685,
+          "categories": [
+            {
+              "label": "Man",
+              "source_pct": 44.679466319557434,
+              "evaluated_pct": 39.166666666666664
+            },
+            {
+              "label": "Other",
+              "source_pct": 0.3254149040026033,
+              "evaluated_pct": 0.0
+            },
+            {
+              "label": "Woman",
+              "source_pct": 54.995118776439966,
+              "evaluated_pct": 60.83333333333333
+            }
+          ]
+        },
+        "Household income": {
+          "distance_pp": 9.020907907582167,
+          "categories": [
+            {
+              "label": "",
+              "source_pct": 0.03254149040026033,
+              "evaluated_pct": 0.0
+            },
+            {
+              "label": "$10,000 - $14,999",
+              "source_pct": 3.709729905629678,
+              "evaluated_pct": 4.583333333333333
+            },
+            {
+              "label": "$100,000 - $119,999",
+              "source_pct": 5.109013992840872,
+              "evaluated_pct": 5.833333333333333
+            },
+            {
+              "label": "$120,000 - $149,999",
+              "source_pct": 4.2303937520338435,
+              "evaluated_pct": 4.166666666666666
+            },
+            {
+              "label": "$15,000 - $19,999",
+              "source_pct": 5.239179954441914,
+              "evaluated_pct": 3.75
+            },
+            {
+              "label": "$150,000 or more",
+              "source_pct": 3.8724373576309796,
+              "evaluated_pct": 1.6666666666666667
+            },
+            {
+              "label": "$20,000 - $24,999",
+              "source_pct": 5.987634233647901,
+              "evaluated_pct": 5.0
+            },
+            {
+              "label": "$25,000 - $29,999",
+              "source_pct": 6.313049137650505,
+              "evaluated_pct": 7.5
+            },
+            {
+              "label": "$30,000 - $39,999",
+              "source_pct": 12.007809957696063,
+              "evaluated_pct": 10.0
+            },
+            {
+              "label": "$40,000 - $49,999",
+              "source_pct": 10.70615034168565,
+              "evaluated_pct": 11.25
+            },
+            {
+              "label": "$50,000 - $59,999",
+              "source_pct": 11.389521640091116,
+              "evaluated_pct": 10.0
+            },
+            {
+              "label": "$60,000 - $69,999",
+              "source_pct": 8.72111942726977,
+              "evaluated_pct": 9.583333333333334
+            },
+            {
+              "label": "$70,000 - $79,999",
+              "source_pct": 8.525870484868207,
+              "evaluated_pct": 10.416666666666668
+            },
+            {
+              "label": "$80,000 - $89,999",
+              "source_pct": 5.0113895216400905,
+              "evaluated_pct": 4.166666666666666
+            },
+            {
+              "label": "$90,000 - $99,999",
+              "source_pct": 5.8249267816465995,
+              "evaluated_pct": 7.5
+            },
+            {
+              "label": "Less than $9,999",
+              "source_pct": 3.319232020826554,
+              "evaluated_pct": 4.583333333333333
+            }
+          ]
+        }
+      },
+      "missing_background_cells": 0
+    }
+  },
+  "source_sha256": {
+    "01_首轮归档/reference.json": "33cf7c10380efe3ecfaaea27ef19ee18d9432a33620319b9191ebc1b43c46939",
+    "01_首轮归档/cohort.json": "309496e6175b49750f34f14bd29c9d707dd09ca2adc3cf47d7536c30e034e3bd",
+    "01_首轮归档/results.json": "04c12c76b7698b0567748b65504241fa7785f2f6a5afbb0625c4d368288360ce",
+    "02_模型对比/results.json": "3b7e9f23834cc2fccbfb092d4761dc223132fbaf15c376abd11d540a67ac40ec",
+    "03_提示与背景/results.json": "41b1766ba1f4bcd7ef2785c2049b5b83b6cc1eef873734a7361d4688dd13330d",
+    "06_北美电商选品/results.json": "967e367e8a765ac9b2e600d3775a5ab138f6ea9b57ddd3db547f8fbc5b10c406"
+  },
+  "audit_code_sha256": "0624288c72bffcff994415fffd134c97646744f356ef9b2c2109e313eba39470"
+}

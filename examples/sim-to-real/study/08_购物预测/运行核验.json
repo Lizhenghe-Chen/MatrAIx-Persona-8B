@@ -1,4 +1,5 @@
 {
+  "verification_scope": "Source hashes, split membership, forecast format, completion and score-file coverage; does not independently recalculate numeric scores.",
   "dataset_digests_verified": true,
   "source_sha256": {
     "pew_zip": "d777de8e589da651e86c09fd8fb7fc14439c8a03632a9ad6864d5abb57792ca8",
@@ -180,7 +181,7 @@
       }
     }
   },
-  "independent_score_verification": {
+  "score_artifact_coverage_checks": {
     "pew": {
       "source": "pew-formal-score.json",
       "completion_gate": true,
@@ -210,5 +211,5 @@
       "scored_people": 500
     }
   },
-  "all_independent_scores_verified": true
+  "all_score_artifacts_and_coverage_verified": true
 }
