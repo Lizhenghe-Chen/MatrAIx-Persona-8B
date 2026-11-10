@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 451,
-  "git_bytes": 78525511,
+  "git_file_count": 454,
+  "git_bytes": 78532872,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -76,6 +76,12 @@
       "path": "decision_lab/calibration.py",
       "bytes": 2768,
       "sha256": "af56c08cd46a368fa71fa8639cf80c99d2d1a26e83824cb91ef98d11f95e631d",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/checkpoint.py",
+      "bytes": 2371,
+      "sha256": "0b1e286c34370c0c0cc85c84ad5d14a64224700f7fdc4ec4d4f8f9158bdc0ab4",
       "storage": "git"
     },
     {
@@ -289,6 +295,12 @@
       "storage": "git"
     },
     {
+      "path": "decision_lab/swiss-supplement-audit.json",
+      "bytes": 2125,
+      "sha256": "a5762c6b0d572025a0b2a9cc67dc2dc14b068e92b4f5f9c321396d77b4f4ae4e",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/swiss_appliances.py",
       "bytes": 3346,
       "sha256": "231cfcb4f6dea9d55aedfdb7874d94bfa602a014bdc0d0341533bc2d0d0cebf4",
@@ -304,6 +316,12 @@
       "path": "decision_lab/test_calibration.py",
       "bytes": 909,
       "sha256": "b2a117f9cded259a2d9c3aabfe921ae6c0cf57f91dff0254ed0fd5b37ef2c94b",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/test_checkpoint.py",
+      "bytes": 1654,
+      "sha256": "38243f0b798cc713b28f1a2ca12aea693586a5fa8fe6341628b012a90017be92",
       "storage": "git"
     },
     {
@@ -362,8 +380,8 @@
     },
     {
       "path": "decision_lab/数据审查发现.md",
-      "bytes": 6887,
-      "sha256": "1e0238745d37008068bcd12338c31acbafcb6fed81cc1aaf74842b03d355fdca",
+      "bytes": 8098,
+      "sha256": "2e3e0859dc86c5b1d4049465d30f7b8177e7a09835a660d4fb51473b51a0de01",
       "storage": "git"
     },
     {

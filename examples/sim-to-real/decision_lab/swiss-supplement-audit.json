@@ -1,0 +1,102 @@
+{
+  "source": "https://doi.org/10.1016/j.jclepro.2024.143968",
+  "supplement_sha256": "6024399cb80beb9a5b4b54b8b305dd456a2e2307f75ebf0f96817b00141efc1f",
+  "source_sections": [
+    "A.1.1",
+    "A.1.2",
+    "A.2",
+    "A.3"
+  ],
+  "checks": {
+    "Education": {
+      "published_counts": [
+        12,
+        134,
+        1086,
+        256,
+        572,
+        532,
+        644,
+        55
+      ],
+      "actual_counts": [
+        12,
+        134,
+        1086,
+        256,
+        572,
+        532,
+        644,
+        55
+      ],
+      "matches": true,
+      "missing": 122
+    },
+    "w7_q40x1": {
+      "published_counts": [
+        44,
+        222,
+        590,
+        603,
+        509,
+        384,
+        256,
+        166,
+        91,
+        166
+      ],
+      "actual_counts": [
+        44,
+        222,
+        590,
+        603,
+        509,
+        384,
+        256,
+        166,
+        91,
+        166
+      ],
+      "matches": true,
+      "missing": 382
+    },
+    "age": {
+      "published_quartiles": [
+        42,
+        55,
+        66
+      ],
+      "actual_quartiles": [
+        42.0,
+        55.0,
+        66.0
+      ]
+    },
+    "sex": {
+      "published_counts": [
+        1658,
+        1753,
+        2
+      ],
+      "actual_counts": [
+        1658,
+        1753,
+        2
+      ]
+    }
+  },
+  "field_timing": {
+    "Education": "wave 7, before wave 8 choice",
+    "w7_q40x1": "wave 7, before wave 8 choice",
+    "w7_q26": "wave 7, before wave 8 choice",
+    "age": "wave 8 personal details before choice",
+    "w8_q2": "wave 8 personal details before choice",
+    "policy_preferences": "after choice; excluded"
+  },
+  "remaining": [
+    "Verify product-level label strings and choice-card picture against CSV.",
+    "Supplement presents English wording; individual original survey language is not retained in prepared public data. Declare author-English text rendering as a distinct language/presentation condition.",
+    "Only source raw mapped fields; exclude choice-derived indexes and post-choice policies."
+  ],
+  "status": "author_descriptive_statistics_and_background_wave_verified"
+}
