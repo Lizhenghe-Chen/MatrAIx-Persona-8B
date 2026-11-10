@@ -1,0 +1,271 @@
+{
+  "analysis_type": "post-hoc sensitivity on previously examined test participants",
+  "people": 240,
+  "reference_people": 2785,
+  "source_score_sha256": "cfb300104063d2e5942381a3177b10038d485ffc7556012d469189b21dcb381d",
+  "protocol_sha256": "4f6c62e1839c862554b35940ac0524ea97c3e6dd650a52ce0d67a54821df161e",
+  "runner_sha256": "3af733d76e511fcf116aad1b1aaa9144385cabc658c068b3499e1b53c383b3fc",
+  "summary": {
+    "statistics_basic": {
+      "tv_pp": 2.2075667277735,
+      "brier": 0.8242945098797018,
+      "distribution": [
+        0.10810348197513084,
+        0.14338413308621192,
+        0.1615072992956591,
+        0.10808432156021576,
+        0.20773370749526757,
+        0.16653338700011502,
+        0.1046536695873998
+      ]
+    },
+    "basic_probability": {
+      "tv_pp": 14.181934232025984,
+      "brier": 0.8780100118544149,
+      "distribution": [
+        0.08689557802287834,
+        0.14235079656862915,
+        0.1897903901143772,
+        0.22087607230392262,
+        0.19263179125817018,
+        0.1102862030228757,
+        0.057169168709151744
+      ]
+    },
+    "statistics_rich": {
+      "tv_pp": 2.160653836143899,
+      "brier": 0.8253441668068989,
+      "distribution": [
+        0.10728321929204707,
+        0.14245869937349384,
+        0.16201960295402404,
+        0.10706034762013585,
+        0.2093460458511632,
+        0.1664141515005951,
+        0.1054179334085405
+      ]
+    },
+    "rich_probability": {
+      "tv_pp": 14.79337355610565,
+      "brier": 0.8726167510563712,
+      "distribution": [
+        0.09510932343234543,
+        0.15128364789604073,
+        0.19249961324257392,
+        0.21534839108911097,
+        0.18621542388613838,
+        0.10765318172442141,
+        0.05189041872937414
+      ]
+    },
+    "statistics_attitude": {
+      "tv_pp": 1.765870682995152,
+      "brier": 0.8254380807176253,
+      "distribution": [
+        0.1046770618488175,
+        0.14253494943677877,
+        0.16422488021951667,
+        0.11083988123610136,
+        0.20970145391208533,
+        0.16622704135519462,
+        0.10179473199150471
+      ]
+    },
+    "attitude_probability": {
+      "tv_pp": 16.589843750000213,
+      "brier": 0.8797168489583332,
+      "distribution": [
+        0.10123958333333535,
+        0.1566901041666681,
+        0.20018489583333127,
+        0.2189817708333348,
+        0.1774869791666662,
+        0.09779427083333193,
+        0.04762239583333383
+      ]
+    }
+  },
+  "comparisons": {
+    "basic": {
+      "reference": "basic_probability",
+      "candidate": "statistics_basic",
+      "tv_improvement_pp": 11.974367504252484,
+      "tv_95_interval": [
+        7.421192119293757,
+        13.924865609523362
+      ],
+      "brier_improvement": 0.05371550197471309,
+      "brier_95_interval": [
+        0.043953744883995526,
+        0.06376768946502094
+      ]
+    },
+    "rich": {
+      "reference": "rich_probability",
+      "candidate": "statistics_rich",
+      "tv_improvement_pp": 12.63271971996175,
+      "tv_95_interval": [
+        8.018717282382541,
+        14.61916977007321
+      ],
+      "brier_improvement": 0.04727258424947223,
+      "brier_95_interval": [
+        0.036394831454835685,
+        0.05810175774253557
+      ]
+    },
+    "attitude": {
+      "reference": "attitude_probability",
+      "candidate": "statistics_attitude",
+      "tv_improvement_pp": 14.823973067005062,
+      "tv_95_interval": [
+        10.55614306325975,
+        16.19047105400479
+      ],
+      "brier_improvement": 0.054278768240707986,
+      "brier_95_interval": [
+        0.04292858266581786,
+        0.0660290943872037
+      ]
+    }
+  },
+  "controlled_attribute_effects": {
+    "Eco-Friendly Materials": {
+      "people": 60,
+      "pairs": 480,
+      "real_effect": 1.6104166666666666,
+      "methods": {
+        "statistics_basic": {
+          "effect": 0.9779984059821388,
+          "minus_real_95_interval": [
+            -1.091005160720443,
+            -0.20709118566981358
+          ]
+        },
+        "basic_probability": {
+          "effect": 0.5685416666666666,
+          "minus_real_95_interval": [
+            -1.5257078124999999,
+            -0.5989369791666667
+          ]
+        },
+        "statistics_rich": {
+          "effect": 0.9568156333845312,
+          "minus_real_95_interval": [
+            -1.1151959227310266,
+            -0.23083016020376051
+          ]
+        },
+        "rich_probability": {
+          "effect": 0.5842916666666668,
+          "minus_real_95_interval": [
+            -1.4791109375,
+            -0.5930781250000011
+          ]
+        },
+        "statistics_attitude": {
+          "effect": 0.9355927679312613,
+          "minus_real_95_interval": [
+            -1.1290522481678265,
+            -0.2575589599604478
+          ]
+        },
+        "attitude_probability": {
+          "effect": 0.7311458333333333,
+          "minus_real_95_interval": [
+            -1.3272765624999998,
+            -0.4447593750000002
+          ]
+        }
+      }
+    },
+    "Gel Cushioning": {
+      "people": 60,
+      "pairs": 480,
+      "real_effect": 1.3333333333333333,
+      "methods": {
+        "statistics_basic": {
+          "effect": 0.7786570375981492,
+          "minus_real_95_interval": [
+            -0.9899765039886861,
+            -0.16016895026852213
+          ]
+        },
+        "basic_probability": {
+          "effect": 0.4956458333333334,
+          "minus_real_95_interval": [
+            -1.2643036458333332,
+            -0.4442598958333334
+          ]
+        },
+        "statistics_rich": {
+          "effect": 0.7715582955439085,
+          "minus_real_95_interval": [
+            -0.9986410839303881,
+            -0.16355252622981747
+          ]
+        },
+        "rich_probability": {
+          "effect": 0.4430936468646864,
+          "minus_real_95_interval": [
+            -1.3293954156353136,
+            -0.4949176516089114
+          ]
+        },
+        "statistics_attitude": {
+          "effect": 0.7658482203936565,
+          "minus_real_95_interval": [
+            -1.0025066406451357,
+            -0.16713670881931175
+          ]
+        },
+        "attitude_probability": {
+          "effect": 0.5637083333333331,
+          "minus_real_95_interval": [
+            -1.2050838541666669,
+            -0.36096927083333363
+          ]
+        }
+      }
+    }
+  },
+  "fit_checks": {
+    "basic": {
+      "iterations": [
+        23
+      ],
+      "max_iter_reached": false,
+      "encoded_columns": 92,
+      "training_rows": 111400
+    },
+    "rich": {
+      "iterations": [
+        30
+      ],
+      "max_iter_reached": false,
+      "encoded_columns": 111,
+      "training_rows": 111400
+    },
+    "attitude": {
+      "iterations": [
+        28
+      ],
+      "max_iter_reached": false,
+      "encoded_columns": 121,
+      "training_rows": 111400
+    }
+  },
+  "versions": {
+    "numpy": "2.5.0",
+    "pandas": "3.0.3",
+    "pyreadr": "0.5.9",
+    "scikit-learn": "1.9.1"
+  },
+  "checks": {
+    "test_people_unchanged": true,
+    "splits_disjoint": true,
+    "source_hash_verified": true,
+    "original_llm_metrics_reproduced": true,
+    "llm_requests": 0
+  }
+}

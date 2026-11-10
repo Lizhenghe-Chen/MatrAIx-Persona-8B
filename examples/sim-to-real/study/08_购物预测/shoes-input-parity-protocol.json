@@ -1,0 +1,69 @@
+{
+  "analysis_type": "post-hoc sensitivity on previously examined test participants",
+  "question": "Does a statistical reference remain useful without attitudes or hidden design labels?",
+  "frozen_sample_sha256": "aadb94b19670cf1213ce83e97bd1af9d407e45e23c203214d38a051b7d9d7698",
+  "source_sha256": "520a10dbfce3467c20f15e1c32cf2dc79a768702bc682a91145b2fd37489df09",
+  "seed": 20261109,
+  "training_people": 2785,
+  "test_people": 240,
+  "shared_fields": [
+    "filler1",
+    "filler2",
+    "filler3",
+    "filler4",
+    "filler5",
+    "filler6",
+    "filler7",
+    "filler8",
+    "withEco",
+    "withGel",
+    "other_filler1",
+    "other_filler2",
+    "other_filler3",
+    "other_filler4",
+    "other_filler5",
+    "other_filler6",
+    "other_filler7",
+    "other_filler8",
+    "other_withEco",
+    "other_withGel",
+    "profile"
+  ],
+  "background_by_variant": {
+    "basic": [
+      "Age group",
+      "Education"
+    ],
+    "rich": [
+      "Age group",
+      "Education",
+      "Gender",
+      "Household income"
+    ],
+    "attitude": [
+      "Age group",
+      "Education",
+      "Gender",
+      "Household income",
+      "Agreement: I prefer a cheaper product even if it is not environmentally sustainable",
+      "Agreement: It is important for consumers to consider the ethical consequences of the products that they purchase"
+    ]
+  },
+  "excluded_inputs": [
+    "design",
+    "design_eco",
+    "design_gel",
+    "participant ID",
+    "test answers"
+  ],
+  "encoding": "one-hot; unseen levels ignored",
+  "fit": {
+    "model": "multinomial logistic regression",
+    "C": 1,
+    "max_iter": 250,
+    "tol": 0.0005
+  },
+  "tuning": "no new hyperparameter search; same regularization as original baseline",
+  "bootstrap": "2000 paired respondent resamples within four original design groups",
+  "limitations": "Statistical models learn from separate human ratings; LLM forecasts are not fine-tuned on those ratings."
+}
