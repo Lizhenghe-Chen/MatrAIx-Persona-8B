@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 449,
-  "git_bytes": 78518956,
+  "git_file_count": 451,
+  "git_bytes": 78525511,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -109,6 +109,12 @@
       "storage": "git"
     },
     {
+      "path": "decision_lab/dryer-formal-manifest.json",
+      "bytes": 2248,
+      "sha256": "7aec031b48e71af6fcdd4047865d6ba83a6c7bb2de4e70d8ef4cd6773e0fcd7e",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/dryer-formal-protocol.json",
       "bytes": 2991,
       "sha256": "0d64da3d0d3a3e380ca07e50dc38e7e1da5419eb9cbda49535fa790cb69349a4",
@@ -154,6 +160,12 @@
       "path": "decision_lab/dryer_baseline.py",
       "bytes": 3614,
       "sha256": "fe2adc951ce92d9e92a3cb04fbd291b6eb339b1a18375f00c17322b81158802a",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/dryer_formal.py",
+      "bytes": 4307,
+      "sha256": "477533dbf9a1f04a8b879063173728f432eca371a65279dda92252f5b29454a9",
       "storage": "git"
     },
     {
