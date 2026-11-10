@@ -1,0 +1,20 @@
+{
+  "version": "dryer-text-technical-v1",
+  "purpose": "Technical validation only; no target-answer scoring or configuration selection",
+  "sample": "Three training-set respondents per country-treatment stratum, one deterministic task each; 21 people, 63 calls across three background conditions",
+  "seed": 20261109,
+  "background_conditions": {
+    "none": [],
+    "basic": ["age_band", "education"],
+    "rich": ["age_band", "education", "weekly_dryer_use", "household_size"]
+  },
+  "admission_evidence": {
+    "license_cloud_use": "Zenodo record 10046247 CC BY 4.0; user authorizes necessary anonymous background at official endpoint. No contact, location coordinate, raw record or respondent identifier sent.",
+    "question_mapping": "dryer-reconciliation.json: 20216 original choices match; Table 2 and Figure 10 support text-rendered choices. Unresolved personalised-cost and USA generic-cost conditions excluded before model execution.",
+    "background_timing": "Weekly use precedes the personalised experimental display (paper equation 7). Age/education/household size treated as stable attributes existing at choice time, even if elicited later. This is a stated retrospective-measurement assumption, not proof of questionnaire ordering. Financial comfort excluded from this technical pilot pending timing review.",
+    "author_statistics": "All 12 published country-treatment counts and 120 Table 4 means reproduce; use final long table without joining wide table.",
+    "leakage_review": "Explicit payload construction sends question/options/context/whitelisted background only; answers, identifiers, task IDs, groups, weights and source metadata stay local. Test respondents are not selected. No scores produced."
+  },
+  "limits": {"calls_per_condition": 21, "cost_usd_per_condition": 1.0},
+  "limitations": ["Text replaces original graphical presentation.", "Pilot is not a formal outcome experiment.", "No evidence of predictive improvement can be inferred from format compliance.", "Field richness and final experiment arms remain subject to frozen formal protocol."]
+}

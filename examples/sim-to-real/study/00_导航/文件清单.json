@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 437,
-  "git_bytes": 78487731,
+  "git_file_count": 439,
+  "git_bytes": 78494519,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -44,8 +44,8 @@
     },
     {
       "path": "decision_lab/README.md",
-      "bytes": 4761,
-      "sha256": "15be56de7fb973fd1e8e89bc40c940a6752205a562e267ce62c3ec9f24e8c965",
+      "bytes": 5822,
+      "sha256": "6e5341b67e18b27077dca1abb70a09816d275fd3bf83c2578d0cd73453bdd042",
       "storage": "git"
     },
     {
@@ -103,6 +103,12 @@
       "storage": "git"
     },
     {
+      "path": "decision_lab/dryer-pilot-protocol.json",
+      "bytes": 2088,
+      "sha256": "f29f517e011ae98eb696f58afc3542067b6376959189e9c06870e375a6de50a9",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/dryer-reconciliation.json",
       "bytes": 24709,
       "sha256": "13d18c0c5ac38f9b34feef55d7e992c17d765f8ab45756ed5e2d92613ffe4149",
@@ -118,6 +124,12 @@
       "path": "decision_lab/dryer_audit.py",
       "bytes": 3115,
       "sha256": "6f47b997e55264826e8167beb934cda4174c131a2e162bc3cf3820aa70fe9a24",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/dryer_pilot.py",
+      "bytes": 3639,
+      "sha256": "5f1a910cae8bf25028e6deb9ec29da625779c2dd1b5bd937c97dafc47f8be8ed",
       "storage": "git"
     },
     {
