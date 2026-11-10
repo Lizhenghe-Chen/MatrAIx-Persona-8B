@@ -191,7 +191,7 @@ def shopping_stage(raw):
     return {"labels": SHOP_SETTINGS, "scopes": data}
 
 
-def build():
+def collect_stages():
     first, models, profiles, shopping = map(read, FOLDERS)
     model_labels = {f"{model}-{arm}": f"{name} · {label}" for model, name in MODELS.items() for arm, label in ARMS.items()}
     profile_labels = {f"p{p}-b{b}": f"{prompt} · {background}"
@@ -206,11 +206,26 @@ def build():
         stage["source"] = f"{folder}/results.json"
         for q in (q for s in stage["scopes"].values() for q in s["items"]):
             assert set(q["settings"]) == set(stage["labels"])
+    return stages
+
+
+def build_history():
+    stages = collect_stages()
     template = (ROOT / "报告模板.html").read_text()
     html = template.replace("@@DATA@@", json.dumps(stages, ensure_ascii=False, allow_nan=False).replace("<", "\\u003c"))
     html = html.replace("@@SCRIPT@@", (ROOT / "report_charts.js").read_text())
     assert "@@" not in html
-    (ROOT / "index.html").write_text(html)
+    (ROOT / "historical-details.html").write_text(html)
+    return stages
+
+
+def build():
+    # Both entry points produce the unified report; the four older rounds remain
+    # available as a technical appendix rather than replacing the latest round.
+    import sys
+    sys.path.insert(0, str(ROOT.parent))
+    from retail_reader_report import build as reader_build
+    reader_build()
 
 
 if __name__ == "__main__":

@@ -96,6 +96,7 @@ main{max-width:1080px;margin:auto;padding:28px 18px}h1{line-height:1.2}section{b
 small{color:#54655e}a{color:#12675d} table{border-collapse:collapse;width:100%} th,td{padding:8px;text-align:left;border-bottom:1px solid #ddd}
 </style><script src="vendor/echarts.min.js"></script>
 <main><h1>REPORT_TITLE</h1>
+<p><a href="index.html">返回阅读版：前后对照、数据样例与通俗解读</a>。本页保留开发样本、分组与技术诊断。</p>
 <p>比较同一批真人、同一道题在不同模型设置下的回答。开发集用来排查问题，独立评估用来检验改善能否复现。</p>
 DECISIONS
 FINDINGS
@@ -127,7 +128,7 @@ SAMPLING
 <div id="amazon" class="chart" role="img" aria-label="Amazon 模型与统计基线的预测误差"></div>
 <p>每个品类分别预测是否发生购买。图中 Brier 分数与问卷的多选项 Brier 定义不同。<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11091104/">Amazon 数据论文</a></p></section>
 <section id="shoesPanel"><h2>运动鞋购买意愿</h2>
-<p>每个人看到 8 对商品，分别给两款鞋 1–7 分。统计模型用独立样本学习商品属性、另一款鞋的价格与评分等信息，以及同样可用的真人背景。</p>
+<p>每个人看到 8 对商品，分别给两款鞋 1–7 分。统计模型用独立真人样本训练，输入包括 10 项商品属性、另一款鞋的价格与用户星级等属性、人口背景、两项实测态度和实验设计信息。基础与补充背景模型组没有收到两项态度，因此统计方法与这些组的输入并不完全相同；它也额外使用了真人训练评分。</p>
 <p id="shoesStatus"></p>
 <label>总体指标 <select id="shoeMetric"><option value="tv_pp">分布误差（百分点）</option><option value="brier">逐人概率误差</option><option value="rating_mae">平均评分绝对误差（分）</option></select></label>
 <div id="shoeOverview" class="chart" role="img" aria-label="运动鞋各设置总体误差"></div>
@@ -409,7 +410,10 @@ window.addEventListener("resize",()=>charts.forEach(chart=>chart.resize()));
 </script></html>'''
     with tempfile.NamedTemporaryFile(mode="w", encoding="utf-8", dir=BASE, delete=False) as output:
         output.write(page.replace("REPORT_TITLE", title).replace("FINDINGS", findings(scores, extra)).replace("SAMPLING", sensitivity).replace("PROGRESS", progress_html).replace("DECISIONS", decisions).replace("PAYLOAD", payload))
-    Path(output.name).replace(BASE / "index.html")
+    Path(output.name).replace(BASE / "technical-details.html")
+    # The reader-facing report shares the same frozen aggregate results.
+    from retail_reader_report import build
+    build()
 
 
 if __name__ == "__main__":
