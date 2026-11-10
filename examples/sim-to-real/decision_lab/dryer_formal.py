@@ -62,6 +62,7 @@ def execute(directory,credentials):
             raise ValueError('Manifest mismatch')
         result=run(study,seal,config,directory/(name+'.sqlite'),unit['phase'])
         print(json.dumps({'unit':name,**result}),flush=True)
+        if result.get('stop_reason'):return
         if not result['complete']:raise RuntimeError('Unit incomplete; stop before next unit')
 
 if __name__=='__main__':

@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 461,
-  "git_bytes": 78551340,
+  "git_file_count": 463,
+  "git_bytes": 78555643,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -170,8 +170,8 @@
     },
     {
       "path": "decision_lab/dryer_formal.py",
-      "bytes": 4307,
-      "sha256": "477533dbf9a1f04a8b879063173728f432eca371a65279dda92252f5b29454a9",
+      "bytes": 4351,
+      "sha256": "90cf77a7f7a8602191fa279e0e269cb006c7f4170d2aa371e7b32b65d3acbef1",
       "storage": "git"
     },
     {
@@ -235,6 +235,12 @@
       "storage": "git"
     },
     {
+      "path": "decision_lab/overnight-handoff.json",
+      "bytes": 519,
+      "sha256": "56f645087ff3e87019f0970d101cbc28b9272e673c1bdb1ddf8bad0feead495e",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/pilot_summary.py",
       "bytes": 2521,
       "sha256": "67d09c7095e8144899e0ba77176d254629589667e6758fb98807ab9fb25a4f18",
@@ -254,8 +260,8 @@
     },
     {
       "path": "decision_lab/runner.py",
-      "bytes": 4579,
-      "sha256": "bf05d29699948c960578df829025c5c7ae62765d058262181aaeab3a43380974",
+      "bytes": 5094,
+      "sha256": "1c6335b51b142671ba11f68145057f71eba5a4d9b0c02e36f56a3b4782b1bd00",
       "storage": "git"
     },
     {
@@ -398,8 +404,8 @@
     },
     {
       "path": "decision_lab/test_runner.py",
-      "bytes": 1957,
-      "sha256": "a113316712fc4440f2d038606febce6a61e0468ce6012c9bdc563fc3e9a23c79",
+      "bytes": 2460,
+      "sha256": "95d8b00a8e195fc1056ee376e5521469b7ef8536b8e38f8ca541ca8dd1c3c88c",
       "storage": "git"
     },
     {
@@ -424,6 +430,12 @@
       "path": "decision_lab/数据审查发现.md",
       "bytes": 9805,
       "sha256": "17cec5dcfbb0fdcbaa19882a0f08a9ec029289adc46fb4ab9db91e1f89bab23d",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/阶段交接_2026-11-10.md",
+      "bytes": 2722,
+      "sha256": "9ee9e5d41d80d30f196c957055684487234a2873c9d8100ecda176316182c865",
       "storage": "git"
     },
     {

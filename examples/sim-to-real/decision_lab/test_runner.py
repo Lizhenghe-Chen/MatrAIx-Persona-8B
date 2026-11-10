@@ -28,3 +28,11 @@ class RunnerTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             result=run(s,f,c,Path(d)/'calls.sqlite','test',lambda *a:self.fail('Must not call'))
             self.assertFalse(result['complete']);self.assertEqual(result['states'],{})
+    def test_operational_deadline_stops_without_new_call(self):
+        import json,time
+        s,f,c=self.fixtures()
+        with tempfile.TemporaryDirectory() as d:
+            Path(d,'run-control.json').write_text(json.dumps({'stop_starting_calls_at_epoch':time.time()-1}))
+            result=run(s,f,c,Path(d)/'calls.sqlite','test',lambda *a:self.fail('Must not call after deadline'))
+            self.assertEqual(result['states'],{})
+            self.assertEqual(result['stop_reason'],'deadline')

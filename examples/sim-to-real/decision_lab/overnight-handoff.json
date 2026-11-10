@@ -1,0 +1,13 @@
+{
+  "time": "2026-11-10T23:38:49.291376+08:00",
+  "status": "stopped_at_complete_response_boundary",
+  "unit": "rich_development",
+  "counts": {
+    "complete": 790
+  },
+  "unit_target": 2336,
+  "remaining_in_unit": 1546,
+  "remaining_total_calls": 13226,
+  "scores_calculated": false,
+  "stop_mechanism": "Temporary SQLite before-insert guard blocked next API request after current result committed; guard removed after process exit. No result rows deleted or modified. Durable stop_requested control remains true."
+}

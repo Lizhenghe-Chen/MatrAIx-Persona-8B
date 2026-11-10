@@ -33,6 +33,8 @@ def run(study, seal, config, database, phase, transport=send):
                config['max_tokens']*config['output_usd_per_million'])/1e6
         jobs.append((digest([r['person'],r['task']]),body,bound,len(r['options'])))
     path=Path(database);path.parent.mkdir(parents=True,exist_ok=True)
+    stop_reason=None
+    control_path=path.parent/'run-control.json'
     with path.with_suffix('.lock').open('a') as lock:
         os.chmod(lock.name,0o600);fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
         db=sqlite3.connect(path);os.chmod(path,0o600)
@@ -46,6 +48,12 @@ def run(study, seal, config, database, phase, transport=send):
             if db.execute("SELECT count(*) FROM calls WHERE status='pending'").fetchone()[0]:
                 raise RuntimeError('Uncertain interrupted request: reconcile before resuming; no automatic repeat')
             for job,body,bound,n in jobs:
+                if control_path.exists():
+                    control=json.loads(control_path.read_text())
+                    deadline=control.get('stop_starting_calls_at_epoch')
+                    if control.get('stop_requested') or (deadline is not None and time.time()>=float(deadline)):
+                        stop_reason='user_stop' if control.get('stop_requested') else 'deadline'
+                        break
                 old=db.execute('SELECT request_hash,status FROM calls WHERE job=?',(job,)).fetchone()
                 if old:
                     if old[0]!=digest(body):raise ValueError('Request changed')
@@ -63,6 +71,6 @@ def run(study, seal, config, database, phase, transport=send):
                     raise RuntimeError('Call failed; inspect checkpoint before explicit retry') from None
                 db.execute('UPDATE calls SET status=?,response=?,elapsed=? WHERE job=?',('complete',json.dumps(result),time.monotonic()-start,job));db.commit()
             counts=dict(db.execute('SELECT status,count(*) FROM calls GROUP BY status'))
-            return {'expected_jobs':len(jobs),'states':counts,'complete':counts.get('complete',0)==len(jobs),
+            return {'expected_jobs':len(jobs),'states':counts,'stop_reason':stop_reason,'complete':counts.get('complete',0)==len(jobs),
                     'reserved_cost_usd':db.execute('SELECT coalesce(sum(reserved_usd),0) FROM calls').fetchone()[0]}
         finally:db.close()
