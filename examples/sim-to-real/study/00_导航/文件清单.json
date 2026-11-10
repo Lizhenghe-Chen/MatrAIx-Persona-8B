@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 439,
-  "git_bytes": 78494519,
+  "git_file_count": 441,
+  "git_bytes": 78498331,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -44,8 +44,8 @@
     },
     {
       "path": "decision_lab/README.md",
-      "bytes": 5822,
-      "sha256": "6e5341b67e18b27077dca1abb70a09816d275fd3bf83c2578d0cd73453bdd042",
+      "bytes": 6182,
+      "sha256": "7b23d4a1148a64080a43854acbfa7fb821b541a13e14dccff8f263a157b2b898",
       "storage": "git"
     },
     {
@@ -106,6 +106,12 @@
       "path": "decision_lab/dryer-pilot-protocol.json",
       "bytes": 2088,
       "sha256": "f29f517e011ae98eb696f58afc3542067b6376959189e9c06870e375a6de50a9",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/dryer-pilot-result.json",
+      "bytes": 1406,
+      "sha256": "5fca10a7fd2352ae2aa899e433fafca7b1efef298aadf1ab67df6e6ba939da3e",
       "storage": "git"
     },
     {
@@ -178,6 +184,12 @@
       "path": "decision_lab/license-review.json",
       "bytes": 1029,
       "sha256": "7223a879eed8678dda4481869eecb0ebd7ef54dacc3840c787b9adc405a90f72",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/pilot_summary.py",
+      "bytes": 2046,
+      "sha256": "064145ddc50fbc65d02b8532f2a021e2c3670533a5227d8047e0a8bbc956e4a4",
       "storage": "git"
     },
     {
