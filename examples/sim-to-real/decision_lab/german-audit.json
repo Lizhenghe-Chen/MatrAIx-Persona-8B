@@ -1,0 +1,218 @@
+{
+  "status": "card_order_verified_not_admitted",
+  "people": 869,
+  "unique_people": 869,
+  "cards": [
+    {
+      "question": "Choice01",
+      "page": 5,
+      "profile_order": [
+        12,
+        1,
+        11
+      ],
+      "legal_codes": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "missing_records": 0
+    },
+    {
+      "question": "Choice02",
+      "page": 6,
+      "profile_order": [
+        2,
+        3,
+        4
+      ],
+      "legal_codes": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "missing_records": 0
+    },
+    {
+      "question": "Choice03",
+      "page": 7,
+      "profile_order": [
+        7,
+        6,
+        5
+      ],
+      "legal_codes": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "missing_records": 0
+    },
+    {
+      "question": "Choice04",
+      "page": 8,
+      "profile_order": [
+        8,
+        9,
+        10
+      ],
+      "legal_codes": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "missing_records": 0
+    },
+    {
+      "question": "Choice05",
+      "page": 10,
+      "profile_order": [
+        1,
+        12,
+        2
+      ],
+      "legal_codes": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "missing_records": 0
+    },
+    {
+      "question": "Choice06",
+      "page": 11,
+      "profile_order": [
+        5,
+        4,
+        3
+      ],
+      "legal_codes": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "missing_records": 0
+    },
+    {
+      "question": "Choice07",
+      "page": 12,
+      "profile_order": [
+        6,
+        7,
+        8
+      ],
+      "legal_codes": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "missing_records": 0
+    },
+    {
+      "question": "Choice08",
+      "page": 13,
+      "profile_order": [
+        11,
+        10,
+        9
+      ],
+      "legal_codes": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "missing_records": 0
+    },
+    {
+      "question": "Choice09",
+      "page": 15,
+      "profile_order": [
+        3,
+        2,
+        1
+      ],
+      "legal_codes": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "missing_records": 0
+    },
+    {
+      "question": "Choice10",
+      "page": 16,
+      "profile_order": [
+        4,
+        5,
+        6
+      ],
+      "legal_codes": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "missing_records": 0
+    },
+    {
+      "question": "Choice11",
+      "page": 17,
+      "profile_order": [
+        9,
+        8,
+        7
+      ],
+      "legal_codes": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "missing_records": 0
+    },
+    {
+      "question": "Choice12",
+      "page": 18,
+      "profile_order": [
+        10,
+        11,
+        12
+      ],
+      "legal_codes": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "missing_records": 0
+    }
+  ],
+  "errors": [],
+  "source_sha256": "c3eaa2b92ceab257ce34f1605975696eb2e5ad9b10425c1b5357b41368b85475",
+  "corrections": [
+    "Each task has three products plus no-buy, not two products.",
+    "Original questionnaire page 19 and SAV label both say age 30–39; English overview 30–49 is inconsistent."
+  ],
+  "timing_warning": "Original questionnaire interleaves choice blocks and attitude questions. English overview grouping is not a reliable chronology.",
+  "excluded_background": [
+    "U_* and W_* utilities/importance derived from choices",
+    "Zero fitted no-choice utility",
+    "post-choice FNS items",
+    "interleaved attitudes unless task-specific timing is reconstructed"
+  ],
+  "pending": [
+    "extract and cross-check all profile attributes against workbook",
+    "randomized information text and sequence",
+    "author descriptive statistics",
+    "background whitelist and timing approval"
+  ]
+}

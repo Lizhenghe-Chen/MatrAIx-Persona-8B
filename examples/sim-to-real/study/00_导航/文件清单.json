@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 415,
-  "git_bytes": 78390302,
+  "git_file_count": 417,
+  "git_bytes": 78396834,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -88,6 +88,18 @@
       "path": "decision_lab/deepseek-pro.json",
       "bytes": 445,
       "sha256": "42bd9cbe9b9b846f14c9883bc2ff7342ab902e23d155c4928d861f981f9b95d5",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/german-audit.json",
+      "bytes": 3778,
+      "sha256": "8682cd6b13adb8764f1fb4a7238169649706f5ec18f932ffa25678d6bf061d24",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/german_packaging.py",
+      "bytes": 2754,
+      "sha256": "b4e3c7b6e3e3ae767f50707fb4881b6ac12767403411d33453d0b060cc26c715",
       "storage": "git"
     },
     {
