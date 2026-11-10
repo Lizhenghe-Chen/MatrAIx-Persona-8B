@@ -1,26 +1,37 @@
-import json,html
+"""Generate the evidence-card index and legacy navigation; never overwrite prose."""
+import html
+import json
 from pathlib import Path
-P=Path(__file__).parent
-rows=[
-('访谈提供本人信息','Generative Agent Simulations of 1,000 People','2024，预印本','https://arxiv.org/abs/2411.10109','1,052名真人；用生活访谈构建对应代理，比较问卷、人格及实验表现。GSS表现达到真人两周后重复自身答案表现的85%，不是答对率85%。','本人经历是值得优先研究的信息来源；不能直接外推为访谈能预测购物成交。','论文摘要及Stanford机构解读'),
-('行为数据专项训练','A foundation model to predict and capture human cognition','2025，Nature','https://www.nature.com/articles/s41586-025-09215-4','Centaur以人类行为数据微调，对照基础模型和认知模型，并检查未训练过的任务。','值得比较同一底座训练前后；行为任务上的收益不能直接等同电商转化率收益。','出版页与扩展图说明'),
-('实验效应与幅度','Large language models can predict the results of social science experiments','2026，Nature','https://www.nature.com/articles/s41586-026-10742-x','正式发表版涉及70项实验、469个效应和119,330名参与者；预测与真实效应相关，但系统高估效应大小。','分开检查排序、方向、绝对幅度。不要沿用旧预印本的476个效应数字。','出版页摘要'),
-('人口背景条件化','Out of One, Many: Using Language Models to Simulate Human Samples','2022，所查为预印本版本','https://arxiv.org/abs/2209.06899','报告GPT-3在特定人口背景条件下可重现一些人群回答分布。','这是早期正面证据，不能推出任意人口标签、任意模型或题材都有效。','论文摘要'),
-('选项顺序与测量偏差','Questioning the Survey Responses of Large Language Models','2024，NeurIPS','https://proceedings.nips.cc/paper_files/paper/2024/hash/515c62809e0a29729d7eec26e2916fc0-Abstract-Conference.html','研究问卷回答中的系统偏差；随机化答案顺序后，模型可能趋向均匀分布。','顺序随机化是诊断工具，不等于修正后就像真人。需把显示位置映射回原答案。','会议页与摘要检索'),
-('人格线索和刻板印象','Evaluating Large Language Model Biases in Persona-Steered Generation','2024，Findings of ACL','https://aclanthology.org/2024.findings-acl.586/','不符合常见刻板组合的人设更难驱动模型，模型有时回到人口标签通常对应的立场。','应检查反常见组合和少数群体；生成性格不能代替本人测量。','论文摘要'),
-('温度与专项微调','Using LLMs to Model the Beliefs and Preferences of Targeted Populations','2024，预印本','https://arxiv.org/abs/2403.20252','在电动车偏好调查中比较两类微调方法，分别评价人群统计和逐人回答，并研究温度的权衡。','温度应按目标选；摘要不足以支持任何通用最优数值。优先补读方法与附录。','论文摘要'),
-('心理量表的统计结构','Limited Ability of LLMs to Simulate Human Psychological Behaviours: a Psychometric Analysis','2024，预印本','https://arxiv.org/abs/2405.07248','用GPT-3.5、GPT-4及一般或真人人口背景人设回答标准化心理测量。','不能只比均值，还要核对方差、相关和量表结构；具体效应待全文提取。','论文摘要'),
-('检索与异质性','When Can Digital Personas Reliably Approximate Human Survey Findings?','2026，预印本','https://arxiv.org/abs/2605.10659','比较四类代理结构、三个模型和两类预测任务；摘要报告检索增强较有收益，少见及主观回答更难预测。','检索内容需排除待测答案；低分歧题上的成功不能代表高分歧题。','论文摘要，待全文核验'),
-('跨文化泛化','Simulated responses from large language models are weak proxies for human economic preferences across 74 countries','2026，Nature Human Behaviour','https://www.nature.com/articles/s41562-026-02611-4','跨74国对照经济偏好，按个体、人口、国家与文化层面评估，并拆分人设信息。','美国英语样本的成功不能直接外推到跨境市场；需要按国家和语言分别验证。','出版摘要与方法检索，待全文核验'),
-('本人历史参照','Large language models rate human happiness higher than humans do','2026，出版论文','https://www.nature.com/articles/s44482-026-00049-z','从数字痕迹预测情绪时存在偏积极倾向；本人历史自报构成强参照。','可借鉴评估设计，不能将情绪结果当作商品购买证据。','出版摘要与结果检索，待全文核验'),
-('线索表达方式','One Persona, Many Cues, Different Results: How Sociodemographic Cues Impact LLM Personalization','2026，ACL','https://aclanthology.org/2026.acl-long.2079/','同一人口特征用不同线索传达，可能改变人格诱导结果。','名字、直接标签和叙述不要混为同一条件；这是提示敏感性证据，不等于真人决策验证。','论文摘要，待全文核验')]
-records=[dict(zip(['factor','title','version','url','finding','implication','checked'],r),id=f'R{i:02}',checked_on='2026-11-10') for i,r in enumerate(rows,1)]
-(P/'sources.json').write_text(json.dumps(records,ensure_ascii=False,indent=2)+'\n')
-intro='''<h1>让AI更像真人：哪些改动有证据？</h1><p>持续维护的研究综述 · v0.1 · 检索日期2026-11-10</p><aside><b>当前判断：</b>没有找到一个适用于所有任务的“真人开关”或最佳温度。较值得优先验证的是：本人真实经历、相关行为记录、用真人数据进行专项训练或校准，以及与预测目标相匹配的输出方式。人口标签更详细、回答更像人，并不自动带来决策更准确。</aside><p>这是首轮定向证据地图，不是穷尽检索的系统综述。纳入12篇论文；逐条标注阅读深度。摘要级证据只能形成候选方向，不能当成已复现的参数配方。没有把营销材料或二手新闻当作核心证据。</p>
-<h2>先分清，我们到底想让AI做什么</h2><ul><li><b>聊起来像真人：</b>语言自然、角色连贯。需要真人盲评，但这不能证明购买预测准确。</li><li><b>替真人回答问卷：</b>比较选项比例、少数回答和逐人准确性。</li><li><b>AI采访真人：</b>AI负责提问，答案来自真人；必须核对访谈质量、引导性与遗漏。不能与“AI替受访者编答案”混淆。本版尚未完成专门的采访质量文献线。</li><li><b>基于访谈模拟本人：</b>先得到真实经历，再预测本人未透露的回答。</li><li><b>预测决策或干预：</b>预测选品、拒买、价格变化的影响。问卷意愿、实验选择、真实成交分别验收。</li></ul>
-<h2>优先研究什么，为什么</h2><table><tr><th>因素</th><th>为什么可能影响</th><th>目前证据与下一步</th></tr><tr><td>本人信息与行为历史</td><td>同龄同学历不等于经历、需求相同。</td><td>访谈模拟有正面证据[R01]；优先比较人口背景、结构化经历、访谈摘要，同一评估人群不变。</td></tr><tr><td>真人数据训练或校准</td><td>直接学习人实际怎样选择，而不只是生成合理叙述。</td><td>行为微调有支持[R02,R07]；与同数据的简单统计模型比较，按人、时间和商品留出。</td></tr><tr><td>输出与汇总</td><td>只取最可能的一项会丢掉其他可能性。</td><td>我们已有同批概率44.17→18.08的内部证据；这不是外部论文结论，也不证明逐人识别改善。</td></tr><tr><td>提示、顺序与人设线索</td><td>位置偏好及刻板印象可能改变答案。</td><td>[R05,R06,R12]支持做敏感性检查；顺序变化后变均匀，也不等于接近真人。</td></tr><tr><td>模型与温度</td><td>知识和随机性改变输出，但随机更多不等于更真实。</td><td>[R07]研究温度权衡；暂无跨任务最佳参数。固定模型版本，逐项调参。</td></tr><tr><td>国家、语言和题目难度</td><td>常见人群、低分歧题可能更容易。</td><td>[R09,R10]提示泛化边界；跨境电商应单列国家、语言、稀有人群。</td></tr></table>
-<h2>怎样把文献变成下一轮实验</h2><p>以下是我们的设计建议，不是论文已经证明的最佳配置，也尚未执行。</p><ol><li>固定同一批真人和商品，先测人口背景、真实购物经历、访谈摘要三档。访谈不提目标题，不收集待测答案作为输入。</li><li>固定背景与题目，比较直接单选、各项概率，以及同一批概率只取最高项，分开识别生成与汇总的影响。</li><li>温度可用0、0.3、0.7、1.0做候选网格；top_p先固定1，思考模式另做对照。数值只是建议，不能宣称最优。温度0也不保证服务端完全确定。</li><li>对选项做平衡换位，用同一人的对应顺序比较各组；单独检查价格、评分、产地、标签与“都不买”。</li><li>有真人训练数据时，同时训练简单选择模型，再比较校准或微调后的LLM。所有方法获得同等可用信息，调参不看测试答案。</li><li>分别报告群体分布、逐人概率误差、拒买召回、只改一个商品属性的影响、实际成本；最后换新商品或新时期验证。</li></ol><p>增加模拟人数只能减少生成波动，不能消除模型系统偏差。效应相关很高也可能夸大实际幅度[R03]。</p>
-<h2>文献卡片：正面结果、限制和可借鉴点</h2>'''
-cards=''.join(f'<article id="{r["id"]}"><h3>{r["id"]} · {html.escape(r["factor"])}</h3><p><a href="{r["url"]}">{html.escape(r["title"])}</a><br>{r["version"]}</p><p><b>发现：</b>{r["finding"]}</p><p><b>如何使用：</b>{r["implication"]}</p><p class="muted">核验深度：{r["checked"]}</p></article>' for r in records)
-end='''<h2>与我们已有实验怎样衔接</h2><p>外部研究支持继续探索真实信息、输出方式与专项训练；它们没有推翻我们“包装改善、产地未改善、简单统计仍强”的结果。我们尚未检验访谈画像或行为微调，不能把论文效果计入MatrAIx成绩。</p><p><a href="../index.html">已完成实验故事报告</a> · <a href="../05_优化记录/优化文档.md">已验证优化记录</a></p><h2>怎样持续更新</h2><ol><li>每次记录检索日期、关键词、来源平台和纳入原因；查论文正式版、勘误和撤稿。</li><li>新增文献写入sources.json：真人样本、任务、模型版本、输入、对照、参数、指标、效应与区间、泄漏控制、阅读深度。未核对写“待核对”，不补猜。</li><li>把“有对照的改善”“仅观察相关”“作者解释”“我们的建议”分开记录。不同任务的分数不能直接排总榜。</li><li>新结论覆盖旧结论时保留版本和原因；下一轮优先补读R07温度全文、R01访谈消融、R09检索泄漏控制，以及AI采访真人的独立质量评估。</li></ol><p>本版检索词：human simulation / silicon samples / survey response / persona conditioning / generative agent interviews / behavioural prediction / temperature / human cognition。来源：arXiv、ACL Anthology、NeurIPS、Nature及作者机构页面。未做自动定时更新；每次更新重新核对证据。</p>'''
-(P/'index.html').write_text('<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LLM真人模拟研究综述</title><style>body{max-width:1000px;margin:40px auto;padding:0 22px;font:18px/1.85 system-ui;color:#233d36;background:#f7f6f0}h1,h2,h3{line-height:1.5}h2{margin-top:42px}aside,article{padding:22px;background:white;border:1px solid #d9e0d7;border-radius:12px;margin:22px 0}aside{border-left:5px solid #387b62}a{color:#225f91}table{border-collapse:collapse;width:100%;font-size:16px}td,th{padding:12px;border:1px solid #ccd6cb;vertical-align:top;text-align:left}.muted{color:#68736d;font-size:15px}@media(max-width:600px){table{display:block;overflow:auto}body{font-size:17px}}</style>'+intro+cards+end+'</html>')
+
+ROOT = Path(__file__).parent
+
+def build():
+    records = json.loads((ROOT / 'sources.json').read_text())
+    assert len({r['id'] for r in records}) == len(records)
+    lines = ['# 文献证据卡', '', '更新：2026-11-10。由 `sources.json` 生成；请修改数据源后运行 `python build.py`。', '',
+             '[返回综述](综述.md) · [参数与实验建议](参数与实验建议.md)', '',
+             '编号仅用于长期维护。每篇都用标题、任务和核验范围解释；摘要级证据不等于全文确认，也不等于已复现。', '',
+             '| 文献 | 任务 | 核验范围 |', '| --- | --- | --- |']
+    for r in records:
+        lines.append(f"| [{r['title']}](#{r['id']}) | {r['factor']} | {r['checked']} |")
+    for r in records:
+        lines += ['', f'<a id="{r["id"]}"></a>', '', f"## {r['id']} · {r['factor']}", '',
+                  f"[{r['title']}]({r['url']})", '', f"版本：{r['version']}。核验日期：{r['checked_on']}。", '',
+                  f"**对象与对照：** {r['human_comparator']}", '', f"**已提取的发现：** {r['finding']}", '',
+                  f"**定位与阅读范围：** {r['locator']}", '', f"**限制：** {r['limitations']}", '']
+        if r.get('parameters'):
+            lines += ['**提取到的配置：**', '']
+            lines += [f'- `{k}`：{v}' for k, v in r['parameters'].items()]
+            lines += ['', '这些是论文设置或比较条件，不自动等于最优参数。']
+        else:
+            lines += ['**配置提取：** 尚未完整提取；不能补猜温度、模型版本或训练参数。']
+        for old in r.get('version_history',[]):
+            lines += ['', f"**版本变更：** {old['version']} — {old['note']}"]
+    (ROOT/'文献证据卡.md').write_text('\n'.join(lines)+'\n')
+    links=[('综述.md','阅读综述正文'),('文献证据卡.md',f'查看{len(records)}项文献证据卡'),('参数与实验建议.md','查看参数与实验建议'),('检索与更新记录.md','查看检索和更新记录')]
+    nav=''.join(f'<li><a href="{html.escape(p)}">{html.escape(t)}</a></li>' for p,t in links)
+    (ROOT/'index.html').write_text('<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>文献综述已迁移到Markdown</title><style>body{max-width:760px;margin:60px auto;padding:0 22px;font:20px/1.8 system-ui;color:#213b36;background:#f6f4ed}a{color:#225f91}li{margin:16px 0}</style><h1>综述现在使用Markdown维护</h1><p>本页保留旧入口。正文、证据与参数说明均已迁到项目内的Markdown文件，方便审阅版本变化。</p><ul>'+nav+'</ul><p>若浏览器将文件下载，请在编辑器或Codex中打开同名 .md 文件。</p><p><a href="../index.html">返回已完成实验报告</a></p></html>\n')
+    print(f'Generated {len(records)} evidence cards and legacy navigation; prose preserved.')
+
+if __name__=='__main__':
+    build()
