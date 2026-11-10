@@ -1,0 +1,1024 @@
+{
+  "status": "sample_and_choice_mapping_verified_display_pending",
+  "sources": [
+    "https://zenodo.org/records/10046247",
+    "https://link.springer.com/article/10.1007/s10603-023-09556-5",
+    "https://link.springer.com/article/10.1007/s10603-023-09556-5/tables/4"
+  ],
+  "published_counts": {
+    "CAN": {
+      "C": 214,
+      "T1": 205,
+      "T2": 215
+    },
+    "IRE": {
+      "C": 198,
+      "T1": 189,
+      "T2": 194
+    },
+    "UK": {
+      "C": 220,
+      "T1": 218,
+      "T2": 217
+    },
+    "USA": {
+      "C": 208,
+      "T1": 228,
+      "T2": 221
+    }
+  },
+  "recomputed_counts": {
+    "CAN": {
+      "T2": 215,
+      "C": 214,
+      "T1": 205
+    },
+    "IRE": {
+      "C": 198,
+      "T2": 194,
+      "T1": 189
+    },
+    "UK": {
+      "C": 220,
+      "T1": 218,
+      "T2": 217
+    },
+    "USA": {
+      "T1": 228,
+      "T2": 221,
+      "C": 208
+    }
+  },
+  "counts_match": true,
+  "raw_choices_checked": 20216,
+  "raw_choice_mismatches": 0,
+  "author_mean_checks": [
+    {
+      "country": "IRE",
+      "treatment": "C",
+      "field": "Age",
+      "published_mean": 3.5,
+      "recomputed_mean": 3.5,
+      "within_rounding": true
+    },
+    {
+      "country": "IRE",
+      "treatment": "T1",
+      "field": "Age",
+      "published_mean": 3.545,
+      "recomputed_mean": 3.544973544973545,
+      "within_rounding": true
+    },
+    {
+      "country": "IRE",
+      "treatment": "T2",
+      "field": "Age",
+      "published_mean": 3.531,
+      "recomputed_mean": 3.5309278350515463,
+      "within_rounding": true
+    },
+    {
+      "country": "IRE",
+      "treatment": "C",
+      "field": "Female",
+      "published_mean": 0.535,
+      "recomputed_mean": 0.5353535353535354,
+      "within_rounding": true
+    },
+    {
+      "country": "IRE",
+      "treatment": "T1",
+      "field": "Female",
+      "published_mean": 0.46,
+      "recomputed_mean": 0.4603174603174603,
+      "within_rounding": true
+    },
+    {
+      "country": "IRE",
+      "treatment": "T2",
+      "field": "Female",
+      "published_mean": 0.49,
+      "recomputed_mean": 0.4896907216494845,
+      "within_rounding": true
+    },
+    {
+      "country": "IRE",
+      "treatment": "C",
+      "field": "Marital",
+      "published_mean": 1.924,
+      "recomputed_mean": 1.9242424242424243,
+      "within_rounding": true
+    },
+    {
+      "country": "IRE",
+      "treatment": "T1",
+      "field": "Marital",
+      "published_mean": 1.947,
+      "recomputed_mean": 1.947089947089947,
+      "within_rounding": true
+    },
+    {
+      "country": "IRE",
+      "treatment": "T2",
+      "field": "Marital",
+      "published_mean": 1.928,
+      "recomputed_mean": 1.9278350515463918,
+      "within_rounding": true
+    },
+    {
+      "country": "IRE",
+      "treatment": "C",
+      "field": "Degree",
+      "published_mean": 0.803,
+      "recomputed_mean": 0.803030303030303,
+      "within_rounding": true
+    },
+    {
+      "country": "IRE",
+      "treatment": "T1",
+      "field": "Degree",
+      "published_mean": 0.672,
+      "recomputed_mean": 0.671957671957672,
+      "within_rounding": true
+    },
+    {
+      "country": "IRE",
+      "treatment": "T2",
+      "field": "Degree",
+      "published_mean": 0.624,
+      "recomputed_mean": 0.6237113402061856,
+      "within_rounding": true
+    },
+    {
+      "country": "IRE",
+      "treatment": "C",
+      "field": "Working",
+      "published_mean": 0.742,
+      "recomputed_mean": 0.7424242424242424,
+      "within_rounding": true
+    },
+    {
+      "country": "IRE",
+      "treatment": "T1",
+      "field": "Working",
+      "published_mean": 0.667,
+      "recomputed_mean": 0.6666666666666666,
+      "within_rounding": true
+    },
+    {
+      "country": "IRE",
+      "treatment": "T2",
+      "field": "Working",
+      "published_mean": 0.675,
+      "recomputed_mean": 0.6752577319587629,
+      "within_rounding": true
+    },
+    {
+      "country": "IRE",
+      "treatment": "C",
+      "field": "EnvConcern",
+      "published_mean": 3.914,
+      "recomputed_mean": 3.914141414141414,
+      "within_rounding": true
+    },
+    {
+      "country": "IRE",
+      "treatment": "T1",
+      "field": "EnvConcern",
+      "published_mean": 4.011,
+      "recomputed_mean": 4.01058201058201,
+      "within_rounding": true
+    },
+    {
+      "country": "IRE",
+      "treatment": "T2",
+      "field": "EnvConcern",
+      "published_mean": 3.948,
+      "recomputed_mean": 3.948453608247423,
+      "within_rounding": true
+    },
+    {
+      "country": "IRE",
+      "treatment": "C",
+      "field": "Income",
+      "published_mean": 3.081,
+      "recomputed_mean": 3.080808080808081,
+      "within_rounding": true
+    },
+    {
+      "country": "IRE",
+      "treatment": "T1",
+      "field": "Income",
+      "published_mean": 2.899,
+      "recomputed_mean": 2.8994708994708995,
+      "within_rounding": true
+    },
+    {
+      "country": "IRE",
+      "treatment": "T2",
+      "field": "Income",
+      "published_mean": 2.943,
+      "recomputed_mean": 2.943298969072165,
+      "within_rounding": true
+    },
+    {
+      "country": "IRE",
+      "treatment": "C",
+      "field": "Patience",
+      "published_mean": 6.439,
+      "recomputed_mean": 6.4393939393939394,
+      "within_rounding": true
+    },
+    {
+      "country": "IRE",
+      "treatment": "T1",
+      "field": "Patience",
+      "published_mean": 6.503,
+      "recomputed_mean": 6.502645502645502,
+      "within_rounding": true
+    },
+    {
+      "country": "IRE",
+      "treatment": "T2",
+      "field": "Patience",
+      "published_mean": 5.959,
+      "recomputed_mean": 5.958762886597938,
+      "within_rounding": true
+    },
+    {
+      "country": "IRE",
+      "treatment": "C",
+      "field": "Risk",
+      "published_mean": 5.646,
+      "recomputed_mean": 5.646464646464646,
+      "within_rounding": true
+    },
+    {
+      "country": "IRE",
+      "treatment": "T1",
+      "field": "Risk",
+      "published_mean": 5.603,
+      "recomputed_mean": 5.603174603174603,
+      "within_rounding": true
+    },
+    {
+      "country": "IRE",
+      "treatment": "T2",
+      "field": "Risk",
+      "published_mean": 5.304,
+      "recomputed_mean": 5.304123711340206,
+      "within_rounding": true
+    },
+    {
+      "country": "IRE",
+      "treatment": "C",
+      "field": "Tumbledrier_usage",
+      "published_mean": 3.576,
+      "recomputed_mean": 3.5757575757575757,
+      "within_rounding": true
+    },
+    {
+      "country": "IRE",
+      "treatment": "T1",
+      "field": "Tumbledrier_usage",
+      "published_mean": 3.657,
+      "recomputed_mean": 3.6571428571428575,
+      "within_rounding": true
+    },
+    {
+      "country": "IRE",
+      "treatment": "T2",
+      "field": "Tumbledrier_usage",
+      "published_mean": 3.572,
+      "recomputed_mean": 3.5721649484536084,
+      "within_rounding": true
+    },
+    {
+      "country": "UK",
+      "treatment": "C",
+      "field": "Age",
+      "published_mean": 3.732,
+      "recomputed_mean": 3.731818181818182,
+      "within_rounding": true
+    },
+    {
+      "country": "UK",
+      "treatment": "T1",
+      "field": "Age",
+      "published_mean": 3.766,
+      "recomputed_mean": 3.7660550458715596,
+      "within_rounding": true
+    },
+    {
+      "country": "UK",
+      "treatment": "T2",
+      "field": "Age",
+      "published_mean": 3.677,
+      "recomputed_mean": 3.6774193548387095,
+      "within_rounding": true
+    },
+    {
+      "country": "UK",
+      "treatment": "C",
+      "field": "Female",
+      "published_mean": 0.545,
+      "recomputed_mean": 0.5454545454545454,
+      "within_rounding": true
+    },
+    {
+      "country": "UK",
+      "treatment": "T1",
+      "field": "Female",
+      "published_mean": 0.564,
+      "recomputed_mean": 0.5642201834862385,
+      "within_rounding": true
+    },
+    {
+      "country": "UK",
+      "treatment": "T2",
+      "field": "Female",
+      "published_mean": 0.502,
+      "recomputed_mean": 0.5023041474654378,
+      "within_rounding": true
+    },
+    {
+      "country": "UK",
+      "treatment": "C",
+      "field": "Marital",
+      "published_mean": 1.968,
+      "recomputed_mean": 1.9681818181818183,
+      "within_rounding": true
+    },
+    {
+      "country": "UK",
+      "treatment": "T1",
+      "field": "Marital",
+      "published_mean": 1.995,
+      "recomputed_mean": 1.9954128440366972,
+      "within_rounding": true
+    },
+    {
+      "country": "UK",
+      "treatment": "T2",
+      "field": "Marital",
+      "published_mean": 1.963,
+      "recomputed_mean": 1.9631336405529953,
+      "within_rounding": true
+    },
+    {
+      "country": "UK",
+      "treatment": "C",
+      "field": "Degree",
+      "published_mean": 0.627,
+      "recomputed_mean": 0.6272727272727273,
+      "within_rounding": true
+    },
+    {
+      "country": "UK",
+      "treatment": "T1",
+      "field": "Degree",
+      "published_mean": 0.606,
+      "recomputed_mean": 0.6055045871559633,
+      "within_rounding": true
+    },
+    {
+      "country": "UK",
+      "treatment": "T2",
+      "field": "Degree",
+      "published_mean": 0.604,
+      "recomputed_mean": 0.6036866359447005,
+      "within_rounding": true
+    },
+    {
+      "country": "UK",
+      "treatment": "C",
+      "field": "Working",
+      "published_mean": 0.636,
+      "recomputed_mean": 0.6363636363636364,
+      "within_rounding": true
+    },
+    {
+      "country": "UK",
+      "treatment": "T1",
+      "field": "Working",
+      "published_mean": 0.61,
+      "recomputed_mean": 0.6100917431192661,
+      "within_rounding": true
+    },
+    {
+      "country": "UK",
+      "treatment": "T2",
+      "field": "Working",
+      "published_mean": 0.636,
+      "recomputed_mean": 0.6359447004608295,
+      "within_rounding": true
+    },
+    {
+      "country": "UK",
+      "treatment": "C",
+      "field": "EnvConcern",
+      "published_mean": 3.623,
+      "recomputed_mean": 3.6227272727272726,
+      "within_rounding": true
+    },
+    {
+      "country": "UK",
+      "treatment": "T1",
+      "field": "EnvConcern",
+      "published_mean": 3.789,
+      "recomputed_mean": 3.7889908256880735,
+      "within_rounding": true
+    },
+    {
+      "country": "UK",
+      "treatment": "T2",
+      "field": "EnvConcern",
+      "published_mean": 3.544,
+      "recomputed_mean": 3.543778801843318,
+      "within_rounding": true
+    },
+    {
+      "country": "UK",
+      "treatment": "C",
+      "field": "Income",
+      "published_mean": 3.173,
+      "recomputed_mean": 3.172727272727273,
+      "within_rounding": true
+    },
+    {
+      "country": "UK",
+      "treatment": "T1",
+      "field": "Income",
+      "published_mean": 3.275,
+      "recomputed_mean": 3.2752293577981653,
+      "within_rounding": true
+    },
+    {
+      "country": "UK",
+      "treatment": "T2",
+      "field": "Income",
+      "published_mean": 3.309,
+      "recomputed_mean": 3.3087557603686637,
+      "within_rounding": true
+    },
+    {
+      "country": "UK",
+      "treatment": "C",
+      "field": "Patience",
+      "published_mean": 6.232,
+      "recomputed_mean": 6.2318181818181815,
+      "within_rounding": true
+    },
+    {
+      "country": "UK",
+      "treatment": "T1",
+      "field": "Patience",
+      "published_mean": 6.408,
+      "recomputed_mean": 6.408256880733945,
+      "within_rounding": true
+    },
+    {
+      "country": "UK",
+      "treatment": "T2",
+      "field": "Patience",
+      "published_mean": 6.3,
+      "recomputed_mean": 6.299539170506913,
+      "within_rounding": true
+    },
+    {
+      "country": "UK",
+      "treatment": "C",
+      "field": "Risk",
+      "published_mean": 5.173,
+      "recomputed_mean": 5.172727272727273,
+      "within_rounding": true
+    },
+    {
+      "country": "UK",
+      "treatment": "T1",
+      "field": "Risk",
+      "published_mean": 5.266,
+      "recomputed_mean": 5.26605504587156,
+      "within_rounding": true
+    },
+    {
+      "country": "UK",
+      "treatment": "T2",
+      "field": "Risk",
+      "published_mean": 5.29,
+      "recomputed_mean": 5.290322580645161,
+      "within_rounding": true
+    },
+    {
+      "country": "UK",
+      "treatment": "C",
+      "field": "Tumbledrier_usage",
+      "published_mean": 4.109,
+      "recomputed_mean": 4.109090909090909,
+      "within_rounding": true
+    },
+    {
+      "country": "UK",
+      "treatment": "T1",
+      "field": "Tumbledrier_usage",
+      "published_mean": 3.72,
+      "recomputed_mean": 3.720183486238532,
+      "within_rounding": true
+    },
+    {
+      "country": "UK",
+      "treatment": "T2",
+      "field": "Tumbledrier_usage",
+      "published_mean": 3.323,
+      "recomputed_mean": 3.3225806451612905,
+      "within_rounding": true
+    },
+    {
+      "country": "CAN",
+      "treatment": "C",
+      "field": "Age",
+      "published_mean": 3.715,
+      "recomputed_mean": 3.7149532710280373,
+      "within_rounding": true
+    },
+    {
+      "country": "CAN",
+      "treatment": "T1",
+      "field": "Age",
+      "published_mean": 3.761,
+      "recomputed_mean": 3.7609756097560973,
+      "within_rounding": true
+    },
+    {
+      "country": "CAN",
+      "treatment": "T2",
+      "field": "Age",
+      "published_mean": 3.726,
+      "recomputed_mean": 3.7255813953488373,
+      "within_rounding": true
+    },
+    {
+      "country": "CAN",
+      "treatment": "C",
+      "field": "Female",
+      "published_mean": 0.505,
+      "recomputed_mean": 0.5046728971962616,
+      "within_rounding": true
+    },
+    {
+      "country": "CAN",
+      "treatment": "T1",
+      "field": "Female",
+      "published_mean": 0.478,
+      "recomputed_mean": 0.47804878048780486,
+      "within_rounding": true
+    },
+    {
+      "country": "CAN",
+      "treatment": "T2",
+      "field": "Female",
+      "published_mean": 0.54,
+      "recomputed_mean": 0.5395348837209303,
+      "within_rounding": true
+    },
+    {
+      "country": "CAN",
+      "treatment": "C",
+      "field": "Marital",
+      "published_mean": 1.986,
+      "recomputed_mean": 1.985981308411215,
+      "within_rounding": true
+    },
+    {
+      "country": "CAN",
+      "treatment": "T1",
+      "field": "Marital",
+      "published_mean": 1.976,
+      "recomputed_mean": 1.975609756097561,
+      "within_rounding": true
+    },
+    {
+      "country": "CAN",
+      "treatment": "T2",
+      "field": "Marital",
+      "published_mean": 2.009,
+      "recomputed_mean": 2.0093023255813955,
+      "within_rounding": true
+    },
+    {
+      "country": "CAN",
+      "treatment": "C",
+      "field": "Degree",
+      "published_mean": 0.673,
+      "recomputed_mean": 0.6728971962616822,
+      "within_rounding": true
+    },
+    {
+      "country": "CAN",
+      "treatment": "T1",
+      "field": "Degree",
+      "published_mean": 0.668,
+      "recomputed_mean": 0.6682926829268293,
+      "within_rounding": true
+    },
+    {
+      "country": "CAN",
+      "treatment": "T2",
+      "field": "Degree",
+      "published_mean": 0.772,
+      "recomputed_mean": 0.772093023255814,
+      "within_rounding": true
+    },
+    {
+      "country": "CAN",
+      "treatment": "C",
+      "field": "Working",
+      "published_mean": 0.607,
+      "recomputed_mean": 0.6074766355140186,
+      "within_rounding": true
+    },
+    {
+      "country": "CAN",
+      "treatment": "T1",
+      "field": "Working",
+      "published_mean": 0.6,
+      "recomputed_mean": 0.6,
+      "within_rounding": true
+    },
+    {
+      "country": "CAN",
+      "treatment": "T2",
+      "field": "Working",
+      "published_mean": 0.665,
+      "recomputed_mean": 0.6651162790697674,
+      "within_rounding": true
+    },
+    {
+      "country": "CAN",
+      "treatment": "C",
+      "field": "EnvConcern",
+      "published_mean": 3.883,
+      "recomputed_mean": 3.883177570093458,
+      "within_rounding": true
+    },
+    {
+      "country": "CAN",
+      "treatment": "T1",
+      "field": "EnvConcern",
+      "published_mean": 3.893,
+      "recomputed_mean": 3.892682926829268,
+      "within_rounding": true
+    },
+    {
+      "country": "CAN",
+      "treatment": "T2",
+      "field": "EnvConcern",
+      "published_mean": 3.842,
+      "recomputed_mean": 3.841860465116279,
+      "within_rounding": true
+    },
+    {
+      "country": "CAN",
+      "treatment": "C",
+      "field": "Income",
+      "published_mean": 3.341,
+      "recomputed_mean": 3.3411214953271027,
+      "within_rounding": true
+    },
+    {
+      "country": "CAN",
+      "treatment": "T1",
+      "field": "Income",
+      "published_mean": 3.195,
+      "recomputed_mean": 3.1951219512195124,
+      "within_rounding": true
+    },
+    {
+      "country": "CAN",
+      "treatment": "T2",
+      "field": "Income",
+      "published_mean": 3.27,
+      "recomputed_mean": 3.269767441860465,
+      "within_rounding": true
+    },
+    {
+      "country": "CAN",
+      "treatment": "C",
+      "field": "Patience",
+      "published_mean": 6.528,
+      "recomputed_mean": 6.52803738317757,
+      "within_rounding": true
+    },
+    {
+      "country": "CAN",
+      "treatment": "T1",
+      "field": "Patience",
+      "published_mean": 6.498,
+      "recomputed_mean": 6.4975609756097565,
+      "within_rounding": true
+    },
+    {
+      "country": "CAN",
+      "treatment": "T2",
+      "field": "Patience",
+      "published_mean": 6.34,
+      "recomputed_mean": 6.339534883720931,
+      "within_rounding": true
+    },
+    {
+      "country": "CAN",
+      "treatment": "C",
+      "field": "Risk",
+      "published_mean": 5.528,
+      "recomputed_mean": 5.52803738317757,
+      "within_rounding": true
+    },
+    {
+      "country": "CAN",
+      "treatment": "T1",
+      "field": "Risk",
+      "published_mean": 5.415,
+      "recomputed_mean": 5.414634146341464,
+      "within_rounding": true
+    },
+    {
+      "country": "CAN",
+      "treatment": "T2",
+      "field": "Risk",
+      "published_mean": 5.474,
+      "recomputed_mean": 5.474418604651163,
+      "within_rounding": true
+    },
+    {
+      "country": "CAN",
+      "treatment": "C",
+      "field": "Tumbledrier_usage",
+      "published_mean": 3.22,
+      "recomputed_mean": 3.2196261682242993,
+      "within_rounding": true
+    },
+    {
+      "country": "CAN",
+      "treatment": "T1",
+      "field": "Tumbledrier_usage",
+      "published_mean": 3.215,
+      "recomputed_mean": 3.2146341463414636,
+      "within_rounding": true
+    },
+    {
+      "country": "CAN",
+      "treatment": "T2",
+      "field": "Tumbledrier_usage",
+      "published_mean": 3.381,
+      "recomputed_mean": 3.3813953488372093,
+      "within_rounding": true
+    },
+    {
+      "country": "USA",
+      "treatment": "C",
+      "field": "Age",
+      "published_mean": 3.553,
+      "recomputed_mean": 3.5528846153846154,
+      "within_rounding": true
+    },
+    {
+      "country": "USA",
+      "treatment": "T1",
+      "field": "Age",
+      "published_mean": 3.632,
+      "recomputed_mean": 3.6315789473684212,
+      "within_rounding": true
+    },
+    {
+      "country": "USA",
+      "treatment": "T2",
+      "field": "Age",
+      "published_mean": 3.498,
+      "recomputed_mean": 3.497737556561086,
+      "within_rounding": true
+    },
+    {
+      "country": "USA",
+      "treatment": "C",
+      "field": "Female",
+      "published_mean": 0.538,
+      "recomputed_mean": 0.5384615384615384,
+      "within_rounding": true
+    },
+    {
+      "country": "USA",
+      "treatment": "T1",
+      "field": "Female",
+      "published_mean": 0.491,
+      "recomputed_mean": 0.49122807017543857,
+      "within_rounding": true
+    },
+    {
+      "country": "USA",
+      "treatment": "T2",
+      "field": "Female",
+      "published_mean": 0.575,
+      "recomputed_mean": 0.5746606334841629,
+      "within_rounding": true
+    },
+    {
+      "country": "USA",
+      "treatment": "C",
+      "field": "Marital",
+      "published_mean": 2.005,
+      "recomputed_mean": 2.0048076923076925,
+      "within_rounding": true
+    },
+    {
+      "country": "USA",
+      "treatment": "T1",
+      "field": "Marital",
+      "published_mean": 2.07,
+      "recomputed_mean": 2.0701754385964914,
+      "within_rounding": true
+    },
+    {
+      "country": "USA",
+      "treatment": "T2",
+      "field": "Marital",
+      "published_mean": 2.023,
+      "recomputed_mean": 2.02262443438914,
+      "within_rounding": true
+    },
+    {
+      "country": "USA",
+      "treatment": "C",
+      "field": "Degree",
+      "published_mean": 0.702,
+      "recomputed_mean": 0.7019230769230769,
+      "within_rounding": true
+    },
+    {
+      "country": "USA",
+      "treatment": "T1",
+      "field": "Degree",
+      "published_mean": 0.675,
+      "recomputed_mean": 0.6754385964912281,
+      "within_rounding": true
+    },
+    {
+      "country": "USA",
+      "treatment": "T2",
+      "field": "Degree",
+      "published_mean": 0.633,
+      "recomputed_mean": 0.6334841628959276,
+      "within_rounding": true
+    },
+    {
+      "country": "USA",
+      "treatment": "C",
+      "field": "Working",
+      "published_mean": 0.606,
+      "recomputed_mean": 0.6057692307692307,
+      "within_rounding": true
+    },
+    {
+      "country": "USA",
+      "treatment": "T1",
+      "field": "Working",
+      "published_mean": 0.605,
+      "recomputed_mean": 0.6052631578947368,
+      "within_rounding": true
+    },
+    {
+      "country": "USA",
+      "treatment": "T2",
+      "field": "Working",
+      "published_mean": 0.624,
+      "recomputed_mean": 0.6244343891402715,
+      "within_rounding": true
+    },
+    {
+      "country": "USA",
+      "treatment": "C",
+      "field": "EnvConcern",
+      "published_mean": 3.909,
+      "recomputed_mean": 3.9086538461538463,
+      "within_rounding": true
+    },
+    {
+      "country": "USA",
+      "treatment": "T1",
+      "field": "EnvConcern",
+      "published_mean": 3.794,
+      "recomputed_mean": 3.793859649122807,
+      "within_rounding": true
+    },
+    {
+      "country": "USA",
+      "treatment": "T2",
+      "field": "EnvConcern",
+      "published_mean": 3.828,
+      "recomputed_mean": 3.828054298642534,
+      "within_rounding": true
+    },
+    {
+      "country": "USA",
+      "treatment": "C",
+      "field": "Income",
+      "published_mean": 3.188,
+      "recomputed_mean": 3.1875,
+      "within_rounding": true
+    },
+    {
+      "country": "USA",
+      "treatment": "T1",
+      "field": "Income",
+      "published_mean": 3.281,
+      "recomputed_mean": 3.280701754385965,
+      "within_rounding": true
+    },
+    {
+      "country": "USA",
+      "treatment": "T2",
+      "field": "Income",
+      "published_mean": 3.222,
+      "recomputed_mean": 3.2217194570135748,
+      "within_rounding": true
+    },
+    {
+      "country": "USA",
+      "treatment": "C",
+      "field": "Patience",
+      "published_mean": 6.37,
+      "recomputed_mean": 6.3701923076923075,
+      "within_rounding": true
+    },
+    {
+      "country": "USA",
+      "treatment": "T1",
+      "field": "Patience",
+      "published_mean": 6.5,
+      "recomputed_mean": 6.5,
+      "within_rounding": true
+    },
+    {
+      "country": "USA",
+      "treatment": "T2",
+      "field": "Patience",
+      "published_mean": 6.448,
+      "recomputed_mean": 6.447963800904978,
+      "within_rounding": true
+    },
+    {
+      "country": "USA",
+      "treatment": "C",
+      "field": "Risk",
+      "published_mean": 5.62,
+      "recomputed_mean": 5.6201923076923075,
+      "within_rounding": true
+    },
+    {
+      "country": "USA",
+      "treatment": "T1",
+      "field": "Risk",
+      "published_mean": 5.785,
+      "recomputed_mean": 5.785087719298246,
+      "within_rounding": true
+    },
+    {
+      "country": "USA",
+      "treatment": "T2",
+      "field": "Risk",
+      "published_mean": 5.457,
+      "recomputed_mean": 5.457013574660634,
+      "within_rounding": true
+    },
+    {
+      "country": "USA",
+      "treatment": "C",
+      "field": "Tumbledrier_usage",
+      "published_mean": 4.069,
+      "recomputed_mean": 4.06875,
+      "within_rounding": true
+    },
+    {
+      "country": "USA",
+      "treatment": "T1",
+      "field": "Tumbledrier_usage",
+      "published_mean": 4.132,
+      "recomputed_mean": 4.131578947368421,
+      "within_rounding": true
+    },
+    {
+      "country": "USA",
+      "treatment": "T2",
+      "field": "Tumbledrier_usage",
+      "published_mean": 4.195,
+      "recomputed_mean": 4.1945701357466065,
+      "within_rounding": true
+    }
+  ],
+  "all_means_match": true,
+  "decision": "Use official final long table as self-contained cohort; no wide-table join. Exact 12 cell counts and 120 means identify published analysis sample. Cause of wide-table version difference remains unknown; not claimed resolved.",
+  "display_issues": [
+    "USA A energy cost: published table 2 says 640 while long table EnExp says 610.",
+    "Personalised energy cost figure 9 rounds differently from PersEnExp10y; exact display computation unverified.",
+    "North American price and capacity require country-specific conversion per table 2."
+  ]
+}
