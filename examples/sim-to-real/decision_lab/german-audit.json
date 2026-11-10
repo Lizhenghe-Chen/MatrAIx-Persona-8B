@@ -212,7 +212,9 @@
   "pending": [
     "randomized information text and sequence",
     "author descriptive statistics",
-    "background whitelist and timing approval"
+    "background whitelist and timing approval",
+    "resolve original participant notice versus public-release use boundary"
   ],
-  "card_attributes": "german-cards.json: 36 profile appearances independently match original PDF and workbook"
+  "card_attributes": "german-cards.json: 36 profile appearances independently match original PDF and workbook",
+  "field_policy": "german-field-policy.json"
 }

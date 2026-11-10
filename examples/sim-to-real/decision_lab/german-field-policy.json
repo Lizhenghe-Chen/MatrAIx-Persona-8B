@@ -1,0 +1,34 @@
+{
+  "study": "german_packaging",
+  "status": "not_admitted_for_cloud_calls",
+  "survey_dates": ["2024-11-07", "2024-11-15"],
+  "source": "survey_original.pdf",
+  "chronology": [
+    {"page": 3, "content": "BPF1/BPF2 familiarity and KA1–KA5 knowledge; before randomized information"},
+    {"page": 4, "content": "Random assignment: Group 1 information; Group 2 no information"},
+    {"pages": [5, 8], "content": "Choice01–Choice04"},
+    {"page": 9, "content": "Environmental attitudes; after first four choices"},
+    {"pages": [10, 13], "content": "Choice05–Choice08"},
+    {"page": 14, "content": "Food-waste attitudes; after first eight choices"},
+    {"pages": [15, 18], "content": "Choice09–Choice12"},
+    {"page": 19, "content": "Food neophobia; after all choices"},
+    {"pages": [19, 21], "content": "Demographics; after all choices"}
+  ],
+  "candidate_basic_fields": ["Age", "Education"],
+  "candidate_additional_fields": ["BPF1", "BPF2", "Income", "HHSize"],
+  "basic_field_caveat": "Demographics were measured after choices. Using age/education as stable antecedent attributes requires explicitly stated retrospective-measurement assumption, not a claim of pre-choice collection.",
+  "exclude_from_primary_background": ["EnvCon*", "Foodwaste*", "FNS*", "X_*", "U_*", "W_*", "Zero", "Info"],
+  "knowledge_items": "Pre-treatment, but exclude from initial background to keep input minimal and avoid explicitly teaching answers to the information manipulation; can be preregistered separately.",
+  "unresolved_source_conflicts": [
+    "English survey overview places attitudes in Part A, whereas original German PDF interleaves them after choice blocks.",
+    "English age overview uses 30–49; original PDF and SAV both use 30–39.",
+    "Original food-waste page includes five statements plus attention check, while SAV names and labels shift to four substantive items. Do not map by matching variable name alone."
+  ],
+  "license_vs_consent": {
+    "public_repository_license": "CC BY 4.0",
+    "original_notice_page": 2,
+    "concern": "Original participant notice says data used exclusively by doctoral researcher and supervisor for analysis. Public release license alone does not establish that this notice permits external AI processing.",
+    "decision": "No participant-level cloud processing until the discrepancy is resolved. Public product-card and wholly synthetic technical checks remain separate."
+  },
+  "pending": ["Resolve participant-notice versus public-release use boundary", "Reconstruct author descriptive statistics", "Freeze final background fields and sampling"]
+}
