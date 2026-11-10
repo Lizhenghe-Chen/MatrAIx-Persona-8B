@@ -90,15 +90,15 @@
   "explanation_sources": {
     "optimize_profiles.py": {
       "path": "../../optimize_profiles.py",
-      "sha256": "505ab2da789f21166d5f3740aa3046aeafcb4d12fc38c84ba5eed215aa69ede4"
+      "sha256": "440f5a3211e5d9d8d35e2485540f4452c4a7206f3988f4fb8cb83bd0e3f57fa5"
     },
     "shopping.py": {
       "path": "../../shopping.py",
-      "sha256": "9da37dd296258cee91985d8b2449d16f7c3c2e7ef71cf8aef9e7f9da9654de1f"
+      "sha256": "a30b73e0ec74891f3fda6bbda9a965094b64e154b9c7238d3ff547307de95319"
     },
     "retail_pew.py": {
       "path": "../../retail_pew.py",
-      "sha256": "6aa7864b803cc1b5593437d38de2a00a9fd10c86ce2699a5873ee3e7ddb1d33a"
+      "sha256": "efd882b1ea23e238f5690aff9ae50f636db9a56d16983ac00d4f906fae537ab4"
     },
     "retail_pew_score.py": {
       "path": "../../retail_pew_score.py",
@@ -110,7 +110,7 @@
     },
     "retail_shoes_prepare.py": {
       "path": "../../retail_shoes_prepare.py",
-      "sha256": "ad324efe01c0a70bfc17192096c0f48b3cf4a337f3a1acd90b6290848cbeac5b"
+      "sha256": "f39faf914d6f8cd8ecf360365cc618083eb99030541e37841dc589dee8022138"
     },
     "retail_shoes_score.py": {
       "path": "../../retail_shoes_score.py",
@@ -118,7 +118,7 @@
     },
     "retail_amazon.py": {
       "path": "../../retail_amazon.py",
-      "sha256": "08c74d74fc88e3714c235996205bd28a3590158d7105cabfa1794fe43ea2fa5b"
+      "sha256": "a242a87bbeb21f69321aba913f082d4261a0e9d244957a5a34d8a02d7dfeb30d"
     },
     "retail_amazon_mix.py": {
       "path": "../../retail_amazon_mix.py",
@@ -126,7 +126,7 @@
     },
     "audit_matching.py": {
       "path": "../../audit_matching.py",
-      "sha256": "0624288c72bffcff994415fffd134c97646744f356ef9b2c2109e313eba39470"
+      "sha256": "a3309ef4274b4950067b0639a95afe988446542d4a83487b23e430b9cb2c4f64"
     },
     "retail_matching_review.py": {
       "path": "../../retail_matching_review.py",
@@ -134,7 +134,7 @@
     },
     "revalidation.py": {
       "path": "../../revalidation.py",
-      "sha256": "6f76346994fa5d89a28cb7f038438f25898f9ae5e419736fecbbd3af47663e5e"
+      "sha256": "f160a24a0703657a341911a61fe6d4eedd13d82b497f739e020f52ec435163bc"
     },
     "revalidation_score.py": {
       "path": "../../revalidation_score.py",

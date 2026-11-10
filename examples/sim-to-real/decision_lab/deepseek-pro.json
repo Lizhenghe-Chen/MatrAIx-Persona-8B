@@ -1,0 +1,13 @@
+{
+  "model": "deepseek-v4-pro",
+  "documented_version": "DeepSeek-V4-Pro-0813",
+  "documentation_checked_on": "2026-11-10",
+  "documentation_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+  "endpoint": "https://api.deepseek.com/chat/completions",
+  "temperature": 0.7,
+  "top_p": 1,
+  "max_tokens": 768,
+  "thinking": {"type": "disabled"},
+  "background_fields": [],
+  "status": "not_frozen_pending_data_audit_and_endpoint_pilot"
+}

@@ -1,0 +1,237 @@
+[
+  {
+    "old": "retail_reader_template.html",
+    "new": "legacy/retail_reader_template.html",
+    "sha256": "06cb3cf7f29cf232a39d7cfb9455bf386dc9626219452d24e1c2ca8a73cfcb85"
+  },
+  {
+    "old": "retail_shoes_input_parity.py",
+    "new": "legacy/retail_shoes_input_parity.py",
+    "sha256": "3af733d76e511fcf116aad1b1aaa9144385cabc658c068b3499e1b53c383b3fc"
+  },
+  {
+    "old": "optimize.py",
+    "new": "legacy/optimize.py",
+    "sha256": "275f804cb223582d5ef090b203d50b6fa486d524f963eb933247a200d72589f4"
+  },
+  {
+    "old": "retail_reader_conclusions.html",
+    "new": "legacy/retail_reader_conclusions.html",
+    "sha256": "3f8cbcf4c0e6d8ee3587b41dbf22d15cfaf53b2428fdb92dd5d1291d73a243bf"
+  },
+  {
+    "old": "retail_history_charts.js",
+    "new": "legacy/retail_history_charts.js",
+    "sha256": "02d754d690d07325e597c019983235660bd6ca1cc0f5064aad2635a65af7e8e9"
+  },
+  {
+    "old": "optimize_report.html",
+    "new": "legacy/optimize_report.html",
+    "sha256": "67b0565e33f67c300087616a4b73deea2b9aafbc8e2f377f66f9cff463e410cf"
+  },
+  {
+    "old": "retail_amazon_score.py",
+    "new": "legacy/retail_amazon_score.py",
+    "sha256": "54ac27bcd9c13173ddf73afd56d0d1181f0fa22dad1b7695953a89726d832667"
+  },
+  {
+    "old": "shopping.py",
+    "new": "legacy/shopping.py",
+    "sha256": "a30b73e0ec74891f3fda6bbda9a965094b64e154b9c7238d3ff547307de95319"
+  },
+  {
+    "old": "retail_pew_draw.py",
+    "new": "legacy/retail_pew_draw.py",
+    "sha256": "3ffca85a509bbc5aeb2339f98c0f3ddfc150af24739e72cd47193bb9be99f453"
+  },
+  {
+    "old": "revalidation_report.py",
+    "new": "legacy/revalidation_report.py",
+    "sha256": "de916b30bc758f50a4e023e497b166cb0ff1fd57234df7e63a36fda4f12352d7"
+  },
+  {
+    "old": "retail_pew_score.py",
+    "new": "legacy/retail_pew_score.py",
+    "sha256": "12f84da67466fe4f91b8af80a308f2cc2b5fff153b6af5c13e94d5c683736284"
+  },
+  {
+    "old": "optimize_profiles.py",
+    "new": "legacy/optimize_profiles.py",
+    "sha256": "440f5a3211e5d9d8d35e2485540f4452c4a7206f3988f4fb8cb83bd0e3f57fa5"
+  },
+  {
+    "old": "shopping_report.py",
+    "new": "legacy/shopping_report.py",
+    "sha256": "4bcf023893c7171d731b68a9f7b5e6daab8a73bada73319612057cda6f4721ba"
+  },
+  {
+    "old": "retail_story_charts.js",
+    "new": "legacy/retail_story_charts.js",
+    "sha256": "878dd654b86a65c455fa6c7e80969d55117e44dace3120e626b2908001494e47"
+  },
+  {
+    "old": "retail_history_template.html",
+    "new": "legacy/retail_history_template.html",
+    "sha256": "fb1485739871e9ab2a05cfbf2d341760e4916228050609e5eb14efc7560c3193"
+  },
+  {
+    "old": "retail_pew_calibration.py",
+    "new": "legacy/retail_pew_calibration.py",
+    "sha256": "7db5379d6279ee38f3b1ce14fa209ec37f7d1b768176a60793cb114196dc5023"
+  },
+  {
+    "old": "optimize_score.py",
+    "new": "legacy/optimize_score.py",
+    "sha256": "214fb6465711e70f76d350f17b3c696409ffb621f82cb7b57dcde7e5f71ad852"
+  },
+  {
+    "old": "retail_audit.py",
+    "new": "legacy/retail_audit.py",
+    "sha256": "35f9c01541f6d49c43b3fa297320304a81f46d875d40f45ee822be559015d1b7"
+  },
+  {
+    "old": "revalidation.py",
+    "new": "legacy/revalidation.py",
+    "sha256": "f160a24a0703657a341911a61fe6d4eedd13d82b497f739e020f52ec435163bc"
+  },
+  {
+    "old": "retail_amazon_model.py",
+    "new": "legacy/retail_amazon_model.py",
+    "sha256": "4ff32b5cc98272c0bd6216049e266e2cbbebd039282b732c467dbce6abf63186"
+  },
+  {
+    "old": "optimize_html.py",
+    "new": "legacy/optimize_html.py",
+    "sha256": "e8e705a997d78cf240fc82d8d3d520414c742c0af7a82043748a5874d9f02fa7"
+  },
+  {
+    "old": "retail_pew.py",
+    "new": "legacy/retail_pew.py",
+    "sha256": "efd882b1ea23e238f5690aff9ae50f636db9a56d16983ac00d4f906fae537ab4"
+  },
+  {
+    "old": "retail_reader_report.py",
+    "new": "legacy/retail_reader_report.py",
+    "sha256": "85ea7383b743e6efbad9713b9725cf0d5e46d915d52a22b239c9cbdd28ef96c7"
+  },
+  {
+    "old": "retail_findings.py",
+    "new": "legacy/retail_findings.py",
+    "sha256": "ff11f13ea9f9367d59ed90ac06df15c67407e2a2caa4b5135e8cbf08882580d0"
+  },
+  {
+    "old": "instruments.py",
+    "new": "legacy/instruments.py",
+    "sha256": "4f85ec8bd3f7f908d1ccd07dcdd3e96d225f021f670d95086e49ca2a8c7589ff"
+  },
+  {
+    "old": "experiment.py",
+    "new": "legacy/experiment.py",
+    "sha256": "b7058e8564ce1655f8a95c4d657a413ff5b90768ab895f54fdbad60448ccf271"
+  },
+  {
+    "old": "retail_report.py",
+    "new": "legacy/retail_report.py",
+    "sha256": "4bfae49a24a949ef24cf213f1f3560d80b5d6de447b140667a8b8269128684a3"
+  },
+  {
+    "old": "retail_amazon.py",
+    "new": "legacy/retail_amazon.py",
+    "sha256": "a242a87bbeb21f69321aba913f082d4261a0e9d244957a5a34d8a02d7dfeb30d"
+  },
+  {
+    "old": "retail_matching_review.py",
+    "new": "legacy/retail_matching_review.py",
+    "sha256": "3a5259462cf2f83ee7f9e76a9e41f1dd8debfe04e04e13270a90a6dadfba6512"
+  },
+  {
+    "old": "retail_story_template.html.tmpl",
+    "new": "legacy/retail_story_template.html.tmpl",
+    "sha256": "f3726fc1f5337fedabbf6d33ba68d078a46dbe128a29fd14e7bafac14ae16300"
+  },
+  {
+    "old": "report_smoke_check.cjs",
+    "new": "legacy/report_smoke_check.cjs",
+    "sha256": "8482b22f14245781b2c4980950bc55af28c3a170dfd3a8d95730263607afcff4"
+  },
+  {
+    "old": "revalidation_charts.js",
+    "new": "legacy/revalidation_charts.js",
+    "sha256": "0250eabb56fc3bb8a35bee4b2501d7cb662746e6d181d0ea856e2fc79600d539"
+  },
+  {
+    "old": "retail_shoes_score.py",
+    "new": "legacy/retail_shoes_score.py",
+    "sha256": "3a23b463dfa290c77b1cd75eacc2689009234ae1e2586a479867dee1044a4f04"
+  },
+  {
+    "old": "retail_reader_template.html.tmpl",
+    "new": "legacy/retail_reader_template.html.tmpl",
+    "sha256": "ff46facf6b82e996a3138c06659fe71f0f7e373dcb5c4073bd8dcd514c2ea39a"
+  },
+  {
+    "old": "test_revalidation.py",
+    "new": "legacy/test_revalidation.py",
+    "sha256": "085b4a28446f2f78d6fd525c03912ebb63d06a46e58914daac8731c5987344a7"
+  },
+  {
+    "old": "retail_story_report.py",
+    "new": "legacy/retail_story_report.py",
+    "sha256": "91d8066f6aab38c04e9ed758efdc19ea28c00f02d0fff6ff6071e8881e2a8f6d"
+  },
+  {
+    "old": "retail_shoes_model.py",
+    "new": "legacy/retail_shoes_model.py",
+    "sha256": "e10fec3b4dc45d22428e038128d930c7960aac6aef296ee1a39809d9f3da0c71"
+  },
+  {
+    "old": "revalidation_score.py",
+    "new": "legacy/revalidation_score.py",
+    "sha256": "2cc4819bbc6a9e8f02a73fe75df480dbfeea28a214ba4196cd99ab2c306ace4f"
+  },
+  {
+    "old": "retail_amazon_mix.py",
+    "new": "legacy/retail_amazon_mix.py",
+    "sha256": "1bf19e22beb158354b5f18f63c3dd891164a9e66a9c39a7e998da45e4d699cdf"
+  },
+  {
+    "old": "retail_amazon_repeat_diagnostics.py",
+    "new": "legacy/retail_amazon_repeat_diagnostics.py",
+    "sha256": "c0d9707eec024e6be0f442534e89648cb9e345f30ee88ad9b2e5b22dcb580716"
+  },
+  {
+    "old": "revalidation_archive.py",
+    "new": "legacy/revalidation_archive.py",
+    "sha256": "9b2c125b1a29893cb740b2f80531781b03f1e9cc82f3713ecab7b35d797a8480"
+  },
+  {
+    "old": "shopping_score.py",
+    "new": "legacy/shopping_score.py",
+    "sha256": "db2b9f40ec49146742cf51dd295e7b269bcbf37e4e686b6ec280c8f2efd16a25"
+  },
+  {
+    "old": "retail_reader_guidance.html",
+    "new": "legacy/retail_reader_guidance.html",
+    "sha256": "9593cdb92e9e87f8cba52153c7fab1c0cb1a5bb846892acaf8ced18ba8c8d212"
+  },
+  {
+    "old": "audit_matching.py",
+    "new": "legacy/audit_matching.py",
+    "sha256": "a3309ef4274b4950067b0639a95afe988446542d4a83487b23e430b9cb2c4f64"
+  },
+  {
+    "old": "retail_shoes_prepare.py",
+    "new": "legacy/retail_shoes_prepare.py",
+    "sha256": "f39faf914d6f8cd8ecf360365cc618083eb99030541e37841dc589dee8022138"
+  },
+  {
+    "old": "optimize_summary.py",
+    "new": "legacy/optimize_summary.py",
+    "sha256": "8695dc20994959b734022be028e640b79091088bc878c672759f2344dfffb015"
+  },
+  {
+    "old": "retail_reader_glossary.js",
+    "new": "legacy/retail_reader_glossary.js",
+    "sha256": "f8202a4f75463f787f4ce731c83f0a7c19ef858cf8fd93c88c5281b76b61ff18"
+  }
+]

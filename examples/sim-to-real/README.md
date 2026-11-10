@@ -1,3 +1,11 @@
+# 新旧实验导航
+
+- [新一轮独立框架与实施状态](decision_lab/README.md)
+- [历史脚本与迁移说明](legacy/README.md)
+- [文献综述](study/11_文献综述/综述.md)
+
+以下为历史研究说明，其成绩不并入新实验。旧命令由兼容链接继续支持。
+
 # MatrAIx 真人问卷对照实验
 
 [通俗故事版报告](study/index.html) · [六轮完整证据与逐题图表](study/evidence.html) · [实验档案与复算](study/README.md) · [文件归档说明](study/00_导航/文件归档说明.md)

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MatrAIx 实验故事｜虚拟顾客到底能不能用</title>
+<style>
+:root{--ink:#213b36;--muted:#52655f;--paper:#f6f4ed;--line:#dcded3;--human:#247960;--before:#b65c40;--after:#4267bd;--statistics:#79619d}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:19px/1.85 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",sans-serif}main,header .inside,nav .inside{max-width:1040px;margin:auto;padding:0 30px}a{color:#285d8b;text-underline-offset:5px}a:hover{color:#15395b}h1,h2,h3{line-height:1.45}h1{font-size:clamp(32px,4.5vw,50px);letter-spacing:-.03em;max-width:900px;margin:20px 0}h2{font-size:30px;margin:10px 0 18px}h3{font-size:23px;margin:12px 0}p{margin:14px 0}strong{font-weight:700}.eyebrow{font-size:15px;letter-spacing:.07em;color:var(--muted)}header{padding:45px 0 30px}.lead{font-size:23px;max-width:860px}.answer{background:#eaf1e8;border-left:5px solid var(--human);padding:18px 24px;margin:26px 0}.answer p{margin:8px 0}.small,.context,figcaption{font-size:16px;color:var(--muted)}.context{margin:0}.button{display:inline-block;padding:10px 18px;border:1px solid #b3c3b9;border-radius:7px;background:#fff;text-decoration:none;font-size:17px}.button.primary{color:#fff;background:var(--ink);border-color:var(--ink)}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}nav{background:#f6f4edf5;position:sticky;top:0;border-block:1px solid var(--line);z-index:5}nav .inside{display:flex;gap:24px;overflow:auto;white-space:nowrap;padding-block:13px;font-size:16px}nav a{text-decoration:none}section{margin:38px 0;padding:34px;background:white;border:1px solid var(--line);border-radius:16px}.chapter{display:inline-block;font-size:16px;color:var(--muted);font-weight:650}.two{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:20px 0}.box{background:#f7f8f3;border:1px solid var(--line);padding:20px;border-radius:10px}.box p{margin:8px 0}.steps{padding:0;list-style:none;counter-reset:step;display:grid;gap:14px}.steps li{counter-increment:step;position:relative;padding:16px 18px 16px 60px;background:#f7f8f3;border-radius:9px}.steps li:before{content:counter(step);position:absolute;left:16px;top:19px;background:var(--ink);color:white;width:29px;height:29px;border-radius:50%;text-align:center;line-height:29px;font-size:17px}.takeaway{background:#edf3ed;border-left:4px solid var(--human);padding:17px 20px}.caution{background:#fff4e7;border-left-color:#ba8840}.metric-note{background:#f3f5fb;border:1px solid #d7dfee;padding:18px 22px;border-radius:9px}.metric-note p{margin:6px 0}figure{margin:25px 0}figure h3{margin-bottom:6px}.bar-chart{margin:22px 0}.bar-row{margin:17px 0}.bar-heading{display:flex;gap:16px;justify-content:space-between;align-items:baseline;margin-bottom:6px}.bar-heading span{min-width:0}.bar-heading strong{white-space:nowrap;font-size:23px;font-variant-numeric:tabular-nums}.bar-track{height:20px;border-radius:4px;background:#edf0eb;overflow:hidden}.bar-fill{height:100%;display:block;min-width:0}.human{background:var(--human)}.before{background:var(--before)}.after{background:var(--after)}.statistics{background:var(--statistics)}figcaption{margin-top:14px}.text-link{font-size:17px}.big-change{font-size:34px;font-weight:750;line-height:1.5;font-variant-numeric:tabular-nums}.big-change span{font-size:17px;font-weight:500}details{padding:14px 18px;border:1px solid var(--line);border-radius:9px;margin:20px 0;font-size:17px}summary{cursor:pointer;font-weight:650}details[open] summary{margin-bottom:16px}select{width:100%;padding:13px;border:1px solid #a3b6a8;border-radius:7px;background:#fff;color:var(--ink);font:inherit}label{display:block;font-weight:650;margin:18px 0 8px}.comparison{padding:24px;background:#fafbf8;border:1px solid var(--line);border-radius:10px;margin-top:18px}.comparison h3{font-size:25px}.table-scroll{max-width:100%;overflow:auto;margin:16px 0}table{border-collapse:collapse;min-width:100%;font-size:16px;line-height:1.7}td,th{padding:12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:#f0f3ed}td:first-child{min-width:145px}ul{padding-left:25px}li{margin:10px 0}.sources{list-style:none;padding:0}.sources li{padding:12px 0;border-bottom:1px solid var(--line)}.sources span{display:block;font-size:16px;color:var(--muted)}.verdicts{display:grid;gap:15px}.verdict{padding:17px 20px;border:1px solid var(--line);border-left:5px solid var(--human);border-radius:6px}.verdict p{margin:7px 0}.verdict.wait{border-left-color:#ba8840}.verdict.no{border-left-color:var(--before)}.exact{font-variant-numeric:tabular-nums}footer{padding:5px 0 50px;color:var(--muted);font-size:16px}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+@media(max-width:700px){body{font-size:18px}main,header .inside,nav .inside{padding-inline:17px}header{padding-top:28px}.lead{font-size:20px}h2{font-size:26px}h3{font-size:22px}section{padding:24px 18px;margin:25px 0}.two{grid-template-columns:1fr}.answer{padding:15px 18px}.bar-heading{font-size:17px}.bar-heading strong{font-size:22px}.comparison{padding:18px 14px}.small,.context,figcaption{font-size:15px}.button{font-size:16px}details{padding:12px}table{font-size:15px}.big-change{font-size:30px}}
+@media print{nav,.actions,label,select{display:none}body{background:white;font-size:12pt}section{border:0;padding:15px 0;break-inside:auto}main{max-width:none;padding:0}.bar-track,.bar-fill,.answer,.takeaway{-webkit-print-color-adjust:exact;print-color-adjust:exact}figure,.box,.comparison{break-inside:avoid}}
+.diagnosis{display:grid;gap:14px;margin:22px 0}.diagnosis article{padding:18px 20px;border:1px solid var(--line);border-left:5px solid #ba8840;border-radius:8px}.diagnosis h4{font-size:20px;margin:0 0 6px}.diagnosis p{margin:6px 0}.reasoning{padding:18px 22px;margin:18px 0;background:#f7f8f3;border-radius:10px}.reasoning dt{font-size:17px;font-weight:700;margin-top:14px}.reasoning dt:first-child{margin-top:0}.reasoning dd{margin:4px 0 0}.experiment-route{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:20px 0}.experiment-route div{padding:16px;background:#f3f5fb;border:1px solid #d7dfee;border-radius:8px;font-size:17px}.experiment-route strong{display:block}.design-card h4{font-size:21px;margin:0 0 10px}.design-card .result{border-top:1px solid var(--line);padding-top:12px}.toy{border:1px dashed #b5bdb0;border-radius:10px;padding:20px;margin:22px 0;background:#fafbf8}.toy h4{font-size:21px;margin:0 0 10px}.toy .two{margin-bottom:8px}.toy-result{font-size:18px;font-weight:650}.toy-stack{display:flex;height:28px;margin:12px 0;border-radius:4px;overflow:hidden}.toy-stack span:first-child{background:var(--after)}.toy-stack span:last-child{background:var(--statistics)}.evidence-level{font-size:15px;font-weight:650;color:#446149}.hypothesis-label{color:#815c28}.reasoning a,.design-card a{font-size:16px}
+@media(max-width:700px){.experiment-route{grid-template-columns:1fr}.reasoning{padding:16px}.toy{padding:16px}.diagnosis article{padding:16px}.bar-heading span{overflow-wrap:anywhere}}
+</style></head>
+<body><header id="story-top"><div class="inside">
+<div class="eyebrow">MatrAIx · 把六轮实验讲清楚</div>
+<h1>电脑里的“顾客”，<br>能替真人帮我们选商品吗？</h1>
+<p class="lead"><strong>现在还不能直接替代。</strong>改进后，某些回答比例更像真人了；但遇到“买哪款”“都不买”和“哪些人会买”，仍有明显偏差。</p>
+<div class="answer"><p><strong>这次最值得记住的一句话：</strong><br>模型可以继续改进，但“看起来像一群顾客”，还不等于“能可靠地替顾客做选择”。</p><p>已有真人数据时，先用这些数据找规律；让模型来比较、补充，再用新的真人结果验证。</p></div>
+<p class="small">下面按事情发生的顺序讲：发现什么问题、怀疑什么原因、怎样检验、改后怎样。我们会区分“实验观察到的结果”和“尚未证实的原因”。</p>
+<div class="actions"><a class="button primary" href="#story-start">从头读这个故事 ↓</a><a class="button" href="#story-diagnosis">问题和原因是什么</a><a class="button" href="#story-use">先看现在怎么用</a><a class="button" href="evidence.html">查看完整证据</a></div>
+</div></header>
+<nav aria-label="阅读路线"><div class="inside"><a href="#story-start">事情的起点</a><a href="#story-problem">第一次答偏</a><a href="#story-changes">后来怎么改</a><a href="#story-comparison">前后对比</a><a href="#story-use">最终建议</a><a href="#story-data">真实数据与全部实验</a></div></nav>
+<main>
+<section id="story-start"><span class="chapter">一 · 我们想解决一个实际问题</span><h2>上架之前，能不能先知道顾客会怎么选？</h2>
+<p>比如两款商品，一款便宜，一款评分高，顾客会买哪款？换一种包装，会不会更愿意买？又有多少人会说：“这两款我都不买。”</p>
+<p>MatrAIx 的思路，是在电脑里生成一群带有年龄、学历和性格设定的“虚拟顾客”，让模型替他们回答。我们要检查的，就是这些回答有没有真实顾客的样子。</p>
+<ol class="steps"><li><strong>先找到真人已经答过的数据。</strong><br>来自美联储、Pew、ANES和学者公开的研究，以及真实购买记录。我们没有重新招募这批人。</li><li><strong>让模型面对相同的问题。</strong><br>给它允许使用的背景和题目，把这人的真实答案留在评分端。</li><li><strong>把两边放在一起比较。</strong><br>真人选各项的比例是多少？模型估计是多少？有对应真人时，还检查能不能猜中具体答案。</li></ol>
+<div class="two"><div class="box"><h3>电脑人物的背景</h3><p>前两轮的画像是生成的，没有逐一对应真人。第六轮又让年龄、学历、性别、收入的粗分类比例尽量对齐真人。</p></div><div class="box"><h3>真人记录里的背景</h3><p>后续多项实验直接使用受访者记录中的年龄、收入、购物活动等。额外添加的四项MatrAIx性格仍是合成设定，不是真人测得的性格。</p></div></div>
+<p class="small">本研究测试的是这些画像、提示和所用模型的组合，尚未单独评测 MatrAIx 官方8B模型权重。<a href="evidence.html#profile-truth">核对每轮背景来自哪里</a>。</p>
+</section>
+
+<section id="story-problem"><span class="chapter">二 · 第一次就看到一个明显的问题</span><h2>真人有不同选择，模型却快答成“全都一样”</h2>
+<p>看一题就容易理解：<strong>“因为物价上涨，你有没有改买更便宜的商品？”</strong></p>
+<figure><h3>回答“有”的比例</h3>{{FIRST_BARS}}<figcaption>第一轮，给模型年龄、学历和四项合成人格。绿色是真人调查的加权比例；橙色是模拟比例。条的全长都是100%。</figcaption></figure>
+<p class="takeaway"><strong>真人约{{FIRST_REAL}}%说有，模型却估到{{FIRST_MODEL}}%。</strong><br>模型说出了一个很“合理”的反应，却把很多没有这样做的人漏掉了。拿这样的模拟去估需求，会高估大家行动的一致程度。</p>
+<p>这让我们发现：读起来像真人的回答，汇总起来仍可能不像真人。于是我们开始一项项改。</p>
+<p><a class="text-link" href="evidence.html#personas">查看第一轮全部结果，不只看这一题 →</a></p>
+<div id="story-diagnosis"><h3>把后来的结果一起看，我们发现了三类问题</h3>
+<div class="diagnosis">
+<article><h4>问题一：把不同的人答得太像</h4><p><strong>现象：</strong>上面那道题，真人有分歧，模型却几乎全选“有”。</p><p><strong>要排查：</strong>是模型本身的判断偏了？不知道这个人真正的处境？还是只交一个答案，把其他可能性丢掉了？</p></article>
+<article><h4>问题二：人物介绍更像了，答案却没明显变准</h4><p><strong>现象：</strong>第六轮补齐年龄、学历之外的性别和收入匹配，没有带来误差下降；再加合成人格，改善也没达到采用门槛。</p><p><strong>要排查：</strong>这些标签是否包含了真正影响选择的信息？性格是生成的，并不等于被模拟真人的实际性格。<a href="evidence.html#revalidation">看匹配与人格对照</a>。</p></article>
+<article><h4>问题三：猜对大概有多少人，不等于猜对是哪几个人</h4><p><strong>现象：</strong>包装实验改后，“都不买”的比例更接近真人；但每100次真实拒买，只认对约{{REFUSAL_RECALL_INT}}次。</p><p><strong>要排查：</strong>改善是否只发生在总体比例？如果要找客户或判断卖点，还得分别检查具体选择和商品属性的影响。<a href="evidence.html#revalidation">看拒买识别结果</a>。</p></article>
+</div>
+<p class="takeaway caution"><strong>现象已经看到了，原因不能直接猜定。</strong>例如，“模型可能在套用常识”“缺少预算或实际需求”是待检验的解释；下面的对照用来判断哪些改动确实有用，尚不能完整揭示模型内部为什么这样回答。</p></div>
+</section>
+
+<section id="story-changes"><span class="chapter">三 · 顺着问题，一项项检验</span><h2>每种改法：为什么试、怎样试、结果说明什么</h2>
+<p>像调一锅汤：如果盐、水、火候一起变了，味道变好，也不知道是哪一步起作用。我们因此把“换模型”“改问法”“补背景”“改汇总方式”分开比较。</p>
+<div class="experiment-route" aria-label="对照设计的三个步骤"><div><strong>① 尽量固定其他条件</strong>在同一项对照中固定题目、人群和评分口径。</div><div><strong>② 只动要检验的因素</strong>例如背景不动，只换问法；或同一批答案，只改汇总。</div><div><strong>③ 对照真人结果</strong>模型输入不含目标题答案；最后才评分。第六轮还按同条件运行三次。</div></div>
+<p class="small">组合改法也保留，但会标明同时改了什么。人群匹配试验需要换抽样画像，只保持共同年龄学历层与汇总权重一致，不能冒称逐一是同一个人。</p>
+<article id="why-model"><h3>第一种：换模型——是不是“答题者”本身不同？</h3>
+<dl class="reasoning"><dt class="hypothesis-label">怀疑的原因</dt><dd>同样的背景和题目，不同模型可能对人群习惯、题意和选择可能性作出不同判断。</dd><dt>改法与设计</dt><dd>先比较Flash、Pro和Qwen；最新对照固定同一批合成画像、13道购物题、概率答法和参数，只换Qwen或Pro，各运行三次。</dd><dt>为什么值得这样试</dt><dd>如果换模型后反复更接近，就说明结果不只受画像影响，也受所用模型影响。但这还不能区分是知识、训练方式还是概率估计能力带来的差异。</dd></dl>
+<div class="metric-note"><strong>先认识下面图里的“误差”。</strong><p>它表示模型估出的选项比例，离真人有多远。<strong>越小越好，0表示完全对上。</strong></p><p>只举算法例子：一题只有“会／不会”，真人60%选“会”，模型估成80%，这一题的误差就是20个百分点。它不是“20%的人答错了”。</p></div>
+<figure><h3>同样13道购物题，平均离真人有多远？</h3>{{MODEL_BARS}}<figcaption>同样匹配年龄、学历、性别、收入，均让模型给各选项的可能性。每次先平均13题误差，再平均三次；单位为百分点。</figcaption></figure>
+<p class="takeaway"><strong>在这组题上，Pro更接近真人，三次都是这个方向。</strong>这支持优先用Pro继续研究合成人群问卷，但还不能说它在所有商品任务上都更好。</p>
+<details><summary>之前的三个模型比较，以及精确差异</summary>{{MODEL_HISTORY}}<p>上表是另一轮的18道生活类题，只给共同情境。Flash在这一条件下误差较大；加完人格后的模型差异不明确，不能据此宣布某个模型任何场景都不能用。</p><p>最新13题对照，每组240条合成画像，真人参照为4,090名背景与答案完整的网络受访者。Pro比Qwen少错{{MODEL_GAIN}}个百分点，95%区间为{{MODEL_CI}}，三次均改善。真人逐人背景仍只交给内网Qwen，Pro只收到合成画像和公开题目。</p><a href="evidence.html#model-decision">前一次三模型结果</a> · <a href="evidence.html#revalidation">最新三次对照</a></details></article>
+
+<article id="why-background"><h3>第二种：改问法、补背景——是不是没有把“这个人”说清楚？</h3>
+<p><span class="evidence-level hypothesis-label">待检验的解释</span><br>只知道两个人年龄和学历相同，仍不知道他们的收入是否稳定、平时怎样上网。模型可能用一个笼统的“这类人通常怎样”来补空缺。让它扮演一个角色，也不一定等于让它认真预测那位受访者的答案。</p>
+<div class="two"><div class="box"><strong>原来的要求，大意是</strong><p>“你扮演一名成年人，这是你的年龄段和学历，请作答。”</p></div><div class="box"><strong>后来的要求，大意是</strong><p>“这是这位受访者真实记录的背景。请预测他当时会怎样回答；不知道的经历不要编造。”</p></div></div>
+<p><strong>为什么可能有效？</strong>把任务说成“预测这个人的实际回答”，能更明确地规定目标；补进与题目有关的真实信息，可能让模型少靠泛泛的印象。为了知道是哪项起作用，我们又拆成下面两组对照：</p>
+<div class="two">
+<div class="box design-card" id="design-prompt"><h4>只改问法</h4><p><strong>固定：</strong>同样的真人、题目、Qwen和贴题背景。</p><p><strong>改变：</strong>从角色扮演，改为预测此人当时的回答，并要求未知经历不要编造。</p><p class="result"><strong>18题平均误差：<br>{{PROMPT_BEFORE}} → {{PROFILE_AFTER_EXACT}}点。</strong></p><p>这支持新提示组合在这些题上有用；没有单独证明“不要编造”这句话贡献了多少，也没直接测到模型编造是否减少。</p><a href="evidence.html#profiles">核对提示对照</a></div>
+<div class="box design-card" id="design-background"><h4>只补真实信息</h4><p><strong>固定：</strong>同样的真人、题目、Qwen和预测问法。</p><p><strong>改变：</strong>在细分年龄、学历外，加入收入、就业、上网行为或政治态度等该调查有记录的字段。</p><p class="result"><strong>18题平均误差：<br>{{BACKGROUND_BEFORE}} → {{PROFILE_AFTER_EXACT}}点。</strong></p><p>这支持这批附加信息整体有帮助；尚未逐字段拆开，不能说改善全来自收入或某项态度。目标题答案始终不放入背景。</p><a href="evidence.html#profiles">核对背景对照</a></div>
+</div>
+<p>在消费、诈骗风险、公共支出这18道题中，组合改法把平均误差从<strong>{{PROFILE_BEFORE}}降到{{PROFILE_AFTER}}点</strong>。但换到电商时，只有产地选择通过原先的门槛；包装拒买没有一起变好，网购习惯反而变差。</p>
+<p class="takeaway caution"><strong>关键是有没有补进有用的信息，不是人物介绍有多长。</strong>人口比例更像、合成人格更多，没有在最新对照中带来达到门槛的收益。我们尚未测量这些人的真实人格，所以也不能据此断言“真实人格没有用”。</p>
+<details><summary>把问法和背景拆开看，究竟哪项起了作用？</summary>{{PROFILE_PARTS}}<p>这三行都来自18道生活类题，单位为百分点，只在各自一行内比较。四项合成人格不是这些真人测得的性格。<a href="evidence.html#profiles">查看各调查、各题与不确定范围</a>。</p></details>
+<details><summary>那把人群匹配得更像，或者再加性格呢？</summary><p>第六轮把年龄、学历之外的性别、收入比例也对齐，误差没有明显下降。再加四项合成人格，Qwen仅改善约0.21点，Pro约0.98点，都没达到2点的采用门槛。</p>{{MATCH_TABLE}}<p>这说明人口比例对齐，不等于偏好也能预测准确。我们尚未对齐美国地区、购物经历或真人测得的性格；这里检验的是四项粗分类。</p><a href="evidence.html#revalidation">查看匹配前后的人群和答案分布</a></details></article>
+
+<article id="why-probability"><h3>第三种：保留不同可能性——是不是在汇总时把分歧丢掉了？</h3>
+<p><strong>怀疑的原因：</strong>“最可能选甲”不等于“一定选甲”。如果许多人只是略偏向甲，汇总时却每人都算一票甲，最后就可能把这群人说得过于一致。</p>
+<p><strong>改法：</strong>原来每题必须交一个答案。后来我们改问：<strong>“这位顾客选商品甲、选商品乙、两款都不买，各有多大可能？”</strong></p>
+<div class="box"><strong>只为说明方法，举个例子</strong><p>模型可以回答：选甲50%、选乙30%、都不买20%。我们保留这些可能性，再汇总所有人的预测。这里的百分比叫“概率”，由模型估计，不是真人自己报告的心理活动。</p></div>
+<div class="toy" id="probability-example"><h4>为什么只留一个答案，可能把比例算偏？</h4><p><strong>假想例子：</strong>有100人，模型对每人都估计“选甲60%、选乙40%”。现在只是换一种加总方法：</p><div class="two"><div><strong>每人只留下最高的一项</strong><div class="toy-stack" role="img" aria-label="假想例子：只留最高项，甲100%，乙0%"><span style="width:100%"></span><span style="width:0%"></span></div><p class="toy-result">预测：甲100%，乙0%</p><p>每人都被记成一票甲，40%的其他可能性消失了。</p></div><div><strong>把每人的可能性都加起来</strong><div class="toy-stack" role="img" aria-label="假想例子：汇总全部可能性，甲60%，乙40%"><span style="width:60%"></span><span style="width:40%"></span></div><p class="toy-result">预测：甲60%，乙40%</p><p>蓝色是甲，紫色是乙。保留了“没有把握”的部分。</p></div></div><p class="small">这里没有给出真人答案，60／40也不一定就对。它只说明两种汇总会怎样不同；原单选是模型直接作答，不等于一定按“只留最高项”运行。</p></div>
+<figure id="aggregation-proof"><h3>真实实验也检查了：同一批预测，只改汇总会怎样？</h3>{{AGGREGATION_BARS}}<figcaption>Pew第13波购物问卷，240人、13题。复用同一批已经生成的概率，不换模型、不换背景、不重新答题；真人参照与调查权重也相同。比较的是平均分布误差，越小越好。</figcaption></figure>
+<p class="takeaway"><strong>{{AGGREGATION_BEFORE}} → {{AGGREGATION_AFTER}}点：这项证据直接支持，汇总时保留其他可能性有用。</strong><br>它并没有让模型重新认识这些人。同一批预测若最终都取最有把握的一项，逐人答对率一样是{{AGGREGATION_ACCURACY}}%。改善的是总体比例估计，不能把它说成“更能认准每个人”。</p>
+<details><summary>这项检查能解释什么，不能解释什么？</summary><p>同一批答案的平均误差减少{{AGGREGATION_GAIN}}个百分点，配对重抽样的95%区间为{{AGGREGATION_CI}}。这是已完成的第五轮分析，不是本次新增实验。</p><p>原单选与新概率之间，还同时改变了提问、输出要求和生成结果。上述“复用同一批概率”检查进一步隔离了汇总方式，但不能把原实验所有改善都归为这一个原因，也不能证明模型给出的每个概率都准确。</p><p><a href="evidence.html#survey">完整图表</a> · <a href="08_购物预测/pew-formal-score.json">原始汇总分数</a></p></details>
+<p><strong>为什么不保证每次都有用？</strong>保留可能性只是不把信息过早删掉。如果模型原本就把某个选项估得过高，保留之后仍可能估错。下面的包装实验有改善，但产地选择没有复现，正说明这点。</p>
+<p>这次最容易看懂的改善，出现在包装实验的“都不买”。</p>
+<figure><h3>全部选择中，有多少是“两款都不买”？</h3>{{REFUSAL_BARS}}<figcaption>同一批240名真实受访者看到的原商品卡。每种模型答题方式运行三次，图中为三次平均。紫色的方法用另外一批真人的选择训练，没有看这240人的目标题答案。</figcaption></figure>
+<p class="takeaway"><strong>从{{REFUSAL_BEFORE}}%提高到{{REFUSAL_AFTER}}%，确实更接近真人的{{REFUSAL_REAL}}%。</strong><br>但还低估了拒买。把模型最有把握的一项当作答案，换算成每100次真人实际选择“都不买”的情况，它只对上约{{REFUSAL_RECALL_INT}}次。</p>
+<p>所以我们能说“总体拒买比例估得更近”，还不能说它能可靠地识别拒买。而在产地、价格的二选一任务上，改为概率后并没有明确改善。</p>
+</article>
+</section>
+
+<section id="story-comparison"><span class="chapter">四 · 把前后结果放在一起看</span><h2>有些改法进步很大，有些没有进步</h2>
+<p>先选一个任务。下图只比较<strong>这个任务内部</strong>的三种方法：改前、改后、用其他真人数据找规律。条越短，回答比例越接近真人。数字是前面解释的误差，单位为百分点，不是准确率。</p>
+<label for="storyCase">你想看哪一项？</label><select id="storyCase">{{CASE_OPTIONS}}</select>
+<div id="storyCaseContent" class="comparison" aria-live="polite">{{DEFAULT_CASE}}</div>
+<details><summary>把这五项的精确平均误差全部展开</summary>{{CASE_TABLE}}<p>单位均为百分点，但各任务的题目、样本和平均规则不同。只能在同一行比较方法，不能把五行相加或当作一条不断进步的曲线。</p><p id="storyInterval"></p><p>“95%区间”描述按既定方法反复抽样时差异的不确定范围；它不是模型95%准确。判断明确改善还要结合原实验门槛，完整计算口径在证据页。</p></details>
+<h3>为什么还放一个“不用大模型”的方法？</h3>
+<p>因为我们要知道：有了模型，是否比已有办法更有用？</p>
+<ul><li><strong>问卷：</strong>找另一批年龄、学历相近的真人，看他们对同题怎么答，再用这些比例预测。</li><li><strong>商品选择：</strong>用另一批真人的选择，学习价格、包装等与选择之间的关系。</li><li><strong>实际购买：</strong>看这位顾客过去几个季度真正买过什么，再预测下一季度。</li></ul>
+<p class="takeaway"><strong>这批实验里，利用已有真人数据的方法通常更接近。</strong>它们能学另外一批人的答案，而原模型没有接受同样的专项训练。因此这回答的是“现有数据条件下，哪种办法更实用”，不是仅凭模型名称评高低。</p>
+<p><strong>为什么它有优势？</strong>它直接参考“类似的人面对这道题、这类商品，实际怎样选”，相当于先看过往同类答卷。模型只看背景后作答，没有同样的专项学习。实验支持优先保留这条参照；尚未证明模型经过相同真人数据训练后仍一定较差。</p>
+<h3>真正的购买记录，给出了相同的提醒</h3>
+<p>在500个留出账户上，预测买哪些品类、买什么价位、钱花在哪些品类、是否复购，直接让模型猜，都不如利用近期购买记录。</p>
+<p>只有“下一季度买哪些品类”这项，把少量模型信号加进去后，逐账户误差约减少<strong>{{AMAZON_GAIN}}%</strong>。收益很小，仍需换一个季度再验证。这是预测误差的改善，不是销售额提升。</p>
+<p><a class="text-link" href="evidence.html#amazon">查看实际购买的四项对照 →</a></p>
+</section>
+
+<section id="story-use"><span class="chapter">五 · 故事讲到这里，现在应该怎么用？</span><h2>把模型当作待验证的助手，别直接把它当成顾客</h2>
+<div class="verdicts"><article class="verdict"><strong>已经支持的方向</strong><p>在部分任务中，换模型、补真实的贴题背景、保留各项可能性，确实能减少偏差。合成人群的购物问卷可优先评估Pro；逐人真人背景继续使用内网Qwen。</p></article><article class="verdict wait"><strong>每次都要重新检查</strong><p>概率输出在购物问卷、运动鞋和包装分布上有效，产地选择却没复现。增加人口字段或合成人格也不是越多越好。</p></article><article class="verdict no"><strong>当前证据还不支持</strong><p>用模拟直接替代真人消费者研究，直接承诺销量或转化率，或者因为总体比例接近就认定能找到具体买家。</p></article></div>
+<h3>如果下一步要用于电商选品，建议这样做</h3>
+<p><strong>下一步应从失败的地方出发：</strong>总体比例仍答偏，就检查概率与真人频率是否吻合；认不准谁会买，就需要更贴近实际需求的真人信息；估不准商品卖点，就做“只改价格或材质”的商品对照。这些是后续设计方向，当前结果还不能保证它们一定带来提升。</p>
+<ol class="steps"><li><strong>先有真实依据。</strong>找清楚商品、目标人群，以及可核对的背景；缺的信息不靠编造补齐。</li><li><strong>先建立简单参照。</strong>有同题选择或购买记录，就先用真人数据找规律。全新商品没有这类数据时，先取得一批真人验证样本。</li><li><strong>把改动拆开比较。</strong>固定商品和人群，分别测换模型、改问法、加背景、给概率；别一次全改后猜是哪项起作用。</li><li><strong>过三道检查再谈采用。</strong>总体比例接近吗？具体选择能认准吗？只改价格、材质等一个属性时，影响也接近真人吗？最后再到新的真人样本或新时间段验证。</li></ol>
+<p class="takeaway"><strong>最终结论：</strong>我们确实找到了能让模型少答偏的办法，但还没找到一套在这些任务上稳定替代真人、并全面超过已有数据方法的方案。现在最有价值的，是保留有效改法，同时清楚地知道它们在哪些地方会失败。</p>
+<p><a class="text-link" href="05_优化记录/优化文档.md">查看持续更新的优化方案和采用条件 →</a></p>
+</section>
+
+<section id="story-data"><span class="chapter">六 · 有依据，也把不足说清楚</span><h2>这些结论用的是什么数据？</h2>
+<p>一共涉及九份真实来源。问卷里记录的是受访者当时的回答；Amazon数据记录的是参与者捐赠的实际购买。二者不能混称为真实成交实验。</p>
+<details><summary>展开九份数据的来源与用途</summary><ul class="sources">{{SOURCES}}</ul><p>论文和官方入口供核对；本次使用的具体文件版本与内容指纹保存在<a href="00_导航/文件清单.json">档案清单</a>。</p></details>
+<details><summary>六轮实验到底按什么顺序做的？</summary>
+<ol><li><strong>先试原始合成人格。</strong>同一批1,200条画像答三份问卷，发现回答过度集中。</li><li><strong>再比三个模型。</strong>同240条画像，固定题目与参数，看换模型能否改善。</li><li><strong>再改提示和真人背景。</strong>三份问卷各240人，拆开比较问法、背景精细度与合成人格。</li><li><strong>带到具体购物任务。</strong>产地、包装和网购习惯各240人；发现通用题上的改善没有普遍复现。</li><li><strong>改变答题形式，并检查真实购买。</strong>购物问卷与运动鞋各240人，实际购买500个留出账户；概率缓解过度一致，但商品属性和逐人预测仍有缺口。</li><li><strong>审查后再跑三次。</strong>补齐四项粗人口匹配，重新比较Pro／Qwen，以及商品单选／概率，共7,200份正式答卷。包装改善，产地未改善；更细匹配未带来明确收益。</li></ol>
+<p>轮次之间题目和样本会变化，每轮只在自己的对照内判断改进，不把它们拼成一个“总准确率”。</p></details>
+<details><summary>这份研究还有哪些限制？有没有修正过错误？</summary>
+<p>第六轮沿用已经研究过的公开数据，是内部复验，不能冒称增加了新的真人验证。公开题目或答案统计可能曾被模型见过；三次生成也不代表覆盖了所有模型随机性。</p>
+<p>前两轮只匹配年龄、学历；最新也只补齐性别、收入的粗分类，不是完整人格匹配。真实受访者的四项MatrAIx性格没有测量值。</p>
+<p>审查发现早期有两组汇总权重不同，其画像增益比较已撤下。第六轮还发现学历标签漏映射，已在查看正式分数前修正，并作废285份正式答卷和10份试跑；只复用输入全文相同的答卷。有效的负面结果继续保留。</p>
+<p><a href="evidence.html#matching-audit">早期审查与复算</a> · <a href="10_匹配与商品复验/mapping-correction.json">本轮修正记录</a> · <a href="00_导航/通俗报告数据核验.json">本页数字来源</a></p></details>
+<details><summary>旧报告里的几个词，用白话怎么说？</summary><ul><li><strong>原单选：</strong>模型每题只能交一个答案。</li><li><strong>保留概率：</strong>保留模型估计的各选项可能性，再汇总；它不是真人自报概率。</li><li><strong>年龄学历统计：</strong>参考另外一批同年龄段、同学历档真人怎么答。</li><li><strong>历史统计／统计基线：</strong>不用大模型的参照方法。问卷和商品任务往往是同一波调查里的其他人，不一定来自更早年份；购买任务才用本人此前的记录。</li><li><strong>分布误差：</strong>模型估计的各选项比例离真人有多远，越低越好。</li><li><strong>逐人正确率：</strong>有对应真人时，看模型最可能的选项有多少次与该真人实际答案相同。</li></ul></details>
+<h3>需要继续核对每道题，可以从这里进去</h3>
+<div class="actions"><a class="button" href="evidence.html#history-details">前四轮：逐题比较</a><a class="button" href="evidence.html#survey">购物问卷：13道题</a><a class="button" href="evidence.html#shoes">运动鞋与卖点</a><a class="button" href="evidence.html#amazon">实际购买</a><a class="button" href="evidence.html#revalidation">最新复验：所有题与三次结果</a></div>
+</section>
+<footer>主页面先帮助理解，<a href="evidence.html">完整证据页</a>保留全部轮次、精确数字和逐题交互。每条结论只适用于对应题目、样本、模型和设置。<a href="#story-top">回到开头 ↑</a></footer>
+</main>
+<script id="story-data-json" type="application/json">{{PAYLOAD}}</script>
+<script>{{SCRIPT}}</script>
+</body></html>
