@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 459,
-  "git_bytes": 78547150,
+  "git_file_count": 461,
+  "git_bytes": 78551340,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -307,6 +307,12 @@
       "storage": "git"
     },
     {
+      "path": "decision_lab/swiss-six-audit.json",
+      "bytes": 1061,
+      "sha256": "66c06fdd66d3026e9fadea5f02b797cb1e06d7809bfde4afa27df891b333a924",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/swiss-supplement-audit.json",
       "bytes": 2125,
       "sha256": "a5762c6b0d572025a0b2a9cc67dc2dc14b068e92b4f5f9c321396d77b4f4ae4e",
@@ -322,6 +328,12 @@
       "path": "decision_lab/swiss_appliances.py",
       "bytes": 3346,
       "sha256": "231cfcb4f6dea9d55aedfdb7874d94bfa602a014bdc0d0341533bc2d0d0cebf4",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/swiss_six_audit.py",
+      "bytes": 2283,
+      "sha256": "cc37bd5ec3bf1a17b2473223c81f5f905b13e803d7273428644197ee81a315ca",
       "storage": "git"
     },
     {
@@ -410,8 +422,8 @@
     },
     {
       "path": "decision_lab/数据审查发现.md",
-      "bytes": 8959,
-      "sha256": "d1e007f8583043e65bb080c83659b58aabd3961dc360bb3236d3d16682d3dfcb",
+      "bytes": 9805,
+      "sha256": "17cec5dcfbb0fdcbaa19882a0f08a9ec029289adc46fb4ab9db91e1f89bab23d",
       "storage": "git"
     },
     {
