@@ -68,6 +68,37 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
   await run(change('historyRound','2'));
   for(const d of ['treat constrained','control constrained','treat random','control random','all'])await run(change('shoeDesign',d));
   for(const task of ['spend','repeat','price'])await run(change('amazonTask',task));
+  // The sixth round keeps separate chart instances and only aggregate inputs.
+  assert.equal(await run('window.revalidationCharts.length'),8);
+  assert.equal(await run("document.querySelectorAll('.rv-chart svg').length"),8);
+  assert.ok(await run("document.querySelector('#revalidation').textContent.includes('4,090')"));
+  assert.ok(await run("document.querySelector('#revalidation').textContent.includes('285份正式答卷')"));
+  assert.ok(await run("document.querySelector('#latest-conclusion').textContent.includes('三次运行均改善')"));
+  const matchPairs=await run("document.querySelector('#rvMatchingContrast').options.length");
+  const matchQuestions=await run("[...document.querySelector('#rvMatchingQuestion').options].map(x=>x.value)");
+  assert.equal(matchPairs,7);assert.equal(matchQuestions.length,13);
+  for(let i=0;i<matchPairs;i++){
+   await run(change('rvMatchingContrast',String(i)));
+   for(const q of matchQuestions){
+    await run(change('rvMatchingQuestion',q));
+    assert.equal(await run("document.querySelectorAll('#rvMatchingOptions tbody tr').length"),q.startsWith('SHOP20')?2:q==='SHOP12'?3:4);
+   }
+  }
+  for(const survey of ['origin','packaging']){
+   await run(change('rvProductSurvey',survey));
+   const qs=await run("[...document.querySelector('#rvProductQuestion').options].map(x=>x.value)");
+   assert.equal(qs.length,survey==='origin'?4:16);
+   for(const method of ['choice','statistics']){
+    await run(change('rvProductContrast',method));
+    for(const q of qs){
+     await run(change('rvProductQuestion',q));
+     assert.equal(await run("document.querySelectorAll('#rvProductOptions tbody tr').length"),survey==='origin'?2:3);
+    }
+   }
+  }
+  await run(change('rvMatchingContrast','5'));
+  await run(change('rvMatchingQuestion','SHOP7C'));
+  await run(change('rvProductContrast','choice'));
   async function screenshot(name,selector){let params={format:'png'};if(selector){const rect=await run(`(()=>{const r=document.querySelector(${JSON.stringify(selector)}).getBoundingClientRect();return {x:r.x+scrollX,y:r.y+scrollY,width:r.width,height:Math.min(r.height,1500),scale:1}})()`);params={...params,clip:rect,captureBeyondViewport:true}}const r=await send('Page.captureScreenshot',params);fs.writeFileSync(path.join(dir,name+'.png'),Buffer.from(r.result.data,'base64'))}
   await run("document.querySelector('#openTerms').click()");
   assert.equal(await run("document.querySelector('#termDialog').open"),true);
@@ -81,11 +112,18 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
   assert.equal(await run("document.querySelector('#termDialog').open"),false);
   await screenshot('desktop-conclusion','#final-answer');await screenshot('desktop-provenance','#profile-truth');await screenshot('desktop-closing','#closing');
   await screenshot('desktop-matching-audit','#matching-audit');
+  await screenshot('desktop-revalidation','#revalidation');
+  await screenshot('desktop-revalidation-models','#rvMatchingOverall');
+  await screenshot('desktop-revalidation-product','#rvProductDistribution');
+  await screenshot('desktop-revalidation-refusal','#rvRefusal');
   await screenshot('desktop-top');await screenshot('desktop-models','#models');await screenshot('desktop-history','#history-details');await screenshot('desktop-parity','#input-parity');await screenshot('desktop-survey','#survey');await screenshot('desktop-shoes','#shoes');await screenshot('desktop-method','#method');
   await send('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true});await wait(200);
   assert.deepEqual(await run('[document.documentElement.clientWidth,document.documentElement.scrollWidth]'),[390,390]);
   await screenshot('mobile-top');await screenshot('mobile-history','#history-details');await screenshot('mobile-models','#models');await screenshot('mobile-survey','#survey');await screenshot('mobile-factors','#decisions');
   await screenshot('mobile-matching-audit','#matching-audit');
+  await screenshot('mobile-revalidation','#revalidation');
+  await screenshot('mobile-revalidation-models','#rvMatchingOverall');
+  await screenshot('mobile-revalidation-product','#rvProductDistribution');
   await run("document.querySelector('[data-explain=probability]').click()");
   assert.equal(await run("document.querySelector('#termDialog').open"),true);
   assert.ok(await run("(()=>{const r=document.querySelector('#termDialog').getBoundingClientRect();return r.left>=0&&r.right<=390})()"));
@@ -93,6 +131,15 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
   // Every chart must have a non-empty SVG and an option object after switching.
   assert.equal(await run("[...document.querySelectorAll('.chart')].filter(x=>x.querySelector('svg')).length"),22);
   assert.deepEqual(errors,[]);
-  console.log(JSON.stringify({folder:dir,...result,networkRequests:requests.length,consoleErrors:errors.length,allSelectorsVerified:true,questionByComparisonViewsVerified:52,mobileWidth:390,contextualChartGuides:22,glossarySearchAndKeyboardVerified:true},null,2));
+  const standalone=pathToFileURL(path.join(path.dirname(file),'10_匹配与商品复验','index.html')).href;
+  await send('Page.navigate',{url:standalone});
+  for(let i=0;i<100;i++){if(await run("document.readyState==='complete' && window.revalidationCharts?.length===8"))break;await wait(100)}
+  assert.equal(await run("document.querySelectorAll('.rv-chart svg').length"),8);
+  assert.deepEqual(await run('[document.documentElement.clientWidth,document.documentElement.scrollWidth]'),[390,390]);
+  await send('Emulation.setDeviceMetricsOverride',{width:1440,height:1080,deviceScaleFactor:1,mobile:false});await wait(200);
+  await screenshot('standalone-revalidation');
+  assert.deepEqual(errors,[]);
+  assert.ok(requests.every(u=>u.startsWith('file:')||u.startsWith('data:')));
+  console.log(JSON.stringify({folder:dir,...result,networkRequests:requests.length,consoleErrors:errors.length,allSelectorsVerified:true,questionByComparisonViewsVerified:52,revalidationCharts:8,revalidationViews:131,standaloneVerified:true,mobileWidth:390,contextualChartGuides:22,glossarySearchAndKeyboardVerified:true},null,2));
  }finally{socket?.close();chrome.kill()}
 })().catch(e=>{console.error(e);process.exitCode=1});

@@ -1,10 +1,10 @@
 <section class="section executive" id="final-answer">
-<p class="section-label">先给结论 · 再看证据</p><h2>原始人格模拟还不足以替代真人研究；最可靠的改进来自真实数据与输出方式</h2>
+<p class="section-label">前五轮阶段结论 · 最新复验见上方</p><h2>原始人格模拟还不足以替代真人研究；最可靠的改进来自真实数据与输出方式</h2>
 <p class="lead">本次发现：模型常把真人的分歧答成近乎全票，低估拒买，且“整体比例像真人”不等于“猜对具体的人”。换模型、补背景可以改善部分任务，但没有一种大模型方案在这些任务上全面超过真人数据建立的参照。</p>
 <div class="decision-list">
 <article><b>原方案有什么不足？</b><p>首轮用合成人格回答“是否改买便宜商品”，模拟约 <strong>99.9%</strong> 选择“是”，真人约 <strong>62%</strong>。电商复验中，真人 <strong>32.1%</strong> 的选择是“都不买”，候选方案只估到 <strong>8.7%</strong>。因此不宜直接据此推算市场需求、拒买率或成交率。<a href="#personas">首轮证据</a> · <a href="#shopping">拒买证据</a></p></article>
-<article><b>模型选哪个？</b><p><strong>只给情境、强制单选的同轮测试，优先考虑 DeepSeek Pro，不建议继续把 Flash 设为这一条件下的默认方法。</strong>误差为 Flash <strong>{{FLASH_CONTEXT}}</strong>、Pro <strong>{{PRO_CONTEXT}}</strong>、Qwen <strong>{{QWEN_CONTEXT}}</strong> 个百分点。加上年龄、学历和人格后，三者差异不再明确。后续真人实验继续用<strong>内网 Qwen</strong>，因为它满足数据留在内网的约定，且完成了全部优化对照；这不是证明 Qwen 精度最高。<a href="#model-decision">模型选择依据</a></p></article>
-<article><b>哪种优化最有把握？</b><p><strong>需要估计群体比例时，让模型给每个选项的概率，再汇总这些概率。</strong>同背景下，购物问卷误差 <strong>{{PEW_BEFORE}} → {{PEW_AFTER}}</strong>，运动鞋 <strong>{{SHOE_BEFORE}} → {{SHOE_AFTER}}</strong>，两项都明确改善。预测提示与贴题真人背景在通用问卷也有效，但换到电商没有普遍复现。随机补合成人格不作为默认优化。<a href="#survey">概率输出证据</a> · <a href="#profiles">背景证据</a></p></article>
+<article><b>模型选哪个？</b><p><strong>只给情境、强制单选的同轮测试，优先考虑 DeepSeek Pro，不建议继续把 Flash 设为这一条件下的默认方法。</strong>误差为 Flash <strong>{{FLASH_CONTEXT}}</strong>、Pro <strong>{{PRO_CONTEXT}}</strong>、Qwen <strong>{{QWEN_CONTEXT}}</strong> 个百分点。第二轮加上年龄、学历和人格后，三者差异不再明确。第六轮同样概率输出的比较见<a href="#revalidation">最新复验</a>。后续真人实验继续用<strong>内网 Qwen</strong>，因为它满足数据留在内网的约定，且完成了全部优化对照；这不是证明 Qwen 精度最高。<a href="#model-decision">模型选择依据</a></p></article>
+<article><b>哪种优化最有把握？</b><p><strong>概率汇总在购物问卷与运动鞋上有效，但不是所有选品任务都有效。</strong>同背景下，购物问卷误差 <strong>{{PEW_BEFORE}} → {{PEW_AFTER}}</strong>，运动鞋 <strong>{{SHOE_BEFORE}} → {{SHOE_AFTER}}</strong>，两项都明确改善。预测提示与贴题真人背景在通用问卷也有效，但换到电商没有普遍复现。第六轮产地二选一未复现这一分布改善。随机补合成人格不作为默认优化。<a href="#survey">概率输出证据</a> · <a href="#profiles">背景证据</a></p></article>
 <article><b>什么最接近真人？现在怎么用？</b><p><strong>已有同题答案或购买记录时，优先建立真人数据参照。</strong>购物问卷中，按同龄同学历的其他真人答案算比例，误差为 <strong>{{PEW_STAT}}</strong>；用真人数据修正模型后为 <strong>5.43</strong>，仍未超过该参照。实际购买的四类任务，直接使用模型均不如近期购买记录。模型适合保留为待验证的补充，不应直接代替真人调查或行为验证。<a href="#closing">最终采用建议</a></p></article>
 </div>
 <p class="note">上述误差越低越好；每个前后比较均来自同一轮、同一批评估对象，不能跨任务相加。这里的“原始方案”特指本项目首轮采用的“MatrAIx 原生合成画像 + 问卷提示 + DeepSeek Flash”，本实验没有单独评测 MatrAIx 官方 8B 模型权重。结论不等于整个项目或所有大模型都无效。</p>
@@ -22,7 +22,7 @@
 <tr><td>第五轮：Pew 购物问卷</td><td>原文件中的年龄段、学历、收入档、性别、地区。</td><td>将 SPSS 编码译成原标签；正式评估各组均使用同一人的背景。</td><td><strong>真实记录。</strong>不是精确年龄和精确收入，不能把公开档位写得比原数据更细。</td></tr>
 <tr><td>第五轮：运动鞋</td><td>同一受访者第一波的年龄段、学历、性别、家庭收入；态度组另用两条本人填写的环保／消费伦理态度。</td><td>通过作者关联规则匹配两波；保留原题档位，未推断这人的四项 MatrAIx 人格。</td><td><strong>真实前测记录。</strong>“实测态度”表示本人事先作答，不等于全面的心理测量。</td></tr>
 <tr><td>第五轮：Amazon</td><td>参与者捐赠的实际购买条目：日期、品类、价格、数量及商品编号。</td><td>计算预测日前各季度的品类频率、价位、支出与复购；该任务没有再加假想职业或人格。</td><td><strong>来源是真实行为记录，输入是其汇总。</strong>仍有数据覆盖、样本选择与记录质量的限制。</td></tr>
-</tbody></table></div>
+<tr><td>第六轮：匹配复验</td><td>MatrAIx 原生生成的北美画像；四项背景配额依据 Pew 真人群体比例。</td><td>所有组展示相同四项粗背景；匹配其加权组合，再另加四项合成人格。</td><td><strong>画像仍是合成的。</strong>群体配额来自真人，不表示每条画像对应某个真人。</td></tr></tbody></table></div>
 <p><strong>“有加工”不等于“凭空猜测”。</strong>把原年龄段归到“18–64／65+”、把收入代码译成区间，或按订单计算频率，是可以复核的转换。模型预测的答案和概率才是推断，必须与留在评分端的真实答案比较；概率数值也不是受访者本人报告的心理概率。</p>
 <p class="note">有一项专门的反例诊断：第五轮曾在 48 人开发样本中交换附加背景，故意检查模型是否会受不对应的信息影响；它未用于正式推荐方案。公开文件可能本来就包含机构插补或清洗，不能宣称每个字段都是未经处理的原话。</p>
 <details><summary>核对具体字段和答案隔离</summary><p>第三轮字段映射见 <a href="../../optimize_profiles.py">optimize_profiles.py</a>；第四轮见 <a href="../../shopping.py">shopping.py</a>；购物问卷见 <a href="../../retail_pew.py">retail_pew.py</a>；运动鞋见 <a href="../../retail_shoes_prepare.py">retail_shoes_prepare.py</a>；真实购买见 <a href="../../retail_amazon.py">retail_amazon.py</a> 与 <a href="../../retail_amazon_mix.py">retail_amazon_mix.py</a>。模型输入使用允许的背景和题目，目标答案、权重及可关联真人的编号不进入提示。统计方法可以学习另外一批真人的答案，评估对象自己的目标答案仍用于最后评分。</p><p>逐人原始记录与关联文件仅在本机复算；本页提供字段和来源，不展示可关联某位受访者的档案。原始来源见<a href="#project-data">九份数据表</a>。</p></details>

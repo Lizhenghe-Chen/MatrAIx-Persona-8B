@@ -1,0 +1,169 @@
+{
+  "seed": 20261110,
+  "repeats": 3,
+  "questions": {
+    "SHOP6A": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to look at or try out the product in person?",
+    "SHOP6B": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to read ratings or reviews that other people have posted online?",
+    "SHOP6C": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to buy online, without having to make a trip to the store?",
+    "SHOP6D": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to compare prices from a number of different sellers?",
+    "SHOP6E": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to be able to ask questions about what it is that you’re buying?",
+    "SHOP6F": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to get advice or recommendations from people you know?",
+    "SHOP6G": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to buy from a store or seller that you are familiar with?",
+    "SHOP7A": "Consumers today can access lots of customer reviews and ratings about products and services they might want to buy. How much do you think these ratings and reviews help to ensure that the products and services people buy are safe?",
+    "SHOP7B": "Consumers today can access lots of customer reviews and ratings about products and services they might want to buy. How much do you think these ratings and reviews help to make consumers feel confident about what they are buying?",
+    "SHOP7C": "Consumers today can access lots of customer reviews and ratings about products and services they might want to buy. How much do you think these ratings and reviews help to make companies be accountable to their customers?",
+    "SHOP12": "How often do you read customer ratings or reviews that other people have posted online when buying something for the first time?",
+    "SHOP20B": "Do you ever use a cell phone while you are inside a physical store to see if you can find a better price online for something you want to buy?",
+    "SHOP20C": "Do you ever use a cell phone while you are inside a physical store to look up reviews or other information online about a product you want to buy?"
+  },
+  "options": {
+    "SHOP6A": [
+      "Extremely important",
+      "Somewhat important",
+      "Not too important",
+      "Not important at all"
+    ],
+    "SHOP6B": [
+      "Extremely important",
+      "Somewhat important",
+      "Not too important",
+      "Not important at all"
+    ],
+    "SHOP6C": [
+      "Extremely important",
+      "Somewhat important",
+      "Not too important",
+      "Not important at all"
+    ],
+    "SHOP6D": [
+      "Extremely important",
+      "Somewhat important",
+      "Not too important",
+      "Not important at all"
+    ],
+    "SHOP6E": [
+      "Extremely important",
+      "Somewhat important",
+      "Not too important",
+      "Not important at all"
+    ],
+    "SHOP6F": [
+      "Extremely important",
+      "Somewhat important",
+      "Not too important",
+      "Not important at all"
+    ],
+    "SHOP6G": [
+      "Extremely important",
+      "Somewhat important",
+      "Not too important",
+      "Not important at all"
+    ],
+    "SHOP7A": [
+      "A lot",
+      "Some",
+      "A little",
+      "Not at all"
+    ],
+    "SHOP7B": [
+      "A lot",
+      "Some",
+      "A little",
+      "Not at all"
+    ],
+    "SHOP7C": [
+      "A lot",
+      "Some",
+      "A little",
+      "Not at all"
+    ],
+    "SHOP12": [
+      "Always or almost always",
+      "Sometimes",
+      "Never"
+    ],
+    "SHOP20B": [
+      "Yes",
+      "No"
+    ],
+    "SHOP20C": [
+      "Yes",
+      "No"
+    ]
+  },
+  "reference": {
+    "SHOP6A": [
+      0.26476814248987907,
+      0.5170914335387021,
+      0.18994270862477894,
+      0.028197715346640586
+    ],
+    "SHOP6B": [
+      0.37197157577549095,
+      0.4681499001413473,
+      0.11720759034893055,
+      0.0426709337342325
+    ],
+    "SHOP6C": [
+      0.11435903330821125,
+      0.3588673244629642,
+      0.373628082394778,
+      0.15314555983404807
+    ],
+    "SHOP6D": [
+      0.43605670507427025,
+      0.4494900386874016,
+      0.0996374039587692,
+      0.014815852279559769
+    ],
+    "SHOP6E": [
+      0.4112333297436795,
+      0.4314415546080757,
+      0.13437985396677263,
+      0.02294526168147324
+    ],
+    "SHOP6F": [
+      0.2306076964020258,
+      0.5556971635239418,
+      0.1820831841014237,
+      0.031611955972608206
+    ],
+    "SHOP6G": [
+      0.31996190218532555,
+      0.5278180679396561,
+      0.1290250390879727,
+      0.02319499078704589
+    ],
+    "SHOP7A": [
+      0.40328341193972056,
+      0.4258276588359924,
+      0.13751172528883152,
+      0.03337720393545607
+    ],
+    "SHOP7B": [
+      0.47073022644619045,
+      0.4352960257968579,
+      0.07482787242443867,
+      0.019145875332514165
+    ],
+    "SHOP7C": [
+      0.44216415560710504,
+      0.4065526902303837,
+      0.11373242332591343,
+      0.03755073083659912
+    ],
+    "SHOP12": [
+      0.47925565976006934,
+      0.4600365328039146,
+      0.060707807436017405
+    ],
+    "SHOP20B": [
+      0.51867257109656,
+      0.48132742890344105
+    ],
+    "SHOP20C": [
+      0.5290336900711174,
+      0.4709663099288837
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "sealed_at": "2026-11-10T07:42:35.416252+00:00",
+  "score_code_sha256": "2cc4819bbc6a9e8f02a73fe75df480dbfeea28a214ba4196cd99ab2c306ace4f",
+  "protocol_sha256": "cb0dcebcc8d6683e2e22328c1bf13ea1e7c47d0ec61f04892f1394f22e15b056",
+  "primary_metric": "Average of three separately scored runs; pooled-probability score is secondary",
+  "status_at_seal": "Corrected mapping before any formal outcome-score inspection. Reuse determined only by identical request hash.",
+  "checks_sha256": "43cb329a075ff5a9e71c0ecffffb0a3941d048bd1e6db27fd805315507914ae1"
+}

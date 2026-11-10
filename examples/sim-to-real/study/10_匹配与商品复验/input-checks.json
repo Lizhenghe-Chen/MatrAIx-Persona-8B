@@ -1,0 +1,7 @@
+{
+  "target_and_weight_input_invariance": true,
+  "real_profiles_local_only": true,
+  "original_product_id_not_in_requests": true,
+  "display_mapping_valid": true,
+  "same_analysis_weights_all_synthetic_arms": true
+}

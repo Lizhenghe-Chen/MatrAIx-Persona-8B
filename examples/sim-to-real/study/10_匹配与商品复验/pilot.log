@@ -1,0 +1,8 @@
+{"phase": "pilot", "provider": "all", "pending": 104}
+{"phase": "pilot", "provider": "all", "completed": 25, "pending_total": 104, "failed_jobs": 0, "elapsed_seconds": 7}
+{"phase": "pilot", "provider": "all", "completed": 50, "pending_total": 104, "failed_jobs": 0, "elapsed_seconds": 11}
+{"phase": "pilot", "provider": "all", "completed": 75, "pending_total": 104, "failed_jobs": 0, "elapsed_seconds": 24}
+{"phase": "pilot", "provider": "all", "completed": 100, "pending_total": 104, "failed_jobs": 0, "elapsed_seconds": 31}
+{"phase": "pilot", "provider": "all", "completed": 104, "pending_total": 104, "failed_jobs": 0, "elapsed_seconds": 32}
+{"phase": "pilot", "provider": "all", "pending": 10}
+{"phase": "pilot", "provider": "all", "completed": 10, "pending_total": 10, "failed_jobs": 0, "elapsed_seconds": 5}

@@ -1,4 +1,4 @@
-<section class="section" id="projectOverview"><p class="section-label">整个项目 · 五轮实验，九份真实数据</p><h2>我们不是只做了一次问卷，而是在逐步排查模型为什么不像真人</h2>
+<section class="section" id="projectOverview"><p class="section-label">整个项目 · 六轮实验，九份真实数据</p><h2>我们不是只做了一次问卷，而是在逐步排查模型为什么不像真人</h2>
 <p>研究从“给模型人格，能不能模拟消费者”开始，依次检查了模型能力、提示方式、真人背景、商品决策、答案表达方式和实际购买。每一步都有对照，也有没有改善的结果。</p>
 <div class="three"><article class="card"><span class="tag">通用问卷 · 优化有效</span><h3>提示和贴题背景有用</h3><p class="big">28.96 → 18.79</p><p>18 道通用题的三问卷等权分布误差，减少 10.17 个百分点；但真人数据参照为 3.64。</p></article><article class="card"><span class="tag caution">换到电商 · 没有普遍复现</span><h3>选品改善，拒买仍不准</h3><p class="big">32.1% <span>真人拒买</span></p><p>优化模型只估计 8.7% 拒买。商品二选一改善了，网购习惯反而变差。</p></article><article class="card"><span class="tag">进一步排查 · 找到新方向</span><h3>输出各项概率可缓解过度一致</h3><p class="big">43.41 → 18.08</p><p>另一份购物问卷的误差明显下降。实际购买预测仍主要依靠历史记录。</p></article></div>
 <div class="callout"><strong>跨轮结论：</strong>模型输出确实可以优化，但有效的改动依赖任务。“在某些题上更像真人”还不能推出“已能替代消费者研究”。最有价值的做法，是在同一批真人上拆开检验每项改动，并保留真人数据参照。</div>
@@ -9,6 +9,7 @@
 <tr><td><a href="#profiles">第三轮：提示与真人背景</a></td><td>每调查 240 人，两提示 × 四档背景</td><td>预测提示与贴题背景组合改善；额外合成人格收益不明确。</td><td>把候选方案带到具体商品和购物题复验。</td></tr>
 <tr><td><a href="#shopping">第四轮：电商任务能复现吗</a></td><td>产地选择、啤酒包装拒买、网购习惯，各 240 人</td><td>只有商品二选一过门槛；拒买低估，网购习惯变差。</td><td>检查单选是否压掉分歧，并引入真实购买记录。</td></tr>
 <tr><td><a href="#takeaways">第五轮：概率、选品与实际购买</a></td><td>购物问卷 240 人、运动鞋 240 人、购买记录 500 个账户</td><td>群体分布改善，但属性吸引力仍低估；历史记录在购买预测中较强。</td><td>补足可见输入对齐的对照，之后再验证新季度与新商品。</td></tr>
+<tr><td><a href="#revalidation">第六轮：匹配与商品内部复验</a></td><td>两模型比较、四项人口匹配、商品单选／概率，每条件三次</td><td>Pro更接近购物问卷真人比例；匹配未明显改善；概率改善包装但未改善产地选择。</td><td>停止把任何单项优化泛化，下一步取得新真人样本或新时间窗。</td></tr>
 </tbody></table></div>
 <p class="note">这不是一条可以直接连线的“总误差不断下降曲线”：前两轮预测合成人群，后续预测不同调查中的真人；题目、样本和设置也有变化。每轮的改进都在本轮内部计算。第三轮与第五轮的 Pew 题目不同，不能把 18.79 和 18.08 当成一次连续升级的成绩。</p>
 </section>
@@ -18,10 +19,10 @@
 <tr><td><a href="https://www.federalreserve.gov/consumerscommunities/shed_data.htm">美联储 SHED 2025</a></td><td>7 题：改买便宜商品、少消费、少储蓄、借款、推迟购买、增加工作、提前购买。</td><td>第一至第三轮</td><td>一人一行：人口与家庭背景、各题答案、调查权重与插补标记。</td></tr>
 <tr><td><a href="https://www.pewresearch.org/dataset/american-trends-panel-wave-168/">Pew 第 168 波</a></td><td>5 题：整体诈骗风险及电话短信、邮件、社交媒体、购物平台风险。</td><td>第一至第三轮</td><td>一人一行：背景、风险判断、上网活动、权重。不是本报告后面的购物评论题。</td></tr>
 <tr><td><a href="https://electionstudies.org/data-center/2024-time-series-study/">ANES 2024</a></td><td>6 题：学校、边境、治安、福利、公路、环保的联邦支出。</td><td>第一至第三轮</td><td>一人一行：背景与政治信息、增加／减少／维持支出的答案、权重。</td></tr>
-<tr><td><a href="https://itemresponsewarehouse.org/tables/bankert_2023_consumer_origin/">Bankert 商品产地选择</a></td><td>两款商品必须选一款；比较制造产地、价格和星级偏好。</td><td>第四轮</td><td>同一人有多道题，每题有两款商品属性和一个实际选择。</td></tr>
-<tr><td><a href="https://data.mendeley.com/datasets/4z748jnnjs/2">Purdue 包装与定价</a></td><td>六罐或六瓶装啤酒，商品甲／商品乙／都不买。</td><td>第四轮</td><td>受访者、原说明版本、选择卡上的包装价格与标签、选择结果。</td></tr>
+<tr><td><a href="https://itemresponsewarehouse.org/tables/bankert_2023_consumer_origin/">Bankert 商品产地选择</a></td><td>两款商品必须选一款；比较制造产地、价格和星级偏好。</td><td>第四、六轮</td><td>同一人有多道题，每题有两款商品属性和一个实际选择。</td></tr>
+<tr><td><a href="https://data.mendeley.com/datasets/4z748jnnjs/2">Purdue 包装与定价</a></td><td>六罐或六瓶装啤酒，商品甲／商品乙／都不买。</td><td>第四、六轮</td><td>受访者、原说明版本、选择卡上的包装价格与标签、选择结果。</td></tr>
 <tr><td><a href="https://www.pewresearch.org/internet/dataset/american-trends-panel-wave-111/">Pew 第 111 波，2022 年</a></td><td>6 题：网购设备、线上或到店偏好、关注达人、受达人内容影响购买。</td><td>第四轮</td><td>一人一行，并有决定哪些人该看到哪些题的跳题信息。</td></tr>
-<tr><td><a href="https://www.pewresearch.org/dataset/american-trends-panel-wave-13/">Pew 第 13 波，2015 年</a></td><td>13 题：购物决策、评论作用、到店比价与查评价。</td><td>第五轮</td><td>人口背景、每题选项、权重；仅取原问卷可核对的网络样本。</td></tr>
+<tr><td><a href="https://www.pewresearch.org/dataset/american-trends-panel-wave-13/">Pew 第 13 波，2015 年</a></td><td>13 题：购物决策、评论作用、到店比价与查评价。</td><td>第五、六轮</td><td>人口背景、每题选项、权重；仅取原问卷可核对的网络样本。</td></tr>
 <tr><td><a href="https://doi.org/10.1017/pan.2021.30">Horiuchi 等运动鞋实验</a></td><td>给两款鞋分别打 1–7 分，比较功能、环保材质等属性。</td><td>第五轮及本次补充</td><td>成对商品卡、10 项属性、两次购买意愿评分，可关联前测背景。</td></tr>
 <tr><td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11091104/">Open eCommerce 1.0</a></td><td>用先前记录预测下季度品类、价位、支出构成和同款复购。</td><td>第五轮</td><td>实际购买条目：日期、价格、数量、品类、商品编号和账户关联号。</td></tr>
 </tbody></table></div>
@@ -40,7 +41,7 @@
 
 <section class="section" id="models"><p class="section-label">第二轮 · 同一批画像更换模型</p><h2>换更强的模型能改善部分结果，收益取决于给它什么信息</h2>
 <p class="note">本节保留冻结分数。同一列换模型可直接比较；从“只给情境”到“加年龄学历”同时变了汇总权重，画像作用应改看<a href="#matching-audit">相同权重复算</a>。</p><p>从冻结画像中抽取 240 条，Flash、Pro、Qwen 都重新回答三份问卷的三种输入，共 6,480 份正式答卷。三个模型都关闭思考，温度 0.7。首轮样本与思考设置不同，因此这轮的模型差异只在本轮内部解释。</p>
-<div id="model-decision"><h3>模型选择：按已测条件推荐，不作通用排名</h3>{{MODEL_TABLE}}<p>同样只给情境时，Pro 相对 Flash 改善 11.86 个百分点，95% 区间 10.46–13.01；只给年龄学历时改善 8.89 点，区间 7.54–10.04。全部人格输入时仅改善 0.01 点，区间 −1.46 至 2.12，差异不明确。</p><p><strong>因此：</strong>不建议将 Flash 在“少量信息、强制单选”下的结果直接用于消费者结论；可优先用 Pro 做这类合成测试。真人背景继续在内网 Qwen 验证优化方案。后续更好的概率输出没有在三模型间重跑，不能声称 Pro 或 Qwen 已经全面胜出，也不能说某个模型任何场景都不能用。</p><p class="note">运行记录中的模型 ID 为 deepseek-flash、deepseek-v4-pro、Qwen/Qwen3.8-27B；判断仅对应本次固定版本、非思考模式与输入。不是对官方 MatrAIx 8B 权重的评测。</p></div><label for="historyScope1">平均值范围</label><select id="historyScope1"></select><div id="historyOverview1" class="chart medium" role="img" aria-label="相同输入条件下三个模型的误差"></div><details><summary>查看三模型 × 三种输入的准确数值</summary><div id="historyTable1"></div></details>
+<div id="model-decision"><h3>模型选择：按已测条件推荐，不作通用排名</h3>{{MODEL_TABLE}}<p>同样只给情境时，Pro 相对 Flash 改善 11.86 个百分点，95% 区间 10.46–13.01；只给年龄学历时改善 8.89 点，区间 7.54–10.04。全部人格输入时仅改善 0.01 点，区间 −1.46 至 2.12，差异不明确。</p><p><strong>因此：</strong>不建议将 Flash 在“少量信息、强制单选”下的结果直接用于消费者结论；可优先用 Pro 做这类合成测试。真人背景继续在内网 Qwen 验证优化方案。第六轮已比较Pro与Qwen的同概率合成人群结果，Flash没有参加，商品任务仍只用Qwen；因此不能声称任何模型已全面胜出，也不能说某个模型任何场景都不能用。</p><p class="note">运行记录中的模型 ID 为 deepseek-flash、deepseek-v4-pro、Qwen/Qwen3.8-27B；判断仅对应本次固定版本、非思考模式与输入。不是对官方 MatrAIx 8B 权重的评测。</p></div><label for="historyScope1">平均值范围</label><select id="historyScope1"></select><div id="historyOverview1" class="chart medium" role="img" aria-label="相同输入条件下三个模型的误差"></div><details><summary>查看三模型 × 三种输入的准确数值</summary><div id="historyTable1"></div></details>
 <div class="two"><div class="callout"><strong>只有共同情境时：</strong><p>Flash 误差 <strong>33.82</strong>，Pro 为 <strong>21.97</strong>，改善 <strong>11.86</strong> 点；Qwen 为 <strong>26.92</strong>。换模型确实产生了差异。</p></div><div class="callout warn"><strong>加入年龄学历和人格后：</strong><p>Flash <strong>23.39</strong>，Pro <strong>23.38</strong>，Qwen <strong>24.27</strong>。模型间差异的区间跨零，不能宣称 Pro 在所有设置都更好。</p></div></div>
 <p>仅给情境时，Flash 有 9 道题完全一致，Pro 有 2 道。但 Pro 仍把电话短信诈骗题答成 100%“重大问题”，真人为 68.3%。所以换模型改善了一部分问题，却没有解决回答过度集中。</p>
 <p class="source"><a href="../02_模型对比/results.json">三模型结果与配对区间</a> · <a href="#history-details">逐题切换三个模型</a></p>

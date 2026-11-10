@@ -1,0 +1,14 @@
+{
+  "valid": {
+    "pilot": 104,
+    "formal": 7200
+  },
+  "all_frozen_request_hashes_match": true,
+  "recorded_error_attempts": 6,
+  "all_valid_answers_archived_or_kept_locally": true,
+  "synthetic_archive_rows": 4392,
+  "product_answers": "Private local checkpoint only",
+  "input_freeze_sha256": "f836740b2bbe5074369a7748d13eeba1092df8cad39d0511646616eb2176f071",
+  "response_checkpoint_sha256": "76a8dd8f5c0b40d21db810493642954d32621081778d6f350eab588e32db0401",
+  "synthetic_archive_sha256": "705c2af5ba2f4eb5b6fe9cf2425401d605261ca97e4286c3854b38882a9d16dd"
+}

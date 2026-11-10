@@ -36,7 +36,16 @@ def interval(bounds, digits=2):
 def build():
     from study.build_report import build_history, FOLDERS
     from retail_matching_review import section as matching_section, write_standalone
+    from revalidation_report import section as revalidation_section, write_standalone as write_revalidation
     history = build_history()
+    # Withdraw mixed-weight causal contrasts from the reader's comparison
+    # selector. Keep frozen source scores and the correction audit available.
+    for stage in history[:2]:
+        for scope in [stage['overall'], *stage['scopes'].values()]:
+            def context_only(key):
+                return key == 'A' or key.endswith('-A')
+            scope['pairs'] = [p for p in scope['pairs']
+                              if context_only(p['reference']) == context_only(p['candidate'])]
     for stage in history:
         if 'historical-stratum' in stage['labels']:
             stage['labels']['historical-stratum'] = '同龄同学历真人比例'
@@ -44,6 +53,13 @@ def build():
     data['history'] = history
     extra_files = {f'history_{i}': '../' + folder + '/results.json' for i, folder in enumerate(FOLDERS)}
     extra_files['matching_audit'] = '../09_方法审查/audit-results.json'
+    revalidation_complete = (BASE.parent / '10_匹配与商品复验/results.json').exists()
+    if revalidation_complete:
+        extra_files['revalidation'] = '../10_匹配与商品复验/results.json'
+        extra_files['revalidation_protocol'] = '../10_匹配与商品复验/protocol.json'
+        extra_files['experiment_status'] = '../10_匹配与商品复验/experiment-status.json'
+        extra_files['revalidation_completion'] = '../10_匹配与商品复验/completion-checks.json'
+        extra_files['revalidation_correction'] = '../10_匹配与商品复验/mapping-correction.json'
     parity_file = BASE / 'shoes-input-parity-score.json'
     assert parity_file.exists(), 'The unified narrative requires the supplemental input-parity result.'
     if parity_file.exists():
@@ -118,7 +134,9 @@ def build():
     explanation_files = ('optimize_profiles.py', 'shopping.py', 'retail_pew.py',
                          'retail_pew_score.py', 'retail_pew_calibration.py',
                          'retail_shoes_prepare.py', 'retail_shoes_score.py',
-                         'retail_amazon.py', 'retail_amazon_mix.py', 'audit_matching.py', 'retail_matching_review.py')
+                         'retail_amazon.py', 'retail_amazon_mix.py', 'audit_matching.py', 'retail_matching_review.py',
+                         'revalidation.py', 'revalidation_score.py', 'revalidation_report.py', 'revalidation_charts.js',
+                         'revalidation_archive.py')
     explanation_sources = {name: {'path': '../../' + name,
         'sha256': hashlib.sha256((ROOT / name).read_bytes()).hexdigest()} for name in explanation_files}
     token = {
@@ -145,8 +163,18 @@ def build():
     matching = matching_section()
     write_standalone(matching, re.search(r'<style>(.*?)</style>', page, re.S).group(1))
     page = page.replace('{{MATCHING_REVIEW}}', matching)
+    revalidation = revalidation_section()
+    write_revalidation(revalidation)
+    page = page.replace('{{REVALIDATION}}', revalidation)
+    if revalidation_complete:
+        page = page.replace('五轮实验，哪些方法真的有用？', '六轮实验，哪些方法真的有用？')
+        page = page.replace('五轮正式实验 · 九份真实数据', '六轮正式实验 · 九份真实数据')
+        page = page.replace('正文包含全部五轮的结论与交互图表', '正文包含六轮的结论与交互图表，最新内部复验置于开头')
     page = page.replace('{{GUIDANCE}}', (ROOT / 'retail_reader_guidance.html').read_text())
     page = page.replace('{{CONCLUSIONS}}', (ROOT / 'retail_reader_conclusions.html').read_text())
+    from revalidation_report import executive
+    latest = executive(json.loads((BASE.parent / '10_匹配与商品复验/results.json').read_text())) if revalidation_complete else ''
+    page = page.replace('{{LATEST_CONCLUSION}}', latest)
     page = page.replace('{{GLOSSARY_SCRIPT}}', (ROOT / 'retail_reader_glossary.js').read_text())
     page = page.replace('{{HISTORY}}', (ROOT / 'retail_history_template.html').read_text())
     page = page.replace('{{HISTORY_SCRIPT}}', (ROOT / 'retail_history_charts.js').read_text())
@@ -165,9 +193,9 @@ def build():
     (BASE.parent / 'index.html').write_text(root_page)
     manifest = {
         'report': 'index.html', 'canonical_report': '../index.html',
-        'scope': '五轮正式实验统一汇报；新增运动鞋输入对齐的事后统计对照，未新增 LLM 请求或重选样本',
+        'scope': '前五轮历史结果、方法审查及第六轮匹配与商品内部复验；撤下混用权重的常规因果比较，保留原始审查记录',
         'sources': data['sources'],
-        'explanation_scope': '新增画像匹配审查、412 个逐题分数独立复算及相同权重敏感性分析；历史冻结分数不变，未新增模型请求',
+        'explanation_scope': '历史冻结分数不变；412 个逐题分数独立复算及权重审查另列，第六轮新增三次重复的匹配、人格、模型和商品输出方式实验',
         'explanation_sources': explanation_sources,
         'report_sha256': hashlib.sha256(page.encode()).hexdigest(),
         'canonical_report_sha256': hashlib.sha256(root_page.encode()).hexdigest(),

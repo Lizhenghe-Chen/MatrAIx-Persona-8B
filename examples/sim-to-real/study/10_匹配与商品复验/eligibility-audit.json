@@ -1,0 +1,36 @@
+{
+  "network_records": 4317,
+  "eligibility_counts": {
+    "background_valid": 4246,
+    "all_target_answers_valid": 4155,
+    "background_True_answers_True": 4090,
+    "background_missing": 71,
+    "background_False_answers_True": 65,
+    "target_answers_incomplete": 162,
+    "background_True_answers_False": 156,
+    "background_False_answers_False": 6
+  },
+  "missing_or_routed_out_by_question": {
+    "SHOP6A": 16,
+    "SHOP6B": 19,
+    "SHOP6C": 25,
+    "SHOP6D": 17,
+    "SHOP6E": 14,
+    "SHOP6F": 29,
+    "SHOP6G": 12,
+    "SHOP7A": 19,
+    "SHOP7B": 22,
+    "SHOP7C": 16,
+    "SHOP12": 16,
+    "SHOP20B": 22,
+    "SHOP20C": 15
+  },
+  "eligible_weight_share_pct": 94.82257264931032,
+  "source_education_labels": {
+    "Some college": 1405,
+    "College graduate+": 2302,
+    "H.S. graduate or less": 610
+  },
+  "unmapped_nonmissing_labels": 0,
+  "interpretation": "Only explicit missing labels and incomplete target answers excluded. All three education labels are mapped, including H.S. graduate or less."
+}

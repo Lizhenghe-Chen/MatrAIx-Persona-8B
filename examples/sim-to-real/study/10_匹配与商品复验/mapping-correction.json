@@ -1,0 +1,161 @@
+{
+  "reason": "Valid H.S. graduate or less label was omitted from the first mapping; 610 valid backgrounds were incorrectly excluded. No outcome score was inspected.",
+  "old_protocol": {
+    "date": "2026-11-10",
+    "status": "frozen before new responses",
+    "purpose": "Internal replication; these public data have already informed earlier analyses. No fresh external validation claim.",
+    "matching": {
+      "human_eligible": 3517,
+      "source_network_n": 4317,
+      "complete_cases_and_common_fields_required": true,
+      "source_cell_n": {
+        "65 or older|Below bachelor's degree|Woman|Below $100,000": 123,
+        "18–64|Bachelor's degree or higher|Man|Below $100,000": 481,
+        "18–64|Below bachelor's degree|Man|Below $100,000": 395,
+        "18–64|Bachelor's degree or higher|Woman|$100,000 or more": 291,
+        "18–64|Bachelor's degree or higher|Woman|Below $100,000": 526,
+        "65 or older|Below bachelor's degree|Man|$100,000 or more": 19,
+        "18–64|Below bachelor's degree|Woman|Below $100,000": 482,
+        "65 or older|Bachelor's degree or higher|Woman|Below $100,000": 140,
+        "18–64|Below bachelor's degree|Man|$100,000 or more": 112,
+        "65 or older|Below bachelor's degree|Man|Below $100,000": 105,
+        "65 or older|Bachelor's degree or higher|Man|$100,000 or more": 145,
+        "65 or older|Below bachelor's degree|Woman|$100,000 or more": 20,
+        "18–64|Bachelor's degree or higher|Man|$100,000 or more": 364,
+        "65 or older|Bachelor's degree or higher|Man|Below $100,000": 174,
+        "18–64|Below bachelor's degree|Woman|$100,000 or more": 76,
+        "65 or older|Bachelor's degree or higher|Woman|$100,000 or more": 64
+      },
+      "weighted_cell_mass": {
+        "18–64|Bachelor's degree or higher|Man|$100,000 or more": 0.07845697115768169,
+        "18–64|Bachelor's degree or higher|Man|Below $100,000": 0.12074883995933684,
+        "18–64|Bachelor's degree or higher|Woman|$100,000 or more": 0.07281979483856606,
+        "18–64|Bachelor's degree or higher|Woman|Below $100,000": 0.1422094956487406,
+        "18–64|Below bachelor's degree|Man|$100,000 or more": 0.03953974626455642,
+        "18–64|Below bachelor's degree|Man|Below $100,000": 0.17311228617342697,
+        "18–64|Below bachelor's degree|Woman|$100,000 or more": 0.030315990300290294,
+        "18–64|Below bachelor's degree|Woman|Below $100,000": 0.2131692546058457,
+        "65 or older|Bachelor's degree or higher|Man|$100,000 or more": 0.01664490586901006,
+        "65 or older|Bachelor's degree or higher|Man|Below $100,000": 0.023464676563297593,
+        "65 or older|Bachelor's degree or higher|Woman|$100,000 or more": 0.012105924473998183,
+        "65 or older|Bachelor's degree or higher|Woman|Below $100,000": 0.023140838763421826,
+        "65 or older|Below bachelor's degree|Man|$100,000 or more": 0.003091875271835117,
+        "65 or older|Below bachelor's degree|Man|Below $100,000": 0.020747105892586926,
+        "65 or older|Below bachelor's degree|Woman|$100,000 or more": 0.0048989316274642,
+        "65 or older|Below bachelor's degree|Woman|Below $100,000": 0.025533362589941436
+      },
+      "fields": [
+        "Age group",
+        "Education",
+        "Gender",
+        "Household income"
+      ],
+      "income_mapping": "Only the shared $100,000 boundary; do not infer finer incomes",
+      "gender_mapping": "Source binary sex labels mapped to Man/Woman for this operational comparison; not a claim about gender identity",
+      "region": "Native North America pinned; common US survey context. No US subregion matching.",
+      "formal_synthetic_slots": 240,
+      "pilot_slots": 12,
+      "arms": [
+        "coarse",
+        "matched",
+        "matched_traits"
+      ],
+      "models": {
+        "qwen": "Qwen/Qwen3.8-27B",
+        "pro": "deepseek-v4-pro"
+      },
+      "same_slot_weights_in_all_arms": true,
+      "cloud_boundary": "Only native DAG records plus public questions. Aggregate demographic quotas, no individual source profiles, IDs or answers.",
+      "graph_sha256": "849dc5e6f2289db87a4d363948f32d0e1db9e9205d3d8a1b52e4ac4e77fedbfd",
+      "pool_n": 50000
+    },
+    "products": {
+      "surveys": [
+        "origin",
+        "packaging"
+      ],
+      "people_per_survey": 240,
+      "model": "qwen",
+      "arms": [
+        "choice",
+        "probability"
+      ],
+      "background": "Identical original P1+B3 respondent background",
+      "prior_overlap": {
+        "origin": {
+          "prior_evaluation_people_reused": 240,
+          "formal_training_overlap": 0
+        },
+        "packaging": {
+          "prior_evaluation_people_reused": 240,
+          "formal_training_overlap": 0
+        }
+      },
+      "pilot_per_survey": 8
+    },
+    "repeats": 3,
+    "parameters": {
+      "temperature": 0.7,
+      "top_p": 1,
+      "max_tokens": 1536,
+      "response_format": {
+        "type": "json_object"
+      }
+    },
+    "thinking": false,
+    "probability_decoder": "Reject out-of-range values or absolute sum error > 0.02; normalize accepted rounding errors to sum 1",
+    "formal_requests": 7200,
+    "pilot_requests": 104,
+    "scoring": {
+      "matching": "13 question TV errors averaged equally; fixed human reference. No individual accuracy for synthetic profiles.",
+      "origin": "Four original attribute-choice proportion errors equally averaged",
+      "packaging": "16 card-level A/B/neither TV errors equally averaged; opt-out recall and Brier reported separately",
+      "replicates": "Score each generation repetition and the averaged probabilities; show all three, no best-run selection",
+      "bootstrap": "2000 samples, respondents clustered for products; fixed demographic cells for synthesis. Coarse versus matched cohorts resampled independently; same synthetic cohort paired across models and trait conditions.",
+      "uncertainty": "Intervals conditional on three generated repetitions and fixed reference; not full survey-design or deployment uncertainty",
+      "adoption": "Gain >= 2pp and bootstrap lower bound > 0 and positive gain in all three repetitions; tasks reported separately",
+      "completion": ">=98% in every cell and repetition, comparisons on common completed IDs; never route real profiles to cloud"
+    },
+    "source_sha256": {
+      "pew13": "d777de8e589da651e86c09fd8fb7fc14439c8a03632a9ad6864d5abb57792ca8",
+      "origin": "be189c75b6fb67aeb6fbed2fe7106a853fef1e1b259902f8b9f77c44aa26d3a0",
+      "packaging": "cd749cc7e33b95d682305c8b078b05b0a49df2b874c939abfc4de574f7d39a49"
+    },
+    "runner_sha256": "3b35f5c6cc7a2b27f18f44ed9128a1363e4d8fae5df468940768fdc9a17db641"
+  },
+  "old_freeze_sha256": "47cd71c29cc1cc1fd41b2f55356c6729296c9288768efdd588f6ee8365ba3e99",
+  "disposition": "Old target definition withdrawn. Only identical full request hashes may be reused under corrected weights; changed requests must be regenerated.",
+  "reused_exact_request_counts": {
+    "pilot": 94,
+    "formal": 3129
+  },
+  "discarded_changed_request_counts": {
+    "pilot": 10,
+    "formal": 285
+  },
+  "reused_by_condition": {
+    "pilot": {
+      "matching/pro/coarse": 10,
+      "matching/pro/matched": 12,
+      "matching/qwen/coarse": 10,
+      "matching/qwen/matched": 12,
+      "matching/pro/matched_traits": 9,
+      "matching/qwen/matched_traits": 9,
+      "origin/qwen/choice": 8,
+      "origin/qwen/probability": 8,
+      "packaging/qwen/choice": 8,
+      "packaging/qwen/probability": 8
+    },
+    "formal": {
+      "matching/pro/coarse": 720,
+      "matching/pro/matched_traits": 537,
+      "matching/pro/matched": 708,
+      "matching/qwen/coarse": 420,
+      "matching/qwen/matched_traits": 333,
+      "matching/qwen/matched": 411
+    }
+  },
+  "corrected_eligible_n": 4090,
+  "products_unchanged": true,
+  "outcomes_used_for_selection": false
+}

@@ -1,0 +1,6 @@
+{
+  "perfect_answer_product_scoring": true,
+  "display_mapping_roundtrips": 8640,
+  "reference_probability_synthetic_scoring": true,
+  "canary_predictions_saved": false
+}

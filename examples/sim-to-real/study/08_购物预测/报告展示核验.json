@@ -1,7 +1,7 @@
 {
   "report": "index.html",
   "canonical_report": "../index.html",
-  "scope": "五轮正式实验统一汇报；新增运动鞋输入对齐的事后统计对照，未新增 LLM 请求或重选样本",
+  "scope": "前五轮历史结果、方法审查及第六轮匹配与商品内部复验；撤下混用权重的常规因果比较，保留原始审查记录",
   "sources": {
     "pew": {
       "path": "pew-formal-score.json",
@@ -55,6 +55,26 @@
       "path": "../09_方法审查/audit-results.json",
       "sha256": "64440d52d29b6cfda5e0d6e8601994468e8a4e7f9f45f0bee2dc51e49a98e48e"
     },
+    "revalidation": {
+      "path": "../10_匹配与商品复验/results.json",
+      "sha256": "a003d938d5d7042fcdda9e7efcb7a909f76b9e323bb81fd66f0b9afa75676d3c"
+    },
+    "revalidation_protocol": {
+      "path": "../10_匹配与商品复验/protocol.json",
+      "sha256": "cb0dcebcc8d6683e2e22328c1bf13ea1e7c47d0ec61f04892f1394f22e15b056"
+    },
+    "experiment_status": {
+      "path": "../10_匹配与商品复验/experiment-status.json",
+      "sha256": "6c7271f04c23e7ed376ae10f2c2ab6fad2d44adad9642739a462ebaedebabd3f"
+    },
+    "revalidation_completion": {
+      "path": "../10_匹配与商品复验/completion-checks.json",
+      "sha256": "e4999d4ae272b6af9fe1559e00c02da8bd8ac8410ca139371225798c657a58c2"
+    },
+    "revalidation_correction": {
+      "path": "../10_匹配与商品复验/mapping-correction.json",
+      "sha256": "0bfcb78c530536a924a9d975366e2ea326eaa7dfa61161db5caefad5678fe391"
+    },
     "input_parity": {
       "path": "shoes-input-parity-score.json",
       "sha256": "b24cefff626e91952adf5396f0fe65bda7466a53d98546c332cf08257475ff9c"
@@ -64,7 +84,7 @@
       "sha256": "4f6c62e1839c862554b35940ac0524ea97c3e6dd650a52ce0d67a54821df161e"
     }
   },
-  "explanation_scope": "新增画像匹配审查、412 个逐题分数独立复算及相同权重敏感性分析；历史冻结分数不变，未新增模型请求",
+  "explanation_scope": "历史冻结分数不变；412 个逐题分数独立复算及权重审查另列，第六轮新增三次重复的匹配、人格、模型和商品输出方式实验",
   "explanation_sources": {
     "optimize_profiles.py": {
       "path": "../../optimize_profiles.py",
@@ -109,8 +129,28 @@
     "retail_matching_review.py": {
       "path": "../../retail_matching_review.py",
       "sha256": "3a5259462cf2f83ee7f9e76a9e41f1dd8debfe04e04e13270a90a6dadfba6512"
+    },
+    "revalidation.py": {
+      "path": "../../revalidation.py",
+      "sha256": "6f76346994fa5d89a28cb7f038438f25898f9ae5e419736fecbbd3af47663e5e"
+    },
+    "revalidation_score.py": {
+      "path": "../../revalidation_score.py",
+      "sha256": "2cc4819bbc6a9e8f02a73fe75df480dbfeea28a214ba4196cd99ab2c306ace4f"
+    },
+    "revalidation_report.py": {
+      "path": "../../revalidation_report.py",
+      "sha256": "b89f8ecf3c5fea77b9d67e987c8aac22972254750da852dff500c4aa4fb210eb"
+    },
+    "revalidation_charts.js": {
+      "path": "../../revalidation_charts.js",
+      "sha256": "6aab18edd6b01d142e002861b615b8a6a175157aa638691578facbdf28a4dc83"
+    },
+    "revalidation_archive.py": {
+      "path": "../../revalidation_archive.py",
+      "sha256": "9b2c125b1a29893cb740b2f80531781b03f1e9cc82f3713ecab7b35d797a8480"
     }
   },
-  "report_sha256": "4d5f78337ce1a9e7eb5c1cc49b5fcd64d481b06191ab3a144b6a78779e101797",
-  "canonical_report_sha256": "8b45a7f105ea94fb0de9848de6f1f7c01638e6d2ead2bae89ce5baed07a11c17"
+  "report_sha256": "7ba828c2ef787cdf7716508b7d2483a63e38a122cac45ae108f28000613f9b7a",
+  "canonical_report_sha256": "d9308d864a16b750ac2c8baa58cff67b99b946d299dc9dbc8eb26d72f5aa168a"
 }

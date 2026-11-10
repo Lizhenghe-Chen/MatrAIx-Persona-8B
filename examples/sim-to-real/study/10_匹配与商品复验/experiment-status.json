@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-10",
+  "policy": "Withdraw invalid interpretations; retain valid negative findings and audit evidence. Do not delete results because a model performs poorly.",
+  "withdrawn_from_main_comparison_selector": {
+    "conditions": "Earlier context-only versus demographic/personality comparisons using different aggregation weights",
+    "reason": "The contrast combines profile input and aggregation changes; unsuitable as an isolated profile effect.",
+    "replacement": "09_方法审查 same-weight sensitivity analysis; round 10 fixes common slot weights before generation",
+    "original_scores": "Preserved as historical evidence; not overwritten"
+  },
+  "retained_with_scope_limits": [
+    "Early synthetic profiles: coarse age/education matching only; not a complete population or personality match",
+    "Direct Qwen/Pro/Flash comparisons: only the tested mode and input; not a universal ranking",
+    "Low refusal predictions and failure to beat statistical references: valid negative findings",
+    "Statistics comparisons: other real answers are available for fitting; not a pure architecture comparison",
+    "Round 10: internal replication on previously used public data, not fresh external validation"
+  ],
+  "raw_datasets_deleted": [],
+  "reason_no_dataset_deletion": "Audit has not established that the source data or complete experiments are invalid. Their small evidence files are necessary for reproducibility.",
+  "discarded_generated_answers": {
+    "formal": 285,
+    "pilot": 10,
+    "reason": "Education label mapping correction changed these request bodies; removed from active checkpoint, not used in conclusions",
+    "evidence": "mapping-correction.json"
+  }
+}

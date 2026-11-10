@@ -1,0 +1,24 @@
+{
+  "charts": 22,
+  "questionOptions": 13,
+  "tableRows": 14,
+  "overflow": [
+    1425,
+    1425
+  ],
+  "networkRequests": 4,
+  "consoleErrors": 0,
+  "allSelectorsVerified": true,
+  "questionByComparisonViewsVerified": 52,
+  "revalidationCharts": 8,
+  "revalidationViews": 131,
+  "standaloneVerified": true,
+  "mobileWidth": 390,
+  "contextualChartGuides": 22,
+  "glossarySearchAndKeyboardVerified": true,
+  "source": "report_smoke_check.cjs; Chrome headless, offline file URLs",
+  "unit_checks_passed": 6,
+  "portable_synthetic_scores_recomputed": true,
+  "desktop_mobile_screenshots_inspected": true,
+  "git_only_report_rebuild_and_inventory_verified": true
+}

@@ -1,6 +1,6 @@
 # MatrAIx 真人问卷对照实验
 
-[五轮实验统一报告](study/index.html) · [实验档案与复算](study/README.md) · [文件归档说明](study/00_导航/文件归档说明.md)
+[六轮实验统一报告](study/index.html) · [实验档案与复算](study/README.md) · [文件归档说明](study/00_导航/文件归档说明.md)
 
 这里集中保存本次研究的全部代码和档案。报告串联合成人格、三模型对比、提示与背景优化、电商选品复验、购物概率与实际购买预测；已完成与待研究的数据分别标注。小型公开资料、汇总结果和离线图表随 Git 保存，大型源包和真人关联运行文件保留本机并登记校验值。
 
@@ -12,6 +12,7 @@
 | 比模型、提示及背景 | `optimize*.py` | `study/02_模型对比/`、`03_提示与背景/` |
 | 北美商品选择、拒买及网购 | `shopping*.py` | `study/06_北美电商选品/` |
 | Pew 购物预测、运动鞋、Amazon 真实购买 | `retail_pew*.py`、`retail_shoes*.py`、`retail_amazon*.py` | `study/08_购物预测/` |
+| 匹配、模型与商品输出方式三次复验 | `revalidation*.py`、`revalidation_charts.js` | [第六轮说明](study/10_匹配与商品复验/README.md)，合成答卷可仅凭Git归档复算 |
 | 复建全部报告 | `retail_report.py`，阅读版及历史图表模板以 `retail_reader`、`retail_history` 开头 | `study/index.html` 为主入口；旧链接继续可用 |
 | 实验运行与归档核验 | `retail_audit.py`、`archive_inventory.py` | `study/08_购物预测/运行核验.json`、`study/00_导航/文件清单.json` |
 
@@ -22,7 +23,7 @@ python3.12 examples/sim-to-real/retail_report.py
 python3.12 examples/sim-to-real/archive_inventory.py check
 ```
 
-交互图表检查用 Node.js 22 以上和 Chrome：`node examples/sim-to-real/report_smoke_check.cjs`。它会检查全部题目切换、汇总表、22 个图表及桌面／手机布局，截图输出到临时目录；非 macOS 可通过 `CHROME_BIN` 指定浏览器程序。
+交互图表检查用 Node.js 22 以上和 Chrome：`node examples/sim-to-real/report_smoke_check.cjs`。它会检查全部题目切换、汇总表、22个历史图表与8个复验图表，以及桌面／手机布局，截图输出到临时目录；非 macOS 可通过 `CHROME_BIN` 指定浏览器程序。
 
 完整运行环境、各轮评分与外部文件恢复方法见[档案说明](study/README.md)。下面保留首轮实验的独立复算说明。
 

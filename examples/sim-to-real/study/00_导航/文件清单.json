@@ -2,13 +2,13 @@
   "schema_version": 1,
   "recorded_on": "2026-11-10",
   "root": "examples/sim-to-real",
-  "scope": "实验代码、五轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
+  "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 287,
-  "git_bytes": 42169267,
-  "local_only_file_count": 28,
-  "local_only_bytes": 591160603,
+  "git_file_count": 311,
+  "git_bytes": 43584521,
+  "local_only_file_count": 30,
+  "local_only_bytes": 629391967,
   "external_large_source": {
     "dataset": "MatrAIx Persona 1M",
     "version_manifest": "study/数据/persona-1m-official-manifest.json",
@@ -18,14 +18,14 @@
   "files": [
     {
       "path": "README.md",
-      "bytes": 5478,
-      "sha256": "abadc01ea526967ef2632f7e06cb742d229ed4b305a3c3fcb8b2b804b9caaca0",
+      "bytes": 5710,
+      "sha256": "5633225eacd2d4410d885a81363b33ab8ace54ec759cac5f12c777380bc8b56e",
       "storage": "git"
     },
     {
       "path": "archive_inventory.py",
       "bytes": 5211,
-      "sha256": "d8a7c4d72b3e33bdf4782100ae57d8a968bd50e31a070cbe508bc9d67b35c3b5",
+      "sha256": "07c9d382d22c002ba5f0db8c455336904099c30770cb8382dd35d061f433afa6",
       "storage": "git"
     },
     {
@@ -84,8 +84,8 @@
     },
     {
       "path": "report_smoke_check.cjs",
-      "bytes": 10374,
-      "sha256": "7029e223092323d767cf55fc4e2bb03c2feb0e39c0efa5d890590d3573859002",
+      "bytes": 13543,
+      "sha256": "92d488244d332f55247314f2e909e195a21c84a85ab6454e730866cd40d30ecc",
       "storage": "git"
     },
     {
@@ -138,8 +138,8 @@
     },
     {
       "path": "retail_history_template.html",
-      "bytes": 21177,
-      "sha256": "cfbf21cd6e40d6916ea5460de4e3f58b50e437ddda4cbc7b68344a2048501fcc",
+      "bytes": 21631,
+      "sha256": "fb1485739871e9ab2a05cfbf2d341760e4916228050609e5eb14efc7560c3193",
       "storage": "git"
     },
     {
@@ -174,8 +174,8 @@
     },
     {
       "path": "retail_reader_conclusions.html",
-      "bytes": 4532,
-      "sha256": "fe2baf63ae4c4f370ff3ee8df82c63acdf2a533a37f662a796dd403b1eb336ad",
+      "bytes": 4599,
+      "sha256": "3f8cbcf4c0e6d8ee3587b41dbf22d15cfaf53b2428fdb92dd5d1291d73a243bf",
       "storage": "git"
     },
     {
@@ -186,20 +186,20 @@
     },
     {
       "path": "retail_reader_guidance.html",
-      "bytes": 11635,
-      "sha256": "c1a626116cc00490e806969823276e78f5aa97aea6200ed2180008bff462842b",
+      "bytes": 12158,
+      "sha256": "9593cdb92e9e87f8cba52153c7fab1c0cb1a5bb846892acaf8ced18ba8c8d212",
       "storage": "git"
     },
     {
       "path": "retail_reader_report.py",
-      "bytes": 10995,
-      "sha256": "848357b9ed27ce41a3323efdfba0865c103e79e69466ea9716f30ff10aa7855d",
+      "bytes": 13215,
+      "sha256": "247b62901b907d083a91e58a01c8122a1e8e4a07946dc7f547f6d5afbae2e05d",
       "storage": "git"
     },
     {
       "path": "retail_reader_template.html",
-      "bytes": 66423,
-      "sha256": "316e3f7ce9e3b2112153413a0b5dcc654a8c5b899f4c1ce48f6e7cae24c29836",
+      "bytes": 66552,
+      "sha256": "ff46facf6b82e996a3138c06659fe71f0f7e373dcb5c4073bd8dcd514c2ea39a",
       "storage": "git"
     },
     {
@@ -233,6 +233,36 @@
       "storage": "git"
     },
     {
+      "path": "revalidation.py",
+      "bytes": 23850,
+      "sha256": "6f76346994fa5d89a28cb7f038438f25898f9ae5e419736fecbbd3af47663e5e",
+      "storage": "git"
+    },
+    {
+      "path": "revalidation_archive.py",
+      "bytes": 3831,
+      "sha256": "9b2c125b1a29893cb740b2f80531781b03f1e9cc82f3713ecab7b35d797a8480",
+      "storage": "git"
+    },
+    {
+      "path": "revalidation_charts.js",
+      "bytes": 7808,
+      "sha256": "6aab18edd6b01d142e002861b615b8a6a175157aa638691578facbdf28a4dc83",
+      "storage": "git"
+    },
+    {
+      "path": "revalidation_report.py",
+      "bytes": 22532,
+      "sha256": "b89f8ecf3c5fea77b9d67e987c8aac22972254750da852dff500c4aa4fb210eb",
+      "storage": "git"
+    },
+    {
+      "path": "revalidation_score.py",
+      "bytes": 12744,
+      "sha256": "2cc4819bbc6a9e8f02a73fe75df480dbfeea28a214ba4196cd99ab2c306ace4f",
+      "storage": "git"
+    },
+    {
       "path": "shopping.py",
       "bytes": 15991,
       "sha256": "9da37dd296258cee91985d8b2449d16f7c3c2e7ef71cf8aef9e7f9da9654de1f",
@@ -258,14 +288,14 @@
     },
     {
       "path": "study/00_导航/从这里开始.md",
-      "bytes": 4473,
-      "sha256": "5dff48116d3189ea6a3f1f34d7b2228dc8909792ac38939d7407e12b58645f1c",
+      "bytes": 4858,
+      "sha256": "5d31e739e9d568d33b5922592250f44987f806012a3c237e264d10bd14c1be56",
       "storage": "git"
     },
     {
       "path": "study/00_导航/文件归档说明.md",
-      "bytes": 7019,
-      "sha256": "2792bc0ac5940c3cf202856cd7ae3b870bbdc4d8e2ebcf06d12e829fac67bd7c",
+      "bytes": 7092,
+      "sha256": "a0221bf268d42b200ed99aea4f1b4df65ddcc7632d7f5d8dbb353e8be5319ec1",
       "storage": "git"
     },
     {
@@ -1216,8 +1246,8 @@
     },
     {
       "path": "study/05_优化记录/优化文档.md",
-      "bytes": 17599,
-      "sha256": "093ff52af57d48f426f21bc56f1009f5150f43bb514b1cf33035eaca1c9633bd",
+      "bytes": 21187,
+      "sha256": "6ee942aa0c25eae5514b55d3a4d7ca744fdb497c499b52493695f8836d7a9817",
       "storage": "git"
     },
     {
@@ -1621,8 +1651,8 @@
     },
     {
       "path": "study/08_购物预测/index.html",
-      "bytes": 394382,
-      "sha256": "4d5f78337ce1a9e7eb5c1cc49b5fcd64d481b06191ab3a144b6a78779e101797",
+      "bytes": 540554,
+      "sha256": "7ba828c2ef787cdf7716508b7d2483a63e38a122cac45ae108f28000613f9b7a",
       "storage": "git"
     },
     {
@@ -1717,8 +1747,8 @@
     },
     {
       "path": "study/08_购物预测/报告展示核验.json",
-      "bytes": 4738,
-      "sha256": "f500f4abc703fe3ee7225680f19830daff5e8ee4256d006da79a025bd42f5fb7",
+      "bytes": 6531,
+      "sha256": "cf679a50bcb77908b2fcee231212d6ac4f2be2740a33677c7680becb6bdb1de2",
       "storage": "git"
     },
     {
@@ -1831,9 +1861,131 @@
       "storage": "git"
     },
     {
+      "path": "study/10_匹配与商品复验/.gitignore",
+      "bytes": 15,
+      "sha256": "290c069535a8f5590a699dd18d0ae2218a45a7940b0319a76ad87f780ac4de69",
+      "storage": "git"
+    },
+    {
+      "path": "study/10_匹配与商品复验/README.md",
+      "bytes": 6913,
+      "sha256": "f8337c43d8fa7ab71d510ff888e50d4239bd02d4928e621bdf022583bb14da95",
+      "storage": "git"
+    },
+    {
+      "path": "study/10_匹配与商品复验/analysis-seal.json",
+      "bytes": 557,
+      "sha256": "f3dc2ac5131e72f7c1522d542d909bfd24fc4b1bddd7eac00e1da422558ee747",
+      "storage": "git"
+    },
+    {
+      "path": "study/10_匹配与商品复验/completion-checks.json",
+      "bytes": 566,
+      "sha256": "e4999d4ae272b6af9fe1559e00c02da8bd8ac8410ca139371225798c657a58c2",
+      "storage": "git"
+    },
+    {
+      "path": "study/10_匹配与商品复验/eligibility-audit.json",
+      "bytes": 1018,
+      "sha256": "49bf9b37a2052a88eaaa00d110c6af4a97c36f2fce29ec3451ad2ded518d7c9d",
+      "storage": "git"
+    },
+    {
+      "path": "study/10_匹配与商品复验/experiment-status.json",
+      "bytes": 1705,
+      "sha256": "6c7271f04c23e7ed376ae10f2c2ab6fad2d44adad9642739a462ebaedebabd3f",
+      "storage": "git"
+    },
+    {
+      "path": "study/10_匹配与商品复验/formal.log",
+      "bytes": 36823,
+      "sha256": "2352dc434f66f7f1e08343040831325d4486ecaa75ed0b7bfe88fe8e39397154",
+      "storage": "git"
+    },
+    {
+      "path": "study/10_匹配与商品复验/index.html",
+      "bytes": 152917,
+      "sha256": "47532dac66a4dc8e48cce223652422430d8d8cfa600884894f054443b662dbf4",
+      "storage": "git"
+    },
+    {
+      "path": "study/10_匹配与商品复验/input-checks.json",
+      "bytes": 217,
+      "sha256": "a50cb00a48f9550516b7a9d54f5947b177fd233afe44f9ade8b1b95075c09c88",
+      "storage": "git"
+    },
+    {
+      "path": "study/10_匹配与商品复验/mapping-correction.json",
+      "bytes": 7843,
+      "sha256": "0bfcb78c530536a924a9d975366e2ea326eaa7dfa61161db5caefad5678fe391",
+      "storage": "git"
+    },
+    {
+      "path": "study/10_匹配与商品复验/matching-reference.json",
+      "bytes": 5582,
+      "sha256": "f5cd1742747cb1b3f7a1c91b9f4be08c45ffe6ed27dbb36cb537edc5116f70ad",
+      "storage": "git"
+    },
+    {
+      "path": "study/10_匹配与商品复验/pilot.log",
+      "bytes": 814,
+      "sha256": "a706bf6874af462dfdfd9fd1a96adfa2326b5b1140ad7487e3dba6f494b8779e",
+      "storage": "git"
+    },
+    {
+      "path": "study/10_匹配与商品复验/protocol.json",
+      "bytes": 6337,
+      "sha256": "cb0dcebcc8d6683e2e22328c1bf13ea1e7c47d0ec61f04892f1394f22e15b056",
+      "storage": "git"
+    },
+    {
+      "path": "study/10_匹配与商品复验/report-checks.json",
+      "bytes": 662,
+      "sha256": "3bbc47d7901b196fd111a5edcdb9eca9c0f5745113493e71e956852f61f23c03",
+      "storage": "git"
+    },
+    {
+      "path": "study/10_匹配与商品复验/results.json",
+      "bytes": 199641,
+      "sha256": "a003d938d5d7042fcdda9e7efcb7a909f76b9e323bb81fd66f0b9afa75676d3c",
+      "storage": "git"
+    },
+    {
+      "path": "study/10_匹配与商品复验/scoring-checks.json",
+      "bytes": 171,
+      "sha256": "43cb329a075ff5a9e71c0ecffffb0a3941d048bd1e6db27fd805315507914ae1",
+      "storage": "git"
+    },
+    {
+      "path": "study/10_匹配与商品复验/synthetic-cohorts.json",
+      "bytes": 275128,
+      "sha256": "b0956b99ecf9a52d10cfe9b820f6ed8bb801bb2b8f80fdf64e3854f4fd49d49f",
+      "storage": "git"
+    },
+    {
+      "path": "study/10_匹配与商品复验/synthetic-responses.jsonl.gz",
+      "bytes": 339074,
+      "sha256": "705c2af5ba2f4eb5b6fe9cf2425401d605261ca97e4286c3854b38882a9d16dd",
+      "storage": "git"
+    },
+    {
+      "path": "study/10_匹配与商品复验/本机运行/freeze.json",
+      "bytes": 32615748,
+      "sha256": "f836740b2bbe5074369a7748d13eeba1092df8cad39d0511646616eb2176f071",
+      "storage": "local_only",
+      "reason": "大型原始下载包；保留本机和获取来源"
+    },
+    {
+      "path": "study/10_匹配与商品复验/本机运行/responses.sqlite",
+      "bytes": 5615616,
+      "sha256": "76a8dd8f5c0b40d21db810493642954d32621081778d6f350eab588e32db0401",
+      "storage": "local_only",
+      "reason": "真人样本、预测关联或运行检查点；按原约定仅本机复算"
+    },
+    {
       "path": "study/README.md",
-      "bytes": 4709,
-      "sha256": "fe65322b62772397177dce745914aa6ac24c1349ff59fd0c7d35c443f99bc5e3",
+      "bytes": 5018,
+      "sha256": "249b79541430cf1aca8d7e104025b8440dc7c77ed5c320487ff5b0c31777fb7b",
       "storage": "git"
     },
     {
@@ -1850,8 +2002,8 @@
     },
     {
       "path": "study/index.html",
-      "bytes": 394720,
-      "sha256": "8b45a7f105ea94fb0de9848de6f1f7c01638e6d2ead2bae89ce5baed07a11c17",
+      "bytes": 540874,
+      "sha256": "d9308d864a16b750ac2c8baa58cff67b99b946d299dc9dbc8eb26d72f5aa168a",
       "storage": "git"
     },
     {
@@ -1932,6 +2084,12 @@
       "path": "study/调研与决策.md",
       "bytes": 5800,
       "sha256": "84ebde45eca13883d2cebddd4b2a4848027d0d18202719ad9184037ea5ede80f",
+      "storage": "git"
+    },
+    {
+      "path": "test_revalidation.py",
+      "bytes": 3238,
+      "sha256": "085b4a28446f2f78d6fd525c03912ebb63d06a46e58914daac8731c5987344a7",
       "storage": "git"
     }
   ]

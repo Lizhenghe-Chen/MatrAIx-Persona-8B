@@ -77,7 +77,7 @@ def write() -> None:
         "schema_version": 1,
         "recorded_on": date.today().isoformat(),
         "root": "examples/sim-to-real",
-        "scope": "实验代码、五轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
+        "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
         "size_unit": "bytes; 1 MiB = 1048576 bytes",
         "git_single_file_limit_bytes": LIMIT,
         "git_file_count": counts["git"],
