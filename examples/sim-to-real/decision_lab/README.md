@@ -1,6 +1,6 @@
 # 新一轮决策模拟实验
 
-本目录是与历史实验隔离的新实现。**目前是数据入场审查和框架基础阶段，尚未完成模型执行、校准、正式评分和报告模块；没有新实验结果。** 不把历史成绩并入本轮。
+本目录是与历史实验隔离的新实现。**目前是数据入场审查和框架基础阶段，已具备运行、评分及校准基础模块，但尚未完成真实数据端到端执行和报告模块；没有新实验结果。** 不把历史成绩并入本轮。
 
 固定 DeepSeek Pro；真人实测与合成人群分轨，冷启动与少量数据校准分别验收。匿名背景可按用户授权发送官方云端，但每套数据仍须完成来源许可和字段白名单审查。
 
@@ -10,7 +10,7 @@
 
 ```sh
 python -m decision_lab check --input prepared-study.json
-python -m decision_lab freeze --input prepared-study.json --output frozen.json
+python -m decision_lab freeze --input prepared-study.json --config frozen-config.json --output frozen.json
 python -m decision_lab verify --input archive.json
 python -m unittest decision_lab.test_core
 ```
@@ -45,3 +45,7 @@ python -m unittest decision_lab.test_core
 本机凭据由用户配置在 `~/.config/matraix-decision-lab/credentials.json`，变量名 `DEEPSEEK_API_KEY`，文件权限0600；不随Git分发、不写入请求日志。实际调用仍从进程变量读取，运行器需显式加载本机凭据。
 
 运行器要求配置与输入共同冻结，明确调用次数和保守费用上限。成功任务不重复调用；中断时状态不明的请求须先核实，避免自动重复计费。失败记录保留，暂未提供自动重试。费用字段为保守预留额，不冒充账单实际收费。
+
+## 校准候选
+
+`calibration.py`在开发集上选择概率温度与统计/LLM凸组合；显式拒绝测试标记及已知测试人员重叠。温度处理保留零概率，不默认补出模型未给出的质量。若混合权重选为0，报告必须写“统计基线被选中”，不能记为LLM优化成功。候选网格仍需在正式方案中冻结。
