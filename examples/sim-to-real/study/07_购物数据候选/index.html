@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>购物与选品：真实数据候选清单 · MatrAIx</title>
+<style>
+:root{color-scheme:light;--ink:#183b38;--muted:#596c69;--line:#ccd9d4;--bg:#f5f5ed;--green:#1c705d;--amber:#87540b}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--bg);font:17px/1.75 system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}main{max-width:1160px;margin:auto;padding:40px 26px 80px}h1{font-size:clamp(30px,4vw,46px);line-height:1.25;margin:16px 0}h2{font-size:26px;margin:38px 0 16px}h3{font-size:22px;margin:0 0 10px}p{margin:12px 0}a{color:#176b82;text-underline-offset:3px}header{border-bottom:2px solid var(--line);padding-bottom:25px}.eyebrow,.small{font-size:14px;color:var(--muted)}.lead{font-size:21px;max-width:1000px}.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:24px 0}.tile{background:#e6eee7;padding:18px;border-radius:12px}.tile strong{font-size:28px;display:block}.callout{padding:18px 22px;border-left:4px solid var(--green);background:#e8eee5;border-radius:0 12px 12px 0}.warn{border-color:#b18239;background:#f5ead6}.scroll{overflow:auto;border:1px solid var(--line);border-radius:12px;background:white}table{border-collapse:collapse;width:100%;font-size:15px;min-width:770px}th,td{text-align:left;padding:14px;vertical-align:top;border-bottom:1px solid var(--line)}th{background:#e7efe9}tr:last-child td{border-bottom:0}td:first-child{min-width:170px}nav{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}button{border:1px solid var(--line);border-radius:20px;background:white;padding:9px 17px;font:inherit;font-size:15px;color:var(--ink);cursor:pointer}button[aria-pressed=true]{background:var(--green);color:white}article{border:1px solid var(--line);padding:25px;border-radius:15px;background:#fffefa;margin:18px 0;scroll-margin-top:20px}.tags{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px}.tag{padding:3px 10px;border-radius:9px;background:#eaf0eb;font-size:14px}.pending{color:var(--amber);background:#f7ecd7}dl{display:grid;grid-template-columns:120px 1fr;gap:10px 18px;margin:18px 0}dt{font-weight:700}dd{margin:0}.sources{border-top:1px solid var(--line);padding-top:12px;font-size:14px}.sources a{display:inline-block;margin-right:15px}ul,ol{padding-left:25px}li{margin:9px 0}.route{display:grid;grid-template-columns:1fr 1fr;gap:14px}.route>div{padding:22px;border-radius:12px;border:1px solid var(--line);background:white}.file{overflow-wrap:anywhere;font-size:14px}footer{border-top:1px solid var(--line);padding-top:20px;margin-top:40px;color:var(--muted);font-size:14px}[hidden]{display:none!important}@media(max-width:700px){main{padding:25px 16px 50px}.tiles{grid-template-columns:1fr 1fr}.route{grid-template-columns:1fr}article{padding:19px}dl{grid-template-columns:1fr;gap:4px}dd{margin-bottom:12px}}@media print{nav{display:none}body{background:white}main{max-width:none;padding:0}article{break-inside:avoid}.scroll{overflow:visible}table{min-width:0;font-size:11px}a{color:inherit}button{display:none}}
+</style>
+<main>
+<header>
+<div class="eyebrow">MatrAIx 真人对照研究 · 数据选型 · 核验日期 2026 年 11 月 10 日</div>
+<h1>下一轮购物实验，哪些真人数据值得用？</h1>
+<p class="lead">建议先考虑：<strong>美国运动鞋购买意愿、加拿大官方网购调查、美国 Amazon 真实订单</strong>。三者分别验证“商品属性怎么取舍”“谁会网购、有什么顾虑”“最终买过什么”。若重点是配送服务，再加入美国配送选择实验。</p>
+<p>这是候选资料与下载核验清单，供你选择下一轮研究。本页没有新增模型实验结果，也不把调查中的购买意愿等同于实际下单。</p>
+<div class="tiles"><div class="tile"><strong>7 份</strong>逐人文件已取得并计数</div><div class="tile"><strong>3 份</strong>本次补齐原始材料</div><div class="tile"><strong>1 份</strong>食品方向待补下载</div><div class="tile"><strong>1 份</strong>跨境平台方向候补</div></div>
+</header>
+<div class="callout"><strong>已收到你补充的三份资料。</strong>运动鞋作者原包、Amazon 完整购买记录、Pew 第 13 波均已归档并通过文件完整性核验。Amazon 日期范围和 Pew 网络／邮寄题面存在需要在方案中处理的差异，详见各卡片。<a href="本次接收核验.json">查看核验结果</a> · <a href="本次接收文件清单.json">查看文件与哈希</a></div>
+
+<h2>先按业务问题选择</h2>
+<div class="scroll"><table>
+<thead><tr><th>想验证什么</th><th>优先数据</th><th>真人材料</th><th>当前准备程度</th></tr></thead>
+<tbody>
+<tr><td>品牌、价格、评价、运费和材质怎样影响购买意愿？</td><td><a href="#shoes">美国运动鞋实验</a></td><td>3,073 人；122,920 条商品评分</td><td>作者原包和原问卷已补齐；关键字段与清洗表一致</td></tr>
+<tr><td>谁会网购？为什么不网购？跨境购买遇到什么障碍？</td><td><a href="#canada">加拿大互联网调查 2022</a></td><td>25,118 人；官方逐人数据、问卷和字典</td><td>官方完整包已下载</td></tr>
+<tr><td>用户实际买什么、花多少钱、是否重复购买？</td><td><a href="#amazon">Amazon Open e-commerce 1.0</a></td><td>5,027 位参与者，关联 180 万余条购买记录</td><td>完整购买记录与问卷已核对关联</td></tr>
+<tr><td>更快配送、额外运费和隐私之间怎么取舍？</td><td><a href="#delivery">美国配送选择实验</a></td><td>3,715 人；地面配送与无人机配送选择</td><td>作者清洗数据、题目映射已下载</td></tr>
+<tr><td>服装产地、材质、质量和价格怎么取舍？</td><td><a href="#tshirt">美国 T 恤选择实验</a></td><td>1,228 人；6,140 次三选一</td><td>清洗版已下载；原题与有效样本筛选待补核</td></tr>
+<tr><td>手机、电视和洗衣机的耐用、维修与价格怎么取舍？</td><td><a href="#durables">瑞士耐用品实验</a></td><td>3,413 人；13,652 次二选一</td><td>清洗版已下载；地区为瑞士</td></tr>
+<tr><td>用户如何比价、看评价、建立购买信任？</td><td><a href="#pew">Pew 2015 网购调查</a></td><td>4,787 人；原题与方法公开</td><td>完整包已收到；网络与邮寄模式已区分</td></tr>
+<tr><td>为什么在线买食品？为什么不买？选配送还是自提？</td><td><a href="#atus">美国时间使用调查：饮食与健康模块</a></td><td>官方逐人文件；本次尚未核对文件人数</td><td>入口、问卷已核对；下载请求被服务器拒绝</td></tr>
+<tr><td>谁使用 Temu、Shein、AliExpress，买什么品类？</td><td><a href="#ces">欧洲央行消费者预期调查 2026</a></td><td>欧元区调查；公开微观数据入口与字段字典</td><td>候补：本轮未下载逐人表；有非商业使用限制</td></tr>
+</tbody></table></div>
+<p class="small">表中的人数优先采用实际下载文件计数；未下载时标明来自论文或官方方法说明。一人可能回答多题，每题又包含多款商品，因此“商品记录数”不能当作人数。文件覆盖人数也不必等于论文某一项分析的筛选后人数。</p>
+
+<h2>每份数据有哪些内容、哪些限制</h2>
+<nav aria-label="筛选候选数据"><button data-filter="all" aria-pressed="true">全部候选</button><button data-filter="north" aria-pressed="false">美国／加拿大</button><button data-filter="product" aria-pressed="false">具体商品实验</button><button data-filter="downloaded" aria-pressed="false">逐人文件已下载</button><button data-filter="action" aria-pressed="false">需要补充下载</button></nav>
+
+<article id="shoes" data-tags="north product downloaded">
+<h3>美国运动鞋购买意愿实验</h3>
+<div class="tags"><span class="tag">最优先：商品属性取舍</span><span class="tag">美国 · 2018 年采集</span><span class="tag">学术论文与复制数据</span><span class="tag">已下载</span></div>
+<p><strong>适合的问题：</strong>模型会不会把“评分高、环保、便宜”机械地当作所有人的唯一偏好？不同价格、品牌和配送条件同时出现时，它能否还原真人评分的分歧？</p>
+<dl><dt>来源依据</dt><dd>Horiuchi、Markovich、Yamamoto 的研究发表于 <em>Political Analysis</em>（2022）；出版方直接链接 Harvard Dataverse 复制数据。现已取得作者 v2 复制包、两轮原始数据和两份原问卷，并与 Item Response Warehouse 清洗表核对。原分析表有一名重复答题者；排除其全部 80 条商品记录后，人数为 3,073，关键字段与清洗版一致。</dd>
+<dt>实际内容</dt><dd>3,073 位美国线上招募受访者，每人评价 20 对假想运动鞋；每款鞋给 1–7 分购买意愿。文件共 122,920 条商品评分。</dd>
+<dt>可变化属性</dt><dd>品牌、美元价格、顾客评分、配送、颜色、环保材料、缓震、鞋重、款式年份、畅销排名。价格档为 43／64／88／110 美元，评分为 3.5／4／4.5／5 星。</dd>
+<dt>真人背景</dt><dd>年龄组、种族、党派，以及已测量的环保态度和社会赞许倾向问项；后者指人们是否倾向于给出“社会认为更体面”的回答。新取得的第一波原始问卷和数据还包含更细年龄、性别、学历及收入；按作者的编号规范化方式，可关联全部 3,073 名清洗样本。具体编码和缺失值仍需在选题阶段冻结。</dd>
+<dt>使用边界</dt><dd>测的是购买意愿评分，没有实际付款，也不能直接当作二选一。样本来自 MTurk，并非全国概率抽样。实验有四种随机化设计，须保留原分组；本文主分析还选取了特定子样本，不能把所有文件记录误称为主分析样本。</dd></dl>
+<p class="sources"><a href="https://doi.org/10.1017/pan.2021.30">原论文</a><a href="https://doi.org/10.7910/DVN/4WDVDB">作者复制数据</a><a href="https://itemresponsewarehouse.org/tables/horiuchi_2022_sdb_shoes/">清洗表与字段说明</a></p>
+</article>
+
+<article id="canada" data-tags="north downloaded">
+<h3>加拿大互联网调查 2022：网购行为与障碍</h3>
+<div class="tags"><span class="tag">最优先：北美网购人群</span><span class="tag">加拿大统计局</span><span class="tag">官方完整包已下载</span></div>
+<p><strong>适合的问题：</strong>哪些人网购频繁？哪些人担心退货、付款安全或无法试穿？外国商家不送到加拿大、结账费用超预期，究竟发生在什么人群中？</p>
+<dl><dt>数据依据</dt><dd>官方公共使用微观数据，即可逐位分析的匿名记录。下载包中有 25,118 条受访者记录，人数与官方代码本一致，并有完整问卷、变量标签和调查权重。</dd>
+<dt>电商内容</dt><dd>购买实物／数字商品／服务、支出档位、网购频率、支付方式、本国商家或加拿大制造购买动机；网购故障、外国商家拒绝销售或配送、额外费用、货不对板、退货投诉和配送问题；不网购的原因。</dd>
+<dt>真人背景</dt><dd>公开表含年龄组、性别、学历、就业、所在省等背景，可与同一人的电商回答对应。</dd>
+<dt>年龄限制</dt><dd><strong>覆盖 15 岁及以上，最年轻组是 15–24 岁，不能严格拆出 18–24 岁。</strong>如果坚持成年人实验，可选 25 岁及以上作为明确的新范围；不能无声地把全部样本当作成年人。</dd>
+<dt>其他限制</dt><dd>自报行为，不是平台订单；加拿大结果不能直接代表美国。问卷跳题必须保留。公共表有合并字段，支出还可能经插补；正式实验需按公共代码本确认字段，不能把原问卷每一项都假定为独立公开。</dd></dl>
+<p class="sources"><a href="https://www150.statcan.gc.ca/n1/pub/56m0003x/56m0003x2020001-eng.htm">官方数据入口</a><a href="https://www150.statcan.gc.ca/n1/pub/56m0003x/2020001/2022.zip">2022 官方 ZIP</a><a href="本机数据/CIUS2022_Codebook_PUMF.pdf">已核对的本机代码本</a><a href="本机数据/CIUS2022_Quest_E.pdf">已核对的本机原问卷</a></p>
+</article>
+
+<article id="amazon" data-tags="north downloaded">
+<h3>Open e-commerce 1.0：美国 Amazon 真实购买记录</h3>
+<div class="tags"><span class="tag">最优先：实际行为验证</span><span class="tag">美国 · 主体订单为 2018–2022 年</span><span class="tag">购买记录与问卷已收到</span></div>
+<p><strong>适合的问题：</strong>给定用户背景和过去的购买历史，模型能否预测之后购买的品类、价格带和复购？这是本批最值得用来补足“问卷回答之外的行为验证”的数据。</p>
+<dl><dt>来源依据</dt><dd>MIT 等机构研究者发布，数据论文发表于 <em>Scientific Data</em>（2024）。5,027 位美国参与者提供 Amazon 账户导出的购买历史，关联 180 万余条购买记录及问卷。</dd>
+<dt>可用内容</dt><dd>订单日期、商品名称、商品标识、价格、数量、类别等，及年龄、学历、收入、性别、家庭规模、购物频率等问卷信息。现已核对问卷 5,027 行、23 列，以及 1,850,717 条商品购买记录、8 列；两表均覆盖 5,027 位参与者，购买记录中的参与者全部能关联问卷。这里的条数是商品购买条目，不是去重后的订单数。</dd>
+<dt>关键限制</dt><dd>这不是全国代表性概率样本；一个账户可能由多人使用。数据记录买过的商品，缺少完整的“看过但没买”的商品集合，因此不能用它直接计算转化率或拒买准确率。预测未来订单时，要按时间分隔历史与目标，不能把未来购买信息放入背景。</dd>
+<dt>日期核验</dt><dd>论文重点为 2018–2022 年，本次文件中这一范围有 <strong>1,810,793 条</strong>，另有 39,923 条 2023 年记录和 1 条日期为 2024-08-15 的记录。原文件已原样保留；正式方案须明确时间范围，不能把整表都描述成 2018–2022 年数据。</dd></dl>
+<p class="sources"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11091104/">数据论文</a><a href="https://doi.org/10.7910/DVN/YGLYDY">官方数据下载页</a><a href="https://github.com/aberke/amazon-study">作者项目与处理代码</a></p>
+</article>
+
+<article id="delivery" data-tags="north downloaded">
+<h3>美国配送选择：运费、等待时间与隐私</h3>
+<div class="tags"><span class="tag">推荐扩展：电商履约</span><span class="tag">美国 · 2023 年发表</span><span class="tag">作者清洗版已下载</span></div>
+<p><strong>适合的问题：</strong>便宜但慢、贵但快，以及提供隐私保护的配送，消费者会怎么选？不同购物经验的人是否做不同取舍？</p>
+<dl><dt>来源依据</dt><dd>Berke 等人的研究发表于 <em>Transportation Research Part C</em>。作者公开匿名数据、问卷 PDF、选择题生成代码、字段解释和分析代码；研究获得 MIT 伦理审批。</dd>
+<dt>实际内容</dt><dd>下载表有 3,715 人。真人在地面与无人机配送间选择，商品场景包括外卖、药品、酒类和临时采购食品；题目变化包括配送费、等待时间和隐私。每人只看到题库中的部分题目，空白不能一律当作漏答。</dd>
+<dt>真人背景</dt><dd>年龄、性别、收入、居住环境，以及网购和配送使用情况等。</dd>
+<dt>使用边界</dt><dd>更适合配送服务取舍，不能代替商品选品；回答来自设定情境，不是实际配送下单。作者未公开 Qualtrics 原始导出，已公开的是筛除不合格回答后的清洗数据。</dd></dl>
+<p class="sources"><a href="https://doi.org/10.1016/j.trc.2023.104391">原论文</a><a href="https://github.com/aberke/drones-consumer-privacy">作者数据、问卷与代码</a><a href="https://raw.githubusercontent.com/aberke/drones-consumer-privacy/master/data/sample-preprocessed.csv">公开逐人 CSV</a></p>
+</article>
+
+<article id="tshirt" data-tags="north product downloaded">
+<h3>美国 T 恤选择：产地、材质、质量与价格</h3>
+<div class="tags"><span class="tag">推荐扩展：服装与产地</span><span class="tag">美国 · 2019 年采集</span><span class="tag">清洗版已下载</span></div>
+<p><strong>适合的问题：</strong>同样是低价服装，消费者会在价格、质量和制造产地之间怎样取舍？它比单独询问“你喜不喜欢某个国家的产品”更接近有明确商品条件的选品任务。</p>
+<dl><dt>来源依据</dt><dd>DiGiuseppe 与 Barry 的研究发表于 <em>International Interactions</em>（2022），作者在 Harvard Dataverse 发布复制数据。</dd>
+<dt>实际内容</dt><dd>当前清洗文件覆盖 1,228 人，每人 5 次三选一，共 6,140 次选择、18,420 条候选商品记录。属性为产地、材质、质量和价格；产地包含中国、印度、越南等亚洲国家。</dd>
+<dt>真人背景</dt><dd>年龄、性别、学历、就业、收入、城乡居住环境，以及不同国家的威胁、敌意、劳动条件评价等。背景测量的时间顺序需要按两波设计核对。</dd>
+<dt>主要缺口</dt><dd><strong>清洗表未保留完整原始提问与展示格式；还要按论文核对注意力检查和排除规则。</strong>1,228 人是文件覆盖人数，不保证全部进入原论文主分析。没有“都不买”，不适合评估拒买率；制造产地选择也不等于跨境平台下单。</dd></dl>
+<p class="sources"><a href="https://doi.org/10.1080/03050629.2022.2089133">原论文</a><a href="https://doi.org/10.7910/DVN/PEZ7EE">作者复制数据</a><a href="https://itemresponsewarehouse.org/tables/digiuseppe_2022_tshirt_usa/">清洗表与已知缺口</a></p>
+</article>
+
+<article id="durables" data-tags="product downloaded">
+<h3>瑞士耐用品选择：手机、电视与洗衣机</h3>
+<div class="tags"><span class="tag">候选：耐用品产品设计</span><span class="tag">瑞士 · 2022 年采集</span><span class="tag">清洗版已下载</span></div>
+<p><strong>适合的问题：</strong>售价提高后，寿命更长、容易维修或更节能的产品还有多少吸引力？模型能否识别不同消费者对这些属性的取舍？</p>
+<dl><dt>来源依据</dt><dd>Brügge、Gomm、Bernauer 的研究发表于 <em>Journal of Cleaner Production</em>（2024）；ETH Zurich 作者存储库提供复制材料。</dd>
+<dt>实际内容</dt><dd>清洗表有 3,413 人，每人 4 次二选一，共 13,652 次选择、27,304 条商品记录。受访者被分配到手机、电视或洗衣机之一，属性含价格、使用寿命、维修、回收、能效、生产环境影响。</dd>
+<dt>真人背景</dt><dd>年龄、性别、学历、家庭收入、政治立场。</dd>
+<dt>使用边界</dt><dd>样本在瑞士，不能当作北美消费者。清洗表为英文属性，原始调查语言与展示顺序需回到原材料核对；没有拒买选项。若北美是硬条件，放在后续跨地区验证。</dd></dl>
+<p class="sources"><a href="https://doi.org/10.1016/j.jclepro.2024.143968">原论文</a><a href="https://zenodo.org/records/18260332">作者复制材料镜像</a><a href="https://itemresponsewarehouse.org/tables/brugge_2024_circular_products/">已下载清洗表说明</a></p>
+</article>
+
+<article id="pew" data-tags="north downloaded">
+<h3>Pew 2015 网购调查：比价、评价与信任</h3>
+<div class="tags"><span class="tag">候选：购物决策过程</span><span class="tag">美国 · 全国概率面板</span><span class="tag">完整 ZIP 已收到</span></div>
+<p><strong>适合的问题：</strong>用户首次购买时会不会看评论、是否相信评论、会不会在店内用手机比价，以及怎样选择线上和实体店。</p>
+<dl><dt>来源与人数</dt><dd>Pew American Trends Panel 第 13 波，2015 年 11–12 月调查，本次 SPSS 文件实测 4,787 人、186 个变量，包含 42 个 SHOP 购物变量及年龄、学历、收入等背景字段。官方综合权重 WEIGHT_W13 在全部记录上有值且为正。</dd>
+<dt>为什么保留</dt><dd>比已用过的 2022 年第 111 波更侧重评价、价格比较和购买信息。适合检验用户如何做购物决策，不能提供同一商品的真实订单转化。</dd>
+<dt>纠正旧清单</dt><dd>用户提供的清单把它写成“只有汇总表、没有逐人文件”，这不准确：官方页面明确提供数据下载，需 Pew 账号。本次已收到并读取完整逐人文件。</dd>
+<dt>题面与样本</dt><dd>数据含 <strong>4,317 名网络受访者、470 名邮寄受访者</strong>。设备类型字段可区分二者，但包内原问卷仅为网络版，邮寄版需另向 Pew 索取。若只使用网络子样本，真人参照也须限定为该子样本，不能直接当作全体样本结果。</dd><dt>时间限制</dt><dd>数据较老，适合历史问卷回测；不能作为 2026 年手机购物、社交平台或 AI 导购渗透率的当前市场估计。</dd></dl>
+<p class="sources"><a href="https://www.pewresearch.org/dataset/american-trends-panel-wave-13/">登录与下载入口</a><a href="https://www.pewresearch.org/internet/2016/12/19/online-shopping-methodology/">官方方法与样本</a><a href="https://www.pewresearch.org/internet/wp-content/uploads/sites/9/2016/12/PI_2016.12.19_Online-Shopping_FINAL.pdf">报告及原题</a></p>
+</article>
+
+<article id="atus" data-tags="north action">
+<h3>美国饮食与健康调查：在线食品购买与不购买原因</h3>
+<div class="tags"><span class="tag">候选：食品、生鲜与商超</span><span class="tag">BLS／USDA 官方调查</span><span class="tag pending">下载入口已核对，文件未取得</span></div>
+<p><strong>适合的问题：</strong>谁使用食品网购，选择配送还是自提？不使用的人是在意费用、无法亲自挑选，还是担心送错、等待？</p>
+<dl><dt>数据来源</dt><dd>美国时间使用调查（ATUS）的 2022–2023 年饮食与健康附加模块，由美国劳工统计局提供逐人数据，美国农业部提供配套研究。</dd>
+<dt>已经核对</dt><dd>2023 年页面列出受访者 CSV ZIP、权重、数据字典和原问卷。题目包含食品采购地点及理由、近 30 天在线买食品次数、配送／自提和不使用原因。</dd>
+<dt>当前状态</dt><dd>本环境下载 ZIP 返回 403，尚未核验样本量和逐人编码。建议由你下载“ATUS 2023 EH Respondent file”和“Replicate weights file”；年龄、收入等背景可能还需关联同年 ATUS 主调查受访者表。</dd>
+<dt>使用边界</dt><dd>适合食品网购行为，对服装、美妆和电子产品的选品较间接。不是具体商品选择卡，也不是交易日志。</dd></dl>
+<p class="sources"><a href="https://www.bls.gov/tus/data/ehdatafiles-2023.htm">官方数据与配套文件</a><a href="https://www.bls.gov/tus/questionnaires/ehmquestionnaire2223.pdf">官方原问卷</a></p>
+</article>
+
+<article id="ces" data-tags="crossborder">
+<h3>欧洲央行 2026 调查：中国电商平台购物</h3>
+<div class="tags"><span class="tag">方向最贴近跨境平台</span><span class="tag">欧元区</span><span class="tag pending">候补，逐人表本轮未下载</span></div>
+<p><strong>适合的问题：</strong>谁使用 Temu、Shein、AliExpress 等中国电商平台，购买哪些品类、频率与金额如何？这是平台跨境购物，而非仅看商品“制造于哪里”。</p>
+<dl><dt>已核对依据</dt><dd>欧洲央行官方文章说明 2026 年 4 月专题；微观数据指南列出平台使用、频率、商品类别、金额等变量，官网提供月度非固定模块的微观数据入口。</dd>
+<dt>未完成核对</dt><dd>本轮尚未下载对应逐人数据并核对该波人数；文章中的开放式回答，不保证以原文形式公开。不能把网站整个平台规模当作该波有效样本数。</dd>
+<dt>采用限制</dt><dd>地区为欧洲。官网条款明确限制商业使用，因此本候选仅考虑科学研究比较；不列为可直接用于商业选品决策的数据源。</dd></dl>
+<p class="sources"><a href="https://www.ecb.europa.eu/press/blog/date/2026/html/ecb.blog20260713~ae38da7434.en.html">官方专题与原题说明</a><a href="https://www.ecb.europa.eu/stats/ecb_surveys/consumer_exp_survey/html/data_methodological.en.html">逐人数据入口与使用条款</a><a href="https://www.ecb.europa.eu/stats/ecb_surveys/consumer_exp_survey/shared/pdf/ecb.CES_microdata_guide.en.pdf">微观数据指南</a></p>
+</article>
+
+<h2>我的选择建议</h2>
+<div class="route"><div><h3>优先补足不同类型证据</h3><p><strong>美国运动鞋 + 加拿大网购 + Amazon 订单</strong></p><p>分别覆盖具体商品、购物过程和实际行为，能回答比“同一份问卷是否答得像”更广的问题。三份分别设计和评分，不硬凑成同一种题型。</p></div><div><h3>优先聚焦产品与选品</h3><p><strong>美国运动鞋 + 美国 T 恤 + 瑞士耐用品</strong></p><p>都包含具体商品属性，能比较价格、品质和功能取舍；代价是第三份不在北美，而且 T 恤原题需补核。若必须全部在北美，第三份可选美国配送，但它测服务选择。</p></div></div>
+<p>如果这轮最关注“为什么不买”，加拿大调查和 ATUS 更值得优先下载；如果最关注“能不能预测实际生意”，Amazon 的价值最高，但要换成历史行为预测，不能照搬问卷答题评分。</p>
+
+<h2>哪些没有进入优先名单</h2>
+<ul>
+<li><strong>平替和送礼小样本：</strong>你本地确有 104 份平替问卷和 111 份礼品问卷；本地说明显示为品牌委托调查。可作探索，但不作为“全国消费者结论”依据，且礼品数据更侧重收礼体验，未必是选品实验。</li>
+<li><strong>泛购买意愿量表、小地区零售调查：</strong>两份清单中若干 Mendeley 数据是真实研究的线索，但有些主要测“促销影响购买意愿”等抽象量表，缺少明确商品选择；与北美选品目标的距离较大。</li>
+<li><strong>没有可信来源链的 Kaggle 数据：</strong>仅有下载文件或“shopping”标题不足以证明来自真人。本轮优先保留能追溯到调查机构、作者论文及原始存储库的材料。</li>
+<li><strong>美国电脑与洗衣机保修、品牌实验：</strong>2026 年发表的论文报告 2023 年 2,238 人样本，内容很适合选品，但本环境访问其 OSF 页面返回 403，尚未确认开放逐人文件，故未列入“可下载数据”主表。<a href="https://doi.org/10.1177/2755323X261438858">原论文</a>。</li>
+</ul>
+
+<h2>还需要补充什么</h2>
+<p><strong>当前优先候选所需的三份补充包均已收到，不必再次下载。</strong>剩余 ATUS 饮食与健康数据仅在你选择食品、生鲜方向时需要：到 <a href="https://www.bls.gov/tus/data/ehdatafiles-2023.htm">BLS 页面</a>下载 2023 EH Respondent ZIP 和 Replicate weights ZIP。</p>
+<p>Pew 邮寄版问卷尚未取得；这不妨碍评估是否先采用网络子样本，但最终选题和样本口径应在正式方案中写清。</p>
+<div class="callout">现在可以决定下一轮采用哪些数据。接收和核验数据不等于实验开跑：尚未抽取评估样本、生成模型答卷或调用模型接口。</div>
+
+<h2>本地归档与核验记录</h2>
+<p>本页、<a href="下载与核验清单.json">下载与核验清单</a>及目录忽略规则可以随项目 Git 管理。已下载文件保存在本目录的 <code>本机数据/</code>，约 574 MB（十进制），其中加拿大官方 ZIP 约 397 MB。下载数据暂不进入 Git；保留来源链接、下载日期、原文件及保存文件的 SHA-256，便于以后确认版本。共享盘来源文件保留。项目 study 根目录另有一份相同 Pew ZIP，校验一致后已归档到本机数据子目录。新增接收材料的逐文件哈希见<a href="本次接收文件清单.json">本次接收文件清单</a>。</p>
+<p>既有四份 CSV 已检查读取、列名、人数及行数；加拿大包核对官方问卷与字典。本次补充材料核对了 Amazon 记录与问卷关联、年份范围，Pew 人数、购物字段、权重和访谈模式，以及运动鞋原包的重复答题处理、第一波关联和关键字段。<strong>尚未完成正式实验需要的逐题答案映射、所有样本排除规则、各层人数和信息泄漏检查。</strong>不能将“已下载”写成“已通过实验验收”。</p>
+<footer>本清单结合用户提供的两份资料并独立核对官方页面、原论文、公开复制文件和本机数据。表中的推荐顺序是针对本次 MatrAIx 购物验证目标的判断，不是数据集的客观排行榜。<br><a href="../index.html">返回已有实验总报告</a></footer>
+</main>
+<script>
+document.querySelectorAll('button[data-filter]').forEach(button=>button.addEventListener('click',()=>{
+document.querySelectorAll('button[data-filter]').forEach(x=>x.setAttribute('aria-pressed',String(x===button)));
+const f=button.dataset.filter;document.querySelectorAll('article[data-tags]').forEach(x=>x.hidden=f!=='all'&&!x.dataset.tags.split(' ').includes(f));
+}));
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',()=>{const target=document.querySelector(a.getAttribute('href'));if(target&&target.hidden){document.querySelector('button[data-filter="all"]').click();}}));
+</script>
+</html>

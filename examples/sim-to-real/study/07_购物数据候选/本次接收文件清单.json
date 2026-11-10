@@ -1,0 +1,120 @@
+{
+  "received_at": "2026-11-10",
+  "source_directory": "/Volumes/元宇宙联合创新实验室/实验数据/MatrAIx问卷对照实验",
+  "files": [
+    {
+      "source_folder": "Horiuchi2021_Conjoint_SDB",
+      "source_filename": "README.pdf",
+      "source_bytes": 149243,
+      "source_sha256": "a3ce96918a071e0946da0fa223726f490b94983c429e33ad35cd6204d0bc01be",
+      "stored_path": "本机数据/Horiuchi2021_Conjoint_SDB/README.pdf",
+      "stored_bytes": 149243,
+      "stored_sha256": "a3ce96918a071e0946da0fa223726f490b94983c429e33ad35cd6204d0bc01be",
+      "received_at": "2026-11-10",
+      "received_via": "用户从官方入口下载并提供本机路径",
+      "round_trip_hash_verified": true
+    },
+    {
+      "source_folder": "Horiuchi2021_Conjoint_SDB",
+      "source_filename": "ReplicationPackage_v2.tar.gz",
+      "source_bytes": 59436256,
+      "source_sha256": "520a10dbfce3467c20f15e1c32cf2dc79a768702bc682a91145b2fd37489df09",
+      "stored_path": "本机数据/Horiuchi2021_Conjoint_SDB/ReplicationPackage_v2.tar.gz",
+      "stored_bytes": 59436256,
+      "stored_sha256": "520a10dbfce3467c20f15e1c32cf2dc79a768702bc682a91145b2fd37489df09",
+      "received_at": "2026-11-10",
+      "received_via": "用户从官方入口下载并提供本机路径",
+      "round_trip_hash_verified": true
+    },
+    {
+      "source_folder": "Open_eCommerce_1.0",
+      "source_filename": "amazon-purchases.csv",
+      "source_bytes": 313070173,
+      "source_sha256": "6efb098a6e01a9acb6e215402a450f4a848ed1b102ca016f9be6c4f03c585e1e",
+      "stored_path": "本机数据/Open_eCommerce_1.0/amazon-purchases.csv.gz",
+      "stored_bytes": 105202948,
+      "stored_sha256": "a0d3862f25aa358207e28b28924d95dd28ca40b0b2ad0e5695322f570d345918",
+      "received_at": "2026-11-10",
+      "received_via": "用户从官方入口下载并提供本机路径",
+      "round_trip_hash_verified": true
+    },
+    {
+      "source_folder": "Open_eCommerce_1.0",
+      "source_filename": "fields.csv",
+      "source_bytes": 2532,
+      "source_sha256": "efc8cd46cb8508cdeb41b908cf6964ca953755e7d1b339e1ccadc839b62f636e",
+      "stored_path": "本机数据/Open_eCommerce_1.0/fields.csv.gz",
+      "stored_bytes": 908,
+      "stored_sha256": "4add995ebf2a576a24a2fe53f792a376502282c69279c4a3f88e04203671e5c6",
+      "received_at": "2026-11-10",
+      "received_via": "用户从官方入口下载并提供本机路径",
+      "round_trip_hash_verified": true
+    },
+    {
+      "source_folder": "Open_eCommerce_1.0",
+      "source_filename": "prescreen-survey-instrument.pdf",
+      "source_bytes": 393144,
+      "source_sha256": "45b5844e05d62aeeb5459483216f294cf0c4c89c9aeae0a1e757f9be82b1b172",
+      "stored_path": "本机数据/Open_eCommerce_1.0/prescreen-survey-instrument.pdf",
+      "stored_bytes": 393144,
+      "stored_sha256": "45b5844e05d62aeeb5459483216f294cf0c4c89c9aeae0a1e757f9be82b1b172",
+      "received_at": "2026-11-10",
+      "received_via": "用户从官方入口下载并提供本机路径",
+      "round_trip_hash_verified": true
+    },
+    {
+      "source_folder": "Open_eCommerce_1.0",
+      "source_filename": "survey-instrument.pdf",
+      "source_bytes": 1333077,
+      "source_sha256": "1dfa140af73a722fb80a8d2449305e839b52c774c700d9a49889c05c4ccd4e40",
+      "stored_path": "本机数据/Open_eCommerce_1.0/survey-instrument.pdf",
+      "stored_bytes": 1333077,
+      "stored_sha256": "1dfa140af73a722fb80a8d2449305e839b52c774c700d9a49889c05c4ccd4e40",
+      "received_at": "2026-11-10",
+      "received_via": "用户从官方入口下载并提供本机路径",
+      "round_trip_hash_verified": true
+    },
+    {
+      "source_folder": "Open_eCommerce_1.0",
+      "source_filename": "survey.csv",
+      "source_bytes": 1560714,
+      "source_sha256": "770d9b5ceb1f55b57b4833bab668a90421df22ee1a253835e9a5f836709960b9",
+      "stored_path": "本机数据/Open_eCommerce_1.0/survey.csv.gz",
+      "stored_bytes": 139853,
+      "stored_sha256": "ce726a067ec9cd6d3733449a2c4c8faa5aa35c9b4cfe9278dea90d84510e7c97",
+      "received_at": "2026-11-10",
+      "received_via": "用户从官方入口下载并提供本机路径",
+      "round_trip_hash_verified": true
+    },
+    {
+      "source_filename": "American-Trends-Panel-Wave-13-Dec-15.zip",
+      "source_bytes": 2887251,
+      "source_sha256": "d777de8e589da651e86c09fd8fb7fc14439c8a03632a9ad6864d5abb57792ca8",
+      "stored_path": "本机数据/Pew_Wave13/American-Trends-Panel-Wave-13-Dec-15.zip",
+      "stored_bytes": 2887251,
+      "stored_sha256": "d777de8e589da651e86c09fd8fb7fc14439c8a03632a9ad6864d5abb57792ca8",
+      "received_at": "2026-11-10",
+      "received_via": "用户从Pew官方入口下载并提供本机路径",
+      "round_trip_hash_verified": true
+    },
+    {
+      "derived_from": "本机数据/Horiuchi2021_Conjoint_SDB/ReplicationPackage_v2.tar.gz",
+      "archive_member": "ReplicationPackage/study1/documents/study1-wave1 survey instruments.pdf",
+      "stored_path": "本机数据/Horiuchi2021_Conjoint_SDB/原问卷/study1-wave1 survey instruments.pdf",
+      "stored_bytes": 129312,
+      "stored_sha256": "ec7bced1a9a856e7c0ab536287e1cd69ace7af62d0ad73ecd5196ce581c9e9a7",
+      "operation": "从原包抽取PDF便于查阅，内容未改动"
+    },
+    {
+      "derived_from": "本机数据/Horiuchi2021_Conjoint_SDB/ReplicationPackage_v2.tar.gz",
+      "archive_member": "ReplicationPackage/study1/documents/study1-wave2 survey instruments.pdf",
+      "stored_path": "本机数据/Horiuchi2021_Conjoint_SDB/原问卷/study1-wave2 survey instruments.pdf",
+      "stored_bytes": 1358075,
+      "stored_sha256": "85a3b4e8c60daf45996b4be782f4829cc494476da1016799b723acae6cc62d75",
+      "operation": "从原包抽取PDF便于查阅，内容未改动"
+    }
+  ],
+  "duplicate_handling": "项目 study 根目录另有相同 Pew ZIP，校验一致后已归入本机数据/Pew_Wave13；共享盘源文件保留",
+  "original_source_preserved": true,
+  "raw_git_policy": "本机数据目录已被Git忽略；索引和汇总核验结果随仓库管理"
+}
