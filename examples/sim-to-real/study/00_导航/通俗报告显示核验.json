@@ -1,0 +1,43 @@
+{
+  "charts": 22,
+  "questionOptions": 13,
+  "tableRows": 14,
+  "overflow": [
+    1425,
+    1425
+  ],
+  "storyFigures": 4,
+  "storyComparisons": 5,
+  "readingLevels": 2,
+  "allNineSourcesPreserved": true,
+  "networkRequests": 7,
+  "failedRequests": [],
+  "consoleErrors": 0,
+  "legacyTemplateRedirectVerified": true,
+  "oldDeepLinksPreserved": true,
+  "unexpandedPlaceholders": 0,
+  "allSelectorsVerified": true,
+  "questionByComparisonViewsVerified": 52,
+  "revalidationCharts": 8,
+  "revalidationViews": 131,
+  "standaloneVerified": true,
+  "sidebarWidth": 581,
+  "mobileWidth": 390,
+  "contextualChartGuides": 22,
+  "glossarySearchAndKeyboardVerified": true,
+  "purpose": "通俗故事页及完整证据页的离线呈现核验",
+  "local_links_checked": 270,
+  "legacy_anchor_links_preserved": 0,
+  "broken_local_links": [],
+  "scoring_results_changed": false,
+  "screenshots_visually_reviewed": [
+    "desktop-top",
+    "desktop-problem",
+    "390px-comparison"
+  ],
+  "story_source": "retail_story_template.html.tmpl",
+  "detail_report": "study/evidence.html",
+  "offline_requests_only": true,
+  "full_evidence_unchanged_except_back_navigation": true,
+  "git_only_offline_rebuild_verified": true
+}

@@ -1,8 +1,8 @@
 # MatrAIx 真人问卷对照实验
 
-[六轮实验统一报告](study/index.html) · [实验档案与复算](study/README.md) · [文件归档说明](study/00_导航/文件归档说明.md)
+[通俗故事版报告](study/index.html) · [六轮完整证据与逐题图表](study/evidence.html) · [实验档案与复算](study/README.md) · [文件归档说明](study/00_导航/文件归档说明.md)
 
-浏览报告请打开 `study/index.html`。旧的 `retail_reader_template.html` 地址现在会自动跳转到正式报告；生成用的源模板已改为 `retail_reader_template.html.tmpl`，不作为阅读页面。
+第一次阅读请打开 `study/index.html`：从真人先答、模型答偏，讲到优化前后和现在怎么用。精确数字、全部六轮和逐题交互保存在 `study/evidence.html`，两页可以互相跳转。旧的 `retail_reader_template.html` 地址会自动跳转；旧章节书签仍可进入完整证据。`.tmpl` 文件是生成用的模板，不作为阅读页面。
 
 这里集中保存本次研究的全部代码和档案。报告串联合成人格、三模型对比、提示与背景优化、电商选品复验、购物概率与实际购买预测；已完成与待研究的数据分别标注。小型公开资料、汇总结果和离线图表随 Git 保存，大型源包和真人关联运行文件保留本机并登记校验值。
 
@@ -15,7 +15,7 @@
 | 北美商品选择、拒买及网购 | `shopping*.py` | `study/06_北美电商选品/` |
 | Pew 购物预测、运动鞋、Amazon 真实购买 | `retail_pew*.py`、`retail_shoes*.py`、`retail_amazon*.py` | `study/08_购物预测/` |
 | 匹配、模型与商品输出方式三次复验 | `revalidation*.py`、`revalidation_charts.js` | [第六轮说明](study/10_匹配与商品复验/README.md)，合成答卷可仅凭Git归档复算 |
-| 复建全部报告 | `retail_report.py`，阅读版及历史图表模板以 `retail_reader`、`retail_history` 开头 | `study/index.html` 为主入口；旧链接继续可用 |
+| 复建全部报告 | `retail_report.py`；故事页由 `retail_story_report.py`、`retail_story_template.html.tmpl` 和 `retail_story_charts.js` 生成，完整证据与历史模板以 `retail_reader`、`retail_history` 开头 | `study/index.html` 为故事入口，`study/evidence.html` 保留逐题证据；旧链接继续可用 |
 | 实验运行与归档核验 | `retail_audit.py`、`archive_inventory.py` | `study/08_购物预测/运行核验.json`、`study/00_导航/文件清单.json` |
 
 报告重建只需 Python 3.12 标准库与 Git 中的聚合结果：

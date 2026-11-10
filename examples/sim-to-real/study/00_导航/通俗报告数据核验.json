@@ -1,0 +1,50 @@
+{
+  "purpose": "Plain-language story; full experimental evidence retained separately",
+  "report": "index.html",
+  "full_evidence": "evidence.html",
+  "data_changed": false,
+  "sources": {
+    "first": {
+      "path": "01_首轮归档/results.json",
+      "sha256": "04c12c76b7698b0567748b65504241fa7785f2f6a5afbb0625c4d368288360ce"
+    },
+    "models": {
+      "path": "02_模型对比/results.json",
+      "sha256": "3b7e9f23834cc2fccbfb092d4761dc223132fbaf15c376abd11d540a67ac40ec"
+    },
+    "profiles": {
+      "path": "03_提示与背景/results.json",
+      "sha256": "41b1766ba1f4bcd7ef2785c2049b5b83b6cc1eef873734a7361d4688dd13330d"
+    },
+    "shopping": {
+      "path": "06_北美电商选品/results.json",
+      "sha256": "967e367e8a765ac9b2e600d3775a5ab138f6ea9b57ddd3db547f8fbc5b10c406"
+    },
+    "pew": {
+      "path": "08_购物预测/pew-formal-score.json",
+      "sha256": "c9ce816553a28822195a48598bf894cea1fbac55e4695274ca64a159d8883bbd"
+    },
+    "shoes": {
+      "path": "08_购物预测/shoes-test-score.json",
+      "sha256": "cfb300104063d2e5942381a3177b10038d485ffc7556012d469189b21dcb381d"
+    },
+    "parity": {
+      "path": "08_购物预测/shoes-input-parity-score.json",
+      "sha256": "b24cefff626e91952adf5396f0fe65bda7466a53d98546c332cf08257475ff9c"
+    },
+    "amazon": {
+      "path": "08_购物预测/amazon-test-score.json",
+      "sha256": "30869b4328dd79907af7c0a62b989085409d9c1513a8e4d2367839701148b1e0"
+    },
+    "revalidation": {
+      "path": "10_匹配与商品复验/results.json",
+      "sha256": "a003d938d5d7042fcdda9e7efcb7a909f76b9e323bb81fd66f0b9afa75676d3c"
+    }
+  },
+  "report_sha256": "aacb2e6c1dc26666fda8ecaabab6b3de062adb8f9390df8187c50b0fbab404ed",
+  "render_sources": {
+    "retail_story_template.html.tmpl": "cc7fa1b96e71f017c606a4aea49ae7e1428a044ea6464f937b5bd9d81f9a1f90",
+    "retail_story_charts.js": "878dd654b86a65c455fa6c7e80969d55117e44dace3120e626b2908001494e47"
+  },
+  "generator_sha256": "684733a685ee37902e2876d00a1579aa4f60799b0755c62314ee0b1e321b6478"
+}

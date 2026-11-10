@@ -1,14 +1,14 @@
 # 购物预测实验
 
-[五轮实验统一报告](../index.html)按研究过程覆盖全部已完成实验，包含早期模型、人格、提示和电商数据。本目录原来的 [index.html](index.html) 同步展示完整报告，保留旧入口可用。图表使用本地 ECharts，支持离线切换。
+[通俗故事版报告](../index.html)按“想解决什么—发现什么—怎样改—效果怎样—现在怎么用”讲清六轮实验。本目录的 [index.html](index.html) 同步展示故事版；[完整证据](../evidence.html)保留所有逐题图表和精确数据。图表均支持离线阅读。
 
-阅读版现在从[最终判断](../index.html#final-answer)开始，单列[真实与合成画像的来源](../index.html#profile-truth)，并在结尾给出[按用途区分的采用建议](../index.html#closing)。每张图有方法解释，右下角术语查询支持原名称与新名称。来源与结论模板为 `retail_reader_guidance.html`、`retail_reader_conclusions.html`；交互解释来自 `retail_reader_glossary.js`。本次只重组说明，未重跑或修改评分。
+故事页开头和结尾都给出结论，主文用具体例子解释真实与合成画像、单选、概率和其他真人数据的作用；[前后对比](../index.html#story-comparison)可切换五项任务。完整证据保留方法解释和右下角术语查询，其来源与结论模板为 `retail_reader_guidance.html`、`retail_reader_conclusions.html`，交互解释来自 `retail_reader_glossary.js`。本次只重组说明，未重跑或修改评分。
 
 [第五轮完整技术图表](technical-details.html)保留开发集、正式评估、分组、概率校准和诊断视图；[前四轮技术附录](../historical-details.html)保留历史细节。既有评分不修改，本次新增的输入对齐统计分析单独保存方案和结果，未新增模型请求。报告输入清单与校验值见[报告展示核验](报告展示核验.json)。
 
 逐人样本、真实答案、预测和运行失败详情存入忽略目录 `本机运行/`。发布的 JSON 只包含总体及逐题汇总。
 
-从仓库根目录运行 `.venv/bin/python examples/sim-to-real/retail_report.py`，统一生成主报告、旧入口兼容页面与两份技术附录。Python 需 3.10 以上，主项目环境为 3.12；报告生成仅用标准库与聚合结果。阅读版主模板为 `retail_reader_template.html.tmpl`，历史章节与图表为 `retail_history_template.html`、`retail_history_charts.js`。重构日期为 2026-11-10。
+从仓库根目录运行 `.venv/bin/python examples/sim-to-real/retail_report.py`，统一生成故事页、完整证据、旧入口兼容页面与两份技术附录。Python 需 3.10 以上，主项目环境为 3.12；报告生成仅用标准库与聚合结果。故事页来自 `retail_story_report.py`、`retail_story_template.html.tmpl`、`retail_story_charts.js`。完整证据主模板为 `retail_reader_template.html.tmpl`，历史章节与图表为 `retail_history_template.html`、`retail_history_charts.js`。重构日期为 2026-11-10。
 
 ## 冻结与调整记录
 

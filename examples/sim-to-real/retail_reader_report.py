@@ -181,7 +181,8 @@ def build():
     for key, value in token.items():
         page = page.replace('{{' + key + '}}', value)
     assert '{{' not in page, 'Unexpanded report template field'
-    (BASE / 'index.html').write_text(page)
+    page = page.replace('<body>', '<body><aside style="padding:12px 24px;background:#eaf1e8;text-align:center">这是完整证据页，保留所有实验与逐题数据。<a href="index.html">返回通俗故事版 →</a></aside>', 1)
+    (BASE / 'evidence.html').write_text(page)
     # Keep the currently opened legacy URL working, and make the study root the
     # canonical entry. Rebase only HTML link/source attributes, never payload data.
     def root_link(match):
@@ -190,15 +191,20 @@ def build():
             return match.group(0)
         return f'{attr}="{posixpath.normpath(posixpath.join("08_购物预测", value))}"'
     root_page = re.sub(r'(href|src)="([^"]+)"', root_link, page)
-    (BASE.parent / 'index.html').write_text(root_page)
+    (BASE.parent / 'evidence.html').write_text(root_page)
+    from retail_story_report import build as build_story
+    story, legacy_story = build_story()
     manifest = {
         'report': 'index.html', 'canonical_report': '../index.html',
+        'full_evidence': 'evidence.html', 'canonical_full_evidence': '../evidence.html',
         'scope': '前五轮历史结果、方法审查及第六轮匹配与商品内部复验；撤下混用权重的常规因果比较，保留原始审查记录',
         'sources': data['sources'],
         'explanation_scope': '历史冻结分数不变；412 个逐题分数独立复算及权重审查另列，第六轮新增三次重复的匹配、人格、模型和商品输出方式实验',
         'explanation_sources': explanation_sources,
-        'report_sha256': hashlib.sha256(page.encode()).hexdigest(),
-        'canonical_report_sha256': hashlib.sha256(root_page.encode()).hexdigest(),
+        'report_sha256': hashlib.sha256(legacy_story.encode()).hexdigest(),
+        'canonical_report_sha256': hashlib.sha256(story.encode()).hexdigest(),
+        'evidence_sha256': hashlib.sha256(page.encode()).hexdigest(),
+        'canonical_evidence_sha256': hashlib.sha256(root_page.encode()).hexdigest(),
     }
     (BASE / '报告展示核验.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
     print('Built reader report from verified aggregate results.')

@@ -6,6 +6,7 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
 (async()=>{
  const dir=fs.mkdtempSync('/tmp/matraix-reader-qa.');
  const file=process.argv[2] || path.join(__dirname,'study','index.html'),url=pathToFileURL(file).href;
+ const evidenceUrl=pathToFileURL(path.join(path.dirname(file),'evidence.html')).href;
  const chrome=spawn(process.env.CHROME_BIN || (process.platform==='darwin' ? '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' : 'google-chrome'),['--headless','--no-first-run','--disable-background-networking','--remote-debugging-port=0','--user-data-dir='+dir,'about:blank'],{stdio:'ignore'});
  let socket;
  try{
@@ -18,11 +19,31 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
   const send=(method,params={})=>new Promise(r=>{const key=++id;pending.set(key,r);socket.send(JSON.stringify({id:key,method,params}))});
   const run=async(expression)=>{const v=await send('Runtime.evaluate',{expression,returnByValue:true});assert.ok(!v.error&&!v.result.exceptionDetails,JSON.stringify(v));return v.result.result.value};
   await send('Runtime.enable');await send('Network.enable');await send('Page.enable');
+  await send('Emulation.setDeviceMetricsOverride',{width:1440,height:1080,deviceScaleFactor:1,mobile:false});
+  await send('Page.navigate',{url});
+  for(let i=0;i<100;i++){if(await run('window.storyReportReady===true'))break;await wait(100)}
+  assert.equal(await run('window.storyReportReady'),true);
+  assert.equal(await run("document.querySelectorAll('.bar-chart').length"),4);
+  assert.equal(await run("document.querySelectorAll('.sources li').length"),9);
+  assert.ok(await run("document.querySelector('#story-use').textContent.includes('还没找到一套')"));
+  const expectedStory={profiles:['29.0 点','18.8 点','3.6 点'],pew:['43.4 点','18.1 点','4.5 点'],shoes:['32.9 点','14.8 点','2.2 点'],origin:['11.3 点','11.5 点','2.6 点'],packaging:['36.1 点','19.5 点','7.3 点']};
+  for(const [key,values] of Object.entries(expectedStory)){
+   await run(`{const s=document.querySelector('#storyCase');s.value=${JSON.stringify(key)};s.dispatchEvent(new Event('change'));}`);
+   assert.deepEqual(await run("[...document.querySelectorAll('#storyCaseContent .bar-heading strong')].map(x=>x.textContent)"),values);
+   assert.ok(await run("document.querySelector('#storyInterval').textContent.includes('95%')"));
+  }
+  await screenshot('story-desktop-top');await screenshot('story-desktop-problem','#story-problem');await screenshot('story-desktop-comparison','#story-comparison');await screenshot('story-desktop-conclusion','#story-use');
+  for(const width of [581,390]){
+   await send('Emulation.setDeviceMetricsOverride',{width,height:954,deviceScaleFactor:1,mobile:true});await wait(200);
+   assert.deepEqual(await run('[document.documentElement.clientWidth,document.documentElement.scrollWidth]'),[width,width]);
+   assert.deepEqual(await run(`(()=>{return [...document.querySelectorAll('.bar-heading strong')].filter(el=>{const a=el.getBoundingClientRect(),b=el.parentElement.getBoundingClientRect();return a.right>b.right+1||a.left<b.left-1}).map(x=>x.textContent)})()`),[]);
+   await screenshot('story-'+width+'-top');await screenshot('story-'+width+'-comparison','#story-comparison');
+  }
   const legacyEntry=pathToFileURL(path.join(path.dirname(file),'..','retail_reader_template.html')).href;
   await send('Emulation.setDeviceMetricsOverride',{width:1440,height:1080,deviceScaleFactor:1,mobile:false});await send('Page.navigate',{url:legacyEntry+'#revalidation'});await wait(200);
   for(let i=0;i<100;i++){if(await run("document.readyState==='complete' && window.reportCharts?.length===22"))break;await wait(100)}
   assert.equal(await run('window.reportCharts.length'),22);assert.deepEqual(errors,[]);
-  assert.equal(await run('window.location.href'),url+'#revalidation');
+  assert.equal(await run('window.location.href'),evidenceUrl+'#revalidation');
   assert.equal(await run('/\\{\\{[A-Z_]+\\}\\}/.test(document.body.textContent)'),false);
   assert.deepEqual(failedRequests,[]);
   await run("window.scrollTo({top:0,behavior:'instant'})");
@@ -153,6 +174,6 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
   assert.deepEqual(errors,[]);
   assert.ok(requests.every(u=>u.startsWith('file:')||u.startsWith('data:')));
   assert.deepEqual(failedRequests,[]);
-  console.log(JSON.stringify({folder:dir,...result,networkRequests:requests.length,failedRequests,consoleErrors:errors.length,legacyTemplateRedirectVerified:true,unexpandedPlaceholders:0,allSelectorsVerified:true,questionByComparisonViewsVerified:52,revalidationCharts:8,revalidationViews:131,standaloneVerified:true,sidebarWidth:581,mobileWidth:390,contextualChartGuides:22,glossarySearchAndKeyboardVerified:true},null,2));
+  console.log(JSON.stringify({folder:dir,...result,storyFigures:4,storyComparisons:5,readingLevels:2,allNineSourcesPreserved:true,networkRequests:requests.length,failedRequests,consoleErrors:errors.length,legacyTemplateRedirectVerified:true,oldDeepLinksPreserved:true,unexpandedPlaceholders:0,allSelectorsVerified:true,questionByComparisonViewsVerified:52,revalidationCharts:8,revalidationViews:131,standaloneVerified:true,sidebarWidth:581,mobileWidth:390,contextualChartGuides:22,glossarySearchAndKeyboardVerified:true},null,2));
  }finally{socket?.close();chrome.kill()}
 })().catch(e=>{console.error(e);process.exitCode=1});
