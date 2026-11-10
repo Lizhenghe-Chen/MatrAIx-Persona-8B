@@ -1,0 +1,1896 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-11-10",
+  "root": "examples/sim-to-real",
+  "scope": "实验代码、五轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
+  "size_unit": "bytes; 1 MiB = 1048576 bytes",
+  "git_single_file_limit_bytes": 20971520,
+  "git_file_count": 280,
+  "git_bytes": 41865088,
+  "local_only_file_count": 28,
+  "local_only_bytes": 591160603,
+  "external_large_source": {
+    "dataset": "MatrAIx Persona 1M",
+    "version_manifest": "study/数据/persona-1m-official-manifest.json",
+    "local_path_file": "study/数据/persona-1m-path.txt",
+    "note": "多 GB 分片留在共享盘，不计入本目录体积；实际实验冻结画像已随 Git 保存"
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 5478,
+      "sha256": "abadc01ea526967ef2632f7e06cb742d229ed4b305a3c3fcb8b2b804b9caaca0",
+      "storage": "git"
+    },
+    {
+      "path": "archive_inventory.py",
+      "bytes": 5211,
+      "sha256": "d8a7c4d72b3e33bdf4782100ae57d8a968bd50e31a070cbe508bc9d67b35c3b5",
+      "storage": "git"
+    },
+    {
+      "path": "experiment.py",
+      "bytes": 28165,
+      "sha256": "845d6aa8e60db47f3f3fbc5047e1f5b73045d0e2f5f947153ed39b2894d71d78",
+      "storage": "git"
+    },
+    {
+      "path": "instruments.py",
+      "bytes": 2643,
+      "sha256": "4f85ec8bd3f7f908d1ccd07dcdd3e96d225f021f670d95086e49ca2a8c7589ff",
+      "storage": "git"
+    },
+    {
+      "path": "optimize.py",
+      "bytes": 10831,
+      "sha256": "368b56ae1534d973f1c9905fb6be3f986fa9cea1e15c25f306e3980429df91e4",
+      "storage": "git"
+    },
+    {
+      "path": "optimize_html.py",
+      "bytes": 7771,
+      "sha256": "e8e705a997d78cf240fc82d8d3d520414c742c0af7a82043748a5874d9f02fa7",
+      "storage": "git"
+    },
+    {
+      "path": "optimize_profiles.py",
+      "bytes": 8745,
+      "sha256": "505ab2da789f21166d5f3740aa3046aeafcb4d12fc38c84ba5eed215aa69ede4",
+      "storage": "git"
+    },
+    {
+      "path": "optimize_report.html",
+      "bytes": 23196,
+      "sha256": "67b0565e33f67c300087616a4b73deea2b9aafbc8e2f377f66f9cff463e410cf",
+      "storage": "git"
+    },
+    {
+      "path": "optimize_score.py",
+      "bytes": 15980,
+      "sha256": "214fb6465711e70f76d350f17b3c696409ffb621f82cb7b57dcde7e5f71ad852",
+      "storage": "git"
+    },
+    {
+      "path": "optimize_summary.py",
+      "bytes": 9047,
+      "sha256": "8695dc20994959b734022be028e640b79091088bc878c672759f2344dfffb015",
+      "storage": "git"
+    },
+    {
+      "path": "report_smoke_check.cjs",
+      "bytes": 7702,
+      "sha256": "d8bd954322946f034104cae5894c208a9aa9e3626e15f4488638b54b105ec8ac",
+      "storage": "git"
+    },
+    {
+      "path": "retail_amazon.py",
+      "bytes": 5208,
+      "sha256": "08c74d74fc88e3714c235996205bd28a3590158d7105cabfa1794fe43ea2fa5b",
+      "storage": "git"
+    },
+    {
+      "path": "retail_amazon_mix.py",
+      "bytes": 11260,
+      "sha256": "1bf19e22beb158354b5f18f63c3dd891164a9e66a9c39a7e998da45e4d699cdf",
+      "storage": "git"
+    },
+    {
+      "path": "retail_amazon_model.py",
+      "bytes": 3722,
+      "sha256": "4ff32b5cc98272c0bd6216049e266e2cbbebd039282b732c467dbce6abf63186",
+      "storage": "git"
+    },
+    {
+      "path": "retail_amazon_repeat_diagnostics.py",
+      "bytes": 2613,
+      "sha256": "c0d9707eec024e6be0f442534e89648cb9e345f30ee88ad9b2e5b22dcb580716",
+      "storage": "git"
+    },
+    {
+      "path": "retail_amazon_score.py",
+      "bytes": 5199,
+      "sha256": "54ac27bcd9c13173ddf73afd56d0d1181f0fa22dad1b7695953a89726d832667",
+      "storage": "git"
+    },
+    {
+      "path": "retail_audit.py",
+      "bytes": 7634,
+      "sha256": "8d37678641ab87b449bc1583081d1dca23cd69fee042d319e890c992243cfefd",
+      "storage": "git"
+    },
+    {
+      "path": "retail_findings.py",
+      "bytes": 7463,
+      "sha256": "ff11f13ea9f9367d59ed90ac06df15c67407e2a2caa4b5135e8cbf08882580d0",
+      "storage": "git"
+    },
+    {
+      "path": "retail_history_charts.js",
+      "bytes": 8706,
+      "sha256": "b1389f5843f580f578fdc539d2506aea2c3690f9c02c4ef433aa900f270a84eb",
+      "storage": "git"
+    },
+    {
+      "path": "retail_history_template.html",
+      "bytes": 19982,
+      "sha256": "83eff88323a6d46eebf90fcb7eb14af5453b3ebd508454656d5713e1326362c3",
+      "storage": "git"
+    },
+    {
+      "path": "retail_pew.py",
+      "bytes": 9669,
+      "sha256": "6aa7864b803cc1b5593437d38de2a00a9fd10c86ce2699a5873ee3e7ddb1d33a",
+      "storage": "git"
+    },
+    {
+      "path": "retail_pew_calibration.py",
+      "bytes": 5630,
+      "sha256": "7db5379d6279ee38f3b1ce14fa209ec37f7d1b768176a60793cb114196dc5023",
+      "storage": "git"
+    },
+    {
+      "path": "retail_pew_draw.py",
+      "bytes": 2938,
+      "sha256": "3ffca85a509bbc5aeb2339f98c0f3ddfc150af24739e72cd47193bb9be99f453",
+      "storage": "git"
+    },
+    {
+      "path": "retail_pew_score.py",
+      "bytes": 7532,
+      "sha256": "12f84da67466fe4f91b8af80a308f2cc2b5fff153b6af5c13e94d5c683736284",
+      "storage": "git"
+    },
+    {
+      "path": "retail_reader_report.py",
+      "bytes": 8345,
+      "sha256": "2bdafc274bbe4db65278469902d208722673f5f145b66363f9bdebac0e9c5733",
+      "storage": "git"
+    },
+    {
+      "path": "retail_reader_template.html",
+      "bytes": 62808,
+      "sha256": "3548f7d4cd81af075642ba48e23fcdbf7022efb696578aafc32c4fda9604e886",
+      "storage": "git"
+    },
+    {
+      "path": "retail_report.py",
+      "bytes": 35299,
+      "sha256": "7cea3f5bb03dce31f59017ab07e1a22a9c4585842730210fc09abc0c0454fe66",
+      "storage": "git"
+    },
+    {
+      "path": "retail_shoes_input_parity.py",
+      "bytes": 8536,
+      "sha256": "3af733d76e511fcf116aad1b1aaa9144385cabc658c068b3499e1b53c383b3fc",
+      "storage": "git"
+    },
+    {
+      "path": "retail_shoes_model.py",
+      "bytes": 5170,
+      "sha256": "e10fec3b4dc45d22428e038128d930c7960aac6aef296ee1a39809d9f3da0c71",
+      "storage": "git"
+    },
+    {
+      "path": "retail_shoes_prepare.py",
+      "bytes": 4155,
+      "sha256": "ad324efe01c0a70bfc17192096c0f48b3cf4a337f3a1acd90b6290848cbeac5b",
+      "storage": "git"
+    },
+    {
+      "path": "retail_shoes_score.py",
+      "bytes": 12457,
+      "sha256": "3a23b463dfa290c77b1cd75eacc2689009234ae1e2586a479867dee1044a4f04",
+      "storage": "git"
+    },
+    {
+      "path": "shopping.py",
+      "bytes": 15991,
+      "sha256": "9da37dd296258cee91985d8b2449d16f7c3c2e7ef71cf8aef9e7f9da9654de1f",
+      "storage": "git"
+    },
+    {
+      "path": "shopping_report.py",
+      "bytes": 11037,
+      "sha256": "4bcf023893c7171d731b68a9f7b5e6daab8a73bada73319612057cda6f4721ba",
+      "storage": "git"
+    },
+    {
+      "path": "shopping_score.py",
+      "bytes": 12292,
+      "sha256": "db2b9f40ec49146742cf51dd295e7b269bcbf37e4e686b6ec280c8f2efd16a25",
+      "storage": "git"
+    },
+    {
+      "path": "study/.gitignore",
+      "bytes": 540,
+      "sha256": "dd008faadfd4eaa1442c1c335dfc5265f7fdd8635cec8d4526d36f319ce512d7",
+      "storage": "git"
+    },
+    {
+      "path": "study/00_导航/从这里开始.md",
+      "bytes": 3834,
+      "sha256": "b2804f61723ea67d5df85c52957e44dd1634ee575e24d51bba0a557da97815e6",
+      "storage": "git"
+    },
+    {
+      "path": "study/00_导航/文件归档说明.md",
+      "bytes": 7019,
+      "sha256": "2792bc0ac5940c3cf202856cd7ae3b870bbdc4d8e2ebcf06d12e829fac67bd7c",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/MatrAIx 真人问卷对照实验报告.docx",
+      "bytes": 43587,
+      "sha256": "15c94bae836119ea27b9fe8809d4d69bff12a0a5a73170c9c22690d836e36b33",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/README.md",
+      "bytes": 3989,
+      "sha256": "5123104b801a066b9218460ca9b4742c4b54ce6b3e05441b71d707fd0af9bc24",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/cohort.json",
+      "bytes": 357701,
+      "sha256": "309496e6175b49750f34f14bd29c9d707dd09ca2adc3cf47d7536c30e034e3bd",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/coverage.json",
+      "bytes": 163,
+      "sha256": "af0272704e7ed7b4a5e57734069c88841099d9194db3ba3823fbb8d12ded8607",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/dag-coverage.json",
+      "bytes": 175,
+      "sha256": "f15e4b4cc1132515ccdd7110b9a0a475a1136d6edf988dc3ee5c14f03338563f",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/execution.log",
+      "bytes": 468761,
+      "sha256": "940663f7c3f87d627d4c23390966eb1328d26eec128133f09e809fb2dd3f6999",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/formal-completion.json",
+      "bytes": 185,
+      "sha256": "3ce9617909318f755ec2f61dbc88294ff50852bdb9d9028e3f0e2fc15fdde10c",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/formal-trials.zip",
+      "bytes": 4547539,
+      "sha256": "aef25400ad8d0ecd3ee02c79faa088f3efc91801a9c174e74462a349068360c8",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/output-sha256.json",
+      "bytes": 532,
+      "sha256": "a23b305c4f1d6b79baaba6939bd3be5b6f775d21d5406b911fc350fbd1f83705",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/completion.json",
+      "bytes": 167,
+      "sha256": "1f689d0fe0cc69fe69e3e66a5ad4ed4d7063db6fd5c77c9186c9520620163631",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/run.json",
+      "bytes": 458,
+      "sha256": "322b0db7bad9c66883f105591112c238bc0c74672e2920d76598dc76b3c8cc98",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-A-dag-20261109-08260.json",
+      "bytes": 507,
+      "sha256": "3232c06a17d939202d847fe2a80b46dde301b018bc61a78e8cd3df1d6c8964ad",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-A-dag-20261109-14211.json",
+      "bytes": 495,
+      "sha256": "58a95366ee904c09d1214999375c73a558da66ef8f9920062f75f3af285c26c6",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-A-dag-20261109-15037.json",
+      "bytes": 500,
+      "sha256": "c9b576970af9889832509e788c8f6932121b1c59f30672029a864c6777a823f3",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-A-dag-20261109-25955.json",
+      "bytes": 499,
+      "sha256": "067f7de388fb10c0dadb55305fff019845901cba68d620238c86450e8e1619d8",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-A-dag-20261109-32985.json",
+      "bytes": 499,
+      "sha256": "ea086251590739f7ae0f834bbe8da07e3d747b29d20141b24e31489e5e68ff16",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-A-dag-20261109-36974.json",
+      "bytes": 499,
+      "sha256": "a58f73d69f4ddf7d4d6efb2cfc3a106370d84de9a891a09773324166f4ba0d13",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-A-dag-20261109-40068.json",
+      "bytes": 499,
+      "sha256": "6e728f91cda41b1d35ae47f4e22295de4686ce3d4aea14d8a2000fa73d810335",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-A-dag-20261109-40684.json",
+      "bytes": 499,
+      "sha256": "2e69b430fe96b1c0f3bd7623df2d7502c10abe2d6566b122bf3ac757458995e8",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-A-dag-20261109-42103.json",
+      "bytes": 495,
+      "sha256": "3c90c335fb822ce620932354f9b71cbb3664987c93952698b9c46cab91ba1154",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-A-dag-20261109-46684.json",
+      "bytes": 509,
+      "sha256": "12341d7ded8bb7f263f629bd32f10c732de986d413c39a224836a645acfd2e8c",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-A-dag-20261109-47201.json",
+      "bytes": 499,
+      "sha256": "154857a6b792556bf31eded9cf9bb9939afdd76498fc173033da15e4e73a9268",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-A-dag-20261109-48678.json",
+      "bytes": 495,
+      "sha256": "1c84f0a0047768f13f843e89c908d38c6dbd5306acafbc909f750d16e10c0fd0",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-B-dag-20261109-08260.json",
+      "bytes": 495,
+      "sha256": "370af6943df11686deb2b46230b01c3c7c6245a323c045e93e8c93765ef4d559",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-B-dag-20261109-14211.json",
+      "bytes": 507,
+      "sha256": "08d98d410c34bf6e423affea2522de4fbfe2cf31012256c9a14c1c240448a9cb",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-B-dag-20261109-15037.json",
+      "bytes": 496,
+      "sha256": "ebf09a25bff5c1e7bb22d3bc5d1019792b1a4b116abf72a4c9d1a01b35954302",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-B-dag-20261109-25955.json",
+      "bytes": 495,
+      "sha256": "0f89426f57be5a295f6674a2ad35e204119eea209e942a8cb959f0b9ba766f88",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-B-dag-20261109-32985.json",
+      "bytes": 495,
+      "sha256": "593af1113e8b9b579fbced60a150d682f718d439247013eec93b68ae31298e0b",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-B-dag-20261109-36974.json",
+      "bytes": 495,
+      "sha256": "48355521da6f9f5108a99489006da1134324b691ac37ee0740906c6061b1f36e",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-B-dag-20261109-40068.json",
+      "bytes": 509,
+      "sha256": "f275f9e5c34bc89ad050809defdf905fc9dec8fe7d20794e329b9ce36fa39e76",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-B-dag-20261109-40684.json",
+      "bytes": 500,
+      "sha256": "8155b8d719e8b74e83b64b334b0baf4561283a7f341652146b629613449ec907",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-B-dag-20261109-42103.json",
+      "bytes": 495,
+      "sha256": "de00cc68955cf7e26bdb336b6fa6343cb00b072a54014a71cae1dde358380526",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-B-dag-20261109-46684.json",
+      "bytes": 495,
+      "sha256": "025b4a2f9c0970b0f3982652bd450e43c23cacffdd172869cbfe746fffd968c0",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-B-dag-20261109-47201.json",
+      "bytes": 495,
+      "sha256": "2cca638292d9d38f6c7370e62dc9c22db598cc3cdf540e008c2dd3374392c31b",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-B-dag-20261109-48678.json",
+      "bytes": 495,
+      "sha256": "79f7042bf3a295ef37579776f8f62c3f830094dc27361a9f1ceec4266b5a6466",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-C-dag-20261109-08260.json",
+      "bytes": 496,
+      "sha256": "4a5f368f1549ac18b500180389fb1dc85d4e2a7571989733f506fc5b63db38d4",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-C-dag-20261109-14211.json",
+      "bytes": 507,
+      "sha256": "319c1b2635a9ad5f3828e56d5dacaa360a8bd86fad81826e7f6242d7066da2ab",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-C-dag-20261109-15037.json",
+      "bytes": 507,
+      "sha256": "76baff52ffb462c9727d9c5bb08f50333267a716e86341fd6a1a32679616eec8",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-C-dag-20261109-25955.json",
+      "bytes": 507,
+      "sha256": "ce86833c641f18b6de0806a19169c94987d9c87e58ee79cc63ff45f6f9393132",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-C-dag-20261109-32985.json",
+      "bytes": 507,
+      "sha256": "f5fc28312ff9b02579b496ae10b56c325f4e4bc12ddcbb9acfae2b6e476d13fc",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-C-dag-20261109-36974.json",
+      "bytes": 507,
+      "sha256": "dcc59e3c0c84e266d085c6bf2e4334c86125073011faf10245fa6ed310294e72",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-C-dag-20261109-40068.json",
+      "bytes": 495,
+      "sha256": "a2b419f7b8ad630c40fe2e2497924602d5830e280efe43ef28cfe6e60dc0a7a7",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-C-dag-20261109-40684.json",
+      "bytes": 496,
+      "sha256": "bdc3b748193deb9dee0c3fe9a7e959fddd1e16ec309ccba4a094f6bb1b85182b",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-C-dag-20261109-42103.json",
+      "bytes": 495,
+      "sha256": "0813ad27db04e168196508594fbaee83e654c5e4675cc24e41b454c91476f7e5",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-C-dag-20261109-46684.json",
+      "bytes": 508,
+      "sha256": "67eb97db23fdcd8a0fabe86d4da53d235fa2881d1aa4e17c7068630dad81e622",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-C-dag-20261109-47201.json",
+      "bytes": 508,
+      "sha256": "0d34db91acd03401308acc7cf8cddba860c95d5d92056ac0deec364d70919313",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-C-dag-20261109-48678.json",
+      "bytes": 508,
+      "sha256": "258c5132d22e2eb1c5b2da208233dd4058cf8621cb51c0d53e882d51d1e5768e",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-A-dag-20261109-08260.json",
+      "bytes": 511,
+      "sha256": "fb9e15c92834012712137651f02d5e4cbee4ec79ae4734da7fc585798052ce14",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-A-dag-20261109-14211.json",
+      "bytes": 500,
+      "sha256": "fac9df7c20b91c9315a94fd8668bc680f603e2323f8e4cc78b8afaf4be7db8c7",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-A-dag-20261109-15037.json",
+      "bytes": 496,
+      "sha256": "b454b19f6eff7d57f4e870bd272b5ff4ecb44ced77ef864cc233dab840e30e62",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-A-dag-20261109-25955.json",
+      "bytes": 509,
+      "sha256": "4ababf21995042696493de2b2af9e99b800633b5165e08c823f573892c8c2bd2",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-A-dag-20261109-32985.json",
+      "bytes": 501,
+      "sha256": "cbf024c53b28c442fd518a4f5684a1908da06fc16c05210a3d4a00faa60b3050",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-A-dag-20261109-36974.json",
+      "bytes": 511,
+      "sha256": "21eb6f16dfcc2c6058c2cbbb37a21a815647fe21f33d3ba6553a6be360ffac74",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-A-dag-20261109-40068.json",
+      "bytes": 501,
+      "sha256": "e4a85e5dfdc36d95af40bcbc4d95482cef810221effacf399f7535e2f1faec44",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-A-dag-20261109-40684.json",
+      "bytes": 501,
+      "sha256": "3a62b5f55ecbb27d1e364bc82cc849fd462bd24bd4de48d72e10b70c8224b39b",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-A-dag-20261109-42103.json",
+      "bytes": 501,
+      "sha256": "c1e373d68dd276ddf7ffeab1e4b467f303c71c0adf0edd410cdeee9d4b8341c3",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-A-dag-20261109-46684.json",
+      "bytes": 500,
+      "sha256": "e019a32905f13dcdff30eb9a846e927ba63eefaa32ed66be7106ea7398d7feaa",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-A-dag-20261109-47201.json",
+      "bytes": 501,
+      "sha256": "e2f06d9e1d372d1ac9618603bfacf0f8c9eefd01d4f41e87819acd27af931518",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-A-dag-20261109-48678.json",
+      "bytes": 501,
+      "sha256": "17c9ec444580089702163c3acdd358dcd5581c480c2c675ebbfe1d0509183a5f",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-B-dag-20261109-08260.json",
+      "bytes": 497,
+      "sha256": "e714dc62ef4f2dd64460da4059f53048e72553902d98491b6bf4409123dfa686",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-B-dag-20261109-14211.json",
+      "bytes": 512,
+      "sha256": "12167411d8f1c5c6de998d5fef261dc0b3d0329efda85cd877958352c7810a98",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-B-dag-20261109-15037.json",
+      "bytes": 501,
+      "sha256": "af4c6d20c2340b9941922693bc88afa5c59375ad7e0c4ba019ed5ab085f24884",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-B-dag-20261109-25955.json",
+      "bytes": 501,
+      "sha256": "6b8b49065e3e116983752cfd71cf39613f18af62e5dbd3faf569b51651b8e4d5",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-B-dag-20261109-32985.json",
+      "bytes": 501,
+      "sha256": "7ba706257d150ea38331738eea83783d9d2530db463101164fd342eba1c6a6e8",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-B-dag-20261109-36974.json",
+      "bytes": 497,
+      "sha256": "7658f6c467aaf61012e736acb615d0350261a2dfd24877194736a926b5f75923",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-B-dag-20261109-40068.json",
+      "bytes": 497,
+      "sha256": "48bdf90f7bd83b0e07d6e14b9202593c418db695b324fae24638ef16ec08c215",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-B-dag-20261109-40684.json",
+      "bytes": 509,
+      "sha256": "d7e2a7a951ad24d32a8a906faea125ae92c8ac991132e4bf62ba590e1946d32e",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-B-dag-20261109-42103.json",
+      "bytes": 511,
+      "sha256": "48805a2cfe49ecb2e221d69a223acfded3961016e137f9f5c15da267a6dae959",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-B-dag-20261109-46684.json",
+      "bytes": 501,
+      "sha256": "10c49c3751a79ecc367bae58c54354832462135993d3bb557309f43a9074dfa0",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-B-dag-20261109-47201.json",
+      "bytes": 501,
+      "sha256": "1063b11b6df58b92919a88b95674141d6433c0a634d087e0c7d07779cd874bcd",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-B-dag-20261109-48678.json",
+      "bytes": 497,
+      "sha256": "112a220d55867cc677aa1ffd38405406886e80e6634367cbc91f24a1b828b928",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-C-dag-20261109-08260.json",
+      "bytes": 509,
+      "sha256": "1d12d633af6bc53b02e8f0b7c68bfddbe2bb74d9b00f0b33cfc26747b80c8fdb",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-C-dag-20261109-14211.json",
+      "bytes": 501,
+      "sha256": "b3560532d53534684e2edf4b08f24736965a8efc20a64af8bd67b35d1e3c5cde",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-C-dag-20261109-15037.json",
+      "bytes": 497,
+      "sha256": "7b0003f8509e868080947ba268b2a314f1688d8761af902aa031426203144700",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-C-dag-20261109-25955.json",
+      "bytes": 497,
+      "sha256": "cae0f9a548c49c2983cce14d33f39e12fa4fb2609083de658ac21bfe125fbe5c",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-C-dag-20261109-32985.json",
+      "bytes": 509,
+      "sha256": "e953f2aba727c8ff933a6b42b4e543d215f9066d607324ea699ce02a6e33ea07",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-C-dag-20261109-36974.json",
+      "bytes": 509,
+      "sha256": "7a0fc7436d4d67c5043f93ab7ad95394b5da7f757d66a9126696a2d5d4024750",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-C-dag-20261109-40068.json",
+      "bytes": 497,
+      "sha256": "3e05ee611c57c5ecd84bf80cf985ac5f03822f45896046ee7ac24abee2196da4",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-C-dag-20261109-40684.json",
+      "bytes": 495,
+      "sha256": "6f884d00f23a0fc441cd9bd43dbeac912aa2695950b7e1d5b0cecaa77656cb60",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-C-dag-20261109-42103.json",
+      "bytes": 497,
+      "sha256": "7ce2925f6a58e9a5585b94e12b6c69e87f817fa4b111392964346a9d45d350cf",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-C-dag-20261109-46684.json",
+      "bytes": 509,
+      "sha256": "8349fea4b54e874c7a30ac50cbd9055df615b8c385c5ef5e2e8ca2d3b2ab40ae",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-C-dag-20261109-47201.json",
+      "bytes": 495,
+      "sha256": "f8e419ae7cee83fc3ce1e0fe0973ee6f5a8949759cfecb30b6d331950e68850c",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-C-dag-20261109-48678.json",
+      "bytes": 497,
+      "sha256": "e271b3f15357f46e76db6cbf498f621b9a66dc1f1ca612b7e264ca53b93665c1",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-A-dag-20261109-08260.json",
+      "bytes": 506,
+      "sha256": "c65ce89575044b54782ab9f93614aced6677705ef49d4e4d81a48d75fc114772",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-A-dag-20261109-14211.json",
+      "bytes": 509,
+      "sha256": "9fb6736792e67285e61a12199f045b4c073f78f1274830f70bb418876cf17d6a",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-A-dag-20261109-15037.json",
+      "bytes": 520,
+      "sha256": "54ddfba258bdb9e9f3a204ed8dca7569b1f49f368e96328832119379ea227838",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-A-dag-20261109-25955.json",
+      "bytes": 506,
+      "sha256": "5ca78d2cd3a2ee6714248783d2f36cd77c74c1ab4b5eaa6f21caea9e382ebf84",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-A-dag-20261109-32985.json",
+      "bytes": 509,
+      "sha256": "dd9bf7b507be1b94bfdc96f5f1093917ce89b2d8b1478e31dd42118b52afbc3a",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-A-dag-20261109-36974.json",
+      "bytes": 520,
+      "sha256": "046562c0023c254fc59d0360a6fc518e7895a9b6434fa7268f71524e192dbd59",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-A-dag-20261109-40068.json",
+      "bytes": 509,
+      "sha256": "0f5be3b39d4772daab28e9474cbcf32fdbf3c8e67f17e64e6aa337aac695bff5",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-A-dag-20261109-40684.json",
+      "bytes": 520,
+      "sha256": "a38f994cd293c61797e23ad8a7211766e6c1a78e080c0a06ffb49573103edd94",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-A-dag-20261109-42103.json",
+      "bytes": 509,
+      "sha256": "c985a2b4a228b8c2af96476bde4e961ae1870aa2c11324a9dc2d3d6f7abf4ca0",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-A-dag-20261109-46684.json",
+      "bytes": 505,
+      "sha256": "4d71d5ed6ba712fda2c192020cb8c8b3ecaf600feddac7f034705264d87db135",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-A-dag-20261109-47201.json",
+      "bytes": 509,
+      "sha256": "928adb0dd356f716009b9a60b4642a380685782705871e76293a5088b1b1b66a",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-A-dag-20261109-48678.json",
+      "bytes": 521,
+      "sha256": "d5cf4e50845422f12d59544e1761e90da1de6e2774d9d89a4b2879c03d5494a6",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-B-dag-20261109-08260.json",
+      "bytes": 521,
+      "sha256": "293e5507c4a2b33cd08111b87d82deec9a5babb616254fcbcd122e55c8469ca2",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-B-dag-20261109-14211.json",
+      "bytes": 518,
+      "sha256": "9302b9ea90b48dc3e5c0e7c5ea6598d4cc9e6dfbd47ec8c47fd60e0ad5293435",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-B-dag-20261109-15037.json",
+      "bytes": 509,
+      "sha256": "7d5de29ce48c7277c993f899caecf4d4d699d5e47f59571e037442fa7a388410",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-B-dag-20261109-25955.json",
+      "bytes": 509,
+      "sha256": "d27a4fc9294d6fb3e500727d132b04189163bb85667de21c5b8b02538f378511",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-B-dag-20261109-32985.json",
+      "bytes": 518,
+      "sha256": "74a61675067b0e08cd8e206a9b3b0e7a3390ccf7f28e25de1a53729546e31eef",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-B-dag-20261109-36974.json",
+      "bytes": 506,
+      "sha256": "9fe69443bb20857ed7b2ab71eb386f95a179bad8f92d382babb1132a0999a803",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-B-dag-20261109-40068.json",
+      "bytes": 505,
+      "sha256": "56ea1509fb56e9f3a20f6d84bdac28cf8626a72b31be68da1ac5544c257557a5",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-B-dag-20261109-40684.json",
+      "bytes": 518,
+      "sha256": "18ba5436c9af0ef7047ad73880a0a161cea937131b52a68353ca0f30726a7f3f",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-B-dag-20261109-42103.json",
+      "bytes": 520,
+      "sha256": "0aaba623404a47f6bbe8e05639fb7213f9f0fc2a377d33c62663e07f69159a32",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-B-dag-20261109-46684.json",
+      "bytes": 509,
+      "sha256": "304167ad6f5d8832fb396b91a027f9e33f3ee09e1c53968dc0d9a8dc1c563269",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-B-dag-20261109-47201.json",
+      "bytes": 509,
+      "sha256": "8c767dc2fc074625ecaf9e8ea570f2d90507609ae16202510417995b0f81eb50",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-B-dag-20261109-48678.json",
+      "bytes": 506,
+      "sha256": "a6e068a5a204b95df024a1ac30ef249a95af6c3ee0da6833cbacef37633b6e4e",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-C-dag-20261109-08260.json",
+      "bytes": 518,
+      "sha256": "0773c2f2e2150e61f4a77bc25e6b17a818a395e4e7d2f2713ea07d5b89682e43",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-C-dag-20261109-14211.json",
+      "bytes": 509,
+      "sha256": "9c25535054ab72773d02ad63745e65d71783f951d4c070d9d00649cb8911ce40",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-C-dag-20261109-15037.json",
+      "bytes": 518,
+      "sha256": "a706e8af798e2c9743f1e757aaeadb23130d42439628408dc18789f9039e0e0a",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-C-dag-20261109-25955.json",
+      "bytes": 506,
+      "sha256": "a0e35e83683730a88b0d4d3db532cc2ebfdc7e6bbe59bdfc2d8d56e5978b7f2d",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-C-dag-20261109-32985.json",
+      "bytes": 506,
+      "sha256": "1928431f131de1f8de758928778cedd549548aa0b66b159bd2f6502c275a056f",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-C-dag-20261109-36974.json",
+      "bytes": 518,
+      "sha256": "9be8fc3ceb23377fd3a7a5b11bb8cc177ce8fb2b0c583a2e87b37210e82ffe57",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-C-dag-20261109-40068.json",
+      "bytes": 506,
+      "sha256": "2cb19c031a58ff4fae112299edd3720b5dc2ae6713d958e924bdd08815c49837",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-C-dag-20261109-40684.json",
+      "bytes": 506,
+      "sha256": "636ec6410e496564643a2569c75c866db39c528a2c897bb21da79148fcfdc462",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-C-dag-20261109-42103.json",
+      "bytes": 506,
+      "sha256": "a818edd5e3d60293f8f16b0127c50a959e9938d0875dc341a7b5decf33f2c7b5",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-C-dag-20261109-46684.json",
+      "bytes": 518,
+      "sha256": "55a26e857ccc8b35b12db604da8a50e7a8f2af6e26ec645d5bdfa5595a704fc1",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-C-dag-20261109-47201.json",
+      "bytes": 518,
+      "sha256": "5a45597b8ff5e77a62443a012b2680a00096dba72ce2fef2c34d8714846f8565",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-C-dag-20261109-48678.json",
+      "bytes": 506,
+      "sha256": "003780971f3b33a04dc9265ee5b8013ddbf9eef95ac22498d657ebefaa9b0b3d",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/reference.json",
+      "bytes": 23013,
+      "sha256": "33cf7c10380efe3ecfaaea27ef19ee18d9432a33620319b9191ebc1b43c46939",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/report.md",
+      "bytes": 658,
+      "sha256": "1d742efb0559365e2938c7b2d364462a18f9690c897e465d8c092e521016a367",
+      "storage": "git"
+    },
+    {
+      "path": "study/01_首轮归档/results.json",
+      "bytes": 57307,
+      "sha256": "04c12c76b7698b0567748b65504241fa7785f2f6a5afbb0625c4d368288360ce",
+      "storage": "git"
+    },
+    {
+      "path": "study/02_模型对比/analysis-source-sha256.json",
+      "bytes": 179,
+      "sha256": "91083e3956cbfd2b674c03f4958c092a99df6f10e9640ddbf35082990a64a5b5",
+      "storage": "git"
+    },
+    {
+      "path": "study/02_模型对比/checkpoints.sqlite",
+      "bytes": 4579328,
+      "sha256": "f38f4ed980ce7ac42925b1746485cf506ad8f8a748a3139bba374b7ca2ff330c",
+      "storage": "local_only",
+      "reason": "可变检查点；同轮纯合成答卷已另存 ZIP 随 Git 保存"
+    },
+    {
+      "path": "study/02_模型对比/flash.log",
+      "bytes": 1392,
+      "sha256": "319f259ce1cc467e3ae6a75c6f61cbcebe0e26a3e6e3ebe3b1e85cac69eb9d38",
+      "storage": "git"
+    },
+    {
+      "path": "study/02_模型对比/formal-completion-flash.json",
+      "bytes": 378,
+      "sha256": "5161fa767f09265c073cea5a625bf7711f7c293e25f1ed991bcf8cf54d770c02",
+      "storage": "git"
+    },
+    {
+      "path": "study/02_模型对比/formal-completion-pro.json",
+      "bytes": 360,
+      "sha256": "53a411edf24ae924ca5957f03ba18d43f4bfa2f2957ef650995f69e156227bd0",
+      "storage": "git"
+    },
+    {
+      "path": "study/02_模型对比/formal-completion-qwen.json",
+      "bytes": 369,
+      "sha256": "083a29749031180dace6ce4f333bd63037baf08f309725ae7f4fddd9c6fe2c55",
+      "storage": "git"
+    },
+    {
+      "path": "study/02_模型对比/input-audit.json",
+      "bytes": 6658,
+      "sha256": "c987c6711b398f5aa07a9d9941f492e45cd095e1890658a9c3e5e2addc876307",
+      "storage": "git"
+    },
+    {
+      "path": "study/02_模型对比/manifest.json",
+      "bytes": 1257,
+      "sha256": "224b03e251b0643ca903eb39957cd0a60b28b71bfe721a3794dcb3eb841a3ad0",
+      "storage": "git"
+    },
+    {
+      "path": "study/02_模型对比/output-sha256.json",
+      "bytes": 448,
+      "sha256": "843af0eb7257a585c43629f3b996b416bc94f435d6ce3ff2d0f8a92ef9a23b2a",
+      "storage": "git"
+    },
+    {
+      "path": "study/02_模型对比/pilot-completion-flash.json",
+      "bytes": 116,
+      "sha256": "c138bbe9f1473301d5351545562da5534afe9f9afad550e7129a88de378e0d37",
+      "storage": "git"
+    },
+    {
+      "path": "study/02_模型对比/pilot-completion-pro.json",
+      "bytes": 110,
+      "sha256": "dc5aa7f872952bb0858e59b0f5dd1b69f23fd2c1aba5233b9221bbe7f59bd028",
+      "storage": "git"
+    },
+    {
+      "path": "study/02_模型对比/pilot-completion.json",
+      "bytes": 333,
+      "sha256": "efcb0a8de2678716d18737ee44cd5aa57baba68048feeb2fafb3ea9b13c00580",
+      "storage": "git"
+    },
+    {
+      "path": "study/02_模型对比/pro.log",
+      "bytes": 560,
+      "sha256": "d9ae9628146ccad586290868ea1a5844b9d1182d7902f346bf16588e488a8cac",
+      "storage": "git"
+    },
+    {
+      "path": "study/02_模型对比/report.md",
+      "bytes": 7657,
+      "sha256": "24dd0be19fa1e9448c39da32b311037254b72ef1f0c1878de52cd44e1d234efd",
+      "storage": "git"
+    },
+    {
+      "path": "study/02_模型对比/results.json",
+      "bytes": 164798,
+      "sha256": "3b7e9f23834cc2fccbfb092d4761dc223132fbaf15c376abd11d540a67ac40ec",
+      "storage": "git"
+    },
+    {
+      "path": "study/02_模型对比/sample-index.json",
+      "bytes": 18770,
+      "sha256": "d6cab500033e5bd1e4345bb948b0852fac34c40b167643cd53c8d81403fa99d6",
+      "storage": "git"
+    },
+    {
+      "path": "study/02_模型对比/trials.zip",
+      "bytes": 247045,
+      "sha256": "fb34b1c2b811fa2dd8cbc445540cdbc54f5f48d77c9721fff3717c79f51793cb",
+      "storage": "git"
+    },
+    {
+      "path": "study/02_模型对比/固定方案.md",
+      "bytes": 1029,
+      "sha256": "97d409223cdc7962a345b2517e85241fb5544aff73321a63a194325fc6168761",
+      "storage": "git"
+    },
+    {
+      "path": "study/03_提示与背景/analysis-source-sha256.json",
+      "bytes": 273,
+      "sha256": "992960294520292a399c1a4f3bf6c678507a5b2479498051d72c6dcbd7b82101",
+      "storage": "git"
+    },
+    {
+      "path": "study/03_提示与背景/checkpoints.sqlite",
+      "bytes": 4521984,
+      "sha256": "f054243d96de9382a27448eddfc0f87ba9c95e88fe746c92c1be4a4f3ddd3f63",
+      "storage": "local_only",
+      "reason": "真人样本、预测关联或运行检查点；按原约定仅本机复算"
+    },
+    {
+      "path": "study/03_提示与背景/formal-completion.json",
+      "bytes": 955,
+      "sha256": "6fc52031f20a1800145c1a8c70699357c443755ab573f90e1907abca6bd70e37",
+      "storage": "git"
+    },
+    {
+      "path": "study/03_提示与背景/formal.log",
+      "bytes": 1384,
+      "sha256": "5d0aee1e00893551d065b46f42014f3872c4bd1d1aa9fadb9dcc67bed08fdcc0",
+      "storage": "git"
+    },
+    {
+      "path": "study/03_提示与背景/input-audit.json",
+      "bytes": 5906,
+      "sha256": "3f3ec35a658ba330cae8c12bb2049fafd07069f267f29ab96d15f7c5130db9ae",
+      "storage": "git"
+    },
+    {
+      "path": "study/03_提示与背景/manifest.json",
+      "bytes": 1259,
+      "sha256": "e7a2fa986cc991e9cd7ed36243f0f843b91aca0d3e1e7878fe3cffa88bb6744a",
+      "storage": "git"
+    },
+    {
+      "path": "study/03_提示与背景/output-sha256.json",
+      "bytes": 448,
+      "sha256": "83bcaa134ab67c858dbbb0d2c236618803bdba49bec2cdd6692134c12df034ef",
+      "storage": "git"
+    },
+    {
+      "path": "study/03_提示与背景/pilot-completion.json",
+      "bytes": 307,
+      "sha256": "3383fa5d45c357a12891c3ff7cf8d910d056cba86d5b89949f61276b57e055aa",
+      "storage": "git"
+    },
+    {
+      "path": "study/03_提示与背景/pilot.log",
+      "bytes": 240,
+      "sha256": "998cd0f90cd0dae4ea9f453333de3aa168f1db15d252f6a9ac9c5439f4197d94",
+      "storage": "git"
+    },
+    {
+      "path": "study/03_提示与背景/report.md",
+      "bytes": 6380,
+      "sha256": "6bb0d56ecac90d925ef9ffcf76833c9793ea1382af6b2391f0697f052271a068",
+      "storage": "git"
+    },
+    {
+      "path": "study/03_提示与背景/results.json",
+      "bytes": 201703,
+      "sha256": "41b1766ba1f4bcd7ef2785c2049b5b83b6cc1eef873734a7361d4688dd13330d",
+      "storage": "git"
+    },
+    {
+      "path": "study/03_提示与背景/sample-index.json",
+      "bytes": 66757,
+      "sha256": "bc85cc4175f8e60a55da94135bd2f3e5be90df9c3b76a5481acc1724c6136932",
+      "storage": "local_only",
+      "reason": "真人样本、预测关联或运行检查点；按原约定仅本机复算"
+    },
+    {
+      "path": "study/03_提示与背景/trials.zip",
+      "bytes": 252202,
+      "sha256": "d0a23bc5d57260387fe0ff6db877dee6da878c92005d8aa8e3bf06472c44c7f6",
+      "storage": "local_only",
+      "reason": "真人样本、预测关联或运行检查点；按原约定仅本机复算"
+    },
+    {
+      "path": "study/03_提示与背景/固定方案.md",
+      "bytes": 1815,
+      "sha256": "5941c66a1d5c965a2da03a73b58345c28433baf9779c82aa29532c44d0566c5a",
+      "storage": "git"
+    },
+    {
+      "path": "study/04_综合报告/MatrAIx 优化实验交互报告.html",
+      "bytes": 1385457,
+      "sha256": "d6da84896fa6c70ccac4f1abd469fcf39bdefc03b56828fe10fecc1eca116bba",
+      "storage": "git"
+    },
+    {
+      "path": "study/04_综合报告/交互报告.sha256",
+      "bytes": 104,
+      "sha256": "1393a0d62c56b275888e8e5b40431232478bc18410ab925980d7d7ba9fa21e67",
+      "storage": "git"
+    },
+    {
+      "path": "study/04_综合报告/优化实验综合报告.md",
+      "bytes": 5343,
+      "sha256": "029fef7e114eede2c120426dd6d7e70389ef3c4a86be2ef5dded6a340a92b5cb",
+      "storage": "git"
+    },
+    {
+      "path": "study/05_优化记录/优化文档.md",
+      "bytes": 13916,
+      "sha256": "9654146ce70f186a16afa2a1d27cc5c88be20cb901fb401b6241d300b65e1d45",
+      "storage": "git"
+    },
+    {
+      "path": "study/06_北美电商选品/analysis-source-sha256.json",
+      "bytes": 271,
+      "sha256": "f58f5804720be96e5f6f2ff5b41d81ce825dd43388e66484a75fd2a2cadac101",
+      "storage": "git"
+    },
+    {
+      "path": "study/06_北美电商选品/checkpoints.sqlite",
+      "bytes": 1441792,
+      "sha256": "a0cdb49d55c7d87468bae0123f03b4a7640aa3d76ee1ae74e32bdd7206ae0716",
+      "storage": "local_only",
+      "reason": "真人样本、预测关联或运行检查点；按原约定仅本机复算"
+    },
+    {
+      "path": "study/06_北美电商选品/formal-completion.json",
+      "bytes": 507,
+      "sha256": "79f484c1b49e9fe725e38151f7345e717384f580e63e60741cc321a975a7d43f",
+      "storage": "git"
+    },
+    {
+      "path": "study/06_北美电商选品/formal.log",
+      "bytes": 824,
+      "sha256": "0e8a19d965e075cebd373f2dc2d2c02433314bc830673596a74610cdee39f1f1",
+      "storage": "git"
+    },
+    {
+      "path": "study/06_北美电商选品/input-audit.json",
+      "bytes": 1029,
+      "sha256": "22feb572bb00f91e94fcd82ab781e0d80267f356029c35db5ea221d4950f9e1b",
+      "storage": "git"
+    },
+    {
+      "path": "study/06_北美电商选品/manifest.json",
+      "bytes": 2949,
+      "sha256": "4994d7b7910bafe7d65e90d011a38cf5b4f230fa6f51c691b1a0cbdca1857dd0",
+      "storage": "git"
+    },
+    {
+      "path": "study/06_北美电商选品/output-sha256.json",
+      "bytes": 537,
+      "sha256": "7cba8bc5e55795af4179c8b29a38fb78598e1a59f5f2cbe889754ab1fe80c68b",
+      "storage": "git"
+    },
+    {
+      "path": "study/06_北美电商选品/pilot-completion.json",
+      "bytes": 483,
+      "sha256": "4ae8ab8f65a92474e709e1b6aa860d372a86804001f906d2c44e2fe08eb11f1f",
+      "storage": "git"
+    },
+    {
+      "path": "study/06_北美电商选品/pilot.log",
+      "bytes": 170,
+      "sha256": "45bbbc6b92bf5c0bfd5ebad7769c3de4cc3214c968e67a02790e286160d32838",
+      "storage": "git"
+    },
+    {
+      "path": "study/06_北美电商选品/prepare.log",
+      "bytes": 1524,
+      "sha256": "98236a81fef25740d0456990bff7d84bd857e5c889f10069d82d16d561e7f955",
+      "storage": "git"
+    },
+    {
+      "path": "study/06_北美电商选品/report.html",
+      "bytes": 70585,
+      "sha256": "d0cc880bc54d3fbdaaff99491111911abc51c70f8b8ca0865c26167d9db24009",
+      "storage": "git"
+    },
+    {
+      "path": "study/06_北美电商选品/results.json",
+      "bytes": 105716,
+      "sha256": "967e367e8a765ac9b2e600d3775a5ab138f6ea9b57ddd3db547f8fbc5b10c406",
+      "storage": "git"
+    },
+    {
+      "path": "study/06_北美电商选品/sample-index.json",
+      "bytes": 277358,
+      "sha256": "4a5ecc5c48d3ad131ad466f018e3ac258691c3878cd4ec55f80d1500e3a57060",
+      "storage": "local_only",
+      "reason": "真人样本、预测关联或运行检查点；按原约定仅本机复算"
+    },
+    {
+      "path": "study/06_北美电商选品/trials.zip",
+      "bytes": 52425,
+      "sha256": "d1c7e6c1df29a16e2cdd56f25a2150ec0bba82f3ae4c6b8cb0e613ffb14bf6f4",
+      "storage": "local_only",
+      "reason": "真人样本、预测关联或运行检查点；按原约定仅本机复算"
+    },
+    {
+      "path": "study/06_北美电商选品/初次预检清单.json",
+      "bytes": 2854,
+      "sha256": "d94a860a3c177f76799b3b17597e82bab3f73311192f44cbff1eae606ab7fa39",
+      "storage": "git"
+    },
+    {
+      "path": "study/06_北美电商选品/固定方案.md",
+      "bytes": 3130,
+      "sha256": "78eb8f10aa33e2cd01f0539840041d35db75378717751c8fa31de08f747a4a3c",
+      "storage": "git"
+    },
+    {
+      "path": "study/06_北美电商选品/数据/origin-appendix.docx",
+      "bytes": 1015353,
+      "sha256": "ff6065511c0373f0245e90ea015ff434c4be1443430b042dbc434dc4ff7722e6",
+      "storage": "local_only",
+      "reason": "出版方补充文件；未确认独立再分发条款"
+    },
+    {
+      "path": "study/06_北美电商选品/数据/origin-original.tab",
+      "bytes": 4020345,
+      "sha256": "64f405b8755470e98cc6f22dc9b070305c4eb97fb1d8071a346a5adac2cceee2",
+      "storage": "git"
+    },
+    {
+      "path": "study/06_北美电商选品/数据/origin.csv",
+      "bytes": 3042388,
+      "sha256": "be189c75b6fb67aeb6fbed2fe7106a853fef1e1b259902f8b9f77c44aa26d3a0",
+      "storage": "git"
+    },
+    {
+      "path": "study/06_北美电商选品/数据/packaging.csv",
+      "bytes": 2300529,
+      "sha256": "cd749cc7e33b95d682305c8b078b05b0a49df2b874c939abfc4de574f7d39a49",
+      "storage": "git"
+    },
+    {
+      "path": "study/06_北美电商选品/数据/pew.zip",
+      "bytes": 2795367,
+      "sha256": "1acebad0a92a7944c59049621094cd7d964d4c7fbdae984ab3a8df11d3d32d78",
+      "storage": "local_only",
+      "reason": "需账户取得的 Pew 数据；按原数据边界留在本机"
+    },
+    {
+      "path": "study/06_北美电商选品/数据索引.md",
+      "bytes": 1874,
+      "sha256": "90ea8e693223906a23536ba77a0cd51a06fe91d914930ae91e42dba36f871a15",
+      "storage": "git"
+    },
+    {
+      "path": "study/07_购物数据候选/.gitignore",
+      "bytes": 785,
+      "sha256": "163c6667d3567355517bfba3c9941db4c800f42b7363809e42bbad6a636a72c0",
+      "storage": "git"
+    },
+    {
+      "path": "study/07_购物数据候选/index.html",
+      "bytes": 29701,
+      "sha256": "7e7847c94d4ba7d88ca0ca7f172dcb5e029de4b190c7b9f0a1d3995660a34f0a",
+      "storage": "git"
+    },
+    {
+      "path": "study/07_购物数据候选/下载与核验清单.json",
+      "bytes": 10868,
+      "sha256": "61938b4f0a2dbb1912e94c04ded4ecbb0731e441227e66d9032f8f068d2c6e43",
+      "storage": "git"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/CIUS2022_Codebook_PUMF.pdf",
+      "bytes": 1923169,
+      "sha256": "429a4f0235a67bee3608dfe247672328be832ffa13d158452f9c85a4134d2682",
+      "storage": "git"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/CIUS2022_Quest_E.pdf",
+      "bytes": 1586856,
+      "sha256": "82e8c36d853ee834fa74da36bf895aeb87972d29fcace326e8be6901613c053a",
+      "storage": "git"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/Horiuchi2021_Conjoint_SDB/README.pdf",
+      "bytes": 149243,
+      "sha256": "a3ce96918a071e0946da0fa223726f490b94983c429e33ad35cd6204d0bc01be",
+      "storage": "git"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/Horiuchi2021_Conjoint_SDB/ReplicationPackage_v2.tar.gz",
+      "bytes": 59436256,
+      "sha256": "520a10dbfce3467c20f15e1c32cf2dc79a768702bc682a91145b2fd37489df09",
+      "storage": "local_only",
+      "reason": "大型原始下载包；保留本机和获取来源"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/Horiuchi2021_Conjoint_SDB/原问卷/study1-wave1 survey instruments.pdf",
+      "bytes": 129312,
+      "sha256": "ec7bced1a9a856e7c0ab536287e1cd69ace7af62d0ad73ecd5196ce581c9e9a7",
+      "storage": "git"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/Horiuchi2021_Conjoint_SDB/原问卷/study1-wave2 survey instruments.pdf",
+      "bytes": 1358075,
+      "sha256": "85a3b4e8c60daf45996b4be782f4829cc494476da1016799b723acae6cc62d75",
+      "storage": "git"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/Open_eCommerce_1.0/amazon-purchases.csv.gz",
+      "bytes": 105202948,
+      "sha256": "a0d3862f25aa358207e28b28924d95dd28ca40b0b2ad0e5695322f570d345918",
+      "storage": "local_only",
+      "reason": "大型原始下载包；保留本机和获取来源"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/Open_eCommerce_1.0/fields.csv.gz",
+      "bytes": 908,
+      "sha256": "4add995ebf2a576a24a2fe53f792a376502282c69279c4a3f88e04203671e5c6",
+      "storage": "git"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/Open_eCommerce_1.0/prescreen-survey-instrument.pdf",
+      "bytes": 393144,
+      "sha256": "45b5844e05d62aeeb5459483216f294cf0c4c89c9aeae0a1e757f9be82b1b172",
+      "storage": "git"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/Open_eCommerce_1.0/survey-instrument.pdf",
+      "bytes": 1333077,
+      "sha256": "1dfa140af73a722fb80a8d2449305e839b52c774c700d9a49889c05c4ccd4e40",
+      "storage": "git"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/Open_eCommerce_1.0/survey.csv.gz",
+      "bytes": 139853,
+      "sha256": "ce726a067ec9cd6d3733449a2c4c8faa5aa35c9b4cfe9278dea90d84510e7c97",
+      "storage": "git"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/Pew_Wave13/American-Trends-Panel-Wave-13-Dec-15.zip",
+      "bytes": 2887251,
+      "sha256": "d777de8e589da651e86c09fd8fb7fc14439c8a03632a9ad6864d5abb57792ca8",
+      "storage": "local_only",
+      "reason": "需账户取得的 Pew 数据；按原数据边界留在本机"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/circular-products.csv.gz",
+      "bytes": 256210,
+      "sha256": "122002a2c5959f0a25a0891d36f26966fe7a8d52087c59e82a6a0a0eb4509389",
+      "storage": "git"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/cius-2022.zip",
+      "bytes": 396906008,
+      "sha256": "74df3009427fc7e3405bedafe907a2e9d3757cb3253520bbbab4a733d7348215",
+      "storage": "local_only",
+      "reason": "大型原始下载包；保留本机和获取来源"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/drone-attributes.py.gz",
+      "bytes": 551,
+      "sha256": "bd740f8d3ad45b6f4c5f24c6d0499d51b3b6ffe1fd359afde7c1d4b88554f968",
+      "storage": "git"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/drone-codebook.py.gz",
+      "bytes": 1693,
+      "sha256": "0fff1375696c6656cff43cb46242fb9f0f46d2de2be4ad41c6b1c7f104a1678c",
+      "storage": "git"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/drone-fields.csv.gz",
+      "bytes": 1110,
+      "sha256": "89b3f872e87052e4408e1b452480e4f703a408b38d362ef95083f8e71998eb76",
+      "storage": "git"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/drone-survey.csv.gz",
+      "bytes": 247822,
+      "sha256": "d869d8a10351b0e20caa05f6f451140ec9f13a42f816c357e9c4597b551919c8",
+      "storage": "git"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/shoes.csv.gz",
+      "bytes": 1591915,
+      "sha256": "cc827e90b9964f9241283993139052854183a034a2511a30924639f2e724232a",
+      "storage": "git"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/tshirt.csv.gz",
+      "bytes": 220497,
+      "sha256": "f6bf1397eb8ec110cdf18b45c8e8b0da2036e33b55638a9cefd983cde4963e57",
+      "storage": "git"
+    },
+    {
+      "path": "study/07_购物数据候选/本次接收文件清单.json",
+      "bytes": 6061,
+      "sha256": "857078c4d2001ca5845a77387f2591c81fdfc27b7f6e6c6a35cc7e95d5305928",
+      "storage": "git"
+    },
+    {
+      "path": "study/07_购物数据候选/本次接收核验.json",
+      "bytes": 5163,
+      "sha256": "7430f059b297244893d70980ff6365a1948cd62e38282b9b4e6979fca301a1b3",
+      "storage": "git"
+    },
+    {
+      "path": "study/07_购物数据候选/来源与许可/README.md",
+      "bytes": 3185,
+      "sha256": "57b82ed8b1c9d353b6cb18fdafdba5f40f39e2385541f40416235aa688a69591",
+      "storage": "git"
+    },
+    {
+      "path": "study/07_购物数据候选/来源与许可/amazon-repository-MIT-LICENSE.txt",
+      "bytes": 1061,
+      "sha256": "e315bbb32e90ca5a7d6f8fa848d14618a0eff0354f047f33875a4434c6d11a7b",
+      "storage": "git"
+    },
+    {
+      "path": "study/07_购物数据候选/来源与许可/drone-MIT-LICENSE.txt",
+      "bytes": 1061,
+      "sha256": "57c3f7c2f0c084127020d3a74945ec3c60a7b07824f9dac5988a2307eedd1f80",
+      "storage": "git"
+    },
+    {
+      "path": "study/07_购物数据候选/来源与许可/数据许可核验.json",
+      "bytes": 4140,
+      "sha256": "a9f993516254dc515644abd1da3664d7f77453d3a339b49f267e5aa1c0712f95",
+      "storage": "git"
+    },
+    {
+      "path": "study/07_购物数据候选/调研线索/README.md",
+      "bytes": 536,
+      "sha256": "b41de223876adc0b7e30b22fa9fa79c510ad22ec7bed7f38b4c03fc750b2f5cb",
+      "storage": "git"
+    },
+    {
+      "path": "study/07_购物数据候选/调研线索/questionnaire_datasets.md",
+      "bytes": 3070,
+      "sha256": "818c76a023ba52385080f87568225bcdca0018ab48d1e319144a1d1492ebbe84",
+      "storage": "git"
+    },
+    {
+      "path": "study/07_购物数据候选/调研线索/来源清单.json",
+      "bytes": 577,
+      "sha256": "a26c6ea947c1f5d9b69eac76a920001a205bbda2727c0e1618f5f01435840123",
+      "storage": "git"
+    },
+    {
+      "path": "study/07_购物数据候选/调研线索/电商问卷数据清单.md",
+      "bytes": 9972,
+      "sha256": "667a398b8d664c88d2b3d8825a997f30eff33d5232e7f7efb02fcf13a2f20051",
+      "storage": "git"
+    },
+    {
+      "path": "study/08_购物预测/.gitignore",
+      "bytes": 15,
+      "sha256": "290c069535a8f5590a699dd18d0ae2218a45a7940b0319a76ad87f780ac4de69",
+      "storage": "git"
+    },
+    {
+      "path": "study/08_购物预测/README.md",
+      "bytes": 8314,
+      "sha256": "f0a64ce64d6079f3d30ac034f5079ea8051a89237f1ff71ded91d6c60d26d53d",
+      "storage": "git"
+    },
+    {
+      "path": "study/08_购物预测/amazon-blend-protocol.json",
+      "bytes": 110,
+      "sha256": "1b1fde79eaee6651820cde3a9db8780e86c2f9746359cbb8f0c567c6ac347223",
+      "storage": "git"
+    },
+    {
+      "path": "study/08_购物预测/amazon-development-score.json",
+      "bytes": 6946,
+      "sha256": "deef8a1d23667d3c10421cdc08176840011c993e789a064ee56823fcaab4a2fe",
+      "storage": "git"
+    },
+    {
+      "path": "study/08_购物预测/amazon-development.json",
+      "bytes": 783,
+      "sha256": "4393ac1732dea4a580b035541d3cc707c6d0afb7bb398191bfe64cb090553319",
+      "storage": "git"
+    },
+    {
+      "path": "study/08_购物预测/amazon-mix-development-score.json",
+      "bytes": 7378,
+      "sha256": "7b8dd7a9040c0aafb23298de7cc48c3e68d7d7257ed3d3e3b45b267212aa273c",
+      "storage": "git"
+    },
+    {
+      "path": "study/08_购物预测/amazon-mix-protocol.json",
+      "bytes": 222,
+      "sha256": "82057b8237e3457420f3b917a3b757376a37758c17994604974851940a0bcca9",
+      "storage": "git"
+    },
+    {
+      "path": "study/08_购物预测/amazon-mix-test-score.json",
+      "bytes": 7363,
+      "sha256": "40db206644c0f111b7abcea99a10d8fe2a831c25c3a5f52349da4022271ff27a",
+      "storage": "git"
+    },
+    {
+      "path": "study/08_购物预测/amazon-repeat-diagnostics.json",
+      "bytes": 3412,
+      "sha256": "39fcf4e5b05bf72a23023adf6e2240eec2dcac3f176ef7909ed7bc68670695a2",
+      "storage": "git"
+    },
+    {
+      "path": "study/08_购物预测/amazon-test-score.json",
+      "bytes": 6795,
+      "sha256": "30869b4328dd79907af7c0a62b989085409d9c1513a8e4d2367839701148b1e0",
+      "storage": "git"
+    },
+    {
+      "path": "study/08_购物预测/index.html",
+      "bytes": 344795,
+      "sha256": "75c18b70dc246e5492511a42ad378206983321d79c82e83bfd101dbcbc966433",
+      "storage": "git"
+    },
+    {
+      "path": "study/08_购物预测/pew-answer-sampling-sensitivity.json",
+      "bytes": 4604,
+      "sha256": "cc1c662d8d9faf37c271f9e92f255263f1efb9dbc194d5ec0525ded1c75fe127",
+      "storage": "git"
+    },
+    {
+      "path": "study/08_购物预测/pew-calibration-protocol.json",
+      "bytes": 1678,
+      "sha256": "5a3855a472b8a742b3a0397a8b745007bb8cac6a7a4a9215c62f988880941a49",
+      "storage": "git"
+    },
+    {
+      "path": "study/08_购物预测/pew-formal-calibration.json",
+      "bytes": 17003,
+      "sha256": "76ca8edc9cc4f61d7d2a1f661761166e6dc8da586e62bc8f3d8d21961e3dd8db",
+      "storage": "git"
+    },
+    {
+      "path": "study/08_购物预测/pew-formal-score.json",
+      "bytes": 91711,
+      "sha256": "c9ce816553a28822195a48598bf894cea1fbac55e4695274ca64a159d8883bbd",
+      "storage": "git"
+    },
+    {
+      "path": "study/08_购物预测/pew-pilot-calibration.json",
+      "bytes": 16948,
+      "sha256": "a6fcc1fc6b06df41761ba307a4c77f3183f583c503978ad1e8456109a4494a2b",
+      "storage": "git"
+    },
+    {
+      "path": "study/08_购物预测/pew-pilot-score.json",
+      "bytes": 114098,
+      "sha256": "d54424232b5c078a9b0ab21c92e6d4d1f929fba06df045489522f12cb6fd6c23",
+      "storage": "git"
+    },
+    {
+      "path": "study/08_购物预测/shoes-calibration-protocol.json",
+      "bytes": 1391,
+      "sha256": "cdf89928a1242f35f4233711cd39df64fd2e810dcadb9d7fdb4be96ce615da81",
+      "storage": "git"
+    },
+    {
+      "path": "study/08_购物预测/shoes-development-score.json",
+      "bytes": 22905,
+      "sha256": "8e9b66506bf1803dc18ad45779ba4857b0899942c4bb447e981e30590b9f67b9",
+      "storage": "git"
+    },
+    {
+      "path": "study/08_购物预测/shoes-input-parity-protocol.json",
+      "bytes": 1930,
+      "sha256": "4f6c62e1839c862554b35940ac0524ea97c3e6dd650a52ce0d67a54821df161e",
+      "storage": "git"
+    },
+    {
+      "path": "study/08_购物预测/shoes-input-parity-score.json",
+      "bytes": 7083,
+      "sha256": "b24cefff626e91952adf5396f0fe65bda7466a53d98546c332cf08257475ff9c",
+      "storage": "git"
+    },
+    {
+      "path": "study/08_购物预测/shoes-test-score.json",
+      "bytes": 23072,
+      "sha256": "cfb300104063d2e5942381a3177b10038d485ffc7556012d469189b21dcb381d",
+      "storage": "git"
+    },
+    {
+      "path": "study/08_购物预测/technical-details.html",
+      "bytes": 255632,
+      "sha256": "5ddc5081094c9e84972c64b82883556121ac6a2b9528b73c6f365c3ccbc8dd52",
+      "storage": "git"
+    },
+    {
+      "path": "study/08_购物预测/vendor/LICENSE",
+      "bytes": 11990,
+      "sha256": "634293835b43a6dd2094fa39182a3d9a6b9ca43b7fdb9ac354e8037af2a3093a",
+      "storage": "git"
+    },
+    {
+      "path": "study/08_购物预测/vendor/NOTICE",
+      "bytes": 168,
+      "sha256": "d491d358344f842685c1b1585970999db65fe30ecf7ef3867af8814f4016c016",
+      "storage": "git"
+    },
+    {
+      "path": "study/08_购物预测/vendor/echarts.min.js",
+      "bytes": 1121883,
+      "sha256": "b66b25aeb4df84e33199dc21694014d336d222cbd9deb0e5a7c14bd6aa0d0fd0",
+      "storage": "git"
+    },
+    {
+      "path": "study/08_购物预测/报告展示核验.json",
+      "bytes": 2588,
+      "sha256": "3c438b3693b4505cc270c7ffee72814edee97a45f614d8b66942e60568f71617",
+      "storage": "git"
+    },
+    {
+      "path": "study/08_购物预测/本机运行/amazon-freeze-obsolete-reference-window.json",
+      "bytes": 562026,
+      "sha256": "a70f5f10d4e3bfdd3f1b0b8aa0e47db4c1e8b015084b0499d0bc99c1201bbf95",
+      "storage": "local_only",
+      "reason": "真人样本、预测关联或运行检查点；按原约定仅本机复算"
+    },
+    {
+      "path": "study/08_购物预测/本机运行/amazon-freeze.json",
+      "bytes": 562029,
+      "sha256": "a7f09b68960d23dfa86ee20ecb5b230899f57f7d850e9eac0f56c04f8ecefbe5",
+      "storage": "local_only",
+      "reason": "真人样本、预测关联或运行检查点；按原约定仅本机复算"
+    },
+    {
+      "path": "study/08_购物预测/本机运行/amazon-mix-freeze.json",
+      "bytes": 1575351,
+      "sha256": "c8f12499290782a612ed14a1a407be22642b6a34267bbf2c786d63e79c5882fe",
+      "storage": "local_only",
+      "reason": "真人样本、预测关联或运行检查点；按原约定仅本机复算"
+    },
+    {
+      "path": "study/08_购物预测/本机运行/amazon-mix.sqlite",
+      "bytes": 163840,
+      "sha256": "0dea720742bac43691d75b1d225e366eb6e2712e9512115c5df1e8de3f879f47",
+      "storage": "local_only",
+      "reason": "真人样本、预测关联或运行检查点；按原约定仅本机复算"
+    },
+    {
+      "path": "study/08_购物预测/本机运行/amazon.sqlite",
+      "bytes": 495616,
+      "sha256": "2fc3305d2bdae6e43fdac95feccf13cec42d570b2ef3bc299276873715141c56",
+      "storage": "local_only",
+      "reason": "真人样本、预测关联或运行检查点；按原约定仅本机复算"
+    },
+    {
+      "path": "study/08_购物预测/本机运行/pew-freeze-v1-format.json",
+      "bytes": 151041,
+      "sha256": "d55400c9a3fb04545672acae1899e130d4fda95258e713f89a62a66dd65ab3dc",
+      "storage": "local_only",
+      "reason": "真人样本、预测关联或运行检查点；按原约定仅本机复算"
+    },
+    {
+      "path": "study/08_购物预测/本机运行/pew-freeze.json",
+      "bytes": 151041,
+      "sha256": "0c7608f1108e940ab4c68ab27082699040ccf94a506023a9ac99517b72365425",
+      "storage": "local_only",
+      "reason": "真人样本、预测关联或运行检查点；按原约定仅本机复算"
+    },
+    {
+      "path": "study/08_购物预测/本机运行/pew-v1-format.sqlite",
+      "bytes": 167936,
+      "sha256": "25c53d739abefdfb5fb31537a1e486543b8c4e95394c85ca93ddd4cf72700739",
+      "storage": "local_only",
+      "reason": "真人样本、预测关联或运行检查点；按原约定仅本机复算"
+    },
+    {
+      "path": "study/08_购物预测/本机运行/pew.sqlite",
+      "bytes": 716800,
+      "sha256": "1c5d2f4653e80af32e0632ba585e59e9245f1b05b9c552186cf6ce6f9d4eaa6b",
+      "storage": "local_only",
+      "reason": "真人样本、预测关联或运行检查点；按原约定仅本机复算"
+    },
+    {
+      "path": "study/08_购物预测/本机运行/shoes-freeze.json",
+      "bytes": 1475951,
+      "sha256": "aadb94b19670cf1213ce83e97bd1af9d407e45e23c203214d38a051b7d9d7698",
+      "storage": "local_only",
+      "reason": "真人样本、预测关联或运行检查点；按原约定仅本机复算"
+    },
+    {
+      "path": "study/08_购物预测/本机运行/shoes-input-parity-predictions.npz",
+      "bytes": 646960,
+      "sha256": "ed24c1e9bf198d5484255974dcf9d688292ca281d33c7a84891708afac0e4bd4",
+      "storage": "local_only",
+      "reason": "真人样本、预测关联或运行检查点；按原约定仅本机复算"
+    },
+    {
+      "path": "study/08_购物预测/本机运行/shoes-model-protocol.json",
+      "bytes": 543,
+      "sha256": "bc82ddf0f3b9c8814de3fc28057fb22bd0009a916395fe04d8f624e7f925317b",
+      "storage": "local_only",
+      "reason": "真人样本、预测关联或运行检查点；按原约定仅本机复算"
+    },
+    {
+      "path": "study/08_购物预测/本机运行/shoes.sqlite",
+      "bytes": 1339392,
+      "sha256": "55016a0e94d9d94e9bcbddab4a349dcce3e7c66c99c2981e2bce333e000eeed9",
+      "storage": "local_only",
+      "reason": "真人样本、预测关联或运行检查点；按原约定仅本机复算"
+    },
+    {
+      "path": "study/08_购物预测/运行核验.json",
+      "bytes": 5962,
+      "sha256": "9f9bb04dc04043ad1fd3db49a7b470a89460283820bacdd2118c6e7b090c3074",
+      "storage": "git"
+    },
+    {
+      "path": "study/README.md",
+      "bytes": 4709,
+      "sha256": "fe65322b62772397177dce745914aa6ac24c1349ff59fd0c7d35c443f99bc5e3",
+      "storage": "git"
+    },
+    {
+      "path": "study/build_report.py",
+      "bytes": 12193,
+      "sha256": "832b3d4f2512991e15c8d48e2c2bda4427febcd45404ea836fb20ef0c02ae444",
+      "storage": "git"
+    },
+    {
+      "path": "study/historical-details.html",
+      "bytes": 160060,
+      "sha256": "37477bd4aff148b6f0daa720d6dc073f29933705589c87ca7fa6c51101e17d80",
+      "storage": "git"
+    },
+    {
+      "path": "study/index.html",
+      "bytes": 345153,
+      "sha256": "a8c19eaa3296ff3e0a68d414b7e872fe853b92b9e8d3a400638bfeabb41241f4",
+      "storage": "git"
+    },
+    {
+      "path": "study/report_charts.js",
+      "bytes": 13798,
+      "sha256": "58c9d2bf9f5a7a9d804383839a0f08e54522358787feb2deea4d1f4561565958",
+      "storage": "git"
+    },
+    {
+      "path": "study/报告模板.html",
+      "bytes": 16331,
+      "sha256": "cf3ba5fd59d670dde7986cf6a7b71e1ee2b803e98cb047fcc138fcf3e694631b",
+      "storage": "git"
+    },
+    {
+      "path": "study/数据/.gitattributes",
+      "bytes": 36,
+      "sha256": "a8580dceffdf65f87f555a3d6a6918d93c5891f6f492d63bdad9fa71e1511a15",
+      "storage": "git"
+    },
+    {
+      "path": "study/数据/anes.zip",
+      "bytes": 6516359,
+      "sha256": "31082da127f1ebcfb1d2736ba650d52cd67a4a6ab13fbe639c2db2515779773c",
+      "storage": "git"
+    },
+    {
+      "path": "study/数据/persona-1m-official-manifest.json",
+      "bytes": 2692,
+      "sha256": "b8582f8fcc6f7023bc46a7d675854c8ce8e44ad886095de9d66005866fdb63a3",
+      "storage": "git"
+    },
+    {
+      "path": "study/数据/persona-1m-path.txt",
+      "bytes": 80,
+      "sha256": "277e48330a91d81f75144d97afae9ae864e5ae05a57526a8c42e665489324044",
+      "storage": "local_only",
+      "reason": "此电脑共享盘路径；发行清单另随 Git 保存"
+    },
+    {
+      "path": "study/数据/pew.zip",
+      "bytes": 3716968,
+      "sha256": "c0ddd883c995d24c262d6569ce22a9fe9aa1ad8fe7af1d96d0b48e1f664e1cdb",
+      "storage": "local_only",
+      "reason": "需账户取得的 Pew 数据；按原数据边界留在本机"
+    },
+    {
+      "path": "study/数据/shed-codebook.pdf",
+      "bytes": 849070,
+      "sha256": "3094d147be4fe60214b1c2550537d1b9d931559d3f804be7976b24e43e27311e",
+      "storage": "git"
+    },
+    {
+      "path": "study/数据/shed-questionnaire.html",
+      "bytes": 159558,
+      "sha256": "dbbdb0ba6d92eb5a6ab37bc81d97837205bba22cd58bf2d42ca36d5b5d373ecf",
+      "storage": "git"
+    },
+    {
+      "path": "study/数据/shed.zip",
+      "bytes": 4676794,
+      "sha256": "a4ab3f7d042f16d63626b1af9aeb6f0b8a0b39e412fa94b87265bc67fe26de14",
+      "storage": "git"
+    },
+    {
+      "path": "study/数据/实验数据索引.md",
+      "bytes": 4010,
+      "sha256": "30cf448f13dc152aa556384ba56e12beac67426b2d53f7eec6154c53cc82ee6e",
+      "storage": "git"
+    },
+    {
+      "path": "study/数据/首轮来源清单.json",
+      "bytes": 920,
+      "sha256": "e9901df30eb529fde8b0b1eeede9704b80a9eb77d855cddec36c1bd7fe1045f7",
+      "storage": "git"
+    },
+    {
+      "path": "study/调研与决策.md",
+      "bytes": 5800,
+      "sha256": "84ebde45eca13883d2cebddd4b2a4848027d0d18202719ad9184037ea5ede80f",
+      "storage": "git"
+    }
+  ]
+}

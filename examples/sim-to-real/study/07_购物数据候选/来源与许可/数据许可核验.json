@@ -1,0 +1,106 @@
+[
+  {
+    "doi": "10.7910/DVN/4WDVDB",
+    "checked_on": "2026-11-10",
+    "verification_url": "https://api.datacite.org/dois/10.7910/DVN/4WDVDB",
+    "titles": [
+      {
+        "title": "Replication Data for: Does Conjoint Analysis Mitigate Social Desirability Bias?"
+      }
+    ],
+    "rights": [
+      {
+        "rightsUri": "info:eu-repo/semantics/openAccess"
+      },
+      {
+        "lang": "en",
+        "rights": "Creative Commons Zero v1.0 Universal",
+        "rightsUri": "https://creativecommons.org/publicdomain/zero/1.0/legalcode",
+        "schemeUri": "https://spdx.org/licenses/",
+        "rightsIdentifier": "cc0-1.0",
+        "rightsIdentifierScheme": "SPDX"
+      }
+    ],
+    "version": "2.1",
+    "landing_page": "https://dataverse.harvard.edu/citation?persistentId=doi:10.7910/DVN/4WDVDB",
+    "note": "许可来自数据存储库提交给 DataCite 的 DOI 元数据；Dataverse 页面本次要求人机验证。版本为核验时登记值，实际使用文件以接收清单哈希为准。"
+  },
+  {
+    "doi": "10.7910/DVN/YGLYDY",
+    "checked_on": "2026-11-10",
+    "verification_url": "https://api.datacite.org/dois/10.7910/DVN/YGLYDY",
+    "titles": [
+      {
+        "title": "Open e-commerce 1.0: Five years of crowdsourced U.S. Amazon purchase histories with user demographics"
+      }
+    ],
+    "rights": [
+      {
+        "rightsUri": "info:eu-repo/semantics/openAccess"
+      },
+      {
+        "lang": "en",
+        "rights": "Creative Commons Zero v1.0 Universal",
+        "rightsUri": "https://creativecommons.org/publicdomain/zero/1.0/legalcode",
+        "schemeUri": "https://spdx.org/licenses/",
+        "rightsIdentifier": "cc0-1.0",
+        "rightsIdentifierScheme": "SPDX"
+      }
+    ],
+    "version": "1.0",
+    "landing_page": "https://dataverse.harvard.edu/citation?persistentId=doi:10.7910/DVN/YGLYDY",
+    "note": "许可来自数据存储库提交给 DataCite 的 DOI 元数据；Dataverse 页面本次要求人机验证。版本为核验时登记值，实际使用文件以接收清单哈希为准。"
+  },
+  {
+    "doi": "10.7910/DVN/PEZ7EE",
+    "checked_on": "2026-11-10",
+    "verification_url": "https://api.datacite.org/dois/10.7910/DVN/PEZ7EE",
+    "titles": [
+      {
+        "title": "Do Consumers Follow the Flag? Perceptions of Hostility and Consumer Preferences"
+      }
+    ],
+    "rights": [
+      {
+        "rightsUri": "info:eu-repo/semantics/openAccess"
+      },
+      {
+        "lang": "en",
+        "rights": "Creative Commons Zero v1.0 Universal",
+        "rightsUri": "https://creativecommons.org/publicdomain/zero/1.0/legalcode",
+        "schemeUri": "https://spdx.org/licenses/",
+        "rightsIdentifier": "cc0-1.0",
+        "rightsIdentifierScheme": "SPDX"
+      }
+    ],
+    "version": "1.0",
+    "landing_page": "https://dataverse.harvard.edu/citation?persistentId=doi:10.7910/DVN/PEZ7EE",
+    "note": "许可来自数据存储库提交给 DataCite 的 DOI 元数据；Dataverse 页面本次要求人机验证。版本为核验时登记值，实际使用文件以接收清单哈希为准。"
+  },
+  {
+    "doi": "10.7910/DVN/YKVLTR",
+    "checked_on": "2026-11-10",
+    "verification_url": "https://api.datacite.org/dois/10.7910/DVN/YKVLTR",
+    "titles": [
+      {
+        "title": "Replication Data: Circular products resonate well with diverse consumers. Evidence from a Choice Experiment in Switzerland"
+      }
+    ],
+    "rights": [
+      {
+        "rightsUri": "info:eu-repo/semantics/openAccess"
+      },
+      {
+        "lang": "en",
+        "rights": "Creative Commons Zero v1.0 Universal",
+        "rightsUri": "https://creativecommons.org/publicdomain/zero/1.0/legalcode",
+        "schemeUri": "https://spdx.org/licenses/",
+        "rightsIdentifier": "cc0-1.0",
+        "rightsIdentifierScheme": "SPDX"
+      }
+    ],
+    "version": "2.0",
+    "landing_page": "https://dataverse.harvard.edu/citation?persistentId=doi:10.7910/DVN/YKVLTR",
+    "note": "许可来自数据存储库提交给 DataCite 的 DOI 元数据；Dataverse 页面本次要求人机验证。版本为核验时登记值，实际使用文件以接收清单哈希为准。"
+  }
+]

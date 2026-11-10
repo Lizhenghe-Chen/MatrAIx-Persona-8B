@@ -1,3 +1,18 @@
-# Downloaded person-level public data and source documents stay in this checkout.
-# The catalog and checksums are tracked; selection and experiment preparation are pending.
-/本机数据/
+# Keep the original paths so frozen input hashes and experiment scripts remain valid.
+# Track only the small public files whose redistribution terms were checked.
+/本机数据/*
+!/本机数据/shoes.csv.gz
+!/本机数据/tshirt.csv.gz
+!/本机数据/circular-products.csv.gz
+!/本机数据/drone-*.gz
+!/本机数据/CIUS2022_Codebook_PUMF.pdf
+!/本机数据/CIUS2022_Quest_E.pdf
+!/本机数据/Horiuchi2021_Conjoint_SDB/
+/本机数据/Horiuchi2021_Conjoint_SDB/*
+!/本机数据/Horiuchi2021_Conjoint_SDB/README.pdf
+!/本机数据/Horiuchi2021_Conjoint_SDB/原问卷/
+!/本机数据/Open_eCommerce_1.0/
+/本机数据/Open_eCommerce_1.0/*
+!/本机数据/Open_eCommerce_1.0/survey.csv.gz
+!/本机数据/Open_eCommerce_1.0/fields.csv.gz
+!/本机数据/Open_eCommerce_1.0/*-instrument.pdf
