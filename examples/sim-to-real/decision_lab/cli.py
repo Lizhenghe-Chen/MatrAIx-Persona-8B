@@ -10,6 +10,9 @@ def main():
     parser.add_argument('command', choices=['check', 'freeze', 'run', 'score', 'report', 'verify'])
     parser.add_argument('--input', type=Path, required=True)
     parser.add_argument('--output', type=Path)
+    parser.add_argument('--config', type=Path)
+    parser.add_argument('--seal', type=Path)
+    parser.add_argument('--phase', choices=['train','development','test'])
     args = parser.parse_args()
     doc = json.loads(args.input.read_text())
     if args.command == 'check':
@@ -22,9 +25,20 @@ def main():
             raise SystemExit('Admission audit incomplete; cannot freeze')
         if not args.output:
             parser.error('--output required')
-        result = {'input_sha256': digest(doc), 'assignments': split(doc['rows']), 'seed': 20261109}
+        if not args.config:
+            parser.error('--config required to freeze')
+        config = json.loads(args.config.read_text())
+        if config.get('status') != 'frozen':
+            raise ValueError('Configuration must be frozen')
+        result = {'config_sha256': digest(config), 'input_sha256': digest(doc), 'assignments': split(doc['rows']), 'seed': 20261109}
         with args.output.open('x') as f:
             json.dump(result, f, ensure_ascii=False, indent=2)
+    elif args.command == 'run':
+        from .runner import run
+        if not all([args.config, args.seal, args.phase, args.output]):
+            parser.error('run requires --config --seal --phase --output checkpoint.sqlite')
+        result = run(doc, json.loads(args.seal.read_text()), json.loads(args.config.read_text()), args.output, args.phase)
+        print(json.dumps(result))
     elif args.command == 'score':
         from .scoring import score
         validate(doc['rows'])

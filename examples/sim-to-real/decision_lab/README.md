@@ -15,7 +15,7 @@ python -m decision_lab verify --input archive.json
 python -m unittest decision_lab.test_core
 ```
 
-`score` 已支持本地概率评分；`run`、`report` 当前明确返回未实现，不会生成模拟成绩。`freeze` 拒绝覆盖已有划分，且要求五项审查全部通过。未通过审查不能以演示数据代替正式实验。
+`score` 已支持本地概率评分；`run` 已接入冻结配置与SQLite检查点；`report` 当前明确返回未实现，不会生成模拟成绩。`freeze` 拒绝覆盖已有划分，且要求五项审查全部通过。未通过审查不能以演示数据代替正式实验。
 
 标准化输入的每条记录包含 person（仅本地）、task、stratum、question、options、context、background、answer（仅评分侧）。background 必须由数据适配器按核准映射产生，不能将原始记录直接送入API。request_payload 只构造明确允许的字段；字段名检查只是附加防护，不能替代内容与来源审查。
 
@@ -43,3 +43,5 @@ python -m unittest decision_lab.test_core
 2026-11-10已用纯合成题验证DeepSeek Pro：返回模型标识为 `deepseek-v4-pro`，关闭思考、JSON概率输出通过。具体服务指纹和token用量见 `endpoint-pilot.json`。这只证明接口兼容，不是正式实验成绩或正式冻结。
 
 本机凭据由用户配置在 `~/.config/matraix-decision-lab/credentials.json`，变量名 `DEEPSEEK_API_KEY`，文件权限0600；不随Git分发、不写入请求日志。实际调用仍从进程变量读取，运行器需显式加载本机凭据。
+
+运行器要求配置与输入共同冻结，明确调用次数和保守费用上限。成功任务不重复调用；中断时状态不明的请求须先核实，避免自动重复计费。失败记录保留，暂未提供自动重试。费用字段为保守预留额，不冒充账单实际收费。
