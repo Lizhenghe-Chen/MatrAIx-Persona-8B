@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 346,
-  "git_bytes": 78330203,
+  "git_file_count": 406,
+  "git_bytes": 78370209,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -20,296 +20,656 @@
   "files": [
     {
       "path": "README.md",
-      "bytes": 7416,
-      "sha256": "278589d3e4e0b21ae3950db703518d09e1a4a12d4a3758466f97f61b94dfca33",
+      "bytes": 7705,
+      "sha256": "5069521ff97ff4238c80f8ffc8824a97f84c77718714f67aa368b528904e479b",
       "storage": "git"
     },
     {
       "path": "archive_inventory.py",
-      "bytes": 5539,
-      "sha256": "1febfbcf56265fabdfe1aa9327afcb5e8282effd31d806f4180778b12bee2185",
+      "bytes": 5780,
+      "sha256": "06004a8e21711b04bcc8b6d676bc5772ed6279e0a300d6b4c7d5c940e20a87a1",
       "storage": "git"
     },
     {
       "path": "audit_matching.py",
-      "bytes": 18038,
-      "sha256": "a3309ef4274b4950067b0639a95afe988446542d4a83487b23e430b9cb2c4f64",
+      "bytes": 24,
+      "sha256": "f14fd3ffccecf58535291b166474828db685f856e871fbab364abd614df50695",
       "storage": "git"
     },
     {
       "path": "data_sources.py",
       "bytes": 2152,
-      "sha256": "23a80dfa991d47230cfba728899bf3af692cc2f634d9c23f2bb22a5089bc4905",
+      "sha256": "a3767806411b4ac4a24c8e56c4705c3c33d2cb996c87941ead1bba8f9a093e57",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/README.md",
+      "bytes": 2457,
+      "sha256": "ec3f3688f43eb388882c8f175780653758fadef5b08672aba31f39a8f5f79b4b",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/__init__.py",
+      "bytes": 73,
+      "sha256": "2c4e9606a303e317879adeda8278b9d703b7173b6adee1006c70d105283df836",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/__main__.py",
+      "bytes": 29,
+      "sha256": "cf7390a2508a0fcad4777a4a629fc5212ab655cb45845975995f835676a834e3",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/audit_sources.py",
+      "bytes": 2206,
+      "sha256": "f188ae43dc7c98ec6446845229b80279223aca6b1a1e50d60091b1a60b5a426c",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/cli.py",
+      "bytes": 1728,
+      "sha256": "25cc8d9629494fbb77bc9616d0f30530948aed394793d72acd094b6bfbbc4c90",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/core.py",
+      "bytes": 2803,
+      "sha256": "c1c3b5396633744540b926a616a1c0d4ad505611578a6e97376cd94e8a506738",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/deepseek-pro.json",
+      "bytes": 445,
+      "sha256": "42bd9cbe9b9b846f14c9883bc2ff7342ab902e23d155c4928d861f981f9b95d5",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/source-audit.json",
+      "bytes": 18759,
+      "sha256": "2f1a2e2b5e39ca757d74526ac7c86b2d11734a7f5f070b4b102e53eb155f25bb",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/test_core.py",
+      "bytes": 1038,
+      "sha256": "b76e35deb658de7f37cf79b153a45ce715789b0ec99a455e48685c51f872d134",
       "storage": "git"
     },
     {
       "path": "experiment.py",
-      "bytes": 28037,
-      "sha256": "b7058e8564ce1655f8a95c4d657a413ff5b90768ab895f54fdbad60448ccf271",
+      "bytes": 20,
+      "sha256": "2bbdf06204c6af7748d39b56955e852738c13bd176a385d99691c95bc13bdc40",
       "storage": "git"
     },
     {
       "path": "instruments.py",
+      "bytes": 21,
+      "sha256": "1493ce9b2ef506e76f6e2cf6bec2f20788ad7e21231dc538297424b07506b4ca",
+      "storage": "git"
+    },
+    {
+      "path": "legacy/README.md",
+      "bytes": 604,
+      "sha256": "4a65a5ca958b633379e12eec63cb0da331bd8e6e8a9e80057bf21a52225ef70a",
+      "storage": "git"
+    },
+    {
+      "path": "legacy/audit_matching.py",
+      "bytes": 18038,
+      "sha256": "a3309ef4274b4950067b0639a95afe988446542d4a83487b23e430b9cb2c4f64",
+      "storage": "git"
+    },
+    {
+      "path": "legacy/data_sources.py",
+      "bytes": 18,
+      "sha256": "e6b52be2cba9eb13b3788c92e56a234ce425e7043ab11ac15d0f96616052ecfa",
+      "storage": "git"
+    },
+    {
+      "path": "legacy/experiment.py",
+      "bytes": 28086,
+      "sha256": "63902509adf15c84af1830623baff38c572130a21c0ac92029354313142b5d3c",
+      "storage": "git"
+    },
+    {
+      "path": "legacy/instruments.py",
       "bytes": 2643,
       "sha256": "4f85ec8bd3f7f908d1ccd07dcdd3e96d225f021f670d95086e49ca2a8c7589ff",
       "storage": "git"
     },
     {
-      "path": "optimize.py",
+      "path": "legacy/migration.json",
+      "bytes": 7944,
+      "sha256": "6ad8723976bf8a2eaf7f28d2f99863ed909a974096e4afcc75b84a1eaf3bddc3",
+      "storage": "git"
+    },
+    {
+      "path": "legacy/optimize.py",
       "bytes": 11300,
       "sha256": "275f804cb223582d5ef090b203d50b6fa486d524f963eb933247a200d72589f4",
       "storage": "git"
     },
     {
-      "path": "optimize_html.py",
+      "path": "legacy/optimize_html.py",
       "bytes": 7771,
       "sha256": "e8e705a997d78cf240fc82d8d3d520414c742c0af7a82043748a5874d9f02fa7",
       "storage": "git"
     },
     {
-      "path": "optimize_profiles.py",
+      "path": "legacy/optimize_profiles.py",
       "bytes": 8796,
       "sha256": "440f5a3211e5d9d8d35e2485540f4452c4a7206f3988f4fb8cb83bd0e3f57fa5",
       "storage": "git"
     },
     {
-      "path": "optimize_report.html",
+      "path": "legacy/optimize_report.html",
       "bytes": 23196,
       "sha256": "67b0565e33f67c300087616a4b73deea2b9aafbc8e2f377f66f9cff463e410cf",
       "storage": "git"
     },
     {
-      "path": "optimize_score.py",
+      "path": "legacy/optimize_score.py",
       "bytes": 15980,
       "sha256": "214fb6465711e70f76d350f17b3c696409ffb621f82cb7b57dcde7e5f71ad852",
       "storage": "git"
     },
     {
-      "path": "optimize_summary.py",
+      "path": "legacy/optimize_summary.py",
       "bytes": 9047,
       "sha256": "8695dc20994959b734022be028e640b79091088bc878c672759f2344dfffb015",
       "storage": "git"
     },
     {
-      "path": "report_smoke_check.cjs",
+      "path": "legacy/report_smoke_check.cjs",
       "bytes": 18693,
       "sha256": "8482b22f14245781b2c4980950bc55af28c3a170dfd3a8d95730263607afcff4",
       "storage": "git"
     },
     {
-      "path": "retail_amazon.py",
+      "path": "legacy/retail_amazon.py",
       "bytes": 5240,
       "sha256": "a242a87bbeb21f69321aba913f082d4261a0e9d244957a5a34d8a02d7dfeb30d",
       "storage": "git"
     },
     {
-      "path": "retail_amazon_mix.py",
+      "path": "legacy/retail_amazon_mix.py",
       "bytes": 11260,
       "sha256": "1bf19e22beb158354b5f18f63c3dd891164a9e66a9c39a7e998da45e4d699cdf",
       "storage": "git"
     },
     {
-      "path": "retail_amazon_model.py",
+      "path": "legacy/retail_amazon_model.py",
       "bytes": 3722,
       "sha256": "4ff32b5cc98272c0bd6216049e266e2cbbebd039282b732c467dbce6abf63186",
       "storage": "git"
     },
     {
-      "path": "retail_amazon_repeat_diagnostics.py",
+      "path": "legacy/retail_amazon_repeat_diagnostics.py",
       "bytes": 2613,
       "sha256": "c0d9707eec024e6be0f442534e89648cb9e345f30ee88ad9b2e5b22dcb580716",
       "storage": "git"
     },
     {
-      "path": "retail_amazon_score.py",
+      "path": "legacy/retail_amazon_score.py",
       "bytes": 5199,
       "sha256": "54ac27bcd9c13173ddf73afd56d0d1181f0fa22dad1b7695953a89726d832667",
       "storage": "git"
     },
     {
-      "path": "retail_audit.py",
+      "path": "legacy/retail_audit.py",
       "bytes": 7951,
       "sha256": "35f9c01541f6d49c43b3fa297320304a81f46d875d40f45ee822be559015d1b7",
       "storage": "git"
     },
     {
-      "path": "retail_findings.py",
+      "path": "legacy/retail_findings.py",
       "bytes": 7463,
       "sha256": "ff11f13ea9f9367d59ed90ac06df15c67407e2a2caa4b5135e8cbf08882580d0",
       "storage": "git"
     },
     {
-      "path": "retail_history_charts.js",
+      "path": "legacy/retail_history_charts.js",
       "bytes": 9122,
       "sha256": "02d754d690d07325e597c019983235660bd6ca1cc0f5064aad2635a65af7e8e9",
       "storage": "git"
     },
     {
-      "path": "retail_history_template.html",
+      "path": "legacy/retail_history_template.html",
       "bytes": 21631,
       "sha256": "fb1485739871e9ab2a05cfbf2d341760e4916228050609e5eb14efc7560c3193",
       "storage": "git"
     },
     {
-      "path": "retail_matching_review.py",
+      "path": "legacy/retail_matching_review.py",
       "bytes": 13221,
       "sha256": "3a5259462cf2f83ee7f9e76a9e41f1dd8debfe04e04e13270a90a6dadfba6512",
       "storage": "git"
     },
     {
-      "path": "retail_pew.py",
+      "path": "legacy/retail_pew.py",
       "bytes": 9719,
       "sha256": "efd882b1ea23e238f5690aff9ae50f636db9a56d16983ac00d4f906fae537ab4",
       "storage": "git"
     },
     {
-      "path": "retail_pew_calibration.py",
+      "path": "legacy/retail_pew_calibration.py",
       "bytes": 5630,
       "sha256": "7db5379d6279ee38f3b1ce14fa209ec37f7d1b768176a60793cb114196dc5023",
       "storage": "git"
     },
     {
-      "path": "retail_pew_draw.py",
+      "path": "legacy/retail_pew_draw.py",
       "bytes": 2938,
       "sha256": "3ffca85a509bbc5aeb2339f98c0f3ddfc150af24739e72cd47193bb9be99f453",
       "storage": "git"
     },
     {
-      "path": "retail_pew_score.py",
+      "path": "legacy/retail_pew_score.py",
       "bytes": 7532,
       "sha256": "12f84da67466fe4f91b8af80a308f2cc2b5fff153b6af5c13e94d5c683736284",
       "storage": "git"
     },
     {
-      "path": "retail_reader_conclusions.html",
+      "path": "legacy/retail_reader_conclusions.html",
       "bytes": 4599,
       "sha256": "3f8cbcf4c0e6d8ee3587b41dbf22d15cfaf53b2428fdb92dd5d1291d73a243bf",
       "storage": "git"
     },
     {
-      "path": "retail_reader_glossary.js",
+      "path": "legacy/retail_reader_glossary.js",
       "bytes": 14331,
       "sha256": "f8202a4f75463f787f4ce731c83f0a7c19ef858cf8fd93c88c5281b76b61ff18",
       "storage": "git"
     },
     {
-      "path": "retail_reader_guidance.html",
+      "path": "legacy/retail_reader_guidance.html",
       "bytes": 12158,
       "sha256": "9593cdb92e9e87f8cba52153c7fab1c0cb1a5bb846892acaf8ced18ba8c8d212",
       "storage": "git"
     },
     {
-      "path": "retail_reader_report.py",
+      "path": "legacy/retail_reader_report.py",
       "bytes": 13806,
       "sha256": "85ea7383b743e6efbad9713b9725cf0d5e46d915d52a22b239c9cbdd28ef96c7",
       "storage": "git"
     },
     {
-      "path": "retail_reader_template.html",
+      "path": "legacy/retail_reader_template.html",
       "bytes": 733,
       "sha256": "06cb3cf7f29cf232a39d7cfb9455bf386dc9626219452d24e1c2ca8a73cfcb85",
       "storage": "git"
     },
     {
-      "path": "retail_reader_template.html.tmpl",
+      "path": "legacy/retail_reader_template.html.tmpl",
       "bytes": 66552,
       "sha256": "ff46facf6b82e996a3138c06659fe71f0f7e373dcb5c4073bd8dcd514c2ea39a",
       "storage": "git"
     },
     {
-      "path": "retail_report.py",
+      "path": "legacy/retail_report.py",
       "bytes": 35319,
       "sha256": "4bfae49a24a949ef24cf213f1f3560d80b5d6de447b140667a8b8269128684a3",
       "storage": "git"
     },
     {
-      "path": "retail_shoes_input_parity.py",
+      "path": "legacy/retail_shoes_input_parity.py",
       "bytes": 8536,
       "sha256": "3af733d76e511fcf116aad1b1aaa9144385cabc658c068b3499e1b53c383b3fc",
       "storage": "git"
     },
     {
-      "path": "retail_shoes_model.py",
+      "path": "legacy/retail_shoes_model.py",
       "bytes": 5170,
       "sha256": "e10fec3b4dc45d22428e038128d930c7960aac6aef296ee1a39809d9f3da0c71",
       "storage": "git"
     },
     {
-      "path": "retail_shoes_prepare.py",
+      "path": "legacy/retail_shoes_prepare.py",
       "bytes": 4179,
       "sha256": "f39faf914d6f8cd8ecf360365cc618083eb99030541e37841dc589dee8022138",
       "storage": "git"
     },
     {
-      "path": "retail_shoes_score.py",
+      "path": "legacy/retail_shoes_score.py",
       "bytes": 12457,
       "sha256": "3a23b463dfa290c77b1cd75eacc2689009234ae1e2586a479867dee1044a4f04",
       "storage": "git"
     },
     {
-      "path": "retail_story_charts.js",
+      "path": "legacy/retail_story_charts.js",
       "bytes": 2018,
       "sha256": "878dd654b86a65c455fa6c7e80969d55117e44dace3120e626b2908001494e47",
       "storage": "git"
     },
     {
-      "path": "retail_story_report.py",
+      "path": "legacy/retail_story_report.py",
       "bytes": 14680,
       "sha256": "91d8066f6aab38c04e9ed758efdc19ea28c00f02d0fff6ff6071e8881e2a8f6d",
       "storage": "git"
     },
     {
-      "path": "retail_story_template.html.tmpl",
+      "path": "legacy/retail_story_template.html.tmpl",
       "bytes": 35450,
       "sha256": "f3726fc1f5337fedabbf6d33ba68d078a46dbe128a29fd14e7bafac14ae16300",
       "storage": "git"
     },
     {
-      "path": "revalidation.py",
+      "path": "legacy/revalidation.py",
       "bytes": 24233,
       "sha256": "f160a24a0703657a341911a61fe6d4eedd13d82b497f739e020f52ec435163bc",
       "storage": "git"
     },
     {
-      "path": "revalidation_archive.py",
+      "path": "legacy/revalidation_archive.py",
       "bytes": 3831,
       "sha256": "9b2c125b1a29893cb740b2f80531781b03f1e9cc82f3713ecab7b35d797a8480",
       "storage": "git"
     },
     {
-      "path": "revalidation_charts.js",
+      "path": "legacy/revalidation_charts.js",
       "bytes": 7841,
       "sha256": "0250eabb56fc3bb8a35bee4b2501d7cb662746e6d181d0ea856e2fc79600d539",
       "storage": "git"
     },
     {
-      "path": "revalidation_report.py",
+      "path": "legacy/revalidation_report.py",
       "bytes": 22537,
       "sha256": "de916b30bc758f50a4e023e497b166cb0ff1fd57234df7e63a36fda4f12352d7",
       "storage": "git"
     },
     {
-      "path": "revalidation_score.py",
+      "path": "legacy/revalidation_score.py",
       "bytes": 12744,
       "sha256": "2cc4819bbc6a9e8f02a73fe75df480dbfeea28a214ba4196cd99ab2c306ace4f",
       "storage": "git"
     },
     {
-      "path": "shopping.py",
+      "path": "legacy/shopping.py",
       "bytes": 16344,
       "sha256": "a30b73e0ec74891f3fda6bbda9a965094b64e154b9c7238d3ff547307de95319",
       "storage": "git"
     },
     {
-      "path": "shopping_report.py",
+      "path": "legacy/shopping_report.py",
       "bytes": 11037,
       "sha256": "4bcf023893c7171d731b68a9f7b5e6daab8a73bada73319612057cda6f4721ba",
       "storage": "git"
     },
     {
-      "path": "shopping_score.py",
+      "path": "legacy/shopping_score.py",
       "bytes": 12292,
       "sha256": "db2b9f40ec49146742cf51dd295e7b269bcbf37e4e686b6ec280c8f2efd16a25",
+      "storage": "git"
+    },
+    {
+      "path": "legacy/study",
+      "bytes": 8,
+      "sha256": "608a1f94610033fa433f3894c0ed33ef5890d25b94ca886f5b52af5e525da461",
+      "storage": "git"
+    },
+    {
+      "path": "legacy/test_revalidation.py",
+      "bytes": 3238,
+      "sha256": "085b4a28446f2f78d6fd525c03912ebb63d06a46e58914daac8731c5987344a7",
+      "storage": "git"
+    },
+    {
+      "path": "optimize.py",
+      "bytes": 18,
+      "sha256": "5a426d1ca0dc9445de4d107d5e24a68e32b93f190ffb7cd294e4f440005a8fd9",
+      "storage": "git"
+    },
+    {
+      "path": "optimize_html.py",
+      "bytes": 23,
+      "sha256": "1fe706c9ff76876697bd7f2dec8d49c5b5aeba6a4d66c312236d791b745d34f9",
+      "storage": "git"
+    },
+    {
+      "path": "optimize_profiles.py",
+      "bytes": 27,
+      "sha256": "64d0b4da277a71047d9c8961a3e9372eec797d852bbeb8c0f524cd62890004dc",
+      "storage": "git"
+    },
+    {
+      "path": "optimize_report.html",
+      "bytes": 27,
+      "sha256": "476983317f588695ecb2223eb5dd7e854584f5f3dc4c28858ec75eebaf900c68",
+      "storage": "git"
+    },
+    {
+      "path": "optimize_score.py",
+      "bytes": 24,
+      "sha256": "01b6f1e8d9407d5129d3ff34ede30e45f4a5f5ab7e42b84620f0f1884713d218",
+      "storage": "git"
+    },
+    {
+      "path": "optimize_summary.py",
+      "bytes": 26,
+      "sha256": "cb69b8fa8fcff4999bbdaf05fa3f29aca52a9026c41cf34937cf7b7493c341ee",
+      "storage": "git"
+    },
+    {
+      "path": "report_smoke_check.cjs",
+      "bytes": 29,
+      "sha256": "14d0324c2962bfa37403b06df6c9a46f5e93f9148d095d40da221ce95a7027fc",
+      "storage": "git"
+    },
+    {
+      "path": "retail_amazon.py",
+      "bytes": 23,
+      "sha256": "46f15fb06527e43807dd6f5c29948c4a62cf1aaea8cf26b99066ecca99e15de4",
+      "storage": "git"
+    },
+    {
+      "path": "retail_amazon_mix.py",
+      "bytes": 27,
+      "sha256": "4591594108a441831cba22aa1b160507c80c2e93c6e676f248876b1ce5f5a70e",
+      "storage": "git"
+    },
+    {
+      "path": "retail_amazon_model.py",
+      "bytes": 29,
+      "sha256": "f486adf73cbf14d0d635639ca78922f22f04aae6434c4de274bbbd1d3291e151",
+      "storage": "git"
+    },
+    {
+      "path": "retail_amazon_repeat_diagnostics.py",
+      "bytes": 42,
+      "sha256": "a8452c4c0d86065aa61064ebc1b34366104be6c3722ce84e609f20816c01d53c",
+      "storage": "git"
+    },
+    {
+      "path": "retail_amazon_score.py",
+      "bytes": 29,
+      "sha256": "402e62148ccaf09ea53ca61682d26626b3e39912f1873f4387ff3042aa5f1837",
+      "storage": "git"
+    },
+    {
+      "path": "retail_audit.py",
+      "bytes": 22,
+      "sha256": "0ae0e1a6039b1ce6b2673d38da96f3ec6a2b5b4958cd9cfaa260cb6e987a73c0",
+      "storage": "git"
+    },
+    {
+      "path": "retail_findings.py",
+      "bytes": 25,
+      "sha256": "feabfaf993740148b508168e1f4cd3c4175bc0367e0bd4a179adc0c871d9752c",
+      "storage": "git"
+    },
+    {
+      "path": "retail_history_charts.js",
+      "bytes": 31,
+      "sha256": "b45b136998378885345f64bd2ad60648fc96b397e64ffcfc68cf029699cd5ee0",
+      "storage": "git"
+    },
+    {
+      "path": "retail_history_template.html",
+      "bytes": 35,
+      "sha256": "4021c3b54457c51c308b01a54109776646b4b3855ad8a6411fa7f54bceab230f",
+      "storage": "git"
+    },
+    {
+      "path": "retail_matching_review.py",
+      "bytes": 32,
+      "sha256": "6557d62f8de617bdf1a948b728be16da896e65291bbf6ac45ad278a20f033db9",
+      "storage": "git"
+    },
+    {
+      "path": "retail_pew.py",
+      "bytes": 20,
+      "sha256": "a8334c4696b8b2dd5aa63aeaebc640778b8cdbd3afce15814cc6868bab2501e5",
+      "storage": "git"
+    },
+    {
+      "path": "retail_pew_calibration.py",
+      "bytes": 32,
+      "sha256": "a577a185758ef14d9203013dab378375957139889463af15c87b42f769cecfbb",
+      "storage": "git"
+    },
+    {
+      "path": "retail_pew_draw.py",
+      "bytes": 25,
+      "sha256": "aacb60d0740430c839e8dcf2e8a0158acbe1d9efb1de7457d17a168cf5f3e27e",
+      "storage": "git"
+    },
+    {
+      "path": "retail_pew_score.py",
+      "bytes": 26,
+      "sha256": "1cf72ed212fc36f946b23f90c967762a08a7e12a65955317a503fbfa654bf1dc",
+      "storage": "git"
+    },
+    {
+      "path": "retail_reader_conclusions.html",
+      "bytes": 37,
+      "sha256": "82ffb0d2807152f292381afe7cbee83d5699713180f3c2afe147fdcab57abf42",
+      "storage": "git"
+    },
+    {
+      "path": "retail_reader_glossary.js",
+      "bytes": 32,
+      "sha256": "c1ab8e4a37e5429ec3cf2778da7d1466ba946a3537066f781224ca5919ef45e3",
+      "storage": "git"
+    },
+    {
+      "path": "retail_reader_guidance.html",
+      "bytes": 34,
+      "sha256": "3dc7bbd6d01fef870e9d00072f84e7cb43e6bdd56df44028762a59561a92a971",
+      "storage": "git"
+    },
+    {
+      "path": "retail_reader_report.py",
+      "bytes": 30,
+      "sha256": "8e21c167532c824197af53f9fa1415d02c1b58ff9b3ec39a44347031f7e5b315",
+      "storage": "git"
+    },
+    {
+      "path": "retail_reader_template.html",
+      "bytes": 34,
+      "sha256": "82a2d91108b5d3f2147a2a2e7a45c320c33876391b96714e26a81e34bcb79c39",
+      "storage": "git"
+    },
+    {
+      "path": "retail_reader_template.html.tmpl",
+      "bytes": 39,
+      "sha256": "db702f120904c12628617e8c5086ba43b8ddab08155eadb0b9244205c002ee4c",
+      "storage": "git"
+    },
+    {
+      "path": "retail_report.py",
+      "bytes": 23,
+      "sha256": "bc8109c246604436b5fbad9696ca94f49ea9545be04b94afff820f7295a61ae3",
+      "storage": "git"
+    },
+    {
+      "path": "retail_shoes_input_parity.py",
+      "bytes": 35,
+      "sha256": "868fadcceea00449c55471f5d90657a697a7ee63dfcdae18f4c6fd150b40b136",
+      "storage": "git"
+    },
+    {
+      "path": "retail_shoes_model.py",
+      "bytes": 28,
+      "sha256": "b35a9bbd083feab474207e4c2c261f3bc667e496ce84a99927e9a22023105f5c",
+      "storage": "git"
+    },
+    {
+      "path": "retail_shoes_prepare.py",
+      "bytes": 30,
+      "sha256": "80104ec1803569b8d0eaeeebf6f4dd912fd4849f8d1ca5a5d374f469c215b197",
+      "storage": "git"
+    },
+    {
+      "path": "retail_shoes_score.py",
+      "bytes": 28,
+      "sha256": "adaf374ae90a74f1a9153dce3be40552926140aef719875cce6e12cfc19dc34e",
+      "storage": "git"
+    },
+    {
+      "path": "retail_story_charts.js",
+      "bytes": 29,
+      "sha256": "d5051b5cd5763c7d09542b1f6f2bcd0e86c1a09f8f4c20373afe69e544496b05",
+      "storage": "git"
+    },
+    {
+      "path": "retail_story_report.py",
+      "bytes": 29,
+      "sha256": "626b324a653e83d3259da0e0eeb7f464a36b01de87c30cdede2aaa5911992cd9",
+      "storage": "git"
+    },
+    {
+      "path": "retail_story_template.html.tmpl",
+      "bytes": 38,
+      "sha256": "f6b28c5bc434822dd7551decb48aa0c08580ec89d88d256c3911e42f32dbfe94",
+      "storage": "git"
+    },
+    {
+      "path": "revalidation.py",
+      "bytes": 22,
+      "sha256": "8e24db0f2fc27d99b3fc5985a22d3f335a857ca4a925a3de82f7352e247bbf16",
+      "storage": "git"
+    },
+    {
+      "path": "revalidation_archive.py",
+      "bytes": 30,
+      "sha256": "150fdefa50ccf914e76d78ec4c6906095657b2ff4eeb2c7b6bbad091ea20af2f",
+      "storage": "git"
+    },
+    {
+      "path": "revalidation_charts.js",
+      "bytes": 29,
+      "sha256": "9a02b7c32ab28182e36a1fbdc6b402bc54ae8ad001051a619395ef92fd6ca029",
+      "storage": "git"
+    },
+    {
+      "path": "revalidation_report.py",
+      "bytes": 29,
+      "sha256": "9de34f42600c2a9ac99db82c6c60fe804466cfb6fb93bd7090c50416f88888f1",
+      "storage": "git"
+    },
+    {
+      "path": "revalidation_score.py",
+      "bytes": 28,
+      "sha256": "9e75f0e834e4dea862dae967d2b4fd5693a611bf0bee5f6b46ec9ac6fb037fe1",
+      "storage": "git"
+    },
+    {
+      "path": "shopping.py",
+      "bytes": 18,
+      "sha256": "e4f0ee882ec144f09d44ff3933c6dd92e76fcd604dad55230df9316dfab483d6",
+      "storage": "git"
+    },
+    {
+      "path": "shopping_report.py",
+      "bytes": 25,
+      "sha256": "c376e381b49bc1dd1eacd29fbc57309ca6d3772d0ba4e16fd9805e8361ea2788",
+      "storage": "git"
+    },
+    {
+      "path": "shopping_score.py",
+      "bytes": 24,
+      "sha256": "58e39f6d517bd37fac54855596bc2e0e00a2c12f2586cf0959e094071b448a94",
       "storage": "git"
     },
     {
@@ -1798,7 +2158,7 @@
     {
       "path": "study/08_购物预测/报告展示核验.json",
       "bytes": 6804,
-      "sha256": "6508d52f6a46351a3c7e7f22072a146a74947c0ec546201d8e28209ff6785088",
+      "sha256": "d39e3e59333a4362d51c55ee0f03f3d25904a708ea0cfc8eaef4b3718babfd78",
       "storage": "git"
     },
     {
@@ -2419,8 +2779,8 @@
     },
     {
       "path": "test_revalidation.py",
-      "bytes": 3238,
-      "sha256": "085b4a28446f2f78d6fd525c03912ebb63d06a46e58914daac8731c5987344a7",
+      "bytes": 27,
+      "sha256": "d4b9ad04ec4ebe0d0f1e128fec843e3e48ebdf7f69f7ee3573ec30358929e22a",
       "storage": "git"
     }
   ]

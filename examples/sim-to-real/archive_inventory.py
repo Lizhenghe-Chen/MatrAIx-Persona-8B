@@ -17,7 +17,13 @@ OUTPUT = ROOT / "study/00_导航/文件清单.json"
 LIMIT = 20 * 1024 * 1024
 
 
+def file_size(path: Path) -> int:
+    return len(str(path.readlink()).encode()) if path.is_symlink() else path.stat().st_size
+
+
 def digest(path: Path) -> str:
+    if path.is_symlink():
+        return hashlib.sha256(str(path.readlink()).encode()).hexdigest()
     with path.open("rb") as stream:
         return hashlib.file_digest(stream, "sha256").hexdigest()
 
@@ -33,7 +39,7 @@ def local_reason(path: Path) -> str:
     relative = path.relative_to(ROOT).as_posix()
     if "11_文献综述/全文资料/本机全文/" in relative:
         return "论文或附件；再分发用途受限或许可尚未确认，全文索引随 Git"
-    if path.stat().st_size > LIMIT:
+    if file_size(path) > LIMIT:
         return "大型原始下载包；保留本机和获取来源"
     if "pew.zip" in relative or "Pew_Wave13/" in relative:
         return "需账户取得的 Pew 数据；按原数据边界留在本机"
@@ -53,7 +59,7 @@ def local_reason(path: Path) -> str:
 def record(path: Path, tracked: bool) -> dict:
     result = {
         "path": path.relative_to(ROOT).as_posix(),
-        "bytes": path.stat().st_size,
+        "bytes": file_size(path),
         "sha256": digest(path),
         "storage": "git" if tracked else "local_only",
     }
@@ -110,13 +116,13 @@ def check() -> None:
     failures = []
     for row in payload["files"]:
         path = ROOT / row["path"]
-        if not path.is_file():
+        if not path.is_file() and not path.is_symlink():
             if row["storage"] == "local_only":
                 absent_local += 1
             else:
                 failures.append("missing: " + row["path"])
             continue
-        if path.stat().st_size != row["bytes"] or digest(path) != row["sha256"]:
+        if file_size(path) != row["bytes"] or digest(path) != row["sha256"]:
             failures.append("changed: " + row["path"])
         else:
             checked[row["storage"]] += 1
