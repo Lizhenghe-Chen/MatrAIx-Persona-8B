@@ -1,0 +1,32 @@
+[
+  {
+    "study": "04_四国烘干机",
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "source": "https://doi.org/10.5281/zenodo.10046247",
+    "status": "repository_license_identified; individual field and privacy review still pending"
+  },
+  {
+    "study": "05_瑞士家电规格",
+    "license": {
+      "name": "CC0 1.0",
+      "uri": "http://creativecommons.org/publicdomain/zero/1.0",
+      "iconUri": "https://licensebuttons.net/p/zero/1.0/88x31.png",
+      "rightsIdentifier": "CC0-1.0",
+      "rightsIdentifierScheme": "SPDX",
+      "schemeUri": "https://spdx.org/licenses/",
+      "languageCode": "en"
+    },
+    "source": "https://doi.org/10.7910/DVN/YKVLTR",
+    "status": "repository_license_identified; individual field and privacy review still pending"
+  },
+  {
+    "study": "03_德国番茄包装",
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "source": "https://doi.org/10.5281/zenodo.21740286",
+    "status": "repository_license_identified; individual field and privacy review still pending"
+  }
+]
