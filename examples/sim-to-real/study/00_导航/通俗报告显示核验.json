@@ -6,8 +6,12 @@
     1425,
     1425
   ],
-  "storyFigures": 4,
+  "storyFigures": 5,
   "storyComparisons": 5,
+  "diagnosticProblems": 3,
+  "mechanismExamplePanels": 2,
+  "aggregationComparisonVerified": true,
+  "separatedPromptAndBackgroundVerified": true,
   "readingLevels": 2,
   "allNineSourcesPreserved": true,
   "networkRequests": 7,
@@ -25,19 +29,18 @@
   "mobileWidth": 390,
   "contextualChartGuides": 22,
   "glossarySearchAndKeyboardVerified": true,
-  "purpose": "通俗故事页及完整证据页的离线呈现核验",
-  "local_links_checked": 270,
-  "legacy_anchor_links_preserved": 0,
+  "purpose": "通俗故事页的问题诊断、改法设计与机制解释的离线呈现核验",
+  "local_links_checked": 284,
   "broken_local_links": [],
   "scoring_results_changed": false,
+  "full_evidence_unchanged": true,
   "screenshots_visually_reviewed": [
-    "desktop-top",
-    "desktop-problem",
-    "390px-comparison"
+    "desktop-diagnosis",
+    "desktop-probability-example",
+    "desktop-prompt-background",
+    "390px-aggregation"
   ],
   "story_source": "retail_story_template.html.tmpl",
   "detail_report": "study/evidence.html",
-  "offline_requests_only": true,
-  "full_evidence_unchanged_except_back_navigation": true,
-  "git_only_offline_rebuild_verified": true
+  "offline_requests_only": true
 }

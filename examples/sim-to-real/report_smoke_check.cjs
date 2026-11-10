@@ -23,8 +23,13 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
   await send('Page.navigate',{url});
   for(let i=0;i<100;i++){if(await run('window.storyReportReady===true'))break;await wait(100)}
   assert.equal(await run('window.storyReportReady'),true);
-  assert.equal(await run("document.querySelectorAll('.bar-chart').length"),4);
+  assert.equal(await run("document.querySelectorAll('.bar-chart').length"),5);
   assert.equal(await run("document.querySelectorAll('.sources li').length"),9);
+  assert.equal(await run("document.querySelectorAll('#story-diagnosis .diagnosis article').length"),3);
+  assert.equal(await run("document.querySelectorAll('.toy-stack').length"),2);
+  assert.deepEqual(await run("[...document.querySelectorAll('#aggregation-proof .bar-heading strong')].map(x=>x.textContent)"),['44.2 点','18.1 点']);
+  assert.ok(await run("document.querySelector('#design-prompt').textContent.includes('21.29 → 18.79')"));
+  assert.ok(await run("document.querySelector('#design-background').textContent.includes('24.05 → 18.79')"));
   assert.ok(await run("document.querySelector('#story-use').textContent.includes('还没找到一套')"));
   const expectedStory={profiles:['29.0 点','18.8 点','3.6 点'],pew:['43.4 点','18.1 点','4.5 点'],shoes:['32.9 点','14.8 点','2.2 点'],origin:['11.3 点','11.5 点','2.6 点'],packaging:['36.1 点','19.5 点','7.3 点']};
   for(const [key,values] of Object.entries(expectedStory)){
@@ -33,11 +38,14 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
    assert.ok(await run("document.querySelector('#storyInterval').textContent.includes('95%')"));
   }
   await screenshot('story-desktop-top');await screenshot('story-desktop-problem','#story-problem');await screenshot('story-desktop-comparison','#story-comparison');await screenshot('story-desktop-conclusion','#story-use');
+  await screenshot('story-desktop-diagnosis','#story-diagnosis');await screenshot('story-desktop-probability-example','#probability-example');await screenshot('story-desktop-aggregation','#aggregation-proof');
+  await screenshot('story-desktop-prompt-background','#design-prompt');
   for(const width of [581,390]){
    await send('Emulation.setDeviceMetricsOverride',{width,height:954,deviceScaleFactor:1,mobile:true});await wait(200);
    assert.deepEqual(await run('[document.documentElement.clientWidth,document.documentElement.scrollWidth]'),[width,width]);
    assert.deepEqual(await run(`(()=>{return [...document.querySelectorAll('.bar-heading strong')].filter(el=>{const a=el.getBoundingClientRect(),b=el.parentElement.getBoundingClientRect();return a.right>b.right+1||a.left<b.left-1}).map(x=>x.textContent)})()`),[]);
    await screenshot('story-'+width+'-top');await screenshot('story-'+width+'-comparison','#story-comparison');
+   await screenshot('story-'+width+'-aggregation','#aggregation-proof');await screenshot('story-'+width+'-probability-example','#probability-example');
   }
   const legacyEntry=pathToFileURL(path.join(path.dirname(file),'..','retail_reader_template.html')).href;
   await send('Emulation.setDeviceMetricsOverride',{width:1440,height:1080,deviceScaleFactor:1,mobile:false});await send('Page.navigate',{url:legacyEntry+'#revalidation'});await wait(200);
@@ -174,6 +182,6 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
   assert.deepEqual(errors,[]);
   assert.ok(requests.every(u=>u.startsWith('file:')||u.startsWith('data:')));
   assert.deepEqual(failedRequests,[]);
-  console.log(JSON.stringify({folder:dir,...result,storyFigures:4,storyComparisons:5,readingLevels:2,allNineSourcesPreserved:true,networkRequests:requests.length,failedRequests,consoleErrors:errors.length,legacyTemplateRedirectVerified:true,oldDeepLinksPreserved:true,unexpandedPlaceholders:0,allSelectorsVerified:true,questionByComparisonViewsVerified:52,revalidationCharts:8,revalidationViews:131,standaloneVerified:true,sidebarWidth:581,mobileWidth:390,contextualChartGuides:22,glossarySearchAndKeyboardVerified:true},null,2));
+  console.log(JSON.stringify({folder:dir,...result,storyFigures:5,storyComparisons:5,diagnosticProblems:3,mechanismExamplePanels:2,aggregationComparisonVerified:true,separatedPromptAndBackgroundVerified:true,readingLevels:2,allNineSourcesPreserved:true,networkRequests:requests.length,failedRequests,consoleErrors:errors.length,legacyTemplateRedirectVerified:true,oldDeepLinksPreserved:true,unexpandedPlaceholders:0,allSelectorsVerified:true,questionByComparisonViewsVerified:52,revalidationCharts:8,revalidationViews:131,standaloneVerified:true,sidebarWidth:581,mobileWidth:390,contextualChartGuides:22,glossarySearchAndKeyboardVerified:true},null,2));
  }finally{socket?.close();chrome.kill()}
 })().catch(e=>{console.error(e);process.exitCode=1});

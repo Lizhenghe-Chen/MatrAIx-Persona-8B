@@ -41,10 +41,10 @@
       "sha256": "a003d938d5d7042fcdda9e7efcb7a909f76b9e323bb81fd66f0b9afa75676d3c"
     }
   },
-  "report_sha256": "aacb2e6c1dc26666fda8ecaabab6b3de062adb8f9390df8187c50b0fbab404ed",
+  "report_sha256": "7182ca4ebf4566563fde122641dbbe090613b05fd3a7ae85aec6a854a363cb2b",
   "render_sources": {
-    "retail_story_template.html.tmpl": "cc7fa1b96e71f017c606a4aea49ae7e1428a044ea6464f937b5bd9d81f9a1f90",
+    "retail_story_template.html.tmpl": "f3726fc1f5337fedabbf6d33ba68d078a46dbe128a29fd14e7bafac14ae16300",
     "retail_story_charts.js": "878dd654b86a65c455fa6c7e80969d55117e44dace3120e626b2908001494e47"
   },
-  "generator_sha256": "684733a685ee37902e2876d00a1579aa4f60799b0755c62314ee0b1e321b6478"
+  "generator_sha256": "91d8066f6aab38c04e9ed758efdc19ea28c00f02d0fff6ff6071e8881e2a8f6d"
 }

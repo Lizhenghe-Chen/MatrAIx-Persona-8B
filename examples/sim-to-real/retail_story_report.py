@@ -100,6 +100,7 @@ def build():
     ]
     sources=''.join(f'<li><a href="{url}">{escape(name)}</a><span>{escape(task)} · {rounds}</span></li>' for name,task,rounds,url in source_rows)
     model_pair=next(x for x in m['comparisons'] if (x['before'],x['after'])==('qwen/matched','pro/matched'))
+    probability_pair=next(x for x in pew['contrasts'] if (x['from'],x['to'])==('rich_probability_argmax','rich_probability'))
     tokens={
         'FIRST_BARS':bars([('真人说改买了便宜商品',100*first['human']['1'],'human'),('模型也说改买了便宜商品',100*first['simulated']['C']['1'],'before')]),
         'FIRST_REAL':f"{100*first['human']['1']:.1f}",'FIRST_MODEL':f"{100*first['simulated']['C']['1']:.1f}",
@@ -112,6 +113,16 @@ def build():
         'MODEL_GAIN':f"{model_pair['gain_pp']:.2f}",'MODEL_CI':f"{model_pair['ci95'][0]:.2f}–{model_pair['ci95'][1]:.2f}",
         'MODEL_HISTORY':table(['第二轮：只给共同情境','平均误差'],[[name,f"{models[key+'-A']['tv_pp']:.2f}"] for key,name in [('flash','Flash'),('pro','Pro'),('qwen','Qwen')]]),
         'PROFILE_BEFORE':f'{oldp:.1f}','PROFILE_AFTER':f'{newp:.1f}',
+        'PROMPT_BEFORE':f"{profiles['overall']['p0-b3']['tv_pp']:.2f}",
+        'BACKGROUND_BEFORE':f"{profiles['overall']['p1-b2']['tv_pp']:.2f}",
+        'PROFILE_AFTER_EXACT':f'{newp:.2f}',
+        'AGGREGATION_BARS':bars([('同一批预测：只留下可能性最高的一项',pew['summaries']['rich_probability_argmax']['tv_pp'],'before'),
+                                 ('同一批预测：把各项可能性都计入',pew['summaries']['rich_probability']['tv_pp'],'after')],50,' 点','同一批预测只改变汇总方式的13题平均分布误差，越小越好'),
+        'AGGREGATION_BEFORE':f"{pew['summaries']['rich_probability_argmax']['tv_pp']:.2f}",
+        'AGGREGATION_AFTER':f"{pew['summaries']['rich_probability']['tv_pp']:.2f}",
+        'AGGREGATION_GAIN':f"{probability_pair['tv_improvement_pp']:.2f}",
+        'AGGREGATION_CI':' 至 '.join(f'{v:.2f}' for v in probability_pair['tv_95_interval']),
+        'AGGREGATION_ACCURACY':f"{100*pew['summaries']['rich_probability']['accuracy']:.1f}",
         'PROFILE_PARTS':table(['只改一件事','平均误差前后','这说明什么'],[
             ['贴题背景不变，改为预测真人答案',f"{profiles['overall']['p0-b3']['tv_pp']:.2f} → {newp:.2f}",'误差减少2.50点，达到原实验门槛'],
             ['预测问法不变，在细分年龄学历外补贴题信息',f"{profiles['overall']['p1-b2']['tv_pp']:.2f} → {newp:.2f}",'误差减少5.27点，达到原实验门槛'],
