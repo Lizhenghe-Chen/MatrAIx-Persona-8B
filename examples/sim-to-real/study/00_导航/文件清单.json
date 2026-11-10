@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 411,
-  "git_bytes": 78379584,
+  "git_file_count": 413,
+  "git_bytes": 78385385,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -44,8 +44,8 @@
     },
     {
       "path": "decision_lab/README.md",
-      "bytes": 2457,
-      "sha256": "ec3f3688f43eb388882c8f175780653758fadef5b08672aba31f39a8f5f79b4b",
+      "bytes": 2757,
+      "sha256": "19e18e6aae28cc68ad4fff27875dd5754b79a87a389406ec6afafe2d1040a13b",
       "storage": "git"
     },
     {
@@ -68,8 +68,8 @@
     },
     {
       "path": "decision_lab/cli.py",
-      "bytes": 1728,
-      "sha256": "25cc8d9629494fbb77bc9616d0f30530948aed394793d72acd094b6bfbbc4c90",
+      "bytes": 2313,
+      "sha256": "1ef37e3775ab22a71d479bb155b16194859fb2d955f6b16f2f84d3a317e2836d",
       "storage": "git"
     },
     {
@@ -94,6 +94,12 @@
       "path": "decision_lab/provider.py",
       "bytes": 2589,
       "sha256": "0d25973bbfc7d8b2aa38bc685912e55ce5b7b6c525dc0f0ef8ee5a99c2ee8134",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/scoring.py",
+      "bytes": 3761,
+      "sha256": "ee0428f8c3871476560daf0f2f57fc9665f6db0659f5102a148ae0d003da9e8c",
       "storage": "git"
     },
     {
@@ -124,6 +130,12 @@
       "path": "decision_lab/test_provider.py",
       "bytes": 993,
       "sha256": "b14b262c4459d1f1c736057e60bc8f06cc96b47a100ae1b826a5c5d156ac19e8",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/test_scoring.py",
+      "bytes": 1155,
+      "sha256": "6af23a23b95f3b6ce8dc93007a5791c42f3db7941d7bc33df8d667fe9a1204bc",
       "storage": "git"
     },
     {

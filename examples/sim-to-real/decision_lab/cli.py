@@ -25,6 +25,20 @@ def main():
         result = {'input_sha256': digest(doc), 'assignments': split(doc['rows']), 'seed': 20261109}
         with args.output.open('x') as f:
             json.dump(result, f, ensure_ascii=False, indent=2)
+    elif args.command == 'score':
+        from .scoring import score
+        validate(doc['rows'])
+        predictions = {}
+        for item in doc['predictions']:
+            key = (item['person'], item['task'])
+            if key in predictions:
+                raise ValueError('Duplicate prediction')
+            predictions[key] = item['probabilities']
+        result = score(doc['rows'], predictions)
+        if not args.output:
+            parser.error('--output required')
+        with args.output.open('x') as f:
+            json.dump(result, f, ensure_ascii=False, indent=2)
     elif args.command == 'verify':
         for item in doc['files']:
             import hashlib

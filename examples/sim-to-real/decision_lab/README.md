@@ -15,7 +15,7 @@ python -m decision_lab verify --input archive.json
 python -m unittest decision_lab.test_core
 ```
 
-`run`、`score`、`report` 当前明确返回未实现，不会生成模拟成绩。`freeze` 拒绝覆盖已有划分，且要求五项审查全部通过。未通过审查不能以演示数据代替正式实验。
+`score` 已支持本地概率评分；`run`、`report` 当前明确返回未实现，不会生成模拟成绩。`freeze` 拒绝覆盖已有划分，且要求五项审查全部通过。未通过审查不能以演示数据代替正式实验。
 
 标准化输入的每条记录包含 person（仅本地）、task、stratum、question、options、context、background、answer（仅评分侧）。background 必须由数据适配器按核准映射产生，不能将原始记录直接送入API。request_payload 只构造明确允许的字段；字段名检查只是附加防护，不能替代内容与来源审查。
 
@@ -31,3 +31,5 @@ python -m unittest decision_lab.test_core
 研究采用标准仍为用户批准计划：Brier相对改善至少2%，或分布误差下降至少2个百分点，配对95%区间高于零；两项标准分别使用。跨研究不能把同一研究的国家当作独立复现。每单元完成率至少98%，失败不能补默认答案。
 
 依赖：Python3.12；源格式审查使用pandas、openpyxl、pyreadstat；后续统计模型使用scipy、scikit-learn。原始文件只读，不运行Excel宏或作者脚本。
+
+评分模块要求显式的语义一致题组，不允许把随机展示的A/B直接当成跨选择卡的同一选项。按人先平均后使用调查权重；配对重抽样按受访者及分层进行。正式缺失分析、跨研究汇总和采用判定仍待接入。
