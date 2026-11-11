@@ -18,3 +18,10 @@ class PopulationTests(unittest.TestCase):
         human=[dict(base,person='h',answer=0)];synthetic=[dict(base,person='s')];p={('s','q'):[.5,.5]}
         for h,s,probs in [(human*2,synthetic,p),(human,synthetic,{}),([dict(human[0],weight=0)],synthetic,p)]:
             with self.assertRaises(ValueError):distribution_comparison(h,s,probs)
+    def test_paired_fixed_reference_interval(self):
+        from .population_scoring import paired_population_interval
+        base=dict(task='q',stratum='s',question='choose',context='same',options=['a','b'],background={'age_bracket':'18-24','education_group':'below_bachelor'})
+        human=[dict(base,person='h',answer=0)];synthetic=[dict(base,person='s1'),dict(base,person='s2')]
+        a={(r['person'],'q'):[.5,.5] for r in synthetic};b={(r['person'],'q'):[1,0] for r in synthetic}
+        result=paired_population_interval(human,synthetic,a,b,repeats=20)
+        self.assertEqual(result['improvement_95_ci'],[50,50]);self.assertTrue(result['passes_2pp_gate'])
