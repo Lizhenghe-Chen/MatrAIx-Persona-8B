@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 537,
-  "git_bytes": 78823909,
+  "git_file_count": 539,
+  "git_bytes": 78854448,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -44,8 +44,8 @@
     },
     {
       "path": "decision_lab/README.md",
-      "bytes": 11044,
-      "sha256": "f0751e78cca82721bdea151c96cb242ea605543988dac04aa8c415f527a98c58",
+      "bytes": 11313,
+      "sha256": "a362bf45a510194f69ff58ed172cf45611e2fb8c3dcd33e3972b7ef7e2513501",
       "storage": "git"
     },
     {
@@ -841,6 +841,18 @@
       "storage": "git"
     },
     {
+      "path": "decision_lab/交接先读.md",
+      "bytes": 12951,
+      "sha256": "ae6bc359ce5a3ef519dc4f7d32e707a4a4977aac6d27a18bb6eaa1eeb418eb85",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/交接状态快照.json",
+      "bytes": 17096,
+      "sha256": "1bae328fac0cb5a189e2405cadb6cca7aae328fdc3bb34ab8ceb4119db2bb78d",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/复算与复用指南.md",
       "bytes": 4568,
       "sha256": "8c5d2a5a9c8e999e4b656e44154bb5e5b9bf75d28885533ef57dbe9186266420",
@@ -866,8 +878,8 @@
     },
     {
       "path": "decision_lab/进度与交付核对.md",
-      "bytes": 3347,
-      "sha256": "6b4552d172cf3052d7f9dd41ab8b9d1224db8140b19763fee370af20d77aeb6e",
+      "bytes": 3570,
+      "sha256": "7d997695ffc9caf1ddd34894a3eee92843dd37a99721802b70ca562b35efb2e2",
       "storage": "git"
     },
     {
