@@ -1,9 +1,23 @@
 """Compare separate human and generated populations; no individual target pairing."""
 from collections import defaultdict,Counter
-from .core import probabilities,tv,digest
+import math
+from .core import probabilities,tv,digest,validate
 
 
 def distribution_comparison(human,synthetic,predictions):
+    validate(human)
+    validate(synthetic,require_answers=False)
+    for population in [human,synthetic]:
+        metadata={}
+        for row in population:
+            weight=row.get('weight',1)
+            if not math.isfinite(weight) or weight<=0:raise ValueError('Invalid population weight')
+            signature=(row['stratum'],weight)
+            if row['person'] in metadata and metadata[row['person']]!=signature:
+                raise ValueError('Inconsistent respondent stratum or weight')
+            metadata[row['person']]=signature
+    expected={(r['person'],r['task']) for r in synthetic}
+    if set(predictions)!=expected:raise ValueError('Predictions do not exactly cover synthetic tasks')
     def group(row):return (row['stratum'],digest([row['question'],row['context'],row['options']]))
     humans=defaultdict(list);models=defaultdict(list)
     for r in human:humans[group(r)].append(r)

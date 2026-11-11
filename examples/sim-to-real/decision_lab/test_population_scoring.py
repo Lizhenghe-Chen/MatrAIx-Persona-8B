@@ -13,3 +13,8 @@ class PopulationTests(unittest.TestCase):
     def test_different_products_rejected(self):
         base=dict(task='q',stratum='s',question='choose',context='same',options=['a','b'])
         with self.assertRaises(ValueError):distribution_comparison([dict(base,person='h',answer=0)],[dict(base,person='s',options=['a','c'])],{})
+    def test_duplicates_missing_and_invalid_weights_fail(self):
+        base=dict(task='q',stratum='s',question='choose',context='same',options=['a','b'])
+        human=[dict(base,person='h',answer=0)];synthetic=[dict(base,person='s')];p={('s','q'):[.5,.5]}
+        for h,s,probs in [(human*2,synthetic,p),(human,synthetic,{}),([dict(human[0],weight=0)],synthetic,p)]:
+            with self.assertRaises(ValueError):distribution_comparison(h,s,probs)
