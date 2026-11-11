@@ -105,3 +105,27 @@ PYTHONPATH=examples/sim-to-real .venv/bin/python -m decision_lab.evaluate_study 
 ```
 
 瑞士研究使用 `--kind swiss`。此入口要求完整答卷、相同测试人员和题目、开发校准结果能复算一致，拒绝覆盖已有输出。比较无背景、基础背景、贴题背景、错配背景、直接单选、同概率取最大项、统计方法及开发集选择的校准混合。按人分层配对重抽样 2,000 次。输出只代表个体预测的主要评分，不替代分群、商品取舍、稳定性和合成人群报告。尚未在完整正式答卷上验收的入口不能标为已完成结果。
+
+### 合成人群与综合汇总入口
+
+合成人群评分不创建虚拟人与真人的逐人配对，只比较固定真人参照下的分布误差：
+
+```sh
+PYTHONPATH=examples/sim-to-real .venv/bin/python -m decision_lab.evaluate_population \
+  <本机研究目录> --kind dryer --output <新的群体评分.json>
+PYTHONPATH=examples/sim-to-real .venv/bin/python -m decision_lab.population_report \
+  <群体评分.json> --output <群体报告.html>
+```
+
+`aggregate_report.py` 把两项个体评分、两项群体评分与运行账目合成一页离线总报告：
+
+```sh
+PYTHONPATH=examples/sim-to-real .venv/bin/python -m decision_lab.aggregate_report \
+  --individual <个体评分.json> <个体评分.json> \
+  --population <群体评分.json> <群体评分.json> \
+  --root dryer=<本机研究目录> --root swiss=<本机研究目录> \
+  --development dryer-calibration-freeze.json swiss-calibration-freeze.json \
+  --output <总报告.html>
+```
+
+总报告拒绝任何未完成单元、重复研究或不完整的评分文件；它不把不同选项数的题合并成一个总分，也不跨研究合并区间。`--development` 只写入开发集选参记录，明确标注为“不是独立测试成绩”。群体主对照在重抽样丢失题组覆盖时不给区间，报告必须照此写出“未给出可靠区间”，不得改写成达到门槛。

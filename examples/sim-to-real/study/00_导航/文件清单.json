@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 539,
-  "git_bytes": 78854448,
+  "git_file_count": 542,
+  "git_bytes": 78879466,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -44,8 +44,8 @@
     },
     {
       "path": "decision_lab/README.md",
-      "bytes": 11313,
-      "sha256": "a362bf45a510194f69ff58ed172cf45611e2fb8c3dcd33e3972b7ef7e2513501",
+      "bytes": 12679,
+      "sha256": "5bf3f14d2af911557c3a10ce303a641c46e8977f27c30e9f27f0631df57dda1d",
       "storage": "git"
     },
     {
@@ -64,6 +64,12 @@
       "path": "decision_lab/adoption_summary.py",
       "bytes": 2889,
       "sha256": "913717d2ea5b3293d191b5b80ab47ca9fc12d543bd543475dc297e8f3c3c6fa5",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/aggregate_report.py",
+      "bytes": 16935,
+      "sha256": "13bd387d5c2e457bdd8c7c3b04e20ab49a5db621095cb83190a6a8578fbafb70",
       "storage": "git"
     },
     {
@@ -380,8 +386,8 @@
     },
     {
       "path": "decision_lab/population_report.py",
-      "bytes": 8559,
-      "sha256": "d0dc10ed3e447b5eed7757e720c9bf8481fcd5fc47d9c9702d0b20283acf5edd",
+      "bytes": 8622,
+      "sha256": "1f782e638b95325eb37e81090bb70f851515908fff100f74f538454b74f46dfc",
       "storage": "git"
     },
     {
@@ -679,6 +685,12 @@
       "storage": "git"
     },
     {
+      "path": "decision_lab/test_aggregate_report.py",
+      "bytes": 4490,
+      "sha256": "feb968f49756cd68c44611f85de8f3b3083d6cb57c9c94d57fe4558c537e4365",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/test_baselines.py",
       "bytes": 1081,
       "sha256": "5e03c0b9b592e612bcb56cd837a4d80496387cc8d567418bba47104dfe072e9d",
@@ -748,6 +760,12 @@
       "path": "decision_lab/test_population_concentration.py",
       "bytes": 847,
       "sha256": "c94619c2956af22513aa7ec02ee5e4918c76daf5cc46a8c12f765136a3d77004",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/test_population_report.py",
+      "bytes": 1820,
+      "sha256": "4e421cd9a0409db9261c859b0d14dd49c00e7bec73971660e5b8d551b2e7179b",
       "storage": "git"
     },
     {
@@ -854,8 +872,8 @@
     },
     {
       "path": "decision_lab/复算与复用指南.md",
-      "bytes": 4568,
-      "sha256": "8c5d2a5a9c8e999e4b656e44154bb5e5b9bf75d28885533ef57dbe9186266420",
+      "bytes": 4912,
+      "sha256": "95a7b068f8d106a512eedac2dcdda9e15d9c27cb3a6ea67ac320b4f493bb9ce9",
       "storage": "git"
     },
     {
