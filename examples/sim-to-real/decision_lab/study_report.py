@@ -2,6 +2,7 @@
 import argparse,json,html
 from pathlib import Path
 from .report_sources import section as source_section
+from .card_view import render as card_view
 
 LABELS={'none':'AI：没有个人背景','basic':'AI：年龄与学历','rich':'AI：增加贴题真实背景','shuffled':'AI：错配附加背景','single':'AI：直接选一个答案','probability_argmax':'AI：从概率中取最大项','statistics_none':'统计模型：商品与情境','statistics_basic':'统计模型：加年龄学历','statistics_rich':'统计模型：加贴题背景','uniform':'各选项机会均等','history':'相同题目的历史比例','calibrated':'开发阶段选定的预测方案'}
 EVENTS={'lower_price':'选择较便宜款','higher_customer_rating':'选择评分较高款','longer_functional_life':'选择寿命较长款','refusal':'两款都不买'}
@@ -47,13 +48,7 @@ def render(data):
         counts=[d['concentration_thresholds'][t]['groups_with_at_least_20_people'] for t in ['0.95','0.99','1.0']]
         supported=sum(g['people']>=20 for g in d['groups'].values())
         concentration.append(f'<tr><td>{LABELS[method]}</td><td>{supported}</td><td>{counts[0]}</td><td>{counts[1]}</td><td>{counts[2]}</td><td>{d["argmax_ties"]}</td></tr>')
-    card_sections=[]
-    for method,cards in data.get('per_card',{}).items():
-        items=[]
-        for number,(key,card) in enumerate(cards.items(),1):
-            values=''.join(f'<tr><td>{esc(option)}</td><td>{100*human:.1f}%</td><td>{100*model:.1f}%</td></tr>' for option,human,model in zip(card['options'],card['human'],card['model']))
-            items.append(f'<details><summary>商品组合 {number} · {card["people"]} 人 · 分布误差 {card["tv_pp"]:.1f} 个百分点</summary><p>{"样本少，仅描述，不作为稳定人群结论。" if card["small_group"] else "完整选项分布，越接近真人越好。"}</p><table><tr><th>商品属性／选项</th><th>真人</th><th>预测</th></tr>{values}</table></details>')
-        card_sections.append(f'<details><summary>{LABELS[method]}：逐题分布</summary>{"".join(items)}</details>')
+    card_sections=card_view({name:list(cards.values()) for name,cards in data.get('per_card',{}).items()},LABELS)
     subgroup=[]
     for method,rows in data['subgroups'].items():
         cells=''.join(f'<tr><td>{esc(FIELDS.get(r["field"],r["field"]))}</td><td>{esc("全部" if r["value"]=="all" else "未知" if r["value"]=="unknown" else r["value"])}</td><td>{r["people"]}</td><td>{r["brier"]:.3f}</td><td>{100*r["accuracy"]:.1f}%</td><td>{"样本少，仅描述" if r["small_group"] else "描述性结果"}</td></tr>' for r in rows)
@@ -70,7 +65,7 @@ def render(data):
 <section><h2>改法有没有帮助</h2><p>改善为正表示后者误差更低。95% 区间跨过 0，说明这批样本不能明确排除没有改善。采用门槛为相对改善至少 2%，且改善区间完全高于 0。每项比较均按同一受访者配对重抽样 2,000 次。</p><table><tr><th>前后对比</th><th>误差下降</th><th>相对改善</th><th>95% 区间</th><th>门槛</th></tr>{''.join(comparisons)}</table></section>
 <section><h2>具体会选什么</h2><p>绿色是真人比例，紫色是预测概率汇总。属性相同、不能区分两款的题目被排除；这些是选择比例，不是属性的因果效应。</p>{''.join(events)}</section>
 <section><h2>有没有把分歧答成全票</h2><p>取每次预测中概率最大的选项，统计同一商品组合下集中到一个选项的程度。只在至少 20 人的题组中计数；概率并列时取第一个选项，因此同时报告并列次数。没有足够人数的题组不计作零偏差。</p><table><tr><th>方法</th><th>可比较题组</th><th>至少95%同选</th><th>至少99%同选</th><th>全部同选</th><th>概率并列题次</th></tr>{"".join(concentration)}</table></section>
-<section><h2>每个商品组合的实际结果</h2><p>商品文字保留原问卷语言；可展开查看所有选项的实际比例。不同研究的商品组合数量不同。</p>{"".join(card_sections)}</section>
+<section><h2>每个商品组合的实际结果</h2><p>商品文字保留原问卷语言；可展开查看所有选项的实际比例。不同研究的商品组合数量不同。</p>{card_sections}</section>
 <section><h2>哪些人群表现不同</h2><p>以下为描述性分析，不从中挑最好的人群替代总体成绩；小样本不作稳定结论。</p>{''.join(subgroup)}</section>
 <section><h2>回到最初的问题：改法是否值得采用</h2>{conclusion(data)}<p>混合预测采用开发样本选定的参数，大语言模型权重为 {100*data['calibration_llm_weight']:.0f}%，其余来自统计模型。它使用过部分真人答案，不能称为冷启动。历史比例查不到相同题面时回退为均匀概率，本次回退 {data['history_unseen_tasks']} 道题，不能据击败这一参照就声称超过统计方法。</p><p>数据核验标识：{esc(data['prepared_sha256'])}。完整来源、题面限制及其他研究结果须与综合报告一起阅读。</p></section></html>'''
 
