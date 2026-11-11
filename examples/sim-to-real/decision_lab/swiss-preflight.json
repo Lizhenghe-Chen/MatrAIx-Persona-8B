@@ -1,0 +1,47 @@
+{
+  "status": "development_and_input_diagnostics_only",
+  "test_scored": false,
+  "source_sha256": "837ee743ed9dcb567be9df6b41e528f28e0a66666dc31c23798064b2b82d0fe9",
+  "baselines": {
+    "none": {
+      "penalty": 0.001,
+      "development_brier": 0.2795346739749402,
+      "background_fields": []
+    },
+    "basic": {
+      "penalty": 0.001,
+      "development_brier": 0.27712605140497826,
+      "background_fields": [
+        "age_years",
+        "education"
+      ]
+    },
+    "rich": {
+      "penalty": 0.01,
+      "development_brier": 0.2834077277909683,
+      "background_fields": [
+        "age_years",
+        "education",
+        "household_monthly_income",
+        "political_self_placement"
+      ]
+    }
+  },
+  "shuffle_coverage": {
+    "train": {
+      "people": 2047,
+      "singletons": 379,
+      "content_changed": 1614
+    },
+    "development": {
+      "people": 683,
+      "singletons": 337,
+      "content_changed": 336
+    },
+    "test": {
+      "people": 683,
+      "singletons": 310,
+      "content_changed": 365
+    }
+  }
+}

@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 468,
-  "git_bytes": 78564086,
+  "git_file_count": 469,
+  "git_bytes": 78565955,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -319,6 +319,12 @@
       "storage": "git"
     },
     {
+      "path": "decision_lab/swiss-preflight.json",
+      "bytes": 1050,
+      "sha256": "4bc760dd8cbaffd9eef3a8bc00c915740d20e8ffbcc336d1e1bc15add10c228d",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/swiss-six-audit.json",
       "bytes": 1061,
       "sha256": "66c06fdd66d3026e9fadea5f02b797cb1e06d7809bfde4afa27df891b333a924",
@@ -458,8 +464,8 @@
     },
     {
       "path": "decision_lab/数据审查发现.md",
-      "bytes": 11319,
-      "sha256": "310b821bb1e0e65610497e442eb3522315bdb5476bbbbe1b4980e27e97ffb0bd",
+      "bytes": 12138,
+      "sha256": "df9697448087af149ad5a30e23b087d7e0fb837bff30f5cabb180604e19476c8",
       "storage": "git"
     },
     {
