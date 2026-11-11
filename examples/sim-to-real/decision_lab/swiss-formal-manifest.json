@@ -1,0 +1,53 @@
+{
+  "protocol_sha256": "a92db96e88676a72c492b0aa07d272b28319b87d5bd6d822880806fdceb6fe49",
+  "units": [
+    {
+      "name": "rich_development",
+      "phase": "development",
+      "calls": 2732,
+      "study_sha256": "e6bb86e1b71af594e17ca627698c25b191a441cde5d3340783cf983a5ba3ccaf",
+      "config_sha256": "45ecd6e689a3e333579e6bc6f04fcecc6f3f94862cd7c17c773eefb8fa8da715",
+      "seal_sha256": "f53fc80efb2d8dd18c060f1b75ca3fc0304206eabb80d8b650c964807d067c0e"
+    },
+    {
+      "name": "none_test",
+      "phase": "test",
+      "calls": 2732,
+      "study_sha256": "e6bb86e1b71af594e17ca627698c25b191a441cde5d3340783cf983a5ba3ccaf",
+      "config_sha256": "ae1078cf812dfb0f5818276369e384891cce738e1e6bbdc39cf1536fdab6d7fc",
+      "seal_sha256": "ed0ab1bd38a7483519a35de49a64cf805a5a4a06f4a0a3668950316886a02133"
+    },
+    {
+      "name": "basic_test",
+      "phase": "test",
+      "calls": 2732,
+      "study_sha256": "e6bb86e1b71af594e17ca627698c25b191a441cde5d3340783cf983a5ba3ccaf",
+      "config_sha256": "8b740e6696347b8c0b18140c16e0433d1f1262e09b26e7fd9f1d7d28dc60f963",
+      "seal_sha256": "d7c6c61cb4a4af55a37ad58f3803e7e9c74ea695ceede7f9c760b2b062467d29"
+    },
+    {
+      "name": "rich_test",
+      "phase": "test",
+      "calls": 2732,
+      "study_sha256": "e6bb86e1b71af594e17ca627698c25b191a441cde5d3340783cf983a5ba3ccaf",
+      "config_sha256": "45ecd6e689a3e333579e6bc6f04fcecc6f3f94862cd7c17c773eefb8fa8da715",
+      "seal_sha256": "f53fc80efb2d8dd18c060f1b75ca3fc0304206eabb80d8b650c964807d067c0e"
+    },
+    {
+      "name": "shuffled_test",
+      "phase": "test",
+      "calls": 2732,
+      "study_sha256": "6ae987a68c6234671d7807cb9b74e532a90e01dd43434b086a4f7d03fc8f6b18",
+      "config_sha256": "45ecd6e689a3e333579e6bc6f04fcecc6f3f94862cd7c17c773eefb8fa8da715",
+      "seal_sha256": "f65a137d360381dd8210d57d8ece57e9e2b1678fa9f8f73502e76ce22bb5bd8d"
+    },
+    {
+      "name": "single_test",
+      "phase": "test",
+      "calls": 2732,
+      "study_sha256": "e6bb86e1b71af594e17ca627698c25b191a441cde5d3340783cf983a5ba3ccaf",
+      "config_sha256": "8e6e6056845dd5b1b400b816957e4c8a603503449f9e01969a9f43e5a401287b",
+      "seal_sha256": "9ce99aa1923b6e7e942154d011e4ed79bef14efd5193884139d93ea552406b47"
+    }
+  ]
+}

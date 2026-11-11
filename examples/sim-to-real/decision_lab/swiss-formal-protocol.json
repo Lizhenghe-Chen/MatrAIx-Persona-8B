@@ -1,0 +1,78 @@
+{
+  "version": "swiss-author-english-formal-v1",
+  "scope": "One Swiss appliance study, three product categories; author-English textual reconstruction.",
+  "split": {
+    "seed": 20261109,
+    "train_people": 2047,
+    "development_people": 683,
+    "test_people": 683,
+    "tasks_per_person": 4
+  },
+  "backgrounds": {
+    "none": [],
+    "basic": [
+      "age_years",
+      "education"
+    ],
+    "rich": [
+      "age_years",
+      "education",
+      "household_monthly_income",
+      "political_self_placement"
+    ]
+  },
+  "cold_start": {
+    "main": "rich_probabilities",
+    "diagnostic": "rich_single_choice",
+    "selection_basis": "User-approved probability/background hypotheses and fixed pilot prompt, not target-development outcomes. No target answers in model context.",
+    "comparators": [
+      "none_probabilities",
+      "basic_probabilities",
+      "shuffled_rich_probabilities"
+    ],
+    "argmax_diagnostic": "Use same rich probability vectors; report tied maxima, deterministic first-index argmax and position limitation. No extra call."
+  },
+  "calibrated": {
+    "main": "development-selected temperature and convex blend of rich probability output and rich statistical baseline",
+    "temperature_grid": [
+      0.5,
+      1,
+      2,
+      4
+    ],
+    "llm_weight_grid": [
+      0,
+      0.25,
+      0.5,
+      0.75,
+      1
+    ],
+    "selection": "Training fits statistical parameters; development selects regularization and probability calibration; test scored once after all selections freeze. Weight zero means statistics-only, not AI improvement."
+  },
+  "execution": {
+    "calls_per_unit": 2732,
+    "units": 6,
+    "maximum_calls": 16392,
+    "conservative_usd_cap_per_unit": 30,
+    "maximum_reserved_usd": 180,
+    "order": [
+      "rich_development",
+      "none_test",
+      "basic_test",
+      "rich_test",
+      "shuffled_test",
+      "single_test"
+    ]
+  },
+  "sample_rationale": "Use all 683 held-out people, four tasks each. No claim that this guarantees power for small effects.",
+  "primary_scoring": "Person-averaged multiclass Brier, 2000 paired respondent bootstraps by product category. Relative improvement >=2% and positive 95% interval. Exact card population distributions not a primary metric because cards are sparse.",
+  "shuffle_policy": "Within product, split, exact age and education; swap income/ideology blocks. Full sample plus 365 actual-content-changed test people; not a causal personality effect.",
+  "leakage": "Inputs whitelist only; no targets, weights or identifiers transmitted. Test outcomes are not used to alter model or configuration.",
+  "limitations": [
+    "Author-English text rather than original individual language and graphics.",
+    "Attribute order not retained.",
+    "No opt-out in original forced choice.",
+    "No complete representative personal profile.",
+    "One study only; independent replication and synthetic population remain required."
+  ]
+}

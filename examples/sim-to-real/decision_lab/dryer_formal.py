@@ -14,22 +14,22 @@ UNITS=[('rich_development','rich','development'),('none_test','none','test'),
        ('shuffled_test','rich','test'),('single_test','rich','test')]
 
 
-def prepare(source,directory):
+def prepare(source,directory,protocol_path=None,pilot_path=None):
     here=Path(__file__).parent;directory=Path(directory)
-    protocol=json.loads((here/'dryer-formal-protocol.json').read_text())
-    pilot=json.loads((here/'dryer-pilot-protocol.json').read_text())
+    protocol=json.loads((Path(protocol_path) if protocol_path else here/'dryer-formal-protocol.json').read_text())
+    pilot=json.loads((Path(pilot_path) if pilot_path else here/'dryer-pilot-protocol.json').read_text())
     doc=json.loads(Path(source).read_text());assignments=split(doc['rows'])
     counts={phase:list(assignments.values()).count(phase) for phase in ['train','development','test']}
-    if counts!={'train':868,'development':292,'test':292}:raise ValueError('Unexpected split')
+    if counts!={k:protocol['split'][k+'_people'] for k in counts}:raise ValueError('Unexpected split')
     doc.update(status='formal_frozen',audit=dict.fromkeys(GATES,True),
                audit_evidence=pilot['admission_evidence'],protocol_sha256=digest(protocol))
-    shuffled,diagnostic=shuffled_background(doc['rows'],['age_band','education'],['weekly_dryer_use','household_size'],assignments)
+    shuffled,diagnostic=shuffled_background(doc['rows'],protocol['backgrounds']['basic'],[x for x in protocol['backgrounds']['rich'] if x not in protocol['backgrounds']['basic']],assignments)
     directory.mkdir(parents=True,exist_ok=False);os.chmod(directory,0o700)
     private_write(directory/'protocol.json',protocol)
     private_write(directory/'shuffle-map.json',diagnostic)
     base=json.loads((here/'deepseek-pro.json').read_text())
     base.update(status='frozen',expected_identity=json.loads((here/'endpoint-pilot.json').read_text())['identity'],
-                max_calls=2336,max_cost_usd=20.,input_usd_per_million=1.32,output_usd_per_million=3.96)
+                max_calls=protocol['execution']['calls_per_unit'],max_cost_usd=protocol['execution']['conservative_usd_cap_per_unit'],input_usd_per_million=1.32,output_usd_per_million=3.96)
     manifest={'protocol_sha256':digest(protocol),'units':[]}
     for name,background,phase in UNITS:
         study=copy.deepcopy(doc)
@@ -37,10 +37,10 @@ def prepare(source,directory):
         config={**base,'background_fields':protocol['backgrounds'][background],
                 'output_mode':'single_choice' if name=='single_test' else 'probabilities'}
         rows=[r for r in study['rows'] if assignments[r['person']]==phase]
-        if len(rows)!=2336:raise ValueError('Unexpected unit size')
+        if len(rows)!=protocol['execution']['calls_per_unit']:raise ValueError('Unexpected unit size')
         for row in rows:
             payload=request_payload(row,config)
-            if row['person'] in json.dumps(payload):raise ValueError('Respondent identifier leaked')
+            if set(payload)!={'question','options','context','background'}:raise ValueError('Unexpected payload fields')
         seal={'config_sha256':digest(config),'input_sha256':digest(study),'assignments':assignments,'seed':20261109}
         private_write(directory/(name+'-study.json'),study)
         private_write(directory/(name+'-config.json'),config)

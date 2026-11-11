@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 469,
-  "git_bytes": 78565955,
+  "git_file_count": 471,
+  "git_bytes": 78571469,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -170,8 +170,8 @@
     },
     {
       "path": "decision_lab/dryer_formal.py",
-      "bytes": 4351,
-      "sha256": "90cf77a7f7a8602191fa279e0e269cb006c7f4170d2aa371e7b32b65d3acbef1",
+      "bytes": 4673,
+      "sha256": "5424f3ecd4ddced92e5c4bb9eac754dd58a71c771d8635063071e45cfa89cd55",
       "storage": "git"
     },
     {
@@ -304,6 +304,18 @@
       "path": "decision_lab/swiss-background-audit.json",
       "bytes": 852,
       "sha256": "88bbbc55fa825c1b0455905a19046b54e1780b4beaa479cd67f6aa255e5c19e6",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/swiss-formal-manifest.json",
+      "bytes": 2248,
+      "sha256": "1db81503d7e1e49b1ecaa3f4bc79436eb3f8f50e8fbc6f7e797de3c44c480d33",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/swiss-formal-protocol.json",
+      "bytes": 2944,
+      "sha256": "79a542f2a03eec7d899f4659726098d37e3ef301275c6012e9957b113c7db5eb",
       "storage": "git"
     },
     {
