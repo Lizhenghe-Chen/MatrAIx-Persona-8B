@@ -6,7 +6,7 @@
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
   "git_file_count": 565,
-  "git_bytes": 83547776,
+  "git_bytes": 83547883,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -44,8 +44,8 @@
     },
     {
       "path": "decision_lab/README.md",
-      "bytes": 16294,
-      "sha256": "873f6021ebd52543667d842d64d4ab2fb087574ba8e262e30d13042972469e46",
+      "bytes": 16298,
+      "sha256": "d38a1088e85010b4ec99ad99fa08979568998b7c0f589386f8c482ea86ddbb8a",
       "storage": "git"
     },
     {
@@ -164,8 +164,8 @@
     },
     {
       "path": "decision_lab/docs/首批研究准入决定.md",
-      "bytes": 3647,
-      "sha256": "ea90abbc7a5b9ada0bbe8872d9073794e9f931cb8d33c53ae109c98bd96496b2",
+      "bytes": 3750,
+      "sha256": "fe14feb405fd59615840986de05772182630431a48861b43bc6b214b6dfac823",
       "storage": "git"
     },
     {

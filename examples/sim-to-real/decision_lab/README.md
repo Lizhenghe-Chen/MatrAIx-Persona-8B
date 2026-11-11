@@ -80,7 +80,7 @@ python -m unittest decision_lab.test_core
 
 `calibration.py`在开发集上选择概率温度与统计/LLM凸组合；显式拒绝测试标记及已知测试人员重叠。温度处理保留零概率，不默认补出模型未给出的质量。若混合权重选为0，报告必须写“统计基线被选中”，不能记为LLM优化成功。候选网格已写入各研究冻结方案。
 
-`evaluate_study.py` 与 `study_report.py` 已贯通校准核验、配对区间、分群与逐题报告，并通过人工数据的完整流程测试。正式结果尚待全部答卷完成后生成与视觉验收；程序测试通过不等于实验效果通过。
+`evaluation/evaluate_study` 与 `reporting/study_report` 贯通校准核验、配对区间、分群与逐题报告。2026-11-11 已用完整正式答卷生成结果并完成视觉验收，见 [`reports/`](reports/)；程序测试通过不等于实验效果通过。
 
 ## 烘干机真实技术试跑
 
