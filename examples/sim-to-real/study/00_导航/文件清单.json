@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 473,
-  "git_bytes": 78574944,
+  "git_file_count": 474,
+  "git_bytes": 78577940,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -70,6 +70,12 @@
       "path": "decision_lab/baselines.py",
       "bytes": 3437,
       "sha256": "69db3e8963fa6b82113912a44e6da35e71c39375f3a9709dd99bfde931031c1b",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/calibrate_study.py",
+      "bytes": 2996,
+      "sha256": "4801045c8b40728f5a34ee0e4b5475cc5404e823a2393880a50533c8acd914db",
       "storage": "git"
     },
     {
