@@ -1,0 +1,35 @@
+{
+  "dryer-text-v1": {
+    "prepared_sha256": "0d6bef972b86aad44345ce049814c92c64c721d12e8cf2a954e1fe8777e1723b",
+    "development_tasks": 2336,
+    "training_people": 868,
+    "support_people_histogram": {
+      "25": 104,
+      "26": 192,
+      "27": 120,
+      "28": 376,
+      "29": 224,
+      "30": 200,
+      "31": 280,
+      "32": 264,
+      "33": 136,
+      "34": 184,
+      "35": 64,
+      "36": 80,
+      "38": 64,
+      "39": 48
+    },
+    "fallback_uniform_tasks": 0,
+    "test_scored": false
+  },
+  "swiss-appliances-v1": {
+    "prepared_sha256": "837ee743ed9dcb567be9df6b41e528f28e0a66666dc31c23798064b2b82d0fe9",
+    "development_tasks": 2732,
+    "training_people": 2047,
+    "support_people_histogram": {
+      "0": 2732
+    },
+    "fallback_uniform_tasks": 2732,
+    "test_scored": false
+  }
+}
