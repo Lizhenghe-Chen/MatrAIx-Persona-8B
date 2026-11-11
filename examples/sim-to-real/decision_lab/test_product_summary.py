@@ -13,3 +13,11 @@ class ProductSummaryTests(unittest.TestCase):
         self.assertAlmostEqual(result['lower_price']['model_probability_share'],.2)
         self.assertEqual(result['refusal']['human_share'],.5)
         self.assertNotIn('higher_customer_rating',result)
+    def test_population_has_no_arbitrary_person_pair(self):
+        from .product_summary import population_properties
+        row=dict(person='virtual',task='q',options=['cheap','dear','Neither'])
+        def attrs(x):return {'cheap':[0,5,0,2],'dear':[0,10,0,3]}[x]
+        with patch('decision_lab.dryer_baseline.attributes',attrs):
+            result=population_properties([row],'dryer',{('virtual','q'):[.2,.3,.5]})
+        self.assertEqual(result['lower_price']['share'],.2)
+        self.assertEqual(result['refusal']['share'],.5)

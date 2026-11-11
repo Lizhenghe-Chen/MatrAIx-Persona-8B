@@ -4,6 +4,7 @@ from pathlib import Path
 from .core import digest,split
 from .checkpoint import read_predictions
 from .persona_mapping import common_background
+from .product_summary import population_properties
 from .population_scoring import distribution_comparison,paired_population_interval
 
 
@@ -44,7 +45,8 @@ def evaluate(root,kind):
             'manifest_sha256':digest(manifest),'human_people':len({r['person'] for r in human}),
             'synthetic_people':len({r['person'] for r in synthetic}),'individual_accuracy_computed':False,
             'methods':results,'subgroups':subgroup,'primary_distribution_comparison':comparison,
-            'limits':'Swiss card distributions are descriptive only; property-choice outcomes require their separate analysis. This file alone is not the full population report.'}
+            'property_choices':{'human':population_properties(human,kind),**{name:population_properties(synthetic,kind,p) for name,p in predictions.items()}},
+            'limits':'Swiss card distributions are descriptive only; Property-choice rates are descriptive here; no interval or adoption claim is generated for them. This file alone is not the full population report.'}
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('root');p.add_argument('--kind',choices=['dryer','swiss'],required=True);p.add_argument('--output',type=Path,required=True);a=p.parse_args()

@@ -6,7 +6,7 @@
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
   "git_file_count": 517,
-  "git_bytes": 78763007,
+  "git_bytes": 78765578,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -236,8 +236,8 @@
     },
     {
       "path": "decision_lab/evaluate_population.py",
-      "bytes": 3916,
-      "sha256": "7aab0a711bfc8f82caa255529f8917ca999d3af2029ab568141642c85fb809c2",
+      "bytes": 4165,
+      "sha256": "40571aa7a58701212dbdcface2a3e38039ba13f765848e63a706205b5a0b797c",
       "storage": "git"
     },
     {
@@ -344,8 +344,8 @@
     },
     {
       "path": "decision_lab/product_summary.py",
-      "bytes": 2284,
-      "sha256": "c31d982f83c4c967cd49861235956448ed9a14bc5a5216e1e4cfb6ecd8918b37",
+      "bytes": 4070,
+      "sha256": "6d7ddcca8623d3f9be6214c86f9b73679d3864041565e0811ab1c69b4ee89d07",
       "storage": "git"
     },
     {
@@ -656,8 +656,8 @@
     },
     {
       "path": "decision_lab/test_product_summary.py",
-      "bytes": 892,
-      "sha256": "975023cf6d5e5cc67ba3e22128d29e4ccdc392b158348861413df13f9d7fdddb",
+      "bytes": 1428,
+      "sha256": "7caa09a32950e83d393907dbdeb2f5c82a403728270455741b2a2e3e4d79c1f7",
       "storage": "git"
     },
     {
