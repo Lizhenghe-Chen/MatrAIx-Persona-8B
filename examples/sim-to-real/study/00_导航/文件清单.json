@@ -6,7 +6,7 @@
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
   "git_file_count": 474,
-  "git_bytes": 78577940,
+  "git_bytes": 78582123,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -284,8 +284,8 @@
     },
     {
       "path": "decision_lab/scoring.py",
-      "bytes": 3761,
-      "sha256": "ee0428f8c3871476560daf0f2f57fc9665f6db0659f5102a148ae0d003da9e8c",
+      "bytes": 6609,
+      "sha256": "475e48c0ce44c118342c2b6945d95806d89135a14ba6143f016ba679a65448ad",
       "storage": "git"
     },
     {
@@ -458,8 +458,8 @@
     },
     {
       "path": "decision_lab/test_scoring.py",
-      "bytes": 1155,
-      "sha256": "6af23a23b95f3b6ce8dc93007a5791c42f3db7941d7bc33df8d667fe9a1204bc",
+      "bytes": 2490,
+      "sha256": "a165e47ea15b9a9e8b6ea57de141a2d3bd4b1c80b7af551894352e8c08db96dd",
       "storage": "git"
     },
     {

@@ -66,3 +66,52 @@ def paired_interval(rows, left, right, repeats=2000, seed=20261109):
         for metric in ['brier','mean_tv_pp']:samples[metric].append(sa[metric]-sb[metric])
     import numpy as np
     return {k:{'improvement_95_ci':np.quantile(v,[.025,.975]).tolist(),'replicates':repeats} for k,v in samples.items()}
+
+
+def paired_brier_interval(rows, left, right, repeats=2000, seed=20261109):
+    """Person-cluster bootstrap without pooling unlike product cards.
+
+    Positive differences mean right improves on left. Average tasks within each
+    person first; resample people within original strata and preserve weights.
+    Relative improvement uses the resampled reference score, not its point mean.
+    """
+    import numpy as np
+    if repeats < 1: raise ValueError('Positive bootstrap count required')
+    people={};seen=set()
+    for r in rows:
+        key=(r['person'],r['task'])
+        if key in seen: raise ValueError('Duplicate scoring row')
+        seen.add(key)
+        weight=r.get('weight',1.0)
+        if not math.isfinite(weight) or weight<=0:raise ValueError('Invalid survey weight')
+        item=people.setdefault(r['person'],{'stratum':r['stratum'],'weight':weight,'a':[],'b':[]})
+        if item['stratum']!=r['stratum'] or item['weight']!=weight:
+            raise ValueError('Inconsistent person metadata')
+        if key not in left or key not in right:raise ValueError('Missing paired prediction')
+        for name,pred in [('a',left),('b',right)]:
+            p=probabilities(pred[key],len(r['options']))
+            item[name].append(brier(p,r['answer']))
+    if not people:raise ValueError('Empty evaluation')
+    ids=sorted(people);strata=defaultdict(list)
+    values=[]
+    for i,person in enumerate(ids):
+        p=people[person];strata[p['stratum']].append(i)
+        values.append([sum(p['a'])/len(p['a']),sum(p['b'])/len(p['b']),p['weight']])
+    values=np.asarray(values)
+    def means(indices):
+        v=values[indices];return (v[:,:2]*v[:,2,None]).sum(axis=0)/v[:,2].sum()
+    reference,candidate=means(np.arange(len(ids)))
+    rng=random.Random(seed);absolute=[];relative=[]
+    for _ in range(repeats):
+        indices=[i for s in sorted(strata) for i in rng.choices(strata[s],k=len(strata[s]))]
+        a,b=means(indices);absolute.append(float(a-b))
+        relative.append(float((a-b)/a) if a>0 else float('nan'))
+    relative_defined=all(math.isfinite(x) for x in relative) and reference>0
+    interval=np.quantile(absolute,[.025,.975]).tolist()
+    return {'reference_brier':float(reference),'candidate_brier':float(candidate),
+            'improvement':float(reference-candidate),'improvement_95_ci':interval,
+            'relative_improvement':float((reference-candidate)/reference) if reference>0 else None,
+            'relative_improvement_95_ci':np.quantile(relative,[.025,.975]).tolist() if relative_defined else None,
+            'passes_2_percent_gate':bool(reference>0 and (reference-candidate)/reference>=.02 and interval[0]>0),
+            'people':len(ids),'tasks':len(rows),'replicates':repeats,'seed':seed,
+            'resampling':'paired respondents within original strata; within-person task means'}
