@@ -21,7 +21,7 @@
 | `studies/` | 各研究的适配器、试跑、冻结准备与来源审查：`dryer_*`、`swiss_*`、`synthetic_*`、`persona_*`，以及 `german_*`、`tshirt_audit`、`radiant_audit`、`audit_sources` |
 | `evaluation/` | 评分、区间与诊断：`evaluate_study`、`evaluate_population`、`calibrate_study`、`scoring`、`population_scoring`、`property_intervals`、`subgroups`、`diagnostics`、`bundle_diagnostics`、`execution_quality` 等 |
 | `reporting/` | 离线报告与汇总：`study_report`、`population_report`、`aggregate_report`、`adoption_summary`、`card_view`、`report_sources`、`report`、`pilot_summary` |
-| `ops/` | 运行维护：失败恢复（`retry_failed`）、稳定性诊断（`stability_run`、`stability_score`）、通用技术试跑（`technical_pilot`） |
+| `ops/` | 运行维护：失败恢复（`retry_failed`）、稳定性诊断（`stability_run`、`stability_score`）、通用技术试跑（`technical_pilot`）、私有材料交接清单（`handoff_manifest`，可 `--check` 校验漂移） |
 | `docs/` | 进度核对、复算指南、数据审查、准入决定、证据对照、阶段交接 |
 | `specs/formal/` | 正式运行的冻结协议、清单、模型配置与服务身份 |
 | `specs/pilots/` | 技术试跑与预检的协议和结果 |

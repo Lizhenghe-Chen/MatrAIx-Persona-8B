@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 551,
-  "git_bytes": 78897705,
+  "git_file_count": 553,
+  "git_bytes": 78901175,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -44,8 +44,8 @@
     },
     {
       "path": "decision_lab/README.md",
-      "bytes": 16147,
-      "sha256": "5c51c638e0e998064135468ea6c199802b4bf54d8a65b56521324345fa3ca4e5",
+      "bytes": 16227,
+      "sha256": "ffee5464f79d7c1b415e65daf87fc7d53fcc3ef34f765c7e41d765945921ca01",
       "storage": "git"
     },
     {
@@ -256,6 +256,12 @@
       "path": "decision_lab/ops/__init__.py",
       "bytes": 73,
       "sha256": "ef4f8546fe9a616568594ceec5a268fcb2af675ebc029bdea0d3f664e2885f0d",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/ops/handoff_manifest.py",
+      "bytes": 2137,
+      "sha256": "840dfa56d89595b48d3e939479c90024e77d0a6e3876a482417e5f8c9ffe2a10",
       "storage": "git"
     },
     {
@@ -868,6 +874,12 @@
       "path": "decision_lab/tests/test_execution_snapshot.py",
       "bytes": 5557,
       "sha256": "53e53f6a745c3369bffe4b106c81484cd9474c60b1239d6b8b2c42b1c6def9ea",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/tests/test_handoff_manifest.py",
+      "bytes": 1253,
+      "sha256": "6b6505d293b998a32b4a67d777a79d14166e3221c857ac92393e62d524db9579",
       "storage": "git"
     },
     {
