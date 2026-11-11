@@ -152,11 +152,12 @@ def render(summary):
                                  f'<td>{100*result["human_share"]:.1f}%</td><td>{100*result["candidate_prediction_share"]:.1f}%</td>'
                                  f'<td class="{sign(result["absolute_error_reduction_pp"])}">{result["absolute_error_reduction_pp"]:+.2f}</td>'
                                  f'<td>{"—" if ci is None else f"[{ci[0]:+.2f}, {ci[1]:+.2f}]"}</td></tr>')
-    execution_rows=[];planned=completed=retried=0
+    execution_rows=[];planned=completed=retried=0;reserved=0;tokens=0
     for kind,units in summary['execution'].items():
         for unit in units:
             execution=unit['execution'];states=execution['states']
             retried+=execution['failed_attempts'];planned+=unit['expected'];completed+=states.get('complete',0)
+            reserved+=execution['reserved_budget_usd'];tokens+=execution['successful_response_tokens'].get('total_tokens',0)
             execution_rows.append(f'<tr><td>{STUDY_NAME[kind]}</td><td>{unit["track"]}</td><td>{unit["unit"]}</td>'
                                   f'<td>{unit["expected"]:,}</td><td>{states.get("complete",0):,}</td>'
                                   f'<td>{100*states.get("complete",0)/unit["expected"]:.1f}%</td>'
@@ -183,7 +184,7 @@ def render(summary):
 {development_section}
 <section><h2>虚拟人群：分布误差与属性比例</h2><p>分布误差是真人比例与虚拟人比例的差距（百分点，越小越好）。合成人群人数与真人参照人数不同，因为只纳入年龄和学历可映射的人；真人参照全程固定，不包含真人抽样误差。</p><table><tr><th>研究</th><th>真人参照</th><th>虚拟人</th><th>只匹配人口背景</th><th>增加合成人格</th><th>同层打乱人格</th><th>主对照改善（百分点）</th><th>95% 区间</th><th>判定</th></tr>{''.join(score_rows)}</table>
 <p>主对照是“只匹配人口背景”减去“增加合成人格”。下表是更细的属性选择比例，正数表示更接近真人。</p><table><tr><th>研究</th><th>选择比例</th><th>真人</th><th>虚拟人</th><th>误差减少（百分点）</th><th>95% 区间</th></tr>{''.join(property_rows)}</table></section>
-<section><h2>跑完了吗：完成度、失败与费用</h2><p>共计划 {planned:,} 次调用，实际完成 {completed:,} 次，完成率 {100*completed/planned:.2f}%。运行中共有 {retried} 次确定性失败，全部经显式重试恢复，原始失败记录和费用仍保留在数据库中，没有删除历史。</p><table><tr><th>研究</th><th>轨道</th><th>单元</th><th>计划</th><th>完成</th><th>完成率</th><th>失败重试</th><th>预留上界</th></tr>{''.join(execution_rows)}</table><p>“预留上界”是按每个请求的最大可能用量估算的保守上限，不是实际账单。模型身份在全部成功回答中一致：<code>{esc('; '.join(sorted(identity)))}</code>。</p></section>
+<section><h2>跑完了吗：完成度、失败与费用</h2><p>共计划 {planned:,} 次调用，实际完成 {completed:,} 次，完成率 {100*completed/planned:.2f}%。运行中共有 {retried} 次确定性失败，全部经显式重试恢复，原始失败记录和费用仍保留在数据库中，没有删除历史。</p><table><tr><th>研究</th><th>轨道</th><th>单元</th><th>计划</th><th>完成</th><th>完成率</th><th>失败重试</th><th>预留上界</th></tr>{''.join(execution_rows)}</table><p>合计：预留上界 ${reserved:.2f}，成功回答累计 {tokens:,} 个 token。“预留上界”是按每个请求的最大可能用量估算的保守上限，不是实际账单；两者相差可达一个数量级，不能混用。模型身份在全部成功回答中一致：<code>{esc('; '.join(sorted(identity)))}</code>。</p></section>
 <section><h2>不能据此说什么</h2><ul>{limits}</ul></section>
 <section><h2>建议</h2><ol><li>把“AI 权重为 0”的路线如实写成统计预测，不当成 AI 优化成果。</li><li>只在有正式测试区间支持时才宣称改善；未达门槛的写成“方向对但幅度不足”。</li><li>下一步应补完未准入研究的题面材料，再独立冻结新版本验证，而不是回头包装成已完成的验证。</li></ol></section>
 {sources}
