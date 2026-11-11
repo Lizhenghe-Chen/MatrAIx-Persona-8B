@@ -6,7 +6,7 @@
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
   "git_file_count": 519,
-  "git_bytes": 78773265,
+  "git_bytes": 78777651,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -440,8 +440,8 @@
     },
     {
       "path": "decision_lab/study_report.py",
-      "bytes": 8309,
-      "sha256": "063c0a761170892da6a6c93f94aa5677ca029d90eaa50315a6a8fcfce9483e55",
+      "bytes": 12052,
+      "sha256": "df062e4a6befb546beb095db4298c74653a664b78d7e3b51b833c96cc5225170",
       "storage": "git"
     },
     {
@@ -698,8 +698,8 @@
     },
     {
       "path": "decision_lab/test_study_report.py",
-      "bytes": 626,
-      "sha256": "0cd165781c699453b075a1359107357c8e3c5225e0631d5aaa36bd31befae782",
+      "bytes": 1269,
+      "sha256": "df4cbe873ac463f086d6da865e6c77bb8fd8b9ae9f6be13164db2eb29131a48c",
       "storage": "git"
     },
     {
