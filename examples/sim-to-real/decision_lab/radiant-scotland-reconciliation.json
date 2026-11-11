@@ -1,0 +1,45 @@
+{
+  "survey_people": 299,
+  "cards": 1790,
+  "refusal_count": 512,
+  "age_counts": {
+    "1.0": 15,
+    "2.0": 74,
+    "3.0": 72,
+    "4.0": 43,
+    "5.0": 31,
+    "6.0": 54,
+    "7.0": 9
+  },
+  "gender_counts": {
+    "1.0": 146,
+    "2.0": 151,
+    "3.0": 1
+  },
+  "education_counts": {
+    "2.0": 61,
+    "3.0": 53,
+    "4.0": 105,
+    "5.0": 79
+  },
+  "exclusive_shopper": 121,
+  "exclusive_cook": 123,
+  "treatment_people": {
+    "0": 154,
+    "1": 145
+  },
+  "report_comparison": {
+    "report_people": 301,
+    "public_people": 299,
+    "explanation": "Workbook states IDs 83 and 257 removed for lack of consent; report choice count still equals public 1790 tasks. Do not reintroduce removed people."
+  },
+  "visual_review": {
+    "pages": [
+      98,
+      99
+    ],
+    "options": "two products plus Neither",
+    "price_unit": "GBP per 250 g pack",
+    "format_limitation": "Original includes icons; text conversion is a different display modality."
+  }
+}

@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 489,
-  "git_bytes": 78685071,
+  "git_file_count": 490,
+  "git_bytes": 78686841,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -325,6 +325,12 @@
       "storage": "git"
     },
     {
+      "path": "decision_lab/radiant-scotland-reconciliation.json",
+      "bytes": 965,
+      "sha256": "4d6fc5ff429c70cf4a7677564a5714f92d5fbcfe9d5d73108f29bde9dc163945",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/radiant_audit.py",
       "bytes": 2297,
       "sha256": "f7f7b19a03d1c49f3157c14e9d26decf8cd922ff68696d02955e154f86ebd80b",
@@ -584,8 +590,8 @@
     },
     {
       "path": "decision_lab/数据审查发现.md",
-      "bytes": 17164,
-      "sha256": "77b1d3f541c6db59fa01ee0c7e149a5a68b7d27812105cf55e4e98a7b9097f67",
+      "bytes": 17969,
+      "sha256": "f5f8e51a8f78b8f90901e4c8fd0c0b493b6d06c63f7f92a9c51bd3d92fff583e",
       "storage": "git"
     },
     {
