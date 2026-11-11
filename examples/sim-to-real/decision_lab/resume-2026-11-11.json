@@ -1,0 +1,11 @@
+{
+  "time": "2026-11-11T10:09:17.354717+08:00",
+  "verified_before_resume": 790,
+  "frozen_inputs_verified": true,
+  "resume_counts": {
+    "complete": 802,
+    "pending": 1
+  },
+  "new_call_cutoff": "2026-11-12T00:55:00+08:00",
+  "scores_calculated": false
+}

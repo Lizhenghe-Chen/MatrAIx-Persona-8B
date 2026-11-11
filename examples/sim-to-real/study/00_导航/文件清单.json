@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "recorded_on": "2026-11-10",
+  "recorded_on": "2026-11-11",
   "root": "examples/sim-to-real",
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 463,
-  "git_bytes": 78555643,
+  "git_file_count": 464,
+  "git_bytes": 78555903,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -256,6 +256,12 @@
       "path": "decision_lab/report.py",
       "bytes": 4430,
       "sha256": "ba8a2e206d27643697054d4a4184a989af54c055db9af18c8199bc91b77a6636",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/resume-2026-11-11.json",
+      "bytes": 260,
+      "sha256": "65d813cd277251b064797c0b5bc1b6c3e0ce8182bf8c085fbaa86c9ca5b3d928",
       "storage": "git"
     },
     {
