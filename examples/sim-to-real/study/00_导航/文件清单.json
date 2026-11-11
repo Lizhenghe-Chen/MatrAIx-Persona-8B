@@ -6,7 +6,7 @@
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
   "git_file_count": 492,
-  "git_bytes": 78693548,
+  "git_bytes": 78694273,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -596,8 +596,8 @@
     },
     {
       "path": "decision_lab/数据审查发现.md",
-      "bytes": 18664,
-      "sha256": "de94e3c4454e1d10bec2b94b569a3aa2091dd4ece7dfae3da96b15b6e1872ff7",
+      "bytes": 19389,
+      "sha256": "1c0a785b41bcf8f68885fd5aef5593c3605118e0b10eb3c7c12a48bed7fda5d5",
       "storage": "git"
     },
     {
