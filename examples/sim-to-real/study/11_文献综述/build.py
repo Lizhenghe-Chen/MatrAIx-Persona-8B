@@ -10,7 +10,8 @@ def build():
     records = json.loads((ROOT / 'sources.json').read_text())
     assert len({r['id'] for r in records}) == len(records)
     build_index(records)
-    lines = ['# 文献证据卡', '', '更新：2026-11-10。由 `sources.json` 生成；请修改数据源后运行 `python build.py`。', '',
+    updated=max(r['checked_on'] for r in records)
+    lines = ['# 文献证据卡', '', f'更新：{updated}。由 `sources.json` 生成；请修改数据源后运行 `python build.py`。', '',
              '[返回综述](综述.md) · [参数与实验建议](参数与实验建议.md)', '',
              '编号仅用于长期维护。每篇都用标题、任务和核验范围解释；摘要级证据不等于全文确认，也不等于已复现。', '',
              '| 文献 | 任务 | 核验范围 |', '| --- | --- | --- |']

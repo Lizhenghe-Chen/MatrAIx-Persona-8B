@@ -6,7 +6,7 @@
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
   "git_file_count": 532,
-  "git_bytes": 78811464,
+  "git_bytes": 78813594,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -830,8 +830,8 @@
     },
     {
       "path": "decision_lab/证据与检验对照.md",
-      "bytes": 4377,
-      "sha256": "e7c1f8210de8f8b6b9d660317ec86228bc4d145f8d9cc3d9167fe292f8374af0",
+      "bytes": 4456,
+      "sha256": "89d3d3660f2b4e6926ec234855098f0dfb765025db606f5e26a9dbfb255788e8",
       "storage": "git"
     },
     {
@@ -3156,8 +3156,8 @@
     },
     {
       "path": "study/11_文献综述/build.py",
-      "bytes": 3621,
-      "sha256": "e9f148ccfb4f1864bd3f6d74ff0e9f3d67db7a656e2f21076fea405e832b1ed0",
+      "bytes": 3671,
+      "sha256": "f2b32e921db7e512005170c0c3e6d3a624792002ea69fed3c832f9b33dddbecd",
       "storage": "git"
     },
     {
@@ -3180,8 +3180,8 @@
     },
     {
       "path": "study/11_文献综述/sources.json",
-      "bytes": 37289,
-      "sha256": "749f1c4b91d05038ba5bd56a4d424ed6941dfe5d3d097b2265492d26a745a3bc",
+      "bytes": 38304,
+      "sha256": "b8b0254e66ae4c2f90081350314df8e72966cb3861a3e848cfda619cb0463959",
       "storage": "git"
     },
     {
@@ -3216,8 +3216,8 @@
     },
     {
       "path": "study/11_文献综述/全文资料/全文索引.md",
-      "bytes": 42224,
-      "sha256": "f430d2fc08a5815bf72a71aa5da7e78ab19c636fbd7d576e52ff78da89d0a52c",
+      "bytes": 42284,
+      "sha256": "766416862bb112ed81f8de40e7f86c2dfcd39f18216e7fd28846d2a666e499a1",
       "storage": "git"
     },
     {
@@ -3407,8 +3407,8 @@
     },
     {
       "path": "study/11_文献综述/文献证据卡.md",
-      "bytes": 28058,
-      "sha256": "bd3fe2fe5ded39286f284aed5524496990e237939cfc6b3bcef27dd2aa8edcee",
+      "bytes": 28984,
+      "sha256": "c1b63c9aad68c98897d80507033340ac1fe54782995b5eafdec40c40376537f4",
       "storage": "git"
     },
     {
