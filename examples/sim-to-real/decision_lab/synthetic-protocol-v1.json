@@ -1,0 +1,19 @@
+{
+  "version": "synthetic-population-v1",
+  "model": "deepseek-v4-pro",
+  "conditions": ["demographics", "personality", "shuffled"],
+  "primary_contrast": "demographics minus personality distribution error",
+  "diagnostic_contrast": "shuffled versus personality; task-allocation sensitivity, not true-person personality alignment",
+  "matching": "Exact eligible held-out background counts by design stratum, age band and two education groups. Unknown/other education excluded only from this track.",
+  "population": "Generated adults from pinned North America and Western Europe proposal pools; no inferred real residency or individual respondent linkage.",
+  "human_reference": "Fixed observed responses from the eligible test cohort, all conditions use the same reference. No target answer used in generation or prompts.",
+  "dryer_primary": "Person-normalized TV in percentage points within identical choice cards and design stratum, then equal weight across cards within stratum, strata weighted by eligible people. Report card support and separate cards with fewer than 20 people.",
+  "swiss_primary": "Same card TV is descriptive only because cards are sparse. Primary population outcomes are chosen lower-price and longer-functional-life proportions on eligible cards, reported separately, not a single adoption score.",
+  "secondary": ["age and education group distributions", "refusal where offered", "argmax concentration versus mean probability concentration", "observed property-choice shares, not causal effects"],
+  "bootstrap": {"replicates": 2000, "unit": "synthetic person with all tasks", "strata": "design stratum and common background cell", "pairing": "same synthetic IDs across conditions", "reference": "human fixed", "seed": 20261109},
+  "adoption": "For supported complete option distributions, reduction >=2 percentage points and improvement 95% interval above zero. No broad cross-study population claim from sparse Swiss cards. Synthetic-only results do not establish individual prediction.",
+  "completion": "At least 98% per condition; prefer complete recovery. Never substitute defaults for failed calls. Report common support and missing composition.",
+  "pilot": "Separate generated IDs not in formal cohort, at most 24 people per study; question format and isolation only, no effect scoring.",
+  "cost": "Formal calls 6984 dryer and 7824 Swiss; each of six units has conservative USD40 reserve, not a billing estimate. Pilot bounded separately.",
+  "limitations": ["Coarse matching does not match unmeasured tastes or all background correlations.", "Generation pins are forward constraints, not posterior inference.", "Personality permutation preserves within-cell margins; unchanged aggregate results may follow from exchangeability.", "Graphic originals are represented by reviewed text attributes."]
+}

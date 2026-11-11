@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 504,
-  "git_bytes": 78726119,
+  "git_file_count": 505,
+  "git_bytes": 78728958,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -508,6 +508,12 @@
       "path": "decision_lab/synthetic-pool-coverage.json",
       "bytes": 4722,
       "sha256": "b94e68ce2c98b7652cfaa64246113be68717b7c1647119a385e49e1f90ab0db0",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/synthetic-protocol-v1.json",
+      "bytes": 2839,
+      "sha256": "8433b753e164e92650445825e8b31485fa2000e1232a78027c3fd3c4e890fc52",
       "storage": "git"
     },
     {
