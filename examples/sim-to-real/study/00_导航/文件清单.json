@@ -6,7 +6,7 @@
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
   "git_file_count": 519,
-  "git_bytes": 78778814,
+  "git_bytes": 78779194,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -44,8 +44,8 @@
     },
     {
       "path": "decision_lab/README.md",
-      "bytes": 10529,
-      "sha256": "8fba17f7f7ea59327964555a1f500b0a9ee6f623757d350e1be3c6a65de92ffb",
+      "bytes": 10909,
+      "sha256": "2931561b940b1f93c95cedf4d9368ce9f2d42ecad145f82c8601cfa5ad609384",
       "storage": "git"
     },
     {
