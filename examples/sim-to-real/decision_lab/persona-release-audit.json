@@ -1,0 +1,3137 @@
+{
+  "release_manifest_sha256": "b8582f8fcc6f7023bc46a7d675854c8ce8e44ad886095de9d66005866fdb63a3",
+  "files": [
+    {
+      "path": "data/persona-1m-0000.parquet",
+      "footer_rows": 100000,
+      "bytes": 1135877520,
+      "manifest_rows_match": true,
+      "manifest_bytes_match": true
+    },
+    {
+      "path": "data/persona-1m-0001.parquet",
+      "footer_rows": 100000,
+      "bytes": 1003083203,
+      "manifest_rows_match": true,
+      "manifest_bytes_match": true
+    },
+    {
+      "path": "data/persona-1m-0002.parquet",
+      "footer_rows": 100000,
+      "bytes": 1033556644,
+      "manifest_rows_match": true,
+      "manifest_bytes_match": true
+    },
+    {
+      "path": "data/persona-1m-0003.parquet",
+      "footer_rows": 100000,
+      "bytes": 490983173,
+      "manifest_rows_match": true,
+      "manifest_bytes_match": true
+    },
+    {
+      "path": "data/persona-1m-0004.parquet",
+      "footer_rows": 100000,
+      "bytes": 212864655,
+      "manifest_rows_match": true,
+      "manifest_bytes_match": true
+    },
+    {
+      "path": "data/persona-1m-0005.parquet",
+      "footer_rows": 99847,
+      "bytes": 140200105,
+      "manifest_rows_match": true,
+      "manifest_bytes_match": true
+    },
+    {
+      "path": "data/persona-1m-0006.parquet",
+      "footer_rows": 100000,
+      "bytes": 37785027,
+      "manifest_rows_match": true,
+      "manifest_bytes_match": true
+    },
+    {
+      "path": "data/persona-1m-0007.parquet",
+      "footer_rows": 100000,
+      "bytes": 37790645,
+      "manifest_rows_match": true,
+      "manifest_bytes_match": true
+    },
+    {
+      "path": "data/persona-1m-0008.parquet",
+      "footer_rows": 100000,
+      "bytes": 37796239,
+      "manifest_rows_match": true,
+      "manifest_bytes_match": true
+    },
+    {
+      "path": "data/persona-1m-0009.parquet",
+      "footer_rows": 100000,
+      "bytes": 37792551,
+      "manifest_rows_match": true,
+      "manifest_bytes_match": true
+    }
+  ],
+  "sources": {
+    "wiki": 323438,
+    "amazon": 97915,
+    "stackoverflow": 113120,
+    "prism": 1487,
+    "gss": 63532,
+    "real_human_survey": 355,
+    "synthetic": 400000
+  },
+  "actual_rows": 999847,
+  "manifest_source_counts_match": true,
+  "synthetic_joint_cells": [
+    {
+      "region": "East Asia",
+      "age_bracket": "13-17",
+      "highest_education": "No formal",
+      "rows": 613
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "13-17",
+      "highest_education": "Primary",
+      "rows": 3344
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "13-17",
+      "highest_education": "Secondary",
+      "rows": 8991
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "13-17",
+      "highest_education": "Vocational / cert",
+      "rows": 318
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "18-24",
+      "highest_education": "Associate's",
+      "rows": 328
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "18-24",
+      "highest_education": "Bachelor's",
+      "rows": 750
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "18-24",
+      "highest_education": "Master's",
+      "rows": 68
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "18-24",
+      "highest_education": "No formal",
+      "rows": 498
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "18-24",
+      "highest_education": "Primary",
+      "rows": 1158
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "18-24",
+      "highest_education": "Secondary",
+      "rows": 5345
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "18-24",
+      "highest_education": "Some college",
+      "rows": 845
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "18-24",
+      "highest_education": "Vocational / cert",
+      "rows": 1057
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "25-34",
+      "highest_education": "Associate's",
+      "rows": 204
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "25-34",
+      "highest_education": "Bachelor's",
+      "rows": 841
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "25-34",
+      "highest_education": "Doctorate",
+      "rows": 24
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "25-34",
+      "highest_education": "Master's",
+      "rows": 196
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "25-34",
+      "highest_education": "No formal",
+      "rows": 406
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "25-34",
+      "highest_education": "Postdoc",
+      "rows": 3
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "25-34",
+      "highest_education": "Primary",
+      "rows": 688
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "25-34",
+      "highest_education": "Secondary",
+      "rows": 2223
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "25-34",
+      "highest_education": "Some college",
+      "rows": 305
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "25-34",
+      "highest_education": "Vocational / cert",
+      "rows": 577
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "35-44",
+      "highest_education": "Associate's",
+      "rows": 180
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "35-44",
+      "highest_education": "Bachelor's",
+      "rows": 711
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "35-44",
+      "highest_education": "Doctorate",
+      "rows": 53
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "35-44",
+      "highest_education": "Master's",
+      "rows": 236
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "35-44",
+      "highest_education": "No formal",
+      "rows": 399
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "35-44",
+      "highest_education": "Postdoc",
+      "rows": 5
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "35-44",
+      "highest_education": "Primary",
+      "rows": 740
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "35-44",
+      "highest_education": "Secondary",
+      "rows": 2102
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "35-44",
+      "highest_education": "Some college",
+      "rows": 181
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "35-44",
+      "highest_education": "Vocational / cert",
+      "rows": 448
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "45-54",
+      "highest_education": "Associate's",
+      "rows": 225
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "45-54",
+      "highest_education": "Bachelor's",
+      "rows": 970
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "45-54",
+      "highest_education": "Doctorate",
+      "rows": 47
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "45-54",
+      "highest_education": "Master's",
+      "rows": 363
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "45-54",
+      "highest_education": "No formal",
+      "rows": 794
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "45-54",
+      "highest_education": "Postdoc",
+      "rows": 7
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "45-54",
+      "highest_education": "Primary",
+      "rows": 1483
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "45-54",
+      "highest_education": "Secondary",
+      "rows": 3867
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "45-54",
+      "highest_education": "Some college",
+      "rows": 285
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "45-54",
+      "highest_education": "Vocational / cert",
+      "rows": 888
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "5-12",
+      "highest_education": "No formal",
+      "rows": 9856
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "5-12",
+      "highest_education": "Primary",
+      "rows": 11736
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "55-64",
+      "highest_education": "Associate's",
+      "rows": 125
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "55-64",
+      "highest_education": "Bachelor's",
+      "rows": 732
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "55-64",
+      "highest_education": "Doctorate",
+      "rows": 18
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "55-64",
+      "highest_education": "Master's",
+      "rows": 222
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "55-64",
+      "highest_education": "No formal",
+      "rows": 793
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "55-64",
+      "highest_education": "Postdoc",
+      "rows": 4
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "55-64",
+      "highest_education": "Primary",
+      "rows": 1440
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "55-64",
+      "highest_education": "Secondary",
+      "rows": 3146
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "55-64",
+      "highest_education": "Some college",
+      "rows": 219
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "55-64",
+      "highest_education": "Vocational / cert",
+      "rows": 642
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "65-74",
+      "highest_education": "Associate's",
+      "rows": 104
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "65-74",
+      "highest_education": "Bachelor's",
+      "rows": 587
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "65-74",
+      "highest_education": "Doctorate",
+      "rows": 19
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "65-74",
+      "highest_education": "Master's",
+      "rows": 150
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "65-74",
+      "highest_education": "No formal",
+      "rows": 909
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "65-74",
+      "highest_education": "Postdoc",
+      "rows": 6
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "65-74",
+      "highest_education": "Primary",
+      "rows": 1576
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "65-74",
+      "highest_education": "Secondary",
+      "rows": 2983
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "65-74",
+      "highest_education": "Some college",
+      "rows": 162
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "65-74",
+      "highest_education": "Vocational / cert",
+      "rows": 564
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "75-84",
+      "highest_education": "Associate's",
+      "rows": 22
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "75-84",
+      "highest_education": "Bachelor's",
+      "rows": 144
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "75-84",
+      "highest_education": "Doctorate",
+      "rows": 10
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "75-84",
+      "highest_education": "Master's",
+      "rows": 51
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "75-84",
+      "highest_education": "No formal",
+      "rows": 409
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "75-84",
+      "highest_education": "Primary",
+      "rows": 635
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "75-84",
+      "highest_education": "Secondary",
+      "rows": 984
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "75-84",
+      "highest_education": "Some college",
+      "rows": 42
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "75-84",
+      "highest_education": "Vocational / cert",
+      "rows": 196
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "85+",
+      "highest_education": "Associate's",
+      "rows": 4
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "85+",
+      "highest_education": "Bachelor's",
+      "rows": 20
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "85+",
+      "highest_education": "Doctorate",
+      "rows": 1
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "85+",
+      "highest_education": "Master's",
+      "rows": 4
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "85+",
+      "highest_education": "No formal",
+      "rows": 72
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "85+",
+      "highest_education": "Primary",
+      "rows": 95
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "85+",
+      "highest_education": "Secondary",
+      "rows": 120
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "85+",
+      "highest_education": "Some college",
+      "rows": 6
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "85+",
+      "highest_education": "Vocational / cert",
+      "rows": 25
+    },
+    {
+      "region": "East Asia",
+      "age_bracket": "Under 5",
+      "highest_education": "No formal",
+      "rows": 13955
+    },
+    {
+      "region": "Eastern Europe",
+      "age_bracket": "13-17",
+      "highest_education": "Primary",
+      "rows": 1
+    },
+    {
+      "region": "Eastern Europe",
+      "age_bracket": "25-34",
+      "highest_education": "Master's",
+      "rows": 1
+    },
+    {
+      "region": "Eastern Europe",
+      "age_bracket": "25-34",
+      "highest_education": "Secondary",
+      "rows": 1
+    },
+    {
+      "region": "Eastern Europe",
+      "age_bracket": "35-44",
+      "highest_education": "Secondary",
+      "rows": 1
+    },
+    {
+      "region": "Eastern Europe",
+      "age_bracket": "45-54",
+      "highest_education": "Secondary",
+      "rows": 1
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "13-17",
+      "highest_education": "No formal",
+      "rows": 208
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "13-17",
+      "highest_education": "Primary",
+      "rows": 1013
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "13-17",
+      "highest_education": "Secondary",
+      "rows": 2658
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "13-17",
+      "highest_education": "Vocational / cert",
+      "rows": 90
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "18-24",
+      "highest_education": "Associate's",
+      "rows": 81
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "18-24",
+      "highest_education": "Bachelor's",
+      "rows": 203
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "18-24",
+      "highest_education": "Master's",
+      "rows": 14
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "18-24",
+      "highest_education": "No formal",
+      "rows": 130
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "18-24",
+      "highest_education": "Primary",
+      "rows": 335
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "18-24",
+      "highest_education": "Secondary",
+      "rows": 1414
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "18-24",
+      "highest_education": "Some college",
+      "rows": 213
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "18-24",
+      "highest_education": "Vocational / cert",
+      "rows": 286
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "25-34",
+      "highest_education": "Associate's",
+      "rows": 56
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "25-34",
+      "highest_education": "Bachelor's",
+      "rows": 230
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "25-34",
+      "highest_education": "Doctorate",
+      "rows": 7
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "25-34",
+      "highest_education": "Master's",
+      "rows": 55
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "25-34",
+      "highest_education": "No formal",
+      "rows": 84
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "25-34",
+      "highest_education": "Postdoc",
+      "rows": 1
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "25-34",
+      "highest_education": "Primary",
+      "rows": 179
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "25-34",
+      "highest_education": "Secondary",
+      "rows": 586
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "25-34",
+      "highest_education": "Some college",
+      "rows": 75
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "25-34",
+      "highest_education": "Vocational / cert",
+      "rows": 151
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "35-44",
+      "highest_education": "Associate's",
+      "rows": 32
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "35-44",
+      "highest_education": "Bachelor's",
+      "rows": 182
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "35-44",
+      "highest_education": "Doctorate",
+      "rows": 11
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "35-44",
+      "highest_education": "Master's",
+      "rows": 64
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "35-44",
+      "highest_education": "No formal",
+      "rows": 100
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "35-44",
+      "highest_education": "Postdoc",
+      "rows": 2
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "35-44",
+      "highest_education": "Primary",
+      "rows": 200
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "35-44",
+      "highest_education": "Secondary",
+      "rows": 569
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "35-44",
+      "highest_education": "Some college",
+      "rows": 55
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "35-44",
+      "highest_education": "Vocational / cert",
+      "rows": 127
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "45-54",
+      "highest_education": "Associate's",
+      "rows": 65
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "45-54",
+      "highest_education": "Bachelor's",
+      "rows": 265
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "45-54",
+      "highest_education": "Doctorate",
+      "rows": 19
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "45-54",
+      "highest_education": "Master's",
+      "rows": 91
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "45-54",
+      "highest_education": "No formal",
+      "rows": 215
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "45-54",
+      "highest_education": "Primary",
+      "rows": 418
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "45-54",
+      "highest_education": "Secondary",
+      "rows": 1023
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "45-54",
+      "highest_education": "Some college",
+      "rows": 85
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "45-54",
+      "highest_education": "Vocational / cert",
+      "rows": 237
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "5-12",
+      "highest_education": "No formal",
+      "rows": 2878
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "5-12",
+      "highest_education": "Primary",
+      "rows": 3430
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "55-64",
+      "highest_education": "Associate's",
+      "rows": 45
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "55-64",
+      "highest_education": "Bachelor's",
+      "rows": 191
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "55-64",
+      "highest_education": "Doctorate",
+      "rows": 3
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "55-64",
+      "highest_education": "Master's",
+      "rows": 64
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "55-64",
+      "highest_education": "No formal",
+      "rows": 221
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "55-64",
+      "highest_education": "Postdoc",
+      "rows": 1
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "55-64",
+      "highest_education": "Primary",
+      "rows": 382
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "55-64",
+      "highest_education": "Secondary",
+      "rows": 894
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "55-64",
+      "highest_education": "Some college",
+      "rows": 60
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "55-64",
+      "highest_education": "Vocational / cert",
+      "rows": 158
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "65-74",
+      "highest_education": "Associate's",
+      "rows": 21
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "65-74",
+      "highest_education": "Bachelor's",
+      "rows": 166
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "65-74",
+      "highest_education": "Doctorate",
+      "rows": 3
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "65-74",
+      "highest_education": "Master's",
+      "rows": 41
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "65-74",
+      "highest_education": "No formal",
+      "rows": 297
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "65-74",
+      "highest_education": "Primary",
+      "rows": 438
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "65-74",
+      "highest_education": "Secondary",
+      "rows": 772
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "65-74",
+      "highest_education": "Some college",
+      "rows": 57
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "65-74",
+      "highest_education": "Vocational / cert",
+      "rows": 146
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "75-84",
+      "highest_education": "Associate's",
+      "rows": 8
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "75-84",
+      "highest_education": "Bachelor's",
+      "rows": 38
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "75-84",
+      "highest_education": "Doctorate",
+      "rows": 5
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "75-84",
+      "highest_education": "Master's",
+      "rows": 11
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "75-84",
+      "highest_education": "No formal",
+      "rows": 97
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "75-84",
+      "highest_education": "Postdoc",
+      "rows": 1
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "75-84",
+      "highest_education": "Primary",
+      "rows": 198
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "75-84",
+      "highest_education": "Secondary",
+      "rows": 269
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "75-84",
+      "highest_education": "Some college",
+      "rows": 18
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "75-84",
+      "highest_education": "Vocational / cert",
+      "rows": 27
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "85+",
+      "highest_education": "Associate's",
+      "rows": 1
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "85+",
+      "highest_education": "Bachelor's",
+      "rows": 9
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "85+",
+      "highest_education": "No formal",
+      "rows": 20
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "85+",
+      "highest_education": "Primary",
+      "rows": 31
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "85+",
+      "highest_education": "Secondary",
+      "rows": 37
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "85+",
+      "highest_education": "Some college",
+      "rows": 2
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "85+",
+      "highest_education": "Vocational / cert",
+      "rows": 2
+    },
+    {
+      "region": "Latin America",
+      "age_bracket": "Under 5",
+      "highest_education": "No formal",
+      "rows": 4051
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "13-17",
+      "highest_education": "No formal",
+      "rows": 182
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "13-17",
+      "highest_education": "Primary",
+      "rows": 1025
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "13-17",
+      "highest_education": "Secondary",
+      "rows": 2668
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "13-17",
+      "highest_education": "Vocational / cert",
+      "rows": 85
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "18-24",
+      "highest_education": "Associate's",
+      "rows": 117
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "18-24",
+      "highest_education": "Bachelor's",
+      "rows": 204
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "18-24",
+      "highest_education": "Master's",
+      "rows": 19
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "18-24",
+      "highest_education": "No formal",
+      "rows": 145
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "18-24",
+      "highest_education": "Primary",
+      "rows": 342
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "18-24",
+      "highest_education": "Secondary",
+      "rows": 1596
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "18-24",
+      "highest_education": "Some college",
+      "rows": 271
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "18-24",
+      "highest_education": "Vocational / cert",
+      "rows": 316
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "25-34",
+      "highest_education": "Associate's",
+      "rows": 52
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "25-34",
+      "highest_education": "Bachelor's",
+      "rows": 255
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "25-34",
+      "highest_education": "Doctorate",
+      "rows": 7
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "25-34",
+      "highest_education": "Master's",
+      "rows": 45
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "25-34",
+      "highest_education": "No formal",
+      "rows": 107
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "25-34",
+      "highest_education": "Postdoc",
+      "rows": 3
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "25-34",
+      "highest_education": "Primary",
+      "rows": 192
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "25-34",
+      "highest_education": "Secondary",
+      "rows": 615
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "25-34",
+      "highest_education": "Some college",
+      "rows": 86
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "25-34",
+      "highest_education": "Vocational / cert",
+      "rows": 129
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "35-44",
+      "highest_education": "Associate's",
+      "rows": 51
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "35-44",
+      "highest_education": "Bachelor's",
+      "rows": 175
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "35-44",
+      "highest_education": "Doctorate",
+      "rows": 10
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "35-44",
+      "highest_education": "Master's",
+      "rows": 70
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "35-44",
+      "highest_education": "No formal",
+      "rows": 104
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "35-44",
+      "highest_education": "Postdoc",
+      "rows": 1
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "35-44",
+      "highest_education": "Primary",
+      "rows": 222
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "35-44",
+      "highest_education": "Secondary",
+      "rows": 580
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "35-44",
+      "highest_education": "Some college",
+      "rows": 63
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "35-44",
+      "highest_education": "Vocational / cert",
+      "rows": 134
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "45-54",
+      "highest_education": "Associate's",
+      "rows": 70
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "45-54",
+      "highest_education": "Bachelor's",
+      "rows": 267
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "45-54",
+      "highest_education": "Doctorate",
+      "rows": 17
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "45-54",
+      "highest_education": "Master's",
+      "rows": 80
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "45-54",
+      "highest_education": "No formal",
+      "rows": 229
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "45-54",
+      "highest_education": "Postdoc",
+      "rows": 2
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "45-54",
+      "highest_education": "Primary",
+      "rows": 480
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "45-54",
+      "highest_education": "Secondary",
+      "rows": 1022
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "45-54",
+      "highest_education": "Some college",
+      "rows": 78
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "45-54",
+      "highest_education": "Vocational / cert",
+      "rows": 236
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "5-12",
+      "highest_education": "No formal",
+      "rows": 2960
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "5-12",
+      "highest_education": "Primary",
+      "rows": 3688
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "55-64",
+      "highest_education": "Associate's",
+      "rows": 34
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "55-64",
+      "highest_education": "Bachelor's",
+      "rows": 195
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "55-64",
+      "highest_education": "Doctorate",
+      "rows": 9
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "55-64",
+      "highest_education": "Master's",
+      "rows": 47
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "55-64",
+      "highest_education": "No formal",
+      "rows": 200
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "55-64",
+      "highest_education": "Postdoc",
+      "rows": 1
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "55-64",
+      "highest_education": "Primary",
+      "rows": 373
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "55-64",
+      "highest_education": "Secondary",
+      "rows": 895
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "55-64",
+      "highest_education": "Some college",
+      "rows": 59
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "55-64",
+      "highest_education": "Vocational / cert",
+      "rows": 198
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "65-74",
+      "highest_education": "Associate's",
+      "rows": 21
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "65-74",
+      "highest_education": "Bachelor's",
+      "rows": 151
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "65-74",
+      "highest_education": "Doctorate",
+      "rows": 6
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "65-74",
+      "highest_education": "Master's",
+      "rows": 40
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "65-74",
+      "highest_education": "No formal",
+      "rows": 254
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "65-74",
+      "highest_education": "Postdoc",
+      "rows": 2
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "65-74",
+      "highest_education": "Primary",
+      "rows": 437
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "65-74",
+      "highest_education": "Secondary",
+      "rows": 868
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "65-74",
+      "highest_education": "Some college",
+      "rows": 63
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "65-74",
+      "highest_education": "Vocational / cert",
+      "rows": 144
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "75-84",
+      "highest_education": "Associate's",
+      "rows": 3
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "75-84",
+      "highest_education": "Bachelor's",
+      "rows": 49
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "75-84",
+      "highest_education": "Doctorate",
+      "rows": 6
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "75-84",
+      "highest_education": "Master's",
+      "rows": 9
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "75-84",
+      "highest_education": "No formal",
+      "rows": 125
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "75-84",
+      "highest_education": "Primary",
+      "rows": 160
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "75-84",
+      "highest_education": "Secondary",
+      "rows": 311
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "75-84",
+      "highest_education": "Some college",
+      "rows": 22
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "75-84",
+      "highest_education": "Vocational / cert",
+      "rows": 46
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "85+",
+      "highest_education": "Associate's",
+      "rows": 1
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "85+",
+      "highest_education": "Bachelor's",
+      "rows": 6
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "85+",
+      "highest_education": "Master's",
+      "rows": 1
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "85+",
+      "highest_education": "No formal",
+      "rows": 13
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "85+",
+      "highest_education": "Primary",
+      "rows": 22
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "85+",
+      "highest_education": "Secondary",
+      "rows": 25
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "85+",
+      "highest_education": "Some college",
+      "rows": 1
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "85+",
+      "highest_education": "Vocational / cert",
+      "rows": 7
+    },
+    {
+      "region": "MENA",
+      "age_bracket": "Under 5",
+      "highest_education": "No formal",
+      "rows": 4204
+    },
+    {
+      "region": "North America",
+      "age_bracket": "25-34",
+      "highest_education": "Primary",
+      "rows": 1
+    },
+    {
+      "region": "North America",
+      "age_bracket": "45-54",
+      "highest_education": "Secondary",
+      "rows": 1
+    },
+    {
+      "region": "North America",
+      "age_bracket": "75-84",
+      "highest_education": "Vocational / cert",
+      "rows": 1
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "13-17",
+      "highest_education": "No formal",
+      "rows": 807
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "13-17",
+      "highest_education": "Primary",
+      "rows": 4271
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "13-17",
+      "highest_education": "Secondary",
+      "rows": 11683
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "13-17",
+      "highest_education": "Vocational / cert",
+      "rows": 371
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "18-24",
+      "highest_education": "Associate's",
+      "rows": 423
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "18-24",
+      "highest_education": "Bachelor's",
+      "rows": 906
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "18-24",
+      "highest_education": "Master's",
+      "rows": 85
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "18-24",
+      "highest_education": "No formal",
+      "rows": 677
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "18-24",
+      "highest_education": "Primary",
+      "rows": 1458
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "18-24",
+      "highest_education": "Secondary",
+      "rows": 7042
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "18-24",
+      "highest_education": "Some college",
+      "rows": 1088
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "18-24",
+      "highest_education": "Vocational / cert",
+      "rows": 1316
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "25-34",
+      "highest_education": "Associate's",
+      "rows": 240
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "25-34",
+      "highest_education": "Bachelor's",
+      "rows": 1059
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "25-34",
+      "highest_education": "Doctorate",
+      "rows": 30
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "25-34",
+      "highest_education": "Master's",
+      "rows": 271
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "25-34",
+      "highest_education": "No formal",
+      "rows": 469
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "25-34",
+      "highest_education": "Postdoc",
+      "rows": 5
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "25-34",
+      "highest_education": "Primary",
+      "rows": 859
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "25-34",
+      "highest_education": "Secondary",
+      "rows": 2892
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "25-34",
+      "highest_education": "Some college",
+      "rows": 378
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "25-34",
+      "highest_education": "Vocational / cert",
+      "rows": 710
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "35-44",
+      "highest_education": "Associate's",
+      "rows": 225
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "35-44",
+      "highest_education": "Bachelor's",
+      "rows": 863
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "35-44",
+      "highest_education": "Doctorate",
+      "rows": 52
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "35-44",
+      "highest_education": "Master's",
+      "rows": 281
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "35-44",
+      "highest_education": "No formal",
+      "rows": 526
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "35-44",
+      "highest_education": "Postdoc",
+      "rows": 7
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "35-44",
+      "highest_education": "Primary",
+      "rows": 931
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "35-44",
+      "highest_education": "Secondary",
+      "rows": 2669
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "35-44",
+      "highest_education": "Some college",
+      "rows": 219
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "35-44",
+      "highest_education": "Vocational / cert",
+      "rows": 615
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "45-54",
+      "highest_education": "Associate's",
+      "rows": 275
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "45-54",
+      "highest_education": "Bachelor's",
+      "rows": 1292
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "45-54",
+      "highest_education": "Doctorate",
+      "rows": 56
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "45-54",
+      "highest_education": "Master's",
+      "rows": 490
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "45-54",
+      "highest_education": "No formal",
+      "rows": 1048
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "45-54",
+      "highest_education": "Postdoc",
+      "rows": 4
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "45-54",
+      "highest_education": "Primary",
+      "rows": 1903
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "45-54",
+      "highest_education": "Secondary",
+      "rows": 4879
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "45-54",
+      "highest_education": "Some college",
+      "rows": 408
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "45-54",
+      "highest_education": "Vocational / cert",
+      "rows": 1098
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "5-12",
+      "highest_education": "No formal",
+      "rows": 12635
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "5-12",
+      "highest_education": "Primary",
+      "rows": 15052
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "55-64",
+      "highest_education": "Associate's",
+      "rows": 190
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "55-64",
+      "highest_education": "Bachelor's",
+      "rows": 897
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "55-64",
+      "highest_education": "Doctorate",
+      "rows": 14
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "55-64",
+      "highest_education": "Master's",
+      "rows": 266
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "55-64",
+      "highest_education": "No formal",
+      "rows": 1040
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "55-64",
+      "highest_education": "Postdoc",
+      "rows": 4
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "55-64",
+      "highest_education": "Primary",
+      "rows": 1837
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "55-64",
+      "highest_education": "Secondary",
+      "rows": 3973
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "55-64",
+      "highest_education": "Some college",
+      "rows": 282
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "55-64",
+      "highest_education": "Vocational / cert",
+      "rows": 819
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "65-74",
+      "highest_education": "Associate's",
+      "rows": 125
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "65-74",
+      "highest_education": "Bachelor's",
+      "rows": 701
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "65-74",
+      "highest_education": "Doctorate",
+      "rows": 18
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "65-74",
+      "highest_education": "Master's",
+      "rows": 200
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "65-74",
+      "highest_education": "No formal",
+      "rows": 1208
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "65-74",
+      "highest_education": "Postdoc",
+      "rows": 6
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "65-74",
+      "highest_education": "Primary",
+      "rows": 1955
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "65-74",
+      "highest_education": "Secondary",
+      "rows": 3706
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "65-74",
+      "highest_education": "Some college",
+      "rows": 202
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "65-74",
+      "highest_education": "Vocational / cert",
+      "rows": 685
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "75-84",
+      "highest_education": "Associate's",
+      "rows": 38
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "75-84",
+      "highest_education": "Bachelor's",
+      "rows": 201
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "75-84",
+      "highest_education": "Doctorate",
+      "rows": 10
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "75-84",
+      "highest_education": "Master's",
+      "rows": 55
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "75-84",
+      "highest_education": "No formal",
+      "rows": 501
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "75-84",
+      "highest_education": "Postdoc",
+      "rows": 3
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "75-84",
+      "highest_education": "Primary",
+      "rows": 863
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "75-84",
+      "highest_education": "Secondary",
+      "rows": 1313
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "75-84",
+      "highest_education": "Some college",
+      "rows": 64
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "75-84",
+      "highest_education": "Vocational / cert",
+      "rows": 226
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "85+",
+      "highest_education": "Associate's",
+      "rows": 6
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "85+",
+      "highest_education": "Bachelor's",
+      "rows": 18
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "85+",
+      "highest_education": "Doctorate",
+      "rows": 2
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "85+",
+      "highest_education": "Master's",
+      "rows": 2
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "85+",
+      "highest_education": "No formal",
+      "rows": 99
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "85+",
+      "highest_education": "Primary",
+      "rows": 126
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "85+",
+      "highest_education": "Secondary",
+      "rows": 145
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "85+",
+      "highest_education": "Some college",
+      "rows": 6
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "85+",
+      "highest_education": "Vocational / cert",
+      "rows": 27
+    },
+    {
+      "region": "South Asia",
+      "age_bracket": "Under 5",
+      "highest_education": "No formal",
+      "rows": 17829
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "13-17",
+      "highest_education": "No formal",
+      "rows": 257
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "13-17",
+      "highest_education": "Primary",
+      "rows": 1588
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "13-17",
+      "highest_education": "Secondary",
+      "rows": 4094
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "13-17",
+      "highest_education": "Vocational / cert",
+      "rows": 128
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "18-24",
+      "highest_education": "Associate's",
+      "rows": 148
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "18-24",
+      "highest_education": "Bachelor's",
+      "rows": 316
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "18-24",
+      "highest_education": "Master's",
+      "rows": 30
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "18-24",
+      "highest_education": "No formal",
+      "rows": 245
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "18-24",
+      "highest_education": "Primary",
+      "rows": 551
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "18-24",
+      "highest_education": "Secondary",
+      "rows": 2412
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "18-24",
+      "highest_education": "Some college",
+      "rows": 368
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "18-24",
+      "highest_education": "Vocational / cert",
+      "rows": 465
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "25-34",
+      "highest_education": "Associate's",
+      "rows": 84
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "25-34",
+      "highest_education": "Bachelor's",
+      "rows": 357
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "25-34",
+      "highest_education": "Doctorate",
+      "rows": 11
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "25-34",
+      "highest_education": "Master's",
+      "rows": 96
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "25-34",
+      "highest_education": "No formal",
+      "rows": 167
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "25-34",
+      "highest_education": "Primary",
+      "rows": 275
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "25-34",
+      "highest_education": "Secondary",
+      "rows": 970
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "25-34",
+      "highest_education": "Some college",
+      "rows": 128
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "25-34",
+      "highest_education": "Vocational / cert",
+      "rows": 293
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "35-44",
+      "highest_education": "Associate's",
+      "rows": 68
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "35-44",
+      "highest_education": "Bachelor's",
+      "rows": 289
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "35-44",
+      "highest_education": "Doctorate",
+      "rows": 31
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "35-44",
+      "highest_education": "Master's",
+      "rows": 93
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "35-44",
+      "highest_education": "No formal",
+      "rows": 170
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "35-44",
+      "highest_education": "Postdoc",
+      "rows": 5
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "35-44",
+      "highest_education": "Primary",
+      "rows": 339
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "35-44",
+      "highest_education": "Secondary",
+      "rows": 903
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "35-44",
+      "highest_education": "Some college",
+      "rows": 90
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "35-44",
+      "highest_education": "Vocational / cert",
+      "rows": 235
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "45-54",
+      "highest_education": "Associate's",
+      "rows": 96
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "45-54",
+      "highest_education": "Bachelor's",
+      "rows": 466
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "45-54",
+      "highest_education": "Doctorate",
+      "rows": 26
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "45-54",
+      "highest_education": "Master's",
+      "rows": 150
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "45-54",
+      "highest_education": "No formal",
+      "rows": 360
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "45-54",
+      "highest_education": "Postdoc",
+      "rows": 7
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "45-54",
+      "highest_education": "Primary",
+      "rows": 670
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "45-54",
+      "highest_education": "Secondary",
+      "rows": 1728
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "45-54",
+      "highest_education": "Some college",
+      "rows": 135
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "45-54",
+      "highest_education": "Vocational / cert",
+      "rows": 378
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "5-12",
+      "highest_education": "No formal",
+      "rows": 4413
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "5-12",
+      "highest_education": "Primary",
+      "rows": 5361
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "55-64",
+      "highest_education": "Associate's",
+      "rows": 67
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "55-64",
+      "highest_education": "Bachelor's",
+      "rows": 290
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "55-64",
+      "highest_education": "Doctorate",
+      "rows": 6
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "55-64",
+      "highest_education": "Master's",
+      "rows": 90
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "55-64",
+      "highest_education": "No formal",
+      "rows": 345
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "55-64",
+      "highest_education": "Postdoc",
+      "rows": 1
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "55-64",
+      "highest_education": "Primary",
+      "rows": 637
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "55-64",
+      "highest_education": "Secondary",
+      "rows": 1371
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "55-64",
+      "highest_education": "Some college",
+      "rows": 110
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "55-64",
+      "highest_education": "Vocational / cert",
+      "rows": 290
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "65-74",
+      "highest_education": "Associate's",
+      "rows": 43
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "65-74",
+      "highest_education": "Bachelor's",
+      "rows": 233
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "65-74",
+      "highest_education": "Doctorate",
+      "rows": 5
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "65-74",
+      "highest_education": "Master's",
+      "rows": 62
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "65-74",
+      "highest_education": "No formal",
+      "rows": 384
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "65-74",
+      "highest_education": "Postdoc",
+      "rows": 1
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "65-74",
+      "highest_education": "Primary",
+      "rows": 660
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "65-74",
+      "highest_education": "Secondary",
+      "rows": 1317
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "65-74",
+      "highest_education": "Some college",
+      "rows": 76
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "65-74",
+      "highest_education": "Vocational / cert",
+      "rows": 244
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "75-84",
+      "highest_education": "Associate's",
+      "rows": 17
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "75-84",
+      "highest_education": "Bachelor's",
+      "rows": 69
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "75-84",
+      "highest_education": "Doctorate",
+      "rows": 3
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "75-84",
+      "highest_education": "Master's",
+      "rows": 10
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "75-84",
+      "highest_education": "No formal",
+      "rows": 199
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "75-84",
+      "highest_education": "Postdoc",
+      "rows": 1
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "75-84",
+      "highest_education": "Primary",
+      "rows": 329
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "75-84",
+      "highest_education": "Secondary",
+      "rows": 433
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "75-84",
+      "highest_education": "Some college",
+      "rows": 26
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "75-84",
+      "highest_education": "Vocational / cert",
+      "rows": 82
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "85+",
+      "highest_education": "Associate's",
+      "rows": 1
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "85+",
+      "highest_education": "Bachelor's",
+      "rows": 4
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "85+",
+      "highest_education": "Doctorate",
+      "rows": 3
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "85+",
+      "highest_education": "Master's",
+      "rows": 1
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "85+",
+      "highest_education": "No formal",
+      "rows": 19
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "85+",
+      "highest_education": "Primary",
+      "rows": 52
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "85+",
+      "highest_education": "Secondary",
+      "rows": 60
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "85+",
+      "highest_education": "Some college",
+      "rows": 2
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "85+",
+      "highest_education": "Vocational / cert",
+      "rows": 9
+    },
+    {
+      "region": "Southeast Asia",
+      "age_bracket": "Under 5",
+      "highest_education": "No formal",
+      "rows": 6286
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "13-17",
+      "highest_education": "No formal",
+      "rows": 562
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "13-17",
+      "highest_education": "Primary",
+      "rows": 3076
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "13-17",
+      "highest_education": "Secondary",
+      "rows": 8038
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "13-17",
+      "highest_education": "Vocational / cert",
+      "rows": 253
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "18-24",
+      "highest_education": "Associate's",
+      "rows": 281
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "18-24",
+      "highest_education": "Bachelor's",
+      "rows": 616
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "18-24",
+      "highest_education": "Master's",
+      "rows": 77
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "18-24",
+      "highest_education": "No formal",
+      "rows": 463
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "18-24",
+      "highest_education": "Primary",
+      "rows": 997
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "18-24",
+      "highest_education": "Secondary",
+      "rows": 4783
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "18-24",
+      "highest_education": "Some college",
+      "rows": 769
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "18-24",
+      "highest_education": "Vocational / cert",
+      "rows": 912
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "25-34",
+      "highest_education": "Associate's",
+      "rows": 160
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "25-34",
+      "highest_education": "Bachelor's",
+      "rows": 700
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "25-34",
+      "highest_education": "Doctorate",
+      "rows": 24
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "25-34",
+      "highest_education": "Master's",
+      "rows": 183
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "25-34",
+      "highest_education": "No formal",
+      "rows": 332
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "25-34",
+      "highest_education": "Postdoc",
+      "rows": 3
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "25-34",
+      "highest_education": "Primary",
+      "rows": 571
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "25-34",
+      "highest_education": "Secondary",
+      "rows": 1947
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "25-34",
+      "highest_education": "Some college",
+      "rows": 266
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "25-34",
+      "highest_education": "Vocational / cert",
+      "rows": 511
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "35-44",
+      "highest_education": "Associate's",
+      "rows": 128
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "35-44",
+      "highest_education": "Bachelor's",
+      "rows": 578
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "35-44",
+      "highest_education": "Doctorate",
+      "rows": 25
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "35-44",
+      "highest_education": "Master's",
+      "rows": 191
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "35-44",
+      "highest_education": "No formal",
+      "rows": 355
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "35-44",
+      "highest_education": "Postdoc",
+      "rows": 6
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "35-44",
+      "highest_education": "Primary",
+      "rows": 630
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "35-44",
+      "highest_education": "Secondary",
+      "rows": 1790
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "35-44",
+      "highest_education": "Some college",
+      "rows": 164
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "35-44",
+      "highest_education": "Vocational / cert",
+      "rows": 437
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "45-54",
+      "highest_education": "Associate's",
+      "rows": 202
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "45-54",
+      "highest_education": "Bachelor's",
+      "rows": 887
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "45-54",
+      "highest_education": "Doctorate",
+      "rows": 45
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "45-54",
+      "highest_education": "Master's",
+      "rows": 302
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "45-54",
+      "highest_education": "No formal",
+      "rows": 728
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "45-54",
+      "highest_education": "Postdoc",
+      "rows": 5
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "45-54",
+      "highest_education": "Primary",
+      "rows": 1379
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "45-54",
+      "highest_education": "Secondary",
+      "rows": 3363
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "45-54",
+      "highest_education": "Some college",
+      "rows": 256
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "45-54",
+      "highest_education": "Vocational / cert",
+      "rows": 750
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "5-12",
+      "highest_education": "No formal",
+      "rows": 8747
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "5-12",
+      "highest_education": "Primary",
+      "rows": 10542
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "55-64",
+      "highest_education": "Associate's",
+      "rows": 119
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "55-64",
+      "highest_education": "Bachelor's",
+      "rows": 618
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "55-64",
+      "highest_education": "Doctorate",
+      "rows": 18
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "55-64",
+      "highest_education": "Master's",
+      "rows": 178
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "55-64",
+      "highest_education": "No formal",
+      "rows": 687
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "55-64",
+      "highest_education": "Postdoc",
+      "rows": 2
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "55-64",
+      "highest_education": "Primary",
+      "rows": 1217
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "55-64",
+      "highest_education": "Secondary",
+      "rows": 2901
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "55-64",
+      "highest_education": "Some college",
+      "rows": 162
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "55-64",
+      "highest_education": "Vocational / cert",
+      "rows": 569
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "65-74",
+      "highest_education": "Associate's",
+      "rows": 77
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "65-74",
+      "highest_education": "Bachelor's",
+      "rows": 521
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "65-74",
+      "highest_education": "Doctorate",
+      "rows": 17
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "65-74",
+      "highest_education": "Master's",
+      "rows": 138
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "65-74",
+      "highest_education": "No formal",
+      "rows": 803
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "65-74",
+      "highest_education": "Postdoc",
+      "rows": 3
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "65-74",
+      "highest_education": "Primary",
+      "rows": 1327
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "65-74",
+      "highest_education": "Secondary",
+      "rows": 2501
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "65-74",
+      "highest_education": "Some college",
+      "rows": 143
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "65-74",
+      "highest_education": "Vocational / cert",
+      "rows": 477
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "75-84",
+      "highest_education": "Associate's",
+      "rows": 33
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "75-84",
+      "highest_education": "Bachelor's",
+      "rows": 146
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "75-84",
+      "highest_education": "Doctorate",
+      "rows": 3
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "75-84",
+      "highest_education": "Master's",
+      "rows": 44
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "75-84",
+      "highest_education": "No formal",
+      "rows": 373
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "75-84",
+      "highest_education": "Postdoc",
+      "rows": 3
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "75-84",
+      "highest_education": "Primary",
+      "rows": 573
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "75-84",
+      "highest_education": "Secondary",
+      "rows": 922
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "75-84",
+      "highest_education": "Some college",
+      "rows": 47
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "75-84",
+      "highest_education": "Vocational / cert",
+      "rows": 152
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "85+",
+      "highest_education": "Associate's",
+      "rows": 2
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "85+",
+      "highest_education": "Bachelor's",
+      "rows": 21
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "85+",
+      "highest_education": "Master's",
+      "rows": 4
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "85+",
+      "highest_education": "No formal",
+      "rows": 66
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "85+",
+      "highest_education": "Postdoc",
+      "rows": 1
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "85+",
+      "highest_education": "Primary",
+      "rows": 84
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "85+",
+      "highest_education": "Secondary",
+      "rows": 100
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "85+",
+      "highest_education": "Some college",
+      "rows": 6
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "85+",
+      "highest_education": "Vocational / cert",
+      "rows": 11
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "age_bracket": "Under 5",
+      "highest_education": "No formal",
+      "rows": 12338
+    },
+    {
+      "region": "Western Europe",
+      "age_bracket": "18-24",
+      "highest_education": "Some college",
+      "rows": 1
+    },
+    {
+      "region": "Western Europe",
+      "age_bracket": "45-54",
+      "highest_education": "Vocational / cert",
+      "rows": 1
+    },
+    {
+      "region": "Western Europe",
+      "age_bracket": "55-64",
+      "highest_education": "No formal",
+      "rows": 1
+    }
+  ],
+  "synthetic_missing_fields": {},
+  "limits": [
+    "Footer and file-size validation is not a full shard hash check.",
+    "Human-grounded attributes are not necessarily directly measured.",
+    "Synthetic records are generated, not observed respondents.",
+    "Region is not country; do not infer American or Swiss residency."
+  ]
+}

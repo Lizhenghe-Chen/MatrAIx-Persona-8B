@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 474,
-  "git_bytes": 78582123,
+  "git_file_count": 476,
+  "git_bytes": 78657107,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -253,6 +253,18 @@
       "storage": "git"
     },
     {
+      "path": "decision_lab/persona-release-audit.json",
+      "bytes": 69894,
+      "sha256": "2bd0d0fe63b78c13b63b300698ce152bb3d30fad7505998346c4ea8f1406202f",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/persona_audit.py",
+      "bytes": 3250,
+      "sha256": "d28bcd344d862e6113545da5b4c1f5854138af50042a69c74bbec220dd3d59fc",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/pilot_summary.py",
       "bytes": 2521,
       "sha256": "67d09c7095e8144899e0ba77176d254629589667e6758fb98807ab9fb25a4f18",
@@ -494,8 +506,8 @@
     },
     {
       "path": "decision_lab/数据审查发现.md",
-      "bytes": 12138,
-      "sha256": "df9697448087af149ad5a30e23b087d7e0fb837bff30f5cabb180604e19476c8",
+      "bytes": 13978,
+      "sha256": "83edc4f0524013e0c84db8c4be554e9066378ab3ec525e4dadbf00ab538aaae0",
       "storage": "git"
     },
     {
