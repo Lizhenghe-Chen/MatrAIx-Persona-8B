@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 491,
-  "git_bytes": 78693008,
+  "git_file_count": 492,
+  "git_bytes": 78693548,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -136,6 +136,12 @@
       "path": "decision_lab/dryer-audit.json",
       "bytes": 1442,
       "sha256": "00433b6e8150a6aaf4b7ebbc26c692a77dc3a8272dd099ddc3050ea1e14ea87a",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/dryer-calibration-freeze.json",
+      "bytes": 540,
+      "sha256": "c9651650e72477623365205ea1eb126da436c3ed8d5a93cc6101e3bc10ca91e0",
       "storage": "git"
     },
     {

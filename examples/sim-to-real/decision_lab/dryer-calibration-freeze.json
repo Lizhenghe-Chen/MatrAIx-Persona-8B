@@ -1,0 +1,11 @@
+{
+  "frozen_at": "2026-11-11T02:43:28.268495+00:00",
+  "calibration_sha256": "92cfa2ad6ac8079bf27405e503ba1fb54a3b78b2462dd0b1b1f5da9112cd8df7",
+  "baseline_sha256": "78d13d648b7ec3491524448d2cc2af970480b3666789a147541008770513191b",
+  "protocol_sha256": "eb06ebaef27a9071d79533db950ce18abf04a8826dd6674c32dc283eea200d39",
+  "selected_temperature": 1,
+  "selected_llm_weight": 0.25,
+  "development_brier": 0.5341415249923331,
+  "test_scored": false,
+  "interpretation": "Development selection only, not evidence of held-out improvement."
+}
