@@ -1,5 +1,6 @@
 """Offline synthetic fixture: complete flow, never sent to a model provider."""
 import unittest,tempfile,json
+from unittest.mock import patch
 from pathlib import Path
 from .core import digest,split
 from .runner import run,GATES
@@ -32,6 +33,15 @@ class PipelineTests(unittest.TestCase):
                 for suffix,obj in [('study',study),('config',cfg),('seal',seal)]:write(formal/(name+'-'+suffix+'.json'),obj)
                 self.assertTrue(run(study,seal,cfg,formal/(name+'.sqlite'),phase,transport)['complete'])
             selection=calibrate(root,'dryer');write(root/'calibration.json',selection)
+            # Matching identifiers alone must not allow a different answer key.
+            from .checkpoint import read_predictions
+            def altered_content(*args,**kwargs):
+                observed,predictions,missing=read_predictions(*args,**kwargs)
+                observed[0]={**observed[0],'answer':(observed[0]['answer']+1)%3}
+                return observed,predictions,missing
+            with patch('decision_lab.calibrate_study.read_predictions',side_effect=altered_content):
+                with self.assertRaisesRegex(ValueError,'Development content differs'):
+                    calibrate(root,'dryer')
             result=evaluate(root,'dryer',root/'calibration.json')
             self.assertEqual(result['methods']['rich']['people'],6)
             self.assertEqual(result['shuffle_changed_content_diagnostic']['changed_people'],0)

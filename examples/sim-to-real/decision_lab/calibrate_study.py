@@ -20,6 +20,14 @@ def calibrate(directory,kind):
     development=[r for r in prepared['rows'] if assignment[r['person']]=='development']
     if {(r['person'],r['task']) for r in rows}!={(r['person'],r['task']) for r in development}:
         raise ValueError('Development checkpoint does not cover frozen baseline cohort')
+    reference={(r['person'],r['task']):r for r in development}
+    for row in rows:
+        original=reference[(row['person'],row['task'])]
+        for field in ['question','context','options','answer','stratum','background']:
+            if row.get(field)!=original.get(field):
+                raise ValueError('Development content differs from frozen source: '+field)
+        if row.get('weight',1)!=original.get('weight',1):
+            raise ValueError('Development weight differs from frozen source')
     baseline=replay(prepared,saved,development,kind,'rich')
     predicted=[baseline[(r['person'],r['task'])] for r in rows]
     protocol=json.loads((formal/'protocol.json').read_text())
