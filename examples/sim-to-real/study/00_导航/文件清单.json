@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 542,
-  "git_bytes": 78879466,
+  "git_file_count": 544,
+  "git_bytes": 78883064,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -44,8 +44,8 @@
     },
     {
       "path": "decision_lab/README.md",
-      "bytes": 12679,
-      "sha256": "5bf3f14d2af911557c3a10ce303a641c46e8977f27c30e9f27f0631df57dda1d",
+      "bytes": 14321,
+      "sha256": "abb6a28195ffd0abf1be65fdcf6b901add725f7122a999f6a3d2ed092a0d38e1",
       "storage": "git"
     },
     {
@@ -76,12 +76,6 @@
       "path": "decision_lab/audit_sources.py",
       "bytes": 2206,
       "sha256": "f188ae43dc7c98ec6446845229b80279223aca6b1a1e50d60091b1a60b5a426c",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/baseline-replay-check.json",
-      "bytes": 1204,
-      "sha256": "d0f41158b1dba418a242729575d359211f89af4e2c5642422c934c75b56df634",
       "storage": "git"
     },
     {
@@ -145,81 +139,51 @@
       "storage": "git"
     },
     {
-      "path": "decision_lab/deepseek-pro.json",
-      "bytes": 445,
-      "sha256": "42bd9cbe9b9b846f14c9883bc2ff7342ab902e23d155c4928d861f981f9b95d5",
-      "storage": "git"
-    },
-    {
       "path": "decision_lab/diagnostics.py",
       "bytes": 2102,
       "sha256": "6ea4b103bc45d015c494773694dfcee924745bef192bdb68c9366ee14cc24991",
       "storage": "git"
     },
     {
-      "path": "decision_lab/dryer-audit.json",
-      "bytes": 1442,
-      "sha256": "00433b6e8150a6aaf4b7ebbc26c692a77dc3a8272dd099ddc3050ea1e14ea87a",
+      "path": "decision_lab/docs/复算与复用指南.md",
+      "bytes": 4912,
+      "sha256": "95a7b068f8d106a512eedac2dcdda9e15d9c27cb3a6ea67ac320b4f493bb9ce9",
       "storage": "git"
     },
     {
-      "path": "decision_lab/dryer-calibration-freeze.json",
-      "bytes": 540,
-      "sha256": "c9651650e72477623365205ea1eb126da436c3ed8d5a93cc6101e3bc10ca91e0",
+      "path": "decision_lab/docs/数据审查发现.md",
+      "bytes": 19597,
+      "sha256": "211ca18ba53083ee45a482a24c274c5cf17f2e8dd3e0ae94de5386e5a6987050",
       "storage": "git"
     },
     {
-      "path": "decision_lab/dryer-formal-manifest.json",
-      "bytes": 2248,
-      "sha256": "7aec031b48e71af6fcdd4047865d6ba83a6c7bb2de4e70d8ef4cd6773e0fcd7e",
+      "path": "decision_lab/docs/美国T恤补充材料核查.md",
+      "bytes": 1915,
+      "sha256": "b145d1706b8173db0149d4e511d222d59949ce3ddb7c49bf0a4890d0bc513a6b",
       "storage": "git"
     },
     {
-      "path": "decision_lab/dryer-formal-protocol.json",
-      "bytes": 2991,
-      "sha256": "0d64da3d0d3a3e380ca07e50dc38e7e1da5419eb9cbda49535fa790cb69349a4",
+      "path": "decision_lab/docs/证据与检验对照.md",
+      "bytes": 4477,
+      "sha256": "b6ca16df9ba32d397a306064f9dd6ff1a4c6ef2977647e6ace09827299fdeb7c",
       "storage": "git"
     },
     {
-      "path": "decision_lab/dryer-none-test-integrity.json",
-      "bytes": 1747,
-      "sha256": "878d2bd8035ec43f03bb4b44a4c244177f012a44dbbcc529b95dcd6a64693b09",
+      "path": "decision_lab/docs/进度与交付核对.md",
+      "bytes": 3722,
+      "sha256": "d171f9c73c743da9027c735f27e80e21cadebf6f24cd905167c5beaa4ff64306",
       "storage": "git"
     },
     {
-      "path": "decision_lab/dryer-pilot-protocol.json",
-      "bytes": 2088,
-      "sha256": "f29f517e011ae98eb696f58afc3542067b6376959189e9c06870e375a6de50a9",
+      "path": "decision_lab/docs/阶段交接_2026-11-10.md",
+      "bytes": 2739,
+      "sha256": "ebae523febc1db9adec68924d6a6ec607f009e1b0d6e931800a72be8e71c0e9c",
       "storage": "git"
     },
     {
-      "path": "decision_lab/dryer-pilot-result.json",
-      "bytes": 1406,
-      "sha256": "5fca10a7fd2352ae2aa899e433fafca7b1efef298aadf1ab67df6e6ba939da3e",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/dryer-preflight.json",
-      "bytes": 1815,
-      "sha256": "98f8ade9e2edca0a287aaf67b63c6e2ec571ce196d703ed029af65e4c62a12dc",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/dryer-reconciliation.json",
-      "bytes": 24709,
-      "sha256": "13d18c0c5ac38f9b34feef55d7e992c17d765f8ab45756ed5e2d92613ffe4149",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/dryer-stability-result.json",
-      "bytes": 528,
-      "sha256": "6e403ba0fd83494e15d9f80d87eabc1b807c6e82e8b19ee51bdf893084e219c3",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/dryer-synthetic-demographics-integrity.json",
-      "bytes": 1826,
-      "sha256": "1de6b55e8df60740ca9a0c4d8aae2eba2f2c1045eb3d7e0cb4886f07174d92f6",
+      "path": "decision_lab/docs/首批研究准入决定.md",
+      "bytes": 3647,
+      "sha256": "ea90abbc7a5b9ada0bbe8872d9073794e9f931cb8d33c53ae109c98bd96496b2",
       "storage": "git"
     },
     {
@@ -242,14 +206,14 @@
     },
     {
       "path": "decision_lab/dryer_formal.py",
-      "bytes": 4673,
-      "sha256": "5424f3ecd4ddced92e5c4bb9eac754dd58a71c771d8635063071e45cfa89cd55",
+      "bytes": 4725,
+      "sha256": "d284ce7cde1156cdc4ca59b18b6f887c0f130913a795fc545a40f9b7cb371f50",
       "storage": "git"
     },
     {
       "path": "decision_lab/dryer_pilot.py",
-      "bytes": 3639,
-      "sha256": "5f1a910cae8bf25028e6deb9ec29da625779c2dd1b5bd937c97dafc47f8be8ed",
+      "bytes": 3678,
+      "sha256": "92d2d74df1bff5a0f2e202a0d50960d3a752ccf0a20f30cdb951703255987ce0",
       "storage": "git"
     },
     {
@@ -265,15 +229,9 @@
       "storage": "git"
     },
     {
-      "path": "decision_lab/endpoint-pilot.json",
-      "bytes": 577,
-      "sha256": "287f31b92ae9bac3647df329b24731a5d52814a3477237ce7b3402819d3e9bc0",
-      "storage": "git"
-    },
-    {
       "path": "decision_lab/evaluate_population.py",
-      "bytes": 4821,
-      "sha256": "25776d31f3ff4896f7ae91ada43cda0eeac09a8236abb61c187c088351155936",
+      "bytes": 4834,
+      "sha256": "4cf888445049e291aa4beda4edd63d801b539bb01a99c1cbbaeecb52d9842b26",
       "storage": "git"
     },
     {
@@ -295,24 +253,6 @@
       "storage": "git"
     },
     {
-      "path": "decision_lab/german-audit.json",
-      "bytes": 3943,
-      "sha256": "2f7f9c0676023d1add9fb65143c28b8a167095fb2c9fb8a81a2f771aae9600a5",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/german-cards.json",
-      "bytes": 16332,
-      "sha256": "63050ccd645dfb4ed14f1dbf083fafde07112bce3116497bb80f9139b6f7df00",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/german-field-policy.json",
-      "bytes": 2609,
-      "sha256": "b3be328205381c29224356fc98600319de8858c811cd43b3a15fd7086c7ea859",
-      "storage": "git"
-    },
-    {
       "path": "decision_lab/german_cards.py",
       "bytes": 3120,
       "sha256": "63202a788abd0c8470a1fcb01a46da41f66ffd519de05ebaead5ea7a242b08f8",
@@ -325,39 +265,9 @@
       "storage": "git"
     },
     {
-      "path": "decision_lab/history-coverage.json",
-      "bytes": 812,
-      "sha256": "64ec0bb41c8026a8206af45a04055b304d2542b980faddf80a3ef90a87e116eb",
-      "storage": "git"
-    },
-    {
       "path": "decision_lab/history_baseline.py",
       "bytes": 2106,
       "sha256": "0880f22397f02ffca94de489e4ce0d305e794ac333b0133e57e45bc73116937c",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/license-review.json",
-      "bytes": 1029,
-      "sha256": "7223a879eed8678dda4481869eecb0ebd7ef54dacc3840c787b9adc405a90f72",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/overnight-handoff.json",
-      "bytes": 519,
-      "sha256": "56f645087ff3e87019f0970d101cbc28b9272e673c1bdb1ddf8bad0feead495e",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/persona-mapping-coverage.json",
-      "bytes": 3944,
-      "sha256": "abe2b97945ff29eaf10716ed18ef723271211a6be39474b9618a4da4a007eb2f",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/persona-release-audit.json",
-      "bytes": 69894,
-      "sha256": "2bd0d0fe63b78c13b63b300698ce152bb3d30fad7505998346c4ea8f1406202f",
       "storage": "git"
     },
     {
@@ -415,24 +325,6 @@
       "storage": "git"
     },
     {
-      "path": "decision_lab/radiant-audit.json",
-      "bytes": 3908,
-      "sha256": "6b9064ca23588360c0cc2686cf9c92bc8f497ddc1a69d7527750102d32ecc357",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/radiant-reports.json",
-      "bytes": 532,
-      "sha256": "7c0b60149d013336cd66b84faa11f6a75dc467c611c089d25dab61277d67cf86",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/radiant-scotland-reconciliation.json",
-      "bytes": 965,
-      "sha256": "4d6fc5ff429c70cf4a7677564a5714f92d5fbcfe9d5d73108f29bde9dc163945",
-      "storage": "git"
-    },
-    {
       "path": "decision_lab/radiant_audit.py",
       "bytes": 2297,
       "sha256": "f7f7b19a03d1c49f3157c14e9d26decf8cd922ff68696d02955e154f86ebd80b",
@@ -451,6 +343,12 @@
       "storage": "git"
     },
     {
+      "path": "decision_lab/reports/README.md",
+      "bytes": 1056,
+      "sha256": "934c8720b059aba9779a020e01acb8a3cc0cf53f5da7cfdd89946766b71c5f2a",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/requirements-audit.txt",
       "bytes": 200,
       "sha256": "cce50e413fac2ed802a0c332acfa12ede78bc39c7f99cf27d5b4f27860b12073",
@@ -460,12 +358,6 @@
       "path": "decision_lab/requirements-score.txt",
       "bytes": 118,
       "sha256": "0fc9eec95b2d4cd50a174cfff26f415ea12da55ae0128b42cfd11e9c1182ed79",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/resume-2026-11-11.json",
-      "bytes": 260,
-      "sha256": "65d813cd277251b064797c0b5bc1b6c3e0ce8182bf8c085fbaa86c9ca5b3d928",
       "storage": "git"
     },
     {
@@ -487,15 +379,279 @@
       "storage": "git"
     },
     {
-      "path": "decision_lab/single-choice-pilot.json",
+      "path": "decision_lab/specs/audits/baseline-replay-check.json",
+      "bytes": 1204,
+      "sha256": "d0f41158b1dba418a242729575d359211f89af4e2c5642422c934c75b56df634",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/audits/dryer-audit.json",
+      "bytes": 1442,
+      "sha256": "00433b6e8150a6aaf4b7ebbc26c692a77dc3a8272dd099ddc3050ea1e14ea87a",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/audits/dryer-reconciliation.json",
+      "bytes": 24709,
+      "sha256": "13d18c0c5ac38f9b34feef55d7e992c17d765f8ab45756ed5e2d92613ffe4149",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/audits/german-audit.json",
+      "bytes": 3943,
+      "sha256": "2f7f9c0676023d1add9fb65143c28b8a167095fb2c9fb8a81a2f771aae9600a5",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/audits/german-cards.json",
+      "bytes": 16332,
+      "sha256": "63050ccd645dfb4ed14f1dbf083fafde07112bce3116497bb80f9139b6f7df00",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/audits/german-field-policy.json",
+      "bytes": 2609,
+      "sha256": "b3be328205381c29224356fc98600319de8858c811cd43b3a15fd7086c7ea859",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/audits/history-coverage.json",
+      "bytes": 812,
+      "sha256": "64ec0bb41c8026a8206af45a04055b304d2542b980faddf80a3ef90a87e116eb",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/audits/license-review.json",
+      "bytes": 1029,
+      "sha256": "7223a879eed8678dda4481869eecb0ebd7ef54dacc3840c787b9adc405a90f72",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/audits/persona-mapping-coverage.json",
+      "bytes": 3944,
+      "sha256": "abe2b97945ff29eaf10716ed18ef723271211a6be39474b9618a4da4a007eb2f",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/audits/persona-release-audit.json",
+      "bytes": 69894,
+      "sha256": "2bd0d0fe63b78c13b63b300698ce152bb3d30fad7505998346c4ea8f1406202f",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/audits/radiant-audit.json",
+      "bytes": 3908,
+      "sha256": "6b9064ca23588360c0cc2686cf9c92bc8f497ddc1a69d7527750102d32ecc357",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/audits/radiant-reports.json",
+      "bytes": 532,
+      "sha256": "7c0b60149d013336cd66b84faa11f6a75dc467c611c089d25dab61277d67cf86",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/audits/radiant-scotland-reconciliation.json",
+      "bytes": 965,
+      "sha256": "4d6fc5ff429c70cf4a7677564a5714f92d5fbcfe9d5d73108f29bde9dc163945",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/audits/source-audit.json",
+      "bytes": 18759,
+      "sha256": "2f1a2e2b5e39ca757d74526ac7c86b2d11734a7f5f070b4b102e53eb155f25bb",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/audits/swiss-audit.json",
+      "bytes": 1418,
+      "sha256": "07c23601c292a25d7d9fdee1e22ca144b56c8c5bd7c35495c94b35885b5c1dba",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/audits/swiss-background-audit.json",
+      "bytes": 852,
+      "sha256": "88bbbc55fa825c1b0455905a19046b54e1780b4beaa479cd67f6aa255e5c19e6",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/audits/swiss-six-audit.json",
+      "bytes": 1061,
+      "sha256": "66c06fdd66d3026e9fadea5f02b797cb1e06d7809bfde4afa27df891b333a924",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/audits/swiss-supplement-audit.json",
+      "bytes": 2125,
+      "sha256": "a5762c6b0d572025a0b2a9cc67dc2dc14b068e92b4f5f9c321396d77b4f4ae4e",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/audits/synthetic-pool-coverage.json",
+      "bytes": 4722,
+      "sha256": "b94e68ce2c98b7652cfaa64246113be68717b7c1647119a385e49e1f90ab0db0",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/audits/tshirt-audit.json",
+      "bytes": 850,
+      "sha256": "2344f85118fd108e7555636c2b0a0883247fd399de345858b94cbabd6ad02197",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/audits/tshirt-supplement-index.json",
+      "bytes": 936,
+      "sha256": "2dc0fe50d1785a2fc74842193efcff06e5856348ba52e7409c213a93fb7954d0",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/formal/deepseek-pro.json",
+      "bytes": 445,
+      "sha256": "42bd9cbe9b9b846f14c9883bc2ff7342ab902e23d155c4928d861f981f9b95d5",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/formal/dryer-formal-manifest.json",
+      "bytes": 2248,
+      "sha256": "7aec031b48e71af6fcdd4047865d6ba83a6c7bb2de4e70d8ef4cd6773e0fcd7e",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/formal/dryer-formal-protocol.json",
+      "bytes": 2991,
+      "sha256": "0d64da3d0d3a3e380ca07e50dc38e7e1da5419eb9cbda49535fa790cb69349a4",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/formal/endpoint-pilot.json",
+      "bytes": 577,
+      "sha256": "287f31b92ae9bac3647df329b24731a5d52814a3477237ce7b3402819d3e9bc0",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/formal/swiss-formal-manifest.json",
+      "bytes": 2248,
+      "sha256": "1db81503d7e1e49b1ecaa3f4bc79436eb3f8f50e8fbc6f7e797de3c44c480d33",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/formal/swiss-formal-protocol.json",
+      "bytes": 2944,
+      "sha256": "79a542f2a03eec7d899f4659726098d37e3ef301275c6012e9957b113c7db5eb",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/formal/synthetic-design-audit.json",
+      "bytes": 525,
+      "sha256": "c44c408793eb2a602583d7d0fa227b43156e1194cd5f6a8200e3386d2f9ead18",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/formal/synthetic-execution-manifests.json",
+      "bytes": 2955,
+      "sha256": "3c3ce8b4762407cea52059f4596fb1207cb18a20af140e511287c958aa4c2d5d",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/formal/synthetic-protocol-v1.json",
+      "bytes": 2839,
+      "sha256": "8433b753e164e92650445825e8b31485fa2000e1232a78027c3fd3c4e890fc52",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/freezes/dryer-calibration-freeze.json",
+      "bytes": 540,
+      "sha256": "c9651650e72477623365205ea1eb126da436c3ed8d5a93cc6101e3bc10ca91e0",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/freezes/dryer-none-test-integrity.json",
+      "bytes": 1747,
+      "sha256": "878d2bd8035ec43f03bb4b44a4c244177f012a44dbbcc529b95dcd6a64693b09",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/freezes/dryer-stability-result.json",
+      "bytes": 528,
+      "sha256": "6e403ba0fd83494e15d9f80d87eabc1b807c6e82e8b19ee51bdf893084e219c3",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/freezes/dryer-synthetic-demographics-integrity.json",
+      "bytes": 1826,
+      "sha256": "1de6b55e8df60740ca9a0c4d8aae2eba2f2c1045eb3d7e0cb4886f07174d92f6",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/freezes/overnight-handoff.json",
+      "bytes": 519,
+      "sha256": "56f645087ff3e87019f0970d101cbc28b9272e673c1bdb1ddf8bad0feead495e",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/freezes/resume-2026-11-11.json",
+      "bytes": 260,
+      "sha256": "65d813cd277251b064797c0b5bc1b6c3e0ce8182bf8c085fbaa86c9ca5b3d928",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/freezes/swiss-calibration-freeze.json",
+      "bytes": 601,
+      "sha256": "91fa60da2b2eace3a23c6801c0788a8a3e23fdecbb6fc4b536a87b226678a244",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/freezes/swiss-stability-result.json",
+      "bytes": 541,
+      "sha256": "d83e48ab842ee0eb91f4db8c15f7c98113dc483407758f2ab6f7affe956d4be8",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/freezes/交接状态快照.json",
+      "bytes": 17096,
+      "sha256": "1bae328fac0cb5a189e2405cadb6cca7aae328fdc3bb34ab8ceb4119db2bb78d",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/pilots/dryer-pilot-protocol.json",
+      "bytes": 2088,
+      "sha256": "f29f517e011ae98eb696f58afc3542067b6376959189e9c06870e375a6de50a9",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/pilots/dryer-pilot-result.json",
+      "bytes": 1406,
+      "sha256": "5fca10a7fd2352ae2aa899e433fafca7b1efef298aadf1ab67df6e6ba939da3e",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/pilots/dryer-preflight.json",
+      "bytes": 1815,
+      "sha256": "98f8ade9e2edca0a287aaf67b63c6e2ec571ce196d703ed029af65e4c62a12dc",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/pilots/single-choice-pilot.json",
       "bytes": 547,
       "sha256": "aa14cb0d6e775d3876a26015c32fbf5eb23cc14534ac690f74b1e94da347b304",
       "storage": "git"
     },
     {
-      "path": "decision_lab/source-audit.json",
-      "bytes": 18759,
-      "sha256": "2f1a2e2b5e39ca757d74526ac7c86b2d11734a7f5f070b4b102e53eb155f25bb",
+      "path": "decision_lab/specs/pilots/swiss-pilot-protocol.json",
+      "bytes": 1617,
+      "sha256": "91f0b98f7ddbea91c821d3ca261bb16e0c2e0d14dd0ef1f6ecbe7209818de107",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/pilots/swiss-pilot-result.json",
+      "bytes": 1396,
+      "sha256": "28c72c2f173d427316adccacf1b517d0e0a9411f010d2fd2d1ac5db815a54618",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/pilots/swiss-preflight.json",
+      "bytes": 1050,
+      "sha256": "4bc760dd8cbaffd9eef3a8bc00c915740d20e8ffbcc336d1e1bc15add10c228d",
       "storage": "git"
     },
     {
@@ -529,72 +685,6 @@
       "storage": "git"
     },
     {
-      "path": "decision_lab/swiss-audit.json",
-      "bytes": 1418,
-      "sha256": "07c23601c292a25d7d9fdee1e22ca144b56c8c5bd7c35495c94b35885b5c1dba",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/swiss-background-audit.json",
-      "bytes": 852,
-      "sha256": "88bbbc55fa825c1b0455905a19046b54e1780b4beaa479cd67f6aa255e5c19e6",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/swiss-calibration-freeze.json",
-      "bytes": 601,
-      "sha256": "91fa60da2b2eace3a23c6801c0788a8a3e23fdecbb6fc4b536a87b226678a244",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/swiss-formal-manifest.json",
-      "bytes": 2248,
-      "sha256": "1db81503d7e1e49b1ecaa3f4bc79436eb3f8f50e8fbc6f7e797de3c44c480d33",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/swiss-formal-protocol.json",
-      "bytes": 2944,
-      "sha256": "79a542f2a03eec7d899f4659726098d37e3ef301275c6012e9957b113c7db5eb",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/swiss-pilot-protocol.json",
-      "bytes": 1617,
-      "sha256": "91f0b98f7ddbea91c821d3ca261bb16e0c2e0d14dd0ef1f6ecbe7209818de107",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/swiss-pilot-result.json",
-      "bytes": 1396,
-      "sha256": "28c72c2f173d427316adccacf1b517d0e0a9411f010d2fd2d1ac5db815a54618",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/swiss-preflight.json",
-      "bytes": 1050,
-      "sha256": "4bc760dd8cbaffd9eef3a8bc00c915740d20e8ffbcc336d1e1bc15add10c228d",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/swiss-six-audit.json",
-      "bytes": 1061,
-      "sha256": "66c06fdd66d3026e9fadea5f02b797cb1e06d7809bfde4afa27df891b333a924",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/swiss-stability-result.json",
-      "bytes": 541,
-      "sha256": "d83e48ab842ee0eb91f4db8c15f7c98113dc483407758f2ab6f7affe956d4be8",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/swiss-supplement-audit.json",
-      "bytes": 2125,
-      "sha256": "a5762c6b0d572025a0b2a9cc67dc2dc14b068e92b4f5f9c321396d77b4f4ae4e",
-      "storage": "git"
-    },
-    {
       "path": "decision_lab/swiss_adapter.py",
       "bytes": 4564,
       "sha256": "8c67485c80b144a7ab3a68bd2bd263596b9426c27cbaa661eae7d7ff1d434997",
@@ -619,30 +709,6 @@
       "storage": "git"
     },
     {
-      "path": "decision_lab/synthetic-design-audit.json",
-      "bytes": 525,
-      "sha256": "c44c408793eb2a602583d7d0fa227b43156e1194cd5f6a8200e3386d2f9ead18",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/synthetic-execution-manifests.json",
-      "bytes": 2955,
-      "sha256": "3c3ce8b4762407cea52059f4596fb1207cb18a20af140e511287c958aa4c2d5d",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/synthetic-pool-coverage.json",
-      "bytes": 4722,
-      "sha256": "b94e68ce2c98b7652cfaa64246113be68717b7c1647119a385e49e1f90ab0db0",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/synthetic-protocol-v1.json",
-      "bytes": 2839,
-      "sha256": "8433b753e164e92650445825e8b31485fa2000e1232a78027c3fd3c4e890fc52",
-      "storage": "git"
-    },
-    {
       "path": "decision_lab/synthetic_cohort.py",
       "bytes": 3263,
       "sha256": "95f42ba20e08fc1ad1b5bf5ff19f576206aa92a6a087c2eec5d1ca15668f818d",
@@ -662,8 +728,8 @@
     },
     {
       "path": "decision_lab/synthetic_run.py",
-      "bytes": 1516,
-      "sha256": "8e15b8047048b9271ac40be9936a13554d88a70bdb5aa0bce411550892f830f1",
+      "bytes": 1529,
+      "sha256": "3ead9581c3ba6f9ccf623be16fd809da5f7174f283d39d480834d813f4cf31ce",
       "storage": "git"
     },
     {
@@ -679,177 +745,171 @@
       "storage": "git"
     },
     {
-      "path": "decision_lab/test_adoption_summary.py",
-      "bytes": 1088,
-      "sha256": "0e66af85bdad1785f572701ac8cced0db2e2e93c86f2fd33a4a9c62211308a20",
+      "path": "decision_lab/tests/__init__.py",
+      "bytes": 49,
+      "sha256": "9a897ec27f6af1528a70105c6c0a78eb1d41af7365bc4cf606a3630a6cefbc85",
       "storage": "git"
     },
     {
-      "path": "decision_lab/test_aggregate_report.py",
-      "bytes": 4490,
-      "sha256": "feb968f49756cd68c44611f85de8f3b3083d6cb57c9c94d57fe4558c537e4365",
+      "path": "decision_lab/tests/test_adoption_summary.py",
+      "bytes": 1089,
+      "sha256": "938b435344d684c13532854a11a04f16fc64fee857584bb1a78bb618d25b0dbb",
       "storage": "git"
     },
     {
-      "path": "decision_lab/test_baselines.py",
-      "bytes": 1081,
-      "sha256": "5e03c0b9b592e612bcb56cd837a4d80496387cc8d567418bba47104dfe072e9d",
+      "path": "decision_lab/tests/test_aggregate_report.py",
+      "bytes": 4491,
+      "sha256": "d96dea6e5506dadb9bc9c33efe06b255dd945716c93791baeacc064665bfdce7",
       "storage": "git"
     },
     {
-      "path": "decision_lab/test_bundle_diagnostics.py",
-      "bytes": 1024,
-      "sha256": "63860a865793891a71b075c83a3cd24e6b38c3b7e9affc854f628aa1c0a6350d",
+      "path": "decision_lab/tests/test_baselines.py",
+      "bytes": 1082,
+      "sha256": "36e9cbe8b241f90e4e69c369da794a1b297333f5f96e054f590841002707b373",
       "storage": "git"
     },
     {
-      "path": "decision_lab/test_calibration.py",
-      "bytes": 909,
-      "sha256": "b2a117f9cded259a2d9c3aabfe921ae6c0cf57f91dff0254ed0fd5b37ef2c94b",
+      "path": "decision_lab/tests/test_bundle_diagnostics.py",
+      "bytes": 1025,
+      "sha256": "9594dffa0ef822e2b880c9fbb5096f807cf4825822967342c942040f2743cf75",
       "storage": "git"
     },
     {
-      "path": "decision_lab/test_checkpoint.py",
-      "bytes": 1654,
-      "sha256": "38243f0b798cc713b28f1a2ca12aea693586a5fa8fe6341628b012a90017be92",
+      "path": "decision_lab/tests/test_calibration.py",
+      "bytes": 910,
+      "sha256": "d7e2f745aee17c8cd27195afff0258e7b5d3781cb5afdfbcb2afc6b0724dc6ad",
       "storage": "git"
     },
     {
-      "path": "decision_lab/test_conditions.py",
-      "bytes": 1829,
-      "sha256": "15000f567c76349a442a6cfde40ebc7faa0f445452740ca6faac8cdce3146263",
+      "path": "decision_lab/tests/test_checkpoint.py",
+      "bytes": 1658,
+      "sha256": "235c13dcaafa7db2f3adb5e78f2fdd3f853faaf2a8f282dfd2571f042d6326ba",
       "storage": "git"
     },
     {
-      "path": "decision_lab/test_core.py",
-      "bytes": 1472,
-      "sha256": "ff194dcbd895b6850bf5bed1bd06538d902cbf6dabd333309630aadebf7f4fce",
+      "path": "decision_lab/tests/test_conditions.py",
+      "bytes": 1830,
+      "sha256": "d86b4a0cd3bcbea9c7e6ebacf5d79ba7ada0c3a773a987f154820d948a250149",
       "storage": "git"
     },
     {
-      "path": "decision_lab/test_diagnostics.py",
-      "bytes": 654,
-      "sha256": "8052e3d524ff807ab5315149bcedf262866cc100e57dcda5391a07454c749270",
+      "path": "decision_lab/tests/test_core.py",
+      "bytes": 1474,
+      "sha256": "67d9f28d87206cfd283eff0c8ab41392eb23b69e998b24e1a6fe7697fd344bd8",
       "storage": "git"
     },
     {
-      "path": "decision_lab/test_dryer_adapter.py",
+      "path": "decision_lab/tests/test_diagnostics.py",
+      "bytes": 655,
+      "sha256": "70e3d8009ba3ecfdb34484fb2099544b1b212310a568b1c6546a3eba0eb38113",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/tests/test_dryer_adapter.py",
       "bytes": 1128,
       "sha256": "3ad72b66524f7e6cac61e798c355862899648c09b7c4f6d482a04e818c553163",
       "storage": "git"
     },
     {
-      "path": "decision_lab/test_dryer_baseline.py",
-      "bytes": 781,
-      "sha256": "d580946d2dd63685e13a75205a729ff8a04f3438f5b65f38d14d8ccd8be9a48a",
+      "path": "decision_lab/tests/test_dryer_baseline.py",
+      "bytes": 782,
+      "sha256": "6e96b86df8dd4669a02c1939b43c94b7efde5dcac38d8e81d84a53ad877978b4",
       "storage": "git"
     },
     {
-      "path": "decision_lab/test_end_to_end.py",
-      "bytes": 4259,
-      "sha256": "2998ece849d25acfa56f66716051f8df263996b67d454c4ec699652f1631108b",
+      "path": "decision_lab/tests/test_end_to_end.py",
+      "bytes": 4266,
+      "sha256": "19b92c1054e9b50e6698430aac339be400b8bb7d2ec882fc725ff4f5edc7a4c3",
       "storage": "git"
     },
     {
-      "path": "decision_lab/test_history_baseline.py",
-      "bytes": 1365,
-      "sha256": "49f32379c5f67ad9cda5f722c38f1fc13339a08ba8ef48786bb06f4aba9cda5e",
+      "path": "decision_lab/tests/test_history_baseline.py",
+      "bytes": 1366,
+      "sha256": "8e834809cd6151a6a5eee9b2c12f3c51293c4ce34f1b8c276700fe235f03d123",
       "storage": "git"
     },
     {
-      "path": "decision_lab/test_population_concentration.py",
-      "bytes": 847,
-      "sha256": "c94619c2956af22513aa7ec02ee5e4918c76daf5cc46a8c12f765136a3d77004",
+      "path": "decision_lab/tests/test_population_concentration.py",
+      "bytes": 848,
+      "sha256": "cbec34d0049ad6c068137b62f568d581e227899d6e30a6b8ac0c606991ddb2ae",
       "storage": "git"
     },
     {
-      "path": "decision_lab/test_population_report.py",
-      "bytes": 1820,
-      "sha256": "4e421cd9a0409db9261c859b0d14dd49c00e7bec73971660e5b8d551b2e7179b",
+      "path": "decision_lab/tests/test_population_report.py",
+      "bytes": 1821,
+      "sha256": "963f7c0b2909b83172ef8615c34527013ac876ca0ec8acd2fd84c1e4fc56845d",
       "storage": "git"
     },
     {
-      "path": "decision_lab/test_population_scoring.py",
-      "bytes": 2093,
-      "sha256": "12b62e7d62a9b99653818f9f03308854318010b8f431c2c01d8f9c27db0ab850",
+      "path": "decision_lab/tests/test_population_scoring.py",
+      "bytes": 2095,
+      "sha256": "1a9a3fa0471eecebca4cf52610e0b779e95535b9bbda6cec52399dcb3508eccd",
       "storage": "git"
     },
     {
-      "path": "decision_lab/test_product_summary.py",
-      "bytes": 1428,
-      "sha256": "7caa09a32950e83d393907dbdeb2f5c82a403728270455741b2a2e3e4d79c1f7",
+      "path": "decision_lab/tests/test_product_summary.py",
+      "bytes": 1430,
+      "sha256": "61c52ec3b378f0599765eaf43ca0d5281a38a6bd4cfee2999bc3c0ca3a55dac8",
       "storage": "git"
     },
     {
-      "path": "decision_lab/test_property_intervals.py",
-      "bytes": 1147,
-      "sha256": "b165f9264ea1c0271f3a5931543c580bc46ea5836430b1f4dd20436c8a3a34fa",
+      "path": "decision_lab/tests/test_property_intervals.py",
+      "bytes": 1148,
+      "sha256": "a994c32c7ba3a3cde37fe1743aa94a89d8cd690b17c0455fc17450753eb4eb6e",
       "storage": "git"
     },
     {
-      "path": "decision_lab/test_provider.py",
-      "bytes": 2465,
-      "sha256": "cd8404151b1ac312cd0c57a11a38b3f02d79933b9080fb45944d857a5e80e9c1",
+      "path": "decision_lab/tests/test_provider.py",
+      "bytes": 2467,
+      "sha256": "d882a9dc81ea701d733bafd81a621872e7c06471537aa043071586070a95149c",
       "storage": "git"
     },
     {
-      "path": "decision_lab/test_report.py",
-      "bytes": 854,
-      "sha256": "f52f29bd61841af6804d4adb7cf153bb5c7649f9e648d5230bf5d07099552f04",
+      "path": "decision_lab/tests/test_report.py",
+      "bytes": 855,
+      "sha256": "097c6e90d6d1ecd16b0b4f2d59cf94b07da5ade707e085fa5aed3a925a38f8e2",
       "storage": "git"
     },
     {
-      "path": "decision_lab/test_runner.py",
-      "bytes": 3021,
-      "sha256": "aca7f60d699ef2476205ef87c1b522efc75420821a240ddccd791b06e64ef9c1",
+      "path": "decision_lab/tests/test_runner.py",
+      "bytes": 3023,
+      "sha256": "30838904ea53fb7e1f517ad8c7b0cfb7ce2016d25a8ba324e0960bfedf9ea67b",
       "storage": "git"
     },
     {
-      "path": "decision_lab/test_scoring.py",
-      "bytes": 2490,
-      "sha256": "a165e47ea15b9a9e8b6ea57de141a2d3bd4b1c80b7af551894352e8c08db96dd",
+      "path": "decision_lab/tests/test_scoring.py",
+      "bytes": 2493,
+      "sha256": "2ef6eb220b0632b446ba4bb117f19860882751077ed16522f5f95cdcba4d83ab",
       "storage": "git"
     },
     {
-      "path": "decision_lab/test_study_report.py",
-      "bytes": 1269,
-      "sha256": "df4cbe873ac463f086d6da865e6c77bb8fd8b9ae9f6be13164db2eb29131a48c",
+      "path": "decision_lab/tests/test_study_report.py",
+      "bytes": 1270,
+      "sha256": "2a6b60ef5f368b1cc33d61b74d6c8c3f131488a9ab48d680eb789eb88cc5ed8c",
       "storage": "git"
     },
     {
-      "path": "decision_lab/test_subgroups.py",
-      "bytes": 707,
-      "sha256": "ee909e83dd2459e608d84ee1d2d70d3e814f28b7ed46d658b366e73a3631170d",
+      "path": "decision_lab/tests/test_subgroups.py",
+      "bytes": 708,
+      "sha256": "4060c98403de1b0d70d1c4a5b37b4378c52583662e0247a15cab2a747ce48c69",
       "storage": "git"
     },
     {
-      "path": "decision_lab/test_survey_baseline.py",
-      "bytes": 1029,
-      "sha256": "4017d716b93ad89132598191ecec58ce9d77e6c96b9e78f5a70611e6533e0999",
+      "path": "decision_lab/tests/test_survey_baseline.py",
+      "bytes": 1030,
+      "sha256": "a7d029f671f3f51f9e64cb6af968bb94a12e529d428d190818dd89d62c700bce",
       "storage": "git"
     },
     {
-      "path": "decision_lab/test_swiss_adapter.py",
-      "bytes": 668,
-      "sha256": "2b2eb04bdddb5ab201059a7d6d4e2ebfc11f104d02dd8dd4b98af6f54bb20fb3",
+      "path": "decision_lab/tests/test_swiss_adapter.py",
+      "bytes": 669,
+      "sha256": "26fd1a3d809dce8c33c5e1dff66f075856430b7bfc1dfe157ce44e3a6e337149",
       "storage": "git"
     },
     {
-      "path": "decision_lab/test_swiss_baseline.py",
-      "bytes": 670,
-      "sha256": "a9120f0863ea03ed8748498974e0f38e7df9b1a52e40c42dae1e324eb804b2a8",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/tshirt-audit.json",
-      "bytes": 850,
-      "sha256": "2344f85118fd108e7555636c2b0a0883247fd399de345858b94cbabd6ad02197",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/tshirt-supplement-index.json",
-      "bytes": 936,
-      "sha256": "2dc0fe50d1785a2fc74842193efcff06e5856348ba52e7409c213a93fb7954d0",
+      "path": "decision_lab/tests/test_swiss_baseline.py",
+      "bytes": 671,
+      "sha256": "64236e7c6d8fa6bfd9a0c18a31f077e51f576b3a6d4c8a979f139718a01a8319",
       "storage": "git"
     },
     {
@@ -860,56 +920,8 @@
     },
     {
       "path": "decision_lab/交接先读.md",
-      "bytes": 12951,
-      "sha256": "ae6bc359ce5a3ef519dc4f7d32e707a4a4977aac6d27a18bb6eaa1eeb418eb85",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/交接状态快照.json",
-      "bytes": 17096,
-      "sha256": "1bae328fac0cb5a189e2405cadb6cca7aae328fdc3bb34ab8ceb4119db2bb78d",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/复算与复用指南.md",
-      "bytes": 4912,
-      "sha256": "95a7b068f8d106a512eedac2dcdda9e15d9c27cb3a6ea67ac320b4f493bb9ce9",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/数据审查发现.md",
-      "bytes": 19389,
-      "sha256": "1c0a785b41bcf8f68885fd5aef5593c3605118e0b10eb3c7c12a48bed7fda5d5",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/美国T恤补充材料核查.md",
-      "bytes": 1915,
-      "sha256": "b145d1706b8173db0149d4e511d222d59949ce3ddb7c49bf0a4890d0bc513a6b",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/证据与检验对照.md",
-      "bytes": 4456,
-      "sha256": "89d3d3660f2b4e6926ec234855098f0dfb765025db606f5e26a9dbfb255788e8",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/进度与交付核对.md",
-      "bytes": 3570,
-      "sha256": "7d997695ffc9caf1ddd34894a3eee92843dd37a99721802b70ca562b35efb2e2",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/阶段交接_2026-11-10.md",
-      "bytes": 2722,
-      "sha256": "9ee9e5d41d80d30f196c957055684487234a2873c9d8100ecda176316182c865",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/首批研究准入决定.md",
-      "bytes": 3599,
-      "sha256": "58156eeacf472ebb978628eb03ab9b65dad5a15eb5778b54caee0ff21c126b4d",
+      "bytes": 13197,
+      "sha256": "8fc5469566f09700f7f2147274f0f1bcff2e70afa72fe66e06f2bcd65c4331fc",
       "storage": "git"
     },
     {

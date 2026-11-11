@@ -1,14 +1,32 @@
 # 新一轮决策模拟实验
 
-> **2026-11-11 用户要求停止并交接：四条运行均已安全停止。接手请先读[交接先读](交接先读.md)和[状态快照](交接状态快照.json)。以下实施记录中的“运行中”是停止前历史状态，不代表现在仍在调用。**
+> **2026-11-11 用户要求停止并交接：四条运行均已安全停止。接手请先读[交接先读](交接先读.md)和[状态快照](specs/freezes/交接状态快照.json)。以下实施记录中的“运行中”是停止前历史状态，不代表现在仍在调用。**
 
 本目录是与历史实验隔离的新实现。**当前两项已准入研究（四国烘干机、瑞士家电）正在执行正式调用；开发结果与稳定性诊断已有记录，完整测试效果尚未发布。** 不把历史成绩并入本轮。
 
-先读[进度与交付核对](进度与交付核对.md)了解哪些工作已完成，再读[数据审查发现](数据审查发现.md)了解入场条件与限制。本文后半部分按模块记录实施依据，早期技术试跑不是正式效果结论。
+先读[进度与交付核对](docs/进度与交付核对.md)了解哪些工作已完成，再读[数据审查发现](docs/数据审查发现.md)了解入场条件与限制。本文后半部分按模块记录实施依据，早期技术试跑不是正式效果结论。
 
 固定 DeepSeek Pro；真人实测与合成人群分轨，冷启动与少量数据校准分别验收。匿名背景可按用户授权发送官方云端，但每套数据仍须完成来源许可和字段白名单审查。
 
-复算、环境版本和模块复用见[复算与复用指南](复算与复用指南.md)。生成报告不需要重新调用模型。
+复算、环境版本和模块复用见[复算与复用指南](docs/复算与复用指南.md)。生成报告不需要重新调用模型。
+
+## 目录结构
+
+根目录只保留可直接 `python -m decision_lab.<模块>` 调用的运行内核、研究适配器、评分与报告模块；冻结材料、文档、测试和生成结果各自归入子目录。
+
+| 位置 | 内容 |
+|---|---|
+| `README.md`、`交接先读.md` | 模块实施记录与当前状态入口；接手先读后者 |
+| `docs/` | 进度核对、复算指南、数据审查、准入决定、证据对照、阶段交接 |
+| `specs/formal/` | 正式运行的冻结协议、清单、模型配置与服务身份 |
+| `specs/pilots/` | 技术试跑与预检的协议和结果 |
+| `specs/freezes/` | 开发选参冻结、单元完整性核验、稳定性结果、交接快照 |
+| `specs/audits/` | 数据来源、许可、逐人还原、人格覆盖等审查记录 |
+| `reports/` | 生成的个体/群体评分 JSON 与离线 HTML 报告 |
+| `tests/` | 全部离线测试；`python -m unittest discover -s examples/sim-to-real/decision_lab -t examples/sim-to-real` 会自动发现 |
+| 根目录 `*.py` | 运行内核（`core`、`runner`、`provider`、`checkpoint`）、研究适配器、评分与报告模块 |
+
+新增文件按上表归位，不要放回根目录。
 
 ## 已可用的入口
 
@@ -47,7 +65,7 @@ python -m unittest decision_lab.test_core
 
 ## 端点技术试跑
 
-2026-11-10已用纯合成题验证DeepSeek Pro：返回模型标识为 `deepseek-v4-pro`，关闭思考、JSON概率输出通过。具体服务指纹和token用量见 `endpoint-pilot.json`。这只证明接口兼容，不是正式实验成绩或正式冻结。
+2026-11-10已用纯合成题验证DeepSeek Pro：返回模型标识为 `deepseek-v4-pro`，关闭思考、JSON概率输出通过。具体服务指纹和token用量见 `examples/sim-to-real/decision_lab/specs/formal/endpoint-pilot.json`。这只证明接口兼容，不是正式实验成绩或正式冻结。
 
 本机凭据由用户配置在 `~/.config/matraix-decision-lab/credentials.json`，变量名 `DEEPSEEK_API_KEY`，文件权限0600；不随Git分发、不写入请求日志。实际调用仍从进程变量读取，运行器需显式加载本机凭据。
 
@@ -61,17 +79,17 @@ python -m unittest decision_lab.test_core
 
 ## 烘干机真实技术试跑
 
-`dryer-pilot-protocol.json`固定21名训练集合受访者、每人1道题，分别测试无背景、年龄学历、年龄学历加家庭人数与使用频率，共63次调用。`dryer_pilot.py`保存私有冻结输入、配置和SQLite检查点；从不输出分数或读取测试集合答案作调参。正式实验仍需单独冻结完整对照、规模与方法。
+`examples/sim-to-real/decision_lab/specs/pilots/dryer-pilot-protocol.json`固定21名训练集合受访者、每人1道题，分别测试无背景、年龄学历、年龄学历加家庭人数与使用频率，共63次调用。`dryer_pilot.py`保存私有冻结输入、配置和SQLite检查点；从不输出分数或读取测试集合答案作调参。正式实验仍需单独冻结完整对照、规模与方法。
 
 年龄、学历及家庭人数被视为选择时已存在的稳定背景，这是回溯测量假设，不等于已经证明所有背景均在选择前询问。财务宽裕程度未纳入本次白名单。公共题面采取文字转写；视觉展示差异及未纳入的信息条件须在正式报告保留。
 
 本机运行材料位于`~/.local/share/matraix-decision-lab/dryer-text-v1/technical-pilot/`，目录0700、文件0600，不随Git提交。凭据路径仅通过参数指定，不将密钥写入命令或记录。运行结束后须从检查点汇总完成率、概率合法性、模型身份、耗时与token；此处尚不代表试跑已完成。
 
-技术试跑已完成：`dryer-pilot-result.json`记录63/63调用成功，21人三种背景条件均完成，无失败或遗留请求；概率合法，模型标识与服务指纹一致。累计调用耗时约70.8秒。未计算准确率、Brier或分布误差，不能据此宣称预测有效。保守费用预留合计约0.373美元，并非实际账单。
+技术试跑已完成：`examples/sim-to-real/decision_lab/specs/pilots/dryer-pilot-result.json`记录63/63调用成功，21人三种背景条件均完成，无失败或遗留请求；概率合法，模型标识与服务指纹一致。累计调用耗时约70.8秒。未计算准确率、Brier或分布误差，不能据此宣称预测有效。保守费用预留合计约0.373美元，并非实际账单。
 
 ## 输出方式和诊断条件
 
-`output_mode=single_choice`要求模型只选一个选项；`probabilities`要求给出完整选项概率。单选结果在评分端转成0/1向量，但保留输出方式标签，这个向量代表一次选择，不能解释为模型自报100%信心。`single-choice-pilot.json`记录纯合成接口验证，不是预测效果证据。
+`output_mode=single_choice`要求模型只选一个选项；`probabilities`要求给出完整选项概率。单选结果在评分端转成0/1向量，但保留输出方式标签，这个向量代表一次选择，不能解释为模型自报100%信心。`examples/sim-to-real/decision_lab/specs/pilots/single-choice-pilot.json`记录纯合成接口验证，不是预测效果证据。
 
 `conditions.py`提供整块附加背景错配及可逆的选项排列。错配严格限制在相同基础背景、研究分层和训练/开发/测试集合内。孤立单元保留原值并单独记录，正式诊断必须报告真正被错配的人数，不把未变化者解释为错配干预。字段交换不产生新画像事实，也不证明人格因果效应。选项换序后须映射回原始商品再评分。
 
@@ -81,13 +99,13 @@ python -m unittest decision_lab.test_core
 
 相同三档背景各拟合一个正则化选择模型。868名训练受访者用于拟合，292名开发受访者用于选惩罚强度；292名测试受访者不评分。每人的8道题先等权汇总，避免把重复选择当成独立受访者。模型参数及输入哈希保存在本机，公开报告只导出汇总。该开发步骤服务于校准路线的统计参照，不用于调整冷启动提示词。
 
-`dryer-preflight.json`保存开发集统计参照及实际错配覆盖率；它不包含测试成绩。`dryer-formal-protocol.json`固定下一阶段的一项研究内对照：全部292名测试受访者，每人8题，五个测试条件和一个开发调用条件，共最多14,016次调用，保守费用预留上限120美元。这个上限不是实际费用预测；依据试跑约每次1.1秒，顺序调用约需4.4小时，网络波动会增加耗时。每个单元独立检查点并冻结服务标识。
+`examples/sim-to-real/decision_lab/specs/pilots/dryer-preflight.json`保存开发集统计参照及实际错配覆盖率；它不包含测试成绩。`examples/sim-to-real/decision_lab/specs/formal/dryer-formal-protocol.json`固定下一阶段的一项研究内对照：全部292名测试受访者，每人8题，五个测试条件和一个开发调用条件，共最多14,016次调用，保守费用预留上限120美元。这个上限不是实际费用预测；依据试跑约每次1.1秒，顺序调用约需4.4小时，网络波动会增加耗时。每个单元独立检查点并冻结服务标识。
 
 ## 通用技术试跑入口
 
 `technical_pilot.py`从独立JSON协议读取分层人数、背景白名单和入场证据，复用模型调用、输入冻结与检查点。它不限于烘干机；不读取研究专属路径，不在代码中写入密钥。每套最多24人，仅从训练集合抽取，每人一道题，不计算预测成绩。
 
-瑞士协议`swiss-pilot-protocol.json`固定三个品类各8人，共24人，三种背景条件共72次调用。`pilot_summary.py`现在按实际研究的人数和选项数核验检查点，不再假定所有问卷都是三选一。
+瑞士协议`examples/sim-to-real/decision_lab/specs/pilots/swiss-pilot-protocol.json`固定三个品类各8人，共24人，三种背景条件共72次调用。`pilot_summary.py`现在按实际研究的人数和选项数核验检查点，不再假定所有问卷都是三选一。
 
 ## 少数选择与集中度
 
@@ -124,7 +142,7 @@ PYTHONPATH=examples/sim-to-real .venv/bin/python -m decision_lab.aggregate_repor
   --individual <个体评分.json> <个体评分.json> \
   --population <群体评分.json> <群体评分.json> \
   --root dryer=<本机研究目录> --root swiss=<本机研究目录> \
-  --development dryer-calibration-freeze.json swiss-calibration-freeze.json \
+  --development examples/sim-to-real/decision_lab/specs/freezes/dryer-calibration-freeze.json examples/sim-to-real/decision_lab/specs/freezes/swiss-calibration-freeze.json \
   --output <总报告.html>
 ```
 

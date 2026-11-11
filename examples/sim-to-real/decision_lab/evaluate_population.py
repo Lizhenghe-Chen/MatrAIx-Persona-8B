@@ -23,7 +23,7 @@ def evaluate(root,kind):
         if bg is not None:human.append({**r,'background':bg})
     manifest=read(formal/'manifest.json');protocol=read(formal/'protocol.json')
     if manifest['design_sha256']!=digest(design):raise ValueError('Synthetic design changed')
-    if protocol!=read(Path(__file__).parent/'synthetic-protocol-v1.json'):raise ValueError('Protocol differs')
+    if protocol!=read(Path(__file__).parent/'specs/formal/synthetic-protocol-v1.json'):raise ValueError('Protocol differs')
     predictions={};synthetic=None
     for unit in manifest['units']:
         name=unit['name'];study=read(formal/(name+'-study.json'));seal=read(formal/(name+'-seal.json'));cfg=read(formal/(name+'-config.json'))

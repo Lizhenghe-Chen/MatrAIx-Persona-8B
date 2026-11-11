@@ -16,8 +16,8 @@ UNITS=[('rich_development','rich','development'),('none_test','none','test'),
 
 def prepare(source,directory,protocol_path=None,pilot_path=None):
     here=Path(__file__).parent;directory=Path(directory)
-    protocol=json.loads((Path(protocol_path) if protocol_path else here/'dryer-formal-protocol.json').read_text())
-    pilot=json.loads((Path(pilot_path) if pilot_path else here/'dryer-pilot-protocol.json').read_text())
+    protocol=json.loads((Path(protocol_path) if protocol_path else here/'specs/formal/dryer-formal-protocol.json').read_text())
+    pilot=json.loads((Path(pilot_path) if pilot_path else here/'specs/pilots/dryer-pilot-protocol.json').read_text())
     doc=json.loads(Path(source).read_text());assignments=split(doc['rows'])
     counts={phase:list(assignments.values()).count(phase) for phase in ['train','development','test']}
     if counts!={k:protocol['split'][k+'_people'] for k in counts}:raise ValueError('Unexpected split')
@@ -27,8 +27,8 @@ def prepare(source,directory,protocol_path=None,pilot_path=None):
     directory.mkdir(parents=True,exist_ok=False);os.chmod(directory,0o700)
     private_write(directory/'protocol.json',protocol)
     private_write(directory/'shuffle-map.json',diagnostic)
-    base=json.loads((here/'deepseek-pro.json').read_text())
-    base.update(status='frozen',expected_identity=json.loads((here/'endpoint-pilot.json').read_text())['identity'],
+    base=json.loads((here/'specs/formal/deepseek-pro.json').read_text())
+    base.update(status='frozen',expected_identity=json.loads((here/'specs/formal/endpoint-pilot.json').read_text())['identity'],
                 max_calls=protocol['execution']['calls_per_unit'],max_cost_usd=protocol['execution']['conservative_usd_cap_per_unit'],input_usd_per_million=1.32,output_usd_per_million=3.96)
     manifest={'protocol_sha256':digest(protocol),'units':[]}
     for name,background,phase in UNITS:

@@ -16,7 +16,7 @@ def private_write(path, value):
 
 def prepare(source, output):
     here=Path(__file__).parent
-    protocol=json.loads((here/'dryer-pilot-protocol.json').read_text())
+    protocol=json.loads((here/'specs/pilots/dryer-pilot-protocol.json').read_text())
     study=json.loads(Path(source).read_text()); assignments=split(study['rows'])
     people=defaultdict(dict)
     for row in study['rows']:
@@ -33,8 +33,8 @@ def prepare(source, output):
     output=Path(output);output.mkdir(parents=True,exist_ok=True)
     os.chmod(output,0o700)
     private_write(output/'study.json',study)
-    config=json.loads((here/'deepseek-pro.json').read_text())
-    config.update(status='frozen',expected_identity=json.loads((here/'endpoint-pilot.json').read_text())['identity'],
+    config=json.loads((here/'specs/formal/deepseek-pro.json').read_text())
+    config.update(status='frozen',expected_identity=json.loads((here/'specs/formal/endpoint-pilot.json').read_text())['identity'],
                   max_calls=21,max_cost_usd=1.,input_usd_per_million=1.32,output_usd_per_million=3.96)
     payload_hashes={}
     for arm,fields in protocol['background_conditions'].items():
