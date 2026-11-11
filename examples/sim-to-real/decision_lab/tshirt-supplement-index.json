@@ -1,0 +1,28 @@
+{
+  "source": "https://doi.org/10.1080/03050629.2022.2089133",
+  "acquisition": "User supplied publisher downloads, 2026-11-11",
+  "directory": "论文与补充材料",
+  "files": [
+    {
+      "original_filename": "gini_a_2089133_f0001_c.jpg",
+      "bytes": 92355,
+      "sha256": "7c4f38a0e60bacf30b4bf46bf5bbc6a0f2815785b53a13ed36688c63c66fff8c"
+    },
+    {
+      "original_filename": "gini_a_2089133_f0002_c.jpg",
+      "bytes": 132737,
+      "sha256": "1c4edf7f96f32f083df1c7a187fe7c8a4962e57d05f4be6e415ce7e850b8171a"
+    },
+    {
+      "original_filename": "gini_a_2089133_sm6766.docx",
+      "bytes": 646557,
+      "sha256": "5882132c4ee47f8552af84dbc40bc49f9af59479375859db88901af93341dada"
+    },
+    {
+      "original_filename": "t0001-10.1080_03050629.2022.2089133.csv",
+      "bytes": 685,
+      "sha256": "ce971a517b7da35c563cc9158396b558a88ce9dd0f7c6466590614a9093e2657"
+    }
+  ],
+  "original_bytes_preserved": true
+}
