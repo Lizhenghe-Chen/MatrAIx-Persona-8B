@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 497,
-  "git_bytes": 78704458,
+  "git_file_count": 499,
+  "git_bytes": 78712443,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -484,6 +484,18 @@
       "path": "decision_lab/swiss_six_audit.py",
       "bytes": 2283,
       "sha256": "cc37bd5ec3bf1a17b2473223c81f5f905b13e803d7273428644197ee81a315ca",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/synthetic-pool-coverage.json",
+      "bytes": 4722,
+      "sha256": "b94e68ce2c98b7652cfaa64246113be68717b7c1647119a385e49e1f90ab0db0",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/synthetic_cohort.py",
+      "bytes": 3263,
+      "sha256": "95f42ba20e08fc1ad1b5bf5ff19f576206aa92a6a087c2eec5d1ca15668f818d",
       "storage": "git"
     },
     {

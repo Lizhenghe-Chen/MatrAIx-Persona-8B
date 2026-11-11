@@ -1,0 +1,205 @@
+{
+  "status": "proposal_pool_not_evaluation_cohort",
+  "seed": 20261109,
+  "proposals_per_region": 20000,
+  "graph_sha256": "849dc5e6f2289db87a4d363948f32d0e1db9e9205d3d8a1b52e4ac4e77fedbfd",
+  "sampler_sha256": "debfe3ee39cbd29eea3ca46342b6b6370adb4d18eac090b20b28432d0063d5f0",
+  "generation": "Pinned region, forward generation, adults retained. No respondent answers used.",
+  "limits": "Synthetic attributes, not measured facts. Not population representative until explicitly matched; no country inferred.",
+  "pool_sha256": "a7feb51fd86cca6b670a4588de1e843d74a570f5a34ebec96677dd26eb2ef06a",
+  "adult_records": 28067,
+  "cells": [
+    {
+      "region": "North America",
+      "age": "18-24",
+      "education": "bachelor_or_higher",
+      "people": 165
+    },
+    {
+      "region": "North America",
+      "age": "18-24",
+      "education": "below_bachelor",
+      "people": 1939
+    },
+    {
+      "region": "North America",
+      "age": "25-34",
+      "education": "bachelor_or_higher",
+      "people": 580
+    },
+    {
+      "region": "North America",
+      "age": "25-34",
+      "education": "below_bachelor",
+      "people": 2384
+    },
+    {
+      "region": "North America",
+      "age": "35-44",
+      "education": "bachelor_or_higher",
+      "people": 532
+    },
+    {
+      "region": "North America",
+      "age": "35-44",
+      "education": "below_bachelor",
+      "people": 2092
+    },
+    {
+      "region": "North America",
+      "age": "45-54",
+      "education": "bachelor_or_higher",
+      "people": 336
+    },
+    {
+      "region": "North America",
+      "age": "45-54",
+      "education": "below_bachelor",
+      "people": 1929
+    },
+    {
+      "region": "North America",
+      "age": "55-64",
+      "education": "bachelor_or_higher",
+      "people": 285
+    },
+    {
+      "region": "North America",
+      "age": "55-64",
+      "education": "below_bachelor",
+      "people": 1857
+    },
+    {
+      "region": "North America",
+      "age": "65-74",
+      "education": "bachelor_or_higher",
+      "people": 143
+    },
+    {
+      "region": "North America",
+      "age": "65-74",
+      "education": "below_bachelor",
+      "people": 1092
+    },
+    {
+      "region": "North America",
+      "age": "75-84",
+      "education": "bachelor_or_higher",
+      "people": 55
+    },
+    {
+      "region": "North America",
+      "age": "75-84",
+      "education": "below_bachelor",
+      "people": 500
+    },
+    {
+      "region": "North America",
+      "age": "85+",
+      "education": "bachelor_or_higher",
+      "people": 17
+    },
+    {
+      "region": "North America",
+      "age": "85+",
+      "education": "below_bachelor",
+      "people": 172
+    },
+    {
+      "region": "Western Europe",
+      "age": "18-24",
+      "education": "bachelor_or_higher",
+      "people": 168
+    },
+    {
+      "region": "Western Europe",
+      "age": "18-24",
+      "education": "below_bachelor",
+      "people": 1883
+    },
+    {
+      "region": "Western Europe",
+      "age": "25-34",
+      "education": "bachelor_or_higher",
+      "people": 590
+    },
+    {
+      "region": "Western Europe",
+      "age": "25-34",
+      "education": "below_bachelor",
+      "people": 2322
+    },
+    {
+      "region": "Western Europe",
+      "age": "35-44",
+      "education": "bachelor_or_higher",
+      "people": 554
+    },
+    {
+      "region": "Western Europe",
+      "age": "35-44",
+      "education": "below_bachelor",
+      "people": 2104
+    },
+    {
+      "region": "Western Europe",
+      "age": "45-54",
+      "education": "bachelor_or_higher",
+      "people": 373
+    },
+    {
+      "region": "Western Europe",
+      "age": "45-54",
+      "education": "below_bachelor",
+      "people": 1884
+    },
+    {
+      "region": "Western Europe",
+      "age": "55-64",
+      "education": "bachelor_or_higher",
+      "people": 310
+    },
+    {
+      "region": "Western Europe",
+      "age": "55-64",
+      "education": "below_bachelor",
+      "people": 1831
+    },
+    {
+      "region": "Western Europe",
+      "age": "65-74",
+      "education": "bachelor_or_higher",
+      "people": 128
+    },
+    {
+      "region": "Western Europe",
+      "age": "65-74",
+      "education": "below_bachelor",
+      "people": 1081
+    },
+    {
+      "region": "Western Europe",
+      "age": "75-84",
+      "education": "bachelor_or_higher",
+      "people": 32
+    },
+    {
+      "region": "Western Europe",
+      "age": "75-84",
+      "education": "below_bachelor",
+      "people": 490
+    },
+    {
+      "region": "Western Europe",
+      "age": "85+",
+      "education": "bachelor_or_higher",
+      "people": 17
+    },
+    {
+      "region": "Western Europe",
+      "age": "85+",
+      "education": "below_bachelor",
+      "people": 222
+    }
+  ]
+}
