@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 509,
-  "git_bytes": 78736236,
+  "git_file_count": 511,
+  "git_bytes": 78740779,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -406,6 +406,18 @@
       "path": "decision_lab/source-audit.json",
       "bytes": 18759,
       "sha256": "2f1a2e2b5e39ca757d74526ac7c86b2d11734a7f5f070b4b102e53eb155f25bb",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/stability_run.py",
+      "bytes": 2642,
+      "sha256": "7c78beef7d80e4b4f8ed3c8336795c5c470d370cfb4d15561ed0994a5ddf69a2",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/stability_score.py",
+      "bytes": 1901,
+      "sha256": "62c31b958755ddb097a4341184e0cf8a6a71bb946049e28a59a78ff8c93b0fea",
       "storage": "git"
     },
     {
