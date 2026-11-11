@@ -6,7 +6,7 @@
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
   "git_file_count": 562,
-  "git_bytes": 80853692,
+  "git_bytes": 80853718,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -146,8 +146,8 @@
     },
     {
       "path": "decision_lab/docs/进度与交付核对.md",
-      "bytes": 3109,
-      "sha256": "bf96173a5d01e47a0f064d436d8601c589668b2c74af4a77b148a2cdd35bf974",
+      "bytes": 3135,
+      "sha256": "7dd1f4b2fb5dbbc0f24a493e606d7e7a73fea4b02311663027571797ddc43ee1",
       "storage": "git"
     },
     {
