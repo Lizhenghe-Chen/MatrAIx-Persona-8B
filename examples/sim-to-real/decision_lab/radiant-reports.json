@@ -1,0 +1,18 @@
+[
+  {
+    "record": "15574862",
+    "source": "https://zenodo.org/records/15574862",
+    "local_filename": "15574862.pdf",
+    "sha256": "a655c070726ee12563a294668f153e982475a1a1b51d76a2cc4f7ed5aff19b32",
+    "bytes": 6950256,
+    "publisher_md5_verified": true
+  },
+  {
+    "record": "14929731",
+    "source": "https://zenodo.org/records/14929731",
+    "local_filename": "14929731.pdf",
+    "sha256": "6ed495883864dbc8f9cb63513e9dc47878ff41f15a7f2ba79e690abe5e881dc3",
+    "bytes": 190435,
+    "publisher_md5_verified": true
+  }
+]
