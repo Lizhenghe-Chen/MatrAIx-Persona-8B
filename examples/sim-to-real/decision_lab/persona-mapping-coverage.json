@@ -1,0 +1,180 @@
+{
+  "dryer": {
+    "people": 1452,
+    "mapped_people": 1427,
+    "excluded_backgrounds": {
+      "Other (please specify)": 25
+    },
+    "cells": [
+      {
+        "age": "18-24",
+        "education": "bachelor_or_higher",
+        "people": 82
+      },
+      {
+        "age": "18-24",
+        "education": "below_bachelor",
+        "people": 104
+      },
+      {
+        "age": "25-34",
+        "education": "bachelor_or_higher",
+        "people": 143
+      },
+      {
+        "age": "25-34",
+        "education": "below_bachelor",
+        "people": 112
+      },
+      {
+        "age": "35-44",
+        "education": "bachelor_or_higher",
+        "people": 123
+      },
+      {
+        "age": "35-44",
+        "education": "below_bachelor",
+        "people": 132
+      },
+      {
+        "age": "45-54",
+        "education": "bachelor_or_higher",
+        "people": 85
+      },
+      {
+        "age": "45-54",
+        "education": "below_bachelor",
+        "people": 151
+      },
+      {
+        "age": "55-64",
+        "education": "bachelor_or_higher",
+        "people": 74
+      },
+      {
+        "age": "55-64",
+        "education": "below_bachelor",
+        "people": 149
+      },
+      {
+        "age": "65-74",
+        "education": "bachelor_or_higher",
+        "people": 83
+      },
+      {
+        "age": "65-74",
+        "education": "below_bachelor",
+        "people": 146
+      },
+      {
+        "age": "75-84",
+        "education": "bachelor_or_higher",
+        "people": 11
+      },
+      {
+        "age": "75-84",
+        "education": "below_bachelor",
+        "people": 31
+      },
+      {
+        "age": "85+",
+        "education": "bachelor_or_higher",
+        "people": 1
+      }
+    ],
+    "status": "mapping_candidate_only_not_frozen_population",
+    "limits": "Education maps to common coarse bins only; do not impute exact degrees. Counts use all eligible backgrounds, not target answers."
+  },
+  "swiss": {
+    "people": 3413,
+    "mapped_people": 3236,
+    "excluded_backgrounds": {
+      "Other": 55,
+      "unknown": 122
+    },
+    "cells": [
+      {
+        "age": "18-24",
+        "education": "bachelor_or_higher",
+        "people": 6
+      },
+      {
+        "age": "18-24",
+        "education": "below_bachelor",
+        "people": 105
+      },
+      {
+        "age": "25-34",
+        "education": "bachelor_or_higher",
+        "people": 168
+      },
+      {
+        "age": "25-34",
+        "education": "below_bachelor",
+        "people": 161
+      },
+      {
+        "age": "35-44",
+        "education": "bachelor_or_higher",
+        "people": 243
+      },
+      {
+        "age": "35-44",
+        "education": "below_bachelor",
+        "people": 248
+      },
+      {
+        "age": "45-54",
+        "education": "bachelor_or_higher",
+        "people": 266
+      },
+      {
+        "age": "45-54",
+        "education": "below_bachelor",
+        "people": 364
+      },
+      {
+        "age": "55-64",
+        "education": "bachelor_or_higher",
+        "people": 238
+      },
+      {
+        "age": "55-64",
+        "education": "below_bachelor",
+        "people": 518
+      },
+      {
+        "age": "65-74",
+        "education": "bachelor_or_higher",
+        "people": 171
+      },
+      {
+        "age": "65-74",
+        "education": "below_bachelor",
+        "people": 409
+      },
+      {
+        "age": "75-84",
+        "education": "bachelor_or_higher",
+        "people": 79
+      },
+      {
+        "age": "75-84",
+        "education": "below_bachelor",
+        "people": 230
+      },
+      {
+        "age": "85+",
+        "education": "bachelor_or_higher",
+        "people": 5
+      },
+      {
+        "age": "85+",
+        "education": "below_bachelor",
+        "people": 25
+      }
+    ],
+    "status": "mapping_candidate_only_not_frozen_population",
+    "limits": "Education maps to common coarse bins only; do not impute exact degrees. Counts use all eligible backgrounds, not target answers."
+  }
+}
