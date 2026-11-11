@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 501,
-  "git_bytes": 78716463,
+  "git_file_count": 502,
+  "git_bytes": 78719998,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -370,6 +370,12 @@
       "path": "decision_lab/resume-2026-11-11.json",
       "bytes": 260,
       "sha256": "65d813cd277251b064797c0b5bc1b6c3e0ce8182bf8c085fbaa86c9ca5b3d928",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/retry_failed.py",
+      "bytes": 3535,
+      "sha256": "0ba3d303fc0d4c1444b76eaef76f5e78eb01fc3c2148c75d1b63c9a3fe9e2fe2",
       "storage": "git"
     },
     {
