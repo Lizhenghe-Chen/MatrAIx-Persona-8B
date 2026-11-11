@@ -70,7 +70,7 @@ def run(study, seal, config, database, phase, transport=send):
                     result=parse_response(raw,n,expected,config.get('output_mode','probabilities'))
                 except Exception as exc:
                     # Persist only error type, never request content, headers or server body.
-                    db.execute('UPDATE calls SET status=?,error=?,elapsed=? WHERE job=?',('failed',type(exc).__name__,time.monotonic()-start,job));db.commit()
+                    db.execute('UPDATE calls SET status=?,error=?,elapsed=? WHERE job=?',('failed',getattr(exc,'reason_code',type(exc).__name__),time.monotonic()-start,job));db.commit()
                     raise RuntimeError('Call failed; inspect checkpoint before explicit retry') from None
                 db.execute('UPDATE calls SET status=?,response=?,elapsed=? WHERE job=?',('complete',json.dumps(result),time.monotonic()-start,job));db.commit()
             counts=dict(db.execute('SELECT status,count(*) FROM calls GROUP BY status'))

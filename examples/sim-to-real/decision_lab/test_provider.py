@@ -28,3 +28,11 @@ class ProviderTests(unittest.TestCase):
         r=build_request({'options':['A','B']},c)
         self.assertIn('zero-based',r['messages'][0]['content'])
         self.assertNotIn('probabilities array',r['messages'][0]['content'])
+
+class FailureCodeTests(unittest.TestCase):
+    def test_failure_code_contains_no_response_text(self):
+        from .provider import parse_response,ResponseValidationError
+        raw={'model':'deepseek-v4-pro','choices':[{'finish_reason':'stop','message':{'content':'{"probabilities":[0.7,0.7]}'}}]}
+        with self.assertRaises(ResponseValidationError) as caught:parse_response(raw,2)
+        self.assertEqual(caught.exception.reason_code,'probabilities_sum_not_one')
+        self.assertNotIn('0.7',str(caught.exception))

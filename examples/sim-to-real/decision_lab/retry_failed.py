@@ -32,7 +32,7 @@ def retry(directory,unit,credentials):
             start=time.monotonic()
             try:result=parse_response(send(body,config['endpoint']),len(row['options']),config['expected_identity'],config.get('output_mode','probabilities'))
             except Exception as exc:
-                db.execute("update calls set status='failed',error=?,elapsed=? where job=?",(type(exc).__name__,time.monotonic()-start,job));db.commit();raise RuntimeError('Recovery failed; retained for inspection') from None
+                db.execute("update calls set status='failed',error=?,elapsed=? where job=?",(getattr(exc,'reason_code',type(exc).__name__),time.monotonic()-start,job));db.commit();raise RuntimeError('Recovery failed; retained for inspection') from None
             db.execute("update calls set status='complete',response=?,elapsed=? where job=?",(json.dumps(result),time.monotonic()-start,job));db.commit()
             return {'recovered':1,'identity':result['identity'],'original_failure_retained':True}
         finally:db.close()
