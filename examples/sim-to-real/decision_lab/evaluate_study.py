@@ -8,6 +8,7 @@ from .calibration import apply
 from .history_baseline import HistoricalProportions
 from .scoring import paired_brier_interval
 from .product_summary import summarize
+from .subgroups import summarize as subgroup_summary
 
 
 def evaluate(directory,kind,calibration_path):
@@ -56,6 +57,7 @@ def evaluate(directory,kind,calibration_path):
     return {'status':'complete_test_primary_brier_only','kind':kind,'prepared_sha256':digest(prepared),
             'calibration_sha256':digest(calibration),'units':provenance,'methods':summaries,'comparisons':comparisons,
             'product_choice_shares':{name:summarize(rows,p,kind) for name,p in predictions.items()},
+            'subgroups':{name:subgroup_summary(rows,p,protocol['backgrounds']['basic']) for name,p in predictions.items()},
             'history_unseen_tasks':sum(n==0 for n in support.values()),
             'calibration_llm_weight':calibration['selection']['llm_weight'],
             'limitations':['This file is the primary individual-prediction analysis, not the full report.',
