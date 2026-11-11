@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 465,
-  "git_bytes": 78558182,
+  "git_file_count": 466,
+  "git_bytes": 78559749,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -433,15 +433,21 @@
       "storage": "git"
     },
     {
+      "path": "decision_lab/tshirt-audit.json",
+      "bytes": 850,
+      "sha256": "2344f85118fd108e7555636c2b0a0883247fd399de345858b94cbabd6ad02197",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/tshirt_audit.py",
-      "bytes": 2279,
-      "sha256": "ab6ec3cd8c75bcb1c6e0a4fbc5d7d6714cb434d845e8c4f76d76b28e1f0c0e44",
+      "bytes": 2305,
+      "sha256": "81f3da110414e8e59c007e6426468c7ae2172d778761178bd501dca18dc73faf",
       "storage": "git"
     },
     {
       "path": "decision_lab/数据审查发现.md",
-      "bytes": 9805,
-      "sha256": "17cec5dcfbb0fdcbaa19882a0f08a9ec029289adc46fb4ab9db91e1f89bab23d",
+      "bytes": 10496,
+      "sha256": "20aa886ede27b66dc6e63bd184bdd1e3696ad375e8dcdaa03ba0becec8931ff6",
       "storage": "git"
     },
     {

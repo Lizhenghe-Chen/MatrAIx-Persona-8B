@@ -1,0 +1,25 @@
+{
+  "status": "structural_audit_only_not_admitted",
+  "source": "https://doi.org/10.7910/DVN/PEZ7EE",
+  "sha256": "c2e56fce5b5bffc4cb1a328addec19021c8327036298043d40c6be71da54fd2a",
+  "rows": 18420,
+  "people": 1228,
+  "tasks": 6140,
+  "alternatives_per_task": 3,
+  "refusal_option": false,
+  "wave1_matched_people": 1184,
+  "wave1_background_mismatches": {
+    "age": 0,
+    "female": 0,
+    "income_": 0,
+    "PARTYID": 0
+  },
+  "errors": [],
+  "pending": [
+    "Original English instructions and attribute definitions",
+    "Author final sample filters and descriptive statistics",
+    "Income coding: published labels omit a bracket; do not infer missing ranges",
+    "Background wave provenance and whitelist"
+  ],
+  "privacy": "worker IDs, postal codes, platform assignment identifiers and timestamps excluded from future request whitelist."
+}

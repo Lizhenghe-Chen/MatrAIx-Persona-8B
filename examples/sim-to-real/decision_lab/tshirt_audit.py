@@ -13,7 +13,7 @@ def audit(directory):
     if not cards.tschoice.sum().eq(1).all():errors.append('not one selected product')
     if not d.tschoice.isin([0,1]).all():errors.append('unknown choice code')
     if b.workerid.duplicated().any():errors.append('duplicate wave-one join key')
-    joined=people.merge(b,on='workerid',how='left',indicator=True,suffixes=('','_w1'),validate='many_to_one')
+    joined=people.merge(b,on='workerid',how='left',indicator='audit_wave1_match',suffixes=('','_w1'),validate='many_to_one')
     mismatch={}
     for field in ['age','female','income_','PARTYID']:
         a=joined[field];v=joined[field+'_w1']
@@ -21,7 +21,7 @@ def audit(directory):
     return {'status':'structural_audit_only_not_admitted','source':'https://doi.org/10.7910/DVN/PEZ7EE',
             'sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'rows':len(d),
             'people':int(d.respid.nunique()),'tasks':len(cards),'alternatives_per_task':3,
-            'refusal_option':False,'wave1_matched_people':int(joined['_merge'].eq('both').sum()),
+            'refusal_option':False,'wave1_matched_people':int(joined['audit_wave1_match'].eq('both').sum()),
             'wave1_background_mismatches':mismatch,'errors':errors,
             'pending':['Original English instructions and attribute definitions','Author final sample filters and descriptive statistics','Income coding: published labels omit a bracket; do not infer missing ranges','Background wave provenance and whitelist'],
             'privacy':'worker IDs, postal codes, platform assignment identifiers and timestamps excluded from future request whitelist.'}
