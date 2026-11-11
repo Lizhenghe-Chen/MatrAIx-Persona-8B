@@ -28,6 +28,21 @@
 
 新增文件按上表归位，不要放回根目录。
 
+## 根目录模块分工
+
+根目录保留的 `*.py` 都可通过 `python -m decision_lab.<模块名>` 直接调用；按职责分为：
+
+| 职责 | 模块 |
+|---|---|
+| 运行内核 | `core`、`checkpoint`、`provider`、`runner`、`conditions`、`calibration`、`baselines`、`cli` |
+| 四国烘干机 | `dryer_adapter`、`dryer_audit`、`dryer_baseline`、`dryer_formal`、`dryer_pilot`、`dryer_preflight`、`dryer_reconcile` |
+| 瑞士家电 | `swiss_adapter`、`swiss_appliances`、`swiss_baseline`、`swiss_six_audit` |
+| 合成人群 | `synthetic_cohort`、`synthetic_prepare`、`synthetic_pilot`、`synthetic_run`、`synthetic_tasks`、`persona_audit`、`persona_mapping`、`generate_persona_pool` |
+| 评分与诊断 | `evaluate_study`、`evaluate_population`、`calibrate_study`、`scoring`、`population_scoring`、`population_concentration`、`property_intervals`、`product_summary`、`subgroups`、`diagnostics`、`bundle_diagnostics`、`history_baseline`、`baseline_replay`、`execution_quality` |
+| 报告与汇总 | `report`、`study_report`、`population_report`、`aggregate_report`、`adoption_summary`、`card_view`、`report_sources`、`pilot_summary` |
+| 运行维护 | `retry_failed`、`stability_run`、`stability_score`、`technical_pilot` |
+| 其他研究审查 | `audit_sources`、`german_cards`、`german_packaging`、`tshirt_audit`、`radiant_audit`、`survey_baseline` |
+
 ## 已可用的入口
 
 从 `examples/sim-to-real` 运行：
