@@ -1,5 +1,5 @@
 import unittest
-from ..study_report import render,conclusion
+from ..reporting.study_report import render,conclusion
 class ReportTests(unittest.TestCase):
     def test_completed_evidence_and_escaping(self):
         with self.assertRaises(ValueError):render({'status':'running'})

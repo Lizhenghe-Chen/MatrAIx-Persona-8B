@@ -1,5 +1,5 @@
 import unittest
-from ..diagnostics import choice_diagnostics
+from ..evaluation.diagnostics import choice_diagnostics
 
 class DiagnosticsTests(unittest.TestCase):
     def test_minority_and_ties_not_hidden(self):

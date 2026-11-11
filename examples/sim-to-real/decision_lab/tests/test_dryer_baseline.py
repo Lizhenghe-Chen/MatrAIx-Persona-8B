@@ -1,5 +1,5 @@
 import unittest
-from ..dryer_baseline import attributes
+from ..studies.dryer_baseline import attributes
 
 class DisplayedFeatures(unittest.TestCase):
     def test_reject_option_preserved(self):

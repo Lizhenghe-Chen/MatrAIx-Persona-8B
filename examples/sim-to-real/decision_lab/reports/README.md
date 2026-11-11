@@ -4,12 +4,12 @@
 
 | 文件 | 来源 |
 |---|---|
-| `individual-<study>.json` | `python -m decision_lab.evaluate_study <研究目录> --kind <dryer\|swiss> --calibration <研究目录>/calibration-v1.json` |
-| `population-<study>.json` | `python -m decision_lab.evaluate_population <研究目录> --kind <dryer\|swiss>` |
-| `adoption-summary.json` | `python -m decision_lab.adoption_summary <个体评分…>` |
-| `individual-<study>.html` | `python -m decision_lab.study_report` |
-| `population-<study>.html` | `python -m decision_lab.population_report` |
-| `aggregate.html` | `python -m decision_lab.aggregate_report` |
+| `individual-<study>.json` | `python -m decision_lab.evaluation.evaluate_study <研究目录> --kind <dryer\|swiss> --calibration <研究目录>/calibration-v1.json` |
+| `population-<study>.json` | `python -m decision_lab.evaluation.evaluate_population <研究目录> --kind <dryer\|swiss>` |
+| `adoption-summary.json` | `python -m decision_lab.reporting.adoption_summary <个体评分…>` |
+| `individual-<study>.html` | `python -m decision_lab.reporting.study_report` |
+| `population-<study>.html` | `python -m decision_lab.reporting.population_report` |
+| `aggregate.html` | `python -m decision_lab.reporting.aggregate_report` |
 
 评分命令只读取本机检查点与冻结参数，不调用模型、不产生费用。已存在的文件不会被覆盖：重算时换新文件名，保留旧的冻结成绩。
 

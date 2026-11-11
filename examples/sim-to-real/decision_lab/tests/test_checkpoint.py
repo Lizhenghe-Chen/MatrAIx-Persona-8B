@@ -1,13 +1,13 @@
 import json,sqlite3,tempfile,unittest
 from pathlib import Path
-from ..checkpoint import read_predictions
-from ..runner import run
+from ..core.checkpoint import read_predictions
+from ..core.runner import run
 from . import test_runner
 
 class CheckpointTests(unittest.TestCase):
     def fixture(self):
         s,f,c=test_runner.RunnerTests().fixtures()
-        from ..core import digest
+        from ..core.core import digest
         for r in s['rows']:r['group']='q'
         f['input_sha256']=digest(s)
         return s,f,c
@@ -23,7 +23,7 @@ class CheckpointTests(unittest.TestCase):
             with self.assertRaises(ValueError):read_predictions(s,f,c,p,'test')
     def test_incomplete_does_not_silently_pass(self):
         s,f,c=self.fixture()
-        from ..core import digest
+        from ..core.core import digest
         c['max_cost_usd']=1e-9;f['config_sha256']=digest(c)
         with tempfile.TemporaryDirectory() as d:
             p=Path(d)/'calls.sqlite';run(s,f,c,p,'test')

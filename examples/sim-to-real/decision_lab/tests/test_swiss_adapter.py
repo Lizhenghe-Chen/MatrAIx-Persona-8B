@@ -1,5 +1,5 @@
 import unittest
-from ..swiss_adapter import label,EDUCATION,INCOME
+from ..studies.swiss_adapter import label,EDUCATION,INCOME
 
 class SwissMappings(unittest.TestCase):
     def test_raw_codes_not_summary_table_zero_based_numbers(self):

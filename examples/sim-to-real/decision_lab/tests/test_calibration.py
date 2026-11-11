@@ -1,5 +1,5 @@
 import unittest
-from ..calibration import transform,select,apply
+from ..core.calibration import transform,select,apply
 
 class CalibrationTests(unittest.TestCase):
     def test_identity_and_zero(self):

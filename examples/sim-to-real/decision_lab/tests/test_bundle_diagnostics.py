@@ -1,5 +1,5 @@
 import unittest
-from ..bundle_diagnostics import summarize
+from ..evaluation.bundle_diagnostics import summarize
 
 class BundleTests(unittest.TestCase):
     def test_different_cards_never_count_as_same_answer(self):

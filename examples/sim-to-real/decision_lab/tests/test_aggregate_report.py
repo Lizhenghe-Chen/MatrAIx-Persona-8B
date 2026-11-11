@@ -1,7 +1,7 @@
 """Aggregate summary refuses incomplete evidence and never pools studies."""
 import unittest,tempfile,json,sqlite3
 from pathlib import Path
-from ..aggregate_report import build,render
+from ..reporting.aggregate_report import build,render
 
 IDENTITY={'model':'deepseek-v4-pro','system_fingerprint':'x'}
 

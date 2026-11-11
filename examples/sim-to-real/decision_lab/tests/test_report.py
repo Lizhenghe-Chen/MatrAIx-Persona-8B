@@ -1,5 +1,5 @@
 import unittest
-from ..report import render
+from ..reporting.report import render
 
 class ReportTests(unittest.TestCase):
     def document(self):

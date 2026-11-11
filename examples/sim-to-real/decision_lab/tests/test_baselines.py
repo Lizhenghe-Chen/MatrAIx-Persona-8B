@@ -1,6 +1,6 @@
 import unittest
 import numpy as np
-from ..baselines import ConditionalLogit,select_penalty
+from ..core.baselines import ConditionalLogit,select_penalty
 
 class ChoiceBaselineTests(unittest.TestCase):
     def tasks(self):

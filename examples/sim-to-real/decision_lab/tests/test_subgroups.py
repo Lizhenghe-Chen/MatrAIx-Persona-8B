@@ -1,5 +1,5 @@
 import unittest
-from ..subgroups import summarize
+from ..evaluation.subgroups import summarize
 
 class SubgroupTests(unittest.TestCase):
     def test_people_not_task_counts(self):

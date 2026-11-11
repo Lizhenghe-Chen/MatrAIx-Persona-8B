@@ -1,7 +1,7 @@
 import tempfile,unittest
 from pathlib import Path
-from ..runner import run,GATES
-from ..core import digest
+from ..core.runner import run,GATES
+from ..core.core import digest
 
 class RunnerTests(unittest.TestCase):
     def fixtures(self):

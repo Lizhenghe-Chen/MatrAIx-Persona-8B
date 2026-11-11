@@ -1,5 +1,5 @@
 import unittest
-from ..adoption_summary import summarize,CONTRASTS
+from ..reporting.adoption_summary import summarize,CONTRASTS
 
 class AdoptionTests(unittest.TestCase):
     def fixture(self,kind,passed=True,ci=(.01,.03)):

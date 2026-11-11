@@ -1,5 +1,5 @@
 import unittest
-from ..scoring import score,paired_interval
+from ..evaluation.scoring import score,paired_interval
 
 class ScoringTests(unittest.TestCase):
     def rows(self):
@@ -20,7 +20,7 @@ class ScoringTests(unittest.TestCase):
 
 class PairedBrierTests(unittest.TestCase):
     def test_weighted_people_and_perfect_reference(self):
-        from ..scoring import paired_brier_interval
+        from ..evaluation.scoring import paired_brier_interval
         rows=[{'person':'a','task':str(i),'stratum':'s','options':['x','y'],'answer':0,'weight':2} for i in range(3)]
         rows.append({'person':'b','task':'0','stratum':'s','options':['different','cards'],'answer':1,'weight':1})
         a={(r['person'],r['task']):[.5,.5] for r in rows}
@@ -32,7 +32,7 @@ class PairedBrierTests(unittest.TestCase):
         self.assertIsNone(zero['relative_improvement'])
         self.assertFalse(zero['passes_2_percent_gate'])
     def test_matches_existing_bootstrap(self):
-        from ..scoring import paired_brier_interval
+        from ..evaluation.scoring import paired_brier_interval
         rows=ScoringTests().rows()
         a={(r['person'],'q'):[.2,.8] for r in rows}
         b={(r['person'],'q'):[.6,.4] for r in rows}

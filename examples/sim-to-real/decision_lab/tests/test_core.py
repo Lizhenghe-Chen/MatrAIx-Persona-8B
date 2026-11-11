@@ -1,5 +1,5 @@
 import unittest
-from ..core import probabilities, split, request_payload, brier, tv
+from ..core.core import probabilities, split, request_payload, brier, tv
 
 class CoreTests(unittest.TestCase):
     def test_probability_validation(self):
@@ -22,7 +22,7 @@ if __name__=='__main__': unittest.main()
 
 class SyntheticValidationTests(unittest.TestCase):
     def test_target_free_is_explicit(self):
-        from ..core import validate
+        from ..core.core import validate
         row={'person':'synthetic-1','task':'q','options':['a','b'],'question':'choose','stratum':'s'}
         validate([row],require_answers=False)
         with self.assertRaises(ValueError):validate([row])

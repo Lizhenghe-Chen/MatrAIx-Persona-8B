@@ -2,7 +2,7 @@
 import argparse
 import json
 from pathlib import Path
-from .core import digest, split, validate
+from .core.core import digest, split, validate
 
 
 def main():
@@ -34,13 +34,13 @@ def main():
         with args.output.open('x') as f:
             json.dump(result, f, ensure_ascii=False, indent=2)
     elif args.command == 'run':
-        from .runner import run
+        from .core.runner import run
         if not all([args.config, args.seal, args.phase, args.output]):
             parser.error('run requires --config --seal --phase --output checkpoint.sqlite')
         result = run(doc, json.loads(args.seal.read_text()), json.loads(args.config.read_text()), args.output, args.phase)
         print(json.dumps(result))
     elif args.command == 'score':
-        from .scoring import score
+        from .evaluation.scoring import score
         validate(doc['rows'])
         predictions = {}
         for item in doc['predictions']:
@@ -55,11 +55,11 @@ def main():
             json.dump(result, f, ensure_ascii=False, indent=2)
     elif args.command == 'report':
         if doc.get('status')=='complete_test_primary_brier_only':
-            from .study_report import render
+            from .reporting.study_report import render
         elif doc.get('status')=='complete_population_distribution_analysis':
-            from .population_report import render
+            from .reporting.population_report import render
         else:
-            from .report import render
+            from .reporting.report import render
         if not args.output:
             parser.error('--output required')
         with args.output.open('x') as f:

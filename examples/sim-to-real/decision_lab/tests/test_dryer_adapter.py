@@ -1,6 +1,6 @@
 import unittest
 from types import SimpleNamespace
-from decision_lab.dryer_adapter import option_text
+from ..studies.dryer_adapter import option_text
 
 class DryerCards(unittest.TestCase):
     def row(self, **changes):

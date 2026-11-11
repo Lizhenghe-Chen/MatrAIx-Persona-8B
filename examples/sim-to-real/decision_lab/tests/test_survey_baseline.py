@@ -1,5 +1,5 @@
 import unittest
-from ..survey_baseline import SurveyBaseline
+from ..studies.survey_baseline import SurveyBaseline
 
 class SurveyBaselineTests(unittest.TestCase):
     def rows(self):

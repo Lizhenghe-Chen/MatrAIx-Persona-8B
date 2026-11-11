@@ -12,11 +12,16 @@
 
 ## 目录结构
 
-根目录只保留可直接 `python -m decision_lab.<模块>` 调用的运行内核、研究适配器、评分与报告模块；冻结材料、文档、测试和生成结果各自归入子目录。
+目录按角色分区：代码进子包，冻结材料、文档、测试与生成结果各有归属。
 
 | 位置 | 内容 |
 |---|---|
 | `README.md`、`交接先读.md` | 模块实施记录与当前状态入口；接手先读后者 |
+| `core/` | 冻结运行内核：输入白名单与校验（`core`）、模型调用（`provider`）、顺序执行与费用闸门（`runner`）、检查点（`checkpoint`）、背景错配与换序（`conditions`）、概率校准与统计基线（`calibration`、`baselines`） |
+| `studies/` | 各研究的适配器、试跑、冻结准备与来源审查：`dryer_*`、`swiss_*`、`synthetic_*`、`persona_*`，以及 `german_*`、`tshirt_audit`、`radiant_audit`、`audit_sources` |
+| `evaluation/` | 评分、区间与诊断：`evaluate_study`、`evaluate_population`、`calibrate_study`、`scoring`、`population_scoring`、`property_intervals`、`subgroups`、`diagnostics`、`bundle_diagnostics`、`execution_quality` 等 |
+| `reporting/` | 离线报告与汇总：`study_report`、`population_report`、`aggregate_report`、`adoption_summary`、`card_view`、`report_sources`、`report`、`pilot_summary` |
+| `ops/` | 运行维护：失败恢复（`retry_failed`）、稳定性诊断（`stability_run`、`stability_score`）、通用技术试跑（`technical_pilot`） |
 | `docs/` | 进度核对、复算指南、数据审查、准入决定、证据对照、阶段交接 |
 | `specs/formal/` | 正式运行的冻结协议、清单、模型配置与服务身份 |
 | `specs/pilots/` | 技术试跑与预检的协议和结果 |
@@ -24,24 +29,9 @@
 | `specs/audits/` | 数据来源、许可、逐人还原、人格覆盖等审查记录 |
 | `reports/` | 生成的个体/群体评分 JSON 与离线 HTML 报告 |
 | `tests/` | 全部离线测试；`python -m unittest discover -s examples/sim-to-real/decision_lab -t examples/sim-to-real` 会自动发现 |
-| 根目录 `*.py` | 运行内核（`core`、`runner`、`provider`、`checkpoint`）、研究适配器、评分与报告模块 |
+| 根目录 | 只有 `__init__.py`、`__main__.py`、`cli.py` 与两份依赖清单 |
 
-新增文件按上表归位，不要放回根目录。
-
-## 根目录模块分工
-
-根目录保留的 `*.py` 都可通过 `python -m decision_lab.<模块名>` 直接调用；按职责分为：
-
-| 职责 | 模块 |
-|---|---|
-| 运行内核 | `core`、`checkpoint`、`provider`、`runner`、`conditions`、`calibration`、`baselines`、`cli` |
-| 四国烘干机 | `dryer_adapter`、`dryer_audit`、`dryer_baseline`、`dryer_formal`、`dryer_pilot`、`dryer_preflight`、`dryer_reconcile` |
-| 瑞士家电 | `swiss_adapter`、`swiss_appliances`、`swiss_baseline`、`swiss_six_audit` |
-| 合成人群 | `synthetic_cohort`、`synthetic_prepare`、`synthetic_pilot`、`synthetic_run`、`synthetic_tasks`、`persona_audit`、`persona_mapping`、`generate_persona_pool` |
-| 评分与诊断 | `evaluate_study`、`evaluate_population`、`calibrate_study`、`scoring`、`population_scoring`、`population_concentration`、`property_intervals`、`product_summary`、`subgroups`、`diagnostics`、`bundle_diagnostics`、`history_baseline`、`baseline_replay`、`execution_quality` |
-| 报告与汇总 | `report`、`study_report`、`population_report`、`aggregate_report`、`adoption_summary`、`card_view`、`report_sources`、`pilot_summary` |
-| 运行维护 | `retry_failed`、`stability_run`、`stability_score`、`technical_pilot` |
-| 其他研究审查 | `audit_sources`、`german_cards`、`german_packaging`、`tshirt_audit`、`radiant_audit`、`survey_baseline` |
+运行入口形如 `python -m decision_lab.studies.dryer_formal`、`python -m decision_lab.evaluation.evaluate_study`、`python -m decision_lab.reporting.aggregate_report`；通用子命令仍是 `python -m decision_lab <check|freeze|run|score|report|verify>`。新增文件按上表归位，不要放回根目录。
 
 ## 已可用的入口
 
@@ -133,7 +123,7 @@ python -m unittest decision_lab.test_core
 待所有测试单元完整完成、开发校准结果冻结后，执行：
 
 ```sh
-PYTHONPATH=examples/sim-to-real .venv/bin/python -m decision_lab.evaluate_study \
+PYTHONPATH=examples/sim-to-real .venv/bin/python -m decision_lab.evaluation.evaluate_study \
   <本机研究目录> --kind dryer --calibration <冻结校准.json> --output <新的评分.json>
 ```
 
@@ -144,16 +134,16 @@ PYTHONPATH=examples/sim-to-real .venv/bin/python -m decision_lab.evaluate_study 
 合成人群评分不创建虚拟人与真人的逐人配对，只比较固定真人参照下的分布误差：
 
 ```sh
-PYTHONPATH=examples/sim-to-real .venv/bin/python -m decision_lab.evaluate_population \
+PYTHONPATH=examples/sim-to-real .venv/bin/python -m decision_lab.evaluation.evaluate_population \
   <本机研究目录> --kind dryer --output <新的群体评分.json>
-PYTHONPATH=examples/sim-to-real .venv/bin/python -m decision_lab.population_report \
+PYTHONPATH=examples/sim-to-real .venv/bin/python -m decision_lab.reporting.population_report \
   <群体评分.json> --output <群体报告.html>
 ```
 
 `aggregate_report.py` 把两项个体评分、两项群体评分与运行账目合成一页离线总报告：
 
 ```sh
-PYTHONPATH=examples/sim-to-real .venv/bin/python -m decision_lab.aggregate_report \
+PYTHONPATH=examples/sim-to-real .venv/bin/python -m decision_lab.reporting.aggregate_report \
   --individual <个体评分.json> <个体评分.json> \
   --population <群体评分.json> <群体评分.json> \
   --root dryer=<本机研究目录> --root swiss=<本机研究目录> \

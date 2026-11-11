@@ -1,5 +1,5 @@
 import unittest
-from ..swiss_baseline import attributes
+from ..studies.swiss_baseline import attributes
 
 class SwissFeatures(unittest.TestCase):
     def test_features_do_not_depend_on_position(self):

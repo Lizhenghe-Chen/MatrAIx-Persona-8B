@@ -1,5 +1,5 @@
 import unittest
-from ..population_scoring import distribution_comparison
+from ..evaluation.population_scoring import distribution_comparison
 
 class PopulationTests(unittest.TestCase):
     def test_no_individual_pairing(self):
@@ -19,7 +19,7 @@ class PopulationTests(unittest.TestCase):
         for h,s,probs in [(human*2,synthetic,p),(human,synthetic,{}),([dict(human[0],weight=0)],synthetic,p)]:
             with self.assertRaises(ValueError):distribution_comparison(h,s,probs)
     def test_paired_fixed_reference_interval(self):
-        from ..population_scoring import paired_population_interval
+        from ..evaluation.population_scoring import paired_population_interval
         base=dict(task='q',stratum='s',question='choose',context='same',options=['a','b'],background={'age_bracket':'18-24','education_group':'below_bachelor'})
         human=[dict(base,person='h',answer=0)];synthetic=[dict(base,person='s1'),dict(base,person='s2')]
         a={(r['person'],'q'):[.5,.5] for r in synthetic};b={(r['person'],'q'):[1,0] for r in synthetic}

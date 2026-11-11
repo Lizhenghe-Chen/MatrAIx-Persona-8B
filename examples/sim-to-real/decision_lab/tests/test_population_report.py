@@ -1,6 +1,6 @@
 """Population report must not import another study's wording."""
 import unittest
-from ..population_report import render
+from ..reporting.population_report import render
 
 CARD={'options':['A','B'],'human':[0.5,0.5],'model':[0.6,0.4],'tv_pp':10.0,'people':30,'small_group':False}
 

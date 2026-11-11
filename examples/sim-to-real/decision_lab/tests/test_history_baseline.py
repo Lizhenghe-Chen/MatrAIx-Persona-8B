@@ -1,5 +1,5 @@
 import unittest
-from ..history_baseline import HistoricalProportions
+from ..evaluation.history_baseline import HistoricalProportions
 
 class HistoryTests(unittest.TestCase):
     def row(self,p,options,answer=0,task='q',context='original'):

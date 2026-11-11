@@ -1,5 +1,5 @@
 import unittest
-from ..conditions import shuffled_background,permute_options,restore_probabilities
+from ..core.conditions import shuffled_background,permute_options,restore_probabilities
 
 class ConditionsTests(unittest.TestCase):
     def test_blocks_stay_together_and_splits_do_not_mix(self):

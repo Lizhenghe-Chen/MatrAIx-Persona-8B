@@ -1,5 +1,5 @@
 import unittest
-from ..property_intervals import compare
+from ..evaluation.property_intervals import compare
 
 class PropertyIntervalTests(unittest.TestCase):
     def test_known_improvement_and_separate_person_ids(self):

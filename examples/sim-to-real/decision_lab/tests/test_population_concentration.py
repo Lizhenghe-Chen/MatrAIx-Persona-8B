@@ -1,5 +1,5 @@
 import unittest
-from ..population_concentration import summarize
+from ..evaluation.population_concentration import summarize
 
 class ConcentrationTests(unittest.TestCase):
     def test_argmax_collapse_is_distinct_from_probability_distribution(self):
