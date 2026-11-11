@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 549,
-  "git_bytes": 78885537,
+  "git_file_count": 551,
+  "git_bytes": 78897705,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -44,8 +44,8 @@
     },
     {
       "path": "decision_lab/README.md",
-      "bytes": 15567,
-      "sha256": "b1688e6f472f4106fdbf2f8c35f4a8781becd80e1935dfc42d31117d8b74b0fa",
+      "bytes": 16147,
+      "sha256": "5c51c638e0e998064135468ea6c199802b4bf54d8a65b56521324345fa3ca4e5",
       "storage": "git"
     },
     {
@@ -116,8 +116,8 @@
     },
     {
       "path": "decision_lab/docs/复算与复用指南.md",
-      "bytes": 4944,
-      "sha256": "8c3c857d973c4b87543fbdd012c427574d17b977c2c7b1e63f5ba46749756445",
+      "bytes": 5319,
+      "sha256": "bfd0dbb5a91b27fb3fa6f01a9a012054d1404e42ed277ff73ead6198a5d3e629",
       "storage": "git"
     },
     {
@@ -202,6 +202,12 @@
       "path": "decision_lab/evaluation/execution_quality.py",
       "bytes": 2815,
       "sha256": "22c1e4b3b09fa170378c51f4904ba77c3eed30b88046b47aac86b7e52f3620ea",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/evaluation/execution_snapshot.py",
+      "bytes": 5673,
+      "sha256": "6726241019c0b765d994233c6239ca59d04b8cf9187ac544aa87b6d0101cc571",
       "storage": "git"
     },
     {
@@ -290,8 +296,8 @@
     },
     {
       "path": "decision_lab/reporting/aggregate_report.py",
-      "bytes": 16947,
-      "sha256": "7f2c1235d347fbef4357c5f1e75673b7aa49b3bd0662e8d6884f104a17c5da14",
+      "bytes": 16930,
+      "sha256": "ba4ee9047122382e303ec1065b982dbad9a0a66e4f19971f8f900df08acb9fbb",
       "storage": "git"
     },
     {
@@ -795,7 +801,7 @@
     {
       "path": "decision_lab/tests/test_aggregate_report.py",
       "bytes": 4501,
-      "sha256": "79abbf583f0c658ced885029f9ef6219c50032b8d31fa9278407f2fc6dc4c343",
+      "sha256": "a618f93a488cb4302fb60f3cefb3e44d9dd4c357ddbc97d4bc81d9da0d890e89",
       "storage": "git"
     },
     {
@@ -856,6 +862,12 @@
       "path": "decision_lab/tests/test_end_to_end.py",
       "bytes": 4332,
       "sha256": "037412313224c82c66dcd95627e04fb534fcd6eae88de032e8f3b552c93e314e",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/tests/test_execution_snapshot.py",
+      "bytes": 5557,
+      "sha256": "53e53f6a745c3369bffe4b106c81484cd9474c60b1239d6b8b2c42b1c6def9ea",
       "storage": "git"
     },
     {

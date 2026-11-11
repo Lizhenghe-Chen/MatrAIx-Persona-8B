@@ -55,7 +55,7 @@ def _execution(root):
         units.append(record)
     synthetic=root/'synthetic-formal-v1'
     design=json.loads((synthetic/'manifest.json').read_text())
-    expected=design['people']*design['tasks_per_condition']
+    expected=design['tasks_per_condition']
     for unit in design['units']:
         database=synthetic/(unit['name']+'.sqlite')
         record={'track':'合成人群','unit':unit['name'],'expected':expected,'present':database.exists()}

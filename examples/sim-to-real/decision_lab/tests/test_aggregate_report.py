@@ -20,7 +20,7 @@ def _root(directory):
     (formal/'manifest.json').write_text(json.dumps({'units':[{'name':'rich_test','calls':2}]}))
     _checkpoint(formal/'rich_test.sqlite',2)
     synthetic=directory/'synthetic-formal-v1';synthetic.mkdir()
-    (synthetic/'manifest.json').write_text(json.dumps({'people':1,'tasks_per_condition':2,'units':[{'name':'demographics'}]}))
+    (synthetic/'manifest.json').write_text(json.dumps({'people':7,'tasks_per_condition':2,'units':[{'name':'demographics'}]}))
     _checkpoint(synthetic/'demographics.sqlite',2)
 
 

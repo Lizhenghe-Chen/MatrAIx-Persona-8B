@@ -140,6 +140,15 @@ PYTHONPATH=examples/sim-to-real .venv/bin/python -m decision_lab.reporting.popul
   <群体评分.json> --output <群体报告.html>
 ```
 
+全部单元完成后，先用核验入口确认检查点仍与冻结输入一致，再评分：
+
+```sh
+PYTHONPATH=examples/sim-to-real .venv/bin/python -m decision_lab.evaluation.execution_snapshot \
+  <本机研究目录> --output <核验记录.json>
+```
+
+该入口逐单元重算每个请求的哈希并与检查点比对，同时核对 SQLite 完整性、清单与 seal 哈希、服务身份、完成数与失败原因；任一不符即以非零退出码结束并列明原因。它只证明“跑的是冻结的那套东西、并且跑完了”，不证明科学有效性。
+
 `aggregate_report.py` 把两项个体评分、两项群体评分与运行账目合成一页离线总报告：
 
 ```sh
