@@ -1,6 +1,7 @@
 """Evaluate complete frozen test units only after development calibration freezes."""
 import argparse,json,os
 from pathlib import Path
+from .bundle_diagnostics import summarize as bundle_summary
 from .core import digest,split
 from .checkpoint import read_predictions
 from .baseline_replay import replay
@@ -71,6 +72,7 @@ def evaluate(directory,kind,calibration_path):
         shuffle_diagnostic['comparison']=paired_brier_interval(changed_rows,predictions['shuffled'],predictions['rich'])
     return {'status':'complete_test_primary_brier_only','kind':kind,'prepared_sha256':digest(prepared),
             'calibration_sha256':digest(calibration),'units':provenance,'methods':summaries,'comparisons':comparisons,'per_card':per_card,
+            'bundle_repetition':{'human':bundle_summary(rows),**{name:bundle_summary([{k:v for k,v in r.items() if k!='answer'} for r in rows],p) for name,p in predictions.items()}},
             'choice_diagnostics':{name:choice_diagnostics(card_rows,p) for name,p in predictions.items()},
             'product_choice_shares':{name:summarize(rows,p,kind) for name,p in predictions.items()},
             'subgroups':{name:subgroup_summary(rows,p,protocol['backgrounds']['basic']) for name,p in predictions.items()},

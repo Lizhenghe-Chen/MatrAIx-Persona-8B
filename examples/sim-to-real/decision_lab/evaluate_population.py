@@ -1,6 +1,7 @@
 """Separate-population evaluation with fixed eligible human reference."""
 import argparse,json,os
 from pathlib import Path
+from .bundle_diagnostics import summarize as bundle_summary
 from .core import digest,split
 from .checkpoint import read_predictions
 from .persona_mapping import common_background
@@ -47,6 +48,7 @@ def evaluate(root,kind):
             'manifest_sha256':digest(manifest),'human_people':len({r['person'] for r in human}),
             'synthetic_people':len({r['person'] for r in synthetic}),'individual_accuracy_computed':False,
             'methods':results,'subgroups':subgroup,'primary_distribution_comparison':comparison,
+            'bundle_repetition':{'human':bundle_summary(human),**{name:bundle_summary(synthetic,p) for name,p in predictions.items()}},
             'concentration':{name:concentration(human,synthetic,p) for name,p in predictions.items()},
             'property_comparisons':{label:property_intervals(human,synthetic,predictions[left],predictions['personality'],kind) for label,left in [('add_personality','demographics'),('shuffle_diagnostic','shuffled')]},
             'property_choices':{'human':population_properties(human,kind),**{name:population_properties(synthetic,kind,p) for name,p in predictions.items()}},

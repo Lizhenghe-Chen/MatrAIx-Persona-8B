@@ -27,6 +27,15 @@ def conclusion(data):
         lines.append('<li><strong>选参结果是纯统计模型</strong>：大语言模型权重为 0，不能把这条路线的改善记为 AI 本身的增益。</li>')
     return '<ul>'+''.join(lines)+'</ul>' if lines else '<p>尚无完整的预定比较，不能判断改法是否有效。</p>'
 
+def bundle_section(data,labels):
+    rows=[]
+    for name,value in data.get('bundle_repetition',{}).items():
+        fraction=value['fraction_sharing_complete_pattern']
+        display='无法比较' if fraction is None else f'{100*fraction:.1f}%'
+        label='真人' if name=='human' else labels[name]
+        rows.append(f'<tr><td>{label}</td><td>{value["comparable_people"]}</td><td>{value["incomparable_people"]}</td><td>{display}</td></tr>')
+    return '<section><h2>整份答案是不是重复得太多</h2><p>只比较看到相同商品题组的人，计算其中有多少人与至少另一人给出完全相同的选择模式。模型取概率最大项，概率并列取首项。这个比例不经过权重调整，只是诊断；不同商品都选第一项不会被混成同一份答案。重复不必然错误，应结合真人重复程度阅读，也不能由此证明心理一致性。</p><table><tr><th>方法</th><th>可比较人数</th><th>没有同题组伙伴的人数</th><th>与别人答案模式相同</th></tr>'+''.join(rows)+'</table></section>'
+
 def render(data):
     if data.get('status')!='complete_test_primary_brier_only':raise ValueError('Completed test evidence required')
     esc=lambda x:html.escape(str(x))
@@ -65,6 +74,7 @@ def render(data):
 <section><h2>改法有没有帮助</h2><p>改善为正表示后者误差更低。95% 区间跨过 0，说明这批样本不能明确排除没有改善。采用门槛为相对改善至少 2%，且改善区间完全高于 0。每项比较均按同一受访者配对重抽样 2,000 次。</p><table><tr><th>前后对比</th><th>误差下降</th><th>相对改善</th><th>95% 区间</th><th>门槛</th></tr>{''.join(comparisons)}</table></section>
 <section><h2>具体会选什么</h2><p>绿色是真人比例，紫色是预测概率汇总。属性相同、不能区分两款的题目被排除；这些是选择比例，不是属性的因果效应。</p>{''.join(events)}</section>
 <section><h2>有没有把分歧答成全票</h2><p>取每次预测中概率最大的选项，统计同一商品组合下集中到一个选项的程度。只在至少 20 人的题组中计数；概率并列时取第一个选项，因此同时报告并列次数。没有足够人数的题组不计作零偏差。</p><table><tr><th>方法</th><th>可比较题组</th><th>至少95%同选</th><th>至少99%同选</th><th>全部同选</th><th>概率并列题次</th></tr>{"".join(concentration)}</table></section>
+{bundle_section(data,LABELS)}
 <section><h2>每个商品组合的实际结果</h2><p>商品文字保留原问卷语言；可展开查看所有选项的实际比例。不同研究的商品组合数量不同。</p>{card_sections}</section>
 <section><h2>哪些人群表现不同</h2><p>以下为描述性分析，不从中挑最好的人群替代总体成绩；小样本不作稳定结论。</p>{''.join(subgroup)}</section>
 <section><h2>回到最初的问题：改法是否值得采用</h2>{conclusion(data)}<p>混合预测采用开发样本选定的参数，大语言模型权重为 {100*data['calibration_llm_weight']:.0f}%，其余来自统计模型。它使用过部分真人答案，不能称为冷启动。历史比例查不到相同题面时回退为均匀概率，本次回退 {data['history_unseen_tasks']} 道题，不能据击败这一参照就声称超过统计方法。</p><p>数据核验标识：{esc(data['prepared_sha256'])}。完整来源、题面限制及其他研究结果须与综合报告一起阅读。</p></section></html>'''

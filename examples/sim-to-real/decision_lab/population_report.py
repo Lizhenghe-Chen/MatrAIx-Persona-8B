@@ -3,7 +3,7 @@ import argparse,json,html
 from pathlib import Path
 from .report_sources import section as source_section
 from .card_view import render as card_view
-from .study_report import EVENTS
+from .study_report import EVENTS,bundle_section
 
 LABELS={'demographics':'只匹配年龄与学历','personality':'增加 MatrAIx 合成人格','shuffled':'在同背景人群中打乱人格'}
 
@@ -57,6 +57,7 @@ def render(data):
 <section><h2>整体比例相差多少</h2><p>分布误差越低越好。例如二选一时真人 40% 选甲、虚拟人预测 55%，误差为 15 个百分点。先在每个研究分组内平均商品组合，再按真人样本人数汇总；不把不同商品的 A、B 位置混在一起。</p><table><tr><th>给虚拟人的信息</th><th>分布误差（百分点）</th></tr>{''.join(tables)}</table><p>瑞士家电的这一汇总只作描述，不能代替正式采用判定。</p></section>
 <section><h2>价格、性能和不购买的具体比例</h2><p>绿色表示真人，紫色表示虚拟人预测。保留完整概率汇总，未强行把每人变成一个确定答案。下表分别比较每种选择比例的绝对误差，正数表示更接近真人。区间跨 0 表示改善仍不明确；不作跨属性的合并采用判定，也不解释为价格或性能的因果效应。</p>{property_effects}{''.join(properties)}</section>
 <section><h2>是不是又变成几乎全票</h2><p>仅统计真人和虚拟人都至少有 20 人的相同商品题组。分别看真人分布、平均概率，以及每次只取最大概率选项后的票数。如果只有最后一列集中，问题可能来自强行单选的汇总方式。概率并列时取首项，也会造成位置集中；没有可比较题组不表示没有问题。</p>{concentration_table}</section>
+{bundle_section(data,LABELS)}
 <section><h2>逐题看差在哪里</h2><p>保留原题语言和商品属性。人数较少的组合尤其容易波动。</p>{cards}</section>
 <section><h2>分人群查看</h2><p>这些结果用于发现问题，不从中挑最好的人群代表总体。below_bachelor 表示本科以下；bachelor_plus 表示本科及以上。</p>{''.join(groups)}</section>
 <section><h2>最终应怎样使用</h2><p>{finding}</p><p>区间只衡量重新抽取虚拟人的波动，真人调查比例被当作固定参照，未包括真人抽样误差、模型版本变化或题面转写误差。单项研究不能证明跨行业通用，也不能代表真实购买转化率。请结合个体预测报告与来源审查阅读。</p></section></html>'''
