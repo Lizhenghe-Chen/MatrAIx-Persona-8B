@@ -5,6 +5,7 @@ from .core import digest,split
 from .checkpoint import read_predictions
 from .persona_mapping import common_background
 from .property_intervals import compare as property_intervals
+from .population_concentration import summarize as concentration
 from .product_summary import population_properties
 from .population_scoring import distribution_comparison,paired_population_interval
 
@@ -46,6 +47,7 @@ def evaluate(root,kind):
             'manifest_sha256':digest(manifest),'human_people':len({r['person'] for r in human}),
             'synthetic_people':len({r['person'] for r in synthetic}),'individual_accuracy_computed':False,
             'methods':results,'subgroups':subgroup,'primary_distribution_comparison':comparison,
+            'concentration':{name:concentration(human,synthetic,p) for name,p in predictions.items()},
             'property_comparisons':{label:property_intervals(human,synthetic,predictions[left],predictions['personality'],kind) for label,left in [('add_personality','demographics'),('shuffle_diagnostic','shuffled')]},
             'property_choices':{'human':population_properties(human,kind),**{name:population_properties(synthetic,kind,p) for name,p in predictions.items()}},
             'limits':'Swiss card distributions are descriptive only; Property-choice intervals keep the human reference fixed; no combined adoption claim is generated for them. This file alone is not the full population report.'}

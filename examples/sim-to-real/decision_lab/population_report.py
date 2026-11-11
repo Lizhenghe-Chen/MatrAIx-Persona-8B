@@ -35,6 +35,11 @@ def render(data):
             warning='真人样本少于 20 人，仅作描述。' if card['small_human_group'] else ''
             entries.append(f'<details><summary>商品组合 {number}：误差 {card["tv_pp"]:.2f} 个百分点</summary><p>真人 {card["human_people"]} 人，虚拟人 {card["synthetic_people"]} 人。{warning}</p>{choices}</details>')
         cards.append(f'<details><summary>{LABELS[name]}：全部商品组合</summary>{"".join(entries)}</details>')
+    concentration_rows=[]
+    for name,result in data.get('concentration',{}).items():
+        for threshold,counts in result['thresholds'].items():
+            concentration_rows.append(f'<tr><td>{LABELS[name]}</td><td>{100*float(threshold):.0f}%</td><td>{result["supported_cards"]}</td><td>{counts["human"]}</td><td>{counts["mean_probabilities"]}</td><td>{counts["argmax_votes"]}</td></tr>')
+    concentration_table='<table><tr><th>设置</th><th>同选门槛</th><th>可比较题组</th><th>真人达到门槛</th><th>保留概率</th><th>强行单选</th></tr>'+''.join(concentration_rows)+'</table>'
     effect_rows=[]
     for contrast,events in data.get('property_comparisons',{}).items():
         label='增加合成人格' if contrast=='add_personality' else '打乱人格与原分配比较（诊断）'
@@ -55,6 +60,7 @@ def render(data):
 <section><h2>人群从哪里来，怎样比较</h2><p>真人参照来自原调查中留出的 {data['human_people']} 人。另生成 {data['synthetic_people']} 名虚拟人，匹配研究分组、年龄段和学历的分布，并分配原研究实际出现的商品题面。虚拟人没有配套的真人答案。</p><p>三组使用相同的人群与题面：第一组只给年龄学历；第二组再给生成的人格属性；第三组在相同背景层内打乱整块人格。人格不是对这些真人的实测信息，不能把它写成事实。打乱组是诊断，不是人格的因果效应实验。</p></section>
 <section><h2>整体比例相差多少</h2><p>分布误差越低越好。例如二选一时真人 40% 选甲、虚拟人预测 55%，误差为 15 个百分点。先在每个研究分组内平均商品组合，再按真人样本人数汇总；不把不同商品的 A、B 位置混在一起。</p><table><tr><th>给虚拟人的信息</th><th>分布误差（百分点）</th></tr>{''.join(tables)}</table><p>瑞士家电的这一汇总只作描述，不能代替正式采用判定。</p></section>
 <section><h2>价格、性能和不购买的具体比例</h2><p>绿色表示真人，紫色表示虚拟人预测。保留完整概率汇总，未强行把每人变成一个确定答案。下表分别比较每种选择比例的绝对误差，正数表示更接近真人。区间跨 0 表示改善仍不明确；不作跨属性的合并采用判定，也不解释为价格或性能的因果效应。</p>{property_effects}{''.join(properties)}</section>
+<section><h2>是不是又变成几乎全票</h2><p>仅统计真人和虚拟人都至少有 20 人的相同商品题组。分别看真人分布、平均概率，以及每次只取最大概率选项后的票数。如果只有最后一列集中，问题可能来自强行单选的汇总方式。概率并列时取首项，也会造成位置集中；没有可比较题组不表示没有问题。</p>{concentration_table}</section>
 <section><h2>逐题看差在哪里</h2><p>保留原题语言和商品属性。人数较少的组合尤其容易波动。</p>{''.join(cards)}</section>
 <section><h2>分人群查看</h2><p>这些结果用于发现问题，不从中挑最好的人群代表总体。below_bachelor 表示本科以下；bachelor_plus 表示本科及以上。</p>{''.join(groups)}</section>
 <section><h2>最终应怎样使用</h2><p>{finding}</p><p>区间只衡量重新抽取虚拟人的波动，真人调查比例被当作固定参照，未包括真人抽样误差、模型版本变化或题面转写误差。单项研究不能证明跨行业通用，也不能代表真实购买转化率。请结合个体预测报告与来源审查阅读。</p></section></html>'''
