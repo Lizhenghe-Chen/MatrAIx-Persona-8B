@@ -36,3 +36,11 @@ class RunnerTests(unittest.TestCase):
             result=run(s,f,c,Path(d)/'calls.sqlite','test',lambda *a:self.fail('Must not call after deadline'))
             self.assertEqual(result['states'],{})
             self.assertEqual(result['stop_reason'],'deadline')
+    def test_generated_population_needs_no_fake_answer(self):
+        s,f,c=self.fixtures();s.update(evaluation_mode='synthetic_population',person_source='generated')
+        for r in s['rows']:r.pop('answer')
+        f['input_sha256']=digest(s)
+        def transport(body,endpoint):
+            return {'model':'deepseek-v4-pro','choices':[{'finish_reason':'stop','message':{'content':'{"probabilities":[0.5,0.5]}'}}]}
+        with tempfile.TemporaryDirectory() as d:
+            self.assertTrue(run(s,f,c,Path(d)/'calls.sqlite','test',transport)['complete'])

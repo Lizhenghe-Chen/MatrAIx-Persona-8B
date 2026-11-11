@@ -13,7 +13,10 @@ GATES=('license_cloud_use','question_mapping','background_timing','author_statis
 
 
 def run(study, seal, config, database, phase, transport=send):
-    validate(study['rows'])
+    population=study.get('evaluation_mode')=='synthetic_population'
+    if population and study.get('person_source')!='generated':
+        raise ValueError('Synthetic population requires explicit generated provenance')
+    validate(study['rows'],require_answers=not population)
     if not all(study.get('audit',{}).get(k) is True for k in GATES):
         raise ValueError('Data admission incomplete')
     if seal['input_sha256']!=digest(study) or seal['config_sha256']!=digest(config):

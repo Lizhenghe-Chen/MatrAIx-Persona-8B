@@ -18,7 +18,7 @@ def probabilities(values, n):
     return values
 
 
-def validate(rows):
+def validate(rows, *, require_answers=True):
     keys = set()
     for r in rows:
         key = (r['person'], r['task'])
@@ -27,8 +27,11 @@ def validate(rows):
         keys.add(key)
         if len(r['options']) < 2 or len(set(r['options'])) != len(r['options']):
             raise ValueError('Invalid options')
-        if r['answer'] not in range(len(r['options'])):
-            raise ValueError('Invalid answer')
+        if require_answers:
+            if r.get('answer') not in range(len(r['options'])):
+                raise ValueError('Invalid answer')
+        elif 'answer' in r:
+            raise ValueError('Synthetic population tasks must not contain individual answers')
         if not r['question'] or not r['stratum']:
             raise ValueError('Missing question or design stratum')
     if not rows:

@@ -6,7 +6,7 @@
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
   "git_file_count": 501,
-  "git_bytes": 78715030,
+  "git_bytes": 78716463,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -116,8 +116,8 @@
     },
     {
       "path": "decision_lab/core.py",
-      "bytes": 2803,
-      "sha256": "c1c3b5396633744540b926a616a1c0d4ad505611578a6e97376cd94e8a506738",
+      "bytes": 2991,
+      "sha256": "19e898d21b06f8b8b1e7e4927eea6da89a9bac5ca32f552b6222497978dff269",
       "storage": "git"
     },
     {
@@ -374,8 +374,8 @@
     },
     {
       "path": "decision_lab/runner.py",
-      "bytes": 5094,
-      "sha256": "1c6335b51b142671ba11f68145057f71eba5a4d9b0c02e36f56a3b4782b1bd00",
+      "bytes": 5344,
+      "sha256": "c6c10738d270de5ec241101f9e790e72fc1624f6b8f91870161b6629d40066a9",
       "storage": "git"
     },
     {
@@ -542,8 +542,8 @@
     },
     {
       "path": "decision_lab/test_core.py",
-      "bytes": 1038,
-      "sha256": "b76e35deb658de7f37cf79b153a45ce715789b0ec99a455e48685c51f872d134",
+      "bytes": 1472,
+      "sha256": "ff194dcbd895b6850bf5bed1bd06538d902cbf6dabd333309630aadebf7f4fce",
       "storage": "git"
     },
     {
@@ -590,8 +590,8 @@
     },
     {
       "path": "decision_lab/test_runner.py",
-      "bytes": 2460,
-      "sha256": "95d8b00a8e195fc1056ee376e5521469b7ef8536b8e38f8ca541ca8dd1c3c88c",
+      "bytes": 3021,
+      "sha256": "aca7f60d699ef2476205ef87c1b522efc75420821a240ddccd791b06e64ef9c1",
       "storage": "git"
     },
     {

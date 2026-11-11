@@ -19,3 +19,11 @@ class CoreTests(unittest.TestCase):
         self.assertAlmostEqual(tv([.2,.8],[.5,.5]),.3)
 
 if __name__=='__main__': unittest.main()
+
+class SyntheticValidationTests(unittest.TestCase):
+    def test_target_free_is_explicit(self):
+        from .core import validate
+        row={'person':'synthetic-1','task':'q','options':['a','b'],'question':'choose','stratum':'s'}
+        validate([row],require_answers=False)
+        with self.assertRaises(ValueError):validate([row])
+        with self.assertRaises(ValueError):validate([{**row,'answer':0}],require_answers=False)
