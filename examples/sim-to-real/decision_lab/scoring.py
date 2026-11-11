@@ -40,7 +40,7 @@ def score(rows, predictions):
         mass=sum(w/counts[r['person']] for r,_,w in items)
         human=[sum(w/counts[r['person']] for r,_,w in items if r['answer']==i)/mass for i in range(len(options))]
         model=[sum(w*p[i]/counts[r['person']] for r,p,w in items)/mass for i in range(len(options))]
-        result['groups'][name]={'options':options,'human':human,'model':model,'tv_pp':100*tv(human,model)}
+        result['groups'][name]={'options':options,'human':human,'model':model,'tv_pp':100*tv(human,model),'people':len(counts),'tasks':len(items),'small_group':len(counts)<20}
     result['mean_tv_pp']=sum(x['tv_pp'] for x in result['groups'].values())/len(groups)
     return result
 

@@ -6,7 +6,7 @@ from .checkpoint import read_predictions
 from .baseline_replay import replay
 from .calibration import apply
 from .history_baseline import HistoricalProportions
-from .scoring import paired_brier_interval
+from .scoring import paired_brier_interval,score
 from .product_summary import summarize
 from .subgroups import summarize as subgroup_summary
 
@@ -54,6 +54,8 @@ def evaluate(directory,kind,calibration_path):
     for k,p in predictions['rich'].items():
         index=max(range(len(p)),key=p.__getitem__)
         predictions['probability_argmax'][k]=[int(i==index) for i in range(len(p))]
+    card_rows=[{**r,'score_group':r.get('score_group',r.get('group'))} for r in rows]
+    per_card={name:score(card_rows,p)['groups'] for name,p in predictions.items()}
     summaries={}
     for name,p in predictions.items():
         result=paired_brier_interval(rows,p,p,repeats=1)
@@ -67,7 +69,7 @@ def evaluate(directory,kind,calibration_path):
     if changed_rows:
         shuffle_diagnostic['comparison']=paired_brier_interval(changed_rows,predictions['shuffled'],predictions['rich'])
     return {'status':'complete_test_primary_brier_only','kind':kind,'prepared_sha256':digest(prepared),
-            'calibration_sha256':digest(calibration),'units':provenance,'methods':summaries,'comparisons':comparisons,
+            'calibration_sha256':digest(calibration),'units':provenance,'methods':summaries,'comparisons':comparisons,'per_card':per_card,
             'product_choice_shares':{name:summarize(rows,p,kind) for name,p in predictions.items()},
             'subgroups':{name:subgroup_summary(rows,p,protocol['backgrounds']['basic']) for name,p in predictions.items()},
             'history_unseen_tasks':sum(n==0 for n in support.values()),
