@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 505,
-  "git_bytes": 78728958,
+  "git_file_count": 507,
+  "git_bytes": 78733045,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -523,9 +523,21 @@
       "storage": "git"
     },
     {
+      "path": "decision_lab/synthetic_pilot.py",
+      "bytes": 2571,
+      "sha256": "53700dc2768ec9312cc491ab7c32b78cb2d43cd92bf751df3b1afd9423b412c5",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/synthetic_prepare.py",
       "bytes": 3166,
       "sha256": "ddf1659c008f88514f026cd50fb9ce91c7ccc0a9af6f2742f13d3aa730219a31",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/synthetic_run.py",
+      "bytes": 1516,
+      "sha256": "8e15b8047048b9271ac40be9936a13554d88a70bdb5aa0bce411550892f830f1",
       "storage": "git"
     },
     {
