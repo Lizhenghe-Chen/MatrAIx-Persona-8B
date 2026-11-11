@@ -24,7 +24,7 @@ def evaluate(directory,kind,calibration_path):
     assignment=split(prepared['rows'])
     rows=[r for r in prepared['rows'] if assignment[r['person']]=='test']
     keys={(r['person'],r['task']) for r in rows}
-    predictions={};provenance={}
+    predictions={};provenance={};changed_people=set()
     for name in ['none','basic','rich','shuffled','single']:
         unit=name+'_test';study=read(formal/(unit+'-study.json'))
         config=read(formal/(unit+'-config.json'));seal=read(formal/(unit+'-seal.json'))
@@ -33,6 +33,13 @@ def evaluate(directory,kind,calibration_path):
         reference={(r['person'],r['task']):r for r in rows}
         for r in observed:
             original=reference[(r['person'],r['task'])]
+            if name=='shuffled':
+                basic=protocol['backgrounds']['basic']
+                additional=[f for f in protocol['backgrounds']['rich'] if f not in basic]
+                if any(r['background'].get(f,'unknown')!=original['background'].get(f,'unknown') for f in basic):
+                    raise ValueError('Shuffling changed basic background')
+                if any(r['background'].get(f,'unknown')!=original['background'].get(f,'unknown') for f in additional):
+                    changed_people.add(r['person'])
             for field in ['options','answer','question','context','stratum']:
                 if r[field]!=original[field]:raise ValueError('Test task mapping differs')
         predictions[name]=p
@@ -54,12 +61,18 @@ def evaluate(directory,kind,calibration_path):
     contrasts=[('none','basic'),('basic','rich'),('shuffled','rich'),('single','rich'),
                ('probability_argmax','rich'),('statistics_rich','rich'),('rich','calibrated'),('statistics_rich','calibrated')]
     comparisons={a+'__to__'+b:paired_brier_interval(rows,predictions[a],predictions[b]) for a,b in contrasts}
+    changed_rows=[r for r in rows if r['person'] in changed_people]
+    shuffle_diagnostic={'changed_people':len(changed_people),'unchanged_people':len({r['person'] for r in rows})-len(changed_people),
+                        'interpretation':'Actual changed content only; descriptive diagnostic, not a new primary cohort.'}
+    if changed_rows:
+        shuffle_diagnostic['comparison']=paired_brier_interval(changed_rows,predictions['shuffled'],predictions['rich'])
     return {'status':'complete_test_primary_brier_only','kind':kind,'prepared_sha256':digest(prepared),
             'calibration_sha256':digest(calibration),'units':provenance,'methods':summaries,'comparisons':comparisons,
             'product_choice_shares':{name:summarize(rows,p,kind) for name,p in predictions.items()},
             'subgroups':{name:subgroup_summary(rows,p,protocol['backgrounds']['basic']) for name,p in predictions.items()},
             'history_unseen_tasks':sum(n==0 for n in support.values()),
             'calibration_llm_weight':calibration['selection']['llm_weight'],
+            'shuffle_changed_content_diagnostic':shuffle_diagnostic,
             'limitations':['This file is the primary individual-prediction analysis, not the full report.',
                           'Single-choice and argmax are point predictions; their Brier scores also measure lost uncertainty.',
                           'No synthetic-persona or cross-study conclusion follows from this file.']}
