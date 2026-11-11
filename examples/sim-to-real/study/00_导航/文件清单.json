@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 535,
-  "git_bytes": 78819932,
+  "git_file_count": 537,
+  "git_bytes": 78823909,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -58,6 +58,12 @@
       "path": "decision_lab/__main__.py",
       "bytes": 29,
       "sha256": "cf7390a2508a0fcad4777a4a629fc5212ab655cb45845975995f835676a834e3",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/adoption_summary.py",
+      "bytes": 2889,
+      "sha256": "913717d2ea5b3293d191b5b80ab47ca9fc12d543bd543475dc297e8f3c3c6fa5",
       "storage": "git"
     },
     {
@@ -664,6 +670,12 @@
       "path": "decision_lab/technical_pilot.py",
       "bytes": 4117,
       "sha256": "97eb38bf6ff7acec0b7a2135c29629aaeb458f6fa2a0d82edc881280dedf86f3",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/test_adoption_summary.py",
+      "bytes": 1088,
+      "sha256": "0e66af85bdad1785f572701ac8cced0db2e2e93c86f2fd33a4a9c62211308a20",
       "storage": "git"
     },
     {
