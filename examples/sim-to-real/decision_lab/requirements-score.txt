@@ -1,0 +1,4 @@
+# Observed scoring environment; Python 3.12. No provider SDK required.
+numpy==2.5.0
+scipy==1.18.0
+scikit-learn==1.9.1

@@ -54,7 +54,12 @@ def main():
         with args.output.open('x') as f:
             json.dump(result, f, ensure_ascii=False, indent=2)
     elif args.command == 'report':
-        from .report import render
+        if doc.get('status')=='complete_test_primary_brier_only':
+            from .study_report import render
+        elif doc.get('status')=='complete_population_distribution_analysis':
+            from .population_report import render
+        else:
+            from .report import render
         if not args.output:
             parser.error('--output required')
         with args.output.open('x') as f:

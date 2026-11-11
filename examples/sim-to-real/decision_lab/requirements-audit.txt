@@ -1,0 +1,9 @@
+# Data adapters and source audits; extends scoring dependencies.
+-r requirements-score.txt
+pandas==3.0.3
+openpyxl==3.1.5
+pyreadstat==1.3.7
+pyarrow==24.0.0
+pypdf==7.0.1
+requests==2.34.2
+pyreadr==0.5.9
