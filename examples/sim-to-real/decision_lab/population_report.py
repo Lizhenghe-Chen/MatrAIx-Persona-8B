@@ -35,6 +35,14 @@ def render(data):
             warning='真人样本少于 20 人，仅作描述。' if card['small_human_group'] else ''
             entries.append(f'<details><summary>商品组合 {number}：误差 {card["tv_pp"]:.2f} 个百分点</summary><p>真人 {card["human_people"]} 人，虚拟人 {card["synthetic_people"]} 人。{warning}</p>{choices}</details>')
         cards.append(f'<details><summary>{LABELS[name]}：全部商品组合</summary>{"".join(entries)}</details>')
+    effect_rows=[]
+    for contrast,events in data.get('property_comparisons',{}).items():
+        label='增加合成人格' if contrast=='add_personality' else '打乱人格与原分配比较（诊断）'
+        for event,result in events.items():
+            interval=result['improvement_95_ci']
+            ci='覆盖不足，不报告区间' if interval is None else f'[{interval[0]:+.2f}, {interval[1]:+.2f}]'
+            effect_rows.append(f'<tr><td>{label}</td><td>{EVENTS[event]}</td><td>{result["absolute_error_reduction_pp"]:+.2f}</td><td>{ci}</td></tr>')
+    property_effects='<table><tr><th>比较</th><th>选择比例</th><th>误差减少（百分点）</th><th>95% 区间</th></tr>'+''.join(effect_rows)+'</table>' if effect_rows else '<p>本文件未包含属性比例区间，不能据比例点估计宣布改善。</p>'
     groups=[]
     for field,values in data['subgroups'].items():
         rows=''.join(f'<tr><td>{esc(value)}</td><td>{LABELS[name]}</td><td>{result["mean_tv_pp"]:.2f}</td></tr>' for value,methods in values.items() for name,result in methods.items())
@@ -46,7 +54,7 @@ def render(data):
 {source_section(data['kind'])}
 <section><h2>人群从哪里来，怎样比较</h2><p>真人参照来自原调查中留出的 {data['human_people']} 人。另生成 {data['synthetic_people']} 名虚拟人，匹配研究分组、年龄段和学历的分布，并分配原研究实际出现的商品题面。虚拟人没有配套的真人答案。</p><p>三组使用相同的人群与题面：第一组只给年龄学历；第二组再给生成的人格属性；第三组在相同背景层内打乱整块人格。人格不是对这些真人的实测信息，不能把它写成事实。打乱组是诊断，不是人格的因果效应实验。</p></section>
 <section><h2>整体比例相差多少</h2><p>分布误差越低越好。例如二选一时真人 40% 选甲、虚拟人预测 55%，误差为 15 个百分点。先在每个研究分组内平均商品组合，再按真人样本人数汇总；不把不同商品的 A、B 位置混在一起。</p><table><tr><th>给虚拟人的信息</th><th>分布误差（百分点）</th></tr>{''.join(tables)}</table><p>瑞士家电的这一汇总只作描述，不能代替正式采用判定。</p></section>
-<section><h2>价格、性能和不购买的具体比例</h2><p>绿色表示真人，紫色表示虚拟人预测。保留完整概率汇总，未强行把每人变成一个确定答案。这些比例没有单独的区间和采用判定，也不是价格或性能的因果效应。</p>{''.join(properties)}</section>
+<section><h2>价格、性能和不购买的具体比例</h2><p>绿色表示真人，紫色表示虚拟人预测。保留完整概率汇总，未强行把每人变成一个确定答案。下表分别比较每种选择比例的绝对误差，正数表示更接近真人。区间跨 0 表示改善仍不明确；不作跨属性的合并采用判定，也不解释为价格或性能的因果效应。</p>{property_effects}{''.join(properties)}</section>
 <section><h2>逐题看差在哪里</h2><p>保留原题语言和商品属性。人数较少的组合尤其容易波动。</p>{''.join(cards)}</section>
 <section><h2>分人群查看</h2><p>这些结果用于发现问题，不从中挑最好的人群代表总体。below_bachelor 表示本科以下；bachelor_plus 表示本科及以上。</p>{''.join(groups)}</section>
 <section><h2>最终应怎样使用</h2><p>{finding}</p><p>区间只衡量重新抽取虚拟人的波动，真人调查比例被当作固定参照，未包括真人抽样误差、模型版本变化或题面转写误差。单项研究不能证明跨行业通用，也不能代表真实购买转化率。请结合个体预测报告与来源审查阅读。</p></section></html>'''
