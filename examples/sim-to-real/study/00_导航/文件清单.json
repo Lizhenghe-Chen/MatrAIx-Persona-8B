@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 479,
-  "git_bytes": 78662590,
+  "git_file_count": 481,
+  "git_bytes": 78665203,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -67,6 +67,18 @@
       "storage": "git"
     },
     {
+      "path": "decision_lab/baseline-replay-check.json",
+      "bytes": 1204,
+      "sha256": "d0f41158b1dba418a242729575d359211f89af4e2c5642422c934c75b56df634",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/baseline_replay.py",
+      "bytes": 1876,
+      "sha256": "d94ff2284b6c7a315079082d37168798d1437f089d0d3393be5ba70827c12118",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/baselines.py",
       "bytes": 3437,
       "sha256": "69db3e8963fa6b82113912a44e6da35e71c39375f3a9709dd99bfde931031c1b",
@@ -74,8 +86,8 @@
     },
     {
       "path": "decision_lab/calibrate_study.py",
-      "bytes": 2996,
-      "sha256": "4801045c8b40728f5a34ee0e4b5475cc5404e823a2393880a50533c8acd914db",
+      "bytes": 2529,
+      "sha256": "8e9dc988da4cf7adaf78aa2eb8fef596bd7712a7a0fe244aad01ca1c555de670",
       "storage": "git"
     },
     {

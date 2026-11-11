@@ -1,0 +1,40 @@
+{
+  "dryer-text-v1": {
+    "source_sha256": "0d6bef972b86aad44345ce049814c92c64c721d12e8cf2a954e1fe8777e1723b",
+    "baseline_sha256": "78d13d648b7ec3491524448d2cc2af970480b3666789a147541008770513191b",
+    "conditions": {
+      "none": {
+        "replayed_development_brier": 0.5294752127784202,
+        "matches_saved": true
+      },
+      "basic": {
+        "replayed_development_brier": 0.5286347242658865,
+        "matches_saved": true
+      },
+      "rich": {
+        "replayed_development_brier": 0.5391090227166108,
+        "matches_saved": true
+      }
+    },
+    "test_scored": false
+  },
+  "swiss-appliances-v1": {
+    "source_sha256": "837ee743ed9dcb567be9df6b41e528f28e0a66666dc31c23798064b2b82d0fe9",
+    "baseline_sha256": "2da54ecd48147bac4cc21d37cce85f5fdb81fddae76a4d97d39a44616942a685",
+    "conditions": {
+      "none": {
+        "replayed_development_brier": 0.2795346739749399,
+        "matches_saved": true
+      },
+      "basic": {
+        "replayed_development_brier": 0.2771260514049784,
+        "matches_saved": true
+      },
+      "rich": {
+        "replayed_development_brier": 0.28340772779096846,
+        "matches_saved": true
+      }
+    },
+    "test_scored": false
+  }
+}
