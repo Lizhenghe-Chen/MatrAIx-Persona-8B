@@ -21,6 +21,11 @@ def render(data):
             chart=''.join(f'<div class="barrow"><span>{label}</span><div class="track"><div class="bar {cls}" style="width:{100*share:.3f}%"></div></div><b>{100*share:.1f}%</b></div>' for label,share,cls in [('真人',v['human_share'],'human'),('预测',v['model_probability_share'],'')])
             lines.append(f'<h4>{EVENTS[key]}</h4>{chart}<p>{v["people"]} 人，{v["eligible_tasks"]} 道有效题；预测减真人：{v["signed_gap_pp"]:+.1f} 个百分点。</p>')
         events.append(f'<details><summary>{LABELS[method]}</summary>{"".join(lines)}</details>')
+    concentration=[]
+    for method,d in data.get('choice_diagnostics',{}).items():
+        counts=[d['concentration_thresholds'][t]['groups_with_at_least_20_people'] for t in ['0.95','0.99','1.0']]
+        supported=sum(g['people']>=20 for g in d['groups'].values())
+        concentration.append(f'<tr><td>{LABELS[method]}</td><td>{supported}</td><td>{counts[0]}</td><td>{counts[1]}</td><td>{counts[2]}</td><td>{d["argmax_ties"]}</td></tr>')
     card_sections=[]
     for method,cards in data.get('per_card',{}).items():
         items=[]
@@ -39,6 +44,7 @@ def render(data):
 <section><h2>先看模型离真人有多远</h2><p>以下是概率预测误差（Brier 分数），越低越好；0 表示每次都把全部概率给了真人实际选择。它不是错误百分比。直接单选会丢掉不确定性，因此还应结合单选正确率阅读。</p>{bars}</section>
 <section><h2>改法有没有帮助</h2><p>改善为正表示后者误差更低。95% 区间跨过 0，说明这批样本不能明确排除没有改善。采用门槛为相对改善至少 2%，且改善区间完全高于 0。每项比较均按同一受访者配对重抽样 2,000 次。</p><table><tr><th>前后对比</th><th>误差下降</th><th>相对改善</th><th>95% 区间</th><th>门槛</th></tr>{''.join(comparisons)}</table></section>
 <section><h2>具体会选什么</h2><p>绿色是真人比例，紫色是预测概率汇总。属性相同、不能区分两款的题目被排除；这些是选择比例，不是属性的因果效应。</p>{''.join(events)}</section>
+<section><h2>有没有把分歧答成全票</h2><p>取每次预测中概率最大的选项，统计同一商品组合下集中到一个选项的程度。只在至少 20 人的题组中计数；概率并列时取第一个选项，因此同时报告并列次数。没有足够人数的题组不计作零偏差。</p><table><tr><th>方法</th><th>可比较题组</th><th>至少95%同选</th><th>至少99%同选</th><th>全部同选</th><th>概率并列题次</th></tr>{"".join(concentration)}</table></section>
 <section><h2>每个商品组合的实际结果</h2><p>商品文字保留原问卷语言；可展开查看所有选项的实际比例。不同研究的商品组合数量不同。</p>{"".join(card_sections)}</section>
 <section><h2>哪些人群表现不同</h2><p>以下为描述性分析，不从中挑最好的人群替代总体成绩；小样本不作稳定结论。</p>{''.join(subgroup)}</section>
 <section><h2>如何理解结论</h2><p>混合预测采用开发样本选定的参数，模型权重为 {100*data['calibration_llm_weight']:.0f}%。它使用过部分真人答案，不能称为冷启动。历史比例查不到相同题面时回退为均匀概率，本次回退 {data['history_unseen_tasks']} 道题，不能据击败这一参照就声称超过统计方法。</p><p>数据核验标识：{esc(data['prepared_sha256'])}。完整来源、题面限制及其他研究结果须与综合报告一起阅读。</p></section></html>'''
