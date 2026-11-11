@@ -1,6 +1,7 @@
 """Offline reader-facing report from completed, provenance-bearing test analysis."""
 import argparse,json,html
 from pathlib import Path
+from .report_sources import section as source_section
 
 LABELS={'none':'AI：没有个人背景','basic':'AI：年龄与学历','rich':'AI：增加贴题真实背景','shuffled':'AI：错配附加背景','single':'AI：直接选一个答案','probability_argmax':'AI：从概率中取最大项','statistics_none':'统计模型：商品与情境','statistics_basic':'统计模型：加年龄学历','statistics_rich':'统计模型：加贴题背景','uniform':'各选项机会均等','history':'相同题目的历史比例','calibrated':'开发阶段选定的预测方案'}
 EVENTS={'lower_price':'选择较便宜款','higher_customer_rating':'选择评分较高款','longer_functional_life':'选择寿命较长款','refusal':'两款都不买'}
@@ -62,6 +63,7 @@ def render(data):
 <style>body{{font:17px/1.7 system-ui,sans-serif;max-width:1100px;margin:auto;padding:28px;color:#20352f;background:#fafaf6}}h1,h2{{line-height:1.3}}section,details{{background:white;padding:22px;margin:20px 0;border:1px solid #d9e1db;border-radius:12px}}.barrow{{display:grid;grid-template-columns:minmax(160px,32%) 1fr 70px;align-items:center;gap:12px;margin:12px 0}}.track{{background:#e7ece8;height:20px;border-radius:5px}}.bar{{background:#6651a8;height:100%;border-radius:5px}}.human{{background:#26745d}}table{{border-collapse:collapse;width:100%;font-size:15px}}td,th{{padding:10px;border-bottom:1px solid #ddd;text-align:left}}summary{{cursor:pointer;font-weight:bold}}.note{{border-left:5px solid #b98525;padding:14px;background:#fff4db}}@media(max-width:650px){{body{{padding:12px}}table{{display:block;overflow:auto}}.barrow{{grid-template-columns:125px 1fr 55px;font-size:14px}}}}</style>
 <h1>{title}：正式测试结果</h1><p class="note">本页是一项研究的个体预测结果。不能单独据此宣布跨研究成功，也不代表合成人群实验的成绩。</p>
 <section><h2>先说结论</h2>{conclusion(data)}<p>这里的“有效”是对未参与调参的真人答案预测得更准，不是文字更像真人，也不是证明实际销量会提高。没有达到门槛不等于证明方法永远无效。</p></section>
+{source_section(data['kind'])}
 <section><h2>这次究竟怎么比</h2><p>先把真人按人分成三份：约六成用来建立统计模型，两成用来选择校准参数，最后两成只用来考试。同一个人的多道选择题始终在同一份里。AI 看题目和允许提供的背景，看不到这个人的正确答案。</p><p>“真实背景”来自原调查记录，并非 AI 猜出来的人设。给多少信息是实验变量：先不给背景，再给年龄学历，再增加与商品有关的实测信息。错配组则保留年龄学历，把附加背景换成可比人群中别人的背景，用于检查信息是否真正有预测贡献；这不是人格的因果实验。</p><p>统计模型和混合预测使用了训练或开发样本的真人答案。纯 AI 路线不使用本研究答案来调参，但不能排除底层模型过去见过公开研究。因此，这几条路线会分别解读。</p></section>
 <section><h2>几个词，一次说明白</h2><dl><dt><strong>直接单选</strong></dt><dd>让 AI 只选一款商品，相当于只交一个答案。</dd><dt><strong>保留概率</strong></dt><dd>让 AI 给所有选项分配机会。例如甲 60%、乙 30%、都不买 10%。汇总人群时保留这些不确定性，不把每个人都强行变成甲。</dd><dt><strong>概率中取最大项</strong></dt><dd>还是上面的同一份预测，但最终只取甲。与保留概率比较，检查差别是否来自汇总方式，而不是换了模型。</dd><dt><strong>历史比例</strong></dt><dd>查训练样本中看到相同题面的人各选了什么。例如十人里六人选甲，就预测甲的机会为 60%。没有相同题面时，本实验回退为各选项机会均等。</dd><dt><strong>统计模型</strong></dt><dd>用训练样本学习价格、商品属性和背景与选择的关系，再预测没有参加训练的人。它不是大语言模型，也不是直接抄测试答案。</dd><dt><strong>分布误差与百分点</strong></dt><dd>比较整个人群各选项的占比。二选一时，真人 40% 选甲、预测 55% 选甲，分布误差就是 15 个百分点；它与逐人是否猜对是两回事。</dd></dl></section>
 <section><h2>先看模型离真人有多远</h2><p>以下是概率预测误差（Brier 分数），越低越好；0 表示每次都把全部概率给了真人实际选择。它不是错误百分比。直接单选会丢掉不确定性，因此还应结合单选正确率阅读。</p>{bars}</section>

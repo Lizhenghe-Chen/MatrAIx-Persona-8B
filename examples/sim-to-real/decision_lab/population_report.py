@@ -1,6 +1,7 @@
 """Offline population report; never imply synthetic/real individual pairing."""
 import argparse,json,html
 from pathlib import Path
+from .report_sources import section as source_section
 from .study_report import EVENTS
 
 LABELS={'demographics':'只匹配年龄与学历','personality':'增加 MatrAIx 合成人格','shuffled':'在同背景人群中打乱人格'}
@@ -42,6 +43,7 @@ def render(data):
     return f'''<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>合成人群：能否复现真人选择</title>
 <style>body{{font:17px/1.7 system-ui;max-width:1050px;margin:auto;padding:24px;background:#fafaf6;color:#20352f}}section,details{{background:white;border:1px solid #d9e1db;border-radius:10px;padding:18px;margin:18px 0}}summary{{cursor:pointer;font-weight:bold}}table{{width:100%;border-collapse:collapse}}td,th{{text-align:left;padding:10px;border-bottom:1px solid #ddd}}.row{{display:grid;grid-template-columns:110px 1fr 70px;gap:10px;align-items:center}}.track{{background:#e7ece8;height:20px}}.bar{{height:100%;background:#6651a8}}.human{{background:#26745d}}@media(max-width:600px){{body{{padding:10px}}table{{display:block;overflow:auto}}}}</style>
 <h1>虚拟人群，能否选出接近真人的结果？</h1><section><h2>先说结论</h2><p>{finding}</p><p>本页只评价人群比例，不计算“这个虚拟人猜中了哪个真人”。它也不能证明虚拟人的人格是真人的实际人格。</p></section>
+{source_section(data['kind'])}
 <section><h2>人群从哪里来，怎样比较</h2><p>真人参照来自原调查中留出的 {data['human_people']} 人。另生成 {data['synthetic_people']} 名虚拟人，匹配研究分组、年龄段和学历的分布，并分配原研究实际出现的商品题面。虚拟人没有配套的真人答案。</p><p>三组使用相同的人群与题面：第一组只给年龄学历；第二组再给生成的人格属性；第三组在相同背景层内打乱整块人格。人格不是对这些真人的实测信息，不能把它写成事实。打乱组是诊断，不是人格的因果效应实验。</p></section>
 <section><h2>整体比例相差多少</h2><p>分布误差越低越好。例如二选一时真人 40% 选甲、虚拟人预测 55%，误差为 15 个百分点。先在每个研究分组内平均商品组合，再按真人样本人数汇总；不把不同商品的 A、B 位置混在一起。</p><table><tr><th>给虚拟人的信息</th><th>分布误差（百分点）</th></tr>{''.join(tables)}</table><p>瑞士家电的这一汇总只作描述，不能代替正式采用判定。</p></section>
 <section><h2>价格、性能和不购买的具体比例</h2><p>绿色表示真人，紫色表示虚拟人预测。保留完整概率汇总，未强行把每人变成一个确定答案。这些比例没有单独的区间和采用判定，也不是价格或性能的因果效应。</p>{''.join(properties)}</section>
