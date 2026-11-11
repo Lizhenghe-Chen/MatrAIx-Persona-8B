@@ -2,15 +2,25 @@
 import json,html
 
 
-def render(methods,labels):
-    safe={}
+def render(methods,labels,limit=None):
+    """Interactive viewer. limit keeps the largest groups so the page stays openable."""
+    safe={};truncated={}
     for name,cards in methods.items():
+        if limit is None or len(cards)<=limit:
+            chosen=cards;truncated[name]=0
+        else:
+            ranked=sorted(range(len(cards)),key=lambda i:(-(cards[i].get('people') or cards[i].get('human_people') or 0),i))
+            chosen=[cards[i] for i in ranked[:limit]];truncated[name]=len(cards)-limit
         safe[name]=[{'options':c['options'],'human':c['human'],'model':c['model'],
                      'tv_pp':c['tv_pp'],'people':c.get('people',c.get('human_people')),
-                     'small':c.get('small_group',c.get('small_human_group',False))} for c in cards]
+                     'small':c.get('small_group',c.get('small_human_group',False))} for c in chosen]
     payload=json.dumps(safe,ensure_ascii=False).replace('<','\\u003c').replace('>','\\u003e').replace('&','\\u0026')
     options=''.join(f'<option value="{html.escape(k,quote=True)}">{html.escape(labels[k])}</option>' for k in safe)
-    return '''<div id="choice-card-view"><label>选择预测设置 <select aria-label="预测设置">'''+options+'''</select></label>
+    dropped=sum(truncated.values())
+    note=('' if not dropped else
+          f'<p>逐题图只展示每组真人样本量最大的 {limit} 个商品组合（共省略 {dropped} 个较小的组合）。'
+          '完整分组数字保存在分析 JSON 中，未在此页省略。</p>')
+    return note+'''<div id="choice-card-view"><label>选择预测设置 <select aria-label="预测设置">'''+options+'''</select></label>
 <div><button type="button" data-step="-1">上一页</button> <span role="status"></span> <button type="button" data-step="1">下一页</button></div><div class="card-list"></div>
 <noscript>逐题图表需要本地浏览器启用 JavaScript，不联网；完整数字同时保存在分析 JSON 中。</noscript></div>
 <script type="application/json" id="choice-card-data">'''+payload+'''</script>

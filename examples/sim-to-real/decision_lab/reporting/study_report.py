@@ -36,7 +36,7 @@ def bundle_section(data,labels):
         rows.append(f'<tr><td>{label}</td><td>{value["comparable_people"]}</td><td>{value["incomparable_people"]}</td><td>{display}</td></tr>')
     return '<section><h2>整份答案是不是重复得太多</h2><p>只比较看到相同商品题组的人，计算其中有多少人与至少另一人给出完全相同的选择模式。模型取概率最大项，概率并列取首项。这个比例不经过权重调整，只是诊断；不同商品都选第一项不会被混成同一份答案。重复不必然错误，应结合真人重复程度阅读，也不能由此证明心理一致性。</p><table><tr><th>方法</th><th>可比较人数</th><th>没有同题组伙伴的人数</th><th>与别人答案模式相同</th></tr>'+''.join(rows)+'</table></section>'
 
-def render(data):
+def render(data,max_cards=None):
     if data.get('status')!='complete_test_primary_brier_only':raise ValueError('Completed test evidence required')
     esc=lambda x:html.escape(str(x))
     methods=data['methods'];limit=max(v['brier'] for v in methods.values()) or 1
@@ -57,7 +57,7 @@ def render(data):
         counts=[d['concentration_thresholds'][t]['groups_with_at_least_20_people'] for t in ['0.95','0.99','1.0']]
         supported=sum(g['people']>=20 for g in d['groups'].values())
         concentration.append(f'<tr><td>{LABELS[method]}</td><td>{supported}</td><td>{counts[0]}</td><td>{counts[1]}</td><td>{counts[2]}</td><td>{d["argmax_ties"]}</td></tr>')
-    card_sections=card_view({name:list(cards.values()) for name,cards in data.get('per_card',{}).items()},LABELS)
+    card_sections=card_view({name:list(cards.values()) for name,cards in data.get('per_card',{}).items()},LABELS,limit=max_cards)
     subgroup=[]
     for method,rows in data['subgroups'].items():
         cells=''.join(f'<tr><td>{esc(FIELDS.get(r["field"],r["field"]))}</td><td>{esc("全部" if r["value"]=="all" else "未知" if r["value"]=="unknown" else r["value"])}</td><td>{r["people"]}</td><td>{r["brier"]:.3f}</td><td>{100*r["accuracy"]:.1f}%</td><td>{"样本少，仅描述" if r["small_group"] else "描述性结果"}</td></tr>' for r in rows)
@@ -80,4 +80,5 @@ def render(data):
 <section><h2>回到最初的问题：改法是否值得采用</h2>{conclusion(data)}<p>混合预测采用开发样本选定的参数，大语言模型权重为 {100*data['calibration_llm_weight']:.0f}%，其余来自统计模型。它使用过部分真人答案，不能称为冷启动。历史比例查不到相同题面时回退为均匀概率，本次回退 {data['history_unseen_tasks']} 道题，不能据击败这一参照就声称超过统计方法。</p><p>数据核验标识：{esc(data['prepared_sha256'])}。完整来源、题面限制及其他研究结果须与综合报告一起阅读。</p></section></html>'''
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('analysis',type=Path);p.add_argument('--output',type=Path,required=True);a=p.parse_args();a.output.write_text(render(json.loads(a.analysis.read_text())))
+    p=argparse.ArgumentParser();p.add_argument('analysis',type=Path);p.add_argument('--output',type=Path,required=True);p.add_argument('--max-cards',type=int,default=None)
+    a=p.parse_args();a.output.write_text(render(json.loads(a.analysis.read_text()),max_cards=a.max_cards))

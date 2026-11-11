@@ -115,14 +115,14 @@ def render(summary):
     bullets=[]
     for study in studies:
         name=STUDY_NAME[study['kind']]
-        for key in ['basic__to__rich','statistics_rich__to__rich','rich__to__calibrated']:
+        for key in ['basic__to__rich','statistics_rich__to__rich','rich__to__calibrated','statistics_rich__to__calibrated']:
             label=dict(CONTRASTS)[key]
             text,kind=study['comparisons'][key]
             bullets.append(f'<li><strong>{name}·{label}</strong>：{text}。</li>')
         if study['calibration_llm_weight']==0:
-            bullets.append(f'<li><strong>{name} 的选参结果是纯统计模型</strong>：AI 权重为 0，这条路线即使表现好，也不能记为 AI 本身的增益。</li>')
+            bullets.append(f'<li><strong>{name}的选参结果是纯统计模型</strong>：AI 权重为 0，这条路线即使表现好，也不能记为 AI 自身的增益。</li>')
         population=study['population']
-        bullets.append(f'<li><strong>{name} 的虚拟人群</strong>：加入合成人格后主对照{population["primary_verdict"][0]}。</li>')
+        bullets.append(f'<li><strong>{name}的虚拟人群</strong>：加入合成人格后主对照{population["primary_verdict"][0]}。</li>')
     comparison_rows=[]
     for study in studies:
         for key,label in CONTRASTS:
@@ -170,10 +170,15 @@ def render(summary):
                          '<table><tr><th>研究</th><th>概率缩放温度</th><th>AI 权重</th><th>开发 Brier</th><th>说明</th></tr>'+development_rows+'</table></section>') if development_rows else ''
     limits=''.join(f'<li>{esc(x)}</li>' for x in summary['limits'])
     sources=''.join(source_section(kind) for kind in sorted(summary['execution']))
+    regressions=[STUDY_NAME[s['kind']] for s in studies if s['comparisons']['statistics_rich__to__rich'][1]=='fail']
+    headline=(f"两项研究里大语言模型都没有超过使用同样信息的统计模型（{('、'.join(regressions))}为明确退化）。"
+              "因此本轮不能把“预测更准”算作 AI 的贡献；校准路线有效的那部分来自统计模型。"
+              if len(regressions)==len(studies) else
+              "大语言模型与统计模型的对比未见一致优势，逐项判定见下表。")
     return f'''<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>决策模拟总报告</title>
 <style>body{{font:17px/1.7 system-ui;max-width:1080px;margin:auto;padding:24px;background:#fafaf6;color:#20352f}}section{{background:white;border:1px solid #d9e1db;border-radius:10px;padding:18px;margin:18px 0}}table{{width:100%;border-collapse:collapse;font-size:15px}}td,th{{text-align:left;padding:9px;border-bottom:1px solid #ddd;vertical-align:top}}.pass{{color:#1a6b3c;font-weight:bold}}.fail{{color:#a3242b;font-weight:bold}}.weak{{color:#8a5a00}}.neutral{{color:#444}}.pending{{color:#7a4b93}}details{{margin:12px 0}}summary{{cursor:pointer;font-weight:bold}}.pos{{color:#1a6b3c}}.neg{{color:#a3242b}}code{{background:#f1f3f0;padding:1px 5px;border-radius:4px}}@media(max-width:600px){{body{{padding:10px}}table{{display:block;overflow:auto}}}}</style>
 <h1>虚拟受访者能不能替真人做选择：本轮完整结果</h1>
-<section><h2>先说结论</h2><ul>{''.join(bullets)}</ul><p>下面是正式测试集的结果，不是开发阶段分数。两项研究都属于家电选择；合成人群是另一条独立路线，不与真人逐人配对。因此这里没有“跨行业普遍有效”的结论。</p></section>
+<section><h2>先说结论</h2><p><strong>{headline}</strong></p><ul>{''.join(bullets)}</ul><p>下面是正式测试集的结果，不是开发阶段分数。两项研究都属于家电选择；合成人群是另一条独立路线，不与真人逐人配对。因此这里没有“跨行业普遍有效”的结论。</p></section>
 <section><h2>两项真人研究：每改一步，测试表现怎样</h2><p>Brier 越小越好；“改善”为正值表示右边做法比左边更接近真人的实际选择。区间来自对真人按人重抽样 2,000 次；区间整体低于 0 表示明确退化。</p><table><tr><th>研究</th><th>比较</th><th>Brier 改善（绝对）</th><th>相对改善</th><th>95% 区间</th><th>判定</th></tr>{''.join(comparison_rows)}</table></section>
 {development_section}
 <section><h2>虚拟人群：分布误差与属性比例</h2><p>分布误差是真人比例与虚拟人比例的差距（百分点，越小越好）。合成人群人数与真人参照人数不同，因为只纳入年龄和学历可映射的人；真人参照全程固定，不包含真人抽样误差。</p><table><tr><th>研究</th><th>真人参照</th><th>虚拟人</th><th>只匹配人口背景</th><th>增加合成人格</th><th>同层打乱人格</th><th>主对照改善（百分点）</th><th>95% 区间</th><th>判定</th></tr>{''.join(score_rows)}</table>
@@ -185,20 +190,30 @@ def render(summary):
 </html>'''
 
 
+
+def parse_roots(values):
+    roots={}
+    for item in values:
+        kind,sep,path=item.partition('=')
+        if not sep or kind not in STUDY_NAME or not path:
+            raise ValueError('Root must be kind=path for a known study')
+        if kind in roots:raise ValueError('Duplicate study root')
+        roots[kind]=Path(path)
+    if not roots:raise ValueError('At least one study root is required')
+    return roots
+
+
+
 if __name__=='__main__':
     parser=argparse.ArgumentParser()
     parser.add_argument('--individual',nargs='+',type=Path,required=True)
     parser.add_argument('--population',nargs='+',type=Path,required=True)
-    parser.add_argument('--root',nargs='+',required=True,help='kind=path for every study directory')
+    parser.add_argument('--root',action='append',nargs='+',required=True,help='kind=path for every study directory')
     parser.add_argument('--development',nargs='*',type=Path,default=[])
     parser.add_argument('--output',type=Path,required=True)
     args=parser.parse_args()
     if args.output.exists():raise ValueError('Do not overwrite aggregate report')
-    roots={}
-    for item in args.root:
-        kind,_,path=item.partition('=')
-        if not _ or kind not in STUDY_NAME:raise ValueError('Root must be kind=path for a known study')
-        roots[kind]=Path(path)
+    roots=parse_roots([item for group in args.root for item in group])
     development=[]
     for path in args.development:
         record=json.loads(path.read_text());record['kind']=path.name.split('-calibration-freeze')[0];development.append(record)

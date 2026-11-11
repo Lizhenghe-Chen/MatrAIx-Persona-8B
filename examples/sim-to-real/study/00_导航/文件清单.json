@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 553,
-  "git_bytes": 78901175,
+  "git_file_count": 562,
+  "git_bytes": 80853289,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -44,8 +44,8 @@
     },
     {
       "path": "decision_lab/README.md",
-      "bytes": 16227,
-      "sha256": "ffee5464f79d7c1b415e65daf87fc7d53fcc3ef34f765c7e41d765945921ca01",
+      "bytes": 16294,
+      "sha256": "873f6021ebd52543667d842d64d4ab2fb087574ba8e262e30d13042972469e46",
       "storage": "git"
     },
     {
@@ -127,6 +127,12 @@
       "storage": "git"
     },
     {
+      "path": "decision_lab/docs/结果与优化记录.md",
+      "bytes": 7800,
+      "sha256": "3218a78dc186628afe89b7d2533b36408bb48ba884029bd65ed5c834507627b3",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/docs/美国T恤补充材料核查.md",
       "bytes": 1915,
       "sha256": "b145d1706b8173db0149d4e511d222d59949ce3ddb7c49bf0a4890d0bc513a6b",
@@ -140,8 +146,8 @@
     },
     {
       "path": "decision_lab/docs/进度与交付核对.md",
-      "bytes": 3722,
-      "sha256": "d171f9c73c743da9027c735f27e80e21cadebf6f24cd905167c5beaa4ff64306",
+      "bytes": 3109,
+      "sha256": "bf96173a5d01e47a0f064d436d8601c589668b2c74af4a77b148a2cdd35bf974",
       "storage": "git"
     },
     {
@@ -302,14 +308,14 @@
     },
     {
       "path": "decision_lab/reporting/aggregate_report.py",
-      "bytes": 16930,
-      "sha256": "ba4ee9047122382e303ec1065b982dbad9a0a66e4f19971f8f900df08acb9fbb",
+      "bytes": 17842,
+      "sha256": "55cebcf29c736e46e26c772396580c0d1c7e8f45e6eb8f00492982bb077340f1",
       "storage": "git"
     },
     {
       "path": "decision_lab/reporting/card_view.py",
-      "bytes": 3273,
-      "sha256": "3fbb2b220a8db508764be560944adc88e28f0878dcd8cafc155dbb5aa652c325",
+      "bytes": 3997,
+      "sha256": "11afe33c27001e1e9bffe6ca47176131395b9c10dbedb70a883398e7b28389dc",
       "storage": "git"
     },
     {
@@ -320,8 +326,8 @@
     },
     {
       "path": "decision_lab/reporting/population_report.py",
-      "bytes": 8622,
-      "sha256": "1f782e638b95325eb37e81090bb70f851515908fff100f74f538454b74f46dfc",
+      "bytes": 8739,
+      "sha256": "b70d9a7687206dbc0878e6e03b5b6625bb67f720c57f180a33f9816b00564a54",
       "storage": "git"
     },
     {
@@ -338,14 +344,62 @@
     },
     {
       "path": "decision_lab/reporting/study_report.py",
-      "bytes": 12746,
-      "sha256": "4e12ab908ca036528960265f3283f8723e76606fc6c745244ac6bffe98f85bb8",
+      "bytes": 12855,
+      "sha256": "546dd07930bfea3c368d56d37d2e352c1aca641b799dc7eaa676939a66d2f99a",
       "storage": "git"
     },
     {
       "path": "decision_lab/reports/README.md",
-      "bytes": 1118,
-      "sha256": "12868ccb13e76a1ce0f4060e05f2160c224e32f3689b9411d80a35a01e68ee62",
+      "bytes": 1698,
+      "sha256": "ecbb725607ff44f418a8d869a61e5b562557ec86409f766f9e5d23134882049d",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/adoption-summary.json",
+      "bytes": 6304,
+      "sha256": "85c52c8008c49cbc0120c08c6196e4083b03ef6e5d086e9027d771fa36d714e4",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/aggregate.html",
+      "bytes": 15171,
+      "sha256": "2f748bb5d79e4eefcf829c97e63e4110107e5d8fb1e39dbbff82f6706966bffe",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/dryer-verification.json",
+      "bytes": 17517,
+      "sha256": "c7db9e042e48908a6f7d839a56ce9d379e5ca7c40f5a1503d9356da4dfa76400",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/individual-dryer.html",
+      "bytes": 700341,
+      "sha256": "63d2a7cc6647cd1395904962dc65a0dfb0720d418b303e7b87cfdb78d9e4efde",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/individual-swiss.html",
+      "bytes": 830082,
+      "sha256": "aaa06ad3f60073bbd218dbfeb50a2558d9903928d58f0829b619cb6579d8deab",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/population-dryer.html",
+      "bytes": 175404,
+      "sha256": "e36e5ede49bfadc8117f8dd6735fa7562c1b9ee5d07370e5ca1588c4c3153849",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/population-swiss.html",
+      "bytes": 186214,
+      "sha256": "e3a0ca030c408e24d3645cf228f9fc3b72668a66abb0ac0658eb7d2831d71519",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/swiss-verification.json",
+      "bytes": 18040,
+      "sha256": "959e59eb931ad020f4e5135821250a5423f95dfba7ec55c81acb0e8964d5aa39",
       "storage": "git"
     },
     {
@@ -806,8 +860,8 @@
     },
     {
       "path": "decision_lab/tests/test_aggregate_report.py",
-      "bytes": 4501,
-      "sha256": "a618f93a488cb4302fb60f3cefb3e44d9dd4c357ddbc97d4bc81d9da0d890e89",
+      "bytes": 5252,
+      "sha256": "7bad1a106e6672aaddb95e8bcfe9f70f9a3837dc2706af2ab005e25db95ddc8c",
       "storage": "git"
     },
     {
@@ -974,8 +1028,8 @@
     },
     {
       "path": "decision_lab/交接先读.md",
-      "bytes": 13233,
-      "sha256": "2336a7fe0a3f667c487853a41bf4154f2d477a6bf2ae3ccafb4c35bde72c911c",
+      "bytes": 5827,
+      "sha256": "56f640b35e7e223410f91cb1a4291a3ac523bf09bad9248778d8d031aef64a63",
       "storage": "git"
     },
     {

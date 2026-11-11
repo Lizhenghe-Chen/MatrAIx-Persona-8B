@@ -79,3 +79,18 @@ class AggregateTests(unittest.TestCase):
             broken=_individual('dryer');broken['status']='partial'
             with self.assertRaisesRegex(ValueError,'Completed individual'):
                 build([broken,_individual('swiss')],[_population(k) for k in roots],roots)
+
+
+class RootArgumentTests(unittest.TestCase):
+    def test_repeated_root_flags_are_all_kept(self):
+        from . import test_aggregate_report as _self
+        from ..reporting.aggregate_report import parse_roots
+        roots=parse_roots(['dryer=/data/dryer','swiss=/data/swiss'])
+        self.assertEqual(sorted(roots),['dryer','swiss'])
+        self.assertEqual(roots['dryer'].as_posix(),'/data/dryer')
+
+    def test_unknown_or_duplicate_root_is_refused(self):
+        from ..reporting.aggregate_report import parse_roots
+        with self.assertRaises(ValueError):parse_roots(['german=/data/german'])
+        with self.assertRaises(ValueError):parse_roots(['dryer=/a','dryer=/b'])
+        with self.assertRaises(ValueError):parse_roots(['dryer'])

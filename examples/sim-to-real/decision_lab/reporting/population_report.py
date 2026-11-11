@@ -7,7 +7,7 @@ from .study_report import EVENTS,bundle_section
 
 LABELS={'demographics':'只匹配年龄与学历','personality':'增加 MatrAIx 合成人格','shuffled':'在同背景人群中打乱人格'}
 
-def render(data):
+def render(data,max_cards=None):
     if data.get('status')!='complete_population_distribution_analysis' or data.get('individual_accuracy_computed') is not False:
         raise ValueError('Complete, separate-population evidence required')
     esc=lambda value:html.escape(str(value))
@@ -30,7 +30,7 @@ def render(data):
             human=data['property_choices']['human'][key]
             events.append(f'<h4>{EVENTS[key]}</h4>{bars(human["share"],value["share"])}<p>真人 {human["people"]} 人；虚拟人 {value["people"]} 人。仅纳入该属性能区分商品的题目。</p>')
         properties.append(f'<details><summary>{LABELS[name]}</summary>{"".join(events)}</details>')
-    cards=card_view({name:method['cards'] for name,method in data['methods'].items()},LABELS)
+    cards=card_view({name:method['cards'] for name,method in data['methods'].items()},LABELS,limit=max_cards)
     concentration_rows=[]
     for name,result in data.get('concentration',{}).items():
         for threshold,counts in result['thresholds'].items():
@@ -64,5 +64,6 @@ def render(data):
 <section><h2>最终应怎样使用</h2><p>{finding}</p><p>区间只衡量重新抽取虚拟人的波动，真人调查比例被当作固定参照，未包括真人抽样误差、模型版本变化或题面转写误差。单项研究不能证明跨行业通用，也不能代表真实购买转化率。请结合个体预测报告与来源审查阅读。</p></section></html>'''
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser();parser.add_argument('analysis',type=Path);parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
-    args.output.write_text(render(json.loads(args.analysis.read_text())))
+    parser=argparse.ArgumentParser();parser.add_argument('analysis',type=Path);parser.add_argument('--output',type=Path,required=True);parser.add_argument('--max-cards',type=int,default=None)
+    args=parser.parse_args()
+    args.output.write_text(render(json.loads(args.analysis.read_text()),max_cards=args.max_cards))

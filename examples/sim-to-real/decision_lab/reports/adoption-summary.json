@@ -1,0 +1,181 @@
+{
+  "status": "complete_comparison_summary",
+  "independent_studies": 2,
+  "contrasts": {
+    "none__to__basic": {
+      "label": "补充年龄与学历",
+      "studies": [
+        {
+          "study": "dryer",
+          "relative_improvement": -0.0015691816922943733,
+          "absolute_improvement": -0.0009720119863020349,
+          "improvement_95_ci": [
+            -0.017610065068493858,
+            0.014699736429794153
+          ],
+          "passes": false,
+          "clear_regression": false,
+          "selected_llm_weight": 0.25
+        },
+        {
+          "study": "swiss",
+          "relative_improvement": -0.0468719996817997,
+          "absolute_improvement": -0.019161065153733725,
+          "improvement_95_ci": [
+            -0.03491664749268006,
+            -0.002955015592973448
+          ],
+          "passes": false,
+          "clear_regression": true,
+          "selected_llm_weight": 0
+        }
+      ],
+      "passing_studies": 0,
+      "clearly_regressing_studies": 1,
+      "replicated_within_included_studies": false,
+      "broad_cross_study_claim_allowed": false,
+      "scope": "Current admitted studies are appliance choices only; no cross-industry claim. No pooled confidence interval computed from per-study intervals."
+    },
+    "basic__to__rich": {
+      "label": "增加贴题真实背景",
+      "studies": [
+        {
+          "study": "dryer",
+          "relative_improvement": 0.017344596584399605,
+          "absolute_improvement": 0.010760774828767139,
+          "improvement_95_ci": [
+            -0.00424541821489629,
+            0.026639358390412118
+          ],
+          "passes": false,
+          "clear_regression": false,
+          "selected_llm_weight": 0.25
+        },
+        {
+          "study": "swiss",
+          "relative_improvement": -0.017203039065014615,
+          "absolute_improvement": -0.007362154465592852,
+          "improvement_95_ci": [
+            -0.023614117532941244,
+            0.008335213598097423
+          ],
+          "passes": false,
+          "clear_regression": false,
+          "selected_llm_weight": 0
+        }
+      ],
+      "passing_studies": 0,
+      "clearly_regressing_studies": 0,
+      "replicated_within_included_studies": false,
+      "broad_cross_study_claim_allowed": false,
+      "scope": "Current admitted studies are appliance choices only; no cross-industry claim. No pooled confidence interval computed from per-study intervals."
+    },
+    "statistics_rich__to__rich": {
+      "label": "纯 AI 是否超过同背景统计模型",
+      "studies": [
+        {
+          "study": "dryer",
+          "relative_improvement": -0.16626800785939563,
+          "absolute_improvement": -0.0869142362164429,
+          "improvement_95_ci": [
+            -0.10743310637396097,
+            -0.06674627138288602
+          ],
+          "passes": false,
+          "clear_regression": true,
+          "selected_llm_weight": 0.25
+        },
+        {
+          "study": "swiss",
+          "relative_improvement": -0.4510452027940136,
+          "absolute_improvement": -0.13531518169620915,
+          "improvement_95_ci": [
+            -0.15290622432798118,
+            -0.117563913194138
+          ],
+          "passes": false,
+          "clear_regression": true,
+          "selected_llm_weight": 0
+        }
+      ],
+      "passing_studies": 0,
+      "clearly_regressing_studies": 2,
+      "replicated_within_included_studies": false,
+      "broad_cross_study_claim_allowed": false,
+      "scope": "Current admitted studies are appliance choices only; no cross-industry claim. No pooled confidence interval computed from per-study intervals."
+    },
+    "rich__to__calibrated": {
+      "label": "开发阶段选定方案是否超过纯 AI",
+      "studies": [
+        {
+          "study": "dryer",
+          "relative_improvement": 0.1388465701356102,
+          "absolute_improvement": 0.0846478132663071,
+          "improvement_95_ci": [
+            0.06950254984351197,
+            0.09961981887185821
+          ],
+          "passes": true,
+          "clear_regression": false,
+          "selected_llm_weight": 0.25
+        },
+        {
+          "study": "swiss",
+          "relative_improvement": 0.3108415933049625,
+          "absolute_improvement": 0.13531518169620915,
+          "improvement_95_ci": [
+            0.11756391319413799,
+            0.15290622432798115
+          ],
+          "passes": true,
+          "clear_regression": false,
+          "selected_llm_weight": 0
+        }
+      ],
+      "passing_studies": 2,
+      "clearly_regressing_studies": 0,
+      "replicated_within_included_studies": true,
+      "broad_cross_study_claim_allowed": false,
+      "scope": "Current admitted studies are appliance choices only; no cross-industry claim. No pooled confidence interval computed from per-study intervals."
+    },
+    "statistics_rich__to__calibrated": {
+      "label": "开发阶段选定方案是否超过同背景统计模型",
+      "studies": [
+        {
+          "study": "dryer",
+          "relative_improvement": -0.004335695109227703,
+          "absolute_improvement": -0.0022664229501357935,
+          "improvement_95_ci": [
+            -0.007763406564467573,
+            0.003718789331608065
+          ],
+          "passes": false,
+          "clear_regression": false,
+          "selected_llm_weight": 0.25
+        },
+        {
+          "study": "swiss",
+          "relative_improvement": 0.0,
+          "absolute_improvement": 0.0,
+          "improvement_95_ci": [
+            0.0,
+            0.0
+          ],
+          "passes": false,
+          "clear_regression": false,
+          "selected_llm_weight": 0
+        }
+      ],
+      "passing_studies": 0,
+      "clearly_regressing_studies": 0,
+      "replicated_within_included_studies": false,
+      "broad_cross_study_claim_allowed": false,
+      "scope": "Current admitted studies are appliance choices only; no cross-industry claim. No pooled confidence interval computed from per-study intervals."
+    }
+  },
+  "limits": [
+    "A selected LLM weight of zero is a statistical prediction, not an improvement of the LLM.",
+    "No single overall Brier score mixes different option counts.",
+    "This summary concerns measured-background individual prediction; generated populations must be reported separately."
+  ]
+}

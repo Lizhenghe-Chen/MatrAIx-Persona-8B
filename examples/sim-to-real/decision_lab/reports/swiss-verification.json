@@ -1,0 +1,522 @@
+{
+  "status": "verified_complete_plan",
+  "root": "/Users/bunnychen/.local/share/matraix-decision-lab/swiss-appliances-v1",
+  "units": [
+    {
+      "track": "formal-v1",
+      "unit": "rich_development",
+      "phase": "development",
+      "expected_tasks": 2732,
+      "frozen_hashes_match": true,
+      "seal_matches": true,
+      "sqlite_integrity": "ok",
+      "execution": {
+        "database": "rich_development.sqlite",
+        "states": {
+          "complete": 2732
+        },
+        "jobs_started": 2732,
+        "attempts_including_retries_and_pending": 2735,
+        "failed_attempts": 3,
+        "jobs_with_any_failure": 3,
+        "first_attempt_failure_fraction_among_finished_jobs": 0.0010980966325036604,
+        "error_categories": {
+          "ValueError": 2,
+          "URLError": 1
+        },
+        "successful_response_tokens": {
+          "prompt_tokens": 1004601,
+          "completion_tokens": 46179,
+          "total_tokens": 1050780,
+          "prompt_cache_hit_tokens": 3328,
+          "prompt_cache_miss_tokens": 1001273
+        },
+        "successful_responses_without_usage": 0,
+        "identities": [
+          {
+            "identity": {
+              "model": "deepseek-v4-pro",
+              "system_fingerprint": "a307abda487cd1b463329ccb945ce396"
+            },
+            "responses": 2732
+          }
+        ],
+        "reserved_budget_usd": 18.45785436,
+        "recorded_request_seconds": 3864.859965636344,
+        "limits": [
+          "Token totals omit unsuccessful responses whose usage was not retained.",
+          "Reserved budget is a conservative request bound, not actual invoiced cost.",
+          "A live snapshot is not final completion-rate evidence; compare against frozen expected jobs.",
+          "Legacy ValueError records cannot be retrospectively assigned a more precise cause."
+        ]
+      },
+      "completed_tasks": 2732,
+      "complete": true,
+      "request_hashes_mismatched": 0,
+      "unexpected_jobs": 0,
+      "request_identities_verified": true,
+      "failure_reasons": {
+        "ValueError": 2,
+        "URLError": 1
+      }
+    },
+    {
+      "track": "formal-v1",
+      "unit": "none_test",
+      "phase": "test",
+      "expected_tasks": 2732,
+      "frozen_hashes_match": true,
+      "seal_matches": true,
+      "sqlite_integrity": "ok",
+      "execution": {
+        "database": "none_test.sqlite",
+        "states": {
+          "complete": 2732
+        },
+        "jobs_started": 2732,
+        "attempts_including_retries_and_pending": 2735,
+        "failed_attempts": 3,
+        "jobs_with_any_failure": 3,
+        "first_attempt_failure_fraction_among_finished_jobs": 0.0010980966325036604,
+        "error_categories": {
+          "invalid_probability_vector": 2,
+          "IncompleteRead": 1
+        },
+        "successful_response_tokens": {
+          "prompt_tokens": 842075,
+          "completion_tokens": 45210,
+          "total_tokens": 887285,
+          "prompt_cache_hit_tokens": 506624,
+          "prompt_cache_miss_tokens": 335451
+        },
+        "successful_responses_without_usage": 0,
+        "identities": [
+          {
+            "identity": {
+              "model": "deepseek-v4-pro",
+              "system_fingerprint": "a307abda487cd1b463329ccb945ce396"
+            },
+            "responses": 2732
+          }
+        ],
+        "reserved_budget_usd": 17.7466212,
+        "recorded_request_seconds": 3255.0509138049238,
+        "limits": [
+          "Token totals omit unsuccessful responses whose usage was not retained.",
+          "Reserved budget is a conservative request bound, not actual invoiced cost.",
+          "A live snapshot is not final completion-rate evidence; compare against frozen expected jobs.",
+          "Legacy ValueError records cannot be retrospectively assigned a more precise cause."
+        ]
+      },
+      "completed_tasks": 2732,
+      "complete": true,
+      "request_hashes_mismatched": 0,
+      "unexpected_jobs": 0,
+      "request_identities_verified": true,
+      "failure_reasons": {
+        "invalid_probability_vector": 2,
+        "IncompleteRead": 1
+      }
+    },
+    {
+      "track": "formal-v1",
+      "unit": "basic_test",
+      "phase": "test",
+      "expected_tasks": 2732,
+      "frozen_hashes_match": true,
+      "seal_matches": true,
+      "sqlite_integrity": "ok",
+      "execution": {
+        "database": "basic_test.sqlite",
+        "states": {
+          "complete": 2732
+        },
+        "jobs_started": 2732,
+        "attempts_including_retries_and_pending": 2734,
+        "failed_attempts": 2,
+        "jobs_with_any_failure": 2,
+        "first_attempt_failure_fraction_among_finished_jobs": 0.0007320644216691069,
+        "error_categories": {
+          "invalid_probability_vector": 2
+        },
+        "successful_response_tokens": {
+          "prompt_tokens": 895491,
+          "completion_tokens": 45339,
+          "total_tokens": 940830,
+          "prompt_cache_hit_tokens": 699392,
+          "prompt_cache_miss_tokens": 196099
+        },
+        "successful_responses_without_usage": 0,
+        "identities": [
+          {
+            "identity": {
+              "model": "deepseek-v4-pro",
+              "system_fingerprint": "a307abda487cd1b463329ccb945ce396"
+            },
+            "responses": 2732
+          }
+        ],
+        "reserved_budget_usd": 18.02039184,
+        "recorded_request_seconds": 2833.3868263241093,
+        "limits": [
+          "Token totals omit unsuccessful responses whose usage was not retained.",
+          "Reserved budget is a conservative request bound, not actual invoiced cost.",
+          "A live snapshot is not final completion-rate evidence; compare against frozen expected jobs.",
+          "Legacy ValueError records cannot be retrospectively assigned a more precise cause."
+        ]
+      },
+      "completed_tasks": 2732,
+      "complete": true,
+      "request_hashes_mismatched": 0,
+      "unexpected_jobs": 0,
+      "request_identities_verified": true,
+      "failure_reasons": {
+        "invalid_probability_vector": 2
+      }
+    },
+    {
+      "track": "formal-v1",
+      "unit": "rich_test",
+      "phase": "test",
+      "expected_tasks": 2732,
+      "frozen_hashes_match": true,
+      "seal_matches": true,
+      "sqlite_integrity": "ok",
+      "execution": {
+        "database": "rich_test.sqlite",
+        "states": {
+          "complete": 2732
+        },
+        "jobs_started": 2732,
+        "attempts_including_retries_and_pending": 2733,
+        "failed_attempts": 1,
+        "jobs_with_any_failure": 1,
+        "first_attempt_failure_fraction_among_finished_jobs": 0.00036603221083455345,
+        "error_categories": {
+          "IncompleteRead": 1
+        },
+        "successful_response_tokens": {
+          "prompt_tokens": 1003271,
+          "completion_tokens": 46098,
+          "total_tokens": 1049369,
+          "prompt_cache_hit_tokens": 699392,
+          "prompt_cache_miss_tokens": 303879
+        },
+        "successful_responses_without_usage": 0,
+        "identities": [
+          {
+            "identity": {
+              "model": "deepseek-v4-pro",
+              "system_fingerprint": "a307abda487cd1b463329ccb945ce396"
+            },
+            "responses": 2732
+          }
+        ],
+        "reserved_budget_usd": 18.4419774,
+        "recorded_request_seconds": 3054.8267330410818,
+        "limits": [
+          "Token totals omit unsuccessful responses whose usage was not retained.",
+          "Reserved budget is a conservative request bound, not actual invoiced cost.",
+          "A live snapshot is not final completion-rate evidence; compare against frozen expected jobs.",
+          "Legacy ValueError records cannot be retrospectively assigned a more precise cause."
+        ]
+      },
+      "completed_tasks": 2732,
+      "complete": true,
+      "request_hashes_mismatched": 0,
+      "unexpected_jobs": 0,
+      "request_identities_verified": true,
+      "failure_reasons": {
+        "IncompleteRead": 1
+      }
+    },
+    {
+      "track": "formal-v1",
+      "unit": "shuffled_test",
+      "phase": "test",
+      "expected_tasks": 2732,
+      "frozen_hashes_match": true,
+      "seal_matches": true,
+      "sqlite_integrity": "ok",
+      "execution": {
+        "database": "shuffled_test.sqlite",
+        "states": {
+          "complete": 2732
+        },
+        "jobs_started": 2732,
+        "attempts_including_retries_and_pending": 2734,
+        "failed_attempts": 2,
+        "jobs_with_any_failure": 2,
+        "first_attempt_failure_fraction_among_finished_jobs": 0.0007320644216691069,
+        "error_categories": {
+          "RemoteDisconnected": 1,
+          "IncompleteRead": 1
+        },
+        "successful_response_tokens": {
+          "prompt_tokens": 1003271,
+          "completion_tokens": 46174,
+          "total_tokens": 1049445,
+          "prompt_cache_hit_tokens": 699392,
+          "prompt_cache_miss_tokens": 303879
+        },
+        "successful_responses_without_usage": 0,
+        "identities": [
+          {
+            "identity": {
+              "model": "deepseek-v4-pro",
+              "system_fingerprint": "a307abda487cd1b463329ccb945ce396"
+            },
+            "responses": 2732
+          }
+        ],
+        "reserved_budget_usd": 18.44889816,
+        "recorded_request_seconds": 3342.1815126180445,
+        "limits": [
+          "Token totals omit unsuccessful responses whose usage was not retained.",
+          "Reserved budget is a conservative request bound, not actual invoiced cost.",
+          "A live snapshot is not final completion-rate evidence; compare against frozen expected jobs.",
+          "Legacy ValueError records cannot be retrospectively assigned a more precise cause."
+        ]
+      },
+      "completed_tasks": 2732,
+      "complete": true,
+      "request_hashes_mismatched": 0,
+      "unexpected_jobs": 0,
+      "request_identities_verified": true,
+      "failure_reasons": {
+        "RemoteDisconnected": 1,
+        "IncompleteRead": 1
+      }
+    },
+    {
+      "track": "formal-v1",
+      "unit": "single_test",
+      "phase": "test",
+      "expected_tasks": 2732,
+      "frozen_hashes_match": true,
+      "seal_matches": true,
+      "sqlite_integrity": "ok",
+      "execution": {
+        "database": "single_test.sqlite",
+        "states": {
+          "complete": 2732
+        },
+        "jobs_started": 2732,
+        "attempts_including_retries_and_pending": 2734,
+        "failed_attempts": 2,
+        "jobs_with_any_failure": 2,
+        "first_attempt_failure_fraction_among_finished_jobs": 0.0007320644216691069,
+        "error_categories": {
+          "IncompleteRead": 2
+        },
+        "successful_response_tokens": {
+          "prompt_tokens": 1003271,
+          "completion_tokens": 18297,
+          "total_tokens": 1021568,
+          "prompt_cache_hit_tokens": 1024,
+          "prompt_cache_miss_tokens": 1002247
+        },
+        "successful_responses_without_usage": 0,
+        "identities": [
+          {
+            "identity": {
+              "model": "deepseek-v4-pro",
+              "system_fingerprint": "a307abda487cd1b463329ccb945ce396"
+            },
+            "responses": 2732
+          }
+        ],
+        "reserved_budget_usd": 18.46673532,
+        "recorded_request_seconds": 3785.8522024789563,
+        "limits": [
+          "Token totals omit unsuccessful responses whose usage was not retained.",
+          "Reserved budget is a conservative request bound, not actual invoiced cost.",
+          "A live snapshot is not final completion-rate evidence; compare against frozen expected jobs.",
+          "Legacy ValueError records cannot be retrospectively assigned a more precise cause."
+        ]
+      },
+      "completed_tasks": 2732,
+      "complete": true,
+      "request_hashes_mismatched": 0,
+      "unexpected_jobs": 0,
+      "request_identities_verified": true,
+      "failure_reasons": {
+        "IncompleteRead": 2
+      }
+    },
+    {
+      "track": "synthetic-formal-v1",
+      "unit": "demographics",
+      "phase": "test",
+      "expected_tasks": 2608,
+      "frozen_hashes_match": true,
+      "seal_matches": true,
+      "sqlite_integrity": "ok",
+      "execution": {
+        "database": "demographics.sqlite",
+        "states": {
+          "complete": 2608
+        },
+        "jobs_started": 2608,
+        "attempts_including_retries_and_pending": 2613,
+        "failed_attempts": 5,
+        "jobs_with_any_failure": 5,
+        "first_attempt_failure_fraction_among_finished_jobs": 0.0019171779141104294,
+        "error_categories": {
+          "URLError": 1,
+          "ValueError": 3,
+          "IncompleteRead": 1
+        },
+        "successful_response_tokens": {
+          "prompt_tokens": 853720,
+          "completion_tokens": 43622,
+          "total_tokens": 897342,
+          "prompt_cache_hit_tokens": 163584,
+          "prompt_cache_miss_tokens": 690136
+        },
+        "successful_responses_without_usage": 0,
+        "identities": [
+          {
+            "identity": {
+              "model": "deepseek-v4-pro",
+              "system_fingerprint": "a307abda487cd1b463329ccb945ce396"
+            },
+            "responses": 2608
+          }
+        ],
+        "reserved_budget_usd": 17.19172884,
+        "recorded_request_seconds": 3749.4376037589827,
+        "limits": [
+          "Token totals omit unsuccessful responses whose usage was not retained.",
+          "Reserved budget is a conservative request bound, not actual invoiced cost.",
+          "A live snapshot is not final completion-rate evidence; compare against frozen expected jobs.",
+          "Legacy ValueError records cannot be retrospectively assigned a more precise cause."
+        ]
+      },
+      "completed_tasks": 2608,
+      "complete": true,
+      "request_hashes_mismatched": 0,
+      "unexpected_jobs": 0,
+      "request_identities_verified": true,
+      "failure_reasons": {
+        "URLError": 1,
+        "ValueError": 3,
+        "IncompleteRead": 1
+      }
+    },
+    {
+      "track": "synthetic-formal-v1",
+      "unit": "personality",
+      "phase": "test",
+      "expected_tasks": 2608,
+      "frozen_hashes_match": true,
+      "seal_matches": true,
+      "sqlite_integrity": "ok",
+      "execution": {
+        "database": "personality.sqlite",
+        "states": {
+          "complete": 2608
+        },
+        "jobs_started": 2608,
+        "attempts_including_retries_and_pending": 2609,
+        "failed_attempts": 1,
+        "jobs_with_any_failure": 1,
+        "first_attempt_failure_fraction_among_finished_jobs": 0.0003834355828220859,
+        "error_categories": {
+          "invalid_probability_vector": 1
+        },
+        "successful_response_tokens": {
+          "prompt_tokens": 965112,
+          "completion_tokens": 44201,
+          "total_tokens": 1009313,
+          "prompt_cache_hit_tokens": 667648,
+          "prompt_cache_miss_tokens": 297464
+        },
+        "successful_responses_without_usage": 0,
+        "identities": [
+          {
+            "identity": {
+              "model": "deepseek-v4-pro",
+              "system_fingerprint": "a307abda487cd1b463329ccb945ce396"
+            },
+            "responses": 2608
+          }
+        ],
+        "reserved_budget_usd": 17.69959884,
+        "recorded_request_seconds": 2679.6792449642526,
+        "limits": [
+          "Token totals omit unsuccessful responses whose usage was not retained.",
+          "Reserved budget is a conservative request bound, not actual invoiced cost.",
+          "A live snapshot is not final completion-rate evidence; compare against frozen expected jobs.",
+          "Legacy ValueError records cannot be retrospectively assigned a more precise cause."
+        ]
+      },
+      "completed_tasks": 2608,
+      "complete": true,
+      "request_hashes_mismatched": 0,
+      "unexpected_jobs": 0,
+      "request_identities_verified": true,
+      "failure_reasons": {
+        "invalid_probability_vector": 1
+      }
+    },
+    {
+      "track": "synthetic-formal-v1",
+      "unit": "shuffled",
+      "phase": "test",
+      "expected_tasks": 2608,
+      "frozen_hashes_match": true,
+      "seal_matches": true,
+      "sqlite_integrity": "ok",
+      "execution": {
+        "database": "shuffled.sqlite",
+        "states": {
+          "complete": 2608
+        },
+        "jobs_started": 2608,
+        "attempts_including_retries_and_pending": 2608,
+        "failed_attempts": 0,
+        "jobs_with_any_failure": 0,
+        "first_attempt_failure_fraction_among_finished_jobs": 0.0,
+        "error_categories": {},
+        "successful_response_tokens": {
+          "prompt_tokens": 965112,
+          "completion_tokens": 44240,
+          "total_tokens": 1009352,
+          "prompt_cache_hit_tokens": 667648,
+          "prompt_cache_miss_tokens": 297464
+        },
+        "successful_responses_without_usage": 0,
+        "identities": [
+          {
+            "identity": {
+              "model": "deepseek-v4-pro",
+              "system_fingerprint": "a307abda487cd1b463329ccb945ce396"
+            },
+            "responses": 2608
+          }
+        ],
+        "reserved_budget_usd": 17.69284572,
+        "recorded_request_seconds": 2819.141555602888,
+        "limits": [
+          "Token totals omit unsuccessful responses whose usage was not retained.",
+          "Reserved budget is a conservative request bound, not actual invoiced cost.",
+          "A live snapshot is not final completion-rate evidence; compare against frozen expected jobs.",
+          "Legacy ValueError records cannot be retrospectively assigned a more precise cause."
+        ]
+      },
+      "completed_tasks": 2608,
+      "complete": true,
+      "request_hashes_mismatched": 0,
+      "unexpected_jobs": 0,
+      "request_identities_verified": true,
+      "failure_reasons": {}
+    }
+  ],
+  "failures": [],
+  "limits": [
+    "This checks frozen-input fidelity and completion, not scientific validity.",
+    "Reserved budget is a conservative request bound, not an invoiced cost.",
+    "Token totals omit unsuccessful responses whose usage was not retained."
+  ]
+}
