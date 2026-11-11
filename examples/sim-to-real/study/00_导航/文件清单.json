@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 518,
-  "git_bytes": 78769663,
+  "git_file_count": 519,
+  "git_bytes": 78773265,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -646,6 +646,12 @@
       "path": "decision_lab/test_dryer_baseline.py",
       "bytes": 781,
       "sha256": "d580946d2dd63685e13a75205a729ff8a04f3438f5b65f38d14d8ccd8be9a48a",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/test_end_to_end.py",
+      "bytes": 3602,
+      "sha256": "1b3ccc45b3ecc2134c38ded2ba1ceb64556722c34e165af0c8bc24939000ee44",
       "storage": "git"
     },
     {
