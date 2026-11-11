@@ -1,0 +1,18 @@
+{
+  "dryer": {
+    "people": 291,
+    "tasks": 2328,
+    "design_sha256": "c8beac2fb0e53564058309bd5a42ca975471974c98ca55bcf867b14cafdf4c20",
+    "has_target_answers": false,
+    "has_real_person_identifiers": false,
+    "status": "design_only_not_executed"
+  },
+  "swiss": {
+    "people": 652,
+    "tasks": 2608,
+    "design_sha256": "09f8f4548f28be8629c451014ce8157c1df3fb8ebf3f46bf5e5b6cb452021d42",
+    "has_target_answers": false,
+    "has_real_person_identifiers": false,
+    "status": "design_only_not_executed"
+  }
+}
