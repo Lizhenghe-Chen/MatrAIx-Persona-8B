@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 486,
-  "git_bytes": 78676348,
+  "git_file_count": 488,
+  "git_bytes": 78683654,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -313,6 +313,18 @@
       "storage": "git"
     },
     {
+      "path": "decision_lab/radiant-audit.json",
+      "bytes": 3908,
+      "sha256": "6b9064ca23588360c0cc2686cf9c92bc8f497ddc1a69d7527750102d32ecc357",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/radiant_audit.py",
+      "bytes": 2297,
+      "sha256": "f7f7b19a03d1c49f3157c14e9d26decf8cd922ff68696d02955e154f86ebd80b",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/report.py",
       "bytes": 4430,
       "sha256": "ba8a2e206d27643697054d4a4184a989af54c055db9af18c8199bc91b77a6636",
@@ -566,8 +578,8 @@
     },
     {
       "path": "decision_lab/数据审查发现.md",
-      "bytes": 15178,
-      "sha256": "fad5bd9341b9cfd4c4e7500c7569acf4cb9bee23e269f0dc049bb5b7be48213d",
+      "bytes": 16279,
+      "sha256": "e249b8498c38fdac4fec13858db344f445daf7f5034519b842b3149009b53513",
       "storage": "git"
     },
     {

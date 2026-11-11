@@ -1,0 +1,171 @@
+{
+  "source": "https://doi.org/10.5281/zenodo.15420092",
+  "status": "structural_only_not_admitted",
+  "files": [
+    {
+      "file": "COBGID.xlsx",
+      "sha256": "c5982a2f1460c2f01c9633b060bd6f172976aaf7c7f6ac517b7f260a9f5c66fe",
+      "survey_people": 336,
+      "choice_people": 336,
+      "choice_rows": 6048,
+      "cards": 2016,
+      "tasks_per_person_histogram": {
+        "6": 336
+      },
+      "errors": [],
+      "choice_columns": [
+        "unique_id",
+        "index",
+        "choice_set",
+        "choice_card",
+        "option",
+        "variety",
+        "organic",
+        "label",
+        "nutr",
+        "access",
+        "prox",
+        "cost",
+        "choice",
+        "firstclick",
+        "lastclick",
+        "pagesubmit",
+        "clickcount",
+        "treated"
+      ]
+    },
+    {
+      "file": "COESHT.xlsx",
+      "sha256": "7cc938266619a06c2d75d30bfc04bfb93682b48185911ef056dd4574f369de69",
+      "survey_people": 345,
+      "choice_people": 345,
+      "choice_rows": 6210,
+      "cards": 2070,
+      "tasks_per_person_histogram": {
+        "6": 345
+      },
+      "errors": [],
+      "choice_columns": [
+        "unique_id",
+        "index",
+        "choice_set",
+        "choice_card",
+        "option",
+        "variety",
+        "cultur",
+        "access",
+        "label",
+        "place",
+        "cost",
+        "choice",
+        "firstclick",
+        "lastclick",
+        "pagesubmit",
+        "clickcount",
+        "treated"
+      ]
+    },
+    {
+      "file": "COITPR.xlsx",
+      "sha256": "27d4211b50529ed8bcd5d485bfd7730ffa3fdd1d00be1e477eaa98d1c8dd4a91",
+      "survey_people": 340,
+      "choice_people": 340,
+      "choice_rows": 6120,
+      "cards": 2040,
+      "tasks_per_person_histogram": {
+        "6": 340
+      },
+      "errors": [],
+      "choice_columns": [
+        "unique_id",
+        "index",
+        "choice_set",
+        "choice_card",
+        "option",
+        "feed",
+        "label",
+        "ageing",
+        "place",
+        "envir",
+        "price",
+        "choice",
+        "firstclick",
+        "lastclick",
+        "pagesubmit",
+        "clickcount",
+        "treated"
+      ]
+    },
+    {
+      "file": "COITYP.xlsx",
+      "sha256": "dea42aebe63ae09eccfa6f9003703a79c22fcffc35a0b1ae41929a964f126d0a",
+      "survey_people": 346,
+      "choice_people": 346,
+      "choice_rows": 6228,
+      "cards": 2076,
+      "tasks_per_person_histogram": {
+        "6": 346
+      },
+      "errors": [],
+      "choice_columns": [
+        "unique_id",
+        "index",
+        "choice_set",
+        "choice_card",
+        "option",
+        "ingr1",
+        "ingr2",
+        "nutr",
+        "label",
+        "envir",
+        "place",
+        "price",
+        "choice",
+        "firstclick",
+        "lastclick",
+        "pagesubmit",
+        "clickcount",
+        "treated"
+      ]
+    },
+    {
+      "file": "COSCBB.xlsx",
+      "sha256": "447cb59fab8500639d9f5478dad4aeeeb64bc09f1d0d0848ae0219e1c42c88a0",
+      "survey_people": 299,
+      "choice_people": 299,
+      "choice_rows": 5370,
+      "cards": 1790,
+      "tasks_per_person_histogram": {
+        "6": 298,
+        "2": 1
+      },
+      "errors": [],
+      "choice_columns": [
+        "unique_id",
+        "index",
+        "choice_set",
+        "choice_card",
+        "option",
+        "ingr",
+        "nutr",
+        "label",
+        "access",
+        "prox",
+        "cost",
+        "choice",
+        "firstclick",
+        "lastclick",
+        "pagesubmit",
+        "clickcount",
+        "treated"
+      ]
+    }
+  ],
+  "pending": [
+    "Original questionnaire and randomized information text",
+    "Author sample statistics and exclusions",
+    "Background measurement timing",
+    "Exact product display and price units; inspect metadata inconsistencies"
+  ],
+  "study_count_policy": "Five country/product datasets within one project are not automatically five independent studies."
+}
