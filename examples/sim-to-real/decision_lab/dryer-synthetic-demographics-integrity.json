@@ -1,0 +1,52 @@
+{
+  "unit": "demographics",
+  "track": "synthetic_population",
+  "verified_at": "2026-11-11T03:44:53.423253+00:00",
+  "people": 291,
+  "complete_tasks": 2328,
+  "missing_tasks": 0,
+  "outcomes_scored": false,
+  "individual_targets_present": false,
+  "study_sha256": "8352c2d224ad3aa39cf04a82a7711925aa741ad2d01caa04ac407d09b0ad5892",
+  "seal_sha256": "898ea40c551dcb1f5583363680a2e2c4383ad803351c862b1b21d4e990593723",
+  "config_sha256": "c834a30699b427839e83f58e6a2a139ac3b96e72ee45655bd7419256f6bf390e",
+  "execution": {
+    "database": "demographics.sqlite",
+    "states": {
+      "complete": 2328
+    },
+    "jobs_started": 2328,
+    "attempts_including_retries_and_pending": 2329,
+    "failed_attempts": 1,
+    "jobs_with_any_failure": 1,
+    "first_attempt_failure_fraction_among_finished_jobs": 0.000429553264604811,
+    "error_categories": {
+      "URLError": 1
+    },
+    "successful_response_tokens": {
+      "prompt_tokens": 562633,
+      "completion_tokens": 51019,
+      "total_tokens": 613652,
+      "prompt_cache_hit_tokens": 305792,
+      "prompt_cache_miss_tokens": 256841
+    },
+    "successful_responses_without_usage": 0,
+    "identities": [
+      {
+        "identity": {
+          "model": "deepseek-v4-pro",
+          "system_fingerprint": "a307abda487cd1b463329ccb945ce396"
+        },
+        "responses": 2328
+      }
+    ],
+    "reserved_budget_usd": 13.79866884,
+    "recorded_request_seconds": 2770.7327616450493,
+    "limits": [
+      "Token totals omit unsuccessful responses whose usage was not retained.",
+      "Reserved budget is a conservative request bound, not actual invoiced cost.",
+      "A live snapshot is not final completion-rate evidence; compare against frozen expected jobs.",
+      "Legacy ValueError records cannot be retrospectively assigned a more precise cause."
+    ]
+  }
+}

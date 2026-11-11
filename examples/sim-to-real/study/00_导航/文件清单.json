@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 532,
-  "git_bytes": 78813594,
+  "git_file_count": 533,
+  "git_bytes": 78815420,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -196,6 +196,12 @@
       "path": "decision_lab/dryer-stability-result.json",
       "bytes": 528,
       "sha256": "6e403ba0fd83494e15d9f80d87eabc1b807c6e82e8b19ee51bdf893084e219c3",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/dryer-synthetic-demographics-integrity.json",
+      "bytes": 1826,
+      "sha256": "1de6b55e8df60740ca9a0c4d8aae2eba2f2c1045eb3d7e0cb4886f07174d92f6",
       "storage": "git"
     },
     {
