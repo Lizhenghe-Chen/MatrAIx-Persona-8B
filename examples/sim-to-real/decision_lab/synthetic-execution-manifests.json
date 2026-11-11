@@ -1,0 +1,60 @@
+{
+  "dryer-text-v1": {
+    "design_sha256": "c8beac2fb0e53564058309bd5a42ca975471974c98ca55bcf867b14cafdf4c20",
+    "people": 291,
+    "tasks_per_condition": 2328,
+    "maximum_calls": 6984,
+    "maximum_reserved_usd": 120,
+    "status": "frozen_inputs_pending_technical_pilot",
+    "units": [
+      {
+        "name": "demographics",
+        "study_sha256": "8352c2d224ad3aa39cf04a82a7711925aa741ad2d01caa04ac407d09b0ad5892",
+        "config_sha256": "c834a30699b427839e83f58e6a2a139ac3b96e72ee45655bd7419256f6bf390e",
+        "seal_sha256": "898ea40c551dcb1f5583363680a2e2c4383ad803351c862b1b21d4e990593723"
+      },
+      {
+        "name": "personality",
+        "study_sha256": "8352c2d224ad3aa39cf04a82a7711925aa741ad2d01caa04ac407d09b0ad5892",
+        "config_sha256": "e9eafa0c05ea84c57cdc3e58ed9f296c19a66f4eff6ae235d3843f0da682e720",
+        "seal_sha256": "d406060f84cb4e6ccb9d890b72f963b75a591d01006c6d425ce38bd6b2b01581"
+      },
+      {
+        "name": "shuffled",
+        "study_sha256": "da571a00b3738b8fc4832e5ac781fbca3cc9e9f731ee4d4c825fc1a1fce83a28",
+        "config_sha256": "e9eafa0c05ea84c57cdc3e58ed9f296c19a66f4eff6ae235d3843f0da682e720",
+        "seal_sha256": "9c27b8e336111cd42b4cb2b056862cf634ebb758a42f7a255a5a36b2f6194473"
+      }
+    ],
+    "interpretation": "No individual truth. Evaluate group distributions only. Within-cell permutation preserves trait margins and tests task-allocation sensitivity, not measured personality alignment."
+  },
+  "swiss-appliances-v1": {
+    "design_sha256": "09f8f4548f28be8629c451014ce8157c1df3fb8ebf3f46bf5e5b6cb452021d42",
+    "people": 652,
+    "tasks_per_condition": 2608,
+    "maximum_calls": 7824,
+    "maximum_reserved_usd": 120,
+    "status": "frozen_inputs_pending_technical_pilot",
+    "units": [
+      {
+        "name": "demographics",
+        "study_sha256": "24a8cb92505be63f6afdd9fb1b218b93f2c1aeddbfab0d9e95380451e5b3f205",
+        "config_sha256": "5f57d33fee88e973055d0ebc49540bea66431b7899639d98ee2907f2f3d212cc",
+        "seal_sha256": "f82ebdb57d87d3990e7a7c87ae7daf806037c2075216dba33fd94c3cdaca4e98"
+      },
+      {
+        "name": "personality",
+        "study_sha256": "24a8cb92505be63f6afdd9fb1b218b93f2c1aeddbfab0d9e95380451e5b3f205",
+        "config_sha256": "9bdefc9d92a3d1c7169662d752a7ca3ec14200bee373d33bd4bab12151613ef9",
+        "seal_sha256": "a4321cff623decaf03b26f4c3bc6b6dae438630ad0bc01808cddd3550e00ff02"
+      },
+      {
+        "name": "shuffled",
+        "study_sha256": "94d04c80259901a4a29c2310c8876994352d6a1926a67d7015c2df3ebf5f996a",
+        "config_sha256": "9bdefc9d92a3d1c7169662d752a7ca3ec14200bee373d33bd4bab12151613ef9",
+        "seal_sha256": "acbeed26f83e3dea21b10391432d2b6417418569361e54aac007d037426d1e6b"
+      }
+    ],
+    "interpretation": "No individual truth. Evaluate group distributions only. Within-cell permutation preserves trait margins and tests task-allocation sensitivity, not measured personality alignment."
+  }
+}
