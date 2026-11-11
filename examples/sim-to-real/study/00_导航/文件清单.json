@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 481,
-  "git_bytes": 78665203,
+  "git_file_count": 482,
+  "git_bytes": 78670807,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -44,8 +44,8 @@
     },
     {
       "path": "decision_lab/README.md",
-      "bytes": 9687,
-      "sha256": "07447da2ac986919b2350504287b858413754d5565c54af46cfaed3b38481752",
+      "bytes": 10529,
+      "sha256": "8fba17f7f7ea59327964555a1f500b0a9ee6f623757d350e1be3c6a65de92ffb",
       "storage": "git"
     },
     {
@@ -220,6 +220,12 @@
       "path": "decision_lab/endpoint-pilot.json",
       "bytes": 577,
       "sha256": "287f31b92ae9bac3647df329b24731a5d52814a3477237ce7b3402819d3e9bc0",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/evaluate_study.py",
+      "bytes": 4762,
+      "sha256": "0b4ba2ed772cd9d02f91a705191e538f50808dd7ce64550406700084edb8debe",
       "storage": "git"
     },
     {
