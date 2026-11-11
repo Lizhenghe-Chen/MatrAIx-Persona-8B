@@ -2,7 +2,7 @@
 import argparse,json,html
 from pathlib import Path
 
-LABELS={'none':'AI：没有个人背景','basic':'AI：年龄与学历','rich':'AI：增加贴题真实背景','shuffled':'AI：错配附加背景','single':'AI：直接选一个答案','probability_argmax':'AI：从概率中取最大项','statistics_none':'统计模型：商品与情境','statistics_basic':'统计模型：加年龄学历','statistics_rich':'统计模型：加贴题背景','uniform':'各选项机会均等','history':'相同题目的历史比例','calibrated':'开发阶段选定的混合预测'}
+LABELS={'none':'AI：没有个人背景','basic':'AI：年龄与学历','rich':'AI：增加贴题真实背景','shuffled':'AI：错配附加背景','single':'AI：直接选一个答案','probability_argmax':'AI：从概率中取最大项','statistics_none':'统计模型：商品与情境','statistics_basic':'统计模型：加年龄学历','statistics_rich':'统计模型：加贴题背景','uniform':'各选项机会均等','history':'相同题目的历史比例','calibrated':'开发阶段选定的预测方案'}
 EVENTS={'lower_price':'选择较便宜款','higher_customer_rating':'选择评分较高款','longer_functional_life':'选择寿命较长款','refusal':'两款都不买'}
 FIELDS={'all':'全部受访者','stratum':'原研究分组','age_band':'年龄段','age_years':'年龄（岁）','education':'学历'}
 
@@ -21,6 +21,8 @@ def conclusion(data):
         elif low>0:result='有改善证据，但幅度未达到采用门槛'
         else:result='尚无明确改善证据'
         lines.append(f'<li><strong>{label}</strong>：{result}。</li>')
+    if data.get('calibration_llm_weight')==0:
+        lines.append('<li><strong>选参结果是纯统计模型</strong>：大语言模型权重为 0，不能把这条路线的改善记为 AI 本身的增益。</li>')
     return '<ul>'+''.join(lines)+'</ul>' if lines else '<p>尚无完整的预定比较，不能判断改法是否有效。</p>'
 
 def render(data):

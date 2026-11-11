@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 519,
-  "git_bytes": 78779194,
+  "git_file_count": 520,
+  "git_bytes": 78780134,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -440,8 +440,8 @@
     },
     {
       "path": "decision_lab/study_report.py",
-      "bytes": 12052,
-      "sha256": "df062e4a6befb546beb095db4298c74653a664b78d7e3b51b833c96cc5225170",
+      "bytes": 12269,
+      "sha256": "cd6c2fd3736713e5f270861338e90b52616b9c394cf3442f3e5d3bfee662dfca",
       "storage": "git"
     },
     {
@@ -466,6 +466,12 @@
       "path": "decision_lab/swiss-background-audit.json",
       "bytes": 852,
       "sha256": "88bbbc55fa825c1b0455905a19046b54e1780b4beaa479cd67f6aa255e5c19e6",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/swiss-calibration-freeze.json",
+      "bytes": 601,
+      "sha256": "91fa60da2b2eace3a23c6801c0788a8a3e23fdecbb6fc4b536a87b226678a244",
       "storage": "git"
     },
     {
@@ -764,8 +770,8 @@
     },
     {
       "path": "decision_lab/进度与交付核对.md",
-      "bytes": 2880,
-      "sha256": "10d3e9160e9bb755162767b7d7d6a67bb2e330e8243ba0ecb61218a826994fe0",
+      "bytes": 3002,
+      "sha256": "b5e9f8186dfaabccf2a746f207372f2da68cc48912aa80b2bfcac6a086c3e79e",
       "storage": "git"
     },
     {

@@ -1,0 +1,11 @@
+{
+  "frozen_at": "2026-11-11T03:28:21.391980+00:00",
+  "calibration_sha256": "09f3c9799ecd69ae8d3598badddad8acc0101fa2f9c88bfa40df0d8b07f1cba5",
+  "baseline_sha256": "2da54ecd48147bac4cc21d37cce85f5fdb81fddae76a4d97d39a44616942a685",
+  "protocol_sha256": "a92db96e88676a72c492b0aa07d272b28319b87d5bd6d822880806fdceb6fe49",
+  "selected_temperature": 1,
+  "selected_llm_weight": 0,
+  "development_brier": 0.2834077277909683,
+  "test_scored": false,
+  "interpretation": "Statistical baseline selected (LLM weight zero). Development selection only; not evidence of LLM improvement or held-out success."
+}
