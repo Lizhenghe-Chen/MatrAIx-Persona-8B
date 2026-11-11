@@ -1,0 +1,17 @@
+{
+  "people": 24,
+  "diagnostics": {
+    "repeat": {
+      "mean_tv_drift_pp": 12.083333333333334,
+      "maximum_tv_drift_pp": 28.000000000000004,
+      "argmax_changed_tasks": 7
+    },
+    "rotated_restored": {
+      "mean_tv_drift_pp": 20.458333333333332,
+      "maximum_tv_drift_pp": 50.0,
+      "argmax_changed_tasks": 11
+    }
+  },
+  "target_answers_used_for_metric": false,
+  "limits": "24 development people; one repeat and one rotation. Difference beyond repeat drift is suggestive, not a precise isolated causal position effect."
+}

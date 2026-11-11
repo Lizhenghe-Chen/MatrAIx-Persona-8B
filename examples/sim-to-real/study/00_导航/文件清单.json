@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 511,
-  "git_bytes": 78740779,
+  "git_file_count": 513,
+  "git_bytes": 78741848,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -178,6 +178,12 @@
       "path": "decision_lab/dryer-reconciliation.json",
       "bytes": 24709,
       "sha256": "13d18c0c5ac38f9b34feef55d7e992c17d765f8ab45756ed5e2d92613ffe4149",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/dryer-stability-result.json",
+      "bytes": 528,
+      "sha256": "6e403ba0fd83494e15d9f80d87eabc1b807c6e82e8b19ee51bdf893084e219c3",
       "storage": "git"
     },
     {
@@ -478,6 +484,12 @@
       "path": "decision_lab/swiss-six-audit.json",
       "bytes": 1061,
       "sha256": "66c06fdd66d3026e9fadea5f02b797cb1e06d7809bfde4afa27df891b333a924",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/swiss-stability-result.json",
+      "bytes": 541,
+      "sha256": "d83e48ab842ee0eb91f4db8c15f7c98113dc483407758f2ab6f7affe956d4be8",
       "storage": "git"
     },
     {
