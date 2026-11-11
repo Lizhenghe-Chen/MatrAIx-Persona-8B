@@ -12,7 +12,7 @@ from .provider import build_request, parse_response, send
 GATES=('license_cloud_use','question_mapping','background_timing','author_statistics','leakage_review')
 
 
-def run(study, seal, config, database, phase, transport=send):
+def run(study, seal, config, database, phase, transport=send, max_new_calls=None):
     population=study.get('evaluation_mode')=='synthetic_population'
     if population and study.get('person_source')!='generated':
         raise ValueError('Synthetic population requires explicit generated provenance')
@@ -50,7 +50,10 @@ def run(study, seal, config, database, phase, transport=send):
             db.execute("INSERT OR IGNORE INTO metadata VALUES ('run_hash',?)",(run_hash,));db.commit()
             if db.execute("SELECT count(*) FROM calls WHERE status='pending'").fetchone()[0]:
                 raise RuntimeError('Uncertain interrupted request: reconcile before resuming; no automatic repeat')
+            started = 0
             for job,body,bound,n in jobs:
+                if max_new_calls is not None and started >= max_new_calls:
+                    stop_reason='batch_limit'; break
                 if control_path.exists():
                     control=json.loads(control_path.read_text())
                     deadline=control.get('stop_starting_calls_at_epoch')
@@ -62,9 +65,12 @@ def run(study, seal, config, database, phase, transport=send):
                     if old[0]!=digest(body):raise ValueError('Request changed')
                     continue
                 count,spent=db.execute('SELECT count(*),coalesce(sum(reserved_usd),0) FROM calls').fetchone()
+                if db.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='failed_attempts'").fetchone():
+                    count += db.execute('SELECT count(*) FROM failed_attempts').fetchone()[0]
                 if count>=cap or spent+bound>budget:break
                 db.execute('INSERT INTO calls VALUES (?,?,?,?,?,?,?)',(job,digest(body),'pending',bound,None,None,None));db.commit()
                 start=time.monotonic()
+                started += 1
                 try:
                     raw=transport(body,config['endpoint'])
                     result=parse_response(raw,n,expected,config.get('output_mode','probabilities'))

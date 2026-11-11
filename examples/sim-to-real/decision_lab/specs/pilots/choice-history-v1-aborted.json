@@ -1,0 +1,13 @@
+{
+  "status": "invalidated_before_effect_scoring",
+  "reason": "Known choices used integer selected_option without explicitly declaring zero-based indexing. Choice interpretation could be ambiguous. Replace with selected product text in a separately frozen version.",
+  "states": {
+    "complete": 419
+  },
+  "attempts": 419,
+  "reserved_usd": 3.36085728,
+  "peak_no_cache_usage_estimate_usd": 0.36441108,
+  "scores_computed": false,
+  "remaining_original_attempt_budget": 241,
+  "remaining_conservative_usd_budget": 6.639142720000001
+}

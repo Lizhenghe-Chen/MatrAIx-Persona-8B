@@ -1,5 +1,7 @@
 # 新旧实验导航
 
+- [两次真实选择快速验证：图解报告](decision_lab/reports/choice-history.html) · [文字结论](decision_lab/docs/两次选择快速验证.md)
+
 - [新一轮独立框架与实施状态](decision_lab/README.md)
 - [历史脚本与迁移说明](legacy/README.md)
 - [文献综述](study/11_文献综述/综述.md)

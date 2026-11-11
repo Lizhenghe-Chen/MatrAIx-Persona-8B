@@ -20,12 +20,17 @@ def build_request(payload, config):
     instruction=("Return JSON with only a probabilities array, in the supplied option order. Nonnegative probabilities must sum to 1."
                  if mode=='probabilities' else
                  "Return JSON with only a choice integer: the zero-based index of the single selected option in the supplied option order.")
+    grounding = ('provided background and known choices. Known choices are separate observations; '
+                 'predict the current question, not a repetition of a known answer'
+                 if config.get('include_choice_history') else 'provided background')
+    if config.get('known_choice_encoding') == 'selected_product_text':
+        instruction = ('In each known choice, selected_option_text is the exact alternative previously chosen. ' + instruction)
     return {'model': config['model'], 'temperature': config['temperature'],
             'top_p': config['top_p'], 'max_tokens': config['max_tokens'],
             'thinking': {'type': 'disabled'}, 'response_format': {'type':'json_object'},
             'messages': [
                 {'role':'system','content':
-                 'Predict this respondent\'s choice in the supplied context using only the provided background. '
+                 'Predict this respondent\'s choice in the supplied context using only the '+grounding+'. '
                  'Do not invent personal experiences. '+instruction+' Do not include explanations.'},
                 {'role':'user','content':json.dumps(payload,ensure_ascii=False)}]}
 

@@ -5,8 +5,8 @@
   "scope": "实验代码、六轮结果、补充分析、报告、公开输入和本机复算材料；排除本清单自身与缓存",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 565,
-  "git_bytes": 83547883,
+  "git_file_count": 578,
+  "git_bytes": 83662355,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -20,8 +20,8 @@
   "files": [
     {
       "path": "README.md",
-      "bytes": 7705,
-      "sha256": "5069521ff97ff4238c80f8ffc8824a97f84c77718714f67aa368b528904e479b",
+      "bytes": 7863,
+      "sha256": "f90fe95b4c772414b0138095d8eb66f74be72c5e6a7553af2cdf1ad6315e21d2",
       "storage": "git"
     },
     {
@@ -44,8 +44,8 @@
     },
     {
       "path": "decision_lab/README.md",
-      "bytes": 16298,
-      "sha256": "d38a1088e85010b4ec99ad99fa08979568998b7c0f589386f8c482ea86ddbb8a",
+      "bytes": 16520,
+      "sha256": "567df180314943a1d3ce8f998d3f081d25cd8c2c57b2c814837b09121a6c76db",
       "storage": "git"
     },
     {
@@ -91,6 +91,12 @@
       "storage": "git"
     },
     {
+      "path": "decision_lab/core/choice_history.py",
+      "bytes": 2097,
+      "sha256": "2555c84bd027c75e7cad7ac969f23da2dce81791f589952f314a549087a63f56",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/core/conditions.py",
       "bytes": 2550,
       "sha256": "8914e1b8600b515fdcf0fddd0af49eba76bd617e4221c4350d345fed3ea901af",
@@ -98,20 +104,26 @@
     },
     {
       "path": "decision_lab/core/core.py",
-      "bytes": 2991,
-      "sha256": "19e898d21b06f8b8b1e7e4927eea6da89a9bac5ca32f552b6222497978dff269",
+      "bytes": 3573,
+      "sha256": "cfd3f5eaa1514949aa070f2395a6449efbce2100ddb1cca796532bdd0763162d",
       "storage": "git"
     },
     {
       "path": "decision_lab/core/provider.py",
-      "bytes": 4118,
-      "sha256": "6fe35814b9357caa24f36c2dbac3082e32fa1dd52ac3619bc2caf9ecee2e89ac",
+      "bytes": 4580,
+      "sha256": "17b2701dafc372d730551a24ebaf3c4f81eb50306fa0f106bd48c7429589ff73",
       "storage": "git"
     },
     {
       "path": "decision_lab/core/runner.py",
-      "bytes": 5371,
-      "sha256": "f40a3f41a5107c333bf18de2139850cba9bf9a26c1e866a7c77b54e3b02c2ca1",
+      "bytes": 5785,
+      "sha256": "bc41f17948e4db0487af7f5c87e0edc1e3ee7dc5efb3e52c0910512191ce5c39",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/docs/两次选择快速验证.md",
+      "bytes": 3819,
+      "sha256": "e0d78b0690efce3c7cee8aa980e6d832be5bfec639f782d9b441b5426a079b3a",
       "storage": "git"
     },
     {
@@ -190,6 +202,12 @@
       "path": "decision_lab/evaluation/calibrate_study.py",
       "bytes": 3053,
       "sha256": "6882bfa21f2c611bd48994966a7a1d50cea049c4f95782568a632f06480e3ce1",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/evaluation/choice_history.py",
+      "bytes": 7519,
+      "sha256": "e00d9f0541cee05b2424818afd7c5f578f78e82d8ee019e0bd1f99d78bb4791f",
       "storage": "git"
     },
     {
@@ -325,6 +343,12 @@
       "storage": "git"
     },
     {
+      "path": "decision_lab/reporting/choice_history.py",
+      "bytes": 21206,
+      "sha256": "81732870a0df0bf652d7da7f875ec6ca6dbc5cb823a5b91e7c4b1858e3a89867",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/reporting/pilot_summary.py",
       "bytes": 2527,
       "sha256": "bdc80c5b125e4cdf5144200b6aa522114678daf776165787e92a7a60f5ae8ff2",
@@ -376,6 +400,18 @@
       "path": "decision_lab/reports/aggregate.html",
       "bytes": 15296,
       "sha256": "c2af01b94a113f83ca639d928fe24a530a85e4b4a5436895956ed0153210c822",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/choice-history-result.json",
+      "bytes": 18904,
+      "sha256": "9cd74f549d22bb538cd8e5a8beccef41a29473f7ce73868693dc81c7619a90f0",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/choice-history.html",
+      "bytes": 26079,
+      "sha256": "9a9d2114c42885bab48e2e64e74aa4f8fc28e3276be79c17820783be3f312372",
       "storage": "git"
     },
     {
@@ -667,6 +703,36 @@
       "storage": "git"
     },
     {
+      "path": "decision_lab/specs/pilots/choice-history-pilot-result.json",
+      "bytes": 481,
+      "sha256": "ad4825f69724d7550875ba01b5021c1cf3e987e59b2427e6f829996e9e7bed31",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/pilots/choice-history-protocol.json",
+      "bytes": 4450,
+      "sha256": "1837a70b811d96e998f5f01a91f4501673eb58478d6abe90c3a0c13222aa014a",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/pilots/choice-history-v1-aborted-pilot-result.json",
+      "bytes": 489,
+      "sha256": "385da397776ec9be014de3489e234b19170ec1bde4a02861609cece330679f24",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/pilots/choice-history-v1-aborted-protocol.json",
+      "bytes": 3528,
+      "sha256": "0b7641543ee1a2b627892558db986972feb2aae5f099ef683624fd44d36e5852",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/pilots/choice-history-v1-aborted.json",
+      "bytes": 537,
+      "sha256": "99de3b1d7bb1d7dbfd66fe8b0930a9933bf0b978301ae039c39cc173c6b73ab2",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/specs/pilots/dryer-pilot-protocol.json",
       "bytes": 2088,
       "sha256": "f29f517e011ae98eb696f58afc3542067b6376959189e9c06870e375a6de50a9",
@@ -718,6 +784,12 @@
       "path": "decision_lab/studies/audit_sources.py",
       "bytes": 2206,
       "sha256": "f188ae43dc7c98ec6446845229b80279223aca6b1a1e50d60091b1a60b5a426c",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/studies/choice_history.py",
+      "bytes": 15490,
+      "sha256": "88c5c803aefc4cf71c7081e404ec6a65cef20507a20f6156feac2e21f9ee61ab",
       "storage": "git"
     },
     {
@@ -904,6 +976,12 @@
       "path": "decision_lab/tests/test_checkpoint.py",
       "bytes": 1678,
       "sha256": "e3f3449a5d344b2c365d02494813a5f9f4a3b138e627932475e4b4e473c0f36d",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/tests/test_choice_history.py",
+      "bytes": 8035,
+      "sha256": "465a8f6191c557511a5405f4df1870a0c9fd86107ce35a821e40ba999c80d31c",
       "storage": "git"
     },
     {

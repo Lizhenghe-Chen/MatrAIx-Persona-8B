@@ -1,0 +1,92 @@
+{
+  "seed": 20261109,
+  "scope": "Exploratory reuse of previous development data; not independent confirmation",
+  "model": "deepseek-v4-pro",
+  "expected_identity": {
+    "model": "deepseek-v4-pro",
+    "system_fingerprint": "a307abda487cd1b463329ccb945ce396"
+  },
+  "sources": {
+    "dryer": {
+      "study_sha256": "948e36984d46df3ead2824e6e98547faed9d21cedba899c16db107338d99ae9b",
+      "seal_sha256": "bf05d31d00f6d6ee294f2dfa8c97b5ad95dad947f726f63e185d779411e2d46a"
+    },
+    "swiss": {
+      "study_sha256": "e6bb86e1b71af594e17ca627698c25b191a441cde5d3340783cf983a5ba3ccaf",
+      "seal_sha256": "f53fc80efb2d8dd18c060f1b75ca3fc0304206eabb80d8b650c964807d067c0e"
+    }
+  },
+  "coverage": {
+    "dryer": {
+      "development_people": 292,
+      "eligible_people": 282,
+      "excluded": {
+        "unmappable_age_or_education": 9,
+        "no_eligible_donor": 1
+      },
+      "eligible_strata": {
+        "UK_T1": 44,
+        "IRE_C": 40,
+        "IRE_T1": 38,
+        "CAN_C": 41,
+        "CAN_T1": 37,
+        "UK_C": 43,
+        "USA_C": 39
+      },
+      "evaluation_quota": {
+        "UK_T1": 8,
+        "IRE_C": 7,
+        "IRE_T1": 6,
+        "CAN_C": 7,
+        "CAN_T1": 6,
+        "UK_C": 7,
+        "USA_C": 7
+      },
+      "pilot_people": 4
+    },
+    "swiss": {
+      "development_people": 683,
+      "eligible_people": 649,
+      "excluded": {
+        "unmappable_age_or_education": 34
+      },
+      "eligible_strata": {
+        "Smartphone": 220,
+        "Washing machine": 212,
+        "TV": 217
+      },
+      "evaluation_quota": {
+        "Smartphone": 16,
+        "Washing machine": 16,
+        "TV": 16
+      },
+      "pilot_people": 4
+    }
+  },
+  "calls": {
+    "pilot": 24,
+    "evaluation": 576,
+    "maximum_attempts": 660
+  },
+  "budget_usd": 10,
+  "planned_conservative_reservation_usd": 4.8180066,
+  "prompt_sha256": "ea417c6f50e246b094a1e2c0853a9ea2f3e493b8342f2323ca2b8a69bb4415c0",
+  "selection": "Largest-remainder proportional quota among eligible people; seeded task sampling without outcome-based selection",
+  "donors": "Same original stratum, 18–64/65+, below bachelor/bachelor+. Same source development pool; donors may recur. Full distinct records, no target cards.",
+  "screening_gate": "Both studies own vs background relative Brier improvement >=2%, and own Brier < other. Intervals crossing zero mean tentative lead only.",
+  "bootstrap": "2000 paired respondent resamples within original study strata; fixed assigned observations/donors",
+  "retry_policy": "At most one explicit retry per failed job; no identity/auth/pending retries; all reservations and attempts count toward global caps",
+  "known_vs_future": "Task split is random, not chronological; no future-purchase claim",
+  "statistics": "Frozen train-fitted, development-selected rich baseline; reference only, not equal-information competitor",
+  "examples": "First evaluation participant in each study by frozen order; first target, irrespective of outcome",
+  "limitations": [
+    "Two appliance studies only",
+    "Previously used development data",
+    "No complete original MatrAIx comparison",
+    "Not zero-shot or synthetic-population validation",
+    "Donor dependence and model-call noise not separately estimated"
+  ],
+  "frozen_input_sha256": "619c3666cbe0d0202ba149e9327a980258c3eec5bd53dc157c8c990b746dcf74",
+  "frozen_config_sha256": "b9bcbd05893660d68e8182a95da89527ddd1cfe2fb4789e55fdc6ff7e8065ea2",
+  "protocol_sha256": "a0669e16d5e89ca2ea740205721c0e084d8e331fc28492d7f5eb21b597432062"
+}

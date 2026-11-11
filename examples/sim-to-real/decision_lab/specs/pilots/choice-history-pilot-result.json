@@ -1,0 +1,20 @@
+{
+  "complete_pilot_jobs": 24,
+  "identity": {
+    "model": "deepseek-v4-pro",
+    "system_fingerprint": "a307abda487cd1b463329ccb945ce396"
+  },
+  "pilot_peak_no_cache_usage_estimate_usd": 0.02304324,
+  "projected_upper_usage_usd": 0.6336891,
+  "planned_conservative_reservation_usd": 5.03837796,
+  "execution": {
+    "states": {
+      "complete": 24
+    },
+    "complete": 24,
+    "attempts": 24,
+    "retries": 0,
+    "reserved_usd": 0.20200884
+  },
+  "scores_computed": false
+}

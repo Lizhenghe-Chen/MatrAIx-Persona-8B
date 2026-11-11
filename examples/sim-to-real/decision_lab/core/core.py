@@ -61,12 +61,21 @@ def split(rows, seed=20261109):
 def request_payload(row, config):
     # Construct explicitly; never serialize the original row.
     fields = config['background_fields']
+    if 'background_fields_by_kind' in config:
+        fields = config['background_fields_by_kind'][row['kind']]
     forbidden = {'person', 'answer', 'weight', 'email', 'name', 'phone', 'id'}
     if forbidden.intersection(fields):
         raise ValueError('Forbidden background field')
-    return {'question': row['question'], 'options': row['options'],
+    payload = {'question': row['question'], 'options': row['options'],
             'context': row['context'],
             'background': {k: row['background'].get(k, 'unknown') for k in fields}}
+    if config.get('include_choice_history'):
+        from .choice_history import checked_history
+        payload['known_choices'] = checked_history(row.get('known_choices', []), row)
+        if config.get('known_choice_encoding') == 'selected_product_text' and any(
+                'selected_option_text' not in item for item in payload['known_choices']):
+            raise ValueError('Known choice must identify selected product text explicitly')
+    return payload
 
 
 def brier(p, answer):
