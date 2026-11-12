@@ -38,6 +38,11 @@ PLANS = {
                 'spec': 'wide-v1.json', 'db': 'wide-v1.sqlite', 'control': 'wide-v1-control.json',
                 'result': 'wide-v1-results.json', 'sources': 'adapters', 'authorized': False,
                 'arms': ['original', 'optimized']},
+    'external-v1': {'studies': ['openecommerce'],
+                    'cohort': 'cohort-external-v1.json', 'forms': 'external-v1-jobs.json',
+                    'spec': 'external-v1.json', 'db': 'external-v1.sqlite',
+                    'control': 'external-v1-control.json', 'result': 'external-v1-results.json',
+                    'sources': 'adapters', 'authorized': False, 'arms': ['optimized']},
     'anchor-v1': {'studies': ['german', 'pew111'],
                   'cohort': 'cohort-wide-v1.json', 'forms': 'anchor-v1-jobs.json',
                   'spec': 'anchor-v1.json', 'db': 'anchor-v1.sqlite', 'control': 'anchor-v1-control.json',
@@ -742,11 +747,12 @@ def score():
 
 def _adapter_rows():
     """Source respondents for the adapter-backed plans, read from the original files."""
-    from .adapters import (drone_rows, german_rows, origin_rows, packaging_rows, pew111_rows,
-                           radiant_rows, shoes_rows, tshirt_rows)
+    from .adapters import (drone_rows, german_rows, openecommerce_rows, origin_rows,
+                           packaging_rows, pew111_rows, radiant_rows, shoes_rows, tshirt_rows)
     loaders = {'drone': drone_rows, 'shoes': shoes_rows, 'origin': origin_rows,
                'packaging': packaging_rows, 'pew111': pew111_rows, 'german': german_rows,
-               'tshirt': tshirt_rows, 'radiant': radiant_rows}
+               'tshirt': tshirt_rows, 'radiant': radiant_rows,
+               'openecommerce': openecommerce_rows}
     for study in STUDIES:
         if study not in loaders:
             raise ValueError('No source loader for ' + study)

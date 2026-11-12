@@ -1,0 +1,84 @@
+{
+  "status": "candidate_matching_not_formal_freeze",
+  "seed": 20261109,
+  "candidate_pool_records": 22326,
+  "snapshot_sha256": "7af4c6c93de57b83d4c1803e06fad19ec17b2c73e9a35966790eb7fca0acf8c6",
+  "studies": {
+    "openecommerce": {
+      "eligible_respondents": 4995,
+      "excluded": {},
+      "phase_allocation": {
+        "pilot": {
+          "18-24|Bachelor's degree": 1,
+          "18-24|High school diploma or GED": 1,
+          "25-34|Bachelor's degree": 1,
+          "25-34|Graduate or professional degree (MA, MS, MBA, PhD, JD, MD, DDS, etc)": 1,
+          "25-34|High school diploma or GED": 1,
+          "35-44|Bachelor's degree": 1,
+          "35-44|High school diploma or GED": 1,
+          "45-54|Bachelor's degree": 1
+        },
+        "screen": {
+          "18-24|Bachelor's degree": 3,
+          "18-24|High school diploma or GED": 4,
+          "25-34|Bachelor's degree": 8,
+          "25-34|Graduate or professional degree (MA, MS, MBA, PhD, JD, MD, DDS, etc)": 3,
+          "25-34|High school diploma or GED": 6,
+          "35-44|Bachelor's degree": 5,
+          "35-44|Graduate or professional degree (MA, MS, MBA, PhD, JD, MD, DDS, etc)": 3,
+          "35-44|High school diploma or GED": 4,
+          "45-54|Bachelor's degree": 3,
+          "45-54|Graduate or professional degree (MA, MS, MBA, PhD, JD, MD, DDS, etc)": 1,
+          "45-54|High school diploma or GED": 2,
+          "55-64|Bachelor's degree": 2,
+          "55-64|Graduate or professional degree (MA, MS, MBA, PhD, JD, MD, DDS, etc)": 1,
+          "55-64|High school diploma or GED": 1,
+          "65+|Bachelor's degree": 1,
+          "65+|Graduate or professional degree (MA, MS, MBA, PhD, JD, MD, DDS, etc)": 1
+        },
+        "reserve": {
+          "18-24|Bachelor's degree": 6,
+          "18-24|Graduate or professional degree (MA, MS, MBA, PhD, JD, MD, DDS, etc)": 1,
+          "18-24|High school diploma or GED": 8,
+          "25-34|Bachelor's degree": 16,
+          "25-34|Graduate or professional degree (MA, MS, MBA, PhD, JD, MD, DDS, etc)": 6,
+          "25-34|High school diploma or GED": 12,
+          "35-44|Bachelor's degree": 11,
+          "35-44|Graduate or professional degree (MA, MS, MBA, PhD, JD, MD, DDS, etc)": 5,
+          "35-44|High school diploma or GED": 8,
+          "45-54|Bachelor's degree": 6,
+          "45-54|Graduate or professional degree (MA, MS, MBA, PhD, JD, MD, DDS, etc)": 3,
+          "45-54|High school diploma or GED": 4,
+          "55-64|Bachelor's degree": 3,
+          "55-64|Graduate or professional degree (MA, MS, MBA, PhD, JD, MD, DDS, etc)": 1,
+          "55-64|High school diploma or GED": 3,
+          "65+|Bachelor's degree": 1,
+          "65+|Graduate or professional degree (MA, MS, MBA, PhD, JD, MD, DDS, etc)": 1,
+          "65+|High school diploma or GED": 1
+        }
+      },
+      "selected": 152,
+      "matched": 152,
+      "unique_release_profiles": 152,
+      "age_resolutions": {
+        "native_age_band": 147,
+        "65_plus": 5
+      },
+      "education_resolution": "unavailable_in_instrument",
+      "match_fields": [
+        "age_bracket",
+        "gender_identity",
+        "highest_education",
+        "region"
+      ],
+      "source_counts": {
+        "wiki": 89,
+        "gss": 49,
+        "prism": 9,
+        "amazon": 2,
+        "stackoverflow": 2,
+        "synthetic": 1
+      }
+    }
+  }
+}

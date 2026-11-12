@@ -138,13 +138,13 @@ def blend(study, pilots=(5, 10, 20, 40), draws=40, seed=20261113):
     return out
 
 
-SOURCE = {'model': 'qwen'}
+SOURCE = {'model': 'qwen', 'round': 'r1'}
 
 
 def formal_model_cards(study, arm='optimized'):
     """Per-card aggregate distribution read from a frozen formal checkpoint."""
     from . import formal
-    plan = 'v1' if study in formal.PLANS['v1']['studies'] else 'wide-v1'
+    plan = next(name for name, spec in formal.PLANS.items() if study in spec['studies'])
     formal.select_plan(plan)
     _, cases_by_study, _ = formal._cases()
     cases = cases_by_study[study]
@@ -168,7 +168,7 @@ def _model_cards(study):
     """Per-card aggregate distribution for the model under evaluation."""
     if SOURCE['model'] == 'pro':
         return formal_model_cards(study)
-    path = ROOT / 'reports/cross-study-v1/screening-r1-opt.json'
+    path = ROOT / f'reports/cross-study-v1/screening-{SOURCE["round"]}-opt.json'
     data = json.loads(path.read_text())['studies']
     return data[study]['cards_detail']
 
@@ -222,15 +222,18 @@ def main():
     parser.add_argument('--studies', default='anes,pew13,pew168,shed,packaging,pew111,german,radiant')
     parser.add_argument('--out', default=None)
     parser.add_argument('--model', default='qwen', choices=['qwen', 'pro'])
+    parser.add_argument('--round', default='r1')
     options = parser.parse_args()
     studies = [s for s in options.studies.split(',') if s]
     SOURCE['model'] = options.model
+    SOURCE['round'] = options.round
     result = {'status': 'pilot_versus_model', 'model': options.model, 'k0': K0,
               'pilots': list(PILOTS), 'studies': {}}
     for study in studies:
         result['studies'][study] = {'crossover': crossover(study), 'blend': blend(study),
                                     'shuffle_ablation': shuffle_ablation(study)}
-    target = ROOT / 'reports/cross-study-v1' / (options.out or f'blend-{options.model}.json')
+    suffix = '' if options.round == 'r1' else f'-{options.round}'
+    target = ROOT / 'reports/cross-study-v1' / (options.out or f'blend{suffix}-{options.model}.json')
     target.write_text(json.dumps(result, ensure_ascii=False, indent=2, default=str) + '\n')
     print(f"{'study':10s} {'AI':>6s} " + ' '.join(f'k={k:<5d}' for k in PILOTS))
     for study, block in result['studies'].items():

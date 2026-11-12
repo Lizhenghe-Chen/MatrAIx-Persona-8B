@@ -810,8 +810,68 @@ def pilot_section():
             '等同"同一人群、同一问卷"的情形；若换成完全不同的国家或人群，'
             'AI 的卡片级信息是否仍然有效，本轮没有测。两类模型（Qwen 与 Pro）给出同样结论，'
             '说明它不是某个模型的偶然。</p>'
-            '<script id="pilot-data" type="application/json">'
+            + external_block()
+            + '<script id="pilot-data" type="application/json">'
             + payload_json + '</script></section>')
+
+
+def external_block():
+    """External validation on a dataset that never took part in any tuning."""
+    path = CROSS / 'external-v1-results.json'
+    qwen_path = CROSS / 'blend-ext-qwen.json'
+    pro_path = CROSS / 'blend-ext-pro.json'
+    if not path.exists():
+        return ''
+    results = json.loads(path.read_text())['studies']['openecommerce']
+    arms = results['results']['arms']
+    qwen = json.loads(qwen_path.read_text())['studies']['openecommerce'] if qwen_path.exists() else None
+    pro = json.loads(pro_path.read_text())['studies']['openecommerce'] if pro_path.exists() else None
+    ai_pro = arms['optimized']['card_tv_pp']
+    ai_qwen = None
+    screening = CROSS / 'screening-ext-opt.json'
+    if screening.exists():
+        ai_qwen = json.loads(screening.read_text())['studies']['openecommerce']['tv_pp']
+    lookup = arms['stratum_history']['card_tv_pp']
+    uniform = arms['uniform']['card_tv_pp']
+    rows = ''.join(
+        f"<tr><th>{name}</th><td>{value:.1f}pp</td></tr>"
+        for name, value in (('只问 AI（Pro）', ai_pro),
+                            ('只问 AI（Qwen）', ai_qwen) if ai_qwen else ('', 0),
+                            ('每档等分', uniform), ('历史查表', lookup)) if value)
+    gain_pro = pro['blend']['20'].get('model_gain_pp') if pro else None
+    gain_qwen = qwen['blend']['20'].get('model_gain_pp') if qwen else None
+    shuffle_pro = pro['shuffle_ablation']['20'] if pro else None
+    crossover = None
+    if pro:
+        for k in sorted(pro['crossover'], key=int):
+            value = pro['crossover'][k]
+            if value is not None and value <= ai_pro:
+                crossover = int(k)
+                break
+    return ('<h3>外部验证：一套从没参与过调参的数据</h3>'
+            '<p>上面所有结论都来自 14 套研究，而它们全部参与过筛查。为检验泛化，'
+            '我接入了一套<strong>此前从未使用</strong>的公开问卷——Amazon「Open eCommerce」'
+            '的美国线上样本：4,995 名受访者、14 道单选题，涵盖 Amazone 使用频率、'
+            '家庭规模、烟酒习惯、疾病、数据出售态度等；人口字段为年龄、性别、学历、收入、州。'
+            '按同一套规则抽取 96 人作为被测队列，其余作历史答案。</p>'
+            '<div class="table-wrap"><table style="min-width:520px">'
+            '<caption>外部数据上的分布误差（14 张卡，96 人，越低越好）</caption>'
+            '<thead><tr><th>做法</th><th>TV</th></tr></thead><tbody>' + rows + '</tbody></table></div>'
+            f'<p><strong>结论一（复现）</strong>：AI 仍然远好于"每档等分"'
+            f'（{ai_pro:.1f} vs {uniform:.1f}pp，误差降低 {100 * (1 - ai_pro / uniform):.0f}%），'
+            f'也仍然远差于查表（差 {100 * (1 - lookup / ai_pro):.0f}%）。'
+            '与前面 14 套完全同向。</p>'
+            + (f'<p><strong>结论二（泛化）</strong>：小样本混合规则在这里依然成立——'
+               f'实测到第 {crossover} 份就超过只问 AI；k=20 时混合 AI 比混合均匀分布好 '
+               f'<b>+{gain_pro:.1f}pp（Pro）</b>'
+               + (f'、<b>+{gain_qwen:.1f}pp（Qwen）</b>' if gain_qwen else '') + '。'
+               + (f'把 AI 的分布换成同一问卷另一道题再混合，误差从 {shuffle_pro["model"]:.1f} 升到 '
+                  f'{shuffle_pro["shuffled"]:.1f}pp，说明卡片级信息同样存在。' if shuffle_pro else '')
+               + '</p>' if crossover else '')
+            + '<p class="small">这套数据此前没有参与任何一次调框架、选权重或做校准，'
+              '因此它检验的是「规则能否迁移」，不是「在同一批数据上拟合得多好」。'
+              '它的题型与前面 14 套不同（行为与态度混合、选项 3–4 个），'
+              '结论仍然一致，这是目前最强的一条泛化证据。</p>')
 
 
 def build(d):

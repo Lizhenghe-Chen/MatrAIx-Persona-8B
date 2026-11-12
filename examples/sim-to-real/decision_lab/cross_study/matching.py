@@ -49,6 +49,10 @@ EDUCATION.update({
     # US T-shirt instrument (CFTF_usa.dta).
     "Associate's": ["Associate's"],
     'Below high school': ['No formal', 'Primary'],
+    # Open eCommerce (Amazon Mechanical Turk) survey of US respondents.
+    'High school diploma or GED': ['Secondary'],
+    'Graduate or professional degree (MA, MS, MBA, PhD, JD, MD, DDS, etc)': DEGREE[1:],
+    'Some high school or less': ['No formal', 'Primary'],
 })
 # Studies whose instrument never measured education. The constraint is dropped and
 # declared; education is never inferred from other fields.

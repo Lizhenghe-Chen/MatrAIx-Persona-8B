@@ -175,7 +175,24 @@ def main():
             if ab['model'] is None: continue
             assert ab['model']<=ab['shuffled']+1e-9,(study,'card-specific information')
         pilot_note=f' pilot blend for {len(pilot_data["studies"])} studies tied to the page;'
-    print(f'PASS: {checked} source hashes; all local report links; 13 distributions and averages; latest run exclusion; readable labels.'+cross_note+cluster_note+clean_note+wide_note+direction_note+anchor_note+pilot_note)
+    external_note=''
+    external_path=HERE.parent/'decision_lab/reports/cross-study-v1/external-v1-results.json'
+    if external_path.exists():
+        ext=json.loads(external_path.read_text())['studies']['openecommerce']
+        html_ext=(HERE/'index.html').read_text()
+        arms=ext['results']['arms']
+        assert '外部验证' in html_ext
+        assert f"{arms['optimized']['card_tv_pp']:.1f}pp" in html_ext
+        assert f"{arms['stratum_history']['card_tv_pp']:.1f}pp" in html_ext
+        # The model must still beat a uniform guess on data it has never seen.
+        assert arms['optimized']['card_tv_pp'] < arms['uniform']['card_tv_pp']
+        pro_ext=HERE.parent/'decision_lab/reports/cross-study-v1/blend-ext-pro.json'
+        if pro_ext.exists():
+            block=json.loads(pro_ext.read_text())['studies']['openecommerce']
+            assert block['blend']['20']['model_gain_pp']>0
+            assert block['shuffle_ablation']['20']['model']<block['shuffle_ablation']['20']['shuffled']
+        external_note=' external validation on the Open eCommerce survey tied to the page;'
+    print(f'PASS: {checked} source hashes; all local report links; 13 distributions and averages; latest run exclusion; readable labels.'+cross_note+cluster_note+clean_note+wide_note+direction_note+anchor_note+pilot_note+external_note)
 
 
 if __name__=='__main__':

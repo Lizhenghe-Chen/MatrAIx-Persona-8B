@@ -11,8 +11,8 @@ from collections import Counter, defaultdict
 
 import pyarrow.parquet as pq
 
-from .adapters import (drone_rows, german_rows, origin_rows, packaging_rows, pew111_rows,
-                       radiant_rows, shoes_rows, tshirt_rows)
+from .adapters import (drone_rows, german_rows, openecommerce_rows, origin_rows, packaging_rows,
+                       pew111_rows, radiant_rows, shoes_rows, tshirt_rows)
 from .matching import compatible, constraints
 from .personas import FIELDS, decode
 from .registry import DATA, OUT
@@ -22,7 +22,8 @@ SEED = 20261109
 STUDIES = ('drone', 'shoes')
 WIDE = ('origin', 'packaging', 'pew111', 'german', 'tshirt', 'radiant')
 WIDE_LOADERS = {'origin': origin_rows, 'packaging': packaging_rows, 'pew111': pew111_rows,
-                'german': german_rows, 'tshirt': tshirt_rows, 'radiant': radiant_rows}
+                'german': german_rows, 'tshirt': tshirt_rows, 'radiant': radiant_rows,
+                'openecommerce': openecommerce_rows}
 PHASES = (('pilot', 8), ('screen', 48), ('reserve', 96))
 UNDER_18 = ('Under 5', '5-12', '13-17', 'unknown')
 

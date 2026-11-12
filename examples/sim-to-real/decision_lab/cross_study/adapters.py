@@ -20,7 +20,7 @@ from collections import defaultdict
 from pathlib import Path
 
 from .matching import AGE
-from .registry import DATA
+from .registry import DATA, ROOT
 
 ORIGIN = DATA / '06_历史北美电商/origin.csv'
 ORIGIN_ORIGINAL = DATA / '06_历史北美电商/origin-original.tab'
@@ -619,4 +619,77 @@ def swiss_six_rows():
                      'context': SWISS_SIX_CONTEXT, 'questions': questions, 'truth': truth,
                      'group': 'Switzerland|panel', 'country': 'Switzerland',
                      'source_id': str(int(person))})
+    return rows
+
+
+# The working copy inside the repository is preferred; the external data volume is a fallback.
+OPENECOMMERCE = next(path for path in (
+    ROOT.parent / 'study/07_购物数据候选/本机数据/Open_eCommerce_1.0/survey.csv.gz',
+    DATA / '07_购物数据候选/本机数据/Open_eCommerce_1.0/survey.csv.gz')
+    if path.exists())
+OPENECOMMERCE_CONTEXT = (
+    'A survey of United States respondents recruited online, asking about how they use Amazon, '
+    'their household, personal habits and health, and their views on selling personal data.'
+)
+# Single-choice columns only: multi-select answers (race, life changes) are comma-joined in the
+# source and cannot be scored as one choice per respondent.
+OPENECOMMERCE_ITEMS = {
+    'household_shoppers': ('Q-amazon-use-howmany', 'How many people in your household use Amazon?'),
+    'household_size': ('Q-amazon-use-hh-size', 'How many people live in your household?'),
+    'amazon_frequency': ('Q-amazon-use-how-oft', 'How often do you use Amazon?'),
+    'cigarettes': ('Q-substance-use-cigarettes', 'Do you smoke cigarettes?'),
+    'marijuana': ('Q-substance-use-marijuana', 'Do you use marijuana?'),
+    'alcohol': ('Q-substance-use-alcohol', 'Do you drink alcohol?'),
+    'diabetes': ('Q-personal-diabetes', 'Do you have diabetes?'),
+    'wheelchair': ('Q-personal-wheelchair', 'Do you use a wheelchair?'),
+    'sell_your_data': ('Q-sell-YOUR-data', 'Would you sell your own personal data?'),
+    'sell_consumer_data': ('Q-sell-consumer-data', 'Should companies be allowed to sell consumer data?'),
+    'small_biz_use': ('Q-small-biz-use', 'Do you use Amazon for a small business?'),
+    'census_use': ('Q-census-use', 'Would you trust Amazon with census data?'),
+    'research_society': ('Q-research-society', 'Do you think research benefits society?'),
+    'sexual_orientation': ('Q-sexual-orientation', 'How do you describe your sexual orientation?'),
+}
+OPENECOMMERCE_AGE = {'18 - 24 years': '18-24', '25 - 34 years': '25-34', '35 - 44 years': '35-44',
+                     '45 - 54 years': '45-54', '55 - 64 years': '55-64', '65 and older': '65+'}
+
+
+def openecommerce_rows():
+    """External validation set: a survey never used in any earlier round.
+
+    Only the evaluated sample's own answers are ever read here; nothing about the
+    model, personas or references enters this adapter.
+    """
+    import pandas as pd
+
+    frame = pd.read_csv(OPENECOMMERCE, sep='\t', compression='gzip')
+    rows = []
+    for _, record in frame.iterrows():
+        age = OPENECOMMERCE_AGE.get(str(record['Q-demos-age']).strip())
+        education = str(record['Q-demos-education']).strip()
+        if not age or education == 'Prefer not to say':
+            continue
+        questions, truth = [], {}
+        for item, (column, prompt) in OPENECOMMERCE_ITEMS.items():
+            value = record.get(column)
+            if not isinstance(value, str) or not value.strip():
+                continue
+            options = sorted({str(v).strip() for v in frame[column].dropna().unique()})
+            if str(value).strip() not in options:
+                continue
+            questions.append(question(item, prompt,
+                                      [(str(i + 1), label) for i, label in enumerate(options)]))
+            truth[item] = str(options.index(str(value).strip()) + 1)
+        if len(questions) < 8:
+            continue
+        background = {'Age': age, 'Education': education,
+                      'Gender': str(record['Q-demos-gender']).strip(),
+                      'Income': str(record['Q-demos-income']).strip(),
+                      'State': str(record['Q-demos-state']).strip()}
+        rows.append({'study': 'openecommerce',
+                     'person': person_id('openecommerce', record['Survey ResponseID']),
+                     'stratum': f'{age}|{education}',
+                     'weight': 1.0, 'background': background,
+                     'context': OPENECOMMERCE_CONTEXT, 'questions': questions, 'truth': truth,
+                     'group': f'{age}|{education}', 'country': 'United States',
+                     'source_id': record['Survey ResponseID']})
     return rows

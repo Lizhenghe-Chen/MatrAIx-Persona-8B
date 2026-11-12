@@ -1,0 +1,76 @@
+{
+  "status": "complete",
+  "studies": [
+    "openecommerce"
+  ],
+  "arms": [
+    "optimized"
+  ],
+  "excluded_participants": [],
+  "excluded_policy": "Excluded before any effect was computed: no complete approved persona exists in the release. Reported, never replaced by a hand-written profile.",
+  "people_with_persona": {
+    "openecommerce": 96
+  },
+  "jobs_per_study_arm": {
+    "openecommerce/optimized": 96
+  },
+  "total_calls": 96,
+  "max_calls": 96,
+  "max_retries": 9,
+  "reserved_peak_usd": 2.82552732,
+  "max_cost_usd": 3.4,
+  "input_peak_usd_per_million": 1.32,
+  "output_peak_usd_per_million": 3.96,
+  "price_source": "https://api-docs.deepseek.com/quick_start/pricing/",
+  "expected_identity": {
+    "model": "deepseek-v4-pro",
+    "system_fingerprint": "a307abda487cd1b463329ccb945ce396"
+  },
+  "jobs_sha256": "235a2c9ac921cd9ead47959ec359403cbabae6f0b0fe264eafb11375c7812e1e",
+  "people_per_study": {
+    "openecommerce": 96
+  },
+  "persona_field_distribution": {
+    "openecommerce": {
+      "min": 11,
+      "median": 360.5,
+      "max": 847,
+      "mean": 322.65625,
+      "people": 96
+    }
+  },
+  "omitted_dimension_distribution": {
+    "openecommerce": {
+      "min": 443,
+      "median": 929.5,
+      "max": 1279,
+      "mean": 967.34375,
+      "people": 96
+    }
+  },
+  "persona_richness_note": "Approved categorical dimensions sent per persona differ by study and by person. A cross-study comparison must read this table: a larger field count is not evidence that the persona is more accurate, but it is a confound for how much information the model received.",
+  "scoring_plan": {
+    "primary": "optimized versus original, per-person Brier, paired by person within stratum, 2000 draws",
+    "required_comparators": [
+      "history (weighted option shares from non-evaluated respondents)",
+      "stratum_history (same, within stratum where at least 20 respondents exist)",
+      "uniform"
+    ],
+    "distribution": "equal-card mean absolute share difference in percentage points",
+    "gates": "relative Brier improvement at least 2% with the 95% interval above zero; card-share improvement reported separately",
+    "no_default_answers": true
+  },
+  "formal_effects_available": false,
+  "formal_run_authorized_by_user": true,
+  "authorization_note": "External validation of the pilot-blend rule, approved under the standing \"iterate autonomously within 300 CNY\" instruction. 96 calls, reserved peak 2.83 USD, measured cost expected about 0.5 USD. Dataset: Open eCommerce survey (Amazon Mechanical Turk, US), never used in any earlier round.",
+  "execution_mode": {
+    "workers": 6,
+    "claim": "INSERT OR IGNORE inside BEGIN IMMEDIATE; one row per frozen body hash"
+  },
+  "completion": {
+    "frozen_jobs": 96,
+    "answered_calls": 96,
+    "failed": 0,
+    "note": "Single arm (optimized). External validation only: no ablation is claimed."
+  }
+}
