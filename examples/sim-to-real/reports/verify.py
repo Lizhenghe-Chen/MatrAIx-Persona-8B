@@ -64,7 +64,19 @@ def main():
     assert data['history']['aborted_run']['attempts']==419
     assert data['history']['aborted_run']['scores_computed'] is False
     assert data['history']['recommend_independent_replication'] is False
-    print(f'PASS: {checked} source hashes; all local report links; 13 distributions and averages; latest run exclusion; readable labels.')
+    cross=HERE.parent/'decision_lab/reports/cross-study-v1/formal-report.summary.json'
+    if cross.exists():
+        summary=json.loads(cross.read_text())
+        html_cross=(HERE/'index.html').read_text()
+        assert 'id="cross-study"' in html_cross
+        for key in summary['rows']:
+            assert f'{100*summary["rows"][key]["brier"]["relative_improvement"]:+.1f}%' in html_cross, key
+        assert (HERE.parent/'decision_lab/reports/cross-study-v1/formal-report.html').exists()
+        assert (HERE.parent/'decision_lab/docs/推荐配置.md').exists()
+        cross_note=f' cross-study summary for {len(summary["rows"])} studies tied to the generated page;'
+    else:
+        cross_note=''
+    print(f'PASS: {checked} source hashes; all local report links; 13 distributions and averages; latest run exclusion; readable labels.'+cross_note)
 
 
 if __name__=='__main__':

@@ -1,0 +1,177 @@
+{
+  "version": "admission-declarations-v1",
+  "principles": [
+    "A study may only be scored after every entry gate has a recorded evidence pointer.",
+    "Every study must name the same-information reference that will be scored alongside the model.",
+    "Distribution claims require at least 20 evaluated respondents per frozen card; otherwise the result is descriptive only.",
+    "Missing data handling and cohort exclusions are recorded before any model output is read."
+  ],
+  "gates": [
+    "license_cloud_use",
+    "question_mapping",
+    "background_timing",
+    "author_statistics",
+    "leakage_review"
+  ],
+  "reference_kinds": [
+    "history",
+    "stratum_history",
+    "attribute_logit"
+  ],
+  "minimum_people_per_card": 20,
+  "studies": [
+    {
+      "id": "dryer",
+      "name": "四国烘干机",
+      "evidence_tier": "historical",
+      "status": "admitted",
+      "gates": {
+        "license_cloud_use": {"status": "passed", "evidence": "specs/pilots/dryer-pilot-protocol.json#admission_evidence.license_cloud_use"},
+        "question_mapping": {"status": "passed", "evidence": "specs/pilots/dryer-pilot-protocol.json#admission_evidence.question_mapping"},
+        "background_timing": {"status": "passed", "evidence": "specs/pilots/dryer-pilot-protocol.json#admission_evidence.background_timing"},
+        "author_statistics": {"status": "passed", "evidence": "specs/audits/dryer-reconciliation.json"},
+        "leakage_review": {"status": "passed", "evidence": "specs/pilots/dryer-pilot-protocol.json#admission_evidence.leakage_review"}
+      },
+      "reference": {"kind": "attribute_logit", "fitted_on": "evaluated cohort excluded", "excludes_evaluated": true},
+      "distribution": {"minimum_people_per_card": 20, "estimable": false, "reason": "Every frozen card is seen by at most 8 evaluated respondents."},
+      "exclusions": [{"kind": "persona_missing", "count": 2, "preregistered": true}],
+      "notes": "Formal v1 run used 94 people after excluding two respondents without an approved release persona."
+    },
+    {
+      "id": "swiss",
+      "name": "瑞士家电规格",
+      "evidence_tier": "historical",
+      "status": "admitted",
+      "gates": {
+        "license_cloud_use": {"status": "passed", "evidence": "specs/pilots/swiss-pilot-protocol.json#admission_evidence.license_cloud_use"},
+        "question_mapping": {"status": "passed", "evidence": "specs/pilots/swiss-pilot-protocol.json#admission_evidence.question_mapping"},
+        "background_timing": {"status": "passed", "evidence": "specs/pilots/swiss-pilot-protocol.json#admission_evidence.background_timing"},
+        "author_statistics": {"status": "passed", "evidence": "specs/audits/swiss-audit.json"},
+        "leakage_review": {"status": "passed", "evidence": "specs/pilots/swiss-pilot-protocol.json#admission_evidence.leakage_review"}
+      },
+      "reference": {"kind": "attribute_logit", "fitted_on": "evaluated cohort excluded", "excludes_evaluated": true},
+      "distribution": {"minimum_people_per_card": 20, "estimable": false, "reason": "All 384 frozen cards are unique to one respondent."},
+      "exclusions": [],
+      "notes": "Author-English textual reconstruction; original visual order not reconstructed."
+    },
+    {
+      "id": "shed",
+      "name": "美国消费调整",
+      "evidence_tier": "historical",
+      "status": "retrospective_incomplete",
+      "gates": {
+        "license_cloud_use": {"status": "not_recorded", "evidence": null},
+        "question_mapping": {"status": "passed", "evidence": "study/03_提示与背景/input-audit.json#identical_question_text_and_order_by_subject"},
+        "background_timing": {"status": "not_recorded", "evidence": null},
+        "author_statistics": {"status": "not_recorded", "evidence": null},
+        "leakage_review": {"status": "passed", "evidence": "study/03_提示与背景/input-audit.json#pilot_formal_disjoint_by_survey"}
+      },
+      "reference": {"kind": "stratum_history", "fitted_on": "evaluated cohort excluded", "excludes_evaluated": true},
+      "distribution": {"minimum_people_per_card": 20, "estimable": true, "reason": "Every card is answered by all 96 evaluated respondents."},
+      "exclusions": [{"kind": "partial_answers", "count": 3, "preregistered": true}],
+      "notes": "Formal v1 run proceeded on format checks plus the historical input audit; three of five gates have no recorded evidence. Recorded here as a retrospective finding, not retroactively certified."
+    },
+    {
+      "id": "pew168",
+      "name": "美国诈骗风险",
+      "evidence_tier": "historical",
+      "status": "retrospective_incomplete",
+      "gates": {
+        "license_cloud_use": {"status": "not_recorded", "evidence": null},
+        "question_mapping": {"status": "passed", "evidence": "study/03_提示与背景/input-audit.json#identical_question_text_and_order_by_subject"},
+        "background_timing": {"status": "not_recorded", "evidence": null},
+        "author_statistics": {"status": "not_recorded", "evidence": null},
+        "leakage_review": {"status": "passed", "evidence": "study/03_提示与背景/input-audit.json#pilot_formal_disjoint_by_survey"}
+      },
+      "reference": {"kind": "stratum_history", "fitted_on": "evaluated cohort excluded", "excludes_evaluated": true},
+      "distribution": {"minimum_people_per_card": 20, "estimable": true, "reason": "Every card is answered by all 96 evaluated respondents."},
+      "exclusions": [],
+      "notes": "Same retrospective gap as shed."
+    },
+    {
+      "id": "anes",
+      "name": "美国公共支出",
+      "evidence_tier": "historical",
+      "status": "retrospective_incomplete",
+      "gates": {
+        "license_cloud_use": {"status": "not_recorded", "evidence": null},
+        "question_mapping": {"status": "passed", "evidence": "study/03_提示与背景/input-audit.json#identical_question_text_and_order_by_subject"},
+        "background_timing": {"status": "not_recorded", "evidence": null},
+        "author_statistics": {"status": "not_recorded", "evidence": null},
+        "leakage_review": {"status": "passed", "evidence": "study/03_提示与背景/input-audit.json#pilot_formal_disjoint_by_survey"}
+      },
+      "reference": {"kind": "stratum_history", "fitted_on": "evaluated cohort excluded", "excludes_evaluated": true},
+      "distribution": {"minimum_people_per_card": 20, "estimable": true, "reason": "Every card is answered by all 96 evaluated respondents."},
+      "exclusions": [],
+      "notes": "Same retrospective gap as shed."
+    },
+    {
+      "id": "pew13",
+      "name": "美国购物看法",
+      "evidence_tier": "historical",
+      "status": "retrospective_incomplete",
+      "gates": {
+        "license_cloud_use": {"status": "not_recorded", "evidence": null},
+        "question_mapping": {"status": "passed", "evidence": "study/03_提示与背景/input-audit.json#identical_question_text_and_order_by_subject"},
+        "background_timing": {"status": "not_recorded", "evidence": null},
+        "author_statistics": {"status": "not_recorded", "evidence": null},
+        "leakage_review": {"status": "passed", "evidence": "study/03_提示与背景/input-audit.json#pilot_formal_disjoint_by_survey"}
+      },
+      "reference": {"kind": "stratum_history", "fitted_on": "evaluated cohort excluded", "excludes_evaluated": true},
+      "distribution": {"minimum_people_per_card": 20, "estimable": true, "reason": "Every card is answered by at least 95 evaluated respondents."},
+      "exclusions": [{"kind": "partial_answers", "count": 3, "preregistered": true}],
+      "notes": "Same retrospective gap as shed."
+    },
+    {
+      "id": "origin",
+      "name": "美国商品产地",
+      "evidence_tier": "historical",
+      "status": "pending",
+      "gates": {
+        "license_cloud_use": {"status": "not_recorded", "evidence": null},
+        "question_mapping": {"status": "pending", "evidence": null},
+        "background_timing": {"status": "pending", "evidence": null},
+        "author_statistics": {"status": "pending", "evidence": null},
+        "leakage_review": {"status": "pending", "evidence": null}
+      },
+      "reference": {"kind": "stratum_history", "fitted_on": "to be fitted on non-evaluated respondents", "excludes_evaluated": true},
+      "distribution": {"minimum_people_per_card": 20, "estimable": null, "reason": "to be measured after adaptation"},
+      "exclusions": [],
+      "notes": "Must reread age and education from the original table; historical stratum labels cannot be reused."
+    },
+    {
+      "id": "packaging",
+      "name": "美国包装与拒买",
+      "evidence_tier": "historical",
+      "status": "pending",
+      "gates": {
+        "license_cloud_use": {"status": "not_recorded", "evidence": null},
+        "question_mapping": {"status": "pending", "evidence": null},
+        "background_timing": {"status": "pending", "evidence": null},
+        "author_statistics": {"status": "pending", "evidence": null},
+        "leakage_review": {"status": "pending", "evidence": null}
+      },
+      "reference": {"kind": "stratum_history", "fitted_on": "to be fitted on non-evaluated respondents", "excludes_evaluated": true},
+      "distribution": {"minimum_people_per_card": 20, "estimable": null, "reason": "to be measured after adaptation"},
+      "exclusions": [],
+      "notes": "Recheck information arm, packaging labels, refusal coding and scoring unit."
+    },
+    {
+      "id": "pew111",
+      "name": "美国网购与达人购物",
+      "evidence_tier": "historical",
+      "status": "pending",
+      "gates": {
+        "license_cloud_use": {"status": "not_recorded", "evidence": null},
+        "question_mapping": {"status": "pending", "evidence": null},
+        "background_timing": {"status": "pending", "evidence": null},
+        "author_statistics": {"status": "pending", "evidence": null},
+        "leakage_review": {"status": "pending", "evidence": null}
+      },
+      "reference": {"kind": "stratum_history", "fitted_on": "to be fitted on non-evaluated respondents", "excludes_evaluated": true},
+      "distribution": {"minimum_people_per_card": 20, "estimable": null, "reason": "to be measured after adaptation"},
+      "exclusions": [],
+      "notes": "Skip logic only decides display eligibility; reread original education coding and survey weights."
+    }
+  ]
+}

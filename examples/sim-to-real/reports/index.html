@@ -25,6 +25,11 @@
 <p class="small">商品产地研究单独比较“选中国产、美国产、便宜款、高评分款”四个比例的平均绝对误差，不是完整选项分布误差。各研究单独报告，不把这些不同指标混成总分。重复运行三次也不等于三项独立研究。</p></details>
 </section>
 
+<section id="cross-study"><span class="number">最新一轮 · 2026-11-12</span><h2>换六份问卷再试：概率仍然有效，但没有超过历史答案对照</h2>
+<div class="grid3"><article class="card"><span class="tag">主对照 · 优化 vs 原生</span><h3>六套全部改善</h3><div class="big">+22.1% → +43.3%</div><p>把单选换成完整概率后，个人概率误差（Brier）在六套研究里全部显著下降。</p><p class="small">收益几乎全部来自“交出概率”；只改提示、保留单选时四套为负。</p></article><article class="card"><span class="tag">历史答案对照 · 必须带</span><h3>AI 全部落后</h3><div class="big">-11.5% → -27.1%</div><p>与“用其他人的答案算出的猜法”相比，六套全部显著更差，区间都低于零。</p><p class="small">只跟随机比会误以为成功；加上对照才发现 AI 接近随机。</p></article><article class="card"><span class="tag">预设门槛</span><h3>跨研究门槛没有达到</h3><div class="big">2 / 6</div><p>同时达到“概率误差改善”与“分布改善至少 2 个百分点”的研究数量。</p><p class="small">要求至少三套、两类任务、两个地区，本轮未满足。</p></article></div><table class="compact"><thead><tr><th>研究</th><th>人数</th><th>优化 vs 原生</th><th>优化 vs 历史答案对照</th></tr></thead><tbody><tr><th>美国公共支出</th><td>96</td><td>+42.9%</td><td>-18.8%</td></tr><tr><th>美国诈骗风险</th><td>96</td><td>+22.5%</td><td>-16.4%</td></tr><tr><th>美国消费调整</th><td>96</td><td>+43.3%</td><td>-21.8%</td></tr><tr><th>美国购物看法</th><td>96</td><td>+41.8%</td><td>-11.5%</td></tr><tr><th>四国烘干机</th><td>94</td><td>+34.4%</td><td>-24.0%</td></tr><tr><th>瑞士家电规格</th><td>96</td><td>+22.1%</td><td>-27.1%</td></tr></tbody></table><p><a href="../decision_lab/reports/cross-study-v1/formal-report.html">查看六套研究完整报告（含逐组数字、区间与不可估计的说明）</a> · <a href="../decision_lab/docs/推荐配置.md">推荐配置与判断顺序</a></p>
+<p class="small">这一节的结果来自独立的六套研究，口径与上面不同：按人计算概率误差，分布误差只在同一题卡至少 20 人可估计时才报。两轮不混算，也没有把六套当成六个行业。</p>
+</section>
+
 <section id="probability"><span class="number">改进一 · 证据最清楚的群体模拟方法</span><h2>让 AI 留下“也可能选另一个”的信息</h2>
 <p>最早发现的现象，是很多虚拟人对同一道题给出几乎一样的答案，而真人明显有分歧。部分原因可以直接验证：<strong>每人只留下一个答案，会把模型的不确定性压掉。</strong></p>
 <div class="grid2"><div class="card"><h3>一个容易理解的例子</h3><p>假设 100 个预测都认为：“甲有 60% 的可能，乙有 40%。”如果每人只留最大项，汇总后就成了 <b>100% 选甲</b>。</p><p>保留概率再汇总，得到的是 <b>甲 60%、乙 40%</b>。这保留了预测的不确定性，但 60/40 本身仍可能估错。</p><p class="small">此处是解释方法的示意数字，不是实验数据。概率来自模型估计，不能冒称真人自报的概率。</p></div>

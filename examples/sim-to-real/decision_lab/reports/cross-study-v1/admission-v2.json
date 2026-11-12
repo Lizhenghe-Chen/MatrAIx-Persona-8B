@@ -1,0 +1,170 @@
+{
+  "status": "admission_checked",
+  "studies": [
+    {
+      "id": "dryer",
+      "name": "四国烘干机",
+      "evidence_tier": "historical",
+      "declared_status": "admitted",
+      "status": "admitted",
+      "missing": [],
+      "reference": "attribute_logit",
+      "distribution_estimable": false,
+      "exclusions": [
+        {
+          "kind": "persona_missing",
+          "count": 2,
+          "preregistered": true
+        }
+      ]
+    },
+    {
+      "id": "swiss",
+      "name": "瑞士家电规格",
+      "evidence_tier": "historical",
+      "declared_status": "admitted",
+      "status": "admitted",
+      "missing": [],
+      "reference": "attribute_logit",
+      "distribution_estimable": false,
+      "exclusions": []
+    },
+    {
+      "id": "shed",
+      "name": "美国消费调整",
+      "evidence_tier": "historical",
+      "declared_status": "retrospective_incomplete",
+      "status": "retrospective_incomplete",
+      "missing": [
+        "license_cloud_use",
+        "background_timing",
+        "author_statistics"
+      ],
+      "reference": "stratum_history",
+      "distribution_estimable": true,
+      "exclusions": [
+        {
+          "kind": "partial_answers",
+          "count": 3,
+          "preregistered": true
+        }
+      ]
+    },
+    {
+      "id": "pew168",
+      "name": "美国诈骗风险",
+      "evidence_tier": "historical",
+      "declared_status": "retrospective_incomplete",
+      "status": "retrospective_incomplete",
+      "missing": [
+        "license_cloud_use",
+        "background_timing",
+        "author_statistics"
+      ],
+      "reference": "stratum_history",
+      "distribution_estimable": true,
+      "exclusions": []
+    },
+    {
+      "id": "anes",
+      "name": "美国公共支出",
+      "evidence_tier": "historical",
+      "declared_status": "retrospective_incomplete",
+      "status": "retrospective_incomplete",
+      "missing": [
+        "license_cloud_use",
+        "background_timing",
+        "author_statistics"
+      ],
+      "reference": "stratum_history",
+      "distribution_estimable": true,
+      "exclusions": []
+    },
+    {
+      "id": "pew13",
+      "name": "美国购物看法",
+      "evidence_tier": "historical",
+      "declared_status": "retrospective_incomplete",
+      "status": "retrospective_incomplete",
+      "missing": [
+        "license_cloud_use",
+        "background_timing",
+        "author_statistics"
+      ],
+      "reference": "stratum_history",
+      "distribution_estimable": true,
+      "exclusions": [
+        {
+          "kind": "partial_answers",
+          "count": 3,
+          "preregistered": true
+        }
+      ]
+    },
+    {
+      "id": "origin",
+      "name": "美国商品产地",
+      "evidence_tier": "historical",
+      "declared_status": "pending",
+      "status": "pending",
+      "missing": [
+        "license_cloud_use",
+        "question_mapping",
+        "background_timing",
+        "author_statistics",
+        "leakage_review"
+      ],
+      "reference": "stratum_history",
+      "distribution_estimable": null,
+      "exclusions": []
+    },
+    {
+      "id": "packaging",
+      "name": "美国包装与拒买",
+      "evidence_tier": "historical",
+      "declared_status": "pending",
+      "status": "pending",
+      "missing": [
+        "license_cloud_use",
+        "question_mapping",
+        "background_timing",
+        "author_statistics",
+        "leakage_review"
+      ],
+      "reference": "stratum_history",
+      "distribution_estimable": null,
+      "exclusions": []
+    },
+    {
+      "id": "pew111",
+      "name": "美国网购与达人购物",
+      "evidence_tier": "historical",
+      "declared_status": "pending",
+      "status": "pending",
+      "missing": [
+        "license_cloud_use",
+        "question_mapping",
+        "background_timing",
+        "author_statistics",
+        "leakage_review"
+      ],
+      "reference": "stratum_history",
+      "distribution_estimable": null,
+      "exclusions": []
+    }
+  ],
+  "misdeclared": [],
+  "admitted": [
+    "dryer",
+    "swiss"
+  ],
+  "incomplete": [
+    "shed",
+    "pew168",
+    "anes",
+    "pew13",
+    "origin",
+    "packaging",
+    "pew111"
+  ]
+}

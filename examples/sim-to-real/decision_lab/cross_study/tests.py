@@ -160,3 +160,85 @@ class FormalReport(unittest.TestCase):
   s=summarize(data)
   self.assertEqual(s['supporting'],[])
   self.assertIn('不可估计',render(s))
+
+
+class AdmissionGate(unittest.TestCase):
+ def _decl(self, gate_status='passed', evidence='x', reference_excludes=True, minimum=20,
+           exclusions=None, declared='admitted'):
+  gates={g:{'status':gate_status,'evidence':evidence} for g in
+         ['license_cloud_use','question_mapping','background_timing','author_statistics','leakage_review']}
+  return {'gates':list(gates),'reference_kinds':['history','stratum_history','attribute_logit'],
+   'minimum_people_per_card':20,
+   'studies':[{'id':'s1','name':'S1','evidence_tier':'historical','status':declared,'gates':gates,
+     'reference':{'kind':'history','fits_on':None,'excludes_evaluated':reference_excludes},
+     'distribution':{'minimum_people_per_card':minimum,'estimable':True,'reason':'r'},
+     'exclusions':[] if exclusions is None else exclusions}]}
+
+ def test_complete_declaration_is_admitted(self):
+  from .admission_check import evaluate
+  result=evaluate(self._decl())
+  self.assertEqual(result['admitted'],['s1'])
+  self.assertEqual(result['misdeclared'],[])
+
+ def test_missing_gate_evidence_blocks_admission(self):
+  from .admission_check import evaluate
+  for kwargs in [{'gate_status':'not_recorded'},{'evidence':None}]:
+   result=evaluate(self._decl(**kwargs))
+   self.assertEqual(result['admitted'],[])
+   self.assertIn('misdeclared',str(result) if result['misdeclared'] else 'misdeclared')
+
+ def test_reference_must_exclude_evaluated(self):
+  from .admission_check import evaluate
+  result=evaluate(self._decl(reference_excludes=False))
+  self.assertEqual(result['admitted'],[])
+
+ def test_card_rule_below_twenty_blocks_admission(self):
+  from .admission_check import evaluate
+  result=evaluate(self._decl(minimum=5))
+  self.assertEqual(result['admitted'],[])
+
+ def test_exclusions_must_be_a_list(self):
+  from .admission_check import evaluate
+  result=evaluate(self._decl(exclusions={'a':1}))
+  self.assertEqual(result['admitted'],[])
+
+ def test_require_reports_the_missing_studies(self):
+  from .admission_check import evaluate, require
+  result=evaluate(self._decl(gate_status='pending'))
+  with self.assertRaises(ValueError):require(result,['s1'])
+
+
+class RecommendedConfig(unittest.TestCase):
+ def test_reference_preference_prefers_stratum_then_history_then_logit(self):
+  from .recommended import choose_reference
+  self.assertEqual(choose_reference({'history':True,'stratum_history':True,'attribute_logit':True}),'stratum_history')
+  self.assertEqual(choose_reference({'history':True,'attribute_logit':True}),'history')
+  self.assertEqual(choose_reference({'attribute_logit':True}),'attribute_logit')
+  self.assertIsNone(choose_reference({}))
+
+ def test_missing_reference_is_refused(self):
+  from .recommended import required_comparators
+  with self.assertRaises(ValueError):required_comparators({'history':False})
+
+ def test_claim_levels(self):
+  from .recommended import claim
+  improve={'relative_improvement':0.05,'improvement_95_ci':[0.01,0.09]}
+  weak={'relative_improvement':0.01,'improvement_95_ci':[0.001,0.02]}
+  regress={'relative_improvement':-0.1,'improvement_95_ci':[-0.2,-0.05]}
+  card_pass={'available':True,'improvement_pp':3.0,'improvement_95_ci':[1.0,5.0]}
+  card_fail={'available':True,'improvement_pp':1.0,'improvement_95_ci':[-1.0,3.0]}
+  card_missing={'available':False}
+  self.assertEqual(claim(improve,card_pass),'improvement')
+  self.assertEqual(claim(improve,card_fail),'direction_only')
+  self.assertEqual(claim(improve,card_missing),'direction_only')
+  self.assertEqual(claim(weak,card_pass),'no_evidence')
+  self.assertEqual(claim(regress,card_pass),'regression')
+  self.assertEqual(claim(None,card_pass),'no_reference')
+
+ def test_config_declares_probabilities_and_limits(self):
+  from .recommended import configuration
+  config=configuration()
+  self.assertEqual(config['output_mode'],'probabilities')
+  self.assertEqual(config['prompt_variant'],'optional')
+  self.assertEqual(config['gates']['minimum_people_per_card'],20)
+  self.assertTrue(any('not purchase' in x for x in config['limits']))

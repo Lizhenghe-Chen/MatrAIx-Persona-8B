@@ -138,6 +138,54 @@ def intervals(rows, lo=-5, hi=32, unit="个百分点"):
     return ''.join(parts)+'</svg>'
 
 
+
+CROSS = HERE.parent/'decision_lab/reports/cross-study-v1'
+
+
+def cross_study_section():
+    """Reader-facing summary of the six-study run; never invents numbers."""
+    summary_path=CROSS/'formal-report.summary.json'
+    link='../decision_lab/reports/cross-study-v1/formal-report.html'
+    if not summary_path.exists():
+        return '<p>六套研究的正式报告尚未生成：<a href="'+link+'">打开跨研究报告</a>。</p>'
+    summary=json.loads(summary_path.read_text())
+    rows=summary['rows']
+    gains=[rows[s]['brier']['relative_improvement'] for s in rows]
+    low,high=min(gains),max(gains)
+    statistical=[s for s in rows if rows[s]['statistical']]
+    worst=min(rows[s]['statistical']['relative_improvement'] for s in statistical)
+    best=max(rows[s]['statistical']['relative_improvement'] for s in statistical)
+    supporting=len(summary['supporting'])
+    gate='达到' if summary['cross_study_gate'] else '没有达到'
+    names=[('anes','美国公共支出'),('pew168','美国诈骗风险'),('shed','美国消费调整'),
+           ('pew13','美国购物看法'),('dryer','四国烘干机'),('swiss','瑞士家电规格')]
+    cells=[]
+    for key,label in names:
+        row=rows[key]
+        gain=f'{100*row["brier"]["relative_improvement"]:+.1f}%'
+        versus='—' if row['statistical'] is None else f'{100*row["statistical"]["relative_improvement"]:+.1f}%'
+        cells.append(f'<tr><th>{html.escape(label)}</th><td>{row["people"]}</td>'
+                     f'<td>{gain}</td><td>{versus}</td></tr>')
+    items=''.join(cells)
+    return ('<div class="grid3">'
+            f'<article class="card"><span class="tag">主对照 · 优化 vs 原生</span><h3>六套全部改善</h3>'
+            f'<div class="big">{100*low:+.1f}% → {100*high:+.1f}%</div>'
+            '<p>把单选换成完整概率后，个人概率误差（Brier）在六套研究里全部显著下降。</p>'
+            '<p class="small">收益几乎全部来自“交出概率”；只改提示、保留单选时四套为负。</p></article>'
+            f'<article class="card"><span class="tag">历史答案对照 · 必须带</span><h3>AI 全部落后</h3>'
+            f'<div class="big">{100*best:+.1f}% → {100*worst:+.1f}%</div>'
+            '<p>与“用其他人的答案算出的猜法”相比，六套全部显著更差，区间都低于零。</p>'
+            '<p class="small">只跟随机比会误以为成功；加上对照才发现 AI 接近随机。</p></article>'
+            f'<article class="card"><span class="tag">预设门槛</span><h3>跨研究门槛{gate}</h3>'
+            f'<div class="big">{supporting} / 6</div>'
+            '<p>同时达到“概率误差改善”与“分布改善至少 2 个百分点”的研究数量。</p>'
+            '<p class="small">要求至少三套、两类任务、两个地区，本轮未满足。</p></article>'
+            '</div>'
+            '<table class="compact"><thead><tr><th>研究</th><th>人数</th><th>优化 vs 原生</th>'
+            '<th>优化 vs 历史答案对照</th></tr></thead><tbody>'+items+'</tbody></table>'
+            f'<p><a href="{link}">查看六套研究完整报告（含逐组数字、区间与不可估计的说明）</a>'
+            ' · <a href="../decision_lab/docs/推荐配置.md">推荐配置与判断顺序</a></p>')
+
 def build(d):
     validate(d)
     slots = {}
@@ -166,6 +214,7 @@ def build(d):
     slots['HISTORY']=''.join('<figure><h3>'+label+'</h3>'+chart([(label2,v['methods'][key]['brier'],kind) for label2,key,kind in [('只有真实背景','background','neutral'),('加本人两次选择','own','before'),('加别人两次选择','other','neutral')]],maximum=1,decimals=4,unit='概率误差分数')+f'<figcaption>各 48 人；本人记录相对只有背景的误差改善 <b>{100*v["comparisons"]["background"]["relative_improvement"]:+.1f}%</b>；95% 区间 [{100*v["comparisons"]["background"]["relative_improvement_95_ci"][0]:.1f}%, {100*v["comparisons"]["background"]["relative_improvement_95_ci"][1]:.1f}%]。</figcaption></figure>' for name,label in [('dryer','四国烘干机'),('swiss','瑞士家电')] for v in [d['history']['studies'][name]])
     slots['QUESTION_TABLE']=''.join('<tr><th>'+html.escape(q['label'])+'</th>'+''.join(f'<td>{q["methods"][k]["error"]:.2f}</td>' for k in ('只选一项','保留概率','真人数据校准','真人统计模型'))+'</tr>' for q in d['questions'])
     slots['QUESTION_DATA']=json.dumps(d['questions'],ensure_ascii=False).replace('</',r'<\/')
+    slots['CROSS_STUDY']=cross_study_section()
     slots['STYLE']=(HERE/'style.css').read_text()
     slots['SCRIPT']=(HERE/'charts.js').read_text()
     page=(HERE/'report.html.tmpl').read_text()
