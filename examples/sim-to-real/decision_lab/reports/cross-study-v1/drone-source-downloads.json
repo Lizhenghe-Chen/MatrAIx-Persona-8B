@@ -1,0 +1,32 @@
+[
+  {
+    "source": "https://raw.githubusercontent.com/aberke/drones-consumer-privacy/d8d1811d4c93e2a86b0d898f097411d5d043cee9/README.md",
+    "local": "README.md",
+    "bytes": 5731,
+    "sha256": "a0ac2f615f7ddb2442733497e46c5312f9cd7f3793d7d89006bbed1e017d5813"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/aberke/drones-consumer-privacy/d8d1811d4c93e2a86b0d898f097411d5d043cee9/LICENSE",
+    "local": "LICENSE",
+    "bytes": 1061,
+    "sha256": "57c3f7c2f0c084127020d3a74945ec3c60a7b07824f9dac5988a2307eedd1f80"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/aberke/drones-consumer-privacy/d8d1811d4c93e2a86b0d898f097411d5d043cee9/survey.pdf",
+    "local": "survey.pdf",
+    "bytes": 715582,
+    "sha256": "cf47410e882cb63575f3093c07e0fb86605d52fa99ba5c5f641fcf90d668cd87"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/aberke/drones-consumer-privacy/d8d1811d4c93e2a86b0d898f097411d5d043cee9/survey-questions/attributes.py",
+    "local": "survey-questions__attributes.py",
+    "bytes": 1556,
+    "sha256": "bb99f6b27dc5d93b753e4f78bfe9bb55192fc7a5cff87dcd5ae07d894718637b"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/aberke/drones-consumer-privacy/d8d1811d4c93e2a86b0d898f097411d5d043cee9/data-analysis/transform-survey-data-for-choice-modeling.ipynb",
+    "local": "data-analysis__transform-survey-data-for-choice-modeling.ipynb",
+    "bytes": 1112415,
+    "sha256": "2a60e61e81cbb8871dc93be17c792e9949c094ecb0e54128a5a841fb3a31a39f"
+  }
+]

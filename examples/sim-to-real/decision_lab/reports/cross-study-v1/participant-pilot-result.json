@@ -1,0 +1,416 @@
+{
+  "purpose": "format_only_no_effect_scoring",
+  "planned": 24,
+  "attempted": 24,
+  "rows": [
+    {
+      "study": "pew13",
+      "arm": "original",
+      "status": "complete",
+      "request_sha256": "3be7fc5598a26895532bb63289702753468fff5e645fb7765eb8137be677f364",
+      "seconds": 2.8935676670080284,
+      "usage": {
+        "prompt_tokens": 1721,
+        "completion_tokens": 321,
+        "total_tokens": 2042,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1721
+      }
+    },
+    {
+      "study": "swiss",
+      "arm": "original",
+      "status": "complete",
+      "request_sha256": "c13e9dda1603951db2f6c4c35b4c7a3ced21a08e9a68c56c964349234fe667c5",
+      "seconds": 1.5910151249991031,
+      "usage": {
+        "prompt_tokens": 2504,
+        "completion_tokens": 111,
+        "total_tokens": 2615,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 2504
+      }
+    },
+    {
+      "study": "pew168",
+      "arm": "prompt_only",
+      "status": "complete",
+      "request_sha256": "afd80b9909ca4878f27cb24c9a4b4afa03676c977e0eb008844e33c56c963bfc",
+      "seconds": 1.8041998330008937,
+      "usage": {
+        "prompt_tokens": 2112,
+        "completion_tokens": 127,
+        "total_tokens": 2239,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 2112
+      }
+    },
+    {
+      "study": "shed",
+      "arm": "prompt_only",
+      "status": "complete",
+      "request_sha256": "573551f1aaea9573b8ac592cee1e0888e6fbc03b76c76665f563ebc3ce02d563",
+      "seconds": 1.5191452090075472,
+      "usage": {
+        "prompt_tokens": 2856,
+        "completion_tokens": 145,
+        "total_tokens": 3001,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 2856
+      }
+    },
+    {
+      "study": "anes",
+      "arm": "prompt_only",
+      "status": "complete",
+      "request_sha256": "30b5983d9728240b36e6662633763428d5c17f677bb3e5e75b123d7c00ec9406",
+      "seconds": 1.9039415000006557,
+      "usage": {
+        "prompt_tokens": 1571,
+        "completion_tokens": 155,
+        "total_tokens": 1726,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1571
+      }
+    },
+    {
+      "study": "shed",
+      "arm": "original",
+      "status": "complete",
+      "request_sha256": "b866e474210f13dabe883794a12f03ba6af9daf06f6ef0af6b983a0d67686417",
+      "seconds": 2.2401572079979815,
+      "usage": {
+        "prompt_tokens": 2918,
+        "completion_tokens": 155,
+        "total_tokens": 3073,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 2918
+      }
+    },
+    {
+      "study": "dryer",
+      "arm": "prompt_only",
+      "status": "complete",
+      "request_sha256": "0a7d4fc53bdb681c1214f14bdcdd7b6e04426b698611a663087cf46c2ba6a104",
+      "seconds": 2.341932249997626,
+      "usage": {
+        "prompt_tokens": 3158,
+        "completion_tokens": 187,
+        "total_tokens": 3345,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 3158
+      }
+    },
+    {
+      "study": "swiss",
+      "arm": "output_only",
+      "status": "complete",
+      "request_sha256": "a198e2d9a23b83a44d0d06919ab6f64ed858f4fefb64bc4672134de2f43e8e76",
+      "seconds": 2.2431833340087906,
+      "usage": {
+        "prompt_tokens": 2419,
+        "completion_tokens": 161,
+        "total_tokens": 2580,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 2419
+      }
+    },
+    {
+      "study": "pew13",
+      "arm": "prompt_only",
+      "status": "complete",
+      "request_sha256": "994c5b5b57fdf025c6ea6ead6c269b56abdd53ea6e315f0a30ccce85eee661b6",
+      "seconds": 2.71479620799073,
+      "usage": {
+        "prompt_tokens": 1659,
+        "completion_tokens": 229,
+        "total_tokens": 1888,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1659
+      }
+    },
+    {
+      "study": "pew168",
+      "arm": "original",
+      "status": "complete",
+      "request_sha256": "0acabf1a8f073193800a9fd8cbb666746315b9651aaabb2fb563fa1ff3232655",
+      "seconds": 2.2619610840047244,
+      "usage": {
+        "prompt_tokens": 2174,
+        "completion_tokens": 154,
+        "total_tokens": 2328,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 2174
+      }
+    },
+    {
+      "study": "anes",
+      "arm": "optimized",
+      "status": "complete",
+      "request_sha256": "614ea00900af66ae9ddfaf6699167c0d04a8a91a7e94d7e8eb53237b20eb9a5f",
+      "seconds": 3.2192551670013927,
+      "usage": {
+        "prompt_tokens": 1498,
+        "completion_tokens": 303,
+        "total_tokens": 1801,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1498
+      }
+    },
+    {
+      "study": "swiss",
+      "arm": "prompt_only",
+      "status": "complete",
+      "request_sha256": "9ad9eb689274a060585ff8952dd8f5c587a545feceff4103eefb87f8f03c6a28",
+      "seconds": 1.8078549170022598,
+      "usage": {
+        "prompt_tokens": 2442,
+        "completion_tokens": 111,
+        "total_tokens": 2553,
+        "prompt_tokens_details": {
+          "cached_tokens": 1536
+        },
+        "prompt_cache_hit_tokens": 1536,
+        "prompt_cache_miss_tokens": 906
+      }
+    },
+    {
+      "study": "dryer",
+      "arm": "optimized",
+      "status": "complete",
+      "request_sha256": "1e3a270dedb234a1cc8b47110a6229fc1b0ed5a3143209017ac83282bd2ed9a0",
+      "seconds": 3.1305685419938527,
+      "usage": {
+        "prompt_tokens": 3086,
+        "completion_tokens": 385,
+        "total_tokens": 3471,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 3086
+      }
+    },
+    {
+      "study": "shed",
+      "arm": "output_only",
+      "status": "complete",
+      "request_sha256": "5b78d1d435a4e0de996eb5e2bc117acd369fe4cb02ebd1f0795e3e48b2640789",
+      "seconds": 3.3191146250028396,
+      "usage": {
+        "prompt_tokens": 2832,
+        "completion_tokens": 288,
+        "total_tokens": 3120,
+        "prompt_tokens_details": {
+          "cached_tokens": 2048
+        },
+        "prompt_cache_hit_tokens": 2048,
+        "prompt_cache_miss_tokens": 784
+      }
+    },
+    {
+      "study": "anes",
+      "arm": "original",
+      "status": "complete",
+      "request_sha256": "57dc5e21bdeae496f21dd2783aa7c9b80a95ac698233c9fa800c85ea3c0f6fb7",
+      "seconds": 2.3646479999879375,
+      "usage": {
+        "prompt_tokens": 1633,
+        "completion_tokens": 160,
+        "total_tokens": 1793,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1633
+      }
+    },
+    {
+      "study": "swiss",
+      "arm": "optimized",
+      "status": "complete",
+      "request_sha256": "d553a029502753d9b4341ad8e831f0e3fe6fccf55d87d3cd0e061ff1ffbce9ba",
+      "seconds": 2.192301834002137,
+      "usage": {
+        "prompt_tokens": 2370,
+        "completion_tokens": 161,
+        "total_tokens": 2531,
+        "prompt_tokens_details": {
+          "cached_tokens": 1536
+        },
+        "prompt_cache_hit_tokens": 1536,
+        "prompt_cache_miss_tokens": 834
+      }
+    },
+    {
+      "study": "pew13",
+      "arm": "optimized",
+      "status": "complete",
+      "request_sha256": "83d5009e9b1513abde940988921d3bb0c463024fc5d2186f0faa727daab1ac4e",
+      "seconds": 5.754759583011037,
+      "usage": {
+        "prompt_tokens": 1583,
+        "completion_tokens": 730,
+        "total_tokens": 2313,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1583
+      }
+    },
+    {
+      "study": "pew168",
+      "arm": "output_only",
+      "status": "complete",
+      "request_sha256": "18e874f1b7c8a95e077929046f96875ea95af810f5bb538c08c7cd615f5ae574",
+      "seconds": 2.878027958009625,
+      "usage": {
+        "prompt_tokens": 2085,
+        "completion_tokens": 303,
+        "total_tokens": 2388,
+        "prompt_tokens_details": {
+          "cached_tokens": 1408
+        },
+        "prompt_cache_hit_tokens": 1408,
+        "prompt_cache_miss_tokens": 677
+      }
+    },
+    {
+      "study": "dryer",
+      "arm": "original",
+      "status": "complete",
+      "request_sha256": "13257accc2d9907e7320db1b1f7abaf0e9973c674c1260f2cff2c421439e0995",
+      "seconds": 1.7350590000132797,
+      "usage": {
+        "prompt_tokens": 3220,
+        "completion_tokens": 161,
+        "total_tokens": 3381,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 3220
+      }
+    },
+    {
+      "study": "shed",
+      "arm": "optimized",
+      "status": "complete",
+      "request_sha256": "44cab21786a27865d7ab40334aeed9546821f44d2d0bf64169143f7019fe1125",
+      "seconds": 2.9921196670038626,
+      "usage": {
+        "prompt_tokens": 2783,
+        "completion_tokens": 288,
+        "total_tokens": 3071,
+        "prompt_tokens_details": {
+          "cached_tokens": 2048
+        },
+        "prompt_cache_hit_tokens": 2048,
+        "prompt_cache_miss_tokens": 735
+      }
+    },
+    {
+      "study": "pew13",
+      "arm": "output_only",
+      "status": "complete",
+      "request_sha256": "190bebaa4c6f4500be79d81dacd1522c2619d9df8c252608cb722d671101acdd",
+      "seconds": 5.1315444159990875,
+      "usage": {
+        "prompt_tokens": 1632,
+        "completion_tokens": 730,
+        "total_tokens": 2362,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1632
+      }
+    },
+    {
+      "study": "pew168",
+      "arm": "optimized",
+      "status": "complete",
+      "request_sha256": "6ae384709c37471f27b028257d28d6f6bd0ebe95b541bc603523910e961571ca",
+      "seconds": 3.1836732500087237,
+      "usage": {
+        "prompt_tokens": 2036,
+        "completion_tokens": 303,
+        "total_tokens": 2339,
+        "prompt_tokens_details": {
+          "cached_tokens": 1408
+        },
+        "prompt_cache_hit_tokens": 1408,
+        "prompt_cache_miss_tokens": 628
+      }
+    },
+    {
+      "study": "anes",
+      "arm": "output_only",
+      "status": "complete",
+      "request_sha256": "ee778e758c4815bd72f83d7d13ee3c6c5f94322a946e63264a5834e16eed07c7",
+      "seconds": 2.8094121250032913,
+      "usage": {
+        "prompt_tokens": 1547,
+        "completion_tokens": 303,
+        "total_tokens": 1850,
+        "prompt_tokens_details": {
+          "cached_tokens": 896
+        },
+        "prompt_cache_hit_tokens": 896,
+        "prompt_cache_miss_tokens": 651
+      }
+    },
+    {
+      "study": "dryer",
+      "arm": "output_only",
+      "status": "complete",
+      "request_sha256": "d2987f69702c9f1f21761511a65ce38c3437fe7b47e4ed18203aab719b4922b4",
+      "seconds": 3.256227375008166,
+      "usage": {
+        "prompt_tokens": 3135,
+        "completion_tokens": 385,
+        "total_tokens": 3520,
+        "prompt_tokens_details": {
+          "cached_tokens": 1792
+        },
+        "prompt_cache_hit_tokens": 1792,
+        "prompt_cache_miss_tokens": 1343
+      }
+    }
+  ],
+  "formal_budget_approved": false
+}

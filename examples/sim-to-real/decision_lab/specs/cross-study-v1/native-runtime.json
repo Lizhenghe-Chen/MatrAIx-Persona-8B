@@ -1,0 +1,46 @@
+{
+  "commit": "51bb97935e9235e984fb78278b341b4591885e00",
+  "files": [
+    {
+      "path": "environment/agents/matraix/agents/persona/json_survey.py",
+      "sha256": "d917ae88b1094a18971df22c301d8a5cbf61c6ea7ba7667fc104f2b6b1dda614"
+    },
+    {
+      "path": "packages/playground/src/playground/inprocess/survey_eval.py",
+      "sha256": "3d460d27226a2f08468a9118ed80fe5e459450501cb88e260482c4545b2ec4c6"
+    },
+    {
+      "path": "packages/playground/src/playground/user_sim/prompt.py",
+      "sha256": "a1dc94b480213007160806f7b92e9c6450a96615c98aface79896ef3ff3f8e73"
+    },
+    {
+      "path": "application/playground/backend/service/survey_instruction_builder.py",
+      "sha256": "572171dc86e7bcb9ee07f858d2e613ab7606ba5b039353bc6b3b9df4206a81f7"
+    },
+    {
+      "path": "application/playground/backend/service/survey_types.py",
+      "sha256": "583a05eb3fd3bbc6261260bebc05c6d63cdead7b3b4efbbfa44a0e401f91a347"
+    },
+    {
+      "path": "environment/agents/matraix/agents/persona/templates/persona_system.md.j2",
+      "sha256": "96d0fe35d8e58b53940c8559bc730601f52778bae281379834832da865dd2321"
+    },
+    {
+      "path": "environment/agents/matraix/agents/persona/templates/persona_macros.md.j2",
+      "sha256": "076a8bf54ce5eb62b2cb8bdf0f382b7320d6022b3f9d7ea7303eb02316cd5175"
+    },
+    {
+      "path": "environment/agents/matraix/agents/persona/templating.py",
+      "sha256": "700d32ed6d335e699594845950a7f623fc5ca81b123a3af9b0c031ae3514b945"
+    },
+    {
+      "path": "src/matraix/persona_dimension_catalog.py",
+      "sha256": "b1f777b4b9fc43992ca831855d68645850453fe84688adbc30eb84f8bcd58d86"
+    }
+  ],
+  "native_request": "system=render_persona_block; user=build_survey_task_prompt; one instrument per complete_json call",
+  "native_failure_behavior": "_normalize_answers fills missing required items; _normalize_value replaces invalid single choices with first option",
+  "required_adaptation": "Strict raw-response validation in ALL arms. Never silently fill or clip. Native prompt reference, not full production behavior.",
+  "persona_rendering": "Native dimension narrative; no implicit fallback allowed in experiment",
+  "output_granularity": "Preserve complete frozen instrument blocks, not necessarily one item per request"
+}

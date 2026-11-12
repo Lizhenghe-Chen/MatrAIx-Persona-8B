@@ -8,6 +8,7 @@
 
 | 想做什么 | 入口 |
 |---|---|
+| 查新一轮19套跨研究验证 | [开跑准备与数据准入](decision_lab/reports/cross-study-v1/index.html) · [实施状态](decision_lab/cross_study/README.md)（尚无正式效果结论） |
 | 给领导和非技术读者看结果 | [离线 HTML 总报告](reports/index.html) |
 | 查哪些优化可以采用 | [持续维护的优化文档](study/05_优化记录/优化文档.md) |
 | 查最新两次选择筛查 | [图解报告](decision_lab/reports/choice-history.html) · [结论与复算](decision_lab/docs/两次选择快速验证.md) |

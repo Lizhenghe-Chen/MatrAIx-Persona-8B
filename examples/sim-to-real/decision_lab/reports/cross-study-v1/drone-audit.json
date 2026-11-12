@@ -1,0 +1,61 @@
+{
+  "study": "drone",
+  "status": "structure_reconstructed_pending_original_presentation_check",
+  "respondents": 3715,
+  "choice_columns": 800,
+  "responses": 36297,
+  "questions_per_person": {
+    "12": 1853,
+    "9": 1143,
+    "6": 629,
+    "0": 90
+  },
+  "vendor_response_counts": {
+    "0": 9528,
+    "1": 11481,
+    "2": 7269,
+    "3": 8019
+  },
+  "invalid_column_patterns": [],
+  "invalid_choice_codes": {},
+  "same_card_twice_within_person": 0,
+  "answer_mapping": {
+    "0": "Ground vehicle",
+    "1": "Drone"
+  },
+  "answer_mapping_evidence": "Author transformation notebook explicitly groups choice==0 as ground and choice==1 as drone.",
+  "source_response_counts": {
+    "0": 22262,
+    "1": 14035
+  },
+  "source_sha256": "d869d8a10351b0e20caa05f6f451140ec9f13a42f816c357e9c4597b551919c8",
+  "publication_source": "https://github.com/aberke/drones-consumer-privacy/tree/d8d1811d4c93e2a86b0d898f097411d5d043cee9",
+  "original_instructions_located": true,
+  "original_instructions_pages": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "matching_fields_available": [
+    "age band",
+    "gender",
+    "household income",
+    "urban/rural",
+    "residence type"
+  ],
+  "education_available": false,
+  "country": "United States",
+  "source_participant_age_minimum": 18,
+  "routing": "Original nonempty choice columns preserve actual delivery-category eligibility; routing answers are not profile fields.",
+  "unresolved": [
+    "Confirm screen/table presentation and historical survey date before admission.",
+    "No education measurement: match available age/sex/income only, explicitly report unavailable education; do not infer it.",
+    "Freeze vendor-block handling and unknown original random order adaptation.",
+    "Sparse cards: preregister vendor-level/attribute-conditioned shares, not unsupported per-card distribution claims.",
+    "Source overlap and cloud field policy require final review."
+  ],
+  "effects_scored": false
+}

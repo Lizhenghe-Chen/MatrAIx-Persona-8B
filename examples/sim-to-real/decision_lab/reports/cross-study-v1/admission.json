@@ -1,0 +1,203 @@
+{
+  "status": "preflight_in_progress_not_effect_report",
+  "studies": [
+    {
+      "id": "shed",
+      "name": "美国消费调整",
+      "evidence": "历史复验",
+      "status": "已完成单人格式试跑",
+      "scope": "7道涨价应对题",
+      "remaining": "继续核对抽样权重、分群精度和完整画像；尚未正式准入",
+      "formal_admitted": false,
+      "formal_budget_approved": false
+    },
+    {
+      "id": "pew168",
+      "name": "美国诈骗风险",
+      "evidence": "历史复验",
+      "status": "已完成单人格式试跑",
+      "scope": "5道风险题",
+      "remaining": "继续核对抽样权重、分群精度和完整画像；尚未正式准入",
+      "formal_admitted": false,
+      "formal_budget_approved": false
+    },
+    {
+      "id": "anes",
+      "name": "美国公共支出",
+      "evidence": "历史复验",
+      "status": "已完成单人格式试跑",
+      "scope": "6道三档支出题",
+      "remaining": "继续核对抽样权重、分群精度和完整画像；尚未正式准入",
+      "formal_admitted": false,
+      "formal_budget_approved": false
+    },
+    {
+      "id": "origin",
+      "name": "美国商品产地",
+      "evidence": "历史复验",
+      "status": "待接入本轮",
+      "scope": "商品二选一与四项属性取舍",
+      "remaining": "已有任务适配；需重新从原表读年龄学历，不能直接沿用历史分层标签",
+      "formal_admitted": false,
+      "formal_budget_approved": false
+    },
+    {
+      "id": "packaging",
+      "name": "美国包装与拒买",
+      "evidence": "历史复验",
+      "status": "待接入本轮",
+      "scope": "两款啤酒与都不买",
+      "remaining": "已有拒买及选择卡适配；复核信息组、完整背景匹配和评分单位",
+      "formal_admitted": false,
+      "formal_budget_approved": false
+    },
+    {
+      "id": "pew111",
+      "name": "美国网购与达人购物",
+      "evidence": "历史复验",
+      "status": "待接入本轮",
+      "scope": "6道设备及购物题",
+      "remaining": "已有原题与跳题适配；重新读原始学历编码与权重",
+      "formal_admitted": false,
+      "formal_budget_approved": false
+    },
+    {
+      "id": "shoes",
+      "name": "美国运动鞋意愿",
+      "evidence": "历史复验",
+      "status": "待接入本轮",
+      "scope": "七档购买意愿",
+      "remaining": "购买意愿属于七档评分；需冻结原题转为选项的适配，不能写成实际购买",
+      "formal_admitted": false,
+      "formal_budget_approved": false
+    },
+    {
+      "id": "pew13",
+      "name": "美国购物看法",
+      "evidence": "历史复验",
+      "status": "已完成单人格式试跑",
+      "scope": "13道购物题",
+      "remaining": "继续核对抽样权重、分群精度和完整画像；尚未正式准入",
+      "formal_admitted": false,
+      "formal_budget_approved": false
+    },
+    {
+      "id": "amazon",
+      "name": "美国真实购买",
+      "evidence": "历史复验",
+      "status": "行为结果单列",
+      "scope": "价格构成、类别与复购",
+      "remaining": "没有未购买商品的完整备选集；需要独立的行为目标与评价标准，不加入商品二选一总分",
+      "formal_admitted": false,
+      "formal_budget_approved": false
+    },
+    {
+      "id": "vegetables",
+      "name": "中国日本有机蔬菜",
+      "evidence": "外部候选（尚未确认独立性）",
+      "status": "关键材料待补",
+      "scope": "含拒选的蔬菜选择",
+      "remaining": "目前仍缺完整24组选择设计，不凭数据列名补造备选商品",
+      "formal_admitted": false,
+      "formal_budget_approved": false
+    },
+    {
+      "id": "swiss_six",
+      "name": "瑞士六品类",
+      "evidence": "外部候选（尚未确认独立性）",
+      "status": "限定候选",
+      "scope": "二选一与购买意愿分开",
+      "remaining": "既有审查发现1,837个数值编号与家电面板重叠；核对编号空间、筛选与题面后再定独立性",
+      "formal_admitted": false,
+      "formal_budget_approved": false
+    },
+    {
+      "id": "german",
+      "name": "德国番茄包装",
+      "evidence": "外部候选（尚未确认独立性）",
+      "status": "用途边界待澄清",
+      "scope": "包装选择及拒买",
+      "remaining": "原受访者告知与公开许可范围存在不一致；尚未批准逐人关联云端实验",
+      "formal_admitted": false,
+      "formal_budget_approved": false
+    },
+    {
+      "id": "dryer",
+      "name": "四国烘干机",
+      "evidence": "历史复验",
+      "status": "已完成单人格式试跑",
+      "scope": "8次商品选择及拒买",
+      "remaining": "继续核对抽样权重、分群精度和完整画像；尚未正式准入",
+      "formal_admitted": false,
+      "formal_budget_approved": false
+    },
+    {
+      "id": "swiss",
+      "name": "瑞士家电规格",
+      "evidence": "历史复验",
+      "status": "已完成单人格式试跑",
+      "scope": "4次家电二选一",
+      "remaining": "继续核对抽样权重、分群精度和完整画像；尚未正式准入",
+      "formal_admitted": false,
+      "formal_budget_approved": false
+    },
+    {
+      "id": "tshirt",
+      "name": "美国T恤",
+      "evidence": "外部候选（尚未确认独立性）",
+      "status": "关键材料待补",
+      "scope": "三款商品选择",
+      "remaining": "逐商品图片映射与第二波样本差异仍未解释；文字版不能冒称完整原实验",
+      "formal_admitted": false,
+      "formal_budget_approved": false
+    },
+    {
+      "id": "radiant",
+      "name": "欧洲新品食品",
+      "evidence": "外部候选（尚未确认独立性）",
+      "status": "待完成材料核验",
+      "scope": "多地食品选择",
+      "remaining": "已找到部分干预原文；仍需逐工作簿核对说明、选择卡与样本差异",
+      "formal_admitted": false,
+      "formal_budget_approved": false
+    },
+    {
+      "id": "supermarket",
+      "name": "美国模拟网超",
+      "evidence": "外部候选（尚未确认独立性）",
+      "status": "行为结果单列",
+      "scope": "选购篮或类别行为",
+      "remaining": "原始数据可读，但实际商品备选集尚未还原，不能虚构单品选择任务",
+      "formal_admitted": false,
+      "formal_budget_approved": false
+    },
+    {
+      "id": "cius",
+      "name": "加拿大互联网使用",
+      "evidence": "外部候选（尚未确认独立性）",
+      "status": "待制定购物题组",
+      "scope": "购物行为问卷候选",
+      "remaining": "原始数据包与问卷齐全；购物题、资格、权重和匹配字段尚未冻结",
+      "formal_admitted": false,
+      "formal_budget_approved": false
+    },
+    {
+      "id": "drone",
+      "name": "美国无人机配送",
+      "evidence": "外部候选（尚未确认独立性）",
+      "status": "结构已重建",
+      "scope": "配送服务偏好候选",
+      "remaining": "3,715人、36,297次配送选择，编码无异常；缺学历实测，应明确只匹配可用背景，待冻结分块和指标",
+      "formal_admitted": false,
+      "formal_budget_approved": false
+    }
+  ],
+  "completed_format_checks": 24,
+  "planned_format_checks": 24,
+  "pilot_peak_price_estimate_usd": 0.09773544,
+  "pilot_input_tokens": 54974,
+  "pilot_output_tokens": 6356,
+  "formal_effects_available": false,
+  "formal_run_authorized": false,
+  "budget_note": "One-person pilot is not a reliable estimate for every full profile. Formal request, retry and fee caps remain unapproved; no final budget requested yet."
+}

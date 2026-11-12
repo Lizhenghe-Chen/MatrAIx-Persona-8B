@@ -1,0 +1,27 @@
+{
+  "status": "technical_only_no_effect_scoring",
+  "max_calls": 4,
+  "max_cost_usd": 1,
+  "input_peak_usd_per_million": 1.32,
+  "output_peak_usd_per_million": 3.96,
+  "price_source": "https://api-docs.deepseek.com/quick_start/pricing/",
+  "price_checked": "2026-11-12",
+  "jobs": [
+    {
+      "arm": "original",
+      "sha256": "27d0262159d74a9e317d2af4bc112110b49b8ed1299791fe5710342c5099152c"
+    },
+    {
+      "arm": "output_only",
+      "sha256": "b2c27c73cffcaf994a7e00043148d0bc8b2de05408764114d62d1f41ef16ee4c"
+    },
+    {
+      "arm": "prompt_only",
+      "sha256": "bd9bfb64a583d0561e64e9e27364e18967794868d2be4f989a2096127af68e61"
+    },
+    {
+      "arm": "optimized",
+      "sha256": "c137afc46065ea7d1a357cbf2c19713aaa68884439e044fb365e50476ce66a42"
+    }
+  ]
+}

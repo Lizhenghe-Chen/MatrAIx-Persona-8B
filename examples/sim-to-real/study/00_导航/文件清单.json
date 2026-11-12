@@ -5,8 +5,8 @@
   "scope": "实验代码、历史六轮、新框架冻结与公开结果、综合报告、文献、公开输入及项目内本机材料；排除本清单自身、缓存和项目外私有运行目录",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 594,
-  "git_bytes": 84041625,
+  "git_file_count": 623,
+  "git_bytes": 84715930,
   "local_only_file_count": 44,
   "local_only_bytes": 151339439,
   "external_large_source": {
@@ -20,8 +20,8 @@
   "files": [
     {
       "path": "README.md",
-      "bytes": 3516,
-      "sha256": "b25b6331d221e0ad34034e0a4541c450b9368f779d62035eea65ba4f396251c7",
+      "bytes": 3717,
+      "sha256": "d36f6101949fcd63ed09f59fba25ef39fa7d050992ac345b66898d78b8f59fe8",
       "storage": "git"
     },
     {
@@ -142,6 +142,102 @@
       "path": "decision_lab/core/runner.py",
       "bytes": 5785,
       "sha256": "bc41f17948e4db0487af7f5c87e0edc1e3ee7dc5efb3e52c0910512191ce5c39",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/cross_study/README.md",
+      "bytes": 4009,
+      "sha256": "d4f4c214704c2157a18bcb672c325f6ddf4f6be1106f189ca1fa7d909da686b5",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/cross_study/__init__.py",
+      "bytes": 82,
+      "sha256": "c42d1218268b7518dce7bded7d3dfd7016a2042e51929330fefd64822622e8b3",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/cross_study/audit.py",
+      "bytes": 4029,
+      "sha256": "7a8428404a9a340526bd1864f88694b64beb3ea5d1298a7bb18215cd07ed1ec1",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/cross_study/cohort.py",
+      "bytes": 5815,
+      "sha256": "07065d45c1c789e7a6f06791229c45058cc77e473ec2d29ad61ad96b7facf593",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/cross_study/drone_audit.py",
+      "bytes": 3048,
+      "sha256": "9a56d5fbd71b886a7fbed2147af154dbc470ee8c9e8e81bf0dd2478da3c7ac20",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/cross_study/matching.py",
+      "bytes": 3896,
+      "sha256": "2f33b013c043ac1356cae65a40f95c90f0a4e68006362457dccb847a0311b0d4",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/cross_study/personas.py",
+      "bytes": 3401,
+      "sha256": "2adb9ef23aa24730827c7e3888497f319e2f39f2ecaff16355f40e144d860da3",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/cross_study/prepare_pilot.py",
+      "bytes": 3047,
+      "sha256": "75f58fac9466cfc06dc566b26391b6d8fc4861edad2488195c98fc9f691f6b83",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/cross_study/protocol.py",
+      "bytes": 6037,
+      "sha256": "2ac54458fddf0b6bc040f525f02f325070b8c9036535f05890999c840e590e17",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/cross_study/registry.py",
+      "bytes": 5381,
+      "sha256": "5bc762f18942b8b6d30db5fedc0c6783e8ba8afa3962884b2b0b7feea67d1883",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/cross_study/report.py",
+      "bytes": 11473,
+      "sha256": "3fae2f36eb5835fd2f5dd6f1a11bc5dadf582024b68fe477cdb522b8e2d6a55d",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/cross_study/run_pilot.py",
+      "bytes": 2661,
+      "sha256": "85923e1cd61008c004c2253cb711f5efd428f33e46d88ee9e6ec2d696634880c",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/cross_study/targets.py",
+      "bytes": 3483,
+      "sha256": "42e0bb6f8581287b7ccdf478b0dde2ffb62c26be32dc1c1e39ab9244e52824c2",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/cross_study/technical.py",
+      "bytes": 4101,
+      "sha256": "08830dc083343c4b93990b0cfe6c6a8caa7bd5a19a889bea522d2ffb57775b62",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/cross_study/tests.py",
+      "bytes": 3011,
+      "sha256": "5f51cc27e3cc2b4f179981aeee585c677a720730d6e437db05239af1aee1fa85",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/cross_study/verify.py",
+      "bytes": 2429,
+      "sha256": "403801d7cd291eb4f4d7806df495c577904c5708f594210ce1734117f36ba553",
       "storage": "git"
     },
     {
@@ -451,6 +547,66 @@
       "storage": "git"
     },
     {
+      "path": "decision_lab/reports/cross-study-v1/admission.json",
+      "bytes": 7717,
+      "sha256": "9343e91bd1573e4b544916091b2b87499d2da197c0d48b377b0b03ca5d5c04e0",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/drone-audit.json",
+      "bytes": 1953,
+      "sha256": "af6fe80327a0d6542c96990f4c1e244ef735b1d1af8e9e1f6a81d0196338943b",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/drone-source-downloads.json",
+      "bytes": 1494,
+      "sha256": "36c48b91dd2256a340e14918bfa9951ef2bd474919a2b49bc2517899c706a06c",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/index.html",
+      "bytes": 12118,
+      "sha256": "2cbbd05383ebd1e1e1497bc0b28d2e48d650f700b180fad6a688718c370a645a",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/matching-candidate.json",
+      "bytes": 8212,
+      "sha256": "92535369816bf73e13e95f0e4696bee990b610e6c3e38b1a665798215609280c",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/participant-pilot-result.json",
+      "bytes": 12038,
+      "sha256": "4aea75f4c94f589390514c7c730c47f87355b8de63487a120d99f45a8e809f49",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/persona-audit.json",
+      "bytes": 457488,
+      "sha256": "0fb3ced6e0f3391c667cfc3355db92f00292ffcfddce8a7c96422c9d876a30b2",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/source-inventory.json",
+      "bytes": 89762,
+      "sha256": "79baa5d0252d7342855d8065eba4e4e4c0ea6800688b1e08b41d979c5b505d28",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/target-structure.json",
+      "bytes": 10902,
+      "sha256": "fa46619fcdeb1836dd107d27e4adf3ea45f2dafcefe4ddca5c542b6bf9ee5fd2",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/technical-result.json",
+      "bytes": 2270,
+      "sha256": "46c07e4d029ec647c50748c5877edb4c9b6f09fb696b33726b3985871dfaea0c",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/reports/dryer-verification.json",
       "bytes": 17517,
       "sha256": "c7db9e042e48908a6f7d839a56ce9d379e5ca7c40f5a1503d9356da4dfa76400",
@@ -628,6 +784,24 @@
       "path": "decision_lab/specs/audits/tshirt-supplement-index.json",
       "bytes": 936,
       "sha256": "2dc0fe50d1785a2fc74842193efcff06e5856348ba52e7409c213a93fb7954d0",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/cross-study-v1/native-runtime.json",
+      "bytes": 2261,
+      "sha256": "d5721e04f4574e728d6010bc50f8e49a3305afd24ed628684ce6d951ccc9aff7",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/cross-study-v1/participant-pilot.json",
+      "bytes": 1207,
+      "sha256": "23203addc404dddc8b1f415a6811f7718b85383f644675657e02c59040c0c65a",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/cross-study-v1/technical-protocol.json",
+      "bytes": 779,
+      "sha256": "7518688c7ab303bcd9da414926e8ba53494a2aa18d4325b8f0e6e8089e7ac31b",
       "storage": "git"
     },
     {

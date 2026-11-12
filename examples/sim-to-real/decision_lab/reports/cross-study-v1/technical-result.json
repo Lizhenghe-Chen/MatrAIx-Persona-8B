@@ -1,0 +1,85 @@
+{
+  "purpose": "synthetic-format-only; not participant pilot or experiment evidence",
+  "planned": 4,
+  "attempts": 4,
+  "rows": [
+    {
+      "arm": "original",
+      "status": "complete",
+      "elapsed_seconds": 1.1501549160020659,
+      "identity": {
+        "model": "deepseek-v4-pro",
+        "system_fingerprint": "a307abda487cd1b463329ccb945ce396"
+      },
+      "usage": {
+        "prompt_tokens": 498,
+        "completion_tokens": 80,
+        "total_tokens": 578,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 498
+      }
+    },
+    {
+      "arm": "output_only",
+      "status": "complete",
+      "elapsed_seconds": 1.4791379170055734,
+      "identity": {
+        "model": "deepseek-v4-pro",
+        "system_fingerprint": "a307abda487cd1b463329ccb945ce396"
+      },
+      "usage": {
+        "prompt_tokens": 407,
+        "completion_tokens": 107,
+        "total_tokens": 514,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 407
+      }
+    },
+    {
+      "arm": "prompt_only",
+      "status": "complete",
+      "elapsed_seconds": 1.5822529579891125,
+      "identity": {
+        "model": "deepseek-v4-pro",
+        "system_fingerprint": "a307abda487cd1b463329ccb945ce396"
+      },
+      "usage": {
+        "prompt_tokens": 432,
+        "completion_tokens": 81,
+        "total_tokens": 513,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 432
+      }
+    },
+    {
+      "arm": "optimized",
+      "status": "complete",
+      "elapsed_seconds": 1.3999250000051688,
+      "identity": {
+        "model": "deepseek-v4-pro",
+        "system_fingerprint": "a307abda487cd1b463329ccb945ce396"
+      },
+      "usage": {
+        "prompt_tokens": 354,
+        "completion_tokens": 107,
+        "total_tokens": 461,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 354
+      }
+    }
+  ],
+  "conservative_reservation_usd": 0.08091864,
+  "formal_budget_approved": false
+}

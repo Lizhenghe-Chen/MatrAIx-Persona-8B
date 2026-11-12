@@ -1,0 +1,44 @@
+{
+  "status": "prepared_not_run",
+  "participants_per_study": 1,
+  "jobs": 24,
+  "max_calls": 24,
+  "max_retries": 0,
+  "max_cost_usd": 5,
+  "reserved_peak_usd": 0.725406,
+  "studies": {
+    "anes": {
+      "questions": 6,
+      "canonical_profile_dimensions": 342,
+      "omitted_noncanonical_or_null": 948
+    },
+    "dryer": {
+      "questions": 8,
+      "canonical_profile_dimensions": 652,
+      "omitted_noncanonical_or_null": 638
+    },
+    "pew13": {
+      "questions": 13,
+      "canonical_profile_dimensions": 15,
+      "omitted_noncanonical_or_null": 1275
+    },
+    "pew168": {
+      "questions": 5,
+      "canonical_profile_dimensions": 185,
+      "omitted_noncanonical_or_null": 1105
+    },
+    "shed": {
+      "questions": 7,
+      "canonical_profile_dimensions": 507,
+      "omitted_noncanonical_or_null": 783
+    },
+    "swiss": {
+      "questions": 4,
+      "canonical_profile_dimensions": 220,
+      "omitted_noncanonical_or_null": 1070
+    }
+  },
+  "input_sha256": "1336166cafd384f21618f29d947192b2f08229c8739bfe458914f50ff8b2af41",
+  "scope": "Only format/identity and input isolation. No effect metrics. These pilot people cannot enter screening.",
+  "formal_budget_approved": false
+}

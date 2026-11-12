@@ -1,0 +1,273 @@
+{
+  "status": "candidate_matching_not_formal_freeze",
+  "seed": 20261109,
+  "candidate_pool_records": 13868,
+  "private_snapshot_sha256": "57aef53e1565059d2d4a679addac20f96bac4d59b1d32c2a71f8390871ed3d4f",
+  "studies": {
+    "anes": {
+      "eligible_backgrounds": 1927,
+      "excluded_backgrounds": {},
+      "allocation": {
+        "pilot": {
+          "18–64|Bachelor's degree or higher": 3,
+          "18–64|Below bachelor's degree": 3,
+          "65+|Bachelor's degree or higher": 1,
+          "65+|Below bachelor's degree": 1
+        },
+        "screen": {
+          "18–64|Bachelor's degree or higher": 16,
+          "18–64|Below bachelor's degree": 20,
+          "65+|Bachelor's degree or higher": 5,
+          "65+|Below bachelor's degree": 7
+        },
+        "reserve": {
+          "18–64|Bachelor's degree or higher": 32,
+          "18–64|Below bachelor's degree": 39,
+          "65+|Bachelor's degree or higher": 11,
+          "65+|Below bachelor's degree": 14
+        }
+      },
+      "warning": "A pilot may omit rare strata. Formal stratum coverage must be accepted before run.",
+      "selected": 152,
+      "matched": 152,
+      "unique_release_profiles": 152,
+      "source_counts": {
+        "wiki": 118,
+        "stackoverflow": 10,
+        "prism": 21,
+        "amazon": 3
+      },
+      "age_resolutions": {
+        "numeric_age_to_native_band": 144,
+        "75_plus_common_coarsening": 8
+      }
+    },
+    "dryer": {
+      "eligible_backgrounds": 1427,
+      "excluded_backgrounds": {
+        "unmapped_education:Other (please specify)": 25
+      },
+      "allocation": {
+        "pilot": {
+          "CAN_C": 1,
+          "CAN_T1": 1,
+          "IRE_C": 1,
+          "IRE_T1": 1,
+          "UK_C": 2,
+          "UK_T1": 1,
+          "USA_C": 1
+        },
+        "screen": {
+          "CAN_C": 7,
+          "CAN_T1": 7,
+          "IRE_C": 7,
+          "IRE_T1": 6,
+          "UK_C": 7,
+          "UK_T1": 7,
+          "USA_C": 7
+        },
+        "reserve": {
+          "CAN_C": 14,
+          "CAN_T1": 13,
+          "IRE_C": 13,
+          "IRE_T1": 13,
+          "UK_C": 15,
+          "UK_T1": 14,
+          "USA_C": 14
+        }
+      },
+      "warning": "A pilot may omit rare strata. Formal stratum coverage must be accepted before run.",
+      "selected": 152,
+      "matched": 149,
+      "unique_release_profiles": 147,
+      "source_counts": {
+        "wiki": 146,
+        "prism": 3
+      },
+      "age_resolutions": {
+        "native_age_band": 152
+      }
+    },
+    "pew13": {
+      "eligible_backgrounds": 4313,
+      "excluded_backgrounds": {
+        "unmapped_age:Unknown": 4
+      },
+      "allocation": {
+        "pilot": {
+          "18-29|College graduate+": 1,
+          "18-29|Some college": 1,
+          "30-49|College graduate+": 1,
+          "30-49|Some college": 1,
+          "50-64|College graduate+": 1,
+          "50-64|Some college": 1,
+          "65+|College graduate+": 1,
+          "65+|Some college": 1
+        },
+        "screen": {
+          "18-29|College graduate+": 3,
+          "18-29|H.S. graduate or less": 1,
+          "18-29|Some college": 3,
+          "30-49|College graduate+": 8,
+          "30-49|H.S. graduate or less": 2,
+          "30-49|Some college": 4,
+          "50-64|College graduate+": 8,
+          "50-64|H.S. graduate or less": 2,
+          "50-64|Some college": 5,
+          "65+|College graduate+": 7,
+          "65+|H.S. graduate or less": 2,
+          "65+|Some college": 3
+        },
+        "reserve": {
+          "18-29|College graduate+": 6,
+          "18-29|H.S. graduate or less": 3,
+          "18-29|Some college": 6,
+          "30-49|College graduate+": 16,
+          "30-49|H.S. graduate or less": 4,
+          "30-49|Some college": 9,
+          "50-64|College graduate+": 16,
+          "50-64|H.S. graduate or less": 4,
+          "50-64|Some college": 10,
+          "65+|College graduate+": 13,
+          "65+|H.S. graduate or less": 3,
+          "65+|Some college": 6
+        }
+      },
+      "warning": "A pilot may omit rare strata. Formal stratum coverage must be accepted before run.",
+      "selected": 152,
+      "matched": 152,
+      "unique_release_profiles": 152,
+      "source_counts": {
+        "gss": 38,
+        "wiki": 100,
+        "amazon": 3,
+        "prism": 11
+      },
+      "age_resolutions": {
+        "18_64_common_coarsening": 116,
+        "65_plus": 36
+      }
+    },
+    "pew168": {
+      "eligible_backgrounds": 9341,
+      "excluded_backgrounds": {},
+      "allocation": {
+        "pilot": {
+          "18–64|Bachelor's degree or higher": 3,
+          "18–64|Below bachelor's degree": 3,
+          "65+|Bachelor's degree or higher": 1,
+          "65+|Below bachelor's degree": 1
+        },
+        "screen": {
+          "18–64|Bachelor's degree or higher": 17,
+          "18–64|Below bachelor's degree": 16,
+          "65+|Bachelor's degree or higher": 7,
+          "65+|Below bachelor's degree": 8
+        },
+        "reserve": {
+          "18–64|Bachelor's degree or higher": 34,
+          "18–64|Below bachelor's degree": 33,
+          "65+|Bachelor's degree or higher": 13,
+          "65+|Below bachelor's degree": 16
+        }
+      },
+      "warning": "A pilot may omit rare strata. Formal stratum coverage must be accepted before run.",
+      "selected": 152,
+      "matched": 152,
+      "unique_release_profiles": 152,
+      "source_counts": {
+        "prism": 8,
+        "amazon": 6,
+        "wiki": 99,
+        "gss": 32,
+        "stackoverflow": 7
+      },
+      "age_resolutions": {
+        "18_64_common_coarsening": 106,
+        "65_plus": 46
+      }
+    },
+    "shed": {
+      "eligible_backgrounds": 12934,
+      "excluded_backgrounds": {},
+      "allocation": {
+        "pilot": {
+          "18–64|Bachelor's degree or higher": 3,
+          "18–64|Below bachelor's degree": 3,
+          "65+|Bachelor's degree or higher": 1,
+          "65+|Below bachelor's degree": 1
+        },
+        "screen": {
+          "18–64|Bachelor's degree or higher": 15,
+          "18–64|Below bachelor's degree": 20,
+          "65+|Bachelor's degree or higher": 5,
+          "65+|Below bachelor's degree": 8
+        },
+        "reserve": {
+          "18–64|Bachelor's degree or higher": 30,
+          "18–64|Below bachelor's degree": 39,
+          "65+|Bachelor's degree or higher": 10,
+          "65+|Below bachelor's degree": 17
+        }
+      },
+      "warning": "A pilot may omit rare strata. Formal stratum coverage must be accepted before run.",
+      "selected": 152,
+      "matched": 152,
+      "unique_release_profiles": 152,
+      "source_counts": {
+        "wiki": 108,
+        "gss": 27,
+        "stackoverflow": 7,
+        "prism": 8,
+        "amazon": 1,
+        "synthetic": 1
+      },
+      "age_resolutions": {
+        "numeric_age_to_native_band": 152
+      }
+    },
+    "swiss": {
+      "eligible_backgrounds": 3224,
+      "excluded_backgrounds": {
+        "unmapped_education:Other": 55,
+        "unmapped_education:unknown": 122,
+        "unmapped_education:None": 12
+      },
+      "allocation": {
+        "pilot": {
+          "Smartphone": 3,
+          "TV": 3,
+          "Washing machine": 2
+        },
+        "screen": {
+          "Smartphone": 16,
+          "TV": 16,
+          "Washing machine": 16
+        },
+        "reserve": {
+          "Smartphone": 32,
+          "TV": 32,
+          "Washing machine": 32
+        }
+      },
+      "warning": "A pilot may omit rare strata. Formal stratum coverage must be accepted before run.",
+      "selected": 152,
+      "matched": 152,
+      "unique_release_profiles": 152,
+      "source_counts": {
+        "prism": 20,
+        "stackoverflow": 12,
+        "wiki": 120
+      },
+      "age_resolutions": {
+        "numeric_age_to_native_band": 152
+      }
+    }
+  },
+  "limits": [
+    "Six existing study adapters only; remaining thirteen still require preparation.",
+    "Pool reservoirs are not full-population optimization; coverage shortfalls need full-cell verification before generation.",
+    "Income omitted pending currency/definition harmonization; no field silently imputed.",
+    "Source quarantine does not establish complete absence of training-data overlap."
+  ]
+}
