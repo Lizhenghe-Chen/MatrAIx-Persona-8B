@@ -521,13 +521,14 @@ def direction_section():
         f"{quintile[-1]['ai_advantage_ci'][1]:+.3f}]）"
         for plan, block in deviation_blocks
         for quintile in [block['quintiles']])
+    headline_plan, headline = deviation_blocks[-1]
     deviation_cards = ''.join(
-        f"<article class=\"card\"><span class=\"tag\">第 {quintile['quintile']} 档"
-        f"{'（最典型）' if quintile['quintile'] == 1 else '（最不典型）' if quintile['quintile'] == 5 else ''}</span>"
-        f"<h3>{quintile['atypical_from']:.2f}–{quintile['atypical_to']:.2f} 偏离度</h3>"
+        f"<article class=\"card\"><span class=\"tag\">{'最典型 20%' if quintile['quintile'] == 1 else '最不典型 20%'}"
+        f" · {html.escape(headline_plan)}</span><h3>{quintile['atypical_from']:.2f}–{quintile['atypical_to']:.2f} 偏离度</h3>"
         f"<div class=\"big\">{quintile['ai_advantage']:+.3f}</div>"
-        f"<p>人格模型相对人群分布的 Brier 优势；正数＝更好。</p></article>"
-        for plan, block in deviation_blocks[:1] for quintile in [block['quintiles'][0], block['quintiles'][-1]])
+        f"<p>人格模型相对“人群分布”的 Brier 优势（正数＝更好）；区间 "
+        f"[{quintile['ai_advantage_ci'][0]:+.3f}, {quintile['ai_advantage_ci'][1]:+.3f}]。</p></article>"
+        for quintile in [headline['quintiles'][0], headline['quintiles'][-1]])
     payload = {'blocks': [{'plan': plan, 'study': study, **block} for plan, study, block in blocks],
                'totals': totals,
                'deviation': {plan: block for plan, block in deviation_blocks}}
@@ -613,7 +614,8 @@ def anchor_section():
             low, high = item['improvement_95_ci']
             significant = (low > 0) or (high < 0)
             contrasts.append({'study': study, 'label': label, 'relative': item['relative_improvement'],
-                              'low': low, 'high': high, 'significant': significant})
+                              'absolute': item['improvement'], 'low': low, 'high': high,
+                              'significant': significant})
     cells = ''.join(
         f"<tr><th>{html.escape(frame.get(row['study'], row['study']))}</th>"
         f"<td>{html.escape(arm_name.get(row['arm'], row['arm']))}</td>"
@@ -621,8 +623,8 @@ def anchor_section():
     contrast_cells = ''.join(
         f"<tr><th>{html.escape(frame.get(item['study'], item['study']))}</th>"
         f"<td>{html.escape(item['label'])}</td>"
+        f"<td>{item['absolute']:+.3f} [{item['low']:+.3f}, {item['high']:+.3f}]</td>"
         f"<td>{100 * item['relative']:+.1f}%</td>"
-        f"<td>[{100 * item['low']:+.1f}, {100 * item['high']:+.1f}] pp</td>"
         f"<td>{'是' if item['significant'] else '否（区间含 0）'}</td></tr>"
         for item in contrasts)
     german = studies['german']['results']
@@ -660,9 +662,12 @@ def anchor_section():
             '<div class="table-wrap"><table style="min-width:640px"><caption>逐项 Brier（越低越好）'
             '</caption><thead><tr><th>研究</th><th>做法</th><th>Brier</th></tr></thead><tbody>'
             + cells + '</tbody></table></div>'
-            '<div class="table-wrap"><table style="min-width:760px"><caption>配对比较（2000 次自助重抽样，按人配对）'
-            '</caption><thead><tr><th>研究</th><th>比较</th><th>相对改善</th><th>95% 区间</th>'
-            '<th>是否排除零</th></tr></thead><tbody>' + contrast_cells + '</tbody></table></div>'
+            '<div class="table-wrap"><table style="min-width:820px"><caption>配对比较（2000 次自助重抽样，按人配对）'
+            '</caption><thead><tr><th>研究</th><th>比较</th><th>Brier 降低（95% 区间）</th>'
+            '<th>相对改善</th><th>区间是否排除零</th></tr></thead><tbody>' + contrast_cells
+            + '</tbody></table></div>'
+            '<p class="small">前两行的区间是对<strong>绝对</strong> Brier 降低值的自助区间；“相对改善”是同一改善'
+            '除以被比较方的 Brier，单位不同，不能混读。</p>'
             + adherence_table()
             + '<p class="small"><strong>这一轮的结论要读准</strong>：提示里给模型的分布，和“直接用该分布”这条基准线'
             '来自同一批非被测者的历史答案。所以这是一次<strong>信息对等测试</strong>——'
