@@ -9,7 +9,16 @@ from backend.service.survey_types import SurveyInstrument
 from backend.service.survey_instruction_builder import render_survey_task_instruction_markdown,render_survey_questionnaire_markdown,render_survey_output_schema_markdown
 from matraix.persona_dimension_catalog import build_template_context_extras
 from jinja2 import Environment,FileSystemLoader,StrictUndefined
-ARMS={'original':('native','choice'),'output_only':('native','probabilities'),'prompt_only':('predict','choice'),'optimized':('predict','probabilities')}
+ARMS={'original':('native','choice'),'output_only':('native','probabilities'),'prompt_only':('predict','choice'),'optimized':('predict','probabilities'),'anchored':('predict','probabilities'),'bounded':('predict','probabilities')}
+ANCHOR_BOUND=15.0
+# Exact 1e-6 was too strict for free-form decimals: the anchored arms produced 15%
+# unusable answers whose only fault was a rounding drift. Drift up to 1% is
+# renormalised and counted; anything larger is still a failure, never a guess.
+PROBABILITY_TOLERANCE=1e-2
+ANCHOR_RULE={'anchored':'Treat these shares as the starting point, then adjust them using only the profile.',
+             'bounded':('Treat these shares as the starting point, then adjust them using only the profile. '
+                        'No single choice may move more than 15 percentage points away from its reference share; '
+                        'renormalise so the probabilities still sum to 1.')}
 PREDICT='Predict the choices the respondent represented by the provided profile would make in the stated survey context. Use only supplied information; do not invent missing personal experiences. Answer every required question.'
 
 def persona_text(dimensions):
@@ -26,7 +35,18 @@ def persona_text(dimensions):
  if not text or text=='## Who you are':raise ValueError('Native renderer produced no profile')
  return text
 
-def build_body(profile,instrument,context,arm,max_tokens=4096):
+def anchor_text(anchors):
+ if not anchors:raise ValueError('Anchored arms need a reference share for every question')
+ lines=['## Reference shares from comparable respondents','',
+        'These shares come from respondents outside the evaluated cohort who match the same age and education band.']
+ for question_id,rows in anchors.items():
+  lines.append('')
+  lines.append('- '+question_id)
+  for option_id,label,share in rows:
+   lines.append(f'  - {option_id} ({label}): {share*100:.1f}%')
+ return '\n'.join(lines)
+
+def build_body(profile,instrument,context,arm,max_tokens=4096,anchors=None):
  if arm not in ARMS:raise ValueError('Unknown arm')
  if not isinstance(context,str):raise ValueError('Context must be explicitly reviewed text')
  if set(instrument)-{'id','title','description','questions'}:raise ValueError('Unexpected instrument metadata')
@@ -41,7 +61,12 @@ def build_body(profile,instrument,context,arm,max_tokens=4096):
   instruction=instruction.replace('- Answer with the selected value only unless a question explicitly\n  asks for `askRationale` / `askConfidence`.','- Estimate a probability for every choice rather than selecting one value.')
   schema='Return JSON with only answers: a list of objects with questionId and probabilities. probabilities is an object keyed by every exact choice id. All probabilities must be finite numbers from 0 to 1 and sum to 1 for each question. No rationale, confidence, or explanations.'
  else:schema=render_survey_output_schema_markdown(obj).strip()+'\nReturn valid JSON. No rationale or confidence.'
- user=f'## Task instruction\n\n{instruction}\n\n## Context\n\n{context}\n\n## Questionnaire\n\n{questionnaire}\n\n## Answer envelope\n\n{schema}'
+ if arm in ANCHOR_RULE:
+  reference=anchor_text(anchors)
+  instruction=instruction+'\n'+ANCHOR_RULE[arm]
+  body_context=f'{context}\n\n{reference}'
+ else:body_context=context
+ user=f'## Task instruction\n\n{instruction}\n\n## Context\n\n{body_context}\n\n## Questionnaire\n\n{questionnaire}\n\n## Answer envelope\n\n{schema}'
  return {'model':'deepseek-v4-pro','temperature':.7,'top_p':1,'max_tokens':max_tokens,'thinking':{'type':'disabled'},'response_format':{'type':'json_object'},'messages':[{'role':'system','content':persona_text(profile)},{'role':'user','content':user}]}
 
 def parse(raw,instrument,arm,expected_identity=None):
@@ -53,7 +78,7 @@ def parse(raw,instrument,arm,expected_identity=None):
  data=json.loads(message['content']);allowed={'answers'} if ARMS[arm][1]=='probabilities' else {'instrument','answers'}
  if not isinstance(data,dict) or set(data)-allowed:raise ValueError('unexpected_envelope')
  expected={q['id']:[str(o['id']) if isinstance(o,dict) else str(o) for o in q['options']] for q in instrument['questions']}
- answers=data.get('answers');result={}
+ answers=data.get('answers');result={};renormalised=0
  if not isinstance(answers,list):raise ValueError('missing_answers')
  for a in answers:
   q=a.get('questionId')
@@ -65,7 +90,11 @@ def parse(raw,instrument,arm,expected_identity=None):
   else:
    if set(a)!={'questionId','probabilities'} or not isinstance(a['probabilities'],dict) or set(a['probabilities'])!=set(opts):raise ValueError('invalid_probability_keys')
    v=[a['probabilities'][o] for o in opts]
-   if any(type(x) not in (int,float) or not math.isfinite(x) or not 0<=x<=1 for x in v) or abs(sum(v)-1)>1e-6:raise ValueError('invalid_probability_values')
+   if any(type(x) not in (int,float) or not math.isfinite(x) or not 0<=x<=1 for x in v):raise ValueError('invalid_probability_values')
+   total=sum(v)
+   if abs(total-1)>PROBABILITY_TOLERANCE:raise ValueError('invalid_probability_values')
+   if abs(total-1)>1e-6:
+    v=[x/total for x in v];renormalised+=1
    result[q]=v
  if set(result)!=set(expected):raise ValueError('missing_required_answers_no_default_fill')
- return {'probabilities':result,'identity':identity,'usage':raw.get('usage',{})}
+ return {'probabilities':result,'identity':identity,'usage':raw.get('usage',{}),'renormalised':renormalised}

@@ -1,0 +1,113 @@
+{
+  "status": "complete",
+  "studies": [
+    "german",
+    "pew111"
+  ],
+  "arms": [
+    "optimized",
+    "anchored",
+    "bounded"
+  ],
+  "excluded_participants": [],
+  "excluded_policy": "Excluded before any effect was computed: no complete approved persona exists in the release. Reported, never replaced by a hand-written profile.",
+  "people_with_persona": {
+    "pew111": 96,
+    "german": 96
+  },
+  "jobs_per_study_arm": {
+    "german/optimized": 96,
+    "german/anchored": 96,
+    "german/bounded": 96,
+    "pew111/optimized": 96,
+    "pew111/anchored": 96,
+    "pew111/bounded": 96
+  },
+  "total_calls": 576,
+  "max_calls": 576,
+  "max_retries": 33,
+  "reserved_peak_usd": 20.32399908,
+  "max_cost_usd": 24.39,
+  "input_peak_usd_per_million": 1.32,
+  "output_peak_usd_per_million": 3.96,
+  "price_source": "https://api-docs.deepseek.com/quick_start/pricing/",
+  "expected_identity": {
+    "model": "deepseek-v4-pro",
+    "system_fingerprint": "a307abda487cd1b463329ccb945ce396"
+  },
+  "jobs_sha256": "3eaf9844595c813a27b62b962a5efcd9a06fa026fbec96c3e143c1099f3b4205",
+  "people_per_study": {
+    "pew111": 96,
+    "german": 96
+  },
+  "persona_field_distribution": {
+    "german": {
+      "min": 293,
+      "median": 641.0,
+      "max": 972,
+      "mean": 623.0625,
+      "people": 96
+    },
+    "pew111": {
+      "min": 12,
+      "median": 327.0,
+      "max": 832,
+      "mean": 304.1770833333333,
+      "people": 96
+    }
+  },
+  "omitted_dimension_distribution": {
+    "german": {
+      "min": 318,
+      "median": 649.0,
+      "max": 997,
+      "mean": 666.9375,
+      "people": 96
+    },
+    "pew111": {
+      "min": 458,
+      "median": 963.0,
+      "max": 1278,
+      "mean": 985.8229166666666,
+      "people": 96
+    }
+  },
+  "persona_richness_note": "Approved categorical dimensions sent per persona differ by study and by person. A cross-study comparison must read this table: a larger field count is not evidence that the persona is more accurate, but it is a confound for how much information the model received.",
+  "scoring_plan": {
+    "primary": "optimized versus original, per-person Brier, paired by person within stratum, 2000 draws",
+    "required_comparators": [
+      "history (weighted option shares from non-evaluated respondents)",
+      "stratum_history (same, within stratum where at least 20 respondents exist)",
+      "uniform"
+    ],
+    "distribution": "equal-card mean absolute share difference in percentage points",
+    "gates": "relative Brier improvement at least 2% with the 95% interval above zero; card-share improvement reported separately",
+    "no_default_answers": true
+  },
+  "formal_effects_available": false,
+  "formal_run_authorized_by_user": true,
+  "authorization_note": "User approved \"zero-cost first, then anchor-v1 (384 calls, about 12-14 CNY)\" on 2026-11-12 and topped up the balance to 998.13 CNY. Frozen plan is 576 jobs: 190 identical \"optimized\" requests were reused from wide-v1 at zero cost, leaving 384 real calls. Reserved peak 20.32 USD is the all-peak worst case; measured per-call cost from wide-v1 implies about 2.1 USD (15 CNY).",
+  "reuse": {
+    "source_plan": "wide-v1",
+    "jobs_adopted": 190,
+    "rule": "same frozen request body hash, byte for byte; the optimized prompt is unchanged"
+  },
+  "execution_mode": {
+    "workers": 8,
+    "claim": "INSERT OR IGNORE inside BEGIN IMMEDIATE; one row per frozen body hash"
+  },
+  "completion": {
+    "frozen_jobs": 576,
+    "unique_request_bodies": 570,
+    "duplicates_by_design": 6,
+    "dedup_note": "Six frozen jobs share a body hash with another job: two German respondents have identical approved persona dimensions, so the request text is identical. One call answers both; no answer was invented or copied.",
+    "answered_calls": 570,
+    "reused_from_wide_v1": 190,
+    "new_calls_paid": 380,
+    "failed_states": 0,
+    "recovered_failures_retained": 58,
+    "renormalised_calls": 23,
+    "renormalise_note": "First run rejected 57 answers whose probabilities summed to 1 +/- more than 1e-6 but less than 1%; the tolerance was widened to 1% with renormalisation and a counter, and every rejected call was recovered through the retained failure record. No answer was filled in by default.",
+    "protocol_change_after_first_run": "PROBABILITY_TOLERANCE 1e-6 -> 1e-2 with renormalisation, recorded per call"
+  }
+}

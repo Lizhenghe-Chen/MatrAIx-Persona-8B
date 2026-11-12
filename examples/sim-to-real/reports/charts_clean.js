@@ -4,7 +4,7 @@
   if (!node || typeof echarts === 'undefined') return;
   const data = JSON.parse(node.textContent);
   const ink = '#14372f', muted = '#566a63', line = '#d8e1da';
-  const green = '#117b70', purple = '#5358a5', orange = '#a15e38', grey = '#9fb0a8';
+  const green = '#117b70', purple = '#5358a5', orange = '#a15e38', grey = '#9fb0a8', blue = '#2f6f9f';
   const base = {
     textStyle: { fontFamily: '-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif', color: ink },
     animationDuration: 600
@@ -330,6 +330,126 @@
       }));
     });
   }
+
+  /* 7. direction correctness: does the model rank options the way people did? */
+  (function () {
+    const node = document.getElementById('direction-data');
+    if (!node) return;
+    const direction = JSON.parse(node.textContent);
+    const labels = { anes: '公共支出', pew13: '购物看法', pew168: '诈骗风险', shed: '消费调整',
+      packaging: '包装与拒买', pew111: '网购与达人', german: '德国番茄', radiant: '西班牙番茄' };
+    mount('directionCompare', (chart, isNarrow) => {
+      const rows = direction.blocks.slice().sort((a, b) => b.ai_argmax - a.ai_argmax);
+      chart.setOption({
+        tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' },
+          formatter: (items) => {
+            const row = rows[items[0].dataIndex];
+            return labels[row.study] || row.study
+              + '<br>可估题卡：' + row.cards
+              + '<br>AI 排对第一：' + (100 * row.ai_argmax).toFixed(0) + '%'
+              + '<br>参照排对第一：' + (row.reference_argmax === null ? '—'
+                  : (100 * row.reference_argmax).toFixed(0) + '%')
+              + '<br>AI 份额中位误差：' + (100 * row.ai_median_share_error).toFixed(1) + 'pp';
+          } },
+        legend: { data: ['AI', '同信息参照'], top: 0, textStyle: { color: muted } },
+        grid: { left: isNarrow ? 92 : 108, right: 58, top: 34, bottom: 34 },
+        xAxis: { type: 'value', max: 100, name: '第一名排对比例', nameTextStyle: { color: muted },
+          axisLabel: { formatter: '{value}%', color: muted }, splitLine: { lineStyle: { color: line } } },
+        yAxis: { type: 'category', data: rows.map((r) => labels[r.study] || r.study),
+          axisLabel: { color: ink, fontSize: isNarrow ? 11 : 13 }, axisLine: { lineStyle: { color: line } } },
+        series: [
+          { name: 'AI', type: 'bar', barMaxWidth: 14, itemStyle: { color: green },
+            data: rows.map((r) => Number((100 * r.ai_argmax).toFixed(1))),
+            label: { show: !isNarrow, position: 'right', color: ink, fontSize: 11,
+                     formatter: (p) => p.value.toFixed(0) + '%' } },
+          { name: '同信息参照', type: 'bar', barMaxWidth: 14, itemStyle: { color: purple },
+            data: rows.map((r) => r.reference_argmax === null ? null
+              : Number((100 * r.reference_argmax).toFixed(1))),
+            label: { show: !isNarrow, position: 'right', color: muted, fontSize: 11,
+                     formatter: (p) => p.value.toFixed(0) + '%' } }
+        ]
+      });
+    });
+
+    /* 8. where the persona helps: advantage over the population distribution by atypicality */
+    mount('deviationQuintiles', (chart, isNarrow) => {
+      const plans = Object.keys(direction.deviation);
+      const colours = [purple, green, orange, grey];
+      const names = { 'v1': '六研究轮', 'clean-v1': '干净实验轮', 'wide-v1': '六套新研究轮' };
+      const first = direction.deviation[plans[0]];
+      const quintiles = first.quintiles.map((q) => 'Q' + q.quintile);
+      const ranges = first.quintiles.map((q) => q.atypical_from.toFixed(2) + '–' + q.atypical_to.toFixed(2));
+      chart.setOption({
+        tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' },
+          formatter: (items) => {
+            const index = items[0].dataIndex;
+            const lines = ['偏离度 ' + ranges[index] + '（越大越不典型）'];
+            plans.forEach((plan) => {
+              const q = direction.deviation[plan].quintiles[index];
+              lines.push(names[plan] + '：' + q.ai_advantage.toFixed(3)
+                + '（区间 ' + q.ai_advantage_ci[0].toFixed(3) + ', ' + q.ai_advantage_ci[1].toFixed(3) + '）'
+                + ' · AI ' + q.ai_brier.toFixed(3) + ' vs 人群分布 ' + q.population_brier.toFixed(3));
+            });
+            return lines.join('<br>');
+          } },
+        legend: { data: plans.map((p) => names[p] || p), top: 0, textStyle: { color: muted } },
+        grid: { left: isNarrow ? 52 : 66, right: 24, top: 42, bottom: 40 },
+        xAxis: { type: 'category', data: quintiles, axisLabel: { color: muted },
+          axisLine: { lineStyle: { color: line } } },
+        yAxis: { type: 'value', name: '相对人群分布的 Brier 优势', nameTextStyle: { color: muted },
+          axisLabel: { color: muted }, splitLine: { lineStyle: { color: line } } },
+        series: plans.map((plan, index) => ({
+          name: names[plan] || plan, type: 'bar', barMaxWidth: 26,
+          itemStyle: { color: colours[index % colours.length] },
+          data: direction.deviation[plan].quintiles.map((q) => Number(q.ai_advantage.toFixed(3))),
+          label: { show: !isNarrow, position: 'top', fontSize: 10, color: muted,
+                   formatter: (p) => p.value.toFixed(2) },
+          markLine: index === 0 ? { silent: true, symbol: 'none',
+            lineStyle: { color: ink, type: 'dashed', width: 1 },
+            data: [{ yAxis: 0 }], label: { formatter: '与人群分布持平', color: ink, position: 'insideEndTop' } } : undefined
+        }))
+      });
+    });
+  })();
+
+  /* 9. anchor-v1: hand the model the distribution and see what is left */
+  (function () {
+    const node = document.getElementById('anchor-data');
+    if (!node) return;
+    const anchor = JSON.parse(node.textContent);
+    mount('anchorCompare', (chart, isNarrow) => {
+      const studies = ['german', 'pew111'];
+      const order = ['optimized', 'anchored', 'bounded', 'stratum_history', 'uniform'];
+      const colours = { optimized: orange, anchored: purple, bounded: blue,
+                        stratum_history: green, uniform: grey };
+      const labels = studies.map((s) => anchor.frame[s] || s);
+      chart.setOption({
+        tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' },
+          formatter: (items) => {
+            const index = items[0].dataIndex;
+            return (anchor.frame[studies[index]] || studies[index]) + '<br>'
+              + anchor.rows.filter((r) => r.study === studies[index])
+                  .map((r) => anchor.arm_name[r.arm] + '：' + r.brier.toFixed(3)).join('<br>');
+          } },
+        legend: { data: order.map((a) => anchor.arm_name[a]), top: 0, textStyle: { color: muted } },
+        grid: { left: isNarrow ? 46 : 56, right: 24, top: 52, bottom: 34 },
+        xAxis: { type: 'category', data: labels, axisLabel: { color: ink },
+          axisLine: { lineStyle: { color: line } } },
+        yAxis: { type: 'value', name: 'Brier（越低越好）', nameTextStyle: { color: muted },
+          min: 0, axisLabel: { color: muted }, splitLine: { lineStyle: { color: line } } },
+        series: order.map((arm) => ({
+          name: anchor.arm_name[arm], type: 'bar', barMaxWidth: 26,
+          itemStyle: { color: colours[arm] || grey },
+          data: studies.map((s) => {
+            const row = anchor.rows.find((r) => r.study === s && r.arm === arm);
+            return row ? Number(row.brier.toFixed(3)) : null;
+          }),
+          label: { show: !isNarrow, position: 'top', fontSize: 10, color: muted,
+                   formatter: (p) => p.value === null ? '' : p.value.toFixed(3) }
+        }))
+      });
+    });
+  })();
 
   const resize = () => { redraws.forEach((draw) => draw()); charts.forEach((chart) => chart.resize()); };
   window.addEventListener('resize', resize);

@@ -116,7 +116,37 @@ def main():
         assert (clean.parent/'clean-v1-report.html').exists()
         assert (HERE.parent/'decision_lab/docs/预注册协议-clean-v1.md').exists()
         clean_note=f' clean-v1 summary for {len(clean_summary["rows"])} studies tied to the generated page;'
-    print(f'PASS: {checked} source hashes; all local report links; 13 distributions and averages; latest run exclusion; readable labels.'+cross_note+cluster_note+clean_note+wide_note)
+    direction_note=''
+    direction_path=HERE.parent/'decision_lab/reports/cross-study-v1/direction-metrics.json'
+    if direction_path.exists():
+        direction_data=json.loads(direction_path.read_text())
+        html_direction=(HERE/'index.html').read_text()
+        assert 'id="direction"' in html_direction
+        totals=direction_data['totals']
+        assert f'{100*totals["ai_argmax"]:.1f}%' in html_direction
+        assert f'{100*totals["reference_argmax"]:.1f}%' in html_direction
+        for plan,payload in direction_data['plans'].items():
+            for study,block in payload['studies'].items():
+                assert f'{100*block["ai_argmax"]:.0f}%' in html_direction,(plan,study)
+        quintile=next(b for b in direction_data['plans'].values() if b['deviation'].get('available'))
+        assert f'{quintile["deviation"]["quintiles"][-1]["ai_advantage"]:+.3f}' in html_direction
+        direction_note=(f' direction metrics for {totals["studies"]} studies / {totals["cards"]} cards '
+                        f'tied to the page;')
+    anchor_note=''
+    anchor_path=HERE.parent/'decision_lab/reports/cross-study-v1/anchor-v1-results.json'
+    if anchor_path.exists():
+        anchor_data=json.loads(anchor_path.read_text())
+        html_anchor=(HERE/'index.html').read_text()
+        assert 'id="anchor"' in html_anchor
+        for study,entry in anchor_data['studies'].items():
+            contrasts=entry['results']['contrasts']
+            for key in ('optimized__to__anchored','stratum_history__to__anchored'):
+                value=contrasts[key]['relative_improvement']
+                assert f'{100*value:+.1f}%' in html_anchor,(study,key)
+            for arm in ('optimized','anchored','bounded'):
+                assert f'{entry["results"]["arms"][arm]["brier"]:.3f}' in html_anchor,(study,arm)
+        anchor_note=(f' anchor-v1 for {len(anchor_data["studies"])} studies tied to the page;')
+    print(f'PASS: {checked} source hashes; all local report links; 13 distributions and averages; latest run exclusion; readable labels.'+cross_note+cluster_note+clean_note+wide_note+direction_note+anchor_note)
 
 
 if __name__=='__main__':

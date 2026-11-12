@@ -11,7 +11,7 @@ def main():
  inv=json.loads((OUT/'source-inventory.json').read_text())
  assert len(inv['studies'])==19
  assert all(f['exists'] and f['read_status']=='metadata_readable' for s in inv['studies'] for f in s['files'])
- for version in ('v14','v13','v12','v11','v10','v9','v8','v7','v6','v5','v3','v2','v1'):
+ for version in ('v16','v15','v14','v13','v12','v11','v10','v9','v8','v7','v6','v5','v3','v2','v1'):
   accepted_path=ROOT.parent/f'archive/accepted-report-{version}.json'
   if accepted_path.exists():break
  accepted=json.loads(accepted_path.read_text())
@@ -77,5 +77,59 @@ def main():
   assert clean['beats_statistics']==[]
   clean=(f" Clean-v1: {cs['max_calls']} calls, {len(cr['studies'])} studies, "
          f"{len(clean['rows'])} behind the statistical reference.")
- print('PASS: 19 source inventories; accepted report unchanged; native hashes; disjoint cohorts; 24 strict responses; four-arm parity; report links.'+formal+clean)
+
+ wide=''
+ if (OUT/'wide-v1-results.json').exists():
+  ws=json.loads((SPEC/'wide-v1.json').read_text());wr=json.loads((OUT/'wide-v1-results.json').read_text())
+  assert ws['status']=='complete'
+  assert wr['jobs_sha256']==ws['jobs_sha256']
+  assert set(wr['studies'])==set(ws['studies'])
+  assert wr['arms']==ws['arms']==['original','optimized']
+  full=sum(1 for _ in json.loads((PRIVATE/'wide-v1-jobs.json').read_text())['jobs'])
+  assert wr['execution']['states']['complete']+wr['execution']['states'].get('failed',0)>=full-4
+  wide=(f" Wide-v1: {ws['total_calls']} frozen calls, {len(wr['studies'])} studies, "
+        f"{wr['execution']['states']['complete']} complete.")
+ anchor=''
+ if (OUT/'anchor-v1-results.json').exists():
+  ans=json.loads((SPEC/'anchor-v1.json').read_text());anr=json.loads((OUT/'anchor-v1-results.json').read_text())
+  assert ans['status']=='complete' and ans['total_calls']==ans['max_calls']
+  assert anr['jobs_sha256']==ans['jobs_sha256']
+  assert anr['arms']==ans['arms']==['optimized','anchored','bounded']
+  assert set(anr['studies'])==set(ans['studies'])=={'german','pew111'}
+  for study,entry in anr['studies'].items():
+   arms=entry['results']['arms']
+   # This plan never runs the native arm, so it must not report one.
+   assert 'original' not in arms
+   for name in ('optimized','anchored','bounded'):
+    assert arms[name]['brier'] is not None
+   contrasts=entry['results']['contrasts']
+   for key in ('optimized__to__anchored','optimized__to__bounded','anchored__to__bounded'):
+    assert contrasts[key]['relative_improvement'] is not None, key
+  # Reused calls must reproduce the source numbers exactly: same bytes, same answers.
+  wide_results=json.loads((OUT/'wide-v1-results.json').read_text())
+  for study in ('german','pew111'):
+   source=wide_results['studies'][study]['results']['arms']['optimized']['brier']
+   reused=anr['studies'][study]['results']['arms']['optimized']['brier']
+   assert abs(source-reused)<1e-12,(study,source,reused)
+  anchor=(f" Anchor-v1: {ans['max_calls']} frozen calls, {ans['reuse']['jobs_adopted']} reused, "
+          f"{anr['execution']['states']['complete']} answered, arms {anr['arms']}.")
+ direction=''
+ if (OUT/'direction-metrics.json').exists():
+  dm=json.loads((OUT/'direction-metrics.json').read_text())
+  totals=dm['totals']
+  assert totals['cards']==sum(s['cards'] for b in dm['plans'].values() for s in b['studies'].values())
+  assert totals['studies']==sum(len(b['studies']) for b in dm['plans'].values())
+  assert 0<=totals['ai_argmax']<=1 and 0<=totals['reference_argmax']<=1
+  for payload in dm['plans'].values():
+   for block in payload['studies'].values():
+    assert 0<=block['ai_argmax']<=1 and block['cards']>=1
+   deviation=payload['deviation']
+   if deviation.get('available'):
+    assert len(deviation['quintiles'])==5
+    for quintile in deviation['quintiles']:
+     low,high=quintile['ai_advantage_ci']
+     assert low<=quintile['ai_advantage']<=high
+  direction=f" Direction: {totals['studies']} studies, {totals['cards']} cards, AI argmax {100*totals['ai_argmax']:.1f}%."
+
+ print('PASS: 19 source inventories; accepted report unchanged; native hashes; disjoint cohorts; 24 strict responses; four-arm parity; report links.'+formal+clean+wide+anchor+direction)
 if __name__=='__main__':main()

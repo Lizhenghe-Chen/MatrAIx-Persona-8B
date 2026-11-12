@@ -21,6 +21,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 from .protocol import ARMS, build_body, parse
+from .scoring import option_ids
 from .registry import OUT, ROOT, SPEC
 from .scoring import build_references, card_key, evaluate
 from .targets import PRIVATE, load_existing
@@ -37,6 +38,11 @@ PLANS = {
                 'spec': 'wide-v1.json', 'db': 'wide-v1.sqlite', 'control': 'wide-v1-control.json',
                 'result': 'wide-v1-results.json', 'sources': 'adapters', 'authorized': False,
                 'arms': ['original', 'optimized']},
+    'anchor-v1': {'studies': ['german', 'pew111'],
+                  'cohort': 'cohort-wide-v1.json', 'forms': 'anchor-v1-jobs.json',
+                  'spec': 'anchor-v1.json', 'db': 'anchor-v1.sqlite', 'control': 'anchor-v1-control.json',
+                  'result': 'anchor-v1-results.json', 'sources': 'adapters', 'authorized': False,
+                  'arms': ['optimized', 'anchored', 'bounded'], 'reuse': 'wide-v1'},
     'clean-v1': {'studies': ['drone', 'shoes'],
                  'cohort': 'cohort-clean-v1.json', 'forms': 'clean-v1-jobs.json',
                  'spec': 'clean-v1.json', 'db': 'clean-v1.sqlite', 'control': 'clean-v1-control.json',
@@ -133,13 +139,22 @@ def prepare():
     usable = [r for r in reserve if r.get('persona')]
     wanted = {(r['persona']['shard'], r['persona']['row_index']) for r in usable}
     profiles, dropped = _profiles(wanted)
-    jobs = []
+    anchored = any(arm in ('anchored', 'bounded') for arm in PLAN_ARMS)
+    card_share, stratum_share = ({}, {})
+    if anchored:
+        evaluated = {r['person'] for r in reserve}
+        history = [r for r in _adapter_rows() if r['study'] in STUDIES and r['person'] not in evaluated]
+        card_share, stratum_share = _anchor_shares(history)
+    jobs, anchor_failures = [], []
     for row in usable:
         key = (row['persona']['shard'], row['persona']['row_index'])
         instrument = {'id': 'cross_study_' + row['study'], 'title': 'Survey',
                       'questions': row['questions']}
+        anchors = _anchors_for(row, card_share, stratum_share) if anchored else None
+        if anchored and anchors is None:
+            anchor_failures.append(row['person'])
         for arm in PLAN_ARMS:
-            body = build_body(profiles[key], instrument, row['context'], arm)
+            body = build_body(profiles[key], instrument, row['context'], arm, anchors=anchors)
             jobs.append({'study': row['study'], 'arm': arm, 'person': row['person'],
                          'instrument': instrument, 'body': body,
                          'body_sha256': hashlib.sha256(
@@ -203,6 +218,50 @@ def prepare():
                      ensure_ascii=False, indent=2))
 
 
+def _anchor_shares(rows, minimum=20):
+    """Reference share per (card, stratum), falling back to the card-wide share.
+
+    Only respondents outside the evaluated cohort are passed in, so an anchored
+    prompt never contains the answer of the person it is describing.
+    """
+    from .scoring import card_key
+    per_card = defaultdict(lambda: defaultdict(float))
+    per_stratum = defaultdict(lambda: defaultdict(float))
+    per_card_mass, per_stratum_mass = defaultdict(float), defaultdict(float)
+    for row in rows:
+        for question in row['questions']:
+            ids = option_ids(question)
+            answer = row['truth'].get(str(question['id']))
+            if answer not in ids:
+                continue
+            key = card_key(question)
+            per_card[key][answer] += 1
+            per_card_mass[key] += 1
+            scoped = (key, str(row['stratum']))
+            per_stratum[scoped][answer] += 1
+            per_stratum_mass[scoped] += 1
+    card_share = {k: {a: v / per_card_mass[k] for a, v in opts.items()} for k, opts in per_card.items()}
+    stratum_share = {k: {a: v / per_stratum_mass[k] for a, v in opts.items()}
+                     for k, opts in per_stratum.items() if per_stratum_mass[k] >= minimum}
+    return card_share, stratum_share
+
+
+def _anchors_for(row, card_share, stratum_share):
+    from .scoring import card_key
+    out = {}
+    for question in row['questions']:
+        ids = option_ids(question)
+        key = card_key(question)
+        share = stratum_share.get((key, str(row['stratum']))) or card_share.get(key)
+        if not share:
+            return None
+        labels = {(str(o['id']) if isinstance(o, dict) else str(o)): str(o['label'])
+                  for o in question['options']} if isinstance(question['options'][0], dict) else \
+                 {str(o): str(o) for o in question['options']}
+        out[str(question['id'])] = [(o, labels.get(o, o), share.get(o, 0.0)) for o in ids]
+    return out
+
+
 def _load_credentials():
     if not os.environ.get('DEEPSEEK_API_KEY'):
         path = Path.home() / '.config/matraix-decision-lab/credentials.json'
@@ -211,6 +270,46 @@ def _load_credentials():
 
 def _control():
     return json.loads(CONTROL.read_text()) if CONTROL.exists() else {}
+
+
+def reuse(source_plan):
+    """Adopt identical completed calls from another plan before paying for them again.
+
+    A call is reused only when the frozen request body hash matches byte for byte,
+    so the same question was asked in the same way. Reuse is recorded in its own
+    table: a reused answer is still a real answer, but it costs nothing now.
+    """
+    plan = PLANS[source_plan]
+    source_db = PRIVATE / plan['db']
+    if not source_db.exists():
+        raise ValueError('Source checkpoint missing: ' + str(source_db))
+    jobs = json.loads(FORMS.read_text())['jobs']
+    wanted = {j['body_sha256'] for j in jobs}
+    connection = sqlite3.connect(f'file:{source_db}?mode=ro', uri=True)
+    try:
+        available = {job: response for job, response in
+                     connection.execute("SELECT job,response FROM calls WHERE status='complete'")}
+    finally:
+        connection.close()
+    target = sqlite3.connect(DB)
+    os.chmod(DB, 0o600)
+    try:
+        target.execute('CREATE TABLE IF NOT EXISTS calls (job TEXT PRIMARY KEY, request_hash TEXT, '
+                       'status TEXT, reserved_usd REAL, response TEXT, error TEXT, elapsed REAL)')
+        target.execute('CREATE TABLE IF NOT EXISTS reused (job TEXT PRIMARY KEY, source TEXT, at REAL)')
+        adopted = 0
+        for key in sorted(wanted & set(available)):
+            inserted = target.execute('INSERT OR IGNORE INTO calls VALUES (?,?,?,?,?,?,?)',
+                                      (key, key, 'complete', 0.0, available[key], None, 0.0)).rowcount
+            if inserted:
+                target.execute('INSERT OR REPLACE INTO reused VALUES (?,?,?)',
+                               (key, source_plan, time.time()))
+                adopted += 1
+        target.commit()
+    finally:
+        target.close()
+    print(json.dumps({'reused': adopted, 'jobs': len(jobs), 'source': source_plan,
+                      'left_to_call': len(jobs) - adopted}, ensure_ascii=False))
 
 
 def reconcile():
@@ -299,12 +398,14 @@ def run(workers=1):
                     raw = send(job['body'], 'https://api.deepseek.com/chat/completions', timeout=120)
                     result = parse(raw, job['instrument'], job['arm'], spec['expected_identity'])
                 except Exception as exc:
+                    reason = getattr(exc, 'reason_code', type(exc).__name__)
+                    detail = str(exc)[:160]
                     connection.execute('UPDATE calls SET status=?,error=?,elapsed=? WHERE job=?',
-                                       ('failed', getattr(exc, 'reason_code', type(exc).__name__),
+                                       ('failed', f'{reason}: {detail}' if detail else reason,
                                         time.monotonic() - start, key))
                     failed += 1
-                    print(json.dumps({'worker': index, 'failed': job['study'], 'error':
-                                      getattr(exc, 'reason_code', type(exc).__name__)}), flush=True)
+                    print(json.dumps({'worker': index, 'failed': job['study'], 'arm': job['arm'],
+                                      'error': reason, 'detail': detail}), flush=True)
                     continue
                 connection.execute('UPDATE calls SET status=?,response=?,elapsed=? WHERE job=?',
                                    ('complete', json.dumps(result), time.monotonic() - start, key))
@@ -379,6 +480,84 @@ def retry():
                               'original_failure_retained': True}))
         finally:
             connection.close()
+
+
+def retry_all(workers=4):
+    """Recover every retained failure in one pass, archiving each original record first.
+
+    Same rules as retry(): a call is only resent when the frozen body matches, the
+    original failure is kept in failed_attempts, and a repeat failure stays failed.
+    """
+    spec = json.loads(SPEC_FILE.read_text())
+    jobs = {j['body_sha256']: j for j in json.loads(FORMS.read_text())['jobs']}
+    _load_credentials()
+    connection = sqlite3.connect(DB, timeout=60, isolation_level=None)
+    connection.execute('PRAGMA busy_timeout=60000')
+    try:
+        if connection.execute("SELECT count(*) FROM calls WHERE status='pending'").fetchone()[0]:
+            raise ValueError('Uncertain pending request; inspect before retrying')
+        pending = connection.execute("SELECT job,request_hash,reserved_usd,error,elapsed FROM calls "
+                                     "WHERE status='failed'").fetchall()
+        if not pending:
+            print(json.dumps({'failed': 0, 'recovered': 0}))
+            return
+        for key, request_hash, reserved, error, elapsed in pending:
+            job = jobs.get(key)
+            if job is None or request_hash != job['body_sha256']:
+                raise ValueError('Failed job is not part of the frozen plan')
+            connection.execute('INSERT INTO failed_attempts VALUES (?,?,?,?,?,?)',
+                               (time.time(), key, request_hash, error, elapsed, reserved))
+            connection.execute("UPDATE calls SET status='pending',error=NULL WHERE job=?", (key,))
+        connection.commit()
+    finally:
+        connection.close()
+
+    import threading
+    recovered = failed = 0
+    lock = threading.Lock()
+    queue = [row[0] for row in pending]
+    cursor = [0]
+
+    def worker():
+        nonlocal recovered, failed
+        connection = sqlite3.connect(DB, timeout=60, isolation_level=None)
+        connection.execute('PRAGMA busy_timeout=60000')
+        try:
+            while True:
+                with lock:
+                    index = cursor[0]
+                    cursor[0] += 1
+                if index >= len(queue):
+                    return
+                key = queue[index]
+                job = jobs[key]
+                start = time.monotonic()
+                try:
+                    raw = send(job['body'], 'https://api.deepseek.com/chat/completions', timeout=120)
+                    result = parse(raw, job['instrument'], job['arm'], spec['expected_identity'])
+                except Exception as exc:
+                    reason = getattr(exc, 'reason_code', type(exc).__name__)
+                    detail = str(exc)[:160]
+                    connection.execute('UPDATE calls SET status=?,error=?,elapsed=? WHERE job=?',
+                                       ('failed', f'{reason}: {detail}' if detail else reason,
+                                        time.monotonic() - start, key))
+                    with lock:
+                        failed += 1
+                    continue
+                connection.execute('UPDATE calls SET status=?,response=?,error=NULL,elapsed=? WHERE job=?',
+                                   ('complete', json.dumps(result), time.monotonic() - start, key))
+                with lock:
+                    recovered += 1
+        finally:
+            connection.close()
+
+    threads = [threading.Thread(target=worker, daemon=False) for _ in range(max(1, workers))]
+    for thread in threads:
+        thread.start()
+    for thread in threads:
+        thread.join()
+    print(json.dumps({'attempted': len(pending), 'recovered': recovered, 'failed': failed,
+                      'original_failures_retained': True}))
 
 
 def _cases():
@@ -576,12 +755,20 @@ def _adapter_rows():
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('command', choices=['prepare', 'run', 'retry', 'score', 'reconcile'])
+    parser.add_argument('command', choices=['prepare', 'run', 'retry', 'score', 'reconcile', 'reuse', 'retry-all'])
+    parser.add_argument('--from-plan', default=None)
     parser.add_argument('--workers', type=int, default=1)
     parser.add_argument('--plan', default='v1', choices=sorted(PLANS))
     args = parser.parse_args()
     select_plan(args.plan)
     if args.command == 'run':
         run(workers=max(1, args.workers))
+    elif args.command == 'retry-all':
+        retry_all(workers=max(1, args.workers))
+    elif args.command == 'reuse':
+        source = args.from_plan or PLANS[args.plan].get('reuse')
+        if not source:
+            raise ValueError('No source plan declared for reuse')
+        reuse(source)
     else:
         {'prepare': prepare, 'retry': retry, 'score': score, 'reconcile': reconcile}[args.command]()

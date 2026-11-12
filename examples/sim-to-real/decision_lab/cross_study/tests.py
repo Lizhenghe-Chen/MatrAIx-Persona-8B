@@ -7,7 +7,8 @@ class Contract(unittest.TestCase):
   self.profile={'age_bracket':'25-34','region':'North America','highest_education':"Bachelor's"}
  def response(self,a):return {'model':'deepseek-v4-pro','choices':[{'finish_reason':'stop','message':{'content':json.dumps({'answers':a})}}]}
  def test_same_profile_and_options(self):
-  bodies=[build_body(self.profile,self.inst,'United States.',a) for a in ARMS]
+  anchors={'q1':[('a','A',.8),('b','B',.2)]}
+  bodies=[build_body(self.profile,self.inst,'United States.',a,anchors=anchors) for a in ARMS]
   self.assertEqual(len({b['messages'][0]['content'] for b in bodies}),1)
   for b in bodies:self.assertIn('| `a` | A |',b['messages'][1]['content'])
  def test_missing_never_defaults(self):
@@ -129,7 +130,8 @@ class FormalReport(unittest.TestCase):
        'improvement_pp':3.0 if supports else 1.0,
        'improvement_95_ci':[1.0,5.0] if supports else [-1.0,3.0],'passes_2pp_gate':supports}},
      'refusal_options':{}}}
-  return {'status':'complete_formal_cross_study','execution':{'states':{'complete':40},'missing_calls':0},
+  return {'status':'complete_formal_cross_study','arms':['original','output_only','prompt_only','optimized'],
+   'execution':{'states':{'complete':40},'missing_calls':0},
    'budget':{'max_calls':40,'reserved_peak_usd':1.0,'max_cost_usd':2.0},'studies':studies}
 
  def test_all_supporting_meets_cross_study_gate(self):
@@ -280,3 +282,55 @@ class Adapters(unittest.TestCase):
   self.assertEqual([o['id'] for o in chosen['questions'][0]['options']],['1','2','0'])
   self.assertIn('No money changes hands',refused['context'])
   self.assertNotIn('No money changes hands',chosen['context'])
+
+
+class AnchorArms(unittest.TestCase):
+ def setUp(self):
+  self.inst={'id':'t','title':'T','questions':[{'id':'q1','prompt':'Choose','required':True,
+            'type':'single_choice','options':[{'id':'a','label':'A'},{'id':'b','label':'B'}]}]}
+  self.profile={'age_bracket':'25-34','region':'North America','highest_education':"Bachelor's"}
+  self.anchors={'q1':[('a','A',.8),('b','B',.2)]}
+ def _response(self,probs):
+  return {'model':'deepseek-v4-pro','choices':[{'finish_reason':'stop',
+          'message':{'content':json.dumps({'answers':[{'questionId':'q1','probabilities':probs}]})}}]}
+ def test_small_rounding_drift_is_renormalised_and_counted(self):
+  result=parse(self._response({'a':.504,'b':.504}),self.inst,'anchored')
+  self.assertEqual(result['renormalised'],1)
+  self.assertAlmostEqual(sum(result['probabilities']['q1']),1.0)
+  self.assertAlmostEqual(result['probabilities']['q1'][0],.5)
+ def test_large_drift_still_fails(self):
+  with self.assertRaises(ValueError):parse(self._response({'a':.55,'b':.5}),self.inst,'anchored')
+ def test_optimized_body_is_byte_identical_when_anchors_are_merely_offered(self):
+  plain=build_body(self.profile,self.inst,'USA','optimized')
+  offered=build_body(self.profile,self.inst,'USA','optimized',anchors=self.anchors)
+  self.assertEqual(plain,offered)
+ def test_anchored_prompt_carries_every_share(self):
+  content=build_body(self.profile,self.inst,'USA','anchored',anchors=self.anchors)['messages'][1]['content']
+  self.assertIn('a (A): 80.0%',content)
+  self.assertIn('starting point',content)
+ def test_bounded_prompt_states_the_limit(self):
+  content=build_body(self.profile,self.inst,'USA','bounded',anchors=self.anchors)['messages'][1]['content']
+  self.assertIn('15 percentage points',content)
+ def test_anchored_arm_refuses_without_anchors(self):
+  with self.assertRaises(ValueError):build_body(self.profile,self.inst,'USA','anchored')
+
+
+class AnchorContrasts(unittest.TestCase):
+ def _cases(self):
+  question={'id':'q1','prompt':'Choose','required':True,'type':'single_choice',
+            'options':[{'id':'a','label':'A'},{'id':'b','label':'B'}]}
+  cases=[]
+  for index,truth in enumerate('ab'):
+   predictions={arm:{'q1':[.8,.2] if truth=='a' else [.2,.8]} for arm in ('optimized','anchored')}
+   cases.append({'study':'x','person':f'p{index}','stratum':'S','weight':1.0,
+                 'truth':{'q1':truth},'questions':[question],'predictions':predictions})
+  return cases,question
+ def test_plan_without_the_original_arm_does_not_crash(self):
+  from .scoring import build_references,evaluate
+  cases,question=self._cases()
+  source=[{'person':f's{i}','stratum':'S','questions':[question],
+           'truth':{'q1':'a' if i%3 else 'b'}} for i in range(25)]
+  result=evaluate(cases,build_references(cases,source),['optimized','anchored'])
+  self.assertIn('optimized__to__anchored',result['contrasts'])
+  self.assertNotIn('original',result['arms'])
+  self.assertIsNotNone(result['contrasts']['optimized__to__anchored']['relative_improvement'])

@@ -491,6 +491,192 @@ def all_studies_section():
             '</script></section>')
 
 
+def direction_section():
+    """Direction correctness, and where the persona actually helps."""
+    path = CROSS / 'direction-metrics.json'
+    if not path.exists():
+        return '<section id="direction"><h2>方向与数量级</h2><p>尚未生成方向指标。</p></section>'
+    data = json.loads(path.read_text())
+    totals = data['totals']
+    blocks = [(plan, study, block)
+              for plan, payload in data['plans'].items()
+              for study, block in payload['studies'].items()]
+    blocks.sort(key=lambda item: item[2]['ai_argmax'])
+    cells = []
+    for plan, study, block in blocks:
+        reference_argmax = ('—' if block['reference_argmax'] is None
+                            else f"{100 * block['reference_argmax']:.0f}%")
+        reference_error = ('—' if block['reference_median_share_error'] is None
+                           else f"{100 * block['reference_median_share_error']:.1f}")
+        cells.append(
+            f"<tr><th>{html.escape(STUDY_LABEL.get(study, study))}</th>"
+            f"<td>{html.escape(TASK_KIND.get(study, '—'))}</td><td>{block['cards']}</td>"
+            f"<td>{100 * block['ai_argmax']:.0f}%</td><td>{reference_argmax}</td>"
+            f"<td>{100 * block['ai_median_share_error']:.1f}</td><td>{reference_error}</td></tr>")
+    deviation_blocks = [(plan, payload['deviation']) for plan, payload in data['plans'].items()
+                        if payload['deviation'].get('available')]
+    deviation_note = '；'.join(
+        f"{plan}：最不典型 20% 人群上 AI 比人群分布好 "
+        f"{quintile[-1]['ai_advantage']:+.3f}（区间 [{quintile[-1]['ai_advantage_ci'][0]:+.3f}, "
+        f"{quintile[-1]['ai_advantage_ci'][1]:+.3f}]）"
+        for plan, block in deviation_blocks
+        for quintile in [block['quintiles']])
+    deviation_cards = ''.join(
+        f"<article class=\"card\"><span class=\"tag\">第 {quintile['quintile']} 档"
+        f"{'（最典型）' if quintile['quintile'] == 1 else '（最不典型）' if quintile['quintile'] == 5 else ''}</span>"
+        f"<h3>{quintile['atypical_from']:.2f}–{quintile['atypical_to']:.2f} 偏离度</h3>"
+        f"<div class=\"big\">{quintile['ai_advantage']:+.3f}</div>"
+        f"<p>人格模型相对人群分布的 Brier 优势；正数＝更好。</p></article>"
+        for plan, block in deviation_blocks[:1] for quintile in [block['quintiles'][0], block['quintiles'][-1]])
+    payload = {'blocks': [{'plan': plan, 'study': study, **block} for plan, study, block in blocks],
+               'totals': totals,
+               'deviation': {plan: block for plan, block in deviation_blocks}}
+    payload_json = json.dumps(payload, ensure_ascii=False).replace('</', '<\\/')
+    return ('<section id="direction"><span class="number">方向 vs 数量级</span>'
+            '<h2>方向对了七成，数量级还差一截</h2>'
+            f'<p class="lead">Brier 只回答“数值准不准”。真正要用起来，先得知道 AI 会不会把冷门选项排到第一。'
+            f'在 {totals["cards"]} 张“至少 20 人答过”的题卡上，AI 把真实最热门选项排第一的比例是 '
+            f'<strong>{100 * totals["ai_argmax"]:.1f}%</strong>，同信息参照是 '
+            f'<strong>{100 * totals["reference_argmax"]:.1f}%</strong>。前二名都排对的比例：'
+            f'AI {100 * totals["ai_top2"]:.1f}%，参照 {100 * totals["reference_top2"]:.1f}%。</p>'
+            '<div class="grid3">'
+            f'<article class="card"><span class="tag">AI 的方向</span><h3>第一名排对</h3>'
+            f'<div class="big">{100 * totals["ai_argmax"]:.0f}%</div>'
+            f'<p>{totals["cards"]} 张题卡里约十次错三次。方向没反，但不足以单独支撑决策。</p></article>'
+            f'<article class="card"><span class="tag">参照的方向</span><h3>第一名排对</h3>'
+            f'<div class="big">{100 * totals["reference_argmax"]:.0f}%</div>'
+            '<p>查表法同样方向正确，而且更准——所以“方向对”是及格线，不是优势。</p></article>'
+            f'<article class="card"><span class="tag">数量级</span><h3>份额中位误差</h3>'
+            f'<div class="big">{100 * totals["ai_median_share_error"]:.1f}pp</div>'
+            f'<p>参照仅 {100 * totals["reference_median_share_error"]:.1f} 个百分点。'
+            '方向对、数量级错，用来估份额会系统性高估小众选项。</p></article>'
+            '</div>'
+            '<figure><h3>每套研究：第一名排对的比例</h3>'
+            '<div id="directionCompare" class="echart" style="height:430px"></div>'
+            '<figcaption>绿色是 AI，深色是同信息参照。包装与拒买那套 AI 只对 6/16 张卡，'
+            '是方向判断最薄弱的一环；ANES 与 Pew 168 上 AI 反而略好于参照，说明'
+            '“固定题卡 + 明显多数选项”时方向并不困难。</figcaption></figure>'
+            '<div class="table-wrap"><table style="min-width:760px"><caption>方向指标逐套清单'
+            '</caption><thead><tr><th>研究</th><th>题型</th><th>可估卡</th>'
+            '<th>AI 排对第一</th><th>参照</th><th>AI 份额中位误差（pp）</th>'
+            '<th>参照</th></tr></thead><tbody>' + ''.join(cells) + '</tbody></table></div>'
+            '<p class="small">“排对第一”只看排序，不看数值；份额中位误差看的是每一档占比与真实的差。'
+            '两者一起看才完整：方向对但误差大，正是“压缩”的表现。'
+            '只在至少 20 人答过的题卡上计算，因此题卡人人不同的 6 套研究（烘干机、家电、无人机、'
+            '运动鞋、产地、T 恤）没有方向指标——不是没算，是结构上不可估。</p>'
+            '<h3>画像到底在谁身上起了作用？</h3>'
+            '<p>把每个人的答案与“人群分布”的距离当作“有多不典型”，按五分位切开，比较 AI 与人群分布谁更准。'
+            '这是目前唯一能看见人格模型<strong>加信息</strong>的地方。</p>'
+            '<div class="grid2">' + deviation_cards + '</div>'
+            '<figure><h3>典型 vs 不典型：五种人群分布、两种预测</h3>'
+            '<div id="deviationQuintiles" class="echart" style="height:400px"></div>'
+            f'<figcaption>{deviation_note}。对绝大多数“典型”的人，人群分布几乎不可战胜；'
+            '只有最不典型的那 20%，人格模型才扳回来。</figcaption></figure>'
+            '<p class="small">必须说清这个分档的性质：分位是按“这个人自己的答案离人群分布多远”划的，'
+            '所以它是<strong>事后分解</strong>——用于回答“画像在哪里有价值”，'
+            '不能当成“先验就能挑出该问 AI 的人”的规则。要那样用，得先有一个不依赖答案的“异常度”信号。'
+            '另外 v1 的最不典型档区间含 0（不显著），wide-v1 才显著，两轮方向一致但强度不同。</p>'
+            '<script id="direction-data" type="application/json">'
+            + payload_json + '</script></section>')
+
+
+def anchor_section():
+    """anchor-v1: hand the model the reference distribution and see what is left."""
+    path = CROSS / 'anchor-v1-results.json'
+    if not path.exists():
+        return '<section id="anchor"><h2>把答案交给 AI</h2><p>尚未生成该实验。</p></section>'
+    data = json.loads(path.read_text())
+    studies = data['studies']
+    frame = {'german': '德国番茄包装', 'pew111': '美国网购与达人'}
+    order = ['optimized', 'anchored', 'bounded', 'stratum_history', 'uniform']
+    arm_name = {'optimized': '优化（旧结果）', 'anchored': '给分布后微调',
+                'bounded': '给分布＋限幅', 'stratum_history': '直接用该分布', 'uniform': '每档等分'}
+    rows = []
+    for study in ('german', 'pew111'):
+        block = studies[study]['results']
+        for arm in order:
+            metric = block['arms'].get(arm) or {}
+            if not metric.get('available') or metric.get('brier') is None:
+                continue
+            rows.append({'study': study, 'arm': arm, 'brier': metric['brier']})
+    contrasts = []
+    for study in ('german', 'pew111'):
+        block = studies[study]['results']['contrasts']
+        for key, label in (('optimized__to__anchored', '给分布后 vs 优化'),
+                           ('optimized__to__bounded', '给分布＋限幅 vs 优化'),
+                           ('anchored__to__bounded', '限幅 vs 不限幅'),
+                           ('stratum_history__to__anchored', '直接用分布 vs 给分布后'),
+                           ('stratum_history__to__bounded', '直接用分布 vs 给分布＋限幅')):
+            item = block.get(key) or {}
+            if item.get('relative_improvement') is None:
+                continue
+            low, high = item['improvement_95_ci']
+            significant = (low > 0) or (high < 0)
+            contrasts.append({'study': study, 'label': label, 'relative': item['relative_improvement'],
+                              'low': low, 'high': high, 'significant': significant})
+    cells = ''.join(
+        f"<tr><th>{html.escape(frame.get(row['study'], row['study']))}</th>"
+        f"<td>{html.escape(arm_name.get(row['arm'], row['arm']))}</td>"
+        f"<td>{row['brier']:.3f}</td></tr>" for row in rows)
+    contrast_cells = ''.join(
+        f"<tr><th>{html.escape(frame.get(item['study'], item['study']))}</th>"
+        f"<td>{html.escape(item['label'])}</td>"
+        f"<td>{100 * item['relative']:+.1f}%</td>"
+        f"<td>[{100 * item['low']:+.1f}, {100 * item['high']:+.1f}] pp</td>"
+        f"<td>{'是' if item['significant'] else '否（区间含 0）'}</td></tr>"
+        for item in contrasts)
+    german = studies['german']['results']
+    pew = studies['pew111']['results']
+    german_gain = german['contrasts']['optimized__to__anchored']['relative_improvement']
+    pew_gain = pew['contrasts']['optimized__to__anchored']['relative_improvement']
+    german_left = -german['contrasts']['stratum_history__to__anchored']['relative_improvement']
+    pew_left = -pew['contrasts']['stratum_history__to__anchored']['relative_improvement']
+    payload = {'rows': rows, 'contrasts': contrasts, 'frame': frame, 'arm_name': arm_name}
+    payload_json = json.dumps(payload, ensure_ascii=False).replace('</', '<\\/')
+    return ('<section id="anchor"><span class="number">信息对等实验</span>'
+            '<h2>把答案交给 AI，它能追上吗？</h2>'
+            '<p class="lead">前面所有比较里 AI 都缺一样东西：它不知道这道题的历史答案分布。'
+            '这一轮直接把这个分布写进提示，让它“以此为起点调整”。如果 AI 真能理解人，它应该在此基础上做得更好；'
+            '如果它只是复述数据，最多只能打平。</p>'
+            '<div class="grid3">'
+            f'<article class="card"><span class="tag">改善很大</span><h3>给分布后</h3>'
+            f'<div class="big">{100 * german_gain:+.0f}%</div>'
+            f'<p>德国番茄相对优化的改善；网购与达人为 {100 * pew_gain:+.0f}%。'
+            '说明此前一半以上的差距来自“没有先验”，不是“不会推理”。</p></article>'
+            f'<article class="card"><span class="tag">仍然没赢</span><h3>相对“直接用该分布”</h3>'
+            f'<div class="big">−{100 * pew_left:.1f}%</div>'
+            '<p>德国番茄仅差 −1.5%（区间跨 0，算打平）；网购与达人 −8.7%（显著）。'
+            '也就是说，人格模型最多做到“不拖后腿”。</p></article>'
+            f'<article class="card"><span class="tag">限幅的作用</span><h3>校准能救多少</h3>'
+            f'<div class="big">+4.1%</div>'
+            '<p>网购与达人的限幅版比不限幅好 4.1%（不显著），德国番茄只 +0.2%。'
+            '过度自信不是主因。</p></article>'
+            '</div>'
+            '<figure><h3>同一批人、同一批题卡：四种做法和两条基准线</h3>'
+            '<div id="anchorCompare" class="echart" style="height:420px"></div>'
+            '<figcaption>越低越好。“直接用该分布”是把历史比例原样给每个人——没有任何个性化；'
+            '“给分布后微调”是让模型在这个基础上按画像调整。两者几乎贴在一起，'
+            '说明模型的个性化调整没有带来可测量的增益。</figcaption></figure>'
+            '<div class="table-wrap"><table style="min-width:640px"><caption>逐项 Brier（越低越好）'
+            '</caption><thead><tr><th>研究</th><th>做法</th><th>Brier</th></tr></thead><tbody>'
+            + cells + '</tbody></table></div>'
+            '<div class="table-wrap"><table style="min-width:760px"><caption>配对比较（2000 次自助重抽样，按人配对）'
+            '</caption><thead><tr><th>研究</th><th>比较</th><th>相对改善</th><th>95% 区间</th>'
+            '<th>是否排除零</th></tr></thead><tbody>' + contrast_cells + '</tbody></table></div>'
+            '<p class="small"><strong>这一轮的结论要读准</strong>：提示里给模型的分布，和“直接用该分布”这条基准线'
+            '来自同一批非被测者的历史答案。所以这是一次<strong>信息对等测试</strong>——'
+            '问的是“在数据已经摆在面前时，大模型能不能比照抄更好”，答案是不能。'
+            '它不能证明“AI 在任何情况下都没有用”，但能证明：<strong>当这道题的人群基础分布已知时，'
+            '描述一个人的画像并不带来可测量的增量</strong>。</p>'
+            '<p class="small">工程与花费：576 条冻结请求中，190 条“优化”请求与上一轮字节完全相同，'
+            '直接复用、不重复付费；实际完成 380 次新调用，另有 58 次因概率和微偏离被拒后按保留记录重试，'
+            '共用 438 次请求。按余额前后快照实测 <strong>约 22.7 元（$3.2）</strong>，'
+            '均价约 ¥0.05/次。另有 23 次回答的概率和偏离 1 超过 1e-6 但小于 1%，'
+            '按“重新归一化并记账”处理，未补任何答案；协议放宽的原因与计数写进了冻结规格。</p>'
+            '<script id="anchor-data" type="application/json">'
+            + payload_json + '</script></section>')
+
+
 def build(d):
     validate(d)
     slots = {}
@@ -523,6 +709,8 @@ def build(d):
     slots['CLEAN_STUDY']=clean_study_section()
     slots['WIDE_STUDY']=wide_study_section()
     slots['ALL_STUDIES']=all_studies_section()
+    slots['DIRECTION']=direction_section()
+    slots['ANCHOR']=anchor_section()
     # The page must stay self-contained: inline the vendored chart library at build time.
     slots['ECHARTS']=(HERE/'vendor/echarts.min.js').read_text()
     slots['CLEAN_CHART_SCRIPT']=(HERE/'charts_clean.js').read_text()

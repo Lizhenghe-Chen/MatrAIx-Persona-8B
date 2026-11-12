@@ -1,0 +1,264 @@
+{
+  "status": "direction_metrics_from_checkpoints",
+  "card_minimum_people": 20,
+  "note": "argmax/top2 use the card's real majority ranking, so they answer \"is the direction right\" separately from Brier's \"is the number right\". Cards need at least 20 scored respondents; studies whose every card is unique therefore have no direction metric, by construction.",
+  "plans": {
+    "v1": {
+      "studies": {
+        "anes": {
+          "cards": 6,
+          "ai_argmax": 1.0,
+          "ai_top2": 0.8333333333333334,
+          "reference_argmax": 0.8333333333333334,
+          "reference_top2": 1.0,
+          "ai_median_share_error": 0.08406250000000032,
+          "reference_median_share_error": 0.02910498611129453,
+          "reference_name": "stratum_history",
+          "ai_mean_share_error": 0.07412037037037045
+        },
+        "pew13": {
+          "cards": 13,
+          "ai_argmax": 0.6923076923076923,
+          "ai_top2": 1.0,
+          "reference_argmax": 0.6923076923076923,
+          "reference_top2": 1.0,
+          "ai_median_share_error": 0.058421052631579,
+          "reference_median_share_error": 0.03721491710266664,
+          "reference_name": "stratum_history",
+          "ai_mean_share_error": 0.0592416076248313
+        },
+        "pew168": {
+          "cards": 5,
+          "ai_argmax": 1.0,
+          "ai_top2": 1.0,
+          "reference_argmax": 1.0,
+          "reference_top2": 1.0,
+          "ai_median_share_error": 0.08007812500000026,
+          "reference_median_share_error": 0.025432167706616236,
+          "reference_name": "stratum_history",
+          "ai_mean_share_error": 0.061963541666666885
+        },
+        "shed": {
+          "cards": 7,
+          "ai_argmax": 0.8571428571428571,
+          "ai_top2": 1.0,
+          "reference_argmax": 1.0,
+          "reference_top2": 1.0,
+          "ai_median_share_error": 0.108421052631579,
+          "reference_median_share_error": 0.028650835022481974,
+          "reference_name": "stratum_history",
+          "ai_mean_share_error": 0.1364040120247426
+        }
+      },
+      "deviation": {
+        "available": true,
+        "pairs": 2967,
+        "note": "ai_advantage above zero means the model beat the population distribution for that group. Quintiles are cut by the distance between a person's own answer and the population shares, so this is a post-hoc decomposition of where the persona helps, not a rule that can be applied before an answer is known.",
+        "quintiles": [
+          {
+            "quintile": 1,
+            "atypical_from": 0.148,
+            "atypical_to": 0.373,
+            "people_cards": 593,
+            "ai_brier": 0.24455649241146712,
+            "population_brier": 0.1148428753474293,
+            "ai_advantage": -0.12971361706403783,
+            "ai_advantage_ci": [
+              -0.15282746740699385,
+              -0.10493386198157041
+            ]
+          },
+          {
+            "quintile": 2,
+            "atypical_from": 0.373,
+            "atypical_to": 0.469,
+            "people_cards": 593,
+            "ai_brier": 0.436741652613828,
+            "population_brier": 0.3097884506966157,
+            "ai_advantage": -0.12695320191721232,
+            "ai_advantage_ci": [
+              -0.15239393362834433,
+              -0.10398091494836027
+            ]
+          },
+          {
+            "quintile": 3,
+            "atypical_from": 0.469,
+            "atypical_to": 0.558,
+            "people_cards": 593,
+            "ai_brier": 0.49660134907251263,
+            "population_brier": 0.47338228829138557,
+            "ai_advantage": -0.02321906078112711,
+            "ai_advantage_ci": [
+              -0.04845702461762688,
+              0.0027074578395973018
+            ]
+          },
+          {
+            "quintile": 4,
+            "atypical_from": 0.558,
+            "atypical_to": 0.65,
+            "people_cards": 593,
+            "ai_brier": 0.6531759696458684,
+            "population_brier": 0.6202258827931659,
+            "ai_advantage": -0.03295008685270259,
+            "ai_advantage_ci": [
+              -0.0593217072154781,
+              -0.008488751439523578
+            ]
+          },
+          {
+            "quintile": 5,
+            "atypical_from": 0.65,
+            "atypical_to": 0.989,
+            "people_cards": 595,
+            "ai_brier": 1.0104942016806724,
+            "population_brier": 1.0404061224835301,
+            "ai_advantage": 0.029911920802857858,
+            "ai_advantage_ci": [
+              -0.003780383320120855,
+              0.061656851741877135
+            ]
+          }
+        ]
+      }
+    },
+    "clean-v1": {
+      "studies": {},
+      "deviation": {
+        "available": false,
+        "pairs": 0
+      }
+    },
+    "wide-v1": {
+      "studies": {
+        "packaging": {
+          "cards": 16,
+          "ai_argmax": 0.375,
+          "ai_top2": 0.0625,
+          "reference_argmax": 0.875,
+          "reference_top2": 0.9375,
+          "ai_median_share_error": 0.19196078431372543,
+          "reference_median_share_error": 0.07034257803090627,
+          "reference_name": "stratum_history",
+          "ai_mean_share_error": 0.18106481481481482
+        },
+        "pew111": {
+          "cards": 6,
+          "ai_argmax": 0.8333333333333334,
+          "ai_top2": 1.0,
+          "reference_argmax": 1.0,
+          "reference_top2": 1.0,
+          "ai_median_share_error": 0.09170504385964931,
+          "reference_median_share_error": 0.013627572904499986,
+          "reference_name": "stratum_history",
+          "ai_mean_share_error": 0.10048354508927834
+        },
+        "german": {
+          "cards": 12,
+          "ai_argmax": 0.6666666666666666,
+          "ai_top2": 0.6666666666666666,
+          "reference_argmax": 0.9166666666666666,
+          "reference_top2": 0.9166666666666666,
+          "ai_median_share_error": 0.11343749999999984,
+          "reference_median_share_error": 0.030209411088964397,
+          "reference_name": "stratum_history",
+          "ai_mean_share_error": 0.1245963541666666
+        },
+        "radiant": {
+          "cards": 9,
+          "ai_argmax": 0.7777777777777778,
+          "ai_top2": 0.5555555555555556,
+          "reference_argmax": 1.0,
+          "reference_top2": 0.8888888888888888,
+          "ai_median_share_error": 0.0784848484848485,
+          "reference_median_share_error": 0.07624633431085043,
+          "reference_name": "stratum_history",
+          "ai_mean_share_error": 0.08708962642295973
+        }
+      },
+      "deviation": {
+        "available": true,
+        "pairs": 2698,
+        "note": "ai_advantage above zero means the model beat the population distribution for that group. Quintiles are cut by the distance between a person's own answer and the population shares, so this is a post-hoc decomposition of where the persona helps, not a rule that can be applied before an answer is known.",
+        "quintiles": [
+          {
+            "quintile": 1,
+            "atypical_from": 0.125,
+            "atypical_to": 0.236,
+            "people_cards": 539,
+            "ai_brier": 0.30171576994434135,
+            "population_brier": 0.06695069657033484,
+            "ai_advantage": -0.23476507337400654,
+            "ai_advantage_ci": [
+              -0.2588265440112406,
+              -0.21053000828121982
+            ]
+          },
+          {
+            "quintile": 2,
+            "atypical_from": 0.236,
+            "atypical_to": 0.468,
+            "people_cards": 539,
+            "ai_brier": 0.5183354359925788,
+            "population_brier": 0.250285832789339,
+            "ai_advantage": -0.2680496032032398,
+            "ai_advantage_ci": [
+              -0.30211567917655674,
+              -0.23670175171624028
+            ]
+          },
+          {
+            "quintile": 3,
+            "atypical_from": 0.468,
+            "atypical_to": 0.596,
+            "people_cards": 539,
+            "ai_brier": 0.777317254174397,
+            "population_brier": 0.46114516455750093,
+            "ai_advantage": -0.31617208961689613,
+            "ai_advantage_ci": [
+              -0.3537346965773238,
+              -0.2755396319556649
+            ]
+          },
+          {
+            "quintile": 4,
+            "atypical_from": 0.596,
+            "atypical_to": 0.701,
+            "people_cards": 539,
+            "ai_brier": 0.7850044526901669,
+            "population_brier": 0.6906700707313007,
+            "ai_advantage": -0.09433438195886633,
+            "ai_advantage_ci": [
+              -0.13252351027193718,
+              -0.05403315658149467
+            ]
+          },
+          {
+            "quintile": 5,
+            "atypical_from": 0.701,
+            "atypical_to": 1.0,
+            "people_cards": 542,
+            "ai_brier": 1.009229151291513,
+            "population_brier": 1.1252951877543302,
+            "ai_advantage": 0.11606603646281739,
+            "ai_advantage_ci": [
+              0.07722673118035911,
+              0.15378653863920114
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "totals": {
+    "studies": 8,
+    "cards": 74,
+    "ai_argmax": 0.7027027027027027,
+    "ai_top2": 0.6756756756756757,
+    "reference_argmax": 0.8918918918918919,
+    "reference_top2": 0.9594594594594594,
+    "ai_median_share_error": 0.08788377192982481,
+    "reference_median_share_error": 0.029657198600129463
+  }
+}

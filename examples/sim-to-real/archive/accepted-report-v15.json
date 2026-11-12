@@ -1,0 +1,157 @@
+{
+  "version": "2026-11-12-approved-v15",
+  "supersedes": "accepted-report-v14.json",
+  "policy": "用户认可的报告与结论；后续调整另立版本，不覆盖冻结依据。",
+  "change": "新增两节：①方向指标（74 张题卡的第一名命中率、份额中位误差、按典型性分位的画像增益）②anchor-v1 信息对等实验（给分布后仍不优于直接用该分布）。",
+  "additions": 0,
+  "files": [
+    {
+      "path": "reports/index.html",
+      "sha256": "f6f592a53a771a6f9c9c3a60d18b756ef45f4f0f818cc6e69657b31c92114d9f"
+    },
+    {
+      "path": "reports/evidence.json",
+      "sha256": "cac2f35eed5034fa0d0e44b17fb582b05df7e70b4e5a5cb6cecec4a3884b8515"
+    },
+    {
+      "path": "reports/report.html.tmpl",
+      "sha256": "165dccecf9140f60579f0d3d6a162428caed02ee619a96654790ecd2469878c3"
+    },
+    {
+      "path": "reports/build.py",
+      "sha256": "9c622b7a6ebe6b62887512affb9c7b2c8ff7eece74dad336b778ec58a516a3fc"
+    },
+    {
+      "path": "reports/charts.js",
+      "sha256": "9234c2c9920d15198cef1d3577e260fa4d848ec01d710f2fffabe94d4f6d25b9"
+    },
+    {
+      "path": "reports/style.css",
+      "sha256": "f5b800a09d88fc333986d9f276ce3fb5b30a43ced90eab2fba3b21fa6ccb8896"
+    },
+    {
+      "path": "study/05_优化记录/优化文档.md",
+      "sha256": "8098d38e0a79b8d517db2b2de5faf79709fe6e9a66cc32f74eed4b786eec11e5"
+    },
+    {
+      "path": "decision_lab/docs/预注册协议-clean-v1.md",
+      "sha256": "77a77d9c11ab5864b2789120d85d3dd6bf7018af4f307c3ce93ceff10ef70812"
+    },
+    {
+      "path": "decision_lab/docs/推荐配置.md",
+      "sha256": "0e3ef6409acf024cdb4710461686fa44cc765c884a588694db5aeab136505736"
+    },
+    {
+      "path": "decision_lab/cross_study/README.md",
+      "sha256": "8225257356552cf9a216756dce7ae570818c054ac309bbb299a3e651969352d2"
+    },
+    {
+      "path": "reports/charts_clean.js",
+      "sha256": "e7914aa4fbbf7b97d88898af259ef3caf0ba1f247c4c2d18fd5d07d839b8725e"
+    },
+    {
+      "path": "reports/vendor/echarts.min.js",
+      "sha256": "b66b25aeb4df84e33199dc21694014d336d222cbd9deb0e5a7c14bd6aa0d0fd0"
+    },
+    {
+      "path": "reports/README.md",
+      "sha256": "595a6ec3109d2388111b6e787a9313cb33a8744cec27e2888630f286400fec20"
+    },
+    {
+      "path": "reports/smoke.cjs",
+      "sha256": "a20895ac631573d8f0b67f5783e51110996569edbabdd3aa58429be822a86d6c"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/clean-v1-diagnostics.json",
+      "sha256": "3f908f5da48a5f44668957374bb600b6fa712854f35c940a6bf346062e017d0d"
+    },
+    {
+      "path": "decision_lab/cross_study/clean_diagnostics.py",
+      "sha256": "740d26fc4af80e4c51ef95e5793b98bd7a3500ce4abb1e23c73f5f5bffd5fbb8"
+    },
+    {
+      "path": "reports/verify.py",
+      "sha256": "850aef568f1fbfe14d3cf87a901cfce7f5450de73230d72b438cff57191a39a7"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/wide-v1-results.json",
+      "sha256": "8ef2a68e0dd2bd833d9f14c25f435a4a5b24866fbf8db085be3c2cfda9d6aa6b"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/wide-audit.json",
+      "sha256": "503da049611932b95438db857621d99fccdfd202b3ed9c07ba402ef8ce871053"
+    },
+    {
+      "path": "decision_lab/specs/cross-study-v1/wide-v1.json",
+      "sha256": "d0664c1aa7b74269f3a1958cf998b338d57d571785adff2e46b9da9cbf4f052b"
+    },
+    {
+      "path": "decision_lab/cross_study/wide_audit.py",
+      "sha256": "0f9c3970b01b040fb003b0dba33a1d43c45814b334f4add23a4591277acb9ff7"
+    },
+    {
+      "path": "decision_lab/cross_study/cohort_clean.py",
+      "sha256": "24742008b54f7ff96ea334ebe39f297415d579c242a2f41be93b9e2f1f41fd1c"
+    },
+    {
+      "path": "decision_lab/cross_study/adapters.py",
+      "sha256": "ceab94b84838163440a2a144dd8b14ade3a9e5df794193ecc8780c6e8154f817"
+    },
+    {
+      "path": "decision_lab/cross_study/matching.py",
+      "sha256": "aebabe1564827e8f96a17d98b0dc6d6b54b0c611e8e545401d6c2c35aeadcc3f"
+    },
+    {
+      "path": "decision_lab/cross_study/formal.py",
+      "sha256": "2b7b5a83379e199b7f3495681fd5fe161b15e209f8ccb17f331c6d53b5d0425c"
+    },
+    {
+      "path": "decision_lab/cross_study/german_baseline.py",
+      "sha256": "685a635e849a85c3625e411df70f67c4373524aacb435ede5ec43b55748055b3"
+    },
+    {
+      "path": "decision_lab/cross_study/tshirt_baseline.py",
+      "sha256": "2aafa8e0229e9366848d63d63416891f16d8235456585203703c6691a4282528"
+    },
+    {
+      "path": "decision_lab/cross_study/radiant_baseline.py",
+      "sha256": "069f6c44a8cafe04afdb0527c444e77443cbfc694acf55c21a4c945f252a8707"
+    },
+    {
+      "path": "decision_lab/cross_study/origin_baseline.py",
+      "sha256": "d73fd468a11064b6f0dc61c4f60ee85d98c8e6bebee1d4c5296282b5c44a126f"
+    },
+    {
+      "path": "decision_lab/docs/结果与优化记录.md",
+      "sha256": "247afd724e5953d881c973fd38edd90f7ca8fe46d3d481ead618d6e1941c0295"
+    },
+    {
+      "path": "decision_lab/docs/进度与交付核对.md",
+      "sha256": "61c73010f1e3164f3ee67e8f2fedbf44900be2d9742ef23ed391ce78546fbef4"
+    },
+    {
+      "path": "decision_lab/docs/复算与复用指南.md",
+      "sha256": "adf2e8505f6c0c88403f3dd11b66de21bdb0a0556faab5c13250594b20fc14db"
+    },
+    {
+      "path": "decision_lab/cross_study/cluster_summary.py",
+      "sha256": "2e8034b7a9fdb1d35f6c281dd84ec3d6ca4217bd33b5bedd182cb7402cd40a34"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/cluster-summary.json",
+      "sha256": "830ac89ea043ed97b706ea4c47bbfa19a699cd90cd0978273cf3ea1e741b9209"
+    },
+    {
+      "path": "decision_lab/cross_study/card_discrimination.py",
+      "sha256": "6c7dc30332ba100f42c54427b8521a03c53acd0d9742bf918fec946cc49fa129"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/card-discrimination.json",
+      "sha256": "136db987ba144de4f2d44b7a14385dbaf1b112f54e3ff383b340dd81b6ef3262"
+    },
+    {
+      "path": "decision_lab/docs/阶段记录-2026-11-12.md",
+      "sha256": "ef3fd4b226ee797ab17cb257c0356c79fbc44ac0f4f42668fabf90c2a33d8ecd"
+    }
+  ]
+}
