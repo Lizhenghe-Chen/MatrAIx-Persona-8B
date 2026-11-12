@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="MatrAIx 决策模拟全部已完成实验的证据总结：哪些改法有效，哪些没有通过，数据与边界是什么。"><title>AI 怎样才能更接近真人选择？｜MatrAIx 实验总报告</title><style>{{STYLE}}</style></head>
+<body>
+<header><div class="hero"><div class="eyebrow">MATRAIX · 决策模拟证据总结 · 2026 年 11 月 12 日</div>
+<h1>AI 怎样才能<br>更接近真人选择？</h1>
+<p class="lead">已有实验给出的方向是：<strong>先保留人的分歧，再验证模型和真实信息是否有用。</strong>只把人物设定写得更丰富，不能保证模拟更真实。</p>
+<p>这份报告把“之前怎样、改了什么、改善多少、哪里没成功”放在一起。所有数字来自已经完成的实验；本次整理没有新增模型调用。</p>
+<a class="jump" href="#decision">先看可采用的做法</a><a class="jump" href="#questions">直接看真人与 AI 的选项分布</a><a class="jump" href="#catalog">查看全部实验与数据来源</a>
+</div></header>
+<nav class="nav" aria-label="报告章节"><div><a href="#decision">结论</a><a href="#probability">保留分歧</a><a href="#model">选择模型</a><a href="#real-data">真人数据</a><a href="#background">提示与背景</a><a href="#failed">未通过的改法</a><a href="#use">如何使用</a><a href="#catalog">证据档案</a></div></nav>
+<main>
+<section id="decision" class="intro"><span class="number">先读这一页</span><h2>可以采用三项改进，但它们解决的问题不同</h2>
+<div class="grid3">
+<article class="card"><span class="tag">群体预测 · 优先采用</span><h3>保留每个选项的概率</h3><div class="big">43.41 → 18.08</div><p>网购问卷的平均分布误差下降 <b>25.33 个百分点</b>。运动鞋与包装研究也改善，商品产地任务没有确认改善。</p><p class="small">适合估计“多少人会选什么”；不等于更会猜中每一个人。<a href="#probability">看证据 →</a></p></article>
+<article class="card"><span class="tag">已测配置 · 优先采用</span><h3>固定用 DeepSeek Pro</h3><div class="big">15.95 → 11.50</div><p>同一批合成画像、同一套购物题、相同概率答法下，Pro 比 Qwen 的平均分布误差低 <b>4.46 个百分点</b>。</p><p class="small">支持本项目的模型默认选择；不代表所有模型、所有任务的排名。<a href="#model">看证据 →</a></p></article>
+<article class="card"><span class="tag">有真人训练答案时</span><h3>先建真人统计参照</h3><div class="big">18.08 → 5.43</div><p>用真人训练数据修正 AI 后，网购误差明显缩小；同背景的简单统计方法为 <b>4.59</b>，仍然更低。</p><p class="small">收益说明真人数据很重要；没有证明 AI 在统计预测之上带来额外价值。<a href="#real-data">看证据 →</a></p></article>
+</div>
+<div class="callout"><strong>还有一个有条件有效的改法：</strong>把“扮演某类人”改为“预测这位受访者当时会怎样回答”，并补充真实、贴题的背景。它在 18 道生活类问卷题上有效，但迁移到购物和家电任务并不稳定。<a href="#background">查看成功与失败的对照</a>。</div>
+<p><strong>目前不能宣称：</strong>已经找到一套通用方法，能够让 MatrAIx 的合成人格可靠地代替真人。我们验证的是若干输入和预测方法，也没有在这组实验中完整评测官方 MatrAIx 8B 权重。下面的优化建议不能合并成“原版整体已经提升多少”的单一数字。</p>
+<details><summary>怎样才算“有明显改善”？这些数字是什么？</summary>
+<div class="grid2"><div><h3>看人群：分布误差</h3><p>例如，真人有 40% 选甲，AI 估计 70%，这道二选一的误差就是 30 个百分点。多个选项时，把各选项比例差的绝对值相加，再除以二；统计名称是“总变差距离”。</p><p><b>越低越好，0 表示群体比例完全相同。</b>同一比例可能来自不同的人，不能据此说 AI 认对了每个人。</p></div><div><h3>看个人：预测概率误差</h3><p>把 AI 对各选项给出的概率，与这个人的实际选择逐项比较，平方后求和，称为 Brier 分数。该选项实际被选记为 1，其他记为 0。</p><p><b>越低越好，0 表示概率预测完全正确。</b>答对率另看最高概率的选项是否猜中。不同选项数的任务不直接比绝对分数。</p></div></div>
+<p>默认采用门槛为：分布误差降低至少 2 个百分点，或个人概率误差相对降低至少 2%；对应改善的 95% 区间还须全部高于 0。区间来自按人配对重抽样；跨过 0，说明目前的数据还不能排除没有改善。</p>
+<p class="small">商品产地研究单独比较“选中国产、美国产、便宜款、高评分款”四个比例的平均绝对误差，不是完整选项分布误差。各研究单独报告，不把这些不同指标混成总分。重复运行三次也不等于三项独立研究。</p></details>
+</section>
+
+<section id="probability"><span class="number">改进一 · 证据最清楚的群体模拟方法</span><h2>让 AI 留下“也可能选另一个”的信息</h2>
+<p>最早发现的现象，是很多虚拟人对同一道题给出几乎一样的答案，而真人明显有分歧。部分原因可以直接验证：<strong>每人只留下一个答案，会把模型的不确定性压掉。</strong></p>
+<div class="grid2"><div class="card"><h3>一个容易理解的例子</h3><p>假设 100 个预测都认为：“甲有 60% 的可能，乙有 40%。”如果每人只留最大项，汇总后就成了 <b>100% 选甲</b>。</p><p>保留概率再汇总，得到的是 <b>甲 60%、乙 40%</b>。这保留了预测的不确定性，但 60/40 本身仍可能估错。</p><p class="small">此处是解释方法的示意数字，不是实验数据。概率来自模型估计，不能冒称真人自报的概率。</p></div>
+<figure><h3>同一批概率，仅改变汇总方法</h3>{{SAME_PROB}}<figcaption>Pew 的 13 道购物题，240 人；不换模型、不重新答题。误差改善 26.09 个百分点，95% 区间 [22.98, 28.64]。直接支持“汇总方式会影响人群比例”。</figcaption></figure></div>
+<h3 style="margin-top:30px">实际改用概率答法后，哪些任务变好了？</h3>
+<p>以下比较固定背景下的两种输出：让模型只选一项，或让模型给出所有选项的概率并汇总。前三项明显改善；第四项没有。图下“95% 区间”全部高于 0，才支持误差确实降低；跨过 0 时写作不确定。</p>
+<div class="grid2">{{PROBABILITY}}</div>
+<p class="small">以上均为历史 Qwen 条件，每项 240 名评估受访者。包装与产地数字为三次运行误差的平均；网购和运动鞋为各自冻结测试结果。运动鞋测的是七档购买意愿，不能当成真实成交。产地图使用四项属性选择比例误差。</p>
+<details><summary>改善区间图与需要保留的反例</summary><div class="chart">{{PROB_INTERVAL}}</div><p>点在 0 的右边表示误差降低；横线是 95% 区间。包装、网购与运动鞋的区间全部在右边；商品产地跨过 0。</p><p>包装实验里，真人选择“都不买”的比例为 32.1%；单选模拟只给出 12.2%，保留概率后为 23.9%，更接近。但识别出具体哪些人会拒买的能力仍弱，拒买召回率约 11.3%。所谓“召回率”，就是在真正拒买的人中认对了多少。</p><p>包装的个人答对率从 36.9% 到 36.0%，没有改善。网购中，同一批概率无论怎样汇总，只要逐人都取最大项，答对率都为 45.6%。<strong>人群比例变好，不能包装成个人预测也变好。</strong></p></details>
+<div class="source">原始评分：<a href="../study/08_购物预测/pew-formal-score.json">网购问卷</a><a href="../study/08_购物预测/shoes-test-score.json">运动鞋意愿</a><a href="../study/10_匹配与商品复验/results.json">包装与产地复验</a> · <a href="../study/evidence.html">历史逐题与属性分析</a></div>
+
+<div id="questions" class="panel" style="margin-top:30px"><span class="number">亲眼看一题 · 可切换全部 13 题</span><h3>真人有分歧，AI 有没有保留下来？</h3><p>初始展示“评价能否让商家对顾客负责”。切换方法，会看到单选、保留概率、真人数据校准和真人统计的差别。纵向每一组都比较同一个选项。</p>
+<div class="select-grid controls"><label>看哪道题<select id="question-select"></select></label><label>看哪种方法<select id="method-select"><option>只选一项</option><option>保留概率</option><option>真人数据校准</option><option>真人统计模型</option></select></label></div>
+<h3 id="question-name"></h3><div id="question-metric" class="metric-line" aria-live="polite"></div><div id="question-bars"></div><p id="method-note" class="explain"></p>
+<details><summary>英文原题、所有题的误差，以及平均方法</summary><p id="question-original" lang="en"></p><p>中文题目及选项仅为阅读释义。模型实际收到英文原题；未把当前中文释义用于运行。此处为带调查权重的分布，逐题排除缺失，因此有效人数略有不同。</p>
+<div class="table-wrap"><table><caption>13 题逐题分布误差 · 单位：百分点，越低越好</caption><thead><tr><th>问题</th><th>只选一项</th><th>保留概率</th><th>真人校准</th><th>真人统计</th></tr></thead><tbody>{{QUESTION_TABLE}}</tbody><tfoot><tr><th>13 题等权平均</th><td>43.41</td><td>18.08</td><td>5.43</td><td>4.59</td></tr></tfoot></table></div>
+<p class="small">统计列为使用更丰富背景的统计模型。旧报告中的“同龄同学历直接查比例”为另一个参照，误差是 4.51，不是此表的 4.59。两者都保留，避免把不同方法的数字混用。</p></details><noscript><p>浏览器未启用脚本。仍可查看上面的固定图表，以及展开“所有题的误差”表。</p></noscript></div>
+</section>
+
+<section id="model"><span class="number">改进二 · 把模型变量缩窄</span><h2>本项目优先用 Pro，有直接对照支持</h2>
+<p>这项比较让 Qwen 和 DeepSeek Pro 看到同样的 240 条合成画像、同样的 13 道购物题，并使用相同的完整概率输出。年龄、学历、性别和收入的匹配方案也一样。每种条件运行三次，三次均是 Pro 更接近真人分布。</p>
+<div class="grid2"><figure><h3>同样条件，只换模型</h3>{{MODEL}}<figcaption>分布误差降低 4.46 个百分点；95% 区间 [4.04, 4.96]。三次运行的平均误差，不是三个独立样本研究。</figcaption></figure><div class="card"><h3>三次是否都改善？</h3><div class="table-wrap"><table><thead><tr><th>重复</th><th>Qwen</th><th>Pro</th><th>误差降低</th></tr></thead><tbody>{{MODEL_REPEATS}}</tbody></table></div><p class="small">单位均为百分点。对照真人来自 Pew Wave 13；合成人群没有与真人一一对应，因此不报告“猜中哪个人”的准确率。</p></div></div>
+<div class="callout"><b>采用决定：</b>后续相似任务把 DeepSeek Pro 作为默认主模型，先减少模型切换。证据支持“在已测条件下比 Qwen 更好”，不能解释为“所有购物任务都最好”或“Qwen 不能用”。此对照也没有分离模型知识、训练方式或概率估计能力各自的贡献。</div>
+<details><summary>之前的 Flash、Qwen、Pro 三模型比较说明什么？</summary>{{EARLY_MODEL}}<p>三份通用问卷、18 题、相同合成样本，在只给共同情境时，Pro 明显优于 Flash：改善 11.86 个百分点，区间 [10.46, 13.01]。但加入年龄、学历和四项合成人格后，Flash 与 Pro 的误差分别为 23.39、23.38，差别不明确。</p><p>因此，“Flash 一定不行”超出了证据。后来以相同概率答法得到的 Pro 对 Qwen 优势，是当前选择 Pro 的更直接依据；Flash 没参加这轮概率复验。</p><p class="small">这里是冻结版本的实验记录：DeepSeek Pro 为 deepseek-v4-pro；Qwen 为 Qwen/Qwen3.8-27B。不是当前市场性能排行榜，也没有新增端点验证。</p></details>
+<div class="source"><a href="../study/10_匹配与商品复验/results.json">相同背景与概率输出的三次复验</a><a href="../study/02_模型对比/results.json">早期三模型完整结果</a></div>
+</section>
+
+<section id="real-data"><span class="number">改进三 · 有真人答案时，先建立可靠参照</span><h2>真人数据带来的帮助，比复杂人设更扎实</h2>
+<p>这里的“真人统计”很简单：用评估样本以外的真人答案，学习什么背景和商品属性通常对应什么选择。可以是按年龄、学历查选项比例，也可以是一个根据价格、能效等属性预测选择的统计模型。<strong>它不需要大语言模型，但需要真人训练答案。</strong></p>
+<div class="grid2"><figure><h3>网购问卷：给 AI 的概率纠偏</h3>{{CALIBRATION}}<figcaption>同一批 240 名评估者、13 题。真人数据校准把误差从 18.08 降到 5.43；同背景统计模型为 4.59。纯年龄学历查比例的另一参照为 4.51。</figcaption></figure><div class="card"><h3>“校准”到底做了什么？</h3><p>先在其他真人样本上检查：AI 是否总把某类选项估高、另一类估低？再用预先选定的简单映射修正概率，最后看未参与拟合的评估者。</p><p>它类似给总是偏高的秤做校正。能让数字更接近，不代表秤已经理解了每个人。</p><p><b>这一轮混合模型选出的 AI 权重是 0。</b>意思是开发数据最终选择了纯统计方法，不能把它称为“AI 融合后胜出”。</p></div></div>
+<h3 style="margin-top:30px">后来换成两套家电选择数据，结论是否站得住？</h3>
+<p>新框架固定 Pro，按人分为训练、开发和测试；同一人的多道题不跨集合。以下是正式测试集上的<strong>个人概率误差</strong>，越低越好；与前面“百分点”的图不是同一种单位。</p>
+<div class="grid2">{{FORMAL}}</div>
+<p>两项研究中，统计方法都比“真实背景＋Pro 概率预测”更好。烘干机的混合方法保留 25% AI 权重，但没有明确超过同背景统计方法；瑞士家电选择 0% AI，等同于纯统计预测。</p><p class="small">Pew 校准图的分布改善是该次测试的观察值，原汇总未单列“原概率对校准”的配对分布改善区间；这里不据此宣布校准已达到跨研究采用门槛。现有证据支持先建统计参照，校准作为有真人训练答案时的候选。</p>
+<div class="callout warn"><b>公平解释：</b>两边使用相同的商品与背景字段，但统计方法额外用过其他真人的训练答案，纯 AI 没有。这是“已有数据时哪条路线更实用”的比较，不是同训练信息条件下的算法优劣证明。</div>
+<details><summary>真实购买行为的结果是否更乐观？</summary><p>在 Amazon 500 个留出账户的季度预测中，“沿用本人近期购买记录”的简单方法也优于 Qwen：购买价格档的概率误差为 0.1952，对比 AI 的 0.2458；支出构成误差为 0.1688，对比 0.2401；相同商品复购误差为 0.3308，对比 0.3679。</p><p>这里包含实际订单，不只是问卷。但它只覆盖该数据中的账户和时间窗口。另一项品类购买混合预测的相对改善约 0.4%，没有达到 2% 的预设采用门槛，不能说 AI 已显著提升成交预测。</p></details>
+<div class="source"><a href="../study/08_购物预测/pew-formal-calibration.json">Pew 校准评分</a><a href="../decision_lab/reports/reader.html">家电正式研究：图解与逐卡分析</a><a href="../decision_lab/docs/结果与优化记录.md">家电结论与方法边界</a><a href="../study/08_购物预测/amazon-mix-test-score.json">真实购买评分</a></div>
+</section>
+
+<section id="background"><span class="number">有条件的改进 · 不能当成万能提示</span><h2>问对问题、给对背景，有时很有帮助</h2>
+<p>“扮演一个 35 岁的人”容易让模型回答一个典型形象；“根据已提供信息，预测这位受访者当时会怎样回答”更贴近任务。再补收入、就业、上网习惯等<strong>真实测得、与问题相关的背景</strong>，可能增加有效线索。</p>
+<div class="grid2"><figure><h3>18 道生活类问卷：四种设置的平均误差</h3>{{PROMPT}}<figcaption>三份调查等权；Qwen，720 名真人，共 18 题。组合改进为 10.17 个百分点，95% 区间 [7.20, 11.74]；答对率 57.9% → 61.0%。</figcaption></figure><div class="card"><h3>拆开看，到底是哪部分有效？</h3><p><b>只改提示：</b>贴题背景相同时，误差从 21.29 到 18.79，降低 2.50 个百分点，区间 [0.54, 4.04]。</p><p><b>只加贴题信息：</b>预测提示相同时，在细分年龄和学历之外加真实信息，误差从 24.05 到 18.79，降低 5.27 个百分点，区间 [2.39, 7.29]。</p><p class="small">字段成组加入，没有证明具体哪一个字段或哪一句提示单独有效；“减少编造”是合理解释，实验没有直接测量这个机制。</p></div></div>
+<h3 style="margin-top:30px">但购物复验出现了相反结果</h3>
+<div class="table-wrap"><table><caption>从“扮演＋基础背景”改成“预测＋贴题背景” · 各任务 240 人</caption><thead><tr><th>任务</th><th>改前误差</th><th>改后误差</th><th>改善幅度</th></tr></thead><tbody>{{TRANSFER}}</tbody></table></div>
+<p>商品产地选择有改善，区间 [1.65, 5.31]；包装没有确认改善，区间 [−5.27, 1.41]；网购与达人购物反而明显变差，区间 [−15.83, −2.38]。产地行仍使用四项属性比例误差，其他两行用完整选项分布误差，单位均为百分点。</p>
+<p><b>采用决定：</b>保留简洁的“预测对应受访者”提示作为候选，背景只加真实且有理由相关的信息；每换任务，先做小规模检验。更多字段可能带来线索，也可能触发刻板推断，现有结果没有证明“越细越好”。</p>
+<details><summary>这些背景是真人数据，还是编出来的？</summary><p>真人预测路线的年龄、学历、收入、就业、网络活动和政治背景等，来自对应调查的公开记录及代码本，缺失标为未知。目标答案不放入该题请求。不同调查只使用各自实际提供的字段。</p><p>MatrAIx 的决策风格、风险容忍度、核心价值观和尽责性，属于另外生成或匹配的<b>合成人格属性</b>，没有该真人的测量值。即使年龄学历匹配，也不能把它们说成“这个人的真实性格”。合成人群只评价人群比例，不与任意真人配对算个人准确率。</p></details>
+<div class="source"><a href="../study/03_提示与背景/results.json">18 题提示与背景结果</a><a href="../study/06_北美电商选品/results.json">三项购物迁移结果</a><a href="../study/03_提示与背景/固定方案.md">字段与提示方案</a></div>
+</section>
+
+<section id="failed"><span class="number">没有通过的改法，也要留下来</span><h2>加两次本人选择，这一次没有帮助到主目标</h2>
+<p>最新筛查只检验一个想法：给模型看这个人的两次真实商品选择，再预测另外两次。两套研究各取原开发集合 48 人，对比“只有背景”“加本人记录”“加别人记录”，题目和背景保持一致。</p>
+<div class="grid2">{{HISTORY}}</div>
+<div class="callout warn"><b>明确决定：本轮暂不扩大。</b>两项研究的平均概率误差都升高，未达到“都改善至少 2%，且都优于错配记录”的继续门槛。但区间都跨过零，小样本不足以证明这种方法必然有害，也不能否定其他形式的行为记录。</div>
+<p>烘干机的拒买识别从 16 道真实拒买题里认对 1 道，提高到认对 6 道，是一个局部变化；整体概率预测和答对率没有因此改善。不能抓住这一个好指标就改写预先规定的成功条件。</p>
+<details><summary>这轮怎样保证没有把错误运行混进成绩？</summary><p>初版已知选择用数字编号，存在从 0 还是从 1 开始的歧义。发现后，在效果评分前废止 419 次请求；保留审计记录，但不用于结论。修正版直接写出被选商品的完整文字，重新冻结并完成 600 次请求：24 次格式试跑，576 次正式筛查，无重试。</p><p>两版合计 1,019 次，没有超过获准的 1,100 次。按冻结单价和不使用缓存的口径，消耗估算合计约 0.94 美元，不是账单金额。结果基于曾用于开发的人员，所以是探索性筛查，不能称作新的独立验证。</p></details>
+<div class="grid2" style="margin-top:24px"><article class="card"><h3>四项合成人格：不作为默认加料</h3><p>18 题真人预测中，在贴题背景上再加四项合成人格，仅改善 0.13 个百分点，区间跨零。后来的 Pro 合成人群复验有约 0.98 点的正向收益，区间 [0.45, 1.42]，但未到 2 点采用门槛。</p><p>不能说“人格毫无用处”；准确结论是：<b>这些未经真人测量、随机匹配的字段，没有形成足够稳定且达到门槛的额外增益。</b></p></article><article class="card"><h3>更精细的人口匹配：不能代替偏好信息</h3><p>把年龄学历匹配扩展为更多人口维度后，Pro 的误差从 11.41 到 11.50，没有改善；Qwen 从 15.50 到 15.95，也没有改善。</p><p>匹配仍是控制人群构成的必要工作，但“构成更像”不保证模型已经理解这些人怎样取舍价格、评价和拒买。</p></article></div>
+<div class="source"><a href="../decision_lab/reports/choice-history.html">两次选择筛查：完整图解、实例与区间</a><a href="../decision_lab/reports/choice-history-result.json">修正版评分与废止记录</a><a href="../study/10_匹配与商品复验/results.json">匹配与人格复验</a></div>
+</section>
+
+<section id="use"><span class="number">把结果变成可执行的选择</span><h2>现在推荐的，是简单、可核验的两条路线</h2>
+<div class="grid2"><article class="card"><span class="tag">还没有目标任务的真人答案</span><h3>作为有误差的探索工具</h3><div class="step"><b>1</b><p>默认 Pro；固定版本与参数，先不反复换模型。</p></div><div class="step"><b>2</b><p>提供原题、真实商品备选和必要的已知背景；缺什么就标未知，不补写故事。</p></div><div class="step"><b>3</b><p>请求所有选项的概率。估计人群比例时平均概率，保留“都不买”和少数选项。</p></div><div class="step"><b>4</b><p>用少量真人先检查偏差，重点看拒买、价格取舍和小人群；不过关就不把它用于关键决策。</p></div><p class="small">这些是分别有依据的默认组件；“Pro＋新提示＋全部背景＋概率”的整套组合，没有被所有研究共同验证为最优。</p></article>
+<article class="card"><span class="tag">已经有真人选择或问卷数据</span><h3>先让简单统计方法站稳</h3><div class="step"><b>1</b><p>按人留出评估样本，同一人的题目不能一部分训练、一部分冒充新受访者测试。</p></div><div class="step"><b>2</b><p>建立查比例或商品选择统计模型，作为每种复杂方法必须比较的参照。</p></div><div class="step"><b>3</b><p>只在训练、开发侧尝试校准；最终评估时冻结，不看分数后继续改同一批题。</p></div><div class="step"><b>4</b><p>AI 只有在相同评估条件下带来额外收益才加入。目前家电研究没有给出这种额外收益证据。</p></div><p class="small">“历史统计”不一定指多年以前的数据：也可能来自同一次调查中留在训练集合的其他真人。</p></article></div>
+<h3 style="margin-top:30px">发现的问题、解释与行动，分别是什么？</h3><div class="table-wrap"><table><thead><tr><th>观察到的现象</th><th>现有证据能解释到哪里</th><th>现在的行动</th></tr></thead><tbody>
+<tr><td>AI 常常几乎全选同一项</td><td>丢弃非最大概率会放大集中；同一批概率改汇总可直接验证。模型自身偏差仍存在。</td><td>保留完整概率；检查各选项份额，不只看多数答案。</td></tr>
+<tr><td>同样背景，模型表现不同</td><td>固定条件下 Pro 优于 Qwen；具体训练机制没有被拆开检验。</td><td>以 Pro 为当前默认，不宣称普遍模型排名。</td></tr>
+<tr><td>加更多背景或人格不稳定</td><td>人口背景可能信息不足；字段成组加入也可能触发刻板推断。原因尚未被因果识别。</td><td>只加入实测、有相关依据的字段，并留对照检验。</td></tr>
+<tr><td>借真人数据校准后更接近</td><td>确实修正了偏差，但统计方法经常更好，收益不能全部记给 AI。</td><td>先统计，后证明 AI 的额外价值。</td></tr>
+<tr><td>两次本人选择未提高总体预测</td><td>本次设计没有支持收益；无法确定是记录太少、任务差异还是模型利用不足。</td><td>按预定规则结束筛查，不继续堆调用“刷出”好分数。</td></tr>
+</tbody></table></div>
+<div class="callout"><strong>最终结论：</strong>我们已经找到能在若干任务上明显改善“人群选择比例”的方法，尤其是保留概率与选用 Pro；有真人训练数据时，统计参照和校准更可靠。我们仍未证明，只靠合成人格就能普遍预测对应真人的选择，也没有证明 AI 已优于有数据支持的简单统计方法。</div>
+</section>
+
+<section id="catalog"><span class="number">证据与文件 · 各轮不混算，成功失败都保留</span><h2>做过哪些实验，数据从哪里来？</h2>
+<div class="table-wrap"><table><thead><tr><th>阶段与要回答的问题</th><th>人群、数据和设计</th><th>可核查结果</th></tr></thead><tbody>
+<tr><th>最初的人格模拟</th><td>1,200 条由 MatrAIx 原生规则生成的北美合成画像；三份调查、18 题、三组信息。与加权真人分布比较，不是同一个人的复刻。</td><td><a href="../study/01_首轮归档/README.md">首轮归档</a><br>人格添加不等于全面可信；旧结果不并入新轮成绩。</td></tr>
+<tr><th>模型对比与提示优化</th><td>模型轮：240 条合成画像，三模型、三组输入。背景轮：三份调查各 240 名真人，两种提示与四档背景。</td><td><a href="../study/04_综合报告/MatrAIx%20优化实验交互报告.html">18 题逐题图表</a><br>支持模型选择与生活题优化，之后再做购物迁移。</td></tr>
+<tr><th>北美购物迁移</th><td>产地二选一、包装拒买、Pew 设备与达人购物，各 240 人；四种提示背景组合。</td><td><a href="../study/06_北美电商选品/report.html">三任务结果</a><br>产地改善，拒买未改善，达人购物变差。</td></tr>
+<tr><th>概率、校准与真实订单</th><td>Pew 13 题、运动鞋意愿各 240 人；Amazon 价格、支出、复购留出 500 个账户。各自保留评估集合。</td><td><a href="../study/evidence.html">全部历史逐题证据</a><br>概率有群体收益；真人统计参照更强。</td></tr>
+<tr><th>匹配与商品三次复验</th><td>同一套历史材料重复调用；每条件 240 人。细匹配、人格、模型与输出方式分别对照。</td><td><a href="../study/10_匹配与商品复验/README.md">复验方法和结果</a><br>Pro 优势重复出现；不是新真人样本上的独立复验。</td></tr>
+<tr><th>新框架家电正式测试</th><td>按人 60%/20%/20% 划分；测试烘干机 292 人、瑞士家电 683 人。真人预测与合成人群分开，正式调用 45,216 次。</td><td><a href="../decision_lab/reports/reader.html">故事与逐卡报告</a><br>Pro 没超过有训练答案的统计参照。只有两套独立研究，且都是家电。</td></tr>
+<tr><th>最新两次选择筛查</th><td>两项研究开发集合各 48 人；本人、别人、无记录三组。修正版 600 次含试跑。</td><td><a href="../decision_lab/reports/choice-history.html">图解与实际题目</a><br>没过继续门槛；初版 419 次废止并保留。</td></tr>
+</tbody></table></div>
+<details><summary>原始调查、作者数据与方法来源</summary><div class="list">
+<p><b>消费与价格：</b><a href="https://www.federalreserve.gov/consumerscommunities/shed_data.htm">美联储 SHED 官方数据</a>，本实验使用 2025 年调查消费调整题；真人答案逐题排除可识别插补值。</p>
+<p><b>诈骗、购物与网购：</b><a href="https://www.pewresearch.org/dataset/american-trends-panel-wave-168/">Pew Wave 168</a>、<a href="https://www.pewresearch.org/internet/dataset/american-trends-panel-wave-111/">Wave 111</a>、<a href="https://www.pewresearch.org/dataset/american-trends-panel-wave-13/">Wave 13</a>。不同波次是不同题材与样本，不能混叫同一套购物题。</p>
+<p><b>公共支出：</b><a href="https://electionstudies.org/data-center/2024-time-series-study/">ANES 2024 Time Series</a>。首轮代码核对的新招募选前网络样本为 2,063 人；最初计划的 2,308 包含纸质答卷，实际执行口径已修正。</p>
+<p><b>制造产地：</b><a href="https://itemresponsewarehouse.org/tables/bankert_2023_consumer_origin/">Bankert 商品产地选择数据与设计</a>。测制造产地偏好，不是跨境平台订单或转化率。</p>
+<p><b>包装与拒买：</b><a href="https://doi.org/10.17632/4z748jnnjs.2">Purdue 包装与标签选择数据</a>。保留两商品与“都不买”；不能把缺失当拒买。</p>
+<p><b>运动鞋意愿：</b><a href="https://doi.org/10.7910/DVN/4WDVDB">Horiuchi 等研究复现数据</a>。保留商品属性与评分尺度。</p>
+<p><b>真实订单：</b><a href="https://doi.org/10.7910/DVN/YGLYDY">Open eCommerce / Amazon 购买数据</a>。与问卷意愿分开报告。</p>
+<p><b>四国烘干机：</b><a href="https://zenodo.org/records/10046247">作者数据与材料</a> · <a href="https://doi.org/10.1007/s10603-023-09556-5">研究论文</a>。原样本 2,527 人，按可还原的文字题面与信息条件准入 1,452 人；868/292/292 用于训练/开发/测试。受题面还原限制，未纳入全部实验条件。</p>
+<p><b>瑞士家电：</b><a href="https://doi.org/10.7910/DVN/YKVLTR">作者数据</a> · <a href="https://doi.org/10.1016/j.jclepro.2024.143968">研究论文</a>。3,413 人，每人四次选择；2,047/683/683 分组。三个品类仍属于同一项研究。</p>
+</div></details>
+<details><summary>主要限制：这份报告没有证明什么？</summary><p>公开题目与统计可能进入过模型训练，无法排除记忆影响。历史资料已被多轮开发使用，重复调用主要检验稳定性，不提供新的独立人群证据。家电正式研究虽有留出测试，也不等于广泛跨行业验证。</p><p>早期“无背景对有背景”曾使用不同汇总权重；<a href="../study/09_方法审查/index.html">方法审查已用相同权重复算</a>，修正结果另存。本报告不沿用有问题的跨组归因；同一输入条件下的模型比较，以及后来的真人背景和概率对照分别看待。</p><p>真人背景并不完整，回溯使用背景时还存在测量时点假设；商品的文字还原可能损失原问卷视觉信息。精确选择卡有时只有极少真人，不能用“这一卡 100% 一致”推断整个模型过度集中。</p><p>各题独立概率可以接近单题比例，但未充分还原跨题相关性与完整个人行为。除单列的 Amazon 订单任务外，商品选择实验与购买意愿不是实际购买、广告转化或商业回报。</p><p>本报告是已完成实验的回顾整理，采用建议来自这些证据。它没有创建新的未见测试集，也没有把未达门槛的方向重新命名为成功。</p></details>
+<details open><summary>文件已统一入口，怎样继续维护？</summary><div class="directory">examples/sim-to-real/
+  reports/       ← 本报告、可分享聚合证据、离线重建工具
+  decision_lab/  ← 新框架、冻结方案、家电与两次选择实验
+  study/         ← 历史轮次、原始汇总、优化记录、文献综述
+  legacy/        ← 旧运行代码与旧实施说明
+  根目录兼容链接   ← 保持历史复算命令可用</div><p>报告、公开配置、汇总、文档与代码随 Git；逐人关联、完整私有请求与检查点留本机；大型源数据和受限材料按已有边界留共享盘或本机。没有为“整齐”而删除反例、冻结结果或把受限数据复制进 Git。</p><p><a href="../README.md">总导航</a> · <a href="README.md">本报告重建与证据清单</a> · <a href="evidence.json">可分享聚合证据</a> · <a href="../study/05_优化记录/优化文档.md">持续维护的优化记录</a> · <a href="../study/11_文献综述/综述.md">文献综述</a> · <a href="../decision_lab/docs/复算与复用指南.md">新框架复算指南</a></p></details>
+</section>
+</main><footer><div class="footgrid"><p><b>一句话带走：</b>先用更合适的模型和概率表达减少偏差；有真人答案就先做统计。只有通过对应任务的真人对照，才谈可用性。</p><p>更新：2026-11-12 · 离线可读，无外部脚本和字体。显示数字四舍五入，来源数值与 SHA-256 校验值保存在聚合证据文件；所有底层实验成绩保持原样。</p></div></footer>
+<script id="question-data" type="application/json">{{QUESTION_DATA}}</script><script>{{SCRIPT}}</script></body></html>

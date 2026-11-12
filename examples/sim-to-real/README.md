@@ -1,70 +1,43 @@
-# 新旧实验导航
+# MatrAIx 真人决策模拟实验
 
-- [两次真实选择快速验证：图解报告](decision_lab/reports/choice-history.html) · [文字结论](decision_lab/docs/两次选择快速验证.md)
+**先读：[AI 怎样才能更接近真人选择？——全部已完成实验总报告](reports/index.html)。**
 
-- [新一轮独立框架与实施状态](decision_lab/README.md)
-- [历史脚本与迁移说明](legacy/README.md)
-- [文献综述](study/11_文献综述/综述.md)
+报告按“发现的问题 → 改了什么 → 前后差多少 → 哪些仍没通过”组织。包含模型、提示、背景、概率输出、真人统计校准与最新两次选择筛查；各轮独立呈现，不把不同任务揉成一个分数。
 
-以下为历史研究说明，其成绩不并入新实验。旧命令由兼容链接继续支持。
+## 按目的找文件
 
-# MatrAIx 真人问卷对照实验
+| 想做什么 | 入口 |
+|---|---|
+| 给领导和非技术读者看结果 | [离线 HTML 总报告](reports/index.html) |
+| 查哪些优化可以采用 | [持续维护的优化文档](study/05_优化记录/优化文档.md) |
+| 查最新两次选择筛查 | [图解报告](decision_lab/reports/choice-history.html) · [结论与复算](decision_lab/docs/两次选择快速验证.md) |
+| 查两套家电正式研究 | [图解与逐卡结果](decision_lab/reports/reader.html) · [框架当前状态](decision_lab/交接先读.md) |
+| 查历史问卷、购物和订单实验 | [历史逐题证据](study/evidence.html) · [按轮次导航](study/00_导航/从这里开始.md) |
+| 复用代码、重新评分 | [新框架说明](decision_lab/README.md) · [复算指南](decision_lab/docs/复算与复用指南.md) |
+| 查论文和源数据 | [文献综述](study/11_文献综述/综述.md) · [历史数据索引](study/数据/实验数据索引.md) · [新数据准入审查](decision_lab/docs/数据审查发现.md) |
 
-[通俗故事版报告](study/index.html) · [六轮完整证据与逐题图表](study/evidence.html) · [实验档案与复算](study/README.md) · [文件归档说明](study/00_导航/文件归档说明.md)
+## 目录分工
 
-第一次阅读请打开 `study/index.html`：从真人先答、模型答偏，讲到优化前后和现在怎么用。精确数字、全部六轮和逐题交互保存在 `study/evidence.html`，两页可以互相跳转。旧的 `retail_reader_template.html` 地址会自动跳转；旧章节书签仍可进入完整证据。`.tmpl` 文件是生成用的模板，不作为阅读页面。
+- `reports/`：跨实验总报告、可分享的聚合证据及离线生成工具。
+- `decision_lab/`：可复用框架、数据适配、冻结方案、家电正式实验和最新筛查。代码按职责分包。
+- `study/`：历史各轮方案、评分与报告，持续优化记录、文献综述。原路径保持不变。
+- `legacy/`：历史运行脚本、模板与旧实施文档。根目录同名符号链接是兼容入口，不是重复副本。
+- `archive_inventory.py`：全档案文件大小与 SHA-256 核验。
 
-这里集中保存本次研究的全部代码和档案。报告串联合成人格、三模型对比、提示与背景优化、电商选品复验、购物概率与实际购买预测；已完成与待研究的数据分别标注。小型公开资料、汇总结果和离线图表随 Git 保存，大型源包集中在[共享盘数据源总索引](file:///Volumes/%E5%85%83%E5%AE%87%E5%AE%99%E8%81%94%E5%90%88%E5%88%9B%E6%96%B0%E5%AE%9E%E9%AA%8C%E5%AE%A4/%E5%AE%9E%E9%AA%8C%E6%95%B0%E6%8D%AE/MatrAIx%E5%A4%9A%E5%9C%B0%E5%8C%BA%E9%80%89%E5%93%81%E6%BA%90%E6%95%B0%E6%8D%AE/README.md)。真人关联运行文件及检查点保留本机。
+2026-11-12 的整理只调整入口与说明、增加总报告；没有重跑实验、变更评分或删除负面结果。旧总说明已移至 [首轮与历史运行说明](legacy/首轮与历史运行说明.md)，新框架长篇实施过程已移至 [实施沿革](decision_lab/docs/实施沿革.md)。
 
-## 代码与报告入口
+## 保存边界
 
-| 任务 | 代码 | 档案 |
-|---|---|---|
-| 首轮合成人格对照 | `experiment.py`、`instruments.py` | `study/01_首轮归档/` |
-| 比模型、提示及背景 | `optimize*.py` | `study/02_模型对比/`、`03_提示与背景/` |
-| 北美商品选择、拒买及网购 | `shopping*.py` | `study/06_北美电商选品/` |
-| Pew 购物预测、运动鞋、Amazon 真实购买 | `retail_pew*.py`、`retail_shoes*.py`、`retail_amazon*.py` | `study/08_购物预测/` |
-| 匹配、模型与商品输出方式三次复验 | `revalidation*.py`、`revalidation_charts.js` | [第六轮说明](study/10_匹配与商品复验/README.md)，合成答卷可仅凭Git归档复算 |
-| 复建全部报告 | `retail_report.py`；故事页由 `retail_story_report.py`、`retail_story_template.html.tmpl` 和 `retail_story_charts.js` 生成，完整证据与历史模板以 `retail_reader`、`retail_history` 开头 | `study/index.html` 为故事入口，`study/evidence.html` 保留逐题证据；旧链接继续可用 |
-| 实验运行与归档核验 | `retail_audit.py`、`archive_inventory.py` | `study/08_购物预测/运行核验.json`、`study/00_导航/文件清单.json` |
+公开报告、聚合结果、代码、小型许可允许的资料随 Git。大型原始数据由 `MATRAIX_DATA_ROOT` 指向共享盘的“多地区选品源数据”；逐人关联、完整真人请求与检查点仍留本机，不能因文件小就纳入公开仓库。私有材料目录为 `~/.local/share/matraix-decision-lab/`；来源恢复及许可见 [归档说明](study/00_导航/文件归档说明.md)。
 
-报告重建只需 Python 3.12 标准库与 Git 中的聚合结果：
+## 不调用模型的维护命令
 
-```sh
-python3.12 examples/sim-to-real/retail_report.py
-python3.12 examples/sim-to-real/archive_inventory.py check
-```
-
-交互图表检查用 Node.js 22 以上和 Chrome：`node examples/sim-to-real/report_smoke_check.cjs`。它会检查全部题目切换、汇总表、22个历史图表与8个复验图表，以及桌面／手机布局，截图输出到临时目录；非 macOS 可通过 `CHROME_BIN` 指定浏览器程序。
-
-完整运行环境、各轮评分与外部文件恢复方法见[档案说明](study/README.md)。下面保留首轮实验的独立复算说明。
-
-首轮用 MatrAIx 原生生成规则抽取同一批 1,200 条北美合成画像，参加三套问卷。A 组只看到共同情境，B 组另看到年龄和学历，C 组再看到四个固定人格字段。三份问卷各自以带官方权重的真人答案为参照。
-
-## 首轮输入目录
-
-原始数据统一从[共享盘数据源总索引](file:///Volumes/%E5%85%83%E5%AE%87%E5%AE%99%E8%81%94%E5%90%88%E5%88%9B%E6%96%B0%E5%AE%9E%E9%AA%8C%E5%AE%A4/%E5%AE%9E%E9%AA%8C%E6%95%B0%E6%8D%AE/MatrAIx%E5%A4%9A%E5%9C%B0%E5%8C%BA%E9%80%89%E5%93%81%E6%BA%90%E6%95%B0%E6%8D%AE/README.md)读取。共享盘挂载位置不同的电脑可设置 `MATRAIX_DATA_ROOT`，指向包含 README.md 的总目录。 首轮调查 ZIP 位于 [00_历史通用问卷](file:///Volumes/%E5%85%83%E5%AE%87%E5%AE%99%E8%81%94%E5%90%88%E5%88%9B%E6%96%B0%E5%AE%9E%E9%AA%8C%E5%AE%A4/%E5%AE%9E%E9%AA%8C%E6%95%B0%E6%8D%AE/MatrAIx%E5%A4%9A%E5%9C%B0%E5%8C%BA%E9%80%89%E5%93%81%E6%BA%90%E6%95%B0%E6%8D%AE/00_%E5%8E%86%E5%8F%B2%E9%80%9A%E7%94%A8%E9%97%AE%E5%8D%B7)。Persona 1M 默认读取 [发行版](file:///Volumes/%E5%85%83%E5%AE%87%E5%AE%99%E8%81%94%E5%90%88%E5%88%9B%E6%96%B0%E5%AE%9E%E9%AA%8C%E5%AE%A4/%E5%AE%9E%E9%AA%8C%E6%95%B0%E6%8D%AE/MatrAIx%E5%A4%9A%E5%9C%B0%E5%8C%BA%E9%80%89%E5%93%81%E6%BA%90%E6%95%B0%E6%8D%AE/09_MatrAIx%E7%94%BB%E5%83%8F/Persona-1M%E5%8F%91%E8%A1%8C%E7%89%88)，也可用 `sample --release <目录>` 指定其他发行版。历史正式运行使用冻结的 DAG 画像，重建这批画像用 `sample-dag`。
-
-- SHED 使用 2025 public use CSV。年龄来自 `ppage`，学历来自 `ppeducat`，使用 `weight`，逐题剔除有插补标记的答案。 [数据及变量字典](https://www.federalreserve.gov/consumerscommunities/shed_data.htm) · [问卷](https://www.federalreserve.gov/publications/2026-supplemental-appendixes-report-economic-well-being-us-households-2025-appendix-a.htm)
-- Pew 使用 Wave 168。用 `F_AGECAT`、`F_EDUCCAT2` 和 `WEIGHT_W168`，保留题目显式提供的“不确定”。 [数据](https://www.pewresearch.org/dataset/american-trends-panel-wave-168/) · [问卷](https://www.pewresearch.org/wp-content/uploads/sites/20/2025/07/PI_2025.07.31_Scams_Questionnaire.pdf)
-- ANES 使用 May 19, 2026 CSV。选前新招募网络样本以 `V240102a > 0` 定义，用 `V241458x` 和 `V241465x` 分层。该样本为 2,063 人，2,308 是包含 245 份纸质答卷的口径。 [数据与问卷](https://electionstudies.org/data-center/2024-time-series-study/)
-- 使用四层匹配，18–64 岁与 65 岁及以上分别交叉本科以下与本科及以上。Pew 公共文件的年龄段无法与原四个年龄段精确对齐。每层抽 300 条正式画像和 3 条互斥的试跑画像。
-
-## 复算命令
-
-从 MatrAIx 仓库根目录运行。使用同一已配置的服务商和具体模型版本完成试跑与正式实验。
+从 MatrAIx 仓库根目录运行：
 
 ```sh
-uv sync --locked --python 3.12
-uv run --no-sync python examples/sim-to-real/experiment.py --work-dir "$study" reference
-uv run --no-sync python examples/sim-to-real/experiment.py --work-dir "$study" sample-dag
-uv run --no-sync python examples/sim-to-real/experiment.py --work-dir "$study" pilot --model "$model"
-uv run --no-sync python examples/sim-to-real/experiment.py --work-dir "$study" formal --model "$model"
-uv run --no-sync python examples/sim-to-real/experiment.py --work-dir "$study" score
+python3 examples/sim-to-real/reports/build.py
+python3 examples/sim-to-real/reports/verify.py
+python3 examples/sim-to-real/archive_inventory.py check
 ```
 
-`pilot/` 包含 108 份技术试跑。正式问卷存入 `formal/`，同配置重跑仅重试失败项。统计按三份调查同步重抽样 B/C 共同完成的画像，A 仅用于总体描述。区间表示模拟抽样波动，以真人调查估计为固定参照。逐题与分组结果在 `results.json`，摘要在 `report.md`。公开题目与统计可能曾被底层模型见过。
-
-## 公开版覆盖审计与备选入口
-
-正式发布的 400,000 条合成画像只有 3 条标为北美。本实验的两个本科及以上分层均没有合格画像。`sample` 会保留 `coverage.json` 并停止。若实验改用 MatrAIx 原生 DAG，可执行 `sample-dag`。该入口在生成前固定地区为北美，从 50,000 个生成候选中使用同样的四层配额取样，保存图文件哈希和抽样参数，另写 `dag-coverage.json`。用该入口得到的结论适用于原生生成器，不覆盖公开 1M 的合成人群子集。
+总报告可仅凭 Git 聚合档案重建。完整逐人评分还需要本机冻结检查点；历史报告仍可通过 `python3 examples/sim-to-real/retail_report.py` 重建。不要为查看报告运行实验的 `prepare` 或 `run` 命令。

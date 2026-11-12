@@ -1,0 +1,4084 @@
+{
+  "schema_version": 1,
+  "updated": "2026-11-12",
+  "sources": [
+    {
+      "path": "../study/08_购物预测/pew-formal-score.json",
+      "sha256": "c9ce816553a28822195a48598bf894cea1fbac55e4695274ca64a159d8883bbd",
+      "storage": "git"
+    },
+    {
+      "path": "../study/08_购物预测/shoes-test-score.json",
+      "sha256": "cfb300104063d2e5942381a3177b10038d485ffc7556012d469189b21dcb381d",
+      "storage": "git"
+    },
+    {
+      "path": "../study/10_匹配与商品复验/results.json",
+      "sha256": "a003d938d5d7042fcdda9e7efcb7a909f76b9e323bb81fd66f0b9afa75676d3c",
+      "storage": "git"
+    },
+    {
+      "path": "../study/02_模型对比/results.json",
+      "sha256": "3b7e9f23834cc2fccbfb092d4761dc223132fbaf15c376abd11d540a67ac40ec",
+      "storage": "git"
+    },
+    {
+      "path": "../study/03_提示与背景/results.json",
+      "sha256": "41b1766ba1f4bcd7ef2785c2049b5b83b6cc1eef873734a7361d4688dd13330d",
+      "storage": "git"
+    },
+    {
+      "path": "../study/06_北美电商选品/results.json",
+      "sha256": "967e367e8a765ac9b2e600d3775a5ab138f6ea9b57ddd3db547f8fbc5b10c406",
+      "storage": "git"
+    },
+    {
+      "path": "../study/08_购物预测/pew-formal-calibration.json",
+      "sha256": "76ca8edc9cc4f61d7d2a1f661761166e6dc8da586e62bc8f3d8d21961e3dd8db",
+      "storage": "git"
+    },
+    {
+      "path": "../study/08_购物预测/amazon-mix-test-score.json",
+      "sha256": "40db206644c0f111b7abcea99a10d8fe2a831c25c3a5f52349da4022271ff27a",
+      "storage": "git"
+    },
+    {
+      "path": "../decision_lab/reports/choice-history-result.json",
+      "sha256": "9cd74f549d22bb538cd8e5a8beccef41a29473f7ce73868693dc81c7619a90f0",
+      "storage": "git"
+    },
+    {
+      "path": "../study/09_方法审查/audit-results.json",
+      "sha256": "64440d52d29b6cfda5e0d6e8601994468e8a4e7f9f45f0bee2dc51e49a98e48e",
+      "storage": "git"
+    },
+    {
+      "path": "local-analysis/individual-dryer.json",
+      "sha256": "c559c3f74c5628eca8e9a4f0486dd403ce3ac2f9a59d0d878811b0b1f33bc474",
+      "storage": "local_only"
+    },
+    {
+      "path": "local-analysis/individual-swiss.json",
+      "sha256": "53c95d9c0a7f417b0ed34b208cb967a62b8da1584595d37fc0f2c6213c44cf23",
+      "storage": "local_only"
+    }
+  ],
+  "probability": [
+    {
+      "label": "网购看法 · 13 道题",
+      "before": 43.411770535773535,
+      "after": 18.076963109681422,
+      "gain": 25.334807426092112,
+      "ci": [
+        22.537988335190157,
+        27.76631055584538
+      ],
+      "source": "pew"
+    },
+    {
+      "label": "运动鞋 · 购买意愿评分",
+      "before": 32.91666666666667,
+      "after": 14.79337355610565,
+      "gain": 18.123293110561022,
+      "ci": [
+        13.670416666666682,
+        21.369902343750006
+      ],
+      "source": "shoes"
+    },
+    {
+      "label": "包装商品 · 包括都不买",
+      "before": 36.13803514045816,
+      "after": 19.530552588770078,
+      "gain": 16.60748255168808,
+      "ci": [
+        13.060644160200802,
+        19.41964717086286
+      ],
+      "source": "rep"
+    },
+    {
+      "label": "商品产地 · 属性取舍",
+      "before": 11.295136517478921,
+      "after": 11.535784827436974,
+      "gain": -0.2406483099580523,
+      "ci": [
+        -1.1410709367510943,
+        0.8368160665002738
+      ],
+      "source": "rep"
+    }
+  ],
+  "questions": [
+    {
+      "key": "SHOP6A",
+      "label": "第一次买：能亲自查看或试用有多重要？",
+      "original": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to look at or try out the product in person?",
+      "options": [
+        "非常重要",
+        "比较重要",
+        "不太重要",
+        "完全不重要"
+      ],
+      "original_options": [
+        "Extremely important",
+        "Somewhat important",
+        "Not too important",
+        "Not important at all"
+      ],
+      "real": [
+        0.28779417587426315,
+        0.5422756236412064,
+        0.16592489789886283,
+        0.004005302585667593
+      ],
+      "people": 237,
+      "methods": {
+        "只选一项": {
+          "shares": [
+            0.0916043720009558,
+            0.8961672050053697,
+            0.012228422993674569,
+            0.0
+          ],
+          "error": 35.38915813641632
+        },
+        "保留概率": {
+          "shares": [
+            0.2350834898531754,
+            0.4640463316993535,
+            0.22122666936785895,
+            0.07964350907961248
+          ],
+          "error": 13.093997796294083
+        },
+        "真人数据校准": {
+          "shares": [
+            0.27741870108632827,
+            0.4881449237459502,
+            0.20072636110524783,
+            0.03371001406247308
+          ],
+          "error": 6.450617468319078
+        },
+        "真人统计模型": {
+          "shares": [
+            0.27030496925365205,
+            0.5072624030419014,
+            0.1920430740425896,
+            0.030389553661857235
+          ],
+          "error": 5.250242721991626
+        }
+      }
+    },
+    {
+      "key": "SHOP6B",
+      "label": "第一次买：能看网上评价有多重要？",
+      "original": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to read ratings or reviews that other people have posted online?",
+      "options": [
+        "非常重要",
+        "比较重要",
+        "不太重要",
+        "完全不重要"
+      ],
+      "original_options": [
+        "Extremely important",
+        "Somewhat important",
+        "Not too important",
+        "Not important at all"
+      ],
+      "real": [
+        0.44212078182172815,
+        0.4167675275368304,
+        0.1081882234215563,
+        0.03292346721988525
+      ],
+      "people": 239,
+      "methods": {
+        "只选一项": {
+          "shares": [
+            0.24295549161731048,
+            0.7249484307350132,
+            0.03209607764767593,
+            0.0
+          ],
+          "error": 30.81809031981831
+        },
+        "保留概率": {
+          "shares": [
+            0.24800865073989617,
+            0.47463606674101466,
+            0.205452470555743,
+            0.07190281196334607
+          ],
+          "error": 19.411213108183187
+        },
+        "真人数据校准": {
+          "shares": [
+            0.3504886651359155,
+            0.47412867062463654,
+            0.12691476413824648,
+            0.04846790010120118
+          ],
+          "error": 9.163211668581246
+        },
+        "真人统计模型": {
+          "shares": [
+            0.36721410576817165,
+            0.47148782602751926,
+            0.11719884083446681,
+            0.04409922736984215
+          ],
+          "error": 7.490667605355639
+        }
+      }
+    },
+    {
+      "key": "SHOP6C",
+      "label": "第一次买：能直接网购有多重要？",
+      "original": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to buy online, without having to make a trip to the store?",
+      "options": [
+        "非常重要",
+        "比较重要",
+        "不太重要",
+        "完全不重要"
+      ],
+      "original_options": [
+        "Extremely important",
+        "Somewhat important",
+        "Not too important",
+        "Not important at all"
+      ],
+      "real": [
+        0.08466021874076819,
+        0.3770215501264727,
+        0.3919941351863648,
+        0.14632409594639434
+      ],
+      "people": 240,
+      "methods": {
+        "只选一项": {
+          "shares": [
+            0.048541658295182526,
+            0.8052885411514387,
+            0.14616980055337872,
+            0.0
+          ],
+          "error": 42.826699102496605
+        },
+        "保留概率": {
+          "shares": [
+            0.15886148383685883,
+            0.41274252214204293,
+            0.3013666612255259,
+            0.12702933279557224
+          ],
+          "error": 10.992223711166092
+        },
+        "真人数据校准": {
+          "shares": [
+            0.10235307799049834,
+            0.3433784644827141,
+            0.38356885865253587,
+            0.17069959887425173
+          ],
+          "error": 4.206836217758753
+        },
+        "真人统计模型": {
+          "shares": [
+            0.11722978776135178,
+            0.3515112081908523,
+            0.37338000524427845,
+            0.15787899880351736
+          ],
+          "error": 4.412447187770667
+        }
+      }
+    },
+    {
+      "key": "SHOP6D",
+      "label": "第一次买：能比较多家价格有多重要？",
+      "original": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to compare prices from a number of different sellers?",
+      "options": [
+        "非常重要",
+        "比较重要",
+        "不太重要",
+        "完全不重要"
+      ],
+      "original_options": [
+        "Extremely important",
+        "Somewhat important",
+        "Not too important",
+        "Not important at all"
+      ],
+      "real": [
+        0.40956110315508965,
+        0.45313040802125165,
+        0.1313145724718492,
+        0.005993916351809467
+      ],
+      "people": 239,
+      "methods": {
+        "只选一项": {
+          "shares": [
+            0.11388725620422753,
+            0.88087045393322,
+            0.0052422898625524555,
+            0.0
+          ],
+          "error": 42.774004591196835
+        },
+        "保留概率": {
+          "shares": [
+            0.24139552206401063,
+            0.4813376668500961,
+            0.21074825831113547,
+            0.06651855277475795
+          ],
+          "error": 16.81655810910791
+        },
+        "真人数据校准": {
+          "shares": [
+            0.41413919106820857,
+            0.4241435307261863,
+            0.1393448747758518,
+            0.022372403429753142
+          ],
+          "error": 2.898687729506527
+        },
+        "真人统计模型": {
+          "shares": [
+            0.4442752620448359,
+            0.4376166189416022,
+            0.10250182611346775,
+            0.01560629290009416
+          ],
+          "error": 4.4326535438030925
+        }
+      }
+    },
+    {
+      "key": "SHOP6E",
+      "label": "第一次买：能询问商品情况有多重要？",
+      "original": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to be able to ask questions about what it is that you’re buying?",
+      "options": [
+        "非常重要",
+        "比较重要",
+        "不太重要",
+        "完全不重要"
+      ],
+      "original_options": [
+        "Extremely important",
+        "Somewhat important",
+        "Not too important",
+        "Not important at all"
+      ],
+      "real": [
+        0.43756134200083907,
+        0.4188267313937314,
+        0.14230996639538138,
+        0.0013019602100479291
+      ],
+      "people": 239,
+      "methods": {
+        "只选一项": {
+          "shares": [
+            0.03109983653794199,
+            0.9629045408529288,
+            0.005995622609129283,
+            0.0
+          ],
+          "error": 54.407780945919725
+        },
+        "保留概率": {
+          "shares": [
+            0.19435918778669936,
+            0.4727545655557631,
+            0.24965401432512038,
+            0.08323223233241737
+          ],
+          "error": 24.320215421413995
+        },
+        "真人数据校准": {
+          "shares": [
+            0.4611620885256705,
+            0.4002523799624506,
+            0.11800807516721261,
+            0.02057745634466571
+          ],
+          "error": 4.287624265944936
+        },
+        "真人统计模型": {
+          "shares": [
+            0.41347820382607264,
+            0.4307898921797887,
+            0.13304488090675273,
+            0.022687023087385894
+          ],
+          "error": 3.334822366339517
+        }
+      }
+    },
+    {
+      "key": "SHOP6F",
+      "label": "第一次买：熟人建议有多重要？",
+      "original": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to get advice or recommendations from people you know?",
+      "options": [
+        "非常重要",
+        "比较重要",
+        "不太重要",
+        "完全不重要"
+      ],
+      "original_options": [
+        "Extremely important",
+        "Somewhat important",
+        "Not too important",
+        "Not important at all"
+      ],
+      "real": [
+        0.2820765175499944,
+        0.5375427866588468,
+        0.1676432543457421,
+        0.012737441445416527
+      ],
+      "people": 236,
+      "methods": {
+        "只选一项": {
+          "shares": [
+            0.022264664774042008,
+            0.9650541051076925,
+            0.012681230118265479,
+            0.0
+          ],
+          "error": 42.75113184488457
+        },
+        "保留概率": {
+          "shares": [
+            0.17594315917494877,
+            0.47073554533184797,
+            0.26395523682881283,
+            0.08936605866439015
+          ],
+          "error": 17.294059970204444
+        },
+        "真人数据校准": {
+          "shares": [
+            0.2457433220094209,
+            0.5187904588462153,
+            0.20547535017773924,
+            0.029990868966624815
+          ],
+          "error": 5.5085523353205215
+        },
+        "真人统计模型": {
+          "shares": [
+            0.22933215445054658,
+            0.5542929168014475,
+            0.18645692524078775,
+            0.02991800350721782
+          ],
+          "error": 5.274436309944776
+        }
+      }
+    },
+    {
+      "key": "SHOP6G",
+      "label": "第一次买：熟悉卖家有多重要？",
+      "original": "In general, when shopping for something that you haven’t purchased before, how important is it for you to be able to buy from a store or seller that you are familiar with?",
+      "options": [
+        "非常重要",
+        "比较重要",
+        "不太重要",
+        "完全不重要"
+      ],
+      "original_options": [
+        "Extremely important",
+        "Somewhat important",
+        "Not too important",
+        "Not important at all"
+      ],
+      "real": [
+        0.35102226419059573,
+        0.5369774355004138,
+        0.07828475923717117,
+        0.03371554107181909
+      ],
+      "people": 240,
+      "methods": {
+        "只选一项": {
+          "shares": [
+            0.01535486082059388,
+            0.9722808428071522,
+            0.012364296372253628,
+            0.0
+          ],
+          "error": 43.53034073067384
+        },
+        "保留概率": {
+          "shares": [
+            0.18307435093126345,
+            0.46918316284751593,
+            0.25921539218273726,
+            0.08852709403848306
+          ],
+          "error": 23.57421859122301
+        },
+        "真人数据校准": {
+          "shares": [
+            0.317080474378417,
+            0.5388096199743205,
+            0.11731569430932323,
+            0.026794211337939303
+          ],
+          "error": 4.086311954605866
+        },
+        "真人统计模型": {
+          "shares": [
+            0.3201867813683205,
+            0.5270726743428291,
+            0.12731098518395806,
+            0.025429559104892155
+          ],
+          "error": 4.902622594678685
+        }
+      }
+    },
+    {
+      "key": "SHOP7A",
+      "label": "网上评价对保证商品安全有多大帮助？",
+      "original": "Consumers today can access lots of customer reviews and ratings about products and services they might want to buy. How much do you think these ratings and reviews help to ensure that the products and services people buy are safe?",
+      "options": [
+        "很大帮助",
+        "一些帮助",
+        "少量帮助",
+        "毫无帮助"
+      ],
+      "original_options": [
+        "A lot",
+        "Some",
+        "A little",
+        "Not at all"
+      ],
+      "real": [
+        0.39444118212139095,
+        0.38427211680450485,
+        0.20423013174669216,
+        0.01705656932741194
+      ],
+      "people": 240,
+      "methods": {
+        "只选一项": {
+          "shares": [
+            0.0,
+            0.9721180164460969,
+            0.027881983553903228,
+            0.0
+          ],
+          "error": 58.78458996415918
+        },
+        "保留概率": {
+          "shares": [
+            0.14875720081429242,
+            0.48264229001523035,
+            0.2727133396973935,
+            0.09588716947308377
+          ],
+          "error": 24.56839813070986
+        },
+        "真人数据校准": {
+          "shares": [
+            0.41200073131790976,
+            0.4260607481510256,
+            0.12684935089158375,
+            0.03508916963948095
+          ],
+          "error": 7.738078085510851
+        },
+        "真人统计模型": {
+          "shares": [
+            0.4036216329499179,
+            0.43419485672529845,
+            0.13007755152277464,
+            0.032105958802008686
+          ],
+          "error": 7.41525802239174
+        }
+      }
+    },
+    {
+      "key": "SHOP7B",
+      "label": "网上评价对增强购买信心有多大帮助？",
+      "original": "Consumers today can access lots of customer reviews and ratings about products and services they might want to buy. How much do you think these ratings and reviews help to make consumers feel confident about what they are buying?",
+      "options": [
+        "很大帮助",
+        "一些帮助",
+        "少量帮助",
+        "毫无帮助"
+      ],
+      "original_options": [
+        "A lot",
+        "Some",
+        "A little",
+        "Not at all"
+      ],
+      "real": [
+        0.4526651931100056,
+        0.46507746625762175,
+        0.07639677200405494,
+        0.005860568628317697
+      ],
+      "people": 239,
+      "methods": {
+        "只选一项": {
+          "shares": [
+            0.06826197692900988,
+            0.9317380230709902,
+            0.0,
+            0.0
+          ],
+          "error": 46.66605568133684
+        },
+        "保留概率": {
+          "shares": [
+            0.25155989658074673,
+            0.5132933532946706,
+            0.17499300885709523,
+            0.06015374126748702
+          ],
+          "error": 20.11052965292587
+        },
+        "真人数据校准": {
+          "shares": [
+            0.48361473043048725,
+            0.4151275247485468,
+            0.07754981126445407,
+            0.023707933556511795
+          ],
+          "error": 4.994994150907492
+        },
+        "真人统计模型": {
+          "shares": [
+            0.4778871518720338,
+            0.4280475738288521,
+            0.07371080052640411,
+            0.02035447377270982
+          ],
+          "error": 3.97158639064204
+        }
+      }
+    },
+    {
+      "key": "SHOP7C",
+      "label": "网上评价对促使商家负责有多大帮助？",
+      "original": "Consumers today can access lots of customer reviews and ratings about products and services they might want to buy. How much do you think these ratings and reviews help to make companies be accountable to their customers?",
+      "options": [
+        "很大帮助",
+        "一些帮助",
+        "少量帮助",
+        "毫无帮助"
+      ],
+      "original_options": [
+        "A lot",
+        "Some",
+        "A little",
+        "Not at all"
+      ],
+      "real": [
+        0.47032113594692854,
+        0.38679558051550145,
+        0.1354576655967272,
+        0.007425617940842767
+      ],
+      "people": 240,
+      "methods": {
+        "只选一项": {
+          "shares": [
+            0.0018044361486683695,
+            0.9954430662467478,
+            0.002752497604583564,
+            0.0
+          ],
+          "error": 60.86474857312465
+        },
+        "保留概率": {
+          "shares": [
+            0.17785929587135813,
+            0.5008629291970969,
+            0.24080948211850492,
+            0.08046829281304031
+          ],
+          "error": 29.24618400755705
+        },
+        "真人数据校准": {
+          "shares": [
+            0.44148933388550554,
+            0.40589076686538494,
+            0.11308629599340655,
+            0.03953360325570283
+          ],
+          "error": 5.12031716647436
+        },
+        "真人统计模型": {
+          "shares": [
+            0.44276968443057174,
+            0.4054408563317485,
+            0.11193826327049462,
+            0.03985119596718499
+          ],
+          "error": 5.107085384258932
+        }
+      }
+    },
+    {
+      "key": "SHOP12",
+      "label": "第一次买某件商品时，多常阅读网上评价？",
+      "original": "How often do you read customer ratings or reviews that other people have posted online when buying something for the first time?",
+      "options": [
+        "总是或几乎总是",
+        "有时",
+        "从不"
+      ],
+      "original_options": [
+        "Always or almost always",
+        "Sometimes",
+        "Never"
+      ],
+      "real": [
+        0.5091572486981871,
+        0.44046433248755057,
+        0.05037841881426238
+      ],
+      "people": 239,
+      "methods": {
+        "只选一项": {
+          "shares": [
+            0.18852503698698347,
+            0.7922526298748532,
+            0.01922233313816308
+          ],
+          "error": 35.17882973873028
+        },
+        "保留概率": {
+          "shares": [
+            0.2836332819476191,
+            0.5603327435137442,
+            0.15603397453863668
+          ],
+          "error": 22.552396675056798
+        },
+        "真人数据校准": {
+          "shares": [
+            0.4217817434590332,
+            0.5104051669064766,
+            0.06781308963449031
+          ],
+          "error": 8.737550523915397
+        },
+        "真人统计模型": {
+          "shares": [
+            0.47657152161216043,
+            0.46098593553099476,
+            0.06244254285684478
+          ],
+          "error": 3.2585727086026637
+        }
+      }
+    },
+    {
+      "key": "SHOP20B",
+      "label": "在实体店里，会用手机查网上更低价格吗？",
+      "original": "Do you ever use a cell phone while you are inside a physical store to see if you can find a better price online for something you want to buy?",
+      "options": [
+        "会",
+        "不会"
+      ],
+      "original_options": [
+        "Yes",
+        "No"
+      ],
+      "real": [
+        0.5154918399126872,
+        0.4845081600873128
+      ],
+      "people": 238,
+      "methods": {
+        "只选一项": {
+          "shares": [
+            0.892745488985621,
+            0.10725451101437883
+          ],
+          "error": 37.72536490729339
+        },
+        "保留概率": {
+          "shares": [
+            0.5809716701192622,
+            0.4190283298807378
+          ],
+          "error": 6.547983020657499
+        },
+        "真人数据校准": {
+          "shares": [
+            0.5011398430645969,
+            0.4988601569354027
+          ],
+          "error": 1.4351996848090103
+        },
+        "真人统计模型": {
+          "shares": [
+            0.5169459382333139,
+            0.48305406176668575
+          ],
+          "error": 0.14540983206268732
+        }
+      }
+    },
+    {
+      "key": "SHOP20C",
+      "label": "在实体店里，会用手机查商品评价等信息吗？",
+      "original": "Do you ever use a cell phone while you are inside a physical store to look up reviews or other information online about a product you want to buy?",
+      "options": [
+        "会",
+        "不会"
+      ],
+      "original_options": [
+        "Yes",
+        "No"
+      ],
+      "real": [
+        0.5683336701115074,
+        0.4316663298884927
+      ],
+      "people": 240,
+      "methods": {
+        "只选一项": {
+          "shares": [
+            0.8946958944015623,
+            0.1053041055984376
+          ],
+          "error": 32.6362224290055
+        },
+        "保留概率": {
+          "shares": [
+            0.6330590924250942,
+            0.36694090757490566
+          ],
+          "error": 6.472542231358691
+        },
+        "真人数据校准": {
+          "shares": [
+            0.50875827807621,
+            0.49124172192378956
+          ],
+          "error": 5.957539203529713
+        },
+        "真人统计模型": {
+          "shares": [
+            0.5210820143448569,
+            0.4789179856551426
+          ],
+          "error": 4.725165576665019
+        }
+      }
+    }
+  ],
+  "pew_summary": {
+    "basic_choice": {
+      "tv_pp": 41.7114496849739,
+      "brier": 1.05808320330377,
+      "accuracy": 0.47095839834811487,
+      "concentration_counts": {
+        "0.95": 5,
+        "0.99": 0,
+        "1": 0
+      }
+    },
+    "rich_choice": {
+      "tv_pp": 43.411770535773535,
+      "brier": 1.021177109634729,
+      "accuracy": 0.48941144518263546,
+      "concentration_counts": {
+        "0.95": 5,
+        "0.99": 1,
+        "1": 0
+      }
+    },
+    "basic_probability": {
+      "tv_pp": 18.636454559538752,
+      "brier": 0.6479088713507584,
+      "accuracy": 0.4722765682394311,
+      "concentration_counts": {
+        "0.95": 0,
+        "0.99": 0,
+        "1": 0
+      }
+    },
+    "rich_probability": {
+      "tv_pp": 18.076963109681422,
+      "brier": 0.6538282052743097,
+      "accuracy": 0.45640172380377203,
+      "concentration_counts": {
+        "0.95": 0,
+        "0.99": 0,
+        "1": 0
+      }
+    },
+    "rich_probability_argmax": {
+      "tv_pp": 44.16689213818434,
+      "brier": 1.0871965523924556,
+      "accuracy": 0.45640172380377203,
+      "concentration_counts": {
+        "0.95": 4,
+        "0.99": 1,
+        "1": 0
+      }
+    },
+    "statistics": {
+      "tv_pp": 4.512760244189486,
+      "brier": 0.5856658038380689,
+      "accuracy": 0.4986387715893391,
+      "concentration_counts": {
+        "0.95": 0,
+        "0.99": 0,
+        "1": 0
+      }
+    }
+  },
+  "pew_contrasts": [
+    {
+      "from": "basic_choice",
+      "to": "rich_choice",
+      "tv_improvement_pp": -1.7003208507996348,
+      "tv_95_interval": [
+        -3.770508638078514,
+        0.42587758051794405
+      ],
+      "brier_improvement": 0.03690609366904085,
+      "brier_95_interval": [
+        0.004949474418085964,
+        0.06810418496790063
+      ]
+    },
+    {
+      "from": "basic_probability",
+      "to": "rich_probability",
+      "tv_improvement_pp": 0.5594914498573296,
+      "tv_95_interval": [
+        -0.3409607329886358,
+        1.3122884972908213
+      ],
+      "brier_improvement": -0.005919333923551373,
+      "brier_95_interval": [
+        -0.016365384524412583,
+        0.0041631388767383
+      ]
+    },
+    {
+      "from": "basic_choice",
+      "to": "basic_probability",
+      "tv_improvement_pp": 23.074995125435148,
+      "tv_95_interval": [
+        20.13237555560294,
+        25.670085485454972
+      ],
+      "brier_improvement": 0.41017433195301156,
+      "brier_95_interval": [
+        0.3710515467621505,
+        0.44938594204334276
+      ]
+    },
+    {
+      "from": "rich_choice",
+      "to": "rich_probability",
+      "tv_improvement_pp": 25.334807426092112,
+      "tv_95_interval": [
+        22.537988335190157,
+        27.76631055584538
+      ],
+      "brier_improvement": 0.36734890436041934,
+      "brier_95_interval": [
+        0.3330786622619502,
+        0.4066119086673681
+      ]
+    },
+    {
+      "from": "rich_probability_argmax",
+      "to": "rich_probability",
+      "tv_improvement_pp": 26.089929028502915,
+      "tv_95_interval": [
+        22.97895047825795,
+        28.639173487968687
+      ],
+      "brier_improvement": 0.43336834711814587,
+      "brier_95_interval": [
+        0.3969371080936454,
+        0.46913015336898345
+      ]
+    },
+    {
+      "from": "statistics",
+      "to": "rich_probability",
+      "tv_improvement_pp": -13.564202865491936,
+      "tv_95_interval": [
+        -14.391622548377923,
+        -8.911435614159064
+      ],
+      "brier_improvement": -0.06816240143624086,
+      "brier_95_interval": [
+        -0.08737390740823783,
+        -0.04960059730439541
+      ]
+    }
+  ],
+  "matching": {
+    "summary": {
+      "qwen/coarse": {
+        "mean_run_tv_pp": 15.500524295745958,
+        "tv_by_run_pp": [
+          15.66949227556133,
+          15.461514850021398,
+          15.370565761655142
+        ],
+        "ensemble_tv_pp": 15.48966906471268,
+        "concentration_by_run": [
+          {
+            "95": 0,
+            "99": 0,
+            "100": 0
+          },
+          {
+            "95": 0,
+            "99": 0,
+            "100": 0
+          },
+          {
+            "95": 0,
+            "99": 0,
+            "100": 0
+          }
+        ]
+      },
+      "qwen/matched": {
+        "mean_run_tv_pp": 15.951723845814323,
+        "tv_by_run_pp": [
+          15.525989504459211,
+          16.2617853879452,
+          16.067396645038563
+        ],
+        "ensemble_tv_pp": 15.948998223365493,
+        "concentration_by_run": [
+          {
+            "95": 0,
+            "99": 0,
+            "100": 0
+          },
+          {
+            "95": 0,
+            "99": 0,
+            "100": 0
+          },
+          {
+            "95": 0,
+            "99": 0,
+            "100": 0
+          }
+        ]
+      },
+      "qwen/matched_traits": {
+        "mean_run_tv_pp": 15.741777956125626,
+        "tv_by_run_pp": [
+          15.752442897652752,
+          15.47663147154309,
+          15.996259499181035
+        ],
+        "ensemble_tv_pp": 15.741777956125626,
+        "concentration_by_run": [
+          {
+            "95": 0,
+            "99": 0,
+            "100": 0
+          },
+          {
+            "95": 0,
+            "99": 0,
+            "100": 0
+          },
+          {
+            "95": 0,
+            "99": 0,
+            "100": 0
+          }
+        ]
+      },
+      "pro/coarse": {
+        "mean_run_tv_pp": 11.411432924548206,
+        "tv_by_run_pp": [
+          11.193259334117736,
+          11.430327190254472,
+          11.610712249272417
+        ],
+        "ensemble_tv_pp": 11.40441130488547,
+        "concentration_by_run": [
+          {
+            "95": 0,
+            "99": 0,
+            "100": 0
+          },
+          {
+            "95": 0,
+            "99": 0,
+            "100": 0
+          },
+          {
+            "95": 0,
+            "99": 0,
+            "100": 0
+          }
+        ]
+      },
+      "pro/matched": {
+        "mean_run_tv_pp": 11.49659599097316,
+        "tv_by_run_pp": [
+          11.399214227408358,
+          11.651683032885732,
+          11.438890712625398
+        ],
+        "ensemble_tv_pp": 11.483794126104057,
+        "concentration_by_run": [
+          {
+            "95": 0,
+            "99": 0,
+            "100": 0
+          },
+          {
+            "95": 0,
+            "99": 0,
+            "100": 0
+          },
+          {
+            "95": 0,
+            "99": 0,
+            "100": 0
+          }
+        ]
+      },
+      "pro/matched_traits": {
+        "mean_run_tv_pp": 10.519786192183107,
+        "tv_by_run_pp": [
+          10.442136063734624,
+          10.515599583780423,
+          10.601622929034267
+        ],
+        "ensemble_tv_pp": 10.511113873787755,
+        "concentration_by_run": [
+          {
+            "95": 0,
+            "99": 0,
+            "100": 0
+          },
+          {
+            "95": 0,
+            "99": 0,
+            "100": 0
+          },
+          {
+            "95": 0,
+            "99": 0,
+            "100": 0
+          }
+        ]
+      }
+    },
+    "comparisons": [
+      {
+        "before": "qwen/coarse",
+        "after": "qwen/matched",
+        "gain_pp": -0.451199550068365,
+        "ci95": [
+          -0.9631875514680271,
+          -0.002412876210443471
+        ],
+        "gain_by_run_pp": [
+          0.14350277110211884,
+          -0.8002705379238009,
+          -0.6968308833834218
+        ],
+        "passes": false
+      },
+      {
+        "before": "pro/coarse",
+        "after": "pro/matched",
+        "gain_pp": -0.08516306642495408,
+        "ci95": [
+          -0.5660412984783332,
+          0.374152857368601
+        ],
+        "gain_by_run_pp": [
+          -0.2059548932906221,
+          -0.22135584263125985,
+          0.1718215366470197
+        ],
+        "passes": false
+      },
+      {
+        "before": "qwen/matched",
+        "after": "qwen/matched_traits",
+        "gain_pp": 0.2099458896886972,
+        "ci95": [
+          -0.4808068279837655,
+          0.9009490707531721
+        ],
+        "gain_by_run_pp": [
+          -0.22645339319354107,
+          0.7851539164021091,
+          0.07113714585752895
+        ],
+        "passes": false
+      },
+      {
+        "before": "pro/matched",
+        "after": "pro/matched_traits",
+        "gain_pp": 0.9768097987900539,
+        "ci95": [
+          0.4549724983392377,
+          1.4224387090948933
+        ],
+        "gain_by_run_pp": [
+          0.9570781636737333,
+          1.1360834491053087,
+          0.8372677835911304
+        ],
+        "passes": false
+      },
+      {
+        "before": "qwen/coarse",
+        "after": "pro/coarse",
+        "gain_pp": 4.0890913711977515,
+        "ci95": [
+          3.653287127990569,
+          4.5738384264042224
+        ],
+        "gain_by_run_pp": [
+          4.476232941443595,
+          4.0311876597669265,
+          3.7598535123827244
+        ],
+        "passes": true
+      },
+      {
+        "before": "qwen/matched",
+        "after": "pro/matched",
+        "gain_pp": 4.455127854841162,
+        "ci95": [
+          4.043407458282502,
+          4.96405144180071
+        ],
+        "gain_by_run_pp": [
+          4.126775277050854,
+          4.6101023550594675,
+          4.628505932413166
+        ],
+        "passes": true
+      },
+      {
+        "before": "qwen/matched_traits",
+        "after": "pro/matched_traits",
+        "gain_pp": 5.221991763942519,
+        "ci95": [
+          4.639890168675812,
+          5.847736410200536
+        ],
+        "gain_by_run_pp": [
+          5.310306833918128,
+          4.961031887762667,
+          5.394636570146767
+        ],
+        "passes": true
+      }
+    ]
+  },
+  "packaging": {
+    "human_refusal": 32.06187064291248,
+    "summary": {
+      "choice": {
+        "mean_run_tv_pp": 36.13803514045816,
+        "tv_by_run_pp": [
+          38.748697602165876,
+          34.671701825886075,
+          34.99370599332252
+        ],
+        "ensemble_tv_pp": 36.01689854904407,
+        "brier": 1.2611778122041484,
+        "accuracy_pct": 36.94110938979258,
+        "concentration_by_run": [
+          {
+            "95": 4,
+            "99": 2,
+            "100": 0
+          },
+          {
+            "95": 0,
+            "99": 0,
+            "100": 0
+          },
+          {
+            "95": 0,
+            "99": 0,
+            "100": 0
+          }
+        ],
+        "opt_out_pct_by_run": [
+          9.552026852569073,
+          13.552155951458825,
+          13.466143816163186
+        ],
+        "opt_out_pct": 12.190108873397028,
+        "opt_out_recall_pct": 10.596215373723037
+      },
+      "probability": {
+        "mean_run_tv_pp": 19.530552588770078,
+        "tv_by_run_pp": [
+          19.474288108370764,
+          19.38066795153636,
+          19.736701706403103
+        ],
+        "ensemble_tv_pp": 19.504346607249026,
+        "brier": 0.7152921826318961,
+        "accuracy_pct": 36.008154746535844,
+        "concentration_by_run": [
+          {
+            "95": 0,
+            "99": 0,
+            "100": 0
+          },
+          {
+            "95": 0,
+            "99": 0,
+            "100": 0
+          },
+          {
+            "95": 0,
+            "99": 0,
+            "100": 0
+          }
+        ],
+        "opt_out_pct_by_run": [
+          23.88117254066615,
+          24.28640588690938,
+          23.503275884327408
+        ],
+        "opt_out_pct": 23.890284770634313,
+        "opt_out_recall_pct": 11.32720290314625
+      },
+      "statistics": {
+        "mean_run_tv_pp": 7.3213832612454315,
+        "tv_by_run_pp": [
+          7.3213832612454315,
+          7.3213832612454315,
+          7.3213832612454315
+        ],
+        "ensemble_tv_pp": 7.321383261245432,
+        "brier": 0.6008367731068363,
+        "accuracy_pct": 51.07603924606248,
+        "concentration_by_run": [
+          {
+            "95": 0,
+            "99": 0,
+            "100": 0
+          },
+          {
+            "95": 0,
+            "99": 0,
+            "100": 0
+          },
+          {
+            "95": 0,
+            "99": 0,
+            "100": 0
+          }
+        ],
+        "opt_out_pct_by_run": [
+          32.20430021322772,
+          32.20430021322772,
+          32.20430021322772
+        ],
+        "opt_out_pct": 32.20430021322772,
+        "opt_out_recall_pct": 37.89089042233529
+      }
+    }
+  },
+  "models": {
+    "overall": {
+      "flash-A": {
+        "tv_pp": 33.8224050115027
+      },
+      "flash-B": {
+        "tv_pp": 31.90581409501682
+      },
+      "flash-C": {
+        "tv_pp": 23.392455840069925
+      },
+      "pro-A": {
+        "tv_pp": 21.96596855741424
+      },
+      "pro-B": {
+        "tv_pp": 23.016394981250627
+      },
+      "pro-C": {
+        "tv_pp": 23.380123420141242
+      },
+      "qwen-A": {
+        "tv_pp": 26.921312314133143
+      },
+      "qwen-B": {
+        "tv_pp": 28.177548093071113
+      },
+      "qwen-C": {
+        "tv_pp": 24.27199484629108
+      }
+    },
+    "comparisons": [
+      {
+        "reference": "flash-A",
+        "candidate": "pro-A",
+        "overall": {
+          "gain_pp": 11.856436454088467,
+          "ci95": [
+            10.463095217674363,
+            13.013097844085125
+          ]
+        },
+        "surveys": {
+          "shed": {
+            "gain_pp": 18.304868929080783,
+            "ci95": [
+              15.507249881461734,
+              20.56677369098554
+            ]
+          },
+          "pew": {
+            "gain_pp": 4.139440433184621,
+            "ci95": [
+              2.8333333333333357,
+              4.97277376651796
+            ]
+          },
+          "anes": {
+            "gain_pp": 13.124999999999996,
+            "ci95": [
+              10.625000000000004,
+              15.833333333333332
+            ]
+          }
+        },
+        "meets_threshold": true
+      },
+      {
+        "reference": "flash-B",
+        "candidate": "pro-B",
+        "overall": {
+          "gain_pp": 8.889419113766186,
+          "ci95": [
+            7.53554473922589,
+            10.036032461389238
+          ]
+        },
+        "surveys": {
+          "shed": {
+            "gain_pp": 6.655618064204802,
+            "ci95": [
+              4.404999506763611,
+              8.653460244349382
+            ]
+          },
+          "pew": {
+            "gain_pp": 4.633968064009522,
+            "ci95": [
+              2.7908899327948067,
+              6.333151923046803
+            ]
+          },
+          "anes": {
+            "gain_pp": 15.378671213084235,
+            "ci95": [
+              12.440607852941024,
+              17.880616227984078
+            ]
+          }
+        },
+        "meets_threshold": true
+      },
+      {
+        "reference": "flash-C",
+        "candidate": "pro-C",
+        "overall": {
+          "gain_pp": 0.01233241992868154,
+          "ci95": [
+            -1.4555531570189741,
+            2.1247901641037634
+          ]
+        },
+        "surveys": {
+          "shed": {
+            "gain_pp": -1.5585954246888818,
+            "ci95": [
+              -3.585821637091523,
+              1.3202973185104452
+            ]
+          },
+          "pew": {
+            "gain_pp": 2.654959237012001,
+            "ci95": [
+              0.7968136847298057,
+              4.5170648853185815
+            ]
+          },
+          "anes": {
+            "gain_pp": -1.0593665525370746,
+            "ci95": [
+              -4.899466239194896,
+              3.9170882945879972
+            ]
+          }
+        },
+        "meets_threshold": false
+      },
+      {
+        "reference": "flash-A",
+        "candidate": "qwen-A",
+        "overall": {
+          "gain_pp": 6.9010926973695605,
+          "ci95": [
+            5.741039787316655,
+            8.009095342872207
+          ]
+        },
+        "surveys": {
+          "shed": {
+            "gain_pp": 4.376297500509345,
+            "ci95": [
+              2.6501070243188707,
+              5.98344035765221
+            ]
+          },
+          "pew": {
+            "gain_pp": 3.457550306857108,
+            "ci95": [
+              1.7908836401904402,
+              5.1242169735237795
+            ]
+          },
+          "anes": {
+            "gain_pp": 12.86943028474223,
+            "ci95": [
+              10.577763618075561,
+              15.16109695140889
+            ]
+          }
+        },
+        "meets_threshold": true
+      },
+      {
+        "reference": "flash-B",
+        "candidate": "qwen-B",
+        "overall": {
+          "gain_pp": 3.7282660019457006,
+          "ci95": [
+            2.5258296575790373,
+            4.6657782573125965
+          ]
+        },
+        "surveys": {
+          "shed": {
+            "gain_pp": 3.47390689405049,
+            "ci95": [
+              1.3900466974728525,
+              5.174774171178474
+            ]
+          },
+          "pew": {
+            "gain_pp": 5.954933764202721,
+            "ci95": [
+              4.123938660337537,
+              7.576277991161644
+            ]
+          },
+          "anes": {
+            "gain_pp": 1.755957347583891,
+            "ci95": [
+              -0.4315299357580251,
+              3.5884100993758175
+            ]
+          }
+        },
+        "meets_threshold": true
+      },
+      {
+        "reference": "flash-C",
+        "candidate": "qwen-C",
+        "overall": {
+          "gain_pp": -0.8795390062211558,
+          "ci95": [
+            -2.054301074993472,
+            0.8084677289003271
+          ]
+        },
+        "surveys": {
+          "shed": {
+            "gain_pp": -2.215838740380523,
+            "ci95": [
+              -3.856690571382606,
+              0.14350670015028733
+            ]
+          },
+          "pew": {
+            "gain_pp": 5.885990437874739,
+            "ci95": [
+              3.872575327929259,
+              7.89863140804903
+            ]
+          },
+          "anes": {
+            "gain_pp": -6.308768716157683,
+            "ci95": [
+              -9.285531049659573,
+              -2.57178889756962
+            ]
+          }
+        },
+        "meets_threshold": false
+      },
+      {
+        "reference": "pro-A",
+        "candidate": "qwen-A",
+        "overall": {
+          "gain_pp": -4.955343756718906,
+          "ci95": [
+            -6.33613088965527,
+            -3.337064926196224
+          ]
+        },
+        "surveys": {
+          "shed": {
+            "gain_pp": -13.92857142857144,
+            "ci95": [
+              -16.607854467249176,
+              -10.892857142857148
+            ]
+          },
+          "pew": {
+            "gain_pp": -0.681890126327513,
+            "ci95": [
+              -2.0152234596608416,
+              0.9847765403391513
+            ]
+          },
+          "anes": {
+            "gain_pp": -0.25556971525776717,
+            "ci95": [
+              -3.45001415970221,
+              2.7074413167079827
+            ]
+          }
+        },
+        "meets_threshold": false
+      },
+      {
+        "reference": "pro-B",
+        "candidate": "qwen-B",
+        "overall": {
+          "gain_pp": -5.161153111820486,
+          "ci95": [
+            -6.497313308117846,
+            -3.7935316722348578
+          ]
+        },
+        "surveys": {
+          "shed": {
+            "gain_pp": -3.181711170154312,
+            "ci95": [
+              -5.431344617332479,
+              -0.8670391407318228
+            ]
+          },
+          "pew": {
+            "gain_pp": 1.3209657001931987,
+            "ci95": [
+              -0.7696154491794275,
+              3.3833225090021024
+            ]
+          },
+          "anes": {
+            "gain_pp": -13.622713865500344,
+            "ci95": [
+              -16.489967326818537,
+              -10.742087707463186
+            ]
+          }
+        },
+        "meets_threshold": false
+      },
+      {
+        "reference": "pro-C",
+        "candidate": "qwen-C",
+        "overall": {
+          "gain_pp": -0.8918714261498373,
+          "ci95": [
+            -2.590066501028293,
+            0.69046660086213
+          ]
+        },
+        "surveys": {
+          "shed": {
+            "gain_pp": -0.6572433156916411,
+            "ci95": [
+              -3.1607666145328452,
+              1.6695537354621621
+            ]
+          },
+          "pew": {
+            "gain_pp": 3.2310312008627378,
+            "ci95": [
+              0.9864869120344578,
+              5.4497348112337525
+            ]
+          },
+          "anes": {
+            "gain_pp": -5.2494021636206085,
+            "ci95": [
+              -9.010300864504368,
+              -1.583528046431171
+            ]
+          }
+        },
+        "meets_threshold": false
+      },
+      {
+        "reference": "flash-A",
+        "candidate": "flash-B",
+        "overall": {
+          "gain_pp": 1.9165909164858874,
+          "ci95": [
+            1.1177544903554484,
+            2.633603151501197
+          ]
+        },
+        "surveys": {
+          "shed": {
+            "gain_pp": 1.7023044477768892,
+            "ci95": [
+              0.29372077489756093,
+              2.971568746703315
+            ]
+          },
+          "pew": {
+            "gain_pp": -1.7142076263512038,
+            "ci95": [
+              -2.8917986745641633,
+              -0.5562764505658457
+            ]
+          },
+          "anes": {
+            "gain_pp": 5.761675928031977,
+            "ci95": [
+              4.2955675953367995,
+              7.123621842309972
+            ]
+          }
+        },
+        "meets_threshold": false
+      },
+      {
+        "reference": "pro-A",
+        "candidate": "pro-B",
+        "overall": {
+          "gain_pp": -1.0504264238363934,
+          "ci95": [
+            -2.8190219361833817,
+            0.5816579298695391
+          ]
+        },
+        "surveys": {
+          "shed": {
+            "gain_pp": -9.946946417099094,
+            "ci95": [
+              -13.058738615368618,
+              -7.0024438353497045
+            ]
+          },
+          "pew": {
+            "gain_pp": -1.2196799955263025,
+            "ci95": [
+              -2.7195318718057777,
+              0.5014912844380306
+            ]
+          },
+          "anes": {
+            "gain_pp": 8.015347141116216,
+            "ci95": [
+              4.296254002914274,
+              11.3240598266829
+            ]
+          }
+        },
+        "meets_threshold": false
+      },
+      {
+        "reference": "qwen-A",
+        "candidate": "qwen-B",
+        "overall": {
+          "gain_pp": -1.2562357789379728,
+          "ci95": [
+            -2.653525089439403,
+            -0.08163967544467617
+          ]
+        },
+        "surveys": {
+          "shed": {
+            "gain_pp": 0.799913841318034,
+            "ci95": [
+              -1.499139135839223,
+              2.8773936555362543
+            ]
+          },
+          "pew": {
+            "gain_pp": 0.7831758309944092,
+            "ci95": [
+              -1.1199098274173354,
+              2.5283443328523454
+            ]
+          },
+          "anes": {
+            "gain_pp": -5.351797009126361,
+            "ci95": [
+              -7.928267010388997,
+              -3.1756738337051695
+            ]
+          }
+        },
+        "meets_threshold": false
+      },
+      {
+        "reference": "flash-B",
+        "candidate": "flash-C",
+        "overall": {
+          "gain_pp": 8.513358254946892,
+          "ci95": [
+            7.089294478326273,
+            9.357841400173397
+          ]
+        },
+        "surveys": {
+          "shed": {
+            "gain_pp": 7.570837449798546,
+            "ci95": [
+              5.262704875485625,
+              8.908887513408262
+            ]
+          },
+          "pew": {
+            "gain_pp": 2.0600090698532796,
+            "ci95": [
+              0.6469020692079666,
+              3.3778146919966607
+            ]
+          },
+          "anes": {
+            "gain_pp": 15.90922824518885,
+            "ci95": [
+              12.98332552619052,
+              17.847047194371992
+            ]
+          }
+        },
+        "meets_threshold": true
+      },
+      {
+        "reference": "pro-B",
+        "candidate": "pro-C",
+        "overall": {
+          "gain_pp": -0.3637284388906134,
+          "ci95": [
+            -2.116173043974264,
+            1.6969347276774074
+          ]
+        },
+        "surveys": {
+          "shed": {
+            "gain_pp": -0.6433760390951377,
+            "ci95": [
+              -3.49187231668706,
+              2.5812404649232827
+            ]
+          },
+          "pew": {
+            "gain_pp": 0.08100024285575813,
+            "ci95": [
+              -1.9878907162811787,
+              2.2177189180323627
+            ]
+          },
+          "anes": {
+            "gain_pp": -0.5288095204324605,
+            "ci95": [
+              -4.863802944275072,
+              4.35598247634323
+            ]
+          }
+        },
+        "meets_threshold": false
+      },
+      {
+        "reference": "qwen-B",
+        "candidate": "qwen-C",
+        "overall": {
+          "gain_pp": 3.9055532467800353,
+          "ci95": [
+            2.4445974882255546,
+            5.446326013862251
+          ]
+        },
+        "surveys": {
+          "shed": {
+            "gain_pp": 1.8810918153675331,
+            "ci95": [
+              -0.6082596418236315,
+              4.405403394083202
+            ]
+          },
+          "pew": {
+            "gain_pp": 1.9910657435252972,
+            "ci95": [
+              -0.20150572013563933,
+              4.475421141770908
+            ]
+          },
+          "anes": {
+            "gain_pp": 7.844502181447275,
+            "ci95": [
+              5.250499467014176,
+              10.62780874446954
+            ]
+          }
+        },
+        "meets_threshold": true
+      }
+    ]
+  },
+  "prompt": {
+    "overall": {
+      "p0-b1": {
+        "tv_pp": 28.956702536744668,
+        "accuracy_pct": 57.91908743419042
+      },
+      "p0-b2": {
+        "tv_pp": 26.886215795822533,
+        "accuracy_pct": 58.4863225419543
+      },
+      "p0-b3": {
+        "tv_pp": 21.28501720218,
+        "accuracy_pct": 59.1981694646936
+      },
+      "p0-b4": {
+        "tv_pp": 19.5635638612733,
+        "accuracy_pct": 61.101769299911126
+      },
+      "p1-b1": {
+        "tv_pp": 25.985693056831717,
+        "accuracy_pct": 57.5415077205518
+      },
+      "p1-b2": {
+        "tv_pp": 24.054015073800855,
+        "accuracy_pct": 58.78744249749807
+      },
+      "p1-b3": {
+        "tv_pp": 18.78750543199705,
+        "accuracy_pct": 61.03874872104069
+      },
+      "p1-b4": {
+        "tv_pp": 18.652715297735497,
+        "accuracy_pct": 59.563055127262515
+      },
+      "historical-stratum": {
+        "tv_pp": 3.637651032459582,
+        "accuracy_pct": 64.66021775656847
+      }
+    },
+    "comparisons": [
+      {
+        "reference": "p0-b1",
+        "candidate": "p1-b1",
+        "overall": {
+          "gain_pp": 2.9710094799129507,
+          "ci95": [
+            1.2229893236246736,
+            4.772063346877384
+          ]
+        },
+        "surveys": {
+          "shed": {
+            "gain_pp": 3.758545986238097,
+            "ci95": [
+              0.919489723336704,
+              6.921850893943964
+            ]
+          },
+          "pew": {
+            "gain_pp": 1.505910722456953,
+            "ci95": [
+              -1.53227784344783,
+              4.1826806296991546
+            ]
+          },
+          "anes": {
+            "gain_pp": 3.648571731043802,
+            "ci95": [
+              0.2357645877359395,
+              6.789172967198806
+            ]
+          }
+        },
+        "meets_threshold": true
+      },
+      {
+        "reference": "p0-b2",
+        "candidate": "p1-b2",
+        "overall": {
+          "gain_pp": 2.8322007220216747,
+          "ci95": [
+            0.7975058929247956,
+            4.426331871006165
+          ]
+        },
+        "surveys": {
+          "shed": {
+            "gain_pp": 4.6106979487159485,
+            "ci95": [
+              1.4842003766843703,
+              6.95993565510568
+            ]
+          },
+          "pew": {
+            "gain_pp": 0.8599674761453926,
+            "ci95": [
+              -1.9631190059500807,
+              3.284869638871994
+            ]
+          },
+          "anes": {
+            "gain_pp": 3.025936741203683,
+            "ci95": [
+              -1.1464272296572926,
+              6.590965018324148
+            ]
+          }
+        },
+        "meets_threshold": true
+      },
+      {
+        "reference": "p0-b3",
+        "candidate": "p1-b3",
+        "overall": {
+          "gain_pp": 2.49751177018295,
+          "ci95": [
+            0.5421646487831157,
+            4.03540389957514
+          ]
+        },
+        "surveys": {
+          "shed": {
+            "gain_pp": 5.434200196021386,
+            "ci95": [
+              1.3621841286693677,
+              8.223343581294497
+            ]
+          },
+          "pew": {
+            "gain_pp": 0.4892374200832279,
+            "ci95": [
+              -2.321140200700516,
+              4.412142733914606
+            ]
+          },
+          "anes": {
+            "gain_pp": 1.5690976944442365,
+            "ci95": [
+              -1.7463310899831423,
+              3.8070140608063094
+            ]
+          }
+        },
+        "meets_threshold": true
+      },
+      {
+        "reference": "p0-b4",
+        "candidate": "p1-b4",
+        "overall": {
+          "gain_pp": 0.9108485635378004,
+          "ci95": [
+            -0.42094221172349566,
+            2.6082544269815577
+          ]
+        },
+        "surveys": {
+          "shed": {
+            "gain_pp": 3.304785637691978,
+            "ci95": [
+              0.2095723669442216,
+              5.734332671433366
+            ]
+          },
+          "pew": {
+            "gain_pp": -0.33921982078855706,
+            "ci95": [
+              -2.2513057817692808,
+              2.6065046945692942
+            ]
+          },
+          "anes": {
+            "gain_pp": -0.23302012629002,
+            "ci95": [
+              -2.66331907377154,
+              2.8847782349013538
+            ]
+          }
+        },
+        "meets_threshold": false
+      },
+      {
+        "reference": "p0-b1",
+        "candidate": "p0-b2",
+        "overall": {
+          "gain_pp": 2.0704867409221372,
+          "ci95": [
+            0.07687854288168448,
+            3.90907041440876
+          ]
+        },
+        "surveys": {
+          "shed": {
+            "gain_pp": 0.8627921939861025,
+            "ci95": [
+              -2.143676350141734,
+              4.152976724882255
+            ]
+          },
+          "pew": {
+            "gain_pp": 1.1577771632784675,
+            "ci95": [
+              -1.4416683183273649,
+              3.7977907303617666
+            ]
+          },
+          "anes": {
+            "gain_pp": 4.190890865501842,
+            "ci95": [
+              -0.13948898135101623,
+              8.256634036303291
+            ]
+          }
+        },
+        "meets_threshold": true
+      },
+      {
+        "reference": "p0-b2",
+        "candidate": "p0-b3",
+        "overall": {
+          "gain_pp": 5.601198593642529,
+          "ci95": [
+            3.012185255859556,
+            7.537237145169667
+          ]
+        },
+        "surveys": {
+          "shed": {
+            "gain_pp": 6.1080912849377995,
+            "ci95": [
+              2.879751606440661,
+              9.184512747518351
+            ]
+          },
+          "pew": {
+            "gain_pp": 3.461972641469039,
+            "ci95": [
+              -0.7641434559546936,
+              5.724685761741434
+            ]
+          },
+          "anes": {
+            "gain_pp": 7.2335318545207485,
+            "ci95": [
+              2.156689590290964,
+              11.944863219931722
+            ]
+          }
+        },
+        "meets_threshold": true
+      },
+      {
+        "reference": "p0-b3",
+        "candidate": "p0-b4",
+        "overall": {
+          "gain_pp": 1.721453340906704,
+          "ci95": [
+            -0.0340786376045439,
+            3.28192485510761
+          ]
+        },
+        "surveys": {
+          "shed": {
+            "gain_pp": 2.0616807633057306,
+            "ci95": [
+              -1.070121894281739,
+              4.99377513467675
+            ]
+          },
+          "pew": {
+            "gain_pp": 1.4238677428366628,
+            "ci95": [
+              -1.511659185083554,
+              4.407051892874879
+            ]
+          },
+          "anes": {
+            "gain_pp": 1.6788115165777189,
+            "ci95": [
+              -1.387813481286994,
+              4.2974931560825445
+            ]
+          }
+        },
+        "meets_threshold": false
+      },
+      {
+        "reference": "p1-b1",
+        "candidate": "p1-b2",
+        "overall": {
+          "gain_pp": 1.9316779830308615,
+          "ci95": [
+            -0.11741335577841422,
+            3.4952716457688546
+          ]
+        },
+        "surveys": {
+          "shed": {
+            "gain_pp": 1.7149441564639538,
+            "ci95": [
+              -1.6996897649494693,
+              4.358444903141158
+            ]
+          },
+          "pew": {
+            "gain_pp": 0.511833916966907,
+            "ci95": [
+              -2.5866782078495496,
+              3.424430888171246
+            ]
+          },
+          "anes": {
+            "gain_pp": 3.5682558756617233,
+            "ci95": [
+              -0.24380754131838914,
+              7.003544371840219
+            ]
+          }
+        },
+        "meets_threshold": false
+      },
+      {
+        "reference": "p1-b2",
+        "candidate": "p1-b3",
+        "overall": {
+          "gain_pp": 5.266509641803805,
+          "ci95": [
+            2.386085138079293,
+            7.2874553130079915
+          ]
+        },
+        "surveys": {
+          "shed": {
+            "gain_pp": 6.931593532243237,
+            "ci95": [
+              3.2612089906258634,
+              9.813310990088853
+            ]
+          },
+          "pew": {
+            "gain_pp": 3.0912425854068744,
+            "ci95": [
+              -0.029591389682767272,
+              6.001011497412237
+            ]
+          },
+          "anes": {
+            "gain_pp": 5.776692807761302,
+            "ci95": [
+              -0.7344844562054479,
+              10.758685252097331
+            ]
+          }
+        },
+        "meets_threshold": true
+      },
+      {
+        "reference": "p1-b3",
+        "candidate": "p1-b4",
+        "overall": {
+          "gain_pp": 0.1347901342615542,
+          "ci95": [
+            -1.3242283407173019,
+            2.1277999766854587
+          ]
+        },
+        "surveys": {
+          "shed": {
+            "gain_pp": -0.0677337950236776,
+            "ci95": [
+              -2.697977069455734,
+              2.9585882656522453
+            ]
+          },
+          "pew": {
+            "gain_pp": 0.5954105019648779,
+            "ci95": [
+              -2.734489442549881,
+              3.7254708972403265
+            ]
+          },
+          "anes": {
+            "gain_pp": -0.12330630415653765,
+            "ci95": [
+              -2.3719820176361726,
+              3.256139017735437
+            ]
+          }
+        },
+        "meets_threshold": false
+      },
+      {
+        "reference": "p0-b1",
+        "candidate": "p0-b3",
+        "overall": {
+          "gain_pp": 7.671685334564667,
+          "ci95": [
+            4.991031496666156,
+            9.260023593570923
+          ]
+        },
+        "surveys": {
+          "shed": {
+            "gain_pp": 6.970883478923902,
+            "ci95": [
+              3.8855979783438825,
+              10.020995555083342
+            ]
+          },
+          "pew": {
+            "gain_pp": 4.6197498047475065,
+            "ci95": [
+              0.5490022948669762,
+              6.788704716858474
+            ]
+          },
+          "anes": {
+            "gain_pp": 11.42442272002259,
+            "ci95": [
+              6.561310258663093,
+              14.9857390228173
+            ]
+          }
+        },
+        "meets_threshold": true
+      },
+      {
+        "reference": "p0-b1",
+        "candidate": "p0-b4",
+        "overall": {
+          "gain_pp": 9.39313867547137,
+          "ci95": [
+            6.694576721417851,
+            11.069737338027037
+          ]
+        },
+        "surveys": {
+          "shed": {
+            "gain_pp": 9.032564242229633,
+            "ci95": [
+              5.565814080838569,
+              12.317683957257566
+            ]
+          },
+          "pew": {
+            "gain_pp": 6.043617547584169,
+            "ci95": [
+              2.8600742862543433,
+              7.357876419349188
+            ]
+          },
+          "anes": {
+            "gain_pp": 13.10323423660031,
+            "ci95": [
+              7.410111651197638,
+              17.14854128163648
+            ]
+          }
+        },
+        "meets_threshold": true
+      },
+      {
+        "reference": "p0-b1",
+        "candidate": "p1-b2",
+        "overall": {
+          "gain_pp": 4.902687462943812,
+          "ci95": [
+            2.7604028149266844,
+            6.55764597887799
+          ]
+        },
+        "surveys": {
+          "shed": {
+            "gain_pp": 5.473490142702051,
+            "ci95": [
+              2.40785504338001,
+              8.21856047973144
+            ]
+          },
+          "pew": {
+            "gain_pp": 2.01774463942386,
+            "ci95": [
+              -0.8577848164037649,
+              4.407076713952772
+            ]
+          },
+          "anes": {
+            "gain_pp": 7.216827606705525,
+            "ci95": [
+              3.0705468202140316,
+              10.897304891642262
+            ]
+          }
+        },
+        "meets_threshold": true
+      },
+      {
+        "reference": "p0-b1",
+        "candidate": "p1-b3",
+        "overall": {
+          "gain_pp": 10.169197104747617,
+          "ci95": [
+            7.19854759323398,
+            11.737101888448851
+          ]
+        },
+        "surveys": {
+          "shed": {
+            "gain_pp": 12.405083674945288,
+            "ci95": [
+              8.369486807449473,
+              15.564107137764747
+            ]
+          },
+          "pew": {
+            "gain_pp": 5.108987224830734,
+            "ci95": [
+              1.7713123278508365,
+              8.149356535742903
+            ]
+          },
+          "anes": {
+            "gain_pp": 12.993520414466827,
+            "ci95": [
+              7.24835441966078,
+              16.65926642229847
+            ]
+          }
+        },
+        "meets_threshold": true
+      },
+      {
+        "reference": "p0-b1",
+        "candidate": "p1-b4",
+        "overall": {
+          "gain_pp": 10.303987239009171,
+          "ci95": [
+            7.7067812586431,
+            11.927570626897436
+          ]
+        },
+        "surveys": {
+          "shed": {
+            "gain_pp": 12.33734987992161,
+            "ci95": [
+              8.516739560247368,
+              15.371417136037026
+            ]
+          },
+          "pew": {
+            "gain_pp": 5.704397726795612,
+            "ci95": [
+              2.7207441617664507,
+              7.865401839729822
+            ]
+          },
+          "anes": {
+            "gain_pp": 12.87021411031029,
+            "ci95": [
+              7.683548825552081,
+              16.6854377011695
+            ]
+          }
+        },
+        "meets_threshold": true
+      },
+      {
+        "reference": "historical-stratum",
+        "candidate": "p0-b1",
+        "overall": {
+          "gain_pp": -25.319051504285085,
+          "ci95": [
+            -25.884654868854604,
+            -20.621165419404797
+          ]
+        },
+        "surveys": {
+          "shed": {
+            "gain_pp": -26.693852231624316,
+            "ci95": [
+              -28.549105475189936,
+              -21.65872182354454
+            ]
+          },
+          "pew": {
+            "gain_pp": -25.258939453772488,
+            "ci95": [
+              -26.295458114689346,
+              -17.01747457483657
+            ]
+          },
+          "anes": {
+            "gain_pp": -24.004362827458454,
+            "ci95": [
+              -27.074293075843222,
+              -15.965556275837438
+            ]
+          }
+        },
+        "meets_threshold": false
+      },
+      {
+        "reference": "historical-stratum",
+        "candidate": "p0-b2",
+        "overall": {
+          "gain_pp": -23.24856476336295,
+          "ci95": [
+            -24.163741631675748,
+            -18.452531550864155
+          ]
+        },
+        "surveys": {
+          "shed": {
+            "gain_pp": -25.831060037638213,
+            "ci95": [
+              -27.392464309664728,
+              -21.2333943503285
+            ]
+          },
+          "pew": {
+            "gain_pp": -24.10116229049402,
+            "ci95": [
+              -25.596153005646705,
+              -15.82669818140222
+            ]
+          },
+          "anes": {
+            "gain_pp": -19.813471961956612,
+            "ci95": [
+              -24.05812123663055,
+              -11.139455021906361
+            ]
+          }
+        },
+        "meets_threshold": false
+      },
+      {
+        "reference": "historical-stratum",
+        "candidate": "p0-b3",
+        "overall": {
+          "gain_pp": -17.647366169720417,
+          "ci95": [
+            -18.723797712508805,
+            -13.42854484007891
+          ]
+        },
+        "surveys": {
+          "shed": {
+            "gain_pp": -19.722968752700414,
+            "ci95": [
+              -21.974807923457885,
+              -14.480427909248537
+            ]
+          },
+          "pew": {
+            "gain_pp": -20.63918964902498,
+            "ci95": [
+              -23.170007804359958,
+              -12.6430569625018
+            ]
+          },
+          "anes": {
+            "gain_pp": -12.579940107435863,
+            "ci95": [
+              -16.014622900881513,
+              -5.757310564615977
+            ]
+          }
+        },
+        "meets_threshold": false
+      },
+      {
+        "reference": "historical-stratum",
+        "candidate": "p0-b4",
+        "overall": {
+          "gain_pp": -15.925912828813715,
+          "ci95": [
+            -17.073174826325573,
+            -11.845505200529352
+          ]
+        },
+        "surveys": {
+          "shed": {
+            "gain_pp": -17.661287989394683,
+            "ci95": [
+              -19.55325829774223,
+              -13.38886177604856
+            ]
+          },
+          "pew": {
+            "gain_pp": -19.21532190618832,
+            "ci95": [
+              -21.32449218526649,
+              -11.735749029219097
+            ]
+          },
+          "anes": {
+            "gain_pp": -10.901128590858143,
+            "ci95": [
+              -15.160549793481065,
+              -4.426463631533532
+            ]
+          }
+        },
+        "meets_threshold": false
+      },
+      {
+        "reference": "historical-stratum",
+        "candidate": "p1-b1",
+        "overall": {
+          "gain_pp": -22.348042024372134,
+          "ci95": [
+            -23.164715073941245,
+            -17.5672126812361
+          ]
+        },
+        "surveys": {
+          "shed": {
+            "gain_pp": -22.93530624538622,
+            "ci95": [
+              -24.946373854612656,
+              -17.47759850989772
+            ]
+          },
+          "pew": {
+            "gain_pp": -23.753028731315535,
+            "ci95": [
+              -25.142803187525992,
+              -15.54034673521198
+            ]
+          },
+          "anes": {
+            "gain_pp": -20.355791096414652,
+            "ci95": [
+              -23.983155720361665,
+              -11.461910479499826
+            ]
+          }
+        },
+        "meets_threshold": false
+      },
+      {
+        "reference": "historical-stratum",
+        "candidate": "p1-b2",
+        "overall": {
+          "gain_pp": -20.41636404134127,
+          "ci95": [
+            -21.42833337292491,
+            -15.993784745975912
+          ]
+        },
+        "surveys": {
+          "shed": {
+            "gain_pp": -21.220362088922265,
+            "ci95": [
+              -23.40237431391468,
+              -16.857020168629187
+            ]
+          },
+          "pew": {
+            "gain_pp": -23.241194814348628,
+            "ci95": [
+              -25.11802897282937,
+              -15.25464459081416
+            ]
+          },
+          "anes": {
+            "gain_pp": -16.78753522075293,
+            "ci95": [
+              -20.37204682781217,
+              -8.947641440118655
+            ]
+          }
+        },
+        "meets_threshold": false
+      },
+      {
+        "reference": "historical-stratum",
+        "candidate": "p1-b3",
+        "overall": {
+          "gain_pp": -15.14985439953747,
+          "ci95": [
+            -16.457187231235384,
+            -11.157439307117208
+          ]
+        },
+        "surveys": {
+          "shed": {
+            "gain_pp": -14.288768556679026,
+            "ci95": [
+              -16.720889668041643,
+              -10.744480787926381
+            ]
+          },
+          "pew": {
+            "gain_pp": -20.149952228941753,
+            "ci95": [
+              -22.624286120638693,
+              -11.962483231970824
+            ]
+          },
+          "anes": {
+            "gain_pp": -11.010842412991625,
+            "ci95": [
+              -15.19604527238542,
+              -4.921438126179824
+            ]
+          }
+        },
+        "meets_threshold": false
+      },
+      {
+        "reference": "historical-stratum",
+        "candidate": "p1-b4",
+        "overall": {
+          "gain_pp": -15.015064265275916,
+          "ci95": [
+            -15.941243742522252,
+            -10.979505722544497
+          ]
+        },
+        "surveys": {
+          "shed": {
+            "gain_pp": -14.356502351702703,
+            "ci95": [
+              -16.720443478466233,
+              -10.454567090704245
+            ]
+          },
+          "pew": {
+            "gain_pp": -19.554541726976876,
+            "ci95": [
+              -21.049386963198813,
+              -11.946060484939052
+            ]
+          },
+          "anes": {
+            "gain_pp": -11.134148717148165,
+            "ci95": [
+              -15.11543511755447,
+              -4.556813463582486
+            ]
+          }
+        },
+        "meets_threshold": false
+      }
+    ]
+  },
+  "commerce": {
+    "origin": {
+      "cells": {
+        "P0+B1": {
+          "tv_pp": 13.96518530063912
+        },
+        "P0+B3": {
+          "tv_pp": 11.278548194144108
+        },
+        "P1+B1": {
+          "tv_pp": 14.041629463266396
+        },
+        "P1+B3": {
+          "tv_pp": 10.33711773099355
+        },
+        "统计基线": {
+          "tv_pp": 2.618437467441329
+        }
+      },
+      "comparisons": [
+        {
+          "reference": "P0+B1",
+          "candidate": "P1+B3",
+          "gain_pp": 3.6280675696455713,
+          "ci95": [
+            1.645858592235764,
+            5.307781461361066
+          ],
+          "accuracy_gain_pp": 0.6111668897813445,
+          "accuracy_ci95": [
+            -1.2517911925479843,
+            2.345564898482812
+          ],
+          "passes": true
+        },
+        {
+          "reference": "P0+B1",
+          "candidate": "P1+B1",
+          "gain_pp": -0.0764441626272756,
+          "ci95": [
+            -1.4885792063890602,
+            1.2495744937306659
+          ],
+          "accuracy_gain_pp": 0.09231369924140154,
+          "accuracy_ci95": [
+            -1.3404032797858143,
+            1.525854808121364
+          ],
+          "passes": false
+        },
+        {
+          "reference": "P0+B3",
+          "candidate": "P1+B3",
+          "gain_pp": 0.9414304631505583,
+          "ci95": [
+            -0.9310630467047424,
+            2.6502806552293614
+          ],
+          "accuracy_gain_pp": 0.2665383757251334,
+          "accuracy_ci95": [
+            -1.6008826974565036,
+            1.9779918284248308
+          ],
+          "passes": false
+        },
+        {
+          "reference": "P0+B1",
+          "candidate": "P0+B3",
+          "gain_pp": 2.686637106495013,
+          "ci95": [
+            0.9525333781157026,
+            4.310378710850925
+          ],
+          "accuracy_gain_pp": 0.3446285140562111,
+          "accuracy_ci95": [
+            -1.4035691376617732,
+            1.9702295292280034
+          ],
+          "passes": true
+        },
+        {
+          "reference": "P1+B1",
+          "candidate": "P1+B3",
+          "gain_pp": 3.704511732272847,
+          "ci95": [
+            1.8715813177631877,
+            5.359758124224921
+          ],
+          "accuracy_gain_pp": 0.5188531905399429,
+          "accuracy_ci95": [
+            -1.2769299419901892,
+            2.282994477911649
+          ],
+          "passes": true
+        },
+        {
+          "reference": "统计基线",
+          "candidate": "P1+B3",
+          "gain_pp": -7.718680263552221,
+          "ci95": [
+            -9.134513604132309,
+            -6.0304885703632145
+          ],
+          "accuracy_gain_pp": -4.817826863007582,
+          "accuracy_ci95": [
+            -6.900531989067385,
+            -2.7833591309683285
+          ],
+          "passes": false
+        }
+      ]
+    },
+    "packaging": {
+      "cells": {
+        "P0+B1": {
+          "tv_pp": 36.89623535538203
+        },
+        "P0+B3": {
+          "tv_pp": 37.96135442891503
+        },
+        "P1+B1": {
+          "tv_pp": 38.54969840573787
+        },
+        "P1+B3": {
+          "tv_pp": 38.951377742606546
+        },
+        "统计基线": {
+          "tv_pp": 7.321383261245421
+        }
+      },
+      "comparisons": [
+        {
+          "reference": "P0+B1",
+          "candidate": "P1+B3",
+          "gain_pp": -2.055142387224514,
+          "ci95": [
+            -5.26943131618763,
+            1.4146055883193738
+          ],
+          "accuracy_gain_pp": -0.7432868577330183,
+          "accuracy_ci95": [
+            -3.880591595662285,
+            2.4320657436095963
+          ],
+          "passes": false
+        },
+        {
+          "reference": "P0+B1",
+          "candidate": "P1+B1",
+          "gain_pp": -1.653463050355839,
+          "ci95": [
+            -5.014084587337043,
+            2.2384864257491373
+          ],
+          "accuracy_gain_pp": -0.15104570100696435,
+          "accuracy_ci95": [
+            -2.993629776658928,
+            2.922032339271875
+          ],
+          "passes": false
+        },
+        {
+          "reference": "P0+B3",
+          "candidate": "P1+B3",
+          "gain_pp": -0.9900233136915162,
+          "ci95": [
+            -4.470875296236975,
+            2.404555510117162
+          ],
+          "accuracy_gain_pp": -1.6831267751097343,
+          "accuracy_ci95": [
+            -4.921580493157765,
+            1.3476471727343151
+          ],
+          "passes": false
+        },
+        {
+          "reference": "P0+B1",
+          "candidate": "P0+B3",
+          "gain_pp": -1.0651190735329976,
+          "ci95": [
+            -3.985384045923465,
+            2.588715860448279
+          ],
+          "accuracy_gain_pp": 0.939839917376716,
+          "accuracy_ci95": [
+            -2.0393670926930074,
+            3.8027772398657493
+          ],
+          "passes": false
+        },
+        {
+          "reference": "P1+B1",
+          "candidate": "P1+B3",
+          "gain_pp": -0.40167933686867485,
+          "ci95": [
+            -3.6460601778791633,
+            2.856960559011929
+          ],
+          "accuracy_gain_pp": -0.5922411567260539,
+          "accuracy_ci95": [
+            -3.7822061386522066,
+            2.414060482829842
+          ],
+          "passes": false
+        },
+        {
+          "reference": "统计基线",
+          "candidate": "P1+B3",
+          "gain_pp": -31.629994481361123,
+          "ci95": [
+            -35.38029371456429,
+            -24.64790142685505
+          ],
+          "accuracy_gain_pp": -14.452943454686284,
+          "accuracy_ci95": [
+            -19.61451878388846,
+            -9.158597986057316
+          ],
+          "passes": false
+        }
+      ]
+    },
+    "pew": {
+      "cells": {
+        "P0+B1": {
+          "tv_pp": 20.029542670797323
+        },
+        "P0+B3": {
+          "tv_pp": 26.220062287238317
+        },
+        "P1+B1": {
+          "tv_pp": 25.009738047542367
+        },
+        "P1+B3": {
+          "tv_pp": 29.659251081428348
+        },
+        "统计基线": {
+          "tv_pp": 2.3782602879276493
+        }
+      },
+      "comparisons": [
+        {
+          "reference": "P0+B1",
+          "candidate": "P1+B3",
+          "gain_pp": -9.629708410631025,
+          "ci95": [
+            -15.830194334845187,
+            -2.3846110158694938
+          ],
+          "accuracy_gain_pp": -0.9309005038362486,
+          "accuracy_ci95": [
+            -5.79916264970101,
+            4.098713706780699
+          ],
+          "passes": false
+        },
+        {
+          "reference": "P0+B1",
+          "candidate": "P1+B1",
+          "gain_pp": -4.980195376745044,
+          "ci95": [
+            -10.534570294766098,
+            0.15929034844846243
+          ],
+          "accuracy_gain_pp": -0.08557096748096882,
+          "accuracy_ci95": [
+            -4.085826176236336,
+            3.3669103553392508
+          ],
+          "passes": false
+        },
+        {
+          "reference": "P0+B3",
+          "candidate": "P1+B3",
+          "gain_pp": -3.4391887941900308,
+          "ci95": [
+            -6.7546943359053335,
+            -0.17781746852115538
+          ],
+          "accuracy_gain_pp": -0.32453359665924353,
+          "accuracy_ci95": [
+            -3.5043934012956184,
+            2.5265045006168383
+          ],
+          "passes": false
+        },
+        {
+          "reference": "P0+B1",
+          "candidate": "P0+B3",
+          "gain_pp": -6.190519616440994,
+          "ci95": [
+            -13.792563756761513,
+            0.5796953752231931
+          ],
+          "accuracy_gain_pp": -0.606366907177005,
+          "accuracy_ci95": [
+            -4.306191830121782,
+            3.2582199978063655
+          ],
+          "passes": false
+        },
+        {
+          "reference": "P1+B1",
+          "candidate": "P1+B3",
+          "gain_pp": -4.649513033885981,
+          "ci95": [
+            -9.497765545620005,
+            0.17496188566416862
+          ],
+          "accuracy_gain_pp": -0.8453295363552797,
+          "accuracy_ci95": [
+            -4.432894427930091,
+            2.7697325276639027
+          ],
+          "passes": false
+        },
+        {
+          "reference": "统计基线",
+          "candidate": "P1+B3",
+          "gain_pp": -27.2809907935007,
+          "ci95": [
+            -30.310944656906752,
+            -17.16599110724241
+          ],
+          "accuracy_gain_pp": -5.147012979038379,
+          "accuracy_ci95": [
+            -12.18147691793321,
+            1.443779383810692
+          ],
+          "passes": false
+        }
+      ]
+    }
+  },
+  "calibration": {
+    "summary": {
+      "statistics_rich": {
+        "brier": 0.5815805258446816,
+        "tv_pp": 4.593920788039006
+      },
+      "raw_model": {
+        "brier": 0.6538282052743097,
+        "tv_pp": 18.076963109681422
+      },
+      "calibrated_model": {
+        "brier": 0.610436635543688,
+        "tv_pp": 5.429655419629518
+      },
+      "blend": {
+        "brier": 0.5815805258446816,
+        "tv_pp": 4.593920788039006
+      }
+    },
+    "model_weight": 0.0,
+    "versus_statistics": {
+      "raw_model": {
+        "brier_gain": -0.07224767942962818,
+        "interval": [
+          -0.09247261677303281,
+          -0.052170362417729654
+        ]
+      },
+      "calibrated_model": {
+        "brier_gain": -0.028856109699006427,
+        "interval": [
+          -0.04006130788498753,
+          -0.018266858793129358
+        ]
+      },
+      "blend": {
+        "brier_gain": 0.0,
+        "interval": [
+          0.0,
+          0.0
+        ]
+      }
+    }
+  },
+  "formal": {
+    "dryer": {
+      "methods": {
+        "none": {
+          "brier": 0.6194387756849311,
+          "people": 292,
+          "tasks": 2336
+        },
+        "basic": {
+          "brier": 0.6204107876712331,
+          "people": 292,
+          "tasks": 2336
+        },
+        "rich": {
+          "brier": 0.609650012842466,
+          "people": 292,
+          "tasks": 2336
+        },
+        "shuffled": {
+          "brier": 0.6040601241438355,
+          "people": 292,
+          "tasks": 2336
+        },
+        "single": {
+          "brier": 0.9571917808219178,
+          "people": 292,
+          "tasks": 2336
+        },
+        "statistics_none": {
+          "brier": 0.5234343387141099,
+          "people": 292,
+          "tasks": 2336
+        },
+        "statistics_basic": {
+          "brier": 0.5180393874840934,
+          "people": 292,
+          "tasks": 2336
+        },
+        "statistics_rich": {
+          "brier": 0.5227357766260231,
+          "people": 292,
+          "tasks": 2336
+        },
+        "uniform": {
+          "brier": 0.6666666666666646,
+          "people": 292,
+          "tasks": 2336
+        },
+        "history": {
+          "brier": 0.5264545738475729,
+          "people": 292,
+          "tasks": 2336
+        },
+        "calibrated": {
+          "brier": 0.5250021995761589,
+          "people": 292,
+          "tasks": 2336
+        },
+        "probability_argmax": {
+          "brier": 0.9323630136986302,
+          "people": 292,
+          "tasks": 2336
+        }
+      },
+      "comparisons": {
+        "none__to__basic": {
+          "reference_brier": 0.6194387756849311,
+          "candidate_brier": 0.6204107876712331,
+          "improvement": -0.0009720119863020349,
+          "improvement_95_ci": [
+            -0.017610065068493858,
+            0.014699736429794153
+          ],
+          "relative_improvement": -0.0015691816922943733,
+          "relative_improvement_95_ci": [
+            -0.028752237178904367,
+            0.023537923813612718
+          ],
+          "passes_2_percent_gate": false,
+          "people": 292,
+          "tasks": 2336,
+          "replicates": 2000,
+          "seed": 20261109,
+          "resampling": "paired respondents within original strata; within-person task means"
+        },
+        "basic__to__rich": {
+          "reference_brier": 0.6204107876712331,
+          "candidate_brier": 0.609650012842466,
+          "improvement": 0.010760774828767139,
+          "improvement_95_ci": [
+            -0.00424541821489629,
+            0.026639358390412118
+          ],
+          "relative_improvement": 0.017344596584399605,
+          "relative_improvement_95_ci": [
+            -0.006971688033859063,
+            0.04281987053160667
+          ],
+          "passes_2_percent_gate": false,
+          "people": 292,
+          "tasks": 2336,
+          "replicates": 2000,
+          "seed": 20261109,
+          "resampling": "paired respondents within original strata; within-person task means"
+        },
+        "shuffled__to__rich": {
+          "reference_brier": 0.6040601241438355,
+          "candidate_brier": 0.609650012842466,
+          "improvement": -0.00558988869863053,
+          "improvement_95_ci": [
+            -0.02052272375856227,
+            0.010105378809931806
+          ],
+          "relative_improvement": -0.009253861453863317,
+          "relative_improvement_95_ci": [
+            -0.034462287866473325,
+            0.016790916722655175
+          ],
+          "passes_2_percent_gate": false,
+          "people": 292,
+          "tasks": 2336,
+          "replicates": 2000,
+          "seed": 20261109,
+          "resampling": "paired respondents within original strata; within-person task means"
+        },
+        "single__to__rich": {
+          "reference_brier": 0.9571917808219178,
+          "candidate_brier": 0.609650012842466,
+          "improvement": 0.3475417679794518,
+          "improvement_95_ci": [
+            0.3107956481164386,
+            0.3835087347602742
+          ],
+          "relative_improvement": 0.36308478085867596,
+          "relative_improvement_95_ci": [
+            0.33832102172043244,
+            0.38614303948858214
+          ],
+          "passes_2_percent_gate": true,
+          "people": 292,
+          "tasks": 2336,
+          "replicates": 2000,
+          "seed": 20261109,
+          "resampling": "paired respondents within original strata; within-person task means"
+        },
+        "probability_argmax__to__rich": {
+          "reference_brier": 0.9323630136986302,
+          "candidate_brier": 0.609650012842466,
+          "improvement": 0.32271300085616417,
+          "improvement_95_ci": [
+            0.29304832099743156,
+            0.35197917859589045
+          ],
+          "relative_improvement": 0.34612376951331475,
+          "relative_improvement_95_ci": [
+            0.3297576503394926,
+            0.3603782193376152
+          ],
+          "passes_2_percent_gate": true,
+          "people": 292,
+          "tasks": 2336,
+          "replicates": 2000,
+          "seed": 20261109,
+          "resampling": "paired respondents within original strata; within-person task means"
+        },
+        "statistics_rich__to__rich": {
+          "reference_brier": 0.5227357766260231,
+          "candidate_brier": 0.609650012842466,
+          "improvement": -0.0869142362164429,
+          "improvement_95_ci": [
+            -0.10743310637396097,
+            -0.06674627138288602
+          ],
+          "relative_improvement": -0.16626800785939563,
+          "relative_improvement_95_ci": [
+            -0.2072809722652399,
+            -0.12527125177124326
+          ],
+          "passes_2_percent_gate": false,
+          "people": 292,
+          "tasks": 2336,
+          "replicates": 2000,
+          "seed": 20261109,
+          "resampling": "paired respondents within original strata; within-person task means"
+        },
+        "rich__to__calibrated": {
+          "reference_brier": 0.609650012842466,
+          "candidate_brier": 0.5250021995761589,
+          "improvement": 0.0846478132663071,
+          "improvement_95_ci": [
+            0.06950254984351197,
+            0.09961981887185821
+          ],
+          "relative_improvement": 0.1388465701356102,
+          "relative_improvement_95_ci": [
+            0.11608411542387095,
+            0.1598858593991316
+          ],
+          "passes_2_percent_gate": true,
+          "people": 292,
+          "tasks": 2336,
+          "replicates": 2000,
+          "seed": 20261109,
+          "resampling": "paired respondents within original strata; within-person task means"
+        },
+        "statistics_rich__to__calibrated": {
+          "reference_brier": 0.5227357766260231,
+          "candidate_brier": 0.5250021995761589,
+          "improvement": -0.0022664229501357935,
+          "improvement_95_ci": [
+            -0.007763406564467573,
+            0.003718789331608065
+          ],
+          "relative_improvement": -0.004335695109227703,
+          "relative_improvement_95_ci": [
+            -0.015180925221533453,
+            0.006927998173257548
+          ],
+          "passes_2_percent_gate": false,
+          "people": 292,
+          "tasks": 2336,
+          "replicates": 2000,
+          "seed": 20261109,
+          "resampling": "paired respondents within original strata; within-person task means"
+        }
+      },
+      "calibration_llm_weight": 0.25
+    },
+    "swiss": {
+      "methods": {
+        "none": {
+          "brier": 0.4087955556368961,
+          "people": 683,
+          "tasks": 2732
+        },
+        "basic": {
+          "brier": 0.42795662079062985,
+          "people": 683,
+          "tasks": 2732
+        },
+        "rich": {
+          "brier": 0.4353187752562227,
+          "people": 683,
+          "tasks": 2732
+        },
+        "shuffled": {
+          "brier": 0.43628607101024913,
+          "people": 683,
+          "tasks": 2732
+        },
+        "single": {
+          "brier": 0.6251830161054173,
+          "people": 683,
+          "tasks": 2732
+        },
+        "statistics_none": {
+          "brier": 0.2910649706691223,
+          "people": 683,
+          "tasks": 2732
+        },
+        "statistics_basic": {
+          "brier": 0.2951013640525082,
+          "people": 683,
+          "tasks": 2732
+        },
+        "statistics_rich": {
+          "brier": 0.30000359356001355,
+          "people": 683,
+          "tasks": 2732
+        },
+        "uniform": {
+          "brier": 0.5,
+          "people": 683,
+          "tasks": 2732
+        },
+        "history": {
+          "brier": 0.4992679355783309,
+          "people": 683,
+          "tasks": 2732
+        },
+        "calibrated": {
+          "brier": 0.30000359356001355,
+          "people": 683,
+          "tasks": 2732
+        },
+        "probability_argmax": {
+          "brier": 0.6610541727672035,
+          "people": 683,
+          "tasks": 2732
+        }
+      },
+      "comparisons": {
+        "none__to__basic": {
+          "reference_brier": 0.4087955556368961,
+          "candidate_brier": 0.42795662079062985,
+          "improvement": -0.019161065153733725,
+          "improvement_95_ci": [
+            -0.03491664749268006,
+            -0.002955015592973448
+          ],
+          "relative_improvement": -0.0468719996817997,
+          "relative_improvement_95_ci": [
+            -0.08755643672186979,
+            -0.007028430340578107
+          ],
+          "passes_2_percent_gate": false,
+          "people": 683,
+          "tasks": 2732,
+          "replicates": 2000,
+          "seed": 20261109,
+          "resampling": "paired respondents within original strata; within-person task means"
+        },
+        "basic__to__rich": {
+          "reference_brier": 0.42795662079062985,
+          "candidate_brier": 0.4353187752562227,
+          "improvement": -0.007362154465592852,
+          "improvement_95_ci": [
+            -0.023614117532941244,
+            0.008335213598097423
+          ],
+          "relative_improvement": -0.017203039065014615,
+          "relative_improvement_95_ci": [
+            -0.05508400174390155,
+            0.019027483328409048
+          ],
+          "passes_2_percent_gate": false,
+          "people": 683,
+          "tasks": 2732,
+          "replicates": 2000,
+          "seed": 20261109,
+          "resampling": "paired respondents within original strata; within-person task means"
+        },
+        "shuffled__to__rich": {
+          "reference_brier": 0.43628607101024913,
+          "candidate_brier": 0.4353187752562227,
+          "improvement": 0.0009672957540264315,
+          "improvement_95_ci": [
+            -0.015871043685944445,
+            0.01673927723279759
+          ],
+          "relative_improvement": 0.0022171135369657676,
+          "relative_improvement_95_ci": [
+            -0.03694122860410396,
+            0.03836728710311233
+          ],
+          "passes_2_percent_gate": false,
+          "people": 683,
+          "tasks": 2732,
+          "replicates": 2000,
+          "seed": 20261109,
+          "resampling": "paired respondents within original strata; within-person task means"
+        },
+        "single__to__rich": {
+          "reference_brier": 0.6251830161054173,
+          "candidate_brier": 0.4353187752562227,
+          "improvement": 0.18986424084919457,
+          "improvement_95_ci": [
+            0.15484050234260657,
+            0.22460010236090794
+          ],
+          "relative_improvement": 0.3036938559718967,
+          "relative_improvement_95_ci": [
+            0.260974962320314,
+            0.34159136824197417
+          ],
+          "passes_2_percent_gate": true,
+          "people": 683,
+          "tasks": 2732,
+          "replicates": 2000,
+          "seed": 20261109,
+          "resampling": "paired respondents within original strata; within-person task means"
+        },
+        "probability_argmax__to__rich": {
+          "reference_brier": 0.6610541727672035,
+          "candidate_brier": 0.4353187752562227,
+          "improvement": 0.22573539751098076,
+          "improvement_95_ci": [
+            0.20243099870058523,
+            0.25021500344070235
+          ],
+          "relative_improvement": 0.34147791029900304,
+          "relative_improvement_95_ci": [
+            0.32197258847668764,
+            0.359569143540769
+          ],
+          "passes_2_percent_gate": true,
+          "people": 683,
+          "tasks": 2732,
+          "replicates": 2000,
+          "seed": 20261109,
+          "resampling": "paired respondents within original strata; within-person task means"
+        },
+        "statistics_rich__to__rich": {
+          "reference_brier": 0.30000359356001355,
+          "candidate_brier": 0.4353187752562227,
+          "improvement": -0.13531518169620915,
+          "improvement_95_ci": [
+            -0.15290622432798118,
+            -0.117563913194138
+          ],
+          "relative_improvement": -0.4510452027940136,
+          "relative_improvement_95_ci": [
+            -0.5316231485784173,
+            -0.37458254210081465
+          ],
+          "passes_2_percent_gate": false,
+          "people": 683,
+          "tasks": 2732,
+          "replicates": 2000,
+          "seed": 20261109,
+          "resampling": "paired respondents within original strata; within-person task means"
+        },
+        "rich__to__calibrated": {
+          "reference_brier": 0.4353187752562227,
+          "candidate_brier": 0.30000359356001355,
+          "improvement": 0.13531518169620915,
+          "improvement_95_ci": [
+            0.11756391319413799,
+            0.15290622432798115
+          ],
+          "relative_improvement": 0.3108415933049625,
+          "relative_improvement_95_ci": [
+            0.27250639735297055,
+            0.3470978785745071
+          ],
+          "passes_2_percent_gate": true,
+          "people": 683,
+          "tasks": 2732,
+          "replicates": 2000,
+          "seed": 20261109,
+          "resampling": "paired respondents within original strata; within-person task means"
+        },
+        "statistics_rich__to__calibrated": {
+          "reference_brier": 0.30000359356001355,
+          "candidate_brier": 0.30000359356001355,
+          "improvement": 0.0,
+          "improvement_95_ci": [
+            0.0,
+            0.0
+          ],
+          "relative_improvement": 0.0,
+          "relative_improvement_95_ci": [
+            0.0,
+            0.0
+          ],
+          "passes_2_percent_gate": false,
+          "people": 683,
+          "tasks": 2732,
+          "replicates": 2000,
+          "seed": 20261109,
+          "resampling": "paired respondents within original strata; within-person task means"
+        }
+      },
+      "calibration_llm_weight": 0
+    }
+  },
+  "amazon": {
+    "accounts": 500,
+    "tasks": {
+      "price": {
+        "results": {
+          "recent": {
+            "brier": 0.19524885181420296,
+            "tv_pp": 4.634969370906196,
+            "shares": [
+              0.4602106248064299,
+              0.29917502011954944,
+              0.11807721909050053,
+              0.027834378062667992,
+              0.029098054344173358,
+              0.06560470357667768
+            ]
+          },
+          "seasonal": {
+            "brier": 0.22965987064249713,
+            "tv_pp": 4.495218190117896,
+            "shares": [
+              0.45652175789918226,
+              0.30411191998013054,
+              0.11732425481991052,
+              0.02797815189610829,
+              0.031389409443538456,
+              0.06267450596112999
+            ]
+          },
+          "model": {
+            "brier": 0.24583244410476135,
+            "tv_pp": 5.169500478146134,
+            "shares": [
+              0.4649535019001052,
+              0.3069723789779204,
+              0.11424799460384703,
+              0.030040095127882374,
+              0.02970048832289783,
+              0.05408554106734724
+            ]
+          },
+          "blend": {
+            "brier": 0.19744070179262344,
+            "tv_pp": 4.721847404452976,
+            "shares": [
+              0.4609814907666553,
+              0.30044233495922584,
+              0.1174548502724772,
+              0.028192876115617466,
+              0.02919596871941658,
+              0.06373247916660758
+            ]
+          }
+        },
+        "comparisons": {
+          "model": {
+            "gain": -0.05058359229055838,
+            "interval": [
+              -0.07026791631814419,
+              -0.032183464042295176
+            ]
+          },
+          "blend": {
+            "gain": -0.0021918499784204302,
+            "interval": [
+              -0.004575636387850281,
+              0.0001301181624343209
+            ]
+          }
+        }
+      },
+      "spend": {
+        "results": {
+          "recent": {
+            "brier": 0.16880445659828414,
+            "tv_pp": 2.8202149755886405,
+            "shares": [
+              0.03378734372745713,
+              0.020086723989851837,
+              0.018909789862712568,
+              0.011869971692984508,
+              0.01433125927408134,
+              0.021645937787170874,
+              0.007051617016091857,
+              0.008781745030915262,
+              0.009354036610780402,
+              0.00916293504626561,
+              0.0010458351774171777,
+              0.0033055852171178972,
+              0.7750625159904748,
+              0.06560470357667768
+            ]
+          },
+          "seasonal": {
+            "brier": 0.20770838807491793,
+            "tv_pp": 4.9032538681297835,
+            "shares": [
+              0.03918435180977146,
+              0.03949396577425959,
+              0.01587860924174459,
+              0.011583060275006166,
+              0.012797825391867756,
+              0.025690104020863257,
+              0.005843130530818804,
+              0.004894487307206818,
+              0.007705110876098597,
+              0.010346880844061206,
+              0.0009970659915494423,
+              0.003924166233528775,
+              0.7589867357420923,
+              0.06267450596112999
+            ]
+          },
+          "model": {
+            "brier": 0.24010882164051514,
+            "tv_pp": 3.572043908538971,
+            "shares": [
+              0.03166252703022926,
+              0.017357848834341313,
+              0.021702531463150286,
+              0.012827188414170257,
+              0.016654876610976067,
+              0.023165398106232752,
+              0.008883253121469923,
+              0.01006992908191852,
+              0.01532773204927819,
+              0.010669852975249399,
+              0.0012631536270290152,
+              0.004193302004440578,
+              0.7715039454225425,
+              0.05471846125897215
+            ]
+          },
+          "blend": {
+            "brier": 0.16880445659828414,
+            "tv_pp": 2.8202149755886405,
+            "shares": [
+              0.03378734372745713,
+              0.020086723989851837,
+              0.018909789862712568,
+              0.011869971692984508,
+              0.01433125927408134,
+              0.021645937787170874,
+              0.007051617016091857,
+              0.008781745030915262,
+              0.009354036610780402,
+              0.00916293504626561,
+              0.0010458351774171777,
+              0.0033055852171178972,
+              0.7750625159904748,
+              0.06560470357667768
+            ]
+          }
+        },
+        "comparisons": {
+          "model": {
+            "gain": -0.071304365042231,
+            "interval": [
+              -0.09710660184546603,
+              -0.047803880608948184
+            ]
+          },
+          "blend": {
+            "gain": 0.0,
+            "interval": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "repeat": {
+        "results": {
+          "recent": {
+            "brier": 0.330794758830549,
+            "tv_pp": 1.7877902988731,
+            "shares": [
+              0.41787790298873057,
+              0.58212209701127
+            ]
+          },
+          "seasonal": {
+            "brier": 0.3850688970182786,
+            "tv_pp": 8.77965049812183,
+            "shares": [
+              0.4877965049812192,
+              0.5122034950187807
+            ]
+          },
+          "model": {
+            "brier": 0.3679285496888889,
+            "tv_pp": 1.45572,
+            "shares": [
+              0.3854428,
+              0.6145571999999997
+            ]
+          },
+          "blend": {
+            "brier": 0.330794758830549,
+            "tv_pp": 1.7877902988731,
+            "shares": [
+              0.41787790298873057,
+              0.58212209701127
+            ]
+          }
+        },
+        "comparisons": {
+          "model": {
+            "gain": -0.03713379085833993,
+            "interval": [
+              -0.06098719515070848,
+              -0.01288537623159569
+            ]
+          },
+          "blend": {
+            "gain": 0.0,
+            "interval": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      }
+    }
+  },
+  "history": {
+    "studies": {
+      "dryer": {
+        "people": 48,
+        "tasks": 96,
+        "completion": {
+          "background": 1.0,
+          "own": 1.0,
+          "other": 1.0
+        },
+        "excluded_incomplete_people": 0,
+        "methods": {
+          "background": {
+            "brier": 0.62209375,
+            "accuracy": 0.5208333333333334,
+            "refusal_true_tasks": 16,
+            "refusal_hits": 1,
+            "refusal_recall": 0.0625,
+            "argmax_ties": 4
+          },
+          "own": {
+            "brier": 0.7004562499999999,
+            "accuracy": 0.4583333333333333,
+            "refusal_true_tasks": 16,
+            "refusal_hits": 6,
+            "refusal_recall": 0.375,
+            "argmax_ties": 2
+          },
+          "other": {
+            "brier": 0.8026458333333334,
+            "accuracy": 0.3645833333333333,
+            "refusal_true_tasks": 16,
+            "refusal_hits": 4,
+            "refusal_recall": 0.25,
+            "argmax_ties": 2
+          },
+          "statistics": {
+            "brier": 0.6111095725331285,
+            "accuracy": 0.4791666666666667,
+            "refusal_true_tasks": 16,
+            "refusal_hits": 1,
+            "refusal_recall": 0.0625,
+            "argmax_ties": 0
+          }
+        },
+        "comparisons": {
+          "background": {
+            "reference_brier": 0.62209375,
+            "candidate_brier": 0.7004562499999999,
+            "improvement": -0.07836249999999989,
+            "improvement_95_ci": [
+              -0.18500348958333307,
+              0.026349166666666386
+            ],
+            "relative_improvement": -0.12596574069422797,
+            "relative_improvement_95_ci": [
+              -0.32119739134183484,
+              0.040752524867927194
+            ],
+            "passes_2_percent_gate": false,
+            "people": 48,
+            "tasks": 96,
+            "replicates": 2000,
+            "seed": 20261109,
+            "resampling": "paired respondents within original strata; within-person task means"
+          },
+          "other": {
+            "reference_brier": 0.8026458333333332,
+            "candidate_brier": 0.7004562499999999,
+            "improvement": 0.10218958333333328,
+            "improvement_95_ci": [
+              -0.011249114583333171,
+              0.22117541666666635
+            ],
+            "relative_improvement": 0.12731590832403245,
+            "relative_improvement_95_ci": [
+              -0.015621905496555576,
+              0.25589567552707293
+            ],
+            "passes_2_percent_gate": false,
+            "people": 48,
+            "tasks": 96,
+            "replicates": 2000,
+            "seed": 20261109,
+            "resampling": "paired respondents within original strata; within-person task means"
+          }
+        },
+        "screening_point_gate": false,
+        "both_intervals_positive": false,
+        "failures_by_stratum": {}
+      },
+      "swiss": {
+        "people": 48,
+        "tasks": 96,
+        "completion": {
+          "background": 1.0,
+          "own": 1.0,
+          "other": 1.0
+        },
+        "excluded_incomplete_people": 0,
+        "methods": {
+          "background": {
+            "brier": 0.4683458333333334,
+            "accuracy": 0.6354166666666666,
+            "refusal_true_tasks": 0,
+            "refusal_hits": 0,
+            "refusal_recall": null,
+            "argmax_ties": 11
+          },
+          "own": {
+            "brier": 0.5367604166666667,
+            "accuracy": 0.59375,
+            "refusal_true_tasks": 0,
+            "refusal_hits": 0,
+            "refusal_recall": null,
+            "argmax_ties": 1
+          },
+          "other": {
+            "brier": 0.41484583333333336,
+            "accuracy": 0.6875,
+            "refusal_true_tasks": 0,
+            "refusal_hits": 0,
+            "refusal_recall": null,
+            "argmax_ties": 0
+          },
+          "statistics": {
+            "brier": 0.2968550346894771,
+            "accuracy": 0.75,
+            "refusal_true_tasks": 0,
+            "refusal_hits": 0,
+            "refusal_recall": null,
+            "argmax_ties": 0
+          }
+        },
+        "comparisons": {
+          "background": {
+            "reference_brier": 0.46834583333333346,
+            "candidate_brier": 0.5367604166666665,
+            "improvement": -0.06841458333333306,
+            "improvement_95_ci": [
+              -0.1734792708333335,
+              0.03862453124999986
+            ],
+            "relative_improvement": -0.1460770620001239,
+            "relative_improvement_95_ci": [
+              -0.3995660750678891,
+              0.0779045457363984
+            ],
+            "passes_2_percent_gate": false,
+            "people": 48,
+            "tasks": 96,
+            "replicates": 2000,
+            "seed": 20261109,
+            "resampling": "paired respondents within original strata; within-person task means"
+          },
+          "other": {
+            "reference_brier": 0.4148458333333335,
+            "candidate_brier": 0.5367604166666665,
+            "improvement": -0.121914583333333,
+            "improvement_95_ci": [
+              -0.24333171874999968,
+              0.001527187499999905
+            ],
+            "relative_improvement": -0.2938792523326929,
+            "relative_improvement_95_ci": [
+              -0.6738863717285297,
+              0.002966443842386257
+            ],
+            "passes_2_percent_gate": false,
+            "people": 48,
+            "tasks": 96,
+            "replicates": 2000,
+            "seed": 20261109,
+            "resampling": "paired respondents within original strata; within-person task means"
+          }
+        },
+        "screening_point_gate": false,
+        "both_intervals_positive": false,
+        "failures_by_stratum": {}
+      }
+    },
+    "execution": {
+      "states": {
+        "complete": 600
+      },
+      "complete": 600,
+      "attempts": 600,
+      "retries": 0,
+      "reserved_usd": 5.03837796,
+      "errors": {},
+      "prompt_tokens": 400997,
+      "completion_tokens": 11672,
+      "peak_no_cache_usage_estimate_usd": 0.57553716
+    },
+    "aborted_run": {
+      "status": "invalidated_before_effect_scoring",
+      "reason": "Known choices used integer selected_option without explicitly declaring zero-based indexing. Choice interpretation could be ambiguous. Replace with selected product text in a separately frozen version.",
+      "states": {
+        "complete": 419
+      },
+      "attempts": 419,
+      "reserved_usd": 3.36085728,
+      "peak_no_cache_usage_estimate_usd": 0.36441108,
+      "scores_computed": false,
+      "remaining_original_attempt_budget": 241,
+      "remaining_conservative_usd_budget": 6.639142720000001
+    },
+    "recommend_independent_replication": false
+  }
+}
