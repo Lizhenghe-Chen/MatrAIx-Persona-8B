@@ -1,6 +1,6 @@
 {
   "version": "2026-11-12-approved-v5",
-  "supersedes": "accepted-report-v4.json",
+  "supersedes": "accepted-report-v3.json",
   "policy": "用户认可的报告与结论；后续调整另立版本，不覆盖冻结依据。",
   "change": "clean-v1 图表适配窄屏（移动端重排坐标轴与标签），散点图加图例、去掉被裁切的端标签；桌面端与移动端截图均已核对。",
   "additions": 0,
