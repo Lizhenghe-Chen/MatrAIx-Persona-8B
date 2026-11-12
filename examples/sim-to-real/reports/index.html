@@ -9,7 +9,7 @@
 <p>这份报告把“之前怎样、改了什么、改善多少、哪里没成功”放在一起。所有数字来自已经完成的实验；本次整理没有新增模型调用。</p>
 <a class="jump" href="#decision">先看可采用的做法</a><a class="jump" href="#clean-v1">看换题型后的复验</a><a class="jump" href="#questions">直接看真人与 AI 的选项分布</a><a class="jump" href="#catalog">查看全部实验与数据来源</a>
 </div></header>
-<nav class="nav" aria-label="报告章节"><div><a href="#all-studies">全部研究</a><a href="#decision">结论</a><a href="#probability">保留分歧</a><a href="#model">选择模型</a><a href="#real-data">真人数据</a><a href="#background">提示与背景</a><a href="#clean-v1">换题型复验</a><a href="#wide">铺开六套</a><a href="#failed">未通过的改法</a><a href="#use">如何使用</a><a href="#catalog">证据档案</a></div></nav>
+<nav class="nav" aria-label="报告章节"><div><a href="#all-studies">全部研究</a><a href="#direction">方向</a><a href="#anchor">信息对等</a><a href="#decision">结论</a><a href="#probability">保留分歧</a><a href="#model">选择模型</a><a href="#real-data">真人数据</a><a href="#background">提示与背景</a><a href="#clean-v1">换题型复验</a><a href="#wide">铺开六套</a><a href="#failed">未通过的改法</a><a href="#use">如何使用</a><a href="#catalog">证据档案</a></div></nav>
 <main>
 <section id="decision" class="intro"><span class="number">先读这一页</span><h2>可以采用三项改进，但它们解决的问题不同</h2>
 <div class="grid3">
@@ -17,6 +17,7 @@
 <article class="card"><span class="tag">已测配置 · 优先采用</span><h3>固定用 DeepSeek Pro</h3><div class="big">15.95 → 11.50</div><p>同一批合成画像、同一套购物题、相同概率答法下，Pro 比 Qwen 的平均分布误差低 <b>4.46 个百分点</b>。</p><p class="small">支持本项目的模型默认选择；不代表所有模型、所有任务的排名。<a href="#model">看证据 →</a></p></article>
 <article class="card"><span class="tag">有真人训练答案时</span><h3>先建真人统计参照</h3><div class="big">18.08 → 5.43</div><p>用真人训练数据修正 AI 后，网购误差明显缩小；同背景的简单统计方法为 <b>4.59</b>，仍然更低。</p><p class="small">收益说明真人数据很重要；没有证明 AI 在统计预测之上带来额外价值。<a href="#real-data">看证据 →</a></p></article>
 </div>
+<div class="callout"><strong>最新一轮补了两条关键证据（2026-11-12 晚）：</strong>① <a href="#direction">方向对不对</a>——AI 把真实最热门选项排第一的比例是 <b>70.3%</b>，同信息参照是 <b>89.2%</b>；方向大多对，但不足以当优势。② <a href="#anchor">把历史分布直接写进提示交给 AI</a>——误差立刻下降 <b>16.5%–24.9%</b>，但最好也只是与“照抄该分布”打平，仍赢不过它。两条合起来说明：此前差距的一大半来自“模型不知道基础比例”，而<strong>人格画像在已知基础分布之上没有可测量的增量</strong>。</div>
 <div class="callout"><strong>还有一个有条件有效的改法：</strong>把“扮演某类人”改为“预测这位受访者当时会怎样回答”，并补充真实、贴题的背景。它在 18 道生活类问卷题上有效，但迁移到购物和家电任务并不稳定。<a href="#background">查看成功与失败的对照</a>。</div>
 <p><strong>目前不能宣称：</strong>已经找到一套通用方法，能够让 MatrAIx 的合成人格可靠地代替真人。我们验证的是若干输入和预测方法，也没有在这组实验中完整评测官方 MatrAIx 8B 权重。下面的优化建议不能合并成“原版整体已经提升多少”的单一数字。</p>
 <details><summary>怎样才算“有明显改善”？这些数字是什么？</summary>
