@@ -380,7 +380,7 @@ def build():
        '这套数据在此前没有参与任何一次调框架、选权重或做校准，因此它检验的是"规则能否迁移"。')}
 
 <div class="callout"><strong>最终配方（可以直接照做）</strong><br>
-① 新问卷先收 <strong>20–30 份</strong>真实回答；<br>
+① 新问卷先收 <strong>10–30 份</strong>真实回答；<br>
 ② 若还要用 AI，先让它给出分布，再与实测按 <strong>w = k/(k+20)</strong> 混合；<br>
 ③ 如果 AI 在这套题上的误差比"每档等分"还差，<strong>不要混合</strong>，直接用实测。</div>
 </section>'''
