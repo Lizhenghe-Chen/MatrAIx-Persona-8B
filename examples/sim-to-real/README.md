@@ -41,3 +41,7 @@ python3 examples/sim-to-real/archive_inventory.py check
 ```
 
 总报告可仅凭 Git 聚合档案重建。完整逐人评分还需要本机冻结检查点；历史报告仍可通过 `python3 examples/sim-to-real/retail_report.py` 重建。不要为查看报告运行实验的 `prepare` 或 `run` 命令。
+
+## 已认可结论与归档决策
+
+当前报告已按提交及文件哈希冻结为 `2026-11-12-approved-v1`。[归档说明与待决策清单](archive/README.md)区分可清理缓存、保留证据，以及需先核验副本的大型源包；[分类清单](archive/catalog.json)保留文件原路径。

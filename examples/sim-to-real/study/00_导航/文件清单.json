@@ -5,8 +5,8 @@
   "scope": "实验代码、历史六轮、新框架冻结与公开结果、综合报告、文献、公开输入及项目内本机材料；排除本清单自身、缓存和项目外私有运行目录",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 590,
-  "git_bytes": 83923938,
+  "git_file_count": 593,
+  "git_bytes": 84038622,
   "local_only_file_count": 47,
   "local_only_bytes": 712884651,
   "external_large_source": {
@@ -20,8 +20,26 @@
   "files": [
     {
       "path": "README.md",
-      "bytes": 3211,
-      "sha256": "616ff7847d8f721c3546ed936932ffbee751e5d8f32953af56dd6d702d7b8ad9",
+      "bytes": 3516,
+      "sha256": "b25b6331d221e0ad34034e0a4541c450b9368f779d62035eea65ba4f396251c7",
+      "storage": "git"
+    },
+    {
+      "path": "archive/README.md",
+      "bytes": 2735,
+      "sha256": "4be9b5dd006abb678b1240c7ff894e29a285ac020e03296ef72d0c191bde4050",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v1.json",
+      "bytes": 1163,
+      "sha256": "17c8e336a49a95f8b5cb614b9e430dbc6761aa914bb0da7b8781764e5bb16291",
+      "storage": "git"
+    },
+    {
+      "path": "archive/catalog.json",
+      "bytes": 110481,
+      "sha256": "90bdb092e5699d94c078cb7b96c0ee6422daec94af0f4863977533999b8059d6",
       "storage": "git"
     },
     {

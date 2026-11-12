@@ -1,0 +1,3827 @@
+{
+  "scope": "项目内既有档案；项目外运行材料另行盘点",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 3211,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "archive_inventory.py",
+      "bytes": 5846,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "audit_matching.py",
+      "bytes": 24,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "data_sources.py",
+      "bytes": 2152,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/README.md",
+      "bytes": 3429,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/__init__.py",
+      "bytes": 73,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/__main__.py",
+      "bytes": 29,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/cli.py",
+      "bytes": 3665,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/core/__init__.py",
+      "bytes": 76,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/core/baselines.py",
+      "bytes": 3437,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/core/calibration.py",
+      "bytes": 2768,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/core/checkpoint.py",
+      "bytes": 2371,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/core/choice_history.py",
+      "bytes": 2097,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/core/conditions.py",
+      "bytes": 2550,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/core/core.py",
+      "bytes": 3573,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/core/provider.py",
+      "bytes": 4580,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/core/runner.py",
+      "bytes": 5785,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/docs/两次选择快速验证.md",
+      "bytes": 3819,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/docs/历史阶段交接.md",
+      "bytes": 6036,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/docs/复算与复用指南.md",
+      "bytes": 5319,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/docs/实施沿革.md",
+      "bytes": 16711,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/docs/数据审查发现.md",
+      "bytes": 19597,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/docs/结果与优化记录.md",
+      "bytes": 7800,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/docs/结果解读与使用建议.md",
+      "bytes": 3399,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/docs/美国T恤补充材料核查.md",
+      "bytes": 1915,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/docs/证据与检验对照.md",
+      "bytes": 4477,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/docs/进度与交付核对.md",
+      "bytes": 3135,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/docs/阶段交接_2026-11-10.md",
+      "bytes": 2747,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/docs/首批研究准入决定.md",
+      "bytes": 3750,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/evaluation/__init__.py",
+      "bytes": 31,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/evaluation/baseline_replay.py",
+      "bytes": 1906,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/evaluation/bundle_diagnostics.py",
+      "bytes": 1908,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/evaluation/calibrate_study.py",
+      "bytes": 3053,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/evaluation/choice_history.py",
+      "bytes": 7519,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/evaluation/diagnostics.py",
+      "bytes": 2108,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/evaluation/evaluate_population.py",
+      "bytes": 4859,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/evaluation/evaluate_study.py",
+      "bytes": 6781,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/evaluation/execution_quality.py",
+      "bytes": 2815,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/evaluation/execution_snapshot.py",
+      "bytes": 5673,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/evaluation/history_baseline.py",
+      "bytes": 2106,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/evaluation/population_concentration.py",
+      "bytes": 1476,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/evaluation/population_scoring.py",
+      "bytes": 6117,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/evaluation/product_summary.py",
+      "bytes": 4112,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/evaluation/property_intervals.py",
+      "bytes": 2861,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/evaluation/scoring.py",
+      "bytes": 6684,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/evaluation/subgroups.py",
+      "bytes": 1347,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/ops/__init__.py",
+      "bytes": 73,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/ops/handoff_manifest.py",
+      "bytes": 2137,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/ops/retry_failed.py",
+      "bytes": 3574,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/ops/stability_run.py",
+      "bytes": 2669,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/ops/stability_score.py",
+      "bytes": 1919,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/ops/technical_pilot.py",
+      "bytes": 4138,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/reporting/__init__.py",
+      "bytes": 34,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/reporting/adoption_summary.py",
+      "bytes": 2889,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/reporting/aggregate_report.py",
+      "bytes": 18120,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/reporting/card_view.py",
+      "bytes": 3997,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/reporting/choice_history.py",
+      "bytes": 21206,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/reporting/pilot_summary.py",
+      "bytes": 2527,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/reporting/population_report.py",
+      "bytes": 8739,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/reporting/reader_report.py",
+      "bytes": 28307,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/reporting/report.py",
+      "bytes": 4430,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/reporting/report_sources.py",
+      "bytes": 2409,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/reporting/study_report.py",
+      "bytes": 12855,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/reports/README.md",
+      "bytes": 2018,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/reports/adoption-summary.json",
+      "bytes": 6304,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/reports/aggregate.html",
+      "bytes": 15296,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/reports/choice-history-result.json",
+      "bytes": 18904,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/reports/choice-history.html",
+      "bytes": 26079,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/reports/dryer-verification.json",
+      "bytes": 17517,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/reports/individual-dryer.html",
+      "bytes": 700341,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/reports/individual-swiss.html",
+      "bytes": 830082,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/reports/population-dryer.html",
+      "bytes": 175404,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/reports/population-swiss.html",
+      "bytes": 186214,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/reports/reader.html",
+      "bytes": 2662032,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/reports/swiss-verification.json",
+      "bytes": 18040,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/requirements-audit.txt",
+      "bytes": 200,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/requirements-score.txt",
+      "bytes": 118,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/audits/baseline-replay-check.json",
+      "bytes": 1204,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/audits/dryer-audit.json",
+      "bytes": 1442,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/audits/dryer-reconciliation.json",
+      "bytes": 24709,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/audits/german-audit.json",
+      "bytes": 3943,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/audits/german-cards.json",
+      "bytes": 16332,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/audits/german-field-policy.json",
+      "bytes": 2609,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/audits/history-coverage.json",
+      "bytes": 812,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/audits/license-review.json",
+      "bytes": 1029,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/audits/persona-mapping-coverage.json",
+      "bytes": 3944,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/audits/persona-release-audit.json",
+      "bytes": 69894,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/audits/radiant-audit.json",
+      "bytes": 3908,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/audits/radiant-reports.json",
+      "bytes": 532,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/audits/radiant-scotland-reconciliation.json",
+      "bytes": 965,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/audits/source-audit.json",
+      "bytes": 18759,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/audits/swiss-audit.json",
+      "bytes": 1418,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/audits/swiss-background-audit.json",
+      "bytes": 852,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/audits/swiss-six-audit.json",
+      "bytes": 1061,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/audits/swiss-supplement-audit.json",
+      "bytes": 2125,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/audits/synthetic-pool-coverage.json",
+      "bytes": 4722,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/audits/tshirt-audit.json",
+      "bytes": 850,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/audits/tshirt-supplement-index.json",
+      "bytes": 936,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/formal/deepseek-pro.json",
+      "bytes": 445,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/formal/dryer-formal-manifest.json",
+      "bytes": 2248,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/formal/dryer-formal-protocol.json",
+      "bytes": 2991,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/formal/endpoint-pilot.json",
+      "bytes": 577,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/formal/swiss-formal-manifest.json",
+      "bytes": 2248,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/formal/swiss-formal-protocol.json",
+      "bytes": 2944,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/formal/synthetic-design-audit.json",
+      "bytes": 525,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/formal/synthetic-execution-manifests.json",
+      "bytes": 2955,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/formal/synthetic-protocol-v1.json",
+      "bytes": 2839,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/freezes/dryer-calibration-freeze.json",
+      "bytes": 540,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/freezes/dryer-none-test-integrity.json",
+      "bytes": 1747,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/freezes/dryer-stability-result.json",
+      "bytes": 528,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/freezes/dryer-synthetic-demographics-integrity.json",
+      "bytes": 1826,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/freezes/overnight-handoff.json",
+      "bytes": 519,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/freezes/resume-2026-11-11.json",
+      "bytes": 260,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/freezes/swiss-calibration-freeze.json",
+      "bytes": 601,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/freezes/swiss-stability-result.json",
+      "bytes": 541,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/freezes/交接状态快照.json",
+      "bytes": 17096,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/pilots/choice-history-pilot-result.json",
+      "bytes": 481,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/pilots/choice-history-protocol.json",
+      "bytes": 4450,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/pilots/choice-history-v1-aborted-pilot-result.json",
+      "bytes": 489,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/pilots/choice-history-v1-aborted-protocol.json",
+      "bytes": 3528,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/pilots/choice-history-v1-aborted.json",
+      "bytes": 537,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/pilots/dryer-pilot-protocol.json",
+      "bytes": 2088,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/pilots/dryer-pilot-result.json",
+      "bytes": 1406,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/pilots/dryer-preflight.json",
+      "bytes": 1815,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/pilots/single-choice-pilot.json",
+      "bytes": 547,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/pilots/swiss-pilot-protocol.json",
+      "bytes": 1617,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/pilots/swiss-pilot-result.json",
+      "bytes": 1396,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/specs/pilots/swiss-preflight.json",
+      "bytes": 1050,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/studies/__init__.py",
+      "bytes": 52,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/studies/audit_sources.py",
+      "bytes": 2206,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/studies/choice_history.py",
+      "bytes": 15490,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/studies/dryer_adapter.py",
+      "bytes": 4669,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/studies/dryer_audit.py",
+      "bytes": 3115,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/studies/dryer_baseline.py",
+      "bytes": 3626,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/studies/dryer_formal.py",
+      "bytes": 4747,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/studies/dryer_pilot.py",
+      "bytes": 3694,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/studies/dryer_preflight.py",
+      "bytes": 2477,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/studies/dryer_reconcile.py",
+      "bytes": 3535,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/studies/generate_persona_pool.py",
+      "bytes": 2019,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/studies/german_cards.py",
+      "bytes": 3120,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/studies/german_packaging.py",
+      "bytes": 2754,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/studies/persona_audit.py",
+      "bytes": 3250,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/studies/persona_mapping.py",
+      "bytes": 1371,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/studies/radiant_audit.py",
+      "bytes": 2297,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/studies/survey_baseline.py",
+      "bytes": 2635,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/studies/swiss_adapter.py",
+      "bytes": 4570,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/studies/swiss_appliances.py",
+      "bytes": 3346,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/studies/swiss_baseline.py",
+      "bytes": 2856,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/studies/swiss_six_audit.py",
+      "bytes": 2283,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/studies/synthetic_cohort.py",
+      "bytes": 3269,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/studies/synthetic_pilot.py",
+      "bytes": 2583,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/studies/synthetic_prepare.py",
+      "bytes": 3178,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/studies/synthetic_run.py",
+      "bytes": 1545,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/studies/synthetic_tasks.py",
+      "bytes": 2068,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/studies/tshirt_audit.py",
+      "bytes": 2305,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/tests/__init__.py",
+      "bytes": 49,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/tests/test_adoption_summary.py",
+      "bytes": 1099,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/tests/test_aggregate_report.py",
+      "bytes": 5252,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/tests/test_baselines.py",
+      "bytes": 1087,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/tests/test_bundle_diagnostics.py",
+      "bytes": 1036,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/tests/test_calibration.py",
+      "bytes": 915,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/tests/test_checkpoint.py",
+      "bytes": 1678,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/tests/test_choice_history.py",
+      "bytes": 8035,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/tests/test_conditions.py",
+      "bytes": 1835,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/tests/test_core.py",
+      "bytes": 1484,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/tests/test_diagnostics.py",
+      "bytes": 666,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/tests/test_dryer_adapter.py",
+      "bytes": 1125,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/tests/test_dryer_baseline.py",
+      "bytes": 790,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/tests/test_end_to_end.py",
+      "bytes": 4332,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/tests/test_execution_snapshot.py",
+      "bytes": 5557,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/tests/test_handoff_manifest.py",
+      "bytes": 1253,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/tests/test_history_baseline.py",
+      "bytes": 1377,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/tests/test_population_concentration.py",
+      "bytes": 859,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/tests/test_population_report.py",
+      "bytes": 1831,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/tests/test_population_scoring.py",
+      "bytes": 2117,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/tests/test_product_summary.py",
+      "bytes": 1468,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/tests/test_property_intervals.py",
+      "bytes": 1159,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/tests/test_provider.py",
+      "bytes": 2477,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/tests/test_report.py",
+      "bytes": 865,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/tests/test_runner.py",
+      "bytes": 3033,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/tests/test_scoring.py",
+      "bytes": 2526,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/tests/test_study_report.py",
+      "bytes": 1280,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/tests/test_subgroups.py",
+      "bytes": 719,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/tests/test_survey_baseline.py",
+      "bytes": 1038,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/tests/test_swiss_adapter.py",
+      "bytes": 677,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/tests/test_swiss_baseline.py",
+      "bytes": 679,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "decision_lab/交接先读.md",
+      "bytes": 2721,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "experiment.py",
+      "bytes": 20,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "instruments.py",
+      "bytes": 21,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "legacy/README.md",
+      "bytes": 752,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/audit_matching.py",
+      "bytes": 18038,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/data_sources.py",
+      "bytes": 18,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/experiment.py",
+      "bytes": 28086,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/instruments.py",
+      "bytes": 2643,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/migration.json",
+      "bytes": 7944,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/optimize.py",
+      "bytes": 11300,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/optimize_html.py",
+      "bytes": 7771,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/optimize_profiles.py",
+      "bytes": 8796,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/optimize_report.html",
+      "bytes": 23196,
+      "storage": "git",
+      "role": "历史展示：原位归档，不能替代当前结论"
+    },
+    {
+      "path": "legacy/optimize_score.py",
+      "bytes": 15980,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/optimize_summary.py",
+      "bytes": 9047,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/report_smoke_check.cjs",
+      "bytes": 18693,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/retail_amazon.py",
+      "bytes": 5240,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/retail_amazon_mix.py",
+      "bytes": 11260,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/retail_amazon_model.py",
+      "bytes": 3722,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/retail_amazon_repeat_diagnostics.py",
+      "bytes": 2613,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/retail_amazon_score.py",
+      "bytes": 5199,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/retail_audit.py",
+      "bytes": 7951,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/retail_findings.py",
+      "bytes": 7463,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/retail_history_charts.js",
+      "bytes": 9122,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/retail_history_template.html",
+      "bytes": 21631,
+      "storage": "git",
+      "role": "历史展示：原位归档，不能替代当前结论"
+    },
+    {
+      "path": "legacy/retail_matching_review.py",
+      "bytes": 13221,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/retail_pew.py",
+      "bytes": 9719,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/retail_pew_calibration.py",
+      "bytes": 5630,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/retail_pew_draw.py",
+      "bytes": 2938,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/retail_pew_score.py",
+      "bytes": 7532,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/retail_reader_conclusions.html",
+      "bytes": 4599,
+      "storage": "git",
+      "role": "历史展示：原位归档，不能替代当前结论"
+    },
+    {
+      "path": "legacy/retail_reader_glossary.js",
+      "bytes": 14331,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/retail_reader_guidance.html",
+      "bytes": 12158,
+      "storage": "git",
+      "role": "历史展示：原位归档，不能替代当前结论"
+    },
+    {
+      "path": "legacy/retail_reader_report.py",
+      "bytes": 13806,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/retail_reader_template.html",
+      "bytes": 733,
+      "storage": "git",
+      "role": "历史展示：原位归档，不能替代当前结论"
+    },
+    {
+      "path": "legacy/retail_reader_template.html.tmpl",
+      "bytes": 66552,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/retail_report.py",
+      "bytes": 35319,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/retail_shoes_input_parity.py",
+      "bytes": 8536,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/retail_shoes_model.py",
+      "bytes": 5170,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/retail_shoes_prepare.py",
+      "bytes": 4179,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/retail_shoes_score.py",
+      "bytes": 12457,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/retail_story_charts.js",
+      "bytes": 2018,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/retail_story_report.py",
+      "bytes": 14680,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/retail_story_template.html.tmpl",
+      "bytes": 35450,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/revalidation.py",
+      "bytes": 24233,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/revalidation_archive.py",
+      "bytes": 3831,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/revalidation_charts.js",
+      "bytes": 7841,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/revalidation_report.py",
+      "bytes": 22537,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/revalidation_score.py",
+      "bytes": 12744,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/shopping.py",
+      "bytes": 16344,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/shopping_report.py",
+      "bytes": 11037,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/shopping_score.py",
+      "bytes": 12292,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/study",
+      "bytes": 8,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/test_revalidation.py",
+      "bytes": 3238,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "legacy/首轮与历史运行说明.md",
+      "bytes": 8060,
+      "storage": "git",
+      "role": "历史代码：兼容复算，不作新实验入口"
+    },
+    {
+      "path": "optimize.py",
+      "bytes": 18,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "optimize_html.py",
+      "bytes": 23,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "optimize_profiles.py",
+      "bytes": 27,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "optimize_report.html",
+      "bytes": 27,
+      "storage": "git",
+      "role": "历史展示：原位归档，不能替代当前结论"
+    },
+    {
+      "path": "optimize_score.py",
+      "bytes": 24,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "optimize_summary.py",
+      "bytes": 26,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "report_smoke_check.cjs",
+      "bytes": 29,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "reports/README.md",
+      "bytes": 2910,
+      "storage": "git",
+      "role": "当前报告：冻结并保留"
+    },
+    {
+      "path": "reports/build.py",
+      "bytes": 13805,
+      "storage": "git",
+      "role": "当前报告：冻结并保留"
+    },
+    {
+      "path": "reports/charts.js",
+      "bytes": 2324,
+      "storage": "git",
+      "role": "当前报告：冻结并保留"
+    },
+    {
+      "path": "reports/evidence.json",
+      "bytes": 107844,
+      "storage": "git",
+      "role": "当前报告：冻结并保留"
+    },
+    {
+      "path": "reports/index.html",
+      "bytes": 71560,
+      "storage": "git",
+      "role": "当前报告：冻结并保留"
+    },
+    {
+      "path": "reports/report.html.tmpl",
+      "bytes": 34105,
+      "storage": "git",
+      "role": "当前报告：冻结并保留"
+    },
+    {
+      "path": "reports/smoke.cjs",
+      "bytes": 4719,
+      "storage": "git",
+      "role": "当前报告：冻结并保留"
+    },
+    {
+      "path": "reports/style.css",
+      "bytes": 6526,
+      "storage": "git",
+      "role": "当前报告：冻结并保留"
+    },
+    {
+      "path": "reports/verify.py",
+      "bytes": 2813,
+      "storage": "git",
+      "role": "当前报告：冻结并保留"
+    },
+    {
+      "path": "retail_amazon.py",
+      "bytes": 23,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "retail_amazon_mix.py",
+      "bytes": 27,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "retail_amazon_model.py",
+      "bytes": 29,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "retail_amazon_repeat_diagnostics.py",
+      "bytes": 42,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "retail_amazon_score.py",
+      "bytes": 29,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "retail_audit.py",
+      "bytes": 22,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "retail_findings.py",
+      "bytes": 25,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "retail_history_charts.js",
+      "bytes": 31,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "retail_history_template.html",
+      "bytes": 35,
+      "storage": "git",
+      "role": "历史展示：原位归档，不能替代当前结论"
+    },
+    {
+      "path": "retail_matching_review.py",
+      "bytes": 32,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "retail_pew.py",
+      "bytes": 20,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "retail_pew_calibration.py",
+      "bytes": 32,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "retail_pew_draw.py",
+      "bytes": 25,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "retail_pew_score.py",
+      "bytes": 26,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "retail_reader_conclusions.html",
+      "bytes": 37,
+      "storage": "git",
+      "role": "历史展示：原位归档，不能替代当前结论"
+    },
+    {
+      "path": "retail_reader_glossary.js",
+      "bytes": 32,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "retail_reader_guidance.html",
+      "bytes": 34,
+      "storage": "git",
+      "role": "历史展示：原位归档，不能替代当前结论"
+    },
+    {
+      "path": "retail_reader_report.py",
+      "bytes": 30,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "retail_reader_template.html",
+      "bytes": 34,
+      "storage": "git",
+      "role": "历史展示：原位归档，不能替代当前结论"
+    },
+    {
+      "path": "retail_reader_template.html.tmpl",
+      "bytes": 39,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "retail_report.py",
+      "bytes": 23,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "retail_shoes_input_parity.py",
+      "bytes": 35,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "retail_shoes_model.py",
+      "bytes": 28,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "retail_shoes_prepare.py",
+      "bytes": 30,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "retail_shoes_score.py",
+      "bytes": 28,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "retail_story_charts.js",
+      "bytes": 29,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "retail_story_report.py",
+      "bytes": 29,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "retail_story_template.html.tmpl",
+      "bytes": 38,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "revalidation.py",
+      "bytes": 22,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "revalidation_archive.py",
+      "bytes": 30,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "revalidation_charts.js",
+      "bytes": 29,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "revalidation_report.py",
+      "bytes": 29,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "revalidation_score.py",
+      "bytes": 28,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "shopping.py",
+      "bytes": 18,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "shopping_report.py",
+      "bytes": 25,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "shopping_score.py",
+      "bytes": 24,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/.gitignore",
+      "bytes": 540,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/00_导航/从这里开始.md",
+      "bytes": 6281,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/00_导航/文件归档说明.md",
+      "bytes": 5930,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/00_导航/通俗报告数据核验.json",
+      "bytes": 2038,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/00_导航/通俗报告显示核验.json",
+      "bytes": 1324,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/MatrAIx 真人问卷对照实验报告.docx",
+      "bytes": 43587,
+      "storage": "git",
+      "role": "历史展示：原位归档，不能替代当前结论"
+    },
+    {
+      "path": "study/01_首轮归档/README.md",
+      "bytes": 4828,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/cohort.json",
+      "bytes": 357701,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/coverage.json",
+      "bytes": 163,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/dag-coverage.json",
+      "bytes": 175,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/execution.log",
+      "bytes": 468761,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/formal-completion.json",
+      "bytes": 185,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/formal-trials.zip",
+      "bytes": 4547539,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/output-sha256.json",
+      "bytes": 532,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/completion.json",
+      "bytes": 167,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/run.json",
+      "bytes": 458,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-A-dag-20261109-08260.json",
+      "bytes": 507,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-A-dag-20261109-14211.json",
+      "bytes": 495,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-A-dag-20261109-15037.json",
+      "bytes": 500,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-A-dag-20261109-25955.json",
+      "bytes": 499,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-A-dag-20261109-32985.json",
+      "bytes": 499,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-A-dag-20261109-36974.json",
+      "bytes": 499,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-A-dag-20261109-40068.json",
+      "bytes": 499,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-A-dag-20261109-40684.json",
+      "bytes": 499,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-A-dag-20261109-42103.json",
+      "bytes": 495,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-A-dag-20261109-46684.json",
+      "bytes": 509,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-A-dag-20261109-47201.json",
+      "bytes": 499,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-A-dag-20261109-48678.json",
+      "bytes": 495,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-B-dag-20261109-08260.json",
+      "bytes": 495,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-B-dag-20261109-14211.json",
+      "bytes": 507,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-B-dag-20261109-15037.json",
+      "bytes": 496,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-B-dag-20261109-25955.json",
+      "bytes": 495,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-B-dag-20261109-32985.json",
+      "bytes": 495,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-B-dag-20261109-36974.json",
+      "bytes": 495,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-B-dag-20261109-40068.json",
+      "bytes": 509,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-B-dag-20261109-40684.json",
+      "bytes": 500,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-B-dag-20261109-42103.json",
+      "bytes": 495,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-B-dag-20261109-46684.json",
+      "bytes": 495,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-B-dag-20261109-47201.json",
+      "bytes": 495,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-B-dag-20261109-48678.json",
+      "bytes": 495,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-C-dag-20261109-08260.json",
+      "bytes": 496,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-C-dag-20261109-14211.json",
+      "bytes": 507,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-C-dag-20261109-15037.json",
+      "bytes": 507,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-C-dag-20261109-25955.json",
+      "bytes": 507,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-C-dag-20261109-32985.json",
+      "bytes": 507,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-C-dag-20261109-36974.json",
+      "bytes": 507,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-C-dag-20261109-40068.json",
+      "bytes": 495,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-C-dag-20261109-40684.json",
+      "bytes": 496,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-C-dag-20261109-42103.json",
+      "bytes": 495,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-C-dag-20261109-46684.json",
+      "bytes": 508,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-C-dag-20261109-47201.json",
+      "bytes": 508,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-anes-C-dag-20261109-48678.json",
+      "bytes": 508,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-A-dag-20261109-08260.json",
+      "bytes": 511,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-A-dag-20261109-14211.json",
+      "bytes": 500,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-A-dag-20261109-15037.json",
+      "bytes": 496,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-A-dag-20261109-25955.json",
+      "bytes": 509,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-A-dag-20261109-32985.json",
+      "bytes": 501,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-A-dag-20261109-36974.json",
+      "bytes": 511,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-A-dag-20261109-40068.json",
+      "bytes": 501,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-A-dag-20261109-40684.json",
+      "bytes": 501,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-A-dag-20261109-42103.json",
+      "bytes": 501,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-A-dag-20261109-46684.json",
+      "bytes": 500,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-A-dag-20261109-47201.json",
+      "bytes": 501,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-A-dag-20261109-48678.json",
+      "bytes": 501,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-B-dag-20261109-08260.json",
+      "bytes": 497,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-B-dag-20261109-14211.json",
+      "bytes": 512,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-B-dag-20261109-15037.json",
+      "bytes": 501,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-B-dag-20261109-25955.json",
+      "bytes": 501,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-B-dag-20261109-32985.json",
+      "bytes": 501,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-B-dag-20261109-36974.json",
+      "bytes": 497,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-B-dag-20261109-40068.json",
+      "bytes": 497,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-B-dag-20261109-40684.json",
+      "bytes": 509,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-B-dag-20261109-42103.json",
+      "bytes": 511,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-B-dag-20261109-46684.json",
+      "bytes": 501,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-B-dag-20261109-47201.json",
+      "bytes": 501,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-B-dag-20261109-48678.json",
+      "bytes": 497,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-C-dag-20261109-08260.json",
+      "bytes": 509,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-C-dag-20261109-14211.json",
+      "bytes": 501,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-C-dag-20261109-15037.json",
+      "bytes": 497,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-C-dag-20261109-25955.json",
+      "bytes": 497,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-C-dag-20261109-32985.json",
+      "bytes": 509,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-C-dag-20261109-36974.json",
+      "bytes": 509,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-C-dag-20261109-40068.json",
+      "bytes": 497,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-C-dag-20261109-40684.json",
+      "bytes": 495,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-C-dag-20261109-42103.json",
+      "bytes": 497,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-C-dag-20261109-46684.json",
+      "bytes": 509,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-C-dag-20261109-47201.json",
+      "bytes": 495,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-pew-C-dag-20261109-48678.json",
+      "bytes": 497,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-A-dag-20261109-08260.json",
+      "bytes": 506,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-A-dag-20261109-14211.json",
+      "bytes": 509,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-A-dag-20261109-15037.json",
+      "bytes": 520,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-A-dag-20261109-25955.json",
+      "bytes": 506,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-A-dag-20261109-32985.json",
+      "bytes": 509,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-A-dag-20261109-36974.json",
+      "bytes": 520,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-A-dag-20261109-40068.json",
+      "bytes": 509,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-A-dag-20261109-40684.json",
+      "bytes": 520,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-A-dag-20261109-42103.json",
+      "bytes": 509,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-A-dag-20261109-46684.json",
+      "bytes": 505,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-A-dag-20261109-47201.json",
+      "bytes": 509,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-A-dag-20261109-48678.json",
+      "bytes": 521,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-B-dag-20261109-08260.json",
+      "bytes": 521,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-B-dag-20261109-14211.json",
+      "bytes": 518,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-B-dag-20261109-15037.json",
+      "bytes": 509,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-B-dag-20261109-25955.json",
+      "bytes": 509,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-B-dag-20261109-32985.json",
+      "bytes": 518,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-B-dag-20261109-36974.json",
+      "bytes": 506,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-B-dag-20261109-40068.json",
+      "bytes": 505,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-B-dag-20261109-40684.json",
+      "bytes": 518,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-B-dag-20261109-42103.json",
+      "bytes": 520,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-B-dag-20261109-46684.json",
+      "bytes": 509,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-B-dag-20261109-47201.json",
+      "bytes": 509,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-B-dag-20261109-48678.json",
+      "bytes": 506,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-C-dag-20261109-08260.json",
+      "bytes": 518,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-C-dag-20261109-14211.json",
+      "bytes": 509,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-C-dag-20261109-15037.json",
+      "bytes": 518,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-C-dag-20261109-25955.json",
+      "bytes": 506,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-C-dag-20261109-32985.json",
+      "bytes": 506,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-C-dag-20261109-36974.json",
+      "bytes": 518,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-C-dag-20261109-40068.json",
+      "bytes": 506,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-C-dag-20261109-40684.json",
+      "bytes": 506,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-C-dag-20261109-42103.json",
+      "bytes": 506,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-C-dag-20261109-46684.json",
+      "bytes": 518,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-C-dag-20261109-47201.json",
+      "bytes": 518,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/pilot/trial-shed-C-dag-20261109-48678.json",
+      "bytes": 506,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/reference.json",
+      "bytes": 23013,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/report.md",
+      "bytes": 658,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/01_首轮归档/results.json",
+      "bytes": 57307,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/02_模型对比/analysis-source-sha256.json",
+      "bytes": 179,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/02_模型对比/checkpoints.sqlite",
+      "bytes": 4579328,
+      "storage": "local_only",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/02_模型对比/flash.log",
+      "bytes": 1392,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/02_模型对比/formal-completion-flash.json",
+      "bytes": 378,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/02_模型对比/formal-completion-pro.json",
+      "bytes": 360,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/02_模型对比/formal-completion-qwen.json",
+      "bytes": 369,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/02_模型对比/input-audit.json",
+      "bytes": 6658,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/02_模型对比/manifest.json",
+      "bytes": 1257,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/02_模型对比/output-sha256.json",
+      "bytes": 448,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/02_模型对比/pilot-completion-flash.json",
+      "bytes": 116,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/02_模型对比/pilot-completion-pro.json",
+      "bytes": 110,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/02_模型对比/pilot-completion.json",
+      "bytes": 333,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/02_模型对比/pro.log",
+      "bytes": 560,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/02_模型对比/report.md",
+      "bytes": 7657,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/02_模型对比/results.json",
+      "bytes": 164798,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/02_模型对比/sample-index.json",
+      "bytes": 18770,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/02_模型对比/trials.zip",
+      "bytes": 247045,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/02_模型对比/固定方案.md",
+      "bytes": 1029,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/03_提示与背景/analysis-source-sha256.json",
+      "bytes": 273,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/03_提示与背景/checkpoints.sqlite",
+      "bytes": 4521984,
+      "storage": "local_only",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/03_提示与背景/formal-completion.json",
+      "bytes": 955,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/03_提示与背景/formal.log",
+      "bytes": 1384,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/03_提示与背景/input-audit.json",
+      "bytes": 5906,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/03_提示与背景/manifest.json",
+      "bytes": 1259,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/03_提示与背景/output-sha256.json",
+      "bytes": 448,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/03_提示与背景/pilot-completion.json",
+      "bytes": 307,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/03_提示与背景/pilot.log",
+      "bytes": 240,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/03_提示与背景/report.md",
+      "bytes": 6380,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/03_提示与背景/results.json",
+      "bytes": 201703,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/03_提示与背景/sample-index.json",
+      "bytes": 66757,
+      "storage": "local_only",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/03_提示与背景/trials.zip",
+      "bytes": 252202,
+      "storage": "local_only",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/03_提示与背景/固定方案.md",
+      "bytes": 1815,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/04_综合报告/MatrAIx 优化实验交互报告.html",
+      "bytes": 1385457,
+      "storage": "git",
+      "role": "历史展示：原位归档，不能替代当前结论"
+    },
+    {
+      "path": "study/04_综合报告/交互报告.sha256",
+      "bytes": 104,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/04_综合报告/优化实验综合报告.md",
+      "bytes": 5343,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/05_优化记录/优化文档.md",
+      "bytes": 26956,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/06_北美电商选品/analysis-source-sha256.json",
+      "bytes": 271,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/06_北美电商选品/checkpoints.sqlite",
+      "bytes": 1441792,
+      "storage": "local_only",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/06_北美电商选品/formal-completion.json",
+      "bytes": 507,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/06_北美电商选品/formal.log",
+      "bytes": 824,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/06_北美电商选品/input-audit.json",
+      "bytes": 1029,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/06_北美电商选品/manifest.json",
+      "bytes": 2949,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/06_北美电商选品/output-sha256.json",
+      "bytes": 537,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/06_北美电商选品/pilot-completion.json",
+      "bytes": 483,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/06_北美电商选品/pilot.log",
+      "bytes": 170,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/06_北美电商选品/prepare.log",
+      "bytes": 1524,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/06_北美电商选品/report.html",
+      "bytes": 70585,
+      "storage": "git",
+      "role": "历史展示：原位归档，不能替代当前结论"
+    },
+    {
+      "path": "study/06_北美电商选品/results.json",
+      "bytes": 105716,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/06_北美电商选品/sample-index.json",
+      "bytes": 277358,
+      "storage": "local_only",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/06_北美电商选品/trials.zip",
+      "bytes": 52425,
+      "storage": "local_only",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/06_北美电商选品/初次预检清单.json",
+      "bytes": 2854,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/06_北美电商选品/固定方案.md",
+      "bytes": 3130,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/06_北美电商选品/数据/origin-appendix.docx",
+      "bytes": 1015353,
+      "storage": "local_only",
+      "role": "历史展示：原位归档，不能替代当前结论"
+    },
+    {
+      "path": "study/06_北美电商选品/数据/origin-original.tab",
+      "bytes": 4020345,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/06_北美电商选品/数据/origin.csv",
+      "bytes": 3042388,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/06_北美电商选品/数据/packaging.csv",
+      "bytes": 2300529,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/06_北美电商选品/数据/pew.zip",
+      "bytes": 2795367,
+      "storage": "local_only",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/06_北美电商选品/数据索引.md",
+      "bytes": 3710,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/07_购物数据候选/.gitignore",
+      "bytes": 785,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/07_购物数据候选/index.html",
+      "bytes": 30099,
+      "storage": "git",
+      "role": "历史展示：原位归档，不能替代当前结论"
+    },
+    {
+      "path": "study/07_购物数据候选/下载与核验清单.json",
+      "bytes": 10868,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/CIUS2022_Codebook_PUMF.pdf",
+      "bytes": 1923169,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/CIUS2022_Quest_E.pdf",
+      "bytes": 1586856,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/Horiuchi2021_Conjoint_SDB/README.pdf",
+      "bytes": 149243,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/Horiuchi2021_Conjoint_SDB/ReplicationPackage_v2.tar.gz",
+      "bytes": 59436256,
+      "storage": "local_only",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/Horiuchi2021_Conjoint_SDB/原问卷/study1-wave1 survey instruments.pdf",
+      "bytes": 129312,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/Horiuchi2021_Conjoint_SDB/原问卷/study1-wave2 survey instruments.pdf",
+      "bytes": 1358075,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/Open_eCommerce_1.0/amazon-purchases.csv.gz",
+      "bytes": 105202948,
+      "storage": "local_only",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/Open_eCommerce_1.0/fields.csv.gz",
+      "bytes": 908,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/Open_eCommerce_1.0/prescreen-survey-instrument.pdf",
+      "bytes": 393144,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/Open_eCommerce_1.0/survey-instrument.pdf",
+      "bytes": 1333077,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/Open_eCommerce_1.0/survey.csv.gz",
+      "bytes": 139853,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/Pew_Wave13/American-Trends-Panel-Wave-13-Dec-15.zip",
+      "bytes": 2887251,
+      "storage": "local_only",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/circular-products.csv.gz",
+      "bytes": 256210,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/cius-2022.zip",
+      "bytes": 396906008,
+      "storage": "local_only",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/drone-attributes.py.gz",
+      "bytes": 551,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/drone-codebook.py.gz",
+      "bytes": 1693,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/drone-fields.csv.gz",
+      "bytes": 1110,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/drone-survey.csv.gz",
+      "bytes": 247822,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/shoes.csv.gz",
+      "bytes": 1591915,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/07_购物数据候选/本机数据/tshirt.csv.gz",
+      "bytes": 220497,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/07_购物数据候选/本次接收文件清单.json",
+      "bytes": 6061,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/07_购物数据候选/本次接收核验.json",
+      "bytes": 5163,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/07_购物数据候选/来源与许可/README.md",
+      "bytes": 3268,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/07_购物数据候选/来源与许可/amazon-repository-MIT-LICENSE.txt",
+      "bytes": 1061,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/07_购物数据候选/来源与许可/drone-MIT-LICENSE.txt",
+      "bytes": 1061,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/07_购物数据候选/来源与许可/数据许可核验.json",
+      "bytes": 4140,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/07_购物数据候选/调研线索/README.md",
+      "bytes": 536,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/07_购物数据候选/调研线索/questionnaire_datasets.md",
+      "bytes": 3070,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/07_购物数据候选/调研线索/来源清单.json",
+      "bytes": 577,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/07_购物数据候选/调研线索/电商问卷数据清单.md",
+      "bytes": 9972,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/.gitignore",
+      "bytes": 15,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/README.md",
+      "bytes": 9392,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/amazon-blend-protocol.json",
+      "bytes": 110,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/amazon-development-score.json",
+      "bytes": 6946,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/amazon-development.json",
+      "bytes": 783,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/amazon-mix-development-score.json",
+      "bytes": 7378,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/amazon-mix-protocol.json",
+      "bytes": 222,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/amazon-mix-test-score.json",
+      "bytes": 7363,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/amazon-repeat-diagnostics.json",
+      "bytes": 3412,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/amazon-test-score.json",
+      "bytes": 6795,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/evidence.html",
+      "bytes": 540775,
+      "storage": "git",
+      "role": "历史展示：原位归档，不能替代当前结论"
+    },
+    {
+      "path": "study/08_购物预测/index.html",
+      "bytes": 49173,
+      "storage": "git",
+      "role": "历史展示：原位归档，不能替代当前结论"
+    },
+    {
+      "path": "study/08_购物预测/pew-answer-sampling-sensitivity.json",
+      "bytes": 4604,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/pew-calibration-protocol.json",
+      "bytes": 1678,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/pew-formal-calibration.json",
+      "bytes": 17003,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/pew-formal-score.json",
+      "bytes": 91711,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/pew-pilot-calibration.json",
+      "bytes": 16948,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/pew-pilot-score.json",
+      "bytes": 114098,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/shoes-calibration-protocol.json",
+      "bytes": 1391,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/shoes-development-score.json",
+      "bytes": 22905,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/shoes-input-parity-protocol.json",
+      "bytes": 1930,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/shoes-input-parity-score.json",
+      "bytes": 7083,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/shoes-test-score.json",
+      "bytes": 23072,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/technical-details.html",
+      "bytes": 255632,
+      "storage": "git",
+      "role": "历史展示：原位归档，不能替代当前结论"
+    },
+    {
+      "path": "study/08_购物预测/vendor/LICENSE",
+      "bytes": 11990,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/vendor/NOTICE",
+      "bytes": 168,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/vendor/echarts.min.js",
+      "bytes": 1121883,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/报告展示核验.json",
+      "bytes": 6804,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/本机运行/amazon-freeze-obsolete-reference-window.json",
+      "bytes": 562026,
+      "storage": "local_only",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/本机运行/amazon-freeze.json",
+      "bytes": 562029,
+      "storage": "local_only",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/本机运行/amazon-mix-freeze.json",
+      "bytes": 1575351,
+      "storage": "local_only",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/本机运行/amazon-mix.sqlite",
+      "bytes": 163840,
+      "storage": "local_only",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/本机运行/amazon.sqlite",
+      "bytes": 495616,
+      "storage": "local_only",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/本机运行/pew-freeze-v1-format.json",
+      "bytes": 151041,
+      "storage": "local_only",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/本机运行/pew-freeze.json",
+      "bytes": 151041,
+      "storage": "local_only",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/本机运行/pew-v1-format.sqlite",
+      "bytes": 167936,
+      "storage": "local_only",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/本机运行/pew.sqlite",
+      "bytes": 716800,
+      "storage": "local_only",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/本机运行/shoes-freeze.json",
+      "bytes": 1475951,
+      "storage": "local_only",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/本机运行/shoes-input-parity-predictions.npz",
+      "bytes": 646960,
+      "storage": "local_only",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/本机运行/shoes-model-protocol.json",
+      "bytes": 543,
+      "storage": "local_only",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/本机运行/shoes.sqlite",
+      "bytes": 1339392,
+      "storage": "local_only",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/08_购物预测/运行核验.json",
+      "bytes": 6136,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/09_方法审查/audit-results.json",
+      "bytes": 104751,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/09_方法审查/index.html",
+      "bytes": 20835,
+      "storage": "git",
+      "role": "历史展示：原位归档，不能替代当前结论"
+    },
+    {
+      "path": "study/10_匹配与商品复验/.gitignore",
+      "bytes": 15,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/10_匹配与商品复验/README.md",
+      "bytes": 7373,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/10_匹配与商品复验/analysis-seal.json",
+      "bytes": 557,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/10_匹配与商品复验/completion-checks.json",
+      "bytes": 566,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/10_匹配与商品复验/eligibility-audit.json",
+      "bytes": 1018,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/10_匹配与商品复验/experiment-status.json",
+      "bytes": 1705,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/10_匹配与商品复验/formal.log",
+      "bytes": 36823,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/10_匹配与商品复验/index.html",
+      "bytes": 152950,
+      "storage": "git",
+      "role": "历史展示：原位归档，不能替代当前结论"
+    },
+    {
+      "path": "study/10_匹配与商品复验/input-checks.json",
+      "bytes": 217,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/10_匹配与商品复验/mapping-correction.json",
+      "bytes": 7843,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/10_匹配与商品复验/matching-reference.json",
+      "bytes": 5582,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/10_匹配与商品复验/pilot.log",
+      "bytes": 814,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/10_匹配与商品复验/protocol.json",
+      "bytes": 6337,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/10_匹配与商品复验/report-checks.json",
+      "bytes": 1089,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/10_匹配与商品复验/results.json",
+      "bytes": 199641,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/10_匹配与商品复验/scoring-checks.json",
+      "bytes": 171,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/10_匹配与商品复验/synthetic-cohorts.json",
+      "bytes": 275128,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/10_匹配与商品复验/synthetic-responses.jsonl.gz",
+      "bytes": 339074,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/10_匹配与商品复验/本机运行/freeze.json",
+      "bytes": 32615748,
+      "storage": "local_only",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/10_匹配与商品复验/本机运行/responses.sqlite",
+      "bytes": 5615616,
+      "storage": "local_only",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/11_文献综述/README.md",
+      "bytes": 1558,
+      "storage": "git",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/build.py",
+      "bytes": 3671,
+      "storage": "git",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/fulltext_library.py",
+      "bytes": 6044,
+      "storage": "git",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/index.html",
+      "bytes": 1062,
+      "storage": "git",
+      "role": "历史展示：原位归档，不能替代当前结论"
+    },
+    {
+      "path": "study/11_文献综述/manage_fulltexts.py",
+      "bytes": 3440,
+      "storage": "git",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/sources.json",
+      "bytes": 38304,
+      "storage": "git",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/.gitignore",
+      "bytes": 91,
+      "storage": "git",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/个体决策与画像匹配/R02_学习真人认知与行为的基础模型_正文.pdf",
+      "bytes": 7639742,
+      "storage": "git",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/个体决策与画像匹配/R04_由人口背景生成模拟调查样本_正文.pdf",
+      "bytes": 3204201,
+      "storage": "git",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/个体决策与画像匹配/R06_画像提示带来的偏差_正文.pdf",
+      "bytes": 528093,
+      "storage": "git",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/个体决策与画像匹配/R12_同一画像的不同线索与个性化_正文.pdf",
+      "bytes": 2555708,
+      "storage": "git",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/全文索引.md",
+      "bytes": 42284,
+      "storage": "git",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/回答分布与评估/R08_心理测量中的真人模拟局限_正文.pdf",
+      "bytes": 3855898,
+      "storage": "git",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/回答分布与评估/R18_能描述概率却不能按概率选择_正文.pdf",
+      "bytes": 2796712,
+      "storage": "git",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/文件索引.json",
+      "bytes": 25226,
+      "storage": "git",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/本机全文/个体决策与画像匹配/R01_根据真人自述预测个体选择_正文.pdf",
+      "bytes": 3563209,
+      "storage": "local_only",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/本机全文/个体决策与画像匹配/R02_学习真人认知与行为的基础模型_补充材料.pdf",
+      "bytes": 886538,
+      "storage": "local_only",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/本机全文/个体决策与画像匹配/R03_预测社会科学实验结果_正文.pdf",
+      "bytes": 8460736,
+      "storage": "local_only",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/本机全文/个体决策与画像匹配/R03_预测社会科学实验结果_补充材料.pdf",
+      "bytes": 4034654,
+      "storage": "local_only",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/本机全文/个体决策与画像匹配/R07_对齐目标人群的信念和偏好_正文.pdf",
+      "bytes": 809805,
+      "storage": "local_only",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/本机全文/个体决策与画像匹配/R09_数字画像能否复现真人调查_正文.pdf",
+      "bytes": 5971557,
+      "storage": "local_only",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/本机全文/个体决策与画像匹配/R10_跨74国经济偏好的模拟局限_正文.pdf",
+      "bytes": 6631274,
+      "storage": "local_only",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/本机全文/个体决策与画像匹配/R10_跨74国经济偏好的模拟局限_补充材料.pdf",
+      "bytes": 19907959,
+      "storage": "local_only",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/本机全文/个体决策与画像匹配/R23_模型经济偏好与真人选择_正文.pdf",
+      "bytes": 1735549,
+      "storage": "local_only",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/本机全文/回答分布与评估/R05_问卷选项顺序与标签偏差_官方补充包.zip",
+      "bytes": 13000579,
+      "storage": "local_only",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/本机全文/回答分布与评估/R05_问卷选项顺序与标签偏差_正文.pdf",
+      "bytes": 1619683,
+      "storage": "local_only",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/本机全文/回答分布与评估/R11_模型高估真人幸福感_正文.pdf",
+      "bytes": 2035275,
+      "storage": "local_only",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/本机全文/回答分布与评估/R11_模型高估真人幸福感_补充材料.pdf",
+      "bytes": 497178,
+      "storage": "local_only",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/本机全文/回答分布与评估/R19_谨慎使用模型替代真人_正文网页.html",
+      "bytes": 208798,
+      "storage": "local_only",
+      "role": "历史展示：原位归档，不能替代当前结论"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/本机全文/回答分布与评估/R22_跨领域合成用户失效基准_正文.pdf",
+      "bytes": 791674,
+      "storage": "local_only",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/本机全文/访谈与背景信息采集/R17_图灵测试与聊天真人感_旧预印本正文.pdf",
+      "bytes": 13130382,
+      "storage": "local_only",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/本机全文/访谈与背景信息采集/R17_图灵测试与聊天真人感_正式版正文网页.html",
+      "bytes": 207834,
+      "storage": "local_only",
+      "role": "历史展示：原位归档，不能替代当前结论"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/消费与商品选择/R13_还原消费者购买意愿分布_正文.pdf",
+      "bytes": 4226945,
+      "storage": "git",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/消费与商品选择/R20_消费者研究中的合成样本指南_正文.pdf",
+      "bytes": 3259631,
+      "storage": "git",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/获取记录.json",
+      "bytes": 11603,
+      "storage": "git",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/访谈与背景信息采集/R14_AI自适应访谈与真人访谈_正文.pdf",
+      "bytes": 1733799,
+      "storage": "git",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/访谈与背景信息采集/R15_AI与真人聊天访谈对比_正文.pdf",
+      "bytes": 1192695,
+      "storage": "git",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/访谈与背景信息采集/R16_AI访谈提问能力评估_正文.pdf",
+      "bytes": 1913014,
+      "storage": "git",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/全文资料/访谈与背景信息采集/R21_AI访谈与固定问卷随机对照_正文.pdf",
+      "bytes": 1472114,
+      "storage": "git",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/参数与实验建议.md",
+      "bytes": 2585,
+      "storage": "git",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/文献证据卡.md",
+      "bytes": 28984,
+      "storage": "git",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/检索与更新记录.md",
+      "bytes": 9092,
+      "storage": "git",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/11_文献综述/综述.md",
+      "bytes": 19398,
+      "storage": "git",
+      "role": "文献资料：独立保留"
+    },
+    {
+      "path": "study/README.md",
+      "bytes": 6234,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/build_report.py",
+      "bytes": 12193,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/evidence.html",
+      "bytes": 541111,
+      "storage": "git",
+      "role": "历史展示：原位归档，不能替代当前结论"
+    },
+    {
+      "path": "study/historical-details.html",
+      "bytes": 160060,
+      "storage": "git",
+      "role": "历史展示：原位归档，不能替代当前结论"
+    },
+    {
+      "path": "study/index.html",
+      "bytes": 49146,
+      "storage": "git",
+      "role": "历史展示：原位归档，不能替代当前结论"
+    },
+    {
+      "path": "study/report_charts.js",
+      "bytes": 13798,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/报告模板.html",
+      "bytes": 16331,
+      "storage": "git",
+      "role": "历史展示：原位归档，不能替代当前结论"
+    },
+    {
+      "path": "study/数据/.gitattributes",
+      "bytes": 36,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/数据/anes.zip",
+      "bytes": 6516359,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/数据/persona-1m-official-manifest.json",
+      "bytes": 2692,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/数据/persona-1m-path.txt",
+      "bytes": 80,
+      "storage": "local_only",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/数据/pew.zip",
+      "bytes": 3716968,
+      "storage": "local_only",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/数据/shed-codebook.pdf",
+      "bytes": 849070,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/数据/shed-questionnaire.html",
+      "bytes": 159558,
+      "storage": "git",
+      "role": "历史展示：原位归档，不能替代当前结论"
+    },
+    {
+      "path": "study/数据/shed.zip",
+      "bytes": 4676794,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/数据/实验数据索引.md",
+      "bytes": 5913,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/数据/首轮来源清单.json",
+      "bytes": 920,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "study/调研与决策.md",
+      "bytes": 5800,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    },
+    {
+      "path": "test_revalidation.py",
+      "bytes": 27,
+      "storage": "git",
+      "role": "证据或复算材料：保留"
+    }
+  ]
+}

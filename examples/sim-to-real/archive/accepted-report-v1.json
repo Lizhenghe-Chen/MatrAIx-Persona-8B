@@ -1,0 +1,35 @@
+{
+  "version": "2026-11-12-approved-v1",
+  "commit": "8b4a11dd2c023244b92de00e10aa5ad9cc3ff00a",
+  "policy": "用户认可的报告与结论；后续调整另立版本，不覆盖冻结依据。",
+  "files": [
+    {
+      "path": "reports/index.html",
+      "sha256": "682b27e9687b4ee35bbc9a2f847533495e401824c9add4d074a246e8011b18c6"
+    },
+    {
+      "path": "reports/evidence.json",
+      "sha256": "cac2f35eed5034fa0d0e44b17fb582b05df7e70b4e5a5cb6cecec4a3884b8515"
+    },
+    {
+      "path": "reports/report.html.tmpl",
+      "sha256": "96377e4a18ac190a81424b57d61f1573900a7706ac23ff6e33d243eee0f7f2d1"
+    },
+    {
+      "path": "reports/build.py",
+      "sha256": "69b4345f0c32569217a771b8cb630194aca8ba4d510788877fe3f0483e87de77"
+    },
+    {
+      "path": "reports/charts.js",
+      "sha256": "9234c2c9920d15198cef1d3577e260fa4d848ec01d710f2fffabe94d4f6d25b9"
+    },
+    {
+      "path": "reports/style.css",
+      "sha256": "3c3cfb63d8791ec1f9459155e7447fdae5ed6e2a251d78e43051d4f340349476"
+    },
+    {
+      "path": "study/05_优化记录/优化文档.md",
+      "sha256": "472249aec7760e5502ea9ae9750db7888f3d47b05c47fe613aae21f051ef791e"
+    }
+  ]
+}
