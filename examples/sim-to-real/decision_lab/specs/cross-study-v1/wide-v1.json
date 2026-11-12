@@ -1,0 +1,172 @@
+{
+  "status": "complete",
+  "studies": [
+    "origin",
+    "packaging",
+    "pew111",
+    "german",
+    "tshirt",
+    "radiant"
+  ],
+  "arms": [
+    "original",
+    "optimized"
+  ],
+  "excluded_participants": [],
+  "excluded_policy": "Excluded before any effect was computed: no complete approved persona exists in the release. Reported, never replaced by a hand-written profile.",
+  "people_with_persona": {
+    "origin": 96,
+    "packaging": 96,
+    "pew111": 96,
+    "german": 96,
+    "tshirt": 96,
+    "radiant": 96
+  },
+  "jobs_per_study_arm": {
+    "origin/original": 96,
+    "origin/optimized": 96,
+    "packaging/original": 96,
+    "packaging/optimized": 96,
+    "pew111/original": 96,
+    "pew111/optimized": 96,
+    "german/original": 96,
+    "german/optimized": 96,
+    "tshirt/original": 96,
+    "tshirt/optimized": 96,
+    "radiant/original": 96,
+    "radiant/optimized": 96
+  },
+  "total_calls": 1152,
+  "max_calls": 1152,
+  "max_retries": 62,
+  "reserved_peak_usd": 35.66826912,
+  "max_cost_usd": 42.81,
+  "input_peak_usd_per_million": 1.32,
+  "output_peak_usd_per_million": 3.96,
+  "price_source": "https://api-docs.deepseek.com/quick_start/pricing/",
+  "expected_identity": {
+    "model": "deepseek-v4-pro",
+    "system_fingerprint": "a307abda487cd1b463329ccb945ce396"
+  },
+  "jobs_sha256": "a85d398fa2871939d328b1864e63164aeea58092a68415d7128bc7e6807c8b24",
+  "people_per_study": {
+    "origin": 96,
+    "packaging": 96,
+    "pew111": 96,
+    "german": 96,
+    "tshirt": 96,
+    "radiant": 96
+  },
+  "persona_field_distribution": {
+    "origin": {
+      "min": 9,
+      "median": 115.0,
+      "max": 843,
+      "mean": 292.1354166666667,
+      "people": 96
+    },
+    "packaging": {
+      "min": 12,
+      "median": 311.0,
+      "max": 783,
+      "mean": 304.21875,
+      "people": 96
+    },
+    "pew111": {
+      "min": 12,
+      "median": 327.0,
+      "max": 832,
+      "mean": 304.1770833333333,
+      "people": 96
+    },
+    "german": {
+      "min": 293,
+      "median": 641.0,
+      "max": 972,
+      "mean": 623.0625,
+      "people": 96
+    },
+    "tshirt": {
+      "min": 11,
+      "median": 307.5,
+      "max": 871,
+      "mean": 284.7708333333333,
+      "people": 96
+    },
+    "radiant": {
+      "min": 135,
+      "median": 524.0,
+      "max": 921,
+      "mean": 492.4166666666667,
+      "people": 96
+    }
+  },
+  "omitted_dimension_distribution": {
+    "origin": {
+      "min": 447,
+      "median": 1175.0,
+      "max": 1281,
+      "mean": 997.8645833333334,
+      "people": 96
+    },
+    "packaging": {
+      "min": 507,
+      "median": 979.0,
+      "max": 1278,
+      "mean": 985.78125,
+      "people": 96
+    },
+    "pew111": {
+      "min": 458,
+      "median": 963.0,
+      "max": 1278,
+      "mean": 985.8229166666666,
+      "people": 96
+    },
+    "german": {
+      "min": 318,
+      "median": 649.0,
+      "max": 997,
+      "mean": 666.9375,
+      "people": 96
+    },
+    "tshirt": {
+      "min": 419,
+      "median": 982.5,
+      "max": 1279,
+      "mean": 1005.2291666666666,
+      "people": 96
+    },
+    "radiant": {
+      "min": 369,
+      "median": 766.0,
+      "max": 1155,
+      "mean": 797.5833333333334,
+      "people": 96
+    }
+  },
+  "persona_richness_note": "Approved categorical dimensions sent per persona differ by study and by person. A cross-study comparison must read this table: a larger field count is not evidence that the persona is more accurate, but it is a confound for how much information the model received.",
+  "scoring_plan": {
+    "primary": "optimized versus original, per-person Brier, paired by person within stratum, 2000 draws",
+    "required_comparators": [
+      "history (weighted option shares from non-evaluated respondents)",
+      "stratum_history (same, within stratum where at least 20 respondents exist)",
+      "uniform"
+    ],
+    "distribution": "equal-card mean absolute share difference in percentage points",
+    "gates": "relative Brier improvement at least 2% with the 95% interval above zero; card-share improvement reported separately",
+    "no_default_answers": true
+  },
+  "formal_effects_available": false,
+  "formal_run_authorized_by_user": true,
+  "authorization_note": "Plan approved 2026-11-12 with a stop point at cost reporting; cost was reported (1,152 calls, reserved peak $35.67, hard cap $42.81, estimated actual $7.7 against a $35 balance) and the user was unavailable. Proceeding on the approved plan: actual cost is ~4.5x below balance and every failure is retained rather than silently resent.",
+  "execution_mode": {
+    "workers": 4,
+    "claim": "INSERT OR IGNORE inside BEGIN IMMEDIATE; one row per frozen body hash"
+  },
+  "completion": {
+    "completed_calls": 1148,
+    "unclaimed_jobs": 4,
+    "note": "4 jobs share a request body with another job (two German respondent pairs with identical approved dimensions); the database keys on the body hash, so one call answers both. No answer is fabricated."
+  }
+}

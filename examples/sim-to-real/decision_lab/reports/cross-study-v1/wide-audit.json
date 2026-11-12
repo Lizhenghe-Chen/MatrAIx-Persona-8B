@@ -1,0 +1,187 @@
+{
+  "cohort_size": 96,
+  "studies": {
+    "origin": {
+      "study": "origin",
+      "respondents": 996,
+      "match_eligible": 712,
+      "questions_per_person": [
+        7,
+        9,
+        10
+      ],
+      "choices": 9955,
+      "complete_rate": 1.0,
+      "rejected": {
+        "choice_not_in_options": 0,
+        "missing_attribute_text": 0,
+        "duplicate_option_ids": 0
+      },
+      "distinct_cards": 10,
+      "cards_with_20_respondents": 10,
+      "respondents_per_card": {
+        "min": 995,
+        "median": 996,
+        "max": 996
+      },
+      "population_estimable": true,
+      "reference_history_coverage": 1.0,
+      "accepted": true
+    },
+    "packaging": {
+      "study": "packaging",
+      "respondents": 1291,
+      "match_eligible": 1291,
+      "questions_per_person": [
+        8
+      ],
+      "choices": 10328,
+      "complete_rate": 1.0,
+      "rejected": {
+        "choice_not_in_options": 0,
+        "missing_attribute_text": 0,
+        "duplicate_option_ids": 0
+      },
+      "distinct_cards": 16,
+      "cards_with_20_respondents": 16,
+      "respondents_per_card": {
+        "min": 643,
+        "median": 648,
+        "max": 648
+      },
+      "population_estimable": true,
+      "reference_history_coverage": 1.0,
+      "accepted": true
+    },
+    "pew111": {
+      "study": "pew111",
+      "respondents": 5890,
+      "match_eligible": 5863,
+      "questions_per_person": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "choices": 32626,
+      "complete_rate": 1.0,
+      "rejected": {
+        "choice_not_in_options": 0,
+        "missing_attribute_text": 0,
+        "duplicate_option_ids": 0
+      },
+      "distinct_cards": 6,
+      "cards_with_20_respondents": 6,
+      "respondents_per_card": {
+        "min": 4620,
+        "median": 5858,
+        "max": 5865
+      },
+      "population_estimable": true,
+      "reference_history_coverage": 1.0,
+      "accepted": true
+    },
+    "german": {
+      "study": "german",
+      "respondents": 325,
+      "match_eligible": 325,
+      "questions_per_person": [
+        12
+      ],
+      "choices": 3900,
+      "complete_rate": 1.0,
+      "rejected": {
+        "choice_not_in_options": 0,
+        "missing_attribute_text": 0,
+        "duplicate_option_ids": 0
+      },
+      "distinct_cards": 12,
+      "cards_with_20_respondents": 12,
+      "respondents_per_card": {
+        "min": 325,
+        "median": 325,
+        "max": 325
+      },
+      "population_estimable": true,
+      "reference_history_coverage": 1.0,
+      "accepted": true
+    },
+    "tshirt": {
+      "study": "tshirt",
+      "respondents": 1184,
+      "match_eligible": 1184,
+      "questions_per_person": [
+        5
+      ],
+      "choices": 5920,
+      "complete_rate": 1.0,
+      "rejected": {
+        "choice_not_in_options": 0,
+        "missing_attribute_text": 0,
+        "duplicate_option_ids": 0
+      },
+      "distinct_cards": 5919,
+      "cards_with_20_respondents": 0,
+      "respondents_per_card": {
+        "min": 1,
+        "median": 1,
+        "max": 2
+      },
+      "population_estimable": false,
+      "reference_history_coverage": 0.0,
+      "accepted": true
+    },
+    "swiss_six": {
+      "study": "swiss_six",
+      "respondents": 6433,
+      "match_eligible": 0,
+      "questions_per_person": [
+        6
+      ],
+      "choices": 38598,
+      "complete_rate": 1.0,
+      "rejected": {
+        "choice_not_in_options": 0,
+        "missing_attribute_text": 0,
+        "duplicate_option_ids": 0
+      },
+      "distinct_cards": 2400,
+      "cards_with_20_respondents": 474,
+      "respondents_per_card": {
+        "min": 5,
+        "median": 16,
+        "max": 31
+      },
+      "population_estimable": false,
+      "reference_history_coverage": 0.1975,
+      "accepted": true
+    },
+    "radiant": {
+      "study": "radiant",
+      "respondents": 331,
+      "match_eligible": 331,
+      "questions_per_person": [
+        6
+      ],
+      "choices": 1986,
+      "complete_rate": 1.0,
+      "rejected": {
+        "choice_not_in_options": 0,
+        "missing_attribute_text": 0,
+        "duplicate_option_ids": 0
+      },
+      "distinct_cards": 32,
+      "cards_with_20_respondents": 32,
+      "respondents_per_card": {
+        "min": 53,
+        "median": 54,
+        "max": 113
+      },
+      "population_estimable": true,
+      "reference_history_coverage": 1.0,
+      "accepted": true
+    }
+  }
+}

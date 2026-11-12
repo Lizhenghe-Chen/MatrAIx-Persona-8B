@@ -27,6 +27,10 @@ ORIGIN_ORIGINAL = DATA / '06_历史北美电商/origin-original.tab'
 PACKAGING = DATA / '06_历史北美电商/packaging.csv'
 PEW111 = DATA / '06_历史北美电商/Pew-W111.zip'
 SHOES = DATA / '08_购物研究与候选/shoes.csv.gz'
+GERMAN = DATA / '03_德国番茄包装/data_valid.sav'
+RADIANT = DATA / '11_欧洲新品食品/COESHT.xlsx'
+TSHIRT = DATA / '07_美国T恤/CFTF_usa.dta'
+SWISS_SIX = DATA / '02_瑞士六品类/w14_conjoint.RData'
 DRONE = DATA / '08_购物研究与候选/drone-survey.csv.gz'
 
 ORIGIN_CONTEXT = 'United States. Survey period: June 2020.'
@@ -37,6 +41,43 @@ PACKAGING_CHEAP_TALK = (' No money changes hands in this survey. Make each choic
 PEW111_CONTEXT = 'United States. Survey period: July 2022.'
 # The published instrument stores the conjoint screens as images, so the exact 1-7 anchor
 # wording could not be read back. The neutral wording below is declared, not reconstructed.
+# The archive holds the design table but not the bioplastic information text, so only the
+# arm that received no extra information is used. The survey period is not documented.
+GERMAN_CONTEXT = ('Germany. Survey period: not documented in the archive. 1 kg of tomatoes in the shown '
+                  'packaging. Compare the three packages and choose one, or choose not to buy any.')
+GERMAN_EDUCATION = {2: 'Finished school without certificate',
+                    3: 'Elementary/main school or polytechnic secondary school, 8th/9th grade',
+                    4: 'Intermediate school, secondary school or polytechnic upper secondary school, 10th grade',
+                    5: 'Advanced technical college entrance qualification (graduation from a technical college',
+                    7: 'University degree'}
+GERMAN_AGE = {1: 'up to 29', 2: '30-39', 3: '40-49', 4: '50-59', 5: '60 or older'}
+GERMAN_GENDER = {1: 'Female', 2: 'Male'}
+GERMAN_HOUSEHOLD = {1: '1', 2: '2', 3: '3', 4: '4', 5: '5'}
+# Spain only: the archive's other country files follow the same schema but are not part of
+# this pre-registration. Period and option labels are taken from the author's metadata sheet.
+RADIANT_CONTEXT = ('Spain. Survey period: 16-22 January 2025. Hanging tomatoes, 1 kg. Three options are '
+                   'shown; option 3 means you would buy neither.')
+RADIANT_VARIETY = {1: 'Underutilised variety', 2: 'Commercial variety'}
+RADIANT_CULTURE = {1: 'Without cultural value', 2: 'With cultural value'}
+RADIANT_ACCESS = {1: 'Short food supply chain', 2: 'Speciality food shop', 3: 'Supermarket'}
+RADIANT_LABEL = {1: 'Without label', 2: 'With label'}
+RADIANT_PLACE = {1: 'Locally (your province)', 2: 'Elsewhere in Spain', 3: 'Outside Spain'}
+RADIANT_EDUCATION = {0: 'No formal', 1: 'Primary', 2: 'Secondary', 3: 'Some college',
+                     4: "Bachelor's", 5: "Master's"}
+RADIANT_AGE = {1: '18-24', 2: '25-34', 3: '35-44', 4: '45-54', 5: '55-64', 6: '65-74'}
+RADIANT_GENDER = {1: 'Female', 2: 'Male'}
+TSHIRT_CONTEXT = ('United States. Survey period: not documented in the archive. One T-shirt described by '
+                  'country of origin, material, quality grade and price. Choose one of the three.')
+TSHIRT_EDUCATION = {'4-year college': "Bachelor's",
+                    '2-year college': "Associate's",
+                    'Some college, but not degree (yet)': 'Some college',
+                    'High school graduate': 'Secondary',
+                    'Did not graduate from high school': 'Below high school',
+                    'Postgraduate degree': "Master's"}
+# Same panel as the already-run Swiss appliance study: declared in the report as one cluster,
+# never counted as an independent replication.
+SWISS_SIX_CONTEXT = ('Switzerland. Survey period: not documented in the archive. Two products are shown '
+                     'per screen; choose the one you would buy.')
 SHOES_CONTEXT = ('United States. Survey period: 2020, online panel. Each screen shows one shoe. Rate how '
                  'likely you would be to buy it, on a scale from 1 (not at all likely) to 7 (extremely likely).')
 SHOES_SCALE = [str(level) for level in range(1, 8)]
@@ -396,4 +437,186 @@ def drone_rows():
                      'questions': questions, 'truth': truth,
                      'group': f"{background['Age group']}|{background['Gender']}",
                      'country': 'United States', 'source_id': row['ResponseId']})
+    return rows
+
+
+def german_rows():
+    """Twelve fixed choice cards x three packages plus "none"; only the no-information arm."""
+    import pyreadstat
+    from .german_baseline import NONE, TASKS, option_text
+    frame, _ = pyreadstat.read_sav(str(GERMAN))
+    rows = []
+    for _, record in frame.iterrows():
+        try:
+            education = GERMAN_EDUCATION.get(int(record['Education']))
+            age = GERMAN_AGE.get(int(record['Age']))
+            gender = GERMAN_GENDER.get(int(record['Gender']))
+            household = GERMAN_HOUSEHOLD.get(int(record['HHSize']))
+        except (TypeError, ValueError):
+            continue
+        if int(record['Group']) != 2 or not (education and age and gender):
+            continue
+        background = {'Age': age, 'Education': education, 'Gender': gender}
+        if household:
+            background['household_size'] = household
+        questions, truth = [], {}
+        for task, profiles in TASKS.items():
+            answer = record.get(f'Choice{task:02d}')
+            if answer is None or (isinstance(answer, float) and answer != answer):
+                continue
+            code = str(int(answer))
+            if code not in ('0', '1', '2', '3'):
+                continue
+            options = [(str(index + 1), option_text(profile)) for index, profile in enumerate(profiles)]
+            options.append(NONE)
+            questions.append(question(f'german_task{task}',
+                                      'Which of these packages would you choose for 1 kg of tomatoes?', options))
+            truth[f'german_task{task}'] = code
+        if not questions or len(truth) != len(questions):
+            continue
+        rows.append({'study': 'german', 'person': person_id('german', str(int(record['ID']))),
+                     'stratum': f'{age}|{education}', 'weight': 1.0, 'background': background,
+                     'context': GERMAN_CONTEXT, 'questions': questions, 'truth': truth,
+                     'group': f'{age}|{education}', 'country': 'Germany',
+                     'source_id': str(int(record['ID']))})
+    return rows
+
+
+def radiant_rows():
+    """Spanish hanging-tomato choice experiment: six cards per respondent, three options, opt-out."""
+    import pandas as pd
+    choices = pd.read_excel(RADIANT, sheet_name='choice')
+    survey = pd.read_excel(RADIANT, sheet_name='survey').set_index('unique_id')
+    rows = []
+    for person, block in choices.groupby('unique_id'):
+        record = survey.loc[person]
+        age = RADIANT_AGE.get(int(record['age'])) if record['age'] == record['age'] else None
+        education = RADIANT_EDUCATION.get(int(record['education'])) if record['education'] == record['education'] else None
+        gender = RADIANT_GENDER.get(int(record['gender'])) if record['gender'] == record['gender'] else None
+        if not (age and education and gender):
+            continue
+        background = {'Age': age, 'Education': education, 'Gender': gender}
+        questions, truth = [], {}
+        for card, group in block.groupby('choice_card'):
+            options, chosen = [], None
+            for _, option in group.sort_values('option').iterrows():
+                code = int(option['option'])
+                if code == 3:
+                    options.append(('3', 'Neither (I would not buy any)'))
+                else:
+                    parts = []
+                    for key, table, value in [('variety', RADIANT_VARIETY, option['variety']),
+                                              ('cultural value', RADIANT_CULTURE, option['cultur']),
+                                              ('access', RADIANT_ACCESS, option['access']),
+                                              ('label', RADIANT_LABEL, option['label']),
+                                              ('place of production', RADIANT_PLACE, option['place'])]:
+                        label = table.get(int(value))
+                        if label is None:
+                            options = []
+                            break
+                        parts.append(f'{key}: {label}')
+                    if not options and not parts:
+                        continue
+                    parts.append(f'cost: {float(option["cost"]):.2f} EUR/kg')
+                    options.append((str(code), ', '.join(parts)))
+                if int(option['choice']) == 1:
+                    chosen = str(code)
+            if len(options) != 3 or chosen not in {code for code, _ in options}:
+                continue
+            identity = 'radiant_' + hashlib.sha256(
+                '|'.join(f'{code}:{text}' for code, text in sorted(options)).encode()).hexdigest()[:12]
+            questions.append(question(identity, 'Which of these would you buy?', options))
+            truth[identity] = chosen
+        if not questions or len(truth) != len(questions):
+            continue
+        rows.append({'study': 'radiant', 'person': person_id('radiant', str(person)),
+                     'stratum': f'{age}|{education}', 'weight': 1.0, 'background': background,
+                     'context': RADIANT_CONTEXT, 'questions': questions, 'truth': truth,
+                     'group': f'{age}|{education}', 'country': 'Spain',
+                     'source_id': str(person)})
+    return rows
+
+
+def tshirt_rows():
+    """Three described T-shirts per card, five cards per respondent; cards are effectively unique."""
+    import pandas as pd
+    from .tshirt_baseline import option_text
+    frame = pd.read_stata(str(TSHIRT), convert_categoricals=True)
+    frame = frame[frame['tschoice'].notna()]
+    rows = []
+    for person, block in frame.groupby('respid'):
+        first = block.iloc[0]
+        education = TSHIRT_EDUCATION.get(str(first.get('educ2', '')).strip())
+        try:
+            age = int(float(first['age']))
+        except (TypeError, ValueError):
+            age = None
+        gender = {1.0: 'Female', 0.0: 'Male'}.get(float(first['female'])) if first['female'] == first['female'] else None
+        if not education or age is None or not gender:
+            continue
+        background = {'Age': str(age), 'Education': education, 'Gender': gender}
+        rural = str(first.get('urbanrural', '')).strip()
+        if rural:
+            background['Area'] = rural
+        questions, truth = [], {}
+        for task, group in block.groupby('taskid'):
+            options, chosen = [], None
+            for _, option in group.sort_values('prof').iterrows():
+                code = str(int(option['prof']))
+                label = option_text(str(option['madeinTShirt']), str(option['material']),
+                                    str(option['quality']), str(option['priceTshirt']))
+                options.append((code, label))
+                if int(option['tschoice']) == 1:
+                    chosen = code
+            if len(options) != 3 or chosen not in {code for code, _ in options}:
+                continue
+            identity = 'tshirt_' + hashlib.sha256(
+                '|'.join(f'{code}:{text}' for code, text in sorted(options)).encode()).hexdigest()[:12]
+            questions.append(question(identity, 'Which of these T-shirts would you buy?', options))
+            truth[identity] = chosen
+        if not questions or len(truth) != len(questions):
+            continue
+        rows.append({'study': 'tshirt', 'person': person_id('tshirt', str(int(person))),
+                     'stratum': f'{age_band(age)}|{education}', 'weight': 1.0, 'background': background,
+                     'context': TSHIRT_CONTEXT, 'questions': questions, 'truth': truth,
+                     'group': f'{age_band(age)}|{education}', 'country': 'United States',
+                     'source_id': str(int(person))})
+    return rows
+
+
+def swiss_six_rows():
+    """Six product categories, two alternatives per round; the panel overlaps the Swiss appliance study."""
+    import pyreadr
+    frame = pyreadr.read_r(str(SWISS_SIX))['dfconj']
+    rows = []
+    for person, block in frame.groupby('PubId'):
+        questions, truth = [], {}
+        for round_id, group in block.groupby('round'):
+            group = group.sort_values('measure')
+            if len(group) != 2:
+                continue
+            options, chosen = [], None
+            for _, option in group.iterrows():
+                code = str(int(option['measure']))
+                product = str(option['product'])
+                label = (f'{product}, price: {option["price"]}, '
+                         f'impact on local economy: {option["impact"]}')
+                options.append((code, label))
+                if int(option['choice']) == 1:
+                    chosen = code
+            if chosen not in {code for code, _ in options}:
+                continue
+            product = str(group.iloc[0]['product'])
+            identity = 'swisssix_' + hashlib.sha256(
+                f'{product}|'.encode() + '|'.join(f'{c}:{t}' for c, t in sorted(options)).encode()).hexdigest()[:12]
+            questions.append(question(identity, f'Which {product} would you buy?', options))
+            truth[identity] = chosen
+        if not questions or len(truth) != len(questions):
+            continue
+        rows.append({'study': 'swiss_six', 'person': person_id('swiss_six', str(int(person))),
+                     'stratum': 'Switzerland|panel', 'weight': 1.0,
+                     'background': {'Country': 'Switzerland'},
+                     'context': SWISS_SIX_CONTEXT, 'questions': questions, 'truth': truth,
+                     'group': 'Switzerland|panel', 'country': 'Switzerland',
+                     'source_id': str(int(person))})
     return rows

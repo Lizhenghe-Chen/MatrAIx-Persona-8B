@@ -11,7 +11,8 @@ from collections import Counter, defaultdict
 
 import pyarrow.parquet as pq
 
-from .adapters import drone_rows, shoes_rows
+from .adapters import (drone_rows, german_rows, origin_rows, packaging_rows, pew111_rows,
+                       radiant_rows, shoes_rows, tshirt_rows)
 from .matching import compatible, constraints
 from .personas import FIELDS, decode
 from .registry import DATA, OUT
@@ -19,14 +20,17 @@ from .targets import PRIVATE
 
 SEED = 20261109
 STUDIES = ('drone', 'shoes')
+WIDE = ('origin', 'packaging', 'pew111', 'german', 'tshirt', 'radiant')
+WIDE_LOADERS = {'origin': origin_rows, 'packaging': packaging_rows, 'pew111': pew111_rows,
+                'german': german_rows, 'tshirt': tshirt_rows, 'radiant': radiant_rows}
 PHASES = (('pilot', 8), ('screen', 48), ('reserve', 96))
 UNDER_18 = ('Under 5', '5-12', '13-17', 'unknown')
 
 
-def eligible():
-    loaders = {'drone': drone_rows, 'shoes': shoes_rows}
+def eligible(studies=STUDIES):
+    loaders = {'drone': drone_rows, 'shoes': shoes_rows, **WIDE_LOADERS}
     by_study, excluded = {}, {}
-    for study in STUDIES:
+    for study in studies:
         kept, reasons = [], Counter()
         for row in loaders[study]():
             rule, error = constraints(row)
@@ -67,7 +71,7 @@ def allocate(rows):
     return chosen, summary
 
 
-def pool(needed_ages):
+def pool(needed_ages, regions=('North America',)):
     release = DATA / '09_MatrAIx画像/Persona-1M发行版'
     manifest = json.loads((release / 'manifest.json').read_text())
     columns = list(enumerate(json.loads((release / 'persona_codes.schema.json').read_text())['columns']))
@@ -81,7 +85,7 @@ def pool(needed_ages):
                 index = offset
                 offset += 1
                 fields = decode(row, keep)
-                if fields['region'] != 'North America' or fields['age_bracket'] not in needed_ages:
+                if fields['region'] not in regions or fields['age_bracket'] not in needed_ages:
                     continue
                 if row['source'] == 'real_human_survey':
                     continue
@@ -100,24 +104,24 @@ def pool(needed_ages):
     return [x for key in sorted(buckets) for x in buckets[key]]
 
 
-def main():
-    path = PRIVATE / 'cohort-clean-v1.json'
+def build(studies, path, report_path):
     if path.exists():
         raise ValueError('Do not overwrite a frozen cohort snapshot: ' + str(path))
-    by_study, excluded = eligible()
+    by_study, excluded = eligible(studies)
     chosen, summaries = {}, {}
-    for study in STUDIES:
+    for study in studies:
         chosen[study], summaries[study] = allocate(by_study[study])
-    needed = set()
+    needed, regions = set(), set()
     for rows in chosen.values():
         for row in rows:
             needed.update(row['matching_rule']['allowed']['age_bracket'])
-    candidates = pool(needed)
+            regions.update(row['matching_rule']['allowed']['region'])
+    candidates = pool(needed, tuple(sorted(regions)))
     by_age = defaultdict(list)
     for candidate in candidates:
         by_age[candidate['fields']['age_bracket']].append(candidate)
     matched, used_per_study = [], defaultdict(set)
-    for study in STUDIES:
+    for study in studies:
         for row in chosen[study]:
             rule = row['matching_rule']
             options = [c for age in rule['allowed']['age_bracket'] for c in by_age.get(age, [])]
@@ -138,7 +142,7 @@ def main():
               'candidate_pool_records': len(candidates),
               'snapshot_sha256': hashlib.sha256(path.read_bytes()).hexdigest(),
               'studies': {}}
-    for study in STUDIES:
+    for study in studies:
         rows = [r for r in matched if r['study'] == study]
         report['studies'][study] = {
             'eligible_respondents': len(by_study[study]),
@@ -152,8 +156,16 @@ def main():
             'match_fields': sorted({k for r in rows for k in r['matching_rule']['allowed']}),
             'source_counts': dict(Counter(r['persona']['source'] for r in rows if r['persona'])),
         }
-    (OUT / 'matching-clean-v1.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
+    report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps({s: (v['matched'], v['selected']) for s, v in report['studies'].items()}))
+
+
+def main():
+    build(STUDIES, PRIVATE / 'cohort-clean-v1.json', OUT / 'matching-clean-v1.json')
+
+
+def main_wide():
+    build(WIDE, PRIVATE / 'cohort-wide-v1.json', OUT / 'matching-wide-v1.json')
 
 
 if __name__ == '__main__':

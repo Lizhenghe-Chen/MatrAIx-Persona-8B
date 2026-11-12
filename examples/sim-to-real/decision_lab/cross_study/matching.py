@@ -32,6 +32,23 @@ EDUCATION.update({
     'College graduate/some post grad': ["Bachelor's"],
     'Postgraduate': DEGREE[1:],
     'Below bachelor\'s degree': ['No formal', 'Primary', 'Secondary', 'Vocational / cert', 'Some college', "Associate's"],
+    # German instrument (data_valid.sav). Level 6 is excluded at the adapter because its
+    # label merges Abitur with a university degree; nothing is guessed here.
+    'Finished school without certificate': ['No formal'],
+    'Elementary/main school or polytechnic secondary school, 8th/9th grade': ['Primary', 'Secondary'],
+    'Intermediate school, secondary school or polytechnic upper secondary school, 10th grade': ['Secondary'],
+    'Advanced technical college entrance qualification (graduation from a technical college': ['Vocational / cert'],
+    'University degree': DEGREE,
+    # RADIANT (Spain): the adapter passes the author's canonical level names directly.
+    'No formal': ['No formal'],
+    'Primary': ['Primary'],
+    'Secondary': ['Secondary'],
+    'Some college': ['Some college', "Associate's"],
+    "Bachelor's": ["Bachelor's"],
+    "Master's": DEGREE[1:],
+    # US T-shirt instrument (CFTF_usa.dta).
+    "Associate's": ["Associate's"],
+    'Below high school': ['No formal', 'Primary'],
 })
 # Studies whose instrument never measured education. The constraint is dropped and
 # declared; education is never inferred from other fields.
@@ -44,8 +61,14 @@ AGE_SPANS={
  '36-45 years old':(['35-44','45-54'],'span_band_36_45'),
  '46-55 years old':(['45-54','55-64'],'span_band_46_55'),
  '56 years old or older':(AGE[4:],'band_56_plus'),
+ # German study reports decade bands that straddle persona brackets; widened, never narrowed.
+ 'up to 29':(['18-24','25-34'],'span_band_under_30'),
+ '30-39':(['25-34','35-44'],'span_band_30_39'),
+ '40-49':(['35-44','45-54'],'span_band_40_49'),
+ '50-59':(['45-54','55-64'],'span_band_50_59'),
+ '60 or older':(AGE[4:],'band_60_plus'),
 }
-COUNTRIES={'USA':'North America','US':'North America','United States':'North America','Canada':'North America','CAN':'North America','UK':'Western Europe','United Kingdom':'Western Europe','Ireland':'Western Europe','IRE':'Western Europe','Switzerland':'Western Europe'}
+COUNTRIES={'USA':'North America','US':'North America','United States':'North America','Canada':'North America','CAN':'North America','UK':'Western Europe','United Kingdom':'Western Europe','Ireland':'Western Europe','IRE':'Western Europe','Switzerland':'Western Europe','Germany':'Western Europe','Deutschland':'Western Europe','Spain':'Western Europe'}
 
 def constraints(record):
  b=record['background'];raw=str(next((b[k] for k in ['Age','Age group','age_band','age_years'] if k in b),'Unknown')).replace('–','-')

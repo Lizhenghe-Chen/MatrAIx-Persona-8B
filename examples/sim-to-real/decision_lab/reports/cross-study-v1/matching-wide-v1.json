@@ -1,0 +1,502 @@
+{
+  "status": "candidate_matching_not_formal_freeze",
+  "seed": 20261109,
+  "candidate_pool_records": 32012,
+  "snapshot_sha256": "b209efa6b47e453c18f5b99310dbbf2b8787ba1b7cac1ccbaf3fbc27648a0857",
+  "studies": {
+    "origin": {
+      "eligible_respondents": 712,
+      "excluded": {
+        "not_adult": 284
+      },
+      "phase_allocation": {
+        "pilot": {
+          "18-24|Bachelor's degree or higher": 1,
+          "18-24|Below bachelor's degree": 1,
+          "25-34|Bachelor's degree or higher": 1,
+          "25-34|Below bachelor's degree": 1,
+          "35-44|Bachelor's degree or higher": 1,
+          "35-44|Below bachelor's degree": 1,
+          "45-54|Bachelor's degree or higher": 1,
+          "45-54|Below bachelor's degree": 1
+        },
+        "screen": {
+          "18-24|Bachelor's degree or higher": 6,
+          "18-24|Below bachelor's degree": 5,
+          "25-34|Bachelor's degree or higher": 6,
+          "25-34|Below bachelor's degree": 7,
+          "35-44|Bachelor's degree or higher": 5,
+          "35-44|Below bachelor's degree": 7,
+          "45-54|Bachelor's degree or higher": 4,
+          "45-54|Below bachelor's degree": 5,
+          "55-64|Bachelor's degree or higher": 1,
+          "55-64|Below bachelor's degree": 2
+        },
+        "reserve": {
+          "18-24|Bachelor's degree or higher": 12,
+          "18-24|Below bachelor's degree": 10,
+          "25-34|Bachelor's degree or higher": 11,
+          "25-34|Below bachelor's degree": 15,
+          "35-44|Bachelor's degree or higher": 10,
+          "35-44|Below bachelor's degree": 14,
+          "45-54|Bachelor's degree or higher": 8,
+          "45-54|Below bachelor's degree": 10,
+          "55-64|Bachelor's degree or higher": 2,
+          "55-64|Below bachelor's degree": 3,
+          "65-74|Below bachelor's degree": 1
+        }
+      },
+      "selected": 152,
+      "matched": 152,
+      "unique_release_profiles": 152,
+      "age_resolutions": {
+        "numeric_age_to_native_band": 152
+      },
+      "education_resolution": "unavailable_in_instrument",
+      "match_fields": [
+        "age_bracket",
+        "highest_education",
+        "region"
+      ],
+      "source_counts": {
+        "stackoverflow": 35,
+        "wiki": 64,
+        "gss": 45,
+        "amazon": 3,
+        "prism": 5
+      }
+    },
+    "packaging": {
+      "eligible_respondents": 1291,
+      "excluded": {},
+      "phase_allocation": {
+        "pilot": {
+          "25-34|AA or BA": 1,
+          "25-34|High school, no college": 1,
+          "45-54|AA or BA": 1,
+          "45-54|High school, no college": 1,
+          "55-64|AA or BA": 1,
+          "55-64|High school, no college": 1,
+          "65+|AA or BA": 1,
+          "65+|Attended college, no degree": 1
+        },
+        "screen": {
+          "21-24|Attended college, no degree": 1,
+          "21-24|High school, no college": 1,
+          "25-34|AA or BA": 3,
+          "25-34|Attended college, no degree": 2,
+          "25-34|Graduate degree": 2,
+          "25-34|High school, no college": 2,
+          "35-44|AA or BA": 2,
+          "35-44|Attended college, no degree": 2,
+          "35-44|Graduate degree": 1,
+          "35-44|High school, no college": 2,
+          "35-44|No high school diploma": 1,
+          "45-54|AA or BA": 3,
+          "45-54|Attended college, no degree": 2,
+          "45-54|Graduate degree": 1,
+          "45-54|High school, no college": 3,
+          "55-64|AA or BA": 3,
+          "55-64|Attended college, no degree": 2,
+          "55-64|Graduate degree": 1,
+          "55-64|High school, no college": 3,
+          "65+|AA or BA": 4,
+          "65+|Attended college, no degree": 3,
+          "65+|Graduate degree": 2,
+          "65+|High school, no college": 2
+        },
+        "reserve": {
+          "21-24|AA or BA": 1,
+          "21-24|Attended college, no degree": 1,
+          "21-24|High school, no college": 1,
+          "25-34|AA or BA": 5,
+          "25-34|Attended college, no degree": 4,
+          "25-34|Graduate degree": 3,
+          "25-34|High school, no college": 5,
+          "25-34|No high school diploma": 1,
+          "35-44|AA or BA": 5,
+          "35-44|Attended college, no degree": 3,
+          "35-44|Graduate degree": 3,
+          "35-44|High school, no college": 5,
+          "35-44|No high school diploma": 1,
+          "45-54|AA or BA": 6,
+          "45-54|Attended college, no degree": 4,
+          "45-54|Graduate degree": 3,
+          "45-54|High school, no college": 6,
+          "45-54|No high school diploma": 1,
+          "55-64|AA or BA": 6,
+          "55-64|Attended college, no degree": 5,
+          "55-64|Graduate degree": 1,
+          "55-64|High school, no college": 5,
+          "65+|AA or BA": 7,
+          "65+|Attended college, no degree": 6,
+          "65+|Graduate degree": 3,
+          "65+|High school, no college": 5
+        }
+      },
+      "selected": 152,
+      "matched": 152,
+      "unique_release_profiles": 152,
+      "age_resolutions": {
+        "native_age_band": 113,
+        "65_plus": 34,
+        "sub_band_21_24": 5
+      },
+      "education_resolution": "unavailable_in_instrument",
+      "match_fields": [
+        "age_bracket",
+        "highest_education",
+        "region"
+      ],
+      "source_counts": {
+        "gss": 34,
+        "wiki": 82,
+        "prism": 5,
+        "stackoverflow": 28,
+        "amazon": 3
+      }
+    },
+    "pew111": {
+      "eligible_respondents": 5863,
+      "excluded": {
+        "unmapped_education:Refused": 11,
+        "unmapped_age:Refused": 16
+      },
+      "phase_allocation": {
+        "pilot": {
+          "18-29|College graduate/some post grad": 1,
+          "30-49|College graduate/some post grad": 1,
+          "30-49|Postgraduate": 1,
+          "30-49|Some college, no degree": 1,
+          "50-64|College graduate/some post grad": 1,
+          "50-64|High school graduate": 1,
+          "50-64|Postgraduate": 1,
+          "50-64|Some college, no degree": 1
+        },
+        "screen": {
+          "18-29|Associate's degree": 1,
+          "18-29|College graduate/some post grad": 3,
+          "18-29|High school graduate": 1,
+          "18-29|Postgraduate": 1,
+          "18-29|Some college, no degree": 2,
+          "30-49|Associate's degree": 2,
+          "30-49|College graduate/some post grad": 5,
+          "30-49|High school graduate": 2,
+          "30-49|Less than high school": 1,
+          "30-49|Postgraduate": 5,
+          "30-49|Some college, no degree": 3,
+          "50-64|Associate's degree": 2,
+          "50-64|College graduate/some post grad": 3,
+          "50-64|High school graduate": 2,
+          "50-64|Postgraduate": 3,
+          "50-64|Some college, no degree": 3,
+          "65+|Associate's degree": 1,
+          "65+|College graduate/some post grad": 2,
+          "65+|High school graduate": 2,
+          "65+|Postgraduate": 2,
+          "65+|Some college, no degree": 2
+        },
+        "reserve": {
+          "18-29|Associate's degree": 1,
+          "18-29|College graduate/some post grad": 6,
+          "18-29|High school graduate": 2,
+          "18-29|Postgraduate": 2,
+          "18-29|Some college, no degree": 3,
+          "30-49|Associate's degree": 4,
+          "30-49|College graduate/some post grad": 10,
+          "30-49|High school graduate": 5,
+          "30-49|Less than high school": 1,
+          "30-49|Postgraduate": 10,
+          "30-49|Some college, no degree": 6,
+          "50-64|Associate's degree": 3,
+          "50-64|College graduate/some post grad": 7,
+          "50-64|High school graduate": 5,
+          "50-64|Less than high school": 1,
+          "50-64|Postgraduate": 5,
+          "50-64|Some college, no degree": 5,
+          "65+|Associate's degree": 2,
+          "65+|College graduate/some post grad": 4,
+          "65+|High school graduate": 4,
+          "65+|Less than high school": 1,
+          "65+|Postgraduate": 5,
+          "65+|Some college, no degree": 4
+        }
+      },
+      "selected": 152,
+      "matched": 152,
+      "unique_release_profiles": 152,
+      "age_resolutions": {
+        "18_64_common_coarsening": 123,
+        "65_plus": 29
+      },
+      "education_resolution": "unavailable_in_instrument",
+      "match_fields": [
+        "age_bracket",
+        "highest_education",
+        "region"
+      ],
+      "source_counts": {
+        "prism": 6,
+        "gss": 50,
+        "wiki": 80,
+        "stackoverflow": 13,
+        "amazon": 3
+      }
+    },
+    "german": {
+      "eligible_respondents": 325,
+      "excluded": {},
+      "phase_allocation": {
+        "pilot": {
+          "30-39|University degree": 1,
+          "40-49|Intermediate school, secondary school or polytechnic upper secondary school, 10th grade": 1,
+          "50-59|Intermediate school, secondary school or polytechnic upper secondary school, 10th grade": 1,
+          "50-59|University degree": 1,
+          "60 or older|Advanced technical college entrance qualification (graduation from a technical college": 1,
+          "60 or older|Elementary/main school or polytechnic secondary school, 8th/9th grade": 1,
+          "60 or older|Intermediate school, secondary school or polytechnic upper secondary school, 10th grade": 1,
+          "up to 29|Intermediate school, secondary school or polytechnic upper secondary school, 10th grade": 1
+        },
+        "screen": {
+          "30-39|Advanced technical college entrance qualification (graduation from a technical college": 2,
+          "30-39|Elementary/main school or polytechnic secondary school, 8th/9th grade": 1,
+          "30-39|Intermediate school, secondary school or polytechnic upper secondary school, 10th grade": 2,
+          "30-39|University degree": 3,
+          "40-49|Advanced technical college entrance qualification (graduation from a technical college": 1,
+          "40-49|Elementary/main school or polytechnic secondary school, 8th/9th grade": 1,
+          "40-49|Intermediate school, secondary school or polytechnic upper secondary school, 10th grade": 3,
+          "40-49|University degree": 1,
+          "50-59|Advanced technical college entrance qualification (graduation from a technical college": 1,
+          "50-59|Elementary/main school or polytechnic secondary school, 8th/9th grade": 1,
+          "50-59|Intermediate school, secondary school or polytechnic upper secondary school, 10th grade": 4,
+          "50-59|University degree": 3,
+          "60 or older|Advanced technical college entrance qualification (graduation from a technical college": 3,
+          "60 or older|Elementary/main school or polytechnic secondary school, 8th/9th grade": 4,
+          "60 or older|Intermediate school, secondary school or polytechnic upper secondary school, 10th grade": 9,
+          "60 or older|University degree": 2,
+          "up to 29|Advanced technical college entrance qualification (graduation from a technical college": 1,
+          "up to 29|Elementary/main school or polytechnic secondary school, 8th/9th grade": 1,
+          "up to 29|Intermediate school, secondary school or polytechnic upper secondary school, 10th grade": 3,
+          "up to 29|University degree": 2
+        },
+        "reserve": {
+          "30-39|Advanced technical college entrance qualification (graduation from a technical college": 5,
+          "30-39|Elementary/main school or polytechnic secondary school, 8th/9th grade": 1,
+          "30-39|Intermediate school, secondary school or polytechnic upper secondary school, 10th grade": 5,
+          "30-39|University degree": 5,
+          "40-49|Advanced technical college entrance qualification (graduation from a technical college": 1,
+          "40-49|Elementary/main school or polytechnic secondary school, 8th/9th grade": 1,
+          "40-49|Intermediate school, secondary school or polytechnic upper secondary school, 10th grade": 5,
+          "40-49|University degree": 3,
+          "50-59|Advanced technical college entrance qualification (graduation from a technical college": 3,
+          "50-59|Elementary/main school or polytechnic secondary school, 8th/9th grade": 2,
+          "50-59|Intermediate school, secondary school or polytechnic upper secondary school, 10th grade": 9,
+          "50-59|University degree": 5,
+          "60 or older|Advanced technical college entrance qualification (graduation from a technical college": 5,
+          "60 or older|Elementary/main school or polytechnic secondary school, 8th/9th grade": 9,
+          "60 or older|Finished school without certificate": 1,
+          "60 or older|Intermediate school, secondary school or polytechnic upper secondary school, 10th grade": 17,
+          "60 or older|University degree": 5,
+          "up to 29|Advanced technical college entrance qualification (graduation from a technical college": 3,
+          "up to 29|Elementary/main school or polytechnic secondary school, 8th/9th grade": 2,
+          "up to 29|Intermediate school, secondary school or polytechnic upper secondary school, 10th grade": 5,
+          "up to 29|University degree": 4
+        }
+      },
+      "selected": 152,
+      "matched": 152,
+      "unique_release_profiles": 148,
+      "age_resolutions": {
+        "span_band_30_39": 25,
+        "span_band_40_49": 17,
+        "span_band_50_59": 30,
+        "band_60_plus": 58,
+        "span_band_under_30": 22
+      },
+      "education_resolution": "unavailable_in_instrument",
+      "match_fields": [
+        "age_bracket",
+        "gender_identity",
+        "highest_education",
+        "lstyle_household_size",
+        "region"
+      ],
+      "source_counts": {
+        "wiki": 151,
+        "amazon": 1
+      }
+    },
+    "tshirt": {
+      "eligible_respondents": 1184,
+      "excluded": {},
+      "phase_allocation": {
+        "pilot": {
+          "25-34|Bachelor's": 2,
+          "25-34|Master's": 1,
+          "25-34|Some college": 1,
+          "35-44|Bachelor's": 1,
+          "35-44|Master's": 1,
+          "35-44|Some college": 1,
+          "45-54|Bachelor's": 1
+        },
+        "screen": {
+          "18-24|Bachelor's": 1,
+          "18-24|Some college": 1,
+          "25-34|Associate's": 2,
+          "25-34|Bachelor's": 9,
+          "25-34|Master's": 3,
+          "25-34|Secondary": 2,
+          "25-34|Some college": 3,
+          "35-44|Associate's": 2,
+          "35-44|Bachelor's": 6,
+          "35-44|Master's": 3,
+          "35-44|Secondary": 1,
+          "35-44|Some college": 3,
+          "45-54|Associate's": 1,
+          "45-54|Bachelor's": 2,
+          "45-54|Master's": 1,
+          "45-54|Secondary": 1,
+          "45-54|Some college": 2,
+          "55-64|Associate's": 1,
+          "55-64|Bachelor's": 1,
+          "55-64|Master's": 1,
+          "55-64|Secondary": 1,
+          "55-64|Some college": 1
+        },
+        "reserve": {
+          "18-24|Associate's": 1,
+          "18-24|Bachelor's": 2,
+          "18-24|Secondary": 1,
+          "18-24|Some college": 2,
+          "25-34|Associate's": 4,
+          "25-34|Bachelor's": 18,
+          "25-34|Master's": 6,
+          "25-34|Secondary": 3,
+          "25-34|Some college": 7,
+          "35-44|Associate's": 3,
+          "35-44|Bachelor's": 12,
+          "35-44|Master's": 6,
+          "35-44|Secondary": 3,
+          "35-44|Some college": 5,
+          "45-54|Associate's": 2,
+          "45-54|Bachelor's": 5,
+          "45-54|Master's": 2,
+          "45-54|Secondary": 1,
+          "45-54|Some college": 3,
+          "55-64|Associate's": 1,
+          "55-64|Bachelor's": 2,
+          "55-64|Master's": 1,
+          "55-64|Secondary": 1,
+          "55-64|Some college": 2,
+          "65-74|Bachelor's": 1,
+          "65-74|Master's": 1,
+          "65-74|Some college": 1
+        }
+      },
+      "selected": 152,
+      "matched": 152,
+      "unique_release_profiles": 152,
+      "age_resolutions": {
+        "numeric_age_to_native_band": 152
+      },
+      "education_resolution": "unavailable_in_instrument",
+      "match_fields": [
+        "age_bracket",
+        "gender_identity",
+        "highest_education",
+        "region"
+      ],
+      "source_counts": {
+        "wiki": 83,
+        "gss": 62,
+        "prism": 7
+      }
+    },
+    "radiant": {
+      "eligible_respondents": 331,
+      "excluded": {},
+      "phase_allocation": {
+        "pilot": {
+          "25-34|Secondary": 1,
+          "25-34|Some college": 1,
+          "35-44|Bachelor's": 1,
+          "35-44|Some college": 1,
+          "45-54|Secondary": 1,
+          "55-64|Secondary": 1,
+          "65-74|Bachelor's": 1,
+          "65-74|Secondary": 1
+        },
+        "screen": {
+          "18-24|Secondary": 1,
+          "18-24|Some college": 1,
+          "25-34|Bachelor's": 1,
+          "25-34|Master's": 2,
+          "25-34|Secondary": 2,
+          "25-34|Some college": 4,
+          "35-44|Bachelor's": 2,
+          "35-44|Master's": 1,
+          "35-44|Secondary": 2,
+          "35-44|Some college": 2,
+          "45-54|Bachelor's": 2,
+          "45-54|Master's": 1,
+          "45-54|Secondary": 5,
+          "45-54|Some college": 2,
+          "55-64|Bachelor's": 2,
+          "55-64|Master's": 1,
+          "55-64|Secondary": 4,
+          "55-64|Some college": 2,
+          "65-74|Bachelor's": 2,
+          "65-74|Master's": 1,
+          "65-74|Primary": 1,
+          "65-74|Secondary": 5,
+          "65-74|Some college": 2
+        },
+        "reserve": {
+          "18-24|Secondary": 1,
+          "18-24|Some college": 1,
+          "25-34|Bachelor's": 2,
+          "25-34|Master's": 3,
+          "25-34|Primary": 1,
+          "25-34|Secondary": 5,
+          "25-34|Some college": 7,
+          "35-44|Bachelor's": 4,
+          "35-44|Master's": 2,
+          "35-44|Secondary": 5,
+          "35-44|Some college": 5,
+          "45-54|Bachelor's": 4,
+          "45-54|Master's": 2,
+          "45-54|Primary": 1,
+          "45-54|Secondary": 10,
+          "45-54|Some college": 5,
+          "55-64|Bachelor's": 3,
+          "55-64|Master's": 1,
+          "55-64|Secondary": 8,
+          "55-64|Some college": 4,
+          "65-74|Bachelor's": 4,
+          "65-74|Master's": 1,
+          "65-74|No formal": 1,
+          "65-74|Primary": 2,
+          "65-74|Secondary": 11,
+          "65-74|Some college": 3
+        }
+      },
+      "selected": 152,
+      "matched": 152,
+      "unique_release_profiles": 150,
+      "age_resolutions": {
+        "native_age_band": 152
+      },
+      "education_resolution": "unavailable_in_instrument",
+      "match_fields": [
+        "age_bracket",
+        "gender_identity",
+        "highest_education",
+        "region"
+      ],
+      "source_counts": {
+        "wiki": 119,
+        "prism": 33
+      }
+    }
+  }
+}
