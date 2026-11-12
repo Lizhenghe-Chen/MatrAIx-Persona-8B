@@ -37,5 +37,21 @@ def main():
  for target in re.findall(r'href="([^"]+)"',(OUT/'index.html').read_text()):
   if not target.startswith(('http:','https:','#')):assert (OUT/target).is_file(),target
  assert not json.loads((OUT/'admission.json').read_text())['formal_effects_available']
- print('PASS: 19 source inventories; accepted report unchanged; native hashes; disjoint cohorts; 24 strict responses; four-arm parity; report links. No effects computed.')
+ formal=''
+ if (OUT/'formal-results.json').exists():
+  spec=json.loads((SPEC/'formal-v1.json').read_text());results=json.loads((OUT/'formal-results.json').read_text())
+  assert spec['status']=='complete' and spec['completion']['completed_calls']==spec['max_calls']
+  assert results['status']=='complete_formal_cross_study'
+  assert results['jobs_sha256']==spec['jobs_sha256']
+  assert results['execution']['states']=={'complete':spec['max_calls']},results['execution']['states']
+  assert set(results['studies'])==set(spec['studies'])
+  for study,entry in results['studies'].items():
+   assert entry['results']['arms']['original']['brier'] is not None
+   assert entry['results']['arms']['optimized']['brier'] is not None
+   assert entry['results']['contrasts']['original__to__optimized']['improvement_95_ci'][0] is not None
+  summary=json.loads((OUT/'formal-report.summary.json').read_text())
+  assert set(summary['rows'])==set(spec['studies'])
+  formal=f" Formal: {spec['max_calls']} calls, {len(results['studies'])} studies, "
+  formal+=f"{len(summary['supporting'])} studies pass both gates, cross-study gate {summary['cross_study_gate']}."
+ print('PASS: 19 source inventories; accepted report unchanged; native hashes; disjoint cohorts; 24 strict responses; four-arm parity; report links.'+formal)
 if __name__=='__main__':main()

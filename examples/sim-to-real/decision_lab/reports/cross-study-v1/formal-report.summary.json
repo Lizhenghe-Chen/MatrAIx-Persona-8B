@@ -1,0 +1,381 @@
+{
+  "rows": {
+    "anes": {
+      "people": 96,
+      "cards": 6,
+      "estimable_cards": 6,
+      "kind": "政策态度",
+      "region": "美国",
+      "brier": {
+        "reference": 1.1629579714228606,
+        "candidate": 0.664468436040709,
+        "improvement": 0.49848953538215157,
+        "relative_improvement": 0.42863933833503676,
+        "improvement_95_ci": [
+          0.3955809235695311,
+          0.593282104154603
+        ],
+        "repeats": 2000,
+        "seed": 20261109,
+        "people": 96,
+        "passes_brier_gate": true
+      },
+      "card": {
+        "available": true,
+        "reference_pp": 18.6278613151803,
+        "candidate_pp": 12.103645738453865,
+        "improvement_pp": 6.524215576726435,
+        "improvement_95_ci": [
+          -0.5552572332055483,
+          13.128310732605916
+        ],
+        "repeats": 2000,
+        "retained_draws": 2000,
+        "seed": 20261109,
+        "estimable_cards": 6,
+        "passes_2pp_gate": false
+      },
+      "statistical": {
+        "reference": 0.5595094921680869,
+        "candidate": 0.664468436040709,
+        "improvement": -0.10495894387262217,
+        "relative_improvement": -0.18759099772536225,
+        "improvement_95_ci": [
+          -0.16011058543820766,
+          -0.0544250953408858
+        ],
+        "repeats": 2000,
+        "seed": 20261109,
+        "people": 96,
+        "passes_brier_gate": false
+      },
+      "statistical_name": "stratum_history",
+      "brier_verdict": [
+        "相对改善 ≥2% 且区间高于零",
+        "pass"
+      ],
+      "card_verdict": [
+        "无明确证据",
+        "neutral"
+      ],
+      "statistical_verdict": [
+        "明确退化",
+        "fail"
+      ],
+      "supports_versus_own_baseline": false
+    },
+    "dryer": {
+      "people": 94,
+      "cards": 216,
+      "estimable_cards": 0,
+      "kind": "商品选择",
+      "region": "北美与西欧",
+      "brier": {
+        "reference": 0.9707446808510638,
+        "candidate": 0.6364773936170213,
+        "improvement": 0.33426728723404253,
+        "relative_improvement": 0.34434109589041095,
+        "improvement_95_ci": [
+          0.27305505319148937,
+          0.3976797872340425
+        ],
+        "repeats": 2000,
+        "seed": 20261109,
+        "people": 94,
+        "passes_brier_gate": true
+      },
+      "card": {
+        "available": false,
+        "reason": "no card reaches 20 evaluated respondents",
+        "cards_with_support": 216
+      },
+      "statistical": {
+        "reference": 0.5132493594306382,
+        "candidate": 0.6364773936170213,
+        "improvement": -0.12322803418638306,
+        "relative_improvement": -0.24009388793603825,
+        "improvement_95_ci": [
+          -0.16867573954845777,
+          -0.07767338823992931
+        ],
+        "repeats": 2000,
+        "seed": 20261109,
+        "people": 94,
+        "passes_brier_gate": false
+      },
+      "statistical_name": "stratum_history",
+      "brier_verdict": [
+        "相对改善 ≥2% 且区间高于零",
+        "pass"
+      ],
+      "card_verdict": [
+        "不可估计",
+        "pending"
+      ],
+      "statistical_verdict": [
+        "明确退化",
+        "fail"
+      ],
+      "supports_versus_own_baseline": false
+    },
+    "pew13": {
+      "people": 96,
+      "cards": 13,
+      "estimable_cards": 13,
+      "kind": "购物行为",
+      "region": "美国",
+      "brier": {
+        "reference": 1.0673936814196048,
+        "candidate": 0.6207273847028575,
+        "improvement": 0.4466662967167473,
+        "relative_improvement": 0.41846443771588865,
+        "improvement_95_ci": [
+          0.37978253960312747,
+          0.5150940959775528
+        ],
+        "repeats": 2000,
+        "seed": 20261109,
+        "people": 96,
+        "passes_brier_gate": true
+      },
+      "card": {
+        "available": true,
+        "reference_pp": 27.44755073414677,
+        "candidate_pp": 11.829085607146995,
+        "improvement_pp": 15.618465126999775,
+        "improvement_95_ci": [
+          6.4787421240980905,
+          20.644998535491162
+        ],
+        "repeats": 2000,
+        "retained_draws": 2000,
+        "seed": 20261109,
+        "estimable_cards": 13,
+        "passes_2pp_gate": true
+      },
+      "statistical": {
+        "reference": 0.5566467414298315,
+        "candidate": 0.6207273847028575,
+        "improvement": -0.06408064327302598,
+        "relative_improvement": -0.11511904858802396,
+        "improvement_95_ci": [
+          -0.10574179153136598,
+          -0.02609330396335985
+        ],
+        "repeats": 2000,
+        "seed": 20261109,
+        "people": 96,
+        "passes_brier_gate": false
+      },
+      "statistical_name": "stratum_history",
+      "brier_verdict": [
+        "相对改善 ≥2% 且区间高于零",
+        "pass"
+      ],
+      "card_verdict": [
+        "改善 ≥2 个百分点且区间高于零",
+        "pass"
+      ],
+      "statistical_verdict": [
+        "明确退化",
+        "fail"
+      ],
+      "supports_versus_own_baseline": true
+    },
+    "pew168": {
+      "people": 96,
+      "cards": 5,
+      "estimable_cards": 5,
+      "kind": "风险判断",
+      "region": "美国",
+      "brier": {
+        "reference": 0.7384827195970018,
+        "candidate": 0.5724352990591923,
+        "improvement": 0.16604742053780952,
+        "relative_improvement": 0.22484943266976298,
+        "improvement_95_ci": [
+          0.11566725886274087,
+          0.21803808794809465
+        ],
+        "repeats": 2000,
+        "seed": 20261109,
+        "people": 96,
+        "passes_brier_gate": true
+      },
+      "card": {
+        "available": true,
+        "reference_pp": 35.31362900927583,
+        "candidate_pp": 16.767535226294928,
+        "improvement_pp": 18.5460937829809,
+        "improvement_95_ci": [
+          14.816095925013416,
+          19.928185810738498
+        ],
+        "repeats": 2000,
+        "retained_draws": 2000,
+        "seed": 20261109,
+        "estimable_cards": 5,
+        "passes_2pp_gate": true
+      },
+      "statistical": {
+        "reference": 0.4917984012094869,
+        "candidate": 0.5724352990591923,
+        "improvement": -0.0806368978497054,
+        "relative_improvement": -0.16396331840728623,
+        "improvement_95_ci": [
+          -0.13709014262068697,
+          -0.02768108278063608
+        ],
+        "repeats": 2000,
+        "seed": 20261109,
+        "people": 96,
+        "passes_brier_gate": false
+      },
+      "statistical_name": "stratum_history",
+      "brier_verdict": [
+        "相对改善 ≥2% 且区间高于零",
+        "pass"
+      ],
+      "card_verdict": [
+        "改善 ≥2 个百分点且区间高于零",
+        "pass"
+      ],
+      "statistical_verdict": [
+        "明确退化",
+        "fail"
+      ],
+      "supports_versus_own_baseline": true
+    },
+    "shed": {
+      "people": 96,
+      "cards": 7,
+      "estimable_cards": 7,
+      "kind": "消费应对",
+      "region": "美国",
+      "brier": {
+        "reference": 0.8297297811819557,
+        "candidate": 0.4702793153538756,
+        "improvement": 0.3594504658280801,
+        "relative_improvement": 0.43321388960637336,
+        "improvement_95_ci": [
+          0.2691492290323321,
+          0.45364047739448926
+        ],
+        "repeats": 2000,
+        "seed": 20261109,
+        "people": 96,
+        "passes_brier_gate": true
+      },
+      "card": {
+        "available": true,
+        "reference_pp": 13.361341709402845,
+        "candidate_pp": 13.443426662937144,
+        "improvement_pp": -0.08208495353429868,
+        "improvement_95_ci": [
+          -3.890622522734187,
+          4.741416143515668
+        ],
+        "repeats": 2000,
+        "retained_draws": 2000,
+        "seed": 20261109,
+        "estimable_cards": 7,
+        "passes_2pp_gate": false
+      },
+      "statistical": {
+        "reference": 0.3860139356116352,
+        "candidate": 0.4702793153538756,
+        "improvement": -0.08426537974224041,
+        "relative_improvement": -0.21829621153112713,
+        "improvement_95_ci": [
+          -0.12469144353330203,
+          -0.042699015218316205
+        ],
+        "repeats": 2000,
+        "seed": 20261109,
+        "people": 96,
+        "passes_brier_gate": false
+      },
+      "statistical_name": "stratum_history",
+      "brier_verdict": [
+        "相对改善 ≥2% 且区间高于零",
+        "pass"
+      ],
+      "card_verdict": [
+        "无明确证据",
+        "neutral"
+      ],
+      "statistical_verdict": [
+        "明确退化",
+        "fail"
+      ],
+      "supports_versus_own_baseline": false
+    },
+    "swiss": {
+      "people": 96,
+      "cards": 384,
+      "estimable_cards": 0,
+      "kind": "商品选择",
+      "region": "西欧",
+      "brier": {
+        "reference": 0.578125,
+        "candidate": 0.45027916666666673,
+        "improvement": 0.12784583333333327,
+        "relative_improvement": 0.22113873873873863,
+        "improvement_95_ci": [
+          0.035392187500000005,
+          0.21499427083333328
+        ],
+        "repeats": 2000,
+        "seed": 20261109,
+        "people": 96,
+        "passes_brier_gate": true
+      },
+      "card": {
+        "available": false,
+        "reason": "no card reaches 20 evaluated respondents",
+        "cards_with_support": 384
+      },
+      "statistical": {
+        "reference": 0.3543264066166602,
+        "candidate": 0.45027916666666673,
+        "improvement": -0.09595276005000652,
+        "relative_improvement": -0.27080329960791266,
+        "improvement_95_ci": [
+          -0.1474033930654245,
+          -0.04673190631335533
+        ],
+        "repeats": 2000,
+        "seed": 20261109,
+        "people": 96,
+        "passes_brier_gate": false
+      },
+      "statistical_name": "attribute_logit",
+      "brier_verdict": [
+        "相对改善 ≥2% 且区间高于零",
+        "pass"
+      ],
+      "card_verdict": [
+        "不可估计",
+        "pending"
+      ],
+      "statistical_verdict": [
+        "明确退化",
+        "fail"
+      ],
+      "supports_versus_own_baseline": false
+    }
+  },
+  "supporting": [
+    "pew13",
+    "pew168"
+  ],
+  "beats_statistics": [],
+  "kinds": [
+    "购物行为",
+    "风险判断"
+  ],
+  "regions": [
+    "美国"
+  ],
+  "cross_study_gate": false
+}

@@ -1,6 +1,30 @@
 # 跨研究适用性验证：实现状态
 
-入口：[开跑准备报告](../reports/cross-study-v1/index.html)。**这是准备阶段，不是效果报告；目前不能运行正式批量实验。**
+入口：**正式结果见[六套研究正式报告](../reports/cross-study-v1/formal-report.html)**；准备过程见[开跑准备报告](../reports/cross-study-v1/index.html)。
+
+## 正式运行已完成（2026-11-12）
+
+六套已准入研究（美国公共支出、诈骗风险、消费调整、购物看法、四国烘干机、瑞士家电）各 96 人（烘干机 94 人，2 人无完整画像、事前排除），四组对照共 2,296 次调用，全部完成，无待处理请求。
+
+- 冻结：`../specs/cross-study-v1/formal-v1.json`（请求哈希、人数、费用上限、评分预案）。
+- 结果：`../reports/cross-study-v1/formal-results.json`（逐组数字与匹配区间）。
+- 报告：`../reports/cross-study-v1/formal-report.html`（离线、可单独拷贝）。
+
+结果要点：
+
+1. 优化组合（预测提示＋概率）相对原生流程在六套全部显著更好，Brier 相对改善 +22.1% 至 +43.3%。
+2. 但收益几乎全部来自“交出概率”，不是改提示：`原生→概率` 与 `原生→优化` 几乎相同。
+3. 与统计参照相比没有任何一套胜出：四套题卡重复的研究差 8%–24%（区间全负），两套家电差 15.7% 与 27.1%（属性回归参照）。
+4. 只有两套（购物看法、诈骗风险）同时达到 Brier 与“分布误差 ≥2 个百分点”双门槛；跨研究门槛（≥3 套、≥2 类任务、≥2 地区）未满足。
+5. 烘干机与瑞士家电的题卡几乎人人不同，分布误差按要求不估计，不拿稀疏卡片硬算。
+
+运行与复算（评分不调用模型）：
+
+```sh
+PYTHONPATH=examples/sim-to-real .venv/bin/python -m decision_lab.cross_study.formal score
+PYTHONPATH=examples/sim-to-real .venv/bin/python -m decision_lab.cross_study.formal_report
+```
+
 
 ## 已实现并实际运行
 

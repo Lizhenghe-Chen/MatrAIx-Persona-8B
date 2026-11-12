@@ -5,8 +5,8 @@
   "scope": "实验代码、历史六轮、新框架冻结与公开结果、综合报告、文献、公开输入及项目内本机材料；排除本清单自身、缓存和项目外私有运行目录",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 623,
-  "git_bytes": 84715930,
+  "git_file_count": 630,
+  "git_bytes": 84902367,
   "local_only_file_count": 44,
   "local_only_bytes": 151339439,
   "external_large_source": {
@@ -146,8 +146,8 @@
     },
     {
       "path": "decision_lab/cross_study/README.md",
-      "bytes": 4009,
-      "sha256": "d4f4c214704c2157a18bcb672c325f6ddf4f6be1106f189ca1fa7d909da686b5",
+      "bytes": 5634,
+      "sha256": "4f93820f0eee2dac64c41bc15ab08d2c52dffb735c3abf3e952e7b40d8c0cf70",
       "storage": "git"
     },
     {
@@ -172,6 +172,18 @@
       "path": "decision_lab/cross_study/drone_audit.py",
       "bytes": 3048,
       "sha256": "9a56d5fbd71b886a7fbed2147af154dbc470ee8c9e8e81bf0dd2478da3c7ac20",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/cross_study/formal.py",
+      "bytes": 26512,
+      "sha256": "cee44ca91ba204e9ec40064f17eeb53da847744bea7a057d0cf4acc867f7bbe1",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/cross_study/formal_report.py",
+      "bytes": 15606,
+      "sha256": "e2a9371d97d4e04e40f414860be612c5ddab34ffbe329d0e10ae30645bc4fd1f",
       "storage": "git"
     },
     {
@@ -217,6 +229,12 @@
       "storage": "git"
     },
     {
+      "path": "decision_lab/cross_study/scoring.py",
+      "bytes": 17780,
+      "sha256": "bcc5ddccc2bc34aff7fa903288f2c6e4c1fbe78a6fdc987d351ddf9a03ef135a",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/cross_study/targets.py",
       "bytes": 3483,
       "sha256": "42e0bb6f8581287b7ccdf478b0dde2ffb62c26be32dc1c1e39ab9244e52824c2",
@@ -230,14 +248,14 @@
     },
     {
       "path": "decision_lab/cross_study/tests.py",
-      "bytes": 3011,
-      "sha256": "5f51cc27e3cc2b4f179981aeee585c677a720730d6e437db05239af1aee1fa85",
+      "bytes": 9318,
+      "sha256": "44db18558d8be039c59211fc46fccf16bf04800160fc95157470c4554b5f5b8c",
       "storage": "git"
     },
     {
       "path": "decision_lab/cross_study/verify.py",
-      "bytes": 2429,
-      "sha256": "403801d7cd291eb4f4d7806df495c577904c5708f594210ce1734117f36ba553",
+      "bytes": 3558,
+      "sha256": "344b04219d9beacdf5ba5ec05fd1a1aa589d9ad4c68ec4e2cc62f61ca6f4d1c8",
       "storage": "git"
     },
     {
@@ -565,6 +583,24 @@
       "storage": "git"
     },
     {
+      "path": "decision_lab/reports/cross-study-v1/formal-report.html",
+      "bytes": 23028,
+      "sha256": "f468a53f4d13397cbb63ecf6e5e550a703b77368131a99058bdd05c9e1f12851",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/formal-report.summary.json",
+      "bytes": 10246,
+      "sha256": "6802a278f2f5e91a5840595f7cb2901eb58e6bf237e612a7a773b89e3731d64e",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/formal-results.json",
+      "bytes": 77842,
+      "sha256": "e45c2da54155db3d1f76d3ffabdec9ab510863ba7bf621700ad5abf4c8c6eae8",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/reports/cross-study-v1/index.html",
       "bytes": 12118,
       "sha256": "2cbbd05383ebd1e1e1497bc0b28d2e48d650f700b180fad6a688718c370a645a",
@@ -784,6 +820,12 @@
       "path": "decision_lab/specs/audits/tshirt-supplement-index.json",
       "bytes": 936,
       "sha256": "2dc0fe50d1785a2fc74842193efcff06e5856348ba52e7409c213a93fb7954d0",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/cross-study-v1/formal-v1.json",
+      "bytes": 5564,
+      "sha256": "e8e8286031ed4647faf642b3d91affafe7dbd7534566326e18bebc356fbba65b",
       "storage": "git"
     },
     {
@@ -1334,8 +1376,8 @@
     },
     {
       "path": "decision_lab/交接先读.md",
-      "bytes": 2721,
-      "sha256": "c9236f17cd2db89e509938ac922a6d0f60908e31946ea3104a095369664a3075",
+      "bytes": 3519,
+      "sha256": "bb67e2eda16490434fc70a1584fc483bb98e79ef60029f3b10cb809db5288600",
       "storage": "git"
     },
     {

@@ -1,0 +1,202 @@
+{
+  "status": "complete",
+  "studies": [
+    "anes",
+    "dryer",
+    "pew13",
+    "pew168",
+    "shed",
+    "swiss"
+  ],
+  "arms": [
+    "original",
+    "output_only",
+    "prompt_only",
+    "optimized"
+  ],
+  "excluded_participants": [
+    {
+      "study": "dryer",
+      "person": "R_3k4EzsxHnu9n5gZ",
+      "reason": "no_frozen_persona_in_release"
+    },
+    {
+      "study": "dryer",
+      "person": "R_ehBE0r0HgXDtOJb",
+      "reason": "no_frozen_persona_in_release"
+    }
+  ],
+  "excluded_policy": "Excluded before any effect was computed: no complete approved persona exists in the release. Reported, never replaced by a hand-written profile.",
+  "people_with_persona": {
+    "anes": 96,
+    "dryer": 94,
+    "pew13": 96,
+    "pew168": 96,
+    "shed": 96,
+    "swiss": 96
+  },
+  "jobs_per_study_arm": {
+    "anes/original": 96,
+    "anes/output_only": 96,
+    "anes/prompt_only": 96,
+    "anes/optimized": 96,
+    "dryer/original": 94,
+    "dryer/output_only": 94,
+    "dryer/prompt_only": 94,
+    "dryer/optimized": 94,
+    "pew13/original": 96,
+    "pew13/output_only": 96,
+    "pew13/prompt_only": 96,
+    "pew13/optimized": 96,
+    "pew168/original": 96,
+    "pew168/output_only": 96,
+    "pew168/prompt_only": 96,
+    "pew168/optimized": 96,
+    "shed/original": 96,
+    "shed/output_only": 96,
+    "shed/prompt_only": 96,
+    "shed/optimized": 96,
+    "swiss/original": 96,
+    "swiss/output_only": 96,
+    "swiss/prompt_only": 96,
+    "swiss/optimized": 96
+  },
+  "total_calls": 2296,
+  "max_calls": 2296,
+  "max_retries": 119,
+  "reserved_peak_usd": 71.60892552,
+  "max_cost_usd": 85.94,
+  "input_peak_usd_per_million": 1.32,
+  "output_peak_usd_per_million": 3.96,
+  "price_source": "https://api-docs.deepseek.com/quick_start/pricing/",
+  "expected_identity": {
+    "model": "deepseek-v4-pro",
+    "system_fingerprint": "a307abda487cd1b463329ccb945ce396"
+  },
+  "jobs_sha256": "dff56f8f6aad84852da8068194af1167e3996569b367fc5c1d6b34a20f209a8c",
+  "people_per_study": {
+    "anes": 96,
+    "dryer": 94,
+    "pew13": 96,
+    "pew168": 96,
+    "shed": 96,
+    "swiss": 96
+  },
+  "persona_field_distribution": {
+    "anes": {
+      "min": 33,
+      "median": 470.5,
+      "max": 881,
+      "mean": 445.3958333333333,
+      "people": 96
+    },
+    "dryer": {
+      "min": 128,
+      "median": 625.5,
+      "max": 867,
+      "mean": 596.1808510638298,
+      "people": 94
+    },
+    "pew13": {
+      "min": 12,
+      "median": 436.5,
+      "max": 803,
+      "mean": 377.5,
+      "people": 96
+    },
+    "pew168": {
+      "min": 12,
+      "median": 452.0,
+      "max": 882,
+      "mean": 384.0104166666667,
+      "people": 96
+    },
+    "shed": {
+      "min": 9,
+      "median": 488.5,
+      "max": 1290,
+      "mean": 433.3958333333333,
+      "people": 96
+    },
+    "swiss": {
+      "min": 49,
+      "median": 544.5,
+      "max": 972,
+      "mean": 491.8125,
+      "people": 96
+    }
+  },
+  "omitted_dimension_distribution": {
+    "anes": {
+      "min": 409,
+      "median": 819.5,
+      "max": 1257,
+      "mean": 844.6041666666666,
+      "people": 96
+    },
+    "dryer": {
+      "min": 423,
+      "median": 664.5,
+      "max": 1162,
+      "mean": 693.8191489361702,
+      "people": 94
+    },
+    "pew13": {
+      "min": 487,
+      "median": 853.5,
+      "max": 1278,
+      "mean": 912.5,
+      "people": 96
+    },
+    "pew168": {
+      "min": 408,
+      "median": 838.0,
+      "max": 1278,
+      "mean": 905.9895833333334,
+      "people": 96
+    },
+    "shed": {
+      "min": 0,
+      "median": 801.5,
+      "max": 1281,
+      "mean": 856.6041666666666,
+      "people": 96
+    },
+    "swiss": {
+      "min": 318,
+      "median": 745.5,
+      "max": 1241,
+      "mean": 798.1875,
+      "people": 96
+    }
+  },
+  "persona_richness_note": "Approved categorical dimensions sent per persona differ by study and by person. A cross-study comparison must read this table: a larger field count is not evidence that the persona is more accurate, but it is a confound for how much information the model received.",
+  "scoring_plan": {
+    "primary": "optimized versus original, per-person Brier, paired by person within stratum, 2000 draws",
+    "required_comparators": [
+      "history (weighted option shares from non-evaluated respondents)",
+      "stratum_history (same, within stratum where at least 20 respondents exist)",
+      "uniform"
+    ],
+    "distribution": "equal-card mean absolute share difference in percentage points",
+    "gates": "relative Brier improvement at least 2% with the 95% interval above zero; card-share improvement reported separately",
+    "no_default_answers": true
+  },
+  "formal_effects_available": false,
+  "formal_run_authorized_by_user": true,
+  "authorization_note": "User authorized the formal run after this freeze on 2026-11-12.",
+  "execution_mode": {
+    "workers": 6,
+    "claim": "INSERT OR IGNORE inside BEGIN IMMEDIATE; one row per frozen body hash"
+  },
+  "completion": {
+    "completed_calls": 2296,
+    "planned_calls": 2296,
+    "failed_calls_recovered": 4,
+    "recovery_note": "Three ValueError responses plus one interrupted pending call (worker restart) were recovered one at a time through the explicit retry path; original failures remain in failed_attempts.",
+    "execution_note": "Sequential start was replaced by six claim-based workers over the same frozen job file; request bodies, order hash and caps are unchanged.",
+    "scored_at": "2026-11-12T13:14:42.743269+08:00",
+    "results": "reports/cross-study-v1/formal-results.json",
+    "report": "reports/cross-study-v1/formal-report.html"
+  }
+}

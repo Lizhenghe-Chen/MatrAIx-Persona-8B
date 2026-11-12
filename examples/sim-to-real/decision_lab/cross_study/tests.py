@@ -41,3 +41,122 @@ class Contract(unittest.TestCase):
  def test_unknown_education_not_imputed(self):
   self.assertIsNone(constraints({'study':'swiss','background':{'age_years':30,'education':'Other'}})[0])
 if __name__=='__main__':unittest.main()
+
+
+class Scoring(unittest.TestCase):
+ def _case(self,person,truth,weight=1.0,stratum='S',options=None):
+  question={'id':'q1','prompt':'Choose','required':True,'type':'single_choice',
+            'options':options or [{'id':'a','label':'A'},{'id':'b','label':'B'}]}
+  good={'a':[.9,.1],'b':[.1,.9]}[truth]
+  return {'study':'x','person':person,'stratum':stratum,'weight':weight,'truth':{'q1':truth},
+          'questions':[question],'predictions':{'good':{'q1':good}}}
+
+ def test_person_brier_matches_hand_calculation(self):
+  from .scoring import person_brier
+  case=self._case('p','a')
+  self.assertAlmostEqual(person_brier(case,lambda q,c: case['predictions']['good']['q1']),0.02)
+
+ def test_paired_interval_is_zero_for_identical_predictions(self):
+  from .scoring import paired_interval
+  rows=[{'person':f'p{i}','stratum':'S','weight':1.0,'left':0.2,'right':0.2} for i in range(5)]
+  result=paired_interval(rows,repeats=50)
+  self.assertEqual(result['improvement'],0)
+  self.assertEqual(result['improvement_95_ci'],[0,0])
+
+ def test_card_key_separates_national_versions(self):
+  from .scoring import card_key
+  a=card_key({'id':'25','options':[{'id':'1','label':'CAD 1200'},{'id':'2','label':'Neither'}]})
+  b=card_key({'id':'25','options':[{'id':'1','label':'USD 900'},{'id':'2','label':'Neither'}]})
+  self.assertNotEqual(a,b)
+
+ def test_history_reference_uses_only_supplied_rows(self):
+  from .scoring import build_references, reference_vector
+  question={'id':'q1','options':[{'id':'a','label':'A'},{'id':'b','label':'B'}]}
+  cases=[{'person':'evaluated','stratum':'S','questions':[question]}]
+  source=[{'person':'other1','stratum':'S','weight':1.0,'truth':{'q1':'a'},'questions':[question]},
+          {'person':'other2','stratum':'S','weight':1.0,'truth':{'q1':'b'},'questions':[question]}]
+  refs=build_references(cases,source)
+  self.assertEqual(reference_vector(refs,'history',question,'S'),[0.5,0.5])
+
+ def test_refusal_options_detected_from_labels(self):
+  from .scoring import refusal_ids
+  questions=[{'id':'q','options':[{'id':'1','label':'Yes'},{'id':'9','label':'Neither'}]}]
+  self.assertEqual(refusal_ids(questions),{'q':['9']})
+
+ def test_gate_requires_relative_two_percent_and_positive_interval(self):
+  from .scoring import passes_brier_gate
+  self.assertTrue(passes_brier_gate({'reference':1.0,'relative_improvement':0.05,'improvement_95_ci':[0.01,0.09]}))
+  self.assertFalse(passes_brier_gate({'reference':1.0,'relative_improvement':0.01,'improvement_95_ci':[0.001,0.02]}))
+  self.assertFalse(passes_brier_gate({'reference':1.0,'relative_improvement':0.05,'improvement_95_ci':[-0.01,0.09]}))
+
+
+class CardInterval(unittest.TestCase):
+ def test_identical_predictions_give_zero(self):
+  from .scoring import card_interval
+  question={'id':'q','options':[{'id':'a','label':'A'},{'id':'b','label':'B'}]}
+  cases=[{'person':f'p{i}','stratum':'S','weight':1.0,'truth':{'q':'a' if i%2 else 'b'},
+          'questions':[question],'predictions':{'x':{'q':[.5,.5]}}} for i in range(25)]
+  vector=lambda q,c: c['predictions']['x']['q']
+  result=card_interval(cases,vector,vector,repeats=50)
+  self.assertEqual(result['improvement_pp'],0)
+  self.assertEqual(result['improvement_95_ci'],[0,0])
+  self.assertFalse(result['passes_2pp_gate'])
+
+ def test_sparse_cards_are_not_estimable(self):
+  from .scoring import card_interval
+  question={'id':'q','options':[{'id':'a','label':'A'},{'id':'b','label':'B'}]}
+  cases=[{'person':f'p{i}','stratum':'S','weight':1.0,'truth':{'q':'a'},
+          'questions':[question],'predictions':{'x':{'q':[.9,.1]}}} for i in range(5)]
+  vector=lambda q,c: c['predictions']['x']['q']
+  self.assertFalse(card_interval(cases,vector,vector,repeats=20).get('available',False))
+
+
+class FormalReport(unittest.TestCase):
+ def _data(self,supports):
+  arm=lambda b: {'people':10,'brier':b,'accuracy':0.5,'card_tv_pp':20.0,'cards':4,
+                 'mean_people_per_card':10,'refusal':{},'available':True,'question_coverage':1.0}
+  contrast=lambda ref,cand,low,high,gate: {'reference':ref,'candidate':cand,'improvement':ref-cand,
+   'relative_improvement':(ref-cand)/ref,'improvement_95_ci':[low,high],'passes_brier_gate':gate,'people':10}
+  studies={}
+  for study in ['anes','pew168','shed','pew13','dryer','swiss']:
+   b=contrast(1.0,0.8,0.1,0.3,supports); h=contrast(1.0,1.1,-0.3,-0.1,False)
+   studies[study]={'people':10,'cards':4,'cards_with_at_least_20_people':4,'results':{
+     'arms':{a:arm(1.0 if a=='original' else 0.9) for a in
+             ['original','output_only','prompt_only','optimized','history','stratum_history','uniform']},
+     'contrasts':{'original__to__optimized':b,'history__to__optimized':h,
+                  'stratum_history__to__optimized':h},
+     'card_contrasts':{'original__to__optimized':{'available':True,
+       'improvement_pp':3.0 if supports else 1.0,
+       'improvement_95_ci':[1.0,5.0] if supports else [-1.0,3.0],'passes_2pp_gate':supports}},
+     'refusal_options':{}}}
+  return {'status':'complete_formal_cross_study','execution':{'states':{'complete':40},'missing_calls':0},
+   'budget':{'max_calls':40,'reserved_peak_usd':1.0,'max_cost_usd':2.0},'studies':studies}
+
+ def test_all_supporting_meets_cross_study_gate(self):
+  from .formal_report import summarize
+  s=summarize(self._data(True))
+  self.assertEqual(len(s['supporting']),6)
+  self.assertTrue(s['cross_study_gate'])
+  self.assertFalse(s['beats_statistics'])
+
+ def test_no_support_fails_gate(self):
+  from .formal_report import summarize
+  s=summarize(self._data(False))
+  self.assertEqual(s['supporting'],[])
+  self.assertFalse(s['cross_study_gate'])
+
+ def test_incomplete_results_are_refused(self):
+  from .formal_report import summarize
+  data=self._data(True);data['status']='preflight'
+  with self.assertRaises(ValueError):summarize(data)
+
+ def test_unavailable_comparators_do_not_crash(self):
+  from .formal_report import summarize,render
+  data=self._data(True)
+  for study in data['studies'].values():
+   study['results']['contrasts']['stratum_history__to__optimized']={'available':False}
+   study['results']['contrasts']['history__to__optimized']={'available':False}
+   study['results']['card_contrasts']['original__to__optimized']={'available':False}
+  s=summarize(data)
+  self.assertEqual(s['supporting'],[])
+  self.assertIn('不可估计',render(s))

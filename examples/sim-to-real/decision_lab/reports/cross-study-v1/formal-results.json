@@ -1,0 +1,2601 @@
+{
+  "status": "complete_formal_cross_study",
+  "arms": [
+    "original",
+    "output_only",
+    "prompt_only",
+    "optimized"
+  ],
+  "spec_sha256": "b71ebb4a1a7fe15f63dea32f045be56f1723f78d5fab972132c9f329440ee546",
+  "jobs_sha256": "dff56f8f6aad84852da8068194af1167e3996569b367fc5c1d6b34a20f209a8c",
+  "execution": {
+    "states": {
+      "complete": 2296
+    },
+    "missing_calls": 0,
+    "answer_coverage": {
+      "shed": {
+        "people_with_any_missing_answer": 3,
+        "dropped_questions": 5,
+        "people_excluded_for_coverage": 0
+      },
+      "pew13": {
+        "people_with_any_missing_answer": 3,
+        "dropped_questions": 4,
+        "people_excluded_for_coverage": 0
+      }
+    },
+    "coverage_rule": "A person is scored on the questions they actually answered; a person with fewer than half answered is excluded and counted. The rule uses observed answers only, never model output."
+  },
+  "studies": {
+    "anes": {
+      "people": 96,
+      "history_source_people": 1831,
+      "excluded_evaluated_from_history": true,
+      "answer_coverage": {},
+      "cards": 6,
+      "cards_with_at_least_20_people": 6,
+      "attribute_baseline": null,
+      "results": {
+        "arms": {
+          "original": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              6
+            ],
+            "brier": 1.1629579714228606,
+            "accuracy": 0.41852101428856975,
+            "card_tv_pp": 18.6278613151803,
+            "cards": 6,
+            "mean_people_per_card": 96.0,
+            "refusal": {}
+          },
+          "output_only": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              6
+            ],
+            "brier": 0.6636738059532123,
+            "accuracy": 0.4754442905585452,
+            "card_tv_pp": 12.22902899047745,
+            "cards": 6,
+            "mean_people_per_card": 96.0,
+            "refusal": {}
+          },
+          "prompt_only": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              6
+            ],
+            "brier": 1.0796618242416167,
+            "accuracy": 0.4601690878791916,
+            "card_tv_pp": 16.1462904590681,
+            "cards": 6,
+            "mean_people_per_card": 96.0,
+            "refusal": {}
+          },
+          "optimized": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              6
+            ],
+            "brier": 0.664468436040709,
+            "accuracy": 0.49138927619797534,
+            "card_tv_pp": 12.103645738453865,
+            "cards": 6,
+            "mean_people_per_card": 96.0,
+            "refusal": {}
+          },
+          "history": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              6
+            ],
+            "brier": 0.5666998283766593,
+            "accuracy": 0.5443114319022289,
+            "card_tv_pp": 6.474069731322156,
+            "cards": 6,
+            "mean_people_per_card": 96.0,
+            "refusal": {}
+          },
+          "stratum_history": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              6
+            ],
+            "brier": 0.5595094921680869,
+            "accuracy": 0.5443114319022289,
+            "card_tv_pp": 6.493197132211992,
+            "cards": 6,
+            "mean_people_per_card": 96.0,
+            "refusal": {}
+          },
+          "uniform": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              6
+            ],
+            "brier": 0.6666666666666666,
+            "accuracy": 0.5378183437089926,
+            "card_tv_pp": 24.18398663714925,
+            "cards": 6,
+            "mean_people_per_card": 96.0,
+            "refusal": {}
+          }
+        },
+        "contrasts": {
+          "original__to__output_only": {
+            "reference": 1.1629579714228606,
+            "candidate": 0.6636738059532123,
+            "improvement": 0.49928416546964827,
+            "relative_improvement": 0.4293226219162349,
+            "improvement_95_ci": [
+              0.3943385628384515,
+              0.5967257932964506
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": true
+          },
+          "original__to__prompt_only": {
+            "reference": 1.1629579714228606,
+            "candidate": 1.0796618242416167,
+            "improvement": 0.0832961471812439,
+            "relative_improvement": 0.07162438301990602,
+            "improvement_95_ci": [
+              -0.014431842572125486,
+              0.18377879750679993
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": false
+          },
+          "original__to__optimized": {
+            "reference": 1.1629579714228606,
+            "candidate": 0.664468436040709,
+            "improvement": 0.49848953538215157,
+            "relative_improvement": 0.42863933833503676,
+            "improvement_95_ci": [
+              0.3955809235695311,
+              0.593282104154603
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": true
+          },
+          "prompt_only__to__optimized": {
+            "reference": 1.0796618242416167,
+            "candidate": 0.664468436040709,
+            "improvement": 0.4151933882009077,
+            "relative_improvement": 0.3845587376330089,
+            "improvement_95_ci": [
+              0.32499127081982304,
+              0.5031450699624046
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": true
+          },
+          "output_only__to__optimized": {
+            "reference": 0.6636738059532123,
+            "candidate": 0.664468436040709,
+            "improvement": -0.000794630087496695,
+            "relative_improvement": -0.0011973202503531,
+            "improvement_95_ci": [
+              -0.03442791705242798,
+              0.03287399153337833
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": false
+          },
+          "history__to__original": {
+            "reference": 0.5666998283766593,
+            "candidate": 1.1629579714228606,
+            "improvement": -0.5962581430462013,
+            "relative_improvement": -1.0521586794091913,
+            "improvement_95_ci": [
+              -0.7060490197860491,
+              -0.4824198085579017
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": false
+          },
+          "history__to__optimized": {
+            "reference": 0.5666998283766593,
+            "candidate": 0.664468436040709,
+            "improvement": -0.09776860766404971,
+            "relative_improvement": -0.17252274090873274,
+            "improvement_95_ci": [
+              -0.15049964600521182,
+              -0.048460063871554215
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": false
+          },
+          "stratum_history__to__original": {
+            "reference": 0.5595094921680869,
+            "candidate": 1.1629579714228606,
+            "improvement": -0.6034484792547737,
+            "relative_improvement": -1.0785312630111497,
+            "improvement_95_ci": [
+              -0.7173041969722688,
+              -0.4870588022147304
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": false
+          },
+          "stratum_history__to__optimized": {
+            "reference": 0.5595094921680869,
+            "candidate": 0.664468436040709,
+            "improvement": -0.10495894387262217,
+            "relative_improvement": -0.18759099772536225,
+            "improvement_95_ci": [
+              -0.16011058543820766,
+              -0.0544250953408858
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": false
+          }
+        },
+        "card_contrasts": {
+          "original__to__optimized": {
+            "available": true,
+            "reference_pp": 18.6278613151803,
+            "candidate_pp": 12.103645738453865,
+            "improvement_pp": 6.524215576726435,
+            "improvement_95_ci": [
+              -0.5552572332055483,
+              13.128310732605916
+            ],
+            "repeats": 2000,
+            "retained_draws": 2000,
+            "seed": 20261109,
+            "estimable_cards": 6,
+            "passes_2pp_gate": false
+          },
+          "history__to__optimized": {
+            "available": true,
+            "reference_pp": 6.474069731322156,
+            "candidate_pp": 12.103645738453865,
+            "improvement_pp": -5.62957600713171,
+            "improvement_95_ci": [
+              -8.88322813511025,
+              0.27835647851758694
+            ],
+            "repeats": 2000,
+            "retained_draws": 2000,
+            "seed": 20261109,
+            "estimable_cards": 6,
+            "passes_2pp_gate": false
+          },
+          "stratum_history__to__optimized": {
+            "available": true,
+            "reference_pp": 6.493197132211992,
+            "candidate_pp": 12.103645738453865,
+            "improvement_pp": -5.6104486062418735,
+            "improvement_95_ci": [
+              -8.983789546704731,
+              0.2817529463571713
+            ],
+            "repeats": 2000,
+            "retained_draws": 2000,
+            "seed": 20261109,
+            "estimable_cards": 6,
+            "passes_2pp_gate": false
+          }
+        },
+        "refusal_options": {},
+        "estimable_cards": {
+          "minimum_people_per_card": 20
+        },
+        "unavailable_reference_cards": [],
+        "aggregation": "Weighted by survey weight; each person contributes one Brier score averaged over their own questions; card shares are averaged over distinct frozen cards.",
+        "computed_at": "2026-11-12T13:11:40.041624+08:00"
+      }
+    },
+    "dryer": {
+      "people": 94,
+      "history_source_people": 1358,
+      "excluded_evaluated_from_history": true,
+      "answer_coverage": {},
+      "cards": 216,
+      "cards_with_at_least_20_people": 0,
+      "attribute_baseline": {
+        "penalty": 0.001,
+        "fit_tasks": 8688,
+        "fit_people": 1086,
+        "selection_people": 272,
+        "comparator": "conditional logit on displayed product attributes only"
+      },
+      "results": {
+        "arms": {
+          "original": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 94,
+            "questions_per_person": [
+              8
+            ],
+            "brier": 0.9707446808510638,
+            "accuracy": 0.5146276595744681,
+            "card_tv_pp": null,
+            "cards": 0,
+            "mean_people_per_card": 0,
+            "refusal": {
+              "17": 0.0,
+              "18": 0.0,
+              "19": 0.0,
+              "20": 0.05555555555555555,
+              "21": 0.0,
+              "22": 0.08888888888888889,
+              "23": 0.0,
+              "24": 0.0,
+              "9": 0.0,
+              "10": 0.14285714285714285,
+              "11": 0.0,
+              "12": 0.08333333333333333,
+              "13": 0.0,
+              "14": 0.03571428571428571,
+              "15": 0.0,
+              "16": 0.08333333333333333,
+              "25": 0.0,
+              "26": 0.05357142857142857,
+              "27": 0.03571428571428571,
+              "28": 0.0,
+              "29": 0.0,
+              "30": 0.08928571428571429,
+              "31": 0.08928571428571429,
+              "32": 0.0,
+              "1": 0.0880952380952381,
+              "2": 0.0880952380952381,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.03571428571428571,
+              "6": 0.0,
+              "7": 0.03571428571428571,
+              "8": 0.028571428571428574
+            }
+          },
+          "output_only": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 94,
+            "questions_per_person": [
+              8
+            ],
+            "brier": 0.6357672872340426,
+            "accuracy": 0.5212765957446809,
+            "card_tv_pp": null,
+            "cards": 0,
+            "mean_people_per_card": 0,
+            "refusal": {
+              "17": 0.10361111111111111,
+              "18": 0.11777777777777777,
+              "19": 0.08361111111111112,
+              "20": 0.205,
+              "21": 0.10944444444444446,
+              "22": 0.19055555555555556,
+              "23": 0.115,
+              "24": 0.08861111111111113,
+              "9": 0.13428571428571429,
+              "10": 0.36357142857142855,
+              "11": 0.22714285714285715,
+              "12": 0.28285714285714286,
+              "13": 0.16690476190476192,
+              "14": 0.2515476190476191,
+              "15": 0.15333333333333332,
+              "16": 0.22464285714285714,
+              "25": 0.08547619047619048,
+              "26": 0.1705357142857143,
+              "27": 0.11845238095238096,
+              "28": 0.10839285714285715,
+              "29": 0.10178571428571428,
+              "30": 0.20357142857142857,
+              "31": 0.21041666666666667,
+              "32": 0.11517857142857144,
+              "1": 0.1254761904761905,
+              "2": 0.13404761904761905,
+              "3": 0.11023809523809525,
+              "4": 0.11261904761904762,
+              "5": 0.11023809523809525,
+              "6": 0.10726190476190477,
+              "7": 0.11023809523809525,
+              "8": 0.11261904761904762
+            }
+          },
+          "prompt_only": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 94,
+            "questions_per_person": [
+              8
+            ],
+            "brier": 0.9840425531914894,
+            "accuracy": 0.5079787234042553,
+            "card_tv_pp": null,
+            "cards": 0,
+            "mean_people_per_card": 0,
+            "refusal": {
+              "17": 0.0,
+              "18": 0.0,
+              "19": 0.0,
+              "20": 0.03333333333333333,
+              "21": 0.0,
+              "22": 0.05555555555555555,
+              "23": 0.0,
+              "24": 0.0,
+              "9": 0.0,
+              "10": 0.15238095238095237,
+              "11": 0.028571428571428574,
+              "12": 0.023809523809523808,
+              "13": 0.0,
+              "14": 0.028571428571428574,
+              "15": 0.0,
+              "16": 0.12380952380952381,
+              "25": 0.0,
+              "26": 0.0,
+              "27": 0.03571428571428571,
+              "28": 0.0,
+              "29": 0.0,
+              "30": 0.30357142857142855,
+              "31": 0.23214285714285715,
+              "32": 0.0,
+              "1": 0.20238095238095238,
+              "2": 0.17857142857142858,
+              "3": 0.0,
+              "4": 0.0,
+              "5": 0.17857142857142858,
+              "6": 0.0,
+              "7": 0.0,
+              "8": 0.14285714285714285
+            }
+          },
+          "optimized": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 94,
+            "questions_per_person": [
+              8
+            ],
+            "brier": 0.6364773936170213,
+            "accuracy": 0.5212765957446809,
+            "card_tv_pp": null,
+            "cards": 0,
+            "mean_people_per_card": 0,
+            "refusal": {
+              "17": 0.0775,
+              "18": 0.12055555555555557,
+              "19": 0.09000000000000001,
+              "20": 0.135,
+              "21": 0.09555555555555556,
+              "22": 0.15222222222222223,
+              "23": 0.10388888888888888,
+              "24": 0.09000000000000001,
+              "9": 0.10357142857142856,
+              "10": 0.2770238095238095,
+              "11": 0.15333333333333332,
+              "12": 0.2069047619047619,
+              "13": 0.12,
+              "14": 0.18416666666666667,
+              "15": 0.1211904761904762,
+              "16": 0.15285714285714286,
+              "25": 0.08613095238095238,
+              "26": 0.15803571428571428,
+              "27": 0.1005952380952381,
+              "28": 0.09761904761904762,
+              "29": 0.08779761904761905,
+              "30": 0.1625,
+              "31": 0.16845238095238096,
+              "32": 0.10357142857142858,
+              "1": 0.13464285714285715,
+              "2": 0.1461904761904762,
+              "3": 0.11202380952380953,
+              "4": 0.1061904761904762,
+              "5": 0.09285714285714286,
+              "6": 0.09380952380952381,
+              "7": 0.10666666666666667,
+              "8": 0.11238095238095239
+            }
+          },
+          "history": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 94,
+            "questions_per_person": [
+              8
+            ],
+            "brier": 0.5132493594306382,
+            "accuracy": 0.6090425531914894,
+            "card_tv_pp": null,
+            "cards": 0,
+            "mean_people_per_card": 0,
+            "refusal": {
+              "17": 0.18846133441721677,
+              "18": 0.19035294770588887,
+              "19": 0.06517689826513355,
+              "20": 0.1629869313692843,
+              "21": 0.15185125332184155,
+              "22": 0.30179795694501577,
+              "23": 0.06982972093266211,
+              "24": 0.1284412482941895,
+              "9": 0.24581402609352918,
+              "10": 0.20348921141955748,
+              "11": 0.28675065609404565,
+              "12": 0.2360946794176608,
+              "13": 0.07011051487537734,
+              "14": 0.14090940033708446,
+              "15": 0.1117243653845251,
+              "16": 0.16538352746205454,
+              "25": 0.027372555098370905,
+              "26": 0.127695533318669,
+              "27": 0.20468758228767966,
+              "28": 0.02953598993879441,
+              "29": 0.1873323966438889,
+              "30": 0.3092684883388831,
+              "31": 0.29332879571800935,
+              "32": 0.20221713145109518,
+              "1": 0.2386348764226391,
+              "2": 0.23863455278320575,
+              "3": 0.12039796032470994,
+              "4": 0.17669953128296687,
+              "5": 0.19722405329760576,
+              "6": 0.09846414002467543,
+              "7": 0.07841174570487942,
+              "8": 0.17319179018040615
+            }
+          },
+          "stratum_history": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 94,
+            "questions_per_person": [
+              8
+            ],
+            "brier": 0.5132493594306382,
+            "accuracy": 0.6090425531914894,
+            "card_tv_pp": null,
+            "cards": 0,
+            "mean_people_per_card": 0,
+            "refusal": {
+              "17": 0.18846133441721677,
+              "18": 0.19035294770588887,
+              "19": 0.06517689826513355,
+              "20": 0.1629869313692843,
+              "21": 0.15185125332184155,
+              "22": 0.30179795694501577,
+              "23": 0.06982972093266211,
+              "24": 0.1284412482941895,
+              "9": 0.24581402609352918,
+              "10": 0.20348921141955748,
+              "11": 0.28675065609404565,
+              "12": 0.2360946794176608,
+              "13": 0.07011051487537734,
+              "14": 0.14090940033708446,
+              "15": 0.1117243653845251,
+              "16": 0.16538352746205454,
+              "25": 0.027372555098370905,
+              "26": 0.127695533318669,
+              "27": 0.20468758228767966,
+              "28": 0.02953598993879441,
+              "29": 0.1873323966438889,
+              "30": 0.3092684883388831,
+              "31": 0.29332879571800935,
+              "32": 0.20221713145109518,
+              "1": 0.2386348764226391,
+              "2": 0.23863455278320575,
+              "3": 0.12039796032470994,
+              "4": 0.17669953128296687,
+              "5": 0.19722405329760576,
+              "6": 0.09846414002467543,
+              "7": 0.07841174570487942,
+              "8": 0.17319179018040615
+            }
+          },
+          "uniform": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 94,
+            "questions_per_person": [
+              8
+            ],
+            "brier": 0.6666666666666667,
+            "accuracy": 0.39893617021276595,
+            "card_tv_pp": null,
+            "cards": 0,
+            "mean_people_per_card": 0,
+            "refusal": {
+              "17": 0.3333333333333333,
+              "18": 0.3333333333333333,
+              "19": 0.3333333333333333,
+              "20": 0.3333333333333333,
+              "21": 0.3333333333333333,
+              "22": 0.3333333333333333,
+              "23": 0.3333333333333333,
+              "24": 0.3333333333333333,
+              "9": 0.3333333333333333,
+              "10": 0.3333333333333333,
+              "11": 0.3333333333333333,
+              "12": 0.3333333333333333,
+              "13": 0.3333333333333333,
+              "14": 0.3333333333333333,
+              "15": 0.3333333333333333,
+              "16": 0.3333333333333333,
+              "25": 0.3333333333333333,
+              "26": 0.3333333333333333,
+              "27": 0.3333333333333333,
+              "28": 0.3333333333333333,
+              "29": 0.3333333333333333,
+              "30": 0.3333333333333333,
+              "31": 0.3333333333333333,
+              "32": 0.3333333333333333,
+              "1": 0.3333333333333333,
+              "2": 0.3333333333333333,
+              "3": 0.3333333333333333,
+              "4": 0.3333333333333333,
+              "5": 0.3333333333333333,
+              "6": 0.3333333333333333,
+              "7": 0.3333333333333333,
+              "8": 0.3333333333333333
+            }
+          },
+          "attribute_logit": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 94,
+            "questions_per_person": [
+              8
+            ],
+            "brier": 0.5500506125758187,
+            "accuracy": 0.5731382978723404,
+            "card_tv_pp": null,
+            "cards": 0,
+            "mean_people_per_card": 0,
+            "refusal": {
+              "17": 0.15449314630644032,
+              "18": 0.21175180246228073,
+              "19": 0.09210766509220074,
+              "20": 0.09459711471729776,
+              "21": 0.09115832054476392,
+              "22": 0.22130572700203913,
+              "23": 0.18454551566605706,
+              "24": 0.11224263536509253,
+              "9": 0.24233314393786468,
+              "10": 0.17878150375017357,
+              "11": 0.24254695968450565,
+              "12": 0.24312065450575918,
+              "13": 0.07776035983146452,
+              "14": 0.18243160389331783,
+              "15": 0.08693677147139126,
+              "16": 0.14785843873250898,
+              "25": 0.04998665361721522,
+              "26": 0.10557107716220505,
+              "27": 0.21735508872472092,
+              "28": 0.06388392081672466,
+              "29": 0.2465795344646676,
+              "30": 0.2881212742040252,
+              "31": 0.3380670270822951,
+              "32": 0.18813783459793385,
+              "1": 0.17270051301036984,
+              "2": 0.2177409831808085,
+              "3": 0.14359644761185614,
+              "4": 0.26400793593564337,
+              "5": 0.23688177366161775,
+              "6": 0.11404514005298436,
+              "7": 0.10959170230046247,
+              "8": 0.19769700764527073
+            }
+          }
+        },
+        "contrasts": {
+          "original__to__output_only": {
+            "reference": 0.9707446808510638,
+            "candidate": 0.6357672872340426,
+            "improvement": 0.33497739361702117,
+            "relative_improvement": 0.34507260273972595,
+            "improvement_95_ci": [
+              0.27368803191489355,
+              0.39472420212765946
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 94,
+            "passes_brier_gate": true
+          },
+          "original__to__prompt_only": {
+            "reference": 0.9707446808510638,
+            "candidate": 0.9840425531914894,
+            "improvement": -0.013297872340425565,
+            "relative_improvement": -0.013698630136986335,
+            "improvement_95_ci": [
+              -0.07978723404255328,
+              0.05319148936170215
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 94,
+            "passes_brier_gate": false
+          },
+          "original__to__optimized": {
+            "reference": 0.9707446808510638,
+            "candidate": 0.6364773936170213,
+            "improvement": 0.33426728723404253,
+            "relative_improvement": 0.34434109589041095,
+            "improvement_95_ci": [
+              0.27305505319148937,
+              0.3976797872340425
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 94,
+            "passes_brier_gate": true
+          },
+          "prompt_only__to__optimized": {
+            "reference": 0.9840425531914894,
+            "candidate": 0.6364773936170213,
+            "improvement": 0.3475651595744681,
+            "relative_improvement": 0.35320135135135133,
+            "improvement_95_ci": [
+              0.287468085106383,
+              0.40780478723404245
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 94,
+            "passes_brier_gate": true
+          },
+          "output_only__to__optimized": {
+            "reference": 0.6357672872340426,
+            "candidate": 0.6364773936170213,
+            "improvement": -0.0007101063829786369,
+            "relative_improvement": -0.0011169281547467038,
+            "improvement_95_ci": [
+              -0.043099734042553184,
+              0.03918590425531909
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 94,
+            "passes_brier_gate": false
+          },
+          "history__to__original": {
+            "reference": 0.5132493594306382,
+            "candidate": 0.9707446808510638,
+            "improvement": -0.4574953214204256,
+            "relative_improvement": -0.8913704674233551,
+            "improvement_95_ci": [
+              -0.5244382971894407,
+              -0.3873103081484849
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 94,
+            "passes_brier_gate": false
+          },
+          "history__to__optimized": {
+            "reference": 0.5132493594306382,
+            "candidate": 0.6364773936170213,
+            "improvement": -0.12322803418638306,
+            "relative_improvement": -0.24009388793603825,
+            "improvement_95_ci": [
+              -0.16867573954845777,
+              -0.07767338823992931
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 94,
+            "passes_brier_gate": false
+          },
+          "stratum_history__to__original": {
+            "reference": 0.5132493594306382,
+            "candidate": 0.9707446808510638,
+            "improvement": -0.4574953214204256,
+            "relative_improvement": -0.8913704674233551,
+            "improvement_95_ci": [
+              -0.5244382971894407,
+              -0.3873103081484849
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 94,
+            "passes_brier_gate": false
+          },
+          "stratum_history__to__optimized": {
+            "reference": 0.5132493594306382,
+            "candidate": 0.6364773936170213,
+            "improvement": -0.12322803418638306,
+            "relative_improvement": -0.24009388793603825,
+            "improvement_95_ci": [
+              -0.16867573954845777,
+              -0.07767338823992931
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 94,
+            "passes_brier_gate": false
+          },
+          "attribute_logit__to__optimized": {
+            "reference": 0.5500506125758187,
+            "candidate": 0.6364773936170213,
+            "improvement": -0.0864267810412026,
+            "relative_improvement": -0.15712514278727321,
+            "improvement_95_ci": [
+              -0.1280999025552264,
+              -0.04638502227000596
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 94,
+            "passes_brier_gate": false
+          }
+        },
+        "card_contrasts": {
+          "original__to__optimized": {
+            "available": false,
+            "reason": "no card reaches 20 evaluated respondents",
+            "cards_with_support": 216
+          },
+          "history__to__optimized": {
+            "available": false,
+            "reason": "no card reaches 20 evaluated respondents",
+            "cards_with_support": 216
+          },
+          "stratum_history__to__optimized": {
+            "available": false,
+            "reason": "no card reaches 20 evaluated respondents",
+            "cards_with_support": 216
+          },
+          "attribute_logit__to__optimized": {
+            "available": false,
+            "reason": "no card reaches 20 evaluated respondents",
+            "cards_with_support": 216
+          }
+        },
+        "refusal_options": {
+          "17": [
+            "2"
+          ],
+          "18": [
+            "2"
+          ],
+          "19": [
+            "2"
+          ],
+          "20": [
+            "2"
+          ],
+          "21": [
+            "2"
+          ],
+          "22": [
+            "2"
+          ],
+          "23": [
+            "2"
+          ],
+          "24": [
+            "2"
+          ],
+          "9": [
+            "2"
+          ],
+          "10": [
+            "2"
+          ],
+          "11": [
+            "2"
+          ],
+          "12": [
+            "2"
+          ],
+          "13": [
+            "2"
+          ],
+          "14": [
+            "2"
+          ],
+          "15": [
+            "2"
+          ],
+          "16": [
+            "2"
+          ],
+          "25": [
+            "2"
+          ],
+          "26": [
+            "2"
+          ],
+          "27": [
+            "2"
+          ],
+          "28": [
+            "2"
+          ],
+          "29": [
+            "2"
+          ],
+          "30": [
+            "2"
+          ],
+          "31": [
+            "2"
+          ],
+          "32": [
+            "2"
+          ],
+          "1": [
+            "2"
+          ],
+          "2": [
+            "2"
+          ],
+          "3": [
+            "2"
+          ],
+          "4": [
+            "2"
+          ],
+          "5": [
+            "2"
+          ],
+          "6": [
+            "2"
+          ],
+          "7": [
+            "2"
+          ],
+          "8": [
+            "2"
+          ]
+        },
+        "estimable_cards": {
+          "minimum_people_per_card": 20
+        },
+        "unavailable_reference_cards": [],
+        "aggregation": "Weighted by survey weight; each person contributes one Brier score averaged over their own questions; card shares are averaged over distinct frozen cards.",
+        "computed_at": "2026-11-12T13:12:19.658330+08:00"
+      }
+    },
+    "pew13": {
+      "people": 96,
+      "history_source_people": 4221,
+      "excluded_evaluated_from_history": true,
+      "answer_coverage": {
+        "people_with_any_missing_answer": 3,
+        "dropped_questions": 4,
+        "people_excluded_for_coverage": 0
+      },
+      "cards": 13,
+      "cards_with_at_least_20_people": 13,
+      "attribute_baseline": null,
+      "results": {
+        "arms": {
+          "original": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              11,
+              12,
+              13
+            ],
+            "brier": 1.0673936814196048,
+            "accuracy": 0.4663031592901976,
+            "card_tv_pp": 27.44755073414677,
+            "cards": 13,
+            "mean_people_per_card": 95.6923076923077,
+            "refusal": {}
+          },
+          "output_only": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              11,
+              12,
+              13
+            ],
+            "brier": 0.6172094695617444,
+            "accuracy": 0.4627540618414321,
+            "card_tv_pp": 13.140402607885594,
+            "cards": 13,
+            "mean_people_per_card": 95.6923076923077,
+            "refusal": {}
+          },
+          "prompt_only": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              11,
+              12,
+              13
+            ],
+            "brier": 1.0886463570516116,
+            "accuracy": 0.4556768214741941,
+            "card_tv_pp": 26.266203093512594,
+            "cards": 13,
+            "mean_people_per_card": 95.6923076923077,
+            "refusal": {}
+          },
+          "optimized": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              11,
+              12,
+              13
+            ],
+            "brier": 0.6207273847028575,
+            "accuracy": 0.48136847853649034,
+            "card_tv_pp": 11.829085607146995,
+            "cards": 13,
+            "mean_people_per_card": 95.6923076923077,
+            "refusal": {}
+          },
+          "history": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              11,
+              12,
+              13
+            ],
+            "brier": 0.5741647369557763,
+            "accuracy": 0.5024930593464292,
+            "card_tv_pp": 8.604207591617017,
+            "cards": 13,
+            "mean_people_per_card": 95.6923076923077,
+            "refusal": {}
+          },
+          "stratum_history": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              11,
+              12,
+              13
+            ],
+            "brier": 0.5566467414298315,
+            "accuracy": 0.5427700487133418,
+            "card_tv_pp": 8.637061632068566,
+            "cards": 13,
+            "mean_people_per_card": 95.6923076923077,
+            "refusal": {}
+          },
+          "uniform": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              11,
+              12,
+              13
+            ],
+            "brier": 0.7051332887923567,
+            "accuracy": 0.4344504282690232,
+            "card_tv_pp": 33.07342372153093,
+            "cards": 13,
+            "mean_people_per_card": 95.6923076923077,
+            "refusal": {}
+          }
+        },
+        "contrasts": {
+          "original__to__output_only": {
+            "reference": 1.0673936814196048,
+            "candidate": 0.6172094695617444,
+            "improvement": 0.4501842118578604,
+            "relative_improvement": 0.42176023682202013,
+            "improvement_95_ci": [
+              0.3782443521444039,
+              0.5202303400324035
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": true
+          },
+          "original__to__prompt_only": {
+            "reference": 1.0673936814196048,
+            "candidate": 1.0886463570516116,
+            "improvement": -0.021252675632006834,
+            "relative_improvement": -0.01991081266636444,
+            "improvement_95_ci": [
+              -0.10259537325495072,
+              0.05792649662952232
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": false
+          },
+          "original__to__optimized": {
+            "reference": 1.0673936814196048,
+            "candidate": 0.6207273847028575,
+            "improvement": 0.4466662967167473,
+            "relative_improvement": 0.41846443771588865,
+            "improvement_95_ci": [
+              0.37978253960312747,
+              0.5150940959775528
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": true
+          },
+          "prompt_only__to__optimized": {
+            "reference": 1.0886463570516116,
+            "candidate": 0.6207273847028575,
+            "improvement": 0.4679189723487541,
+            "relative_improvement": 0.429817239839044,
+            "improvement_95_ci": [
+              0.38806001711044147,
+              0.5509729992906651
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": true
+          },
+          "output_only__to__optimized": {
+            "reference": 0.6172094695617444,
+            "candidate": 0.6207273847028575,
+            "improvement": -0.0035179151411131038,
+            "relative_improvement": -0.005699710251709252,
+            "improvement_95_ci": [
+              -0.03523882112654497,
+              0.033163499921378126
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": false
+          },
+          "history__to__original": {
+            "reference": 0.5741647369557763,
+            "candidate": 1.0673936814196048,
+            "improvement": -0.4932289444638285,
+            "relative_improvement": -0.8590373332206542,
+            "improvement_95_ci": [
+              -0.5546485990631869,
+              -0.4286481187968636
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": false
+          },
+          "history__to__optimized": {
+            "reference": 0.5741647369557763,
+            "candidate": 0.6207273847028575,
+            "improvement": -0.04656264774708119,
+            "relative_improvement": -0.08109632088162803,
+            "improvement_95_ci": [
+              -0.09623699040525902,
+              -0.0037457653255009715
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": false
+          },
+          "stratum_history__to__original": {
+            "reference": 0.5566467414298315,
+            "candidate": 1.0673936814196048,
+            "improvement": -0.5107469399897733,
+            "relative_improvement": -0.9175423153970907,
+            "improvement_95_ci": [
+              -0.5732919108847767,
+              -0.4466557253877097
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": false
+          },
+          "stratum_history__to__optimized": {
+            "reference": 0.5566467414298315,
+            "candidate": 0.6207273847028575,
+            "improvement": -0.06408064327302598,
+            "relative_improvement": -0.11511904858802396,
+            "improvement_95_ci": [
+              -0.10574179153136598,
+              -0.02609330396335985
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": false
+          }
+        },
+        "card_contrasts": {
+          "original__to__optimized": {
+            "available": true,
+            "reference_pp": 27.44755073414677,
+            "candidate_pp": 11.829085607146995,
+            "improvement_pp": 15.618465126999775,
+            "improvement_95_ci": [
+              6.4787421240980905,
+              20.644998535491162
+            ],
+            "repeats": 2000,
+            "retained_draws": 2000,
+            "seed": 20261109,
+            "estimable_cards": 13,
+            "passes_2pp_gate": true
+          },
+          "history__to__optimized": {
+            "available": true,
+            "reference_pp": 8.604207591617017,
+            "candidate_pp": 11.829085607146995,
+            "improvement_pp": -3.2248780155299777,
+            "improvement_95_ci": [
+              -7.959399792620188,
+              0.7322205047430828
+            ],
+            "repeats": 2000,
+            "retained_draws": 2000,
+            "seed": 20261109,
+            "estimable_cards": 13,
+            "passes_2pp_gate": false
+          },
+          "stratum_history__to__optimized": {
+            "available": true,
+            "reference_pp": 8.637061632068566,
+            "candidate_pp": 11.829085607146995,
+            "improvement_pp": -3.1920239750784294,
+            "improvement_95_ci": [
+              -7.857801941984582,
+              0.8788603043362606
+            ],
+            "repeats": 2000,
+            "retained_draws": 2000,
+            "seed": 20261109,
+            "estimable_cards": 13,
+            "passes_2pp_gate": false
+          }
+        },
+        "refusal_options": {},
+        "estimable_cards": {
+          "minimum_people_per_card": 20
+        },
+        "unavailable_reference_cards": [],
+        "aggregation": "Weighted by survey weight; each person contributes one Brier score averaged over their own questions; card shares are averaged over distinct frozen cards.",
+        "computed_at": "2026-11-12T13:12:49.199884+08:00"
+      }
+    },
+    "pew168": {
+      "people": 96,
+      "history_source_people": 9245,
+      "excluded_evaluated_from_history": true,
+      "answer_coverage": {},
+      "cards": 5,
+      "cards_with_at_least_20_people": 5,
+      "attribute_baseline": null,
+      "results": {
+        "arms": {
+          "original": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              5
+            ],
+            "brier": 0.7384827195970018,
+            "accuracy": 0.6307586402014991,
+            "card_tv_pp": 35.31362900927583,
+            "cards": 5,
+            "mean_people_per_card": 96.0,
+            "refusal": {
+              "OSCAM_PLAT_a": 0.0,
+              "OSCAM_PLAT_b": 0.0,
+              "OSCAM_PLAT_c": 0.0,
+              "OSCAM_PLAT_d": 0.0
+            }
+          },
+          "output_only": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              5
+            ],
+            "brier": 0.5427809066002074,
+            "accuracy": 0.6382592648054118,
+            "card_tv_pp": 15.296342665150314,
+            "cards": 5,
+            "mean_people_per_card": 96.0,
+            "refusal": {
+              "OSCAM_PLAT_a": 0.027561427186993625,
+              "OSCAM_PLAT_b": 0.02836489885332604,
+              "OSCAM_PLAT_c": 0.03978590517779608,
+              "OSCAM_PLAT_d": 0.041532502477419984
+            }
+          },
+          "prompt_only": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              5
+            ],
+            "brier": 0.719367672757936,
+            "accuracy": 0.640316163621032,
+            "card_tv_pp": 35.5384196905115,
+            "cards": 5,
+            "mean_people_per_card": 96.0,
+            "refusal": {
+              "OSCAM_PLAT_a": 0.0,
+              "OSCAM_PLAT_b": 0.0,
+              "OSCAM_PLAT_c": 0.0,
+              "OSCAM_PLAT_d": 0.0
+            }
+          },
+          "optimized": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              5
+            ],
+            "brier": 0.5724352990591923,
+            "accuracy": 0.6371485111164292,
+            "card_tv_pp": 16.767535226294928,
+            "cards": 5,
+            "mean_people_per_card": 96.0,
+            "refusal": {
+              "OSCAM_PLAT_a": 0.029991395418988858,
+              "OSCAM_PLAT_b": 0.029211205446274792,
+              "OSCAM_PLAT_c": 0.03672600613461372,
+              "OSCAM_PLAT_d": 0.03829001177156993
+            }
+          },
+          "history": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              5
+            ],
+            "brier": 0.5004680182684867,
+            "accuracy": 0.6371485111164292,
+            "card_tv_pp": 5.964466942273929,
+            "cards": 5,
+            "mean_people_per_card": 96.0,
+            "refusal": {
+              "OSCAM_PLAT_a": 0.04820376607830618,
+              "OSCAM_PLAT_b": 0.060507198807865405,
+              "OSCAM_PLAT_c": 0.11058735314883661,
+              "OSCAM_PLAT_d": 0.11596499408926303
+            }
+          },
+          "stratum_history": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              5
+            ],
+            "brier": 0.4917984012094869,
+            "accuracy": 0.6371485111164292,
+            "card_tv_pp": 5.932600016014093,
+            "cards": 5,
+            "mean_people_per_card": 96.0,
+            "refusal": {
+              "OSCAM_PLAT_a": 0.04924867373544452,
+              "OSCAM_PLAT_b": 0.061882954223919415,
+              "OSCAM_PLAT_c": 0.11755569695321498,
+              "OSCAM_PLAT_d": 0.12061802346159949
+            }
+          },
+          "uniform": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              5
+            ],
+            "brier": 0.7333333333333334,
+            "accuracy": 0.6371485111164292,
+            "card_tv_pp": 42.23590447964258,
+            "cards": 5,
+            "mean_people_per_card": 96.0,
+            "refusal": {
+              "OSCAM_PLAT_a": 0.25,
+              "OSCAM_PLAT_b": 0.25,
+              "OSCAM_PLAT_c": 0.25,
+              "OSCAM_PLAT_d": 0.25
+            }
+          }
+        },
+        "contrasts": {
+          "original__to__output_only": {
+            "reference": 0.7384827195970018,
+            "candidate": 0.5427809066002074,
+            "improvement": 0.19570181299679446,
+            "relative_improvement": 0.265005270676599,
+            "improvement_95_ci": [
+              0.13774101330962624,
+              0.2542239027274271
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": true
+          },
+          "original__to__prompt_only": {
+            "reference": 0.7384827195970018,
+            "candidate": 0.719367672757936,
+            "improvement": 0.01911504683906584,
+            "relative_improvement": 0.0258842168297413,
+            "improvement_95_ci": [
+              0.0006327129445291568,
+              0.03995795765200694
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": true
+          },
+          "original__to__optimized": {
+            "reference": 0.7384827195970018,
+            "candidate": 0.5724352990591923,
+            "improvement": 0.16604742053780952,
+            "relative_improvement": 0.22484943266976298,
+            "improvement_95_ci": [
+              0.11566725886274087,
+              0.21803808794809465
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": true
+          },
+          "prompt_only__to__optimized": {
+            "reference": 0.719367672757936,
+            "candidate": 0.5724352990591923,
+            "improvement": 0.14693237369874368,
+            "relative_improvement": 0.20425212205523413,
+            "improvement_95_ci": [
+              0.10197678637605395,
+              0.19582376252775713
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": true
+          },
+          "output_only__to__optimized": {
+            "reference": 0.5427809066002074,
+            "candidate": 0.5724352990591923,
+            "improvement": -0.029654392458984935,
+            "relative_improvement": -0.05463418498769574,
+            "improvement_95_ci": [
+              -0.07385928994924207,
+              0.00682987445165173
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": false
+          },
+          "history__to__original": {
+            "reference": 0.5004680182684867,
+            "candidate": 0.7384827195970018,
+            "improvement": -0.2380147013285151,
+            "relative_improvement": -0.47558423843344777,
+            "improvement_95_ci": [
+              -0.31716275909387726,
+              -0.15550732278955587
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": false
+          },
+          "history__to__optimized": {
+            "reference": 0.5004680182684867,
+            "candidate": 0.5724352990591923,
+            "improvement": -0.07196728079070558,
+            "relative_improvement": -0.14379995956524277,
+            "improvement_95_ci": [
+              -0.1226825068284374,
+              -0.024220081878225663
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": false
+          },
+          "stratum_history__to__original": {
+            "reference": 0.4917984012094869,
+            "candidate": 0.7384827195970018,
+            "improvement": -0.24668431838751492,
+            "relative_improvement": -0.5015964219908821,
+            "improvement_95_ci": [
+              -0.3268948056872317,
+              -0.16185583166671175
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": false
+          },
+          "stratum_history__to__optimized": {
+            "reference": 0.4917984012094869,
+            "candidate": 0.5724352990591923,
+            "improvement": -0.0806368978497054,
+            "relative_improvement": -0.16396331840728623,
+            "improvement_95_ci": [
+              -0.13709014262068697,
+              -0.02768108278063608
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": false
+          }
+        },
+        "card_contrasts": {
+          "original__to__optimized": {
+            "available": true,
+            "reference_pp": 35.31362900927583,
+            "candidate_pp": 16.767535226294928,
+            "improvement_pp": 18.5460937829809,
+            "improvement_95_ci": [
+              14.816095925013416,
+              19.928185810738498
+            ],
+            "repeats": 2000,
+            "retained_draws": 2000,
+            "seed": 20261109,
+            "estimable_cards": 5,
+            "passes_2pp_gate": true
+          },
+          "history__to__optimized": {
+            "available": true,
+            "reference_pp": 5.964466942273929,
+            "candidate_pp": 16.767535226294928,
+            "improvement_pp": -10.803068284020998,
+            "improvement_95_ci": [
+              -13.6235442119287,
+              -2.2137063566651864
+            ],
+            "repeats": 2000,
+            "retained_draws": 2000,
+            "seed": 20261109,
+            "estimable_cards": 5,
+            "passes_2pp_gate": false
+          },
+          "stratum_history__to__optimized": {
+            "available": true,
+            "reference_pp": 5.932600016014093,
+            "candidate_pp": 16.767535226294928,
+            "improvement_pp": -10.834935210280836,
+            "improvement_95_ci": [
+              -13.845709736562657,
+              -2.1365057173376893
+            ],
+            "repeats": 2000,
+            "retained_draws": 2000,
+            "seed": 20261109,
+            "estimable_cards": 5,
+            "passes_2pp_gate": false
+          }
+        },
+        "refusal_options": {
+          "OSCAM_PLAT_a": [
+            "4"
+          ],
+          "OSCAM_PLAT_b": [
+            "4"
+          ],
+          "OSCAM_PLAT_c": [
+            "4"
+          ],
+          "OSCAM_PLAT_d": [
+            "4"
+          ]
+        },
+        "estimable_cards": {
+          "minimum_people_per_card": 20
+        },
+        "unavailable_reference_cards": [],
+        "aggregation": "Weighted by survey weight; each person contributes one Brier score averaged over their own questions; card shares are averaged over distinct frozen cards.",
+        "computed_at": "2026-11-12T13:13:00.062845+08:00"
+      }
+    },
+    "shed": {
+      "people": 96,
+      "history_source_people": 12838,
+      "excluded_evaluated_from_history": true,
+      "answer_coverage": {
+        "people_with_any_missing_answer": 3,
+        "dropped_questions": 5,
+        "people_excluded_for_coverage": 0
+      },
+      "cards": 7,
+      "cards_with_at_least_20_people": 7,
+      "attribute_baseline": null,
+      "results": {
+        "arms": {
+          "original": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              5,
+              6,
+              7
+            ],
+            "brier": 0.8297297811819557,
+            "accuracy": 0.585135109409022,
+            "card_tv_pp": 13.361341709402845,
+            "cards": 7,
+            "mean_people_per_card": 95.28571428571429,
+            "refusal": {}
+          },
+          "output_only": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              5,
+              6,
+              7
+            ],
+            "brier": 0.4720488699520823,
+            "accuracy": 0.60515980005632,
+            "card_tv_pp": 13.078417574688698,
+            "cards": 7,
+            "mean_people_per_card": 95.28571428571429,
+            "refusal": {}
+          },
+          "prompt_only": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              5,
+              6,
+              7
+            ],
+            "brier": 0.845324852129492,
+            "accuracy": 0.5773375739352539,
+            "card_tv_pp": 15.360181099906644,
+            "cards": 7,
+            "mean_people_per_card": 95.28571428571429,
+            "refusal": {}
+          },
+          "optimized": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              5,
+              6,
+              7
+            ],
+            "brier": 0.4702793153538756,
+            "accuracy": 0.585833002464648,
+            "card_tv_pp": 13.443426662937144,
+            "cards": 7,
+            "mean_people_per_card": 95.28571428571429,
+            "refusal": {}
+          },
+          "history": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              5,
+              6,
+              7
+            ],
+            "brier": 0.40049881037363017,
+            "accuracy": 0.7056323216594941,
+            "card_tv_pp": 4.13551936075696,
+            "cards": 7,
+            "mean_people_per_card": 95.28571428571429,
+            "refusal": {}
+          },
+          "stratum_history": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              5,
+              6,
+              7
+            ],
+            "brier": 0.3860139356116352,
+            "accuracy": 0.7047122097322148,
+            "card_tv_pp": 4.031517367868152,
+            "cards": 7,
+            "mean_people_per_card": 95.28571428571429,
+            "refusal": {}
+          },
+          "uniform": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              5,
+              6,
+              7
+            ],
+            "brier": 0.5,
+            "accuracy": 0.36505134213893314,
+            "card_tv_pp": 20.468436812667964,
+            "cards": 7,
+            "mean_people_per_card": 95.28571428571429,
+            "refusal": {}
+          }
+        },
+        "contrasts": {
+          "original__to__output_only": {
+            "reference": 0.8297297811819557,
+            "candidate": 0.4720488699520823,
+            "improvement": 0.35768091122987344,
+            "relative_improvement": 0.4310812017863871,
+            "improvement_95_ci": [
+              0.2726638633921951,
+              0.44404654770806085
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": true
+          },
+          "original__to__prompt_only": {
+            "reference": 0.8297297811819557,
+            "candidate": 0.845324852129492,
+            "improvement": -0.015595070947536316,
+            "relative_improvement": -0.01879536121425102,
+            "improvement_95_ci": [
+              -0.1106400174400366,
+              0.077382607374891
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": false
+          },
+          "original__to__optimized": {
+            "reference": 0.8297297811819557,
+            "candidate": 0.4702793153538756,
+            "improvement": 0.3594504658280801,
+            "relative_improvement": 0.43321388960637336,
+            "improvement_95_ci": [
+              0.2691492290323321,
+              0.45364047739448926
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": true
+          },
+          "prompt_only__to__optimized": {
+            "reference": 0.845324852129492,
+            "candidate": 0.4702793153538756,
+            "improvement": 0.3750455367756164,
+            "relative_improvement": 0.4436703071379293,
+            "improvement_95_ci": [
+              0.29555550199514596,
+              0.45374408187606263
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": true
+          },
+          "output_only__to__optimized": {
+            "reference": 0.4720488699520823,
+            "candidate": 0.4702793153538756,
+            "improvement": 0.0017695545982066574,
+            "relative_improvement": 0.0037486682223946115,
+            "improvement_95_ci": [
+              -0.03734033658403646,
+              0.0404772625013215
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": false
+          },
+          "history__to__original": {
+            "reference": 0.40049881037363017,
+            "candidate": 0.8297297811819557,
+            "improvement": -0.42923097080832556,
+            "relative_improvement": -1.0717409382761731,
+            "improvement_95_ci": [
+              -0.5256231430907384,
+              -0.33234218391216097
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": false
+          },
+          "history__to__optimized": {
+            "reference": 0.40049881037363017,
+            "candidate": 0.4702793153538756,
+            "improvement": -0.06978050498024546,
+            "relative_improvement": -0.1742339881487947,
+            "improvement_95_ci": [
+              -0.11128504683162332,
+              -0.027578567152197753
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": false
+          },
+          "stratum_history__to__original": {
+            "reference": 0.3860139356116352,
+            "candidate": 0.8297297811819557,
+            "improvement": -0.4437158455703205,
+            "relative_improvement": -1.1494814166935636,
+            "improvement_95_ci": [
+              -0.5417015900808142,
+              -0.34398636183749615
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": false
+          },
+          "stratum_history__to__optimized": {
+            "reference": 0.3860139356116352,
+            "candidate": 0.4702793153538756,
+            "improvement": -0.08426537974224041,
+            "relative_improvement": -0.21829621153112713,
+            "improvement_95_ci": [
+              -0.12469144353330203,
+              -0.042699015218316205
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": false
+          }
+        },
+        "card_contrasts": {
+          "original__to__optimized": {
+            "available": true,
+            "reference_pp": 13.361341709402845,
+            "candidate_pp": 13.443426662937144,
+            "improvement_pp": -0.08208495353429868,
+            "improvement_95_ci": [
+              -3.890622522734187,
+              4.741416143515668
+            ],
+            "repeats": 2000,
+            "retained_draws": 2000,
+            "seed": 20261109,
+            "estimable_cards": 7,
+            "passes_2pp_gate": false
+          },
+          "history__to__optimized": {
+            "available": true,
+            "reference_pp": 4.13551936075696,
+            "candidate_pp": 13.443426662937144,
+            "improvement_pp": -9.307907302180183,
+            "improvement_95_ci": [
+              -11.510989918958426,
+              -3.4735739295709687
+            ],
+            "repeats": 2000,
+            "retained_draws": 2000,
+            "seed": 20261109,
+            "estimable_cards": 7,
+            "passes_2pp_gate": false
+          },
+          "stratum_history__to__optimized": {
+            "available": true,
+            "reference_pp": 4.031517367868152,
+            "candidate_pp": 13.443426662937144,
+            "improvement_pp": -9.411909295068991,
+            "improvement_95_ci": [
+              -11.657604538485705,
+              -3.4902857435973837
+            ],
+            "repeats": 2000,
+            "retained_draws": 2000,
+            "seed": 20261109,
+            "estimable_cards": 7,
+            "passes_2pp_gate": false
+          }
+        },
+        "refusal_options": {},
+        "estimable_cards": {
+          "minimum_people_per_card": 20
+        },
+        "unavailable_reference_cards": [],
+        "aggregation": "Weighted by survey weight; each person contributes one Brier score averaged over their own questions; card shares are averaged over distinct frozen cards.",
+        "computed_at": "2026-11-12T13:13:12.217237+08:00"
+      }
+    },
+    "swiss": {
+      "people": 96,
+      "history_source_people": 3317,
+      "excluded_evaluated_from_history": true,
+      "answer_coverage": {},
+      "cards": 384,
+      "cards_with_at_least_20_people": 0,
+      "attribute_baseline": {
+        "penalty": 0.001,
+        "fit_tasks": 10612,
+        "fit_people": 2653,
+        "selection_people": 664,
+        "comparator": "conditional logit on displayed product attributes only"
+      },
+      "results": {
+        "arms": {
+          "original": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              4
+            ],
+            "brier": 0.578125,
+            "accuracy": 0.7109375,
+            "card_tv_pp": null,
+            "cards": 0,
+            "mean_people_per_card": 0,
+            "refusal": {}
+          },
+          "output_only": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              4
+            ],
+            "brier": 0.4076520833333333,
+            "accuracy": 0.6927083333333334,
+            "card_tv_pp": null,
+            "cards": 0,
+            "mean_people_per_card": 0,
+            "refusal": {}
+          },
+          "prompt_only": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              4
+            ],
+            "brier": 0.6302083333333334,
+            "accuracy": 0.6848958333333334,
+            "card_tv_pp": null,
+            "cards": 0,
+            "mean_people_per_card": 0,
+            "refusal": {}
+          },
+          "optimized": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              4
+            ],
+            "brier": 0.45027916666666673,
+            "accuracy": 0.6692708333333334,
+            "card_tv_pp": null,
+            "cards": 0,
+            "mean_people_per_card": 0,
+            "refusal": {}
+          },
+          "history": {
+            "available": false,
+            "question_coverage": 0.005208333333333333,
+            "people": 2,
+            "questions_per_person": [
+              4
+            ],
+            "brier": null,
+            "accuracy": null,
+            "card_tv_pp": null,
+            "cards": 0,
+            "mean_people_per_card": 0,
+            "refusal": {}
+          },
+          "stratum_history": {
+            "available": false,
+            "question_coverage": 0.005208333333333333,
+            "people": 2,
+            "questions_per_person": [
+              4
+            ],
+            "brier": null,
+            "accuracy": null,
+            "card_tv_pp": null,
+            "cards": 0,
+            "mean_people_per_card": 0,
+            "refusal": {}
+          },
+          "uniform": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              4
+            ],
+            "brier": 0.5,
+            "accuracy": 0.5104166666666666,
+            "card_tv_pp": null,
+            "cards": 0,
+            "mean_people_per_card": 0,
+            "refusal": {}
+          },
+          "attribute_logit": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              4
+            ],
+            "brier": 0.3543264066166602,
+            "accuracy": 0.7369791666666666,
+            "card_tv_pp": null,
+            "cards": 0,
+            "mean_people_per_card": 0,
+            "refusal": {}
+          }
+        },
+        "contrasts": {
+          "original__to__output_only": {
+            "reference": 0.578125,
+            "candidate": 0.4076520833333333,
+            "improvement": 0.1704729166666667,
+            "relative_improvement": 0.2948720720720721,
+            "improvement_95_ci": [
+              0.09257135416666668,
+              0.24933906249999999
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": true
+          },
+          "original__to__prompt_only": {
+            "reference": 0.578125,
+            "candidate": 0.6302083333333334,
+            "improvement": -0.05208333333333337,
+            "relative_improvement": -0.09009009009009016,
+            "improvement_95_ci": [
+              -0.140625,
+              0.03125
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": false
+          },
+          "original__to__optimized": {
+            "reference": 0.578125,
+            "candidate": 0.45027916666666673,
+            "improvement": 0.12784583333333327,
+            "relative_improvement": 0.22113873873873863,
+            "improvement_95_ci": [
+              0.035392187500000005,
+              0.21499427083333328
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": true
+          },
+          "prompt_only__to__optimized": {
+            "reference": 0.6302083333333334,
+            "candidate": 0.45027916666666673,
+            "improvement": 0.17992916666666664,
+            "relative_improvement": 0.2855074380165289,
+            "improvement_95_ci": [
+              0.10376041666666669,
+              0.25819895833333334
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": true
+          },
+          "output_only__to__optimized": {
+            "reference": 0.4076520833333333,
+            "candidate": 0.45027916666666673,
+            "improvement": -0.042627083333333426,
+            "relative_improvement": -0.10456731383481649,
+            "improvement_95_ci": [
+              -0.09136145833333342,
+              0.005182291666666672
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": false
+          },
+          "history__to__original": {
+            "available": false,
+            "reason": "no question with both vectors"
+          },
+          "history__to__optimized": {
+            "available": false,
+            "reason": "no question with both vectors"
+          },
+          "stratum_history__to__original": {
+            "available": false,
+            "reason": "no question with both vectors"
+          },
+          "stratum_history__to__optimized": {
+            "available": false,
+            "reason": "no question with both vectors"
+          },
+          "attribute_logit__to__optimized": {
+            "reference": 0.3543264066166602,
+            "candidate": 0.45027916666666673,
+            "improvement": -0.09595276005000652,
+            "relative_improvement": -0.27080329960791266,
+            "improvement_95_ci": [
+              -0.1474033930654245,
+              -0.04673190631335533
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": false
+          }
+        },
+        "card_contrasts": {
+          "original__to__optimized": {
+            "available": false,
+            "reason": "no card reaches 20 evaluated respondents",
+            "cards_with_support": 384
+          },
+          "history__to__optimized": {
+            "available": false,
+            "reason": "no card reaches 20 evaluated respondents",
+            "cards_with_support": 384
+          },
+          "stratum_history__to__optimized": {
+            "available": false,
+            "reason": "no card reaches 20 evaluated respondents",
+            "cards_with_support": 384
+          },
+          "attribute_logit__to__optimized": {
+            "available": false,
+            "reason": "no card reaches 20 evaluated respondents",
+            "cards_with_support": 384
+          }
+        },
+        "refusal_options": {},
+        "estimable_cards": {
+          "minimum_people_per_card": 20
+        },
+        "unavailable_reference_cards": [
+          "2",
+          "3",
+          "2",
+          "3",
+          "1",
+          "4",
+          "3",
+          "3",
+          "3",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "4",
+          "1",
+          "1",
+          "3",
+          "4",
+          "1",
+          "3",
+          "2",
+          "2",
+          "4",
+          "1",
+          "3",
+          "3",
+          "2",
+          "3",
+          "4",
+          "4",
+          "2",
+          "2",
+          "3",
+          "1",
+          "2",
+          "4",
+          "2",
+          "2",
+          "1",
+          "3",
+          "3",
+          "3",
+          "3",
+          "2",
+          "4",
+          "1",
+          "1",
+          "2",
+          "3",
+          "2",
+          "1",
+          "4",
+          "3",
+          "2",
+          "1",
+          "2",
+          "1",
+          "1",
+          "3",
+          "1",
+          "4",
+          "2",
+          "3",
+          "3",
+          "3",
+          "3",
+          "1",
+          "3",
+          "4",
+          "4",
+          "1",
+          "2",
+          "4",
+          "4",
+          "1",
+          "1",
+          "4",
+          "4",
+          "1",
+          "3",
+          "4",
+          "4",
+          "1",
+          "4",
+          "4",
+          "4",
+          "3",
+          "3",
+          "4",
+          "3",
+          "3",
+          "1",
+          "2",
+          "2",
+          "4",
+          "2",
+          "4",
+          "1",
+          "3",
+          "3",
+          "2",
+          "2",
+          "3",
+          "4",
+          "1",
+          "1",
+          "1",
+          "1",
+          "4",
+          "3",
+          "3",
+          "2",
+          "2",
+          "2",
+          "1",
+          "4",
+          "4",
+          "1",
+          "2",
+          "2",
+          "1",
+          "3",
+          "1",
+          "1",
+          "3",
+          "2",
+          "1",
+          "1",
+          "1",
+          "1",
+          "4",
+          "1",
+          "3",
+          "3",
+          "4",
+          "1",
+          "2",
+          "1",
+          "2",
+          "1",
+          "3",
+          "2",
+          "4",
+          "3",
+          "4",
+          "1",
+          "4",
+          "1",
+          "4",
+          "1",
+          "4",
+          "4",
+          "3",
+          "2",
+          "4",
+          "2",
+          "2",
+          "3",
+          "1",
+          "2",
+          "4",
+          "3",
+          "3",
+          "2",
+          "2",
+          "2",
+          "3",
+          "3",
+          "1",
+          "1",
+          "4",
+          "2",
+          "2",
+          "3",
+          "4",
+          "4",
+          "3",
+          "4",
+          "1",
+          "3",
+          "2",
+          "4",
+          "1",
+          "1",
+          "3",
+          "3",
+          "4",
+          "2",
+          "1",
+          "1",
+          "2",
+          "2",
+          "3",
+          "4",
+          "2",
+          "3",
+          "4",
+          "2",
+          "4",
+          "3",
+          "2",
+          "1",
+          "1",
+          "3",
+          "2",
+          "3",
+          "2",
+          "2",
+          "4",
+          "2",
+          "3",
+          "3",
+          "1",
+          "1",
+          "3",
+          "1",
+          "1",
+          "4",
+          "2",
+          "1",
+          "1",
+          "2",
+          "2",
+          "4",
+          "2",
+          "4",
+          "3",
+          "4",
+          "4",
+          "3",
+          "2",
+          "2",
+          "4",
+          "4",
+          "4",
+          "1",
+          "3",
+          "3",
+          "2",
+          "1",
+          "3",
+          "4",
+          "3",
+          "3",
+          "1",
+          "3",
+          "4",
+          "2",
+          "3",
+          "4",
+          "1",
+          "1",
+          "4",
+          "4",
+          "1",
+          "4",
+          "2",
+          "3",
+          "4",
+          "3",
+          "4",
+          "4",
+          "3",
+          "2",
+          "4",
+          "3",
+          "4",
+          "3",
+          "3",
+          "2",
+          "4",
+          "3",
+          "3",
+          "4",
+          "3",
+          "3",
+          "4",
+          "1",
+          "1",
+          "3",
+          "4",
+          "2",
+          "1",
+          "3",
+          "2",
+          "1",
+          "4",
+          "1",
+          "2",
+          "1",
+          "3",
+          "4",
+          "2",
+          "4",
+          "4",
+          "1",
+          "3",
+          "2",
+          "1",
+          "2",
+          "2",
+          "3",
+          "4",
+          "4",
+          "1",
+          "1",
+          "1",
+          "2",
+          "2",
+          "4",
+          "1",
+          "2",
+          "3",
+          "2",
+          "4",
+          "2",
+          "4",
+          "1",
+          "3",
+          "4",
+          "1",
+          "1",
+          "3",
+          "2",
+          "3",
+          "3",
+          "3",
+          "3",
+          "2",
+          "1",
+          "1",
+          "2",
+          "1",
+          "1",
+          "2",
+          "1",
+          "2",
+          "4",
+          "4",
+          "2",
+          "4",
+          "3",
+          "4",
+          "1",
+          "2",
+          "3",
+          "2",
+          "2",
+          "4",
+          "4",
+          "1",
+          "2",
+          "3",
+          "2",
+          "2",
+          "2",
+          "4",
+          "4",
+          "2",
+          "1",
+          "1",
+          "2",
+          "2",
+          "4",
+          "1",
+          "3",
+          "1",
+          "2",
+          "3",
+          "4",
+          "4",
+          "2",
+          "4",
+          "2",
+          "3",
+          "2",
+          "2",
+          "3",
+          "1",
+          "4",
+          "2"
+        ],
+        "aggregation": "Weighted by survey weight; each person contributes one Brier score averaged over their own questions; card shares are averaged over distinct frozen cards.",
+        "computed_at": "2026-11-12T13:13:29.633875+08:00"
+      }
+    }
+  },
+  "budget": {
+    "max_calls": 2296,
+    "reserved_peak_usd": 71.60892552,
+    "max_cost_usd": 85.94
+  }
+}
