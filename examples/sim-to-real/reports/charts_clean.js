@@ -280,6 +280,57 @@
     });
   }
 
+  /* 7. all studies: AI minus reference, with 95% intervals */
+  const allNode = document.getElementById('all-data');
+  if (allNode) {
+    const all = JSON.parse(allNode.textContent);
+    const labels = { anes: '美国公共支出', pew168: '美国诈骗风险', shed: '美国消费调整',
+                     pew13: '美国购物看法', dryer: '四国烘干机', swiss: '瑞士家电规格',
+                     drone: '美国无人机配送', shoes: '美国运动鞋（打分）', origin: '美国商品产地',
+                     packaging: '美国包装与拒买', pew111: '美国网购与达人', german: '德国番茄包装',
+                     tshirt: '美国 T 恤', radiant: '西班牙悬挂番茄' };
+    const rows = all.rows.filter((r) => r.ai_vs_reference !== null)
+      .slice().sort((a, b) => a.ai_vs_reference - b.ai_vs_reference);
+    mount('allCompare', (chart, isNarrow) => {
+      const low = rows.map((r) => 100 * r.ai_vs_reference_ci[0]);
+      const high = rows.map((r) => 100 * r.ai_vs_reference_ci[1]);
+      chart.setOption(Object.assign({}, base, {
+        tooltip: {
+          trigger: 'axis', axisPointer: { type: 'shadow' },
+          formatter: (items) => {
+            const row = rows[items[0].dataIndex];
+            return '<b>' + (labels[row.study] || row.study) + '</b><br>'
+              + '簇：' + row.cluster + ' · ' + row.people + ' 人<br>'
+              + 'AI vs 参照：' + (100 * row.ai_vs_reference).toFixed(1) + '%<br>'
+              + '区间：[' + (100 * row.ai_vs_reference_ci[0]).toFixed(1) + ', '
+              + (100 * row.ai_vs_reference_ci[1]).toFixed(1) + ']';
+          }
+        },
+        grid: { left: isNarrow ? 118 : 150, right: isNarrow ? 44 : 60, top: 24, bottom: 46 },
+        xAxis: {
+          type: 'value', name: 'AI 相对统计参照的 Brier 改善', nameTextStyle: { color: muted },
+          axisLabel: { formatter: '{value}%', color: muted }, splitLine: { lineStyle: { color: line } }
+        },
+        yAxis: {
+          type: 'category', data: rows.map((r) => labels[r.study] || r.study),
+          axisLabel: { color: ink, fontSize: isNarrow ? 11 : 13 },
+          axisLine: { lineStyle: { color: line } }
+        },
+        series: [
+          { name: 'AI vs 参照', type: 'bar', barMaxWidth: 20,
+            itemStyle: { color: orange }, data: rows.map((r) => 100 * r.ai_vs_reference),
+            label: { show: !isNarrow, position: 'left', color: ink, fontSize: 11,
+                     formatter: (p) => p.value.toFixed(1) + '%' } },
+          { name: '零线', type: 'line', showSymbol: false, silent: true,
+            lineStyle: { color: green, type: 'dashed', width: 1.4 },
+            data: rows.map(() => 0),
+            markLine: { silent: true, symbol: 'none', lineStyle: { color: green, type: 'dashed' },
+                        data: [{ xAxis: 0 }], label: { formatter: '与参照持平', color: green, position: 'end' } } }
+        ]
+      }));
+    });
+  }
+
   const resize = () => { redraws.forEach((draw) => draw()); charts.forEach((chart) => chart.resize()); };
   window.addEventListener('resize', resize);
   window.addEventListener('beforeprint', resize);

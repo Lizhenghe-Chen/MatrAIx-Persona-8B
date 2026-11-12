@@ -77,6 +77,18 @@ def main():
     else:
         cross_note=''
     clean=HERE.parent/'decision_lab/reports/cross-study-v1/clean-v1-report.summary.json'
+    cluster=HERE.parent/'decision_lab/reports/cross-study-v1/cluster-summary.json'
+    cluster_note=''
+    if cluster.exists():
+        data=json.loads(cluster.read_text())
+        html_all=(HERE/'index.html').read_text()
+        assert 'id="all-studies"' in html_all
+        for row in data['rows']:
+            assert f'{100*row["ai_over_uniform"]:+.1f}%' in html_all, row['study']
+        stats=data['summary']
+        assert f'+{100*stats["mean_ai_over_uniform"]:.1f}%' in html_all
+        assert f'{stats["studies_behind_reference"]}/{stats["studies"]}' in html_all
+        cluster_note=f' cluster summary for {stats["studies"]} studies / {stats["clusters"]} clusters tied to the page;'
     wide=HERE.parent/'decision_lab/reports/cross-study-v1/wide-v1-results.json'
     wide_note=''
     if wide.exists():
@@ -104,7 +116,7 @@ def main():
         assert (clean.parent/'clean-v1-report.html').exists()
         assert (HERE.parent/'decision_lab/docs/预注册协议-clean-v1.md').exists()
         clean_note=f' clean-v1 summary for {len(clean_summary["rows"])} studies tied to the generated page;'
-    print(f'PASS: {checked} source hashes; all local report links; 13 distributions and averages; latest run exclusion; readable labels.'+cross_note+clean_note+wide_note)
+    print(f'PASS: {checked} source hashes; all local report links; 13 distributions and averages; latest run exclusion; readable labels.'+cross_note+cluster_note+clean_note+wide_note)
 
 
 if __name__=='__main__':

@@ -421,6 +421,76 @@ def wide_study_section():
             f'{json.dumps(frame, ensure_ascii=False).replace("</", "<\\/")}</script></section>')
 
 
+STUDY_LABEL = {'anes': '美国公共支出', 'pew168': '美国诈骗风险', 'shed': '美国消费调整',
+               'pew13': '美国购物看法', 'dryer': '四国烘干机', 'swiss': '瑞士家电规格',
+               'drone': '美国无人机配送', 'shoes': '美国运动鞋（打分）',
+               'origin': '美国商品产地', 'packaging': '美国包装与拒买', 'pew111': '美国网购与达人',
+               'german': '德国番茄包装', 'tshirt': '美国 T 恤', 'radiant': '西班牙悬挂番茄'}
+TASK_KIND = {'anes': '政策态度', 'pew168': '风险判断', 'shed': '消费应对', 'pew13': '购物看法',
+             'dryer': '商品选择', 'swiss': '家电规格', 'drone': '配送二选一', 'shoes': '1–7 打分',
+             'origin': '商品选择', 'packaging': '包装与拒买', 'pew111': '购物行为',
+             'german': '包装选择', 'tshirt': '商品选择', 'radiant': '食品选择'}
+
+
+def all_studies_section():
+    """One page for all fourteen studies: the only cross-study comparison that is legitimate."""
+    path = CROSS / 'cluster-summary.json'
+    if not path.exists():
+        return '<section id="all-studies"><h2>全部研究一页看完</h2><p>尚未生成簇汇总。</p></section>'
+    summary = json.loads(path.read_text())
+    rows = sorted(summary['rows'], key=lambda r: (r['ai_vs_reference'] is None,
+                                                  r['ai_vs_reference'] if r['ai_vs_reference'] is not None else 0))
+    stats = summary['summary']
+    cells = []
+    for row in rows:
+        gap = '—' if row['ai_vs_reference'] is None else f"{100 * row['ai_vs_reference']:+.1f}%"
+        ci = ('—' if row['ai_vs_reference_ci'] is None else
+              f"[{100 * row['ai_vs_reference_ci'][0]:+.1f}, {100 * row['ai_vs_reference_ci'][1]:+.1f}]")
+        estimable = '—' if not row['cards'] else f"{row['cards_estimable']}/{row['cards']}"
+        reference = ('—' if row['reference_over_uniform'] is None
+                     else f"{100 * row['reference_over_uniform']:+.1f}%")
+        cells.append(
+            f"<tr><th>{html.escape(STUDY_LABEL.get(row['study'], row['study']))}</th>"
+            f"<td>{html.escape(TASK_KIND.get(row['study'], '—'))}</td>"
+            f"<td>{html.escape(row['cluster'])}</td><td>{row['people']}</td>"
+            f"<td>{100 * row['ai_over_uniform']:+.1f}%</td>"
+            f"<td>{reference}</td><td>{gap}</td><td>{ci}</td><td>{estimable}</td></tr>")
+    table = ''.join(cells)
+    return ('<section id="all-studies"><span class="number">全部轮次 · 一页看完</span>'
+            '<h2>十四套研究，一张表比到底</h2>'
+            f'<p class="lead">共 {stats["studies"]} 套研究、{stats["clusters"]} 个独立数据集簇。'
+            f'其中 {stats["studies_behind_reference"]} 套在同信息统计参照面前落后，'
+            f'95% 区间高于零的有 {len(stats["any_ci_above_zero"])} 套。</p>'
+            '<div class="grid3">'
+            f'<article class="card"><span class="tag">AI 的信息量</span><h3>相对“每档等分”</h3>'
+            f'<div class="big">+{100 * stats["mean_ai_over_uniform"]:.1f}%</div>'
+            '<p>十四套平均。AI 确实带了信息，不是随机。</p></article>'
+            f'<article class="card"><span class="tag">统计参照的信息量</span><h3>同一把尺子</h3>'
+            f'<div class="big">+{100 * stats["mean_reference_over_uniform"]:.1f}%</div>'
+            '<p>同样的题卡、同样的答案来源，参照是 AI 的三倍多。</p></article>'
+            f'<article class="card"><span class="tag">主对照</span><h3>谁更接近真人</h3>'
+            f'<div class="big">{stats["studies_behind_reference"]}/{stats["studies"]}</div>'
+            '<p>没有任何一套超过统计参照，也没有一套的区间高于零。</p></article>'
+            '</div>'
+            '<figure><h3>每套研究：AI 比统计参照差多少（负值＝更差）</h3>'
+            '<div id="allCompare" class="echart" style="height:520px"></div>'
+            '<figcaption>横轴是 Brier 相对改善；条形是 AI 相对该套最强参照的差距，'
+            '全部落在虚线左侧（虚线＝与参照持平）。每一套的 95% 区间见下表与悬停提示，'
+            '区间全部低于零，说明差距不是抽样噪声。</figcaption></figure>'
+            '<div class="table-wrap"><table><caption>十四套研究逐项对照（按“AI vs 参照”从差到好排序）'
+            '</caption><thead><tr><th>研究</th><th>题型</th><th>数据集簇</th><th>人数</th>'
+            '<th>AI vs 等分</th><th>参照 vs 等分</th><th>AI vs 参照</th><th>95% 区间</th>'
+            '<th>可估卡/总卡</th></tr></thead><tbody>' + table + '</tbody></table></div>'
+            '<p class="small">“AI vs 等分”“参照 vs 等分”都以“每个选项等可能”为基准，因此可以横向比较；'
+            '“AI vs 参照”是每套各自最强的同信息参照，强弱不同，只逐套看、不跨套平均。'
+            '“可估卡”指同一题卡至少 20 名被测者——不足则群体分布误差不可估计。</p>'
+            '<p class="small">簇一列是独立性口径：Pew 四套算一个簇，所以 14 套不是 14 次独立复现。'
+            '可用脚本 <code>decision_lab.cross_study.cluster_summary</code> 复算。</p>'
+            f'<script id="all-data" type="application/json">'
+            f'{json.dumps({"rows": rows, "summary": stats}, ensure_ascii=False).replace("</", "<\\/")}'
+            '</script></section>')
+
+
 def build(d):
     validate(d)
     slots = {}
@@ -452,6 +522,7 @@ def build(d):
     slots['CROSS_STUDY']=cross_study_section()
     slots['CLEAN_STUDY']=clean_study_section()
     slots['WIDE_STUDY']=wide_study_section()
+    slots['ALL_STUDIES']=all_studies_section()
     # The page must stay self-contained: inline the vendored chart library at build time.
     slots['ECHARTS']=(HERE/'vendor/echarts.min.js').read_text()
     slots['CLEAN_CHART_SCRIPT']=(HERE/'charts_clean.js').read_text()
