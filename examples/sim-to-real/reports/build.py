@@ -359,6 +359,19 @@ def wide_study_section():
                      f'<td>{reference}</td><td>{gap}</td>'
                      f'<td>{row["cards_estimable"]}/{row["cards"]}</td></tr>')
     cells = ''.join(cells)
+    discrimination_path = CROSS / 'card-discrimination.json'
+    discrimination = ''
+    if discrimination_path.exists():
+        diag = json.loads(discrimination_path.read_text())['plans']
+        pairs = [(name, s) for plan in diag.values() if plan.get('available')
+                 for name, s in plan['studies'].items() if s.get('available')]
+        if pairs:
+            low = min(pairs, key=lambda x: x[1]['slope'])
+            high = max(pairs, key=lambda x: x[1]['slope'])
+            discrimination = (f'<p class="small">题卡判别力（预测题卡份额 vs 真人题卡份额的回归斜率，1.0＝完全跟住）：'
+                              f'最弱 {html.escape(low[0])} {low[1]["slope"]:.2f}，最强 {html.escape(high[0])} '
+                              f'{high[1]["slope"]:.2f}。斜率普遍小于 1，说明模型只跟住了一部分题卡差异——'
+                              '这既是“压扁”的直接证据，也说明它不是靠背下已发表比例取胜。</p>')
     cluster_path = CROSS / 'cluster-summary.json'
     cluster = json.loads(cluster_path.read_text())['summary'] if cluster_path.exists() else None
     pooled = ''
@@ -399,7 +412,7 @@ def wide_study_section():
             f'${frame["budget"]["reserved_peak_usd"]:.2f}；按 token 单价估约 $5.2，'
             '按账户余额变化实测约 210 元（≈$29）——上限口径是“每次输出顶满”的最坏情况，'
             '不是账单，也不是实际花费。</p>'
-            + pooled + '<p class="small">独立性问题：14 套研究只对应 11 个独立数据集簇——Pew 四套算一个簇，'
+            + pooled + discrimination + '<p class="small">独立性问题：14 套研究只对应 11 个独立数据集簇——Pew 四套算一个簇，'
             '所以本轮增加的是“领域覆盖”，不是 6 次独立复现。</p>'
             f'<p><a href="{link}">查看六套新研究完整报告</a>'
             ' · <a href="../decision_lab/reports/cross-study-v1/wide-audit.json">结构审计</a>'
