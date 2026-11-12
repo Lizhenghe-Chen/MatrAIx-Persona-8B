@@ -77,6 +77,17 @@ def main():
     else:
         cross_note=''
     clean=HERE.parent/'decision_lab/reports/cross-study-v1/clean-v1-report.summary.json'
+    wide=HERE.parent/'decision_lab/reports/cross-study-v1/wide-v1-results.json'
+    wide_note=''
+    if wide.exists():
+        wide_data=json.loads(wide.read_text())
+        html_wide=(HERE/'index.html').read_text()
+        assert 'id="wide"' in html_wide
+        for study,entry in wide_data['studies'].items():
+            arms=entry['results']['arms']
+            versus=(arms['uniform']['brier']-arms['optimized']['brier'])/arms['uniform']['brier']
+            assert f'{100*versus:+.1f}%' in html_wide, study
+        wide_note=f' wide summary for {len(wide_data["studies"])} studies tied to the generated page;'
     clean_note=''
     if clean.exists():
         clean_summary=json.loads(clean.read_text())
@@ -93,7 +104,7 @@ def main():
         assert (clean.parent/'clean-v1-report.html').exists()
         assert (HERE.parent/'decision_lab/docs/预注册协议-clean-v1.md').exists()
         clean_note=f' clean-v1 summary for {len(clean_summary["rows"])} studies tied to the generated page;'
-    print(f'PASS: {checked} source hashes; all local report links; 13 distributions and averages; latest run exclusion; readable labels.'+cross_note+clean_note)
+    print(f'PASS: {checked} source hashes; all local report links; 13 distributions and averages; latest run exclusion; readable labels.'+cross_note+clean_note+wide_note)
 
 
 if __name__=='__main__':

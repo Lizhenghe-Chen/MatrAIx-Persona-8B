@@ -8,12 +8,18 @@ from .registry import OUT
 
 STUDY_NAME = {'anes': '美国公共支出', 'pew168': '美国诈骗风险', 'shed': '美国消费调整',
               'pew13': '美国购物看法', 'dryer': '四国烘干机', 'swiss': '瑞士家电规格',
-              'drone': '美国无人机配送', 'shoes': '美国运动鞋意愿（打分）'}
+              'drone': '美国无人机配送', 'shoes': '美国运动鞋意愿（打分）',
+              'origin': '美国商品产地', 'packaging': '美国包装与拒买', 'pew111': '美国网购与达人',
+              'german': '德国番茄包装', 'tshirt': '美国 T 恤', 'radiant': '西班牙悬挂番茄'}
 STUDY_KIND = {'anes': '政策态度', 'pew168': '风险判断', 'shed': '消费应对',
               'pew13': '购物行为', 'dryer': '商品选择', 'swiss': '商品选择',
-              'drone': '配送服务选择', 'shoes': '商品意愿打分'}
+              'drone': '配送服务选择', 'shoes': '商品意愿打分',
+              'origin': '商品选择', 'packaging': '商品选择', 'pew111': '购物行为',
+              'german': '商品选择', 'tshirt': '商品选择', 'radiant': '商品选择'}
 STUDY_REGION = {'anes': '美国', 'pew168': '美国', 'shed': '美国', 'pew13': '美国',
-                'dryer': '北美与西欧', 'swiss': '西欧', 'drone': '美国', 'shoes': '美国'}
+                'dryer': '北美与西欧', 'swiss': '西欧', 'drone': '美国', 'shoes': '美国',
+                'origin': '美国', 'packaging': '美国', 'pew111': '美国', 'german': '德国',
+                'tshirt': '美国', 'radiant': '西班牙'}
 ARM_LABEL = {'original': '原生提示·单选', 'output_only': '原生提示·概率',
              'prompt_only': '预测提示·单选', 'optimized': '预测提示·概率',
              'history': '统计：全体历史比例', 'stratum_history': '统计：同层历史比例',

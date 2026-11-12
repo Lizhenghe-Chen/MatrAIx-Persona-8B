@@ -235,6 +235,51 @@
     }));
   });
 
+  /* 6. wide round: AI vs same-information reference, both relative to "every option equally likely" */
+  const wideNode = document.getElementById('wide-data');
+  if (wideNode) {
+    const wide = JSON.parse(wideNode.textContent);
+    const labels = { origin: '商品产地', packaging: '包装与拒买', pew111: '网购与达人',
+                     german: '德国番茄', tshirt: '美国 T 恤', radiant: '西班牙番茄' };
+    mount('wideCompare', (chart, isNarrow) => {
+      const rows = wide.rows;
+      chart.setOption(Object.assign({}, base, {
+        tooltip: {
+          trigger: 'axis', axisPointer: { type: 'shadow' },
+          formatter: (items) => {
+            const row = rows[items[0].dataIndex];
+            const ref = row.reference === null ? '不可估计' : row.reference.toFixed(1) + '%';
+            const gap = row.gap === null ? '—' : row.gap.toFixed(1) + '%（区间 '
+              + row.ci[0].toFixed(1) + ', ' + row.ci[1].toFixed(1) + '）';
+            return '<b>' + labels[row.study] + '</b> · ' + row.people + ' 人<br>'
+              + 'AI 优化 vs 等分：' + row.ai.toFixed(1) + '%<br>'
+              + '统计参照 vs 等分：' + ref + '<br>AI vs 参照：' + gap;
+          }
+        },
+        legend: { data: ['AI 优化', '同信息统计参照'], bottom: 0, textStyle: { color: muted } },
+        grid: { left: isNarrow ? 56 : 72, right: isNarrow ? 16 : 26, top: 30, bottom: 72 },
+        xAxis: {
+          type: 'category', data: rows.map((r) => labels[r.study] || r.study),
+          axisLabel: { color: ink, fontSize: isNarrow ? 10 : 12, interval: 0,
+                       rotate: isNarrow ? 40 : 0 },
+          axisLine: { lineStyle: { color: line } }
+        },
+        yAxis: {
+          type: 'value', name: '相对“每档等分”的改善', nameTextStyle: { color: muted },
+          axisLabel: { formatter: '{value}%', color: muted }, splitLine: { lineStyle: { color: line } }
+        },
+        series: [
+          { name: 'AI 优化', type: 'bar', barMaxWidth: 26, itemStyle: { color: purple },
+            data: rows.map((r) => r.ai) },
+          { name: '同信息统计参照', type: 'bar', barMaxWidth: 26, itemStyle: { color: green },
+            data: rows.map((r) => r.reference) },
+          { name: '等分', type: 'line', showSymbol: false, silent: true,
+            lineStyle: { color: grey, type: 'dashed' }, data: rows.map(() => 0) }
+        ]
+      }));
+    });
+  }
+
   const resize = () => { redraws.forEach((draw) => draw()); charts.forEach((chart) => chart.resize()); };
   window.addEventListener('resize', resize);
   window.addEventListener('beforeprint', resize);

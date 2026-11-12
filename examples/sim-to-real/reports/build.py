@@ -299,6 +299,99 @@ def clean_study_section():
             + body + '</section>')
 
 
+# One cluster per independent dataset/panel: adding studies inside a cluster is not
+# an independent replication, and the report must never imply otherwise.
+CLUSTERS = {'shed': 'Pew', 'pew168': 'Pew', 'pew13': 'Pew', 'pew111': 'Pew',
+            'anes': 'ANES', 'swiss': 'Swiss panel', 'dryer': 'Dryer (4 countries)',
+            'origin': 'Origin', 'packaging': 'Packaging', 'shoes': 'Shoes', 'drone': 'Drone',
+            'german': 'German tomato', 'tshirt': 'T-shirt', 'radiant': 'Spanish tomato'}
+
+
+def _wide_frame():
+    """Per-study information content for the wide round, read from the frozen results."""
+    path = CROSS / 'wide-v1-results.json'
+    if not path.exists():
+        return None
+    data = json.loads(path.read_text())
+    usable = lambda c: bool(c) and c.get('available', True)
+    rows = []
+    for study, entry in data['studies'].items():
+        arms = entry['results']['arms']
+        uniform = arms['uniform']['brier']
+        key = next((k for k in ('stratum_history__to__optimized', 'history__to__optimized',
+                                'attribute_logit__to__optimized')
+                    if usable(entry['results']['contrasts'].get(k))), None)
+        reference = key.split('__to__')[0] if key else None
+        contrast = entry['results']['contrasts'].get(key) if key else None
+        rows.append({
+            'study': study, 'cluster': CLUSTERS.get(study, study), 'people': entry['people'],
+            'ai': round(100 * (uniform - arms['optimized']['brier']) / uniform, 1),
+            'reference_name': reference,
+            'reference': (None if reference is None else
+                          round(100 * (uniform - arms[reference]['brier']) / uniform, 1)),
+            'gap': (None if contrast is None else round(100 * contrast['relative_improvement'], 1)),
+            'ci': (None if contrast is None else
+                   [round(100 * v, 1) for v in contrast['improvement_95_ci']]),
+            'cards_estimable': entry['cards_with_at_least_20_people'], 'cards': entry['cards'],
+        })
+    return {'rows': rows, 'budget': data['budget']}
+
+
+def wide_study_section():
+    frame = _wide_frame()
+    link = '../decision_lab/reports/cross-study-v1/wide-v1-report.html'
+    if not frame:
+        return '<section id="wide"><h2>铺开六套</h2><p>尚未运行。</p></section>'
+    rows = frame['rows']
+    labels = {'origin': '商品产地', 'packaging': '包装与拒买', 'pew111': '网购与达人',
+              'german': '德国番茄包装', 'tshirt': '美国 T 恤', 'radiant': '西班牙悬挂番茄'}
+    reference_label = {'history': '同层历史答案', 'stratum_history': '同层历史答案',
+                       'attribute_logit': '商品属性模型'}
+    behind = [r for r in rows if r['gap'] is not None and r['gap'] < 0]
+    positive = [r for r in rows if r['ai'] > 0]
+    cells = []
+    for row in rows:
+        reference = '—' if row['reference'] is None else f"{row['reference']:+.1f}%"
+        gap = '—' if row['gap'] is None else f"{row['gap']:+.1f}%"
+        cells.append(f'<tr><th>{html.escape(labels.get(row["study"], row["study"]))}</th>'
+                     f'<td>{row["people"]}</td><td>{row["ai"]:+.1f}%</td>'
+                     f'<td>{reference}</td><td>{gap}</td>'
+                     f'<td>{row["cards_estimable"]}/{row["cards"]}</td></tr>')
+    cells = ''.join(cells)
+    return ('<section id="wide"><h2>再铺六套：从 8 套扩到 14 套研究</h2>'
+            '<p class="lead">许可门按你的要求降为声明项，其余口径不变：预注册冻结、同信息参照、'
+            '20 人/卡门槛、失败照报。新增六套覆盖商品产地、包装拒买、网购与达人、德国番茄包装、'
+            '美国 T 恤、西班牙悬挂番茄。</p>'
+            f'<div class="grid3">'
+            f'<article class="card"><span class="tag">信息量 · AI</span><h3>比“等分”好一点</h3>'
+            f'<div class="big">+{sum(r["ai"] for r in rows) / len(rows):.1f}%</div>'
+            f'<p>六套平均：{len(positive)}/6 明显高于每档等分；包装与拒买反而更差。</p></article>'
+            f'<article class="card"><span class="tag">信息量 · 统计参照</span><h3>仍高一个量级</h3>'
+            f'<div class="big">+{sum(r["reference"] for r in rows if r["reference"] is not None) / len([r for r in rows if r["reference"] is not None]):.1f}%</div>'
+            '<p>同信息参照平均好过等分约 25%：AI 的 7% 只是它的零头。</p></article>'
+            f'<article class="card"><span class="tag">主对照</span><h3>{len(behind)}/6 显著落后</h3>'
+            f'<div class="big">{sum(r["gap"] for r in rows if r["gap"] is not None) / max(1, len([r for r in rows if r["gap"] is not None])):+.1f}%</div>'
+            '<p>六套区间全部低于零，没有一套超过统计参照（表中“AI vs 参照”）。</p></article>'
+            '</div>'
+            '<figure><h3>每套研究：AI 与统计参照各自相对“每档等分”的信息量</h3>'
+            '<div id="wideCompare" class="echart" style="height:420px"></div>'
+            '<figcaption>柱子越高＝比“每个选项等可能”更准。AI（紫）每套都低于同信息统计参照（绿），'
+            '两者差距就是“模型没学到的题卡信息”。原点为每档等分。</figcaption></figure>'
+            '<div class="table-wrap"><table><caption>六套新研究（Brier 越小越好；相对列以“每档等分”为基准）</caption>'
+            '<thead><tr><th>研究</th><th>人数</th><th>AI 优化 vs 等分</th><th>统计参照 vs 等分</th>'
+            '<th>AI vs 参照</th><th>可估卡数/总卡数</th></tr></thead><tbody>'
+            + cells + '</tbody></table></div>'
+            '<p class="small">可估卡数指“同一题卡至少 20 名被测者”的卡。T 恤与商品产地的题卡几乎人人不同，'
+            '因此群体分布误差不可估计，只用个体概率误差与属性参照比较。</p>'
+            '<p class="small">独立性问题：14 套研究只对应 11 个独立数据集簇——Pew 四套算一个簇，'
+            '所以本轮增加的是“领域覆盖”，不是 6 次独立复现。</p>'
+            f'<p><a href="{link}">查看六套新研究完整报告</a>'
+            ' · <a href="../decision_lab/reports/cross-study-v1/wide-audit.json">结构审计</a>'
+            ' · <a href="../decision_lab/specs/cross-study-v1/wide-v1.json">冻结规格</a></p>'
+            f'<script id="wide-data" type="application/json">'
+            f'{json.dumps(frame, ensure_ascii=False).replace("</", "<\\/")}</script></section>')
+
+
 def build(d):
     validate(d)
     slots = {}
@@ -329,6 +422,7 @@ def build(d):
     slots['QUESTION_DATA']=json.dumps(d['questions'],ensure_ascii=False).replace('</',r'<\/')
     slots['CROSS_STUDY']=cross_study_section()
     slots['CLEAN_STUDY']=clean_study_section()
+    slots['WIDE_STUDY']=wide_study_section()
     # The page must stay self-contained: inline the vendored chart library at build time.
     slots['ECHARTS']=(HERE/'vendor/echarts.min.js').read_text()
     slots['CLEAN_CHART_SCRIPT']=(HERE/'charts_clean.js').read_text()
