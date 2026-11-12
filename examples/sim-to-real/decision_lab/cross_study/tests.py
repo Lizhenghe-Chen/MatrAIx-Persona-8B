@@ -242,3 +242,41 @@ class RecommendedConfig(unittest.TestCase):
   self.assertEqual(config['prompt_variant'],'optional')
   self.assertEqual(config['gates']['minimum_people_per_card'],20)
   self.assertTrue(any('not purchase' in x for x in config['limits']))
+
+
+class Adapters(unittest.TestCase):
+ def test_age_band_boundaries(self):
+  from .adapters import age_band
+  self.assertEqual(age_band(18),'18-24'); self.assertEqual(age_band(24),'18-24')
+  self.assertEqual(age_band(25),'25-34'); self.assertEqual(age_band(65),'65-74')
+  self.assertEqual(age_band(90),'85+')
+
+ def test_person_ids_are_study_scoped(self):
+  from .adapters import person_id
+  self.assertNotEqual(person_id('origin','1'), person_id('packaging','1'))
+  self.assertEqual(len(person_id('origin','1')),24)
+
+ def test_packaging_refusal_means_no_profile_chosen(self):
+  import csv,tempfile
+  from pathlib import Path
+  from unittest.mock import patch
+  from . import adapters
+  fields=['id','task','profile','choice','attr_packaging','attr_price','cov_age_group','cov_education',
+          'cov_income_usd','cov_region','trial_block','trial_cheap_talk']
+  rows=[['1','1','1','1','Bottle','$10','25-34','AA or BA','x','Northeast','1','0'],
+        ['1','1','2','0','Can','$12','25-34','AA or BA','x','Northeast','1','0'],
+        ['2','1','1','0','Bottle','$10','65+','Graduate degree','x','South','2','1'],
+        ['2','1','2','0','Can','$12','65+','Graduate degree','x','South','2','1']]
+  with tempfile.TemporaryDirectory() as tmp:
+   path=Path(tmp)/'packaging.csv'
+   with path.open('w',newline='') as stream:
+    writer=csv.writer(stream);writer.writerow(fields);writer.writerows(rows)
+   with patch.object(adapters,'PACKAGING',path):
+    data=adapters.packaging_rows()
+  self.assertEqual(len(data),2)
+  chosen=next(r for r in data if r['truth'].get('block1_card1')=='1')
+  refused=next(r for r in data if r['truth'].get('block2_card1')=='0')
+  self.assertEqual(chosen['truth']['block1_card1'],'1')
+  self.assertEqual([o['id'] for o in chosen['questions'][0]['options']],['1','2','0'])
+  self.assertIn('No money changes hands',refused['context'])
+  self.assertNotIn('No money changes hands',chosen['context'])

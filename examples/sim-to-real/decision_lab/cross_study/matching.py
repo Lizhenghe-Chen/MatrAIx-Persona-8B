@@ -18,6 +18,21 @@ EDUCATION={
  'Apprenticeship/vocational school/commercial middle school':['Vocational / cert'],
  'Obligatory schooling':['Secondary'],'Matura/vocational school-leaving certificate':['Secondary'],
 }
+# Labels added for the v2 re-checks; existing labels and their results are unchanged.
+EDUCATION.update({
+    'No high school diploma': ['No formal', 'Primary'],
+    'High school, no college': ['Secondary'],
+    'Attended college, no degree': ['Some college', 'Vocational / cert'],
+    'AA or BA': ["Associate's", "Bachelor's"],
+    'Graduate degree': DEGREE[1:],
+    'Less than high school': ['No formal', 'Primary'],
+    'High school graduate': ['Secondary'],
+    'Some college, no degree': ['Some college', "Associate's"],
+    "Associate's degree": ["Associate's"],
+    'College graduate/some post grad': ["Bachelor's"],
+    'Postgraduate': DEGREE[1:],
+    'Below bachelor\'s degree': ['No formal', 'Primary', 'Secondary', 'Vocational / cert', 'Some college', "Associate's"],
+})
 COUNTRIES={'USA':'North America','US':'North America','United States':'North America','Canada':'North America','CAN':'North America','UK':'Western Europe','United Kingdom':'Western Europe','Ireland':'Western Europe','IRE':'Western Europe','Switzerland':'Western Europe'}
 
 def constraints(record):
@@ -32,6 +47,7 @@ def constraints(record):
   ages=[AGE[next(i for i,upper in enumerate([24,34,44,54,64,74,84,float('inf')]) if n<=upper)]];resolution='numeric_age_to_native_band'
  elif age=='65+':ages=AGE[5:];resolution='65_plus'
  elif age=='80 or older':ages=AGE[6:];resolution='75_plus_common_coarsening'
+ elif age=='21-24':ages=['18-24'];resolution='sub_band_21_24'
  elif age in ['18-29','30-49','50-64']:ages=AGE[:5];resolution='18_64_common_coarsening'
  else:return None,'unmapped_age:'+age
  country=record.get('country','United States')

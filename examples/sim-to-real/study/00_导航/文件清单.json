@@ -5,8 +5,8 @@
   "scope": "实验代码、历史六轮、新框架冻结与公开结果、综合报告、文献、公开输入及项目内本机材料；排除本清单自身、缓存和项目外私有运行目录",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 636,
-  "git_bytes": 84943541,
+  "git_file_count": 637,
+  "git_bytes": 84963123,
   "local_only_file_count": 44,
   "local_only_bytes": 151339439,
   "external_large_source": {
@@ -163,6 +163,12 @@
       "storage": "git"
     },
     {
+      "path": "decision_lab/cross_study/adapters.py",
+      "bytes": 12919,
+      "sha256": "af3bc17832d1e0ae6ff36e34ea7e2fd0f77e837509b735978ef56f1bfdb0ff21",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/cross_study/admission_check.py",
       "bytes": 3600,
       "sha256": "3586df3d978f97287a57c3573794c7adaceb23776389fccd4b635bfe4dd9e5e8",
@@ -200,8 +206,8 @@
     },
     {
       "path": "decision_lab/cross_study/matching.py",
-      "bytes": 3896,
-      "sha256": "2f33b013c043ac1356cae65a40f95c90f0a4e68006362457dccb847a0311b0d4",
+      "bytes": 4739,
+      "sha256": "26e7f623a353bee8887867431c1e8a325f2d4e6fdb7b2ba9a49651197055e943",
       "storage": "git"
     },
     {
@@ -266,8 +272,8 @@
     },
     {
       "path": "decision_lab/cross_study/tests.py",
-      "bytes": 13335,
-      "sha256": "114f950ddc112e040da48b7aa43c55df4a98c29a1e787d4918afe9edfeb64ec3",
+      "bytes": 15257,
+      "sha256": "b860fa8330124cdc3d51ca88c5155960c1a6b8ef3f7aefb100ccc1240e27fd6d",
       "storage": "git"
     },
     {
@@ -590,8 +596,8 @@
     },
     {
       "path": "decision_lab/reports/cross-study-v1/admission-v2.json",
-      "bytes": 4173,
-      "sha256": "d0bbe297aac55badb4ee3127f07bced9ce51fa73be0bc9c5846fb35259fa16ac",
+      "bytes": 4744,
+      "sha256": "d78866ea0e688a621abe7a9ddcc1d08b9b4b2dce4f036c7533eaf1cd3e3c5676",
       "storage": "git"
     },
     {
@@ -854,8 +860,8 @@
     },
     {
       "path": "decision_lab/specs/cross-study-v1/admission-declarations.json",
-      "bytes": 10333,
-      "sha256": "2c190d518da211396ea0dccc0515fd67faebbcb1b7123bc589aab73e2db620dc",
+      "bytes": 13660,
+      "sha256": "68d0d1bfb96cb76a1c591d4e1e5305fa033e8373f8724a0108e7d1fa8905d529",
       "storage": "git"
     },
     {

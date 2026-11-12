@@ -114,9 +114,16 @@
         "author_statistics",
         "leakage_review"
       ],
-      "reference": "stratum_history",
-      "distribution_estimable": null,
-      "exclusions": []
+      "reference": "attribute_logit",
+      "distribution_estimable": false,
+      "exclusions": [
+        {
+          "kind": "not_recorded_gate",
+          "count": 0,
+          "preregistered": true,
+          "note": "Five entry gates still pending; see gates above."
+        }
+      ]
     },
     {
       "id": "packaging",
@@ -132,8 +139,15 @@
         "leakage_review"
       ],
       "reference": "stratum_history",
-      "distribution_estimable": null,
-      "exclusions": []
+      "distribution_estimable": true,
+      "exclusions": [
+        {
+          "kind": "not_recorded_gate",
+          "count": 0,
+          "preregistered": true,
+          "note": "Five entry gates still pending; see gates above."
+        }
+      ]
     },
     {
       "id": "pew111",
@@ -149,8 +163,15 @@
         "leakage_review"
       ],
       "reference": "stratum_history",
-      "distribution_estimable": null,
-      "exclusions": []
+      "distribution_estimable": true,
+      "exclusions": [
+        {
+          "kind": "not_recorded_gate",
+          "count": 0,
+          "preregistered": true,
+          "note": "Five entry gates still pending; see gates above."
+        }
+      ]
     }
   ],
   "misdeclared": [],

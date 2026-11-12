@@ -26,15 +26,44 @@
       "evidence_tier": "historical",
       "status": "admitted",
       "gates": {
-        "license_cloud_use": {"status": "passed", "evidence": "specs/pilots/dryer-pilot-protocol.json#admission_evidence.license_cloud_use"},
-        "question_mapping": {"status": "passed", "evidence": "specs/pilots/dryer-pilot-protocol.json#admission_evidence.question_mapping"},
-        "background_timing": {"status": "passed", "evidence": "specs/pilots/dryer-pilot-protocol.json#admission_evidence.background_timing"},
-        "author_statistics": {"status": "passed", "evidence": "specs/audits/dryer-reconciliation.json"},
-        "leakage_review": {"status": "passed", "evidence": "specs/pilots/dryer-pilot-protocol.json#admission_evidence.leakage_review"}
+        "license_cloud_use": {
+          "status": "passed",
+          "evidence": "specs/pilots/dryer-pilot-protocol.json#admission_evidence.license_cloud_use"
+        },
+        "question_mapping": {
+          "status": "passed",
+          "evidence": "specs/pilots/dryer-pilot-protocol.json#admission_evidence.question_mapping"
+        },
+        "background_timing": {
+          "status": "passed",
+          "evidence": "specs/pilots/dryer-pilot-protocol.json#admission_evidence.background_timing"
+        },
+        "author_statistics": {
+          "status": "passed",
+          "evidence": "specs/audits/dryer-reconciliation.json"
+        },
+        "leakage_review": {
+          "status": "passed",
+          "evidence": "specs/pilots/dryer-pilot-protocol.json#admission_evidence.leakage_review"
+        }
       },
-      "reference": {"kind": "attribute_logit", "fitted_on": "evaluated cohort excluded", "excludes_evaluated": true},
-      "distribution": {"minimum_people_per_card": 20, "estimable": false, "reason": "Every frozen card is seen by at most 8 evaluated respondents."},
-      "exclusions": [{"kind": "persona_missing", "count": 2, "preregistered": true}],
+      "reference": {
+        "kind": "attribute_logit",
+        "fitted_on": "evaluated cohort excluded",
+        "excludes_evaluated": true
+      },
+      "distribution": {
+        "minimum_people_per_card": 20,
+        "estimable": false,
+        "reason": "Every frozen card is seen by at most 8 evaluated respondents."
+      },
+      "exclusions": [
+        {
+          "kind": "persona_missing",
+          "count": 2,
+          "preregistered": true
+        }
+      ],
       "notes": "Formal v1 run used 94 people after excluding two respondents without an approved release persona."
     },
     {
@@ -43,14 +72,37 @@
       "evidence_tier": "historical",
       "status": "admitted",
       "gates": {
-        "license_cloud_use": {"status": "passed", "evidence": "specs/pilots/swiss-pilot-protocol.json#admission_evidence.license_cloud_use"},
-        "question_mapping": {"status": "passed", "evidence": "specs/pilots/swiss-pilot-protocol.json#admission_evidence.question_mapping"},
-        "background_timing": {"status": "passed", "evidence": "specs/pilots/swiss-pilot-protocol.json#admission_evidence.background_timing"},
-        "author_statistics": {"status": "passed", "evidence": "specs/audits/swiss-audit.json"},
-        "leakage_review": {"status": "passed", "evidence": "specs/pilots/swiss-pilot-protocol.json#admission_evidence.leakage_review"}
+        "license_cloud_use": {
+          "status": "passed",
+          "evidence": "specs/pilots/swiss-pilot-protocol.json#admission_evidence.license_cloud_use"
+        },
+        "question_mapping": {
+          "status": "passed",
+          "evidence": "specs/pilots/swiss-pilot-protocol.json#admission_evidence.question_mapping"
+        },
+        "background_timing": {
+          "status": "passed",
+          "evidence": "specs/pilots/swiss-pilot-protocol.json#admission_evidence.background_timing"
+        },
+        "author_statistics": {
+          "status": "passed",
+          "evidence": "specs/audits/swiss-audit.json"
+        },
+        "leakage_review": {
+          "status": "passed",
+          "evidence": "specs/pilots/swiss-pilot-protocol.json#admission_evidence.leakage_review"
+        }
       },
-      "reference": {"kind": "attribute_logit", "fitted_on": "evaluated cohort excluded", "excludes_evaluated": true},
-      "distribution": {"minimum_people_per_card": 20, "estimable": false, "reason": "All 384 frozen cards are unique to one respondent."},
+      "reference": {
+        "kind": "attribute_logit",
+        "fitted_on": "evaluated cohort excluded",
+        "excludes_evaluated": true
+      },
+      "distribution": {
+        "minimum_people_per_card": 20,
+        "estimable": false,
+        "reason": "All 384 frozen cards are unique to one respondent."
+      },
       "exclusions": [],
       "notes": "Author-English textual reconstruction; original visual order not reconstructed."
     },
@@ -60,15 +112,44 @@
       "evidence_tier": "historical",
       "status": "retrospective_incomplete",
       "gates": {
-        "license_cloud_use": {"status": "not_recorded", "evidence": null},
-        "question_mapping": {"status": "passed", "evidence": "study/03_提示与背景/input-audit.json#identical_question_text_and_order_by_subject"},
-        "background_timing": {"status": "not_recorded", "evidence": null},
-        "author_statistics": {"status": "not_recorded", "evidence": null},
-        "leakage_review": {"status": "passed", "evidence": "study/03_提示与背景/input-audit.json#pilot_formal_disjoint_by_survey"}
+        "license_cloud_use": {
+          "status": "not_recorded",
+          "evidence": null
+        },
+        "question_mapping": {
+          "status": "passed",
+          "evidence": "study/03_提示与背景/input-audit.json#identical_question_text_and_order_by_subject"
+        },
+        "background_timing": {
+          "status": "not_recorded",
+          "evidence": null
+        },
+        "author_statistics": {
+          "status": "not_recorded",
+          "evidence": null
+        },
+        "leakage_review": {
+          "status": "passed",
+          "evidence": "study/03_提示与背景/input-audit.json#pilot_formal_disjoint_by_survey"
+        }
       },
-      "reference": {"kind": "stratum_history", "fitted_on": "evaluated cohort excluded", "excludes_evaluated": true},
-      "distribution": {"minimum_people_per_card": 20, "estimable": true, "reason": "Every card is answered by all 96 evaluated respondents."},
-      "exclusions": [{"kind": "partial_answers", "count": 3, "preregistered": true}],
+      "reference": {
+        "kind": "stratum_history",
+        "fitted_on": "evaluated cohort excluded",
+        "excludes_evaluated": true
+      },
+      "distribution": {
+        "minimum_people_per_card": 20,
+        "estimable": true,
+        "reason": "Every card is answered by all 96 evaluated respondents."
+      },
+      "exclusions": [
+        {
+          "kind": "partial_answers",
+          "count": 3,
+          "preregistered": true
+        }
+      ],
       "notes": "Formal v1 run proceeded on format checks plus the historical input audit; three of five gates have no recorded evidence. Recorded here as a retrospective finding, not retroactively certified."
     },
     {
@@ -77,14 +158,37 @@
       "evidence_tier": "historical",
       "status": "retrospective_incomplete",
       "gates": {
-        "license_cloud_use": {"status": "not_recorded", "evidence": null},
-        "question_mapping": {"status": "passed", "evidence": "study/03_提示与背景/input-audit.json#identical_question_text_and_order_by_subject"},
-        "background_timing": {"status": "not_recorded", "evidence": null},
-        "author_statistics": {"status": "not_recorded", "evidence": null},
-        "leakage_review": {"status": "passed", "evidence": "study/03_提示与背景/input-audit.json#pilot_formal_disjoint_by_survey"}
+        "license_cloud_use": {
+          "status": "not_recorded",
+          "evidence": null
+        },
+        "question_mapping": {
+          "status": "passed",
+          "evidence": "study/03_提示与背景/input-audit.json#identical_question_text_and_order_by_subject"
+        },
+        "background_timing": {
+          "status": "not_recorded",
+          "evidence": null
+        },
+        "author_statistics": {
+          "status": "not_recorded",
+          "evidence": null
+        },
+        "leakage_review": {
+          "status": "passed",
+          "evidence": "study/03_提示与背景/input-audit.json#pilot_formal_disjoint_by_survey"
+        }
       },
-      "reference": {"kind": "stratum_history", "fitted_on": "evaluated cohort excluded", "excludes_evaluated": true},
-      "distribution": {"minimum_people_per_card": 20, "estimable": true, "reason": "Every card is answered by all 96 evaluated respondents."},
+      "reference": {
+        "kind": "stratum_history",
+        "fitted_on": "evaluated cohort excluded",
+        "excludes_evaluated": true
+      },
+      "distribution": {
+        "minimum_people_per_card": 20,
+        "estimable": true,
+        "reason": "Every card is answered by all 96 evaluated respondents."
+      },
       "exclusions": [],
       "notes": "Same retrospective gap as shed."
     },
@@ -94,14 +198,37 @@
       "evidence_tier": "historical",
       "status": "retrospective_incomplete",
       "gates": {
-        "license_cloud_use": {"status": "not_recorded", "evidence": null},
-        "question_mapping": {"status": "passed", "evidence": "study/03_提示与背景/input-audit.json#identical_question_text_and_order_by_subject"},
-        "background_timing": {"status": "not_recorded", "evidence": null},
-        "author_statistics": {"status": "not_recorded", "evidence": null},
-        "leakage_review": {"status": "passed", "evidence": "study/03_提示与背景/input-audit.json#pilot_formal_disjoint_by_survey"}
+        "license_cloud_use": {
+          "status": "not_recorded",
+          "evidence": null
+        },
+        "question_mapping": {
+          "status": "passed",
+          "evidence": "study/03_提示与背景/input-audit.json#identical_question_text_and_order_by_subject"
+        },
+        "background_timing": {
+          "status": "not_recorded",
+          "evidence": null
+        },
+        "author_statistics": {
+          "status": "not_recorded",
+          "evidence": null
+        },
+        "leakage_review": {
+          "status": "passed",
+          "evidence": "study/03_提示与背景/input-audit.json#pilot_formal_disjoint_by_survey"
+        }
       },
-      "reference": {"kind": "stratum_history", "fitted_on": "evaluated cohort excluded", "excludes_evaluated": true},
-      "distribution": {"minimum_people_per_card": 20, "estimable": true, "reason": "Every card is answered by all 96 evaluated respondents."},
+      "reference": {
+        "kind": "stratum_history",
+        "fitted_on": "evaluated cohort excluded",
+        "excludes_evaluated": true
+      },
+      "distribution": {
+        "minimum_people_per_card": 20,
+        "estimable": true,
+        "reason": "Every card is answered by all 96 evaluated respondents."
+      },
       "exclusions": [],
       "notes": "Same retrospective gap as shed."
     },
@@ -111,15 +238,44 @@
       "evidence_tier": "historical",
       "status": "retrospective_incomplete",
       "gates": {
-        "license_cloud_use": {"status": "not_recorded", "evidence": null},
-        "question_mapping": {"status": "passed", "evidence": "study/03_提示与背景/input-audit.json#identical_question_text_and_order_by_subject"},
-        "background_timing": {"status": "not_recorded", "evidence": null},
-        "author_statistics": {"status": "not_recorded", "evidence": null},
-        "leakage_review": {"status": "passed", "evidence": "study/03_提示与背景/input-audit.json#pilot_formal_disjoint_by_survey"}
+        "license_cloud_use": {
+          "status": "not_recorded",
+          "evidence": null
+        },
+        "question_mapping": {
+          "status": "passed",
+          "evidence": "study/03_提示与背景/input-audit.json#identical_question_text_and_order_by_subject"
+        },
+        "background_timing": {
+          "status": "not_recorded",
+          "evidence": null
+        },
+        "author_statistics": {
+          "status": "not_recorded",
+          "evidence": null
+        },
+        "leakage_review": {
+          "status": "passed",
+          "evidence": "study/03_提示与背景/input-audit.json#pilot_formal_disjoint_by_survey"
+        }
       },
-      "reference": {"kind": "stratum_history", "fitted_on": "evaluated cohort excluded", "excludes_evaluated": true},
-      "distribution": {"minimum_people_per_card": 20, "estimable": true, "reason": "Every card is answered by at least 95 evaluated respondents."},
-      "exclusions": [{"kind": "partial_answers", "count": 3, "preregistered": true}],
+      "reference": {
+        "kind": "stratum_history",
+        "fitted_on": "evaluated cohort excluded",
+        "excludes_evaluated": true
+      },
+      "distribution": {
+        "minimum_people_per_card": 20,
+        "estimable": true,
+        "reason": "Every card is answered by at least 95 evaluated respondents."
+      },
+      "exclusions": [
+        {
+          "kind": "partial_answers",
+          "count": 3,
+          "preregistered": true
+        }
+      ],
       "notes": "Same retrospective gap as shed."
     },
     {
@@ -128,16 +284,55 @@
       "evidence_tier": "historical",
       "status": "pending",
       "gates": {
-        "license_cloud_use": {"status": "not_recorded", "evidence": null},
-        "question_mapping": {"status": "pending", "evidence": null},
-        "background_timing": {"status": "pending", "evidence": null},
-        "author_statistics": {"status": "pending", "evidence": null},
-        "leakage_review": {"status": "pending", "evidence": null}
+        "license_cloud_use": {
+          "status": "not_recorded",
+          "evidence": null
+        },
+        "question_mapping": {
+          "status": "pending",
+          "evidence": null
+        },
+        "background_timing": {
+          "status": "pending",
+          "evidence": null
+        },
+        "author_statistics": {
+          "status": "pending",
+          "evidence": null
+        },
+        "leakage_review": {
+          "status": "pending",
+          "evidence": null
+        }
       },
-      "reference": {"kind": "stratum_history", "fitted_on": "to be fitted on non-evaluated respondents", "excludes_evaluated": true},
-      "distribution": {"minimum_people_per_card": 20, "estimable": null, "reason": "to be measured after adaptation"},
-      "exclusions": [],
-      "notes": "Must reread age and education from the original table; historical stratum labels cannot be reused."
+      "reference": {
+        "kind": "attribute_logit",
+        "fitted_on": "non-evaluated respondents only",
+        "excludes_evaluated": true
+      },
+      "distribution": {
+        "minimum_people_per_card": 20,
+        "estimable": false,
+        "reason": "Every card is unique to one respondent (7,043 cards, none with 20 evaluated respondents); the attribute logit is the only same-information reference."
+      },
+      "exclusions": [
+        {
+          "kind": "not_recorded_gate",
+          "count": 0,
+          "preregistered": true,
+          "note": "Five entry gates still pending; see gates above."
+        }
+      ],
+      "notes": "Must reread age and education from the original table; historical stratum labels cannot be reused.",
+      "measured": {
+        "eligible_people": 712,
+        "cards": 7043,
+        "questions_per_person": [
+          7,
+          9,
+          10
+        ]
+      }
     },
     {
       "id": "packaging",
@@ -145,16 +340,53 @@
       "evidence_tier": "historical",
       "status": "pending",
       "gates": {
-        "license_cloud_use": {"status": "not_recorded", "evidence": null},
-        "question_mapping": {"status": "pending", "evidence": null},
-        "background_timing": {"status": "pending", "evidence": null},
-        "author_statistics": {"status": "pending", "evidence": null},
-        "leakage_review": {"status": "pending", "evidence": null}
+        "license_cloud_use": {
+          "status": "not_recorded",
+          "evidence": null
+        },
+        "question_mapping": {
+          "status": "pending",
+          "evidence": null
+        },
+        "background_timing": {
+          "status": "pending",
+          "evidence": null
+        },
+        "author_statistics": {
+          "status": "pending",
+          "evidence": null
+        },
+        "leakage_review": {
+          "status": "pending",
+          "evidence": null
+        }
       },
-      "reference": {"kind": "stratum_history", "fitted_on": "to be fitted on non-evaluated respondents", "excludes_evaluated": true},
-      "distribution": {"minimum_people_per_card": 20, "estimable": null, "reason": "to be measured after adaptation"},
-      "exclusions": [],
-      "notes": "Recheck information arm, packaging labels, refusal coding and scoring unit."
+      "reference": {
+        "kind": "stratum_history",
+        "fitted_on": "non-evaluated respondents only",
+        "excludes_evaluated": true
+      },
+      "distribution": {
+        "minimum_people_per_card": 20,
+        "estimable": true,
+        "reason": "16 frozen cards, each answered by all evaluated respondents."
+      },
+      "exclusions": [
+        {
+          "kind": "not_recorded_gate",
+          "count": 0,
+          "preregistered": true,
+          "note": "Five entry gates still pending; see gates above."
+        }
+      ],
+      "notes": "Recheck information arm, packaging labels, refusal coding and scoring unit.",
+      "measured": {
+        "eligible_people": 1291,
+        "cards": 16,
+        "questions_per_person": [
+          8
+        ]
+      }
     },
     {
       "id": "pew111",
@@ -162,16 +394,58 @@
       "evidence_tier": "historical",
       "status": "pending",
       "gates": {
-        "license_cloud_use": {"status": "not_recorded", "evidence": null},
-        "question_mapping": {"status": "pending", "evidence": null},
-        "background_timing": {"status": "pending", "evidence": null},
-        "author_statistics": {"status": "pending", "evidence": null},
-        "leakage_review": {"status": "pending", "evidence": null}
+        "license_cloud_use": {
+          "status": "not_recorded",
+          "evidence": null
+        },
+        "question_mapping": {
+          "status": "pending",
+          "evidence": null
+        },
+        "background_timing": {
+          "status": "pending",
+          "evidence": null
+        },
+        "author_statistics": {
+          "status": "pending",
+          "evidence": null
+        },
+        "leakage_review": {
+          "status": "pending",
+          "evidence": null
+        }
       },
-      "reference": {"kind": "stratum_history", "fitted_on": "to be fitted on non-evaluated respondents", "excludes_evaluated": true},
-      "distribution": {"minimum_people_per_card": 20, "estimable": null, "reason": "to be measured after adaptation"},
-      "exclusions": [],
-      "notes": "Skip logic only decides display eligibility; reread original education coding and survey weights."
+      "reference": {
+        "kind": "stratum_history",
+        "fitted_on": "non-evaluated respondents only",
+        "excludes_evaluated": true
+      },
+      "distribution": {
+        "minimum_people_per_card": 20,
+        "estimable": true,
+        "reason": "6 frozen cards; skip logic only gates display and is recorded as such."
+      },
+      "exclusions": [
+        {
+          "kind": "not_recorded_gate",
+          "count": 0,
+          "preregistered": true,
+          "note": "Five entry gates still pending; see gates above."
+        }
+      ],
+      "notes": "Skip logic only decides display eligibility; reread original education coding and survey weights.",
+      "measured": {
+        "eligible_people": 5863,
+        "cards": 6,
+        "questions_per_person": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      }
     }
   ]
 }
