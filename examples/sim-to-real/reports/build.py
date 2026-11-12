@@ -663,7 +663,8 @@ def anchor_section():
             '<div class="table-wrap"><table style="min-width:760px"><caption>配对比较（2000 次自助重抽样，按人配对）'
             '</caption><thead><tr><th>研究</th><th>比较</th><th>相对改善</th><th>95% 区间</th>'
             '<th>是否排除零</th></tr></thead><tbody>' + contrast_cells + '</tbody></table></div>'
-            '<p class="small"><strong>这一轮的结论要读准</strong>：提示里给模型的分布，和“直接用该分布”这条基准线'
+            + adherence_table()
+            + '<p class="small"><strong>这一轮的结论要读准</strong>：提示里给模型的分布，和“直接用该分布”这条基准线'
             '来自同一批非被测者的历史答案。所以这是一次<strong>信息对等测试</strong>——'
             '问的是“在数据已经摆在面前时，大模型能不能比照抄更好”，答案是不能。'
             '它不能证明“AI 在任何情况下都没有用”，但能证明：<strong>当这道题的人群基础分布已知时，'
@@ -675,6 +676,40 @@ def anchor_section():
             '按“重新归一化并记账”处理，未补任何答案；协议放宽的原因与计数写进了冻结规格。</p>'
             '<script id="anchor-data" type="application/json">'
             + payload_json + '</script></section>')
+
+
+def adherence_table():
+    """Show that accuracy improves exactly as predictions move towards the reference."""
+    path = CROSS / 'anchor-v1-adherence.json'
+    if not path.exists():
+        return ''
+    data = json.loads(path.read_text())
+    studies = data['studies']
+    results = json.loads((CROSS / 'anchor-v1-results.json').read_text())
+    labels = {'optimized': '优化（旧结果）', 'anchored': '给分布后微调',
+              'bounded': '给分布＋限幅', 'stratum_history': '直接用该分布（＝参照本身）'}
+    cells = []
+    for arm in ('optimized', 'anchored', 'bounded', 'stratum_history'):
+        row = [f"<tr><th>{labels[arm]}</th>"]
+        for study in ('german', 'pew111'):
+            distance = studies[study][arm]['median_tv_to_reference']
+            brier = results['studies'][study]['results']['arms'][arm]['brier']
+            row.append(f"<td>{distance:.3f}</td><td>{brier:.3f}</td>")
+        row.append('</tr>')
+        cells.append(''.join(row))
+    german_beyond = 100 * studies['german']['bounded']['share_cells_beyond_bound']
+    pew_beyond = 100 * studies['pew111']['bounded']['share_cells_beyond_bound']
+    return ('<div class="table-wrap"><table style="min-width:640px">'
+            '<caption>离参照越近，误差越小——而最靠近的那个点就是参照本身</caption>'
+            '<thead><tr><th rowspan="2">做法</th><th colspan="2">德国番茄</th>'
+            '<th colspan="2">美国网购与达人</th></tr>'
+            '<tr><th>离参照的距离</th><th>Brier</th><th>离参照的距离</th><th>Brier</th></tr></thead>'
+            '<tbody>' + ''.join(cells) + '</tbody></table></div>'
+            f'<p class="small">“离参照的距离”是预测分布与参照分布的全变差距离（0＝完全一致，'
+            '中位数、按人按题统计）。四条线单调对应：越靠近参照，Brier 越低，'
+            '而最好的取值就是“与参照完全一致”。这说明模型的每次“调整”都只是把噪声叠在一个已经更好的答案上。'
+            f'同时它也真的照做了：限幅版只在 {german_beyond:.1f}%（德国）和 {pew_beyond:.1f}%（网购）'
+            '的选项上越过 ±15 个百分点的界线，所以“限幅没用”不是因为模型无视指令。</p>')
 
 
 def build(d):

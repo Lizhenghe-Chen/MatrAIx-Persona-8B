@@ -145,6 +145,17 @@ def main():
                 assert f'{100*value:+.1f}%' in html_anchor,(study,key)
             for arm in ('optimized','anchored','bounded'):
                 assert f'{entry["results"]["arms"][arm]["brier"]:.3f}' in html_anchor,(study,arm)
+        adherence_path=anchor_path.parent/'anchor-v1-adherence.json'
+        if adherence_path.exists():
+            adherence=json.loads(adherence_path.read_text())
+            for study,block in adherence['studies'].items():
+                for arm in ('optimized','anchored','bounded'):
+                    assert f'{block[arm]["median_tv_to_reference"]:.3f}' in html_anchor,(study,arm)
+            # The audit must show a monotone move towards the reference, or the
+            # "model ignores the anchor" alternative would still be open.
+            for study,block in adherence['studies'].items():
+                assert block['bounded']['median_tv_to_reference'] < block['anchored']['median_tv_to_reference'] \
+                    < block['optimized']['median_tv_to_reference'],study
         anchor_note=(f' anchor-v1 for {len(anchor_data["studies"])} studies tied to the page;')
     print(f'PASS: {checked} source hashes; all local report links; 13 distributions and averages; latest run exclusion; readable labels.'+cross_note+cluster_note+clean_note+wide_note+direction_note+anchor_note)
 

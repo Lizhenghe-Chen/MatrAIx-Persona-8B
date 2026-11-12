@@ -11,7 +11,7 @@ def main():
  inv=json.loads((OUT/'source-inventory.json').read_text())
  assert len(inv['studies'])==19
  assert all(f['exists'] and f['read_status']=='metadata_readable' for s in inv['studies'] for f in s['files'])
- for version in ('v16','v15','v14','v13','v12','v11','v10','v9','v8','v7','v6','v5','v3','v2','v1'):
+ for version in ('v17','v16','v15','v14','v13','v12','v11','v10','v9','v8','v7','v6','v5','v3','v2','v1'):
   accepted_path=ROOT.parent/f'archive/accepted-report-{version}.json'
   if accepted_path.exists():break
  accepted=json.loads(accepted_path.read_text())
@@ -111,6 +111,12 @@ def main():
    source=wide_results['studies'][study]['results']['arms']['optimized']['brier']
    reused=anr['studies'][study]['results']['arms']['optimized']['brier']
    assert abs(source-reused)<1e-12,(study,source,reused)
+  adherence=json.loads((OUT/'anchor-v1-adherence.json').read_text())
+  for study,block in adherence['studies'].items():
+   # If the model had ignored the anchor, the two distant arms would tie; they do not.
+   assert block['anchored']['median_tv_to_reference']<block['optimized']['median_tv_to_reference']*0.5,study
+   assert block['bounded']['median_tv_to_reference']<=block['anchored']['median_tv_to_reference'],study
+   assert block['bounded']['share_cells_beyond_bound']<0.15,study
   anchor=(f" Anchor-v1: {ans['max_calls']} frozen calls, {ans['reuse']['jobs_adopted']} reused, "
           f"{anr['execution']['states']['complete']} answered, arms {anr['arms']}.")
  direction=''
