@@ -76,12 +76,26 @@ def _shares(rows, question_key, truth_key='truth'):
     return ([v / mass for v in totals] if mass else None), counted, mass
 
 
+def card_index(source_rows):
+    """Card key -> the respondents who answered it, built in one pass.
+
+    Scanning every source row per card is quadratic; with thousands of distinct
+    cards that is the difference between seconds and hours.
+    """
+    index = defaultdict(dict)
+    for position, row in enumerate(source_rows):
+        for question in row['questions']:
+            index[card_key(question)][row['person']] = row
+    return {key: list(people.values()) for key, people in index.items()}
+
+
 def build_references(evaluation_cases, source_rows, minimum=20):
     """Global and stratum-conditional shares for every card under evaluation."""
     keys = {card_key(q) for case in evaluation_cases for q in case['questions']}
+    index = card_index(source_rows)
     global_shares, per_stratum, unavailable = {}, {}, []
     for key in keys:
-        rows = [r for r in source_rows if any(card_key(q) == key for q in r['questions'])]
+        rows = index.get(key, [])
         shares, counted, _ = _shares(rows, key)
         if shares is None:
             unavailable.append(key[0])
@@ -97,8 +111,7 @@ def build_references(evaluation_cases, source_rows, minimum=20):
                 per_stratum[key][str(stratum)] = shares
     return {'history': {'global': global_shares, 'stratum': {}},
             'stratum_history': {'global': global_shares, 'stratum': per_stratum},
-            'card_people': {key: sum(1 for r in source_rows if any(card_key(q) == key for q in r['questions']))
-                            for key in keys if key in global_shares},
+            'card_people': {key: len(index.get(key, [])) for key in keys if key in global_shares},
             'unavailable_cards': unavailable}
 
 

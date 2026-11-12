@@ -396,17 +396,24 @@ def _cases():
 
 
 def _attribute_baseline(study, cases, history_rows):
-    """Conditional logit on displayed product attributes, fitted off the evaluated cohort.
+    """Same-information reference on displayed product attributes, fitted off the evaluated cohort.
 
-    Used where choice cards are randomized so no card-level historical share is
-    estimable. Contains no evaluated person's answer.
+    Used where choice cards are randomized, or where every card is unique, so no
+    card-level historical share is estimable: conditional logit for choice cards,
+    a rating model for 1-7 scales. Contains no evaluated person's answer.
     """
+    if study == 'shoes':
+        from .shoes_baseline import build
+        table, note = build(cases, history_rows)
+        if not table or not any(table.values()):
+            return {}, note
+        return {'attribute_rating': table}, note
     if study == 'swiss':
         from ..studies.swiss_baseline import attributes as parse
     elif study == 'dryer':
         from ..studies.dryer_baseline import attributes as parse
     else:
-        return None
+        return {}, 'no attribute model declared for this study'
     from ..core.baselines import ConditionalLogit
 
     def tasks(rows):
@@ -427,7 +434,7 @@ def _attribute_baseline(study, cases, history_rows):
 
     fit_rows = tasks(history_rows)
     if len(fit_rows) < 50:
-        return None
+        return {}, 'too few historical tasks to fit an attribute model'
     people = sorted({r['person'] for r in fit_rows})
     cut = max(1, int(len(people) * 0.8))
     train_people = set(people[:cut])
@@ -456,10 +463,10 @@ def _attribute_baseline(study, cases, history_rows):
             vectors[str(question['id'])] = model.predict(
                 [{'features': features, 'answer': 0}])[0]
         table[case['person']] = vectors
-    return table, {'penalty': penalty, 'fit_tasks': len(train),
-                   'fit_people': len(train_people),
-                   'selection_people': len(people) - len(train_people),
-                   'comparator': 'conditional logit on displayed product attributes only'}
+    note = {'penalty': penalty, 'fit_tasks': len(train), 'fit_people': len(train_people),
+            'selection_people': len(people) - len(train_people),
+            'comparator': 'conditional logit on displayed product attributes only'}
+    return {'attribute_logit': table}, note
 
 
 
@@ -484,8 +491,8 @@ def score():
         if len(history_rows) < 20:
             raise ValueError('Too few non-evaluated respondents for a history baseline: ' + study)
         references = build_references(cases, history_rows)
-        fitted = _attribute_baseline(study, cases, history_rows)
-        case_references, fitted_note = ({'attribute_logit': fitted[0]}, fitted[1]) if fitted else ({}, None)
+        fitted = _attribute_baseline(study, cases, history_rows) or ({}, None)
+        case_references, fitted_note = fitted
         results['studies'][study] = {
             'people': len(cases),
             'history_source_people': len(history_rows),

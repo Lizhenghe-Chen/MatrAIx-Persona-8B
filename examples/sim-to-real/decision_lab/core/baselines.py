@@ -66,3 +66,53 @@ def select_penalty(train, development, grid=(.001,.01,.1,1.0)):
         candidates.append((float(weights@losses),penalty,model))
     loss,penalty,model=min(candidates,key=lambda x:(x[0],-x[1]))
     return model,{'penalty':penalty,'development_brier':loss,'grid':list(grid)}
+
+
+class RatingAttributeBaseline:
+    """Ridge regression of an ordinal rating on displayed product attributes.
+
+    Needed where every rating card is unique, so no card-level historical share
+    exists: the reference must be a same-information model, not other people's
+    answers to the same card. Predicting a distribution for the Brier score uses
+    the empirical training residual histogram, so the reference is a real
+    predictive distribution rather than a rounded point forecast.
+    """
+    def __init__(self, levels=(1,2,3,4,5,6,7), penalty=1.0):
+        if penalty<=0:raise ValueError('Positive regularization required')
+        self.penalty=penalty;self.levels=tuple(levels)
+
+    def fit(self,tasks):
+        if not tasks:raise ValueError('Empty training tasks')
+        xs=[np.asarray(t['features'],dtype=float) for t in tasks]
+        width=xs[0].shape[0]
+        for x,t in zip(xs,tasks):
+            if x.ndim!=1 or x.shape[0]!=width or not np.isfinite(x).all():raise ValueError('Invalid features')
+            if t['answer'] not in self.levels:raise ValueError('Rating outside declared scale')
+        xmat=np.stack(xs);y=np.asarray([t['answer'] for t in tasks],dtype=float)
+        self.mean=xmat.mean(axis=0);self.scale=xmat.std(axis=0);self.scale[self.scale<1e-12]=1
+        z=(xmat-self.mean)/self.scale
+        design=np.hstack([np.ones((len(z),1)),z])
+        gram=design.T@design+self.penalty*np.eye(design.shape[1]);gram[0,0]-=self.penalty
+        self.beta=np.linalg.solve(gram,design.T@y)
+        residual=y-design@self.beta
+        self.residuals=Counter(int(round(v)) for v in residual)
+        self.training_people={t['person'] for t in tasks}
+        return self
+
+    def expected(self,features):
+        x=np.asarray(features,dtype=float)
+        if x.ndim!=1 or x.shape[0]!=len(self.beta)-1 or not np.isfinite(x).all():raise ValueError('Invalid prediction features')
+        return float(np.r_[1.0,(x-self.mean)/self.scale]@self.beta)
+
+    def predict(self,tasks):
+        """Probability of each scale level, from the point forecast plus training residuals."""
+        result=[]
+        for t in tasks:
+            centre=int(round(self.expected(t['features'])))
+            weights={level:0.5 for level in self.levels}
+            for shift,count in self.residuals.items():
+                level=centre+shift
+                if level in weights:weights[level]+=count
+            norm=sum(weights.values())
+            result.append([round(weights[level]/norm,9) for level in self.levels])
+        return result

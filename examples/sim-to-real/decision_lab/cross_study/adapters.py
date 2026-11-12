@@ -25,6 +25,8 @@ ORIGIN = DATA / '06_历史北美电商/origin.csv'
 ORIGIN_ORIGINAL = DATA / '06_历史北美电商/origin-original.tab'
 PACKAGING = DATA / '06_历史北美电商/packaging.csv'
 PEW111 = DATA / '06_历史北美电商/Pew-W111.zip'
+SHOES = DATA / '08_购物研究与候选/shoes.csv.gz'
+DRONE = DATA / '08_购物研究与候选/drone-survey.csv.gz'
 
 ORIGIN_CONTEXT = 'United States. Survey period: June 2020.'
 PACKAGING_CONTEXT = ('United States. Survey period: 2019. The two six-packs differ only in the displayed '
@@ -32,6 +34,13 @@ PACKAGING_CONTEXT = ('United States. Survey period: 2019. The two six-packs diff
 PACKAGING_CHEAP_TALK = (' No money changes hands in this survey. Make each choice as if paying the displayed '
                         'price at your usual retailer. Choose neither if you would buy neither.')
 PEW111_CONTEXT = 'United States. Survey period: July 2022.'
+# The published instrument stores the conjoint screens as images, so the exact 1-7 anchor
+# wording could not be read back. The neutral wording below is declared, not reconstructed.
+SHOES_CONTEXT = ('United States. Survey period: 2020, online panel. Each screen shows one shoe. Rate how '
+                 'likely you would be to buy it, on a scale from 1 (not at all likely) to 7 (extremely likely).')
+SHOES_SCALE = [str(level) for level in range(1, 8)]
+SHOES_ATTRIBUTES = ('ave_customer_review', 'best_seller', 'brand', 'color', 'eco_friendly_materials',
+                    'gel_cushioning', 'model_year', 'price', 'shipping', 'weight')
 
 PEW111_ITEMS = {
     'ONLSHOP1_a': ('Do you ever buy things online using a desktop or laptop computer?', ('Yes', 'No')),
@@ -276,3 +285,60 @@ if __name__ == '__main__':
         args.output.write_text(json.dumps({'study': args.study, 'rows': data}, ensure_ascii=False))
         args.output.chmod(0o600)
     print(json.dumps(result, ensure_ascii=False))
+
+
+def shoe_card_id(row):
+    """Card identity from the displayed shoe, never from the per-respondent task index.
+
+    Every respondent sees a different shoe under the same task number, so a
+    task-based identity would silently merge unrelated cards and invent a
+    historical share that no respondent ever produced.
+    """
+    values = '|'.join(f'{key}={row.get("attr_" + key, "")}' for key in SHOES_ATTRIBUTES)
+    return 'shoe' + hashlib.sha256(values.encode()).hexdigest()[:12]
+
+
+def rating_question(identifier, prompt, scale=SHOES_SCALE):
+    return {'id': str(identifier), 'prompt': prompt, 'type': 'single_choice', 'required': True,
+            'options': [{'id': str(level), 'label': str(level)} for level in scale]}
+
+
+def shoes_rows():
+    """One 1-7 rating per displayed shoe; no education variable exists in this study."""
+    import gzip
+    by_person = defaultdict(list)
+    with gzip.open(SHOES, 'rt', newline='') as stream:
+        for row in csv.DictReader(stream):
+            by_person[row['id']].append(row)
+    rows = []
+    for raw_id, items in by_person.items():
+        first = items[0]
+        age_group = first.get('cov_age_group') or ''
+        race = first.get('cov_race') or ''
+        background = {'Age group': age_group, 'Race': race}
+        party = first.get('cov_party_id') or ''
+        if party:
+            background['Party identification'] = party
+        questions, truth = [], {}
+        for item in sorted(items, key=lambda r: (int(r['task']), int(r['profile']))):
+            rating = str(item.get('rating', '')).strip()
+            if rating not in SHOES_SCALE:
+                continue
+            attributes = {key.replace('_', ' '): item.get(f'attr_{key}', '') for key in SHOES_ATTRIBUTES}
+            label = product_label(attributes)
+            if not label:
+                continue
+            identifier = shoe_card_id(item)
+            if identifier in truth:
+                continue
+            questions.append(rating_question(identifier, f'Rate this shoe: {label}'))
+            truth[identifier] = rating
+        if not questions or len(truth) != len(questions):
+            continue
+        rows.append({'study': 'shoes', 'person': person_id('shoes', raw_id),
+                     'stratum': f'{age_group}|{race}', 'weight': 1.0,
+                     'background': background, 'context': SHOES_CONTEXT,
+                     'questions': questions, 'truth': truth,
+                     'group': f'{age_group}|{race}', 'country': 'United States',
+                     'source_id': raw_id})
+    return rows

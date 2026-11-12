@@ -1,0 +1,33 @@
+{
+  "people": 3073,
+  "ratings": 122920,
+  "ratings_per_person": [
+    40
+  ],
+  "rating_histogram": {
+    "1": 13393,
+    "2": 17625,
+    "3": 19900,
+    "4": 13286,
+    "5": 25538,
+    "6": 20336,
+    "7": 12842
+  },
+  "distinct_cards": 107236,
+  "cards_repeating_at_least_20": 0,
+  "max_repeats": 6,
+  "feature_width": 17,
+  "category_levels": {
+    "attr_brand": 6,
+    "attr_color": 4,
+    "attr_eco_friendly_materials": 2,
+    "attr_gel_cushioning": 2,
+    "attr_shipping": 3
+  },
+  "held_out_ratings": 122920,
+  "reference_mae": 1.5425,
+  "global_mean_mae": 1.6311,
+  "reference_brier": 0.8464,
+  "uniform_brier": 0.8571,
+  "note": "Rating cards are unique per respondent, so no card-level historical share exists; the attribute model is the only same-information reference."
+}
