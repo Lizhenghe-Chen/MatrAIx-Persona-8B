@@ -5,8 +5,8 @@
   "scope": "实验代码、历史六轮、新框架冻结与公开结果、综合报告、文献、公开输入及项目内本机材料；排除本清单自身、缓存和项目外私有运行目录",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 630,
-  "git_bytes": 84902500,
+  "git_file_count": 636,
+  "git_bytes": 84943541,
   "local_only_file_count": 44,
   "local_only_bytes": 151339439,
   "external_large_source": {
@@ -26,14 +26,20 @@
     },
     {
       "path": "archive/README.md",
-      "bytes": 3289,
-      "sha256": "51b331f369607b4ad7683694fd59e380652d5236ece48e52a70bda8705aac4a0",
+      "bytes": 3449,
+      "sha256": "81c2839a58df72e47f019cefc02cfb1963fdf7878455ed1e56c33e013ca33eae",
       "storage": "git"
     },
     {
       "path": "archive/accepted-report-v1.json",
       "bytes": 1163,
       "sha256": "17c8e336a49a95f8b5cb614b9e430dbc6761aa914bb0da7b8781764e5bb16291",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v2.json",
+      "bytes": 1529,
+      "sha256": "3b7c917913abc8be2dd9f994dcb1205bde727de9a58acaab1cf63f78456486dd",
       "storage": "git"
     },
     {
@@ -146,14 +152,20 @@
     },
     {
       "path": "decision_lab/cross_study/README.md",
-      "bytes": 5634,
-      "sha256": "4f93820f0eee2dac64c41bc15ab08d2c52dffb735c3abf3e952e7b40d8c0cf70",
+      "bytes": 5662,
+      "sha256": "2327b9c32cbf14ed431019359b11361611d85919dfeea9e5789d875b44f4ed56",
       "storage": "git"
     },
     {
       "path": "decision_lab/cross_study/__init__.py",
       "bytes": 82,
       "sha256": "c42d1218268b7518dce7bded7d3dfd7016a2042e51929330fefd64822622e8b3",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/cross_study/admission_check.py",
+      "bytes": 3600,
+      "sha256": "3586df3d978f97287a57c3573794c7adaceb23776389fccd4b635bfe4dd9e5e8",
       "storage": "git"
     },
     {
@@ -211,6 +223,12 @@
       "storage": "git"
     },
     {
+      "path": "decision_lab/cross_study/recommended.py",
+      "bytes": 4532,
+      "sha256": "fb3fc6dd438433f8d250926824df93b6017a3f098ebfc0f2d3c96dd17ca22000",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/cross_study/registry.py",
       "bytes": 5381,
       "sha256": "5bc762f18942b8b6d30db5fedc0c6783e8ba8afa3962884b2b0b7feea67d1883",
@@ -248,14 +266,14 @@
     },
     {
       "path": "decision_lab/cross_study/tests.py",
-      "bytes": 9318,
-      "sha256": "44db18558d8be039c59211fc46fccf16bf04800160fc95157470c4554b5f5b8c",
+      "bytes": 13335,
+      "sha256": "114f950ddc112e040da48b7aa43c55df4a98c29a1e787d4918afe9edfeb64ec3",
       "storage": "git"
     },
     {
       "path": "decision_lab/cross_study/verify.py",
-      "bytes": 3558,
-      "sha256": "344b04219d9beacdf5ba5ec05fd1a1aa589d9ad4c68ec4e2cc62f61ca6f4d1c8",
+      "bytes": 3676,
+      "sha256": "565ab219cd60a5d2e0ae162b8ca602930c64c95b1731fe9e654793d3a8f42951",
       "storage": "git"
     },
     {
@@ -280,6 +298,12 @@
       "path": "decision_lab/docs/实施沿革.md",
       "bytes": 16711,
       "sha256": "3a0e397487faa5107271d9754d26f14558e6c3455424c092b22f86ad08f900b3",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/docs/推荐配置.md",
+      "bytes": 3475,
+      "sha256": "96ac33a9e42dd781c5356ed53fa29ea942c86f944b60927fda0a4d28ffc20fef",
       "storage": "git"
     },
     {
@@ -565,6 +589,12 @@
       "storage": "git"
     },
     {
+      "path": "decision_lab/reports/cross-study-v1/admission-v2.json",
+      "bytes": 4173,
+      "sha256": "d0bbe297aac55badb4ee3127f07bced9ce51fa73be0bc9c5846fb35259fa16ac",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/reports/cross-study-v1/admission.json",
       "bytes": 7717,
       "sha256": "9343e91bd1573e4b544916091b2b87499d2da197c0d48b377b0b03ca5d5c04e0",
@@ -820,6 +850,12 @@
       "path": "decision_lab/specs/audits/tshirt-supplement-index.json",
       "bytes": 936,
       "sha256": "2dc0fe50d1785a2fc74842193efcff06e5856348ba52e7409c213a93fb7954d0",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/cross-study-v1/admission-declarations.json",
+      "bytes": 10333,
+      "sha256": "2c190d518da211396ea0dccc0515fd67faebbcb1b7123bc589aab73e2db620dc",
       "storage": "git"
     },
     {
@@ -1754,8 +1790,8 @@
     },
     {
       "path": "reports/build.py",
-      "bytes": 13805,
-      "sha256": "69b4345f0c32569217a771b8cb630194aca8ba4d510788877fe3f0483e87de77",
+      "bytes": 17186,
+      "sha256": "52373eb9d4bb55302220cf665d3fdf996c399c073cd54e8add457f5667b1ccb6",
       "storage": "git"
     },
     {
@@ -1772,14 +1808,14 @@
     },
     {
       "path": "reports/index.html",
-      "bytes": 71560,
-      "sha256": "682b27e9687b4ee35bbc9a2f847533495e401824c9add4d074a246e8011b18c6",
+      "bytes": 73930,
+      "sha256": "6f7872345df81d7673fea83c8bca7bc667907b0b0ae93580c3f1c9a6dc55bf48",
       "storage": "git"
     },
     {
       "path": "reports/report.html.tmpl",
-      "bytes": 34105,
-      "sha256": "96377e4a18ac190a81424b57d61f1573900a7706ac23ff6e33d243eee0f7f2d1",
+      "bytes": 34543,
+      "sha256": "75954a4b6481cb2b3d8a288845c66ed9218e276f3bb2d95ab7ad18f215f51cb5",
       "storage": "git"
     },
     {
@@ -1796,8 +1832,8 @@
     },
     {
       "path": "reports/verify.py",
-      "bytes": 2813,
-      "sha256": "4ef2a91c0d984a43f32be55c384e95894f541eeee8decb79c8b616449bc20827",
+      "bytes": 3529,
+      "sha256": "5fcfaf8ecc124ac245f552d7d4930b856abf5e09789f2654cab17973fd96878b",
       "storage": "git"
     },
     {
@@ -2994,8 +3030,8 @@
     },
     {
       "path": "study/05_优化记录/优化文档.md",
-      "bytes": 26956,
-      "sha256": "472249aec7760e5502ea9ae9750db7888f3d47b05c47fe613aae21f051ef791e",
+      "bytes": 29127,
+      "sha256": "02c567c5ceaf14d51f1093398a6b229544dd267e478381a87b94667c0c0893a5",
       "storage": "git"
     },
     {

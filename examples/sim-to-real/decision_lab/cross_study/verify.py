@@ -11,7 +11,9 @@ def main():
  inv=json.loads((OUT/'source-inventory.json').read_text())
  assert len(inv['studies'])==19
  assert all(f['exists'] and f['read_status']=='metadata_readable' for s in inv['studies'] for f in s['files'])
- accepted=json.loads((ROOT.parent/'archive/accepted-report-v1.json').read_text())
+ accepted_path=ROOT.parent/'archive/accepted-report-v2.json'
+ if not accepted_path.exists():accepted_path=ROOT.parent/'archive/accepted-report-v1.json'
+ accepted=json.loads(accepted_path.read_text())
  for f in accepted['files']:assert sha(ROOT.parent/f['path'])==f['sha256'],f['path']
  native=json.loads((SPEC/'native-runtime.json').read_text())
  for f in native['files']:assert sha(ROOT.parents[2]/f['path'])==f['sha256'],f['path']

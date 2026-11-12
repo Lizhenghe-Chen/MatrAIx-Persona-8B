@@ -1,0 +1,41 @@
+{
+  "version": "2026-11-12-approved-v2",
+  "supersedes": "accepted-report-v1.json",
+  "commit": "1c553e7c13807c1cc333b35e4169fc388ff54b79",
+  "policy": "用户认可的报告与结论；后续调整另立版本，不覆盖冻结依据。",
+  "change": "新增“跨研究六套验证”章节与入口链接；优化文档补入六套结果、概率与提示的拆解、准入诚实记录。历史数字与结论未改动。",
+  "additions": [
+    "document.getElementById(\"cross-study\") 章节",
+    "链接到 cross-study-v1 正式报告与推荐配置"
+  ],
+  "files": [
+    {
+      "path": "reports/index.html",
+      "sha256": "6f7872345df81d7673fea83c8bca7bc667907b0b0ae93580c3f1c9a6dc55bf48"
+    },
+    {
+      "path": "reports/evidence.json",
+      "sha256": "cac2f35eed5034fa0d0e44b17fb582b05df7e70b4e5a5cb6cecec4a3884b8515"
+    },
+    {
+      "path": "reports/report.html.tmpl",
+      "sha256": "75954a4b6481cb2b3d8a288845c66ed9218e276f3bb2d95ab7ad18f215f51cb5"
+    },
+    {
+      "path": "reports/build.py",
+      "sha256": "52373eb9d4bb55302220cf665d3fdf996c399c073cd54e8add457f5667b1ccb6"
+    },
+    {
+      "path": "reports/charts.js",
+      "sha256": "9234c2c9920d15198cef1d3577e260fa4d848ec01d710f2fffabe94d4f6d25b9"
+    },
+    {
+      "path": "reports/style.css",
+      "sha256": "3c3cfb63d8791ec1f9459155e7447fdae5ed6e2a251d78e43051d4f340349476"
+    },
+    {
+      "path": "study/05_优化记录/优化文档.md",
+      "sha256": "02c567c5ceaf14d51f1093398a6b229544dd267e478381a87b94667c0c0893a5"
+    }
+  ]
+}
