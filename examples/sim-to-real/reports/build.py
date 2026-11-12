@@ -477,7 +477,7 @@ def all_studies_section():
             '<figcaption>横轴是 Brier 相对改善；条形是 AI 相对该套最强参照的差距，'
             '全部落在虚线左侧（虚线＝与参照持平）。每一套的 95% 区间见下表与悬停提示，'
             '区间全部低于零，说明差距不是抽样噪声。</figcaption></figure>'
-            '<div class="table-wrap"><table><caption>十四套研究逐项对照（按“AI vs 参照”从差到好排序）'
+            '<div class="table-wrap"><table style="min-width:880px"><caption>十四套研究逐项对照（按“AI vs 参照”从差到好排序）'
             '</caption><thead><tr><th>研究</th><th>题型</th><th>数据集簇</th><th>人数</th>'
             '<th>AI vs 等分</th><th>参照 vs 等分</th><th>AI vs 参照</th><th>95% 区间</th>'
             '<th>可估卡/总卡</th></tr></thead><tbody>' + table + '</tbody></table></div>'
