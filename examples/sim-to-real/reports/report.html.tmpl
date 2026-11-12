@@ -5,9 +5,9 @@
 <h1>AI 怎样才能<br>更接近真人选择？</h1>
 <p class="lead">已有实验给出的方向是：<strong>先保留人的分歧，再验证模型和真实信息是否有用。</strong>只把人物设定写得更丰富，不能保证模拟更真实。</p>
 <p>这份报告把“之前怎样、改了什么、改善多少、哪里没成功”放在一起。所有数字来自已经完成的实验；本次整理没有新增模型调用。</p>
-<a class="jump" href="#decision">先看可采用的做法</a><a class="jump" href="#questions">直接看真人与 AI 的选项分布</a><a class="jump" href="#catalog">查看全部实验与数据来源</a>
+<a class="jump" href="#decision">先看可采用的做法</a><a class="jump" href="#clean-v1">看换题型后的复验</a><a class="jump" href="#questions">直接看真人与 AI 的选项分布</a><a class="jump" href="#catalog">查看全部实验与数据来源</a>
 </div></header>
-<nav class="nav" aria-label="报告章节"><div><a href="#decision">结论</a><a href="#probability">保留分歧</a><a href="#model">选择模型</a><a href="#real-data">真人数据</a><a href="#background">提示与背景</a><a href="#failed">未通过的改法</a><a href="#use">如何使用</a><a href="#catalog">证据档案</a></div></nav>
+<nav class="nav" aria-label="报告章节"><div><a href="#decision">结论</a><a href="#probability">保留分歧</a><a href="#model">选择模型</a><a href="#real-data">真人数据</a><a href="#background">提示与背景</a><a href="#clean-v1">换题型复验</a><a href="#failed">未通过的改法</a><a href="#use">如何使用</a><a href="#catalog">证据档案</a></div></nav>
 <main>
 <section id="decision" class="intro"><span class="number">先读这一页</span><h2>可以采用三项改进，但它们解决的问题不同</h2>
 <div class="grid3">
@@ -132,4 +132,4 @@
   根目录兼容链接   ← 保持历史复算命令可用</div><p>报告、公开配置、汇总、文档与代码随 Git；逐人关联、完整私有请求与检查点留本机；大型源数据和受限材料按已有边界留共享盘或本机。没有为“整齐”而删除反例、冻结结果或把受限数据复制进 Git。</p><p><a href="../README.md">总导航</a> · <a href="README.md">本报告重建与证据清单</a> · <a href="evidence.json">可分享聚合证据</a> · <a href="../study/05_优化记录/优化文档.md">持续维护的优化记录</a> · <a href="../study/11_文献综述/综述.md">文献综述</a> · <a href="../decision_lab/docs/复算与复用指南.md">新框架复算指南</a></p></details>
 </section>
 </main><footer><div class="footgrid"><p><b>一句话带走：</b>先用更合适的模型和概率表达减少偏差；有真人答案就先做统计。只有通过对应任务的真人对照，才谈可用性。</p><p>更新：2026-11-12 · 离线可读，无外部脚本和字体。显示数字四舍五入，来源数值与 SHA-256 校验值保存在聚合证据文件；所有底层实验成绩保持原样。</p></div></footer>
-<script id="question-data" type="application/json">{{QUESTION_DATA}}</script><script>{{SCRIPT}}</script></body></html>
+<script id="question-data" type="application/json">{{QUESTION_DATA}}</script><script>{{SCRIPT}}</script><script>{{ECHARTS}}</script><script>{{CLEAN_CHART_SCRIPT}}</script></body></html>

@@ -1,0 +1,73 @@
+{
+  "version": "2026-11-12-approved-v5",
+  "supersedes": "accepted-report-v4.json",
+  "policy": "用户认可的报告与结论；后续调整另立版本，不覆盖冻结依据。",
+  "change": "clean-v1 图表适配窄屏（移动端重排坐标轴与标签），散点图加图例、去掉被裁切的端标签；桌面端与移动端截图均已核对。",
+  "additions": 0,
+  "files": [
+    {
+      "path": "reports/index.html",
+      "sha256": "11b02a947c8595b98c5c95ecb6c30e2e6fa63ebcc1dfd40a6dd8657b56a7acbb"
+    },
+    {
+      "path": "reports/evidence.json",
+      "sha256": "cac2f35eed5034fa0d0e44b17fb582b05df7e70b4e5a5cb6cecec4a3884b8515"
+    },
+    {
+      "path": "reports/report.html.tmpl",
+      "sha256": "9be24fd9e0f114ec16c56edfa2555d57876ec0cbfaae593e174b68c26ade26b5"
+    },
+    {
+      "path": "reports/build.py",
+      "sha256": "fe54f2b37d8c1602e59c9acda545392646abcf63da5337314d85b4a1df114750"
+    },
+    {
+      "path": "reports/charts.js",
+      "sha256": "9234c2c9920d15198cef1d3577e260fa4d848ec01d710f2fffabe94d4f6d25b9"
+    },
+    {
+      "path": "reports/style.css",
+      "sha256": "f5b800a09d88fc333986d9f276ce3fb5b30a43ced90eab2fba3b21fa6ccb8896"
+    },
+    {
+      "path": "study/05_优化记录/优化文档.md",
+      "sha256": "8098d38e0a79b8d517db2b2de5faf79709fe6e9a66cc32f74eed4b786eec11e5"
+    },
+    {
+      "path": "decision_lab/docs/预注册协议-clean-v1.md",
+      "sha256": "77a77d9c11ab5864b2789120d85d3dd6bf7018af4f307c3ce93ceff10ef70812"
+    },
+    {
+      "path": "decision_lab/docs/推荐配置.md",
+      "sha256": "0e3ef6409acf024cdb4710461686fa44cc765c884a588694db5aeab136505736"
+    },
+    {
+      "path": "decision_lab/cross_study/README.md",
+      "sha256": "8225257356552cf9a216756dce7ae570818c054ac309bbb299a3e651969352d2"
+    },
+    {
+      "path": "reports/charts_clean.js",
+      "sha256": "467f80904a0f2582d4d6c38350985cabdc8a2240f38809eab38c1669b11e2784"
+    },
+    {
+      "path": "reports/vendor/echarts.min.js",
+      "sha256": "b66b25aeb4df84e33199dc21694014d336d222cbd9deb0e5a7c14bd6aa0d0fd0"
+    },
+    {
+      "path": "reports/README.md",
+      "sha256": "595a6ec3109d2388111b6e787a9313cb33a8744cec27e2888630f286400fec20"
+    },
+    {
+      "path": "reports/smoke.cjs",
+      "sha256": "6c4058871fdd790064d9b0c4ae2fd2c2e85cf790251a3dc09b566b12e0bee141"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/clean-v1-diagnostics.json",
+      "sha256": "3f908f5da48a5f44668957374bb600b6fa712854f35c940a6bf346062e017d0d"
+    },
+    {
+      "path": "decision_lab/cross_study/clean_diagnostics.py",
+      "sha256": "740d26fc4af80e4c51ef95e5793b98bd7a3500ce4abb1e23c73f5f5bffd5fbb8"
+    }
+  ]
+}

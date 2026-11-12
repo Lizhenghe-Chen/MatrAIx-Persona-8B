@@ -187,14 +187,19 @@ def cross_study_section():
             ' · <a href="../decision_lab/docs/推荐配置.md">推荐配置与判断顺序</a></p>')
 
 def clean_study_section():
-    """Two-arm clean experiment: same optimisation, a choice study and a rating study."""
+    """Two-arm clean experiment with real charts; every number comes from the diagnostics file."""
     summary_path = CROSS / 'clean-v1-report.summary.json'
     results_path = CROSS / 'clean-v1-results.json'
+    diagnostics_path = CROSS / 'clean-v1-diagnostics.json'
     link = '../decision_lab/reports/cross-study-v1/clean-v1-report.html'
-    if not summary_path.exists() or not results_path.exists():
-        return '<section id="clean-v1"><h2>干净实验</h2><p>尚未运行：<a href="' + link + '">报告页</a>。</p></section>'
+    if not (summary_path.exists() and results_path.exists() and diagnostics_path.exists()):
+        return ('<section id="clean-v1"><h2>换题型再验一次：两臂干净实验</h2>'
+                '<p>诊断尚未生成：先运行 <code>python -m decision_lab.cross_study.clean_diagnostics</code>。'
+                f'<a href="{link}">报告页</a></p></section>')
     summary = json.loads(summary_path.read_text())
     results = json.loads(results_path.read_text())
+    diagnostics = json.loads(diagnostics_path.read_text())
+    drone, shoes = diagnostics['drone'], diagnostics['shoes']
     labels = {'drone': '美国无人机配送（二选一）', 'shoes': '美国运动鞋意愿（1–7 打分）'}
     cells, flat, refs = [], [], []
     for study, row in summary['rows'].items():
@@ -215,29 +220,83 @@ def clean_study_section():
     stats_text = ('两套都不是统计参照的对手：' + f'{100 * min(refs):+.1f}% ~ {100 * max(refs):+.1f}%。'
                   if refs and max(refs) < 0 else '')
     budget = results['budget']
-    return ('<section id="clean-v1"><h2>换题型再验一次：两臂干净实验</h2>'
-            '<p>为回应“打分题、多选题也常用”，另起一份<strong>预注册</strong>实验：一份二选一、'
-            '一份 1–7 打分，各 96 名画像，只跑两个臂（原生单选、优化概率）。'
-            f'冻结调用 {budget["max_calls"]} 次，保守上限 ${budget["reserved_peak_usd"]:.2f}。</p>'
-            '<div class="grid3">'
-            f'<article class="card"><span class="tag">主对照 · 优化 vs 原生</span><h3>仍是大幅改善</h3>'
-            f'<div class="big">+{100 * min(r["brier"]["relative_improvement"] for r in summary["rows"].values()):.1f}% → '
-            f'+{100 * max(r["brier"]["relative_improvement"] for r in summary["rows"].values()):.1f}%</div>'
-            '<p>但原生臂只交一个选项，被当分布评分时必然偏高；这一项不能当预测力。</p></article>'
-            '<article class="card"><span class="tag">与“每档等可能”比</span><h3>几乎没有信息</h3>'
-            f'<div class="big">{flat_text or "略高于等分"}</div>'
-            '<p>无人机只比抛硬币好约 3%，运动鞋不如等分——模型没有真正用上题卡信息。</p></article>'
-            f'<article class="card"><span class="tag">与同信息统计比</span><h3>两套全部落后</h3>'
-            f'<div class="big">{stats_text or "未达统计参照"}</div>'
-            '<p>无人机的历史答案对照好过等分约 30%，AI 只有 3%；差距就在这里。</p></article>'
-            '</div>'
-            '<table class="compact"><thead><tr><th>研究</th><th>人数</th><th>优化 vs 原生</th>'
-            '<th>优化 vs 每档等可能</th><th>优化 vs 统计参照</th></tr></thead><tbody>'
-            + ''.join(cells) + '</tbody></table>'
-            '<p class="small">分布误差在这两套都不可估计：被测的 96 人分散在几百张题卡上，'
-            '没有一张卡达到 20 人。只问“谁的预测更准”，不问“群体分布准不准”。</p>'
-            f'<p><a href="{link}">查看干净实验完整报告</a>'
-            ' · <a href="../decision_lab/docs/预注册协议-clean-v1.md">预注册协议（含运行前修订）</a></p></section>')
+    spread = drone['actual_share_range']
+    figure = lambda title, chart, caption, extra='': (
+        f'<figure><h3>{title}</h3><div id="{chart}" class="echart"{extra}></div>'
+        f'<figcaption>{caption}</figcaption></figure>')
+    body = (
+        '<p class="lead">换一份没用过的问卷、换成 1–7 打分，之前的优化方案还成立吗？'
+        '这一轮是<strong>预注册</strong>的：协议先写好，只跑原生单选与优化概率两个臂。</p>'
+        '<div class="grid3">'
+        f'<article class="card"><span class="tag">主对照 · 优化 vs 原生</span><h3>仍是大幅改善</h3>'
+        f'<div class="big">+{100 * min(r["brier"]["relative_improvement"] for r in summary["rows"].values()):.1f}% → '
+        f'+{100 * max(r["brier"]["relative_improvement"] for r in summary["rows"].values()):.1f}%</div>'
+        '<p>但原生臂只交一个选项，被当分布评分时必然偏高；这一项不能当预测力。</p></article>'
+        f'<article class="card"><span class="tag">与“每档等可能”比</span><h3>几乎不含信息</h3>'
+        f'<div class="big">{100 * drone["improvement"]["optimized"]:+.1f}% / '
+        f'{100 * shoes["improvement"]["optimized"]:+.1f}%</div>'
+        f'<p>{flat_text or "只比等分略好"}方向学会了，幅度压扁了：见下面的散点。</p></article>'
+        f'<article class="card"><span class="tag">与同信息统计比</span><h3>两套全部落后</h3>'
+        f'<div class="big">{100 * min(refs):+.1f}% / {100 * max(refs):+.1f}%</div>'
+        f'<p>无人机历史答案对照好过等分 {100 * drone["improvement"]["stratum_history"]:.0f}%，'
+        f'AI 只有 {100 * drone["improvement"]["optimized"]:.0f}%；差距在“敢不敢把差异拉开”。</p></article>'
+        '</div>'
+        + figure('谁比“每个选项等可能”更准',
+                 'cleanRelative',
+                 '柱子在零线右边表示比“每个选项等可能”更准。原生单选因为只交一个选项而大幅偏离；'
+                 '优化概率贴住零线；只有同信息统计参照稳定在右边。'
+                 '括号内是该方法的 Brier 原值（越小越好）。',
+                 ' style="height:400px"')
+        + '<div class="grid2">'
+        + figure('无人机：方向学会了，幅度压扁了',
+                 'cleanScatter',
+                 f'每一个点是一张题卡（共 {drone["cards"]} 张，每张 {drone["people_per_card"]["min"]}–'
+                 f'{drone["people_per_card"]["max"]} 人）。横轴是真人真实选择率，纵轴是 AI 预测率，虚线是完全学会。'
+                 f'AI 确实跟着题卡动（相关 {drone["fit"]["corr"]:.2f}），但斜率只有 {drone["fit"]["slope"]:.2f}：'
+                 f'真人低于 10% 的卡它给 {100 * drone["fit"]["buckets"]["under10"]["predicted"]:.0f}%，'
+                 f'真人高于 70% 的卡只给 {100 * drone["fit"]["buckets"]["over70"]["predicted"]:.0f}%——'
+                 f'真人的 {100 * spread[0]:.0f}%–{100 * spread[1]:.0f}% 被压成大约 30%–65%。'
+                 '<br><span class="small">底部长条是真人选择率的分布。</span>',
+                 ' style="height:430px"')
+        + figure('无人机总体构成：AI 以为是一半一半',
+                 'cleanDonut',
+                 f'真人实际选无人机 {100 * drone["actual_drone_share"]:.1f}%，AI 预测均值 '
+                 f'{100 * drone["predicted_drone_share"]:.1f}%。'
+                 '连“总体比例”这一层都对不上，更谈不上逐题卡差异。',
+                 ' style="height:430px"')
+        + '</div>'
+        + '<div class="grid2">'
+        + figure('运动鞋：1–7 分分布太“扁”',
+                 'cleanRating',
+                 f'真人平均 {shoes["human_mean_rating"]:.2f} 分，AI 预测平均 {shoes["model_mean_rating"]:.2f} 分；'
+                 '但 AI 把概率摊得更平均，真人更集中在 5 分。分布越扁，Brier 越接近“每档等分”。',
+                 ' style="height:400px"')
+        + figure('个体差异被压掉了多少',
+                 'cleanVariation',
+                 f'以真人为 100%：AI 只保留了 {100 * shoes["variation"]["between_kept"]:.0f}% 的“人与人”差异、'
+                 f'{100 * shoes["variation"]["within_kept"]:.0f}% 的“同一人跨商品”差异。'
+                 f'AI 与星级评论的相关是 {shoes["correlation"]["review"]:.2f}，与价格 {shoes["correlation"]["price"]:.2f}——'
+                 '它并非完全不看属性，只是信号远小于它压掉的差异。',
+                 ' style="height:400px"')
+        + '</div>'
+        + '<div class="table-wrap"><table><caption>逐套数字（Brier 越小越好；相对列以“每档等可能”为基准）</caption>'
+          '<thead><tr><th>研究</th><th>人数</th><th>优化 vs 原生</th><th>优化 vs 每档等可能</th>'
+          '<th>优化 vs 统计参照</th></tr></thead><tbody>' + ''.join(cells) + '</tbody></table></div>'
+        + f'<p class="small">冻结调用 {budget["max_calls"]} 次，保守上限 ${budget["reserved_peak_usd"]:.2f}，'
+          '实际按 token 计约 $4.82。分布误差在这两套都不可估计：被测的 96 人分散在 '
+          f'{drone["cards"]} / {shoes["cards"]:,} 张题卡上，没有一张卡达到 20 人——'
+          '所以这里只回答“谁的预测更准”，不回答“群体分布准不准”。</p>'
+        + '<p class="small">两套问卷都<strong>没有测量学历</strong>，匹配时按缺失处理，不做推断；'
+          '匹配字段为年龄带 + 性别（无人机）、仅年龄带（运动鞋）。四臂缩两臂发生在发出任何请求之前，'
+          '代价是不能拆“提示 vs 概率”，报告里已如实标注。</p>'
+        + f'<p><a href="{link}">查看干净实验完整报告</a>'
+          ' · <a href="../decision_lab/docs/预注册协议-clean-v1.md">预注册协议（含运行前修订）</a>'
+          ' · <a href="../decision_lab/docs/结果与优化记录.md">结果与优化记录</a></p>'
+        + '<noscript><p>浏览器未启用脚本：图表不可见，上面表格与文字结论仍然有效。</p></noscript>'
+        + f'<script id="clean-data" type="application/json">'
+          f'{json.dumps(diagnostics, ensure_ascii=False).replace("</", "<\\/")}</script>')
+    return ('<section id="clean-v1"><h2>换一份问卷、换一种题型，结论还成立吗</h2>'
+            + body + '</section>')
 
 
 def build(d):
@@ -270,6 +329,9 @@ def build(d):
     slots['QUESTION_DATA']=json.dumps(d['questions'],ensure_ascii=False).replace('</',r'<\/')
     slots['CROSS_STUDY']=cross_study_section()
     slots['CLEAN_STUDY']=clean_study_section()
+    # The page must stay self-contained: inline the vendored chart library at build time.
+    slots['ECHARTS']=(HERE/'vendor/echarts.min.js').read_text()
+    slots['CLEAN_CHART_SCRIPT']=(HERE/'charts_clean.js').read_text()
     slots['STYLE']=(HERE/'style.css').read_text()
     slots['SCRIPT']=(HERE/'charts.js').read_text()
     page=(HERE/'report.html.tmpl').read_text()

@@ -27,6 +27,17 @@ node examples/sim-to-real/reports/smoke.cjs
 
 仅在要从冻结评分重新抽取时使用 `build.py --collect`。这还需要本机 `~/.local/share/matraix-decision-lab/analysis-v1/individual-{dryer,swiss}.json`；它们约 82 MB 的原分析包保留原位。公开导出的 `local-analysis/` 来源名称是相对标识，不是可独立复算逐人评分的替代文件。`verify.py --local-sources` 会核验这些本机源文件。
 
+## 图表怎么来
+
+页面里所有图表都由**已评分的本地文件**生成，不手填数字：
+
+| 图表 | 数据来源 | 生成方式 |
+|---|---|---|
+| 前段条形图、区间图、分布条 | `evidence.json` | `build.py` 内联 SVG（`charts.js`） |
+| clean-v1 的五个图（相对等分改善、题卡散点、构成环图、评分分布、差异保留率） | `decision_lab/reports/cross-study-v1/clean-v1-diagnostics.json` | ECharts（`charts_clean.js`） |
+
+`clean-v1-diagnostics.json` 由 `PYTHONPATH=examples/sim-to-real .venv/bin/python -m decision_lab.cross_study.clean_diagnostics` 从本机检查点重算。ECharts 已本地化在 `vendor/echarts.min.js`，并在构建时**内联进 `index.html`**——页面仍是单文件、离线可开、零外部请求（`smoke.cjs` 会断言这一点）。改动图表脚本后必须重跑 `node smoke.cjs`。
+
 ## 内容维护规则
 
 1. 数字从已评分结果抽取，保留哈希；不要以新调用覆盖旧结果。
