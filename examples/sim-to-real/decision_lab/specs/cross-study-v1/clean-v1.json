@@ -1,0 +1,91 @@
+{
+  "status": "complete",
+  "studies": [
+    "drone",
+    "shoes"
+  ],
+  "arms": [
+    "original",
+    "optimized"
+  ],
+  "excluded_participants": [],
+  "excluded_policy": "Excluded before any effect was computed: no complete approved persona exists in the release. Reported, never replaced by a hand-written profile.",
+  "people_with_persona": {
+    "drone": 96,
+    "shoes": 96
+  },
+  "jobs_per_study_arm": {
+    "drone/original": 96,
+    "drone/optimized": 96,
+    "shoes/original": 96,
+    "shoes/optimized": 96
+  },
+  "total_calls": 384,
+  "max_calls": 384,
+  "max_retries": 24,
+  "reserved_peak_usd": 15.74376408,
+  "max_cost_usd": 18.9,
+  "input_peak_usd_per_million": 1.32,
+  "output_peak_usd_per_million": 3.96,
+  "price_source": "https://api-docs.deepseek.com/quick_start/pricing/",
+  "expected_identity": {
+    "model": "deepseek-v4-pro",
+    "system_fingerprint": "a307abda487cd1b463329ccb945ce396"
+  },
+  "jobs_sha256": "37acf603be5a2632239e4fc2d720ddab355349f37dd8f4726c8b7c32ee24f05d",
+  "people_per_study": {
+    "drone": 96,
+    "shoes": 96
+  },
+  "persona_field_distribution": {
+    "drone": {
+      "min": 12,
+      "median": 374.0,
+      "max": 884,
+      "mean": 342.1770833333333,
+      "people": 96
+    },
+    "shoes": {
+      "min": 11,
+      "median": 286.5,
+      "max": 891,
+      "mean": 304.4270833333333,
+      "people": 96
+    }
+  },
+  "omitted_dimension_distribution": {
+    "drone": {
+      "min": 406,
+      "median": 916.0,
+      "max": 1278,
+      "mean": 947.8229166666666,
+      "people": 96
+    },
+    "shoes": {
+      "min": 399,
+      "median": 1003.5,
+      "max": 1279,
+      "mean": 985.5729166666666,
+      "people": 96
+    }
+  },
+  "persona_richness_note": "Approved categorical dimensions sent per persona differ by study and by person. A cross-study comparison must read this table: a larger field count is not evidence that the persona is more accurate, but it is a confound for how much information the model received.",
+  "scoring_plan": {
+    "primary": "optimized versus original, per-person Brier, paired by person within stratum, 2000 draws",
+    "required_comparators": [
+      "history (weighted option shares from non-evaluated respondents)",
+      "stratum_history (same, within stratum where at least 20 respondents exist)",
+      "uniform"
+    ],
+    "distribution": "equal-card mean absolute share difference in percentage points",
+    "gates": "relative Brier improvement at least 2% with the 95% interval above zero; card-share improvement reported separately",
+    "no_default_answers": true
+  },
+  "formal_effects_available": false,
+  "formal_run_authorized_by_user": true,
+  "authorization_note": "User chose the two-arm plan on 2026-11-12 after the frozen cost was reported: original + optimized only, 384 calls, reserve USD 15.74, hard cap USD 18.90.",
+  "execution_mode": {
+    "workers": 4,
+    "claim": "INSERT OR IGNORE inside BEGIN IMMEDIATE; one row per frozen body hash"
+  }
+}

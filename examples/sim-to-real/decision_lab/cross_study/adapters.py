@@ -15,6 +15,7 @@ Truth, identifiers and respondent-level fields stay in local private blocks.
 import csv
 import hashlib
 import json
+import re
 from collections import defaultdict
 from pathlib import Path
 
@@ -39,6 +40,15 @@ PEW111_CONTEXT = 'United States. Survey period: July 2022.'
 SHOES_CONTEXT = ('United States. Survey period: 2020, online panel. Each screen shows one shoe. Rate how '
                  'likely you would be to buy it, on a scale from 1 (not at all likely) to 7 (extremely likely).')
 SHOES_SCALE = [str(level) for level in range(1, 8)]
+DRONE_COLUMN = re.compile(r'^CHOICE_v([0-3])_gc([0-3])_gt([0-3])_dc([0-3])_dt([0-3])_dp([01])_1(?:\.1)?$')
+DRONE_GENDER = {'1': 'Male', '2': 'Female', '3': 'Other', '4': 'Prefer not to answer'}
+DRONE_AGE = {'1': '18-24', '2': '25-34', '3': '35-44', '4': '45-54', '5': '55-64', '6': '65+'}
+DRONE_INCOME = {'1': 'Less than $25,000', '2': '$25,000 to $49,999', '3': '$50,000 to $74,999',
+                '4': '$75,000 to $99,999', '5': '$100,000 to $149,999', '6': '$150,000 to $199,999',
+                '7': '$200,000 or more'}
+DRONE_RESIDENCE = {'1': 'Private home', '2': 'Apartment', '3': 'Other'}
+DRONE_CONTEXT = ('United States. Survey period: 2022, online panel, adults 18+. Each screen compares two '
+                 'ways to receive the same order. Choose the option you prefer.')
 SHOES_ATTRIBUTES = ('ave_customer_review', 'best_seller', 'brand', 'color', 'eco_friendly_materials',
                     'gel_cushioning', 'model_year', 'price', 'shipping', 'weight')
 
@@ -341,4 +351,49 @@ def shoes_rows():
                      'questions': questions, 'truth': truth,
                      'group': f'{age_group}|{race}', 'country': 'United States',
                      'source_id': raw_id})
+    return rows
+
+
+def drone_rows():
+    """One two-option delivery choice per answered card; the author's 0/1 codes are kept."""
+    from .drone_baseline import COST_LEVELS, TIME_MINUTES, option_text
+    import gzip
+    with gzip.open(DRONE, 'rt', newline='') as stream:
+        reader = csv.DictReader(stream)
+        columns = [c for c in reader.fieldnames if DRONE_COLUMN.fullmatch(c)]
+        records = list(reader)
+    rows = []
+    for row in records:
+        background = {'Age group': DRONE_AGE.get(row.get('Q_age', '').strip(), 'Unknown'),
+                      'Gender': DRONE_GENDER.get(row.get('Q_gender', '').strip(), 'Unknown')}
+        for key, label in (('Household income', DRONE_INCOME), ('Residence type', DRONE_RESIDENCE)):
+            value = label.get(row.get({'Household income': 'Q_income',
+                                       'Residence type': 'Q_residence_type'}[key], '').strip())
+            if value:
+                background[key] = value
+        questions, truth, seen = [], {}, set()
+        for column in columns:
+            parts = DRONE_COLUMN.fullmatch(column)
+            answer = row[column]
+            if answer not in ('0', '1'):
+                continue
+            vendor, gc, gt, dc, dt, dp = (int(parts.group(i)) for i in range(1, 7))
+            card = f'drone_v{vendor}_gc{gc}_gt{gt}_dc{dc}_dt{dt}_dp{dp}'
+            if card in seen:
+                continue
+            seen.add(card)
+            options = [('0', option_text(0, vendor, COST_LEVELS[vendor][gc], TIME_MINUTES[vendor][gt], dp)),
+                       ('1', option_text(1, vendor, COST_LEVELS[vendor][dc], TIME_MINUTES[vendor][dt], dp))]
+            questions.append(question(card,
+                                      f'Delivery of {["take-out food", "prescription medications", "items from a liquor store", "last-minute groceries"][vendor]}. '
+                                      'Compare the two options. Which would you choose?', options))
+            truth[card] = answer
+        if not questions or len(truth) != len(questions):
+            continue
+        rows.append({'study': 'drone', 'person': person_id('drone', row['ResponseId']),
+                     'stratum': f"{background['Age group']}|{background['Gender']}", 'weight': 1.0,
+                     'background': background, 'context': DRONE_CONTEXT,
+                     'questions': questions, 'truth': truth,
+                     'group': f"{background['Age group']}|{background['Gender']}",
+                     'country': 'United States', 'source_id': row['ResponseId']})
     return rows

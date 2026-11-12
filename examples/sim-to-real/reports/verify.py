@@ -76,7 +76,24 @@ def main():
         cross_note=f' cross-study summary for {len(summary["rows"])} studies tied to the generated page;'
     else:
         cross_note=''
-    print(f'PASS: {checked} source hashes; all local report links; 13 distributions and averages; latest run exclusion; readable labels.'+cross_note)
+    clean=HERE.parent/'decision_lab/reports/cross-study-v1/clean-v1-report.summary.json'
+    clean_note=''
+    if clean.exists():
+        clean_summary=json.loads(clean.read_text())
+        clean_results=json.loads((clean.parent/'clean-v1-results.json').read_text())
+        html_clean=(HERE/'index.html').read_text()
+        assert 'id="clean-v1"' in html_clean
+        for key,row in clean_summary['rows'].items():
+            assert f'{100*row["brier"]["relative_improvement"]:+.1f}%' in html_clean, key
+            arms=clean_results['studies'][key]['results']['arms']
+            versus=(arms['uniform']['brier']-arms['optimized']['brier'])/arms['uniform']['brier']
+            assert f'{100*versus:+.1f}%' in html_clean, key
+            if row['statistical'] is not None:
+                assert f'{100*row["statistical"]["relative_improvement"]:+.1f}%' in html_clean, key
+        assert (clean.parent/'clean-v1-report.html').exists()
+        assert (HERE.parent/'decision_lab/docs/预注册协议-clean-v1.md').exists()
+        clean_note=f' clean-v1 summary for {len(clean_summary["rows"])} studies tied to the generated page;'
+    print(f'PASS: {checked} source hashes; all local report links; 13 distributions and averages; latest run exclusion; readable labels.'+cross_note+clean_note)
 
 
 if __name__=='__main__':

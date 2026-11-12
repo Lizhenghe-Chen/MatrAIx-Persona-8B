@@ -68,3 +68,26 @@ PYTHONPATH=examples/sim-to-real .venv/bin/python -m decision_lab.cross_study.rep
 原件审计和全量发行版审计可分别运行`decision_lab.cross_study.audit`、`decision_lab.cross_study.personas`，需要共享盘。候选准备脚本禁止覆盖私有快照。不要为了查看报告运行准备或调用脚本。
 
 正式执行入口尚未开放，不要把格式试跑程序改成循环去跑48人。必须先完成上述准入、匹配、评分及预算门槛。
+
+
+## clean-v1：独立预注册的第二轮
+
+六套之后另起的一轮，用来检验「换问卷、换题型」后结论是否还成立。
+
+```bash
+PYTHONPATH=examples/sim-to-real .venv/bin/python -m decision_lab.cross_study.cohort_clean   # 选人+匹配（只读数据，无调用）
+PYTHONPATH=examples/sim-to-real .venv/bin/python -m decision_lab.cross_study.formal prepare --plan clean-v1
+PYTHONPATH=examples/sim-to-real .venv/bin/python -m decision_lab.cross_study.formal run --plan clean-v1 --workers 4
+PYTHONPATH=examples/sim-to-real .venv/bin/python -m decision_lab.cross_study.formal retry --plan clean-v1   # 每次恢复一条失败
+PYTHONPATH=examples/sim-to-real .venv/bin/python -m decision_lab.cross_study.formal score --plan clean-v1
+PYTHONPATH=examples/sim-to-real .venv/bin/python -m decision_lab.cross_study.formal_report \
+    --input decision_lab/reports/cross-study-v1/clean-v1-results.json \
+    --output decision_lab/reports/cross-study-v1/clean-v1-report.html
+```
+
+差异只在计划层：`--plan` 决定研究名单、队列快照、作业/规格/检查点路径与臂数（clean-v1 只有
+`original` + `optimized`，因此评分不会伪造未跑过的消融）。评分口径与 v1 完全相同。
+
+- 无人机：历史答案对照按题卡从非被测受访者算，每卡 67–130 人，可用。
+- 运动鞋：每题一张卡、几乎不重复（107,236 张卡、最多 6 人），历史答案对照不可用，
+  改用 `attribute_rating`（十项属性的评分模型，`shoes_baseline.py`）。

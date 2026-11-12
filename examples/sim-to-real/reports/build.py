@@ -186,6 +186,60 @@ def cross_study_section():
             f'<p><a href="{link}">查看六套研究完整报告（含逐组数字、区间与不可估计的说明）</a>'
             ' · <a href="../decision_lab/docs/推荐配置.md">推荐配置与判断顺序</a></p>')
 
+def clean_study_section():
+    """Two-arm clean experiment: same optimisation, a choice study and a rating study."""
+    summary_path = CROSS / 'clean-v1-report.summary.json'
+    results_path = CROSS / 'clean-v1-results.json'
+    link = '../decision_lab/reports/cross-study-v1/clean-v1-report.html'
+    if not summary_path.exists() or not results_path.exists():
+        return '<section id="clean-v1"><h2>干净实验</h2><p>尚未运行：<a href="' + link + '">报告页</a>。</p></section>'
+    summary = json.loads(summary_path.read_text())
+    results = json.loads(results_path.read_text())
+    labels = {'drone': '美国无人机配送（二选一）', 'shoes': '美国运动鞋意愿（1–7 打分）'}
+    cells, flat, refs = [], [], []
+    for study, row in summary['rows'].items():
+        arms = results['studies'][study]['results']['arms']
+        uniform = arms['uniform']['brier']
+        optimized = arms['optimized']['brier']
+        own = f'{100 * row["brier"]["relative_improvement"]:+.1f}%'
+        versus_uniform = f'{100 * (uniform - optimized) / uniform:+.1f}%'
+        statistical = row['statistical']
+        versus_statistics = '—' if statistical is None else f'{100 * statistical["relative_improvement"]:+.1f}%'
+        cells.append(f'<tr><th>{html.escape(labels.get(study, study))}</th><td>{row["people"]}</td>'
+                     f'<td>{own}</td><td>{versus_uniform}</td><td>{versus_statistics}</td></tr>')
+        if optimized >= uniform:
+            flat.append(labels.get(study, study))
+        if statistical is not None:
+            refs.append(statistical['relative_improvement'])
+    flat_text = ('在' + '、'.join(flat) + '上，优化组合连“每个选项等可能”都没有超过。') if flat else ''
+    stats_text = ('两套都不是统计参照的对手：' + f'{100 * min(refs):+.1f}% ~ {100 * max(refs):+.1f}%。'
+                  if refs and max(refs) < 0 else '')
+    budget = results['budget']
+    return ('<section id="clean-v1"><h2>换题型再验一次：两臂干净实验</h2>'
+            '<p>为回应“打分题、多选题也常用”，另起一份<strong>预注册</strong>实验：一份二选一、'
+            '一份 1–7 打分，各 96 名画像，只跑两个臂（原生单选、优化概率）。'
+            f'冻结调用 {budget["max_calls"]} 次，保守上限 ${budget["reserved_peak_usd"]:.2f}。</p>'
+            '<div class="grid3">'
+            f'<article class="card"><span class="tag">主对照 · 优化 vs 原生</span><h3>仍是大幅改善</h3>'
+            f'<div class="big">+{100 * min(r["brier"]["relative_improvement"] for r in summary["rows"].values()):.1f}% → '
+            f'+{100 * max(r["brier"]["relative_improvement"] for r in summary["rows"].values()):.1f}%</div>'
+            '<p>但原生臂只交一个选项，被当分布评分时必然偏高；这一项不能当预测力。</p></article>'
+            '<article class="card"><span class="tag">与“每档等可能”比</span><h3>几乎没有信息</h3>'
+            f'<div class="big">{flat_text or "略高于等分"}</div>'
+            '<p>无人机只比抛硬币好约 3%，运动鞋不如等分——模型没有真正用上题卡信息。</p></article>'
+            f'<article class="card"><span class="tag">与同信息统计比</span><h3>两套全部落后</h3>'
+            f'<div class="big">{stats_text or "未达统计参照"}</div>'
+            '<p>无人机的历史答案对照好过等分约 30%，AI 只有 3%；差距就在这里。</p></article>'
+            '</div>'
+            '<table class="compact"><thead><tr><th>研究</th><th>人数</th><th>优化 vs 原生</th>'
+            '<th>优化 vs 每档等可能</th><th>优化 vs 统计参照</th></tr></thead><tbody>'
+            + ''.join(cells) + '</tbody></table>'
+            '<p class="small">分布误差在这两套都不可估计：被测的 96 人分散在几百张题卡上，'
+            '没有一张卡达到 20 人。只问“谁的预测更准”，不问“群体分布准不准”。</p>'
+            f'<p><a href="{link}">查看干净实验完整报告</a>'
+            ' · <a href="../decision_lab/docs/预注册协议-clean-v1.md">预注册协议（含运行前修订）</a></p></section>')
+
+
 def build(d):
     validate(d)
     slots = {}
@@ -215,6 +269,7 @@ def build(d):
     slots['QUESTION_TABLE']=''.join('<tr><th>'+html.escape(q['label'])+'</th>'+''.join(f'<td>{q["methods"][k]["error"]:.2f}</td>' for k in ('只选一项','保留概率','真人数据校准','真人统计模型'))+'</tr>' for q in d['questions'])
     slots['QUESTION_DATA']=json.dumps(d['questions'],ensure_ascii=False).replace('</',r'<\/')
     slots['CROSS_STUDY']=cross_study_section()
+    slots['CLEAN_STUDY']=clean_study_section()
     slots['STYLE']=(HERE/'style.css').read_text()
     slots['SCRIPT']=(HERE/'charts.js').read_text()
     page=(HERE/'report.html.tmpl').read_text()

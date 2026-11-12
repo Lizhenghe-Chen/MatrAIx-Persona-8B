@@ -11,8 +11,9 @@ def main():
  inv=json.loads((OUT/'source-inventory.json').read_text())
  assert len(inv['studies'])==19
  assert all(f['exists'] and f['read_status']=='metadata_readable' for s in inv['studies'] for f in s['files'])
- accepted_path=ROOT.parent/'archive/accepted-report-v2.json'
- if not accepted_path.exists():accepted_path=ROOT.parent/'archive/accepted-report-v1.json'
+ for version in ('v3','v2','v1'):
+  accepted_path=ROOT.parent/f'archive/accepted-report-{version}.json'
+  if accepted_path.exists():break
  accepted=json.loads(accepted_path.read_text())
  for f in accepted['files']:assert sha(ROOT.parent/f['path'])==f['sha256'],f['path']
  native=json.loads((SPEC/'native-runtime.json').read_text())
@@ -55,5 +56,26 @@ def main():
   assert set(summary['rows'])==set(spec['studies'])
   formal=f" Formal: {spec['max_calls']} calls, {len(results['studies'])} studies, "
   formal+=f"{len(summary['supporting'])} studies pass both gates, cross-study gate {summary['cross_study_gate']}."
- print('PASS: 19 source inventories; accepted report unchanged; native hashes; disjoint cohorts; 24 strict responses; four-arm parity; report links.'+formal)
+ clean=''
+ if (OUT/'clean-v1-results.json').exists():
+  cs=json.loads((SPEC/'clean-v1.json').read_text());cr=json.loads((OUT/'clean-v1-results.json').read_text())
+  assert cs['status']=='complete' and cs['total_calls']==cs['max_calls']
+  assert cr['status']=='complete_formal_cross_study'
+  assert cr['jobs_sha256']==cs['jobs_sha256']
+  assert cr['execution']['states']=={'complete':cs['max_calls']},cr['execution']['states']
+  assert set(cr['studies'])==set(cs['studies'])=={'drone','shoes'}
+  assert cr['arms']==cs['arms']==['original','optimized']
+  for study,entry in cr['studies'].items():
+   assert entry['results']['arms']['original']['brier'] is not None
+   assert entry['results']['arms']['optimized']['brier'] is not None
+   # The two-arm plan must never report an ablation it did not run.
+   assert 'output_only' not in entry['results']['arms'] and 'prompt_only' not in entry['results']['arms']
+   statistical=entry['results']['contrasts']
+   assert 'history__to__optimized' in statistical or 'attribute_rating__to__optimized' in statistical
+  clean=json.loads((OUT/'clean-v1-report.summary.json').read_text())
+  assert set(clean['rows'])=={'drone','shoes'}
+  assert clean['beats_statistics']==[]
+  clean=(f" Clean-v1: {cs['max_calls']} calls, {len(cr['studies'])} studies, "
+         f"{len(clean['rows'])} behind the statistical reference.")
+ print('PASS: 19 source inventories; accepted report unchanged; native hashes; disjoint cohorts; 24 strict responses; four-arm parity; report links.'+formal+clean)
 if __name__=='__main__':main()

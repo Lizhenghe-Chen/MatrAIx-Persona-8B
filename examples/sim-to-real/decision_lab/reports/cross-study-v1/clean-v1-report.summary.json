@@ -1,0 +1,117 @@
+{
+  "rows": {
+    "drone": {
+      "people": 96,
+      "cards": 368,
+      "estimable_cards": 0,
+      "kind": "配送服务选择",
+      "region": "美国",
+      "brier": {
+        "reference": 0.7048611111111112,
+        "candidate": 0.4859756365740741,
+        "improvement": 0.21888547453703705,
+        "relative_improvement": 0.3105370279146141,
+        "improvement_95_ci": [
+          0.15954484953703707,
+          0.278230324074074
+        ],
+        "repeats": 2000,
+        "seed": 20261109,
+        "people": 96,
+        "passes_brier_gate": true
+      },
+      "card": {
+        "available": false,
+        "reason": "no card reaches 20 evaluated respondents",
+        "cards_with_support": 368
+      },
+      "statistical": {
+        "reference": 0.3505899488496282,
+        "candidate": 0.4859756365740741,
+        "improvement": -0.13538568772444592,
+        "relative_improvement": -0.386165342642251,
+        "improvement_95_ci": [
+          -0.16797303242324985,
+          -0.10264601299864928
+        ],
+        "repeats": 2000,
+        "seed": 20261109,
+        "people": 96,
+        "passes_brier_gate": false
+      },
+      "statistical_name": "stratum_history",
+      "brier_verdict": [
+        "相对改善 ≥2% 且区间高于零",
+        "pass"
+      ],
+      "card_verdict": [
+        "不可估计",
+        "pending"
+      ],
+      "statistical_verdict": [
+        "明确退化",
+        "fail"
+      ],
+      "supports_versus_own_baseline": false
+    },
+    "shoes": {
+      "people": 96,
+      "cards": 3822,
+      "estimable_cards": 0,
+      "kind": "商品意愿打分",
+      "region": "美国",
+      "brier": {
+        "reference": 1.5885416666666667,
+        "candidate": 0.8602138963541667,
+        "improvement": 0.7283277703125001,
+        "relative_improvement": 0.45848830131147544,
+        "improvement_95_ci": [
+          0.6918825359375002,
+          0.7625924578125
+        ],
+        "repeats": 2000,
+        "seed": 20261109,
+        "people": 96,
+        "passes_brier_gate": true
+      },
+      "card": {
+        "available": false,
+        "reason": "no card reaches 20 evaluated respondents",
+        "cards_with_support": 3822
+      },
+      "statistical": {
+        "reference": 0.8388652773555131,
+        "candidate": 0.8602138963541667,
+        "improvement": -0.02134861899865359,
+        "relative_improvement": -0.025449401202960978,
+        "improvement_95_ci": [
+          -0.029620761122770234,
+          -0.012938514341142793
+        ],
+        "repeats": 2000,
+        "seed": 20261109,
+        "people": 96,
+        "passes_brier_gate": false
+      },
+      "statistical_name": "attribute_rating",
+      "brier_verdict": [
+        "相对改善 ≥2% 且区间高于零",
+        "pass"
+      ],
+      "card_verdict": [
+        "不可估计",
+        "pending"
+      ],
+      "statistical_verdict": [
+        "明确退化",
+        "fail"
+      ],
+      "supports_versus_own_baseline": false
+    }
+  },
+  "supporting": [],
+  "beats_statistics": [],
+  "kinds": [],
+  "regions": [],
+  "cross_study_gate": false
+}

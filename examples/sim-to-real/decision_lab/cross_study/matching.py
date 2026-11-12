@@ -33,12 +33,25 @@ EDUCATION.update({
     'Postgraduate': DEGREE[1:],
     'Below bachelor\'s degree': ['No formal', 'Primary', 'Secondary', 'Vocational / cert', 'Some college', "Associate's"],
 })
+# Studies whose instrument never measured education. The constraint is dropped and
+# declared; education is never inferred from other fields.
+NO_EDUCATION={'drone','shoes'}
+# Bands that straddle the persona age brackets are widened, never narrowed.
+AGE_SPANS={
+ '18-20 years old':(['18-24'],'sub_band_18_20'),
+ '21-25 years old':(['18-24','25-34'],'span_band_21_25'),
+ '26-35 years old':(['25-34','35-44'],'span_band_26_35'),
+ '36-45 years old':(['35-44','45-54'],'span_band_36_45'),
+ '46-55 years old':(['45-54','55-64'],'span_band_46_55'),
+ '56 years old or older':(AGE[4:],'band_56_plus'),
+}
 COUNTRIES={'USA':'North America','US':'North America','United States':'North America','Canada':'North America','CAN':'North America','UK':'Western Europe','United Kingdom':'Western Europe','Ireland':'Western Europe','IRE':'Western Europe','Switzerland':'Western Europe'}
 
 def constraints(record):
  b=record['background'];raw=str(next((b[k] for k in ['Age','Age group','age_band','age_years'] if k in b),'Unknown')).replace('–','-')
  education=str(next((b[k] for k in ['Education','education'] if k in b),'Unknown'))
- if education not in EDUCATION:return None,'unmapped_education:'+education
+ no_education=education not in EDUCATION and record['study'] in NO_EDUCATION
+ if education not in EDUCATION and not no_education:return None,'unmapped_education:'+education
  age=raw.replace('85 or over','85+').replace('65 or older','65+')
  if age in AGE:ages=[age];resolution='native_age_band'
  elif re.fullmatch(r'\d+(\.0)?',age):
@@ -48,11 +61,13 @@ def constraints(record):
  elif age=='65+':ages=AGE[5:];resolution='65_plus'
  elif age=='80 or older':ages=AGE[6:];resolution='75_plus_common_coarsening'
  elif age=='21-24':ages=['18-24'];resolution='sub_band_21_24'
+ elif age in AGE_SPANS:ages,resolution=AGE_SPANS[age]
  elif age in ['18-29','30-49','50-64']:ages=AGE[:5];resolution='18_64_common_coarsening'
  else:return None,'unmapped_age:'+age
  country=record.get('country','United States')
  if country not in COUNTRIES:return None,'unmapped_country:'+str(country)
- allowed={'region':[COUNTRIES[country]],'age_bracket':ages,'highest_education':EDUCATION[education]}
+ allowed={'region':[COUNTRIES[country]],'age_bracket':ages}
+ if not no_education:allowed['highest_education']=EDUCATION[education]
  sex=b.get('Sex',b.get('Gender'))
  if sex in ['Male','Female']:allowed['gender_identity']=['Man' if sex=='Male' else 'Woman']
  size=b.get('household_size')
@@ -61,7 +76,9 @@ def constraints(record):
   if n>=1:allowed['lstyle_household_size']=['Lives alone' if n==1 else '2 people' if n==2 else '3-4 people' if n<=4 else '5+ people']
  except (TypeError,ValueError):pass
  # Currency and definitions differ; no income conversion is inferred here.
- return {'allowed':allowed,'age_resolution':resolution,'excluded_sources':['real_human_survey']+(['gss'] if record['study']=='anes' else []),'country_context':country},None
+ rule={'allowed':allowed,'age_resolution':resolution,'excluded_sources':['real_human_survey']+(['gss'] if record['study']=='anes' else []),'country_context':country}
+ if no_education:rule['education_resolution']='unavailable_in_instrument'
+ return rule,None
 
 def compatible(profile,rule):
  return profile['source'] not in rule['excluded_sources'] and all(profile['fields'].get(k) in values for k,values in rule['allowed'].items())

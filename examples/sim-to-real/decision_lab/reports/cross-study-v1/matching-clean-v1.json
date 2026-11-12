@@ -1,0 +1,152 @@
+{
+  "status": "candidate_matching_not_formal_freeze",
+  "seed": 20261109,
+  "candidate_pool_records": 22326,
+  "snapshot_sha256": "270c266586fb9758c3a33f573e8a7609c2fd14f23c288a20a0622af5e9eb2eb9",
+  "studies": {
+    "drone": {
+      "eligible_respondents": 3625,
+      "excluded": {},
+      "phase_allocation": {
+        "pilot": {
+          "18-24|Female": 1,
+          "18-24|Male": 1,
+          "25-34|Female": 1,
+          "25-34|Male": 1,
+          "35-44|Female": 1,
+          "35-44|Male": 1,
+          "45-54|Female": 1,
+          "55-64|Female": 1
+        },
+        "screen": {
+          "18-24|Female": 4,
+          "18-24|Male": 3,
+          "25-34|Female": 7,
+          "25-34|Male": 9,
+          "35-44|Female": 6,
+          "35-44|Male": 6,
+          "45-54|Female": 3,
+          "45-54|Male": 3,
+          "55-64|Female": 3,
+          "55-64|Male": 2,
+          "65+|Female": 1,
+          "65+|Male": 1
+        },
+        "reserve": {
+          "18-24|Female": 8,
+          "18-24|Male": 7,
+          "18-24|Other": 1,
+          "25-34|Female": 14,
+          "25-34|Male": 18,
+          "25-34|Other": 1,
+          "35-44|Female": 11,
+          "35-44|Male": 12,
+          "45-54|Female": 6,
+          "45-54|Male": 5,
+          "55-64|Female": 6,
+          "55-64|Male": 3,
+          "65+|Female": 2,
+          "65+|Male": 2
+        }
+      },
+      "selected": 152,
+      "matched": 152,
+      "unique_release_profiles": 152,
+      "age_resolutions": {
+        "native_age_band": 146,
+        "65_plus": 6
+      },
+      "education_resolution": "unavailable_in_instrument",
+      "match_fields": [
+        "age_bracket",
+        "gender_identity",
+        "region"
+      ],
+      "source_counts": {
+        "gss": 39,
+        "wiki": 105,
+        "amazon": 5,
+        "prism": 2,
+        "stackoverflow": 1
+      }
+    },
+    "shoes": {
+      "eligible_respondents": 3073,
+      "excluded": {},
+      "phase_allocation": {
+        "pilot": {
+          "21-25 years old|White": 1,
+          "26-35 years old|Black": 1,
+          "26-35 years old|White": 2,
+          "36-45 years old|White": 2,
+          "46-55 years old|White": 1,
+          "56 years old or older|White": 1
+        },
+        "screen": {
+          "18-20 years old|White": 1,
+          "21-25 years old|Asian": 1,
+          "21-25 years old|Black": 1,
+          "21-25 years old|Hispanic": 1,
+          "21-25 years old|White": 4,
+          "26-35 years old|Asian": 2,
+          "26-35 years old|Black": 2,
+          "26-35 years old|Hispanic": 1,
+          "26-35 years old|White": 13,
+          "36-45 years old|Asian": 1,
+          "36-45 years old|Black": 1,
+          "36-45 years old|Hispanic": 1,
+          "36-45 years old|White": 8,
+          "46-55 years old|White": 6,
+          "56 years old or older|White": 5
+        },
+        "reserve": {
+          "18-20 years old|White": 1,
+          "21-25 years old|Asian": 2,
+          "21-25 years old|Black": 1,
+          "21-25 years old|Hispanic": 1,
+          "21-25 years old|Other": 1,
+          "21-25 years old|White": 7,
+          "26-35 years old|Asian": 3,
+          "26-35 years old|Black": 4,
+          "26-35 years old|Hispanic": 3,
+          "26-35 years old|Native American": 1,
+          "26-35 years old|Other": 1,
+          "26-35 years old|White": 25,
+          "36-45 years old|Asian": 2,
+          "36-45 years old|Black": 2,
+          "36-45 years old|Hispanic": 1,
+          "36-45 years old|White": 17,
+          "46-55 years old|Asian": 1,
+          "46-55 years old|Black": 1,
+          "46-55 years old|White": 12,
+          "56 years old or older|Black": 1,
+          "56 years old or older|White": 9
+        }
+      },
+      "selected": 152,
+      "matched": 152,
+      "unique_release_profiles": 152,
+      "age_resolutions": {
+        "span_band_21_25": 20,
+        "span_band_26_35": 58,
+        "span_band_36_45": 35,
+        "span_band_46_55": 21,
+        "band_56_plus": 16,
+        "sub_band_18_20": 2
+      },
+      "education_resolution": "unavailable_in_instrument",
+      "match_fields": [
+        "age_bracket",
+        "region"
+      ],
+      "source_counts": {
+        "amazon": 10,
+        "gss": 31,
+        "synthetic": 1,
+        "stackoverflow": 21,
+        "wiki": 86,
+        "prism": 3
+      }
+    }
+  }
+}

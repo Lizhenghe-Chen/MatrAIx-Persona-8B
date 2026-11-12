@@ -272,12 +272,13 @@ def evaluate(cases, references, arms, seed=20261109, case_references=None):
             'refusal': _refusal_by_question(cases, vector_of, refusals),
         }
     contrasts = {}
-    for left, right in [('original', 'output_only'), ('original', 'prompt_only'),
-                        ('original', 'optimized'), ('prompt_only', 'optimized'),
-                        ('output_only', 'optimized'),
-                        ('history', 'original'), ('history', 'optimized'),
-                        ('stratum_history', 'original'), ('stratum_history', 'optimized')] + \
-                      [(name, 'optimized') for name in case_references]:
+    # Only contrast arms that were actually run: a two-arm plan has no ablation to report.
+    planned = [('original', 'output_only'), ('original', 'prompt_only'), ('original', 'optimized'),
+               ('prompt_only', 'optimized'), ('output_only', 'optimized')]
+    for left, right in ([(l, r) for l, r in planned if l in arms and r in arms]
+                        + [('history', 'original'), ('history', 'optimized'),
+                           ('stratum_history', 'original'), ('stratum_history', 'optimized')]
+                        + [(name, 'optimized') for name in case_references]):
         rows = [{'person': c['person'], 'stratum': c['stratum'], 'weight': float(c.get('weight', 1.0)),
                  'left': brier_rows[left][c['person']], 'right': brier_rows[right][c['person']]}
                 for c in cases
@@ -292,6 +293,7 @@ def evaluate(cases, references, arms, seed=20261109, case_references=None):
     card_contrasts = {}
     card_pairs = [('original', 'optimized')] + [(name, 'optimized') for name in
                                                 ('history', 'stratum_history') + tuple(case_references)]
+    card_pairs = [(l, r) for l, r in card_pairs if l in arms and r in arms]
     for left, right in card_pairs:
         card_contrasts[f'{left}__to__{right}'] = card_interval(cases, vectors[left], vectors[right])
     return {'arms': summary, 'contrasts': contrasts, 'card_contrasts': card_contrasts,

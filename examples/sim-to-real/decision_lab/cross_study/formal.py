@@ -26,14 +26,45 @@ from .scoring import build_references, card_key, evaluate
 from .targets import PRIVATE, load_existing
 from ..core.provider import send
 
-STUDIES = ['anes', 'dryer', 'pew13', 'pew168', 'shed', 'swiss']
+PLANS = {
+    'v1': {'studies': ['anes', 'dryer', 'pew13', 'pew168', 'shed', 'swiss'],
+           'cohort': 'cohort-candidate-v2.json', 'forms': 'formal-v1-jobs.json',
+           'spec': 'formal-v1.json', 'db': 'formal-v1.sqlite', 'control': 'formal-v1-control.json',
+           'result': 'formal-results.json', 'sources': 'existing', 'authorized': True,
+           'arms': ['original', 'output_only', 'prompt_only', 'optimized']},
+    'clean-v1': {'studies': ['drone', 'shoes'],
+                 'cohort': 'cohort-clean-v1.json', 'forms': 'clean-v1-jobs.json',
+                 'spec': 'clean-v1.json', 'db': 'clean-v1.sqlite', 'control': 'clean-v1-control.json',
+                 'result': 'clean-v1-results.json', 'sources': 'adapters', 'authorized': False,
+                 'arms': ['original', 'optimized']},
+}
+STUDIES = PLANS['v1']['studies']
+PLAN_ARMS = PLANS['v1']['arms']
+COHORT_FILE = PRIVATE / PLANS['v1']['cohort']
+SOURCE_KIND = PLANS['v1']['sources']
+AUTHORIZED = PLANS['v1']['authorized']
 IDENTITY = {'model': 'deepseek-v4-pro', 'system_fingerprint': 'a307abda487cd1b463329ccb945ce396'}
 INPUT_USD, OUTPUT_USD = 1.32, 3.96
-FORMS = PRIVATE / 'formal-v1-jobs.json'
-RESULT = OUT / 'formal-results.json'
-SPEC_FILE = SPEC / 'formal-v1.json'
-DB = PRIVATE / 'formal-v1.sqlite'
-CONTROL = PRIVATE / 'formal-v1-control.json'
+FORMS = PRIVATE / PLANS['v1']['forms']
+RESULT = OUT / PLANS['v1']['result']
+SPEC_FILE = SPEC / PLANS['v1']['spec']
+DB = PRIVATE / PLANS['v1']['db']
+CONTROL = PRIVATE / PLANS['v1']['control']
+
+
+def select_plan(name):
+    """Rebind the plan globals; the v1 plan keeps its original paths and values."""
+    global STUDIES, COHORT_FILE, SOURCE_KIND, AUTHORIZED, PLAN_ARMS
+    global FORMS, RESULT, SPEC_FILE, DB, CONTROL
+    if name not in PLANS:
+        raise ValueError('Unknown plan: ' + name)
+    plan = PLANS[name]
+    STUDIES, COHORT_FILE, SOURCE_KIND = plan['studies'], PRIVATE / plan['cohort'], plan['sources']
+    AUTHORIZED = plan['authorized']
+    PLAN_ARMS = plan['arms']
+    FORMS, RESULT, SPEC_FILE = PRIVATE / plan['forms'], OUT / plan['result'], SPEC / plan['spec']
+    DB, CONTROL = PRIVATE / plan['db'], PRIVATE / plan['control']
+    return plan
 
 
 def sha(path):
@@ -89,7 +120,7 @@ def _distribution(values):
 def prepare():
     if SPEC_FILE.exists() or FORMS.exists():
         raise ValueError('Formal plan already frozen; inspect it instead of rebuilding')
-    cohort = json.loads((PRIVATE / 'cohort-candidate-v2.json').read_text())
+    cohort = json.loads(COHORT_FILE.read_text())
     reserve = [r for r in cohort if r['phase'] == 'reserve' and r['study'] in STUDIES]
     excluded = [{'study': r['study'], 'person': r['person'],
                  'reason': 'no_frozen_persona_in_release' if not r.get('persona') else 'unknown'}
@@ -102,7 +133,7 @@ def prepare():
         key = (row['persona']['shard'], row['persona']['row_index'])
         instrument = {'id': 'cross_study_' + row['study'], 'title': 'Survey',
                       'questions': row['questions']}
-        for arm in ARMS:
+        for arm in PLAN_ARMS:
             body = build_body(profiles[key], instrument, row['context'], arm)
             jobs.append({'study': row['study'], 'arm': arm, 'person': row['person'],
                          'instrument': instrument, 'body': body,
@@ -120,11 +151,11 @@ def prepare():
     os.chmod(FORMS, 0o600)
     spec = {
         'status': 'frozen_not_started',
-        'studies': STUDIES, 'arms': list(ARMS),
+        'studies': STUDIES, 'arms': list(PLAN_ARMS),
         'excluded_participants': excluded,
         'excluded_policy': 'Excluded before any effect was computed: no complete approved persona exists in the release. Reported, never replaced by a hand-written profile.',
         'people_with_persona': dict(Counter(r['study'] for r in usable)),
-        'jobs_per_study_arm': {f'{s}/{a}': counts[(s, a)] for s in STUDIES for a in ARMS},
+        'jobs_per_study_arm': {f'{s}/{a}': counts[(s, a)] for s in STUDIES for a in PLAN_ARMS},
         'total_calls': len(jobs),
         'max_calls': len(jobs),
         'max_retries': len(jobs) // 20 + 5,
@@ -156,8 +187,10 @@ def prepare():
             'no_default_answers': True,
         },
         'formal_effects_available': False,
-        'formal_run_authorized_by_user': True,
-        'authorization_note': 'User authorized the formal run after this freeze on 2026-11-12.',
+        'formal_run_authorized_by_user': AUTHORIZED,
+        'authorization_note': ('User authorized the formal run after this freeze on 2026-11-12.'
+                               if AUTHORIZED else 'Not authorized yet: the frozen cost is reported to the user '
+                                                  'first and run() refuses until this flag is set.'),
     }
     SPEC_FILE.write_text(json.dumps(spec, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps({k: spec[k] for k in ['total_calls', 'max_calls', 'reserved_peak_usd',
@@ -206,6 +239,8 @@ def run(workers=1):
         raise ValueError('Call count differs from the freeze')
     if spec['reserved_peak_usd'] > spec['max_cost_usd']:
         raise ValueError('Reservation exceeds the frozen cap')
+    if not spec.get('formal_run_authorized_by_user'):
+        raise ValueError('Formal run not authorized: report the frozen cost and wait for the user')
     _load_credentials()
     setup = sqlite3.connect(DB)
     os.chmod(DB, 0o600)
@@ -300,7 +335,7 @@ def retry():
     jobs = json.loads(FORMS.read_text())['jobs']
     by_hash = {j['body_sha256']: j for j in jobs}
     _load_credentials()
-    with (DB.parent / 'formal-v1.lock').open('a') as lock:
+    with (DB.parent / (DB.stem + '.lock')).open('a') as lock:
         os.chmod(lock.name, 0o600)
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         connection = sqlite3.connect(DB)
@@ -343,7 +378,7 @@ def retry():
 
 def _cases():
     spec = json.loads(SPEC_FILE.read_text())
-    cohort = json.loads((PRIVATE / 'cohort-candidate-v2.json').read_text())
+    cohort = json.loads(COHORT_FILE.read_text())
     reserve = [r for r in cohort if r['phase'] == 'reserve' and r.get('persona') and r['study'] in STUDIES]
     truth = {(r['study'], r['person']): r for r in reserve}
     jobs = json.loads(FORMS.read_text())['jobs']
@@ -369,8 +404,8 @@ def _cases():
                                    'people_excluded_for_coverage': 0})
     from .scoring import option_ids
     for (study, person), arms in predictions.items():
-        if set(arms) != set(ARMS):
-            missing += len(set(ARMS) - set(arms))
+        if set(arms) != set(PLAN_ARMS):
+            missing += len(set(PLAN_ARMS) - set(arms))
             continue
         row = truth[(study, person)]
         # Truth completeness is a data property, fixed before any model output is read.
@@ -472,11 +507,11 @@ def _attribute_baseline(study, cases, history_rows):
 
 def score():
     spec, cases_by_study, execution = _cases()
-    source = list(load_existing())
+    source = list(load_existing()) if SOURCE_KIND == 'existing' else _adapter_rows()
     source_by_study = defaultdict(list)
     for row in source:
         source_by_study[row['study']].append(row)
-    results = {'status': 'complete_formal_cross_study', 'arms': list(ARMS),
+    results = {'status': 'complete_formal_cross_study', 'arms': list(PLAN_ARMS),
                'spec_sha256': sha(SPEC_FILE), 'jobs_sha256': spec['jobs_sha256'],
                'execution': execution, 'studies': {}, 'budget': {
                    'max_calls': spec['max_calls'],
@@ -503,7 +538,7 @@ def score():
                 1 for key in {card_key(q) for c in cases for q in c['questions']}
                 if sum(1 for c in cases for q in c['questions'] if card_key(q) == key) >= 20),
             'attribute_baseline': fitted_note,
-            'results': evaluate(cases, references, list(ARMS), case_references=case_references),
+            'results': evaluate(cases, references, list(PLAN_ARMS), case_references=case_references),
         }
     RESULT.write_text(json.dumps(results, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps({'status': results['status'],
@@ -513,11 +548,23 @@ def score():
                                   for s, v in results['studies'].items()}}, ensure_ascii=False, indent=2))
 
 
+def _adapter_rows():
+    """Source respondents for the clean-v1 studies, read from the original files."""
+    from .adapters import drone_rows, shoes_rows
+    loaders = {'drone': drone_rows, 'shoes': shoes_rows}
+    for study in STUDIES:
+        if study not in loaders:
+            raise ValueError('No source loader for ' + study)
+        yield from loaders[study]()
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('command', choices=['prepare', 'run', 'retry', 'score', 'reconcile'])
     parser.add_argument('--workers', type=int, default=1)
+    parser.add_argument('--plan', default='v1', choices=sorted(PLANS))
     args = parser.parse_args()
+    select_plan(args.plan)
     if args.command == 'run':
         run(workers=max(1, args.workers))
     else:

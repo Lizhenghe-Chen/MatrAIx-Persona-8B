@@ -1,0 +1,48 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>跨研究正式验证：2 套研究</title>
+<style>body{font:17px/1.7 system-ui;max-width:1140px;margin:auto;padding:24px;background:#fafaf6;color:#20352f}
+section{background:white;border:1px solid #d9e1db;border-radius:10px;padding:18px;margin:18px 0}
+table{width:100%;border-collapse:collapse;font-size:15px}td,th{text-align:left;padding:9px;border-bottom:1px solid #ddd;vertical-align:top}
+.pass{color:#1a6b3c;font-weight:bold}.fail{color:#a3242b;font-weight:bold}.weak{color:#8a5a00}.neutral{color:#444}.pending{color:#7a4b93}
+code{background:#f1f3f0;padding:1px 5px;border-radius:4px}@media(max-width:600px){body{padding:10px}table{display:block;overflow:auto}}</style>
+<h1>同一套优化，换2份问卷还成立吗？</h1>
+<section><h2>先说结论</h2><p><strong>2 套研究全部显示：优化组合大幅优于原生流程（Brier 相对改善 美国无人机配送 +31.1%、美国运动鞋意愿（打分） +45.8%）。但其中 0 套同时达到“分布误差改善 ≥2 个百分点且区间高于零”：没有。并且在有统计参照的 2 套研究中，优化组合在 Brier 上全部显著差于统计参照。</strong></p>
+<p><strong>本计划只有 2 套研究，“至少三套”的跨研究门槛在设计上不可能满足；因此逐套判定，不作跨研究概括。</strong>预设门槛是“至少三套新研究同时通过、覆盖两类任务和两个地区”。</p>
+<p>“优化组合”指把提示改成“预测这套画像代表的人会怎么选”，并让模型交出每个选项的概率；对照是原生 MatrAIx 问卷指令加单选。2 个臂使用同一批画像、同一份问卷、同一情境，只改这两件事。</p>
+<p>Brier 越小越好；分布误差以百分点计，越小越好。区间均来自按人分层重抽样 2,000 次。</p></section>
+<section><h2>主对照：优化组合 vs 原生流程</h2>
+<p>分布误差只在“同一题卡在<b>被测人群</b>中至少有 20 人”时估计。题卡随机的商品/服务研究里，96 名被测者分散到几百张卡上，因此这些研究不报告分布误差，不拿稀疏卡片硬算。</p>
+<table><tr><th>研究</th><th>人数</th><th>Brier 相对改善</th><th>95% 区间</th><th>Brier 判定</th><th>分布改善（百分点）</th><th>95% 区间</th><th>分布判定</th></tr>
+<tr><td>美国无人机配送</td><td>96</td><td>+31.1%</td><td>[+0.1595, +0.2782]</td><td><span class="pass">相对改善 ≥2% 且区间高于零</span></td><td>—</td><td>—</td><td><span class="pending">不可估计</span></td></tr><tr><td>美国运动鞋意愿（打分）</td><td>96</td><td>+45.8%</td><td>[+0.6919, +0.7626]</td><td><span class="pass">相对改善 ≥2% 且区间高于零</span></td><td>—</td><td>—</td><td><span class="pending">不可估计</span></td></tr></table></section>
+<section><h2>各组到底得多少分</h2>
+<p>同一行内比较才有意义；不同研究的题数与选项数不同，不能横向比大小。</p>
+<table><tr><th>研究</th><th>原生提示·单选</th><th>预测提示·概率</th><th>统计：全体历史比例</th><th>统计：同层历史比例</th><th>统计：商品属性评分模型</th><th>机会均等</th></tr>
+<tr><td>美国无人机配送</td><td>0.7049</td><td>0.4860</td><td>0.3491</td><td>0.3506</td><td>0.5000</td></tr><tr><td>美国运动鞋意愿（打分）</td><td>1.5885</td><td>0.8602</td><td>—</td><td>—</td><td>0.8389</td><td>0.8571</td></tr></table></section>
+<section><h2>怎么读这两个臂</h2><p><strong>这一节是读法提醒，不是新结果。</strong>“原生”臂只交一个选项，把它当分布来算 Brier 时会因为过度自信而偏高，所以“优化比原生好 X%”主要说明“交出概率比只报一个选项更像分布”，不等于预测力提高。真正能说明信息量的是与“每档等可能”和统计参照的比较。</p><p class="fail">在 美国运动鞋意愿（打分） 上，优化组合的 Brier 等于或高于“每个选项等可能”：模型没有提供超过“永远答中间/等分”的信息。</p><p>原生臂在 美国无人机配送、美国运动鞋意愿（打分） 上比“等可能”还差，这是点预测被当分布评分的必然结果，不应读成“建模失败”。</p><table><tr><th>研究</th><th>原生·单选</th><th>预测·概率</th><th>每档等可能</th><th>优化相对等可能</th></tr><tr><td>美国无人机配送</td><td>0.7049</td><td>0.4860</td><td>0.5000</td><td>+2.8%</td></tr><tr><td>美国运动鞋意愿（打分）</td><td>1.5885</td><td>0.8602</td><td>0.8571</td><td>-0.4%</td></tr></table></section>
+<section><h2>和统计参照比，而不是只和自己比</h2>
+<p>每一套取可用的最强统计参照：题卡重复的研究用“同层历史比例”，否则用“全体历史比例”；题卡随机的家电研究用商品属性条件 logit。所有参照只用未参与评测的受访者答案拟合，且与画像看到完全相同的题目。</p>
+<table><tr><th>研究</th><th>统计参照</th><th>Brier 相对改善</th><th>95% 区间</th><th>判定</th></tr>
+<tr><td>美国无人机配送</td><td>统计：同层历史比例</td><td>-38.6%</td><td>[-0.1680, -0.1026]</td><td><span class="fail">明确退化</span></td></tr><tr><td>美国运动鞋意愿（打分）</td><td>统计：商品属性评分模型</td><td>-2.5%</td><td>[-0.0296, -0.0129]</td><td><span class="fail">明确退化</span></td></tr></table></section>
+
+<details><summary><strong>全部对照逐项明细</strong></summary><p>本次只跑了两个臂，没有“只有概率/只有提示”的拆解，因此不能把改善归因到提示或概率中的哪一个。</p>
+<table><tr><th>研究</th><th>比较</th><th>Brier 相对改善</th><th>95% 区间</th><th>判定</th></tr>
+<tr><td>美国无人机配送</td><td>原生提示·单选 → 预测提示·概率</td><td>+31.1%</td><td>[+0.1595, +0.2782]</td><td><span class="pass">相对改善 ≥2% 且区间高于零</span></td></tr><tr><td>美国无人机配送</td><td>统计：全体历史比例 → 原生提示·单选</td><td>-101.9%</td><td>[-0.4130, -0.2976]</td><td><span class="fail">明确退化</span></td></tr><tr><td>美国无人机配送</td><td>统计：全体历史比例 → 预测提示·概率</td><td>-39.2%</td><td>[-0.1694, -0.1043]</td><td><span class="fail">明确退化</span></td></tr><tr><td>美国无人机配送</td><td>统计：同层历史比例 → 原生提示·单选</td><td>-101.1%</td><td>[-0.4115, -0.2961]</td><td><span class="fail">明确退化</span></td></tr><tr><td>美国无人机配送</td><td>统计：同层历史比例 → 预测提示·概率</td><td>-38.6%</td><td>[-0.1680, -0.1026]</td><td><span class="fail">明确退化</span></td></tr><tr><td>美国运动鞋意愿（打分）</td><td>原生提示·单选 → 预测提示·概率</td><td>+45.8%</td><td>[+0.6919, +0.7626]</td><td><span class="pass">相对改善 ≥2% 且区间高于零</span></td></tr><tr><td>美国运动鞋意愿（打分）</td><td>统计：全体历史比例 → 原生提示·单选</td><td>—</td><td>—</td><td><span class="pending">不可估计</span></td></tr><tr><td>美国运动鞋意愿（打分）</td><td>统计：全体历史比例 → 预测提示·概率</td><td>—</td><td>—</td><td><span class="pending">不可估计</span></td></tr><tr><td>美国运动鞋意愿（打分）</td><td>统计：同层历史比例 → 原生提示·单选</td><td>—</td><td>—</td><td><span class="pending">不可估计</span></td></tr><tr><td>美国运动鞋意愿（打分）</td><td>统计：同层历史比例 → 预测提示·概率</td><td>—</td><td>—</td><td><span class="pending">不可估计</span></td></tr><tr><td>美国运动鞋意愿（打分）</td><td>统计：商品属性评分模型 → 预测提示·概率</td><td>-2.5%</td><td>[-0.0296, -0.0129]</td><td><span class="fail">明确退化</span></td></tr></table></details>
+<section><h2>跑完了吗：完成度与费用</h2>
+<p>计划 384 次调用；检查点状态 {&quot;complete&quot;: 384}。缺失调用 0。</p>
+<p>保守预留上限 $15.74，冻结费用上限 $18.90；两者都按最大输出估算，不是账单。失败调用不会被自动填答案，需显式重试并保留原记录。</p>
+<p>答题覆盖规则：按被测人实际作答的题目计算；少于一半题目的被测人整人排除并计数。规则只看观察到的事实答案，不看模型输出。</p>
+<p>画像厚薄是跨研究比较的混淆因素：每套研究发出的规范人格字段中位数不同，详见冻结规格 <code>persona_field_distribution</code>。</p>
+<p>本计划的两臂选择、题型口径与参照规则见 <code>docs/预注册协议-clean-v1.md</code>；冻结规格 <code>specs/cross-study-v1/clean-v1.json</code>。</p></section>
+<section><h2>不能说什么</h2>
+<ul>
+<li>这几套不算多个独立行业，也不跨地区；结论只在这几套问卷内成立。</li>
+<li>画像是发行版里的合成人格，不是这些真人的实测信息；匹配只做人口字段约束。</li>
+<li>题面经过文字化与结构重建，图形、跳题与原始展示顺序未必完全一致。</li>
+<li>公开数据可能已进入底层模型训练。</li>
+<li>通过门槛只说明“预测这些问卷的选择更准”，不说明销量、转化或真实行为。</li>
+<li>本页不含跨题相关性分析：每题单独请求，不能声称还原整份答卷的联合分布。</li>
+<li>“优化组合”优于原生流程，很大一部分来自“给出概率”而不是“改提示”；两者要分开读。</li>
+</ul></section>
+<section><h2>怎么复算</h2>
+<p>评分只读本机检查点，不调用模型：<code>PYTHONPATH=examples/sim-to-real .venv/bin/python -m decision_lab.cross_study.formal score</code>，随后 <code>... -m decision_lab.cross_study.formal_report</code>。冻结规格见 <code>specs/cross-study-v1/formal-v1.json</code>，逐组数字见 <code>reports/cross-study-v1/formal-results.json</code>。</p></section>
+</html>
