@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import re
 import json
 from html.parser import HTMLParser
 from pathlib import Path
@@ -192,7 +193,28 @@ def main():
             assert block['blend']['20']['model_gain_pp']>0
             assert block['shuffle_ablation']['20']['model']<block['shuffle_ablation']['20']['shuffled']
         external_note=' external validation on the Open eCommerce survey tied to the page;'
-    print(f'PASS: {checked} source hashes; all local report links; 13 distributions and averages; latest run exclusion; readable labels.'+cross_note+cluster_note+clean_note+wide_note+direction_note+anchor_note+pilot_note+external_note)
+    story_path=HERE/'story.html'
+    story_note=''
+    if story_path.exists():
+        story=story_path.read_text()
+        assert 'id="story-data"' in story
+        assert not [u for u in re.findall(r'https?://[^"\' )]+', story) if 'w3.org' not in u
+                   and 'apache.org' not in u and 'github.com/ecomfe' not in u], 'story must be offline'
+        cluster_path=HERE.parent/'decision_lab/reports/cross-study-v1/cluster-summary.json'
+        stats=json.loads(cluster_path.read_text())['summary']
+        assert f'{stats["studies_behind_reference"]} / {stats["studies"]}' in story
+        assert f'+{100*stats["mean_ai_over_uniform"]:.1f}%' in story
+        assert f'+{100*stats["mean_reference_over_uniform"]:.1f}%' in story
+        direction_path=HERE.parent/'decision_lab/reports/cross-study-v1/direction-metrics.json'
+        if direction_path.exists():
+            totals=json.loads(direction_path.read_text())['totals']
+            assert f'{100*totals["ai_argmax"]:.1f}%' in story
+        external_path=HERE.parent/'decision_lab/reports/cross-study-v1/external-v1-results.json'
+        if external_path.exists():
+            arms=json.loads(external_path.read_text())['studies']['openecommerce']['results']['arms']
+            assert f'{arms["optimized"]["card_tv_pp"]:.1f}' in story
+        story_note=' narrative report tied to the frozen artifacts;'
+    print(f'PASS: {checked} source hashes; all local report links; 13 distributions and averages; latest run exclusion; readable labels.'+cross_note+cluster_note+clean_note+wide_note+direction_note+anchor_note+pilot_note+external_note+story_note)
 
 
 if __name__=='__main__':
