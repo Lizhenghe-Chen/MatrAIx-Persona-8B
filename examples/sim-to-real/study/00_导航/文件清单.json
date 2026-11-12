@@ -5,10 +5,10 @@
   "scope": "实验代码、历史六轮、新框架冻结与公开结果、综合报告、文献、公开输入及项目内本机材料；排除本清单自身、缓存和项目外私有运行目录",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 593,
-  "git_bytes": 84038622,
-  "local_only_file_count": 47,
-  "local_only_bytes": 712884651,
+  "git_file_count": 594,
+  "git_bytes": 84041625,
+  "local_only_file_count": 44,
+  "local_only_bytes": 151339439,
   "external_large_source": {
     "dataset": "MatrAIx Persona 1M",
     "version_manifest": "study/数据/persona-1m-official-manifest.json",
@@ -26,8 +26,8 @@
     },
     {
       "path": "archive/README.md",
-      "bytes": 2735,
-      "sha256": "4be9b5dd006abb678b1240c7ff894e29a285ac020e03296ef72d0c191bde4050",
+      "bytes": 3289,
+      "sha256": "51b331f369607b4ad7683694fd59e380652d5236ece48e52a70bda8705aac4a0",
       "storage": "git"
     },
     {
@@ -38,8 +38,14 @@
     },
     {
       "path": "archive/catalog.json",
-      "bytes": 110481,
-      "sha256": "90bdb092e5699d94c078cb7b96c0ee6422daec94af0f4863977533999b8059d6",
+      "bytes": 111316,
+      "sha256": "07961bedcb6b0d0fc3b62af21997dd8bfd5595867206d95c11a32bcaac49eb85",
+      "storage": "git"
+    },
+    {
+      "path": "archive/deduplication-2026-11-12.json",
+      "bytes": 1614,
+      "sha256": "eab66b4c346c8bf38fa74a9c1e9847d08d3ac562ae08ca6df0b5f746f30a837e",
       "storage": "git"
     },
     {
@@ -2950,13 +2956,6 @@
       "storage": "git"
     },
     {
-      "path": "study/07_购物数据候选/本机数据/Horiuchi2021_Conjoint_SDB/ReplicationPackage_v2.tar.gz",
-      "bytes": 59436256,
-      "sha256": "520a10dbfce3467c20f15e1c32cf2dc79a768702bc682a91145b2fd37489df09",
-      "storage": "local_only",
-      "reason": "大型原始下载包；保留本机和获取来源"
-    },
-    {
       "path": "study/07_购物数据候选/本机数据/Horiuchi2021_Conjoint_SDB/原问卷/study1-wave1 survey instruments.pdf",
       "bytes": 129312,
       "sha256": "ec7bced1a9a856e7c0ab536287e1cd69ace7af62d0ad73ecd5196ce581c9e9a7",
@@ -2967,13 +2966,6 @@
       "bytes": 1358075,
       "sha256": "85a3b4e8c60daf45996b4be782f4829cc494476da1016799b723acae6cc62d75",
       "storage": "git"
-    },
-    {
-      "path": "study/07_购物数据候选/本机数据/Open_eCommerce_1.0/amazon-purchases.csv.gz",
-      "bytes": 105202948,
-      "sha256": "a0d3862f25aa358207e28b28924d95dd28ca40b0b2ad0e5695322f570d345918",
-      "storage": "local_only",
-      "reason": "大型原始下载包；保留本机和获取来源"
     },
     {
       "path": "study/07_购物数据候选/本机数据/Open_eCommerce_1.0/fields.csv.gz",
@@ -3011,13 +3003,6 @@
       "bytes": 256210,
       "sha256": "122002a2c5959f0a25a0891d36f26966fe7a8d52087c59e82a6a0a0eb4509389",
       "storage": "git"
-    },
-    {
-      "path": "study/07_购物数据候选/本机数据/cius-2022.zip",
-      "bytes": 396906008,
-      "sha256": "74df3009427fc7e3405bedafe907a2e9d3757cb3253520bbbab4a733d7348215",
-      "storage": "local_only",
-      "reason": "大型原始下载包；保留本机和获取来源"
     },
     {
       "path": "study/07_购物数据候选/本机数据/drone-attributes.py.gz",

@@ -2908,8 +2908,10 @@
     {
       "path": "study/07_购物数据候选/本机数据/Horiuchi2021_Conjoint_SDB/ReplicationPackage_v2.tar.gz",
       "bytes": 59436256,
-      "storage": "local_only",
-      "role": "证据或复算材料：保留"
+      "storage": "external_verified",
+      "role": "已去重；真人源文件保留共享盘",
+      "retained_source": "/Volumes/元宇宙联合创新实验室/实验数据/MatrAIx多地区选品源数据/08_购物研究与候选/Horiuchi2021_Conjoint_SDB/ReplicationPackage_v2.tar.gz",
+      "sha256": "520a10dbfce3467c20f15e1c32cf2dc79a768702bc682a91145b2fd37489df09"
     },
     {
       "path": "study/07_购物数据候选/本机数据/Horiuchi2021_Conjoint_SDB/原问卷/study1-wave1 survey instruments.pdf",
@@ -2926,8 +2928,10 @@
     {
       "path": "study/07_购物数据候选/本机数据/Open_eCommerce_1.0/amazon-purchases.csv.gz",
       "bytes": 105202948,
-      "storage": "local_only",
-      "role": "证据或复算材料：保留"
+      "storage": "external_verified",
+      "role": "已去重；真人源文件保留共享盘",
+      "retained_source": "/Volumes/元宇宙联合创新实验室/实验数据/MatrAIx多地区选品源数据/08_购物研究与候选/Open_eCommerce_1.0/amazon-purchases.csv.gz",
+      "sha256": "a0d3862f25aa358207e28b28924d95dd28ca40b0b2ad0e5695322f570d345918"
     },
     {
       "path": "study/07_购物数据候选/本机数据/Open_eCommerce_1.0/fields.csv.gz",
@@ -2968,8 +2972,10 @@
     {
       "path": "study/07_购物数据候选/本机数据/cius-2022.zip",
       "bytes": 396906008,
-      "storage": "local_only",
-      "role": "证据或复算材料：保留"
+      "storage": "external_verified",
+      "role": "已去重；真人源文件保留共享盘",
+      "retained_source": "/Volumes/元宇宙联合创新实验室/实验数据/MatrAIx多地区选品源数据/08_购物研究与候选/cius-2022.zip",
+      "sha256": "74df3009427fc7e3405bedafe907a2e9d3757cb3253520bbbab4a733d7348215"
     },
     {
       "path": "study/07_购物数据候选/本机数据/drone-attributes.py.gz",

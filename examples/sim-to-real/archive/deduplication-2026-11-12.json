@@ -1,0 +1,29 @@
+{
+  "scope": "Only three user-approved redundant source copies; retained shared sources are untouched",
+  "files": [
+    {
+      "project_path": "study/07_购物数据候选/本机数据/cius-2022.zip",
+      "retained_source": "/Volumes/元宇宙联合创新实验室/实验数据/MatrAIx多地区选品源数据/08_购物研究与候选/cius-2022.zip",
+      "bytes": 396906008,
+      "sha256": "74df3009427fc7e3405bedafe907a2e9d3757cb3253520bbbab4a733d7348215",
+      "archive_read_check": "passed",
+      "action": "removed_verified_redundant_project_copy"
+    },
+    {
+      "project_path": "study/07_购物数据候选/本机数据/Open_eCommerce_1.0/amazon-purchases.csv.gz",
+      "retained_source": "/Volumes/元宇宙联合创新实验室/实验数据/MatrAIx多地区选品源数据/08_购物研究与候选/Open_eCommerce_1.0/amazon-purchases.csv.gz",
+      "bytes": 105202948,
+      "sha256": "a0d3862f25aa358207e28b28924d95dd28ca40b0b2ad0e5695322f570d345918",
+      "archive_read_check": "passed",
+      "action": "removed_verified_redundant_project_copy"
+    },
+    {
+      "project_path": "study/07_购物数据候选/本机数据/Horiuchi2021_Conjoint_SDB/ReplicationPackage_v2.tar.gz",
+      "retained_source": "/Volumes/元宇宙联合创新实验室/实验数据/MatrAIx多地区选品源数据/08_购物研究与候选/Horiuchi2021_Conjoint_SDB/ReplicationPackage_v2.tar.gz",
+      "bytes": 59436256,
+      "sha256": "520a10dbfce3467c20f15e1c32cf2dc79a768702bc682a91145b2fd37489df09",
+      "archive_read_check": "passed",
+      "action": "removed_verified_redundant_project_copy"
+    }
+  ]
+}
