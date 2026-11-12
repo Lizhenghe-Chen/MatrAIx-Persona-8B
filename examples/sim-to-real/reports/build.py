@@ -359,6 +359,17 @@ def wide_study_section():
                      f'<td>{reference}</td><td>{gap}</td>'
                      f'<td>{row["cards_estimable"]}/{row["cards"]}</td></tr>')
     cells = ''.join(cells)
+    cluster_path = CROSS / 'cluster-summary.json'
+    cluster = json.loads(cluster_path.read_text())['summary'] if cluster_path.exists() else None
+    pooled = ''
+    if cluster:
+        pooled = (f'<p class="small"><strong>三轮合起来：</strong>'
+                  f'{cluster["studies"]} 套研究、{cluster["clusters"]} 个独立数据集簇；'
+                  f'{cluster["studies_behind_reference"]} 套在同信息参照面前落后，'
+                  f'区间高于零的有 {len(cluster["any_ci_above_zero"])} 套；'
+                  f'AI 相对“每档等分”平均 +{100 * cluster["mean_ai_over_uniform"]:.1f}%，'
+                  f'参照平均 +{100 * cluster["mean_reference_over_uniform"]:.1f}%。'
+                  f'群体分布可估计的有 {len(cluster["population_estimable_studies"])} 套。</p>')
     return ('<section id="wide"><h2>再铺六套：从 8 套扩到 14 套研究</h2>'
             '<p class="lead">许可门按你的要求降为声明项，其余口径不变：预注册冻结、同信息参照、'
             '20 人/卡门槛、失败照报。新增六套覆盖商品产地、包装拒买、网购与达人、德国番茄包装、'
@@ -388,7 +399,7 @@ def wide_study_section():
             f'${frame["budget"]["reserved_peak_usd"]:.2f}；按 token 单价估约 $5.2，'
             '按账户余额变化实测约 210 元（≈$29）——上限口径是“每次输出顶满”的最坏情况，'
             '不是账单，也不是实际花费。</p>'
-            '<p class="small">独立性问题：14 套研究只对应 11 个独立数据集簇——Pew 四套算一个簇，'
+            + pooled + '<p class="small">独立性问题：14 套研究只对应 11 个独立数据集簇——Pew 四套算一个簇，'
             '所以本轮增加的是“领域覆盖”，不是 6 次独立复现。</p>'
             f'<p><a href="{link}">查看六套新研究完整报告</a>'
             ' · <a href="../decision_lab/reports/cross-study-v1/wide-audit.json">结构审计</a>'
