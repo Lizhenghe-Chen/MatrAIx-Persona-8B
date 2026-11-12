@@ -451,6 +451,45 @@
     });
   })();
 
+  /* 10. pilot crossover: how many real answers before counting beats the model */
+  (function () {
+    const node = document.getElementById('pilot-data');
+    if (!node) return;
+    const pilot = JSON.parse(node.textContent);
+    mount('pilotCrossover', (chart, isNarrow) => {
+      const ks = ['5', '10', '20', '40', '80', '160', '320'];
+      const series = pilot.rows.map((row) => ({
+        name: row.study, type: 'line', smooth: true, symbolSize: 5,
+        data: ks.map((k) => row.crossover && k === String(row.crossover) ? row.crossover : null)
+      }));
+      // Draw the real curves from the stored crossover block.
+      const palette = ['#117b70', '#5358a5', '#a15e38', '#2f6f9f', '#7d5ba6', '#8a6d3b', '#4f7c59', '#9b4f6f'];
+      const curves = (pilot.curves || []);
+      chart.setOption({
+        tooltip: { trigger: 'axis' },
+        legend: { data: pilot.rows.map((r) => r.label || r.study), top: 0, textStyle: { color: muted },
+          type: 'scroll' },
+        grid: { left: 52, right: 24, top: 58, bottom: 44 },
+        xAxis: { type: 'category', data: ks, name: '小样本人数 k', nameTextStyle: { color: muted },
+          axisLabel: { color: muted } },
+        yAxis: { type: 'value', name: '分布误差 TV（pp，越低越好）', nameTextStyle: { color: muted },
+          axisLabel: { color: muted }, splitLine: { lineStyle: { color: line } } },
+        series: curves.map((curve, index) => ({
+          name: curve.label, type: 'line', smooth: true, symbolSize: 5,
+          lineStyle: { width: 2, color: palette[index % palette.length] },
+          itemStyle: { color: palette[index % palette.length] },
+          data: curve.values,
+          markLine: curve.ai === null ? undefined : {
+            silent: true, symbol: 'none',
+            lineStyle: { width: 1, type: 'dashed', color: palette[index % palette.length] },
+            data: [{ yAxis: curve.ai }],
+            label: { show: false }
+          }
+        }))
+      });
+    });
+  })();
+
   const resize = () => { redraws.forEach((draw) => draw()); charts.forEach((chart) => chart.resize()); };
   window.addEventListener('resize', resize);
   window.addEventListener('beforeprint', resize);

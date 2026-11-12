@@ -68,14 +68,25 @@ def parse_response(response, option_count, expected_identity=None, output_mode="
             'identity':identity,'usage':response.get('usage',{})}
 
 
+OFFICIAL='https://api.deepseek.com/chat/completions'
+# Two endpoints are allowed, and nothing else: the billed official API and one
+# private host for free exploratory screening. A private address is not trusted
+# by default; it is listed here explicitly so a typo or a copied URL cannot
+# redirect a request somewhere new.
+LOCAL='http://10.120.47.101:8000/v1/chat/completions'
+ALLOWED={OFFICIAL:True, LOCAL:False}
+
+
 def send(body, endpoint, timeout=90):
-    if endpoint != 'https://api.deepseek.com/chat/completions':
-        raise ValueError('Only the approved official endpoint is allowed')
-    key=os.environ.get('DEEPSEEK_API_KEY')
-    if not key:
-        raise RuntimeError('DEEPSEEK_API_KEY is not configured')
-    req=urllib.request.Request(endpoint, data=json.dumps(body).encode(),
-        headers={'Authorization':'Bearer '+key,'Content-Type':'application/json'})
+    if endpoint not in ALLOWED:
+        raise ValueError('Only the approved endpoints are allowed')
+    headers={'Content-Type':'application/json'}
+    if ALLOWED[endpoint]:
+        key=os.environ.get('DEEPSEEK_API_KEY')
+        if not key:
+            raise RuntimeError('DEEPSEEK_API_KEY is not configured')
+        headers['Authorization']='Bearer '+key
+    req=urllib.request.Request(endpoint, data=json.dumps(body).encode(), headers=headers)
     # Do not print headers, raw request records, or response error bodies.
     with urllib.request.urlopen(req,timeout=timeout) as response:
         return json.load(response)

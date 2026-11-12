@@ -1,0 +1,73 @@
+{
+  "status": "sampling_noise_floor",
+  "studies": [
+    {
+      "study": "anes",
+      "available": true,
+      "cards": 6,
+      "splits": 2400,
+      "split_half_median_pp": 8.333333333333337,
+      "cohort_vs_truth_floor_pp": 5.892556509887899,
+      "note": "split_half_median_pp compares two halves of the same cohort; cohort_vs_truth_floor_pp divides it by sqrt(2) to express how far a large-sample truth would sit from this cohort by sampling alone."
+    },
+    {
+      "study": "pew13",
+      "available": true,
+      "cards": 13,
+      "splits": 5200,
+      "split_half_median_pp": 10.416666666666666,
+      "cohort_vs_truth_floor_pp": 7.365695637359869,
+      "note": "split_half_median_pp compares two halves of the same cohort; cohort_vs_truth_floor_pp divides it by sqrt(2) to express how far a large-sample truth would sit from this cohort by sampling alone."
+    },
+    {
+      "study": "pew168",
+      "available": true,
+      "cards": 5,
+      "splits": 2000,
+      "split_half_median_pp": 8.333333333333336,
+      "cohort_vs_truth_floor_pp": 5.892556509887897,
+      "note": "split_half_median_pp compares two halves of the same cohort; cohort_vs_truth_floor_pp divides it by sqrt(2) to express how far a large-sample truth would sit from this cohort by sampling alone."
+    },
+    {
+      "study": "shed",
+      "available": true,
+      "cards": 7,
+      "splits": 2800,
+      "split_half_median_pp": 6.249999999999999,
+      "cohort_vs_truth_floor_pp": 4.419417382415921,
+      "note": "split_half_median_pp compares two halves of the same cohort; cohort_vs_truth_floor_pp divides it by sqrt(2) to express how far a large-sample truth would sit from this cohort by sampling alone."
+    },
+    {
+      "study": "packaging",
+      "available": true,
+      "cards": 16,
+      "splits": 6400,
+      "split_half_median_pp": 14.76923076923077,
+      "cohort_vs_truth_floor_pp": 10.443423229832087,
+      "note": "split_half_median_pp compares two halves of the same cohort; cohort_vs_truth_floor_pp divides it by sqrt(2) to express how far a large-sample truth would sit from this cohort by sampling alone."
+    },
+    {
+      "study": "pew111",
+      "available": true,
+      "cards": 6,
+      "splits": 2400,
+      "split_half_median_pp": 8.023049645390069,
+      "cohort_vs_truth_floor_pp": 5.673152810051643,
+      "note": "split_half_median_pp compares two halves of the same cohort; cohort_vs_truth_floor_pp divides it by sqrt(2) to express how far a large-sample truth would sit from this cohort by sampling alone."
+    },
+    {
+      "study": "german",
+      "available": true,
+      "cards": 12,
+      "splits": 4800,
+      "split_half_median_pp": 10.416666666666666,
+      "cohort_vs_truth_floor_pp": 7.365695637359869,
+      "note": "split_half_median_pp compares two halves of the same cohort; cohort_vs_truth_floor_pp divides it by sqrt(2) to express how far a large-sample truth would sit from this cohort by sampling alone."
+    },
+    {
+      "study": "radiant",
+      "available": false,
+      "cards": 0
+    }
+  ]
+}

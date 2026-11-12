@@ -41,6 +41,10 @@ const delay=ms=>new Promise(r=>setTimeout(r,ms));
  const anchorState=await run(`(()=>{const c=[...document.querySelectorAll('#anchor .echart canvas')];return {count:c.length,w:c.map(x=>x.width)}})()`);
  assert.ok(anchorState.count>=1&&anchorState.w.every(w=>w>100),JSON.stringify(anchorState));
  await screenshot('anchor');
+ await run("document.querySelector('#pilot').scrollIntoView();");await delay(900);
+ const pilotState=await run(`(()=>{const c=[...document.querySelectorAll('#pilot .echart canvas')];return {count:c.length,w:c.map(x=>x.width)}})()`);
+ assert.ok(pilotState.count>=1&&pilotState.w.every(w=>w>100),JSON.stringify(pilotState));
+ await screenshot('pilot');
  await run("document.querySelector('#wide').scrollIntoView();");await delay(900);
  const wideState=await run(`(()=>{const c=[...document.querySelectorAll('#wide .echart canvas')];return {count:c.length,w:c.map(x=>x.width)}})()`);
  assert.ok(wideState.count>=1&&wideState.w.every(w=>w>100),JSON.stringify(wideState));
@@ -60,6 +64,6 @@ const delay=ms=>new Promise(r=>setTimeout(r,ms));
   await run("document.querySelector('#questions').scrollIntoView();");await delay(200);await screenshot('mobile-distribution');
   await run("document.querySelector('#model').scrollIntoView();");await delay(200);await screenshot('mobile-model');
   assert.equal(errors.length,0);assert.deepEqual(remote,[]);
-  console.log('PASS: 52 question/method combinations; all-studies chart; 2 direction charts; anchor chart; 5 clean-v1 charts; wide chart; all displayed percentages; mobile viewport; no JS errors; zero remote requests. Screenshots: /tmp/matraix-overview-*.png');
+  console.log('PASS: 52 question/method combinations; all-studies chart; 2 direction charts; anchor chart; pilot crossover chart; 5 clean-v1 charts; wide chart; all displayed percentages; mobile viewport; no JS errors; zero remote requests. Screenshots: /tmp/matraix-overview-*.png');
  }finally{if(socket)socket.close();const stopped=new Promise(r=>chrome.once('exit',r));chrome.kill();await stopped;fs.rmSync(dir,{recursive:true,force:true,maxRetries:5,retryDelay:100})}
 })().catch(e=>{console.error(e);process.exitCode=1});

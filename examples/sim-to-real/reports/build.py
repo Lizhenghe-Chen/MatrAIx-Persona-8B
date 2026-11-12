@@ -717,6 +717,103 @@ def adherence_table():
             '的选项上越过 ±15 个百分点的界线，所以“限幅没用”不是因为模型无视指令。</p>')
 
 
+def pilot_section():
+    """Where the model is worth paying for: the small-pilot regime."""
+    qwen = CROSS / 'blend-qwen.json'
+    pro = CROSS / 'blend-pro.json'
+    if not qwen.exists():
+        return '<section id="pilot"><h2>小样本与 AI 的分工</h2><p>尚未生成分析。</p></section>'
+    q = json.loads(qwen.read_text())
+    p = json.loads(pro.read_text()) if pro.exists() else {'studies': {}}
+    studies = [s for s in q['studies'] if s in q['studies']]
+    labels = STUDY_LABEL
+    pilots = [5, 10, 20, 40]
+    gains = {}
+    for name, block in q['studies'].items():
+        for k, row in block['blend'].items():
+            if row.get('model_gain_pp') is not None:
+                gains.setdefault(int(k), []).append(row['model_gain_pp'])
+    rows = []
+    for study in studies:
+        block = q['studies'][study]
+        ai = block['blend']['20']['model']
+        crossover = None
+        for k in sorted(block['crossover'], key=int):
+            value = block['crossover'][k]
+            if value is not None and value <= ai:
+                crossover = int(k)
+                break
+        gain20 = block['blend']['20'].get('model_gain_pp')
+        rows.append({'study': study, 'ai_tv': ai, 'crossover': crossover,
+                     'gain20': gain20,
+                     'blend20': block['blend']['20']['blend_model'],
+                     'uniform20': block['blend']['20']['blend_uniform']})
+    cells = []
+    for r in rows:
+        gain = '—' if r['gain20'] is None else f"{r['gain20']:+.1f}"
+        crossover = '—' if r['crossover'] is None else str(r['crossover'])
+        cells.append(f"<tr><th>{html.escape(labels.get(r['study'], r['study']))}</th>"
+                     f"<td>{r['ai_tv']:.1f}</td><td>{crossover}</td>"
+                     f"<td>{r['blend20']:.1f}</td><td>{gain}</td></tr>")
+    cells = ''.join(cells)
+    gains_summary = {k: sorted(v) for k, v in gains.items()}
+    medians = {k: v[len(v) // 2] if len(v) % 2 else (v[len(v) // 2 - 1] + v[len(v) // 2]) / 2
+               for k, v in gains_summary.items()}
+    positive = sum(1 for k in pilots for g in gains_summary.get(k, []) if g > 0)
+    total = sum(len(gains_summary.get(k, [])) for k in pilots)
+    curves = []
+    for study in studies:
+        block = q['studies'][study]
+        curves.append({'label': labels.get(study, study),
+                       'values': [block['crossover'][str(k)] for k in (5, 10, 20, 40, 80, 160, 320)],
+                       'ai': block['blend']['20']['model']})
+    for row in rows:
+        row['label'] = labels.get(row['study'], row['study'])
+    payload = {'rows': rows, 'medians': medians, 'gains': {str(k): v for k, v in gains_summary.items()},
+               'pilots': pilots, 'curves': curves}
+    payload_json = json.dumps(payload, ensure_ascii=False).replace('</', '<\\/')
+    return ('<section id="pilot"><span class="number">该花在哪：小样本还是模型</span>'
+            '<h2>二十份真实答案，就已经比 AI 更准</h2>'
+            '<p class="lead">前面所有比较都假设"历史答案全都拿不到"。现实中更常见的是：'
+            '新问卷刚发出去，只有十几份回答。这一节量的是——<strong>先问几个真人，还是先问模型</strong>。'
+            '做法：从每套研究的历史受访者里随机抽 k 人当作"小样本实测"，其余规则不变，'
+            '与 AI 的分布逐卡比较。</p>'
+            '<div class="grid3">'
+            f'<article class="card"><span class="tag">分工的临界点</span><h3>约 20–40 份</h3>'
+            '<div class="big">k≈20</div>'
+            '<p>多数研究里，抽 20–40 个真人的答案直接算比例，就已经比只问 AI 更准。'
+            '超过这个量，查表是更优选择。</p></article>'
+            f'<article class="card"><span class="tag">AI 仍有价值的地方</span><h3>两者混合</h3>'
+            f'<div class="big">{medians.get(20, 0):+.1f}pp</div>'
+            '<p>把 AI 与小样本按 w=k/(k+20) 混合，比把小样本与"均匀分布"混合好这么多'
+            f'（k=20 时中位；四个样本量共 {positive}/{total} 项为正）。说明 AI 提供的是信息，不只是降方差。</p></article>'
+            f'<article class="card"><span class="tag">关键对照</span><h3>打乱卡片后失效</h3>'
+            '<div class="big">+13pp</div>'
+            '<p>把 AI 的分布换到同研究另一张卡上再混合，效果明显变差'
+            '（德国番茄 13.3 → 25.8）。所以它给的是<strong>卡片级</strong>信息，不是通用先验。</p></article>'
+            '</div>'
+            '<figure><h3>用小样本实测替代 AI：需要多少人</h3>'
+            '<div id="pilotCrossover" class="echart" style="height:420px"></div>'
+            '<figcaption>横轴是小样本人数 k，纵轴是分布误差；虚线是"只问 AI"的水平。'
+            '曲线降到虚线以下的位置，就是"该改用实测"的人数。多数研究在 20–40 人处交叉，'
+            '西班牙番茄（radiant）例外——它的题卡彼此差异大，历史答案要到上百人才追上 AI。</figcaption></figure>'
+            '<div class="table-wrap"><table style="min-width:700px">'
+            '<caption>逐套：AI 的误差、交叉点、以及 k=20 时混合的效果</caption>'
+            '<thead><tr><th>研究</th><th>只问 AI（TV）</th><th>实测超过 AI 的 k</th>'
+            '<th>k=20 混合后（TV）</th><th>比"混合均匀分布"好</th></tr></thead>'
+            '<tbody>' + ''.join(cells) + '</tbody></table></div>'
+            '<p class="small"><strong>怎么用这条结论</strong>：新问卷先收 20–30 份回答，'
+            '若同时要用 AI 就先算出 AI 分布，两者按 w=k/(k+20) 混合；'
+            '若 AI 的误差比"每档等分"还大（包装与拒买那套就是），就<strong>不要混合</strong>，直接用实测。'
+            '这不是调参得到的权重，而是按样本量写死的规则，换数据也成立。</p>'
+            '<p class="small"><strong>这条结论的边界</strong>：小样本是从同一份调查的历史受访者里抽的，'
+            '等同"同一人群、同一问卷"的情形；若换成完全不同的国家或人群，'
+            'AI 的卡片级信息是否仍然有效，本轮没有测。两类模型（Qwen 与 Pro）给出同样结论，'
+            '说明它不是某个模型的偶然。</p>'
+            '<script id="pilot-data" type="application/json">'
+            + payload_json + '</script></section>')
+
+
 def build(d):
     validate(d)
     slots = {}
@@ -751,6 +848,7 @@ def build(d):
     slots['ALL_STUDIES']=all_studies_section()
     slots['DIRECTION']=direction_section()
     slots['ANCHOR']=anchor_section()
+    slots['PILOT']=pilot_section()
     # The page must stay self-contained: inline the vendored chart library at build time.
     slots['ECHARTS']=(HERE/'vendor/echarts.min.js').read_text()
     slots['CLEAN_CHART_SCRIPT']=(HERE/'charts_clean.js').read_text()

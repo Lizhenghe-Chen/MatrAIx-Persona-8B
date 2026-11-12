@@ -11,7 +11,7 @@ def main():
  inv=json.loads((OUT/'source-inventory.json').read_text())
  assert len(inv['studies'])==19
  assert all(f['exists'] and f['read_status']=='metadata_readable' for s in inv['studies'] for f in s['files'])
- for version in ('v21','v20','v19','v18','v17','v16','v15','v14','v13','v12','v11','v10','v9','v8','v7','v6','v5','v3','v2','v1'):
+ for version in ('v22','v21','v20','v19','v18','v17','v16','v15','v14','v13','v12','v11','v10','v9','v8','v7','v6','v5','v3','v2','v1'):
   accepted_path=ROOT.parent/f'archive/accepted-report-{version}.json'
   if accepted_path.exists():break
  accepted=json.loads(accepted_path.read_text())
@@ -136,6 +136,22 @@ def main():
      low,high=quintile['ai_advantage_ci']
      assert low<=quintile['ai_advantage']<=high
   direction=f" Direction: {totals['studies']} studies, {totals['cards']} cards, AI argmax {100*totals['ai_argmax']:.1f}%."
+ pilot=''
+ for model in ('qwen','pro'):
+  path=OUT/f'blend-{model}.json'
+  if not path.exists(): continue
+  data=json.loads(path.read_text())
+  assert data['k0']==20.0
+  positives=0
+  for study,block in data['studies'].items():
+   row=block['blend']['20']
+   if row.get('model_gain_pp') is None: continue
+   positives += row['model_gain_pp']>0
+   # Card-specific information must beat the shuffled-card prior, or the claim fails.
+   ab=block['shuffle_ablation']['20']
+   assert ab['model']<=ab['shuffled']+1e-9,(model,study)
+  assert positives>=6,(model,positives)
+  pilot += f' {model}: {positives}/{len(data["studies"])} studies gain from the model.'
 
- print('PASS: 19 source inventories; accepted report unchanged; native hashes; disjoint cohorts; 24 strict responses; four-arm parity; report links.'+formal+clean+wide+anchor+direction)
+ print('PASS: 19 source inventories; accepted report unchanged; native hashes; disjoint cohorts; 24 strict responses; four-arm parity; report links.'+formal+clean+wide+anchor+direction+pilot)
 if __name__=='__main__':main()

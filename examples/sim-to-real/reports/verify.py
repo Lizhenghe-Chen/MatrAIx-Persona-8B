@@ -157,7 +157,25 @@ def main():
                 assert block['bounded']['median_tv_to_reference'] < block['anchored']['median_tv_to_reference'] \
                     < block['optimized']['median_tv_to_reference'],study
         anchor_note=(f' anchor-v1 for {len(anchor_data["studies"])} studies tied to the page;')
-    print(f'PASS: {checked} source hashes; all local report links; 13 distributions and averages; latest run exclusion; readable labels.'+cross_note+cluster_note+clean_note+wide_note+direction_note+anchor_note)
+    pilot_note=''
+    pilot_qwen=HERE.parent/'decision_lab/reports/cross-study-v1/blend-qwen.json'
+    if pilot_qwen.exists():
+        pilot_data=json.loads(pilot_qwen.read_text())
+        html_pilot=(HERE/'index.html').read_text()
+        assert 'id="pilot"' in html_pilot
+        gains=[]
+        for study,block in pilot_data['studies'].items():
+            row=block['blend']['20']
+            if row.get('model_gain_pp') is None: continue
+            gains.append(row['model_gain_pp'])
+            assert f"{row['blend_model']:.1f}" in html_pilot,(study,'blend')
+        assert gains and sum(1 for g in gains if g>0)>=6, gains
+        for study,block in pilot_data['studies'].items():
+            ab=block['shuffle_ablation']['20']
+            if ab['model'] is None: continue
+            assert ab['model']<=ab['shuffled']+1e-9,(study,'card-specific information')
+        pilot_note=f' pilot blend for {len(pilot_data["studies"])} studies tied to the page;'
+    print(f'PASS: {checked} source hashes; all local report links; 13 distributions and averages; latest run exclusion; readable labels.'+cross_note+cluster_note+clean_note+wide_note+direction_note+anchor_note+pilot_note)
 
 
 if __name__=='__main__':
