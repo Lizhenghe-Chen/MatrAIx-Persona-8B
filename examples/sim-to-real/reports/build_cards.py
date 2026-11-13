@@ -40,6 +40,25 @@ ROLE = {
     'german': '铺开 · 包装选择', 'tshirt': '铺开 · 商品选择', 'radiant': '铺开 · 食品选择',
     'openecommerce': '外部验证 · 行为与态度',
 }
+# Why these six have one respondent per question: they are not ordinary surveys.
+_CONJOINT_MOTIVE = ('同一组搭配问 96 个人，只能学到"这一组谁赢"；'
+                    '把搭配随机成 {n} 组，才能反推出"每个属性各值多少"。')
+DESIGN = {
+    'dryer': {'kind': '联合分析', 'detail': '每道题是随机拼出来的两台烘干机，受访者各看各的几张',
+              'motive': _CONJOINT_MOTIVE},
+    'swiss': {'kind': '联合分析', 'detail': '每道题是随机拼出来的两件家电',
+              'motive': _CONJOINT_MOTIVE},
+    'drone': {'kind': '联合分析', 'detail': '每道题是随机拼出来的两种外卖配送方案',
+              'motive': _CONJOINT_MOTIVE},
+    'origin': {'kind': '联合分析', 'detail': '每道题是随机拼出来的两件商品',
+               'motive': _CONJOINT_MOTIVE},
+    'tshirt': {'kind': '联合分析', 'detail': '每道题是随机拼出来的三件 T 恤',
+               'motive': _CONJOINT_MOTIVE},
+    'shoes': {'kind': '打分任务', 'detail': '每道题是一双独一无二的鞋，全库 3,822 双',
+              'motive': ('同一款鞋只问一个人，只能学到"这一款打几分"；'
+                         '把款式随机成 {n} 款、每款问不同的人，'
+                         '才能反推出"品牌、颜色、价格各值多少"。')},
+}
 SERIES = (('truth', '真人', '#14372f'), ('original', '原版 MatrAIx', '#a15e38'),
           ('optimized', '优化后', '#5358a5'))
 
@@ -254,17 +273,28 @@ def study_section(study, entry, index):
     body = []
     if not estimable:
         counts = [q['people'] for q in entry['questions']] or [0]
-        body.append('<p class="note-warn"><strong>为什么这里没有逐题数字。</strong>'
-                    '不是题目太多，而是<strong>每个人答的题不一样</strong>——'
-                    + (f'{cards} 道题，每道只有 1 人作答。'
-                       if max(counts) == 1 else
-                       f'{cards} 道题，人最多的一道也只有 {max(counts)} 人作答'
-                       f'（平均 {sum(counts) / len(counts):.1f} 人）。')
-                    + '一个人选了什么就是 100%，量不出"分布"。</p>'
+        design = DESIGN.get(study, {'kind': '逐题作答', 'detail': '每道题只有少数人作答',
+                                    'motive': '同一道题问 96 个人只会学到这一题的答案，'
+                                              '随机成 {n} 道才能反推属性。'})
+        body.append('<p class="note-warn"><strong>这套不是普通问卷，是'
+                    + html.escape(design['kind']) + '。</strong>'
+                    + html.escape(design['detail']) + '。'
+                    '所以「每个人答的题不一样」是<strong>故意的</strong>，不是抽样失败：'
+                    + html.escape(design['motive'].format(n=cards))
+                    + (f'代价就是每题只有 1 人作答。' if max(counts) == 1 else
+                       f'代价就是每题只有 1–{max(counts)} 人作答（平均 {sum(counts) / len(counts):.1f} 人）。')
+                    + '一个人选了什么就是 100%，逐题分布无从谈起。</p>'
                     + floor_table()
-                    + '<p class="small">人少时量到的是抽样噪声，不是模型误差，'
-                      '所以这种问卷只给"全部题目汇总"的视图，不编造逐题分布。'
-                      '20 人这道门槛就是这么来的。</p>')
+                    + ('<p class="small">人少时量到的是抽样噪声，不是模型误差。'
+                       '这类数据正确的比法是<strong>按属性建模</strong>'
+                       '（条件逻辑回归或评分模型，只用题目里显示的属性、不看真人答案），'
+                       '也是这套研究真正的评分口径——也就是其它研究里'
+                       '"同信息统计参照"那个对手。</p>'
+                       if entry.get('attribute_model') else
+                       '<p class="small">人少时量到的是抽样噪声，不是模型误差。</p>')
+                    + '<p class="small">下面这张汇总图只是"质量集中在哪儿"的示意'
+                      '（按选项位置对齐后求和，不是误差指标）；'
+                      '"至少 20 人"这道门槛只针对普通问卷的逐题分布。</p>')
         body.append(f'<div class="echart pooled" id="pool-{study}" data-pool="{study}"></div>')
     else:
         if not has_native:

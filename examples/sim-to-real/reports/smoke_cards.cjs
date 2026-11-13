@@ -47,8 +47,9 @@ const delay=ms=>new Promise(r=>setTimeout(r,ms));
   // A question nobody could score is labelled by cause, not lumped in with a missing arm.
   assert.ok(await run("document.body.innerHTML.includes('逐题不可估')"),'unscorable questions are named');
   // The label must be explained where it appears, not left for the reader to guess.
-  assert.ok(await run("document.body.innerHTML.includes('为什么这里没有逐题数字')"),'unscorable reason stated');
-  assert.ok(await run("document.body.innerHTML.includes('每个人答的题不一样')"),'cause named: different items per person');
+  assert.ok(await run("document.body.innerHTML.includes('不是普通问卷')"),'unscorable reason stated');
+  assert.ok(await run("document.body.innerHTML.includes('不是抽样失败')"),'design intent named, not a sampling failure');
+  assert.ok(await run("document.body.innerHTML.includes('联合分析')&&document.body.innerHTML.includes('打分任务')"),'both design kinds named');
   assert.ok(await run("document.body.innerHTML.includes('62pp')"),'sampling floor table present');
   // The external study gained its native arm: both numbers must be on the page.
   assert.ok(await run(`(()=>{const s=document.querySelector('#s-openecommerce');

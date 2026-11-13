@@ -154,6 +154,8 @@ def build(plans=None):
         formal.select_plan(plan)
         _, cases_by_study, _ = formal._cases()
         block = {'arms': json.loads(formal.SPEC_FILE.read_text())['arms'], 'studies': {}}
+        frozen = OUT / formal.PLANS[plan]['result']
+        results = json.loads(frozen.read_text()).get('studies', {}) if frozen.exists() else {}
         for study in formal.PLANS[plan]['studies']:
             cases = cases_by_study.get(study) or []
             if not cases:
@@ -164,6 +166,11 @@ def build(plans=None):
                 'cards': len(cards),
                 'estimable_cards': sum(1 for card in cards if card['estimable']),
                 'arms': arms,
+                # Whether a same-information attribute model exists for this study;
+                # conjoint data is only fairly scored at the attribute level.
+                'attribute_model': any(
+                    name.startswith('attribute')
+                    for name in results.get(study, {}).get('results', {}).get('arms', {})),
                 'card_tv': _card_tv(cards),
                 'pooled': _pooled(cards),
                 'questions': cards,

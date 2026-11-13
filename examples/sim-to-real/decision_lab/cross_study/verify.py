@@ -11,7 +11,7 @@ def main():
  inv=json.loads((OUT/'source-inventory.json').read_text())
  assert len(inv['studies'])==19
  assert all(f['exists'] and f['read_status']=='metadata_readable' for s in inv['studies'] for f in s['files'])
- for version in ('v36','v35','v34','v33','v32','v31','v30','v29','v28','v27','v26','v25','v24','v23','v22','v21','v20','v19','v18','v17','v16','v15','v14','v13','v12','v11','v10','v9','v8','v7','v6','v5','v3','v2','v1'):
+ for version in ('v37','v36','v35','v34','v33','v32','v31','v30','v29','v28','v27','v26','v25','v24','v23','v22','v21','v20','v19','v18','v17','v16','v15','v14','v13','v12','v11','v10','v9','v8','v7','v6','v5','v3','v2','v1'):
   accepted_path=ROOT.parent/f'archive/accepted-report-{version}.json'
   if accepted_path.exists():break
  accepted=json.loads(accepted_path.read_text())
