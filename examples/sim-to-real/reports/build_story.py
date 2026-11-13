@@ -34,6 +34,25 @@ def pp(value, digits=1):
     return f'{value:.{digits}f}'
 
 
+def _attribute_briers():
+    """AI vs attributes-only reference, per study, from the frozen result files."""
+    out = {}
+    root = HERE.parent / 'decision_lab/reports/cross-study-v1'
+    for name in ('formal-results.json', 'wide-v1-results.json', 'clean-v1-results.json'):
+        path = root / name
+        if not path.exists():
+            continue
+        for study, block in json.loads(path.read_text()).get('studies', {}).items():
+            arms = (block.get('results') or {}).get('arms') or {}
+            reference = next((payload.get('brier') for key, payload in arms.items()
+                              if key.startswith('attribute') and payload.get('brier') is not None),
+                             None)
+            ai = (arms.get('optimized') or {}).get('brier')
+            if reference is not None and ai is not None:
+                out.setdefault(study, {'reference': reference, 'optimized': ai})
+    return out
+
+
 def gather():
     """Every number the story quotes, read from the frozen artifacts."""
     cluster = load('cluster-summary.json', {'rows': [], 'summary': {}})
@@ -73,12 +92,15 @@ def gather():
         'stats': stats,
         'rows': rows,
         'direction': direction['totals'],
+        'quintiles': (direction.get('plans', {}).get('wide-v1', {}).get('deviation') or {}).get('quintiles') or [],
+        'attribute': _attribute_briers(),
         'anchor': {'german': german, 'pew111': pew111},
         'blend_pro': blend_pro.get('studies', {}),
         'blend_qwen': blend_qwen.get('studies', {}),
         'external': {'arms': ext_arms, 'people': ext.get('people'),
                      'cards': ext.get('cards'),
                      'results': ext.get('results'),
+                     'history_people': ext.get('history_source_people'),
                      'blend': external_pro.get('studies', {}).get('openecommerce', {})},
         'noise': {b['study']: b for b in noise['studies']},
         'screening': screening,
@@ -136,7 +158,58 @@ def build():
     ext_native = (ext_arms.get('original') or {}).get('card_tv_pp')
     _ext_res = d['external'].get('results') or {}
     ext_contrast = (_ext_res.get('card_contrasts') or {}).get('original__to__optimized')
+
+    def _quintile_rows():
+        quintiles = d['quintiles']
+        if len(quintiles) < 5:
+            return []
+        picks = [(quintiles[0], '最典型的 20%'), (quintiles[2], '中间 20%'),
+                 (quintiles[-1], '最不典型的 20%')]
+        rows = []
+        for entry, band in picks:
+            gain = entry['ai_advantage']
+            low, high = entry['ai_advantage_ci']
+            if low > 0:
+                verdict = '<strong>AI 反超</strong>'
+            elif high < 0:
+                verdict = 'AI 明显更差'
+            else:
+                verdict = '无法区分'
+            rows.append({'band': band,
+                         'range': f"{entry['atypical_from']:.2f}–{entry['atypical_to']:.2f}",
+                         'gain': f'<strong>{gain:+.3f}</strong>' if gain > 0 else f'{gain:.3f}',
+                         'ci': f'[{low:+.3f}, {high:+.3f}]',
+                         'verdict': verdict})
+        return rows
+    quintile_rows = _quintile_rows()
+
+    def _attribute_list():
+        """The four product-choice studies where an attributes-only model beats the AI."""
+        wanted = [('dryer', '四国烘干机'), ('swiss', '瑞士家电'), ('origin', '商品产地'),
+                  ('tshirt', '美国 T 恤')]
+        pairs = []
+        for name, label in wanted:
+            arms = ((d.get('attribute') or {}).get(name) or {})
+            reference, ai = arms.get('reference'), arms.get('optimized')
+            if reference is None or ai is None:
+                continue
+            pairs.append(f'{label} {reference:.3f} vs {ai:.3f}')
+        return '、'.join(pairs)
+    attribute_list = _attribute_list()
+
+    def _probability_row():
+        evidence = HERE / 'evidence.json'
+        gains = [row['gain'] for row in json.loads(evidence.read_text())['probability']]
+        better = [g for g in gains if g > 0]
+        if not better:
+            return '未确认改善'
+        span = f'{min(better):.1f}–{max(better):.1f} 个百分点'
+        return (f'群体误差下降 {span}' if len(better) == len(gains)
+                else f'群体误差下降 {span}（{len(gains)} 项中 {len(better)} 项改善）')
+    probability_row = _probability_row()
+    blend_studies = d['blend_pro']
     ext_people = d['external']['people']
+    ext_pool = ext_people + (d['external'].get('history_people') or 0)
     ext_blend = d['external']['blend']
     ext_gain = (ext_blend.get('blend', {}).get('20', {}) or {}).get('model_gain_pp')
     ext_shuffle = (ext_blend.get('shuffle_ablation', {}).get('20', {}) or {})
@@ -303,7 +376,7 @@ def build():
         ['只给年龄学历', '不用完整画像模板', '−1.62pp', '含 0', '更差'],
         ['一次问整批人', '直接问这批人的分布', '−4.71pp', '含 0', '明显更差']],
        '门槛在跑之前就写好：平均改善 ≥1 个百分点、多数研究同向、其他两个指标不能明显变差。'
-       '四个最被看好的框架全部没有通过。')}
+       '六种全部没有通过：最好的也只 +1.26pp，而门槛是平均 ≥1pp 且区间不含 0。')}
 <p>三条路都堵死之后，答案就只剩一个方向了。</p>
 </section>'''
 
@@ -322,8 +395,8 @@ def build():
        '数字是个体预测误差（Brier，越低越好）。两列几乎贴在一起，'
        '说明"知道这个人是谁"在多数问卷上几乎没有增加信息。')}
 <p>这解释了为什么 AI 会输：<strong>它把大量算力花在"这个人是谁"上，而这道题的答案主要由题目本身决定。</strong>
-更直接的证据是：在 4 套商品选择里，一个<strong>完全不知道这个人、只看商品属性</strong>的回归模型也赢了 AI
-（瑞士家电 0.354 vs 0.450，商品产地 0.335 vs 0.387）。</p>
+更直接的证据是：在 4 套商品选择里，一个<strong>完全不知道这个人、只看商品属性</strong>的回归模型全部赢了 AI
+（{attribute_list}）。</p>
 <p>顺带一个反直觉的细节：<strong>拒买选项的平均比例并没有被系统性低估</strong>（真实 10.1%，预测 11.3%）。
 真正弱的是"认出<em>哪些人</em>会拒买"——召回率只有约 10.6%。这两件事经常被混为一谈。</p>
 </section>'''
@@ -337,9 +410,8 @@ def build():
 <p>我们按"这个人的答案离人群分布多远"把人分成五档，比较 AI 与人群分布本身谁更准：</p>
 {table('按"典型性"分档后的 AI 优势（正值＝AI 更准）',
        ['人群', '偏离度', 'AI 相对人群分布的优势', '95% 区间', '判定'],
-       [['最典型的 20%', '0.13–0.37', '−0.235', '[−0.259, −0.211]', 'AI 明显更差'],
-        ['中间 20%', '0.47–0.56', '−0.316', '[−0.354, −0.276]', 'AI 明显更差'],
-        ['最不典型的 20%', '0.70–1.00', '<strong>+0.116</strong>', '[+0.077, +0.154]', '<strong>AI 反超</strong>']],
+       [[row['band'], row['range'], row['gain'], row['ci'], row['verdict']]
+        for row in quintile_rows],
        '这解释了此前所有"AI 平均而言更差"的结果：它对 80% 的人拖后腿，'
        '但在最需要个性化的 20% 人身上扳回来。可惜的是——分档本身要用到答案，'
        '所以这是"事后解释"，还不能直接当"事先挑人"的规则。')}
@@ -348,7 +420,7 @@ def build():
 <p>这是最硬的一条证据。我们做了一个"打乱卡片"的对照：把 AI 对<strong>这道题</strong>的预测，
 换成它对<strong>同一份问卷另一道题</strong>的预测，再和其他信息混合。</p>
 <div class="grid3">
-{card('真实卡片', f'{ext_shuffle.get("model", 0):.1f}pp', '用 AI 对这道题的预测混合后，误差。', '对照')}
+{card('真实卡片', f'{ext_shuffle.get("model", 0):.1f}pp', '用 AI 对这道题的预测混合后的误差。', '对照')}
 {card('打乱卡片', f'{ext_shuffle.get("shuffled", 0):.1f}pp', '换成另一道题的预测后，误差几乎翻倍。', '反证')}
 {card('差多少', f'+{ext_shuffle.get("shuffled", 0) - ext_shuffle.get("model", 0):.1f}pp', '说明 AI 提供的不是"通用先验"，而是这道题的信息。', '结论')}
 </div>
@@ -386,8 +458,9 @@ def build():
 <h3>最后：换一套从没用过的数据，还算数吗</h3>
 <p>上面所有结论都来自 14 套研究，而它们都参与过筛查。为检验泛化，我们接入了一套
 <strong>完全没碰过</strong>的公开问卷：Amazon「Open eCommerce」美国线上样本，
-{ext_people:,} 名受访者、14 道单选题，题型与人群体量都与前面不同。</p>
-<figure><h3>外部数据上的四种做法</h3>
+{ext_pool:,} 名受访者、14 道单选题，题型与人群体量都与前面不同。
+我们抽 {ext_people} 人作被测队列，其余 {ext_pool - ext_people:,} 人作历史答案。</p>
+<figure><h3>同一套外部数据，六种做法</h3>
 <div id="storyExternal" class="echart" style="height:360px"></div>
 <figcaption>AI 仍然远好于"每档等分"，也仍然远差于查表——与前 14 套同向；
 而小样本混合的规则在这里同样成立（k=20 时比混合均匀分布好 {ext_gain:.1f}pp）。
@@ -395,8 +468,9 @@ def build():
 {table('外部验证：五条判据全部通过',
        ['判据', '结果', '说明'],
        ([['最稳的一条在新数据上复现', '通过',
-          f'只改输出形式：选一项 {ext_native:.1f} → 给概率 {ext_ai:.1f}pp，'
-          f'区间 [{ext_contrast["improvement_95_ci"][0]:.1f}, {ext_contrast["improvement_95_ci"][1]:.1f}]']]
+          f'只改输出形式：{ext_native:.1f} → {ext_ai:.1f}pp'
+          f'（改善 {ext_contrast["improvement_pp"]:.1f}pp，'
+          f'区间 [{ext_contrast["improvement_95_ci"][0]:+.1f}, {ext_contrast["improvement_95_ci"][1]:+.1f}]）']]
         if ext_native and ext_contrast else [])
        + [['既有结论复现', '通过', f'AI {ext_ai:.1f}pp vs 等分 {ext_uniform:.1f}pp vs 查表 {ext_ref:.1f}pp'],
         ['小样本混合', '通过', f'k=20 时增益 +{ext_gain:.1f}pp，与内部研究同向'],
@@ -416,13 +490,14 @@ def build():
 <h2>改造前 vs 改造后</h2>
 {table('同一批数据，不同做法的表现',
        ['环节', '改造前', '改造后', '变化'],
-       [['输出形式', '让 AI 选一个答案', '让 AI 给每个选项的概率', '群体误差下降 16.6–25.3 个百分点'],
+       [['输出形式', '让 AI 选一个答案', '让 AI 给每个选项的概率', probability_row],
         ['用到历史答案', '没有', '把历史分布写进提示', '相对改善 16.5–24.9%'],
         ['与他人比较', '和"随机猜"比', '和"同样信息的查表"比', '发现 14/14 落后'],
         ['小样本利用', '不用', '按 w=k/(k+20) 与 AI 混合', '+5.6pp [+3.9, +7.3]'],
         ['使用前提', '任何情况都用 AI', '按题卡判断，AI 差于等分就不混合', '避免"包装与拒买"那类反例']],
-       '前半段（输出形式、历史答案）来自 14 套研究；后半段（混合规则）在 9 套内部研究 + 1 套外部数据、'
-       '2 个模型上验证过。')}
+       '输出形式在 15 套里 14 套明显改善、1 套持平（美国消费调整），没有一套变差；'
+       '历史答案那一条来自 14 套内部研究；'
+       f'混合规则在 {len(blend_studies)} 套内部研究 + 1 套外部数据、2 个模型上验证过。')}
 </section>'''
 
     # ---------- limits ----------
@@ -450,7 +525,7 @@ def build():
 <h2>我们的发现，与已有研究对得上吗</h2>
 {table('与文献的对话',
        ['我们的发现', '已有研究', '关系'],
-       [['方向对、幅度错（第一名命中 {pct(direction.get("ai_argmax", 0))}，但份额差 8–30 个百分点）',
+       [[f'方向对、幅度错（第一名命中 {pct(direction.get("ai_argmax", 0))}，但份额差 8–30 个百分点）',
          'Nature 实验预测研究：模型能高相关地预测实验效应，却系统性高估幅度',
          '同一种失败形态：知道方向，不知道分寸'],
         ['AI 把人群差异压平，且不能靠调参修正',
@@ -478,7 +553,7 @@ def build():
 <div class="grid3">
 {card('第一天', '先收 10–20 份', '找 10–20 个符合目标人群的人，问同样的题。这比什么模型都快，而且几乎不花钱。', '步骤一')}
 {card('第二天', '问一次 AI', '让 AI 对同一套题给出分布（注意：要概率，不要让它只选一个）。', '步骤二')}
-{card('第三天', '按公式混合', 'w = k/(k+20)：5 份时八成信 AI，20 份时五五开，40 份时八成信实测。若 AI 连"每档等分"都不如，直接用实测。', '步骤三')}
+{card('第三天', '按公式混合', 'w = k/(k+20)：5 份时八成信 AI，20 份时五五开，40 份时三分之二信实测。若 AI 连"每档等分"都不如，直接用实测。', '步骤三')}
 </div>
 <p>预期效果（八套内部研究的中位数）：</p>
 {table('样本很少时，AI 到底帮了多少',
@@ -497,7 +572,7 @@ def build():
          f"降低 {d['median_pilot']['40'] - d['median_blend']['40']:.1f} 个百分点"]],
        '越低越好。注意第二列和第三列的关系：<strong>实测攒到 40 份时，它自己就已经比 AI 准了</strong>——'
        'AI 的价值集中在最开头那几天。')}
-<p>所以准确的用法是：<strong>问卷刚发出去、只有个位数或十几份回答时，AI 能把误差压掉近一半；
+<p>所以准确的用法是：<strong>问卷刚发出去、只有个位数或十几份回答时，AI 能把误差压掉一半以上；
 等攒到四五十份，就该相信实测、把 AI 的权重降下来。</strong>这正是 w = k/(k+20) 自动做的事——
 样本越多，权重越偏向实测。</p>
 <div class="callout"><strong>一句话收尾</strong>：这项研究最初想回答"AI 能不能替代真人问卷"。
@@ -551,7 +626,7 @@ def main():
     }
     DATA = json.dumps(payload, ensure_ascii=False).replace('</', '<\\/')
     page = build()
-    (HERE / 'story.html').write_text(page)
+    (HERE / 'story.html').write_text(notes.curly_quotes(page))
     print(f'Built narrative report: {HERE / "story.html"} ({len(page):,} bytes)')
 
 

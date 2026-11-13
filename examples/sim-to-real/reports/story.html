@@ -1,13 +1,15 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="MatrAIx 决策模拟实验的故事版报告：AI 能否替代真人问卷、输在哪里、小样本如何与 AI 互补。"><title>AI 能替真人回答问卷吗？｜MatrAIx 实验故事</title><style>:root{--ink:#14372f;--muted:#566a63;--paper:#f4f3ec;--line:#d8e1da;--green:#117b70;--orange:#a15e38;--purple:#5358a5;--white:#fffefa}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:74px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.8 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}a{color:#126a64;text-underline-offset:4px}a:hover{color:#7d4729}header,main,footer{max-width:1180px;margin:auto;padding:0 30px}.hero{padding:62px 0 28px;max-width:980px}.eyebrow{font-size:13px;font-weight:700;letter-spacing:2px;color:var(--muted)}h1{font-size:clamp(32px,4.5vw,55px);line-height:1.25;letter-spacing:-1px;margin:18px 0 24px}h2{font-size:clamp(26px,3vw,35px);line-height:1.35;margin:14px 0 22px}h3{font-size:21px;line-height:1.5;margin:0 0 16px}p{margin:12px 0 18px}.lead{font-size:21px;max-width:900px}.small,figcaption,.source{font-size:14px;color:var(--muted)}.source{margin-top:20px}.source a{margin-right:10px}.tag{display:inline-block;padding:3px 10px;font-size:13px;border-radius:5px;background:#e0eee6;color:#175b4f}.tag.warn{background:#f3e5d5;color:#8b4d24}.tag.neutral{background:#e5e9ec;color:#4e6371}.nav{position:sticky;top:0;background:rgba(244,243,236,.97);z-index:5;border-block:1px solid var(--line);backdrop-filter:blur(10px)}.nav div{display:flex;gap:25px;max-width:1180px;margin:auto;padding:13px 30px;overflow:auto;white-space:nowrap}.nav a{text-decoration:none;font-size:15px;font-weight:600}section{padding:45px 0;border-bottom:1px solid var(--line)}.intro{padding-top:25px}.grid2,.grid3{display:grid;gap:22px;grid-template-columns:repeat(2,minmax(0,1fr))}.grid3{grid-template-columns:repeat(3,minmax(0,1fr))}.card,figure,.panel{padding:26px;background:var(--white);border:1px solid var(--line);border-radius:14px;margin:0;min-width:0}.card p:last-child{margin-bottom:0}.callout{padding:22px 26px;background:#e5eee5;border-left:4px solid var(--green);border-radius:0 10px 10px 0;margin:24px 0}.callout.warn{background:#f2e9dd;border-color:var(--orange)}.big{font-size:34px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.3;margin:12px 0}.big span{font-size:17px;font-weight:400}.number{display:block;font-size:13px;letter-spacing:1px;color:var(--muted);font-weight:650;margin-bottom:12px}.chart{overflow:auto}.chart svg{display:block;width:100%;min-width:510px}svg{width:100%;display:block}svg text{font-family:inherit;font-size:15px;fill:var(--ink)}svg .axis{font-size:13px;fill:var(--muted)}svg .grid{stroke:#dfe6e0;stroke-width:1}svg .value{font-weight:650;font-variant-numeric:tabular-nums}.legend{display:flex;flex-wrap:wrap;gap:16px;margin:12px 0 22px;font-size:14px}.legend span:before{content:"";display:inline-block;width:12px;height:12px;background:var(--color);border-radius:3px;margin-right:6px}.table-wrap{overflow:auto;margin:18px 0 10px}table{width:100%;border-collapse:collapse;text-align:left;font-size:15px}td,th{padding:12px 15px;border-bottom:1px solid var(--line);vertical-align:top}th{font-weight:650}thead{background:#e9ede6}td{font-variant-numeric:tabular-nums}caption{text-align:left;font-weight:650;padding:12px 0}details{margin-top:22px;padding:18px 22px;border:1px solid var(--line);border-radius:10px;background:#fdfcf7}summary{cursor:pointer;font-weight:650}summary:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid #c8923b;outline-offset:3px}details[open]>summary{margin-bottom:18px}.explain{font-size:15px;color:var(--muted)}select{font:inherit;padding:11px 12px;color:var(--ink);background:white;border:1px solid #9fb5aa;border-radius:7px;max-width:100%;width:100%;margin:8px 0 14px}.select-grid{display:grid;grid-template-columns:2fr 1fr;gap:18px}.distribution-option{margin:20px 0}.distribution-option h4{font-size:16px;margin:0 0 9px}.dist-row{display:grid;grid-template-columns:100px 1fr 60px;gap:12px;align-items:center;margin:6px 0;font-size:14px}.track{background:#e9eee8;border-radius:3px;height:15px;overflow:hidden}.fill{height:100%;border-radius:3px}.dist-row b{text-align:right}.metric-line{font-size:18px;font-weight:650;padding:14px 0;border-bottom:1px solid var(--line)}.step{display:flex;gap:16px;margin:18px 0}.step>b{flex:0 0 30px;height:30px;border-radius:50%;background:#e0eae1;text-align:center;line-height:30px}.step p{margin:0}.directory{font:14px/1.9 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere;background:#edf0e9;padding:20px;border-radius:8px}code{font-size:.9em;overflow-wrap:anywhere}.nowrap{white-space:nowrap}footer{padding-top:35px;padding-bottom:55px;color:var(--muted);font-size:14px}.footgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.negative{color:var(--orange)}.positive{color:var(--green)}.jump{display:inline-block;margin:6px 12px 6px 0;padding:7px 13px;border:1px solid var(--line);border-radius:6px;text-decoration:none}.list p{padding-bottom:12px;border-bottom:1px solid var(--line)}@media(max-width:850px){.grid3{grid-template-columns:1fr}.grid2{grid-template-columns:1fr}.chart svg{min-width:510px}.hero{padding-top:35px}.nav div{gap:20px}section{padding:32px 0}}@media(max-width:560px){header,main,footer{padding-left:19px;padding-right:19px}body{font-size:16px}.lead{font-size:19px}.card,figure,.panel{padding:18px}.nav div{padding-left:19px;padding-right:19px}.select-grid,.footgrid{grid-template-columns:1fr}.dist-row{grid-template-columns:76px 1fr 55px;gap:8px}.big{font-size:29px}td,th{padding:10px}.callout{padding:17px}.chart{margin-inline:-6px}.chart svg{min-width:480px}.source{overflow-wrap:anywhere}}@media print{.nav,.controls{display:none}body{background:white;color:black;font-size:12px}.hero{padding-top:10px}header,main,footer{max-width:none;padding-inline:0}section{padding:20px 0}.grid2{grid-template-columns:1fr 1fr}.grid3{grid-template-columns:repeat(3,1fr)}figure,.card{break-inside:avoid;padding:13px}a{color:inherit}.chart svg{min-width:0}details{display:block}h1{font-size:32px}h2{font-size:25px}.small,figcaption{font-size:11px}}
 .bar-plot{padding:4px 0 8px}.bar-row{margin:12px 0 20px}.bar-top{display:flex;justify-content:space-between;gap:14px;align-items:baseline;font-size:15px;margin-bottom:7px}.bar-top b{font-size:19px;font-variant-numeric:tabular-nums}.bar-track{height:23px;border-radius:4px;background:#edf0e9;overflow:hidden}.bar-track>div{height:100%;border-radius:4px}.bar-axis{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:-7px}.bar-unit{font-size:12px;color:var(--muted);text-align:right;margin-top:4px}
-.echart{width:100%;min-width:0;height:380px;display:block}figure>.echart{margin-top:6px}@media(max-width:560px){.echart{height:330px}}@media print{.echart{height:320px;break-inside:avoid}}</style></head><body>
+.echart{width:100%;min-width:0;height:380px;display:block}figure>.echart{margin-top:6px}@media(max-width:560px){.echart{height:330px}}@media print{.echart{height:320px;break-inside:avoid}}
+.unit{font-weight:400;font-size:11px;color:var(--muted);display:inline-block;margin-top:2px}
+</style></head><body>
 <header><div class="hero">
 <div class="eyebrow">MATRAIX · 决策模拟 · 实验总报告（故事版）· 2026 年 11 月</div>
 <h1>AI 能替真人<br>回答问卷吗？</h1>
 <p class="lead">一个很实际的问题：下周要定方案，发几百份问卷来不及，能不能直接问 AI？
 我们用 <strong>14 套真实问卷、11 个独立数据集、6 个国家</strong>，
 外加一套<strong>此前从未使用、共 4,995 人</strong>的公开调查，把这句话变成了可以称重的比较。
-结论比"能"或"不能"都要具体——而且它最后指向了一个你今晚就能用的做法。</p>
+结论比“能”或“不能”都要具体——而且它最后指向了一个你今晚就能用的做法。</p>
 <a class="jump" href="#answer">先看一页纸答案</a>
 <a class="jump" href="#recipe">直接看怎么用</a>
 <a class="jump" href="#limits">看它的边界</a>
@@ -15,30 +17,30 @@
 <section id="answer" class="intro"><span class="number">一页纸答案</span>
 <h2>三个结论，按重要性排序</h2>
 <div class="grid3">
-<article class="card"><span class="tag">第一层</span><h3>AI 会不会答问卷？</h3><div class="big">会，但只有半条命</div><p>它能抓住"大多数人选什么"，方向对的比例 70.3%；但"各占多少"常常差 8–30 个百分点。用它排序可以，用它估份额不够。</p></article>
+<article class="card"><span class="tag">第一层</span><h3>AI 会不会答问卷？</h3><div class="big">会，但只有半条命</div><p>它能抓住“大多数人选什么”，方向对的比例 70.3%；但“各占多少”常常差 8–30 个百分点。用它排序可以，用它估份额不够。</p></article>
 <article class="card"><span class="tag">第二层</span><h3>和&quot;查历史数据&quot;比呢？</h3><div class="big">14 战 14 败</div><p>只要同类人群的历史答案存在，直接数比例永远比问 AI 准。我们试过把答案直接交给 AI，它仍然赢不了——这一点是本项目最硬的负结果。</p></article>
 <article class="card"><span class="tag">第三层</span><h3>那 AI 还有什么用？</h3><div class="big">+5.6pp</div><p>当你只有<strong>十几份</strong>真实回答时，把 AI 与小样本混合，比任何一方单独使用都准，而且这个收益在新数据上复现了。这是唯一可交付的用法。</p></article>
 </div>
 <p class="lead">一句话：<strong>AI 不能替代数据，但能给小数据补上一块。</strong></p>
-<div class="callout"><strong>为什么这个结论值得信</strong>：每一套问卷都有"标准答案"（真人的实际回答），
+<div class="callout"><strong>为什么这个结论值得信</strong>：每一套问卷都有“标准答案”（真人的实际回答），
 每一次比较都有预设的裁判和门槛，跑之前先写死，跑完不许改；失败的尝试全部留在档案里，
 包括我们自己最看好的那几个方案。</div>
 </section>
 <section id="method"><span class="number">怎么比的</span>
-<h2>我们不是"感觉一下准不准"，而是造了一把尺子</h2>
-<p>要让结论站得住，必须先解决一个陷阱：<strong>如果题目很简单，任何人猜"最热门选项"都能得高分。</strong>
-那怎么区分"AI 真的理解人"和"AI 只是知道常识"？</p>
+<h2>我们不是“感觉一下准不准”，而是造了一把尺子</h2>
+<p>要让结论站得住，必须先解决一个陷阱：<strong>如果题目很简单，任何人猜“最热门选项”都能得高分。</strong>
+那怎么区分“AI 真的理解人”和“AI 只是知道常识”？</p>
 
 <h3>关键设计：给 AI 配一个同信息的对手</h3>
-<p>我们为每套问卷都建了一个"查表"对手：</p>
+<p>我们为每套问卷都建了一个“查表”对手：</p>
 <ol>
 <li>从这份调查里，把<strong>没被评估的其他人</strong>挑出来；</li>
-<li>按"年龄 × 学历"分层，数出每个层里每个选项被选了多少次；</li>
+<li>按“年龄 × 学历”分层，数出每个层里每个选项被选了多少次；</li>
 <li>遇到要预测的人，就把<strong>他所在那一层的比例</strong>直接给他。</li>
 </ol>
 <p>这个对手<strong>没有任何推理能力</strong>，它只会数数。但它和 AI 拿到的是同样的信息（这个人的人口特征）。
-如果 AI 比它准，说明模型真的带来了新东西；如果不如它，说明模型的所有"共情"加起来还不如一张表。</p>
-<div class="callout">打个比方：天气预报说"明天降水概率 60%"。如果当地历史同期下雨的频率也是 60%，
+如果 AI 比它准，说明模型真的带来了新东西；如果不如它，说明模型的所有“共情”加起来还不如一张表。</p>
+<div class="callout">打个比方：天气预报说“明天降水概率 60%”。如果当地历史同期下雨的频率也是 60%，
 这个预报就没有增加任何信息。我们要测的，就是 AI 的预报到底有没有增加信息。</div>
 
 <h3>三个指标，一起看，不许拿一个换另一个</h3>
@@ -54,15 +56,15 @@
 这意味着<strong>误差在 4.4–10.4 个百分点以内，根本无法区分好坏</strong>。
 后面所有解读都要放在这把尺子上看。</p>
 
-<h3>为什么有的问卷"没有逐题数字"</h3>
+<h3>为什么有的问卷“没有逐题数字”</h3>
 <p>14 套里有 6 套不是普通问卷，而是<strong>联合分析</strong>（5 套）和<strong>打分任务</strong>（1 套）。
 这类研究的做法是把产品属性随机拼成组合，每人只答其中几张——同一组搭配问 96 个人，
-只能学到"这一组谁赢"；把它随机成几百组，才能反推出"价格贵 100 元扣多少、容量大 1 公斤值多少"。
+只能学到“这一组谁赢”；把它随机成几百组，才能反推出“价格贵 100 元扣多少、容量大 1 公斤值多少”。
 <strong>随机化就是实验本身</strong>，不是抽样失败。</p>
 <p>代价是每道题只有 1–8 人作答，而一个人的答案就是 100%，量不出分布。
 所以这六套改用<strong>属性模型</strong>评分（只用题目里显示的属性、不看真人答案）——
-也就是前面那个"同信息查表对手"，它恰好是这几套里最强的对手。</p>
-<div class="callout">顺便解释"为什么至少要 20 人"：一道真分布 50/30/20 的题，
+也就是前面那个“同信息查表对手”，它恰好是这几套里最强的对手。</p>
+<div class="callout">顺便解释“为什么至少要 20 人”：一道真分布 50/30/20 的题，
 即使 AI <strong>完全答对</strong>，只问 1 个人量到的误差平均也有 62 个百分点，
 问 20 个人是 12 个，问 96 个人才降到 6 个。
 人太少时量到的是抽样噪声，不是模型误差。</div>
@@ -77,133 +79,134 @@
 </div>
 <figure><h3>每套问卷：AI 比查表差多少（负值＝更差）</h3>
 <div id="storyCompare" class="echart" style="height:460px"></div>
-<figcaption>十四根条形全部落在虚线左侧。虚线是"与查表持平"，越往左越差。
+<figcaption>十四根条形全部落在虚线左侧。虚线是“与查表持平”，越往左越差。
 差距从 −2.5%（运动鞋打分）到 −38.6%（无人机配送）。</figcaption></figure>
 <p><strong>但这里有个容易误读的地方。</strong>输给查表，不等于 AI 一无是处——
 因为查表有一个前提：<strong>这道题的历史答案存在</strong>。新问卷、新人群、新国家，往往没有。
 所以第二幕要问的是：如果这道题没有历史答案，AI 的错到底错在哪？</p>
 </section>
 <section id="act2"><span class="number">第二幕</span>
-<h2>三个"以为的原因"，一个个被排除</h2>
-<p class="lead">面对"AI 不如查表"，最自然的三种解释是：它不会推理、它太保守、它措辞没调好。
+<h2>三个“以为的原因”，一个个被排除</h2>
+<p class="lead">面对“AI 不如查表”，最自然的三种解释是：它不会推理、它太保守、它措辞没调好。
 我们逐个做了对照，<strong>三个都不是主因</strong>。</p>
 
-<h3>排除一：不是"不会推理"，是"不知道基础比例"</h3>
-<p>我们把参照用的历史分布<strong>直接写进提示</strong>，让它"以此为起点调整"。结果：</p>
+<h3>排除一：不是“不会推理”，是“不知道基础比例”</h3>
+<p>我们把参照用的历史分布<strong>直接写进提示</strong>，让它“以此为起点调整”。结果：</p>
 <div class="grid3">
 <article class="card"><span class="tag">改善</span><h3>德国番茄</h3><div class="big">+25%</div><p>给分布后相对原来的改善，幅度很大。</p></article>
 <article class="card"><span class="tag">改善</span><h3>美国网购</h3><div class="big">+16%</div><p>同一套做法，另一套问卷同样大幅改善。</p></article>
 <article class="card"><span class="tag">仍然没赢</span><h3>但相对&quot;照抄该分布&quot;</h3><div class="big">−8.7%</div><p>德国番茄打平（−1.5%），网购仍显著落后。</p></article>
 </div>
 <p>进一步的审计更直接：模型给出的分布<strong>确实在向参照靠近</strong>（距离从 0.283 降到 0.057），
-而且<strong>越靠近越准，最准的那一点就是参照本身</strong>。也就是说，它每一次"按画像调整"，
+而且<strong>越靠近越准，最准的那一点就是参照本身</strong>。也就是说，它每一次“按画像调整”，
 都是在一个更好的答案上叠加噪声。</p>
 
-<h3>排除二：不是"太保守"，而是"噪声"</h3>
+<h3>排除二：不是“太保守”，而是“噪声”</h3>
 <p>看起来 AI 把人群差异压扁了——运动鞋那套里，人与人之间的差异只保留了
 <strong>39%</strong>，同一个人跨商品的差异只保留 <strong>19%</strong>。
-那最直觉的修法是"把预测拉开一点"（数学上叫幂次锐化）。我们试了：</p>
+那最直觉的修法是“把预测拉开一点”（数学上叫幂次锐化）。我们试了：</p>
 <p class="callout">结论很干脆：<strong>拉开的系数取 1 时最好，任何拉开都更差。</strong>
 换一种修法（线性再校准）在留出研究上同样失败，两组数据拟合出的系数分别是 0.689 和 0.997——
-说明这个"畸变"每套问卷都不一样，<strong>没有一个通用旋钮可以拧</strong>。</p>
+说明这个“畸变”每套问卷都不一样，<strong>没有一个通用旋钮可以拧</strong>。</p>
 
-<h3>排除三：不是"措辞问题"</h3>
+<h3>排除三：不是“措辞问题”</h3>
 <p>我们在免费模型上筛了 6 种任务框架，共约 4,600 次调用，全部按事先写死的门槛判定：</p>
-<div class="table-wrap"><table><caption>六种任务框架的筛查结果（相对基线，正值＝更好）</caption><thead><tr><th>框架</th><th>思路</th><th>卡级平均改善</th><th>95% 区间</th><th>判定</th></tr></thead><tbody><tr><th>先想人群再调整</th><td>让它先判断同龄人怎么答，再按画像调整</td><td>+1.26pp</td><td>[−0.08, +2.60]</td><td>未过（区间含 0）</td></tr><tr><th>提示"同类人也有分歧"</th><td>明确告诉它人群内部并不一致</td><td>+0.65pp</td><td>[−0.19, +1.49]</td><td>未过</td></tr><tr><th>提示"都不买是真实答案"</th><td>针对拒买选项被低估</td><td>+0.80pp</td><td>[−0.32, +1.95]</td><td>未过</td></tr><tr><th>按 100 人计数</th><td>把概率换成计数</td><td>−1.13pp</td><td>含 0</td><td>更差</td></tr><tr><th>只给年龄学历</th><td>不用完整画像模板</td><td>−1.62pp</td><td>含 0</td><td>更差</td></tr><tr><th>一次问整批人</th><td>直接问这批人的分布</td><td>−4.71pp</td><td>含 0</td><td>明显更差</td></tr></tbody></table></div><p class="small">门槛在跑之前就写好：平均改善 ≥1 个百分点、多数研究同向、其他两个指标不能明显变差。四个最被看好的框架全部没有通过。</p>
+<div class="table-wrap"><table><caption>六种任务框架的筛查结果（相对基线，正值＝更好）</caption><thead><tr><th>框架</th><th>思路</th><th>卡级平均改善</th><th>95% 区间</th><th>判定</th></tr></thead><tbody><tr><th>先想人群再调整</th><td>让它先判断同龄人怎么答，再按画像调整</td><td>+1.26pp</td><td>[−0.08, +2.60]</td><td>未过（区间含 0）</td></tr><tr><th>提示“同类人也有分歧”</th><td>明确告诉它人群内部并不一致</td><td>+0.65pp</td><td>[−0.19, +1.49]</td><td>未过</td></tr><tr><th>提示“都不买是真实答案”</th><td>针对拒买选项被低估</td><td>+0.80pp</td><td>[−0.32, +1.95]</td><td>未过</td></tr><tr><th>按 100 人计数</th><td>把概率换成计数</td><td>−1.13pp</td><td>含 0</td><td>更差</td></tr><tr><th>只给年龄学历</th><td>不用完整画像模板</td><td>−1.62pp</td><td>含 0</td><td>更差</td></tr><tr><th>一次问整批人</th><td>直接问这批人的分布</td><td>−4.71pp</td><td>含 0</td><td>明显更差</td></tr></tbody></table></div><p class="small">门槛在跑之前就写好：平均改善 ≥1 个百分点、多数研究同向、其他两个指标不能明显变差。六种全部没有通过：最好的也只 +1.26pp，而门槛是平均 ≥1pp 且区间不含 0。</p>
 <p>三条路都堵死之后，答案就只剩一个方向了。</p>
 </section>
 <section id="act3"><span class="number">第三幕</span>
-<h2>真正的原因：这道题的答案，本来就不太取决于"你是谁"</h2>
+<h2>真正的原因：这道题的答案，本来就不太取决于“你是谁”</h2>
 <p>我们把查表对手拆成两档：一档<strong>完全不看人</strong>，给每个人同一个历史平均分布；
 另一档按年龄学历精细分层。结果：</p>
-<div class="table-wrap"><table><caption>&quot;看人&quot;到底加了多少信息</caption><thead><tr><th>问卷</th><th>完全不看人</th><th>按年龄学历分层</th><th>差别</th></tr></thead><tbody><tr><th>四国烘干机</th><td>0.513</td><td>0.513</td><td>几乎没有</td></tr><tr><th>德国番茄</th><td>0.504</td><td>0.504</td><td>几乎没有</td></tr><tr><th>美国网购</th><td>0.416</td><td>0.384</td><td>很小</td></tr><tr><th>美国诈骗风险</th><td>0.500</td><td>0.492</td><td>很小</td></tr></tbody></table></div><p class="small">数字是个体预测误差（Brier，越低越好）。两列几乎贴在一起，说明"知道这个人是谁"在多数问卷上几乎没有增加信息。</p>
-<p>这解释了为什么 AI 会输：<strong>它把大量算力花在"这个人是谁"上，而这道题的答案主要由题目本身决定。</strong>
-更直接的证据是：在 4 套商品选择里，一个<strong>完全不知道这个人、只看商品属性</strong>的回归模型也赢了 AI
-（瑞士家电 0.354 vs 0.450，商品产地 0.335 vs 0.387）。</p>
+<div class="table-wrap"><table><caption>&quot;看人&quot;到底加了多少信息</caption><thead><tr><th>问卷</th><th>完全不看人</th><th>按年龄学历分层</th><th>差别</th></tr></thead><tbody><tr><th>四国烘干机</th><td>0.513</td><td>0.513</td><td>几乎没有</td></tr><tr><th>德国番茄</th><td>0.504</td><td>0.504</td><td>几乎没有</td></tr><tr><th>美国网购</th><td>0.416</td><td>0.384</td><td>很小</td></tr><tr><th>美国诈骗风险</th><td>0.500</td><td>0.492</td><td>很小</td></tr></tbody></table></div><p class="small">数字是个体预测误差（Brier，越低越好）。两列几乎贴在一起，说明“知道这个人是谁”在多数问卷上几乎没有增加信息。</p>
+<p>这解释了为什么 AI 会输：<strong>它把大量算力花在“这个人是谁”上，而这道题的答案主要由题目本身决定。</strong>
+更直接的证据是：在 4 套商品选择里，一个<strong>完全不知道这个人、只看商品属性</strong>的回归模型全部赢了 AI
+（四国烘干机 0.550 vs 0.636、瑞士家电 0.354 vs 0.450、商品产地 0.335 vs 0.387、美国 T 恤 0.509 vs 0.561）。</p>
 <p>顺带一个反直觉的细节：<strong>拒买选项的平均比例并没有被系统性低估</strong>（真实 10.1%，预测 11.3%）。
-真正弱的是"认出<em>哪些人</em>会拒买"——召回率只有约 10.6%。这两件事经常被混为一谈。</p>
+真正弱的是“认出<em>哪些人</em>会拒买”——召回率只有约 10.6%。这两件事经常被混为一谈。</p>
 </section>
 <section id="act4"><span class="number">第四幕</span>
 <h2>但 AI 不是一无所长：它在两种地方确实有价值</h2>
 
-<h3>价值一：在最"不像平均水平"的那群人身上</h3>
-<p>我们按"这个人的答案离人群分布多远"把人分成五档，比较 AI 与人群分布本身谁更准：</p>
-<div class="table-wrap"><table><caption>按&quot;典型性&quot;分档后的 AI 优势（正值＝AI 更准）</caption><thead><tr><th>人群</th><th>偏离度</th><th>AI 相对人群分布的优势</th><th>95% 区间</th><th>判定</th></tr></thead><tbody><tr><th>最典型的 20%</th><td>0.13–0.37</td><td>−0.235</td><td>[−0.259, −0.211]</td><td>AI 明显更差</td></tr><tr><th>中间 20%</th><td>0.47–0.56</td><td>−0.316</td><td>[−0.354, −0.276]</td><td>AI 明显更差</td></tr><tr><th>最不典型的 20%</th><td>0.70–1.00</td><td><strong>+0.116</strong></td><td>[+0.077, +0.154]</td><td><strong>AI 反超</strong></td></tr></tbody></table></div><p class="small">这解释了此前所有"AI 平均而言更差"的结果：它对 80% 的人拖后腿，但在最需要个性化的 20% 人身上扳回来。可惜的是——分档本身要用到答案，所以这是"事后解释"，还不能直接当"事先挑人"的规则。</p>
+<h3>价值一：在最“不像平均水平”的那群人身上</h3>
+<p>我们按“这个人的答案离人群分布多远”把人分成五档，比较 AI 与人群分布本身谁更准：</p>
+<div class="table-wrap"><table><caption>按&quot;典型性&quot;分档后的 AI 优势（正值＝AI 更准）</caption><thead><tr><th>人群</th><th>偏离度</th><th>AI 相对人群分布的优势</th><th>95% 区间</th><th>判定</th></tr></thead><tbody><tr><th>最典型的 20%</th><td>0.12–0.24</td><td>-0.235</td><td>[-0.259, -0.211]</td><td>AI 明显更差</td></tr><tr><th>中间 20%</th><td>0.47–0.60</td><td>-0.316</td><td>[-0.354, -0.276]</td><td>AI 明显更差</td></tr><tr><th>最不典型的 20%</th><td>0.70–1.00</td><td><strong>+0.116</strong></td><td>[+0.077, +0.154]</td><td><strong>AI 反超</strong></td></tr></tbody></table></div><p class="small">这解释了此前所有“AI 平均而言更差”的结果：它对 80% 的人拖后腿，但在最需要个性化的 20% 人身上扳回来。可惜的是——分档本身要用到答案，所以这是“事后解释”，还不能直接当“事先挑人”的规则。</p>
 
 <h3>价值二：它知道具体题目的特殊之处</h3>
-<p>这是最硬的一条证据。我们做了一个"打乱卡片"的对照：把 AI 对<strong>这道题</strong>的预测，
+<p>这是最硬的一条证据。我们做了一个“打乱卡片”的对照：把 AI 对<strong>这道题</strong>的预测，
 换成它对<strong>同一份问卷另一道题</strong>的预测，再和其他信息混合。</p>
 <div class="grid3">
-<article class="card"><span class="tag">对照</span><h3>真实卡片</h3><div class="big">10.7pp</div><p>用 AI 对这道题的预测混合后，误差。</p></article>
+<article class="card"><span class="tag">对照</span><h3>真实卡片</h3><div class="big">10.7pp</div><p>用 AI 对这道题的预测混合后的误差。</p></article>
 <article class="card"><span class="tag">反证</span><h3>打乱卡片</h3><div class="big">23.7pp</div><p>换成另一道题的预测后，误差几乎翻倍。</p></article>
-<article class="card"><span class="tag">结论</span><h3>差多少</h3><div class="big">+13.0pp</div><p>说明 AI 提供的不是"通用先验"，而是这道题的信息。</p></article>
+<article class="card"><span class="tag">结论</span><h3>差多少</h3><div class="big">+13.0pp</div><p>说明 AI 提供的不是“通用先验”，而是这道题的信息。</p></article>
 </div>
 <p class="small">这张图用的是外部验证数据（下一幕）。同样的结果在 8 套内部研究里都成立，
-只有"包装与拒买"那套例外——因为 AI 在那套上比"每档等分"还差。</p>
+只有“包装与拒买”那套例外——因为 AI 在那套上比“每档等分”还差。</p>
 </section>
 <section id="recipe"><span class="number">第五幕 · 可交付的方案</span>
-<h2>把 AI 和"十几份真实回答"混在一起，比两者单独用都好</h2>
+<h2>把 AI 和“十几份真实回答”混在一起，比两者单独用都好</h2>
 <p class="lead">如果历史答案不存在，你手里通常还有一个很小的东西：<strong>刚收回来的十几份问卷</strong>。
 问题于是变成——问真人，还是问模型，还是都要？</p>
 
-<h3>先回答"要几份"</h3>
-<p>我们从每套研究的历史受访者里随机抽 k 人当作"小样本实测"，看它什么时候超过"只问 AI"：</p>
+<h3>先回答“要几份”</h3>
+<p>我们从每套研究的历史受访者里随机抽 k 人当作“小样本实测”，看它什么时候超过“只问 AI”：</p>
 <figure><h3>实测要多少人，才能超过 AI</h3>
 <div id="storyCrossover" class="echart" style="height:430px"></div>
-<figcaption>横轴是小样本人数，纵轴是分布误差；每条虚线是"只问 AI"的水平。
-曲线降到虚线以下的位置，就是"该改用实测"的人数。<strong>多数问卷在 20–40 份处交叉</strong>；
+<figcaption>横轴是小样本人数，纵轴是分布误差；每条虚线是“只问 AI”的水平。
+曲线降到虚线以下的位置，就是“该改用实测”的人数。<strong>多数问卷在 20–40 份处交叉</strong>；
 西班牙番茄例外，它的题卡彼此差异极大，历史答案要到三百份才追上。</figcaption></figure>
 
-<h3>再回答"能不能相加"</h3>
+<h3>再回答“能不能相加”</h3>
 <p>用一条<strong>不调参、写死</strong>的规则混合：权重 w = k/(k+20)，即样本越多越信实测。
-关键是配上对照——把同样权重用在"均匀分布"上。只有"混合 AI"更好，才能说明 AI 提供了信息。</p>
+关键是配上对照——把同样权重用在“均匀分布”上。只有“混合 AI”更好，才能说明 AI 提供了信息。</p>
 <div class="grid3">
 <article class="card"><span class="tag">主结果</span><h3>混合有增益</h3><div class="big">+5.6pp</div><p>九套问卷、88 张题卡的汇总，<strong>95% 区间 [+3.9, +7.3]</strong>，九套里 8 套为正。Pro 与 Qwen 两个模型一致。</p></article>
-<article class="card"><span class="tag">关键对照</span><h3>不是降方差</h3><div class="big">对照赢</div><p>把小样本与"均匀分布"同样混合，效果明显更差——说明 AI 带的是信息，不是"平均一下降噪声"。</p></article>
-<article class="card"><span class="tag">防止顾此失彼</span><h3>个体也没吃亏</h3><div class="big">7 / 8</div><p>同一批数据里，混合方案在个体预测误差上也更好，没有出现"群体变好、个体变差"的交换。</p></article>
+<article class="card"><span class="tag">关键对照</span><h3>不是降方差</h3><div class="big">对照赢</div><p>把小样本与“均匀分布”同样混合，效果明显更差——说明 AI 带的是信息，不是“平均一下降噪声”。</p></article>
+<article class="card"><span class="tag">防止顾此失彼</span><h3>个体也没吃亏</h3><div class="big">7 / 8</div><p>同一批数据里，混合方案在个体预测误差上也更好，没有出现“群体变好、个体变差”的交换。</p></article>
 </div>
 
 <h3>最后：换一套从没用过的数据，还算数吗</h3>
 <p>上面所有结论都来自 14 套研究，而它们都参与过筛查。为检验泛化，我们接入了一套
 <strong>完全没碰过</strong>的公开问卷：Amazon「Open eCommerce」美国线上样本，
-96 名受访者、14 道单选题，题型与人群体量都与前面不同。</p>
-<figure><h3>外部数据上的四种做法</h3>
+4,995 名受访者、14 道单选题，题型与人群体量都与前面不同。
+我们抽 96 人作被测队列，其余 4,899 人作历史答案。</p>
+<figure><h3>同一套外部数据，六种做法</h3>
 <div id="storyExternal" class="echart" style="height:360px"></div>
-<figcaption>AI 仍然远好于"每档等分"，也仍然远差于查表——与前 14 套同向；
+<figcaption>AI 仍然远好于“每档等分”，也仍然远差于查表——与前 14 套同向；
 而小样本混合的规则在这里同样成立（k=20 时比混合均匀分布好 9.3pp）。
-最左两根柱子是同一批人、同一道题，只改了"让 AI 选一项"和"让 AI 给概率"。</figcaption></figure>
-<div class="table-wrap"><table><caption>外部验证：五条判据全部通过</caption><thead><tr><th>判据</th><th>结果</th><th>说明</th></tr></thead><tbody><tr><th>最稳的一条在新数据上复现</th><td>通过</td><td>只改输出形式：选一项 24.2 → 给概率 18.2pp，区间 [3.3, 8.3]</td></tr><tr><th>既有结论复现</th><td>通过</td><td>AI 18.2pp vs 等分 37.8pp vs 查表 2.6pp</td></tr><tr><th>小样本混合</th><td>通过</td><td>k=20 时增益 +9.3pp，与内部研究同向</td></tr><tr><th>卡片级信息</th><td>通过</td><td>打乱卡片后误差 10.7 → 23.7pp</td></tr><tr><th>个体不吃亏</th><td>通过</td><td>同一批数据里个体误差同时改善</td></tr></tbody></table></div><p class="small">这套数据在此前没有参与任何一次调框架、选权重或做校准，因此它检验的是"规则能否迁移"。</p>
+最左两根柱子是同一批人、同一道题，只改了“让 AI 选一项”和“让 AI 给概率”。</figcaption></figure>
+<div class="table-wrap"><table><caption>外部验证：五条判据全部通过</caption><thead><tr><th>判据</th><th>结果</th><th>说明</th></tr></thead><tbody><tr><th>最稳的一条在新数据上复现</th><td>通过</td><td>只改输出形式：24.2 → 18.2pp（改善 6.0pp，区间 [+3.3, +8.3]）</td></tr><tr><th>既有结论复现</th><td>通过</td><td>AI 18.2pp vs 等分 37.8pp vs 查表 2.6pp</td></tr><tr><th>小样本混合</th><td>通过</td><td>k=20 时增益 +9.3pp，与内部研究同向</td></tr><tr><th>卡片级信息</th><td>通过</td><td>打乱卡片后误差 10.7 → 23.7pp</td></tr><tr><th>个体不吃亏</th><td>通过</td><td>同一批数据里个体误差同时改善</td></tr></tbody></table></div><p class="small">这套数据在此前没有参与任何一次调框架、选权重或做校准，因此它检验的是“规则能否迁移”。</p>
 
 <div class="callout"><strong>最终配方（可以直接照做）</strong><br>
 ① 新问卷先收 <strong>10–30 份</strong>真实回答；<br>
 ② 若还要用 AI，先让它给出分布，再与实测按 <strong>w = k/(k+20)</strong> 混合；<br>
-③ 如果 AI 在这套题上的误差比"每档等分"还差，<strong>不要混合</strong>，直接用实测。</div>
+③ 如果 AI 在这套题上的误差比“每档等分”还差，<strong>不要混合</strong>，直接用实测。</div>
 </section>
 <section id="compare"><span class="number">一页对比</span>
 <h2>改造前 vs 改造后</h2>
-<div class="table-wrap"><table><caption>同一批数据，不同做法的表现</caption><thead><tr><th>环节</th><th>改造前</th><th>改造后</th><th>变化</th></tr></thead><tbody><tr><th>输出形式</th><td>让 AI 选一个答案</td><td>让 AI 给每个选项的概率</td><td>群体误差下降 16.6–25.3 个百分点</td></tr><tr><th>用到历史答案</th><td>没有</td><td>把历史分布写进提示</td><td>相对改善 16.5–24.9%</td></tr><tr><th>与他人比较</th><td>和"随机猜"比</td><td>和"同样信息的查表"比</td><td>发现 14/14 落后</td></tr><tr><th>小样本利用</th><td>不用</td><td>按 w=k/(k+20) 与 AI 混合</td><td>+5.6pp [+3.9, +7.3]</td></tr><tr><th>使用前提</th><td>任何情况都用 AI</td><td>按题卡判断，AI 差于等分就不混合</td><td>避免"包装与拒买"那类反例</td></tr></tbody></table></div><p class="small">前半段（输出形式、历史答案）来自 14 套研究；后半段（混合规则）在 9 套内部研究 + 1 套外部数据、2 个模型上验证过。</p>
+<div class="table-wrap"><table><caption>同一批数据，不同做法的表现</caption><thead><tr><th>环节</th><th>改造前</th><th>改造后</th><th>变化</th></tr></thead><tbody><tr><th>输出形式</th><td>让 AI 选一个答案</td><td>让 AI 给每个选项的概率</td><td>群体误差下降 16.6–25.3 个百分点（4 项中 3 项改善）</td></tr><tr><th>用到历史答案</th><td>没有</td><td>把历史分布写进提示</td><td>相对改善 16.5–24.9%</td></tr><tr><th>与他人比较</th><td>和“随机猜”比</td><td>和“同样信息的查表”比</td><td>发现 14/14 落后</td></tr><tr><th>小样本利用</th><td>不用</td><td>按 w=k/(k+20) 与 AI 混合</td><td>+5.6pp [+3.9, +7.3]</td></tr><tr><th>使用前提</th><td>任何情况都用 AI</td><td>按题卡判断，AI 差于等分就不混合</td><td>避免“包装与拒买”那类反例</td></tr></tbody></table></div><p class="small">输出形式在 15 套里 14 套明显改善、1 套持平（美国消费调整），没有一套变差；历史答案那一条来自 14 套内部研究；混合规则在 8 套内部研究 + 1 套外部数据、2 个模型上验证过。</p>
 </section>
 <section id="limits"><span class="number">诚实边界</span>
 <h2>这些结论不能说什么</h2>
 <ul>
-<li><strong>不能说"AI 完全不懂人"。</strong>它赢不了"同样信息的查表"，但当只有十几份真实回答时，
+<li><strong>不能说“AI 完全不懂人”。</strong>它赢不了“同样信息的查表”，但当只有十几份真实回答时，
 它的信息能让结果明显变好——这是实测出来的增量，不是安慰奖。</li>
 <li><strong>不能说这是 14 次独立复现。</strong>14 套研究只对应 11 个独立数据集
 （Pew 四套算一个簇），增加的是领域覆盖，不是统计功效。</li>
-<li><strong>不能把"误差 4.4–10.4 个百分点"当成准确度。</strong>
+<li><strong>不能把“误差 4.4–10.4 个百分点”当成准确度。</strong>
 96 人规模的抽样噪声本身就有这么大，我们的解读都放在这把尺子上。</li>
 <li><strong>外部验证只覆盖美国线上样本。</strong>跨国家、跨语言是否成立，没有测。</li>
-<li><strong>没有测"商品属性结构化注入"这条线。</strong>现有的商品选择数据里，属性模型的参照本身就赢了 AI，
-但"把属性结构化喂给 AI"这条路还没走过。</li>
-<li><strong>事后分解不等于可用规则。</strong>"AI 在最不典型的 20% 人身上更准"需要用答案来分档，
+<li><strong>没有测“商品属性结构化注入”这条线。</strong>现有的商品选择数据里，属性模型的参照本身就赢了 AI，
+但“把属性结构化喂给 AI”这条路还没走过。</li>
+<li><strong>事后分解不等于可用规则。</strong>“AI 在最不典型的 20% 人身上更准”需要用答案来分档，
 目前只能解释、不能事先挑选。</li>
 </ul>
 </section>
 <section id="literature"><span class="number">放进研究脉络</span>
 <h2>我们的发现，与已有研究对得上吗</h2>
-<div class="table-wrap"><table><caption>与文献的对话</caption><thead><tr><th>我们的发现</th><th>已有研究</th><th>关系</th></tr></thead><tbody><tr><th>方向对、幅度错（第一名命中 {pct(direction.get("ai_argmax", 0))}，但份额差 8–30 个百分点）</th><td>Nature 实验预测研究：模型能高相关地预测实验效应，却系统性高估幅度</td><td>同一种失败形态：知道方向，不知道分寸</td></tr><tr><th>AI 把人群差异压平，且不能靠调参修正</th><td>抽样机制研究（2026）：模型能描述分布，重复抽样时却集中选择同一项</td><td>机制一致；我们的补充是"没有通用旋钮"</td></tr><tr><th>提高随机性会同时伤到个体预测</th><td>电动车偏好研究：温度升高改善群体分布、损害逐人预测</td><td>我们绕开了这个交换：在模型外部做混合，个体同时变好</td></tr><tr><th>模型必须带着"数据条件"评价，而不是排一个总分榜</th><td>访谈代理论文（2026 v3）：同样任务，给不同信息，表现从 74% 到 86%</td><td>支持我们的核心主张：先说清楚给了什么，再谈准不准</td></tr><tr><th>小样本 + 模型的组合优于任一单独使用</th><td>Centaur（Nature 2025）证明行为训练有效；但访谈代理附录显示微调并不总有效</td><td>方向一致：关键在于信息，不在于模型的大小或训练量</td></tr></tbody></table></div><p class="small">以上都是性质上的对照，不是数字上的排名——各研究的任务、指标、样本都不同，不能直接比大小。</p>
+<div class="table-wrap"><table><caption>与文献的对话</caption><thead><tr><th>我们的发现</th><th>已有研究</th><th>关系</th></tr></thead><tbody><tr><th>方向对、幅度错（第一名命中 70.3%，但份额差 8–30 个百分点）</th><td>Nature 实验预测研究：模型能高相关地预测实验效应，却系统性高估幅度</td><td>同一种失败形态：知道方向，不知道分寸</td></tr><tr><th>AI 把人群差异压平，且不能靠调参修正</th><td>抽样机制研究（2026）：模型能描述分布，重复抽样时却集中选择同一项</td><td>机制一致；我们的补充是“没有通用旋钮”</td></tr><tr><th>提高随机性会同时伤到个体预测</th><td>电动车偏好研究：温度升高改善群体分布、损害逐人预测</td><td>我们绕开了这个交换：在模型外部做混合，个体同时变好</td></tr><tr><th>模型必须带着“数据条件”评价，而不是排一个总分榜</th><td>访谈代理论文（2026 v3）：同样任务，给不同信息，表现从 74% 到 86%</td><td>支持我们的核心主张：先说清楚给了什么，再谈准不准</td></tr><tr><th>小样本 + 模型的组合优于任一单独使用</th><td>Centaur（Nature 2025）证明行为训练有效；但访谈代理附录显示微调并不总有效</td><td>方向一致：关键在于信息，不在于模型的大小或训练量</td></tr></tbody></table></div><p class="small">以上都是性质上的对照，不是数字上的排名——各研究的任务、指标、样本都不同，不能直接比大小。</p>
 <p>文献里还有一条我们没做的事：<strong>把自然语言意愿映射成评分分布</strong>（即 SSR 方法）。
-我们的评分题目前是直接让模型给概率，没有走"先写文字再映射"这条路。这可能是下一个值得试的方向。</p>
+我们的评分题目前是直接让模型给概率，没有走“先写文字再映射”这条路。这可能是下一个值得试的方向。</p>
 </section>
 <section id="ending" class="intro"><span class="number">回到开头</span>
 <h2>所以，下周那个方案会怎么定？</h2>
@@ -211,14 +214,14 @@
 <div class="grid3">
 <article class="card"><span class="tag">步骤一</span><h3>第一天</h3><div class="big">先收 10–20 份</div><p>找 10–20 个符合目标人群的人，问同样的题。这比什么模型都快，而且几乎不花钱。</p></article>
 <article class="card"><span class="tag">步骤二</span><h3>第二天</h3><div class="big">问一次 AI</div><p>让 AI 对同一套题给出分布（注意：要概率，不要让它只选一个）。</p></article>
-<article class="card"><span class="tag">步骤三</span><h3>第三天</h3><div class="big">按公式混合</div><p>w = k/(k+20)：5 份时八成信 AI，20 份时五五开，40 份时八成信实测。若 AI 连"每档等分"都不如，直接用实测。</p></article>
+<article class="card"><span class="tag">步骤三</span><h3>第三天</h3><div class="big">按公式混合</div><p>w = k/(k+20)：5 份时八成信 AI，20 份时五五开，40 份时三分之二信实测。若 AI 连“每档等分”都不如，直接用实测。</p></article>
 </div>
 <p>预期效果（八套内部研究的中位数）：</p>
 <div class="table-wrap"><table><caption>样本很少时，AI 到底帮了多少</caption><thead><tr><th>手上有的样本</th><th>只问 AI</th><th>只用实测</th><th>两者混合</th><th>混合相对只用实测</th></tr></thead><tbody><tr><th>5 份</th><td>10.9pp</td><td>23.4pp</td><td><strong>10.2pp</strong></td><td>降低 13.2 个百分点</td></tr><tr><th>10 份</th><td>11.0pp</td><td>16.9pp</td><td><strong>10.2pp</strong></td><td>降低 6.7 个百分点</td></tr><tr><th>20 份</th><td>11.2pp</td><td>12.3pp</td><td><strong>9.2pp</strong></td><td>降低 3.1 个百分点</td></tr><tr><th>40 份</th><td>11.2pp</td><td>9.1pp</td><td><strong>8.2pp</strong></td><td>降低 0.9 个百分点</td></tr></tbody></table></div><p class="small">越低越好。注意第二列和第三列的关系：<strong>实测攒到 40 份时，它自己就已经比 AI 准了</strong>——AI 的价值集中在最开头那几天。</p>
-<p>所以准确的用法是：<strong>问卷刚发出去、只有个位数或十几份回答时，AI 能把误差压掉近一半；
+<p>所以准确的用法是：<strong>问卷刚发出去、只有个位数或十几份回答时，AI 能把误差压掉一半以上；
 等攒到四五十份，就该相信实测、把 AI 的权重降下来。</strong>这正是 w = k/(k+20) 自动做的事——
 样本越多，权重越偏向实测。</p>
-<div class="callout"><strong>一句话收尾</strong>：这项研究最初想回答"AI 能不能替代真人问卷"。
+<div class="callout"><strong>一句话收尾</strong>：这项研究最初想回答“AI 能不能替代真人问卷”。
 答案是不能，但它给出了一个更好的答案——<strong>AI 不能替代数据，它能让小数据更值钱。</strong>
 这也正好呼应了开头那个问题：你没有时间发几百份问卷，但你也不需要了。</div>
 <p class="small">全部数字来自 <code>decision_lab/reports/cross-study-v1/</code> 下的冻结结果文件，

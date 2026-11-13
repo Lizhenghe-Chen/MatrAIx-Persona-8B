@@ -19,7 +19,7 @@ import html
 import json
 from pathlib import Path
 
-from notes import design, floor_table
+from notes import curly_quotes, design, floor_table
 
 HERE = Path(__file__).resolve().parent
 CROSS = HERE.parent / 'decision_lab/reports/cross-study-v1'
@@ -174,7 +174,8 @@ def verdict_chip(native_tv, optimized_tv, native_ran=True):
                 '仅优化臂</span>')
     if state == 'unestimable':
         return ('<span class="chip tie" title="原版臂跑了，但这套问卷的题目人人不同，'
-                '没有一道题够 20 人，逐题误差算不出来">逐题不可估</span>')
+                '没有一道题够 20 人，逐题误差算不出来；展开可看个体误差">'
+                '改看个体误差</span>')
     if state == 'tie':
         return '<span class="chip tie">≈ 两者相当</span>'
     # The verdict chip carries the good/bad reading, so the detail cells need not shout.
@@ -370,13 +371,16 @@ def build():
             f'<tr><th><a href="#s-{study}">{html.escape(LABELS.get(study, study))}</a></th>'
             f'<td>{entry["people"]}</td><td>{entry["cards"]}</td>'
             f'<td>{entry["estimable_cards"]}</td>'
-            f'<td>{tv_cell(native_value, state, who == "native") if native_value is not None else missing_cell(native_value, state)}</td>'
-            f'<td>{tv_cell(optimized_value, state, who == "optimized")}</td>'
-            f'<td>{verdict_chip(native_value, optimized_value, native_ran)}</td></tr>')
+            + ('<td><span class="tv muted">—</span></td><td><span class="tv muted">—</span></td>'
+               if not entry['estimable_cards'] else
+               f'<td>{tv_cell(native_value, state, who == "native") if native_value is not None else missing_cell(native_value, state)}</td>'
+               f'<td>{tv_cell(optimized_value, state, who == "optimized")}</td>')
+            + f'<td>{verdict_chip(native_value, optimized_value, native_ran)}</td></tr>')
     overview.append('</tbody></table></div>'
                     '<p class="small">「可估题」＝至少 20 名被测者答过同一道题。'
-                    '为 0 的研究，单题分布不可估（一个人的答案就是 100%），'
-                    '只能看全部题目的汇总视图。这些数字与技术版报告逐套一致。</p>')
+                    '为 0 的六套是联合分析或打分任务，题目人人不同，'
+                    '单题分布算不出来——展开后改用<strong>个体误差</strong>判好坏，'
+                    '并保留全部题目的汇总视图。这些数字与技术版报告逐套一致。</p>')
     overview = ''.join(overview)
 
     charts, pooled = {}, {}
@@ -415,10 +419,10 @@ def build():
             '不点开也能扫一眼差在哪。</p>'
             '<div class="callout"><strong>怎么读</strong>：'
             '「真人」是实际作答者的选中比例；'
-            '「原版 MatrAIx」把 96 次输出当成 96 个人投票（它每次只选一个，天然是分布）；'
+            '「原版 MatrAIx」是每个人只交一个选项，把这些单选汇总起来就是一条分布；'
             '「优化后」是模型给每个选项的概率取平均。'
             '误差 TV（百分点）越低越好，最后一列「原版−真人」指出高估（正）还是低估（负）。</div>'
-            '<div class="legend"><span class="legend-item"><b class="tv win">12.1<i>▼</i></b> 更准的那一版</span>'
+            '<div class="legend"><span class="legend-item"><b class="tv win">12.1<i>▼</i></b> 两种做法里误差更低的那个</span>'
             '<span class="legend-item"><b class="tv tie">13.4<i>≈</i></b> 差异不到 2 个百分点，视为相当</span>'
             '<span class="legend-item"><b class="dir up">+21.9</b> 高估</span>'
             '<span class="legend-item"><b class="dir down">−16.7</b> 低估</span>'
@@ -438,7 +442,7 @@ def build():
             f'<script id="card-data" type="application/json">{data_json}</script>'
             f'<script>{ECHARTS}</script><script>{CHARTS}</script>'
             '</body></html>')
-    (HERE / 'cards.html').write_text(page)
+    (HERE / 'cards.html').write_text(curly_quotes(page))
     print(f'Built per-question report: {HERE / "cards.html"} ({len(page):,} bytes)')
 
 

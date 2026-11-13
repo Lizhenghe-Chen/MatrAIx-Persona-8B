@@ -1,6 +1,6 @@
 # 报告目录
 
-两个页面，同一份冻结数据，用途不同：
+三个页面，同一份冻结数据，用途不同：
 
 | 文件 | 读者 | 内容 |
 |---|---|---|
@@ -8,14 +8,14 @@
 | [index.html](index.html) | 要核对数字的人 | 技术版：逐套明细、95% 区间、13 道题的分布切换、冻结证据 |
 | [cards.html](cards.html) | 要逐题看分布的人 | 两级抽屉：研究 → 题目。展开即三色分组柱状图（真人 / 原版 / 优化），收起时每道题带迷你分布条 |
 
-两页的数字都由同一批 `decision_lab/reports/cross-study-v1/*.json` 填入，改一处必须同时重建两页；
+三页的数字都由同一批 `decision_lab/reports/cross-study-v1/*.json` 填入，改一处必须同时重建三页；
 `verify.py` 会逐条比对页面文字与冻结数据的一致性。都不是手填数字。
 
 ## 文件用途
 
 | 文件 | 用途 |
 |---|---|
-| [story.html](story.html) · [index.html](index.html) | 两个可单独拷贝、离线打开的页面；图表全部内联，零外部请求 |
+| [story.html](story.html) · [index.html](index.html) · [cards.html](cards.html) | 三个可单独拷贝、离线打开的页面；图表全部内联，零外部请求 |
 | [evidence.json](evidence.json) | 从冻结评分抽取的聚合数字与来源 SHA-256；没有逐人编号、完整请求或答案关联 |
 | [build.py](build.py) · [build_story.py](build_story.py) · [build_cards.py](build_cards.py) | 分别生成技术版、故事版、逐题版；不调用模型 |
 | [notes.py](notes.py) | 三页共用的一段说明：六套联合分析/打分任务为何没有逐题分布，以及“至少 20 人”门槛的抽样噪底（固定种子实算） |

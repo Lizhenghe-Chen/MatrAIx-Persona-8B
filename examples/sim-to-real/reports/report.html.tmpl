@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="MatrAIx 决策模拟全部已完成实验的证据总结：哪些改法有效，哪些没有通过，数据与边界是什么。"><title>AI 怎样才能更接近真人选择？｜MatrAIx 实验总报告</title><style>{{STYLE}}</style></head>
 <body>
-<header><div class="hero"><div class="eyebrow">MATRAIX · 决策模拟证据总结 · 2026 年 11 月 12 日</div>
+<header><div class="hero"><div class="eyebrow">MATRAIX · 决策模拟证据总结 · 2026 年 11 月 13 日</div>
 <h1>AI 怎样才能<br>更接近真人选择？</h1>
 <p class="lead">已有实验给出的方向是：<strong>先保留人的分歧，再验证模型和真实信息是否有用。</strong>只把人物设定写得更丰富，不能保证模拟更真实。</p>
 <p>这份报告把“之前怎样、改了什么、改善多少、哪里没成功”放在一起。数字全部来自已经完成的实验：除最后一节的信息对等实验（380 次新调用）外，其余均为既有检查点的复算。</p>
@@ -15,7 +15,7 @@
 <article class="card"><span class="tag">已测配置 · 优先采用</span><h3>固定用 DeepSeek Pro</h3><div class="big">15.95 → 11.50</div><p>同一批合成画像、同一套购物题、相同概率答法下，Pro 比 Qwen 的平均分布误差低 <b>4.46 个百分点</b>。</p><p class="small">支持本项目的模型默认选择；不代表所有模型、所有任务的排名。<a href="#model">看证据 →</a></p></article>
 <article class="card"><span class="tag">有真人训练答案时</span><h3>先建真人统计参照</h3><div class="big">18.08 → 5.43</div><p>用真人训练数据修正 AI 后，网购误差明显缩小；同背景的简单统计方法为 <b>4.59</b>，仍然更低。</p><p class="small">收益说明真人数据很重要；没有证明 AI 在统计预测之上带来额外价值。<a href="#real-data">看证据 →</a></p></article>
 </div>
-<div class="callout"><strong>最新一轮补了两条关键证据（2026-11-12 晚）：</strong>① <a href="#direction">方向对不对</a>——AI 把真实最热门选项排第一的比例是 <b>70.3%</b>，同信息参照是 <b>89.2%</b>；方向大多对，但不足以当优势。② <a href="#anchor">把历史分布直接写进提示交给 AI</a>——误差立刻下降 <b>16.5%–24.9%</b>，但最好也只是与“照抄该分布”打平，仍赢不过它。两条合起来说明：此前差距的一大半来自“模型不知道基础比例”，而<strong>人格画像在已知基础分布之上没有可测量的增量</strong>。</div>
+<div class="callout"><strong>11 月 12 日那一轮补了两条关键证据：</strong>① <a href="#direction">方向对不对</a>——AI 把真实最热门选项排第一的比例是 <b>70.3%</b>，同信息参照是 <b>89.2%</b>；方向大多对，但不足以当优势。② <a href="#anchor">把历史分布直接写进提示交给 AI</a>——误差立刻下降 <b>16.5%–24.9%</b>，但最好也只是与“照抄该分布”打平，仍赢不过它。两条合起来说明：此前差距的一大半来自“模型不知道基础比例”，而<strong>人格画像在已知基础分布之上没有可测量的增量</strong>。11 月 13 日又补齐了外部验证缺的原版臂：同一批人、同一道题，只把“让 AI 选一项”改成“给出概率”，分布误差从 24.2pp 降到 18.2pp（区间不跨零），这是第 15 套、也是唯一一套跑前没人看过结果的数据。</div>
 <div class="callout"><strong>还有一个有条件有效的改法：</strong>把“扮演某类人”改为“预测这位受访者当时会怎样回答”，并补充真实、贴题的背景。它在 18 道生活类问卷题上有效，但迁移到购物和家电任务并不稳定。<a href="#background">查看成功与失败的对照</a>。</div>
 <p><strong>目前不能宣称：</strong>已经找到一套通用方法，能够让 MatrAIx 的合成人格可靠地代替真人。我们验证的是若干输入和预测方法，也没有在这组实验中完整评测官方 MatrAIx 8B 权重。下面的优化建议不能合并成“原版整体已经提升多少”的单一数字。</p>
 <details><summary>怎样才算“有明显改善”？这些数字是什么？</summary>
@@ -117,6 +117,10 @@
 <tr><th>匹配与商品三次复验</th><td>同一套历史材料重复调用；每条件 240 人。细匹配、人格、模型与输出方式分别对照。</td><td><a href="../study/10_匹配与商品复验/README.md">复验方法和结果</a><br>Pro 优势重复出现；不是新真人样本上的独立复验。</td></tr>
 <tr><th>新框架家电正式测试</th><td>按人 60%/20%/20% 划分；测试烘干机 292 人、瑞士家电 683 人。真人预测与合成人群分开，正式调用 45,216 次。</td><td><a href="../decision_lab/reports/reader.html">故事与逐卡报告</a><br>Pro 没超过有训练答案的统计参照。只有两套独立研究，且都是家电。</td></tr>
 <tr><th>最新两次选择筛查</th><td>两项研究开发集合各 48 人；本人、别人、无记录三组。修正版 600 次含试跑。</td><td><a href="../decision_lab/reports/choice-history.html">图解与实际题目</a><br>没过继续门槛；初版 419 次废止并保留。</td></tr>
+<tr><th>信息对等实验</th><td>德国番茄包装、美国网购与达人为两套问卷；把历史分布直接写进提示，再让 AI 在此之上调整。冻结 576 条请求，190 条逐字节复用。</td><td><a href="#anchor">本节逐项数字</a><br>改善很大，但最好只与“照抄该分布”打平，没能超过。</td></tr>
+<tr><th>免费模型筛查</th><td>本地 Qwen 端点，6 种任务框架 + 2 种人群写法，约 4,600 次免费调用；判定门槛在跑之前写死。</td><td><a href="#background">筛查与背景结果</a><br>六种全部未过门槛，最好的也只 +1.26pp。</td></tr>
+<tr><th>小样本 × AI 混合</th><td>9 套研究（8 内部 + 1 外部）、88 张题卡；按 w = k/(k+20) 混合，并与“混合均匀分布”对照。另做打乱卡片与偏样本测试。</td><td><a href="#pilot">分工与临界点</a><br>k=20 时增益 +5.6pp，区间 [+3.9, +7.3]；8/9 为正，包装与拒买由断路器排除。</td></tr>
+<tr><th>外部验证（第 15 套）</th><td>Amazon「Open eCommerce」美国线上样本，4,995 人；抽 96 人作被测队列。先只跑优化臂，后补齐原版臂（96 次新调用）。</td><td><a href="#pilot">外部验证四条结论</a><br>既有全部结论同向；只改输出形式即 24.2 → 18.2pp。</td></tr>
 </tbody></table></div>
 <details><summary>原始调查、作者数据与方法来源</summary><div class="list">
 <p><b>消费与价格：</b><a href="https://www.federalreserve.gov/consumerscommunities/shed_data.htm">美联储 SHED 官方数据</a>，本实验使用 2025 年调查消费调整题；真人答案逐题排除可识别插补值。</p>

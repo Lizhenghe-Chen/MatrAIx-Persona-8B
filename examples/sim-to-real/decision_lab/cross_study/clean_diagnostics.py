@@ -138,7 +138,6 @@ def shoes_diagnostics(responses, results):
     between_model, within_model = statistics.pstdev(model_means), statistics.mean(model_within)
     return {
         'respondents': len(rows),
-        'ratings': total,
         'people_per_person_questions': sorted({len(values) for values in human.values()}),
         'items_predicted': items,
         'human_histogram': [round(value / total, 4) for value in histogram],
@@ -152,7 +151,9 @@ def shoes_diagnostics(responses, results):
             'within_kept': round(within_model / within_human, 4),
         },
         'correlation': {'review': correlation(expected, review), 'price': correlation(expected, price)},
-        'cards': 107236,
+        # Unique shoes, not rating rows: a "card" here is one product profile.
+        'cards': len({q['id'] for row in rows for q in row['questions']}),
+        'ratings': total,
         'cards_with_20_people': 0,
         'arms': _arms(results, 'shoes'),
         'reference': 'attribute_rating',

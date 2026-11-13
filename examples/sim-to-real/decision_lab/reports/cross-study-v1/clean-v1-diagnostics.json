@@ -2281,7 +2281,6 @@
   },
   "shoes": {
     "respondents": 3073,
-    "ratings": 122914,
     "people_per_person_questions": [
       38,
       40
@@ -2320,6 +2319,7 @@
       "price": -0.0627
     },
     "cards": 107236,
+    "ratings": 122914,
     "cards_with_20_people": 0,
     "arms": {
       "original": [

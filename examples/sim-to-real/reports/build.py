@@ -188,12 +188,27 @@ def cross_study_section():
             f'<p><a href="{link}">查看六套研究完整报告（含逐组数字、区间与不可估计的说明）</a>'
             ' · <a href="../decision_lab/docs/推荐配置.md">推荐配置与判断顺序</a></p>')
 
+def evaluated_cards():
+    """Cards the evaluated cohort actually saw, per study (per-card.json, widest arm set)."""
+    path = CROSS / 'per-card.json'
+    if not path.exists():
+        return {}
+    chosen = {}
+    for block in json.loads(path.read_text())['plans'].values():
+        for study, entry in block['studies'].items():
+            if study not in chosen or ('original' not in chosen[study]['arms']
+                                       and 'original' in entry['arms']):
+                chosen[study] = entry
+    return {study: entry['cards'] for study, entry in chosen.items()}
+
+
 def clean_study_section():
     """Two-arm clean experiment with real charts; every number comes from the diagnostics file."""
     summary_path = CROSS / 'clean-v1-report.summary.json'
     results_path = CROSS / 'clean-v1-results.json'
     diagnostics_path = CROSS / 'clean-v1-diagnostics.json'
     link = '../decision_lab/reports/cross-study-v1/clean-v1-report.html'
+    seen = evaluated_cards()
     if not (summary_path.exists() and results_path.exists() and diagnostics_path.exists()):
         return ('<section id="clean-v1"><h2>换题型再验一次：两臂干净实验</h2>'
                 '<p>诊断尚未生成：先运行 <code>python -m decision_lab.cross_study.clean_diagnostics</code>。'
@@ -286,8 +301,10 @@ def clean_study_section():
           '<th>优化 vs 统计参照</th></tr></thead><tbody>' + ''.join(cells) + '</tbody></table></div>'
         + f'<p class="small">冻结调用 {budget["max_calls"]} 次，保守上限 ${budget["reserved_peak_usd"]:.2f}；'
           '按官方价目与实际 token（含缓存命中）计约 $4.8，低谷时段约为一半；'
-          '保守上限不是账单。分布误差在这两套都不可估计：被测的 96 人分散在 '
-          f'{drone["cards"]} / {shoes["cards"]:,} 张题卡上，没有一张卡达到 20 人——'
+          '保守上限不是账单。分布误差在这两套都不可估计：被测的 96 人各自看到的题卡互不相同，'
+          f'分别散在 {seen["drone"]} 张无人机题卡与 {seen["shoes"]:,} 双鞋上'
+          f'（整套数据共 {drone["cards"]} 张卡、{shoes["cards"]:,} 双鞋），'
+          '没有一张卡达到 20 人——'
           '所以这里只回答“谁的预测更准”，不回答“群体分布准不准”。</p>'
         + '<p class="small">两套问卷都<strong>没有测量学历</strong>，匹配时按缺失处理，不做推断；'
           '匹配字段为年龄带 + 性别（无人机）、仅年龄带（运动鞋）。四臂缩两臂发生在发出任何请求之前，'
@@ -461,7 +478,8 @@ def all_studies_section():
     return ('<section id="all-studies"><span class="number">全部轮次 · 一页看完</span>'
             '<h2>十四套研究，一张表比到底</h2>'
             f'<p class="lead">共 {stats["studies"]} 套研究、{stats["clusters"]} 个独立数据集簇。'
-            f'其中 {stats["studies_behind_reference"]} 套在同信息统计参照面前落后，'
+            f'{"全部" if stats["studies_behind_reference"] == stats["studies"] else str(stats["studies_behind_reference"]) + " 套"}'
+            f'在同信息统计参照面前落后，'
             f'95% 区间高于零的有 {len(stats["any_ci_above_zero"])} 套。</p>'
             '<div class="grid3">'
             f'<article class="card"><span class="tag">AI 的信息量</span><h3>相对“每档等分”</h3>'
@@ -481,14 +499,15 @@ def all_studies_section():
             '区间全部低于零，说明差距不是抽样噪声。</figcaption></figure>'
             '<div class="table-wrap"><table style="min-width:880px"><caption>十四套研究逐项对照（按“AI vs 参照”从差到好排序）'
             '</caption><thead><tr><th>研究</th><th>题型</th><th>数据集簇</th><th>人数</th>'
-            '<th>AI vs 等分</th><th>参照 vs 等分</th><th>AI vs 参照</th><th>95% 区间</th>'
+            '<th>AI vs 等分</th><th>参照 vs 等分</th><th>AI vs 参照</th>'
+            '<th>95% 区间<br><span class="unit">Brier 绝对差</span></th>'
             '<th>可估卡/总卡</th></tr></thead><tbody>' + table + '</tbody></table></div>'
             '<p class="small">“AI vs 等分”“参照 vs 等分”都以“每个选项等可能”为基准，因此可以横向比较；'
             '“AI vs 参照”是每套各自最强的同信息参照，强弱不同，只逐套看、不跨套平均。'
             '“可估卡”指同一题卡至少 20 名被测者——不足则群体分布误差不可估计。</p>'
-            + conjoint_note() +
             '<p class="small">簇一列是独立性口径：Pew 四套算一个簇，所以 14 套不是 14 次独立复现。'
             '可用脚本 <code>decision_lab.cross_study.cluster_summary</code> 复算。</p>'
+            + conjoint_note() +
             f'<script id="all-data" type="application/json">'
             f'{json.dumps({"rows": rows, "summary": stats}, ensure_ascii=False).replace("</", "<\\/")}'
             '</script></section>')
@@ -882,7 +901,7 @@ def external_block():
     return ('<h3>外部验证：一套从没参与过调参的数据</h3>'
             '<p>上面所有结论都来自 14 套研究，而它们全部参与过筛查。为检验泛化，'
             '我接入了一套<strong>此前从未使用</strong>的公开问卷——Amazon「Open eCommerce」'
-            '的美国线上样本：4,995 名受访者、14 道单选题，涵盖 Amazone 使用频率、'
+            '的美国线上样本：4,995 名受访者、14 道单选题，涵盖 Amazon 使用频率、'
             '家庭规模、烟酒习惯、疾病、数据出售态度等；人口字段为年龄、性别、学历、收入、州。'
             '按同一套规则抽取 96 人作为被测队列，其余作历史答案。</p>'
             '<div class="table-wrap"><table style="min-width:520px">'
@@ -891,8 +910,8 @@ def external_block():
             + (f'<p><strong>结论零（新数据上复现了最稳的那条）</strong>：'
                f'同一批人、同一道题、同一句人设描述，<strong>只改"让 AI 选一项"为"给出概率"</strong>，'
                f'分布误差从 {native:.1f}pp 降到 {ai_pro:.1f}pp，'
-               f'降低 {100 * (1 - ai_pro / native):.0f}%，95% 区间 '
-               f'[{contrast["improvement_95_ci"][0]:.1f}, {contrast["improvement_95_ci"][1]:.1f}]'
+               f'降低 {100 * (1 - ai_pro / native):.0f}%（即 {contrast["improvement_pp"]:.1f} 个百分点），'
+               f'95% 区间 [{contrast["improvement_95_ci"][0]:.1f}, {contrast["improvement_95_ci"][1]:.1f}] 个百分点'
                f'（14 题配对自举，不跨零）。这是第 15 套数据、也是唯一一套在跑之前'
                f'没被任何人看过结果的数据，结论与前 14 套一致。</p>'
                if native and contrast else '')
@@ -927,9 +946,13 @@ def build(d):
     def chart(rows, **kwargs): return '<div class="chart">'+bars(rows, **kwargs)+'</div>'
     cards=[]
     for r in d['probability']:
-        cards.append(f'<figure><h3>{r["label"]}</h3>'+chart([('只选一项', r['before'], 'before'), ('保留概率', r['after'], 'after')])+
-                     f'<figcaption>误差减少 <b>{r["gain"]:.2f}</b> 个百分点；95% 区间 [{r["ci"][0]:.2f}, {r["ci"][1]:.2f}]。'+
-                     ('<strong>未确认改善。</strong>' if r['gain']<0 else '')+'</figcaption></figure>')
+        cards.append(f'<figure><h3>{r["label"]}</h3>'+chart([('只选一项', r['before'], 'before'), ('保留概率', r['after'], 'after')])
+                     + (f'<figcaption>误差<b>增加</b> <b>{abs(r["gain"]):.2f}</b> 个百分点'
+                        f'（95% 区间 [{r["ci"][0]:.2f}, {r["ci"][1]:.2f}]）。'
+                        '<strong>未确认改善。</strong></figcaption></figure>'
+                        if r['gain'] < 0 else
+                        f'<figcaption>误差减少 <b>{r["gain"]:.2f}</b> 个百分点；'
+                        f'95% 区间 [{r["ci"][0]:.2f}, {r["ci"][1]:.2f}]。</figcaption></figure>'))
     slots['PROBABILITY']=''.join(cards)
     slots['PROB_INTERVAL']=intervals([(r['label'],r['gain'],r['ci']) for r in d['probability']])
     p=d['pew_summary']
@@ -964,7 +987,7 @@ def build(d):
     page=(HERE/'report.html.tmpl').read_text()
     for key,val in slots.items(): page=page.replace('{{'+key+'}}',val)
     assert '{{' not in page, 'Unfilled template slot'
-    (HERE/'index.html').write_text(page)
+    (HERE/'index.html').write_text(notes.curly_quotes(page))
 
 
 if __name__ == '__main__':

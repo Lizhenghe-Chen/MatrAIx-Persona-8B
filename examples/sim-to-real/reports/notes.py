@@ -9,7 +9,9 @@ Kept in one place so the narrative report, the technical report and the per-ques
 cannot drift into three different explanations of the same fact.
 """
 import random
+import re
 
+_TEXT = re.compile(r'>([^<>]+)<')
 MINIMUM = 20
 
 _CONJOINT = ('同一组搭配问 96 个人，只能学到"这一组谁赢"；'
@@ -130,3 +132,40 @@ def conjoint_block(rows, style='callout'):
               '（条件逻辑回归或评分模型，只用题目里显示的属性、不看真人答案）——'
               '也就是本报告里"同信息统计参照"那个对手。'
               '「至少 20 人」这道门槛只针对普通问卷的逐题分布，不是对这批数据的减分。</p></div>')
+
+
+_SCRIPT = re.compile(r'<(script|style)\b[\s\S]*?</\1>', re.I)
+
+
+def curly_quotes(doc):
+    """Straight quotes in visible text become Chinese curly quotes.
+
+    Only text between tags is touched, and script/style bodies are skipped, so inline
+    JSON and CSS keep their own quoting. One page, one convention: the reports were
+    mixing "..." and “...” inside the same paragraph.
+    """
+    state = {'opening': True}
+
+    def flip(segment):
+        # The state is document-wide and is updated by quotes that are already curly,
+        # so a paragraph that mixes “...” and "..." still pairs up correctly.
+        out = []
+        for char in segment:
+            if char == '"':
+                out.append('“' if state['opening'] else '”')
+                state['opening'] = not state['opening']
+            else:
+                if char == '“':
+                    state['opening'] = False
+                elif char == '”':
+                    state['opening'] = True
+                out.append(char)
+        return ''.join(out)
+
+    parts, last = [], 0
+    for match in _SCRIPT.finditer(doc):
+        parts.append(_TEXT.sub(lambda m: '>' + flip(m.group(1)) + '<', doc[last:match.start()]))
+        parts.append(match.group(0))
+        last = match.end()
+    parts.append(_TEXT.sub(lambda m: '>' + flip(m.group(1)) + '<', doc[last:]))
+    return ''.join(parts)

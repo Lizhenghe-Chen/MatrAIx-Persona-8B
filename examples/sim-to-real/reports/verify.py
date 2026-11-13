@@ -44,6 +44,11 @@ def main():
             path=HERE / source['path']
         assert hashlib.sha256(path.read_bytes()).hexdigest()==source['sha256'],path
         checked+=1
+    # A literal {pct(...)} once shipped to the page; the templates are f-strings, so any
+    # unfilled placeholder means a string lost its prefix somewhere.
+    for page in ('index.html','story.html','cards.html'):
+        text=(HERE/page).read_text()
+        assert not re.search(r'\{(?:pct|f?mt|card|table)\(', text), (page,'unrendered placeholder')
     html=(HERE/'index.html').read_text()
     doc=Links();doc.feed(html)
     for href in doc.links:
