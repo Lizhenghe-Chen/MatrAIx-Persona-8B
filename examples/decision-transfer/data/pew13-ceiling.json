@@ -1,0 +1,146 @@
+{
+ "date": "2026-11-13",
+ "source": "Pew American Trends Panel Wave 13 (Dec 2015), ATP W13.sav",
+ "people_with_all_items": 4571,
+ "items": 13,
+ "single_option_share_median": 0.6108,
+ "icc_between_person": 0.2137,
+ "brier_marginal_average": 0.4366,
+ "brier_demographics_average": 0.4108,
+ "brier_item_only_reference": 0.4787,
+ "brier_with_true_person_effect": 0.337,
+ "headroom_from_person_effect": 0.1417,
+ "cross_item_transfer": [
+  {
+   "split": "importance odd to even",
+   "fit_items": 4,
+   "test_items": 3,
+   "brier_item_only": 0.4876,
+   "brier_with_person_effect": 0.466,
+   "gain": 0.0216
+  },
+  {
+   "split": "importance first four to last three",
+   "fit_items": 4,
+   "test_items": 3,
+   "brier_item_only": 0.4894,
+   "brier_with_person_effect": 0.4258,
+   "gain": 0.0636
+  },
+  {
+   "split": "importance to government role",
+   "fit_items": 7,
+   "test_items": 3,
+   "brier_item_only": 0.4981,
+   "brier_with_person_effect": 0.4926,
+   "gain": 0.0055
+  },
+  {
+   "split": "behaviour pair to behaviour",
+   "fit_items": 2,
+   "test_items": 1,
+   "brier_item_only": 0.5,
+   "brier_with_person_effect": 0.6419,
+   "gain": -0.1419
+  }
+ ],
+ "per_item": [
+  {
+   "item": "SHOP6A_W13",
+   "label": "look at or try out the product in person",
+   "share": 0.2667,
+   "brier_marginal": 0.3911,
+   "brier_demographics": 0.3816
+  },
+  {
+   "item": "SHOP6B_W13",
+   "label": "read ratings or reviews online",
+   "share": 0.3365,
+   "brier_marginal": 0.4465,
+   "brier_demographics": 0.426
+  },
+  {
+   "item": "SHOP6C_W13",
+   "label": "buy online without a store trip",
+   "share": 0.1065,
+   "brier_marginal": 0.1904,
+   "brier_demographics": 0.1905
+  },
+  {
+   "item": "SHOP6D_W13",
+   "label": "compare prices from different sellers",
+   "share": 0.4133,
+   "brier_marginal": 0.485,
+   "brier_demographics": 0.4807
+  },
+  {
+   "item": "SHOP6E_W13",
+   "label": "ask questions about what they are buying",
+   "share": 0.3979,
+   "brier_marginal": 0.4792,
+   "brier_demographics": 0.4585
+  },
+  {
+   "item": "SHOP6F_W13",
+   "label": "get advice from people they know",
+   "share": 0.2201,
+   "brier_marginal": 0.3433,
+   "brier_demographics": 0.3448
+  },
+  {
+   "item": "SHOP6G_W13",
+   "label": "buy from a familiar store or seller",
+   "share": 0.3317,
+   "brier_marginal": 0.4433,
+   "brier_demographics": 0.4403
+  },
+  {
+   "item": "SHOP7A_W13",
+   "label": "government should ensure products are safe",
+   "share": 0.3581,
+   "brier_marginal": 0.4597,
+   "brier_demographics": 0.4391
+  },
+  {
+   "item": "SHOP7B_W13",
+   "label": "government should make consumers confident",
+   "share": 0.4294,
+   "brier_marginal": 0.49,
+   "brier_demographics": 0.4742
+  },
+  {
+   "item": "SHOP7C_W13",
+   "label": "government should hold companies accountable",
+   "share": 0.4146,
+   "brier_marginal": 0.4854,
+   "brier_demographics": 0.4757
+  },
+  {
+   "item": "SHOP20B_W13",
+   "label": "check online for a better price",
+   "share": 0.4301,
+   "brier_marginal": 0.4902,
+   "brier_demographics": 0.3956
+  },
+  {
+   "item": "SHOP20C_W13",
+   "label": "look up reviews before buying",
+   "share": 0.4599,
+   "brier_marginal": 0.4968,
+   "brier_demographics": 0.4054
+  },
+  {
+   "item": "SHOP20D_W13",
+   "label": "call or text someone about a purchase",
+   "share": 0.6108,
+   "brier_marginal": 0.4754,
+   "brier_demographics": 0.4285
+  }
+ ],
+ "icc_note": "Share of item variance that sits between people; an upper bound on what any profile could carry.",
+ "limitations": [
+  "Binarised items (top category versus the rest); other splits would shift the levels.",
+  "Demographics are a lower bound on profile information: richer audited facts could carry more.",
+  "The oracle row uses the respondent's other answers, which the protocol forbids as input; it is a ceiling only, never a method."
+ ]
+}
