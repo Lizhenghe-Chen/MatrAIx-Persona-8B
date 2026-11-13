@@ -162,6 +162,87 @@ def run(limit=None):
     return {'new_calls': calls}
 
 
+VARIANTS = {
+    'baseline': None,
+    'frequency': ('Before answering, consider how common each answer is among people in general. '
+                  'Some answers are rare and some are widespread; do not assume the options are equally likely.'),
+    'two_step': ('First judge how common each answer is among people in general, then adjust that judgement '
+                 'using this respondent\'s information. Report only the adjusted probabilities.'),
+}
+
+
+def run_variant(variant, limit=None):
+    """Same frozen facts and questions, only the instruction changes."""
+    import urllib.request
+    import protocol
+    import payloads
+    deck = [item for item in json.loads((PRIVATE / 'deck.json').read_text()) if item['arm'] == 'own']
+    log = PRIVATE / f'runs-{variant}.jsonl'
+    done = set()
+    if log.exists():
+        done = {json.loads(line)['sha256'] for line in log.read_text().splitlines()
+                if json.loads(line).get('status') == 'ok'}
+    calls = 0
+    for item in deck:
+        if item['sha256'] in done:
+            continue
+        if limit and calls >= limit:
+            break
+        body = protocol.build(item['body'], 'own', 'qwen', BASIC_FIELDS, extra_labels(), 512,
+                              preamble=VARIANTS[variant])
+        started = time.time()
+        request = urllib.request.Request('http://10.120.47.101:8000/v1/chat/completions',
+                                         data=json.dumps(body, ensure_ascii=False).encode(),
+                                         headers={'Content-Type': 'application/json'}, method='POST')
+        try:
+            with urllib.request.urlopen(request, timeout=120) as response:
+                raw = json.loads(response.read().decode())
+            parsed = protocol.parse(raw, item['questions'], 'qwen')
+            record = {'sha256': item['sha256'], 'key': item['key'], 'variant': variant, 'status': 'ok',
+                      'probabilities': parsed['probabilities'], 'seconds': round(time.time() - started, 2)}
+        except Exception as error:
+            record = {'sha256': item['sha256'], 'key': item['key'], 'variant': variant, 'status': 'error',
+                      'reason': str(error)[:200], 'seconds': round(time.time() - started, 2)}
+        with log.open('a') as handle:
+            handle.write(json.dumps(record, ensure_ascii=False) + '\n')
+        calls += 1
+        print(json.dumps({'n': calls, 'status': record['status']}), flush=True)
+    return {'new_calls': calls, 'variant': variant}
+
+
+def evaluate_variants():
+    answers = json.loads((PRIVATE / 'answers.json').read_text())
+    rows = []
+    for variant in VARIANTS:
+        log = PRIVATE / f'runs-{variant}.jsonl'
+        if not log.exists():
+            continue
+        for line in log.read_text().splitlines():
+            record = json.loads(line)
+            if record.get('status') != 'ok':
+                continue
+            for qid, probability in record['probabilities'].items():
+                rows.append({'variant': variant, 'key': record['key'], 'qid': qid,
+                             'p': probability[0], 'y': answers[record['key']][qid]})
+    frame = pd.DataFrame(rows)
+    if frame.empty:
+        return {}
+
+    def brier(p, y):
+        p = np.asarray(p, float); y = np.asarray(y, float)
+        return float(np.mean((p - y) ** 2 + ((1 - p) - (1 - y)) ** 2))
+
+    base = frame[frame.variant == 'baseline']
+    marginal = base.groupby('qid').y.transform('mean')
+    out = {'marginal_reference': round(brier(marginal.values, base.y.values), 4), 'variants': {}}
+    for variant, group in frame.groupby('variant'):
+        out['variants'][variant] = {'questions': int(len(group)),
+                                    'brier': round(brier(group.p.values, group.y.values), 4),
+                                    'mean_p': round(float(group.p.mean()), 3),
+                                    'actual_rate': round(float(group.y.mean()), 3)}
+    return out
+
+
 def evaluate():
     deck = json.loads((PRIVATE / 'deck.json').read_text())
     answers = json.loads((PRIVATE / 'answers.json').read_text())
@@ -203,6 +284,8 @@ if __name__ == '__main__':
     parser.add_argument('--freeze', action='store_true')
     parser.add_argument('--run', action='store_true')
     parser.add_argument('--evaluate', action='store_true')
+    parser.add_argument('--variant', choices=sorted(VARIANTS), default='frequency')
+    parser.add_argument('--evaluate-variants', dest='evaluate_variants', action='store_true')
     parser.add_argument('--limit', type=int, default=100)
     parser.add_argument('--arms', default='basic,own,other')
     args = parser.parse_args()
@@ -212,3 +295,7 @@ if __name__ == '__main__':
         print(json.dumps(run(), ensure_ascii=False))
     elif args.evaluate:
         print(json.dumps(evaluate(), ensure_ascii=False, indent=1))
+    elif args.evaluate_variants:
+        print(json.dumps(evaluate_variants(), ensure_ascii=False, indent=1))
+    else:
+        print(json.dumps(run_variant(args.variant), ensure_ascii=False))
