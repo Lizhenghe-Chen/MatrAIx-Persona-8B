@@ -31,6 +31,7 @@ const delay=ms=>new Promise(r=>setTimeout(r,ms));
   await run("document.querySelector('#all-studies').scrollIntoView();");await delay(900);
  const allState=await run(`(()=>{const c=[...document.querySelectorAll('#all-studies .echart canvas')];return {count:c.length,w:c.map(x=>x.width)}})()`);
  assert.ok(allState.count>=1&&allState.w.every(w=>w>100),JSON.stringify(allState));
+ assert.ok(await run("!!document.querySelector('#plain-lookup')&&!!document.querySelector('#plain-fewshot')"),'plain-language glossary present');
  const conjoint=await run(`(()=>{const s=document.querySelector('#all-studies');const t=s.textContent;return {stated:t.includes('为什么有六套研究没有逐题数字'),rows:s.querySelector('.note-warn table').querySelectorAll('tbody tr').length,floor:t.includes('62pp')}})()`);
  assert.ok(conjoint.stated,'conjoint explanation present');
  assert.equal(conjoint.rows,6,'six studies listed: '+conjoint.rows);

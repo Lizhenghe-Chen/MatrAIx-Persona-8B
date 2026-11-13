@@ -953,6 +953,7 @@ def build(d):
                         if r['gain'] < 0 else
                         f'<figcaption>误差减少 <b>{r["gain"]:.2f}</b> 个百分点；'
                         f'95% 区间 [{r["ci"][0]:.2f}, {r["ci"][1]:.2f}]。</figcaption></figure>'))
+    slots['PLAIN']=notes.glossary()
     slots['PROBABILITY']=''.join(cards)
     slots['PROB_INTERVAL']=intervals([(r['label'],r['gain'],r['ci']) for r in d['probability']])
     p=d['pew_summary']

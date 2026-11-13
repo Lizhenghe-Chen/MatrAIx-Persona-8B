@@ -36,6 +36,13 @@ const delay=ms=>new Promise(r=>setTimeout(r,ms));
   assert.equal(numbers.length,4,'headline numbers present: '+JSON.stringify(numbers));
   const conjoint=await run(`(()=>{const t=document.body.innerText;return {stated:t.includes('为什么有的问卷'),why:t.includes('随机化就是实验本身'),kinds:t.includes('联合分析')&&t.includes('打分任务')}})()`);
   assert.ok(conjoint.stated&&conjoint.why&&conjoint.kinds,'conjoint explanation in narrative: '+JSON.stringify(conjoint));
+  // Jargon must be explained in plain words, reachable from an inline chip.
+  const plain=await run(`(()=>{const chips=document.querySelectorAll('.ask');const ids=[...chips].map(a=>a.getAttribute('href')).filter(h=>h&&h.startsWith('#'));
+    return {chips:chips.length, targets:ids.filter(h=>document.querySelector(h)).length, wants:ids.length,
+            items:document.querySelectorAll('.plain-item').length}})()`);
+  assert.ok(plain.chips>=4,'info chips: '+plain.chips);
+  assert.equal(plain.targets,plain.wants,'every chip lands on a glossary entry');
+  assert.ok(plain.items>=5,'glossary entries: '+plain.items);
   await send('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true});
   await delay(600);
   assert.ok(await run('document.documentElement.scrollWidth<=window.innerWidth+1'));

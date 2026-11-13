@@ -2,3 +2,24 @@
 .bar-plot{padding:4px 0 8px}.bar-row{margin:12px 0 20px}.bar-top{display:flex;justify-content:space-between;gap:14px;align-items:baseline;font-size:15px;margin-bottom:7px}.bar-top b{font-size:19px;font-variant-numeric:tabular-nums}.bar-track{height:23px;border-radius:4px;background:#edf0e9;overflow:hidden}.bar-track>div{height:100%;border-radius:4px}.bar-axis{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:-7px}.bar-unit{font-size:12px;color:var(--muted);text-align:right;margin-top:4px}
 .echart{width:100%;min-width:0;height:380px;display:block}figure>.echart{margin-top:6px}@media(max-width:560px){.echart{height:330px}}@media print{.echart{height:320px;break-inside:avoid}}
 .unit{font-weight:400;font-size:11px;color:var(--muted);display:inline-block;margin-top:2px}
+
+/* plain-language helpers: an inline "?" chip plus the glossary it links to */
+.ask{display:inline-flex;align-items:center;justify-content:center;min-width:17px;height:17px;padding:0 3px;
+ border-radius:999px;background:#e8efeb;color:#2f5a4e;font-size:11px;font-weight:700;line-height:1;
+ text-decoration:none;vertical-align:1px;border:1px solid #cfdcd5}
+.ask:hover{background:#14372f;color:#fff;border-color:#14372f}
+.plain{background:#f7f9f7;border:1px solid #e2e9e4;border-radius:14px;padding:18px 20px;margin:26px 0}
+.plain>h3{margin:0 0 6px;font-size:17px}
+.plain-item{padding:14px 0;border-top:1px solid #e4ebe6;scroll-margin-top:24px}
+.plain-item:first-of-type{border-top:0}
+.plain-item:target{background:#fff;box-shadow:0 0 0 8px #fff;border-radius:8px}
+.plain-item h4{margin:0 0 5px;font-size:15px;color:#14372f}
+.plain-item p{margin:0;font-size:14.5px;line-height:1.75;color:#2c3f37}
+@media print{.plain{break-inside:avoid}}
+
+/* a small plain table used inside the story, where the main table style is too heavy */
+.plain-table{width:100%;border-collapse:collapse;margin:12px 0 18px;font-size:14.5px}
+.plain-table th,.plain-table td{padding:9px 12px;border-bottom:1px solid #e4ebe6;text-align:left;vertical-align:top}
+.plain-table th{background:#f4f7f5;font-weight:650;font-size:13.5px;color:#3a534a}
+.plain-table tr:last-child td{border-bottom:0}
+@media(max-width:560px){.plain-table{font-size:13.5px}.plain-table th,.plain-table td{padding:7px 8px}}

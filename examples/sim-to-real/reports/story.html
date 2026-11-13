@@ -2,6 +2,27 @@
 .bar-plot{padding:4px 0 8px}.bar-row{margin:12px 0 20px}.bar-top{display:flex;justify-content:space-between;gap:14px;align-items:baseline;font-size:15px;margin-bottom:7px}.bar-top b{font-size:19px;font-variant-numeric:tabular-nums}.bar-track{height:23px;border-radius:4px;background:#edf0e9;overflow:hidden}.bar-track>div{height:100%;border-radius:4px}.bar-axis{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:-7px}.bar-unit{font-size:12px;color:var(--muted);text-align:right;margin-top:4px}
 .echart{width:100%;min-width:0;height:380px;display:block}figure>.echart{margin-top:6px}@media(max-width:560px){.echart{height:330px}}@media print{.echart{height:320px;break-inside:avoid}}
 .unit{font-weight:400;font-size:11px;color:var(--muted);display:inline-block;margin-top:2px}
+
+/* plain-language helpers: an inline "?" chip plus the glossary it links to */
+.ask{display:inline-flex;align-items:center;justify-content:center;min-width:17px;height:17px;padding:0 3px;
+ border-radius:999px;background:#e8efeb;color:#2f5a4e;font-size:11px;font-weight:700;line-height:1;
+ text-decoration:none;vertical-align:1px;border:1px solid #cfdcd5}
+.ask:hover{background:#14372f;color:#fff;border-color:#14372f}
+.plain{background:#f7f9f7;border:1px solid #e2e9e4;border-radius:14px;padding:18px 20px;margin:26px 0}
+.plain>h3{margin:0 0 6px;font-size:17px}
+.plain-item{padding:14px 0;border-top:1px solid #e4ebe6;scroll-margin-top:24px}
+.plain-item:first-of-type{border-top:0}
+.plain-item:target{background:#fff;box-shadow:0 0 0 8px #fff;border-radius:8px}
+.plain-item h4{margin:0 0 5px;font-size:15px;color:#14372f}
+.plain-item p{margin:0;font-size:14.5px;line-height:1.75;color:#2c3f37}
+@media print{.plain{break-inside:avoid}}
+
+/* a small plain table used inside the story, where the main table style is too heavy */
+.plain-table{width:100%;border-collapse:collapse;margin:12px 0 18px;font-size:14.5px}
+.plain-table th,.plain-table td{padding:9px 12px;border-bottom:1px solid #e4ebe6;text-align:left;vertical-align:top}
+.plain-table th{background:#f4f7f5;font-weight:650;font-size:13.5px;color:#3a534a}
+.plain-table tr:last-child td{border-bottom:0}
+@media(max-width:560px){.plain-table{font-size:13.5px}.plain-table th,.plain-table td{padding:7px 8px}}
 </style></head><body>
 <header><div class="hero">
 <div class="eyebrow">MATRAIX · 决策模拟 · 实验总报告（故事版）· 2026 年 11 月</div>
@@ -25,6 +46,7 @@
 <div class="callout"><strong>为什么这个结论值得信</strong>：每一套问卷都有“标准答案”（真人的实际回答），
 每一次比较都有预设的裁判和门槛，跑之前先写死，跑完不许改；失败的尝试全部留在档案里，
 包括我们自己最看好的那几个方案。</div>
+<div class="plain"><h3>看不懂术语？这里用大白话说清楚</h3><p class="small">正文里带 <span class="ask">?</span> 的词，都可以跳到这里看。</p><div class="plain-item" id="plain-lookup"><h4>查表（同信息对手）</h4><p>不给 AI 任何推理，只去数别人怎么答的：从这次调查里挑出<b>被测者以外</b>的人，数一数每个选项被选了多少次，把比例直接当成这个人的答案。我们主要用“先按年龄 × 学历分组，再各自数”的分层版。它拿到的信息和 AI 一样，所以是公平对手——但它只在“这道题以前有人答过”时才有用。</p></div><div class="plain-item" id="plain-tv"><h4>分布误差（TV）</h4><p>一句话：<b>猜的比例和真实比例差多远</b>，单位是百分点，越低越好。比如真人有 40% 选甲，AI 说 70%，这道二选一就差 30 个百分点。选项多时把各项差加起来除以二。它衡量的是“整群人”，不保证猜对某一个具体的人。</p></div><div class="plain-item" id="plain-brier"><h4>个体误差（Brier）</h4><p>一句话：<b>对某一个人的预测有多离谱</b>，越低越好。给每个选项一个概率，实际被选的那个记 1、其他记 0，逐项比、平方、相加。它的好处是<b>一个人的答案就够评分</b>，不需要凑够一群人——所以题目人人不同的问卷也能算。</p></div><div class="plain-item" id="plain-blend"><h4>混合（w = k/(k+20)）</h4><p>手上已有 k 份真人回答时，把 AI 的分布和真人的分布按权重相加：真人占 k/(k+20)，AI 占剩下的。5 份时八成信 AI，20 份时五五开，40 份时三分之二信真人。<b>这条公式是写死的</b>，不是调出来的；真人越多，AI 的权重自动越小。</p></div><div class="plain-item" id="plain-fewshot"><h4>few-shot（喂例子）</h4><p>把若干个具体例子放进提示，让模型照着学——这是业界常见做法。<b>我们最终方案不是这个</b>：模型从头到尾看不到真人答案，两份答案是在模型外面用算术相加的。区别很实际：喂例子每次都要重新调用模型，而且模型会压扁、误读；在外面相加是免费的、数据原样保留。</p></div><div class="plain-item" id="plain-quintile"><h4>偏离度（分位数）</h4><p>把每个人的答案和“人群平均分布”比一比，差得越远越“不典型”。按这个距离把人分成五档（各 20%），就能看出 AI 到底在哪种人身上有用：最典型的 20% 上它明显更差，最不典型的 20% 上它反而更准。注意这是<b>事后分解</b>——分档要用到答案，所以只能解释，还不能用来事先挑人。</p></div></div>
 </section>
 <section id="method"><span class="number">怎么比的</span>
 <h2>我们不是“感觉一下准不准”，而是造了一把尺子</h2>
@@ -32,7 +54,7 @@
 那怎么区分“AI 真的理解人”和“AI 只是知道常识”？</p>
 
 <h3>关键设计：给 AI 配一个同信息的对手</h3>
-<p>我们为每套问卷都建了一个“查表”对手：</p>
+<p>我们为每套问卷都建了一个<a class="ask" href="#plain-lookup" title="白话解释：查表（同信息对手）">查表</a>对手：</p>
 <ol>
 <li>从这份调查里，把<strong>没被评估的其他人</strong>挑出来；</li>
 <li>按“年龄 × 学历”分层，数出每个层里每个选项被选了多少次；</li>
@@ -45,8 +67,8 @@
 
 <h3>三个指标，一起看，不许拿一个换另一个</h3>
 <div class="grid3">
-<article class="card"><span class="tag">指标一</span><h3>看群体</h3><div class="big">分布误差</div><p>目标人群里每个选项占多少，与真实比例差多远。单位是百分点，越低越好。</p></article>
-<article class="card"><span class="tag">指标二</span><h3>看个人</h3><div class="big">个体误差</div><p>对某一个人的预测概率，与他实际选择有多吻合（Brier 分数）。</p></article>
+<article class="card"><span class="tag">指标一</span><h3>看群体</h3><div class="big">分布误差 <a class="ask" href="#plain-tv" title="白话解释：分布误差（TV）">分布误差</a></div><p>目标人群里每个选项占多少，与真实比例差多远。单位是百分点，越低越好。</p></article>
+<article class="card"><span class="tag">指标二</span><h3>看个人</h3><div class="big">个体误差 <a class="ask" href="#plain-brier" title="白话解释：个体误差（Brier）">个体误差</a></div><p>对某一个人的预测概率，与他实际选择有多吻合（Brier 分数）。</p></article>
 <article class="card"><span class="tag">指标三</span><h3>看排序</h3><div class="big">第一名命中率</div><p>真实最热门的选项，AI 有没有排在第一。</p></article>
 </div>
 
@@ -129,7 +151,8 @@
 <h2>但 AI 不是一无所长：它在两种地方确实有价值</h2>
 
 <h3>价值一：在最“不像平均水平”的那群人身上</h3>
-<p>我们按“这个人的答案离人群分布多远”把人分成五档，比较 AI 与人群分布本身谁更准：</p>
+<p>我们按“这个人的答案离人群分布多远”（<a class="ask" href="#plain-quintile" title="白话解释：偏离度（分位数）">偏离度</a>）把人分成五档，
+比较 AI 与人群分布本身谁更准：</p>
 <div class="table-wrap"><table><caption>按&quot;典型性&quot;分档后的 AI 优势（正值＝AI 更准）</caption><thead><tr><th>人群</th><th>偏离度</th><th>AI 相对人群分布的优势</th><th>95% 区间</th><th>判定</th></tr></thead><tbody><tr><th>最典型的 20%</th><td>0.12–0.24</td><td>-0.235</td><td>[-0.259, -0.211]</td><td>AI 明显更差</td></tr><tr><th>中间 20%</th><td>0.47–0.60</td><td>-0.316</td><td>[-0.354, -0.276]</td><td>AI 明显更差</td></tr><tr><th>最不典型的 20%</th><td>0.70–1.00</td><td><strong>+0.116</strong></td><td>[+0.077, +0.154]</td><td><strong>AI 反超</strong></td></tr></tbody></table></div><p class="small">这解释了此前所有“AI 平均而言更差”的结果：它对 80% 的人拖后腿，但在最需要个性化的 20% 人身上扳回来。可惜的是——分档本身要用到答案，所以这是“事后解释”，还不能直接当“事先挑人”的规则。</p>
 
 <h3>价值二：它知道具体题目的特殊之处</h3>
@@ -181,6 +204,38 @@
 ① 新问卷先收 <strong>10–30 份</strong>真实回答；<br>
 ② 若还要用 AI，先让它给出分布，再与实测按 <strong>w = k/(k+20)</strong> 混合；<br>
 ③ 如果 AI 在这套题上的误差比“每档等分”还差，<strong>不要混合</strong>，直接用实测。</div>
+
+<h3>那如果连一份真人数据都没有？</h3>
+<p>这时候要分清是哪一种“没有”：</p>
+<table class="plain-table">
+<thead><tr><th>情况</th><th>手上还剩什么</th><th>怎么办</th></tr></thead>
+<tbody>
+<tr><td>这道题没答案，但<b>同类人有别的数据</b></td><td>一张<a class="ask" href="#plain-lookup" title="白话解释：查表（同信息对手）">查表</a></td>
+    <td><b>别问 AI</b>，查表比它准三倍多</td></tr>
+<tr><td><b>这个人群、这个国家完全没数据</b></td><td>只剩“每个选项各占多少随便猜”</td>
+    <td>用 AI，它是唯一比瞎猜好的</td></tr>
+<tr><td>连题目、概念都是全新的</td><td>什么参照都没有</td><td><b>没测过</b>，别押注</td></tr>
+</tbody></table>
+<p>只剩“瞎猜”当参照时，AI 能到什么程度——以外部验证那套数据为例：</p>
+<div class="grid3">
+<article class="card"><span class="tag">猜错程度</span><h3>瞎猜</h3><div class="big">37.8</div><p>每个选项凭空平摊，当作参照下限。</p></article>
+<article class="card"><span class="tag">猜错程度</span><h3>AI 给概率</h3><div class="big">18.2</div><p>比瞎猜好 52%。十四套研究平均比瞎猜好 7.1%。</p></article>
+<article class="card"><span class="tag">要留意的反例</span><h3>但不是稳赢</h3><div class="big">2 / 14</div><p>十四套里有两套反而更差：包装与拒买（差 21.5%）、运动鞋打分（差 0.4%）。</p></article>
+</div>
+<p>所以没有真人数据时，<strong>它够用来判断方向，不够用来报比例</strong>。四条用法规矩：</p>
+<ol>
+<li><strong>只要方向，不要份额。</strong>它把“哪项最受欢迎”排对的比例是
+    <strong>70.3%</strong>；但问“红色占几成”，它会错得很远，
+    而且总把差异压扁——小众选项估高、大热门估低。</li>
+<li><strong>一定要它给概率</strong>，别让它只选一个。同一批题：只选一个猜错 43.4，给概率 18.1。</li>
+<li><strong>把选项和产品属性写全。</strong>这是它唯一真正带信息的地方：把它的答案换成同一问卷另一道题的答案，
+    误差立刻从 10.7 涨到 23.7。</li>
+<li><strong>别信绝对水平，只信相对排序。</strong>它说“A 40%、B 30%”，你只该记住“A 比 B 受欢迎”。</li>
+</ol>
+<div class="callout"><strong>为什么不在提示里塞例子（<a class="ask" href="#plain-fewshot" title="白话解释：few-shot（喂例子）">few-shot</a>）？</strong>
+我们试过：给模型看某人自己的<strong>两次真实选择</strong>再预测另外两次，两套研究的误差都升高，没过门槛；
+把<strong>整份历史分布</strong>写进提示，改善很大，但最好也只是打平“直接照抄该分布”。
+所以真人答案在我们这里是<strong>第二个投票人</strong>，不是给模型的教材。</div>
 </section>
 <section id="compare"><span class="number">一页对比</span>
 <h2>改造前 vs 改造后</h2>

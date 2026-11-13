@@ -18,7 +18,7 @@
 | [story.html](story.html) · [index.html](index.html) · [cards.html](cards.html) | 三个可单独拷贝、离线打开的页面；图表全部内联，零外部请求 |
 | [evidence.json](evidence.json) | 从冻结评分抽取的聚合数字与来源 SHA-256；没有逐人编号、完整请求或答案关联 |
 | [build.py](build.py) · [build_story.py](build_story.py) · [build_cards.py](build_cards.py) | 分别生成技术版、故事版、逐题版；不调用模型 |
-| [notes.py](notes.py) | 三页共用的一段说明：六套联合分析/打分任务为何没有逐题分布，以及“至少 20 人”门槛的抽样噪底（固定种子实算） |
+| [notes.py](notes.py) | 三页共用的两段说明：① 六套联合分析/打分任务为何没有逐题分布、“至少 20 人”门槛的抽样噪底（固定种子实算）；② 白话术语表（查表／分布误差／个体误差／混合／few-shot／偏离度），正文的 `?` 徽标跳到这里 |
 | [report.html.tmpl](report.html.tmpl) | 可维护的中文说明模板 |
 | [style.css](style.css)、[charts.js](charts.js)、[charts_clean.js](charts_clean.js)、[charts_story.js](charts_story.js) | 版式与图表，生成时内嵌，阅读不依赖外网 |
 | [verify.py](verify.py)、[smoke.cjs](smoke.cjs)、[smoke_story.cjs](smoke_story.cjs)、[smoke_cards.cjs](smoke_cards.cjs) | 来源及链接核验、三页的浏览器交互与移动版检查 |
