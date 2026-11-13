@@ -70660,6 +70660,623 @@
         }
       }
     },
+    "external-v2": {
+      "arms": [
+        "original",
+        "optimized"
+      ],
+      "studies": {
+        "openecommerce": {
+          "people": 96,
+          "cards": 14,
+          "estimable_cards": 14,
+          "arms": [
+            "original",
+            "optimized"
+          ],
+          "card_tv": {
+            "cards": 14,
+            "optimized": 18.209821428571427,
+            "original": 24.18154761904762,
+            "uniform": 37.797619047619044
+          },
+          "pooled": {
+            "cards": 14,
+            "options": 4,
+            "truth": [
+              0.2976190476190476,
+              0.42187500000000006,
+              0.13616071428571427,
+              0.14434523809523808
+            ],
+            "original": [
+              0.21651785714285715,
+              0.4717261904761904,
+              0.10863095238095237,
+              0.203125
+            ],
+            "optimized": [
+              0.25650297619047624,
+              0.4219858630952381,
+              0.17489657738095238,
+              0.1466145833333333
+            ],
+            "tv_original": 10.863095238095234,
+            "tv_optimized": 4.111607142857138,
+            "note": "Illustration only: cards are aligned by option position, so this is a picture of where the mass sits, not the error metric. card_tv is the metric, and it equals the frozen per-card mean."
+          },
+          "questions": [
+            {
+              "question": "alcohol",
+              "prompt": "Do you drink alcohol?",
+              "people": 96,
+              "estimable": true,
+              "options": [
+                {
+                  "id": "1",
+                  "label": "I stopped in the recent past"
+                },
+                {
+                  "id": "2",
+                  "label": "No"
+                },
+                {
+                  "id": "3",
+                  "label": "Prefer not to say"
+                },
+                {
+                  "id": "4",
+                  "label": "Yes"
+                }
+              ],
+              "truth": [
+                0.041666666666666664,
+                0.5208333333333334,
+                0.010416666666666666,
+                0.4270833333333333
+              ],
+              "original": [
+                0.0,
+                0.14583333333333334,
+                0.0,
+                0.8541666666666666
+              ],
+              "optimized": [
+                0.05614583333333328,
+                0.23864583333333314,
+                0.04937499999999995,
+                0.6558333333333332
+              ],
+              "tv_original": 42.70833333333333,
+              "tv_optimized": 28.218749999999996
+            },
+            {
+              "question": "amazon_frequency",
+              "prompt": "How often do you use Amazon?",
+              "people": 96,
+              "estimable": true,
+              "options": [
+                {
+                  "id": "1",
+                  "label": "5 - 10 times per month"
+                },
+                {
+                  "id": "2",
+                  "label": "Less than 5 times per month"
+                },
+                {
+                  "id": "3",
+                  "label": "More than 10 times per month"
+                }
+              ],
+              "truth": [
+                0.2916666666666667,
+                0.625,
+                0.08333333333333333
+              ],
+              "original": [
+                0.15625,
+                0.71875,
+                0.125
+              ],
+              "optimized": [
+                0.3984374999999998,
+                0.3052083333333334,
+                0.29635416666666675
+              ],
+              "tv_original": 13.541666666666668,
+              "tv_optimized": 31.979166666666657
+            },
+            {
+              "question": "census_use",
+              "prompt": "Would you trust Amazon with census data?",
+              "people": 96,
+              "estimable": true,
+              "options": [
+                {
+                  "id": "1",
+                  "label": "I don't know"
+                },
+                {
+                  "id": "2",
+                  "label": "No"
+                },
+                {
+                  "id": "3",
+                  "label": "Yes"
+                }
+              ],
+              "truth": [
+                0.2916666666666667,
+                0.4479166666666667,
+                0.2604166666666667
+              ],
+              "original": [
+                0.19791666666666666,
+                0.7604166666666666,
+                0.041666666666666664
+              ],
+              "optimized": [
+                0.2031249999999999,
+                0.6281250000000005,
+                0.16874999999999982
+              ],
+              "tv_original": 31.25,
+              "tv_optimized": 18.020833333333375
+            },
+            {
+              "question": "cigarettes",
+              "prompt": "Do you smoke cigarettes?",
+              "people": 96,
+              "estimable": true,
+              "options": [
+                {
+                  "id": "1",
+                  "label": "I stopped in the recent past"
+                },
+                {
+                  "id": "2",
+                  "label": "No"
+                },
+                {
+                  "id": "3",
+                  "label": "Prefer not to say"
+                },
+                {
+                  "id": "4",
+                  "label": "Yes"
+                }
+              ],
+              "truth": [
+                0.041666666666666664,
+                0.7916666666666666,
+                0.010416666666666666,
+                0.15625
+              ],
+              "original": [
+                0.0,
+                1.0,
+                0.0,
+                0.0
+              ],
+              "optimized": [
+                0.06666666666666658,
+                0.8395833333333332,
+                0.04302083333333329,
+                0.050729166666666624
+              ],
+              "tv_original": 20.833333333333336,
+              "tv_optimized": 10.552083333333325
+            },
+            {
+              "question": "diabetes",
+              "prompt": "Do you have diabetes?",
+              "people": 96,
+              "estimable": true,
+              "options": [
+                {
+                  "id": "1",
+                  "label": "No"
+                },
+                {
+                  "id": "2",
+                  "label": "Prefer not to say"
+                },
+                {
+                  "id": "3",
+                  "label": "Yes"
+                }
+              ],
+              "truth": [
+                0.8645833333333334,
+                0.0,
+                0.13541666666666666
+              ],
+              "original": [
+                0.9895833333333334,
+                0.0,
+                0.010416666666666666
+              ],
+              "optimized": [
+                0.8668750000000004,
+                0.05385416666666661,
+                0.07927083333333323
+              ],
+              "tv_original": 12.5,
+              "tv_optimized": 5.6145833333333535
+            },
+            {
+              "question": "household_shoppers",
+              "prompt": "How many people in your household use Amazon?",
+              "people": 96,
+              "estimable": true,
+              "options": [
+                {
+                  "id": "1",
+                  "label": "1 (just me!)"
+                },
+                {
+                  "id": "2",
+                  "label": "2"
+                },
+                {
+                  "id": "3",
+                  "label": "3"
+                },
+                {
+                  "id": "4",
+                  "label": "4+"
+                }
+              ],
+              "truth": [
+                0.6979166666666666,
+                0.20833333333333334,
+                0.052083333333333336,
+                0.041666666666666664
+              ],
+              "original": [
+                0.3229166666666667,
+                0.3333333333333333,
+                0.0625,
+                0.28125
+              ],
+              "optimized": [
+                0.29218750000000043,
+                0.3192708333333332,
+                0.161875,
+                0.22666666666666668
+              ],
+              "tv_original": 37.49999999999999,
+              "tv_optimized": 40.572916666666636
+            },
+            {
+              "question": "household_size",
+              "prompt": "How many people live in your household?",
+              "people": 96,
+              "estimable": true,
+              "options": [
+                {
+                  "id": "1",
+                  "label": "1 (just me!)"
+                },
+                {
+                  "id": "2",
+                  "label": "2"
+                },
+                {
+                  "id": "3",
+                  "label": "3"
+                },
+                {
+                  "id": "4",
+                  "label": "4+"
+                }
+              ],
+              "truth": [
+                0.20833333333333334,
+                0.2708333333333333,
+                0.22916666666666666,
+                0.2916666666666667
+              ],
+              "original": [
+                0.3229166666666667,
+                0.3020833333333333,
+                0.052083333333333336,
+                0.3229166666666667
+              ],
+              "optimized": [
+                0.2698958333333336,
+                0.2964583333333332,
+                0.1608333333333333,
+                0.2728125
+              ],
+              "tv_original": 17.708333333333332,
+              "tv_optimized": 8.71875000000001
+            },
+            {
+              "question": "marijuana",
+              "prompt": "Do you use marijuana?",
+              "people": 96,
+              "estimable": true,
+              "options": [
+                {
+                  "id": "1",
+                  "label": "I stopped in the recent past"
+                },
+                {
+                  "id": "2",
+                  "label": "No"
+                },
+                {
+                  "id": "3",
+                  "label": "Prefer not to say"
+                },
+                {
+                  "id": "4",
+                  "label": "Yes"
+                }
+              ],
+              "truth": [
+                0.041666666666666664,
+                0.7604166666666666,
+                0.010416666666666666,
+                0.1875
+              ],
+              "original": [
+                0.0,
+                0.9895833333333334,
+                0.0,
+                0.010416666666666666
+              ],
+              "optimized": [
+                0.0532291666666666,
+                0.7708333333333334,
+                0.06406249999999993,
+                0.111875
+              ],
+              "tv_original": 22.91666666666667,
+              "tv_optimized": 7.562499999999997
+            },
+            {
+              "question": "research_society",
+              "prompt": "Do you think research benefits society?",
+              "people": 96,
+              "estimable": true,
+              "options": [
+                {
+                  "id": "1",
+                  "label": "I don't know"
+                },
+                {
+                  "id": "2",
+                  "label": "No"
+                },
+                {
+                  "id": "3",
+                  "label": "Yes"
+                }
+              ],
+              "truth": [
+                0.17708333333333334,
+                0.17708333333333334,
+                0.6458333333333334
+              ],
+              "original": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "optimized": [
+                0.059999999999999935,
+                0.05249999999999994,
+                0.8875000000000001
+              ],
+              "tv_original": 35.416666666666664,
+              "tv_optimized": 24.166666666666675
+            },
+            {
+              "question": "sell_consumer_data",
+              "prompt": "Should companies be allowed to sell consumer data?",
+              "people": 96,
+              "estimable": true,
+              "options": [
+                {
+                  "id": "1",
+                  "label": "I don't know"
+                },
+                {
+                  "id": "2",
+                  "label": "No"
+                },
+                {
+                  "id": "3",
+                  "label": "Yes"
+                },
+                {
+                  "id": "4",
+                  "label": "Yes if consumers get part of the profit"
+                }
+              ],
+              "truth": [
+                0.052083333333333336,
+                0.4479166666666667,
+                0.020833333333333332,
+                0.4791666666666667
+              ],
+              "original": [
+                0.0,
+                0.28125,
+                0.0,
+                0.71875
+              ],
+              "optimized": [
+                0.12239583333333322,
+                0.3885416666666666,
+                0.10885416666666657,
+                0.38020833333333326
+              ],
+              "tv_original": 23.958333333333336,
+              "tv_optimized": 15.833333333333332
+            },
+            {
+              "question": "sell_your_data",
+              "prompt": "Would you sell your own personal data?",
+              "people": 96,
+              "estimable": true,
+              "options": [
+                {
+                  "id": "1",
+                  "label": "I don't know"
+                },
+                {
+                  "id": "2",
+                  "label": "No"
+                },
+                {
+                  "id": "3",
+                  "label": "Yes"
+                },
+                {
+                  "id": "4",
+                  "label": "Yes if I get part of the profit"
+                }
+              ],
+              "truth": [
+                0.03125,
+                0.4895833333333333,
+                0.041666666666666664,
+                0.4375
+              ],
+              "original": [
+                0.0,
+                0.34375,
+                0.0,
+                0.65625
+              ],
+              "optimized": [
+                0.13072916666666654,
+                0.4083333333333332,
+                0.10645833333333325,
+                0.3544791666666665
+              ],
+              "tv_original": 21.875,
+              "tv_optimized": 16.427083333333336
+            },
+            {
+              "question": "sexual_orientation",
+              "prompt": "How do you describe your sexual orientation?",
+              "people": 96,
+              "estimable": true,
+              "options": [
+                {
+                  "id": "1",
+                  "label": "LGBTQ+"
+                },
+                {
+                  "id": "2",
+                  "label": "heterosexual (straight)"
+                },
+                {
+                  "id": "3",
+                  "label": "prefer not to say"
+                }
+              ],
+              "truth": [
+                0.21875,
+                0.7604166666666666,
+                0.020833333333333332
+              ],
+              "original": [
+                0.041666666666666664,
+                0.9583333333333334,
+                0.0
+              ],
+              "optimized": [
+                0.0707291666666666,
+                0.8829166666666671,
+                0.04635416666666661
+              ],
+              "tv_original": 19.79166666666667,
+              "tv_optimized": 14.802083333333357
+            },
+            {
+              "question": "small_biz_use",
+              "prompt": "Do you use Amazon for a small business?",
+              "people": 96,
+              "estimable": true,
+              "options": [
+                {
+                  "id": "1",
+                  "label": "I don't know"
+                },
+                {
+                  "id": "2",
+                  "label": "No"
+                },
+                {
+                  "id": "3",
+                  "label": "Yes"
+                }
+              ],
+              "truth": [
+                0.22916666666666666,
+                0.40625,
+                0.3645833333333333
+              ],
+              "original": [
+                0.0,
+                0.7708333333333334,
+                0.22916666666666666
+              ],
+              "optimized": [
+                0.05333333333333327,
+                0.6990625,
+                0.24760416666666693
+              ],
+              "tv_original": 36.458333333333336,
+              "tv_optimized": 29.281249999999993
+            },
+            {
+              "question": "wheelchair",
+              "prompt": "Do you use a wheelchair?",
+              "people": 96,
+              "estimable": true,
+              "options": [
+                {
+                  "id": "1",
+                  "label": "No"
+                },
+                {
+                  "id": "2",
+                  "label": "Prefer not to say"
+                },
+                {
+                  "id": "3",
+                  "label": "Yes"
+                }
+              ],
+              "truth": [
+                0.9791666666666666,
+                0.0,
+                0.020833333333333332
+              ],
+              "original": [
+                1.0,
+                0.0,
+                0.0
+              ],
+              "optimized": [
+                0.9472916666666676,
+                0.024468749999999994,
+                0.02823958333333333
+              ],
+              "tv_original": 2.083333333333335,
+              "tv_optimized": 3.1874999999999485
+            }
+          ]
+        }
+      }
+    },
     "anchor-v1": {
       "arms": [
         "optimized",

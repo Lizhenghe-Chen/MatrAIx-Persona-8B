@@ -59,7 +59,7 @@ node examples/sim-to-real/reports/smoke_cards.cjs
 |---|---|---|
 | 前段条形图、区间图、分布条 | `evidence.json` | `build.py` 内联 SVG（`charts.js`） |
 | clean-v1 的五个图（相对等分改善、题卡散点、构成环图、评分分布、差异保留率） | `decision_lab/reports/cross-study-v1/clean-v1-diagnostics.json` | ECharts（`charts_clean.js`） |
-| 故事版三张图（AI vs 查表、实测交叉点、外部验证） | `cluster-summary.json`、`blend-qwen.json`、`external-v1-results.json` | ECharts（`charts_story.js`） |
+| 故事版三张图（AI vs 查表、实测交叉点、外部验证） | `cluster-summary.json`、`blend-qwen.json`、`external-v2-results.json` | ECharts（`charts_story.js`） |
 
 `clean-v1-diagnostics.json` 由 `PYTHONPATH=examples/sim-to-real .venv/bin/python -m decision_lab.cross_study.clean_diagnostics` 从本机检查点重算。ECharts 已本地化在 `vendor/echarts.min.js`，并在构建时**内联进 `index.html`**——页面仍是单文件、离线可开、零外部请求（`smoke.cjs` 会断言这一点）。改动图表脚本后必须重跑 `node smoke.cjs`。
 

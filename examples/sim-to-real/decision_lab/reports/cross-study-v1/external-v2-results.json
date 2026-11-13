@@ -1,0 +1,297 @@
+{
+  "status": "complete_formal_cross_study",
+  "arms": [
+    "original",
+    "optimized"
+  ],
+  "spec_sha256": "70c49d4cb4b2f0d0c6b4524f6757ce98c042df69216711936c65cda8769322fb",
+  "jobs_sha256": "2f51cf1841415f8940d83d12727f69188fb7dc1dd9f2bb447d332c7d3bf1b3bf",
+  "execution": {
+    "states": {
+      "complete": 192
+    },
+    "missing_calls": 0,
+    "answer_coverage": {},
+    "coverage_rule": "A person is scored on the questions they actually answered; a person with fewer than half answered is excluded and counted. The rule uses observed answers only, never model output."
+  },
+  "studies": {
+    "openecommerce": {
+      "people": 96,
+      "history_source_people": 4899,
+      "excluded_evaluated_from_history": true,
+      "answer_coverage": {},
+      "cards": 14,
+      "cards_with_at_least_20_people": 14,
+      "attribute_baseline": "no attribute model declared for this study",
+      "results": {
+        "arms": {
+          "original": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              14
+            ],
+            "brier": 0.8660714285714285,
+            "accuracy": 0.5669642857142857,
+            "card_tv_pp": 24.18154761904762,
+            "cards": 14,
+            "mean_people_per_card": 96.0,
+            "refusal": {
+              "cigarettes": 0.0,
+              "marijuana": 0.0,
+              "alcohol": 0.0,
+              "diabetes": 0.0,
+              "wheelchair": 0.0,
+              "sell_your_data": 0.0,
+              "sell_consumer_data": 0.0,
+              "small_biz_use": 0.0,
+              "census_use": 0.19791666666666666,
+              "research_society": 0.0,
+              "sexual_orientation": 0.0
+            }
+          },
+          "optimized": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              14
+            ],
+            "brier": 0.6168991681547619,
+            "accuracy": 0.5520833333333334,
+            "card_tv_pp": 18.209821428571427,
+            "cards": 14,
+            "mean_people_per_card": 96.0,
+            "refusal": {
+              "cigarettes": 0.04302083333333329,
+              "marijuana": 0.06406249999999993,
+              "alcohol": 0.04937499999999995,
+              "diabetes": 0.05385416666666661,
+              "wheelchair": 0.024468749999999994,
+              "sell_your_data": 0.13072916666666654,
+              "sell_consumer_data": 0.12239583333333322,
+              "small_biz_use": 0.05333333333333327,
+              "census_use": 0.2031249999999999,
+              "research_society": 0.059999999999999935,
+              "sexual_orientation": 0.04635416666666661
+            }
+          },
+          "history": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              14
+            ],
+            "brier": 0.47309080795376907,
+            "accuracy": 0.6205357142857143,
+            "card_tv_pp": 2.5519511999533457,
+            "cards": 14,
+            "mean_people_per_card": 96.0,
+            "refusal": {
+              "cigarettes": 0.002245356195141871,
+              "marijuana": 0.009185548071034895,
+              "alcohol": 0.004490712390283742,
+              "diabetes": 0.0032659726474790767,
+              "wheelchair": 0.002245356195141871,
+              "sell_your_data": 0.03123086344151863,
+              "sell_consumer_data": 0.04388650745050004,
+              "small_biz_use": 0.25372525005103075,
+              "census_use": 0.28107777097366776,
+              "research_society": 0.1702388242498466,
+              "sexual_orientation": 0.011226780975709316
+            }
+          },
+          "stratum_history": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              14
+            ],
+            "brier": 0.467332870219258,
+            "accuracy": 0.6309523809523809,
+            "card_tv_pp": 2.5844293203841127,
+            "cards": 14,
+            "mean_people_per_card": 96.0,
+            "refusal": {
+              "cigarettes": 0.0022462658605700123,
+              "marijuana": 0.009025962177081253,
+              "alcohol": 0.00442468890328522,
+              "diabetes": 0.003275425055673393,
+              "wheelchair": 0.0022516135786170583,
+              "sell_your_data": 0.030904328880811335,
+              "sell_consumer_data": 0.04347904991996974,
+              "small_biz_use": 0.25228130170205004,
+              "census_use": 0.2788680191486757,
+              "research_society": 0.1691818550940111,
+              "sexual_orientation": 0.011026547909419754
+            }
+          },
+          "uniform": {
+            "available": true,
+            "question_coverage": 1.0,
+            "people": 96,
+            "questions_per_person": [
+              14
+            ],
+            "brier": 0.7083333333333334,
+            "accuracy": 0.2976190476190476,
+            "card_tv_pp": 37.79761904761904,
+            "cards": 14,
+            "mean_people_per_card": 96.0,
+            "refusal": {
+              "cigarettes": 0.25,
+              "marijuana": 0.25,
+              "alcohol": 0.25,
+              "diabetes": 0.33333333333333287,
+              "wheelchair": 0.33333333333333287,
+              "sell_your_data": 0.25,
+              "sell_consumer_data": 0.25,
+              "small_biz_use": 0.33333333333333287,
+              "census_use": 0.33333333333333287,
+              "research_society": 0.33333333333333287,
+              "sexual_orientation": 0.33333333333333287
+            }
+          }
+        },
+        "contrasts": {
+          "original__to__optimized": {
+            "reference": 0.8660714285714285,
+            "candidate": 0.6168991681547619,
+            "improvement": 0.24917226041666662,
+            "relative_improvement": 0.2877040532646048,
+            "improvement_95_ci": [
+              0.21795830952380946,
+              0.2821743809523809
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": true
+          },
+          "history__to__original": {
+            "reference": 0.47309080795376907,
+            "candidate": 0.8660714285714285,
+            "improvement": -0.3929806206176594,
+            "relative_improvement": -0.8306663625898686,
+            "improvement_95_ci": [
+              -0.42919944321507963,
+              -0.35745921926266966
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": false
+          },
+          "history__to__optimized": {
+            "reference": 0.47309080795376907,
+            "candidate": 0.6168991681547619,
+            "improvement": -0.1438083602009928,
+            "relative_improvement": -0.30397622989759276,
+            "improvement_95_ci": [
+              -0.17040888952700928,
+              -0.1176979391353477
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": false
+          },
+          "stratum_history__to__original": {
+            "reference": 0.467332870219258,
+            "candidate": 0.8660714285714285,
+            "improvement": -0.3987385583521705,
+            "relative_improvement": -0.853221726443284,
+            "improvement_95_ci": [
+              -0.4344255296779821,
+              -0.36209287025166964
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": false
+          },
+          "stratum_history__to__optimized": {
+            "reference": 0.467332870219258,
+            "candidate": 0.6168991681547619,
+            "improvement": -0.14956629793550386,
+            "relative_improvement": -0.32004232414752254,
+            "improvement_95_ci": [
+              -0.1765558634087145,
+              -0.1210054585807725
+            ],
+            "repeats": 2000,
+            "seed": 20261109,
+            "people": 96,
+            "passes_brier_gate": false
+          }
+        },
+        "card_contrasts": {
+          "original__to__optimized": {
+            "available": true,
+            "reference_pp": 24.18154761904762,
+            "candidate_pp": 18.209821428571427,
+            "improvement_pp": 5.971726190476193,
+            "improvement_95_ci": [
+              3.2890625,
+              8.30877976190476
+            ],
+            "repeats": 2000,
+            "retained_draws": 2000,
+            "seed": 20261109,
+            "estimable_cards": 14,
+            "passes_2pp_gate": true
+          }
+        },
+        "refusal_options": {
+          "cigarettes": [
+            "3"
+          ],
+          "marijuana": [
+            "3"
+          ],
+          "alcohol": [
+            "3"
+          ],
+          "diabetes": [
+            "2"
+          ],
+          "wheelchair": [
+            "2"
+          ],
+          "sell_your_data": [
+            "1"
+          ],
+          "sell_consumer_data": [
+            "1"
+          ],
+          "small_biz_use": [
+            "1"
+          ],
+          "census_use": [
+            "1"
+          ],
+          "research_society": [
+            "1"
+          ],
+          "sexual_orientation": [
+            "3"
+          ]
+        },
+        "estimable_cards": {
+          "minimum_people_per_card": 20
+        },
+        "unavailable_reference_cards": [],
+        "aggregation": "Weighted by survey weight; each person contributes one Brier score averaged over their own questions; card shares are averaged over distinct frozen cards.",
+        "computed_at": "2026-11-13T10:59:36.020657+08:00"
+      }
+    }
+  },
+  "budget": {
+    "max_calls": 192,
+    "reserved_peak_usd": 5.72328504,
+    "max_cost_usd": 6.87
+  }
+}

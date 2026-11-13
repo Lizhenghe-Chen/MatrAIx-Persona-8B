@@ -104,7 +104,7 @@ def question_table(card):
     so once is clearer.
     """
     has_native = card['original'] is not None
-    who, gain, state = verdict(card['tv_original'], card['tv_optimized'])
+    who, gain, state = verdict(card['tv_original'], card['tv_optimized'], has_native)
     head = ['选项', '真人'] + (['原版 MatrAIx'] if has_native else []) + \
            ['优化后'] + (['原版−真人'] if has_native else [])
     rows = []
@@ -124,9 +124,9 @@ def question_table(card):
         foot.append(f'<td>{tv_cell(card["tv_original"], state, who == "native")}</td>')
     foot.append(f'<td>{tv_cell(card["tv_optimized"], state, who == "optimized")}</td>')
     if has_native:
-        foot.append(f'<td>{verdict_chip(card["tv_original"], card["tv_optimized"])}</td>')
+        foot.append(f'<td>{verdict_chip(card["tv_original"], card["tv_optimized"], has_native)}</td>')
     else:
-        foot.append(f'<td>{verdict_chip(None, card["tv_optimized"])}</td>')
+        foot.append(f'<td>{verdict_chip(None, card["tv_optimized"], has_native)}</td>')
     rows.append('<tr class="qfoot">' + ''.join(foot) + '</tr>')
     head_html = ''.join(f'<th>{html.escape(h)}</th>' for h in head)
     return ('<div class="table-wrap"><table class="qtable">'
@@ -137,10 +137,14 @@ GATE_PP = 2.0          # the project's declared gate for a meaningful distributi
 DIRECTION_PP = 1.0     # below this an over/under-estimate is not worth colouring
 
 
-def verdict(native_tv, optimized_tv):
-    """Compare two error totals. Returns (who, gain, state) with state in good/bad/tie."""
+def verdict(native_tv, optimized_tv, native_ran=True):
+    """Compare two error totals. Returns (who, gain, state) with state in good/bad/tie.
+
+    A missing native number has two different causes and they must not share a label:
+    the arm never ran, or it ran but no question had enough respondents to score.
+    """
     if native_tv is None or optimized_tv is None:
-        return None, None, 'unknown'
+        return None, None, ('unknown' if not native_ran else 'unestimable')
     gain = native_tv - optimized_tv          # positive = optimized is better
     if abs(gain) < GATE_PP:
         return 'tie', gain, 'tie'
@@ -150,7 +154,7 @@ def verdict(native_tv, optimized_tv):
 def tv_cell(value, state, is_winner):
     """One error number. The winner is emphasised; the other is muted, never red."""
     if value is None:
-        label = '未跑原版臂' if state == 'unknown' else '不可估'
+        label = '未跑原版臂' if state == 'unknown' else '逐题不可估'
         return f'<span class="tv muted" title="{label}">—</span>'
     text = f'{value:.1f}'
     if state == 'tie':
@@ -160,12 +164,15 @@ def tv_cell(value, state, is_winner):
     return f'<span class="tv lose">{text}</span>'
 
 
-def verdict_chip(native_tv, optimized_tv):
-    who, gain, state = verdict(native_tv, optimized_tv)
+def verdict_chip(native_tv, optimized_tv, native_ran=True):
+    who, gain, state = verdict(native_tv, optimized_tv, native_ran)
     if state == 'unknown':
         return ('<span class="chip unknown" title="这套研究只运行了优化臂，'
                 '因此没有原版误差可对比；正文给出每档等分的参照误差">'
                 '仅优化臂</span>')
+    if state == 'unestimable':
+        return ('<span class="chip tie" title="原版臂跑了，但这套问卷的题目人人不同，'
+                '没有一道题够 20 人，逐题误差算不出来">逐题不可估</span>')
     if state == 'tie':
         return '<span class="chip tie">≈ 两者相当</span>'
     # The verdict chip carries the good/bad reading, so the detail cells need not shout.
@@ -178,20 +185,21 @@ def missing_cell(value, state):
     """A missing number says why, rather than showing a dash the reader must decode."""
     if value is None and state == 'unknown':
         return '<span class="tv muted" title="这套研究没有运行原版单选臂">未跑</span>'
-    return '<span class="tv muted">不可估</span>'
+    return '<span class="tv muted" title="原版臂跑了，但没有一道题的作答人数够 20">逐题不可估</span>'
 
 
-def study_numbers(native_value, optimized_value, who, state):
+def study_numbers(native_value, optimized_value, who, state, native_ran=True):
     """Header numbers. A missing arm is named, not shown as a bare dash."""
     parts = []
     if native_value is None:
-        parts.append('<span class="snum-missing">原版 <b>未跑</b></span>')
+        word = '未跑' if not native_ran else '逐题不可估'
+        parts.append(f'<span class="snum-missing">原版 <b>{word}</b></span>')
     else:
         parts.append(f'<span class="snum-native"><i>原版</i>'
                      f'{tv_cell(native_value, state, who == "native")}</span>')
     parts.append(f'<span class="snum-optimized"><i>优化</i>'
                  f'{tv_cell(optimized_value, state, who == "optimized")}</span>')
-    parts.append(verdict_chip(native_value, optimized_value))
+    parts.append(verdict_chip(native_value, optimized_value, native_ran))
     return ''.join(parts)
 
 
@@ -210,7 +218,7 @@ def study_section(study, entry, index):
     has_native = 'original' in entry['arms']
     native_value = metrics['original'] if metrics else None
     optimized_value = metrics['optimized'] if metrics else None
-    who, gain, state = verdict(native_value, optimized_value)
+    who, gain, state = verdict(native_value, optimized_value, has_native)
     coverage = f'{estimable}/{cards} 题可估'
 
     body = []
@@ -237,7 +245,7 @@ def study_section(study, entry, index):
         for card_index, card in enumerate(entry['questions']):
             if not card['estimable']:
                 continue
-            q_who, q_gain, q_state = verdict(card['tv_original'], card['tv_optimized'])
+            q_who, q_gain, q_state = verdict(card['tv_original'], card['tv_optimized'], has_native)
             items.append(
                 '<details class="q-drawer">'
                 '<summary>'
@@ -268,7 +276,7 @@ def study_section(study, entry, index):
             f'<span class="sname">{html.escape(label)}</span>'
             f'<span class="srole">{html.escape(ROLE.get(study, ""))}</span>'
             f'<span class="smeta">{entry["people"]} 人 · {coverage}</span>'
-            f'<span class="snums">{study_numbers(native_value, optimized_value, who, state)}</span>'
+            f'<span class="snums">{study_numbers(native_value, optimized_value, who, state, has_native)}</span>'
             '</summary>'
             '<div class="study-body">' + ''.join(body) + '</div>'
             '</details></section>')
@@ -287,14 +295,15 @@ def build():
         metrics = entry.get('card_tv')
         native_value = metrics['original'] if metrics else None
         optimized_value = metrics['optimized'] if metrics else None
-        who, gain, state = verdict(native_value, optimized_value)
+        native_ran = 'original' in entry['arms']
+        who, gain, state = verdict(native_value, optimized_value, native_ran)
         overview.append(
             f'<tr><th><a href="#s-{study}">{html.escape(LABELS.get(study, study))}</a></th>'
             f'<td>{entry["people"]}</td><td>{entry["cards"]}</td>'
             f'<td>{entry["estimable_cards"]}</td>'
             f'<td>{tv_cell(native_value, state, who == "native") if native_value is not None else missing_cell(native_value, state)}</td>'
             f'<td>{tv_cell(optimized_value, state, who == "optimized")}</td>'
-            f'<td>{verdict_chip(native_value, optimized_value)}</td></tr>')
+            f'<td>{verdict_chip(native_value, optimized_value, native_ran)}</td></tr>')
     overview.append('</tbody></table></div>'
                     '<p class="small">「可估题」＝至少 20 名被测者答过同一道题。'
                     '为 0 的研究，单题分布不可估（一个人的答案就是 100%），'

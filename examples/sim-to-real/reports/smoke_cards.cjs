@@ -40,9 +40,15 @@ const delay=ms=>new Promise(r=>setTimeout(r,ms));
   // Collapsed rows still carry a miniature comparison strip.
   const strips=await run("document.querySelectorAll('.qstrip .strip-row').length");
   assert.ok(strips>=240,'strip rows: '+strips);
-  // A study that never ran the native arm must say so, not show a silent dash.
-  assert.ok(await run("document.body.innerHTML.includes('仅优化臂')"),'missing arm is named');
-  assert.ok(await run("document.body.innerHTML.includes('原版</i> <b>未跑</b>')||document.body.innerHTML.includes('原版 <b>未跑</b>')"),'header marks the arm as not run');
+  // Every study now has both arms, so no header may claim one is missing.
+  assert.equal(await run("[...document.querySelectorAll('.snums')].filter(e=>e.textContent.includes('未跑')).length"),0,'no arm left unrun');
+  assert.equal(await run("[...document.querySelectorAll('.snum-missing b')].filter(e=>e.textContent!=='逐题不可估').length"),0,'missing numbers only mean "cannot score"');
+  assert.ok(await run("!document.body.innerHTML.includes('无法比较')"),'no vague wording');
+  // A question nobody could score is labelled by cause, not lumped in with a missing arm.
+  assert.ok(await run("document.body.innerHTML.includes('逐题不可估')"),'unscorable questions are named');
+  // The external study gained its native arm: both numbers must be on the page.
+  assert.ok(await run(`(()=>{const s=document.querySelector('#s-openecommerce');
+    return !!s && /24\.2/.test(s.textContent) && /18\.2/.test(s.textContent);})()`),'external study shows both arms');
 
   // Colour semantics, checked against the intended values rather than by impression.
   const colouring=await run(`(()=>{

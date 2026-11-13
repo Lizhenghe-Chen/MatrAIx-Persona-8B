@@ -1,0 +1,72 @@
+{
+  "status": "complete",
+  "studies": [
+    "openecommerce"
+  ],
+  "arms": [
+    "original",
+    "optimized"
+  ],
+  "excluded_participants": [],
+  "excluded_policy": "Excluded before any effect was computed: no complete approved persona exists in the release. Reported, never replaced by a hand-written profile.",
+  "people_with_persona": {
+    "openecommerce": 96
+  },
+  "jobs_per_study_arm": {
+    "openecommerce/original": 96,
+    "openecommerce/optimized": 96
+  },
+  "total_calls": 192,
+  "max_calls": 192,
+  "max_retries": 14,
+  "reserved_peak_usd": 5.72328504,
+  "max_cost_usd": 6.87,
+  "input_peak_usd_per_million": 1.32,
+  "output_peak_usd_per_million": 3.96,
+  "price_source": "https://api-docs.deepseek.com/quick_start/pricing/",
+  "expected_identity": {
+    "model": "deepseek-v4-pro",
+    "system_fingerprint": "a307abda487cd1b463329ccb945ce396"
+  },
+  "jobs_sha256": "2f51cf1841415f8940d83d12727f69188fb7dc1dd9f2bb447d332c7d3bf1b3bf",
+  "people_per_study": {
+    "openecommerce": 96
+  },
+  "persona_field_distribution": {
+    "openecommerce": {
+      "min": 11,
+      "median": 360.5,
+      "max": 847,
+      "mean": 322.65625,
+      "people": 96
+    }
+  },
+  "omitted_dimension_distribution": {
+    "openecommerce": {
+      "min": 443,
+      "median": 929.5,
+      "max": 1279,
+      "mean": 967.34375,
+      "people": 96
+    }
+  },
+  "persona_richness_note": "Approved categorical dimensions sent per persona differ by study and by person. A cross-study comparison must read this table: a larger field count is not evidence that the persona is more accurate, but it is a confound for how much information the model received.",
+  "scoring_plan": {
+    "primary": "optimized versus original, per-person Brier, paired by person within stratum, 2000 draws",
+    "required_comparators": [
+      "history (weighted option shares from non-evaluated respondents)",
+      "stratum_history (same, within stratum where at least 20 respondents exist)",
+      "uniform"
+    ],
+    "distribution": "equal-card mean absolute share difference in percentage points",
+    "gates": "relative Brier improvement at least 2% with the 95% interval above zero; card-share improvement reported separately",
+    "no_default_answers": true
+  },
+  "formal_effects_available": false,
+  "formal_run_authorized_by_user": true,
+  "authorization_note": "Fill the missing arm of the external validation: external-v1 ran only the optimized arm, so the page had no 原版 column. This plan re-runs the same 192 frozen bodies with both arms; the 96 optimized bills are reused byte-identically for free, so only 96 new native-instruction calls are paid for. Purpose: test whether \"probability output beats single choice\" also holds on a dataset never used before. Approved under the standing \"iterate autonomously within 300 CNY\" instruction.",
+  "execution_mode": {
+    "workers": 8,
+    "claim": "INSERT OR IGNORE inside BEGIN IMMEDIATE; one row per frozen body hash"
+  }
+}

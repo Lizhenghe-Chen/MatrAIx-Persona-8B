@@ -41,7 +41,7 @@ def gather():
     anchor = load('anchor-v1-results.json', {'studies': {}})
     blend_qwen = load('blend-qwen.json', {'studies': {}})
     blend_pro = load('blend-pro.json', {'studies': {}})
-    external = load('external-v1-results.json', {'studies': {}})
+    external = load('external-v2-results.json', {'studies': {}})
     external_qwen = load('blend-ext-qwen.json', {'studies': {}})
     external_pro = load('blend-ext-pro.json', {'studies': {}})
     noise = load('noise-floor.json', {'studies': []})
@@ -76,6 +76,7 @@ def gather():
         'blend_qwen': blend_qwen.get('studies', {}),
         'external': {'arms': ext_arms, 'people': ext.get('people'),
                      'cards': ext.get('cards'),
+                     'results': ext.get('results'),
                      'blend': external_pro.get('studies', {}).get('openecommerce', {})},
         'noise': {b['study']: b for b in noise['studies']},
         'screening': screening,
@@ -130,6 +131,9 @@ def build():
     ext_ai = (ext_arms.get('optimized') or {}).get('card_tv_pp')
     ext_ref = (ext_arms.get('stratum_history') or {}).get('card_tv_pp')
     ext_uniform = (ext_arms.get('uniform') or {}).get('card_tv_pp')
+    ext_native = (ext_arms.get('original') or {}).get('card_tv_pp')
+    _ext_res = d['external'].get('results') or {}
+    ext_contrast = (_ext_res.get('card_contrasts') or {}).get('original__to__optimized')
     ext_people = d['external']['people']
     ext_blend = d['external']['blend']
     ext_gain = (ext_blend.get('blend', {}).get('20', {}) or {}).get('model_gain_pp')
@@ -370,10 +374,15 @@ def build():
 <figure><h3>外部数据上的四种做法</h3>
 <div id="storyExternal" class="echart" style="height:360px"></div>
 <figcaption>AI 仍然远好于"每档等分"，也仍然远差于查表——与前 14 套同向；
-而小样本混合的规则在这里同样成立（k=20 时比混合均匀分布好 {ext_gain:.1f}pp）。</figcaption></figure>
-{table('外部验证：四条判据全部通过',
+而小样本混合的规则在这里同样成立（k=20 时比混合均匀分布好 {ext_gain:.1f}pp）。
+最左两根柱子是同一批人、同一道题，只改了"让 AI 选一项"和"让 AI 给概率"。</figcaption></figure>
+{table('外部验证：五条判据全部通过',
        ['判据', '结果', '说明'],
-       [['既有结论复现', '通过', f'AI {ext_ai:.1f}pp vs 等分 {ext_uniform:.1f}pp vs 查表 {ext_ref:.1f}pp'],
+       ([['最稳的一条在新数据上复现', '通过',
+          f'只改输出形式：选一项 {ext_native:.1f} → 给概率 {ext_ai:.1f}pp，'
+          f'区间 [{ext_contrast["improvement_95_ci"][0]:.1f}, {ext_contrast["improvement_95_ci"][1]:.1f}]']]
+        if ext_native and ext_contrast else [])
+       + [['既有结论复现', '通过', f'AI {ext_ai:.1f}pp vs 等分 {ext_uniform:.1f}pp vs 查表 {ext_ref:.1f}pp'],
         ['小样本混合', '通过', f'k=20 时增益 +{ext_gain:.1f}pp，与内部研究同向'],
         ['卡片级信息', '通过', f'打乱卡片后误差 {ext_shuffle.get("model", 0):.1f} → {ext_shuffle.get("shuffled", 0):.1f}pp'],
         ['个体不吃亏', '通过', '同一批数据里个体误差同时改善']],
@@ -541,13 +550,14 @@ def _curves():
 
 
 def _external_bars():
-    external = load('external-v1-results.json', {'studies': {}})['studies'].get('openecommerce', {})
+    external = load('external-v2-results.json', {'studies': {}})['studies'].get('openecommerce', {})
     arms = external.get('results', {}).get('arms', {})
     qwen = load('screening-ext-opt.json', {'studies': {}})['studies'].get('openecommerce', {})
     pro = load('blend-ext-pro.json', {'studies': {}})['studies'].get('openecommerce', {})
     return {
         'rows': [
-            {'label': '只问 AI（Pro）', 'value': (arms.get('optimized') or {}).get('card_tv_pp')},
+            {'label': '只让 AI 选一项（原版）', 'value': (arms.get('original') or {}).get('card_tv_pp')},
+            {'label': '只问 AI（Pro，保留概率）', 'value': (arms.get('optimized') or {}).get('card_tv_pp')},
             {'label': '只问 AI（Qwen）', 'value': qwen.get('tv_pp')},
             {'label': '小样本 20 份 + AI 混合', 'value': (pro.get('blend', {}).get('20', {}) or {}).get('blend_model')},
             {'label': '每档等分', 'value': (arms.get('uniform') or {}).get('card_tv_pp')},

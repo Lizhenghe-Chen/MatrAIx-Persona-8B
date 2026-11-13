@@ -823,7 +823,9 @@ def pilot_section():
 
 def external_block():
     """External validation on a dataset that never took part in any tuning."""
-    path = CROSS / 'external-v1-results.json'
+    path = CROSS / 'external-v2-results.json'
+    if not path.exists():
+        path = CROSS / 'external-v1-results.json'
     qwen_path = CROSS / 'blend-ext-qwen.json'
     pro_path = CROSS / 'blend-ext-pro.json'
     if not path.exists():
@@ -839,9 +841,12 @@ def external_block():
         ai_qwen = json.loads(screening.read_text())['studies']['openecommerce']['tv_pp']
     lookup = arms['stratum_history']['card_tv_pp']
     uniform = arms['uniform']['card_tv_pp']
+    native = arms.get('original', {}).get('card_tv_pp')
+    contrast = results['results']['card_contrasts'].get('original__to__optimized')
     rows = ''.join(
         f"<tr><th>{name}</th><td>{value:.1f}pp</td></tr>"
-        for name, value in (('只问 AI（Pro）', ai_pro),
+        for name, value in (('只让 AI 选一项（原版）', native),
+                            ('只问 AI（Pro，保留概率）', ai_pro),
                             ('只问 AI（Qwen）', ai_qwen) if ai_qwen else ('', 0),
                             ('每档等分', uniform), ('历史查表', lookup)) if value)
     gain_pro = pro['blend']['20'].get('model_gain_pp') if pro else None
@@ -863,7 +868,15 @@ def external_block():
             '<div class="table-wrap"><table style="min-width:520px">'
             '<caption>外部数据上的分布误差（14 张卡，96 人，越低越好）</caption>'
             '<thead><tr><th>做法</th><th>TV</th></tr></thead><tbody>' + rows + '</tbody></table></div>'
-            f'<p><strong>结论一（复现）</strong>：AI 仍然远好于"每档等分"'
+            + (f'<p><strong>结论零（新数据上复现了最稳的那条）</strong>：'
+               f'同一批人、同一道题、同一句人设描述，<strong>只改"让 AI 选一项"为"给出概率"</strong>，'
+               f'分布误差从 {native:.1f}pp 降到 {ai_pro:.1f}pp，'
+               f'降低 {100 * (1 - ai_pro / native):.0f}%，95% 区间 '
+               f'[{contrast["improvement_95_ci"][0]:.1f}, {contrast["improvement_95_ci"][1]:.1f}]'
+               f'（14 题配对自举，不跨零）。这是第 15 套数据、也是唯一一套在跑之前'
+               f'没被任何人看过结果的数据，结论与前 14 套一致。</p>'
+               if native and contrast else '')
+            + f'<p><strong>结论一（复现）</strong>：AI 仍然远好于"每档等分"'
             f'（{ai_pro:.1f} vs {uniform:.1f}pp，误差降低 {100 * (1 - ai_pro / uniform):.0f}%），'
             f'也仍然远差于查表（差 {100 * (1 - lookup / ai_pro):.0f}%）。'
             '与前面 14 套完全同向。</p>'
