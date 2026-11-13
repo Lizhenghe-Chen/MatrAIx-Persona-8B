@@ -1,0 +1,120 @@
+{
+  "status": "structural_audit_only_not_admission",
+  "date": "2026-11-13",
+  "target_answers_used_for_selection": false,
+  "model_calls": 0,
+  "data_root_env": "MATRAIX_DATA_ROOT",
+  "candidates": [
+    {
+      "id": "origin",
+      "title": "美国商品产地",
+      "role": "historical_development_only",
+      "source": "06_历史北美电商/origin-original.tab",
+      "sha256": "64f405b8755470e98cc6f22dc9b070305c4eb97fb1d8071a346a5adac2cceee2",
+      "columns": [
+        "q2_w1",
+        "q5_w1",
+        "q11_1_w1",
+        "q11_2_w1",
+        "q11_3_w1",
+        "q11_4_w1",
+        "q11_5_w1",
+        "q11_6_w1",
+        "q22_w1",
+        "task_num",
+        "product",
+        "country",
+        "rating",
+        "Q14_1",
+        "Q14_4",
+        "mark_up",
+        "profile_chosen",
+        "wave1_only",
+        "id",
+        "age",
+        "race",
+        "gender",
+        "educ",
+        "college",
+        "inc",
+        "ft_mexico",
+        "ft_china",
+        "ft_UK",
+        "ft_germ",
+        "ft_japan",
+        "ft_PR",
+        "ft_us",
+        "pid3_lean",
+        "pid3_lean_w2",
+        "mark_up_cat",
+        "rating_cat",
+        "product_cat",
+        "ethno1",
+        "ethno2",
+        "ethno3",
+        "ethno4",
+        "ethno5",
+        "ethno6",
+        "ethnocentrism"
+      ],
+      "potential_facts": [
+        "age",
+        "educ",
+        "gender",
+        "inc",
+        "q11_1_w1–q11_6_w1"
+      ],
+      "pending": [
+        "Verify exact original labels and pre-choice timing.",
+        "Do not treat income as budget or cultural-attitude scores as universal purchase constraints.",
+        "Observed earlier experiment outcomes prohibit a fresh independent-validation claim."
+      ],
+      "admitted": false
+    },
+    {
+      "id": "swiss_six",
+      "title": "瑞士六品类",
+      "role": "cross_category_candidate_same_panel_not_independent_country_replication",
+      "source": "02_瑞士六品类/w14_conjoint.RData",
+      "sha256": "081e720ec4c4cd03943731f8b2a43df1433859231bf99b73235877fc3aa8503a",
+      "people": 6535,
+      "tasks": 39210,
+      "categories": [
+        "Chocolate (100g)",
+        "Jacket",
+        "Laptop",
+        "Shirt",
+        "Smartphone",
+        "Tomatoes (1kg)"
+      ],
+      "categories_per_person": {
+        "2": 6535
+      },
+      "potential_facts": [
+        "age",
+        "educ",
+        "inc",
+        "envcon",
+        "envbeh",
+        "cfc"
+      ],
+      "prohibited_until_proven_safe": [
+        "choice",
+        "rating",
+        "green_*",
+        "intention_tpb",
+        "choice-derived attitude scores"
+      ],
+      "pending": [
+        "Original instructions, price units and field labels.",
+        "Measurement timing and target-answer derivation for all proposed preference fields.",
+        "Shared wave8/wave14 IDs and global person-level split.",
+        "Each person sees two categories, not all six.",
+        "SEP_w14_reduced.RData dataframe conversion currently fails in pyreadr; do not infer unjoined fields."
+      ],
+      "admitted": false
+    }
+  ],
+  "independent_validation": "No new independently qualified validation dataset frozen yet; do not rename old test data as new.",
+  "raw_copy_policy": "Raw human records remain in shared storage or local private stage directory; no raw copy made in Git."
+}

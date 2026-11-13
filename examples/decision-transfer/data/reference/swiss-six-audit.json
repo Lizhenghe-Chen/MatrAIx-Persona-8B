@@ -1,0 +1,24 @@
+{
+  "source": "https://zenodo.org/records/20008484",
+  "sha256": "081e720ec4c4cd03943731f8b2a43df1433859231bf99b73235877fc3aa8503a",
+  "raw_rows": 78719,
+  "rows_without_choice_keys": 299,
+  "valid_rows": 78420,
+  "people_with_choices": 6535,
+  "choice_tasks": 39210,
+  "structural_errors": [],
+  "shared_numeric_identifiers_with_wave8": 1837,
+  "independence": "Same panel family; shared numeric IDs require namespace confirmation. Do not count as independent-person replication without resolving linkage.",
+  "role": "dependent-panel extension candidate; prioritize unrelated US T-shirt sample for independent validation",
+  "pending": [
+    "Original instructions, language and background timing",
+    "Author final analytic sample filters (paper approximately 5000 vs 6535 with choices)",
+    "Rating vs forced-choice task mapping",
+    "Shared panel identifier namespace and globally consistent splits"
+  ],
+  "excluded_inputs": [
+    "choice-derived green propensity scores",
+    "unverified concurrent intention scales"
+  ],
+  "status": "not_admitted"
+}

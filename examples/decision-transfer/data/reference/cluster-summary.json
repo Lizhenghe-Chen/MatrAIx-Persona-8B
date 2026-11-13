@@ -1,0 +1,262 @@
+{
+  "rows": [
+    {
+      "plan": "v1",
+      "study": "anes",
+      "cluster": "ANES",
+      "people": 96,
+      "ai_over_uniform": 0.0033,
+      "reference": "stratum_history",
+      "reference_over_uniform": 0.1607,
+      "ai_vs_reference": -0.1876,
+      "ai_vs_reference_ci": [
+        -0.1601,
+        -0.0544
+      ],
+      "cards_estimable": 6,
+      "cards": 6
+    },
+    {
+      "plan": "v1",
+      "study": "dryer",
+      "cluster": "Dryer (4 countries)",
+      "people": 94,
+      "ai_over_uniform": 0.0453,
+      "reference": "stratum_history",
+      "reference_over_uniform": 0.2301,
+      "ai_vs_reference": -0.2401,
+      "ai_vs_reference_ci": [
+        -0.1687,
+        -0.0777
+      ],
+      "cards_estimable": 0,
+      "cards": 216
+    },
+    {
+      "plan": "v1",
+      "study": "pew13",
+      "cluster": "Pew",
+      "people": 96,
+      "ai_over_uniform": 0.1197,
+      "reference": "stratum_history",
+      "reference_over_uniform": 0.2106,
+      "ai_vs_reference": -0.1151,
+      "ai_vs_reference_ci": [
+        -0.1057,
+        -0.0261
+      ],
+      "cards_estimable": 13,
+      "cards": 13
+    },
+    {
+      "plan": "v1",
+      "study": "pew168",
+      "cluster": "Pew",
+      "people": 96,
+      "ai_over_uniform": 0.2194,
+      "reference": "stratum_history",
+      "reference_over_uniform": 0.3294,
+      "ai_vs_reference": -0.164,
+      "ai_vs_reference_ci": [
+        -0.1371,
+        -0.0277
+      ],
+      "cards_estimable": 5,
+      "cards": 5
+    },
+    {
+      "plan": "v1",
+      "study": "shed",
+      "cluster": "Pew",
+      "people": 96,
+      "ai_over_uniform": 0.0594,
+      "reference": "stratum_history",
+      "reference_over_uniform": 0.228,
+      "ai_vs_reference": -0.2183,
+      "ai_vs_reference_ci": [
+        -0.1247,
+        -0.0427
+      ],
+      "cards_estimable": 7,
+      "cards": 7
+    },
+    {
+      "plan": "v1",
+      "study": "swiss",
+      "cluster": "Swiss panel",
+      "people": 96,
+      "ai_over_uniform": 0.0994,
+      "reference": "attribute_logit",
+      "reference_over_uniform": 0.2913,
+      "ai_vs_reference": -0.2708,
+      "ai_vs_reference_ci": [
+        -0.1474,
+        -0.0467
+      ],
+      "cards_estimable": 0,
+      "cards": 384
+    },
+    {
+      "plan": "clean-v1",
+      "study": "drone",
+      "cluster": "Drone",
+      "people": 96,
+      "ai_over_uniform": 0.028,
+      "reference": "stratum_history",
+      "reference_over_uniform": 0.2988,
+      "ai_vs_reference": -0.3862,
+      "ai_vs_reference_ci": [
+        -0.168,
+        -0.1026
+      ],
+      "cards_estimable": 0,
+      "cards": 368
+    },
+    {
+      "plan": "clean-v1",
+      "study": "shoes",
+      "cluster": "Shoes",
+      "people": 96,
+      "ai_over_uniform": -0.0036,
+      "reference": "attribute_rating",
+      "reference_over_uniform": 0.0213,
+      "ai_vs_reference": -0.0254,
+      "ai_vs_reference_ci": [
+        -0.0296,
+        -0.0129
+      ],
+      "cards_estimable": 0,
+      "cards": 3822
+    },
+    {
+      "plan": "wide-v1",
+      "study": "origin",
+      "cluster": "Origin",
+      "people": 96,
+      "ai_over_uniform": 0.2262,
+      "reference": "attribute_logit",
+      "reference_over_uniform": 0.3291,
+      "ai_vs_reference": -0.1534,
+      "ai_vs_reference_ci": [
+        -0.0761,
+        -0.0267
+      ],
+      "cards_estimable": 0,
+      "cards": 956
+    },
+    {
+      "plan": "wide-v1",
+      "study": "packaging",
+      "cluster": "Packaging",
+      "people": 96,
+      "ai_over_uniform": -0.2149,
+      "reference": "stratum_history",
+      "reference_over_uniform": 0.0769,
+      "ai_vs_reference": -0.3162,
+      "ai_vs_reference_ci": [
+        -0.2493,
+        -0.142
+      ],
+      "cards_estimable": 16,
+      "cards": 16
+    },
+    {
+      "plan": "wide-v1",
+      "study": "pew111",
+      "cluster": "Pew",
+      "people": 96,
+      "ai_over_uniform": 0.0881,
+      "reference": "stratum_history",
+      "reference_over_uniform": 0.2995,
+      "ai_vs_reference": -0.3017,
+      "ai_vs_reference_ci": [
+        -0.1612,
+        -0.0726
+      ],
+      "cards_estimable": 6,
+      "cards": 6
+    },
+    {
+      "plan": "wide-v1",
+      "study": "german",
+      "cluster": "German tomato",
+      "people": 96,
+      "ai_over_uniform": 0.0909,
+      "reference": "stratum_history",
+      "reference_over_uniform": 0.3276,
+      "ai_vs_reference": -0.3519,
+      "ai_vs_reference_ci": [
+        -0.2126,
+        -0.1438
+      ],
+      "cards_estimable": 12,
+      "cards": 12
+    },
+    {
+      "plan": "wide-v1",
+      "study": "tshirt",
+      "cluster": "T-shirt",
+      "people": 96,
+      "ai_over_uniform": 0.1591,
+      "reference": "attribute_logit",
+      "reference_over_uniform": 0.2369,
+      "ai_vs_reference": -0.1019,
+      "ai_vs_reference_ci": [
+        -0.0819,
+        -0.0207
+      ],
+      "cards_estimable": 0,
+      "cards": 480
+    },
+    {
+      "plan": "wide-v1",
+      "study": "radiant",
+      "cluster": "Spanish tomato",
+      "people": 96,
+      "ai_over_uniform": 0.0743,
+      "reference": "stratum_history",
+      "reference_over_uniform": 0.2165,
+      "ai_vs_reference": -0.1815,
+      "ai_vs_reference_ci": [
+        -0.1268,
+        -0.0613
+      ],
+      "cards_estimable": 9,
+      "cards": 32
+    }
+  ],
+  "summary": {
+    "studies": 14,
+    "studies_with_reference": 14,
+    "clusters": 11,
+    "cluster_names": [
+      "ANES",
+      "Drone",
+      "Dryer (4 countries)",
+      "German tomato",
+      "Origin",
+      "Packaging",
+      "Pew",
+      "Shoes",
+      "Spanish tomato",
+      "Swiss panel",
+      "T-shirt"
+    ],
+    "studies_behind_reference": 14,
+    "clusters_behind_reference": 11,
+    "any_ci_above_zero": [],
+    "mean_ai_over_uniform": 0.071,
+    "mean_reference_over_uniform": 0.2326,
+    "population_estimable_studies": [
+      "anes",
+      "pew13",
+      "pew168",
+      "shed",
+      "packaging",
+      "pew111",
+      "german",
+      "radiant"
+    ],
+    "note": "Studies sharing a dataset or panel are one cluster. Pooling only uses the improvement over \"every option equally likely\", the one metric every study has; reference strength differs and is never averaged across studies."
+  }
+}

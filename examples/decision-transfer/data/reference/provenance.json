@@ -1,0 +1,29 @@
+{
+  "historical_commit": "775db9dc1dde56b9f94d5ea99c250d5ae10e540a",
+  "files": [
+    {
+      "source": "examples/sim-to-real/reports/evidence.json",
+      "copy": "data/reference/evidence.json",
+      "sha256": "cac2f35eed5034fa0d0e44b17fb582b05df7e70b4e5a5cb6cecec4a3884b8515",
+      "role": "historical_reference_only_not_new_evaluation"
+    },
+    {
+      "source": "examples/sim-to-real/decision_lab/reports/cross-study-v1/cluster-summary.json",
+      "copy": "data/reference/cluster-summary.json",
+      "sha256": "830ac89ea043ed97b706ea4c47bbfa19a699cd90cd0978273cf3ea1e741b9209",
+      "role": "historical_reference_only_not_new_evaluation"
+    },
+    {
+      "source": "examples/sim-to-real/decision_lab/reports/cross-study-v1/external-v2-results.json",
+      "copy": "data/reference/external-v2-results.json",
+      "sha256": "62a1f94bc3acd90b8f64ce20af9527bd311c0d423a832c424ae3acda7ef87b5b",
+      "role": "historical_reference_only_not_new_evaluation"
+    },
+    {
+      "source": "examples/sim-to-real/decision_lab/specs/audits/swiss-six-audit.json",
+      "copy": "data/reference/swiss-six-audit.json",
+      "sha256": "66c06fdd66d3026e9fadea5f02b797cb1e06d7809bfde4afa27df891b333a924",
+      "role": "historical_reference_only_not_new_evaluation"
+    }
+  ]
+}
