@@ -1,0 +1,8 @@
+{
+  "sources": {
+    "application/playground/backend/service/survey_instruction_builder.py": "572171dc86e7bcb9ee07f858d2e613ab7606ba5b039353bc6b3b9df4206a81f7",
+    "application/playground/backend/service/survey_types.py": "583a05eb3fd3bbc6261260bebc05c6d63cdead7b3b4efbbfa44a0e401f91a347"
+  },
+  "task_sha256": "a15ca319b27a7ea7557688cd66bc2f4041a084680103143bbd9c87b05c509e4a",
+  "adaptation": "Native task instruction; title placeholder; probability output replaces selected-value requirement. Empty description default retained. Persona rendering not yet implemented."
+}

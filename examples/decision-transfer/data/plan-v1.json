@@ -1,0 +1,10 @@
+{
+  "version": "v1",
+  "date": "2026-11-13",
+  "status": "approved_design_pending_admission_and_budget",
+  "model_calls": 0,
+  "documents": {
+    "docs/核心研究方案.md": "8dc1591ebfa3b018dc8a09b9447ed5ad3ec87ee8fc3161baa59a43ff1b6c5852",
+    "docs/执行规程.md": "a6ae6b21cb39a0ad67beb215b9d257bbb6c141381b2e71bc00ad5bb240bbd7ec"
+  }
+}

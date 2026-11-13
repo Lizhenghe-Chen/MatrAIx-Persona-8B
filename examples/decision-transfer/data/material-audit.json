@@ -1,0 +1,26 @@
+{
+  "date": "2026-11-13",
+  "status": "not_admitted",
+  "swiss_paper": {
+    "url": "https://digitalcollection.zhaw.ch/bitstreams/e3a5a156-bd97-4d27-8f84-b383a9c1cd7c/download",
+    "doi": "10.1016/j.spc.2026.04.008",
+    "local_path": "/Users/bunnychen/.local/share/matraix-decision-transfer/work/materials/swiss-six-paper.pdf",
+    "bytes": 5625932,
+    "sha256": "72eee7ab67c62e4fa8646137f0d467737fc8002d94bea7b49ff1b79c28b84c5c",
+    "pages": 17,
+    "checked_pages": [
+      5,
+      6,
+      7
+    ],
+    "findings": [
+      "Page 5: survey December 2024 to February 2025; speeders and registry mismatches excluded. Need reproduce exclusions, raw 6535 is not automatically author analytic sample.",
+      "Page 5: environmental impact is lifecycle production and consumption, shown as colored A-E scale, not local economy.",
+      "Pages 5-6: assigned one domain, two products, three paired rounds per product, forced binary choice; separate rating is target-derived information and forbidden as input.",
+      "Page 7: envcon nine-item index; envbeh eight-item index. Underlying items, raw scale and timing still unverified.",
+      "Page 5 prose mentions jeans but table lists jacket; resolve with original instrument, do not silently harmonize.",
+      "Need supplement Appendix A.1 and actual survey order; main paper alone does not establish pre-choice timing."
+    ]
+  },
+  "model_calls": 0
+}
