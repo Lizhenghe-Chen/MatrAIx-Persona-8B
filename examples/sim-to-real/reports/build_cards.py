@@ -214,6 +214,60 @@ def option_key(card):
 
 
 
+def individual_block(entry):
+    """What the six non-estimable studies are judged on instead of a per-card distribution."""
+    data = entry.get('individual')
+    if not data:
+        return ''
+    rows = []
+    for name, label in (('original', '只让 AI 选一项（原版）'),
+                        ('optimized', '只问 AI，保留概率（优化）'),
+                        ('uniform', '每档等分'),
+                        ('history', '历史查表'),
+                        ('stratum_history', '历史分层查表')):
+        value = data['brier'].get(name)
+        if value is None or any(abs(value - (r[2] or -1)) < 1e-9 for r in rows):
+            continue
+        mark = ' class="win"'
+        rows.append((label, value, value))
+    reference = data['reference']
+    if reference and not any((r[2] or -1) == reference['brier'] for r in rows):
+        rows.append((reference['label'], reference['brier'], reference['brier']))
+    best = min(r[1] for r in rows)
+    body = ''.join(
+        f'<tr><th>{html.escape(label)}</th>'
+        f'<td><span class="tv{" win" if value == best else ""}">{value:.3f}</span></td></tr>'
+        for label, value, _ in rows)
+    ai = data['brier'].get('optimized')
+    uni = data['brier'].get('uniform')
+    ref = reference['brier'] if reference else None
+    verdict = ''
+    if ai is not None and uni:
+        share = 100 * (1 - ai / uni)
+        if abs(share) < 0.5:
+            verdict += f'这六套的胜负是在这里判的：个体误差与“每档等分”基本持平（{ai:.3f} vs {uni:.3f}）。'
+        else:
+            verdict += (f'这六套的胜负是在这里判的：个体误差比“每档等分”'
+                        f'{"低" if share > 0 else "高"} {abs(share):.0f}%'
+                        f'（{ai:.3f} vs {uni:.3f}）。')
+    if ai is not None and ref:
+        verdict += (f'但仍不如{html.escape(reference["label"])}'
+                    f'（{ai:.3f} vs {ref:.3f}，差 {100 * (1 - ref / ai):.0f}%）。')
+    contrast = data.get('native_to_optimized')
+    if contrast:
+        low, high = contrast['improvement_95_ci']
+        verdict += (f' 只改“选一项”为“给概率”，个体误差改善 '
+                    f'{contrast["improvement"]:.3f}，区间 [{low:+.3f}, {high:+.3f}]。')
+    return ('<p class="small"><strong>那这套怎么判好坏？</strong>换一个不需要"多人答同一题"的指标：'
+            '<strong>个体误差</strong>——每个人的每道题算一个预测，与他的实际选择比。'
+            '一个人的答案就够评分，不必凑够 20 人。</p>'
+            '<div class="table-wrap"><table style="min-width:300px">'
+            '<caption>个体误差（每人每题，越低越好；这六套的正式口径）</caption>'
+            '<thead><tr><th>做法</th><th>Brier</th></tr></thead>'
+            f'<tbody>{body}</tbody></table></div>'
+            f'<p class="small">{verdict}</p>')
+
+
 def study_section(study, entry, index):
     label = LABELS.get(study, study)
     metrics = entry.get('card_tv')
@@ -237,14 +291,9 @@ def study_section(study, entry, index):
                        f'代价就是每题只有 1–{max(counts)} 人作答（平均 {sum(counts) / len(counts):.1f} 人）。')
                     + '一个人选了什么就是 100%，逐题分布无从谈起。</p>'
                     + floor_table()
-                    + ('<p class="small">人少时量到的是抽样噪声，不是模型误差。'
-                       '这类数据正确的比法是<strong>按属性建模</strong>'
-                       '（条件逻辑回归或评分模型，只用题目里显示的属性、不看真人答案），'
-                       '也是这套研究真正的评分口径——也就是其它研究里'
-                       '"同信息统计参照"那个对手。</p>'
-                       if entry.get('attribute_model') else
-                       '<p class="small">人少时量到的是抽样噪声，不是模型误差。</p>')
-                    + '<p class="small">下面这张汇总图只是"质量集中在哪儿"的示意'
+                    + individual_block(entry)
+                    + '<p class="small">人少时量到的是抽样噪声，不是模型误差，'
+                      '所以这套不报逐题分布。下面这张汇总图只是"质量集中在哪儿"的示意'
                       '（按选项位置对齐后求和，不是误差指标）；'
                       '"至少 20 人"这道门槛只针对普通问卷的逐题分布。</p>')
         body.append(f'<div class="echart pooled" id="pool-{study}" data-pool="{study}"></div>')

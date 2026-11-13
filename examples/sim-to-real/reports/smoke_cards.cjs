@@ -51,6 +51,9 @@ const delay=ms=>new Promise(r=>setTimeout(r,ms));
   assert.ok(await run("document.body.innerHTML.includes('不是抽样失败')"),'design intent named, not a sampling failure');
   assert.ok(await run("document.body.innerHTML.includes('联合分析')&&document.body.innerHTML.includes('打分任务')"),'both design kinds named');
   assert.ok(await run("document.body.innerHTML.includes('62pp')"),'sampling floor table present');
+  // "Cannot score the distribution" must not read as "cannot judge at all".
+  assert.ok(await run("document.body.innerHTML.includes('个体误差')"),'person-level fallback stated');
+  assert.equal(await run("[...document.querySelectorAll('.study')].filter(s=>s.textContent.includes('逐题不可估')&&!s.textContent.includes('Brier')).length"),0,'every unestimable study shows what it is judged on');
   // The external study gained its native arm: both numbers must be on the page.
   assert.ok(await run(`(()=>{const s=document.querySelector('#s-openecommerce');
     return !!s && /24\.2/.test(s.textContent) && /18\.2/.test(s.textContent);})()`),'external study shows both arms');

@@ -22,6 +22,36 @@
             "optimized"
           ],
           "attribute_model": false,
+          "individual": {
+            "brier": {
+              "original": 1.1629579714228606,
+              "output_only": 0.6636738059532123,
+              "prompt_only": 1.0796618242416167,
+              "optimized": 0.664468436040709,
+              "history": 0.5666998283766593,
+              "stratum_history": 0.5595094921680869,
+              "uniform": 0.6666666666666666
+            },
+            "reference": {
+              "name": "stratum_history",
+              "label": "历史分层查表",
+              "brier": 0.5595094921680869
+            },
+            "native_to_optimized": {
+              "reference": 1.1629579714228606,
+              "candidate": 0.664468436040709,
+              "improvement": 0.49848953538215157,
+              "relative_improvement": 0.42863933833503676,
+              "improvement_95_ci": [
+                0.3955809235695311,
+                0.593282104154603
+              ],
+              "repeats": 2000,
+              "seed": 20261109,
+              "people": 96,
+              "passes_brier_gate": true
+            }
+          },
           "card_tv": {
             "cards": 6,
             "optimized": 12.103645738453865,
@@ -286,6 +316,37 @@
             "optimized"
           ],
           "attribute_model": true,
+          "individual": {
+            "brier": {
+              "original": 0.9707446808510638,
+              "output_only": 0.6357672872340426,
+              "prompt_only": 0.9840425531914894,
+              "optimized": 0.6364773936170213,
+              "history": 0.5132493594306382,
+              "stratum_history": 0.5132493594306382,
+              "uniform": 0.6666666666666667,
+              "attribute_logit": 0.5500506125758187
+            },
+            "reference": {
+              "name": "history",
+              "label": "历史查表",
+              "brier": 0.5132493594306382
+            },
+            "native_to_optimized": {
+              "reference": 0.9707446808510638,
+              "candidate": 0.6364773936170213,
+              "improvement": 0.33426728723404253,
+              "relative_improvement": 0.34434109589041095,
+              "improvement_95_ci": [
+                0.27305505319148937,
+                0.3976797872340425
+              ],
+              "repeats": 2000,
+              "seed": 20261109,
+              "people": 94,
+              "passes_brier_gate": true
+            }
+          },
           "card_tv": null,
           "pooled": {
             "cards": 216,
@@ -8315,6 +8376,36 @@
             "optimized"
           ],
           "attribute_model": false,
+          "individual": {
+            "brier": {
+              "original": 1.0673936814196048,
+              "output_only": 0.6172094695617444,
+              "prompt_only": 1.0886463570516116,
+              "optimized": 0.6207273847028575,
+              "history": 0.5741647369557763,
+              "stratum_history": 0.5566467414298315,
+              "uniform": 0.7051332887923567
+            },
+            "reference": {
+              "name": "stratum_history",
+              "label": "历史分层查表",
+              "brier": 0.5566467414298315
+            },
+            "native_to_optimized": {
+              "reference": 1.0673936814196048,
+              "candidate": 0.6207273847028575,
+              "improvement": 0.4466662967167473,
+              "relative_improvement": 0.41846443771588865,
+              "improvement_95_ci": [
+                0.37978253960312747,
+                0.5150940959775528
+              ],
+              "repeats": 2000,
+              "seed": 20261109,
+              "people": 96,
+              "passes_brier_gate": true
+            }
+          },
           "card_tv": {
             "cards": 13,
             "optimized": 11.829085607146995,
@@ -8897,6 +8988,36 @@
             "optimized"
           ],
           "attribute_model": false,
+          "individual": {
+            "brier": {
+              "original": 0.7384827195970018,
+              "output_only": 0.5427809066002074,
+              "prompt_only": 0.719367672757936,
+              "optimized": 0.5724352990591923,
+              "history": 0.5004680182684867,
+              "stratum_history": 0.4917984012094869,
+              "uniform": 0.7333333333333334
+            },
+            "reference": {
+              "name": "stratum_history",
+              "label": "历史分层查表",
+              "brier": 0.4917984012094869
+            },
+            "native_to_optimized": {
+              "reference": 0.7384827195970018,
+              "candidate": 0.5724352990591923,
+              "improvement": 0.16604742053780952,
+              "relative_improvement": 0.22484943266976298,
+              "improvement_95_ci": [
+                0.11566725886274087,
+                0.21803808794809465
+              ],
+              "repeats": 2000,
+              "seed": 20261109,
+              "people": 96,
+              "passes_brier_gate": true
+            }
+          },
           "card_tv": {
             "cards": 5,
             "optimized": 16.767535226294928,
@@ -9155,6 +9276,36 @@
             "optimized"
           ],
           "attribute_model": false,
+          "individual": {
+            "brier": {
+              "original": 0.8297297811819557,
+              "output_only": 0.4720488699520823,
+              "prompt_only": 0.845324852129492,
+              "optimized": 0.4702793153538756,
+              "history": 0.40049881037363017,
+              "stratum_history": 0.3860139356116352,
+              "uniform": 0.5
+            },
+            "reference": {
+              "name": "stratum_history",
+              "label": "历史分层查表",
+              "brier": 0.3860139356116352
+            },
+            "native_to_optimized": {
+              "reference": 0.8297297811819557,
+              "candidate": 0.4702793153538756,
+              "improvement": 0.3594504658280801,
+              "relative_improvement": 0.43321388960637336,
+              "improvement_95_ci": [
+                0.2691492290323321,
+                0.45364047739448926
+              ],
+              "repeats": 2000,
+              "seed": 20261109,
+              "people": 96,
+              "passes_brier_gate": true
+            }
+          },
           "card_tv": {
             "cards": 7,
             "optimized": 13.443426662937144,
@@ -9404,6 +9555,35 @@
             "optimized"
           ],
           "attribute_model": true,
+          "individual": {
+            "brier": {
+              "original": 0.578125,
+              "output_only": 0.4076520833333333,
+              "prompt_only": 0.6302083333333334,
+              "optimized": 0.45027916666666673,
+              "uniform": 0.5,
+              "attribute_logit": 0.3543264066166602
+            },
+            "reference": {
+              "name": "attribute_logit",
+              "label": "属性模型（条件逻辑回归）",
+              "brier": 0.3543264066166602
+            },
+            "native_to_optimized": {
+              "reference": 0.578125,
+              "candidate": 0.45027916666666673,
+              "improvement": 0.12784583333333327,
+              "relative_improvement": 0.22113873873873863,
+              "improvement_95_ci": [
+                0.035392187500000005,
+                0.21499427083333328
+              ],
+              "repeats": 2000,
+              "seed": 20261109,
+              "people": 96,
+              "passes_brier_gate": true
+            }
+          },
           "card_tv": null,
           "pooled": {
             "cards": 384,
@@ -20964,6 +21144,33 @@
             "optimized"
           ],
           "attribute_model": true,
+          "individual": {
+            "brier": {
+              "original": 0.4719907407407407,
+              "optimized": 0.3868900462962963,
+              "uniform": 0.5,
+              "attribute_logit": 0.3354265611467224
+            },
+            "reference": {
+              "name": "attribute_logit",
+              "label": "属性模型（条件逻辑回归）",
+              "brier": 0.3354265611467224
+            },
+            "native_to_optimized": {
+              "reference": 0.4719907407407407,
+              "candidate": 0.3868900462962963,
+              "improvement": 0.0851006944444444,
+              "relative_improvement": 0.1803016184404119,
+              "improvement_95_ci": [
+                0.03940798611111118,
+                0.13149305555555563
+              ],
+              "repeats": 2000,
+              "seed": 20261109,
+              "people": 96,
+              "passes_brier_gate": true
+            }
+          },
           "card_tv": null,
           "pooled": {
             "cards": 956,
@@ -49676,6 +49883,34 @@
             "optimized"
           ],
           "attribute_model": false,
+          "individual": {
+            "brier": {
+              "original": 1.3333333333333333,
+              "optimized": 0.8099510416666668,
+              "history": 0.607326985355741,
+              "stratum_history": 0.6153939763903156,
+              "uniform": 0.6666666666666666
+            },
+            "reference": {
+              "name": "history",
+              "label": "历史查表",
+              "brier": 0.607326985355741
+            },
+            "native_to_optimized": {
+              "reference": 1.3333333333333333,
+              "candidate": 0.8099510416666668,
+              "improvement": 0.5233822916666665,
+              "relative_improvement": 0.3925367187499999,
+              "improvement_95_ci": [
+                0.44101927083333325,
+                0.605934375
+              ],
+              "repeats": 2000,
+              "seed": 20261109,
+              "people": 96,
+              "passes_brier_gate": true
+            }
+          },
           "card_tv": {
             "cards": 16,
             "optimized": 27.15972222222222,
@@ -50308,6 +50543,34 @@
             "optimized"
           ],
           "attribute_model": false,
+          "individual": {
+            "brier": {
+              "original": 0.8640011746645286,
+              "optimized": 0.499572836692113,
+              "history": 0.4156981390889957,
+              "stratum_history": 0.38377040515843214,
+              "uniform": 0.5478186714636413
+            },
+            "reference": {
+              "name": "stratum_history",
+              "label": "历史分层查表",
+              "brier": 0.38377040515843214
+            },
+            "native_to_optimized": {
+              "reference": 0.8640011746645286,
+              "candidate": 0.499572836692113,
+              "improvement": 0.36442833797241564,
+              "relative_improvement": 0.4217914843853246,
+              "improvement_95_ci": [
+                0.2556456331161701,
+                0.47436665344992646
+              ],
+              "repeats": 2000,
+              "seed": 20261109,
+              "people": 96,
+              "passes_brier_gate": true
+            }
+          },
           "card_tv": {
             "cards": 6,
             "optimized": 12.10839159741672,
@@ -50542,6 +50805,35 @@
             "optimized"
           ],
           "attribute_model": true,
+          "individual": {
+            "brier": {
+              "original": 0.9149305555555555,
+              "optimized": 0.6818128472222224,
+              "history": 0.5037347527062158,
+              "stratum_history": 0.5043262507337841,
+              "uniform": 0.75,
+              "attribute_logit": 0.5161970016585923
+            },
+            "reference": {
+              "name": "history",
+              "label": "历史查表",
+              "brier": 0.5037347527062158
+            },
+            "native_to_optimized": {
+              "reference": 0.9149305555555555,
+              "candidate": 0.6818128472222224,
+              "improvement": 0.23311770833333312,
+              "relative_improvement": 0.25479278937381383,
+              "improvement_95_ci": [
+                0.1851446180555556,
+                0.2810821180555554
+              ],
+              "repeats": 2000,
+              "seed": 20261109,
+              "people": 96,
+              "passes_brier_gate": true
+            }
+          },
           "card_tv": {
             "cards": 12,
             "optimized": 24.91927083333333,
@@ -51113,6 +51405,33 @@
             "optimized"
           ],
           "attribute_model": true,
+          "individual": {
+            "brier": {
+              "original": 0.8416666666666667,
+              "optimized": 0.5605983333333333,
+              "uniform": 0.6666666666666666,
+              "attribute_logit": 0.508745110671455
+            },
+            "reference": {
+              "name": "attribute_logit",
+              "label": "属性模型（条件逻辑回归）",
+              "brier": 0.508745110671455
+            },
+            "native_to_optimized": {
+              "reference": 0.8416666666666667,
+              "candidate": 0.5605983333333333,
+              "improvement": 0.28106833333333336,
+              "relative_improvement": 0.3339425742574258,
+              "improvement_95_ci": [
+                0.2205275,
+                0.3503016666666666
+              ],
+              "repeats": 2000,
+              "seed": 20261109,
+              "people": 96,
+              "passes_brier_gate": true
+            }
+          },
           "card_tv": null,
           "pooled": {
             "cards": 480,
@@ -68908,6 +69227,35 @@
             "optimized"
           ],
           "attribute_model": true,
+          "individual": {
+            "brier": {
+              "original": 0.9097222222222222,
+              "optimized": 0.6171621527777778,
+              "history": 0.522362116771384,
+              "stratum_history": 0.522362116771384,
+              "uniform": 0.6666666666666666,
+              "attribute_logit": 0.5554577492278786
+            },
+            "reference": {
+              "name": "history",
+              "label": "历史查表",
+              "brier": 0.522362116771384
+            },
+            "native_to_optimized": {
+              "reference": 0.9097222222222222,
+              "candidate": 0.6171621527777778,
+              "improvement": 0.29256006944444446,
+              "relative_improvement": 0.3215927480916031,
+              "improvement_95_ci": [
+                0.23487951388888895,
+                0.3478854166666666
+              ],
+              "repeats": 2000,
+              "seed": 20261109,
+              "people": 96,
+              "passes_brier_gate": true
+            }
+          },
           "card_tv": {
             "cards": 9,
             "optimized": 13.063443963443966,
@@ -70138,6 +70486,20 @@
             "optimized"
           ],
           "attribute_model": false,
+          "individual": {
+            "brier": {
+              "optimized": 0.6168991681547619,
+              "history": 0.47309080795376907,
+              "stratum_history": 0.467332870219258,
+              "uniform": 0.7083333333333334
+            },
+            "reference": {
+              "name": "stratum_history",
+              "label": "历史分层查表",
+              "brier": 0.467332870219258
+            },
+            "native_to_optimized": null
+          },
           "card_tv": {
             "cards": 14,
             "optimized": 18.209821428571427,
@@ -70688,6 +71050,34 @@
             "optimized"
           ],
           "attribute_model": false,
+          "individual": {
+            "brier": {
+              "original": 0.8660714285714285,
+              "optimized": 0.6168991681547619,
+              "history": 0.47309080795376907,
+              "stratum_history": 0.467332870219258,
+              "uniform": 0.7083333333333334
+            },
+            "reference": {
+              "name": "stratum_history",
+              "label": "历史分层查表",
+              "brier": 0.467332870219258
+            },
+            "native_to_optimized": {
+              "reference": 0.8660714285714285,
+              "candidate": 0.6168991681547619,
+              "improvement": 0.24917226041666662,
+              "relative_improvement": 0.2877040532646048,
+              "improvement_95_ci": [
+                0.21795830952380946,
+                0.2821743809523809
+              ],
+              "repeats": 2000,
+              "seed": 20261109,
+              "people": 96,
+              "passes_brier_gate": true
+            }
+          },
           "card_tv": {
             "cards": 14,
             "optimized": 18.209821428571427,
@@ -71308,6 +71698,23 @@
             "bounded"
           ],
           "attribute_model": true,
+          "individual": {
+            "brier": {
+              "optimized": 0.6818128472222224,
+              "anchored": 0.5120331597222222,
+              "bounded": 0.5107855820873907,
+              "history": 0.5037347527062158,
+              "stratum_history": 0.5043262507337841,
+              "uniform": 0.75,
+              "attribute_logit": 0.5161970016585923
+            },
+            "reference": {
+              "name": "history",
+              "label": "历史查表",
+              "brier": 0.5037347527062158
+            },
+            "native_to_optimized": null
+          },
           "card_tv": {
             "cards": 12,
             "optimized": 24.91927083333333,
@@ -71815,6 +72222,22 @@
             "bounded"
           ],
           "attribute_model": false,
+          "individual": {
+            "brier": {
+              "optimized": 0.499572836692113,
+              "anchored": 0.417287450058426,
+              "bounded": 0.40022484544175907,
+              "history": 0.4156981390889957,
+              "stratum_history": 0.38377040515843214,
+              "uniform": 0.5478186714636413
+            },
+            "reference": {
+              "name": "stratum_history",
+              "label": "历史分层查表",
+              "brier": 0.38377040515843214
+            },
+            "native_to_optimized": null
+          },
           "card_tv": {
             "cards": 6,
             "optimized": 12.108391597416713,
@@ -72033,6 +72456,34 @@
             "optimized"
           ],
           "attribute_model": false,
+          "individual": {
+            "brier": {
+              "original": 0.7048611111111112,
+              "optimized": 0.4859756365740741,
+              "history": 0.34912620035809416,
+              "stratum_history": 0.3505899488496282,
+              "uniform": 0.5
+            },
+            "reference": {
+              "name": "history",
+              "label": "历史查表",
+              "brier": 0.34912620035809416
+            },
+            "native_to_optimized": {
+              "reference": 0.7048611111111112,
+              "candidate": 0.4859756365740741,
+              "improvement": 0.21888547453703705,
+              "relative_improvement": 0.3105370279146141,
+              "improvement_95_ci": [
+                0.15954484953703707,
+                0.278230324074074
+              ],
+              "repeats": 2000,
+              "seed": 20261109,
+              "people": 96,
+              "passes_brier_gate": true
+            }
+          },
           "card_tv": null,
           "pooled": {
             "cards": 368,
@@ -83105,6 +83556,33 @@
             "optimized"
           ],
           "attribute_model": true,
+          "individual": {
+            "brier": {
+              "original": 1.5885416666666667,
+              "optimized": 0.8602138963541667,
+              "uniform": 0.8571428571428573,
+              "attribute_rating": 0.8388652773555131
+            },
+            "reference": {
+              "name": "attribute_rating",
+              "label": "属性评分模型",
+              "brier": 0.8388652773555131
+            },
+            "native_to_optimized": {
+              "reference": 1.5885416666666667,
+              "candidate": 0.8602138963541667,
+              "improvement": 0.7283277703125001,
+              "relative_improvement": 0.45848830131147544,
+              "improvement_95_ci": [
+                0.6918825359375002,
+                0.7625924578125
+              ],
+              "repeats": 2000,
+              "seed": 20261109,
+              "people": 96,
+              "passes_brier_gate": true
+            }
+          },
           "card_tv": null,
           "pooled": {
             "cards": 3822,

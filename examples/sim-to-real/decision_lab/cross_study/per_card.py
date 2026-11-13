@@ -143,6 +143,36 @@ def _pooled(cards):
                      'metric, and it equals the frozen per-card mean.')}
 
 
+REFERENCE_LABELS = {'attribute_logit': '属性模型（条件逻辑回归）',
+                    'attribute_rating': '属性评分模型',
+                    'stratum_history': '历史分层查表',
+                    'history': '历史查表'}
+
+
+def _individual(study_block):
+    """Person-level reading, which survives even when no card has 20 respondents.
+
+    A share needs many people; one outcome is enough to score one prediction. That is
+    why the six conjoint studies are still judged, just not on a per-card distribution.
+    """
+    results = study_block.get('results') or {}
+    arms = results.get('arms') or {}
+    brier = {name: payload['brier'] for name, payload in arms.items()
+             if payload.get('available') and payload.get('brier') is not None}
+    if not brier:
+        return None
+    best = None
+    for name, value in brier.items():
+        if name in REFERENCE_LABELS and (best is None or value < best[1]):
+            best = (name, value)
+    contrast = (results.get('contrasts') or {}).get('original__to__optimized')
+    return {'brier': brier,
+            'reference': ({'name': best[0], 'label': REFERENCE_LABELS[best[0]], 'brier': best[1]}
+                          if best else None),
+            'native_to_optimized': contrast if contrast and contrast.get('improvement') is not None
+            else None}
+
+
 def build(plans=None):
     payload = {'status': 'per_question_distributions', 'minimum_people': MINIMUM,
                'note': ('truth = evaluated respondents\' share; original = share of the '
@@ -171,6 +201,7 @@ def build(plans=None):
                 'attribute_model': any(
                     name.startswith('attribute')
                     for name in results.get(study, {}).get('results', {}).get('arms', {})),
+                'individual': _individual(results.get(study, {})),
                 'card_tv': _card_tv(cards),
                 'pooled': _pooled(cards),
                 'questions': cards,
