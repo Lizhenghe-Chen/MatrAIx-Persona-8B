@@ -88,8 +88,18 @@ def _tv(predicted, actual):
     return 50 * sum(abs(p - a) for p, a in zip(predicted, actual))
 
 
+def _uniform_tv(card):
+    """What an equally-likely guess would score on this card: the weakest useful baseline."""
+    width = len(card['truth'])
+    return 50 * sum(abs(1 / width - value) for value in card['truth'])
+
+
 def _card_tv(cards):
-    """Mean per-card TV over estimable cards: the same quantity the frozen summaries report."""
+    """Mean per-card TV over estimable cards: the same quantity the frozen summaries report.
+
+    `uniform` is included because a study that ran only the optimized arm still needs
+    something to be read against; without it the error number has no scale.
+    """
     usable = [card for card in cards if card['estimable']]
     if not usable:
         return None
@@ -97,7 +107,8 @@ def _card_tv(cards):
     return {'cards': len(usable),
             'optimized': sum(card['tv_optimized'] for card in usable) / len(usable),
             'original': (sum(card['tv_original'] for card in with_native) / len(with_native)
-                         if with_native else None)}
+                         if with_native else None),
+            'uniform': sum(_uniform_tv(card) for card in usable) / len(usable)}
 
 
 def _pooled(cards):

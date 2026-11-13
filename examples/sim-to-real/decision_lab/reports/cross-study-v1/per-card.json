@@ -24,7 +24,8 @@
           "card_tv": {
             "cards": 6,
             "optimized": 12.103645738453865,
-            "original": 18.6278613151803
+            "original": 18.6278613151803,
+            "uniform": 24.18398663714925
           },
           "pooled": {
             "cards": 6,
@@ -8314,7 +8315,8 @@
           "card_tv": {
             "cards": 13,
             "optimized": 11.829085607146995,
-            "original": 27.44755073414677
+            "original": 27.44755073414677,
+            "uniform": 33.07342372153093
           },
           "pooled": {
             "cards": 13,
@@ -8894,7 +8896,8 @@
           "card_tv": {
             "cards": 5,
             "optimized": 16.767535226294928,
-            "original": 35.31362900927583
+            "original": 35.31362900927583,
+            "uniform": 42.23590447964258
           },
           "pooled": {
             "cards": 5,
@@ -9150,7 +9153,8 @@
           "card_tv": {
             "cards": 7,
             "optimized": 13.443426662937144,
-            "original": 13.361341709402845
+            "original": 13.361341709402845,
+            "uniform": 20.468436812667964
           },
           "pooled": {
             "cards": 7,
@@ -49667,7 +49671,8 @@
           "card_tv": {
             "cards": 16,
             "optimized": 27.15972222222222,
-            "original": 41.62581699346405
+            "original": 41.62581699346405,
+            "uniform": 17.875816993464053
           },
           "pooled": {
             "cards": 16,
@@ -50297,7 +50302,8 @@
           "card_tv": {
             "cards": 6,
             "optimized": 12.10839159741672,
-            "original": 17.389802676733765
+            "original": 17.389802676733765,
+            "uniform": 27.78345237715628
           },
           "pooled": {
             "cards": 6,
@@ -50529,7 +50535,8 @@
           "card_tv": {
             "cards": 12,
             "optimized": 24.91927083333333,
-            "original": 28.73263888888889
+            "original": 28.73263888888889,
+            "uniform": 42.361111111111114
           },
           "pooled": {
             "cards": 12,
@@ -68892,7 +68899,8 @@
           "card_tv": {
             "cards": 9,
             "optimized": 13.063443963443966,
-            "original": 22.823472823472823
+            "original": 22.823472823472823,
+            "uniform": 28.18278018278018
           },
           "pooled": {
             "cards": 32,
@@ -70120,7 +70128,8 @@
           "card_tv": {
             "cards": 14,
             "optimized": 18.209821428571427,
-            "original": null
+            "original": null,
+            "uniform": 37.797619047619044
           },
           "pooled": {
             "cards": 14,
@@ -70670,7 +70679,8 @@
           "card_tv": {
             "cards": 12,
             "optimized": 24.91927083333333,
-            "original": null
+            "original": null,
+            "uniform": 42.361111111111114
           },
           "pooled": {
             "cards": 12,
@@ -71175,7 +71185,8 @@
           "card_tv": {
             "cards": 6,
             "optimized": 12.108391597416713,
-            "original": null
+            "original": null,
+            "uniform": 27.783452377156276
           },
           "pooled": {
             "cards": 6,

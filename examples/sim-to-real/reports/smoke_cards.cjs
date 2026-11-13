@@ -40,6 +40,9 @@ const delay=ms=>new Promise(r=>setTimeout(r,ms));
   // Collapsed rows still carry a miniature comparison strip.
   const strips=await run("document.querySelectorAll('.qstrip .strip-row').length");
   assert.ok(strips>=240,'strip rows: '+strips);
+  // A study that never ran the native arm must say so, not show a silent dash.
+  assert.ok(await run("document.body.innerHTML.includes('仅优化臂')"),'missing arm is named');
+  assert.ok(await run("document.body.innerHTML.includes('原版</i> <b>未跑</b>')||document.body.innerHTML.includes('原版 <b>未跑</b>')"),'header marks the arm as not run');
 
   // Colour semantics, checked against the intended values rather than by impression.
   const colouring=await run(`(()=>{

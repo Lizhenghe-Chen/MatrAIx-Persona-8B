@@ -97,24 +97,40 @@ def direction_cell(delta):
     return f'<span class="dir {kind}" title="{word}">{value:+.1f}</span>'
 
 
-def question_rows(card):
+def question_table(card):
+    """Shares plus the verdict row. Columns for an arm that never ran are omitted.
+
+    Printing "not run" in every cell would be noise; leaving the column out and saying
+    so once is clearer.
+    """
+    has_native = card['original'] is not None
     who, gain, state = verdict(card['tv_original'], card['tv_optimized'])
+    head = ['选项', '真人'] + (['原版 MatrAIx'] if has_native else []) + \
+           ['优化后'] + (['原版−真人'] if has_native else [])
     rows = []
     for index, option in enumerate(card['options']):
         truth = card['truth'][index]
-        native = card['original'][index] if card['original'] else None
         optimized = card['optimized'][index]
-        delta = None if native is None else native - truth
-        rows.append(f'<tr><th>{html.escape(option["label"][:130])}</th>'
-                    f'<td>{pct(truth)}</td>'
-                    f'<td>{"—" if native is None else pct(native)}</td>'
-                    f'<td>{pct(optimized)}</td><td>{direction_cell(delta)}</td></tr>')
-    rows.append(
-        '<tr class="qfoot"><th>误差（TV，越低越好）</th><td>—</td>'
-        f'<td>{tv_cell(card["tv_original"], state, who == "native")}</td>'
-        f'<td>{tv_cell(card["tv_optimized"], state, who == "optimized")}</td>'
-        f'<td>{verdict_chip(card["tv_original"], card["tv_optimized"])}</td></tr>')
-    return ''.join(rows)
+        cells = [f'<th>{html.escape(option["label"][:130])}</th>', f'<td>{pct(truth)}</td>']
+        if has_native:
+            native = card['original'][index]
+            cells.append(f'<td>{pct(native)}</td>')
+        cells.append(f'<td>{pct(optimized)}</td>')
+        if has_native:
+            cells.append(f'<td>{direction_cell(card["original"][index] - truth)}</td>')
+        rows.append('<tr>' + ''.join(cells) + '</tr>')
+    foot = ['<th>误差（TV，越低越好）</th>', '<td>—</td>']
+    if has_native:
+        foot.append(f'<td>{tv_cell(card["tv_original"], state, who == "native")}</td>')
+    foot.append(f'<td>{tv_cell(card["tv_optimized"], state, who == "optimized")}</td>')
+    if has_native:
+        foot.append(f'<td>{verdict_chip(card["tv_original"], card["tv_optimized"])}</td>')
+    else:
+        foot.append(f'<td>{verdict_chip(None, card["tv_optimized"])}</td>')
+    rows.append('<tr class="qfoot">' + ''.join(foot) + '</tr>')
+    head_html = ''.join(f'<th>{html.escape(h)}</th>' for h in head)
+    return ('<div class="table-wrap"><table class="qtable">'
+            f'<thead><tr>{head_html}</tr></thead><tbody>' + ''.join(rows) + '</tbody></table></div>')
 
 
 GATE_PP = 2.0          # the project's declared gate for a meaningful distribution difference
@@ -134,7 +150,8 @@ def verdict(native_tv, optimized_tv):
 def tv_cell(value, state, is_winner):
     """One error number. The winner is emphasised; the other is muted, never red."""
     if value is None:
-        return '<span class="tv muted">—</span>'
+        label = '未跑原版臂' if state == 'unknown' else '不可估'
+        return f'<span class="tv muted" title="{label}">—</span>'
     text = f'{value:.1f}'
     if state == 'tie':
         return f'<span class="tv tie">{text}<i>≈</i></span>'
@@ -143,16 +160,39 @@ def tv_cell(value, state, is_winner):
     return f'<span class="tv lose">{text}</span>'
 
 
-def verdict_chip(native_tv, optimized_tv, prefix=''):
+def verdict_chip(native_tv, optimized_tv):
     who, gain, state = verdict(native_tv, optimized_tv)
     if state == 'unknown':
-        return '<span class="chip unknown">无法比较</span>'
+        return ('<span class="chip unknown" title="这套研究只运行了优化臂，'
+                '因此没有原版误差可对比；正文给出每档等分的参照误差">'
+                '仅优化臂</span>')
     if state == 'tie':
         return '<span class="chip tie">≈ 两者相当</span>'
     # The verdict chip carries the good/bad reading, so the detail cells need not shout.
     if who == 'optimized':
         return f'<span class="chip win">优化更准 {abs(gain):.1f}pp</span>'
     return f'<span class="chip lose">原版更准 {abs(gain):.1f}pp</span>'
+
+
+def missing_cell(value, state):
+    """A missing number says why, rather than showing a dash the reader must decode."""
+    if value is None and state == 'unknown':
+        return '<span class="tv muted" title="这套研究没有运行原版单选臂">未跑</span>'
+    return '<span class="tv muted">不可估</span>'
+
+
+def study_numbers(native_value, optimized_value, who, state):
+    """Header numbers. A missing arm is named, not shown as a bare dash."""
+    parts = []
+    if native_value is None:
+        parts.append('<span class="snum-missing">原版 <b>未跑</b></span>')
+    else:
+        parts.append(f'<span class="snum-native"><i>原版</i>'
+                     f'{tv_cell(native_value, state, who == "native")}</span>')
+    parts.append(f'<span class="snum-optimized"><i>优化</i>'
+                 f'{tv_cell(optimized_value, state, who == "optimized")}</span>')
+    parts.append(verdict_chip(native_value, optimized_value))
+    return ''.join(parts)
 
 
 def option_key(card):
@@ -182,8 +222,14 @@ def study_section(study, entry, index):
         body.append(f'<div class="echart pooled" id="pool-{study}" data-pool="{study}"></div>')
     else:
         if not has_native:
-            body.append('<p class="small">这套只跑了优化臂，没有原版单选数据；'
-                        '当时的设计目标是外部验证，为省费用没有重复跑原生输出。</p>')
+            uniform_tv = metrics['uniform'] if metrics else None
+            gap = '' if uniform_tv is None else (
+                f'作为参照：如果对每道题都按"每个选项等可能"去猜，误差是 {uniform_tv:.1f}pp，'
+                f'优化后是 {metrics["optimized"]:.1f}pp，降低了 '
+                f'{100 * (1 - metrics["optimized"] / uniform_tv):.0f}%。')
+            body.append('<p class="note-warn"><strong>这套没有原版臂。</strong>'
+                        '它的定位是外部验证，为省费用只跑了优化臂，所以表里的"原版 MatrAIx"是空的——'
+                        '不是没有数据，是当时没跑。' + gap + '</p>')
         if estimable < cards:
             body.append(f'<p class="small">另有 {cards - estimable} 道题人数不足 20，'
                         '未逐题列出。</p>')
@@ -201,17 +247,16 @@ def study_section(study, entry, index):
                 '</span>'
                 f'<span class="qstrip">{strip(card)}</span>'
                 f'<span class="qtv">'
-                f'{tv_cell(card["tv_original"], q_state, q_who == "native")}'
-                f'{tv_cell(card["tv_optimized"], q_state, q_who == "optimized")}'
-                '</span>'
+                + ('' if card['original'] is None else
+                   tv_cell(card['tv_original'], q_state, q_who == 'native'))
+                + tv_cell(card['tv_optimized'], q_state, q_who == 'optimized')
+                + '</span>'
+                
                 f'<span class="qpeople">{card["people"]} 人</span>'
                 '</summary>'
                 '<div class="q-body">'
                 f'<div class="echart qchart" id="qchart-{study}-{card_index}"></div>'
-                '<div class="table-wrap"><table class="qtable">'
-                '<thead><tr><th>选项</th><th>真人</th><th>原版 MatrAIx</th><th>优化后</th>'
-                '<th>原版−真人</th></tr></thead><tbody>'
-                + question_rows(card) + '</tbody></table></div>'
+                + question_table(card)
                 + option_key(card)
                 + '</div></details>')
         body.append('<div class="qlist">' + ''.join(items) + '</div>')
@@ -223,12 +268,7 @@ def study_section(study, entry, index):
             f'<span class="sname">{html.escape(label)}</span>'
             f'<span class="srole">{html.escape(ROLE.get(study, ""))}</span>'
             f'<span class="smeta">{entry["people"]} 人 · {coverage}</span>'
-            f'<span class="snums">'
-            f'<span class="snum-native">{tv_cell(native_value, state, who == "native")} '
-            f'<i>原版</i></span>'
-            f'<span class="snum-optimized">{tv_cell(optimized_value, state, who == "optimized")} '
-            f'<i>优化</i></span>'
-            f'{verdict_chip(native_value, optimized_value)}</span>'
+            f'<span class="snums">{study_numbers(native_value, optimized_value, who, state)}</span>'
             '</summary>'
             '<div class="study-body">' + ''.join(body) + '</div>'
             '</details></section>')
@@ -252,7 +292,7 @@ def build():
             f'<tr><th><a href="#s-{study}">{html.escape(LABELS.get(study, study))}</a></th>'
             f'<td>{entry["people"]}</td><td>{entry["cards"]}</td>'
             f'<td>{entry["estimable_cards"]}</td>'
-            f'<td>{tv_cell(native_value, state, who == "native")}</td>'
+            f'<td>{tv_cell(native_value, state, who == "native") if native_value is not None else missing_cell(native_value, state)}</td>'
             f'<td>{tv_cell(optimized_value, state, who == "optimized")}</td>'
             f'<td>{verdict_chip(native_value, optimized_value)}</td></tr>')
     overview.append('</tbody></table></div>'
@@ -340,7 +380,9 @@ EXTRA = """
 .snums{font-size:13px;display:flex;gap:12px;align-items:center;font-variant-numeric:tabular-nums}
 .qtv{font-size:13px;display:flex;gap:8px;align-items:center;font-variant-numeric:tabular-nums;
   flex:0 0 116px;justify-content:flex-end}
-.snum-native i,.snum-optimized i{font-style:normal;color:#8b9a92;font-size:11px;margin-left:3px}
+.snum-native i,.snum-optimized i{font-style:normal;color:#8b9a92;font-size:11px;margin-right:4px}
+.snum-missing{color:#a1442a;font-size:12px}
+.snum-missing b{font-weight:600}
 /* --- error numbers: one emphasis colour, never red --- */
 .tv{font-variant-numeric:tabular-nums;font-weight:600}
 .tv i{font-style:normal;font-size:9px;margin-left:2px;opacity:.85}
@@ -360,6 +402,10 @@ EXTRA = """
 .dir.down{color:#2f6f9f}
 .dir.flat{color:#8b9a92}
 .dir.muted{color:#b8c4bc}
+.na{font-size:11px;color:#a1442a;background:#fbeee7;border-radius:4px;padding:0 5px}
+.note-warn{margin:0 0 12px;padding:10px 14px;border-radius:10px;background:#fdf7f3;
+  border:1px solid #f0ddd1;font-size:13px;line-height:1.7;color:#6b4a37}
+.note-warn strong{color:#a1442a}
 .study-body{padding:16px 18px 20px}
 .qlist{display:flex;flex-direction:column;gap:8px;margin-top:12px}
 .q-drawer>summary{display:flex;align-items:center;gap:14px;flex-wrap:nowrap;
