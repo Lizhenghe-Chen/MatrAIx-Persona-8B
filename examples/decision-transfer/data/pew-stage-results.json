@@ -1,0 +1,40 @@
+{
+ "date": "2026-11-13",
+ "status": "direction_probe_not_a_result",
+ "endpoint": "Qwen/Qwen3.8-27B (free internal)",
+ "people": 50,
+ "questions_per_arm": 150,
+ "fact_items": [
+  "SHOP6A",
+  "SHOP6C",
+  "SHOP6E",
+  "SHOP6G"
+ ],
+ "target_items": [
+  "SHOP6B",
+  "SHOP6D",
+  "SHOP6F"
+ ],
+ "arms": {
+  "other": {
+   "brier": 0.4948,
+   "mean_p": 0.315,
+   "actual_rate": 0.293,
+   "n": 150
+  },
+  "own": {
+   "brier": 0.4594,
+   "mean_p": 0.287,
+   "actual_rate": 0.293,
+   "n": 150
+  }
+ },
+ "marginal_reference": 0.3797,
+ "statistical_within_construct_ceiling": {
+  "reference": 0.4876,
+  "with_person_effect": 0.466,
+  "gain": 0.0216,
+  "source": "pew13-ceiling.json odd/even split, 4571 people"
+ },
+ "verdict": "Facts carry a little person signal (own beats donor by 0.035), but the model loses to the marginal baseline by 0.08, so the binding constraint is model calibration, not the facts."
+}
