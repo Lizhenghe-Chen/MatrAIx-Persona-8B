@@ -211,6 +211,36 @@ def option_key(card):
     return f'<ol class="opt-key">{items}</ol>'
 
 
+def sampling_floor():
+    """How much error a *perfect* answer would still measure at n respondents.
+
+    Reproducible: fixed seed, fixed question, 4,000 draws per row. This is the reason a
+    question needs about 20 respondents before its distribution can be read at all.
+    """
+    import random
+    rng = random.Random(7)
+    truth = (0.5, 0.3, 0.2)
+    rows = []
+    for n in (1, 4, 20, 96):
+        totals = []
+        for _ in range(4000):
+            counts = [0, 0, 0]
+            for _ in range(n):
+                counts[rng.choices((0, 1, 2), truth)[0]] += 1
+            totals.append(sum(abs(counts[i] / n - truth[i]) for i in range(3)) / 2)
+        rows.append((n, 100 * sum(totals) / len(totals)))
+    return rows
+
+
+def floor_table():
+    rows = ''.join(f'<tr><td>{n} 人</td><td>{value:.0f}pp</td></tr>'
+                   for n, value in sampling_floor())
+    return ('<div class="table-wrap"><table style="min-width:280px">'
+            '<caption>一道题的作答人数 → 即使 AI 完全答对，也会量出这么大的误差</caption>'
+            '<thead><tr><th>作答人数</th><th>量到的误差</th></tr></thead>'
+            f'<tbody>{rows}</tbody></table></div>')
+
+
 def study_section(study, entry, index):
     label = LABELS.get(study, study)
     metrics = entry.get('card_tv')
@@ -223,10 +253,18 @@ def study_section(study, entry, index):
 
     body = []
     if not estimable:
-        body.append(f'<p class="small">这套问卷的 {cards} 道题几乎人人不同'
-                    f'（平均每道题 {entry["people"] / max(1, cards):.1f} 人作答），'
-                    '单题分布没有意义——一个人选了什么就是 100%。'
-                    '因此这里只给"全部题目汇总"的视图，不编造逐题分布。</p>')
+        counts = [q['people'] for q in entry['questions']] or [0]
+        body.append('<p class="note-warn"><strong>为什么这里没有逐题数字。</strong>'
+                    '不是题目太多，而是<strong>每个人答的题不一样</strong>——'
+                    + (f'{cards} 道题，每道只有 1 人作答。'
+                       if max(counts) == 1 else
+                       f'{cards} 道题，人最多的一道也只有 {max(counts)} 人作答'
+                       f'（平均 {sum(counts) / len(counts):.1f} 人）。')
+                    + '一个人选了什么就是 100%，量不出"分布"。</p>'
+                    + floor_table()
+                    + '<p class="small">人少时量到的是抽样噪声，不是模型误差，'
+                      '所以这种问卷只给"全部题目汇总"的视图，不编造逐题分布。'
+                      '20 人这道门槛就是这么来的。</p>')
         body.append(f'<div class="echart pooled" id="pool-{study}" data-pool="{study}"></div>')
     else:
         if not has_native:
