@@ -6,6 +6,7 @@
 |---|---|---|
 | [story.html](story.html) | 领导、非技术读者 | 叙事版：一个真实场景进、同一个场景出；三轮排除、真实原因、可交付方案、外部验证、诚实边界 |
 | [index.html](index.html) | 要核对数字的人 | 技术版：逐套明细、95% 区间、13 道题的分布切换、冻结证据 |
+| [cards.html](cards.html) | 要逐题看分布的人 | 每一套、每一道题：真人分布 / 原版 MatrAIx 分布 / 优化后分布并排，含逐选项偏差 |
 
 两页的数字都由同一批 `decision_lab/reports/cross-study-v1/*.json` 填入，改一处必须同时重建两页；
 `verify.py` 会逐条比对页面文字与冻结数据的一致性。都不是手填数字。
@@ -16,10 +17,10 @@
 |---|---|
 | [story.html](story.html) · [index.html](index.html) | 两个可单独拷贝、离线打开的页面；图表全部内联，零外部请求 |
 | [evidence.json](evidence.json) | 从冻结评分抽取的聚合数字与来源 SHA-256；没有逐人编号、完整请求或答案关联 |
-| [build.py](build.py) · [build_story.py](build_story.py) | 分别生成技术版与故事版；不调用模型 |
+| [build.py](build.py) · [build_story.py](build_story.py) · [build_cards.py](build_cards.py) | 分别生成技术版、故事版、逐题版；不调用模型 |
 | [report.html.tmpl](report.html.tmpl) | 可维护的中文说明模板 |
 | [style.css](style.css)、[charts.js](charts.js)、[charts_clean.js](charts_clean.js)、[charts_story.js](charts_story.js) | 版式与图表，生成时内嵌，阅读不依赖外网 |
-| [verify.py](verify.py)、[smoke.cjs](smoke.cjs)、[smoke_story.cjs](smoke_story.cjs) | 来源及链接核验、两页的浏览器交互与移动版检查 |
+| [verify.py](verify.py)、[smoke.cjs](smoke.cjs)、[smoke_story.cjs](smoke_story.cjs)、[smoke_cards.cjs](smoke_cards.cjs) | 来源及链接核验、三页的浏览器交互与移动版检查 |
 
 ## 离线重建
 
@@ -31,6 +32,7 @@ python3 examples/sim-to-real/reports/build_story.py
 python3 examples/sim-to-real/reports/verify.py
 node examples/sim-to-real/reports/smoke.cjs
 node examples/sim-to-real/reports/smoke_story.cjs
+node examples/sim-to-real/reports/smoke_cards.cjs
 ```
 
 `smoke.cjs` 使用 Node.js 22+ 和本机 Chrome；非默认路径可设 `CHROME_BIN`。截图只写临时目录，不进入实验档案。

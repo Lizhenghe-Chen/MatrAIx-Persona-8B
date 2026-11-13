@@ -496,8 +496,9 @@ def build():
             '<a href="#literature">文献</a><a href="#ending">回到开头</a>'
             '</div></nav><main>'
             + answer + method + act1 + act2 + act3 + act4 + recipe + compare + limits + literature + ending
-            + '<p class="small" style="text-align:center">技术版（含逐套明细与全部冻结证据）：'
-              '<a href="index.html">打开技术报告 →</a></p>'
+            + '<p class="small" style="text-align:center">要逐题看：'
+              '<a href="cards.html">每一道题的真人 / 原版 / 优化分布 →</a>'
+              ' · 要核对全部数字：<a href="index.html">技术版报告 →</a></p>'
             + '</main>'
             + f'<script id="story-data" type="application/json">{DATA}</script>'
             + f'<script>{ECHARTS}</script>'

@@ -214,7 +214,24 @@ def main():
             arms=json.loads(external_path.read_text())['studies']['openecommerce']['results']['arms']
             assert f'{arms["optimized"]["card_tv_pp"]:.1f}' in story
         story_note=' narrative report tied to the frozen artifacts;'
-    print(f'PASS: {checked} source hashes; all local report links; 13 distributions and averages; latest run exclusion; readable labels.'+cross_note+cluster_note+clean_note+wide_note+direction_note+anchor_note+pilot_note+external_note+story_note)
+    cards_note=''
+    cards_path=HERE/'cards.html'
+    per_card=HERE.parent/'decision_lab/reports/cross-study-v1/per-card.json'
+    if cards_path.exists() and per_card.exists():
+        per=json.loads(per_card.read_text())
+        html_cards=cards_path.read_text()
+        assert 'id="overview"' in html_cards
+        checked_studies=0
+        for plan,block in per['plans'].items():
+            for study,entry in block['studies'].items():
+                metrics=entry.get('card_tv')
+                if not metrics: continue
+                checked_studies+=1
+                # The per-question page must quote the same per-card mean as the frozen files.
+                assert f"{metrics['optimized']:.1f}pp" in html_cards,(plan,study)
+        assert checked_studies>0
+        cards_note=f' per-question page for {checked_studies} study-rows tied to per-card.json;'
+    print(f'PASS: {checked} source hashes; all local report links; 13 distributions and averages; latest run exclusion; readable labels.'+cross_note+cluster_note+clean_note+wide_note+direction_note+anchor_note+pilot_note+external_note+story_note+cards_note)
 
 
 if __name__=='__main__':
