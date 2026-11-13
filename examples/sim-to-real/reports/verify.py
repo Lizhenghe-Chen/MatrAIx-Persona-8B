@@ -228,7 +228,11 @@ def main():
                 if not metrics: continue
                 checked_studies+=1
                 # The per-question page must quote the same per-card mean as the frozen files.
-                assert f"{metrics['optimized']:.1f}pp" in html_cards,(plan,study)
+                # Cells render as ">12.1<i>▼</i>" (winner) or ">27.2</span>" (muted), so match
+                # the number right after the cell's opening bracket.
+                assert f">{metrics['optimized']:.1f}" in html_cards,(plan,study,'optimized')
+                if metrics['original'] is not None:
+                    assert f">{metrics['original']:.1f}" in html_cards,(plan,study,'original')
         assert checked_studies>0
         cards_note=f' per-question page for {checked_studies} study-rows tied to per-card.json;'
     print(f'PASS: {checked} source hashes; all local report links; 13 distributions and averages; latest run exclusion; readable labels.'+cross_note+cluster_note+clean_note+wide_note+direction_note+anchor_note+pilot_note+external_note+story_note+cards_note)

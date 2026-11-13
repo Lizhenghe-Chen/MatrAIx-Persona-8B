@@ -1,4 +1,4 @@
-/* Rendering QA for the per-question report: every chart, every anchor, no network. */
+/* Rendering QA for the per-question report: drawers, lazy charts, colour semantics. */
 const assert=require('node:assert/strict');
 const fs=require('node:fs'),path=require('node:path'),{spawn}=require('node:child_process'),{pathToFileURL}=require('node:url');
 const delay=ms=>new Promise(r=>setTimeout(r,ms));
@@ -25,30 +25,81 @@ const delay=ms=>new Promise(r=>setTimeout(r,ms));
   await send('Runtime.enable');await send('Page.enable');await send('Network.enable');
   await send('Emulation.setDeviceMetricsOverride',{width:1440,height:1080,deviceScaleFactor:1,mobile:false});
   await send('Page.navigate',{url:pathToFileURL(path.join(__dirname,'cards.html')).href});
-  for(let i=0;i<60;i++){if(await run("document.querySelectorAll('section.study').length"))break;await delay(150)}
-  const studies=await run("document.querySelectorAll('section.study').length");
-  assert.equal(studies,15,'one section per study-row: '+studies);
-  const rows=await run("document.querySelectorAll('table.qtable tbody tr').length");
-  assert.ok(rows>=300,'per-question rows: '+rows);
-  const charts=await run(`document.querySelectorAll('.echart canvas').length`);
-  assert.ok(charts>=15,'charts: '+charts);
-  const tiny=await run(`(()=>{const bad=[];for(const c of document.querySelectorAll('.echart canvas')){if(c.width<100||c.height<100)bad.push([c.width,c.height])}return bad})()`);
-  assert.deepEqual(tiny,[]);
+  for(let i=0;i<60;i++){if(await run("document.querySelectorAll('.study-drawer').length"))break;await delay(150)}
+  await run("document.documentElement.style.scrollBehavior='auto'");
+
+  const studies=await run("document.querySelectorAll('.study-drawer').length");
+  const questions=await run("document.querySelectorAll('.q-drawer').length");
+  assert.equal(studies,15,'study drawers: '+studies);
+  assert.equal(questions,88,'question drawers: '+questions);
+
+  // Nothing heavy is rendered until a drawer opens.
+  assert.equal(await run("document.querySelectorAll('.echart canvas').length"),0,'no canvas before open');
+  assert.equal(await run("[...document.querySelectorAll('.study-drawer')].filter(d=>d.open).length"),0,'all collapsed');
+
+  // Collapsed rows still carry a miniature comparison strip.
+  const strips=await run("document.querySelectorAll('.qstrip .strip-row').length");
+  assert.ok(strips>=240,'strip rows: '+strips);
+
+  // Colour semantics, checked against the intended values rather than by impression.
+  const colouring=await run(`(()=>{
+    const pick=(sel,prop)=>getComputedStyle(document.querySelector(sel))[prop];
+    return {
+      win:document.querySelectorAll('.tv.win').length,
+      lose:document.querySelectorAll('.tv.lose').length,
+      tie:document.querySelectorAll('.tv.tie').length,
+      up:document.querySelectorAll('.dir.up').length,
+      down:document.querySelectorAll('.dir.down').length,
+      winColour:pick('.tv.win','color'),
+      loseColour:pick('.tv.lose','color'),
+      upColour:pick('.dir.up','color'),
+      downColour:pick('.dir.down','color'),
+      chipWin:pick('.chip.win','background-color'),
+      chipLose:pick('.chip.lose','background-color')
+    };
+  })()`);
+  assert.ok(colouring.win>0&&colouring.lose>0&&colouring.tie>0,'three states present: '+JSON.stringify(colouring));
+  assert.ok(colouring.up>0&&colouring.down>0,'both deviation directions present');
+  assert.equal(colouring.winColour,'rgb(15, 107, 95)','winner emphasised in teal');
+  assert.equal(colouring.loseColour,'rgb(139, 154, 146)','loser muted, not red');
+  assert.equal(colouring.upColour,'rgb(161, 94, 56)','over-estimate warm');
+  assert.equal(colouring.downColour,'rgb(47, 111, 159)','under-estimate cool');
+  assert.equal(colouring.chipWin,'rgb(232, 243, 239)','improvement chip is green');
+  assert.equal(colouring.chipLose,'rgb(251, 238, 231)','regression chip is warm red');
+
+  // Opening one question draws exactly one chart.
+  await run("document.querySelector('#s-german .study-drawer').open=true");
+  await delay(250);
+  await run("document.querySelector('#s-german .q-drawer').open=true");
+  await delay(900);
+  const opened=await run("(()=>{const c=document.querySelector('#s-german .qchart canvas');return c?[c.width,c.height]:null})()");
+  assert.ok(opened&&opened[0]>400&&opened[1]>200,JSON.stringify(opened));
+  assert.equal(await run("document.querySelectorAll('#s-german .qchart canvas').length"),1,'lazy: one chart');
+  assert.ok(await run("document.querySelectorAll('#s-german .opt-key li').length")>=2,'numbered key present');
+
+  // Expand-all opens everything; collapse-all closes questions again.
+  await run("document.querySelector('[data-act=expand]').click()");
+  await delay(3000);
+  assert.equal(await run("[...document.querySelectorAll('.q-drawer')].filter(d=>d.open).length"),88,'all questions open');
+  assert.ok(await run("document.querySelectorAll('.echart canvas').length")>=85,'charts rendered');
+  await run("document.querySelector('[data-act=collapse]').click()");
+  await delay(400);
+  assert.equal(await run("[...document.querySelectorAll('.q-drawer')].filter(d=>d.open).length"),0,'all collapsed again');
+
+  // A study whose every card is unique falls back to one pooled chart.
+  await run("document.querySelector('#s-dryer .study-drawer').open=true");
+  await delay(900);
+  assert.ok(await run("document.querySelectorAll('#s-dryer .pooled canvas').length")===1,'pooled chart');
+  assert.ok(await run("document.querySelectorAll('#s-dryer .q-drawer').length")===0,'no per-question rows');
+
   const broken=await run(`(()=>{const bad=[];for(const a of document.querySelectorAll('a[href^="#"]')){const id=a.getAttribute('href').slice(1);if(id&&!document.getElementById(id))bad.push(a.getAttribute('href'))}return bad})()`);
   assert.deepEqual(broken,[]);
-  const shuffled=await run(`(()=>{const t=document.body.innerText;return ['77.1%','52.8%','18.2pp','41.6pp'].filter(x=>t.includes(x))})()`);
-  assert.equal(shuffled.length,4,'spot numbers present: '+JSON.stringify(shuffled));
+
   await send('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true});
-  await delay(700);
+  await delay(800);
   assert.ok(await run('document.documentElement.scrollWidth<=window.innerWidth+1'));
-  const shots=[['overview','#overview'],['german','#s-german'],['dryer','#s-dryer']];
-  await send('Emulation.setDeviceMetricsOverride',{width:1440,height:1080,deviceScaleFactor:1,mobile:false});
-  for(const [name,sel] of shots){
-    await run(`document.querySelector('${sel}').scrollIntoView({block:'start'})`);await delay(700);
-    const {result}=await send('Page.captureScreenshot',{format:'png'});
-    fs.writeFileSync('/tmp/cards-'+name+'.png',Buffer.from(result.data,'base64'));
-  }
   assert.equal(errors.length,0);assert.deepEqual(remote,[]);
-  console.log('PASS: '+studies+' study sections; '+rows+' per-question rows; '+charts+' charts; anchors resolve; spot numbers; mobile viewport; no JS errors; zero remote requests.');
+  console.log('PASS: '+studies+' studies; '+questions+' question drawers; '+strips+' strip rows; '
+    +'lazy charts; expand/collapse; pooled fallback; winner-emphasis without red; mobile viewport; no JS errors; zero remote requests.');
  }finally{if(socket)socket.close();const stopped=new Promise(r=>chrome.once('exit',r));chrome.kill();await stopped;fs.rmSync(dir,{recursive:true,force:true,maxRetries:5,retryDelay:100})}
 })().catch(e=>{console.error(e);process.exitCode=1});
