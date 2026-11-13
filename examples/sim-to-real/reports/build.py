@@ -988,6 +988,8 @@ def build(d):
     page=(HERE/'report.html.tmpl').read_text()
     for key,val in slots.items(): page=page.replace('{{'+key+'}}',val)
     assert '{{' not in page, 'Unfilled template slot'
+    from reader_summary import render as render_reader_summary
+    page=page.replace("<main>", "<main>"+render_reader_summary(), 1)
     (HERE/'index.html').write_text(notes.curly_quotes(page))
 
 

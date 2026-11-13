@@ -442,6 +442,8 @@ def build():
             f'<script id="card-data" type="application/json">{data_json}</script>'
             f'<script>{ECHARTS}</script><script>{CHARTS}</script>'
             '</body></html>')
+    from reader_summary import render as render_reader_summary
+    page=page.replace("<main>", "<main>"+render_reader_summary(), 1)
     (HERE / 'cards.html').write_text(curly_quotes(page))
     print(f'Built per-question report: {HERE / "cards.html"} ({len(page):,} bytes)')
 

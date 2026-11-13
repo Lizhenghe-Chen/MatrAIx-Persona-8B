@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "recorded_on": "2026-11-12",
+  "recorded_on": "2026-11-13",
   "root": "examples/sim-to-real",
   "scope": "实验代码、历史六轮、新框架冻结与公开结果、综合报告、文献、公开输入及项目内本机材料；排除本清单自身、缓存和项目外私有运行目录",
   "size_unit": "bytes; 1 MiB = 1048576 bytes",
   "git_single_file_limit_bytes": 20971520,
-  "git_file_count": 637,
-  "git_bytes": 84963123,
+  "git_file_count": 708,
+  "git_bytes": 104307791,
   "local_only_file_count": 44,
   "local_only_bytes": 151339439,
   "external_large_source": {
@@ -20,8 +20,8 @@
   "files": [
     {
       "path": "README.md",
-      "bytes": 3717,
-      "sha256": "d36f6101949fcd63ed09f59fba25ef39fa7d050992ac345b66898d78b8f59fe8",
+      "bytes": 3960,
+      "sha256": "e0b0c77529eedfee6c50abd2863ff7f9edca0d61a27c91e3589ccc1e8c054229",
       "storage": "git"
     },
     {
@@ -37,9 +37,237 @@
       "storage": "git"
     },
     {
+      "path": "archive/accepted-report-v10.json",
+      "bytes": 5880,
+      "sha256": "d5b421260f1d2391e3109b8189e004fbecbe02434d1a5a172167150426c02704",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v11.json",
+      "bytes": 5798,
+      "sha256": "12ebb8c656f8e46d7347ab5309513e6fb454c5d810ef4c9b3a744e6b871c860b",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v12.json",
+      "bytes": 6015,
+      "sha256": "3b127dc9dd07563ce6d11854746db5bb81118391380a9f6373644e6a01fcdf72",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v13.json",
+      "bytes": 5933,
+      "sha256": "58d65ad47b491046301e1a95f5d45a048ec68971eb684d40e03eb83e7e1f6b19",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v14.json",
+      "bytes": 6019,
+      "sha256": "66c1bdab5e7679165907807ba9a4023f3d0d27685d0d0c10b450a5adbc668472",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v15.json",
+      "bytes": 6021,
+      "sha256": "f7d9e4fe887d4094c3e9a023aa51053cfdaad6a69ed75fa1ded89f549953ebed",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v16.json",
+      "bytes": 5935,
+      "sha256": "99c0274d6e91c37a5b4ae9ab5e80fc8fdea110efcbd512e39a9f9dd457dcacf1",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v17.json",
+      "bytes": 5953,
+      "sha256": "6a6de6daeb60acde2d4cb0af072c6d03889ee83de6bfed84ef75a7ec5e0a1384",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v18.json",
+      "bytes": 5968,
+      "sha256": "2f9abebc855fe35a9e7c17500446125c9097cf06a1339dc265bdb73c277f364e",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v19.json",
+      "bytes": 5929,
+      "sha256": "79bdbc2a45ef558ea6fafd07573613d114f86bf8d55e7eeab6d185c1f7f6cc1d",
+      "storage": "git"
+    },
+    {
       "path": "archive/accepted-report-v2.json",
       "bytes": 1529,
       "sha256": "3b7c917913abc8be2dd9f994dcb1205bde727de9a58acaab1cf63f78456486dd",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v20.json",
+      "bytes": 5948,
+      "sha256": "e3405ea8e72bbf2814ebf98108394dc221ebf2e4443bb872b25495568b3c023c",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v21.json",
+      "bytes": 5959,
+      "sha256": "455dd47e0073e4354a851a87218284fdef326e77b51ec4d78832bbf6097608fe",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v22.json",
+      "bytes": 5965,
+      "sha256": "d0ef59b471facc8aa6a0d6680d363dfa6a1d6e69c3d686a94fa3d5e742a2ee50",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v23.json",
+      "bytes": 6004,
+      "sha256": "78d4ae07c6297df9efbeaea35e7d26e3997d93f01513af6277268eb79c45715a",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v24.json",
+      "bytes": 5930,
+      "sha256": "c04543b1a5c7cef3bf5312b0fc9b745cbe885d7cec800143dfbcf2176d747008",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v25.json",
+      "bytes": 5945,
+      "sha256": "8531e00f03494efd9d382c25c6c5627c481d658208ee6982f893153cd5c7a696",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v26.json",
+      "bytes": 5950,
+      "sha256": "3b99c183913a83b771379b2b212e728eff7d5fff16c070ac210d7d1d55f0df27",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v27.json",
+      "bytes": 6563,
+      "sha256": "8cc318c18d3865eed267a16f8c07dee46c22b45f8191af94fe81a4cf6c864c3d",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v28.json",
+      "bytes": 6466,
+      "sha256": "bfba10680e4715df6143050ef866540dc59cd75bb23388f71eb314e9be601a78",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v29.json",
+      "bytes": 6415,
+      "sha256": "8aa45663b40976c72e941aa427ec5babb452d8ac76f36bec8d1fc2902151a5d3",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v3.json",
+      "bytes": 1908,
+      "sha256": "a6e15bb36ab5cd223c759217dc5cb255728ea3cc598a114ec4cd123d9267974b",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v30.json",
+      "bytes": 8192,
+      "sha256": "5bf7a339421004cb46e6387f0a6f22cc9505532b23253290380ec7160ca9e1f4",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v31.json",
+      "bytes": 8168,
+      "sha256": "228ca47df61f8d53cdeb12631a1ab6e9ac000f3da9a218ba64e416e5d8e2558f",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v32.json",
+      "bytes": 9183,
+      "sha256": "7f004d2946e1aed916c6c4f3aa4832f0a91f0bf61841e091e4008c85a431bc59",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v33.json",
+      "bytes": 9219,
+      "sha256": "5d9b47443b33658e688577aa5f075d484c09e1ed7d85a50eba342555b820b8d2",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v34.json",
+      "bytes": 9191,
+      "sha256": "baed134739c9ca336a4649f2b61222404876d1f6b7332186229beab5dcfa2d6b",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v35.json",
+      "bytes": 9248,
+      "sha256": "1ee72d7a7f61f9ee7e9cdecadd3c7d52579e852d90a7dd98f4c21f40ba9b9315",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v36.json",
+      "bytes": 9287,
+      "sha256": "73ff92fcd4f17d2bddadf386ae60f3862c405ea059238dddbcfab235b3a52850",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v37.json",
+      "bytes": 9302,
+      "sha256": "72ae7c8ea742a0d6da4f194b7ab5277ee7368e8261106f379abc1d0e0e056e21",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v38.json",
+      "bytes": 9321,
+      "sha256": "13520afa5c67879a2319634ef3a2e5544774efc8ff769c87851e684ad6f280df",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v39.json",
+      "bytes": 9237,
+      "sha256": "0d8d22b008f3127c8db204a001fdcc445c0363dfba70c55b62d4a5d17e3e0a90",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v40.json",
+      "bytes": 9568,
+      "sha256": "50e58b7c7018209bf95d7b97e4d2564625ac75758037e62ccbe212ed295e137d",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v41.json",
+      "bytes": 9585,
+      "sha256": "d44b8057223455cf628dcf383b0248f40271426564a0159d7ebdac272e02e5eb",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v5.json",
+      "bytes": 2676,
+      "sha256": "c783a148d456e6dc617b1a2e2784851d1c02a5e36f0df20ef02dd0338866c994",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v6.json",
+      "bytes": 4814,
+      "sha256": "351710b4f84729a65a5f2625db8f1319976f7ffb7b776fe03405181b4f1a46d4",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v7.json",
+      "bytes": 5087,
+      "sha256": "09fc2a81b80031b59928b4be9a661d0157b101b091df17702d57a277d035ba2b",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v8.json",
+      "bytes": 5188,
+      "sha256": "a753894c9bccb774bd4ba4caef50fb3e512a186a3907e2261a56f86adffe1005",
+      "storage": "git"
+    },
+    {
+      "path": "archive/accepted-report-v9.json",
+      "bytes": 5480,
+      "sha256": "fce86ea4d445c9dc7aa2c3332e700df97ea1c08658f39256cf9769a62bd4be29",
       "storage": "git"
     },
     {
@@ -61,12 +289,6 @@
       "storage": "git"
     },
     {
-      "path": "audit_matching.py",
-      "bytes": 24,
-      "sha256": "f14fd3ffccecf58535291b166474828db685f856e871fbab364abd614df50695",
-      "storage": "git"
-    },
-    {
       "path": "data_sources.py",
       "bytes": 2152,
       "sha256": "a3767806411b4ac4a24c8e56c4705c3c33d2cb996c87941ead1bba8f9a093e57",
@@ -74,8 +296,8 @@
     },
     {
       "path": "decision_lab/README.md",
-      "bytes": 3429,
-      "sha256": "19fd9971706b3ad28b1a15586f82592de460e8d49b2b88827e2d396788ec01bf",
+      "bytes": 3580,
+      "sha256": "7aecf6317c81e402e0546fbcd7fbbac0d749421adfa94bb2ad2474ba84099937",
       "storage": "git"
     },
     {
@@ -104,8 +326,8 @@
     },
     {
       "path": "decision_lab/core/baselines.py",
-      "bytes": 3437,
-      "sha256": "69db3e8963fa6b82113912a44e6da35e71c39375f3a9709dd99bfde931031c1b",
+      "bytes": 5986,
+      "sha256": "5108ae3c8b1cd69203a82761f50481a2fe61081d4a366bcb66336d9bf4804c47",
       "storage": "git"
     },
     {
@@ -140,8 +362,8 @@
     },
     {
       "path": "decision_lab/core/provider.py",
-      "bytes": 4580,
-      "sha256": "17b2701dafc372d730551a24ebaf3c4f81eb50306fa0f106bd48c7429589ff73",
+      "bytes": 5025,
+      "sha256": "c231893586513ad9e8bc6836e05d00b63495042ea2f1bc3fdfe97584370bc786",
       "storage": "git"
     },
     {
@@ -152,8 +374,8 @@
     },
     {
       "path": "decision_lab/cross_study/README.md",
-      "bytes": 5662,
-      "sha256": "2327b9c32cbf14ed431019359b11361611d85919dfeea9e5789d875b44f4ed56",
+      "bytes": 7195,
+      "sha256": "8225257356552cf9a216756dce7ae570818c054ac309bbb299a3e651969352d2",
       "storage": "git"
     },
     {
@@ -164,8 +386,8 @@
     },
     {
       "path": "decision_lab/cross_study/adapters.py",
-      "bytes": 12919,
-      "sha256": "af3bc17832d1e0ae6ff36e34ea7e2fd0f77e837509b735978ef56f1bfdb0ff21",
+      "bytes": 36468,
+      "sha256": "7f44028c67ae11c85d01e92b6620acc5166e2f90d474739c4db0fe59ca7794ae",
       "storage": "git"
     },
     {
@@ -175,9 +397,39 @@
       "storage": "git"
     },
     {
+      "path": "decision_lab/cross_study/anchor_audit.py",
+      "bytes": 3857,
+      "sha256": "4bfd4572900ebe76b17e4e01868198b1dcc9bddc5f3e7d6ccec3d426eec32e4c",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/cross_study/audit.py",
       "bytes": 4029,
       "sha256": "7a8428404a9a340526bd1864f88694b64beb3ea5d1298a7bb18215cd07ed1ec1",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/cross_study/blend.py",
+      "bytes": 11249,
+      "sha256": "75c33407c5066fc49ab54ff04148ad9d419fff2590209000457442838569f488",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/cross_study/card_discrimination.py",
+      "bytes": 4648,
+      "sha256": "6c7dc30332ba100f42c54427b8521a03c53acd0d9742bf918fec946cc49fa129",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/cross_study/clean_diagnostics.py",
+      "bytes": 9040,
+      "sha256": "1ca60353054f6653cef9c6cfe53a1e6989f97c06419c9fa2f8296bf68609c6a3",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/cross_study/cluster_summary.py",
+      "bytes": 4412,
+      "sha256": "2e8034b7a9fdb1d35f6c281dd84ec3d6ca4217bd33b5bedd182cb7402cd40a34",
       "storage": "git"
     },
     {
@@ -187,27 +439,75 @@
       "storage": "git"
     },
     {
+      "path": "decision_lab/cross_study/cohort_clean.py",
+      "bytes": 8093,
+      "sha256": "654e92079c7d6724865f306fd1688b005364cc516ea6c55cee44c8e7bd77c81c",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/cross_study/direction_metrics.py",
+      "bytes": 10688,
+      "sha256": "b0fe61cb8f14bf2b1fe1f7bcbc674e6c9d8aeb8b53cf71a257e7fcd3ed8b82d3",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/cross_study/drone_audit.py",
       "bytes": 3048,
       "sha256": "9a56d5fbd71b886a7fbed2147af154dbc470ee8c9e8e81bf0dd2478da3c7ac20",
       "storage": "git"
     },
     {
+      "path": "decision_lab/cross_study/drone_baseline.py",
+      "bytes": 2064,
+      "sha256": "3f72172468819374a1ff04f38679588a6dfb08a9dcd8660005330958afaaab29",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/cross_study/evolve.py",
+      "bytes": 30198,
+      "sha256": "452e7a34cbef62f769dad6856167785d1ccf7f1e1cc4d460dcd25c104cbd12c5",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/cross_study/formal.py",
-      "bytes": 26512,
-      "sha256": "cee44ca91ba204e9ec40064f17eeb53da847744bea7a057d0cf4acc867f7bbe1",
+      "bytes": 40475,
+      "sha256": "c98fe680ff06501eb24a7bb452fa4fbbfe1759fb012204abf3c18aec8ec864f1",
       "storage": "git"
     },
     {
       "path": "decision_lab/cross_study/formal_report.py",
-      "bytes": 15606,
-      "sha256": "e2a9371d97d4e04e40f414860be612c5ddab34ffbe329d0e10ae30645bc4fd1f",
+      "bytes": 19853,
+      "sha256": "ba12d27b701e1a9fa9a9756537462cb175fde1fd5edc64bbbea5ef920e9bd3b5",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/cross_study/german_baseline.py",
+      "bytes": 2871,
+      "sha256": "685a635e849a85c3625e411df70f67c4373524aacb435ede5ec43b55748055b3",
       "storage": "git"
     },
     {
       "path": "decision_lab/cross_study/matching.py",
-      "bytes": 4739,
-      "sha256": "26e7f623a353bee8887867431c1e8a325f2d4e6fdb7b2ba9a49651197055e943",
+      "bytes": 7296,
+      "sha256": "7791edb63aef690f57cf4131f136abb0ebc7eae7d2290a699074d2be12a09ae3",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/cross_study/noise_floor.py",
+      "bytes": 3394,
+      "sha256": "e05749410578c115328216016df22a2e05939328a3144f0ddb72c03fd92c658c",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/cross_study/origin_baseline.py",
+      "bytes": 1560,
+      "sha256": "d73fd468a11064b6f0dc61c4f60ee85d98c8e6bebee1d4c5296282b5c44a126f",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/cross_study/per_card.py",
+      "bytes": 10322,
+      "sha256": "e0c9a41b3f60c4655f99926085f5ddf7a811ba8ea4e1deff6213c979903647d7",
       "storage": "git"
     },
     {
@@ -224,8 +524,14 @@
     },
     {
       "path": "decision_lab/cross_study/protocol.py",
-      "bytes": 6037,
-      "sha256": "2ac54458fddf0b6bc040f525f02f325070b8c9036535f05890999c840e590e17",
+      "bytes": 7714,
+      "sha256": "1ca79e0da603edbe8306fb9b46e048f7fc949114a060b6ffb55bb08bf972dd85",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/cross_study/radiant_baseline.py",
+      "bytes": 1657,
+      "sha256": "069f6c44a8cafe04afdb0527c444e77443cbfc694acf55c21a4c945f252a8707",
       "storage": "git"
     },
     {
@@ -254,14 +560,26 @@
     },
     {
       "path": "decision_lab/cross_study/scoring.py",
-      "bytes": 17780,
-      "sha256": "bcc5ddccc2bc34aff7fa903288f2c6e4c1fbe78a6fdc987d351ddf9a03ef135a",
+      "bytes": 18732,
+      "sha256": "8e36b2b1d7741181bba8feb076332e2827966ae7b75a44e5061b96b526313c0b",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/cross_study/shoes_audit.py",
+      "bytes": 4903,
+      "sha256": "e918cc7ab44bda04b67dffec0440d7cf12a7e9da594d48085a4fb40dc372bcdb",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/cross_study/shoes_baseline.py",
+      "bytes": 3566,
+      "sha256": "d812267c7b4a39332d2d839077781c365f40fd76e3c0af44e47a6efcecfa2690",
       "storage": "git"
     },
     {
       "path": "decision_lab/cross_study/targets.py",
-      "bytes": 3483,
-      "sha256": "42e0bb6f8581287b7ccdf478b0dde2ffb62c26be32dc1c1e39ab9244e52824c2",
+      "bytes": 3590,
+      "sha256": "b116d4e493e64cc89c3c1b98960253cb9940688b3c0173978c0acb2f317249fd",
       "storage": "git"
     },
     {
@@ -272,44 +590,86 @@
     },
     {
       "path": "decision_lab/cross_study/tests.py",
-      "bytes": 15257,
-      "sha256": "b860fa8330124cdc3d51ca88c5155960c1a6b8ef3f7aefb100ccc1240e27fd6d",
+      "bytes": 18394,
+      "sha256": "e13bada92e1668771e9a5ac6af24cb29fc943cd71e227348c1293403325f2714",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/cross_study/tshirt_baseline.py",
+      "bytes": 1681,
+      "sha256": "2aafa8e0229e9366848d63d63416891f16d8235456585203703c6691a4282528",
       "storage": "git"
     },
     {
       "path": "decision_lab/cross_study/verify.py",
-      "bytes": 3676,
-      "sha256": "565ab219cd60a5d2e0ae162b8ca602930c64c95b1731fe9e654793d3a8f42951",
+      "bytes": 9485,
+      "sha256": "bb254ee9def1803a5abf5be16da4f5e50b4119f5924a2f508525818ede34db07",
       "storage": "git"
     },
     {
-      "path": "decision_lab/docs/两次选择快速验证.md",
+      "path": "decision_lab/cross_study/wide_audit.py",
+      "bytes": 3942,
+      "sha256": "0f9c3970b01b040fb003b0dba33a1d43c45814b334f4add23a4591277acb9ff7",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/docs/README.md",
+      "bytes": 2886,
+      "sha256": "dcb1c3c92723550477c5182f7ef8d99bd27176789692abbbf25464c67bde94d8",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/docs/archive/两次选择快速验证.md",
       "bytes": 3819,
       "sha256": "e0d78b0690efce3c7cee8aa980e6d832be5bfec639f782d9b441b5426a079b3a",
       "storage": "git"
     },
     {
-      "path": "decision_lab/docs/历史阶段交接.md",
-      "bytes": 6036,
-      "sha256": "d6d056bc8dfc5ec77c6874a8e0e24cb4226dd02daee34a3118836bfdebac1071",
+      "path": "decision_lab/docs/archive/历史阶段交接.md",
+      "bytes": 6088,
+      "sha256": "d61a4013893e185707542631915d930f20e356adf5816c4be12cc6af85c87447",
       "storage": "git"
     },
     {
-      "path": "decision_lab/docs/复算与复用指南.md",
-      "bytes": 5319,
-      "sha256": "bfd0dbb5a91b27fb3fa6f01a9a012054d1404e42ed277ff73ead6198a5d3e629",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/docs/实施沿革.md",
+      "path": "decision_lab/docs/archive/实施沿革.md",
       "bytes": 16711,
       "sha256": "3a0e397487faa5107271d9754d26f14558e6c3455424c092b22f86ad08f900b3",
       "storage": "git"
     },
     {
+      "path": "decision_lab/docs/archive/结果解读与使用建议.md",
+      "bytes": 3399,
+      "sha256": "b35fef24e0087445f5ef68109ffe455257c6f1e57d21d4ec7c791c8de5f272d7",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/docs/archive/证据与检验对照.md",
+      "bytes": 4477,
+      "sha256": "b6ca16df9ba32d397a306064f9dd6ff1a4c6ef2977647e6ace09827299fdeb7c",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/docs/archive/阶段交接_2026-11-10.md",
+      "bytes": 2747,
+      "sha256": "135bf9cdccf0258215bc89870003889fc91f71edb60399f60f93856324eb51d0",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/docs/复算与复用指南.md",
+      "bytes": 7743,
+      "sha256": "29967978cb4187a2343d8fa1b5ae1d0da81e0b3e076daedcdd8aeeb75a38404d",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/docs/实验迭代日志.md",
+      "bytes": 17774,
+      "sha256": "bd6693df55e4e735c6083e4f7026f1b54828449939182347b942991031900fea",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/docs/推荐配置.md",
-      "bytes": 3475,
-      "sha256": "96ac33a9e42dd781c5356ed53fa29ea942c86f944b60927fda0a4d28ffc20fef",
+      "bytes": 4009,
+      "sha256": "0e3ef6409acf024cdb4710461686fa44cc765c884a588694db5aeab136505736",
       "storage": "git"
     },
     {
@@ -320,14 +680,8 @@
     },
     {
       "path": "decision_lab/docs/结果与优化记录.md",
-      "bytes": 7800,
-      "sha256": "3218a78dc186628afe89b7d2533b36408bb48ba884029bd65ed5c834507627b3",
-      "storage": "git"
-    },
-    {
-      "path": "decision_lab/docs/结果解读与使用建议.md",
-      "bytes": 3399,
-      "sha256": "b35fef24e0087445f5ef68109ffe455257c6f1e57d21d4ec7c791c8de5f272d7",
+      "bytes": 25918,
+      "sha256": "7602faa2ca69961f833ae6df0b1766e56281372ad656301128accabd043f87e1",
       "storage": "git"
     },
     {
@@ -337,21 +691,27 @@
       "storage": "git"
     },
     {
-      "path": "decision_lab/docs/证据与检验对照.md",
-      "bytes": 4477,
-      "sha256": "b6ca16df9ba32d397a306064f9dd6ff1a4c6ef2977647e6ace09827299fdeb7c",
-      "storage": "git"
-    },
-    {
       "path": "decision_lab/docs/进度与交付核对.md",
-      "bytes": 3135,
-      "sha256": "7dd1f4b2fb5dbbc0f24a493e606d7e7a73fea4b02311663027571797ddc43ee1",
+      "bytes": 4752,
+      "sha256": "b9b0240d2424381688a93b9e7985e2cdb4a0e2909aa5d168d6e80279ae07d07c",
       "storage": "git"
     },
     {
-      "path": "decision_lab/docs/阶段交接_2026-11-10.md",
-      "bytes": 2747,
-      "sha256": "135bf9cdccf0258215bc89870003889fc91f71edb60399f60f93856324eb51d0",
+      "path": "decision_lab/docs/阶段记录-2026-11-12.md",
+      "bytes": 11581,
+      "sha256": "79167b68b8abf9621de3a822ed869fd00717b6ffac22a0c947de580daf3ea54b",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/docs/预注册协议-anchor-v1.md",
+      "bytes": 4089,
+      "sha256": "bb5dfc706b36b593d028ace1a95bcacf8af2d558077744186dba8150ccc5a138",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/docs/预注册协议-clean-v1.md",
+      "bytes": 8912,
+      "sha256": "77a77d9c11ab5864b2789120d85d3dd6bf7018af4f307c3ce93ceff10ef70812",
       "storage": "git"
     },
     {
@@ -469,6 +829,12 @@
       "storage": "git"
     },
     {
+      "path": "decision_lab/ops/balance.py",
+      "bytes": 2909,
+      "sha256": "a16267bd586240e4eea769bcbe2f3db8c223d129c18830f71aaeaf17bb27f864",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/ops/handoff_manifest.py",
       "bytes": 2137,
       "sha256": "840dfa56d89595b48d3e939479c90024e77d0a6e3876a482417e5f8c9ffe2a10",
@@ -542,8 +908,8 @@
     },
     {
       "path": "decision_lab/reporting/reader_report.py",
-      "bytes": 28307,
-      "sha256": "4b46ea1876c5bae0532beb35d784c017bb785323c76bf792989d49b33a0a4b12",
+      "bytes": 28315,
+      "sha256": "21a8276fdc985841827282ff8eb441594c523368590b3ceab70fa24c420fcd96",
       "storage": "git"
     },
     {
@@ -607,6 +973,84 @@
       "storage": "git"
     },
     {
+      "path": "decision_lab/reports/cross-study-v1/anchor-v1-adherence.json",
+      "bytes": 2111,
+      "sha256": "d9bcfa0df76c6226169f63b6224df11158a782b7e198ae14aab94bd122936af7",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/anchor-v1-results.json",
+      "bytes": 27497,
+      "sha256": "dcac1009dcda177230659f277a08ac1ae4185ff3b102b2433ee2c6bb8434a579",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/blend-ext-pro.json",
+      "bytes": 1920,
+      "sha256": "815eec4ebbac1f08cfb414575ad93dd4ce01dc657cbac1fa9e88625d4017ecc8",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/blend-ext-qwen.json",
+      "bytes": 1917,
+      "sha256": "c1c2414abd29f0fcb27c9f0b9900d7f96cffc204e63e780b32e49a7cbee1258a",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/blend-pro.json",
+      "bytes": 14285,
+      "sha256": "68c77c91828a262ec56f084c2df6448f03ee5c29cfc03df987b47ccb6b6d7b5d",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/blend-qwen.json",
+      "bytes": 14260,
+      "sha256": "6418279e04dcd23f1b7429da2d06a912af31128d377f4cdb0157931b2d5d365d",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/card-discrimination.json",
+      "bytes": 3039,
+      "sha256": "136db987ba144de4f2d44b7a14385dbaf1b112f54e3ff383b340dd81b6ef3262",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/clean-v1-diagnostics.json",
+      "bytes": 52502,
+      "sha256": "8b8f2320f9e9fc7f65bd964f3d9d77b0901d87dce720516157f14f488e69d406",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/clean-v1-report.html",
+      "bytes": 10169,
+      "sha256": "8566b5b160483c3976e0ef51b0f6ff31d9f140869137f27bb05f7fa15a991242",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/clean-v1-report.summary.json",
+      "bytes": 3087,
+      "sha256": "72e0247e05e15e44d45b1784ac74e3f5e88213f71d98985019d65f827c258b56",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/clean-v1-results.json",
+      "bytes": 99428,
+      "sha256": "94b0aaacaf2cdb299cae83efa529d9e902a067490bc8064d5a0849b7462fb589",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/cluster-summary.json",
+      "bytes": 6147,
+      "sha256": "830ac89ea043ed97b706ea4c47bbfa19a699cd90cd0978273cf3ea1e741b9209",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/direction-metrics.json",
+      "bytes": 9325,
+      "sha256": "57baa4dd66b52be5cf3e537de730e73680b5c05b9920b48b4bedac601dbe6aea",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/reports/cross-study-v1/drone-audit.json",
       "bytes": 1953,
       "sha256": "af6fe80327a0d6542c96990f4c1e244ef735b1d1af8e9e1f6a81d0196338943b",
@@ -616,6 +1060,18 @@
       "path": "decision_lab/reports/cross-study-v1/drone-source-downloads.json",
       "bytes": 1494,
       "sha256": "36c48b91dd2256a340e14918bfa9951ef2bd474919a2b49bc2517899c706a06c",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/external-v1-results.json",
+      "bytes": 7070,
+      "sha256": "cd3cd7a9fd1985b51dda4eb449172859966f7637a65a17e4b1d580c289367661",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/external-v2-results.json",
+      "bytes": 9907,
+      "sha256": "62a1f94bc3acd90b8f64ce20af9527bd311c0d423a832c424ae3acda7ef87b5b",
       "storage": "git"
     },
     {
@@ -649,15 +1105,111 @@
       "storage": "git"
     },
     {
+      "path": "decision_lab/reports/cross-study-v1/matching-clean-v1.json",
+      "bytes": 4301,
+      "sha256": "c8f4c1d5ee8371b3121e6121f564fa48b7e7e15eab9bc9833991eeb6af072c76",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/matching-external-v1.json",
+      "bytes": 3367,
+      "sha256": "67fb8aaca56652e0e6380c4f7bc50b45abfcf17da7e21f646cd53197cebb2295",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/matching-wide-v1.json",
+      "bytes": 18569,
+      "sha256": "c9720844b4fce7c0888084a4e5dffa72f90ba44dd3f4bb7450ddbd1c80bb12c7",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/noise-floor.json",
+      "bytes": 3049,
+      "sha256": "4c948604da0fc9ea22a7fe2c5eb1c6c6edf7e164ddaa9ff199a93f1647c236a5",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/reports/cross-study-v1/participant-pilot-result.json",
       "bytes": 12038,
       "sha256": "4aea75f4c94f589390514c7c730c47f87355b8de63487a120d99f45a8e809f49",
       "storage": "git"
     },
     {
+      "path": "decision_lab/reports/cross-study-v1/per-card.json",
+      "bytes": 9680146,
+      "sha256": "dc3916d98820b6afe9028babfa7025d1bc1b7541fe0822eef282f33f1b7bc54f",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/reports/cross-study-v1/persona-audit.json",
       "bytes": 457488,
       "sha256": "0fb3ced6e0f3391c667cfc3355db92f00292ffcfddce8a7c96422c9d876a30b2",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/screening-ext-opt.json",
+      "bytes": 4966,
+      "sha256": "1d482579f86ce3b64e5aa9cf2c6926cb0117e21aeb0a3d2ab26637d317472c51",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/screening-r1-agg.json",
+      "bytes": 24814,
+      "sha256": "2505403748e9ab7e220847db6d76bab098c9fc2353d3d3fb985f5e8088860d98",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/screening-r1-agg_scoped.json",
+      "bytes": 24776,
+      "sha256": "b771062838b1838cfb854d3016677a55f00c112a90f5620690579f4f6aa56bb8",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/screening-r1-brief.json",
+      "bytes": 25560,
+      "sha256": "41cd59a914373d4749e6ebc0d66a38fd3486bc04347f286ea6f1c28ecba21abb",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/screening-r1-cards.json",
+      "bytes": 6357,
+      "sha256": "fe623749113b0606414f60e06d7507bee105a075c7a074ca1ff4252ab2c91975",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/screening-r1-counts.json",
+      "bytes": 25531,
+      "sha256": "57e4a306db90e006c1f903dadbbcedf4ede0d783ef23be3e6e2a4a78eb350e25",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/screening-r1-hetero.json",
+      "bytes": 25515,
+      "sha256": "5d862fd168305878d0f81f081453f6ddbd7cbfa504ca424b9df54766f3c03bdc",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/screening-r1-opt.json",
+      "bytes": 25535,
+      "sha256": "e844c33a96f9de7a76f0fff30de153080aa041f027c1366d2019cd0aaa896bb5",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/screening-r1-refusal.json",
+      "bytes": 25569,
+      "sha256": "f2b87c14e8aeaf56e1addfe86e6563240c5fcf7dcfacfd2ad791d8b9fd0c3beb",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/screening-r1-scoped.json",
+      "bytes": 25544,
+      "sha256": "f8c6a79dff73e7a09fc0b6636fee13b8d75e2410f9cf875f0ac2874f060dd64f",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/shoes-audit.json",
+      "bytes": 785,
+      "sha256": "c5d60363d2a1b88760c9509b1b49f6d658e4930ca0932c6737cf513d1c19ec0b",
       "storage": "git"
     },
     {
@@ -676,6 +1228,30 @@
       "path": "decision_lab/reports/cross-study-v1/technical-result.json",
       "bytes": 2270,
       "sha256": "46c07e4d029ec647c50748c5877edb4c9b6f09fb696b33726b3985871dfaea0c",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/wide-audit.json",
+      "bytes": 4419,
+      "sha256": "503da049611932b95438db857621d99fccdfd202b3ed9c07ba402ef8ce871053",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/wide-v1-report.html",
+      "bytes": 20454,
+      "sha256": "08afffc4493adc579f70e932d88c24b84d1f4d85cc63b676df5a77d013660667",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/wide-v1-report.summary.json",
+      "bytes": 10184,
+      "sha256": "53937ecfbc2f064438e2ac3d836bbeca50bfaacc1dee7c7047f8163c289139e8",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/wide-v1-results.json",
+      "bytes": 88630,
+      "sha256": "8ef2a68e0dd2bd833d9f14c25f435a4a5b24866fbf8db085be3c2cfda9d6aa6b",
       "storage": "git"
     },
     {
@@ -865,6 +1441,30 @@
       "storage": "git"
     },
     {
+      "path": "decision_lab/specs/cross-study-v1/anchor-v1.json",
+      "bytes": 4350,
+      "sha256": "0f83de9ae6d704d0a610885085e2714a314beb983a04d43de4f8592b2dc501f7",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/cross-study-v1/clean-v1.json",
+      "bytes": 2953,
+      "sha256": "0520b33fadc0ca2dc1683b70bb93ca0790e5e061c057bf33ca590d3d3c040595",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/cross-study-v1/external-v1.json",
+      "bytes": 2885,
+      "sha256": "c0c00fc5e538fa22c590502add5e22c3b8c8478793540159e494e7a682f6ddbc",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/cross-study-v1/external-v2.json",
+      "bytes": 2958,
+      "sha256": "70c49d4cb4b2f0d0c6b4524f6757ce98c042df69216711936c65cda8769322fb",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/specs/cross-study-v1/formal-v1.json",
       "bytes": 5564,
       "sha256": "e8e8286031ed4647faf642b3d91affafe7dbd7534566326e18bebc356fbba65b",
@@ -883,9 +1483,27 @@
       "storage": "git"
     },
     {
+      "path": "decision_lab/specs/cross-study-v1/screening/ext.sqlite",
+      "bytes": 118784,
+      "sha256": "4dc2f35143bfa598872a46413f87a68bbade5bbba37ff82cc980c70e0a8a0829",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/cross-study-v1/screening/r1.sqlite",
+      "bytes": 3166208,
+      "sha256": "b9f69362b4a4df2be28ed91644e0e94627268f6cda7d42da65947ed7b592dc0b",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/specs/cross-study-v1/technical-protocol.json",
       "bytes": 779,
       "sha256": "7518688c7ab303bcd9da414926e8ba53494a2aa18d4325b8f0e6e8089e7ac31b",
+      "storage": "git"
+    },
+    {
+      "path": "decision_lab/specs/cross-study-v1/wide-v1.json",
+      "bytes": 4926,
+      "sha256": "d0664c1aa7b74269f3a1958cf998b338d57d571785adff2e46b9da9cbf4f052b",
       "storage": "git"
     },
     {
@@ -1279,6 +1897,12 @@
       "storage": "git"
     },
     {
+      "path": "decision_lab/tests/test_clean_v1.py",
+      "bytes": 3453,
+      "sha256": "6783d9ada2dae41ad977e7a74f8e967e53852eebe89fd0245a0093e953268edf",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/tests/test_conditions.py",
       "bytes": 1835,
       "sha256": "877b65b21588819ebeb543f29ca2977158402affc73cfddca76fa7bef94d870d",
@@ -1387,6 +2011,12 @@
       "storage": "git"
     },
     {
+      "path": "decision_lab/tests/test_shoes_rating.py",
+      "bytes": 2970,
+      "sha256": "151df5bbfcc0a894df2a6ac377d77089a5438e361f0bfed3c198d7b39bb70418",
+      "storage": "git"
+    },
+    {
       "path": "decision_lab/tests/test_study_report.py",
       "bytes": 1280,
       "sha256": "6cd04748336d5cf207f88d9f0a529c6c700834ba8eca99ca30b5382f7d45c030",
@@ -1418,26 +2048,14 @@
     },
     {
       "path": "decision_lab/交接先读.md",
-      "bytes": 3652,
-      "sha256": "52ac6201925459160dd4cd38525fa9cc5bb508672f51c59bf3563799b8a020db",
-      "storage": "git"
-    },
-    {
-      "path": "experiment.py",
-      "bytes": 20,
-      "sha256": "2bbdf06204c6af7748d39b56955e852738c13bd176a385d99691c95bc13bdc40",
-      "storage": "git"
-    },
-    {
-      "path": "instruments.py",
-      "bytes": 21,
-      "sha256": "1493ce9b2ef506e76f6e2cf6bec2f20788ad7e21231dc538297424b07506b4ca",
+      "bytes": 3607,
+      "sha256": "7b0a541eec65bb46443599f8f3ebcbfd9528c63249fced850477b476ad93477f",
       "storage": "git"
     },
     {
       "path": "legacy/README.md",
-      "bytes": 752,
-      "sha256": "954228814bd6cc267bb83a80055c179d0cf35e22d323443ba46a5bdc1e31cdff",
+      "bytes": 1000,
+      "sha256": "3df43c59f4602c18e852d13afeaecd8a9ad87b98ed71b47f06a4a18635789085",
       "storage": "git"
     },
     {
@@ -1747,63 +2365,57 @@
       "storage": "git"
     },
     {
-      "path": "optimize.py",
-      "bytes": 18,
-      "sha256": "5a426d1ca0dc9445de4d107d5e24a68e32b93f190ffb7cd294e4f440005a8fd9",
-      "storage": "git"
-    },
-    {
-      "path": "optimize_html.py",
-      "bytes": 23,
-      "sha256": "1fe706c9ff76876697bd7f2dec8d49c5b5aeba6a4d66c312236d791b745d34f9",
-      "storage": "git"
-    },
-    {
-      "path": "optimize_profiles.py",
-      "bytes": 27,
-      "sha256": "64d0b4da277a71047d9c8961a3e9372eec797d852bbeb8c0f524cd62890004dc",
-      "storage": "git"
-    },
-    {
-      "path": "optimize_report.html",
-      "bytes": 27,
-      "sha256": "476983317f588695ecb2223eb5dd7e854584f5f3dc4c28858ec75eebaf900c68",
-      "storage": "git"
-    },
-    {
-      "path": "optimize_score.py",
-      "bytes": 24,
-      "sha256": "01b6f1e8d9407d5129d3ff34ede30e45f4a5f5ab7e42b84620f0f1884713d218",
-      "storage": "git"
-    },
-    {
-      "path": "optimize_summary.py",
-      "bytes": 26,
-      "sha256": "cb69b8fa8fcff4999bbdaf05fa3f29aca52a9026c41cf34937cf7b7493c341ee",
-      "storage": "git"
-    },
-    {
-      "path": "report_smoke_check.cjs",
-      "bytes": 29,
-      "sha256": "14d0324c2962bfa37403b06df6c9a46f5e93f9148d095d40da221ce95a7027fc",
-      "storage": "git"
-    },
-    {
       "path": "reports/README.md",
-      "bytes": 2910,
-      "sha256": "998059c123a17ade84599f36d3b62701b4014508f868d3c9b8d283cd6f60a86a",
+      "bytes": 5981,
+      "sha256": "cca7966322b041357fcc67a08c337974bbcc78b389fe10f16a847a2c8a45cc3b",
       "storage": "git"
     },
     {
       "path": "reports/build.py",
-      "bytes": 17186,
-      "sha256": "52373eb9d4bb55302220cf665d3fdf996c399c073cd54e8add457f5667b1ccb6",
+      "bytes": 74209,
+      "sha256": "0db0181a271cf98c8f2e2192e0fab869f06639b86d404007bd68e4218339651f",
+      "storage": "git"
+    },
+    {
+      "path": "reports/build_cards.py",
+      "bytes": 29461,
+      "sha256": "1b26155feb150ac973e2a5918cec53c51767d200adf379249418d5192443399c",
+      "storage": "git"
+    },
+    {
+      "path": "reports/build_story.py",
+      "bytes": 43678,
+      "sha256": "9bd1ba0e5bb6481f9c5a0297737b980f0a145edcd0e6eed78e0e8fa75cf708ac",
+      "storage": "git"
+    },
+    {
+      "path": "reports/cards.html",
+      "bytes": 1443080,
+      "sha256": "dcdfc483a136ab31cc9c2ea5c1c26cc21fb5618fba1b244273c9dd39f751abe1",
       "storage": "git"
     },
     {
       "path": "reports/charts.js",
       "bytes": 2324,
       "sha256": "9234c2c9920d15198cef1d3577e260fa4d848ec01d710f2fffabe94d4f6d25b9",
+      "storage": "git"
+    },
+    {
+      "path": "reports/charts_cards.js",
+      "bytes": 6903,
+      "sha256": "4a28fb2e8525935990448492c43ffce2ecad25a8684635665cefb10cbe76f52d",
+      "storage": "git"
+    },
+    {
+      "path": "reports/charts_clean.js",
+      "bytes": 26158,
+      "sha256": "7d061a532f65838ec1ddf02acd019e3853eb0f3e6d68f5afdc0d05c0ff83bdf4",
+      "storage": "git"
+    },
+    {
+      "path": "reports/charts_story.js",
+      "bytes": 5408,
+      "sha256": "843e756b53a018580ecea1b2c273c38d3fad867de93fe6ee573fbfb4c9ef7334",
       "storage": "git"
     },
     {
@@ -1814,248 +2426,68 @@
     },
     {
       "path": "reports/index.html",
-      "bytes": 73930,
-      "sha256": "6f7872345df81d7673fea83c8bca7bc667907b0b0ae93580c3f1c9a6dc55bf48",
+      "bytes": 1324923,
+      "sha256": "2e715d7c2ec9dcb6a15874ac7553e8a5d3a292ac4eb98aecf7be452a63bbadc6",
+      "storage": "git"
+    },
+    {
+      "path": "reports/notes.py",
+      "bytes": 11929,
+      "sha256": "149374e76048fdc45b5aa4db4ea5fc2f1df086e9e9f8caa7e0fa50c953602e53",
+      "storage": "git"
+    },
+    {
+      "path": "reports/reader_summary.py",
+      "bytes": 5640,
+      "sha256": "796f474d6e0299dca32b0d53788a3a598c161c970437bcab800786533a349615",
       "storage": "git"
     },
     {
       "path": "reports/report.html.tmpl",
-      "bytes": 34543,
-      "sha256": "75954a4b6481cb2b3d8a288845c66ed9218e276f3bb2d95ab7ad18f215f51cb5",
+      "bytes": 38353,
+      "sha256": "15a0df41c7c56c38f9786a371f9afb76dd7e2d5d26f5fb0b3f3fa53b52078d30",
       "storage": "git"
     },
     {
       "path": "reports/smoke.cjs",
-      "bytes": 4719,
-      "sha256": "69302d9cb42b79a3d6913c0c7d6e6811ee91448633302334516529d673a34427",
+      "bytes": 8226,
+      "sha256": "b7cf21865774475b7a0c581da56bc3d77eba52ced0b726969ebefdf0bd860f73",
+      "storage": "git"
+    },
+    {
+      "path": "reports/smoke_cards.cjs",
+      "bytes": 9082,
+      "sha256": "c0fed3601f5b6575de7dc7f918fb9449744c6331b56703f6e7c98449b368bd21",
+      "storage": "git"
+    },
+    {
+      "path": "reports/smoke_story.cjs",
+      "bytes": 4741,
+      "sha256": "26c0f40e75b4bedd7cf0a87e51a3ba624869ab02941b4939286f8919be6854ef",
+      "storage": "git"
+    },
+    {
+      "path": "reports/story.html",
+      "bytes": 1179224,
+      "sha256": "919216eb7a89bdc71597bc329e4eacee49225a295ea752fa17791cc34f8746a5",
       "storage": "git"
     },
     {
       "path": "reports/style.css",
-      "bytes": 6526,
-      "sha256": "3c3cfb63d8791ec1f9459155e7447fdae5ed6e2a251d78e43051d4f340349476",
+      "bytes": 8271,
+      "sha256": "d7da2a81b9fcfde179196995200a09959060ab6b5f59eab283fbce3216dd078b",
+      "storage": "git"
+    },
+    {
+      "path": "reports/vendor/echarts.min.js",
+      "bytes": 1121883,
+      "sha256": "b66b25aeb4df84e33199dc21694014d336d222cbd9deb0e5a7c14bd6aa0d0fd0",
       "storage": "git"
     },
     {
       "path": "reports/verify.py",
-      "bytes": 3529,
-      "sha256": "5fcfaf8ecc124ac245f552d7d4930b856abf5e09789f2654cab17973fd96878b",
-      "storage": "git"
-    },
-    {
-      "path": "retail_amazon.py",
-      "bytes": 23,
-      "sha256": "46f15fb06527e43807dd6f5c29948c4a62cf1aaea8cf26b99066ecca99e15de4",
-      "storage": "git"
-    },
-    {
-      "path": "retail_amazon_mix.py",
-      "bytes": 27,
-      "sha256": "4591594108a441831cba22aa1b160507c80c2e93c6e676f248876b1ce5f5a70e",
-      "storage": "git"
-    },
-    {
-      "path": "retail_amazon_model.py",
-      "bytes": 29,
-      "sha256": "f486adf73cbf14d0d635639ca78922f22f04aae6434c4de274bbbd1d3291e151",
-      "storage": "git"
-    },
-    {
-      "path": "retail_amazon_repeat_diagnostics.py",
-      "bytes": 42,
-      "sha256": "a8452c4c0d86065aa61064ebc1b34366104be6c3722ce84e609f20816c01d53c",
-      "storage": "git"
-    },
-    {
-      "path": "retail_amazon_score.py",
-      "bytes": 29,
-      "sha256": "402e62148ccaf09ea53ca61682d26626b3e39912f1873f4387ff3042aa5f1837",
-      "storage": "git"
-    },
-    {
-      "path": "retail_audit.py",
-      "bytes": 22,
-      "sha256": "0ae0e1a6039b1ce6b2673d38da96f3ec6a2b5b4958cd9cfaa260cb6e987a73c0",
-      "storage": "git"
-    },
-    {
-      "path": "retail_findings.py",
-      "bytes": 25,
-      "sha256": "feabfaf993740148b508168e1f4cd3c4175bc0367e0bd4a179adc0c871d9752c",
-      "storage": "git"
-    },
-    {
-      "path": "retail_history_charts.js",
-      "bytes": 31,
-      "sha256": "b45b136998378885345f64bd2ad60648fc96b397e64ffcfc68cf029699cd5ee0",
-      "storage": "git"
-    },
-    {
-      "path": "retail_history_template.html",
-      "bytes": 35,
-      "sha256": "4021c3b54457c51c308b01a54109776646b4b3855ad8a6411fa7f54bceab230f",
-      "storage": "git"
-    },
-    {
-      "path": "retail_matching_review.py",
-      "bytes": 32,
-      "sha256": "6557d62f8de617bdf1a948b728be16da896e65291bbf6ac45ad278a20f033db9",
-      "storage": "git"
-    },
-    {
-      "path": "retail_pew.py",
-      "bytes": 20,
-      "sha256": "a8334c4696b8b2dd5aa63aeaebc640778b8cdbd3afce15814cc6868bab2501e5",
-      "storage": "git"
-    },
-    {
-      "path": "retail_pew_calibration.py",
-      "bytes": 32,
-      "sha256": "a577a185758ef14d9203013dab378375957139889463af15c87b42f769cecfbb",
-      "storage": "git"
-    },
-    {
-      "path": "retail_pew_draw.py",
-      "bytes": 25,
-      "sha256": "aacb60d0740430c839e8dcf2e8a0158acbe1d9efb1de7457d17a168cf5f3e27e",
-      "storage": "git"
-    },
-    {
-      "path": "retail_pew_score.py",
-      "bytes": 26,
-      "sha256": "1cf72ed212fc36f946b23f90c967762a08a7e12a65955317a503fbfa654bf1dc",
-      "storage": "git"
-    },
-    {
-      "path": "retail_reader_conclusions.html",
-      "bytes": 37,
-      "sha256": "82ffb0d2807152f292381afe7cbee83d5699713180f3c2afe147fdcab57abf42",
-      "storage": "git"
-    },
-    {
-      "path": "retail_reader_glossary.js",
-      "bytes": 32,
-      "sha256": "c1ab8e4a37e5429ec3cf2778da7d1466ba946a3537066f781224ca5919ef45e3",
-      "storage": "git"
-    },
-    {
-      "path": "retail_reader_guidance.html",
-      "bytes": 34,
-      "sha256": "3dc7bbd6d01fef870e9d00072f84e7cb43e6bdd56df44028762a59561a92a971",
-      "storage": "git"
-    },
-    {
-      "path": "retail_reader_report.py",
-      "bytes": 30,
-      "sha256": "8e21c167532c824197af53f9fa1415d02c1b58ff9b3ec39a44347031f7e5b315",
-      "storage": "git"
-    },
-    {
-      "path": "retail_reader_template.html",
-      "bytes": 34,
-      "sha256": "82a2d91108b5d3f2147a2a2e7a45c320c33876391b96714e26a81e34bcb79c39",
-      "storage": "git"
-    },
-    {
-      "path": "retail_reader_template.html.tmpl",
-      "bytes": 39,
-      "sha256": "db702f120904c12628617e8c5086ba43b8ddab08155eadb0b9244205c002ee4c",
-      "storage": "git"
-    },
-    {
-      "path": "retail_report.py",
-      "bytes": 23,
-      "sha256": "bc8109c246604436b5fbad9696ca94f49ea9545be04b94afff820f7295a61ae3",
-      "storage": "git"
-    },
-    {
-      "path": "retail_shoes_input_parity.py",
-      "bytes": 35,
-      "sha256": "868fadcceea00449c55471f5d90657a697a7ee63dfcdae18f4c6fd150b40b136",
-      "storage": "git"
-    },
-    {
-      "path": "retail_shoes_model.py",
-      "bytes": 28,
-      "sha256": "b35a9bbd083feab474207e4c2c261f3bc667e496ce84a99927e9a22023105f5c",
-      "storage": "git"
-    },
-    {
-      "path": "retail_shoes_prepare.py",
-      "bytes": 30,
-      "sha256": "80104ec1803569b8d0eaeeebf6f4dd912fd4849f8d1ca5a5d374f469c215b197",
-      "storage": "git"
-    },
-    {
-      "path": "retail_shoes_score.py",
-      "bytes": 28,
-      "sha256": "adaf374ae90a74f1a9153dce3be40552926140aef719875cce6e12cfc19dc34e",
-      "storage": "git"
-    },
-    {
-      "path": "retail_story_charts.js",
-      "bytes": 29,
-      "sha256": "d5051b5cd5763c7d09542b1f6f2bcd0e86c1a09f8f4c20373afe69e544496b05",
-      "storage": "git"
-    },
-    {
-      "path": "retail_story_report.py",
-      "bytes": 29,
-      "sha256": "626b324a653e83d3259da0e0eeb7f464a36b01de87c30cdede2aaa5911992cd9",
-      "storage": "git"
-    },
-    {
-      "path": "retail_story_template.html.tmpl",
-      "bytes": 38,
-      "sha256": "f6b28c5bc434822dd7551decb48aa0c08580ec89d88d256c3911e42f32dbfe94",
-      "storage": "git"
-    },
-    {
-      "path": "revalidation.py",
-      "bytes": 22,
-      "sha256": "8e24db0f2fc27d99b3fc5985a22d3f335a857ca4a925a3de82f7352e247bbf16",
-      "storage": "git"
-    },
-    {
-      "path": "revalidation_archive.py",
-      "bytes": 30,
-      "sha256": "150fdefa50ccf914e76d78ec4c6906095657b2ff4eeb2c7b6bbad091ea20af2f",
-      "storage": "git"
-    },
-    {
-      "path": "revalidation_charts.js",
-      "bytes": 29,
-      "sha256": "9a02b7c32ab28182e36a1fbdc6b402bc54ae8ad001051a619395ef92fd6ca029",
-      "storage": "git"
-    },
-    {
-      "path": "revalidation_report.py",
-      "bytes": 29,
-      "sha256": "9de34f42600c2a9ac99db82c6c60fe804466cfb6fb93bd7090c50416f88888f1",
-      "storage": "git"
-    },
-    {
-      "path": "revalidation_score.py",
-      "bytes": 28,
-      "sha256": "9e75f0e834e4dea862dae967d2b4fd5693a611bf0bee5f6b46ec9ac6fb037fe1",
-      "storage": "git"
-    },
-    {
-      "path": "shopping.py",
-      "bytes": 18,
-      "sha256": "e4f0ee882ec144f09d44ff3933c6dd92e76fcd604dad55230df9316dfab483d6",
-      "storage": "git"
-    },
-    {
-      "path": "shopping_report.py",
-      "bytes": 25,
-      "sha256": "c376e381b49bc1dd1eacd29fbc57309ca6d3772d0ba4e16fd9805e8361ea2788",
-      "storage": "git"
-    },
-    {
-      "path": "shopping_score.py",
-      "bytes": 24,
-      "sha256": "58e39f6d517bd37fac54855596bc2e0e00a2c12f2586cf0959e094071b448a94",
+      "bytes": 13787,
+      "sha256": "aa85e599961a890d26e3bb7fd1ad892389f10f4dbd6542b89b1694ba0ae2e8d6",
       "storage": "git"
     },
     {
@@ -3036,8 +3468,8 @@
     },
     {
       "path": "study/05_优化记录/优化文档.md",
-      "bytes": 29127,
-      "sha256": "02c567c5ceaf14d51f1093398a6b229544dd267e478381a87b94667c0c0893a5",
+      "bytes": 31873,
+      "sha256": "8098d38e0a79b8d517db2b2de5faf79709fe6e9a66cc32f74eed4b786eec11e5",
       "storage": "git"
     },
     {
@@ -4140,12 +4572,6 @@
       "path": "study/调研与决策.md",
       "bytes": 5800,
       "sha256": "84ebde45eca13883d2cebddd4b2a4848027d0d18202719ad9184037ea5ede80f",
-      "storage": "git"
-    },
-    {
-      "path": "test_revalidation.py",
-      "bytes": 27,
-      "sha256": "d4b9ad04ec4ebe0d0f1e128fec843e3e48ebdf7f69f7ee3573ec30358929e22a",
       "storage": "git"
     }
   ]

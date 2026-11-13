@@ -661,6 +661,8 @@ def main():
     }
     DATA = json.dumps(payload, ensure_ascii=False).replace('</', '<\\/')
     page = build()
+    from reader_summary import render as render_reader_summary
+    page=page.replace("<main>", "<main>"+render_reader_summary(), 1)
     (HERE / 'story.html').write_text(notes.curly_quotes(page))
     print(f'Built narrative report: {HERE / "story.html"} ({len(page):,} bytes)')
 
