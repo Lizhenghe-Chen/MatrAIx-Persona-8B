@@ -24,7 +24,7 @@ def facts_text(values, approved_fields):
         lines.append(f'- {label}: {val if val is not None else "Unknown"}')
     return '\n'.join(lines)
 
-def build(payload, arm, model, basic_fields, extra_fields, max_tokens):
+def build(payload, arm, model, basic_fields, extra_fields, max_tokens, preamble=None):
     """payload already stripped by adapter; donor/answer/weight/ID stay outside."""
     if arm not in ARMS or model not in MODELS:
         raise ValueError('Unapproved arm or model')
@@ -55,7 +55,8 @@ def build(payload, arm, model, basic_fields, extra_fields, max_tokens):
         lines += [f'| `{k}` | {v} |' for k,v in q['options'].items()]
         lines += ['']
     schema='Return JSON with only answers: a list of objects with questionId and probabilities. probabilities is an object keyed by every exact choice id. All probabilities must be finite numbers from 0 to 1 and sum to 1 for each question. No rationale, confidence, or explanations.'
-    user=f'## Task instruction\n\n{task}\n\n{PREDICTION}\n\n## Context\n\n{payload["context"]}\n\n## Questionnaire\n\n'+ '\n'.join(lines).strip() + '\n\n## Answer envelope\n\n'+schema
+    instruction = PREDICTION if preamble is None else preamble
+    user=f'## Task instruction\n\n{task}\n\n{instruction}\n\n## Context\n\n{payload["context"]}\n\n## Questionnaire\n\n'+ '\n'.join(lines).strip() + '\n\n## Answer envelope\n\n'+schema
     body={'model':MODELS[model],'temperature':.7,'top_p':1,'max_tokens':max_tokens,'response_format':{'type':'json_object'},'messages':[{'role':'system','content':system},{'role':'user','content':user}]}
     if model=='qwen':body['chat_template_kwargs']={'enable_thinking':False}
     else:body['thinking']={'type':'disabled'}

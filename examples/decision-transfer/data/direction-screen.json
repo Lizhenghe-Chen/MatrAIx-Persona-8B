@@ -1,0 +1,42 @@
+{
+ "date": "2026-11-13",
+ "status": "direction_screen_not_a_result",
+ "model": "Qwen/Qwen3.8-27B (free internal endpoint)",
+ "note": "Exploratory screen on the free endpoint to locate headroom. Never a formal effect estimate; Pro remains the only scoring model for the protocol.",
+ "groups": {
+  "baseline/other": {
+   "questions": 288,
+   "brier": 0.2436,
+   "base_rate_reference": 0.1773,
+   "logit_reference": 0.1799,
+   "mean_p_green": 0.803,
+   "accuracy": 0.851
+  },
+  "baseline/own": {
+   "questions": 288,
+   "brier": 0.2034,
+   "base_rate_reference": 0.1773,
+   "logit_reference": 0.1799,
+   "mean_p_green": 0.815,
+   "accuracy": 0.892
+  },
+  "prior/own": {
+   "questions": 120,
+   "brier": 0.231,
+   "base_rate_reference": 0.1818,
+   "logit_reference": 0.1778,
+   "mean_p_green": 0.825,
+   "accuracy": 0.867
+  }
+ },
+ "references": {
+  "base_rate_all": 0.1786,
+  "logit_all": 0.1793
+ },
+ "pro_same_people": {
+  "own": 0.3108,
+  "other": 0.2719,
+  "note": "DeepSeek Pro, 48 people, same frozen inputs"
+ },
+ "actual_green_rate": 0.902
+}
