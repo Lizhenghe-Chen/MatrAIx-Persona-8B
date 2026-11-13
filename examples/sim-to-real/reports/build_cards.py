@@ -19,6 +19,8 @@ import html
 import json
 from pathlib import Path
 
+from notes import design, floor_table
+
 HERE = Path(__file__).resolve().parent
 CROSS = HERE.parent / 'decision_lab/reports/cross-study-v1'
 
@@ -39,25 +41,6 @@ ROLE = {
     'origin': '铺开 · 商品选择', 'packaging': '铺开 · 包装与拒买', 'pew111': '铺开 · 购物行为',
     'german': '铺开 · 包装选择', 'tshirt': '铺开 · 商品选择', 'radiant': '铺开 · 食品选择',
     'openecommerce': '外部验证 · 行为与态度',
-}
-# Why these six have one respondent per question: they are not ordinary surveys.
-_CONJOINT_MOTIVE = ('同一组搭配问 96 个人，只能学到"这一组谁赢"；'
-                    '把搭配随机成 {n} 组，才能反推出"每个属性各值多少"。')
-DESIGN = {
-    'dryer': {'kind': '联合分析', 'detail': '每道题是随机拼出来的两台烘干机，受访者各看各的几张',
-              'motive': _CONJOINT_MOTIVE},
-    'swiss': {'kind': '联合分析', 'detail': '每道题是随机拼出来的两件家电',
-              'motive': _CONJOINT_MOTIVE},
-    'drone': {'kind': '联合分析', 'detail': '每道题是随机拼出来的两种外卖配送方案',
-              'motive': _CONJOINT_MOTIVE},
-    'origin': {'kind': '联合分析', 'detail': '每道题是随机拼出来的两件商品',
-               'motive': _CONJOINT_MOTIVE},
-    'tshirt': {'kind': '联合分析', 'detail': '每道题是随机拼出来的三件 T 恤',
-               'motive': _CONJOINT_MOTIVE},
-    'shoes': {'kind': '打分任务', 'detail': '每道题是一双独一无二的鞋，全库 3,822 双',
-              'motive': ('同一款鞋只问一个人，只能学到"这一款打几分"；'
-                         '把款式随机成 {n} 款、每款问不同的人，'
-                         '才能反推出"品牌、颜色、价格各值多少"。')},
 }
 SERIES = (('truth', '真人', '#14372f'), ('original', '原版 MatrAIx', '#a15e38'),
           ('optimized', '优化后', '#5358a5'))
@@ -230,35 +213,6 @@ def option_key(card):
     return f'<ol class="opt-key">{items}</ol>'
 
 
-def sampling_floor():
-    """How much error a *perfect* answer would still measure at n respondents.
-
-    Reproducible: fixed seed, fixed question, 4,000 draws per row. This is the reason a
-    question needs about 20 respondents before its distribution can be read at all.
-    """
-    import random
-    rng = random.Random(7)
-    truth = (0.5, 0.3, 0.2)
-    rows = []
-    for n in (1, 4, 20, 96):
-        totals = []
-        for _ in range(4000):
-            counts = [0, 0, 0]
-            for _ in range(n):
-                counts[rng.choices((0, 1, 2), truth)[0]] += 1
-            totals.append(sum(abs(counts[i] / n - truth[i]) for i in range(3)) / 2)
-        rows.append((n, 100 * sum(totals) / len(totals)))
-    return rows
-
-
-def floor_table():
-    rows = ''.join(f'<tr><td>{n} 人</td><td>{value:.0f}pp</td></tr>'
-                   for n, value in sampling_floor())
-    return ('<div class="table-wrap"><table style="min-width:280px">'
-            '<caption>一道题的作答人数 → 即使 AI 完全答对，也会量出这么大的误差</caption>'
-            '<thead><tr><th>作答人数</th><th>量到的误差</th></tr></thead>'
-            f'<tbody>{rows}</tbody></table></div>')
-
 
 def study_section(study, entry, index):
     label = LABELS.get(study, study)
@@ -273,14 +227,12 @@ def study_section(study, entry, index):
     body = []
     if not estimable:
         counts = [q['people'] for q in entry['questions']] or [0]
-        design = DESIGN.get(study, {'kind': '逐题作答', 'detail': '每道题只有少数人作答',
-                                    'motive': '同一道题问 96 个人只会学到这一题的答案，'
-                                              '随机成 {n} 道才能反推属性。'})
+        shape = design(study)
         body.append('<p class="note-warn"><strong>这套不是普通问卷，是'
-                    + html.escape(design['kind']) + '。</strong>'
-                    + html.escape(design['detail']) + '。'
+                    + html.escape(shape['kind']) + '。</strong>'
+                    + html.escape(shape['detail']) + '。'
                     '所以「每个人答的题不一样」是<strong>故意的</strong>，不是抽样失败：'
-                    + html.escape(design['motive'].format(n=cards))
+                    + html.escape(shape['motive'].format(n=cards))
                     + (f'代价就是每题只有 1 人作答。' if max(counts) == 1 else
                        f'代价就是每题只有 1–{max(counts)} 人作答（平均 {sum(counts) / len(counts):.1f} 人）。')
                     + '一个人选了什么就是 100%，逐题分布无从谈起。</p>'

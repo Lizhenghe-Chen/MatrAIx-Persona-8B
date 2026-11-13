@@ -34,6 +34,8 @@ const delay=ms=>new Promise(r=>setTimeout(r,ms));
   assert.deepEqual(broken,[]);
   const numbers=await run(`(()=>{const t=document.body.innerText;return ['+5.6pp','+7.1%','+23.3%','14 / 14'].filter(x=>t.includes(x))})()`);
   assert.equal(numbers.length,4,'headline numbers present: '+JSON.stringify(numbers));
+  const conjoint=await run(`(()=>{const t=document.body.innerText;return {stated:t.includes('为什么有的问卷'),why:t.includes('随机化就是实验本身'),kinds:t.includes('联合分析')&&t.includes('打分任务')}})()`);
+  assert.ok(conjoint.stated&&conjoint.why&&conjoint.kinds,'conjoint explanation in narrative: '+JSON.stringify(conjoint));
   await send('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true});
   await delay(600);
   assert.ok(await run('document.documentElement.scrollWidth<=window.innerWidth+1'));

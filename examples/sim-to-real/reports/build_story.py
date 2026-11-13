@@ -13,6 +13,8 @@ import json
 import statistics
 from pathlib import Path
 
+import notes
+
 HERE = Path(__file__).resolve().parent
 CROSS = HERE.parent / 'decision_lab/reports/cross-study-v1'
 
@@ -139,6 +141,7 @@ def build():
     ext_gain = (ext_blend.get('blend', {}).get('20', {}) or {}).get('model_gain_pp')
     ext_shuffle = (ext_blend.get('shuffle_ablation', {}).get('20', {}) or {})
 
+    floor = notes.sampling_floor()
     noise_values = [b.get('cohort_vs_truth_floor_pp') for b in d['noise'].values()
                     if b.get('cohort_vs_truth_floor_pp')]
     variance = d['variance']
@@ -226,6 +229,19 @@ def build():
 两半的比例仍然会差 <strong>{pp(min(noise_values))}–{pp(max(noise_values))} 个百分点</strong>。
 这意味着<strong>误差在 {pp(min(noise_values))}–{pp(max(noise_values))} 个百分点以内，根本无法区分好坏</strong>。
 后面所有解读都要放在这把尺子上看。</p>
+
+<h3>为什么有的问卷"没有逐题数字"</h3>
+<p>14 套里有 6 套不是普通问卷，而是<strong>联合分析</strong>（5 套）和<strong>打分任务</strong>（1 套）。
+这类研究的做法是把产品属性随机拼成组合，每人只答其中几张——同一组搭配问 96 个人，
+只能学到"这一组谁赢"；把它随机成几百组，才能反推出"价格贵 100 元扣多少、容量大 1 公斤值多少"。
+<strong>随机化就是实验本身</strong>，不是抽样失败。</p>
+<p>代价是每道题只有 1–8 人作答，而一个人的答案就是 100%，量不出分布。
+所以这六套改用<strong>属性模型</strong>评分（只用题目里显示的属性、不看真人答案）——
+也就是前面那个"同信息查表对手"，它恰好是这几套里最强的对手。</p>
+<div class="callout">顺便解释"为什么至少要 20 人"：一道真分布 50/30/20 的题，
+即使 AI <strong>完全答对</strong>，只问 {floor[0][0]} 个人量到的误差平均也有 {floor[0][1]:.0f} 个百分点，
+问 {floor[2][0]} 个人是 {floor[2][1]:.0f} 个，问 {floor[3][0]} 个人才降到 {floor[3][1]:.0f} 个。
+人太少时量到的是抽样噪声，不是模型误差。</div>
 </section>'''
 
     # ---------- act 1 ----------

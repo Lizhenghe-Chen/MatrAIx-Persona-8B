@@ -7,6 +7,8 @@ import html
 import json
 from pathlib import Path
 
+import notes
+
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 PRIVATE = Path.home() / ".local/share/matraix-decision-lab/analysis-v1"
@@ -484,11 +486,29 @@ def all_studies_section():
             '<p class="small">“AI vs 等分”“参照 vs 等分”都以“每个选项等可能”为基准，因此可以横向比较；'
             '“AI vs 参照”是每套各自最强的同信息参照，强弱不同，只逐套看、不跨套平均。'
             '“可估卡”指同一题卡至少 20 名被测者——不足则群体分布误差不可估计。</p>'
+            + conjoint_note() +
             '<p class="small">簇一列是独立性口径：Pew 四套算一个簇，所以 14 套不是 14 次独立复现。'
             '可用脚本 <code>decision_lab.cross_study.cluster_summary</code> 复算。</p>'
             f'<script id="all-data" type="application/json">'
             f'{json.dumps({"rows": rows, "summary": stats}, ensure_ascii=False).replace("</", "<\\/")}'
             '</script></section>')
+
+
+def conjoint_note():
+    """Why six studies have no per-question distribution (shared wording with the card page)."""
+    path = CROSS / 'per-card.json'
+    if not path.exists():
+        return ''
+    payload = json.loads(path.read_text())
+    labels = {'anes': '美国公共支出', 'pew13': '美国购物看法', 'pew168': '美国诈骗风险',
+              'shed': '美国消费调整', 'dryer': '四国烘干机', 'swiss': '瑞士家电规格',
+              'drone': '美国无人机配送', 'shoes': '美国运动鞋打分',
+              'origin': '美国商品产地', 'packaging': '美国包装与拒买',
+              'pew111': '美国网购与达人', 'german': '德国番茄包装',
+              'tshirt': '美国 T 恤', 'radiant': '西班牙悬挂番茄',
+              'openecommerce': '美国线上购物调查（外部）'}
+    rows = notes.zero_card_studies(payload, labels)
+    return notes.conjoint_block(rows, style='note-warn')
 
 
 def direction_section():
