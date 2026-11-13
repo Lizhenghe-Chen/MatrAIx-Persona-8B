@@ -1,0 +1,178 @@
+{
+ "status": "frozen_pending_budget_confirmation",
+ "protocol_version": "v2",
+ "prediction_instruction": "You are not answering for yourself. Predict how the respondent described in this request would answer. Use only the supplied information; do not invent personal experience, budgets or past behaviour.",
+ "models": {
+  "pro": "deepseek-v4-pro",
+  "qwen": "Qwen/Qwen3.8-27B"
+ },
+ "arms": [
+  "matraix",
+  "basic",
+  "own",
+  "other"
+ ],
+ "max_tokens": 768,
+ "temperature": 0.7,
+ "top_p": 1,
+ "caps": {
+  "qwen_calls": 96,
+  "pro_calls": 476,
+  "pro_usd": 10.0
+ },
+ "design": {
+  "seed": 20261109,
+  "domain": "electronics",
+  "persons_with_choices": 6832,
+  "eligible_stage2": 1554,
+  "evaluation": 48,
+  "technical": 4,
+  "reserved": {
+   "clothes": 48,
+   "food": 48
+  },
+  "donors_assigned": 52,
+  "donors_missing": 0,
+  "strata": {
+   "18-29 | Apprenticeship/Vocational school": 10,
+   "18-29 | High school (Matura)": 38,
+   "18-29 | No/Compulsory school": 3,
+   "18-29 | University/ETH/UAS": 37,
+   "30-64 | Apprenticeship/Vocational school": 291,
+   "30-64 | High school (Matura)": 262,
+   "30-64 | No/Compulsory school": 39,
+   "30-64 | University/ETH/UAS": 419,
+   "65+ | Apprenticeship/Vocational school": 178,
+   "65+ | High school (Matura)": 114,
+   "65+ | No/Compulsory school": 24,
+   "65+ | University/ETH/UAS": 139
+  },
+  "evaluation_by_stratum": {
+   "18-29 | High school (Matura)": 1,
+   "18-29 | University/ETH/UAS": 1,
+   "30-64 | Apprenticeship/Vocational school": 9,
+   "30-64 | High school (Matura)": 8,
+   "30-64 | No/Compulsory school": 1,
+   "30-64 | University/ETH/UAS": 13,
+   "65+ | Apprenticeship/Vocational school": 6,
+   "65+ | High school (Matura)": 4,
+   "65+ | No/Compulsory school": 1,
+   "65+ | University/ETH/UAS": 4
+  },
+  "technical_by_stratum": {
+   "30-64 | Apprenticeship/Vocational school": 1,
+   "30-64 | High school (Matura)": 1,
+   "30-64 | University/ETH/UAS": 1,
+   "65+ | Apprenticeship/Vocational school": 1
+  },
+  "linkage_checks": {
+   "attitude_tpb": {
+    "compared": 6552,
+    "exact": 6552
+   },
+   "norm_tpb": {
+    "compared": 6490,
+    "exact": 6490
+   },
+   "change_di": {
+    "compared": 6534,
+    "exact": 6534
+   },
+   "goal_di": {
+    "compared": 6535,
+    "exact": 6535
+   },
+   "relations_di": {
+    "compared": 6487,
+    "exact": 6487
+   },
+   "know_di": {
+    "compared": 6528,
+    "exact": 6528
+   },
+   "token_di": {
+    "compared": 6533,
+    "exact": 6533
+   },
+   "intention_tpb": {
+    "compared": 6562,
+    "exact": 6562
+   }
+  },
+  "notes": [
+   "Evaluation and technical participants are disjoint; reserved categories are frozen and never reused.",
+   "A donor shares the study, category domain and coarse age/education cell, prefers the same gender, is never the recipient, and is used once.",
+   "Eligibility requires two products with three paired rounds each, one choice per round, all 29 fact items answered and all four background labels present."
+  ]
+ },
+ "request_estimate": {
+  "requests": 216,
+  "prompt_tokens_estimate": 179867,
+  "completion_tokens_estimate": 34560,
+  "usd_peak": 0.3743,
+  "usd_off_peak": 0.1871,
+  "basis": "characters/4 plus a fixed per-request allowance; reconciled against the official usage report"
+ },
+ "baseline_field_whitelist": {
+  "age_years": "Age in years",
+  "education": "Highest completed education",
+  "gender": "Gender",
+  "household_income": "Household income band",
+  "country": "Country of residence"
+ },
+ "extra_field_whitelist": {
+  "w14_q29x1": "For me, buying environmentally friendly PRODUCTS is a good idea (1 = does not apply at all, 7 = fully applies)",
+  "w14_q29x2": "For me, purchasing environmentally friendly PRODUCTS is pleasant (1 = does not apply at all, 7 = fully applies)",
+  "w14_q29x3": "For me, purchasing environmentally friendly PRODUCTS is a wise choice (1 = does not apply at all, 7 = fully applies)",
+  "w14_q29x10": "Most people who are important to me think I should buy environmentally friendly PRODUCTS (1 = does not apply at all, 7 = fully applies)",
+  "w14_q29x11": "Most people whose opinions I value prefer that I buy environmentally friendly PRODUCTS (1 = does not apply at all, 7 = fully applies)",
+  "w14_q29x12": "It is important to me to do what people who are important to me and whose opinions I value think I should do (1 = does not apply at all, 7 = fully applies)",
+  "w14_q29x5": "I am confident that, if I want, I can buy environmentally friendly PRODUCTS (1 = does not apply at all, 7 = fully applies)",
+  "w14_q30x1": "There's not much point in me making such changes because I feel confident that technological innovators will solve environmental problems (1 = strongly disagree, 7 = strongly agree)",
+  "w14_q30x2": "Humans are powerless when it comes to saving the Earth, so there is no point for me to change (1 = strongly disagree, 7 = strongly agree)",
+  "w14_q30x3": "Environmental problems are far in the future, so there is no need to act (1 = strongly disagree, 7 = strongly agree)",
+  "w14_q30x4": "Such changes are not really necessary for me because environmental conditions are likely to remain ok in my area (1 = strongly disagree, 7 = strongly agree)",
+  "w14_q30x5": "There is no pressing need to change because nature has great resiliency and our actions are trivial (1 = strongly disagree, 7 = strongly agree)",
+  "w14_q30x6": "Making such changes would interfere too much with my other goals in life (1 = strongly disagree, 7 = strongly agree)",
+  "w14_q30x7": "I'm concerned that such changes will take up too much of my time (1 = strongly disagree, 7 = strongly agree)",
+  "w14_q30x8": "I can't change because I'm invested in my current lifestyle (1 = strongly disagree, 7 = strongly agree)",
+  "w14_q30x9": "Environmental concerns are important to me but it's too hard to change my habits (1 = strongly disagree, 7 = strongly agree)",
+  "w14_q30x10": "I haven't changed because I'm afraid this wouldn't work (1 = strongly disagree, 7 = strongly agree)",
+  "w14_q30x11": "Making such changes would be criticized by those around me (1 = strongly disagree, 7 = strongly agree)",
+  "w14_q30x12": "I would be letting certain people down if I made such changes (1 = strongly disagree, 7 = strongly agree)",
+  "w14_q30x13": "I'm worried that my friends would disapprove if I made such changes (1 = strongly disagree, 7 = strongly agree)",
+  "w14_q30x14": "If I made the necessary changes, I probably would be embarrassed when others noticed what I was doing (1 = strongly disagree, 7 = strongly agree)",
+  "w14_q30x15": "There's so much information out there that I'm confused about how to make such changes (1 = strongly disagree, 7 = strongly agree)",
+  "w14_q30x16": "I don't understand enough of the details about how to make such changes (1 = strongly disagree, 7 = strongly agree)",
+  "w14_q30x17": "I'd like to change, but I'm not sure where to begin (1 = strongly disagree, 7 = strongly agree)",
+  "w14_q30x18": "The pro-environmental efforts that I currently engage in make further changes unnecessary (1 = strongly disagree, 7 = strongly agree)",
+  "w14_q30x19": "I have already made sacrifices to solve environmental problems, so there is no need for me to do more (1 = strongly disagree, 7 = strongly agree)",
+  "w14_q30x20": "I previously have made important efforts in this, so there is no need for me to make further changes (1 = strongly disagree, 7 = strongly agree)",
+  "w14_q30x21": "My environmental actions already make enough of a difference (1 = strongly disagree, 7 = strongly agree)",
+  "w14_q30x22": "It's not fair for me to change when really it's industry that's causing the majority of environmental problems (1 = strongly disagree, 7 = strongly agree)"
+ },
+ "excluded_inputs": [
+  "choice",
+  "rating",
+  "rating_num",
+  "green_grmscore_rescaled",
+  "green_idealscore_rescaled",
+  "green_coefscore_rescaled",
+  "intention_tpb",
+  "w14_q29x7",
+  "w14_q29x8",
+  "w14_q29x9"
+ ],
+ "native_persona": "8d0900440b69c459e1bbf0fcaa4aae802e0f17a4",
+ "notes": [
+  "One request holds a participant's six paired choices; all arms share the identical questionnaire and context.",
+  "Prices are the published CHF levels from Table 1; impact is the four-word level label because the coloured A-E display was not recoverable from the data.",
+  "No participant id, weight or recorded choice is present in any request.",
+  "Protocol v2 adds one prediction instruction identical in all four arms; nothing else differs."
+ ],
+ "private_hashes": {
+  "participants_sha256": "71eec22bb26ebcf70735f3c281cda8c7f8df3f7e6222eca4aa02fbe2b4069402",
+  "answers_sha256": "37425a261e0a34ba1f30b5f1255dda344ef5676482c9820b3aaf328c19c25d77",
+  "requests_sha256": "979799d80492ad1f684360e170b4ea722c33775832898bf1c6ac50b412aaf605"
+ }
+}

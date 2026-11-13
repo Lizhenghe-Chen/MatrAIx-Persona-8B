@@ -1,0 +1,24 @@
+{
+  "date": "2026-11-13",
+  "purpose": "Frozen copy of the native persona renderer used by the four-arm decision-transfer experiment. Rendering behaviour must not drift with the product code.",
+  "source_commit": "8d0900440b69c459e1bbf0fcaa4aae802e0f17a4",
+  "files": {
+    "persona_dimension_catalog.py": {
+      "origin": "src/matraix/persona_dimension_catalog.py",
+      "sha256": "b1f777b4b9fc43992ca831855d68645850453fe84688adbc30eb84f8bcd58d86"
+    },
+    "persona_system.md.j2": {
+      "origin": "environment/agents/matraix/agents/persona/templates/persona_system.md.j2",
+      "sha256": "96d0fe35d8e58b53940c8559bc730601f52778bae281379834832da865dd2321"
+    },
+    "persona_macros.md.j2": {
+      "origin": "environment/agents/matraix/agents/persona/templates/persona_macros.md.j2",
+      "sha256": "076a8bf54ce5eb62b2cb8bdf0f382b7320d6022b3f9d7ea7303eb02316cd5175"
+    },
+    "dimensions.json": {
+      "origin": "persona/schema/dimensions.json",
+      "sha256": "cbf4db9d887dec057431aff409e1d28d83f345e7a31e29a4275a607212ecfca5"
+    }
+  },
+  "note": "No product behaviour is reimplemented here: the copied module and templates render exactly as the running product does. Only the seven audited categorical demographics are ever supplied."
+}

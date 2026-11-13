@@ -1,0 +1,14 @@
+{
+ "questions": 288,
+ "mean_abs_probability_gap_own_vs_other": 0.1656,
+ "share_identical_side_of_0.5": 0.8472,
+ "corr_own_facts_vs_probability": -0.0766,
+ "corr_donor_facts_vs_probability": -0.0311,
+ "mean_own_block": 2.866,
+ "mean_donor_block": 2.871,
+ "own_confident_wrong": 0.0486,
+ "other_confident_wrong": 0.0278,
+ "accuracy_own": 0.816,
+ "accuracy_other": 0.8368,
+ "note": "Diagnostic only: shows whether the model moves with the supplied block. It cannot identify why a block helps; the pre-registered comparison stays authoritative."
+}

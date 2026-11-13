@@ -1,0 +1,68 @@
+{
+ "complete_people": 48,
+ "arms": {
+  "matraix": {
+   "mean_brier": 0.35092,
+   "n": 48
+  },
+  "basic": {
+   "mean_brier": 0.34085,
+   "n": 48
+  },
+  "own": {
+   "mean_brier": 0.31085,
+   "n": 48
+  },
+  "other": {
+   "mean_brier": 0.27195,
+   "n": 48
+  }
+ },
+ "comparisons": [
+  {
+   "arm": "own",
+   "reference": "basic",
+   "absolute": 0.03,
+   "relative": 0.088,
+   "low": -0.01724,
+   "high": 0.07505,
+   "n_people": 48
+  },
+  {
+   "arm": "own",
+   "reference": "other",
+   "absolute": -0.0389,
+   "relative": -0.143,
+   "low": -0.07612,
+   "high": -0.00176,
+   "n_people": 48
+  },
+  {
+   "arm": "other",
+   "reference": "basic",
+   "absolute": 0.0689,
+   "relative": 0.2021,
+   "low": 0.03139,
+   "high": 0.10687,
+   "n_people": 48
+  },
+  {
+   "arm": "matraix",
+   "reference": "basic",
+   "absolute": -0.01007,
+   "relative": -0.0296,
+   "low": -0.05716,
+   "high": 0.03695,
+   "n_people": 48
+  },
+  {
+   "arm": "matraix",
+   "reference": "own",
+   "absolute": -0.04007,
+   "relative": -0.1289,
+   "low": -0.08329,
+   "high": 0.00439,
+   "n_people": 48
+  }
+ ]
+}

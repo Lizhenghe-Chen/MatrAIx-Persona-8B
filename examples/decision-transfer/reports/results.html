@@ -1,0 +1,52 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>结果｜真实资料能不能帮 AI 预测这个人</title><style>
+*{box-sizing:border-box}body{margin:0;background:#f5f4ee;color:#213e35;font:17px/1.8 system-ui,-apple-system,"PingFang SC",sans-serif}
+main{max-width:1000px;margin:auto;padding:40px 24px 70px}h1{font-size:34px;line-height:1.35}h2{font-size:24px;margin-top:34px}
+.eyebrow,small{color:#5b6c65}.notice{padding:18px 22px;background:#e4eee8;border-left:5px solid #257461;border-radius:5px;margin:22px 0}
+.warn{background:#f7ead8;border-color:#a97432}.card{background:white;border:1px solid #d7ded7;border-radius:12px;padding:20px;margin:16px 0}
+.bar{display:flex;align-items:center;gap:12px;margin:10px 0}.lab{flex:0 0 190px;font-size:15px}
+.track{flex:1;background:#e8ebe6;border-radius:6px;height:20px;overflow:hidden}.fill{display:block;height:100%;background:#8fa8a0}
+.fill.best{background:#257461}.val{flex:0 0 78px;text-align:right;font-variant-numeric:tabular-nums}
+table{width:100%;border-collapse:collapse;background:white;font-size:15px}th,td{padding:9px 10px;border-bottom:1px solid #e3e6e0;text-align:left;vertical-align:top}
+th{background:#eef1ec}code{font-size:13px}a{color:#176c65}footer{margin-top:34px;font-size:14px;color:#5b6c65}
+</style></head><body><main>
+<div class="eyebrow">2026-11-13 · 瑞士六品类 · 电子产品组 · 正式成绩（DeepSeek Pro）</div>
+<h1>知道一个人的真实态度，能不能让 AI 更准确地预测他没答过的选择？</h1>
+<div class="notice"><strong>结论：本人资料相对基础资料方向为正但区间跨零（+8.8%，[-0.0172, +0.0751]），而相对错配资料反而显著更差（-0.0389，[-0.0761, -0.0018]）。按方案不宣称真实资料有额外价值，也不进入品类外推。</strong><br>
+四臂同一批 48 名受访者、同一套 6 道二选一；分数是逐人 Brier 误差，越低越准。</div>
+
+<h2>四组误差</h2><div class="card"><div class="bar"><span class="lab">只有基础资料</span><span class="track"><span class="fill " style="width:97.1%"></span></span><span class="val">0.3408</span></div>
+<div class="bar"><span class="lab">加本人的真实资料</span><span class="track"><span class="fill best" style="width:88.6%"></span></span><span class="val">0.3109</span></div>
+<div class="bar"><span class="lab">加可比他人的资料</span><span class="track"><span class="fill " style="width:77.5%"></span></span><span class="val">0.2720</span></div>
+<div class="bar"><span class="lab">当前 MatrAIx 方法</span><span class="track"><span class="fill " style="width:100.0%"></span></span><span class="val">0.3509</span></div>
+<p><small>参照：每个选项都给 0.5 时，Brier 恒为 0.5。本轮最好的一组为 0.2720。</small></p></div>
+
+<h2>配对比较（2000 次分层重抽样，同人同步）</h2>
+<table><tr><th>比较</th><th>绝对差</th><th>相对改善</th><th>95% 区间</th><th>判断</th></tr><tr><td>本人资料 − 基础资料</td><td>+0.0300</td><td>+8.80%</td><td>[-0.0172, +0.0751]</td><td>跨零</td></tr>
+<tr><td>本人资料 − 错配资料</td><td>-0.0389</td><td>-14.30%</td><td>[-0.0761, -0.0018]</td><td>低于零</td></tr>
+<tr><td>错配资料 − 基础资料</td><td>+0.0689</td><td>+20.21%</td><td>[+0.0314, +0.1069]</td><td>高于零</td></tr>
+<tr><td>MatrAIx − 基础资料</td><td>-0.0101</td><td>-2.96%</td><td>[-0.0572, +0.0369]</td><td>跨零</td></tr>
+<tr><td>MatrAIx − 本人资料</td><td>-0.0401</td><td>-12.89%</td><td>[-0.0833, +0.0044]</td><td>跨零</td></tr></table>
+<p><small>绝对差为「参照臂误差 − 比较臂误差」，正数表示比较臂更准。区间以本次冻结的供体和模型输出为条件，不涵盖所有可能错配或模型随机性。</small></p>
+
+<h2>模型看到什么、实际选了什么（示例，已去标识）</h2>
+<table><tr><th>题目</th><th>本人实际选择</th><th>模型给「Offer 1」的概率</th><th>与0.5判断</th></tr><tr><td><code>laptop-r1</code></td><td>laptop, price 1540.00 CHF, environmental impact low</td><td>0.65</td><td>一致</td></tr><tr><td><code>laptop-r2</code></td><td>laptop, price 1540.00 CHF, environmental impact low</td><td>0.55</td><td>一致</td></tr><tr><td><code>laptop-r3</code></td><td>laptop, price 1470.00 CHF, environmental impact very low</td><td>0.45</td><td>相反</td></tr><tr><td><code>smartphone-r4</code></td><td>smartphone, price 450.00 CHF, environmental impact very low</td><td>0.45</td><td>一致</td></tr><tr><td><code>smartphone-r5</code></td><td>smartphone, price 500.00 CHF, environmental impact high</td><td>0.55</td><td>一致</td></tr><tr><td><code>smartphone-r6</code></td><td>smartphone, price 450.00 CHF, environmental impact low</td><td>0.50</td><td>持平</td></tr></table>
+
+<h2>为什么会这样（事后诊断，不替代主指标）</h2><div class="card">
+<ul>
+<li>模型确实会随资料块变动：同一道题上，本人资料与错配资料给出的概率平均相差 0.17，但 85% 的题仍然落在 0.5 的同一侧，很少真正改判。</li>
+<li>两臂的自信程度几乎一样（|p−0.5| 约 0.24），差别在于「自信却答错」的比例：本人资料 4.9%，错配资料 2.8%。</li>
+<li>也就是说，本人的态度资料有时和他真实的选择不一致（典型的态度—行为落差），模型却更信它；而错配资料与这个人无关，反而更接近「这类人通常怎么选」的稳定先验。</li>
+<li>这条解释是事后提出的，只能说明机制可能是什么，不能反过来证明主比较。</li>
+</ul></div>
+
+<h2>这次没有证明什么</h2><div class="notice warn">
+<ul><li>只有一套研究通过准入，所以任何结果都是<strong>单一研究内的探索性筛查</strong>，不是跨研究、跨国家复现。</li>
+<li>样本框架是「选择有效＋29 项事实齐全」，无法复现作者按答题速度做的剔除。</li>
+<li>错配供体固定为这一批，区间不代表所有可能错配；错配诊断也不能证明人格的因果作用。</li></ul></div>
+
+<h2>运行与检查</h2><div class="card">
+<p>请求 216 份，估算 0.37 美元（上限 10 美元）；Qwen 技术检查 31 次，其中 15 对相同请求全部出现差异，说明不能假设输出确定。</p>
+<p>字段来源：[准入进度](../docs/准入进度.md) · [核心研究方案](../docs/核心研究方案.md) · 冻结规格：[stage2-freeze.json](../data/stage2-freeze.json)</p></div>
+<footer>成绩只来自 DeepSeek Pro；Qwen 只做流程检查，不与正式成绩混算。旧实验报告保持原样，不重新计算。</footer>
+</main></body></html>

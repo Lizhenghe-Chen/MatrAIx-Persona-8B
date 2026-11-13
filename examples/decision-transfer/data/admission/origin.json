@@ -1,0 +1,45 @@
+{
+ "study": "origin",
+ "date": "2026-11-13",
+ "status": "not_admitted",
+ "source": {
+  "path": "/Volumes/元宇宙联合创新实验室/实验数据/MatrAIx多地区选品源数据/06_历史北美电商/origin-original.tab",
+  "sha256": "64f405b8755470e98cc6f22dc9b070305c4eb97fb1d8071a346a5adac2cceee2",
+  "rows": 20463,
+  "note": "Byte-identical to the authors' final_w1w2.tab in the Dataverse archive."
+ },
+ "resolved": {
+  "age": "stored as (age - 17); the authors add 17 in Appendix.R before banding",
+  "education": "q22_w1 (1-7) is the education instrument; the educ column is a different, coarser code",
+  "income": "inc 1-11 folded into four published bands; code 5 is captured by the 30-59k branch because the authors' case_when tests that range first",
+  "gender": "1 Male, 2 Female, 3 Other, missing treated as Other by the authors",
+  "timing": "Wave 1 (April 2020) held the attitudes; wave 2 (June 2020) held the conjoint, so attitudes are strictly pre-choice."
+ },
+ "unresolved": [
+  "The six attitude items are known only as appendix prose. Without the instrument screenshot, the text cannot be tied to q11_1..q11_6: exactly one four-item combination reproduces the published scale, and its sign pattern does not match the appendix ordering.",
+  "Column-to-wording order may have been randomised at administration; guessing would mislabel facts."
+ ],
+ "scale_reconstruction": {
+  "matches": [
+   {
+    "columns": [
+     "q11_1_w1",
+     "q11_3_w1",
+     "q11_5_w1",
+     "q11_6_w1"
+    ],
+    "signs": [
+     1,
+     -1,
+     -1,
+     -1
+    ],
+    "formula": "(mean-1)/4"
+   }
+  ],
+  "people_compared": 1521,
+  "max_abs_error": 0.0
+ },
+ "consequence": "No extra measured facts can be produced without inventing wording, so this study stays out of the stage-2 screen. It is not swapped for a different dataset.",
+ "next_source_needed": "The article's online appendix Figure A1 (survey instrument screenshot) or the preregistered questionnaire at https://osf.io/dnujq."
+}

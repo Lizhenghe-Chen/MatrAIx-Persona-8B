@@ -1,8 +1,13 @@
 {
-  "status": "structural_audit_only_not_admission",
+  "status": "stage2_pro_completed",
   "date": "2026-11-13",
   "target_answers_used_for_selection": false,
-  "model_calls": 0,
+  "model_calls": {
+    "qwen": 31,
+    "pro_successful": 216,
+    "pro_failed_auth": 3,
+    "pro_usd": 0.6197
+  },
   "data_root_env": "MATRAIX_DATA_ROOT",
   "candidates": [
     {
@@ -65,16 +70,16 @@
         "q11_1_w1–q11_6_w1"
       ],
       "pending": [
-        "Verify exact original labels and pre-choice timing.",
-        "Do not treat income as budget or cultural-attitude scores as universal purchase constraints.",
-        "Observed earlier experiment outcomes prohibit a fresh independent-validation claim."
+        "Attitude item wording cannot be tied to q11_1..q11_6; the instrument screenshot is missing.",
+        "Resolved: age is stored as age-17, education is q22_w1, waves prove pre-choice timing."
       ],
-      "admitted": false
+      "admitted": false,
+      "admission_ref": "data/admission/origin.json"
     },
     {
       "id": "swiss_six",
       "title": "瑞士六品类",
-      "role": "cross_category_candidate_same_panel_not_independent_country_replication",
+      "role": "stage2_information_increment_primary",
       "source": "02_瑞士六品类/w14_conjoint.RData",
       "sha256": "081e720ec4c4cd03943731f8b2a43df1433859231bf99b73235877fc3aa8503a",
       "people": 6535,
@@ -91,12 +96,10 @@
         "2": 6535
       },
       "potential_facts": [
-        "age",
-        "educ",
-        "inc",
-        "envcon",
-        "envbeh",
-        "cfc"
+        "w14_q29x1-x3 attitude",
+        "w14_q29x10-x12 subjective norm",
+        "w14_q29x5 perceived behavioural control",
+        "w14_q30x1-x22 DIPB barriers"
       ],
       "prohibited_until_proven_safe": [
         "choice",
@@ -106,15 +109,21 @@
         "choice-derived attitude scores"
       ],
       "pending": [
-        "Original instructions, price units and field labels.",
-        "Measurement timing and target-answer derivation for all proposed preference fields.",
-        "Shared wave8/wave14 IDs and global person-level split.",
-        "Each person sees two categories, not all six.",
-        "SEP_w14_reduced.RData dataframe conversion currently fails in pyreadr; do not infer unjoined fields."
+        "Pro formal run complete; results in data/stage2-results.json.",
+        "Category extension (clothes, food) not run and not implied by this result."
       ],
-      "admitted": false
+      "admitted": true,
+      "admission_ref": "data/admission/swiss.json"
     }
   ],
   "independent_validation": "No new independently qualified validation dataset frozen yet; do not rename old test data as new.",
-  "raw_copy_policy": "Raw human records remain in shared storage or local private stage directory; no raw copy made in Git."
+  "raw_copy_policy": "Raw human records remain in shared storage or local private stage directory; no raw copy made in Git.",
+  "admission_records": {
+    "swiss": "data/admission/swiss.json",
+    "origin": "data/admission/origin.json"
+  },
+  "run_state": {
+    "qwen": "~/.local/share/matraix-decision-transfer/work/stage2/runs/qwen.jsonl",
+    "pro": "~/.local/share/matraix-decision-transfer/work/stage2/runs/pro.jsonl"
+  }
 }

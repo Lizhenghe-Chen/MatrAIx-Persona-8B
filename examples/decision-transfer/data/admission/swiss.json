@@ -1,0 +1,425 @@
+{
+ "study": "swiss_six",
+ "date": "2026-11-13",
+ "status": "admitted_for_stage2",
+ "sources": {
+  "conjoint": {
+   "path": "/Volumes/元宇宙联合创新实验室/实验数据/MatrAIx多地区选品源数据/02_瑞士六品类/w14_conjoint.RData",
+   "sha256": "081e720ec4c4cd03943731f8b2a43df1433859231bf99b73235877fc3aa8503a"
+  },
+  "background": {
+   "path": "/Volumes/元宇宙联合创新实验室/实验数据/MatrAIx多地区选品源数据/02_瑞士六品类/SEP_w14_reduced.RData",
+   "sha256": "e9ed4f66477dc69e02ea96a615a67ade95166640cd230597cc5a77aa9288ff25"
+  },
+  "author_code": {
+   "path": "/Volumes/元宇宙联合创新实验室/实验数据/MatrAIx多地区选品源数据/02_瑞士六品类/Dragons_ReplicationCode_Gomm.R",
+   "sha256": "0131ce0e6e529a23e248fcccc00dd8fbec40426a0d6df5c1ba5df599fb85c76e"
+  },
+  "supplement": {
+   "path": "/Users/bunnychen/.local/share/matraix-decision-transfer/work/materials/swiss-six-supplement.docx",
+   "sha256": "71d8f40638b2195b0a66e3666d71762abc9989789541d6465f1e50d0abada421",
+   "origin": "Elsevier mmc1.docx for PII S2352550926000461, CC BY 4.0"
+  },
+  "questionnaire_ocr": "/Users/bunnychen/.local/share/matraix-decision-transfer/work/materials/swiss-six-questionnaire-ocr.txt"
+ },
+ "evidence": {
+  "wording": "Supplementary A.1 lists every TPB and DIPB item verbatim; the OCR of A.10 shows the items as administered, including the 1-7 anchors.",
+  "timing": "A.10 page order: person details, TPB block, DIPB block, conjoint task, post-conjoint labels, closing questions. Every fact item is answered before any product choice.",
+  "instrument": "Paper section 3.2.2 and A.10: two products, three paired rounds, forced binary choice, then a separate purchase-likelihood rating.",
+  "price_levels": "Table 1 CHF levels per product; the questionnaire displayed a coloured A-E impact scale whose exact letter-to-level assignment is not recoverable, so only the published level labels are used."
+ },
+ "linkage": {
+  "method": "SEP rows follow ascending PubId; verified by recomputing eight published aggregates.",
+  "checks": {
+   "attitude_tpb": {
+    "compared": 6552,
+    "exact": 6552
+   },
+   "norm_tpb": {
+    "compared": 6490,
+    "exact": 6490
+   },
+   "change_di": {
+    "compared": 6534,
+    "exact": 6534
+   },
+   "goal_di": {
+    "compared": 6535,
+    "exact": 6535
+   },
+   "relations_di": {
+    "compared": 6487,
+    "exact": 6487
+   },
+   "know_di": {
+    "compared": 6528,
+    "exact": 6528
+   },
+   "token_di": {
+    "compared": 6533,
+    "exact": 6533
+   },
+   "intention_tpb": {
+    "compared": 6562,
+    "exact": 6562
+   }
+  },
+  "persons": 6832,
+  "mismatches": 0
+ },
+ "reliability_check": {
+  "computed": {
+   "attitude": {
+    "alpha": 0.886,
+    "mean": 5.54,
+    "sd": 1.38
+   },
+   "norm": {
+    "alpha": 0.77,
+    "mean": 3.89,
+    "sd": 1.52
+   },
+   "control": {
+    "alpha": null,
+    "mean": 5.21,
+    "sd": 1.54
+   },
+   "change": {
+    "alpha": 0.83,
+    "mean": 1.95,
+    "sd": 1.05
+   },
+   "goals": {
+    "alpha": 0.795,
+    "mean": 2.23,
+    "sd": 1.01
+   },
+   "relations": {
+    "alpha": 0.83,
+    "mean": 1.63,
+    "sd": 0.9
+   },
+   "knowledge": {
+    "alpha": 0.684,
+    "mean": 2.68,
+    "sd": 1.11
+   },
+   "token": {
+    "alpha": 0.713,
+    "mean": 2.69,
+    "sd": 1.18
+   },
+   "intention": {
+    "alpha": 0.914,
+    "mean": 5.36,
+    "sd": 1.44
+   }
+  },
+  "paper_table2": {
+   "attitude": [
+    0.89,
+    5.54,
+    1.38
+   ],
+   "norm": [
+    0.76,
+    3.79,
+    1.55
+   ],
+   "intention": [
+    0.91,
+    5.37,
+    1.44
+   ],
+   "change": [
+    0.83,
+    1.98,
+    1.06
+   ],
+   "goals": [
+    0.8,
+    2.25,
+    1.03
+   ],
+   "relations": [
+    0.83,
+    1.64,
+    0.91
+   ],
+   "knowledge": [
+    0.68,
+    2.7,
+    1.13
+   ],
+   "token": [
+    0.72,
+    2.7,
+    1.18
+   ]
+  },
+  "tolerance": {
+   "alpha": 0.02,
+   "mean": 0.12,
+   "sd": 0.06
+  }
+ },
+ "counts": {
+  "persons_with_valid_choices": 6535,
+  "persons_with_all_29_items": 4829
+ },
+ "fields": [
+  {
+   "column": "w14_q29x1",
+   "block": "attitude",
+   "wording": "For me, buying environmentally friendly PRODUCTS is a good idea.",
+   "scale": "1-7",
+   "measured": "before the choice task",
+   "answer_derived": false
+  },
+  {
+   "column": "w14_q29x2",
+   "block": "attitude",
+   "wording": "For me, purchasing environmentally friendly PRODUCTS is pleasant.",
+   "scale": "1-7",
+   "measured": "before the choice task",
+   "answer_derived": false
+  },
+  {
+   "column": "w14_q29x3",
+   "block": "attitude",
+   "wording": "For me, purchasing environmentally friendly PRODUCTS is a wise choice.",
+   "scale": "1-7",
+   "measured": "before the choice task",
+   "answer_derived": false
+  },
+  {
+   "column": "w14_q29x10",
+   "block": "norm",
+   "wording": "Most people who are important to me think I should buy environmentally friendly PRODUCTS.",
+   "scale": "1-7",
+   "measured": "before the choice task",
+   "answer_derived": false
+  },
+  {
+   "column": "w14_q29x11",
+   "block": "norm",
+   "wording": "Most people whose opinions I value prefer that I buy environmentally friendly PRODUCTS.",
+   "scale": "1-7",
+   "measured": "before the choice task",
+   "answer_derived": false
+  },
+  {
+   "column": "w14_q29x12",
+   "block": "norm",
+   "wording": "It is important to me to do what people who are important to me and whose opinions I value think I should do.",
+   "scale": "1-7",
+   "measured": "before the choice task",
+   "answer_derived": false
+  },
+  {
+   "column": "w14_q29x5",
+   "block": "control",
+   "wording": "I am confident that, if I want, I can buy environmentally friendly PRODUCTS.",
+   "scale": "1-7",
+   "measured": "before the choice task",
+   "answer_derived": false
+  },
+  {
+   "column": "w14_q30x1",
+   "block": "change",
+   "wording": "There's not much point in me making such changes because I feel confident that technological innovators will solve environmental problems.",
+   "scale": "1-7",
+   "measured": "before the choice task",
+   "answer_derived": false
+  },
+  {
+   "column": "w14_q30x2",
+   "block": "change",
+   "wording": "Humans are powerless when it comes to saving the Earth, so there is no point for me to change.",
+   "scale": "1-7",
+   "measured": "before the choice task",
+   "answer_derived": false
+  },
+  {
+   "column": "w14_q30x3",
+   "block": "change",
+   "wording": "Environmental problems are far in the future, so there is no need to act.",
+   "scale": "1-7",
+   "measured": "before the choice task",
+   "answer_derived": false
+  },
+  {
+   "column": "w14_q30x4",
+   "block": "change",
+   "wording": "Such changes are not really necessary for me because environmental conditions are likely to remain ok in my area.",
+   "scale": "1-7",
+   "measured": "before the choice task",
+   "answer_derived": false
+  },
+  {
+   "column": "w14_q30x5",
+   "block": "change",
+   "wording": "There is no pressing need to change because nature has great resiliency and our actions are trivial.",
+   "scale": "1-7",
+   "measured": "before the choice task",
+   "answer_derived": false
+  },
+  {
+   "column": "w14_q30x6",
+   "block": "goals",
+   "wording": "Making such changes would interfere too much with my other goals in life.",
+   "scale": "1-7",
+   "measured": "before the choice task",
+   "answer_derived": false
+  },
+  {
+   "column": "w14_q30x7",
+   "block": "goals",
+   "wording": "I'm concerned that such changes will take up too much of my time.",
+   "scale": "1-7",
+   "measured": "before the choice task",
+   "answer_derived": false
+  },
+  {
+   "column": "w14_q30x8",
+   "block": "goals",
+   "wording": "I can't change because I'm invested in my current lifestyle.",
+   "scale": "1-7",
+   "measured": "before the choice task",
+   "answer_derived": false
+  },
+  {
+   "column": "w14_q30x9",
+   "block": "goals",
+   "wording": "Environmental concerns are important to me but it's too hard to change my habits.",
+   "scale": "1-7",
+   "measured": "before the choice task",
+   "answer_derived": false
+  },
+  {
+   "column": "w14_q30x10",
+   "block": "goals",
+   "wording": "I haven't changed because I'm afraid this wouldn't work.",
+   "scale": "1-7",
+   "measured": "before the choice task",
+   "answer_derived": false
+  },
+  {
+   "column": "w14_q30x11",
+   "block": "relations",
+   "wording": "Making such changes would be criticized by those around me.",
+   "scale": "1-7",
+   "measured": "before the choice task",
+   "answer_derived": false
+  },
+  {
+   "column": "w14_q30x12",
+   "block": "relations",
+   "wording": "I would be letting certain people down if I made such changes.",
+   "scale": "1-7",
+   "measured": "before the choice task",
+   "answer_derived": false
+  },
+  {
+   "column": "w14_q30x13",
+   "block": "relations",
+   "wording": "I'm worried that my friends would disapprove if I made such changes.",
+   "scale": "1-7",
+   "measured": "before the choice task",
+   "answer_derived": false
+  },
+  {
+   "column": "w14_q30x14",
+   "block": "relations",
+   "wording": "If I made the necessary changes, I probably would be embarrassed when others noticed what I was doing.",
+   "scale": "1-7",
+   "measured": "before the choice task",
+   "answer_derived": false
+  },
+  {
+   "column": "w14_q30x15",
+   "block": "knowledge",
+   "wording": "There's so much information out there that I'm confused about how to make such changes.",
+   "scale": "1-7",
+   "measured": "before the choice task",
+   "answer_derived": false
+  },
+  {
+   "column": "w14_q30x16",
+   "block": "knowledge",
+   "wording": "I don't understand enough of the details about how to make such changes.",
+   "scale": "1-7",
+   "measured": "before the choice task",
+   "answer_derived": false
+  },
+  {
+   "column": "w14_q30x17",
+   "block": "knowledge",
+   "wording": "I'd like to change, but I'm not sure where to begin.",
+   "scale": "1-7",
+   "measured": "before the choice task",
+   "answer_derived": false
+  },
+  {
+   "column": "w14_q30x18",
+   "block": "knowledge",
+   "wording": "The pro-environmental efforts that I currently engage in make further changes unnecessary.",
+   "scale": "1-7",
+   "measured": "before the choice task",
+   "answer_derived": false
+  },
+  {
+   "column": "w14_q30x19",
+   "block": "token",
+   "wording": "I have already made sacrifices to solve environmental problems, so there is no need for me to do more.",
+   "scale": "1-7",
+   "measured": "before the choice task",
+   "answer_derived": false
+  },
+  {
+   "column": "w14_q30x20",
+   "block": "token",
+   "wording": "I previously have made important efforts in this, so there is no need for me to make further changes.",
+   "scale": "1-7",
+   "measured": "before the choice task",
+   "answer_derived": false
+  },
+  {
+   "column": "w14_q30x21",
+   "block": "token",
+   "wording": "My environmental actions already make enough of a difference.",
+   "scale": "1-7",
+   "measured": "before the choice task",
+   "answer_derived": false
+  },
+  {
+   "column": "w14_q30x22",
+   "block": "token",
+   "wording": "It's not fair for me to change when really it's industry that's causing the majority of environmental problems.",
+   "scale": "1-7",
+   "measured": "before the choice task",
+   "answer_derived": false
+  }
+ ],
+ "excluded_fields": {
+  "columns": [
+   "choice",
+   "rating",
+   "rating_num",
+   "green_grmscore_rescaled",
+   "green_idealscore_rescaled",
+   "green_coefscore_rescaled",
+   "intention_tpb",
+   "w14_q29x7",
+   "w14_q29x8",
+   "w14_q29x9"
+  ],
+  "reason": "choice, rating, intention and any choice-derived score"
+ },
+ "limitations": [
+  "The authors excluded speeders and registry mismatches; those flags are not in the released files, so the analysed sample cannot be reproduced exactly. The frame here is every respondent with valid choices and complete items.",
+  "envcon, envbeh and cfc exist only as precomputed indices in the release; they are not used because a standardised score cannot be turned into a faithful natural-language fact.",
+  "Paper text says jeans in one place and the data says Jacket; the data label is used and not harmonised.",
+  "The paper anchors the rating scale in the opposite direction to the questionnaire screenshot; ratings are excluded from model input, so this does not affect the experiment."
+ ]
+}

@@ -7,6 +7,11 @@ from probabilities import validate_questions, parse_probabilities
 ARMS = ('matraix', 'basic', 'own', 'other')
 MODELS = {'qwen': 'Qwen/Qwen3.8-27B', 'pro': 'deepseek-v4-pro'}
 NATIVE = Path(__file__).resolve().parents[1] / 'data/native'
+# Protocol v2: identical in every arm, so the only difference stays the allowed
+# information. Without it the request reads as the model's own survey answers.
+PREDICTION = ('You are not answering for yourself. Predict how the respondent described in this request '
+              'would answer. Use only the supplied information; do not invent personal experience, '
+              'budgets or past behaviour.')
 
 def facts_text(values, approved_fields):
     if not isinstance(values, dict) or set(values) != set(approved_fields):
@@ -50,7 +55,7 @@ def build(payload, arm, model, basic_fields, extra_fields, max_tokens):
         lines += [f'| `{k}` | {v} |' for k,v in q['options'].items()]
         lines += ['']
     schema='Return JSON with only answers: a list of objects with questionId and probabilities. probabilities is an object keyed by every exact choice id. All probabilities must be finite numbers from 0 to 1 and sum to 1 for each question. No rationale, confidence, or explanations.'
-    user=f'## Task instruction\n\n{task}\n\n## Context\n\n{payload["context"]}\n\n## Questionnaire\n\n'+ '\n'.join(lines).strip() + '\n\n## Answer envelope\n\n'+schema
+    user=f'## Task instruction\n\n{task}\n\n{PREDICTION}\n\n## Context\n\n{payload["context"]}\n\n## Questionnaire\n\n'+ '\n'.join(lines).strip() + '\n\n## Answer envelope\n\n'+schema
     body={'model':MODELS[model],'temperature':.7,'top_p':1,'max_tokens':max_tokens,'response_format':{'type':'json_object'},'messages':[{'role':'system','content':system},{'role':'user','content':user}]}
     if model=='qwen':body['chat_template_kwargs']={'enable_thinking':False}
     else:body['thinking']={'type':'disabled'}
