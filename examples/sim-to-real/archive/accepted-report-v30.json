@@ -1,0 +1,213 @@
+{
+  "version": "2026-11-13-approved-v30",
+  "supersedes": "accepted-report-v29.json",
+  "policy": "用户认可的报告与结论；后续调整另立版本，不覆盖冻结依据。",
+  "change": "目录精简：删除顶层 47 个指向 legacy/ 的兼容符号链接（代码改为显式指向 legacy/），6 份被取代的文档移入 docs/archive/，新增 docs/README.md 与重整后的两份 README；报告内容本身未变，故事版与技术版数字仍与冻结 JSON 一致。",
+  "additions": 10,
+  "files": [
+    {
+      "path": "reports/index.html",
+      "sha256": "2e232333f849e7161d3907266c857729c6a9a2b09441c42ac9abe63a954eed7a"
+    },
+    {
+      "path": "reports/evidence.json",
+      "sha256": "cac2f35eed5034fa0d0e44b17fb582b05df7e70b4e5a5cb6cecec4a3884b8515"
+    },
+    {
+      "path": "reports/report.html.tmpl",
+      "sha256": "731e36d8e797d3002eaa62a4dab68abc03a9510028bf16912351a0cf94e4d5c5"
+    },
+    {
+      "path": "reports/build.py",
+      "sha256": "cdd7ca81280c57b86e2aa1123b4a76f917f49701120ca978eac8cc0e39e16188"
+    },
+    {
+      "path": "reports/charts.js",
+      "sha256": "9234c2c9920d15198cef1d3577e260fa4d848ec01d710f2fffabe94d4f6d25b9"
+    },
+    {
+      "path": "reports/style.css",
+      "sha256": "f5b800a09d88fc333986d9f276ce3fb5b30a43ced90eab2fba3b21fa6ccb8896"
+    },
+    {
+      "path": "study/05_优化记录/优化文档.md",
+      "sha256": "8098d38e0a79b8d517db2b2de5faf79709fe6e9a66cc32f74eed4b786eec11e5"
+    },
+    {
+      "path": "decision_lab/docs/预注册协议-clean-v1.md",
+      "sha256": "77a77d9c11ab5864b2789120d85d3dd6bf7018af4f307c3ce93ceff10ef70812"
+    },
+    {
+      "path": "decision_lab/docs/推荐配置.md",
+      "sha256": "0e3ef6409acf024cdb4710461686fa44cc765c884a588694db5aeab136505736"
+    },
+    {
+      "path": "decision_lab/cross_study/README.md",
+      "sha256": "8225257356552cf9a216756dce7ae570818c054ac309bbb299a3e651969352d2"
+    },
+    {
+      "path": "reports/charts_clean.js",
+      "sha256": "7d061a532f65838ec1ddf02acd019e3853eb0f3e6d68f5afdc0d05c0ff83bdf4"
+    },
+    {
+      "path": "reports/vendor/echarts.min.js",
+      "sha256": "b66b25aeb4df84e33199dc21694014d336d222cbd9deb0e5a7c14bd6aa0d0fd0"
+    },
+    {
+      "path": "reports/README.md",
+      "sha256": "5c9f63d9bc986420db3691696235b1ad7bfb6916beb3a88e45c7e6c6d536c0ff"
+    },
+    {
+      "path": "reports/smoke.cjs",
+      "sha256": "0c759cff0d9ca6c4d96e31f4e871f27bf733ee35a240ffac09d617af1a318896"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/clean-v1-diagnostics.json",
+      "sha256": "3f908f5da48a5f44668957374bb600b6fa712854f35c940a6bf346062e017d0d"
+    },
+    {
+      "path": "decision_lab/cross_study/clean_diagnostics.py",
+      "sha256": "740d26fc4af80e4c51ef95e5793b98bd7a3500ce4abb1e23c73f5f5bffd5fbb8"
+    },
+    {
+      "path": "reports/verify.py",
+      "sha256": "fceaf51e1f8e4a7d6cd7da4ea27e3d9788bb80fd8bec9cebe810eac119d62839"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/wide-v1-results.json",
+      "sha256": "8ef2a68e0dd2bd833d9f14c25f435a4a5b24866fbf8db085be3c2cfda9d6aa6b"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/wide-audit.json",
+      "sha256": "503da049611932b95438db857621d99fccdfd202b3ed9c07ba402ef8ce871053"
+    },
+    {
+      "path": "decision_lab/specs/cross-study-v1/wide-v1.json",
+      "sha256": "d0664c1aa7b74269f3a1958cf998b338d57d571785adff2e46b9da9cbf4f052b"
+    },
+    {
+      "path": "decision_lab/cross_study/wide_audit.py",
+      "sha256": "0f9c3970b01b040fb003b0dba33a1d43c45814b334f4add23a4591277acb9ff7"
+    },
+    {
+      "path": "decision_lab/cross_study/cohort_clean.py",
+      "sha256": "654e92079c7d6724865f306fd1688b005364cc516ea6c55cee44c8e7bd77c81c"
+    },
+    {
+      "path": "decision_lab/cross_study/adapters.py",
+      "sha256": "7f44028c67ae11c85d01e92b6620acc5166e2f90d474739c4db0fe59ca7794ae"
+    },
+    {
+      "path": "decision_lab/cross_study/matching.py",
+      "sha256": "7791edb63aef690f57cf4131f136abb0ebc7eae7d2290a699074d2be12a09ae3"
+    },
+    {
+      "path": "decision_lab/cross_study/formal.py",
+      "sha256": "c0e69ed12296544c9d76375721927fcf3c4f771aa9f614084287095cef73bd36"
+    },
+    {
+      "path": "decision_lab/cross_study/german_baseline.py",
+      "sha256": "685a635e849a85c3625e411df70f67c4373524aacb435ede5ec43b55748055b3"
+    },
+    {
+      "path": "decision_lab/cross_study/tshirt_baseline.py",
+      "sha256": "2aafa8e0229e9366848d63d63416891f16d8235456585203703c6691a4282528"
+    },
+    {
+      "path": "decision_lab/cross_study/radiant_baseline.py",
+      "sha256": "069f6c44a8cafe04afdb0527c444e77443cbfc694acf55c21a4c945f252a8707"
+    },
+    {
+      "path": "decision_lab/cross_study/origin_baseline.py",
+      "sha256": "d73fd468a11064b6f0dc61c4f60ee85d98c8e6bebee1d4c5296282b5c44a126f"
+    },
+    {
+      "path": "decision_lab/docs/结果与优化记录.md",
+      "sha256": "7602faa2ca69961f833ae6df0b1766e56281372ad656301128accabd043f87e1"
+    },
+    {
+      "path": "decision_lab/docs/进度与交付核对.md",
+      "sha256": "b9b0240d2424381688a93b9e7985e2cdb4a0e2909aa5d168d6e80279ae07d07c"
+    },
+    {
+      "path": "decision_lab/docs/复算与复用指南.md",
+      "sha256": "29967978cb4187a2343d8fa1b5ae1d0da81e0b3e076daedcdd8aeeb75a38404d"
+    },
+    {
+      "path": "decision_lab/cross_study/cluster_summary.py",
+      "sha256": "2e8034b7a9fdb1d35f6c281dd84ec3d6ca4217bd33b5bedd182cb7402cd40a34"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/cluster-summary.json",
+      "sha256": "830ac89ea043ed97b706ea4c47bbfa19a699cd90cd0978273cf3ea1e741b9209"
+    },
+    {
+      "path": "decision_lab/cross_study/card_discrimination.py",
+      "sha256": "6c7dc30332ba100f42c54427b8521a03c53acd0d9742bf918fec946cc49fa129"
+    },
+    {
+      "path": "decision_lab/reports/cross-study-v1/card-discrimination.json",
+      "sha256": "136db987ba144de4f2d44b7a14385dbaf1b112f54e3ff383b340dd81b6ef3262"
+    },
+    {
+      "path": "decision_lab/docs/阶段记录-2026-11-12.md",
+      "sha256": "79167b68b8abf9621de3a822ed869fd00717b6ffac22a0c947de580daf3ea54b"
+    },
+    {
+      "path": "reports/story.html",
+      "sha256": "adab5a26923762e48059cc1f762ee99596315c9ccb2c3be66014590ea8b2a569"
+    },
+    {
+      "path": "reports/build_story.py",
+      "sha256": "284aeef499f85111c29820323b12432a90ef7f22f1dd151703adf81833c734f9"
+    },
+    {
+      "path": "reports/charts_story.js",
+      "sha256": "843e756b53a018580ecea1b2c273c38d3fad867de93fe6ee573fbfb4c9ef7334"
+    },
+    {
+      "path": "reports/smoke_story.cjs",
+      "sha256": "fde80309ecd5178f2f3c966a939c242da4ad89a0f2e6ff3e5dcb4187d338d394"
+    },
+    {
+      "path": "decision_lab/交接先读.md",
+      "sha256": "7b0a541eec65bb46443599f8f3ebcbfd9528c63249fced850477b476ad93477f"
+    },
+    {
+      "path": "decision_lab/docs/README.md",
+      "sha256": "dcb1c3c92723550477c5182f7ef8d99bd27176789692abbbf25464c67bde94d8"
+    },
+    {
+      "path": "decision_lab/docs/archive/历史阶段交接.md",
+      "sha256": "d61a4013893e185707542631915d930f20e356adf5816c4be12cc6af85c87447"
+    },
+    {
+      "path": "decision_lab/docs/archive/阶段交接_2026-11-10.md",
+      "sha256": "135bf9cdccf0258215bc89870003889fc91f71edb60399f60f93856324eb51d0"
+    },
+    {
+      "path": "decision_lab/docs/archive/实施沿革.md",
+      "sha256": "3a0e397487faa5107271d9754d26f14558e6c3455424c092b22f86ad08f900b3"
+    },
+    {
+      "path": "decision_lab/docs/archive/两次选择快速验证.md",
+      "sha256": "e0d78b0690efce3c7cee8aa980e6d832be5bfec639f782d9b441b5426a079b3a"
+    },
+    {
+      "path": "decision_lab/docs/archive/结果解读与使用建议.md",
+      "sha256": "b35fef24e0087445f5ef68109ffe455257c6f1e57d21d4ec7c791c8de5f272d7"
+    },
+    {
+      "path": "decision_lab/docs/archive/证据与检验对照.md",
+      "sha256": "b6ca16df9ba32d397a306064f9dd6ff1a4c6ef2977647e6ace09827299fdeb7c"
+    },
+    {
+      "path": "legacy/README.md",
+      "sha256": "3df43c59f4602c18e852d13afeaecd8a9ad87b98ed71b47f06a4a18635789085"
+    },
+    {
+      "path": "decision_lab/cross_study/targets.py",
+      "sha256": "b116d4e493e64cc89c3c1b98960253cb9940688b3c0173978c0acb2f317249fd"
+    }
+  ]
+}

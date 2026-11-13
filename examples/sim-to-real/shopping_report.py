@@ -1,1 +1,0 @@
-legacy/shopping_report.py

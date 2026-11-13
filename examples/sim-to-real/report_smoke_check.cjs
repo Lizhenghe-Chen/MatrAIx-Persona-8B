@@ -1,1 +1,0 @@
-legacy/report_smoke_check.cjs

@@ -1,1 +1,0 @@
-legacy/retail_shoes_prepare.py

@@ -1,1 +1,0 @@
-legacy/revalidation_charts.js

@@ -4,7 +4,9 @@ from pathlib import Path
 from collections import defaultdict,Counter
 from .registry import ROOT,OUT
 BASE=ROOT.parent
-if str(BASE) not in sys.path:sys.path.insert(0,str(BASE))
+# The historical readers live in legacy/; nothing at the top level is importable.
+LEGACY=BASE/'legacy'
+if str(LEGACY) not in sys.path:sys.path.insert(0,str(LEGACY))
 PRIVATE=Path.home()/'.local/share/matraix-decision-lab/cross-study-v1'
 
 def q(identifier,prompt,options):

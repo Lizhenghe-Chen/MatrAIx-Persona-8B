@@ -1,17 +1,25 @@
-# 实验总报告与可分享证据
+# 报告目录
 
-**阅读入口：[AI 怎样才能更接近真人选择？](index.html)**。涵盖历史问卷、模型与提示、购物、统计校准、两套家电正式测试，以及两次真实选择的最新筛查。它解释已完成的实验，不发起模型请求。
+两个页面，同一份冻结数据，用途不同：
+
+| 文件 | 读者 | 内容 |
+|---|---|---|
+| [story.html](story.html) | 领导、非技术读者 | 叙事版：一个真实场景进、同一个场景出；三轮排除、真实原因、可交付方案、外部验证、诚实边界 |
+| [index.html](index.html) | 要核对数字的人 | 技术版：逐套明细、95% 区间、13 道题的分布切换、冻结证据 |
+
+两页的数字都由同一批 `decision_lab/reports/cross-study-v1/*.json` 填入，改一处必须同时重建两页；
+`verify.py` 会逐条比对页面文字与冻结数据的一致性。都不是手填数字。
 
 ## 文件用途
 
 | 文件 | 用途 |
 |---|---|
-| [index.html](index.html) | 可单独拷贝、离线打开的最终报告；包括柱状图、区间图和 13 道题的分布切换 |
+| [story.html](story.html) · [index.html](index.html) | 两个可单独拷贝、离线打开的页面；图表全部内联，零外部请求 |
 | [evidence.json](evidence.json) | 从冻结评分抽取的聚合数字与来源 SHA-256；没有逐人编号、完整请求或答案关联 |
-| [build.py](build.py) | 抽取来源、验证分布和数值关系、生成报告；不调用模型 |
+| [build.py](build.py) · [build_story.py](build_story.py) | 分别生成技术版与故事版；不调用模型 |
 | [report.html.tmpl](report.html.tmpl) | 可维护的中文说明模板 |
-| [style.css](style.css)、[charts.js](charts.js) | 版式与交互，生成时内嵌，阅读不依赖外网 |
-| [verify.py](verify.py)、[smoke.cjs](smoke.cjs) | 来源及链接核验、实际浏览器交互与移动版检查 |
+| [style.css](style.css)、[charts.js](charts.js)、[charts_clean.js](charts_clean.js)、[charts_story.js](charts_story.js) | 版式与图表，生成时内嵌，阅读不依赖外网 |
+| [verify.py](verify.py)、[smoke.cjs](smoke.cjs)、[smoke_story.cjs](smoke_story.cjs) | 来源及链接核验、两页的浏览器交互与移动版检查 |
 
 ## 离线重建
 
@@ -19,8 +27,10 @@
 
 ```sh
 python3 examples/sim-to-real/reports/build.py
+python3 examples/sim-to-real/reports/build_story.py
 python3 examples/sim-to-real/reports/verify.py
 node examples/sim-to-real/reports/smoke.cjs
+node examples/sim-to-real/reports/smoke_story.cjs
 ```
 
 `smoke.cjs` 使用 Node.js 22+ 和本机 Chrome；非默认路径可设 `CHROME_BIN`。截图只写临时目录，不进入实验档案。
@@ -35,6 +45,7 @@ node examples/sim-to-real/reports/smoke.cjs
 |---|---|---|
 | 前段条形图、区间图、分布条 | `evidence.json` | `build.py` 内联 SVG（`charts.js`） |
 | clean-v1 的五个图（相对等分改善、题卡散点、构成环图、评分分布、差异保留率） | `decision_lab/reports/cross-study-v1/clean-v1-diagnostics.json` | ECharts（`charts_clean.js`） |
+| 故事版三张图（AI vs 查表、实测交叉点、外部验证） | `cluster-summary.json`、`blend-qwen.json`、`external-v1-results.json` | ECharts（`charts_story.js`） |
 
 `clean-v1-diagnostics.json` 由 `PYTHONPATH=examples/sim-to-real .venv/bin/python -m decision_lab.cross_study.clean_diagnostics` 从本机检查点重算。ECharts 已本地化在 `vendor/echarts.min.js`，并在构建时**内联进 `index.html`**——页面仍是单文件、离线可开、零外部请求（`smoke.cjs` 会断言这一点）。改动图表脚本后必须重跑 `node smoke.cjs`。
 
@@ -47,4 +58,4 @@ node examples/sim-to-real/reports/smoke.cjs
 5. 模型、提示、背景、输出方式的分别有效，不等于它们拼起来的组合已经被整体验证。
 6. 暂未支持的合成人格与两次选择输入仍保留证据。不得删掉失败实验以制造一致成功印象。
 
-来源索引见报告末尾；全量历史见 [study](../study/README.md)，新框架见 [decision_lab](../decision_lab/README.md)，持续采用建议见 [优化文档](../study/05_优化记录/优化文档.md)。
+来源索引见报告末尾；全量历史见 [study](../study/README.md)，当前框架见 [decision_lab](../decision_lab/README.md)，持续采用建议见 [推荐配置](../decision_lab/docs/推荐配置.md)。
