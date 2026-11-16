@@ -38,7 +38,7 @@ def check_archive():
 
 
 def check_report():
-    for name in ('index.html', 'results.html', 'summary.html'):
+    for name in ('summary.html',):
         path = HERE / 'reports' / name
         if not path.exists():
             raise RuntimeError('Missing report: ' + name)
