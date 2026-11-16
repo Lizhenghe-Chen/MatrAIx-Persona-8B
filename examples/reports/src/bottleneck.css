@@ -15,7 +15,7 @@
 .effect-card { display: flex; flex-direction: column; }
 .effect-card--primary { border-top: 4px solid var(--blue); }
 .effect-card h2 { font-size: clamp(23px, 2.8vw, 30px); }
-.effect-card h3, .effect-remaining h3 { font-size: 1.2rem; }
+.effect-card h3 { font-size: 1.2rem; }
 .effect-use { margin: 0 0 4px; font-weight: 700; color: var(--blue); }
 
 .effect-results { margin: .55em 0 .25em; }
@@ -28,7 +28,7 @@
   gap: 0 12px;
   margin: 0;
 }
-.effect-results b, .effect-number {
+.effect-results b {
   font-size: clamp(22px, 2.45vw, 31px);
   font-weight: 740;
   line-height: 1.35;
@@ -37,12 +37,10 @@
 .effect-results .gain { color: var(--green); font-weight: 700; }
 .effect-card .source { margin-top: auto; padding-top: 9px; }
 
-.effect-remaining {
-  padding: 12px 14px;
-  border-radius: 8px;
-  background: #f2f5fa;
-}
-.effect-remaining .effect-number { color: var(--warm); }
+.cause-intro p:first-child { margin-top: 0; }
+.cause-grid { margin-top: 14px; }
+.cause-detail { margin-top: 10px; }
+.cause-detail summary { padding: 0; }
 
 @media (min-width: 960px) {
   .effect-grid--three { grid-template-columns: repeat(3, minmax(0, 1fr)); }

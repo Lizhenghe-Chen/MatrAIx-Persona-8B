@@ -132,6 +132,7 @@ def issue_summary(d):
   <p class="finding-note">只留概率最高的一项，其他答案的可能性就被舍掉了。
     改成把每个人给各选项的概率都算进去后，「有时」降到 <b>{after:.1%}</b>，离真人还有一段差距。</p>
   <p class="source report-actions">{link('先看哪些改法有效', CENTER + 'bottleneck.html', primary=True)}
+    {link('为什么还不够准', CENTER + 'bottleneck.html#remaining')}
     {link('看食品日期原题', CENTER + 'question-cases.html#CBQ700')}</p>"""
 
 
@@ -171,8 +172,9 @@ def bottleneck_summary(d):
     <div><dt>猜买哪款，AI 还会选偏</dt><dd>豆腐问卷里固定「买不买」的预测，只把选款交给 AI，误差从
       <b>{combined['refusal_only']['conditional']:.3f}</b> 升到 <b>{combined['combined']['conditional']:.3f}</b>。</dd></div>
   </dl>
-  <p>豆腐对照把问题定位到选款。统计选款还用过其他真人的答案，资料和模型各影响了多少，现有实验还分不开。</p>
-  <p class="source report-actions">{link('查看瓶颈证据', CENTER + 'bottleneck.html#remaining')}
+  <p><b>现有证据首先指向两处</b>，给了什么真人资料，以及模型会不会用这些资料。豆腐对照把差距定位到选款。
+    统计选款还用过其他真人的答案，资料和模型各影响多少还分不开。真人答题的方式也可能影响这段差距，本项目尚未单独测量。</p>
+  <p class="source report-actions">{link('看四个可能原因与论文', CENTER + 'bottleneck.html#remaining', primary=True)}
     {link('看换模型和补资料的效果', CENTER + 'bottleneck.html#depends')}</p>"""
 
 

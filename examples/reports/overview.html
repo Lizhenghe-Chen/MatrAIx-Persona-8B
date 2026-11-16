@@ -211,6 +211,7 @@ footer { padding: 14px 0 0; margin-top: 16px; border-top: 1px solid var(--line);
   <p class="finding-note">只留概率最高的一项，其他答案的可能性就被舍掉了。
     改成把每个人给各选项的概率都算进去后，「有时」降到 <b>28.6%</b>，离真人还有一段差距。</p>
   <p class="source report-actions"><a class="report-link report-link--primary" href="bottleneck.html"><span>先看哪些改法有效</span><span class="report-link-type" aria-hidden="true">HTML</span></a>
+    <a class="report-link" href="bottleneck.html#remaining"><span>为什么还不够准</span><span class="report-link-type" aria-hidden="true">HTML</span></a>
     <a class="report-link" href="question-cases.html#CBQ700"><span>看食品日期原题</span><span class="report-link-type" aria-hidden="true">HTML</span></a></p>
 </div>
 
@@ -302,8 +303,9 @@ footer { padding: 14px 0 0; margin-top: 16px; border-top: 1px solid var(--line);
     <div><dt>猜买哪款，AI 还会选偏</dt><dd>豆腐问卷里固定「买不买」的预测，只把选款交给 AI，误差从
       <b>0.364</b> 升到 <b>0.400</b>。</dd></div>
   </dl>
-  <p>豆腐对照把问题定位到选款。统计选款还用过其他真人的答案，资料和模型各影响了多少，现有实验还分不开。</p>
-  <p class="source report-actions"><a class="report-link" href="bottleneck.html#remaining"><span>查看瓶颈证据</span><span class="report-link-type" aria-hidden="true">HTML</span></a>
+  <p><b>现有证据首先指向两处</b>，给了什么真人资料，以及模型会不会用这些资料。豆腐对照把差距定位到选款。
+    统计选款还用过其他真人的答案，资料和模型各影响多少还分不开。真人答题的方式也可能影响这段差距，本项目尚未单独测量。</p>
+  <p class="source report-actions"><a class="report-link report-link--primary" href="bottleneck.html#remaining"><span>看四个可能原因与论文</span><span class="report-link-type" aria-hidden="true">HTML</span></a>
     <a class="report-link" href="bottleneck.html#depends"><span>看换模型和补资料的效果</span><span class="report-link-type" aria-hidden="true">HTML</span></a></p>
 </aside>
 <section class="usage" id="adopt" aria-labelledby="adopt-title">
@@ -326,7 +328,7 @@ footer { padding: 14px 0 0; margin-top: 16px; border-top: 1px solid var(--line);
 </section>
 <section class="appendix" id="html-reports" aria-labelledby="html-reports-title">
   <h2 id="html-reports-title">重点报告</h2>
-  <ul class="report-links"><li><a class="report-link" href="bottleneck.html"><span>有效改法与剩余差距</span><span class="report-link-type" aria-hidden="true">HTML</span></a><p class="note">看哪些改法可以先用、误差少了多少。也能查换模型、补资料或调参数的对照结果。</p></li><li><a class="report-link" href="question-cases.html"><span>真人原题与答案分布</span><span class="report-link-type" aria-hidden="true">HTML</span></a><p class="note">从「买东西会看评价吗」开始，看看真人、MatrAI X 项目和各个改法分别怎么答。</p></li><li><a class="report-link" href="purchase-evidence.html"><span>本人记录与购买预测</span><span class="report-link-type" aria-hidden="true">HTML</span></a><p class="note">从超市酸奶说起。手里有一家人过去的购物记录，能猜准他们下一趟买不买、又会买哪款吗？</p></li><li><a class="report-link" href="project-evidence.html"><span>项目证据与边界</span><span class="report-link-type" aria-hidden="true">HTML</span></a><p class="note">一份真人问卷变成虚拟人物卡后，哪些是本人填的，哪些是 AI 推的？看看原始资料和人物卡。</p></li></ul>
+  <ul class="report-links"><li><a class="report-link" href="bottleneck.html"><span>有效改法与剩余差距</span><span class="report-link-type" aria-hidden="true">HTML</span></a><p class="note">先看哪些改法可以用、误差少了多少。再对照项目实验和论文，看为什么换了几种办法仍和真人有差距。</p></li><li><a class="report-link" href="question-cases.html"><span>真人原题与答案分布</span><span class="report-link-type" aria-hidden="true">HTML</span></a><p class="note">从「买东西会看评价吗」开始，看看真人、MatrAI X 项目和各个改法分别怎么答。</p></li><li><a class="report-link" href="purchase-evidence.html"><span>本人记录与购买预测</span><span class="report-link-type" aria-hidden="true">HTML</span></a><p class="note">从超市酸奶说起。手里有一家人过去的购物记录，能猜准他们下一趟买不买、又会买哪款吗？</p></li><li><a class="report-link" href="project-evidence.html"><span>项目证据与边界</span><span class="report-link-type" aria-hidden="true">HTML</span></a><p class="note">一份真人问卷变成虚拟人物卡后，哪些是本人填的，哪些是 AI 推的？看看原始资料和人物卡。</p></li></ul>
 </section>
 <section class="appendix" id="evidence" aria-labelledby="evidence-title">
   <h2 id="evidence-title">实验明细与来源</h2>

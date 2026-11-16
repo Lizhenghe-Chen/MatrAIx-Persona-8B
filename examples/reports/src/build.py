@@ -328,6 +328,101 @@ def purchase_page(data):
 
 
 
+def bottleneck_analysis(d):
+    food, tofu = (study['results']['scores'] for study in d['replication']['studies'])
+    combined = d['combined']
+    statistics, hybrid = (combined['scores'][key] for key in ('refusal_only', 'combined'))
+    rise_low, rise_high = (-x for x in reversed(combined['combined_vs_reference']['refusal_only']['ci95']))
+    matching = d['matching']['matching']['summary']
+    origins = d['commerce']['surveys']['origin']['cells']
+    anchors = d['anchors']['studies']['german']['results']['arms']
+    beer = d['same_info']['studies']['beer']['brier']
+    cheese = d['same_info']['studies']['italy']['brier']
+    final_data = a('末轮复验数据', DIAGNOSIS['replication'])
+    return f"""
+<section class="sources" aria-labelledby="remaining">
+  <h2 id="remaining">为什么改了几轮，还是和真人有差距？</h2>
+  <div class="panel cause-intro">
+    <p><b>只数最高概率的选项，能把结果推成一边倒。</b> 同一批 AI 答案，每人只数概率最高的一项，食品标签问卷的比例误差是
+      {food['argmax']['tv']:.2f} 个百分点。把各选项的概率都算进去，降到 {food['output_only']['tv']:.2f}。这一步只换了数法。</p>
+    <p><b>改过以后，最值得排查的是资料和模型怎么用资料。</b> 在豆腐问卷里，固定「买不买」的预测，
+      只换「买哪款」的办法，选款误差从统计方法的 <b>{statistics['conditional']:.3f}</b> 升到 AI 的 <b>{hybrid['conditional']:.3f}</b>。
+      统计方法还用过另一批真人的答案，这个对照能找到差距出在哪一步，暂时分不出资料和方法各影响多少。</p>
+    <p class="source report-actions">{a('看同一批答案怎么数', '#mechanism-title')} {a('豆腐组合补算数据', DIAGNOSIS['combined'])}</p>
+  </div>
+  <div class="tiles effect-grid cause-grid">
+    <article class="tile effect-card" id="cause-person">
+      <p class="effect-use">人物资料</p>
+      <h3>本人的旧选择能补充画像中的信息</h3>
+      <p>豆腐问卷中，同一个统计方法加上本人两次选择，个人预测误差从 <b>{tofu['population']['brier']:.3f} 降到 {tofu['own']['brier']:.3f}</b>。
+        换成别人的记录，误差是 {tofu['other']['brier']:.3f}。两个人年龄、收入相近，平时买不买豆腐仍可能不同。</p>
+      <p>Park 等研究了 1,052 位美国受访者。在他们的社会调查题上，只给人口背景的答对率是 58.12%，用约两小时的本人访谈是 65.67%。
+        真人自己隔两周重答，两次一致率是 79.53%。这支持使用本人资料。访谈能帮多少，要看预测哪一类题。</p>
+      <p class="source report-actions">{final_data} {a('Park 等，2026 年预印本 v3，附表', 'https://arxiv.org/pdf/2411.10109v3#page=84')}</p>
+    </article>
+    <article class="tile effect-card" id="cause-model">
+      <p class="effect-use">模型</p>
+      <h3>拿到同一份资料，判断也会不同</h3>
+      <p>购物问卷固定题目、画像和概率输出，Qwen 换 DeepSeek Pro 后，比例误差从
+        <b>{matching['qwen/matched']['mean_run_tv_pp']:.2f} 降到 {matching['pro/matched']['mean_run_tv_pp']:.2f} 个百分点</b>。
+        另把同一份群体预测和本人记录交给 Qwen 与统计方法，啤酒和奶酪两题材都是统计方法的个人误差更低。</p>
+      <p>Brand 等把 GPT 和真人放进相似的牙膏与笔电选购题。模型有时连真人更喜欢哪种口味、哪种屏幕尺寸的方向都估反。
+        用同品类真人答案训练改善了一些判断，从笔电换到平板时却没有延续这个收益。</p>
+      <p class="source report-actions">{a('换模型的实验', DIAGNOSIS['matching'])} {a('同资料比较', DIAGNOSIS['same_info'])}
+        {a('Brand 等，HBS 工作论文，§3.3', 'https://www.hbs.edu/ris/Publication%20Files/23-062_6bfe7a5b-3ed9-4afd-a4c1-c91b60dd82e5.pdf')}</p>
+    </article>
+    <article class="tile effect-card" id="cause-prompt">
+      <p class="effect-use">提示和输出</p>
+      <h3>换说法与换数法，效果不同</h3>
+      <p>商品产地题只改提示词，比例误差从 <b>{origins['P0+B1']['tv_pp']:.2f} 到 {origins['P1+B1']['tv_pp']:.2f}</b>，基本持平。
+        开头食品标签的大幅改善来自保留全组选项的概率。两项正式复验的逐人答对率各只提高约 1 个百分点。</p>
+      <p>Tjuatja 等发现，有些文字或格式变化会改变模型答案，真人对同类改动的反应常常不同。
+        Jang 等在一批 Pew 题上发现，直接让模型报全体比例，比逐个虚拟人单选再加总更接近真人。我们用的是每个虚拟人的完整概率再汇总。</p>
+      <p class="source report-actions">{a('只换提示词的对照', DIAGNOSIS['commerce'])}
+        {a('Tjuatja 等，TACL，2024', 'https://aclanthology.org/2024.tacl-1.56/')}
+        {a('Jang 等，2026 年预印本 v3', 'https://arxiv.org/html/2607.25292v3#S6')}</p>
+    </article>
+    <article class="tile effect-card" id="cause-survey">
+      <p class="effect-use">真人问卷</p>
+      <h3>答题条件有差别，影响多大还没测</h3>
+      <p>食品标签题由访员打电话问平时习惯。豆腐题给真人看商品卡，记录他们在设定情境里的选择。AI 在两项实验中都读文字。</p>
+      <p>Pew 曾把真人随机分给电话访问和网页自填两组。60 道题里的答复差异平均为 5.5 个百分点，随题而变。
+        本项目还缺同一批题在两种方式下的真人对照，暂时无法量出这部分误差。现有证据也不足以把差距归到问卷数据质量上。</p>
+      <p class="source report-actions">{a('CDC 电话访问说明', 'https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/CBQPFA_J.htm')}
+        {a('Pew 随机对照，2015', 'https://www.pewresearch.org/2015/05/13/from-telephone-to-the-web-the-challenge-of-mode-of-interview-effects-in-public-opinion-polls/')}
+        {a('本项目末轮规程', STAGE / 'docs/末轮复验规程.md')}</p>
+    </article>
+  </div>
+  <details class="panel cause-detail"><summary>豆腐选款的完整成绩，以及资料相同时的对照</summary>
+    <p>把「买不买」与「选哪款」全部计入，换成 AI 选款后，个人概率误差从 {statistics['brier']:.3f} 升到 {hybrid['brier']:.3f}。
+      增加量的 95% 区间为 [{rise_low:+.3f}, {rise_high:+.3f}]。使用的是同一批实验题的事后补算。</p>
+    <p>啤酒问卷用相同的群体预测和记录，Qwen 和统计的误差分别为 {beer['qwen_own']:.3f}、{beer['stat_own']:.3f}，奶酪问卷分别为
+      {cheese['qwen_own']:.3f}、{cheese['stat_own']:.3f}。德国番茄包装题给 AI 看同题真人比例，误差从
+      {anchors['optimized']['brier']:.3f} 降到 {anchors['anchored']['brier']:.3f}，直接用同一组真人比例为 {anchors['stratum_history']['brier']:.3f}。</p>
+    <p class="source report-actions">{a('豆腐补算', DIAGNOSIS['combined'])} {a('同资料对照', DIAGNOSIS['same_info'])}
+      {a('同题真人比例对照', DIAGNOSIS['anchors'])}</p>
+  </details>
+  <details class="panel cause-detail"><summary>为什么有的论文说能预测，我们仍然测到明显差距？</summary>
+    <p>说准「总体怎样」、说准「哪类人怎样」和猜中「某个人怎样」，是三个成绩。Bisbee 等发现，合成问卷的平均分有时接近真人，
+      回答仍更集中，各类人之间的差异也会估偏。Ashokkumar 等在 70 项社会科学实验里发现，模型估出的实验变化和实测变化相关，
+      整体仍高估变化有多大。这些论文的成绩适用于它们各自测的任务。</p>
+    <p>题目本身的分歧也要看。一轮早期瑞士试验中，90.3% 的答案落在同一个选项，靠猜多数就容易拿高答对率。
+      那轮很难检验个人偏好。这两项末轮实验各评估 96 人，食品标签是本人自报习惯，豆腐是问卷选购。验证实际下单还需要真实订单。</p>
+    <p class="source report-actions">{a('Bisbee 等，Political Analysis，2024', 'https://doi.org/10.1017/pan.2024.5')}
+      {a('Ashokkumar 等，Nature，2026', 'https://www.nature.com/articles/s41586-026-10742-x')}
+      {a('瑞士试验复核', STAGE / 'archive/2026-11-13-exploration/docs/结果记录.md')}
+      {a('真实订单对照', 'purchase-evidence.html')}</p>
+  </details>
+  <details class="panel cause-detail"><summary>还差哪项对照，才能分清是资料还是模型？</summary>
+    <p>在同一批人和题目上，让每个模型都试两种输入，一次只给基础背景，一次再加本人的旧选择。答完才用留出的真人答案评分。
+      固定模型换资料，可以量出资料增加的作用。</p>
+    <p>比较模型与统计时，两边可以用同一份从其他真人算出的群体预测，再看同样的本人记录。这样能比较谁更会用资料。
+      要估计答题方式的影响，可以把真人随机分给原来的问卷形式和 AI 读到的文字版，比较同题答案。</p>
+  </details>
+</section>
+"""
+
+
 def bottleneck_page(d, cases, purchases):
     def source_ref(key, name):
         return a(name, DIAGNOSIS[key])
@@ -376,10 +471,6 @@ def bottleneck_page(d, cases, purchases):
     packaging = d['commerce']['surveys']['packaging']['cells']
     commerce_ref = source_ref('commerce', '提示词与背景对照')
 
-    anchors = d['anchors']['studies']['german']['results']['arms']
-    beer = d['same_info']['studies']['beer']['brier']
-    cheese = d['same_info']['studies']['italy']['brier']
-    stats = d['combined']['scores']
     buy = tofu['scores']
     own_gain = tofu['contrasts']['population__own']['choice']['improvement'] / buy['population']['brier']
     yogurt = next(row for row in purchases['gains'] if row['label'] == '酸奶（超市）')
@@ -387,9 +478,6 @@ def bottleneck_page(d, cases, purchases):
     pilot_err = pilot['scores']
     pilot_shift = pilot_err['pilot_ai'] - pilot_err['pilot']
     pilot_low, pilot_high = pilot['contrasts']['pilot']['ci95']
-    combined_gap = stats['combined']['brier'] - stats['refusal_only']['brier']
-    combined_low, combined_high = (-x for x in reversed(d['combined']['combined_vs_reference']['refusal_only']['ci95']))
-
     main_unit = (f'{labels[0]} {chart["argmax"][0]:.2f} → {chart["full"][0]:.2f}，'
                  f'{labels[1]} {chart["argmax"][1]:.2f} → {chart["full"][1]:.2f}。')
     payload = json.dumps(chart, ensure_ascii=False, allow_nan=False).replace('<', '\\u003c')
@@ -398,8 +486,8 @@ def bottleneck_page(d, cases, purchases):
     return html_page('有效改法与剩余差距｜MatrAI X', f"""
 {headline('哪些改法确实有用？', '估一群人的答案比例，先保留各选项的概率。手里有本人的旧选择，就用它来更新统计。每组数字左边是改前，右边是改后，误差越低越好。')}
 <nav class="report-actions effect-jumps" aria-label="本页导航">
-  {a('优先采用的改法', '#what-helps')} {a('换模型与补资料', '#depends')}
-  {a('改完还差在哪', '#remaining')} {a('收益小或待验证', '#causes')}
+  {a('为什么还不够准', '#remaining')} {a('优先采用的改法', '#what-helps')}
+  {a('换模型与补资料', '#depends')} {a('收益小或待验证', '#causes')}
 </nav>
 <section class="tiles effect-grid" id="what-helps" aria-label="优先采用的改法">
   <article class="tile effect-card effect-card--primary">
@@ -444,33 +532,7 @@ def bottleneck_page(d, cases, purchases):
     </article>
   </div>
 </section>
-<section class="panel sources" aria-labelledby="remaining">
-  <h2 id="remaining">改完还差在哪儿？</h2>
-  <div class="tiles effect-grid">
-    <div class="effect-remaining">
-      <h3>「买不买」固定，换 AI 选款就变差</h3>
-      <p class="effect-number">{stats['refusal_only']['conditional']:.3f} → {stats['combined']['conditional']:.3f}</p>
-      <p>只看在豆腐问卷里选了商品的人。两组的「买不买」预测相同。选款用统计时是左边的误差，交给 AI 后是右边的误差。</p>
-    </div>
-    <div class="effect-remaining">
-      <h3>现在还分不清资料和方法各影响多少</h3>
-      <p>统计选款看过另一批真人的训练答案。这个对照能找到差距发生在选款，剩下要用同样的资料来比较谁处理得更好。</p>
-    </div>
-  </div>
-  <details><summary>看「买不买」和「买哪款」合起来的误差</summary>
-    <p>全部选项都计入后，个人概率误差从 {stats['refusal_only']['brier']:.3f} 升到 {stats['combined']['brier']:.3f}，多了
-      {combined_gap:.3f} 分。增加量的 95% 区间为 [{combined_low:+.3f}, {combined_high:+.3f}]。</p>
-    <p>这是用同一批实验题做的事后补算。概率误差用 Brier 分数表示，越低越好。</p>
-  </details>
-  <details><summary>其他对照怎样检验资料和处理方法？</summary>
-    <p>德国番茄包装问卷中，给 AI 同题真人比例，个人概率误差从 {anchors['optimized']['brier']:.3f} 降到
-      {anchors['anchored']['brier']:.3f}，直接统计同一组真人比例为 {anchors['stratum_history']['brier']:.3f}。</p>
-    <p>给 Qwen 和统计方法同样的群体预测和本人记录，啤酒问卷的误差分别为 {beer['qwen_own']:.3f}、{beer['stat_own']:.3f}，
-      奶酪问卷分别为 {cheese['qwen_own']:.3f}、{cheese['stat_own']:.3f}。</p>
-    <p class="source">{source_ref('anchors', '加入真人比例的对照')} · {source_ref('same_info', '同资料对照数据')}</p>
-  </details>
-  <p class="source">{source_ref('combined', '组合补算数据')} · {a('看真实订单的验证', 'purchase-evidence.html')}</p>
-</section>
+{bottleneck_analysis(d)}
 <section class="sources" aria-labelledby="causes">
   <h2 id="causes">哪些改法收益小，或还没证实？</h2>
   <div class="tiles effect-grid effect-grid--three">
@@ -494,6 +556,11 @@ def bottleneck_page(d, cases, purchases):
       <h3>多跑几次，或调作答设置</h3>
       <p>同一套购物问卷用 Pro 重复三次，误差从 {min(runs):.2f} 到 {max(runs):.2f} 个百分点。平均三次结果仅再少 <b>{delta:.2f} 个百分点</b>。</p>
       <p>温度和取样范围在末轮各组都相同。单独改其中一项能帮多少，还没测。</p>
+      <details><summary>看调温度在别的题里造成了什么</summary>
+        <p>有一项用训练过的模型预测电动车偏好的研究，提高温度后，整群人的分布通常更近，逐人的误差却更大。
+          这组结果只说明在该研究里两类成绩有取舍。</p>
+        <p class="source">{a('电动车偏好研究，预印本，§6.3', 'https://arxiv.org/html/2403.20252v1#S6.SS3')}</p>
+      </details>
       <p class="source">{repeat_ref} · {settings}</p>
     </article>
   </div>
@@ -520,8 +587,7 @@ def bottleneck_page(d, cases, purchases):
       {origin['summary']['choice']['mean_run_tv_pp']:.2f} 到 {origin['summary']['probability']['mean_run_tv_pp']:.2f} 个百分点。
       改善的 95% 区间 [{origin_low:+.2f}, {origin_high:+.2f}] 跨 0，效果仍不确定。{repeat_ref}</p>
   </details>
-  <p class="source report-actions">{a('打开购物评价原题', 'question-cases.html#SHOP12')} {data_ref}
-    {a('Jang 等的独立研究', 'https://arxiv.org/abs/2607.25292v3')}</p>
+  <p class="source report-actions">{a('打开购物评价原题', 'question-cases.html#SHOP12')} {data_ref}</p>
 </section>
 <footer class="report-actions">{a('回到最终对照', 'overview.html')} {a('查看真题与答案分布', 'question-cases.html')}</footer>
 """, js, styles=(HERE / 'src/bottleneck.css').read_text())
