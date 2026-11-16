@@ -58,13 +58,13 @@ PROJECT_BASELINE = 'MatrAI X 项目（单选）'
 NEUTRAL, PROBABILITY, COMBINED, STATISTICS = '#a2b0c5', '#638bbd', '#234fa0', '#19815f'
 
 
-def link(label, target):
+def link(label, target, *, primary=False):
     parts = urlsplit(target)
     url = target if parts.scheme else urlunsplit(
         ('', '', quote('../../../' + parts.path, safe='/'), parts.query, parts.fragment)
     )
     if Path(parts.path).suffix.lower() in HTML:
-        return report_button(label, url)
+        return report_button(label, url, primary=primary)
     return f'<a href="{h(url, quote=True)}">{h(label)}</a>'
 
 
@@ -131,8 +131,8 @@ def issue_summary(d):
     MatrAI X 项目只让每个虚拟人选一个答案，结果估成 <b>{before:.1%}</b>。</p>
   <p class="finding-note">只留概率最高的一项，其他答案的可能性就被舍掉了。
     改成把每个人给各选项的概率都算进去后，「有时」降到 <b>{after:.1%}</b>，离真人还有一段差距。</p>
-  <p class="source report-actions">{link('看食品日期原题', CENTER + 'question-cases.html#CBQ700')}
-    {link('看只改汇总的对照', CENTER + 'bottleneck.html#mechanism-title')}</p>"""
+  <p class="source report-actions">{link('先看哪些改法有效', CENTER + 'bottleneck.html', primary=True)}
+    {link('看食品日期原题', CENTER + 'question-cases.html#CBQ700')}</p>"""
 
 
 def study_scope(d):
@@ -164,28 +164,16 @@ def bottleneck_summary(d):
     food, tofu = (study['results'] for study in d['replication']['studies'])
     after = [r['scores']['output_only']['tv'] for r in (food, tofu)]
     combined = d['combined']['scores']
-    matching = d['repeat']['matching']['summary']
-    qwen, pro = (matching[f'{model}/matched'] for model in ('qwen', 'pro'))
-    runs = pro['tv_by_run_pp']
-    averaging_gain = pro['mean_run_tv_pp'] - pro['ensemble_tv_pp']
     return f"""
-  <p>保留概率后，食品标签和豆腐复验的群体比例误差仍有
-    <b>{after[0]:.2f}</b> 和 <b>{after[1]:.2f}</b> 个百分点。豆腐的组合对照固定了「买不买」的预测，
-    选款用统计时，个人概率误差是 <b>{combined['refusal_only']['brier']:.3f}</b>，改用 AI 选款后上升到
-    <b>{combined['combined']['brier']:.3f}</b>。只看真人确实选了商品的题，选款误差从
-    {combined['refusal_only']['conditional']:.3f} 升到 {combined['combined']['conditional']:.3f}。统计选款用过其他真人的训练答案。</p>
   <dl class="bottleneck-factors">
-    <div><dt>多知道一点本人怎样选</dt><dd>豆腐实验用本人的两次选择更新统计，个人概率误差从
-      {tofu['scores']['population']['brier']:.3f} 降到 {tofu['scores']['own']['brier']:.3f}。
-      用别人的两次选择更新时，误差为 {tofu['scores']['other']['brier']:.3f}。</dd></div>
-    <div><dt>换一个模型</dt><dd>早期购物问卷固定题目和画像，Qwen 换成 DeepSeek Pro 后，
-      群体误差从 {qwen['mean_run_tv_pp']:.2f} 降到 {pro['mean_run_tv_pp']:.2f} 个百分点。</dd></div>
-    <div><dt>让同一个模型再答几次</dt><dd>同一套购物问卷用 Pro 重复三次，误差在 {min(runs):.2f} 至 {max(runs):.2f} 个百分点之间。
-      平均三次预测，误差比三次单独评分的平均值再少 {averaging_gain:.2f} 个百分点。</dd></div>
-    <div><dt>调整 AI 的作答设置</dt><dd>末轮各组都用同一套设置。温度和取样范围只改其中一项会怎样，还需要对照测试。</dd></div>
+    <div><dt>人群比例仍有差距</dt><dd>保留概率后，食品标签和豆腐选购的比例误差还有
+      <b>{after[0]:.2f}</b> 和 <b>{after[1]:.2f}</b> 个百分点。</dd></div>
+    <div><dt>猜买哪款，AI 还会选偏</dt><dd>豆腐问卷里固定「买不买」的预测，只把选款交给 AI，误差从
+      <b>{combined['refusal_only']['conditional']:.3f}</b> 升到 <b>{combined['combined']['conditional']:.3f}</b>。</dd></div>
   </dl>
-  <p class="note">这些对照只量出了各自条件下的效果。剩余误差还有多少来自画像遗漏、模型能力或样本波动，现有数据无法分开估计。</p>
-  <p class="source">{link('查看瓶颈证据与实验条件', CENTER + 'bottleneck.html#remaining')}</p>"""
+  <p>豆腐对照把问题定位到选款。统计选款还用过其他真人的答案，资料和模型各影响了多少，现有实验还分不开。</p>
+  <p class="source report-actions">{link('查看瓶颈证据', CENTER + 'bottleneck.html#remaining')}
+    {link('看换模型和补资料的效果', CENTER + 'bottleneck.html#depends')}</p>"""
 
 
 def usage_summary(d):

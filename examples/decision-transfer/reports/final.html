@@ -113,7 +113,7 @@ nav a { text-decoration-thickness: 1px; }
 .bottleneck-factors {
   display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 18px; margin: 12px 0;
 }
-.bottleneck-factors > div { border-top: 1px solid #d2def2; padding-top: 8px; }
+.bottleneck-factors > div { background: var(--paper); border: 1px solid #d2def2; border-radius: 8px; padding: 10px 13px; }
 .bottleneck-factors dt { font-weight: 720; }
 .bottleneck-factors dd { margin: 0; font-size: .9rem; }
 .usage dl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 12px 0 0; }
@@ -210,8 +210,8 @@ footer { padding: 14px 0 0; margin-top: 16px; border-top: 1px solid var(--line);
     MatrAI X 项目只让每个虚拟人选一个答案，结果估成 <b>75.8%</b>。</p>
   <p class="finding-note">只留概率最高的一项，其他答案的可能性就被舍掉了。
     改成把每个人给各选项的概率都算进去后，「有时」降到 <b>28.6%</b>，离真人还有一段差距。</p>
-  <p class="source report-actions"><a class="report-link" href="../../../examples/reports/question-cases.html#CBQ700"><span>看食品日期原题</span><span class="report-link-type" aria-hidden="true">HTML</span></a>
-    <a class="report-link" href="../../../examples/reports/bottleneck.html#mechanism-title"><span>看只改汇总的对照</span><span class="report-link-type" aria-hidden="true">HTML</span></a></p>
+  <p class="source report-actions"><a class="report-link report-link--primary" href="../../../examples/reports/bottleneck.html"><span>先看哪些改法有效</span><span class="report-link-type" aria-hidden="true">HTML</span></a>
+    <a class="report-link" href="../../../examples/reports/question-cases.html#CBQ700"><span>看食品日期原题</span><span class="report-link-type" aria-hidden="true">HTML</span></a></p>
 </div>
 
 <div class="secondary">
@@ -294,25 +294,17 @@ footer { padding: 14px 0 0; margin-top: 16px; border-top: 1px solid var(--line);
   <p class="source"><a href="../../../examples/decision-transfer/docs/%E6%9C%AB%E8%BD%AE%E5%A4%8D%E9%AA%8C%E8%A7%84%E7%A8%8B.md">样本、匹配和评分规程</a></p>
 </section>
 <aside class="bottleneck-brief" id="bottleneck" aria-labelledby="bottleneck-title">
-  <h2 id="bottleneck-title">优化后，差距为什么还在？</h2>
+  <h2 id="bottleneck-title">改完还差在哪儿？</h2>
 
-  <p>保留概率后，食品标签和豆腐复验的群体比例误差仍有
-    <b>23.32</b> 和 <b>15.69</b> 个百分点。豆腐的组合对照固定了「买不买」的预测，
-    选款用统计时，个人概率误差是 <b>0.453</b>，改用 AI 选款后上升到
-    <b>0.478</b>。只看真人确实选了商品的题，选款误差从
-    0.364 升到 0.400。统计选款用过其他真人的训练答案。</p>
   <dl class="bottleneck-factors">
-    <div><dt>多知道一点本人怎样选</dt><dd>豆腐实验用本人的两次选择更新统计，个人概率误差从
-      0.558 降到 0.471。
-      用别人的两次选择更新时，误差为 0.586。</dd></div>
-    <div><dt>换一个模型</dt><dd>早期购物问卷固定题目和画像，Qwen 换成 DeepSeek Pro 后，
-      群体误差从 15.95 降到 11.50 个百分点。</dd></div>
-    <div><dt>让同一个模型再答几次</dt><dd>同一套购物问卷用 Pro 重复三次，误差在 11.40 至 11.65 个百分点之间。
-      平均三次预测，误差比三次单独评分的平均值再少 0.01 个百分点。</dd></div>
-    <div><dt>调整 AI 的作答设置</dt><dd>末轮各组都用同一套设置。温度和取样范围只改其中一项会怎样，还需要对照测试。</dd></div>
+    <div><dt>人群比例仍有差距</dt><dd>保留概率后，食品标签和豆腐选购的比例误差还有
+      <b>23.32</b> 和 <b>15.69</b> 个百分点。</dd></div>
+    <div><dt>猜买哪款，AI 还会选偏</dt><dd>豆腐问卷里固定「买不买」的预测，只把选款交给 AI，误差从
+      <b>0.364</b> 升到 <b>0.400</b>。</dd></div>
   </dl>
-  <p class="note">这些对照只量出了各自条件下的效果。剩余误差还有多少来自画像遗漏、模型能力或样本波动，现有数据无法分开估计。</p>
-  <p class="source"><a class="report-link" href="../../../examples/reports/bottleneck.html#remaining"><span>查看瓶颈证据与实验条件</span><span class="report-link-type" aria-hidden="true">HTML</span></a></p>
+  <p>豆腐对照把问题定位到选款。统计选款还用过其他真人的答案，资料和模型各影响了多少，现有实验还分不开。</p>
+  <p class="source report-actions"><a class="report-link" href="../../../examples/reports/bottleneck.html#remaining"><span>查看瓶颈证据</span><span class="report-link-type" aria-hidden="true">HTML</span></a>
+    <a class="report-link" href="../../../examples/reports/bottleneck.html#depends"><span>看换模型和补资料的效果</span><span class="report-link-type" aria-hidden="true">HTML</span></a></p>
 </aside>
 <section class="usage" id="adopt" aria-labelledby="adopt-title">
   <h2 id="adopt-title">实际怎么选方法</h2>
@@ -334,7 +326,7 @@ footer { padding: 14px 0 0; margin-top: 16px; border-top: 1px solid var(--line);
 </section>
 <section class="appendix" id="html-reports" aria-labelledby="html-reports-title">
   <h2 id="html-reports-title">重点报告</h2>
-  <ul class="report-links"><li><a class="report-link" href="../../../examples/reports/bottleneck.html"><span>改法与剩余差距</span><span class="report-link-type" aria-hidden="true">HTML</span></a><p class="note">十个虚拟人为什么会投出十张相同的票？从一个小例子看懂问题，再看真人实验里改好多少。</p></li><li><a class="report-link" href="../../../examples/reports/question-cases.html"><span>真人原题与答案分布</span><span class="report-link-type" aria-hidden="true">HTML</span></a><p class="note">从「买东西会看评价吗」开始，看看真人、MatrAI X 项目和各个改法分别怎么答。</p></li><li><a class="report-link" href="../../../examples/reports/purchase-evidence.html"><span>本人记录与购买预测</span><span class="report-link-type" aria-hidden="true">HTML</span></a><p class="note">从超市酸奶说起。手里有一家人过去的购物记录，能猜准他们下一趟买不买、又会买哪款吗？</p></li><li><a class="report-link" href="../../../examples/reports/project-evidence.html"><span>项目证据与边界</span><span class="report-link-type" aria-hidden="true">HTML</span></a><p class="note">一份真人问卷变成虚拟人物卡后，哪些是本人填的，哪些是 AI 推的？看看原始资料和人物卡。</p></li></ul>
+  <ul class="report-links"><li><a class="report-link" href="../../../examples/reports/bottleneck.html"><span>有效改法与剩余差距</span><span class="report-link-type" aria-hidden="true">HTML</span></a><p class="note">看哪些改法可以先用、误差少了多少。也能查换模型、补资料或调参数的对照结果。</p></li><li><a class="report-link" href="../../../examples/reports/question-cases.html"><span>真人原题与答案分布</span><span class="report-link-type" aria-hidden="true">HTML</span></a><p class="note">从「买东西会看评价吗」开始，看看真人、MatrAI X 项目和各个改法分别怎么答。</p></li><li><a class="report-link" href="../../../examples/reports/purchase-evidence.html"><span>本人记录与购买预测</span><span class="report-link-type" aria-hidden="true">HTML</span></a><p class="note">从超市酸奶说起。手里有一家人过去的购物记录，能猜准他们下一趟买不买、又会买哪款吗？</p></li><li><a class="report-link" href="../../../examples/reports/project-evidence.html"><span>项目证据与边界</span><span class="report-link-type" aria-hidden="true">HTML</span></a><p class="note">一份真人问卷变成虚拟人物卡后，哪些是本人填的，哪些是 AI 推的？看看原始资料和人物卡。</p></li></ul>
 </section>
 <section class="appendix" id="evidence" aria-labelledby="evidence-title">
   <h2 id="evidence-title">实验明细与来源</h2>

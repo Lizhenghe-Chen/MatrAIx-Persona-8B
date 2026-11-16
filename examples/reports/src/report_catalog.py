@@ -10,8 +10,8 @@ EXAMPLES = Path(__file__).resolve().parents[2]
 CENTER = EXAMPLES / 'reports'
 HTML = {'.html', '.htm'}
 FEATURED_REPORTS = (
-    ('bottleneck.html', '改法与剩余差距',
-     '十个虚拟人为什么会投出十张相同的票？从一个小例子看懂问题，再看真人实验里改好多少。'),
+    ('bottleneck.html', '有效改法与剩余差距',
+     '看哪些改法可以先用、误差少了多少。也能查换模型、补资料或调参数的对照结果。'),
     ('question-cases.html', '真人原题与答案分布',
      '从「买东西会看评价吗」开始，看看真人、MatrAI X 项目和各个改法分别怎么答。'),
     ('purchase-evidence.html', '本人记录与购买预测',

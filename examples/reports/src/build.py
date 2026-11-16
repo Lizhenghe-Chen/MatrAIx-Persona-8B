@@ -33,6 +33,7 @@ DIAGNOSIS = {
     'replication': STAGE / 'data/final-replication-v1.json',
     'combined': STAGE / 'data/final-combined-v1.json',
     'matching': FROZEN / 'study/10_匹配与商品复验/results.json',
+    'commerce': FROZEN / 'study/06_北美电商选品/results.json',
     'same_info': STAGE / 'data/personal-choice-qwen-v1.json',
     'anchors': FROZEN / 'decision_lab/reports/cross-study-v1/anchor-v1-results.json',
 }
@@ -73,10 +74,10 @@ def nav():
 {a('原题对照', 'question-cases.html')} {a('问题与瓶颈', 'bottleneck.html')}</nav></header>'''
 
 
-def html_page(title, contents, js=''):
+def html_page(title, contents, js='', *, styles=''):
     return (f'<!doctype html>\n<html lang="zh-CN"><head><meta charset="utf-8">'
             f'<meta name="viewport" content="width=device-width, initial-scale=1"><title>{h(title)}</title>'
-            f'<style>\n{THEME}</style></head><body><main>\n{nav()}\n{contents}\n</main>\n{js}</body></html>\n')
+            f'<style>\n{THEME}{styles}</style></head><body><main>\n{nav()}\n{contents}\n</main>\n{js}</body></html>\n')
 
 
 def headline(title, description):
@@ -327,7 +328,7 @@ def purchase_page(data):
 
 
 
-def bottleneck_page(d, cases):
+def bottleneck_page(d, cases, purchases):
     def source_ref(key, name):
         return a(name, DIAGNOSIS[key])
 
@@ -341,11 +342,16 @@ def bottleneck_page(d, cases):
              'argmax': [r['scores']['argmax']['tv'] for r in (food, tofu)],
              'full': [r['scores']['output_only']['tv'] for r in (food, tofu)]}
     production_rows = []
+    outcome_rows = []
     for label, study, contrast in zip(labels, (food, tofu), pipeline_ci, strict=True):
         scores = study['scores']
+        before = scores['original']['tv']
+        after = scores['output_only']['tv']
+        gain = contrast['improvement']
+        outcome_rows.append(f'<div><dt>{h(label)}</dt><dd><b>{before:.2f} → {after:.2f}</b> '
+                            f'<span class="gain">少 {gain:.2f} 个百分点</span></dd></div>')
         production_rows.append((
-            h(label), f"{scores['original']['tv']:.2f}", f"{scores['output_only']['tv']:.2f}",
-            f"<b>{contrast['improvement']:.2f}</b>",
+            h(label), f'{before:.2f}', f'{after:.2f}', f'<b>{gain:.2f}</b>',
             f"[{contrast['ci95'][0]:.2f}, {contrast['ci95'][1]:.2f}]",
             f"{100 * (scores['output_only']['accuracy'] - scores['original']['accuracy']):+.2f}",
         ))
@@ -358,15 +364,25 @@ def bottleneck_page(d, cases):
     pro_more = compare['summary']['pro/matched_traits']
     runs = pro['tv_by_run_pp']
     delta = pro['mean_run_tv_pp'] - pro['ensemble_tv_pp']
+    model_gain = qwen['mean_run_tv_pp'] - pro['mean_run_tv_pp']
+    traits_gain = pro['mean_run_tv_pp'] - pro_more['mean_run_tv_pp']
     origin = d['matching']['products']['origin']
     origin_contrast = next(c for c in origin['comparisons'] if c['before'] == 'choice' and c['after'] == 'probability')
     origin_low, origin_high = origin_contrast['ci95']
+    origins = d['commerce']['surveys']['origin']['cells']
+    base = origins['P0+B1']['tv_pp']
+    with_info = origins['P0+B3']['tv_pp']
+    only_prompt = origins['P1+B1']['tv_pp']
+    packaging = d['commerce']['surveys']['packaging']['cells']
+    commerce_ref = source_ref('commerce', '提示词与背景对照')
 
     anchors = d['anchors']['studies']['german']['results']['arms']
     beer = d['same_info']['studies']['beer']['brier']
     cheese = d['same_info']['studies']['italy']['brier']
     stats = d['combined']['scores']
     buy = tofu['scores']
+    own_gain = tofu['contrasts']['population__own']['choice']['improvement'] / buy['population']['brier']
+    yogurt = next(row for row in purchases['gains'] if row['label'] == '酸奶（超市）')
     pilot = food['pilot']
     pilot_err = pilot['scores']
     pilot_shift = pilot_err['pilot_ai'] - pilot_err['pilot']
@@ -374,52 +390,115 @@ def bottleneck_page(d, cases):
     combined_gap = stats['combined']['brier'] - stats['refusal_only']['brier']
     combined_low, combined_high = (-x for x in reversed(d['combined']['combined_vs_reference']['refusal_only']['ci95']))
 
-    findings = [
-        ('知道本人以前的选择，有用吗？', '有对照支持', f"""
-          德国番茄包装问卷给 AI 同题真人比例后，个人概率误差从 {anchors['optimized']['brier']:.3f}
-          降到 {anchors['anchored']['brier']:.3f}。直接采用同一组真人比例为 {anchors['stratum_history']['brier']:.3f}。
-          豆腐实验中，用本人两次选择更新统计，误差从 {buy['population']['brier']:.3f} 降到 {buy['own']['brier']:.3f}。
-          把这两次记录换成别人的，误差是 {buy['other']['brier']:.3f}。""",
-          '这些任务中，同题资料和本人实际选择能提供帮助。较早的 Pew 对照中，'
-          f'固定 Pro 和匹配的人群，加入四项合成人格，分布误差从 {pro["mean_run_tv_pp"]:.2f} 降到 {pro_more["mean_run_tv_pp"]:.2f} 个百分点。'
-          '这次改善较小，且未达到预定的 2 个百分点门槛。',
-          f'{source_ref("anchors","加入真人比例的完整结果")} · {data_ref} · {repeat_ref}'),
-        ('换一个 AI，成绩会变吗？', '有对照支持', f"""
-          同题、同画像和概率输出条件下，购物问卷从 Qwen 换到 DeepSeek Pro 后，
-          分布误差从 {qwen['mean_run_tv_pp']:.2f} 降到 {pro['mean_run_tv_pp']:.2f} 个百分点。
-          在啤酒、奶酪问卷里，给 Qwen 和统计方法同样的群体预测与本人记录，
-          统计误差分别为 {beer['stat_own']:.3f}、{cheese['stat_own']:.3f}，好于 Qwen 的
-          {beer['qwen_own']:.3f}、{cheese['qwen_own']:.3f}。""",
-          '选模型会影响结果，而且给足相同资料也可能处理不好。现有对照无法把差距拆成理解、推理和概率校准各占多少。',
-          f'{repeat_ref} · {source_ref("same_info", "同资料对照数据")}'),
-        ('让同一个 AI 多答几次，会稳很多吗？', '测到波动，范围有限',
-          f'同一组 {compare["people_per_cohort"]} 个画像和同配置的 Pro 购物问卷重复三次，分布误差在 {min(runs):.2f}–{max(runs):.2f} 之间。'
-          f'把三次概率直接平均，比三次分开评分的平均误差仅少 {delta:.2f} 个百分点。',
-          '这套问卷上，多跑几次没有消除剩余误差。其他问卷和单个问题可能更不稳定，需单独重复。',
-          repeat_ref),
-        ('调整 AI 的作答设置，会更准吗？', '还需要单独测试',
-          f'末轮模型设定了温度 0.7 和 top_p＝1，分别控制输出的随机程度与取样候选范围。'
-          f'Pro 的 {d["replication"]["run"]["pro"]["successful"]} 次技术检查或正式评估请求均完成。',
-          '参数有记录。末轮各组用同一设置，也没有逐档调整温度或 top_p 的对照，因此无法估计调参能补掉多少误差。',
-          settings),
-        ('问卷会选，实际也会买吗？', '要看真实订单',
-          '食品标签是自报行为，豆腐是设定情境中的假设选择。每套正式评估 96 人，同一豆腐题卡还需要达到最低人数才比较比例。',
-          '各题的真人比例仍有抽样误差。这些结果用来评估同题、同人群条件下的模拟，实际下单需另用真实交易验证。',
-          f'{settings} · {a("真实购买与时间留出结果", "purchase-evidence.html")}'),
-    ]
-    explanations = ''.join(
-        f'<details><summary>{h(topic)} <span class="diagnosis-status">{h(status)}</span></summary>'
-        f'<p>{h(test)}</p><p>{h(conclusion)}</p><p class="source">{sources}</p></details>'
-        for topic, status, test, conclusion, sources in findings
-    )
     main_unit = (f'{labels[0]} {chart["argmax"][0]:.2f} → {chart["full"][0]:.2f}，'
                  f'{labels[1]} {chart["argmax"][1]:.2f} → {chart["full"][1]:.2f}。')
     payload = json.dumps(chart, ensure_ascii=False, allow_nan=False).replace('<', '\\u003c')
     js = (f'<script type="application/json" id="mechanism-data">{payload}</script>'
           f'<script>{VENDOR.read_text()}</script><script>{(HERE / "src/bottleneck.js").read_text()}</script>')
-    return html_page('问题、改法与剩余差距｜MatrAI X', f"""
-{headline('为什么 AI 常常答成一边倒？', '真人有不同的习惯，虚拟人却容易挤到同一个答案。我们换一种数答案的方法，再看哪一步还会猜错。')}
-<section class="panel" aria-labelledby="mechanism-title">
+    return html_page('有效改法与剩余差距｜MatrAI X', f"""
+{headline('哪些改法确实有用？', '估一群人的答案比例，先保留各选项的概率。手里有本人的旧选择，就用它来更新统计。每组数字左边是改前，右边是改后，误差越低越好。')}
+<nav class="report-actions effect-jumps" aria-label="本页导航">
+  {a('优先采用的改法', '#what-helps')} {a('换模型与补资料', '#depends')}
+  {a('改完还差在哪', '#remaining')} {a('收益小或待验证', '#causes')}
+</nav>
+<section class="tiles effect-grid" id="what-helps" aria-label="优先采用的改法">
+  <article class="tile effect-card effect-card--primary">
+    <p class="effect-use">估一群人怎么选</p>
+    <h2>保留每个选项的概率</h2>
+    <p class="small">人群比例误差，单位为百分点。</p>
+    <dl class="effect-results">{''.join(outcome_rows)}</dl>
+    <p>同一模型、题目和人物卡。原来每人交一个选项，改后交全部概率，再汇总。两项实验的逐人答对率各只提高约 1 个百分点。</p>
+    <p class="source report-actions">{a('看为什么这样更准', '#mechanism-title')} {data_ref}</p>
+  </article>
+  <article class="tile effect-card effect-card--primary">
+    <p class="effect-use">猜某个人会选什么</p>
+    <h2>用本人的旧选择更新统计</h2>
+    <p class="small">先按其他真人怎么选来估计，再用本人的记录调整。</p>
+    <dl class="effect-results">
+      <div><dt>瑞典豆腐问卷 · 个人概率误差</dt><dd><b>{buy['population']['brier']:.3f} → {buy['own']['brier']:.3f}</b>
+        <span class="gain">比原误差少 {own_gain:.1%}</span></dd></div>
+      <div><dt>美国超市酸奶订单 · 个人概率误差</dt><dd><b>{yogurt['baseline']:.3f} → {yogurt['with_history']:.3f}</b>
+        <span class="gain">比原误差少 {yogurt['relative']:.1%}</span></dd></div>
+    </dl>
+    <p>豆腐问卷用了本人的两次实验选择。换成别人的记录，误差是 {buy['other']['brier']:.3f}。酸奶实验用的是已有购物历史的家庭。</p>
+    <p class="source report-actions">{a('看更多购买记录对照', 'purchase-evidence.html')} {source_ref('replication', '豆腐复验数据')}</p>
+  </article>
+</section>
+<section class="sources" aria-labelledby="depends">
+  <h2 id="depends">哪两件事要看题目再决定？</h2>
+  <div class="tiles effect-grid">
+    <article class="tile effect-card">
+      <h3>换一个更适合这份问卷的模型</h3>
+      <dl class="effect-results"><div><dt>购物态度问卷 · Qwen 换为 DeepSeek Pro</dt>
+        <dd><b>{qwen['mean_run_tv_pp']:.2f} → {pro['mean_run_tv_pp']:.2f}</b> <span class="gain">少 {model_gain:.2f} 个百分点</span></dd></div></dl>
+      <p>同一批题、同一批人物卡、都给选项概率，只换了模型。上面的数字是各答三次的平均误差。换一份问卷，需要重新验证。</p>
+      <p class="source">{repeat_ref}</p>
+    </article>
+    <article class="tile effect-card">
+      <h3>补上和这道题相关的真人资料</h3>
+      <dl class="effect-results"><div><dt>美国商品产地题 · 加入本人收入和文化态度</dt>
+        <dd><b>{base:.2f} → {with_info:.2f}</b> <span class="gain">少 {base - with_info:.2f} 个百分点</span></dd></div></dl>
+      <p>固定题目、模型和提示词，只补这两项实测资料。换成啤酒包装题，补收入和地区后，误差从
+        {packaging['P0+B1']['tv_pp']:.2f} 到 {packaging['P0+B3']['tv_pp']:.2f} 个百分点，改善还未证实。</p>
+      <p class="source">{commerce_ref} · {a('实验说明', DIAGNOSIS['commerce'].with_name('固定方案.md'))}</p>
+    </article>
+  </div>
+</section>
+<section class="panel sources" aria-labelledby="remaining">
+  <h2 id="remaining">改完还差在哪儿？</h2>
+  <div class="tiles effect-grid">
+    <div class="effect-remaining">
+      <h3>「买不买」固定，换 AI 选款就变差</h3>
+      <p class="effect-number">{stats['refusal_only']['conditional']:.3f} → {stats['combined']['conditional']:.3f}</p>
+      <p>只看在豆腐问卷里选了商品的人。两组的「买不买」预测相同。选款用统计时是左边的误差，交给 AI 后是右边的误差。</p>
+    </div>
+    <div class="effect-remaining">
+      <h3>现在还分不清资料和方法各影响多少</h3>
+      <p>统计选款看过另一批真人的训练答案。这个对照能找到差距发生在选款，剩下要用同样的资料来比较谁处理得更好。</p>
+    </div>
+  </div>
+  <details><summary>看「买不买」和「买哪款」合起来的误差</summary>
+    <p>全部选项都计入后，个人概率误差从 {stats['refusal_only']['brier']:.3f} 升到 {stats['combined']['brier']:.3f}，多了
+      {combined_gap:.3f} 分。增加量的 95% 区间为 [{combined_low:+.3f}, {combined_high:+.3f}]。</p>
+    <p>这是用同一批实验题做的事后补算。概率误差用 Brier 分数表示，越低越好。</p>
+  </details>
+  <details><summary>其他对照怎样检验资料和处理方法？</summary>
+    <p>德国番茄包装问卷中，给 AI 同题真人比例，个人概率误差从 {anchors['optimized']['brier']:.3f} 降到
+      {anchors['anchored']['brier']:.3f}，直接统计同一组真人比例为 {anchors['stratum_history']['brier']:.3f}。</p>
+    <p>给 Qwen 和统计方法同样的群体预测和本人记录，啤酒问卷的误差分别为 {beer['qwen_own']:.3f}、{beer['stat_own']:.3f}，
+      奶酪问卷分别为 {cheese['qwen_own']:.3f}、{cheese['stat_own']:.3f}。</p>
+    <p class="source">{source_ref('anchors', '加入真人比例的对照')} · {source_ref('same_info', '同资料对照数据')}</p>
+  </details>
+  <p class="source">{source_ref('combined', '组合补算数据')} · {a('看真实订单的验证', 'purchase-evidence.html')}</p>
+</section>
+<section class="sources" aria-labelledby="causes">
+  <h2 id="causes">哪些改法收益小，或还没证实？</h2>
+  <div class="tiles effect-grid effect-grid--three">
+    <article class="tile effect-card">
+      <h3>只改提示词，或多加几项性格</h3>
+      <p>美国商品产地题只换提示词，误差 {base:.2f} → {only_prompt:.2f} 个百分点，基本持平。</p>
+      <p>购物问卷给虚拟人物多加四项合成人格，误差少 {traits_gain:.2f} 个百分点，低于实验预先定的 2 个百分点门槛。</p>
+      <p class="source">{commerce_ref} · {repeat_ref}</p>
+    </article>
+    <article class="tile effect-card">
+      <h3>20 份真人试答再加 AI</h3>
+      <p>手里已有这组试答，可以先直接统计。食品标签问卷的误差是 <b>{pilot_err['pilot']:.2f}</b> 个百分点，和 AI 各占一半为
+        <b>{pilot_err['pilot_ai']:.2f}</b>，多了 {pilot_shift:.2f}。这次基本持平。</p>
+      <details id="pilot-interpretation"><summary>换一批试答者会怎样？</summary>
+        <p>这次的误差改善区间为 [{pilot_low:+.2f}, {pilot_high:+.2f}] 个百分点，包含 0，无法确认加 AI 有助益。
+          另外抽 {pilot['alternate_draws']} 组试答者，{pilot['share_ai_better']['pilot']:.1%} 的情况下加 AI 后误差更低。效果随试答者而变。</p>
+      </details>
+      <p class="source">{data_ref}</p>
+    </article>
+    <article class="tile effect-card">
+      <h3>多跑几次，或调作答设置</h3>
+      <p>同一套购物问卷用 Pro 重复三次，误差从 {min(runs):.2f} 到 {max(runs):.2f} 个百分点。平均三次结果仅再少 <b>{delta:.2f} 个百分点</b>。</p>
+      <p>温度和取样范围在末轮各组都相同。单独改其中一项能帮多少，还没测。</p>
+      <p class="source">{repeat_ref} · {settings}</p>
+    </article>
+  </div>
+</section>
+<section class="panel sources" aria-labelledby="mechanism-title">
   <h2 id="mechanism-title">每人只数一个答案，会漏掉什么？</h2>
   <p>问「购物前会看评价吗」，真人中 <b>{shopping_arms['real']:.1%}</b> 选「总是或几乎总是」。
     MatrAI X 项目单选估成 <b>{shopping_arms['original']:.1%}</b>，保留全部概率后是 <b>{shopping_arms['output_only']:.1%}</b>。</p>
@@ -432,8 +511,6 @@ def bottleneck_page(d, cases):
   <div class="chart mechanism-chart" id="mechanism-chart" role="img" aria-label="{h(main_unit, quote=True)}">
     <noscript><p>{h(main_unit)}</p></noscript>
   </div>
-  <p>如果从 MatrAI X 项目原来的单选流程开始比较，美国食品标签和瑞典豆腐的误差分别少了
-    <b>{pipeline_ci[0]['improvement']:.2f}</b> 和 <b>{pipeline_ci[1]['improvement']:.2f}</b> 个百分点。</p>
   <details><summary>查看正式对照的改前、改后和区间</summary>
     <p class="small">表中改前用的是项目直接单选的成绩。上图的灰柱则是从完整概率中取最高项，用于检验数法本身。
     每项 96 人，固定模型、画像、题卡和评分。比例误差、下降量和区间以百分点计。
@@ -446,41 +523,8 @@ def bottleneck_page(d, cases):
   <p class="source report-actions">{a('打开购物评价原题', 'question-cases.html#SHOP12')} {data_ref}
     {a('Jang 等的独立研究', 'https://arxiv.org/abs/2607.25292v3')}</p>
 </section>
-<section class="panel sources" aria-labelledby="remaining">
-  <h2 id="remaining">知道他买不买，还能猜出买哪款吗？</h2>
-  <p>把两款豆腐摆在面前，可以先猜受访者会不会买，再猜会选哪款。我们把第一步的预测固定相同，第二步分别交给统计方法和 AI。</p>
-  <p>只看在题里选了商品的人，选款交给统计方法时，误差为 <b>{stats['refusal_only']['conditional']:.3f}</b>，交给 AI 后升到
-    <b>{stats['combined']['conditional']:.3f}</b>。只改这一步就出现差距。统计方法还用过另一批真人的答案，资料和方法各影响了多少，现有对照无法分开算。</p>
-  <p>换回「一群人有多少选某项」这个问题，食品标签和豆腐改后的比例误差仍是 <b>{chart['full'][0]:.2f}</b> 和
-    <b>{chart['full'][1]:.2f}</b> 个百分点。</p>
-  <details><summary>看两步合起来的误差</summary>
-    <p>全部选项都计入后，个人概率误差从 {stats['refusal_only']['brier']:.3f} 升到 {stats['combined']['brier']:.3f}，多了
-      {combined_gap:.3f} 分。增加量的 95% 区间为 [{combined_low:+.3f}, {combined_high:+.3f}]。</p>
-    <p>这是用同一批实验题做的事后补算。概率误差用 Brier 分数表示，越低越好。</p>
-  </details>
-  <p class="source">{source_ref('combined', '组合补算数据')}</p>
-  <details id="pilot-interpretation"><summary>为什么 20 份试答加 AI 还看不出改善？</summary>
-    <p>同一批 20 位试答者直接统计，误差是 {pilot_err['pilot']:.2f} 个百分点。每项与 AI 各占一半后，
-    误差为 {pilot_err['pilot_ai']:.2f}，增加 {pilot_shift:.2f}。改善的 95% 区间为
-    [{pilot_low:+.2f}, {pilot_high:+.2f}]，跨 0。用同一组评估者另抽 {pilot['alternate_draws']} 组试答者，
-    有 {pilot['share_ai_better']['pilot']:.1%} 的情况下，混合误差低于直接统计。收益随试答样本而变，具体原因尚未单独分离。</p>
-  </details>
-</section>
-<section class="panel sources" aria-labelledby="causes">
-  <h2 id="causes">还有哪些地方会影响结果？</h2>
-  <p>相关的真人资料能帮上一些忙，换模型也改变过成绩。简单多跑几次在那份购物问卷上收益很小。可以展开看每件事是怎样测的。</p>
-  {explanations}
-</section>
-<section class="panel sources">
-  <h2>优先改什么</h2>
-  <ol>
-    <li>只需估人群比例时，保留完整概率。在新问题上保留真人比例或统计方法作为对照。</li>
-    <li>能拿到同类真人记录时，先用统计更新。把「买不买」和「买哪款」分别核对，再判断 AI 能不能帮到其中一步。</li>
-    <li>要验证调参或换模型时，固定题面、画像和输出方式，一次只改一个因素。每组重复调用，分别报告平均误差和波动。</li>
-  </ol>
-  <p class="source">{a('回到最终对照', 'overview.html')} · {a('查看真题与答案分布', 'question-cases.html')}</p>
-</section>
-""", js)
+<footer class="report-actions">{a('回到最终对照', 'overview.html')} {a('查看真题与答案分布', 'question-cases.html')}</footer>
+""", js, styles=(HERE / 'src/bottleneck.css').read_text())
 
 
 
@@ -630,6 +674,7 @@ def main():
     entries = inventory()
     catalog_html, counts = catalog_page(entries)
     diagnosis = {key: read_json(path) for key, path in DIAGNOSIS.items()}
+    purchases = read_json(PURCHASE)
     by_file = (REPORT_OVERVIEW, BEHAVIOR, PURCHASE, CRITICAL, CASES, VENDOR, *DIAGNOSIS.values())
     catalog = {
         'scope': 'examples 中可随项目分享的 HTML、Word、Markdown 和 PDF，另含论文在线正文。报告中心页面可从首页查阅。',
@@ -641,8 +686,8 @@ def main():
         HERE / 'index.html': index_page(),
         HERE / 'overview.html': relocate_page(REPORT_OVERVIEW),
         HERE / 'question-cases.html': question_page(cases, diagnosis['replication']),
-        HERE / 'bottleneck.html': bottleneck_page(diagnosis, cases),
-        HERE / 'purchase-evidence.html': purchase_page(read_json(PURCHASE)),
+        HERE / 'bottleneck.html': bottleneck_page(diagnosis, cases, purchases),
+        HERE / 'purchase-evidence.html': purchase_page(purchases),
         HERE / 'project-evidence.html': project_page(),
         HERE / 'catalog.html': catalog_html,
         HERE / 'data/catalog.json': json.dumps(catalog, ensure_ascii=False, indent=2) + '\n',

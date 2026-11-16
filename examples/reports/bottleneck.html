@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>问题、改法与剩余差距｜MatrAI X</title><style>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>有效改法与剩余差距｜MatrAI X</title><style>
 :root {
   color-scheme: light;
   --ink: #192b42;
@@ -133,14 +133,164 @@ tr:last-child td { border-bottom: none; }
 }
 .report-links li { min-width: 0; }
 @media (max-width: 660px) { .report-links { grid-template-columns: 1fr; } }
+.effect-jumps {
+  gap: 6px 8px;
+  margin: 0 0 14px;
+  font-size: .94rem;
+}
+.effect-jumps a {
+  padding: 5px 10px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--paper);
+  font-weight: 650;
+}
+
+.effect-grid { gap: 14px; }
+.effect-card { display: flex; flex-direction: column; }
+.effect-card--primary { border-top: 4px solid var(--blue); }
+.effect-card h2 { font-size: clamp(23px, 2.8vw, 30px); }
+.effect-card h3, .effect-remaining h3 { font-size: 1.2rem; }
+.effect-use { margin: 0 0 4px; font-weight: 700; color: var(--blue); }
+
+.effect-results { margin: .55em 0 .25em; }
+.effect-results > div { border-top: 1px solid var(--line); padding: 7px 0; }
+.effect-results dt { color: var(--muted); font-size: .94rem; }
+.effect-results dd {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 12px;
+  margin: 0;
+}
+.effect-results b, .effect-number {
+  font-size: clamp(22px, 2.45vw, 31px);
+  font-weight: 740;
+  line-height: 1.35;
+  font-variant-numeric: tabular-nums;
+}
+.effect-results .gain { color: var(--green); font-weight: 700; }
+.effect-card .source { margin-top: auto; padding-top: 9px; }
+
+.effect-remaining {
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: #f2f5fa;
+}
+.effect-remaining .effect-number { color: var(--warm); }
+
+@media (min-width: 960px) {
+  .effect-grid--three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
 </style></head><body><main>
 <header class="site-bar">
 <a class="brand" href="index.html">MatrAI X 报告中心</a>
 <nav class="report-actions" aria-label="报告导航"><a class="report-link" href="overview.html"><span>最终对照</span><span class="report-link-type" aria-hidden="true">HTML</span></a>
 <a class="report-link" href="question-cases.html"><span>原题对照</span><span class="report-link-type" aria-hidden="true">HTML</span></a> <a class="report-link" href="bottleneck.html"><span>问题与瓶颈</span><span class="report-link-type" aria-hidden="true">HTML</span></a></nav></header>
 
-<div class="hero"><h1>为什么 AI 常常答成一边倒？</h1><p class="lead">真人有不同的习惯，虚拟人却容易挤到同一个答案。我们换一种数答案的方法，再看哪一步还会猜错。</p></div>
-<section class="panel" aria-labelledby="mechanism-title">
+<div class="hero"><h1>哪些改法确实有用？</h1><p class="lead">估一群人的答案比例，先保留各选项的概率。手里有本人的旧选择，就用它来更新统计。每组数字左边是改前，右边是改后，误差越低越好。</p></div>
+<nav class="report-actions effect-jumps" aria-label="本页导航">
+  <a href="#what-helps">优先采用的改法</a> <a href="#depends">换模型与补资料</a>
+  <a href="#remaining">改完还差在哪</a> <a href="#causes">收益小或待验证</a>
+</nav>
+<section class="tiles effect-grid" id="what-helps" aria-label="优先采用的改法">
+  <article class="tile effect-card effect-card--primary">
+    <p class="effect-use">估一群人怎么选</p>
+    <h2>保留每个选项的概率</h2>
+    <p class="small">人群比例误差，单位为百分点。</p>
+    <dl class="effect-results"><div><dt>美国食品标签问卷</dt><dd><b>49.84 → 23.32</b> <span class="gain">少 26.51 个百分点</span></dd></div><div><dt>瑞典豆腐选购</dt><dd><b>28.92 → 15.69</b> <span class="gain">少 13.24 个百分点</span></dd></div></dl>
+    <p>同一模型、题目和人物卡。原来每人交一个选项，改后交全部概率，再汇总。两项实验的逐人答对率各只提高约 1 个百分点。</p>
+    <p class="source report-actions"><a href="#mechanism-title">看为什么这样更准</a> <a href="../decision-transfer/data/final-replication-v1.json">正式复验数据</a></p>
+  </article>
+  <article class="tile effect-card effect-card--primary">
+    <p class="effect-use">猜某个人会选什么</p>
+    <h2>用本人的旧选择更新统计</h2>
+    <p class="small">先按其他真人怎么选来估计，再用本人的记录调整。</p>
+    <dl class="effect-results">
+      <div><dt>瑞典豆腐问卷 · 个人概率误差</dt><dd><b>0.558 → 0.471</b>
+        <span class="gain">比原误差少 15.7%</span></dd></div>
+      <div><dt>美国超市酸奶订单 · 个人概率误差</dt><dd><b>0.291 → 0.255</b>
+        <span class="gain">比原误差少 12.2%</span></dd></div>
+    </dl>
+    <p>豆腐问卷用了本人的两次实验选择。换成别人的记录，误差是 0.586。酸奶实验用的是已有购物历史的家庭。</p>
+    <p class="source report-actions"><a class="report-link" href="purchase-evidence.html"><span>看更多购买记录对照</span><span class="report-link-type" aria-hidden="true">HTML</span></a> <a href="../decision-transfer/data/final-replication-v1.json">豆腐复验数据</a></p>
+  </article>
+</section>
+<section class="sources" aria-labelledby="depends">
+  <h2 id="depends">哪两件事要看题目再决定？</h2>
+  <div class="tiles effect-grid">
+    <article class="tile effect-card">
+      <h3>换一个更适合这份问卷的模型</h3>
+      <dl class="effect-results"><div><dt>购物态度问卷 · Qwen 换为 DeepSeek Pro</dt>
+        <dd><b>15.95 → 11.50</b> <span class="gain">少 4.46 个百分点</span></dd></div></dl>
+      <p>同一批题、同一批人物卡、都给选项概率，只换了模型。上面的数字是各答三次的平均误差。换一份问卷，需要重新验证。</p>
+      <p class="source"><a href="../sim-to-real/study/10_%E5%8C%B9%E9%85%8D%E4%B8%8E%E5%95%86%E5%93%81%E5%A4%8D%E9%AA%8C/results.json">换模型和三次重复的结果</a></p>
+    </article>
+    <article class="tile effect-card">
+      <h3>补上和这道题相关的真人资料</h3>
+      <dl class="effect-results"><div><dt>美国商品产地题 · 加入本人收入和文化态度</dt>
+        <dd><b>13.97 → 11.28</b> <span class="gain">少 2.69 个百分点</span></dd></div></dl>
+      <p>固定题目、模型和提示词，只补这两项实测资料。换成啤酒包装题，补收入和地区后，误差从
+        36.90 到 37.96 个百分点，改善还未证实。</p>
+      <p class="source"><a href="../sim-to-real/study/06_%E5%8C%97%E7%BE%8E%E7%94%B5%E5%95%86%E9%80%89%E5%93%81/results.json">提示词与背景对照</a> · <a href="../sim-to-real/study/06_%E5%8C%97%E7%BE%8E%E7%94%B5%E5%95%86%E9%80%89%E5%93%81/%E5%9B%BA%E5%AE%9A%E6%96%B9%E6%A1%88.md">实验说明</a></p>
+    </article>
+  </div>
+</section>
+<section class="panel sources" aria-labelledby="remaining">
+  <h2 id="remaining">改完还差在哪儿？</h2>
+  <div class="tiles effect-grid">
+    <div class="effect-remaining">
+      <h3>「买不买」固定，换 AI 选款就变差</h3>
+      <p class="effect-number">0.364 → 0.400</p>
+      <p>只看在豆腐问卷里选了商品的人。两组的「买不买」预测相同。选款用统计时是左边的误差，交给 AI 后是右边的误差。</p>
+    </div>
+    <div class="effect-remaining">
+      <h3>现在还分不清资料和方法各影响多少</h3>
+      <p>统计选款看过另一批真人的训练答案。这个对照能找到差距发生在选款，剩下要用同样的资料来比较谁处理得更好。</p>
+    </div>
+  </div>
+  <details><summary>看「买不买」和「买哪款」合起来的误差</summary>
+    <p>全部选项都计入后，个人概率误差从 0.453 升到 0.478，多了
+      0.025 分。增加量的 95% 区间为 [+0.001, +0.048]。</p>
+    <p>这是用同一批实验题做的事后补算。概率误差用 Brier 分数表示，越低越好。</p>
+  </details>
+  <details><summary>其他对照怎样检验资料和处理方法？</summary>
+    <p>德国番茄包装问卷中，给 AI 同题真人比例，个人概率误差从 0.682 降到
+      0.512，直接统计同一组真人比例为 0.504。</p>
+    <p>给 Qwen 和统计方法同样的群体预测和本人记录，啤酒问卷的误差分别为 0.660、0.535，
+      奶酪问卷分别为 0.599、0.498。</p>
+    <p class="source"><a href="../sim-to-real/decision_lab/reports/cross-study-v1/anchor-v1-results.json">加入真人比例的对照</a> · <a href="../decision-transfer/data/personal-choice-qwen-v1.json">同资料对照数据</a></p>
+  </details>
+  <p class="source"><a href="../decision-transfer/data/final-combined-v1.json">组合补算数据</a> · <a class="report-link" href="purchase-evidence.html"><span>看真实订单的验证</span><span class="report-link-type" aria-hidden="true">HTML</span></a></p>
+</section>
+<section class="sources" aria-labelledby="causes">
+  <h2 id="causes">哪些改法收益小，或还没证实？</h2>
+  <div class="tiles effect-grid effect-grid--three">
+    <article class="tile effect-card">
+      <h3>只改提示词，或多加几项性格</h3>
+      <p>美国商品产地题只换提示词，误差 13.97 → 14.04 个百分点，基本持平。</p>
+      <p>购物问卷给虚拟人物多加四项合成人格，误差少 0.98 个百分点，低于实验预先定的 2 个百分点门槛。</p>
+      <p class="source"><a href="../sim-to-real/study/06_%E5%8C%97%E7%BE%8E%E7%94%B5%E5%95%86%E9%80%89%E5%93%81/results.json">提示词与背景对照</a> · <a href="../sim-to-real/study/10_%E5%8C%B9%E9%85%8D%E4%B8%8E%E5%95%86%E5%93%81%E5%A4%8D%E9%AA%8C/results.json">换模型和三次重复的结果</a></p>
+    </article>
+    <article class="tile effect-card">
+      <h3>20 份真人试答再加 AI</h3>
+      <p>手里已有这组试答，可以先直接统计。食品标签问卷的误差是 <b>18.88</b> 个百分点，和 AI 各占一半为
+        <b>18.95</b>，多了 0.07。这次基本持平。</p>
+      <details id="pilot-interpretation"><summary>换一批试答者会怎样？</summary>
+        <p>这次的误差改善区间为 [-3.06, +6.43] 个百分点，包含 0，无法确认加 AI 有助益。
+          另外抽 199 组试答者，68.8% 的情况下加 AI 后误差更低。效果随试答者而变。</p>
+      </details>
+      <p class="source"><a href="../decision-transfer/data/final-replication-v1.json">正式复验数据</a></p>
+    </article>
+    <article class="tile effect-card">
+      <h3>多跑几次，或调作答设置</h3>
+      <p>同一套购物问卷用 Pro 重复三次，误差从 11.40 到 11.65 个百分点。平均三次结果仅再少 <b>0.01 个百分点</b>。</p>
+      <p>温度和取样范围在末轮各组都相同。单独改其中一项能帮多少，还没测。</p>
+      <p class="source"><a href="../sim-to-real/study/10_%E5%8C%B9%E9%85%8D%E4%B8%8E%E5%95%86%E5%93%81%E5%A4%8D%E9%AA%8C/results.json">换模型和三次重复的结果</a> · <a href="../decision-transfer/docs/%E6%9C%AB%E8%BD%AE%E5%A4%8D%E9%AA%8C%E8%A7%84%E7%A8%8B.md">末轮规程</a></p>
+    </article>
+  </div>
+</section>
+<section class="panel sources" aria-labelledby="mechanism-title">
   <h2 id="mechanism-title">每人只数一个答案，会漏掉什么？</h2>
   <p>问「购物前会看评价吗」，真人中 <b>50.0%</b> 选「总是或几乎总是」。
     MatrAI X 项目单选估成 <b>80.6%</b>，保留全部概率后是 <b>55.1%</b>。</p>
@@ -153,8 +303,6 @@ tr:last-child td { border-bottom: none; }
   <div class="chart mechanism-chart" id="mechanism-chart" role="img" aria-label="美国食品标签问卷 52.42 → 23.32，瑞典豆腐选购 27.66 → 15.69。">
     <noscript><p>美国食品标签问卷 52.42 → 23.32，瑞典豆腐选购 27.66 → 15.69。</p></noscript>
   </div>
-  <p>如果从 MatrAI X 项目原来的单选流程开始比较，美国食品标签和瑞典豆腐的误差分别少了
-    <b>26.51</b> 和 <b>13.24</b> 个百分点。</p>
   <details><summary>查看正式对照的改前、改后和区间</summary>
     <p class="small">表中改前用的是项目直接单选的成绩。上图的灰柱则是从完整概率中取最高项，用于检验数法本身。
     每项 96 人，固定模型、画像、题卡和评分。比例误差、下降量和区间以百分点计。
@@ -167,49 +315,7 @@ tr:last-child td { border-bottom: none; }
   <p class="source report-actions"><a class="report-link" href="question-cases.html#SHOP12"><span>打开购物评价原题</span><span class="report-link-type" aria-hidden="true">HTML</span></a> <a href="../decision-transfer/data/final-replication-v1.json">正式复验数据</a>
     <a href="https://arxiv.org/abs/2607.25292v3">Jang 等的独立研究</a></p>
 </section>
-<section class="panel sources" aria-labelledby="remaining">
-  <h2 id="remaining">知道他买不买，还能猜出买哪款吗？</h2>
-  <p>把两款豆腐摆在面前，可以先猜受访者会不会买，再猜会选哪款。我们把第一步的预测固定相同，第二步分别交给统计方法和 AI。</p>
-  <p>只看在题里选了商品的人，选款交给统计方法时，误差为 <b>0.364</b>，交给 AI 后升到
-    <b>0.400</b>。只改这一步就出现差距。统计方法还用过另一批真人的答案，资料和方法各影响了多少，现有对照无法分开算。</p>
-  <p>换回「一群人有多少选某项」这个问题，食品标签和豆腐改后的比例误差仍是 <b>23.32</b> 和
-    <b>15.69</b> 个百分点。</p>
-  <details><summary>看两步合起来的误差</summary>
-    <p>全部选项都计入后，个人概率误差从 0.453 升到 0.478，多了
-      0.025 分。增加量的 95% 区间为 [+0.001, +0.048]。</p>
-    <p>这是用同一批实验题做的事后补算。概率误差用 Brier 分数表示，越低越好。</p>
-  </details>
-  <p class="source"><a href="../decision-transfer/data/final-combined-v1.json">组合补算数据</a></p>
-  <details id="pilot-interpretation"><summary>为什么 20 份试答加 AI 还看不出改善？</summary>
-    <p>同一批 20 位试答者直接统计，误差是 18.88 个百分点。每项与 AI 各占一半后，
-    误差为 18.95，增加 0.07。改善的 95% 区间为
-    [-3.06, +6.43]，跨 0。用同一组评估者另抽 199 组试答者，
-    有 68.8% 的情况下，混合误差低于直接统计。收益随试答样本而变，具体原因尚未单独分离。</p>
-  </details>
-</section>
-<section class="panel sources" aria-labelledby="causes">
-  <h2 id="causes">还有哪些地方会影响结果？</h2>
-  <p>相关的真人资料能帮上一些忙，换模型也改变过成绩。简单多跑几次在那份购物问卷上收益很小。可以展开看每件事是怎样测的。</p>
-  <details><summary>知道本人以前的选择，有用吗？ <span class="diagnosis-status">有对照支持</span></summary><p>
-          德国番茄包装问卷给 AI 同题真人比例后，个人概率误差从 0.682
-          降到 0.512。直接采用同一组真人比例为 0.504。
-          豆腐实验中，用本人两次选择更新统计，误差从 0.558 降到 0.471。
-          把这两次记录换成别人的，误差是 0.586。</p><p>这些任务中，同题资料和本人实际选择能提供帮助。较早的 Pew 对照中，固定 Pro 和匹配的人群，加入四项合成人格，分布误差从 11.50 降到 10.52 个百分点。这次改善较小，且未达到预定的 2 个百分点门槛。</p><p class="source"><a href="../sim-to-real/decision_lab/reports/cross-study-v1/anchor-v1-results.json">加入真人比例的完整结果</a> · <a href="../decision-transfer/data/final-replication-v1.json">正式复验数据</a> · <a href="../sim-to-real/study/10_%E5%8C%B9%E9%85%8D%E4%B8%8E%E5%95%86%E5%93%81%E5%A4%8D%E9%AA%8C/results.json">换模型和三次重复的结果</a></p></details><details><summary>换一个 AI，成绩会变吗？ <span class="diagnosis-status">有对照支持</span></summary><p>
-          同题、同画像和概率输出条件下，购物问卷从 Qwen 换到 DeepSeek Pro 后，
-          分布误差从 15.95 降到 11.50 个百分点。
-          在啤酒、奶酪问卷里，给 Qwen 和统计方法同样的群体预测与本人记录，
-          统计误差分别为 0.535、0.498，好于 Qwen 的
-          0.660、0.599。</p><p>选模型会影响结果，而且给足相同资料也可能处理不好。现有对照无法把差距拆成理解、推理和概率校准各占多少。</p><p class="source"><a href="../sim-to-real/study/10_%E5%8C%B9%E9%85%8D%E4%B8%8E%E5%95%86%E5%93%81%E5%A4%8D%E9%AA%8C/results.json">换模型和三次重复的结果</a> · <a href="../decision-transfer/data/personal-choice-qwen-v1.json">同资料对照数据</a></p></details><details><summary>让同一个 AI 多答几次，会稳很多吗？ <span class="diagnosis-status">测到波动，范围有限</span></summary><p>同一组 240 个画像和同配置的 Pro 购物问卷重复三次，分布误差在 11.40–11.65 之间。把三次概率直接平均，比三次分开评分的平均误差仅少 0.01 个百分点。</p><p>这套问卷上，多跑几次没有消除剩余误差。其他问卷和单个问题可能更不稳定，需单独重复。</p><p class="source"><a href="../sim-to-real/study/10_%E5%8C%B9%E9%85%8D%E4%B8%8E%E5%95%86%E5%93%81%E5%A4%8D%E9%AA%8C/results.json">换模型和三次重复的结果</a></p></details><details><summary>调整 AI 的作答设置，会更准吗？ <span class="diagnosis-status">还需要单独测试</span></summary><p>末轮模型设定了温度 0.7 和 top_p＝1，分别控制输出的随机程度与取样候选范围。Pro 的 400 次技术检查或正式评估请求均完成。</p><p>参数有记录。末轮各组用同一设置，也没有逐档调整温度或 top_p 的对照，因此无法估计调参能补掉多少误差。</p><p class="source"><a href="../decision-transfer/docs/%E6%9C%AB%E8%BD%AE%E5%A4%8D%E9%AA%8C%E8%A7%84%E7%A8%8B.md">末轮规程</a></p></details><details><summary>问卷会选，实际也会买吗？ <span class="diagnosis-status">要看真实订单</span></summary><p>食品标签是自报行为，豆腐是设定情境中的假设选择。每套正式评估 96 人，同一豆腐题卡还需要达到最低人数才比较比例。</p><p>各题的真人比例仍有抽样误差。这些结果用来评估同题、同人群条件下的模拟，实际下单需另用真实交易验证。</p><p class="source"><a href="../decision-transfer/docs/%E6%9C%AB%E8%BD%AE%E5%A4%8D%E9%AA%8C%E8%A7%84%E7%A8%8B.md">末轮规程</a> · <a class="report-link" href="purchase-evidence.html"><span>真实购买与时间留出结果</span><span class="report-link-type" aria-hidden="true">HTML</span></a></p></details>
-</section>
-<section class="panel sources">
-  <h2>优先改什么</h2>
-  <ol>
-    <li>只需估人群比例时，保留完整概率。在新问题上保留真人比例或统计方法作为对照。</li>
-    <li>能拿到同类真人记录时，先用统计更新。把「买不买」和「买哪款」分别核对，再判断 AI 能不能帮到其中一步。</li>
-    <li>要验证调参或换模型时，固定题面、画像和输出方式，一次只改一个因素。每组重复调用，分别报告平均误差和波动。</li>
-  </ol>
-  <p class="source"><a class="report-link" href="overview.html"><span>回到最终对照</span><span class="report-link-type" aria-hidden="true">HTML</span></a> · <a class="report-link" href="question-cases.html"><span>查看真题与答案分布</span><span class="report-link-type" aria-hidden="true">HTML</span></a></p>
-</section>
+<footer class="report-actions"><a class="report-link" href="overview.html"><span>回到最终对照</span><span class="report-link-type" aria-hidden="true">HTML</span></a> <a class="report-link" href="question-cases.html"><span>查看真题与答案分布</span><span class="report-link-type" aria-hidden="true">HTML</span></a></footer>
 
 </main>
 <script type="application/json" id="mechanism-data">{"labels": ["美国食品标签问卷", "瑞典豆腐选购"], "argmax": [52.422320892850664, 27.66132887620812], "full": [23.323310978101187, 15.688322071718407]}</script><script>

@@ -9,7 +9,7 @@
 | 文件 | 用途 |
 |---|---|
 | [overview.html](overview.html) | 三张 ECharts 对照图、真人样本、改善区间与采用建议 |
-| [bottleneck.html](bottleneck.html) | 发现的问题、已验证的原因、改法、提升和仍待验证的因素 |
+| [bottleneck.html](bottleneck.html) | 开头用卡片给出优先采用的改法及真实提升，随后可查瓶颈、适用条件和对照图 |
 | [question-cases.html](question-cases.html) | 按研究展开 9 套历轮题例、末轮食品标签和豆腐实例，也可查其余 6 套历轮研究的逐人评分 |
 | [purchase-evidence.html](purchase-evidence.html) | 本人历史数据的 12 组改善区间和同资料比较 |
 | [project-evidence.html](project-evidence.html) | 从真人问卷和人物卡的对照入手，下方可核对项目独立审阅原文 |

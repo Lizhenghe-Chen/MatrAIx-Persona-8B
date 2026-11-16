@@ -9,7 +9,7 @@
     "模板、任务与运行说明": 78
   },
   "highlight_sources": {
-    "examples/decision-transfer/reports/final.html": "36511ca45566803e8424882991b8d42cd2f7455cc08a4f6da4c2375daf5debb8",
+    "examples/decision-transfer/reports/final.html": "950a571652da702d9ebc59b80704f9ceb64c1565b684f4d63d57db94f17aa6d5",
     "examples/decision-transfer/reports/summary.html": "b64a8efde74431fea3bcd1e54f0d23bd84c07b0f33929165d5a4a9df82bbf9d9",
     "examples/decision-transfer/data/conclusions-v1.json": "8714029a90e78a17435bc7576b1874a0460faa9179b00cabe026c73b1ac11f88",
     "examples/虚拟消费者模拟研究报告/04-MatrAIx批判性评估/MatrAIx项目的证据与边界.html": "1c6aad7f65c08152211bc34e6718fc80f431e024acd3c954085e18e8e8dd24f8",
@@ -18,6 +18,7 @@
     "examples/decision-transfer/data/final-replication-v1.json": "167c12f16152ee717c840a7a7fbe30068fb2086900660dfe6abc7f613fb0c8b2",
     "examples/decision-transfer/data/final-combined-v1.json": "7154b64cb6c6f029471c84d1918e4047abc22ca99d2ccb34ee7abe0bd9ef914b",
     "examples/sim-to-real/study/10_匹配与商品复验/results.json": "a003d938d5d7042fcdda9e7efcb7a909f76b9e323bb81fd66f0b9afa75676d3c",
+    "examples/sim-to-real/study/06_北美电商选品/results.json": "967e367e8a765ac9b2e600d3775a5ab138f6ea9b57ddd3db547f8fbc5b10c406",
     "examples/decision-transfer/data/personal-choice-qwen-v1.json": "9d2883d1e01389bff1cbfd96d1ca2d45b8fcddb010c4422036bb0b0ff3f6f024",
     "examples/sim-to-real/decision_lab/reports/cross-study-v1/anchor-v1-results.json": "dcac1009dcda177230659f277a08ac1ae4185ff3b102b2433ee2c6bb8434a579"
   },
