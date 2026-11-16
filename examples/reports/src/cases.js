@@ -10,7 +10,8 @@
   let active;
   const percent = (x) => (100 * x).toFixed(1) + '%';
   const tv = (shares, actual) => 50 * shares.reduce((sum, p, i) => sum + Math.abs(p - actual[i]), 0);
-  const split = (label) => label.replace(/^(A|B|C|合用|统计) /, '$1\n');
+  const plainLabel = (label) => label.replace(/^[ABC](?: ·)? /, '');
+  const chartLabel = (label) => plainLabel(label).replace('＋', '\n＋').replace(/^(合用|统计) /, '$1\n');
   let mode = 'distribution';
 
   function element(tag, text, className) {
@@ -50,8 +51,8 @@
     const isShares = mode === 'distribution';
     $('chart-heading').textContent = isShares ? '各方案的答案分布' : '各方案的答案离真人多远？';
     $('chart-unit').textContent = isShares
-      ? '单位：%（每柱合计 100%）。选项占比没有固定的好坏，颜色区分答案。'
-      : '单位：百分点。整道题的分布误差，越低越好。真人列的误差是 0。';
+      ? '每柱合计 100%。同一种颜色代表同一个选项，拿它的占比和真人那一柱比。'
+      : '单位为百分点。把一道题的所有选项都算进去，柱越矮越接近真人。';
     $('legend').replaceChildren(...(isShares ? q.option_labels.map((label, i) => {
       const li = element('li', label);
       const swatch = element('i', '', 'legend-swatch');
@@ -76,12 +77,13 @@
         axisPointer: {type: 'shadow'},
         formatter: (items) => {
           const arm = q.arms[items[0].dataIndex];
-          if (!isShares) return arm.label + '\n分布误差  ' + tv(arm.shares, actual).toFixed(2) + ' 个百分点';
-          return arm.label + '\n' + q.option_labels.map((label, i) => label + '  ' + percent(arm.shares[i])).join('\n');
+          const name = plainLabel(arm.label);
+          if (!isShares) return name + '\n分布误差  ' + tv(arm.shares, actual).toFixed(2) + ' 个百分点';
+          return name + '\n' + q.option_labels.map((label, i) => label + '  ' + percent(arm.shares[i])).join('\n');
         }
       },
       xAxis: {
-        type: 'category', data: q.arms.map(arm => split(arm.short)),
+        type: 'category', data: q.arms.map(arm => chartLabel(arm.short)),
         axisTick: {show: false},
         axisLabel: {interval: 0, fontSize: 12, lineHeight: 15, color: '#243953'}
       },
@@ -109,18 +111,27 @@
 
   function render(q) {
     const actual = q.arms[0].shares;
-    const base = tv(q.arms[1].shares, actual);
+    const original = q.arms[1].shares;
+    const base = tv(original, actual);
     const best = q.arms.slice(1).reduce((left, right) => tv(left.shares, actual) <= tv(right.shares, actual) ? left : right);
     const bestError = tv(best.shares, actual);
     const candidate = q.arms.find(arm => arm.key === q.compare);
-    const difference = base - tv(candidate.shares, actual);
+    const candidateError = tv(candidate.shares, actual);
+    const difference = base - candidateError;
+    const option = actual.reduce((largest, share, i) =>
+      Math.abs(original[i] - share) > Math.abs(original[largest] - actual[largest]) ? i : largest, 0);
+    const method = plainLabel(candidate.label);
+    $('case-example').textContent = `先看「${q.option_labels[option]}」这个选项。真人占 ${percent(actual[option])}，` +
+      `MatrAI X 项目单选估成 ${percent(original[option])}，「${method}」估成 ${percent(candidate.shares[option])}。`;
     const result = Math.abs(difference) < .005 ? '与项目单选接近持平' :
       '比项目单选' + (difference > 0 ? '少 ' : '多 ') + Math.abs(difference).toFixed(2) + ' 个百分点';
-    $('case-result').textContent = '「' + candidate.label + '」的误差为 ' + tv(candidate.shares, actual).toFixed(2) +
-      ' 个百分点，' + result + '。' + (best === candidate ? '它是此题误差最低的模拟或估计方法。' :
-        '此题误差最低的是「' + best.label + '」（' + bestError.toFixed(2) + ' 个百分点）。');
+    $('case-result').textContent = `把所有选项都算进去，「${method}」的误差是 ${candidateError.toFixed(2)} 个百分点，${result}。` +
+      (best === candidate ? '在这道题上，它的误差最低。' :
+        `在这道题上，误差最低的是「${plainLabel(best.label)}」（${bestError.toFixed(2)} 个百分点）。`);
     $('fixed').textContent = q.fixed;
-    $('changed').textContent = q.changed;
+    $('changed').textContent = q.study_id === 'nhanes'
+      ? '让 AI 交出所有选项的概率。另外先数 20 份真人试答，再试着把试答和 AI 各算一半。等概率参照把 AI 换成每个选项机会相同。'
+      : q.changed;
     $('case-note').textContent = q.note || '这是一道题的结果。整项实验的平均值见总报告和原始明细。';
     $('original-question').textContent = q.prompt;
     $('original-options').replaceChildren(...q.original_options.map(label => element('li', label)));
@@ -135,7 +146,9 @@
         q.alternatives.map((description, i) => [q.option_labels[i], description]),
       ));
     }
-    $('method-table').replaceChildren(table(['方案', '用了什么资料，怎么作答'], q.arms.map(a => [a.label, a.method])));
+    $('method-table').replaceChildren(table(['方案', '用了什么资料，怎么作答'], q.arms.map(arm => [
+      plainLabel(arm.label), arm.key === 'pilot_ai' ? '同一批 20 份真人试答占一半，AI 给出的完整概率占另一半。' : arm.method
+    ])));
     $('numeric-table').replaceChildren(table(
       ['回答组', ...q.option_labels, '分布误差（百分点）', '较项目单选'],
       q.arms.map((arm, i) => {
@@ -143,7 +156,7 @@
         const delta = base - error;
         const gainText = i < 2 ? '—' : Math.abs(delta) < .005 ? '接近持平' :
           (delta < 0 ? '增加 ' : '减少 ') + Math.abs(delta).toFixed(2) + ' 个百分点';
-        return [arm.label, ...arm.shares.map(x => element('td', percent(x), 'numeric')),
+        return [plainLabel(arm.label), ...arm.shares.map(x => element('td', percent(x), 'numeric')),
           element('td', error.toFixed(2), 'numeric'), element('td', gainText, i < 2 ? '' : delta < 0 ? 'up' : 'down')];
       })
     ));
@@ -175,6 +188,11 @@
 
   for (const drawer of document.querySelectorAll('[data-case-id]')) {
     drawer.addEventListener('toggle', () => activate(drawer));
+  }
+  for (const link of document.querySelectorAll('a[href^="question-cases.html#"]')) {
+    link.addEventListener('click', () => {
+      if (link.hash === location.hash) selectHash();
+    });
   }
   for (const button of document.querySelectorAll('[data-chart-mode]')) {
     button.addEventListener('click', () => {

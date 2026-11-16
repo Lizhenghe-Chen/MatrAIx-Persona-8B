@@ -13,7 +13,7 @@
 * { box-sizing: border-box; }
 body {
   margin: 0; background: var(--page); color: var(--ink);
-  font: 16px/1.65 "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font: 17px/1.7 "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
 }
 main { max-width: 1160px; margin: auto; padding: 0 clamp(14px, 4vw, 48px) 34px; }
 a { color: var(--blue); text-underline-offset: .2em; }
@@ -31,7 +31,7 @@ p { margin: .45em 0; }
 .brand { font-weight: 750; text-decoration: none; color: var(--ink); }
 nav { display: flex; gap: 7px 18px; flex-wrap: wrap; font-size: .875rem; }
 .hero { padding: clamp(23px, 5vw, 49px) 0 clamp(16px, 3.5vw, 28px); }
-.lead { color: var(--muted); font-size: clamp(15px, 2vw, 19px); max-width: 70ch; }
+.lead { color: var(--muted); font-size: clamp(17px, 2vw, 20px); max-width: 74ch; }
 .panel, .tile {
   min-width: 0; background: var(--paper); padding: clamp(13px, 2.65vw, 24px);
   border: 1px solid var(--line); border-radius: 13px;
@@ -41,6 +41,8 @@ nav { display: flex; gap: 7px 18px; flex-wrap: wrap; font-size: .875rem; }
 .tile p:last-child { margin-bottom: 0; }
 .reading, .sources { margin-top: 24px; }
 .summary-line { background: var(--wash); padding: 10px 13px; border-radius: 8px; }
+.summary-line p:first-child { margin-top: 0; }
+.summary-line p:last-child { margin-bottom: 0; }
 .small, .source, footer { color: var(--muted); font-size: .875rem; }
 footer { border-top: 1px solid var(--line); padding-top: 12px; margin-top: 20px; }
 .field { display: grid; gap: 3px; font-size: .875rem; color: var(--muted); min-width: 0; max-width: 100%; }
@@ -72,7 +74,7 @@ button { cursor: pointer; }
 .control { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 11px 0; }
 .control div { padding: 9px 12px; border-radius: 8px; background: #f2f5fa; }
 .control dt { font-weight: 700; }
-.control dd { margin: 0; font-size: .9rem; }
+.control dd { margin: 0; font-size: .96rem; }
 .details-block { margin-top: 13px; }
 details { border-top: 1px solid var(--line); margin-top: 7px; }
 summary { cursor: pointer; padding: 8px 0; font-weight: 675; }
@@ -99,24 +101,10 @@ tr:last-child td { border-bottom: none; }
   .control { gap: 5px; }
   .chart { height: 295px; }
 }
-.diagnosis-flow {
-  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px;
-  margin: 0 0 18px;
-}
-.diagnosis-flow div {
-  background: var(--paper); border: 1px solid var(--line); border-radius: 9px; padding: 10px 12px;
-}
-.diagnosis-flow dt { color: var(--blue); font-weight: 720; }
-.diagnosis-flow dd { margin: .28em 0 0; }
-.diagnosis-flow div:last-child { background: var(--wash); }
 .diagnosis-key { display: inline-block; width: 11px; height: 11px; border-radius: 2px; background: var(--blue); }
 .diagnosis-key.secondary { background: #a2b0c5; }
 .mechanism-chart { height: 270px; }
-.diagnosis-rows th:nth-child(1) { min-width: 9ch; }
-.diagnosis-rows td p { margin: 0; }
-.diagnosis-status { display: block; margin-top: 5px; color: var(--muted); font-size: .85em; }
+.diagnosis-status { color: var(--muted); font-size: .85em; font-weight: 500; }
 @media (max-width: 710px) {
-  .diagnosis-flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .diagnosis-rows table { min-width: 570px; }
   .mechanism-chart { height: 242px; }
 }

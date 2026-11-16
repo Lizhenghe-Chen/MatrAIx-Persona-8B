@@ -1,4 +1,7 @@
 (() => {
+  if (location.hash === '#pilot-interpretation') {
+    document.getElementById('pilot-interpretation').open = true;
+  }
   const spec = JSON.parse(document.getElementById('mechanism-data').textContent);
   const element = document.getElementById('mechanism-chart');
   const chart = echarts.init(element);

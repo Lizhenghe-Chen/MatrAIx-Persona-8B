@@ -15,7 +15,7 @@
 * { box-sizing: border-box; }
 body {
   margin: 0; background: var(--page); color: var(--ink);
-  font: 16px/1.65 "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font: 17px/1.7 "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
 }
 main { max-width: 1160px; margin: auto; padding: 0 clamp(14px, 4vw, 48px) 34px; }
 a { color: var(--blue); text-underline-offset: .2em; }
@@ -33,7 +33,7 @@ p { margin: .45em 0; }
 .brand { font-weight: 750; text-decoration: none; color: var(--ink); }
 nav { display: flex; gap: 7px 18px; flex-wrap: wrap; font-size: .875rem; }
 .hero { padding: clamp(23px, 5vw, 49px) 0 clamp(16px, 3.5vw, 28px); }
-.lead { color: var(--muted); font-size: clamp(15px, 2vw, 19px); max-width: 70ch; }
+.lead { color: var(--muted); font-size: clamp(17px, 2vw, 20px); max-width: 74ch; }
 .panel, .tile {
   min-width: 0; background: var(--paper); padding: clamp(13px, 2.65vw, 24px);
   border: 1px solid var(--line); border-radius: 13px;
@@ -43,6 +43,8 @@ nav { display: flex; gap: 7px 18px; flex-wrap: wrap; font-size: .875rem; }
 .tile p:last-child { margin-bottom: 0; }
 .reading, .sources { margin-top: 24px; }
 .summary-line { background: var(--wash); padding: 10px 13px; border-radius: 8px; }
+.summary-line p:first-child { margin-top: 0; }
+.summary-line p:last-child { margin-bottom: 0; }
 .small, .source, footer { color: var(--muted); font-size: .875rem; }
 footer { border-top: 1px solid var(--line); padding-top: 12px; margin-top: 20px; }
 .field { display: grid; gap: 3px; font-size: .875rem; color: var(--muted); min-width: 0; max-width: 100%; }
@@ -74,7 +76,7 @@ button { cursor: pointer; }
 .control { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 11px 0; }
 .control div { padding: 9px 12px; border-radius: 8px; background: #f2f5fa; }
 .control dt { font-weight: 700; }
-.control dd { margin: 0; font-size: .9rem; }
+.control dd { margin: 0; font-size: .96rem; }
 .details-block { margin-top: 13px; }
 details { border-top: 1px solid var(--line); margin-top: 7px; }
 summary { cursor: pointer; padding: 8px 0; font-weight: 675; }
@@ -101,25 +103,11 @@ tr:last-child td { border-bottom: none; }
   .control { gap: 5px; }
   .chart { height: 295px; }
 }
-.diagnosis-flow {
-  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px;
-  margin: 0 0 18px;
-}
-.diagnosis-flow div {
-  background: var(--paper); border: 1px solid var(--line); border-radius: 9px; padding: 10px 12px;
-}
-.diagnosis-flow dt { color: var(--blue); font-weight: 720; }
-.diagnosis-flow dd { margin: .28em 0 0; }
-.diagnosis-flow div:last-child { background: var(--wash); }
 .diagnosis-key { display: inline-block; width: 11px; height: 11px; border-radius: 2px; background: var(--blue); }
 .diagnosis-key.secondary { background: #a2b0c5; }
 .mechanism-chart { height: 270px; }
-.diagnosis-rows th:nth-child(1) { min-width: 9ch; }
-.diagnosis-rows td p { margin: 0; }
-.diagnosis-status { display: block; margin-top: 5px; color: var(--muted); font-size: .85em; }
+.diagnosis-status { color: var(--muted); font-size: .85em; font-weight: 500; }
 @media (max-width: 710px) {
-  .diagnosis-flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .diagnosis-rows table { min-width: 570px; }
   .mechanism-chart { height: 242px; }
 }
 .report-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
@@ -151,17 +139,17 @@ tr:last-child td { border-bottom: none; }
 <nav class="report-actions" aria-label="报告导航"><a class="report-link" href="overview.html"><span>最终对照</span><span class="report-link-type" aria-hidden="true">HTML</span></a>
 <a class="report-link" href="question-cases.html"><span>原题对照</span><span class="report-link-type" aria-hidden="true">HTML</span></a> <a class="report-link" href="bottleneck.html"><span>问题与瓶颈</span><span class="report-link-type" aria-hidden="true">HTML</span></a></nav></header>
 
-<div class="hero"><h1>MatrAI X 报告中心</h1><p class="lead">主报告汇总最新真人对照，三张图说明哪些改法有用、还有多大差距。</p></div>
+<div class="hero"><h1>MatrAI X 报告中心</h1><p class="lead">如果让 AI 替一群人填问卷，它会答得像这群人吗？从主报告里的三张图开始。想追问原因、看原题或核对购买记录，可以直接选下面的报告。</p></div>
 <div class="report-actions report-actions--hero">
   <a class="report-link report-link--primary" href="overview.html"><span>打开主报告</span><span class="report-link-type" aria-hidden="true">HTML</span></a>
 </div>
 <section aria-labelledby="featured-title">
   <h2 id="featured-title">重点报告</h2>
-  <div class="tiles"><article class="tile"><h3><a class="report-link" href="bottleneck.html"><span>改法与剩余差距</span><span class="report-link-type" aria-hidden="true">HTML</span></a></h3><p>看新一轮真人对照提升了多少。对同一批 AI 回答换一种汇总方式，看看结果为什么会变。</p></article><article class="tile"><h3><a class="report-link" href="question-cases.html"><span>真人原题与答案分布</span><span class="report-link-type" aria-hidden="true">HTML</span></a></h3><p>按研究展开购物、涨价、诈骗风险、公共支出和选品题，查看真人和各方案怎么答。</p></article><article class="tile"><h3><a class="report-link" href="purchase-evidence.html"><span>本人记录与购买预测</span><span class="report-link-type" aria-hidden="true">HTML</span></a></h3><p>用真人问卷、收银记录和有日期的订单，检验本人以往的选择能否帮助预测买不买、买哪款。</p></article><article class="tile"><h3><a class="report-link" href="project-evidence.html"><span>项目证据与边界</span><span class="report-link-type" aria-hidden="true">HTML</span></a></h3><p>核对项目论文、数据来源和代码，了解哪些能力有实测，哪些还缺真人证据。</p></article></div>
+  <div class="tiles"><article class="tile"><h3><a class="report-link" href="bottleneck.html"><span>改法与剩余差距</span><span class="report-link-type" aria-hidden="true">HTML</span></a></h3><p>十个虚拟人为什么会投出十张相同的票？从一个小例子看懂问题，再看真人实验里改好多少。</p></article><article class="tile"><h3><a class="report-link" href="question-cases.html"><span>真人原题与答案分布</span><span class="report-link-type" aria-hidden="true">HTML</span></a></h3><p>从「买东西会看评价吗」开始，看看真人、MatrAI X 项目和各个改法分别怎么答。</p></article><article class="tile"><h3><a class="report-link" href="purchase-evidence.html"><span>本人记录与购买预测</span><span class="report-link-type" aria-hidden="true">HTML</span></a></h3><p>从超市酸奶说起。手里有一家人过去的购物记录，能猜准他们下一趟买不买、又会买哪款吗？</p></article><article class="tile"><h3><a class="report-link" href="project-evidence.html"><span>项目证据与边界</span><span class="report-link-type" aria-hidden="true">HTML</span></a></h3><p>一份真人问卷变成虚拟人物卡后，哪些是本人填的，哪些是 AI 推的？看看原始资料和人物卡。</p></article></div>
 </section>
 <details class="reading panel">
   <summary>报告里的数字怎么读</summary>
-  <div class="table-wrap"><table><thead><tr><th scope="col">指标</th><th scope="col">怎么读</th></tr></thead><tbody><tr class=""><td>选项占比（%）</td><td>分母是该题的有效回答；概率组取选项概率平均。占比没有统一的高低好坏，与真人占比的差才是误差。</td></tr><tr class=""><td>分布误差（百分点）</td><td>越低越好。把各选项预测占比和真人占比的差取绝对值，相加后除以二。真人 60%、AI 80% 的二选一题误差为 20 个百分点。</td></tr><tr class=""><td>个人概率误差（Brier）</td><td>越低越好。把每人的预测概率和实际的 0／1 答案比较，很自信却猜错时，扣分更重。这个分数不是百分比。</td></tr><tr class=""><td>逐人答对率（%）</td><td>越高越好。取每人的最高概率选项，与其真实答案比较。人群比例估得准，不等于能猜中个人。</td></tr><tr class=""><td>相对降幅（%）</td><td>用旧误差减新误差，再除以旧误差；负的变化表示误差增多。与「百分点」和答对率分开读。</td></tr><tr class=""><td>95% 区间与样本量</td><td>改善区间跨 0 表示方向不确定。人数按有效受访者计，同一个人的多道题不能算多人。人数少的题卡不展示比例。</td></tr></tbody></table></div>
+  <div class="table-wrap"><table><thead><tr><th scope="col">指标</th><th scope="col">怎么读</th></tr></thead><tbody><tr class=""><td>选项占比（%）</td><td>100 份等权回答中有 60 份选「会」，占比就是 60%。AI 给出各选项的概率时，取大家对同一选项给出概率的平均。</td></tr><tr class=""><td>分布误差（百分点）</td><td>越低越好。二选一题上，真人有 60% 选甲，AI 估成 80%，差了 20 个百分点。选项多时，看所有选项的占比差。</td></tr><tr class=""><td>个人概率误差（Brier）</td><td>越低越好。假如真人最终选了甲，事先给甲 90% 的概率，比给甲 10% 得到的误差小。</td></tr><tr class=""><td>逐人答对率（%）</td><td>越高越好。对每个人，把 AI 的最高概率选项与真人的实际答案一一比对。</td></tr><tr class=""><td>相对降幅（%）</td><td>误差从 0.4 降到 0.3，少了 0.1，也就是原误差的四分之一，降幅为 25%。</td></tr><tr class=""><td>95% 区间和样本量</td><td>改善的区间含有 0 时，现有样本还无法确认改善方向。问卷按受访者计算。同一个人的多道题仍算一个人。</td></tr></tbody></table></div>
   <p class="small">比较结果前，先确认是否用了同一题面、同一批评估对象、同一个模型和同样的资料。每道题的页面都说明控制条件和实际改动。</p>
 </details>
 <footer class="report-actions"><a class="report-link" href="catalog.html"><span>历史归档与全部资料</span><span class="report-link-type" aria-hidden="true">HTML</span></a>

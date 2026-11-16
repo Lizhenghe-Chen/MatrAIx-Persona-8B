@@ -15,7 +15,7 @@
 * { box-sizing: border-box; }
 body {
   margin: 0; background: var(--page); color: var(--ink);
-  font: 16px/1.65 "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font: 17px/1.7 "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
 }
 main { max-width: 1160px; margin: auto; padding: 0 clamp(14px, 4vw, 48px) 34px; }
 a { color: var(--blue); text-underline-offset: .2em; }
@@ -33,7 +33,7 @@ p { margin: .45em 0; }
 .brand { font-weight: 750; text-decoration: none; color: var(--ink); }
 nav { display: flex; gap: 7px 18px; flex-wrap: wrap; font-size: .875rem; }
 .hero { padding: clamp(23px, 5vw, 49px) 0 clamp(16px, 3.5vw, 28px); }
-.lead { color: var(--muted); font-size: clamp(15px, 2vw, 19px); max-width: 70ch; }
+.lead { color: var(--muted); font-size: clamp(17px, 2vw, 20px); max-width: 74ch; }
 .panel, .tile {
   min-width: 0; background: var(--paper); padding: clamp(13px, 2.65vw, 24px);
   border: 1px solid var(--line); border-radius: 13px;
@@ -43,6 +43,8 @@ nav { display: flex; gap: 7px 18px; flex-wrap: wrap; font-size: .875rem; }
 .tile p:last-child { margin-bottom: 0; }
 .reading, .sources { margin-top: 24px; }
 .summary-line { background: var(--wash); padding: 10px 13px; border-radius: 8px; }
+.summary-line p:first-child { margin-top: 0; }
+.summary-line p:last-child { margin-bottom: 0; }
 .small, .source, footer { color: var(--muted); font-size: .875rem; }
 footer { border-top: 1px solid var(--line); padding-top: 12px; margin-top: 20px; }
 .field { display: grid; gap: 3px; font-size: .875rem; color: var(--muted); min-width: 0; max-width: 100%; }
@@ -74,7 +76,7 @@ button { cursor: pointer; }
 .control { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 11px 0; }
 .control div { padding: 9px 12px; border-radius: 8px; background: #f2f5fa; }
 .control dt { font-weight: 700; }
-.control dd { margin: 0; font-size: .9rem; }
+.control dd { margin: 0; font-size: .96rem; }
 .details-block { margin-top: 13px; }
 details { border-top: 1px solid var(--line); margin-top: 7px; }
 summary { cursor: pointer; padding: 8px 0; font-weight: 675; }
@@ -101,25 +103,11 @@ tr:last-child td { border-bottom: none; }
   .control { gap: 5px; }
   .chart { height: 295px; }
 }
-.diagnosis-flow {
-  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px;
-  margin: 0 0 18px;
-}
-.diagnosis-flow div {
-  background: var(--paper); border: 1px solid var(--line); border-radius: 9px; padding: 10px 12px;
-}
-.diagnosis-flow dt { color: var(--blue); font-weight: 720; }
-.diagnosis-flow dd { margin: .28em 0 0; }
-.diagnosis-flow div:last-child { background: var(--wash); }
 .diagnosis-key { display: inline-block; width: 11px; height: 11px; border-radius: 2px; background: var(--blue); }
 .diagnosis-key.secondary { background: #a2b0c5; }
 .mechanism-chart { height: 270px; }
-.diagnosis-rows th:nth-child(1) { min-width: 9ch; }
-.diagnosis-rows td p { margin: 0; }
-.diagnosis-status { display: block; margin-top: 5px; color: var(--muted); font-size: .85em; }
+.diagnosis-status { color: var(--muted); font-size: .85em; font-weight: 500; }
 @media (max-width: 710px) {
-  .diagnosis-flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .diagnosis-rows table { min-width: 570px; }
   .mechanism-chart { height: 242px; }
 }
 .report-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
@@ -151,19 +139,28 @@ tr:last-child td { border-bottom: none; }
 <nav class="report-actions" aria-label="报告导航"><a class="report-link" href="overview.html"><span>最终对照</span><span class="report-link-type" aria-hidden="true">HTML</span></a>
 <a class="report-link" href="question-cases.html"><span>原题对照</span><span class="report-link-type" aria-hidden="true">HTML</span></a> <a class="report-link" href="bottleneck.html"><span>问题与瓶颈</span><span class="report-link-type" aria-hidden="true">HTML</span></a></nav></header>
 
-<div class="hero"><h1>本人记录何时让预测更准？</h1><p class="lead">同一批人的留出问卷或订单能核对本人记录是否带来额外价值。</p></div>
-<section class="panel">
-  <h2>加入本人记录后，误差减少多少？</h2>
-  <p class="summary-line">12 组留出对照中，8 组的改善区间全高于 0。</p>
-  <p class="small">横轴是 Brier 误差的绝对下降量，<b>越高表示改善越大</b>。0 表示没有变化，
-  左侧是误差增多。点为估计值，线为 95% 区间；线跨 0 的组，方向仍不确定。</p>
+<div class="hero"><h1>知道过去买过什么，下次能猜得更准吗？</h1><p class="lead">收银小票记得一家人常买什么。先看这些真实记录能帮多少，再看把同样的资料交给 AI 有没有额外收益。</p></div>
+<section class="panel" aria-labelledby="purchase-example-title">
+  <h2 id="purchase-example-title">下一趟去超市，这家人会买酸奶吗？</h2>
+  <p>先试一种简单办法，按其他家庭平常买酸奶的比例来猜。再打开这一家的旧小票，看他家以往有多少趟买了酸奶，最近两次又买了哪款。
+    前一个数字用来估「这趟买不买」，后两笔记录用来估「买了更可能是哪款」。</p>
+  <p class="summary-line">把 <b>299 户</b> 的下一趟真实购物留来判卷。加上本人记录后，预测误差从
+    <b>0.291 降到 0.255</b>，比原来少 <b>12.2%</b>。
+    这个分数越低，给各选项的概率就越接近实际结果。</p>
+  <p class="source"><a href="../decision-transfer/archive/2026-11-13-exploration/docs/%E4%B8%8B%E4%B8%80%E6%AC%A1%E8%B4%AD%E7%89%A9%E4%B9%B0%E4%B8%8D%E4%B9%B0%E8%BF%99%E4%B8%AA%E5%93%81%E7%B1%BB.md">查看酸奶实验和数据来源</a></p>
+</section>
+<section class="panel sources">
+  <h2>换成其他问卷和商品，效果还在吗？</h2>
+  <p>12 组问卷或交易对照中，8 组的改善区间全在零的右边，已有数据支持误差减少。</p>
+  <p>先找写着「0」的竖线。<b>点越往右，表示误差减少越多。</b> 每条横线是估计的 95% 区间。
+    横线碰到或跨过零时，现有样本还无法确认有没有改善。横轴单位是误差分数（Brier）的差。</p>
   <p class="small" id="purchase-scroll" hidden>横向滑动可查看完整区间。</p>
   <div class="chart-frame" tabindex="0" aria-label="改善区间图，可横向滚动">
     <div id="purchase-chart" style="height:440px" role="img" aria-label="十二组 Brier 误差下降与 95% 区间"></div>
   </div>
   <dl class="control">
-    <div><dt>控制条件</dt><dd>每组比较同一批留出的人或家庭、同一预测目标与评分口径。问卷、收银记录与次单预测分别解释。</dd></div>
-    <div><dt>实际改动</dt><dd>在各自的群体参照上加入本人选择或购买记录。有时间的订单另将买不买和买哪款拆开预测。</dd></div>
+    <div><dt>用什么来判卷？</dt><dd>同一组的两种做法都用同一批人或家庭的留出答案，题目和打分方法相同。</dd></div>
+    <div><dt>多知道了什么？</dt><dd>原先从一群人常怎么选来估计。改法再看这个人真的选过或买过什么。有日期的订单还能把买不买与买哪款分开估。</dd></div>
   </dl>
   <details><summary>查看 12 组改前改后及区间</summary>
     <p class="small">改前、改后的 Brier 是误差，越低越好。相对降幅是下降量除以改前误差，不能与横轴数值直接互换。</p>
@@ -171,10 +168,14 @@ tr:last-child td { border-bottom: none; }
   </details>
 </section>
 <section class="panel sources">
-  <h2>给统计和 AI 相同资料，谁更准？</h2>
-  <p>啤酒和奶酪问卷的比较固定评估者、题卡、群体预测和本人记录，只改变由 AI 还是统计处理这些资料。两套问卷的统计误差均更低。</p>
-  <div class="table-wrap"><table><thead><tr><th scope="col">问卷</th><th scope="col">AI 的 Brier（越低越好）</th><th scope="col">统计的 Brier（越低越好）</th><th scope="col">AI 多出的误差</th></tr></thead><tbody><tr class=""><td>美国啤酒</td><td>0.6604</td><td>0.5349</td><td>+0.1255</td></tr><tr class=""><td>意大利奶酪</td><td>0.5995</td><td>0.4978</td><td>+0.1017</td></tr></tbody></table></div>
-  <p class="small">两套收银数据没有可核验的时间戳，只能判断同一户的另一笔购买。英国电商补测的两个完整误差区间跨 0。证据来自这些已有历史的样本，新客和其他品类需要另外验证。</p>
+  <h2>同一份资料交给 AI，还能再进一步吗？</h2>
+  <p>以美国啤酒问卷为例。把一群人平常怎么选、这个人此前的两次选择同时交给统计方法和 AI。
+    考的是同一批人和同一批题，AI 的误差为 <b>0.660</b>，统计方法为 <b>0.535</b>。奶酪问卷也由统计方法胜出。</p>
+  <details><summary>查看两种方法的精确分数</summary>
+    <div class="table-wrap"><table><thead><tr><th scope="col">问卷</th><th scope="col">AI 的误差（越低越好）</th><th scope="col">统计方法的误差（越低越好）</th><th scope="col">AI 多出的误差</th></tr></thead><tbody><tr class=""><td>美国啤酒</td><td>0.6604</td><td>0.5349</td><td>+0.1255</td></tr><tr class=""><td>意大利奶酪</td><td>0.5995</td><td>0.4978</td><td>+0.1017</td></tr></tbody></table></div>
+  </details>
+  <p>有两套收银数据只能配对同一户的两笔购买，先后顺序无从核对。英国电商的两项误差改善区间包含零。
+    这些成绩的对象都是已有同类记录的人。若用来预测新顾客，还需要相应的交易数据验证。</p>
   <p class="source"><a href="../decision-transfer/data/conclusions-v1.json">冻结数据与来源哈希</a> · <a class="report-link" href="../decision-transfer/reports/summary.html"><span>阶段原报告</span><span class="report-link-type" aria-hidden="true">HTML</span></a> · <a href="https://doi.org/10.24432/C5BW33">英国电商原始数据</a></p>
 </section>
 
@@ -249,7 +250,7 @@ var yo={},mo={};var xo,_o=function(){function t(t,e,n){var i=this;this._sleepAft
       type: 'value',
       min: Math.floor(20 * Math.min(0, ...gains.map(row => row.ci95[0]))) / 20,
       max: Math.ceil(20 * Math.max(...gains.map(row => row.ci95[1]))) / 20,
-      axisLabel: {formatter: x => x.toFixed(2)},
+      axisLabel: {formatter: x => x === 0 ? '0' : x.toFixed(2)},
       splitLine: {lineStyle: {color: '#e4ebf3'}}
     },
     yAxis: {

@@ -24,7 +24,7 @@ body {
   margin: 0;
   background: var(--page);
   color: var(--ink);
-  font: 16px/1.65 "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+  font: 17px/1.7 "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
 }
 main { max-width: 1160px; padding: 0 clamp(14px, 4vw, 52px) 40px; margin: auto; }
 a { color: var(--blue); text-underline-offset: .18em; }
@@ -46,8 +46,8 @@ h3 { font-size: 1.13rem; margin: 1.1em 0 .35em; }
 nav { display: flex; flex-wrap: wrap; gap: 7px 20px; font-size: .875rem; }
 nav a { text-decoration-thickness: 1px; }
 .headline { padding: clamp(22px, 4vw, 42px) 0 clamp(17px, 3vw, 28px); }
-.lead { font-size: clamp(15px, 1.9vw, 19px); color: var(--muted); margin-top: .6em; }
-.finding-note { max-width: 76ch; }
+.lead { font-size: clamp(17px, 2vw, 20px); margin-top: .6em; }
+.lead, .finding-note { max-width: 76ch; }
 .panel {
   margin: 0;
   background: var(--paper);
@@ -106,6 +106,7 @@ nav a { text-decoration-thickness: 1px; }
 .scope-grid > div { border-top: 1px solid var(--line); padding-top: 8px; min-width: 0; }
 .scope-grid dt { font-weight: 720; }
 .scope-grid dd { margin-left: 0; }
+.study-scope details { margin-top: 13px; }
 .usage, .appendix, .bottleneck-brief { margin-top: 28px; }
 .bottleneck-brief { background: #eef3fd; padding: 14px 16px; border-radius: 10px; }
 .bottleneck-brief h2 { font-size: clamp(20px, 2.6vw, 25px); }
@@ -178,7 +179,7 @@ footer { padding: 14px 0 0; margin-top: 16px; border-top: 1px solid var(--line);
   </nav>
 </header>
 <div class="headline">
-  <h1>优化后，准了多少？</h1>
+  <h1>让 AI 填问卷，能有多准？</h1>
 @@ISSUE_SUMMARY@@
 </div>
 @@RESULTS@@

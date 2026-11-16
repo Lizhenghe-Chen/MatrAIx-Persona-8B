@@ -15,7 +15,7 @@
 * { box-sizing: border-box; }
 body {
   margin: 0; background: var(--page); color: var(--ink);
-  font: 16px/1.65 "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font: 17px/1.7 "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
 }
 main { max-width: 1160px; margin: auto; padding: 0 clamp(14px, 4vw, 48px) 34px; }
 a { color: var(--blue); text-underline-offset: .2em; }
@@ -33,7 +33,7 @@ p { margin: .45em 0; }
 .brand { font-weight: 750; text-decoration: none; color: var(--ink); }
 nav { display: flex; gap: 7px 18px; flex-wrap: wrap; font-size: .875rem; }
 .hero { padding: clamp(23px, 5vw, 49px) 0 clamp(16px, 3.5vw, 28px); }
-.lead { color: var(--muted); font-size: clamp(15px, 2vw, 19px); max-width: 70ch; }
+.lead { color: var(--muted); font-size: clamp(17px, 2vw, 20px); max-width: 74ch; }
 .panel, .tile {
   min-width: 0; background: var(--paper); padding: clamp(13px, 2.65vw, 24px);
   border: 1px solid var(--line); border-radius: 13px;
@@ -43,6 +43,8 @@ nav { display: flex; gap: 7px 18px; flex-wrap: wrap; font-size: .875rem; }
 .tile p:last-child { margin-bottom: 0; }
 .reading, .sources { margin-top: 24px; }
 .summary-line { background: var(--wash); padding: 10px 13px; border-radius: 8px; }
+.summary-line p:first-child { margin-top: 0; }
+.summary-line p:last-child { margin-bottom: 0; }
 .small, .source, footer { color: var(--muted); font-size: .875rem; }
 footer { border-top: 1px solid var(--line); padding-top: 12px; margin-top: 20px; }
 .field { display: grid; gap: 3px; font-size: .875rem; color: var(--muted); min-width: 0; max-width: 100%; }
@@ -74,7 +76,7 @@ button { cursor: pointer; }
 .control { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 11px 0; }
 .control div { padding: 9px 12px; border-radius: 8px; background: #f2f5fa; }
 .control dt { font-weight: 700; }
-.control dd { margin: 0; font-size: .9rem; }
+.control dd { margin: 0; font-size: .96rem; }
 .details-block { margin-top: 13px; }
 details { border-top: 1px solid var(--line); margin-top: 7px; }
 summary { cursor: pointer; padding: 8px 0; font-weight: 675; }
@@ -101,25 +103,11 @@ tr:last-child td { border-bottom: none; }
   .control { gap: 5px; }
   .chart { height: 295px; }
 }
-.diagnosis-flow {
-  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px;
-  margin: 0 0 18px;
-}
-.diagnosis-flow div {
-  background: var(--paper); border: 1px solid var(--line); border-radius: 9px; padding: 10px 12px;
-}
-.diagnosis-flow dt { color: var(--blue); font-weight: 720; }
-.diagnosis-flow dd { margin: .28em 0 0; }
-.diagnosis-flow div:last-child { background: var(--wash); }
 .diagnosis-key { display: inline-block; width: 11px; height: 11px; border-radius: 2px; background: var(--blue); }
 .diagnosis-key.secondary { background: #a2b0c5; }
 .mechanism-chart { height: 270px; }
-.diagnosis-rows th:nth-child(1) { min-width: 9ch; }
-.diagnosis-rows td p { margin: 0; }
-.diagnosis-status { display: block; margin-top: 5px; color: var(--muted); font-size: .85em; }
+.diagnosis-status { color: var(--muted); font-size: .85em; font-weight: 500; }
 @media (max-width: 710px) {
-  .diagnosis-flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .diagnosis-rows table { min-width: 570px; }
   .mechanism-chart { height: 242px; }
 }
 .report-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
@@ -151,15 +139,22 @@ tr:last-child td { border-bottom: none; }
 <nav class="report-actions" aria-label="报告导航"><a class="report-link" href="overview.html"><span>最终对照</span><span class="report-link-type" aria-hidden="true">HTML</span></a>
 <a class="report-link" href="question-cases.html"><span>原题对照</span><span class="report-link-type" aria-hidden="true">HTML</span></a> <a class="report-link" href="bottleneck.html"><span>问题与瓶颈</span><span class="report-link-type" aria-hidden="true">HTML</span></a></nav></header>
 
-<div class="hero"><h1>同一道题，真人和各方案怎么答？</h1><p class="lead">先展开一项研究，再点开一道题。分布误差按「项目单选 → 该研究的优化方法」排列，越低越接近真人。</p></div>
-<div class="report-actions">
-  <a class="report-link" href="../sim-to-real/reports/cards.html"><span>历轮逐题完整版（88 个可比题目）</span><span class="report-link-type" aria-hidden="true">HTML</span></a>
-  <a class="report-link" href="../sim-to-real/reports/index.html"><span>历轮技术报告</span><span class="report-link-type" aria-hidden="true">HTML</span></a>
-</div>
+<div class="hero"><h1>同一道题，真人和 AI 怎么答？</h1><p class="lead">先选一道你熟悉的问题。展开后，找「真人」那一柱，挑一个颜色，再看看其他柱里同一个颜色占了多少。数字越接近真人，那个选项就估得越准。</p></div>
+<section class="panel" aria-labelledby="start-case-title">
+  <h2 id="start-case-title">先看一道真题</h2>
+  <div class="report-actions">
+    <a class="report-link" href="question-cases.html#SHOP12"><span>买东西会看评价吗？</span><span class="report-link-type" aria-hidden="true">HTML</span></a>
+    <a class="report-link" href="question-cases.html#INF3_a"><span>涨价后会改买便宜货吗？</span><span class="report-link-type" aria-hidden="true">HTML</span></a>
+    <a class="report-link" href="question-cases.html#CBQ700"><span>买食品会看日期吗？</span><span class="report-link-type" aria-hidden="true">HTML</span></a>
+    <a class="report-link" href="question-cases.html#tofu-1"><span>两款豆腐，都可以不买？</span><span class="report-link-type" aria-hidden="true">HTML</span></a>
+  </div>
+</section>
 <noscript><p>开启本地 JavaScript 可以切换图表。<a href="data/question-cases-v1.json">查阅案例数据</a>。</p></noscript>
 <section class="panel sources" aria-labelledby="historic-questions-title">
   <h2 id="historic-questions-title">历轮研究 · 9 个题例</h2>
-  <p class="small">每套选一道实际问题或商品卡。包括购物行为、涨价应对、诈骗风险、公共态度和商品选择。各研究的完整题目可从上方旧版逐题页查找。</p>
+  <p>每项先选一道实际问题。点开后可以看原文、选项，以及改动的是指令、作答方式还是两者一起改。每项完整题目可另查逐题页。</p>
+  <p class="source report-actions"><a class="report-link" href="../sim-to-real/reports/cards.html"><span>历轮逐题完整版（88 个可比题目）</span><span class="report-link-type" aria-hidden="true">HTML</span></a>
+    <a class="report-link" href="../sim-to-real/reports/index.html"><span>历轮技术报告</span><span class="report-link-type" aria-hidden="true">HTML</span></a></p>
   <details class="study-drawer" id="study-pew13">
   <summary>Pew 购物与评价<span class="drawer-meta">96 人 · 13 个题目可比 · 平均误差 27.45 → 11.83 个百分点</span></summary>
   <div class="study-questions"><p class="small">这里选一道题演示。研究平均值比较项目单选与「改提示＋保留概率」合用。</p><details class="question-drawer" id="SHOP12" data-case-id="SHOP12"><summary id="question-title-SHOP12">购物前会看其他人的评价吗？<span class="drawer-meta">96 人 · 分布误差 30.61 → 7.54 个百分点</span></summary></details><p class="source"><a class="report-link" href="../sim-to-real/reports/cards.html#s-pew13"><span>查这项研究的全部可比题</span><span class="report-link-type" aria-hidden="true">HTML</span></a></p></div>
@@ -207,7 +202,10 @@ tr:last-child td { border-bottom: none; }
   </details>
 </section>
 <section class="panel case-head" id="case-viewer" hidden>
-  <p id="case-result" class="summary-line" aria-live="polite"></p>
+  <div class="summary-line" aria-live="polite">
+    <p id="case-example"></p>
+    <p id="case-result"></p>
+  </div>
   <div id="products"></div>
   <details><summary>查看实际使用的原文题面和选项</summary>
     <blockquote id="original-question" translate="no"></blockquote>
@@ -226,8 +224,8 @@ tr:last-child td { border-bottom: none; }
     <div id="question-chart" class="chart" role="img" aria-labelledby="chart-heading chart-unit"></div>
   </div>
   <dl class="control">
-    <div><dt>控制条件</dt><dd id="fixed"></dd></div>
-    <div><dt>实际改动</dt><dd id="changed"></dd></div>
+    <div><dt>哪些条件一样？</dt><dd id="fixed"></dd></div>
+    <div><dt>哪一步改了？</dt><dd id="changed"></dd></div>
   </dl>
   <p id="case-note" class="small"></p>
   <details><summary>各组具体怎么做</summary><div id="method-table"></div></details>
@@ -300,7 +298,8 @@ var yo={},mo={};var xo,_o=function(){function t(t,e,n){var i=this;this._sleepAft
   let active;
   const percent = (x) => (100 * x).toFixed(1) + '%';
   const tv = (shares, actual) => 50 * shares.reduce((sum, p, i) => sum + Math.abs(p - actual[i]), 0);
-  const split = (label) => label.replace(/^(A|B|C|合用|统计) /, '$1\n');
+  const plainLabel = (label) => label.replace(/^[ABC](?: ·)? /, '');
+  const chartLabel = (label) => plainLabel(label).replace('＋', '\n＋').replace(/^(合用|统计) /, '$1\n');
   let mode = 'distribution';
 
   function element(tag, text, className) {
@@ -340,8 +339,8 @@ var yo={},mo={};var xo,_o=function(){function t(t,e,n){var i=this;this._sleepAft
     const isShares = mode === 'distribution';
     $('chart-heading').textContent = isShares ? '各方案的答案分布' : '各方案的答案离真人多远？';
     $('chart-unit').textContent = isShares
-      ? '单位：%（每柱合计 100%）。选项占比没有固定的好坏，颜色区分答案。'
-      : '单位：百分点。整道题的分布误差，越低越好。真人列的误差是 0。';
+      ? '每柱合计 100%。同一种颜色代表同一个选项，拿它的占比和真人那一柱比。'
+      : '单位为百分点。把一道题的所有选项都算进去，柱越矮越接近真人。';
     $('legend').replaceChildren(...(isShares ? q.option_labels.map((label, i) => {
       const li = element('li', label);
       const swatch = element('i', '', 'legend-swatch');
@@ -366,12 +365,13 @@ var yo={},mo={};var xo,_o=function(){function t(t,e,n){var i=this;this._sleepAft
         axisPointer: {type: 'shadow'},
         formatter: (items) => {
           const arm = q.arms[items[0].dataIndex];
-          if (!isShares) return arm.label + '\n分布误差  ' + tv(arm.shares, actual).toFixed(2) + ' 个百分点';
-          return arm.label + '\n' + q.option_labels.map((label, i) => label + '  ' + percent(arm.shares[i])).join('\n');
+          const name = plainLabel(arm.label);
+          if (!isShares) return name + '\n分布误差  ' + tv(arm.shares, actual).toFixed(2) + ' 个百分点';
+          return name + '\n' + q.option_labels.map((label, i) => label + '  ' + percent(arm.shares[i])).join('\n');
         }
       },
       xAxis: {
-        type: 'category', data: q.arms.map(arm => split(arm.short)),
+        type: 'category', data: q.arms.map(arm => chartLabel(arm.short)),
         axisTick: {show: false},
         axisLabel: {interval: 0, fontSize: 12, lineHeight: 15, color: '#243953'}
       },
@@ -399,18 +399,27 @@ var yo={},mo={};var xo,_o=function(){function t(t,e,n){var i=this;this._sleepAft
 
   function render(q) {
     const actual = q.arms[0].shares;
-    const base = tv(q.arms[1].shares, actual);
+    const original = q.arms[1].shares;
+    const base = tv(original, actual);
     const best = q.arms.slice(1).reduce((left, right) => tv(left.shares, actual) <= tv(right.shares, actual) ? left : right);
     const bestError = tv(best.shares, actual);
     const candidate = q.arms.find(arm => arm.key === q.compare);
-    const difference = base - tv(candidate.shares, actual);
+    const candidateError = tv(candidate.shares, actual);
+    const difference = base - candidateError;
+    const option = actual.reduce((largest, share, i) =>
+      Math.abs(original[i] - share) > Math.abs(original[largest] - actual[largest]) ? i : largest, 0);
+    const method = plainLabel(candidate.label);
+    $('case-example').textContent = `先看「${q.option_labels[option]}」这个选项。真人占 ${percent(actual[option])}，` +
+      `MatrAI X 项目单选估成 ${percent(original[option])}，「${method}」估成 ${percent(candidate.shares[option])}。`;
     const result = Math.abs(difference) < .005 ? '与项目单选接近持平' :
       '比项目单选' + (difference > 0 ? '少 ' : '多 ') + Math.abs(difference).toFixed(2) + ' 个百分点';
-    $('case-result').textContent = '「' + candidate.label + '」的误差为 ' + tv(candidate.shares, actual).toFixed(2) +
-      ' 个百分点，' + result + '。' + (best === candidate ? '它是此题误差最低的模拟或估计方法。' :
-        '此题误差最低的是「' + best.label + '」（' + bestError.toFixed(2) + ' 个百分点）。');
+    $('case-result').textContent = `把所有选项都算进去，「${method}」的误差是 ${candidateError.toFixed(2)} 个百分点，${result}。` +
+      (best === candidate ? '在这道题上，它的误差最低。' :
+        `在这道题上，误差最低的是「${plainLabel(best.label)}」（${bestError.toFixed(2)} 个百分点）。`);
     $('fixed').textContent = q.fixed;
-    $('changed').textContent = q.changed;
+    $('changed').textContent = q.study_id === 'nhanes'
+      ? '让 AI 交出所有选项的概率。另外先数 20 份真人试答，再试着把试答和 AI 各算一半。等概率参照把 AI 换成每个选项机会相同。'
+      : q.changed;
     $('case-note').textContent = q.note || '这是一道题的结果。整项实验的平均值见总报告和原始明细。';
     $('original-question').textContent = q.prompt;
     $('original-options').replaceChildren(...q.original_options.map(label => element('li', label)));
@@ -425,7 +434,9 @@ var yo={},mo={};var xo,_o=function(){function t(t,e,n){var i=this;this._sleepAft
         q.alternatives.map((description, i) => [q.option_labels[i], description]),
       ));
     }
-    $('method-table').replaceChildren(table(['方案', '用了什么资料，怎么作答'], q.arms.map(a => [a.label, a.method])));
+    $('method-table').replaceChildren(table(['方案', '用了什么资料，怎么作答'], q.arms.map(arm => [
+      plainLabel(arm.label), arm.key === 'pilot_ai' ? '同一批 20 份真人试答占一半，AI 给出的完整概率占另一半。' : arm.method
+    ])));
     $('numeric-table').replaceChildren(table(
       ['回答组', ...q.option_labels, '分布误差（百分点）', '较项目单选'],
       q.arms.map((arm, i) => {
@@ -433,7 +444,7 @@ var yo={},mo={};var xo,_o=function(){function t(t,e,n){var i=this;this._sleepAft
         const delta = base - error;
         const gainText = i < 2 ? '—' : Math.abs(delta) < .005 ? '接近持平' :
           (delta < 0 ? '增加 ' : '减少 ') + Math.abs(delta).toFixed(2) + ' 个百分点';
-        return [arm.label, ...arm.shares.map(x => element('td', percent(x), 'numeric')),
+        return [plainLabel(arm.label), ...arm.shares.map(x => element('td', percent(x), 'numeric')),
           element('td', error.toFixed(2), 'numeric'), element('td', gainText, i < 2 ? '' : delta < 0 ? 'up' : 'down')];
       })
     ));
@@ -465,6 +476,11 @@ var yo={},mo={};var xo,_o=function(){function t(t,e,n){var i=this;this._sleepAft
 
   for (const drawer of document.querySelectorAll('[data-case-id]')) {
     drawer.addEventListener('toggle', () => activate(drawer));
+  }
+  for (const link of document.querySelectorAll('a[href^="question-cases.html#"]')) {
+    link.addEventListener('click', () => {
+      if (link.hash === location.hash) selectHash();
+    });
   }
   for (const button of document.querySelectorAll('[data-chart-mode]')) {
     button.addEventListener('click', () => {

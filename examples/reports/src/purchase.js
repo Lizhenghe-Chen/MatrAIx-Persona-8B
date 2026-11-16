@@ -23,7 +23,7 @@
       type: 'value',
       min: Math.floor(20 * Math.min(0, ...gains.map(row => row.ci95[0]))) / 20,
       max: Math.ceil(20 * Math.max(...gains.map(row => row.ci95[1]))) / 20,
-      axisLabel: {formatter: x => x.toFixed(2)},
+      axisLabel: {formatter: x => x === 0 ? '0' : x.toFixed(2)},
       splitLine: {lineStyle: {color: '#e4ebf3'}}
     },
     yAxis: {

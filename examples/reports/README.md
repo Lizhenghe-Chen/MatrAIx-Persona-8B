@@ -2,6 +2,8 @@
 
 从 [主报告](overview.html) 开始。每张对照图旁有对应的证据按钮。[重点报告](overview.html#html-reports)提供四个阅读入口，分别查复验与剩余误差、真人原题、购买记录和项目原始证据。这个清单与[报告中心](index.html)同步。
 
+主报告和四份重点报告各有一个可核对的读题例子。先看真人怎么选、项目怎么估、改后差多少，再展开精确数值、评分方法和出处。逐题页在每道题里也选一个选项带读。
+
 较早的报告、故事版、演示和模板可在[历史归档与全部资料](catalog.html)按名称和格式查找。两篇仅在本机存档的论文网页提供 PMC 在线全文。部分历史页面仍有搬迁前的链接，现用的实验明细和来源见主报告。
 
 | 文件 | 用途 |
@@ -10,7 +12,7 @@
 | [bottleneck.html](bottleneck.html) | 发现的问题、已验证的原因、改法、提升和仍待验证的因素 |
 | [question-cases.html](question-cases.html) | 按研究展开 9 套历轮题例、末轮食品标签和豆腐实例，也可查其余 6 套历轮研究的逐人评分 |
 | [purchase-evidence.html](purchase-evidence.html) | 本人历史数据的 12 组改善区间和同资料比较 |
-| [project-evidence.html](project-evidence.html) | 项目独立审阅，随报告发布的本地副本 |
+| [project-evidence.html](project-evidence.html) | 从真人问卷和人物卡的对照入手，下方可核对项目独立审阅原文 |
 | [catalog.html](catalog.html) | HTML、Word、Markdown 和 PDF 的可搜索索引 |
 | [data/question-cases-v1.json](data/question-cases-v1.json) | 逐题聚合比例和来源哈希，无个体资料 |
 | [data/catalog.json](data/catalog.json) | 分类、用途和重点报告来源哈希 |

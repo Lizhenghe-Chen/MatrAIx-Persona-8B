@@ -24,7 +24,7 @@ body {
   margin: 0;
   background: var(--page);
   color: var(--ink);
-  font: 16px/1.65 "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+  font: 17px/1.7 "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
 }
 main { max-width: 1160px; padding: 0 clamp(14px, 4vw, 52px) 40px; margin: auto; }
 a { color: var(--blue); text-underline-offset: .18em; }
@@ -46,8 +46,8 @@ h3 { font-size: 1.13rem; margin: 1.1em 0 .35em; }
 nav { display: flex; flex-wrap: wrap; gap: 7px 20px; font-size: .875rem; }
 nav a { text-decoration-thickness: 1px; }
 .headline { padding: clamp(22px, 4vw, 42px) 0 clamp(17px, 3vw, 28px); }
-.lead { font-size: clamp(15px, 1.9vw, 19px); color: var(--muted); margin-top: .6em; }
-.finding-note { max-width: 76ch; }
+.lead { font-size: clamp(17px, 2vw, 20px); margin-top: .6em; }
+.lead, .finding-note { max-width: 76ch; }
 .panel {
   margin: 0;
   background: var(--paper);
@@ -106,6 +106,7 @@ nav a { text-decoration-thickness: 1px; }
 .scope-grid > div { border-top: 1px solid var(--line); padding-top: 8px; min-width: 0; }
 .scope-grid dt { font-weight: 720; }
 .scope-grid dd { margin-left: 0; }
+.study-scope details { margin-top: 13px; }
 .usage, .appendix, .bottleneck-brief { margin-top: 28px; }
 .bottleneck-brief { background: #eef3fd; padding: 14px 16px; border-radius: 10px; }
 .bottleneck-brief h2 { font-size: clamp(20px, 2.6vw, 25px); }
@@ -201,13 +202,14 @@ footer { padding: 14px 0 0; margin-top: 16px; border-top: 1px solid var(--line);
   </nav>
 </header>
 <div class="headline">
-  <h1>优化后，准了多少？</h1>
+  <h1>让 AI 填问卷，能有多准？</h1>
 
-  <p class="lead"><b>结论</b>　保留完整概率能改善受测问卷的人群比例。预测某个人会怎么选时，本人的真实选择记录更有参考价值。</p>
-  <p class="finding-note"><b>发现的问题</b>　以买食品会不会看包装日期为例，真人中 <b>6.0%</b> 选「有时」，
-    MatrAI X 项目单选估成 <b>75.8%</b>。改用完整概率后降到 <b>28.6%</b>。</p>
-  <p class="finding-note"><b>原因与改法</b>　每人只给最高项投一票，会把其他选项的概率都丢掉。
-    用同一批食品标签的概率答案，只数最高项时误差为 52.42 个百分点，保留全部概率汇总后降到 23.32。</p>
+  <p class="lead">要估一群人怎么选，<b>把每个选项的概率都留下</b>，两项新实验的比例都更接近真人。
+    要猜某个人会怎么选，<b>他以前真的选过什么</b>也能提供帮助。</p>
+  <p class="finding-note">买食品时，你会看包装日期吗？这道真实问卷里，<b>6.0%</b> 的人答「有时」。
+    MatrAI X 项目只让每个虚拟人选一个答案，结果估成 <b>75.8%</b>。</p>
+  <p class="finding-note">只留概率最高的一项，其他答案的可能性就被舍掉了。
+    改成把每个人给各选项的概率都算进去后，「有时」降到 <b>28.6%</b>，离真人还有一段差距。</p>
   <p class="source report-actions"><a class="report-link" href="../../../examples/reports/question-cases.html#CBQ700"><span>看食品日期原题</span><span class="report-link-type" aria-hidden="true">HTML</span></a>
     <a class="report-link" href="../../../examples/reports/bottleneck.html#mechanism-title"><span>看只改汇总的对照</span><span class="report-link-type" aria-hidden="true">HTML</span></a></p>
 </div>
@@ -215,7 +217,7 @@ footer { padding: 14px 0 0; margin-top: 16px; border-top: 1px solid var(--line);
 <div class="secondary">
   <figure class="panel primary" id="survey" aria-labelledby="survey-title">
     <figcaption>
-      <h2 id="survey-title">保留概率，误差少了多少？</h2>
+      <h2 id="survey-title">一群人会怎么选？</h2>
       <p class="meta">每项 96 人，固定模型、画像和题目 · 群体比例误差（百分点），越低越好</p>
       <ul class="key" aria-label="图例">
         <li><i class="swatch old" aria-hidden="true"></i>MatrAI X 项目（单选）</li>
@@ -231,13 +233,14 @@ footer { padding: 14px 0 0; margin-top: 16px; border-top: 1px solid var(--line);
   </figure>
   <figure class="panel" id="pilot" aria-labelledby="pilot-title">
     <figcaption>
-      <h2 id="pilot-title">20 份真人试答，加 AI 有用吗？</h2>
+      <h2 id="pilot-title">问过 20 人，还要加 AI 吗？</h2>
       <p class="meta">美国食品标签问卷 · 群体比例误差（百分点），越低越好</p>
     </figcaption>
     <div class="chart" data-chart="pilot" role="img" aria-label="食品标签问卷的群体比例误差，越低越好。直接统计 18.88，试答和 AI 各占一半 18.95 个百分点。"><noscript><p class="chart-note">食品标签问卷的群体比例误差，越低越好。直接统计 18.88，试答和 AI 各占一半 18.95 个百分点。</p></noscript></div>
     <div class="pilot-takeaway">
-      <p><b>本次加 AI 后，估计误差多 0.07 个百分点。</b></p>
-      <p class="note">误差下降量的 95% 区间为 ［-3.06，+6.43］ 个百分点，跨过 0，效果仍不确定。</p>
+      <p>先拿 20 份试答数一遍，再试着让真人统计和 AI 各算一半。用另外一批真人的回答检验。</p>
+      <p><b>加 AI 后，误差多 0.07 个百分点。这次基本持平。</b></p>
+      <p class="note">误差改善的 95% 区间为 ［-3.06，+6.43］ 个百分点，包含 0。现有样本还无法确认加 AI 有帮助。</p>
     </div>
     <p class="source report-actions"><a href="../../../examples/decision-transfer/data/final-replication-v1.json">试答回放数据</a>
       <a class="report-link" href="../../../examples/reports/bottleneck.html#pilot-interpretation"><span>看试答对照的解释</span><span class="report-link-type" aria-hidden="true">HTML</span></a></p>
@@ -246,7 +249,7 @@ footer { padding: 14px 0 0; margin-top: 16px; border-top: 1px solid var(--line);
 
 <figure class="panel primary" id="combined" aria-labelledby="combined-title">
   <figcaption>
-    <h2 id="combined-title">本人记录和 AI 合用，准了多少？</h2>
+    <h2 id="combined-title">知道他以前怎么选，能猜中这次吗？</h2>
     <p class="meta">瑞典豆腐选购 · 同一批 96 人的 671 次选择 · 个人概率误差，越低越好</p>
   </figcaption>
   <div class="main-grid">
@@ -254,24 +257,25 @@ footer { padding: 14px 0 0; margin-top: 16px; border-top: 1px solid var(--line);
     <div class="stats">
       <div>
         <span class="big-number">50.2%</span>
-        <p><strong>比 MatrAI X 项目单选低</strong></p>
+        <p><strong>合用方案比 MatrAI X 项目单选的误差低</strong></p>
         <p>误差 0.961 → 0.478</p>
       </div>
       <div class="best">
-        <p><strong>两步都用统计最准确（0.453）</strong></p>
-        <p>同样用本人记录判断买不买，把选款交给 AI 后，误差增加 5.5%。</p>
+        <p><strong>两步都用统计更准（0.453）</strong></p>
+        <p>用同一份记录判断买不买，再把选款交给 AI，误差增加 5.5%。</p>
       </div>
     </div>
   </div>
-  <p class="note method-note"><b>合用的意思</b> 用本人的两次真实选择帮忙判断买不买，再让 AI 判断会选哪款。结果来自同一批数据的事后补算。</p>
+  <p class="note method-note">想预测一个人会选哪款豆腐，可以先估他会不会买，再估买了会选哪款。
+    合用方案先用他的两次实验选择判断买不买，选款交给 AI。图中降幅包含新增的真人资料和两步判断，来自同一批实验题的事后补算。</p>
   <p class="source report-actions"><a href="../../../examples/decision-transfer/data/final-combined-v1.json">组合补算数据</a>
     <a class="report-link" href="../../../examples/reports/purchase-evidence.html"><span>本人记录与购买预测</span><span class="report-link-type" aria-hidden="true">HTML</span></a></p>
 </figure>
 <section class="panel study-scope" id="design" aria-labelledby="design-title">
   <h2 id="design-title">真人样本与比较方法</h2>
 
-  <p>末轮选用项目此前未用于方案开发的两套真人研究。两种作答方式共用 DeepSeek Pro、同一批 Persona 1M 合成画像、相同题面和选项顺序。
-    「MatrAI X 项目单选」沿用项目原生问卷指令，优化方式只改为输出全部选项的概率。</p>
+  <p>我们找了两套此前没用来选改法的真人研究。让同一个 AI（DeepSeek Pro）用同一批虚拟人物、同样的题目和选项顺序作答。
+    MatrAI X 项目原来只交一个答案，优化方法交出每个选项的概率。</p>
   <dl class="scope-grid">
     <div><dt>美国 CDC 食品标签问卷</dt><dd>2017–2018 年的自报购物习惯。正式评估 96 位成年人，
       共 5 道固定题、480 次作答，按官方访谈权重汇总。另抽 20 位同题试答者单独比较。</dd>
@@ -280,10 +284,13 @@ footer { padding: 14px 0 0; margin-top: 16px; border-top: 1px solid var(--line);
       共出现 40 种商品卡，其中 20 种达到至少 20 人作答，用于估人群比例。统计模型用另外 261 人训练。</dd>
       <dd class="source"><a href="https://zenodo.org/records/22649882">作者问卷和工作簿</a></dd></div>
   </dl>
-  <p class="note">给模型的是按地区、年龄、学历和性别匹配的合成画像，瑞典按西欧大区匹配。试答与统计方法另用真人资料，评分使用留出的答案。
-    两套研究均已公开，模型在训练中是否见过相关资料未知。</p>
-  <p class="note"><b>数字怎么读</b>　群体比例误差越低越好。二选一时，真人选某项为 60%，模型为 80%，就差 20 个百分点。
-    个人概率误差用 Brier 分数，衡量给个人各选项的概率离实际答案有多远，也越低越好。按人重抽样 2,000 次来估计 95% 区间。区间全在零上方，说明本次下降有统计支持。</p>
+  <p>这些虚拟人物来自 Persona 1M。我们按地区、年龄、学历和性别找相近的画像，瑞典按西欧大区匹配。
+    最后用留出的真人答案判卷。两套研究早已公开，AI 在训练时是否见过相关资料，无法确认。</p>
+  <details><summary>百分比、误差和区间怎么读？</summary>
+    <p><b>群体比例误差越低越好。</b> 一道二选一题，真人有 60% 选甲，AI 估成 80%，误差就是 20 个百分点。</p>
+    <p><b>个人概率误差也越低越好。</b> 例如真人选了甲，事先给甲 90% 的概率，比给甲 10% 更准。这个误差分数叫 Brier。</p>
+    <p><b>95% 区间</b>帮我们判断改善稳不稳。按受访者重抽样 2,000 次来估计区间。改善区间如果包含 0，现有样本还无法确认有没有改善。</p>
+  </details>
   <p class="source"><a href="../../../examples/decision-transfer/docs/%E6%9C%AB%E8%BD%AE%E5%A4%8D%E9%AA%8C%E8%A7%84%E7%A8%8B.md">样本、匹配和评分规程</a></p>
 </section>
 <aside class="bottleneck-brief" id="bottleneck" aria-labelledby="bottleneck-title">
@@ -295,15 +302,14 @@ footer { padding: 14px 0 0; margin-top: 16px; border-top: 1px solid var(--line);
     <b>0.478</b>。只看真人确实选了商品的题，选款误差从
     0.364 升到 0.400。统计选款用过其他真人的训练答案。</p>
   <dl class="bottleneck-factors">
-    <div><dt>真人资料</dt><dd>豆腐实验用本人的两次选择更新统计，个人概率误差从
+    <div><dt>多知道一点本人怎样选</dt><dd>豆腐实验用本人的两次选择更新统计，个人概率误差从
       0.558 降到 0.471。
       用别人的两次选择更新时，误差为 0.586。</dd></div>
-    <div><dt>模型的影响</dt><dd>早期购物问卷固定题目和画像，Qwen 换成 DeepSeek Pro 后，
+    <div><dt>换一个模型</dt><dd>早期购物问卷固定题目和画像，Qwen 换成 DeepSeek Pro 后，
       群体误差从 15.95 降到 11.50 个百分点。</dd></div>
-    <div><dt>随机波动</dt><dd>同一套购物问卷用 Pro 重复三次，误差在 11.40 至 11.65 个百分点之间。
+    <div><dt>让同一个模型再答几次</dt><dd>同一套购物问卷用 Pro 重复三次，误差在 11.40 至 11.65 个百分点之间。
       平均三次预测，误差比三次单独评分的平均值再少 0.01 个百分点。</dd></div>
-    <div><dt>温度等运行参数</dt><dd>末轮固定温度 0.7、top_p＝1。两项参数都影响作答时的取样。
-      这轮缺少单独改变参数的对照，调参能带来多少改善仍未知。</dd></div>
+    <div><dt>调整 AI 的作答设置</dt><dd>末轮各组都用同一套设置。温度和取样范围只改其中一项会怎样，还需要对照测试。</dd></div>
   </dl>
   <p class="note">这些对照只量出了各自条件下的效果。剩余误差还有多少来自画像遗漏、模型能力或样本波动，现有数据无法分开估计。</p>
   <p class="source"><a class="report-link" href="../../../examples/reports/bottleneck.html#remaining"><span>查看瓶颈证据与实验条件</span><span class="report-link-type" aria-hidden="true">HTML</span></a></p>
@@ -328,7 +334,7 @@ footer { padding: 14px 0 0; margin-top: 16px; border-top: 1px solid var(--line);
 </section>
 <section class="appendix" id="html-reports" aria-labelledby="html-reports-title">
   <h2 id="html-reports-title">重点报告</h2>
-  <ul class="report-links"><li><a class="report-link" href="../../../examples/reports/bottleneck.html"><span>改法与剩余差距</span><span class="report-link-type" aria-hidden="true">HTML</span></a><p class="note">看新一轮真人对照提升了多少。对同一批 AI 回答换一种汇总方式，看看结果为什么会变。</p></li><li><a class="report-link" href="../../../examples/reports/question-cases.html"><span>真人原题与答案分布</span><span class="report-link-type" aria-hidden="true">HTML</span></a><p class="note">按研究展开购物、涨价、诈骗风险、公共支出和选品题，查看真人和各方案怎么答。</p></li><li><a class="report-link" href="../../../examples/reports/purchase-evidence.html"><span>本人记录与购买预测</span><span class="report-link-type" aria-hidden="true">HTML</span></a><p class="note">用真人问卷、收银记录和有日期的订单，检验本人以往的选择能否帮助预测买不买、买哪款。</p></li><li><a class="report-link" href="../../../examples/reports/project-evidence.html"><span>项目证据与边界</span><span class="report-link-type" aria-hidden="true">HTML</span></a><p class="note">核对项目论文、数据来源和代码，了解哪些能力有实测，哪些还缺真人证据。</p></li></ul>
+  <ul class="report-links"><li><a class="report-link" href="../../../examples/reports/bottleneck.html"><span>改法与剩余差距</span><span class="report-link-type" aria-hidden="true">HTML</span></a><p class="note">十个虚拟人为什么会投出十张相同的票？从一个小例子看懂问题，再看真人实验里改好多少。</p></li><li><a class="report-link" href="../../../examples/reports/question-cases.html"><span>真人原题与答案分布</span><span class="report-link-type" aria-hidden="true">HTML</span></a><p class="note">从「买东西会看评价吗」开始，看看真人、MatrAI X 项目和各个改法分别怎么答。</p></li><li><a class="report-link" href="../../../examples/reports/purchase-evidence.html"><span>本人记录与购买预测</span><span class="report-link-type" aria-hidden="true">HTML</span></a><p class="note">从超市酸奶说起。手里有一家人过去的购物记录，能猜准他们下一趟买不买、又会买哪款吗？</p></li><li><a class="report-link" href="../../../examples/reports/project-evidence.html"><span>项目证据与边界</span><span class="report-link-type" aria-hidden="true">HTML</span></a><p class="note">一份真人问卷变成虚拟人物卡后，哪些是本人填的，哪些是 AI 推的？看看原始资料和人物卡。</p></li></ul>
 </section>
 <section class="appendix" id="evidence" aria-labelledby="evidence-title">
   <h2 id="evidence-title">实验明细与来源</h2>

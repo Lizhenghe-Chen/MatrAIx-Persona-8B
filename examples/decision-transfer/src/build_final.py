@@ -124,14 +124,13 @@ def issue_summary(d):
     real = case['real'][option]
     before = case['model']['original'][option]
     after = case['model']['output_only'][option]
-    argmax_error = food['scores']['argmax']['tv']
-    probability_error = food['scores']['output_only']['tv']
     return f"""
-  <p class="lead"><b>结论</b>　保留完整概率能改善受测问卷的人群比例。预测某个人会怎么选时，本人的真实选择记录更有参考价值。</p>
-  <p class="finding-note"><b>发现的问题</b>　以买食品会不会看包装日期为例，真人中 <b>{real:.1%}</b> 选「有时」，
-    MatrAI X 项目单选估成 <b>{before:.1%}</b>。改用完整概率后降到 <b>{after:.1%}</b>。</p>
-  <p class="finding-note"><b>原因与改法</b>　每人只给最高项投一票，会把其他选项的概率都丢掉。
-    用同一批食品标签的概率答案，只数最高项时误差为 {argmax_error:.2f} 个百分点，保留全部概率汇总后降到 {probability_error:.2f}。</p>
+  <p class="lead">要估一群人怎么选，<b>把每个选项的概率都留下</b>，两项新实验的比例都更接近真人。
+    要猜某个人会怎么选，<b>他以前真的选过什么</b>也能提供帮助。</p>
+  <p class="finding-note">买食品时，你会看包装日期吗？这道真实问卷里，<b>{real:.1%}</b> 的人答「有时」。
+    MatrAI X 项目只让每个虚拟人选一个答案，结果估成 <b>{before:.1%}</b>。</p>
+  <p class="finding-note">只留概率最高的一项，其他答案的可能性就被舍掉了。
+    改成把每个人给各选项的概率都算进去后，「有时」降到 <b>{after:.1%}</b>，离真人还有一段差距。</p>
   <p class="source report-actions">{link('看食品日期原题', CENTER + 'question-cases.html#CBQ700')}
     {link('看只改汇总的对照', CENTER + 'bottleneck.html#mechanism-title')}</p>"""
 
@@ -141,8 +140,8 @@ def study_scope(d):
     survey, choice = food['results'], tofu['results']
     tofu_meta = d['replication']['freeze']['metadata']['tofu']
     return f"""
-  <p>末轮选用项目此前未用于方案开发的两套真人研究。两种作答方式共用 DeepSeek Pro、同一批 Persona 1M 合成画像、相同题面和选项顺序。
-    「MatrAI X 项目单选」沿用项目原生问卷指令，优化方式只改为输出全部选项的概率。</p>
+  <p>我们找了两套此前没用来选改法的真人研究。让同一个 AI（DeepSeek Pro）用同一批虚拟人物、同样的题目和选项顺序作答。
+    MatrAI X 项目原来只交一个答案，优化方法交出每个选项的概率。</p>
   <dl class="scope-grid">
     <div><dt>{h(food['label'])}</dt><dd>2017–2018 年的自报购物习惯。正式评估 {survey['scored_people']} 位成年人，
       共 {survey['scored_cards']} 道固定题、{survey['eligible_target_tasks']} 次作答，按官方访谈权重汇总。另抽 20 位同题试答者单独比较。</dd>
@@ -151,10 +150,13 @@ def study_scope(d):
       共出现 {tofu_meta['cards']} 种商品卡，其中 {choice['scored_cards']} 种达到至少 20 人作答，用于估人群比例。统计模型用另外 {choice['stat_training_people']} 人训练。</dd>
       <dd class="source">{link('作者问卷和工作簿', tofu['source'])}</dd></div>
   </dl>
-  <p class="note">给模型的是按地区、年龄、学历和性别匹配的合成画像，瑞典按西欧大区匹配。试答与统计方法另用真人资料，评分使用留出的答案。
-    两套研究均已公开，模型在训练中是否见过相关资料未知。</p>
-  <p class="note"><b>数字怎么读</b>　群体比例误差越低越好。二选一时，真人选某项为 60%，模型为 80%，就差 20 个百分点。
-    个人概率误差用 Brier 分数，衡量给个人各选项的概率离实际答案有多远，也越低越好。按人重抽样 2,000 次来估计 95% 区间。区间全在零上方，说明本次下降有统计支持。</p>
+  <p>这些虚拟人物来自 Persona 1M。我们按地区、年龄、学历和性别找相近的画像，瑞典按西欧大区匹配。
+    最后用留出的真人答案判卷。两套研究早已公开，AI 在训练时是否见过相关资料，无法确认。</p>
+  <details><summary>百分比、误差和区间怎么读？</summary>
+    <p><b>群体比例误差越低越好。</b> 一道二选一题，真人有 60% 选甲，AI 估成 80%，误差就是 20 个百分点。</p>
+    <p><b>个人概率误差也越低越好。</b> 例如真人选了甲，事先给甲 90% 的概率，比给甲 10% 更准。这个误差分数叫 Brier。</p>
+    <p><b>95% 区间</b>帮我们判断改善稳不稳。按受访者重抽样 2,000 次来估计区间。改善区间如果包含 0，现有样本还无法确认有没有改善。</p>
+  </details>
   <p class="source">{link('样本、匹配和评分规程', STAGE + 'docs/末轮复验规程.md')}</p>"""
 
 
@@ -173,15 +175,14 @@ def bottleneck_summary(d):
     <b>{combined['combined']['brier']:.3f}</b>。只看真人确实选了商品的题，选款误差从
     {combined['refusal_only']['conditional']:.3f} 升到 {combined['combined']['conditional']:.3f}。统计选款用过其他真人的训练答案。</p>
   <dl class="bottleneck-factors">
-    <div><dt>真人资料</dt><dd>豆腐实验用本人的两次选择更新统计，个人概率误差从
+    <div><dt>多知道一点本人怎样选</dt><dd>豆腐实验用本人的两次选择更新统计，个人概率误差从
       {tofu['scores']['population']['brier']:.3f} 降到 {tofu['scores']['own']['brier']:.3f}。
       用别人的两次选择更新时，误差为 {tofu['scores']['other']['brier']:.3f}。</dd></div>
-    <div><dt>模型的影响</dt><dd>早期购物问卷固定题目和画像，Qwen 换成 DeepSeek Pro 后，
+    <div><dt>换一个模型</dt><dd>早期购物问卷固定题目和画像，Qwen 换成 DeepSeek Pro 后，
       群体误差从 {qwen['mean_run_tv_pp']:.2f} 降到 {pro['mean_run_tv_pp']:.2f} 个百分点。</dd></div>
-    <div><dt>随机波动</dt><dd>同一套购物问卷用 Pro 重复三次，误差在 {min(runs):.2f} 至 {max(runs):.2f} 个百分点之间。
+    <div><dt>让同一个模型再答几次</dt><dd>同一套购物问卷用 Pro 重复三次，误差在 {min(runs):.2f} 至 {max(runs):.2f} 个百分点之间。
       平均三次预测，误差比三次单独评分的平均值再少 {averaging_gain:.2f} 个百分点。</dd></div>
-    <div><dt>温度等运行参数</dt><dd>末轮固定温度 0.7、top_p＝1。两项参数都影响作答时的取样。
-      这轮缺少单独改变参数的对照，调参能带来多少改善仍未知。</dd></div>
+    <div><dt>调整 AI 的作答设置</dt><dd>末轮各组都用同一套设置。温度和取样范围只改其中一项会怎样，还需要对照测试。</dd></div>
   </dl>
   <p class="note">这些对照只量出了各自条件下的效果。剩余误差还有多少来自画像遗漏、模型能力或样本波动，现有数据无法分开估计。</p>
   <p class="source">{link('查看瓶颈证据与实验条件', CENTER + 'bottleneck.html#remaining')}</p>"""
@@ -273,7 +274,7 @@ def report_results(d):
     combined_figure = f"""
 <figure class="panel primary" id="combined" aria-labelledby="combined-title">
   <figcaption>
-    <h2 id="combined-title">本人记录和 AI 合用，准了多少？</h2>
+    <h2 id="combined-title">知道他以前怎么选，能猜中这次吗？</h2>
     <p class="meta">瑞典豆腐选购 · 同一批 {combined['people']} 人的 {combined['tasks']} 次选择 · 个人概率误差，越低越好</p>
   </figcaption>
   <div class="main-grid">
@@ -281,16 +282,17 @@ def report_results(d):
     <div class="stats">
       <div>
         <span class="big-number">{reduction:.1%}</span>
-        <p><strong>比 MatrAI X 项目单选低</strong></p>
+        <p><strong>合用方案比 MatrAI X 项目单选的误差低</strong></p>
         <p>误差 {original:.3f} → {hybrid:.3f}</p>
       </div>
       <div class="best">
-        <p><strong>两步都用统计最准确（{statistics:.3f}）</strong></p>
-        <p>同样用本人记录判断买不买，把选款交给 AI 后，误差增加 {added_error:.1%}。</p>
+        <p><strong>两步都用统计更准（{statistics:.3f}）</strong></p>
+        <p>用同一份记录判断买不买，再把选款交给 AI，误差增加 {added_error:.1%}。</p>
       </div>
     </div>
   </div>
-  <p class="note method-note"><b>合用的意思</b> 用本人的两次真实选择帮忙判断买不买，再让 AI 判断会选哪款。结果来自同一批数据的事后补算。</p>
+  <p class="note method-note">想预测一个人会选哪款豆腐，可以先估他会不会买，再估买了会选哪款。
+    合用方案先用他的两次实验选择判断买不买，选款交给 AI。图中降幅包含新增的真人资料和两步判断，来自同一批实验题的事后补算。</p>
   <p class="source report-actions">{source('combined', '组合补算数据')}
     {link('本人记录与购买预测', CENTER + 'purchase-evidence.html')}</p>
 </figure>"""
@@ -298,7 +300,7 @@ def report_results(d):
 <div class="secondary">
   <figure class="panel primary" id="survey" aria-labelledby="survey-title">
     <figcaption>
-      <h2 id="survey-title">保留概率，误差少了多少？</h2>
+      <h2 id="survey-title">一群人会怎么选？</h2>
       <p class="meta">每项 96 人，固定模型、画像和题目 · 群体比例误差（百分点），越低越好</p>
       <ul class="key" aria-label="图例">
         <li><i class="swatch old" aria-hidden="true"></i>{PROJECT_BASELINE}</li>
@@ -314,13 +316,14 @@ def report_results(d):
   </figure>
   <figure class="panel" id="pilot" aria-labelledby="pilot-title">
     <figcaption>
-      <h2 id="pilot-title">20 份真人试答，加 AI 有用吗？</h2>
+      <h2 id="pilot-title">问过 20 人，还要加 AI 吗？</h2>
       <p class="meta">美国食品标签问卷 · 群体比例误差（百分点），越低越好</p>
     </figcaption>
     {pilot_chart}
     <div class="pilot-takeaway">
-      <p><b>本次加 AI 后，估计误差多 {pilot_difference:.2f} 个百分点。</b></p>
-      <p class="note">误差下降量的 95% 区间为 {pilot_interval} 个百分点，跨过 0，效果仍不确定。</p>
+      <p>先拿 20 份试答数一遍，再试着让真人统计和 AI 各算一半。用另外一批真人的回答检验。</p>
+      <p><b>加 AI 后，误差多 {pilot_difference:.2f} 个百分点。这次基本持平。</b></p>
+      <p class="note">误差改善的 95% 区间为 {pilot_interval} 个百分点，包含 0。现有样本还无法确认加 AI 有帮助。</p>
     </div>
     <p class="source report-actions">{source('replication', '试答回放数据')}
       {link('看试答对照的解释', CENTER + 'bottleneck.html#pilot-interpretation')}</p>
