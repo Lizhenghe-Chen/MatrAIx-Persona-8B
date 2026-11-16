@@ -6,7 +6,7 @@
 
 | 文件 | 用途 |
 |---|---|
-| [overview.html](overview.html) | 最终对照，三张 ECharts 柱状图 |
+| [overview.html](overview.html) | 三张 ECharts 对照图、真人样本、改善区间与采用建议 |
 | [bottleneck.html](bottleneck.html) | 发现的问题、已验证的原因、改法、提升和仍待验证的因素 |
 | [question-cases.html](question-cases.html) | 按研究展开 9 套历轮题例、末轮食品标签和豆腐实例，也可查其余 6 套历轮研究的逐人评分 |
 | [purchase-evidence.html](purchase-evidence.html) | 本人历史数据的 12 组改善区间和同资料比较 |
@@ -22,7 +22,7 @@
 ```sh
 .venv/bin/python examples/decision-transfer/src/build_final.py
 .venv/bin/python examples/reports/src/build.py
-.venv/bin/python examples/reports/src/build.py --check
+.venv/bin/python examples/decision-transfer/src/verify.py
 ```
 
 已有聚合案例足够重建页面。需要重新导出时，可在有权限的原机器运行 `.venv/bin/python examples/reports/src/collect_cases.py`。脚本只读取冻结材料，输出聚合比例。历史四组案例和研究均值与已公布结果核对，另五套引用各自冻结的逐题比例。旧评分记录的方案哈希与现存方案文件哈希不同，二者均登记于聚合数据的来源记录。此报告整理使用已完成的配对对照。

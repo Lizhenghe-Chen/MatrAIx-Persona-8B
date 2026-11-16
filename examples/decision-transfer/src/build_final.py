@@ -49,7 +49,7 @@ SOURCES = {
     'combined': STAGE + 'data/final-combined-v1.json',
 }
 NAMES = dict(anes='美国公共开支', dryer='四国烘干机', pew13='购物态度（Pew）',
-             pew168='诈骗风险（Pew）', shed='美国涨价应对', swiss='瑞士家电',
+             pew168='诈骗风险（Pew）', shed='美联储涨价应对（SHED）', swiss='瑞士家电',
              origin='美国商品产地', packaging='美国啤酒包装', pew111='网购与达人（Pew）',
              german='德国番茄包装', tshirt='美国 T 恤', radiant='西班牙番茄',
              drone='美国无人机配送', shoes='美国运动鞋评分', openecommerce='美国 Open eCommerce')
@@ -124,13 +124,38 @@ def issue_summary(d):
     real = case['real'][option]
     before = case['model']['original'][option]
     after = case['model']['output_only'][option]
+    argmax_error = food['scores']['argmax']['tv']
+    probability_error = food['scores']['output_only']['tv']
     return f"""
-  <p class="lead"><b>发现的问题</b>　以买食品会不会看包装日期为例，真人中 <b>{real:.1%}</b> 选「有时」，
+  <p class="lead"><b>结论</b>　保留完整概率能改善受测问卷的人群比例。预测某个人会怎么选时，本人的真实选择记录更有参考价值。</p>
+  <p class="finding-note"><b>发现的问题</b>　以买食品会不会看包装日期为例，真人中 <b>{real:.1%}</b> 选「有时」，
     MatrAI X 项目单选估成 <b>{before:.1%}</b>。改用完整概率后降到 <b>{after:.1%}</b>。</p>
   <p class="finding-note"><b>原因与改法</b>　每人只给最高项投一票，会把其他选项的概率都丢掉。
-    对同一批 AI 答案保留所有选项的概率，再按相同权重汇总，两项复验的群体比例误差都下降了。</p>
+    用同一批食品标签的概率答案，只数最高项时误差为 {argmax_error:.2f} 个百分点，保留全部概率汇总后降到 {probability_error:.2f}。</p>
   <p class="source report-actions">{link('看食品日期原题', CENTER + 'question-cases.html#CBQ700')}
     {link('看只改汇总的对照', CENTER + 'bottleneck.html#mechanism-title')}</p>"""
+
+
+def study_scope(d):
+    food, tofu = d['replication']['studies']
+    survey, choice = food['results'], tofu['results']
+    tofu_meta = d['replication']['freeze']['metadata']['tofu']
+    return f"""
+  <p>末轮选用项目此前未用于方案开发的两套真人研究。两种作答方式共用 DeepSeek Pro、同一批 Persona 1M 合成画像、相同题面和选项顺序。
+    「MatrAI X 项目单选」沿用项目原生问卷指令，优化方式只改为输出全部选项的概率。</p>
+  <dl class="scope-grid">
+    <div><dt>{h(food['label'])}</dt><dd>2017–2018 年的自报购物习惯。正式评估 {survey['scored_people']} 位成年人，
+      共 {survey['scored_cards']} 道固定题、{survey['eligible_target_tasks']} 次作答，按官方访谈权重汇总。另抽 20 位同题试答者单独比较。</dd>
+      <dd class="source">{link('CDC 问卷、代码本和数据', food['source'])}</dd></div>
+    <div><dt>{h(tofu['label'])}</dt><dd>2021 年的情境选购。{choice['scored_people']} 位受访者作出 {choice['eligible_target_tasks']} 次待预测的选择。
+      共出现 {tofu_meta['cards']} 种商品卡，其中 {choice['scored_cards']} 种达到至少 20 人作答，用于估人群比例。统计模型用另外 {choice['stat_training_people']} 人训练。</dd>
+      <dd class="source">{link('作者问卷和工作簿', tofu['source'])}</dd></div>
+  </dl>
+  <p class="note">给模型的是按地区、年龄、学历和性别匹配的合成画像，瑞典按西欧大区匹配。试答与统计方法另用真人资料，评分使用留出的答案。
+    两套研究均已公开，模型在训练中是否见过相关资料未知。</p>
+  <p class="note"><b>数字怎么读</b>　群体比例误差越低越好。二选一时，真人选某项为 60%，模型为 80%，就差 20 个百分点。
+    个人概率误差用 Brier 分数，衡量给个人各选项的概率离实际答案有多远，也越低越好。按人重抽样 2,000 次来估计 95% 区间。区间全在零上方，说明本次下降有统计支持。</p>
+  <p class="source">{link('样本、匹配和评分规程', STAGE + 'docs/末轮复验规程.md')}</p>"""
 
 
 def bottleneck_summary(d):
@@ -145,10 +170,12 @@ def bottleneck_summary(d):
   <p>保留概率后，食品标签和豆腐复验的群体比例误差仍有
     <b>{after[0]:.2f}</b> 和 <b>{after[1]:.2f}</b> 个百分点。豆腐的组合对照固定了「买不买」的预测，
     选款用统计时，个人概率误差是 <b>{combined['refusal_only']['brier']:.3f}</b>，改用 AI 选款后上升到
-    <b>{combined['combined']['brier']:.3f}</b>。差距出现在选款这一步。统计选款用过其他真人的训练答案。</p>
+    <b>{combined['combined']['brier']:.3f}</b>。只看真人确实选了商品的题，选款误差从
+    {combined['refusal_only']['conditional']:.3f} 升到 {combined['combined']['conditional']:.3f}。统计选款用过其他真人的训练答案。</p>
   <dl class="bottleneck-factors">
     <div><dt>真人资料</dt><dd>豆腐实验用本人的两次选择更新统计，个人概率误差从
-      {tofu['scores']['population']['brier']:.3f} 降到 {tofu['scores']['own']['brier']:.3f}。与商品直接相关的记录能提供帮助。</dd></div>
+      {tofu['scores']['population']['brier']:.3f} 降到 {tofu['scores']['own']['brier']:.3f}。
+      用别人的两次选择更新时，误差为 {tofu['scores']['other']['brier']:.3f}。</dd></div>
     <div><dt>模型的影响</dt><dd>早期购物问卷固定题目和画像，Qwen 换成 DeepSeek Pro 后，
       群体误差从 {qwen['mean_run_tv_pp']:.2f} 降到 {pro['mean_run_tv_pp']:.2f} 个百分点。</dd></div>
     <div><dt>随机波动</dt><dd>同一套购物问卷用 Pro 重复三次，误差在 {min(runs):.2f} 至 {max(runs):.2f} 个百分点之间。
@@ -158,6 +185,31 @@ def bottleneck_summary(d):
   </dl>
   <p class="note">这些对照只量出了各自条件下的效果。剩余误差还有多少来自画像遗漏、模型能力或样本波动，现有数据无法分开估计。</p>
   <p class="source">{link('查看瓶颈证据与实验条件', CENTER + 'bottleneck.html#remaining')}</p>"""
+
+
+def usage_summary(d):
+    history = [study['results']['arms'] for key in ('formal', 'wide', 'clean', 'external')
+               for study in d[key]['studies'].values()]
+    group_count = sum(arms['original']['card_tv_pp'] is not None for arms in history)
+    summary = d['cluster']['summary']
+    shed = d['formal']['studies']['shed']['results']['arms']
+    gains = d['conclusions']['summary_counts']
+    yogurt = next(row for row in d['conclusions']['gains'] if row['label'] == '酸奶（超市）')
+    return f"""
+  <dl>
+    <div><dt>手头只有模拟答案</dt><dd>保留完整概率，先用于粗估人群比例。需要拿比例做决策时，安排真人问卷来校对。</dd></div>
+    <div><dt>已经有同题真人试答</dt><dd>先直接统计这批人的选择。用另外留出的真人答案验证加入 AI 后能否继续降误差。</dd></div>
+    <div><dt>有本人的同类选择记录</dt><dd>先用统计更新买不买的概率，再用留出的记录核对买哪款。豆腐实验的组合补算中，两步都用统计误差最低。</dd></div>
+  </dl>
+  <p><b>不同题的效果</b>　历轮另有 {len(history)} 套研究。{group_count} 套可比较人群比例，另外 {len(history) - group_count} 套主要按人评分。
+    美国家庭涨价应对题上，改提示并保留概率后，群体误差由 {shed['original']['card_tv_pp']:.2f} 到 {shed['optimized']['card_tv_pp']:.2f} 个百分点，
+    基本持平。历轮汇总纳入真人统计对照的 {summary['studies_with_reference']} 套研究中，有 {summary['studies_behind_reference']} 套的 AI 个人概率误差较大。
+    这些统计参照使用了其他真人的答案。</p>
+  <p><b>问卷和交易的证据</b>　加入本人记录的 {gains['comparisons']} 组问卷或交易对照中，{gains['interval_above_zero']} 组的改善区间高于零。
+    有日期的超市酸奶记录中，把买不买和买哪款分开预测，个人概率误差从 {yogurt['baseline']:.3f} 降到 {yogurt['with_history']:.3f}。
+    这项结果来自有购物记录的家庭。销量和新客转化还需另外的交易样本验证。</p>
+  <p class="source report-actions">{source('cluster', '历轮统计参照')}
+    {link('看 12 组个人记录与交易对照', CENTER + 'purchase-evidence.html')}</p>"""
 
 
 def report_results(d):
@@ -176,7 +228,7 @@ def report_results(d):
     survey_names = ('美国食品标签', '瑞典豆腐选购')
     before = [r['scores']['original']['tv'] for r in (nhanes, tofu)]
     after = [r['scores']['output_only']['tv'] for r in (nhanes, tofu)]
-    improvements = [r['contrasts']['original__output_only']['group']['improvement'] for r in (nhanes, tofu)]
+    improvements = [r['contrasts']['original__output_only']['group'] for r in (nhanes, tofu)]
 
     chart_values = {
         'combined': plot(
@@ -213,9 +265,11 @@ def report_results(d):
         f'试答和 AI 各占一半 {pilot_with_ai:.2f} 个百分点。'
     )
     gains = ''.join(
-        f'<div><dt>{h(name)}</dt><dd>误差少 <strong>{gain:.2f}</strong> 个百分点</dd></div>'
+        f'<div><dt>{h(name)}</dt><dd>误差少 <strong>{gain["improvement"]:.2f}</strong> 个百分点</dd>'
+        f'<dd class="gain-range">95% 区间 {interval(gain["ci95"])}</dd></div>'
         for name, gain in zip(survey_names, improvements, strict=True)
     )
+    accuracy = [(r['scores']['original']['accuracy'], r['scores']['output_only']['accuracy']) for r in (nhanes, tofu)]
     combined_figure = f"""
 <figure class="panel primary" id="combined" aria-labelledby="combined-title">
   <figcaption>
@@ -253,7 +307,8 @@ def report_results(d):
     </figcaption>
     {survey_chart}
     <dl class="gains">{gains}</dl>
-    <p class="note">人群比例更准了，两项研究的逐人答对率各提高约 1 个百分点。</p>
+    <p class="note">用每人的单选答案或概率最高的答案判卷，食品标签的答对率从 {accuracy[0][0]:.1%} 到 {accuracy[0][1]:.1%}，
+      豆腐从 {accuracy[1][0]:.1%} 到 {accuracy[1][1]:.1%}。</p>
     <p class="source report-actions">{source('replication', '正式复验数据')}
       {link('按研究查看真人原题', CENTER + 'question-cases.html')}</p>
   </figure>
@@ -264,7 +319,7 @@ def report_results(d):
     </figcaption>
     {pilot_chart}
     <div class="pilot-takeaway">
-      <p><b>加 AI 后误差增加 {pilot_difference:.2f} 个百分点。</b></p>
+      <p><b>本次加 AI 后，估计误差多 {pilot_difference:.2f} 个百分点。</b></p>
       <p class="note">误差下降量的 95% 区间为 {pilot_interval} 个百分点，跨过 0，效果仍不确定。</p>
     </div>
     <p class="source report-actions">{source('replication', '试答回放数据')}
@@ -369,15 +424,15 @@ def historical_details(d):
                                 interval(comp.get('improvement_95_ci')), number(arms['original']['brier'], 3),
                                 number(arms['optimized']['brier'], 3), f"{arms['original']['accuracy']:.1%}",
                                 f"{arms['optimized']['accuracy']:.1%}", source(key)))
-    cluster = d['cluster']['summary']
     content += details(
-        '十五套问卷的完整对照',
-        f"<p>历史汇总的 {cluster['studies']} 套对照全部落后于各自采用的真人统计参照，"
-        '这些参照使用其他真人的历史答案或用其训练模型。群体比例误差单位为百分点，'
-        '逐人答对率取最高概率。— 表示题卡没有足够重复或结果未提供。</p>'
+        f'{len(frozen_rows)} 套历轮研究的完整对照',
+        '<p>下表按研究列成绩。群体比例误差单位为百分点，逐人答对率取最高概率。'
+        '— 表示题卡没有足够重复或结果未提供。</p>'
         + table(['研究', '人数', 'MatrAI X 项目比例误差', '改后比例误差', '比例改善区间', '项目 Brier',
                  '改后 Brier', '项目答对率', '改后答对率', '来源'], frozen_rows)
-        + f'''<p class="source report-actions">{source("cluster", "十四套历史比较")}
+        + f'''<p class="note">旧汇总把美联储 SHED 误归到 Pew。这里引用各研究的误差，跨来源复验以实际调查来源判断。
+             {link('SHED 数据来源说明', STUDY + '01_首轮归档/README.md')}</p>
+             <p class="source report-actions">{source("cluster", "十四套历史比较")}
              {link('历轮逐题完整版', 'examples/sim-to-real/reports/cards.html')}
              {link('历轮技术报告', 'examples/sim-to-real/reports/index.html')}</p>''', 'surveys',
     )
@@ -460,6 +515,8 @@ def render(d, echarts):
     slots = {
         'ISSUE_SUMMARY': issue_summary(d),
         'RESULTS': results,
+        'STUDY_SCOPE': study_scope(d),
+        'USAGE_SUMMARY': usage_summary(d),
         'APPENDIX': latest_details(d) + historical_details(d) + provenance_details(d),
         'HTML_NAV': ' '.join((link('报告中心', CENTER + 'index.html'),
                               report_button('重点报告', '#html-reports', primary=True,

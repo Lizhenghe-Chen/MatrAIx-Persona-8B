@@ -92,11 +92,20 @@ nav a { text-decoration-thickness: 1px; }
 }
 .gains dt { font-size: .875rem; color: var(--muted); }
 .gains dd { margin: 0; font-weight: 660; color: var(--green); }
+.gains .gain-range { font-size: .82rem; font-weight: 500; color: var(--muted); }
 .gains strong { font-size: 1.24rem; font-variant-numeric: tabular-nums; }
 .pilot-takeaway { border-top: 1px solid var(--line); padding-top: 9px; }
 .pilot-takeaway b { color: var(--warm); }
 .note { margin: .5em 0 .15em; font-size: .905rem; color: var(--muted); }
 .method-note { border-top: 1px solid var(--line); padding-top: 11px; }
+.study-scope { margin-top: 16px; }
+.scope-grid {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 20px;
+  margin: 12px 0;
+}
+.scope-grid > div { border-top: 1px solid var(--line); padding-top: 8px; min-width: 0; }
+.scope-grid dt { font-weight: 720; }
+.scope-grid dd { margin-left: 0; }
 .usage, .appendix, .bottleneck-brief { margin-top: 28px; }
 .bottleneck-brief { background: #eef3fd; padding: 14px 16px; border-radius: 10px; }
 .bottleneck-brief h2 { font-size: clamp(20px, 2.6vw, 25px); }
@@ -141,7 +150,7 @@ footer { padding: 14px 0 0; margin-top: 16px; border-top: 1px solid var(--line);
   .big-number { font-size: 38px; }
   #combined .chart { height: 234px; }
   .chart { height: 218px; }
-  .bottleneck-factors { grid-template-columns: 1fr; }
+  .bottleneck-factors, .scope-grid { grid-template-columns: 1fr; }
   .usage dl { grid-template-columns: 1fr; gap: 6px; }
   .usage, .appendix { margin-top: 21px; }
 }
@@ -162,6 +171,7 @@ footer { padding: 14px 0 0; margin-top: 16px; border-top: 1px solid var(--line);
     @@HTML_NAV@@
     <a href="#survey">改前改后</a>
     <a href="#combined">合用结果</a>
+    <a href="#design">样本与方法</a>
     <a href="#bottleneck">剩余瓶颈</a>
     <a href="#adopt">采用建议</a>
     <a href="#evidence">明细与来源</a>
@@ -172,17 +182,17 @@ footer { padding: 14px 0 0; margin-top: 16px; border-top: 1px solid var(--line);
 @@ISSUE_SUMMARY@@
 </div>
 @@RESULTS@@
+<section class="panel study-scope" id="design" aria-labelledby="design-title">
+  <h2 id="design-title">真人样本与比较方法</h2>
+@@STUDY_SCOPE@@
+</section>
 <aside class="bottleneck-brief" id="bottleneck" aria-labelledby="bottleneck-title">
   <h2 id="bottleneck-title">优化后，差距为什么还在？</h2>
 @@BOTTLENECK_SUMMARY@@
 </aside>
 <section class="usage" id="adopt" aria-labelledby="adopt-title">
   <h2 id="adopt-title">实际怎么选方法</h2>
-  <dl>
-    <div><dt>只有模拟，没有真人答案</dt><dd>保留每个选项的概率，再汇总人群比例。</dd></div>
-    <div><dt>已经有真人试答</dt><dd>先直接统计。判断加 AI 是否能在这份问卷上再降误差。</dd></div>
-    <div><dt>有本人的同类选择记录</dt><dd>优先用统计更新买不买的概率，再单独检查买哪款。</dd></div>
-  </dl>
+@@USAGE_SUMMARY@@
 </section>
 <section class="appendix" id="html-reports" aria-labelledby="html-reports-title">
   <h2 id="html-reports-title">重点报告</h2>
