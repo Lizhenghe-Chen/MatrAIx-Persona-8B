@@ -1,0 +1,1191 @@
+{
+  "seed": 20261109,
+  "splits": 100,
+  "new_calls": 0,
+  "studies": {
+    "beer": {
+      "people": 1291,
+      "actual_no_buy_rate": 0.32261812548412083,
+      "pilot_cards_per_person": 4,
+      "test_people_per_split": 1191,
+      "budgets": {
+        "10": {
+          "pilot_attribute_logit": {
+            "full_brier": 0.7003579304567227,
+            "no_buy_brier": 0.4728119981758889,
+            "no_buy_rate": 0.3407317073170731,
+            "reference": "qwen",
+            "improvement": 0.03206588482455373,
+            "improvement_over_pilot_attributes": 0.0,
+            "positive_splits_vs_pilot_attributes": 0.0,
+            "improvement_over_pilot_positions": 0.005182198813604277,
+            "positive_splits_vs_pilot_positions": 0.64,
+            "positive_splits": 0.8,
+            "split_improvement_p05_p95": [
+              -0.0571638802433907,
+              0.09941480681061365
+            ]
+          },
+          "pilot_attribute_logit_qwen_mix": {
+            "full_brier": 0.6785458756251711,
+            "no_buy_brier": 0.4728119981758889,
+            "no_buy_rate": 0.3407317073170731,
+            "reference": "qwen",
+            "improvement": 0.05387793965610517,
+            "improvement_over_pilot_attributes": 0.021812054831551433,
+            "positive_splits_vs_pilot_attributes": 0.76,
+            "improvement_over_pilot_positions": 0.026994253645155713,
+            "positive_splits_vs_pilot_positions": 0.87,
+            "positive_splits": 0.92,
+            "split_improvement_p05_p95": [
+              -0.02436003134952697,
+              0.10164961875890227
+            ]
+          },
+          "pilot_uniform_products": {
+            "full_brier": 0.6916828861214213,
+            "no_buy_brier": 0.4728119981758889,
+            "no_buy_rate": 0.3407317073170731,
+            "reference": "qwen",
+            "improvement": 0.04074092915985502,
+            "improvement_over_pilot_attributes": 0.008675044335301285,
+            "positive_splits_vs_pilot_attributes": 0.5,
+            "improvement_over_pilot_positions": 0.01385724314890556,
+            "positive_splits_vs_pilot_positions": 0.71,
+            "positive_splits": 0.89,
+            "split_improvement_p05_p95": [
+              -0.04305082942862666,
+              0.09227670468105272
+            ]
+          },
+          "pilot_position_products": {
+            "full_brier": 0.705540129270327,
+            "no_buy_brier": 0.4728119981758889,
+            "no_buy_rate": 0.3407317073170731,
+            "reference": "qwen",
+            "improvement": 0.02688368601094945,
+            "improvement_over_pilot_attributes": -0.005182198813604277,
+            "positive_splits_vs_pilot_attributes": 0.36,
+            "improvement_over_pilot_positions": 0.0,
+            "positive_splits_vs_pilot_positions": 0.0,
+            "positive_splits": 0.78,
+            "split_improvement_p05_p95": [
+              -0.07493960349037085,
+              0.08580762905401994
+            ]
+          },
+          "qwen": {
+            "full_brier": 0.7324238152812762,
+            "no_buy_brier": 0.5087535684298908,
+            "no_buy_rate": 0.17329932829555003,
+            "reference": "qwen",
+            "improvement": 0.0,
+            "improvement_over_pilot_attributes": -0.03206588482455373,
+            "positive_splits_vs_pilot_attributes": 0.2,
+            "improvement_over_pilot_positions": -0.02688368601094945,
+            "positive_splits_vs_pilot_positions": 0.22,
+            "positive_splits": 0.0,
+            "split_improvement_p05_p95": [
+              0.0,
+              0.0
+            ]
+          },
+          "pilot_constant": {
+            "full_brier": 0.6982374668086042,
+            "no_buy_brier": 0.4728119981758889,
+            "no_buy_rate": 0.3407317073170731,
+            "reference": "qwen",
+            "improvement": 0.034186348472671914,
+            "improvement_over_pilot_attributes": 0.0021204636481181906,
+            "positive_splits_vs_pilot_attributes": 0.42,
+            "improvement_over_pilot_positions": 0.007302662461722466,
+            "positive_splits_vs_pilot_positions": 0.57,
+            "positive_splits": 0.88,
+            "split_improvement_p05_p95": [
+              -0.04392703039446535,
+              0.07520892632258232
+            ]
+          },
+          "pilot_offset": {
+            "full_brier": 0.7365591387428794,
+            "no_buy_brier": 0.5249473117692015,
+            "no_buy_rate": 0.34430431123289634,
+            "reference": "qwen",
+            "improvement": -0.004135323461603061,
+            "improvement_over_pilot_attributes": -0.036201208286156784,
+            "positive_splits_vs_pilot_attributes": 0.18,
+            "improvement_over_pilot_positions": -0.031019009472552504,
+            "positive_splits_vs_pilot_positions": 0.13,
+            "positive_splits": 0.62,
+            "split_improvement_p05_p95": [
+              -0.09041286280338152,
+              0.0346084227116069
+            ]
+          }
+        },
+        "25": {
+          "pilot_attribute_logit": {
+            "full_brier": 0.6639755801659661,
+            "no_buy_brier": 0.4550825419973725,
+            "no_buy_rate": 0.33257425742574254,
+            "reference": "qwen",
+            "improvement": 0.06844823511531004,
+            "improvement_over_pilot_attributes": 0.0,
+            "positive_splits_vs_pilot_attributes": 0.0,
+            "improvement_over_pilot_positions": 0.025135539628811047,
+            "positive_splits_vs_pilot_positions": 0.83,
+            "positive_splits": 0.99,
+            "split_improvement_p05_p95": [
+              0.015874932634427946,
+              0.11265566061497509
+            ]
+          },
+          "pilot_attribute_logit_qwen_mix": {
+            "full_brier": 0.6598721151005025,
+            "no_buy_brier": 0.4550825419973725,
+            "no_buy_rate": 0.33257425742574254,
+            "reference": "qwen",
+            "improvement": 0.07255170018077381,
+            "improvement_over_pilot_attributes": 0.004103465065463759,
+            "positive_splits_vs_pilot_attributes": 0.46,
+            "improvement_over_pilot_positions": 0.029239004694274807,
+            "positive_splits_vs_pilot_positions": 0.9,
+            "positive_splits": 1.0,
+            "split_improvement_p05_p95": [
+              0.026458569882165734,
+              0.11106103818180738
+            ]
+          },
+          "pilot_uniform_products": {
+            "full_brier": 0.678385793987534,
+            "no_buy_brier": 0.4550825419973725,
+            "no_buy_rate": 0.33257425742574254,
+            "reference": "qwen",
+            "improvement": 0.05403802129374227,
+            "improvement_over_pilot_attributes": -0.014410213821567779,
+            "positive_splits_vs_pilot_attributes": 0.25,
+            "improvement_over_pilot_positions": 0.010725325807243273,
+            "positive_splits_vs_pilot_positions": 0.72,
+            "positive_splits": 0.96,
+            "split_improvement_p05_p95": [
+              0.00556378297582994,
+              0.0950315884419639
+            ]
+          },
+          "pilot_position_products": {
+            "full_brier": 0.6891111197947772,
+            "no_buy_brier": 0.4550825419973725,
+            "no_buy_rate": 0.33257425742574254,
+            "reference": "qwen",
+            "improvement": 0.04331269548649899,
+            "improvement_over_pilot_attributes": -0.025135539628811047,
+            "positive_splits_vs_pilot_attributes": 0.17,
+            "improvement_over_pilot_positions": 0.0,
+            "positive_splits_vs_pilot_positions": 0.0,
+            "positive_splits": 0.87,
+            "split_improvement_p05_p95": [
+              -0.013434374269796207,
+              0.09250205597112723
+            ]
+          },
+          "qwen": {
+            "full_brier": 0.7324238152812762,
+            "no_buy_brier": 0.5087535684298908,
+            "no_buy_rate": 0.17329932829555003,
+            "reference": "qwen",
+            "improvement": 0.0,
+            "improvement_over_pilot_attributes": -0.06844823511531004,
+            "positive_splits_vs_pilot_attributes": 0.01,
+            "improvement_over_pilot_positions": -0.04331269548649899,
+            "positive_splits_vs_pilot_positions": 0.13,
+            "positive_splits": 0.0,
+            "split_improvement_p05_p95": [
+              0.0,
+              0.0
+            ]
+          },
+          "pilot_constant": {
+            "full_brier": 0.684908147431926,
+            "no_buy_brier": 0.4550825419973725,
+            "no_buy_rate": 0.33257425742574254,
+            "reference": "qwen",
+            "improvement": 0.04751566784935034,
+            "improvement_over_pilot_attributes": -0.0209325672659597,
+            "positive_splits_vs_pilot_attributes": 0.19,
+            "improvement_over_pilot_positions": 0.004202972362851345,
+            "positive_splits_vs_pilot_positions": 0.51,
+            "positive_splits": 0.97,
+            "split_improvement_p05_p95": [
+              0.007192938070339982,
+              0.07464452233734324
+            ]
+          },
+          "pilot_offset": {
+            "full_brier": 0.7249604809613617,
+            "no_buy_brier": 0.5096596760769768,
+            "no_buy_rate": 0.33618861611330275,
+            "reference": "qwen",
+            "improvement": 0.007463334319914635,
+            "improvement_over_pilot_attributes": -0.060984900795395404,
+            "positive_splits_vs_pilot_attributes": 0.02,
+            "improvement_over_pilot_positions": -0.03584936116658437,
+            "positive_splits_vs_pilot_positions": 0.14,
+            "positive_splits": 0.74,
+            "split_improvement_p05_p95": [
+              -0.04722911258723147,
+              0.03537630044153453
+            ]
+          }
+        },
+        "50": {
+          "pilot_attribute_logit": {
+            "full_brier": 0.6457523054296479,
+            "no_buy_brier": 0.446178700841445,
+            "no_buy_rate": 0.327910447761194,
+            "reference": "qwen",
+            "improvement": 0.08667150985162828,
+            "improvement_over_pilot_attributes": 0.0,
+            "positive_splits_vs_pilot_attributes": 0.0,
+            "improvement_over_pilot_positions": 0.035065816331985786,
+            "positive_splits_vs_pilot_positions": 0.91,
+            "positive_splits": 1.0,
+            "split_improvement_p05_p95": [
+              0.05275712789582728,
+              0.11896616317133402
+            ]
+          },
+          "pilot_attribute_logit_qwen_mix": {
+            "full_brier": 0.6500089290588786,
+            "no_buy_brier": 0.446178700841445,
+            "no_buy_rate": 0.327910447761194,
+            "reference": "qwen",
+            "improvement": 0.08241488622239762,
+            "improvement_over_pilot_attributes": -0.004256623629230637,
+            "positive_splits_vs_pilot_attributes": 0.34,
+            "improvement_over_pilot_positions": 0.030809192702755155,
+            "positive_splits_vs_pilot_positions": 0.96,
+            "positive_splits": 1.0,
+            "split_improvement_p05_p95": [
+              0.05739568674576936,
+              0.11123906140697039
+            ]
+          },
+          "pilot_uniform_products": {
+            "full_brier": 0.6717079131205882,
+            "no_buy_brier": 0.446178700841445,
+            "no_buy_rate": 0.327910447761194,
+            "reference": "qwen",
+            "improvement": 0.060715902160688,
+            "improvement_over_pilot_attributes": -0.02595560769094027,
+            "positive_splits_vs_pilot_attributes": 0.11,
+            "improvement_over_pilot_positions": 0.00911020864104552,
+            "positive_splits_vs_pilot_positions": 0.79,
+            "positive_splits": 0.98,
+            "split_improvement_p05_p95": [
+              0.02915589688685787,
+              0.09600338891653992
+            ]
+          },
+          "pilot_position_products": {
+            "full_brier": 0.6808181217616337,
+            "no_buy_brier": 0.446178700841445,
+            "no_buy_rate": 0.327910447761194,
+            "reference": "qwen",
+            "improvement": 0.05160569351964248,
+            "improvement_over_pilot_attributes": -0.035065816331985786,
+            "positive_splits_vs_pilot_attributes": 0.09,
+            "improvement_over_pilot_positions": 0.0,
+            "positive_splits_vs_pilot_positions": 0.0,
+            "positive_splits": 0.96,
+            "split_improvement_p05_p95": [
+              0.007717744257363186,
+              0.09409641609540528
+            ]
+          },
+          "qwen": {
+            "full_brier": 0.7324238152812762,
+            "no_buy_brier": 0.5087535684298908,
+            "no_buy_rate": 0.17329932829555003,
+            "reference": "qwen",
+            "improvement": 0.0,
+            "improvement_over_pilot_attributes": -0.08667150985162828,
+            "positive_splits_vs_pilot_attributes": 0.0,
+            "improvement_over_pilot_positions": -0.05160569351964248,
+            "positive_splits_vs_pilot_positions": 0.04,
+            "positive_splits": 0.0,
+            "split_improvement_p05_p95": [
+              0.0,
+              0.0
+            ]
+          },
+          "pilot_constant": {
+            "full_brier": 0.678295377292307,
+            "no_buy_brier": 0.446178700841445,
+            "no_buy_rate": 0.327910447761194,
+            "reference": "qwen",
+            "improvement": 0.054128437988969144,
+            "improvement_over_pilot_attributes": -0.032543071862659124,
+            "positive_splits_vs_pilot_attributes": 0.04,
+            "improvement_over_pilot_positions": 0.0025227444693266643,
+            "positive_splits_vs_pilot_positions": 0.48,
+            "positive_splits": 0.99,
+            "split_improvement_p05_p95": [
+              0.03222870893280539,
+              0.07717996805467017
+            ]
+          },
+          "pilot_offset": {
+            "full_brier": 0.7183571172918959,
+            "no_buy_brier": 0.5009150843700398,
+            "no_buy_rate": 0.3311342019992481,
+            "reference": "qwen",
+            "improvement": 0.014066697989380362,
+            "improvement_over_pilot_attributes": -0.0726048118622479,
+            "positive_splits_vs_pilot_attributes": 0.01,
+            "improvement_over_pilot_positions": -0.03753899553026212,
+            "positive_splits_vs_pilot_positions": 0.1,
+            "positive_splits": 0.83,
+            "split_improvement_p05_p95": [
+              -0.02741104538781319,
+              0.034536095802697155
+            ]
+          }
+        },
+        "100": {
+          "pilot_attribute_logit": {
+            "full_brier": 0.6368041346230823,
+            "no_buy_brier": 0.44309613854791424,
+            "no_buy_rate": 0.32204488778054857,
+            "reference": "qwen",
+            "improvement": 0.09561968065819407,
+            "improvement_over_pilot_attributes": 0.0,
+            "positive_splits_vs_pilot_attributes": 0.0,
+            "improvement_over_pilot_positions": 0.04106336188843839,
+            "positive_splits_vs_pilot_positions": 0.97,
+            "positive_splits": 1.0,
+            "split_improvement_p05_p95": [
+              0.06939837801971618,
+              0.1266767568003409
+            ]
+          },
+          "pilot_attribute_logit_qwen_mix": {
+            "full_brier": 0.6458103546850096,
+            "no_buy_brier": 0.44309613854791424,
+            "no_buy_rate": 0.32204488778054857,
+            "reference": "qwen",
+            "improvement": 0.08661346059626679,
+            "improvement_over_pilot_attributes": -0.009006220061927285,
+            "positive_splits_vs_pilot_attributes": 0.14,
+            "improvement_over_pilot_positions": 0.032057141826511114,
+            "positive_splits_vs_pilot_positions": 0.97,
+            "positive_splits": 1.0,
+            "split_improvement_p05_p95": [
+              0.06268056144498944,
+              0.11301848837026103
+            ]
+          },
+          "pilot_uniform_products": {
+            "full_brier": 0.6693959914004403,
+            "no_buy_brier": 0.44309613854791424,
+            "no_buy_rate": 0.32204488778054857,
+            "reference": "qwen",
+            "improvement": 0.063027823880836,
+            "improvement_over_pilot_attributes": -0.032591856777358076,
+            "positive_splits_vs_pilot_attributes": 0.04,
+            "improvement_over_pilot_positions": 0.008471505111080324,
+            "positive_splits_vs_pilot_positions": 0.73,
+            "positive_splits": 0.99,
+            "split_improvement_p05_p95": [
+              0.030442646914684086,
+              0.09791627084800045
+            ]
+          },
+          "pilot_position_products": {
+            "full_brier": 0.6778674965115207,
+            "no_buy_brier": 0.44309613854791424,
+            "no_buy_rate": 0.32204488778054857,
+            "reference": "qwen",
+            "improvement": 0.05455631876975568,
+            "improvement_over_pilot_attributes": -0.04106336188843839,
+            "positive_splits_vs_pilot_attributes": 0.03,
+            "improvement_over_pilot_positions": 0.0,
+            "positive_splits_vs_pilot_positions": 0.0,
+            "positive_splits": 0.98,
+            "split_improvement_p05_p95": [
+              0.013763557252741093,
+              0.09177650504138375
+            ]
+          },
+          "qwen": {
+            "full_brier": 0.7324238152812762,
+            "no_buy_brier": 0.5087535684298908,
+            "no_buy_rate": 0.17329932829555003,
+            "reference": "qwen",
+            "improvement": 0.0,
+            "improvement_over_pilot_attributes": -0.09561968065819407,
+            "positive_splits_vs_pilot_attributes": 0.0,
+            "improvement_over_pilot_positions": -0.05455631876975568,
+            "positive_splits_vs_pilot_positions": 0.02,
+            "positive_splits": 0.0,
+            "split_improvement_p05_p95": [
+              0.0,
+              0.0
+            ]
+          },
+          "pilot_constant": {
+            "full_brier": 0.6762742512604903,
+            "no_buy_brier": 0.44309613854791424,
+            "no_buy_rate": 0.32204488778054857,
+            "reference": "qwen",
+            "improvement": 0.056149564020786,
+            "improvement_over_pilot_attributes": -0.03947011663740807,
+            "positive_splits_vs_pilot_attributes": 0.01,
+            "improvement_over_pilot_positions": 0.0015932452510303207,
+            "positive_splits_vs_pilot_positions": 0.5,
+            "positive_splits": 0.99,
+            "split_improvement_p05_p95": [
+              0.03449621404117466,
+              0.075385079842981
+            ]
+          },
+          "pilot_offset": {
+            "full_brier": 0.7153551596053458,
+            "no_buy_brier": 0.49675559491519083,
+            "no_buy_rate": 0.3258303361766492,
+            "reference": "qwen",
+            "improvement": 0.017068655675930425,
+            "improvement_over_pilot_attributes": -0.07855102498226364,
+            "positive_splits_vs_pilot_attributes": 0.0,
+            "improvement_over_pilot_positions": -0.03748766309382525,
+            "positive_splits_vs_pilot_positions": 0.06,
+            "positive_splits": 0.86,
+            "split_improvement_p05_p95": [
+              -0.0119447187936567,
+              0.03597182200195635
+            ]
+          }
+        }
+      }
+    },
+    "german": {
+      "people": 401,
+      "actual_no_buy_rate": 0.060473815461346635,
+      "pilot_cards_per_person": 6,
+      "test_people_per_split": 301,
+      "budgets": {
+        "10": {
+          "pilot_attribute_logit": {
+            "full_brier": 0.5501072680499113,
+            "no_buy_brier": 0.1178624865069494,
+            "no_buy_rate": 0.07114754098360655,
+            "reference": "qwen",
+            "improvement": 0.08974741079837227,
+            "improvement_over_pilot_attributes": 0.0,
+            "positive_splits_vs_pilot_attributes": 0.0,
+            "improvement_over_pilot_positions": 0.21478367269782186,
+            "positive_splits_vs_pilot_positions": 1.0,
+            "positive_splits": 0.97,
+            "split_improvement_p05_p95": [
+              0.024492768222346837,
+              0.1525214101187908
+            ]
+          },
+          "pilot_attribute_logit_qwen_mix": {
+            "full_brier": 0.5656767532003998,
+            "no_buy_brier": 0.1178624865069494,
+            "no_buy_rate": 0.07114754098360655,
+            "reference": "qwen",
+            "improvement": 0.0741779256478838,
+            "improvement_over_pilot_attributes": -0.015569485150488458,
+            "positive_splits_vs_pilot_attributes": 0.18,
+            "improvement_over_pilot_positions": 0.19921418754733333,
+            "positive_splits_vs_pilot_positions": 1.0,
+            "positive_splits": 1.0,
+            "split_improvement_p05_p95": [
+              0.03699485388937202,
+              0.11752995338799455
+            ]
+          },
+          "pilot_uniform_products": {
+            "full_brier": 0.7051419898972132,
+            "no_buy_brier": 0.1178624865069494,
+            "no_buy_rate": 0.07114754098360655,
+            "reference": "qwen",
+            "improvement": -0.06528731104892968,
+            "improvement_over_pilot_attributes": -0.15503472184730194,
+            "positive_splits_vs_pilot_attributes": 0.0,
+            "improvement_over_pilot_positions": 0.059748950850519914,
+            "positive_splits_vs_pilot_positions": 0.95,
+            "positive_splits": 0.0,
+            "split_improvement_p05_p95": [
+              -0.12141700133301032,
+              -0.011815307121225678
+            ]
+          },
+          "pilot_position_products": {
+            "full_brier": 0.7648909407477329,
+            "no_buy_brier": 0.1178624865069494,
+            "no_buy_rate": 0.07114754098360655,
+            "reference": "qwen",
+            "improvement": -0.1250362618994496,
+            "improvement_over_pilot_attributes": -0.21478367269782186,
+            "positive_splits_vs_pilot_attributes": 0.0,
+            "improvement_over_pilot_positions": 0.0,
+            "positive_splits_vs_pilot_positions": 0.0,
+            "positive_splits": 0.0,
+            "split_improvement_p05_p95": [
+              -0.2559371827651273,
+              -0.04096982067184151
+            ]
+          },
+          "qwen": {
+            "full_brier": 0.6398546788482835,
+            "no_buy_brier": 0.1339265503875969,
+            "no_buy_rate": 0.11691666666666668,
+            "reference": "qwen",
+            "improvement": 0.0,
+            "improvement_over_pilot_attributes": -0.08974741079837227,
+            "positive_splits_vs_pilot_attributes": 0.03,
+            "improvement_over_pilot_positions": 0.1250362618994496,
+            "positive_splits_vs_pilot_positions": 1.0,
+            "positive_splits": 0.0,
+            "split_improvement_p05_p95": [
+              0.0,
+              0.0
+            ]
+          },
+          "pilot_constant": {
+            "full_brier": 0.6233234515651537,
+            "no_buy_brier": 0.1178624865069494,
+            "no_buy_rate": 0.07114754098360655,
+            "reference": "qwen",
+            "improvement": 0.016531227283129817,
+            "improvement_over_pilot_attributes": -0.07321618351524245,
+            "positive_splits_vs_pilot_attributes": 0.05,
+            "improvement_over_pilot_positions": 0.14156748918257941,
+            "positive_splits_vs_pilot_positions": 1.0,
+            "positive_splits": 0.9,
+            "split_improvement_p05_p95": [
+              -0.0034542441384858343,
+              0.036022897992220505
+            ]
+          },
+          "pilot_offset": {
+            "full_brier": 0.6379382482253376,
+            "no_buy_brier": 0.13290025638112477,
+            "no_buy_rate": 0.08162714202730129,
+            "reference": "qwen",
+            "improvement": 0.0019164306229459028,
+            "improvement_over_pilot_attributes": -0.0878309801754264,
+            "positive_splits_vs_pilot_attributes": 0.01,
+            "improvement_over_pilot_positions": 0.1269526925223955,
+            "positive_splits_vs_pilot_positions": 1.0,
+            "positive_splits": 0.68,
+            "split_improvement_p05_p95": [
+              -0.02400992344288667,
+              0.023158450052141438
+            ]
+          },
+          "swiss_products_qwen": {
+            "full_brier": 0.5861938294979888,
+            "no_buy_brier": 0.1339265503875969,
+            "no_buy_rate": 0.11691666666666668,
+            "reference": "swiss_products_qwen",
+            "improvement": 0.0,
+            "improvement_over_pilot_attributes": -0.03608656144807749,
+            "positive_splits_vs_pilot_attributes": 0.16,
+            "improvement_over_pilot_positions": 0.1786971112497444,
+            "positive_splits_vs_pilot_positions": 1.0,
+            "positive_splits": 0.0,
+            "split_improvement_p05_p95": [
+              0.0,
+              0.0
+            ]
+          },
+          "swiss_products_pilot_constant": {
+            "full_brier": 0.5691187580644315,
+            "no_buy_brier": 0.1178624865069494,
+            "no_buy_rate": 0.07114754098360655,
+            "reference": "swiss_products_qwen",
+            "improvement": 0.017075071433557357,
+            "improvement_over_pilot_attributes": -0.019011490014520127,
+            "positive_splits_vs_pilot_attributes": 0.22,
+            "improvement_over_pilot_positions": 0.1957721826833017,
+            "positive_splits_vs_pilot_positions": 1.0,
+            "positive_splits": 0.92,
+            "split_improvement_p05_p95": [
+              -0.005520567621146583,
+              0.037313944581332775
+            ]
+          },
+          "swiss_products_pilot_offset": {
+            "full_brier": 0.5830440664457978,
+            "no_buy_brier": 0.13290025638112477,
+            "no_buy_rate": 0.08162714202730129,
+            "reference": "swiss_products_qwen",
+            "improvement": 0.0031497630521910326,
+            "improvement_over_pilot_attributes": -0.03293679839588645,
+            "positive_splits_vs_pilot_attributes": 0.17,
+            "improvement_over_pilot_positions": 0.1818468743019354,
+            "positive_splits_vs_pilot_positions": 1.0,
+            "positive_splits": 0.75,
+            "split_improvement_p05_p95": [
+              -0.026035729577066926,
+              0.02723661040318452
+            ]
+          },
+          "pilot_attribute_logit_swiss_mix": {
+            "full_brier": 0.5439198173197866,
+            "no_buy_brier": 0.1178624865069494,
+            "no_buy_rate": 0.07114754098360655,
+            "reference": "qwen",
+            "improvement": 0.09593486152849694,
+            "improvement_over_pilot_attributes": 0.006187450730124719,
+            "positive_splits_vs_pilot_attributes": 0.47,
+            "improvement_over_pilot_positions": 0.2209711234279466,
+            "positive_splits_vs_pilot_positions": 1.0,
+            "positive_splits": 1.0,
+            "split_improvement_p05_p95": [
+              0.04209104210065841,
+              0.1475138894284828
+            ]
+          }
+        },
+        "25": {
+          "pilot_attribute_logit": {
+            "full_brier": 0.5354328048320777,
+            "no_buy_brier": 0.11567260824710772,
+            "no_buy_rate": 0.06417218543046356,
+            "reference": "qwen",
+            "improvement": 0.10442187401620596,
+            "improvement_over_pilot_attributes": 0.0,
+            "positive_splits_vs_pilot_attributes": 0.0,
+            "improvement_over_pilot_positions": 0.2299021889459075,
+            "positive_splits_vs_pilot_positions": 1.0,
+            "positive_splits": 0.99,
+            "split_improvement_p05_p95": [
+              0.03662695151268414,
+              0.15630105303567735
+            ]
+          },
+          "pilot_attribute_logit_qwen_mix": {
+            "full_brier": 0.5589287534881183,
+            "no_buy_brier": 0.11567260824710772,
+            "no_buy_rate": 0.06417218543046356,
+            "reference": "qwen",
+            "improvement": 0.08092592536016514,
+            "improvement_over_pilot_attributes": -0.02349594865604081,
+            "positive_splits_vs_pilot_attributes": 0.06,
+            "improvement_over_pilot_positions": 0.20640624028986676,
+            "positive_splits_vs_pilot_positions": 1.0,
+            "positive_splits": 1.0,
+            "split_improvement_p05_p95": [
+              0.040395235750236555,
+              0.12144391028808117
+            ]
+          },
+          "pilot_uniform_products": {
+            "full_brier": 0.7036820710573188,
+            "no_buy_brier": 0.11567260824710772,
+            "no_buy_rate": 0.06417218543046356,
+            "reference": "qwen",
+            "improvement": -0.06382739220903529,
+            "improvement_over_pilot_attributes": -0.16824926622524125,
+            "positive_splits_vs_pilot_attributes": 0.0,
+            "improvement_over_pilot_positions": 0.061652922720666276,
+            "positive_splits_vs_pilot_positions": 1.0,
+            "positive_splits": 0.0,
+            "split_improvement_p05_p95": [
+              -0.1114265341651764,
+              -0.01197183470708097
+            ]
+          },
+          "pilot_position_products": {
+            "full_brier": 0.7653349937779851,
+            "no_buy_brier": 0.11567260824710772,
+            "no_buy_rate": 0.06417218543046356,
+            "reference": "qwen",
+            "improvement": -0.12548031492970158,
+            "improvement_over_pilot_attributes": -0.2299021889459075,
+            "positive_splits_vs_pilot_attributes": 0.0,
+            "improvement_over_pilot_positions": 0.0,
+            "positive_splits_vs_pilot_positions": 0.0,
+            "positive_splits": 0.0,
+            "split_improvement_p05_p95": [
+              -0.2591816803539954,
+              -0.03730347502416114
+            ]
+          },
+          "qwen": {
+            "full_brier": 0.6398546788482835,
+            "no_buy_brier": 0.1339265503875969,
+            "no_buy_rate": 0.11691666666666668,
+            "reference": "qwen",
+            "improvement": 0.0,
+            "improvement_over_pilot_attributes": -0.10442187401620596,
+            "positive_splits_vs_pilot_attributes": 0.01,
+            "improvement_over_pilot_positions": 0.12548031492970158,
+            "positive_splits_vs_pilot_positions": 1.0,
+            "positive_splits": 0.0,
+            "split_improvement_p05_p95": [
+              0.0,
+              0.0
+            ]
+          },
+          "pilot_constant": {
+            "full_brier": 0.6215516476609207,
+            "no_buy_brier": 0.11567260824710772,
+            "no_buy_rate": 0.06417218543046356,
+            "reference": "qwen",
+            "improvement": 0.01830303118736272,
+            "improvement_over_pilot_attributes": -0.08611884282884326,
+            "positive_splits_vs_pilot_attributes": 0.02,
+            "improvement_over_pilot_positions": 0.1437833461170643,
+            "positive_splits_vs_pilot_positions": 1.0,
+            "positive_splits": 0.94,
+            "split_improvement_p05_p95": [
+              -0.0005303828506435348,
+              0.03683690747606715
+            ]
+          },
+          "pilot_offset": {
+            "full_brier": 0.6329873027526463,
+            "no_buy_brier": 0.126859196405616,
+            "no_buy_rate": 0.0720694283161563,
+            "reference": "qwen",
+            "improvement": 0.006867376095637177,
+            "improvement_over_pilot_attributes": -0.09755449792056878,
+            "positive_splits_vs_pilot_attributes": 0.01,
+            "improvement_over_pilot_positions": 0.13234769102533878,
+            "positive_splits_vs_pilot_positions": 1.0,
+            "positive_splits": 0.82,
+            "split_improvement_p05_p95": [
+              -0.005353942425885577,
+              0.024840545680025385
+            ]
+          },
+          "swiss_products_qwen": {
+            "full_brier": 0.5861938294979888,
+            "no_buy_brier": 0.1339265503875969,
+            "no_buy_rate": 0.11691666666666668,
+            "reference": "swiss_products_qwen",
+            "improvement": 0.0,
+            "improvement_over_pilot_attributes": -0.050761024665911175,
+            "positive_splits_vs_pilot_attributes": 0.06,
+            "improvement_over_pilot_positions": 0.17914116427999635,
+            "positive_splits_vs_pilot_positions": 1.0,
+            "positive_splits": 0.0,
+            "split_improvement_p05_p95": [
+              0.0,
+              0.0
+            ]
+          },
+          "swiss_products_pilot_constant": {
+            "full_brier": 0.5671442922678438,
+            "no_buy_brier": 0.11567260824710772,
+            "no_buy_rate": 0.06417218543046356,
+            "reference": "swiss_products_qwen",
+            "improvement": 0.019049537230145016,
+            "improvement_over_pilot_attributes": -0.03171148743576617,
+            "positive_splits_vs_pilot_attributes": 0.13,
+            "improvement_over_pilot_positions": 0.19819070151014134,
+            "positive_splits_vs_pilot_positions": 1.0,
+            "positive_splits": 0.97,
+            "split_improvement_p05_p95": [
+              0.0014096801120584647,
+              0.03811790270039982
+            ]
+          },
+          "swiss_products_pilot_offset": {
+            "full_brier": 0.5777470897903494,
+            "no_buy_brier": 0.126859196405616,
+            "no_buy_rate": 0.0720694283161563,
+            "reference": "swiss_products_qwen",
+            "improvement": 0.00844673970763933,
+            "improvement_over_pilot_attributes": -0.04231428495827186,
+            "positive_splits_vs_pilot_attributes": 0.07,
+            "improvement_over_pilot_positions": 0.1875879039876357,
+            "positive_splits_vs_pilot_positions": 1.0,
+            "positive_splits": 0.89,
+            "split_improvement_p05_p95": [
+              -0.005339779455693466,
+              0.028282143220793636
+            ]
+          },
+          "pilot_attribute_logit_swiss_mix": {
+            "full_brier": 0.5379966588563989,
+            "no_buy_brier": 0.11567260824710772,
+            "no_buy_rate": 0.06417218543046356,
+            "reference": "qwen",
+            "improvement": 0.1018580199918846,
+            "improvement_over_pilot_attributes": -0.0025638540243213344,
+            "positive_splits_vs_pilot_attributes": 0.31,
+            "improvement_over_pilot_positions": 0.22733833492158617,
+            "positive_splits_vs_pilot_positions": 1.0,
+            "positive_splits": 1.0,
+            "split_improvement_p05_p95": [
+              0.053224380835268564,
+              0.15359267376959576
+            ]
+          }
+        },
+        "50": {
+          "pilot_attribute_logit": {
+            "full_brier": 0.5329746946060615,
+            "no_buy_brier": 0.11465443722107556,
+            "no_buy_rate": 0.061960132890365435,
+            "reference": "qwen",
+            "improvement": 0.10687998424222199,
+            "improvement_over_pilot_attributes": 0.0,
+            "positive_splits_vs_pilot_attributes": 0.0,
+            "improvement_over_pilot_positions": 0.23115743476921868,
+            "positive_splits_vs_pilot_positions": 0.99,
+            "positive_splits": 0.98,
+            "split_improvement_p05_p95": [
+              0.04988388377488655,
+              0.15932519082787538
+            ]
+          },
+          "pilot_attribute_logit_qwen_mix": {
+            "full_brier": 0.557954249336046,
+            "no_buy_brier": 0.11465443722107556,
+            "no_buy_rate": 0.061960132890365435,
+            "reference": "qwen",
+            "improvement": 0.08190042951223755,
+            "improvement_over_pilot_attributes": -0.024979554729984425,
+            "positive_splits_vs_pilot_attributes": 0.05,
+            "improvement_over_pilot_positions": 0.20617788003923426,
+            "positive_splits_vs_pilot_positions": 1.0,
+            "positive_splits": 1.0,
+            "split_improvement_p05_p95": [
+              0.04550022633073135,
+              0.12272236884330157
+            ]
+          },
+          "pilot_uniform_products": {
+            "full_brier": 0.7030032903732973,
+            "no_buy_brier": 0.11465443722107556,
+            "no_buy_rate": 0.061960132890365435,
+            "reference": "qwen",
+            "improvement": -0.06314861152501378,
+            "improvement_over_pilot_attributes": -0.17002859576723584,
+            "positive_splits_vs_pilot_attributes": 0.01,
+            "improvement_over_pilot_positions": 0.06112883900198289,
+            "positive_splits_vs_pilot_positions": 1.0,
+            "positive_splits": 0.0,
+            "split_improvement_p05_p95": [
+              -0.11167128704735935,
+              -0.012016940884880959
+            ]
+          },
+          "pilot_position_products": {
+            "full_brier": 0.7641321293752802,
+            "no_buy_brier": 0.11465443722107556,
+            "no_buy_rate": 0.061960132890365435,
+            "reference": "qwen",
+            "improvement": -0.12427745052699665,
+            "improvement_over_pilot_attributes": -0.23115743476921868,
+            "positive_splits_vs_pilot_attributes": 0.01,
+            "improvement_over_pilot_positions": 0.0,
+            "positive_splits_vs_pilot_positions": 0.0,
+            "positive_splits": 0.0,
+            "split_improvement_p05_p95": [
+              -0.2528093656413183,
+              -0.03269613384827399
+            ]
+          },
+          "qwen": {
+            "full_brier": 0.6398546788482835,
+            "no_buy_brier": 0.1339265503875969,
+            "no_buy_rate": 0.11691666666666668,
+            "reference": "qwen",
+            "improvement": 0.0,
+            "improvement_over_pilot_attributes": -0.10687998424222199,
+            "positive_splits_vs_pilot_attributes": 0.02,
+            "improvement_over_pilot_positions": 0.12427745052699665,
+            "positive_splits_vs_pilot_positions": 1.0,
+            "positive_splits": 0.0,
+            "split_improvement_p05_p95": [
+              0.0,
+              0.0
+            ]
+          },
+          "pilot_constant": {
+            "full_brier": 0.6207990044526934,
+            "no_buy_brier": 0.11465443722107556,
+            "no_buy_rate": 0.061960132890365435,
+            "reference": "qwen",
+            "improvement": 0.0190556743955901,
+            "improvement_over_pilot_attributes": -0.08782430984663192,
+            "positive_splits_vs_pilot_attributes": 0.03,
+            "improvement_over_pilot_positions": 0.14333312492258676,
+            "positive_splits_vs_pilot_positions": 1.0,
+            "positive_splits": 0.98,
+            "split_improvement_p05_p95": [
+              0.0017645533771886378,
+              0.036949239902414895
+            ]
+          },
+          "pilot_offset": {
+            "full_brier": 0.6311260217134147,
+            "no_buy_brier": 0.12451512428460475,
+            "no_buy_rate": 0.06882479081195618,
+            "reference": "qwen",
+            "improvement": 0.008728657134868877,
+            "improvement_over_pilot_attributes": -0.09815132710735312,
+            "positive_splits_vs_pilot_attributes": 0.02,
+            "improvement_over_pilot_positions": 0.13300610766186555,
+            "positive_splits_vs_pilot_positions": 1.0,
+            "positive_splits": 0.89,
+            "split_improvement_p05_p95": [
+              -0.0039656915278196035,
+              0.023778631366716766
+            ]
+          },
+          "swiss_products_qwen": {
+            "full_brier": 0.5861938294979888,
+            "no_buy_brier": 0.1339265503875969,
+            "no_buy_rate": 0.11691666666666668,
+            "reference": "swiss_products_qwen",
+            "improvement": 0.0,
+            "improvement_over_pilot_attributes": -0.05321913489192722,
+            "positive_splits_vs_pilot_attributes": 0.06,
+            "improvement_over_pilot_positions": 0.17793829987729148,
+            "positive_splits_vs_pilot_positions": 1.0,
+            "positive_splits": 0.0,
+            "split_improvement_p05_p95": [
+              0.0,
+              0.0
+            ]
+          },
+          "swiss_products_pilot_constant": {
+            "full_brier": 0.5662071504990096,
+            "no_buy_brier": 0.11465443722107556,
+            "no_buy_rate": 0.061960132890365435,
+            "reference": "swiss_products_qwen",
+            "improvement": 0.01998667899897909,
+            "improvement_over_pilot_attributes": -0.03323245589294814,
+            "positive_splits_vs_pilot_attributes": 0.13,
+            "improvement_over_pilot_positions": 0.19792497887627059,
+            "positive_splits_vs_pilot_positions": 1.0,
+            "positive_splits": 0.99,
+            "split_improvement_p05_p95": [
+              0.0031320140936199224,
+              0.03799304308964271
+            ]
+          },
+          "swiss_products_pilot_offset": {
+            "full_brier": 0.5756838821671864,
+            "no_buy_brier": 0.12451512428460475,
+            "no_buy_rate": 0.06882479081195618,
+            "reference": "swiss_products_qwen",
+            "improvement": 0.01050994733080243,
+            "improvement_over_pilot_attributes": -0.0427091875611248,
+            "positive_splits_vs_pilot_attributes": 0.08,
+            "improvement_over_pilot_positions": 0.1884482472080939,
+            "positive_splits_vs_pilot_positions": 1.0,
+            "positive_splits": 0.94,
+            "split_improvement_p05_p95": [
+              -0.0031833782719478676,
+              0.027192324647459874
+            ]
+          },
+          "pilot_attribute_logit_swiss_mix": {
+            "full_brier": 0.5369170600793658,
+            "no_buy_brier": 0.11465443722107556,
+            "no_buy_rate": 0.061960132890365435,
+            "reference": "qwen",
+            "improvement": 0.10293761876891779,
+            "improvement_over_pilot_attributes": -0.003942365473304221,
+            "positive_splits_vs_pilot_attributes": 0.3,
+            "improvement_over_pilot_positions": 0.22721506929591445,
+            "positive_splits_vs_pilot_positions": 1.0,
+            "positive_splits": 1.0,
+            "split_improvement_p05_p95": [
+              0.04844438538446801,
+              0.1529047949742912
+            ]
+          }
+        },
+        "100": {
+          "pilot_attribute_logit": {
+            "full_brier": 0.5295387103737664,
+            "no_buy_brier": 0.11414050320491193,
+            "no_buy_rate": 0.06211314475873544,
+            "reference": "qwen",
+            "improvement": 0.11031596847451716,
+            "improvement_over_pilot_attributes": 0.0,
+            "positive_splits_vs_pilot_attributes": 0.0,
+            "improvement_over_pilot_positions": 0.23394430630849025,
+            "positive_splits_vs_pilot_positions": 1.0,
+            "positive_splits": 0.99,
+            "split_improvement_p05_p95": [
+              0.05535400233372411,
+              0.15684905852959016
+            ]
+          },
+          "pilot_attribute_logit_qwen_mix": {
+            "full_brier": 0.5566701839920865,
+            "no_buy_brier": 0.11414050320491193,
+            "no_buy_rate": 0.06211314475873544,
+            "reference": "qwen",
+            "improvement": 0.0831844948561971,
+            "improvement_over_pilot_attributes": -0.027131473618320044,
+            "positive_splits_vs_pilot_attributes": 0.06,
+            "improvement_over_pilot_positions": 0.2068128326901702,
+            "positive_splits_vs_pilot_positions": 1.0,
+            "positive_splits": 1.0,
+            "split_improvement_p05_p95": [
+              0.042320826958126584,
+              0.11986773885779009
+            ]
+          },
+          "pilot_uniform_products": {
+            "full_brier": 0.7026606676958549,
+            "no_buy_brier": 0.11414050320491193,
+            "no_buy_rate": 0.06211314475873544,
+            "reference": "qwen",
+            "improvement": -0.06280598884757138,
+            "improvement_over_pilot_attributes": -0.17312195732208857,
+            "positive_splits_vs_pilot_attributes": 0.01,
+            "improvement_over_pilot_positions": 0.060822348986401716,
+            "positive_splits_vs_pilot_positions": 1.0,
+            "positive_splits": 0.0,
+            "split_improvement_p05_p95": [
+              -0.1116612793212716,
+              -0.011948732366731515
+            ]
+          },
+          "pilot_position_products": {
+            "full_brier": 0.7634830166822567,
+            "no_buy_brier": 0.11414050320491193,
+            "no_buy_rate": 0.06211314475873544,
+            "reference": "qwen",
+            "improvement": -0.1236283378339731,
+            "improvement_over_pilot_attributes": -0.23394430630849025,
+            "positive_splits_vs_pilot_attributes": 0.0,
+            "improvement_over_pilot_positions": 0.0,
+            "positive_splits_vs_pilot_positions": 0.0,
+            "positive_splits": 0.0,
+            "split_improvement_p05_p95": [
+              -0.25035568845743766,
+              -0.029729936711477712
+            ]
+          },
+          "qwen": {
+            "full_brier": 0.6398546788482835,
+            "no_buy_brier": 0.1339265503875969,
+            "no_buy_rate": 0.11691666666666668,
+            "reference": "qwen",
+            "improvement": 0.0,
+            "improvement_over_pilot_attributes": -0.11031596847451716,
+            "positive_splits_vs_pilot_attributes": 0.01,
+            "improvement_over_pilot_positions": 0.1236283378339731,
+            "positive_splits_vs_pilot_positions": 1.0,
+            "positive_splits": 0.0,
+            "split_improvement_p05_p95": [
+              0.0,
+              0.0
+            ]
+          },
+          "pilot_constant": {
+            "full_brier": 0.6203797527818207,
+            "no_buy_brier": 0.11414050320491193,
+            "no_buy_rate": 0.06211314475873544,
+            "reference": "qwen",
+            "improvement": 0.01947492606646282,
+            "improvement_over_pilot_attributes": -0.09084104240805434,
+            "positive_splits_vs_pilot_attributes": 0.01,
+            "improvement_over_pilot_positions": 0.14310326390043593,
+            "positive_splits_vs_pilot_positions": 1.0,
+            "positive_splits": 0.97,
+            "split_improvement_p05_p95": [
+              0.002099798541748893,
+              0.036858359067546496
+            ]
+          },
+          "pilot_offset": {
+            "full_brier": 0.629892279354589,
+            "no_buy_brier": 0.1228875151921368,
+            "no_buy_rate": 0.06812015462080677,
+            "reference": "qwen",
+            "improvement": 0.009962399493694526,
+            "improvement_over_pilot_attributes": -0.10035356898082264,
+            "positive_splits_vs_pilot_attributes": 0.01,
+            "improvement_over_pilot_positions": 0.13359073732766766,
+            "positive_splits_vs_pilot_positions": 1.0,
+            "positive_splits": 0.92,
+            "split_improvement_p05_p95": [
+              -0.0019411026600474944,
+              0.022342444496718843
+            ]
+          },
+          "swiss_products_qwen": {
+            "full_brier": 0.5861938294979888,
+            "no_buy_brier": 0.1339265503875969,
+            "no_buy_rate": 0.11691666666666668,
+            "reference": "swiss_products_qwen",
+            "improvement": 0.0,
+            "improvement_over_pilot_attributes": -0.056655119124222386,
+            "positive_splits_vs_pilot_attributes": 0.05,
+            "improvement_over_pilot_positions": 0.17728918718426787,
+            "positive_splits_vs_pilot_positions": 1.0,
+            "positive_splits": 0.0,
+            "split_improvement_p05_p95": [
+              0.0,
+              0.0
+            ]
+          },
+          "swiss_products_pilot_constant": {
+            "full_brier": 0.5658278525684042,
+            "no_buy_brier": 0.11414050320491193,
+            "no_buy_rate": 0.06211314475873544,
+            "reference": "swiss_products_qwen",
+            "improvement": 0.02036597692958461,
+            "improvement_over_pilot_attributes": -0.03628914219463777,
+            "positive_splits_vs_pilot_attributes": 0.11,
+            "improvement_over_pilot_positions": 0.19765516411385245,
+            "positive_splits_vs_pilot_positions": 1.0,
+            "positive_splits": 0.98,
+            "split_improvement_p05_p95": [
+              0.002388201674830509,
+              0.038528376842413795
+            ]
+          },
+          "swiss_products_pilot_offset": {
+            "full_brier": 0.5743851693720641,
+            "no_buy_brier": 0.1228875151921368,
+            "no_buy_rate": 0.06812015462080677,
+            "reference": "swiss_products_qwen",
+            "improvement": 0.011808660125924625,
+            "improvement_over_pilot_attributes": -0.044846458998297756,
+            "positive_splits_vs_pilot_attributes": 0.07,
+            "improvement_over_pilot_positions": 0.1890978473101925,
+            "positive_splits_vs_pilot_positions": 1.0,
+            "positive_splits": 0.97,
+            "split_improvement_p05_p95": [
+              0.0012968183117296585,
+              0.025645690251979176
+            ]
+          },
+          "pilot_attribute_logit_swiss_mix": {
+            "full_brier": 0.5357677588144906,
+            "no_buy_brier": 0.11414050320491193,
+            "no_buy_rate": 0.06211314475873544,
+            "reference": "qwen",
+            "improvement": 0.10408692003379302,
+            "improvement_over_pilot_attributes": -0.006229048440724126,
+            "positive_splits_vs_pilot_attributes": 0.22,
+            "improvement_over_pilot_positions": 0.2277152578677661,
+            "positive_splits_vs_pilot_positions": 1.0,
+            "positive_splits": 1.0,
+            "split_improvement_p05_p95": [
+              0.05301650789963865,
+              0.15666638291893906
+            ]
+          }
+        }
+      }
+    }
+  }
+}

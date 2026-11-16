@@ -1,0 +1,94 @@
+{
+  "planned_requests": 144,
+  "errors": 0,
+  "pending": 0,
+  "seed": 20261109,
+  "model_identity": [
+    {
+      "model": "Qwen/Qwen3.8-27B",
+      "system_fingerprint": "vllm-0.29.0-tp2-f806618a"
+    }
+  ],
+  "studies": {
+    "swiss": {
+      "complete_people": 24,
+      "original": 0.35783750000000003,
+      "two_same_order": 0.3529020833333334,
+      "two_opposite_orders": 0.31718125,
+      "paired_improvement": 0.03572083333333333,
+      "ci95": [
+        0.0029145746527777542,
+        0.06925362847222222
+      ],
+      "same_order_probability_tv": 0.09555555555555555,
+      "reverse_order_probability_tv": 0.15305555555555553,
+      "leave_one_person_out_human_rate": 0.14380040407088848,
+      "focal_choice_shares": {
+        "greener_or_cheaper_on_equal_impact": {
+          "human": 0.9236111111111112,
+          "original": 0.6732638888888889,
+          "two_same_order": 0.6708333333333332,
+          "two_opposite_orders": 0.6799305555555555
+        }
+      }
+    },
+    "pew": {
+      "complete_people": 24,
+      "original": 0.5919444444444445,
+      "two_same_order": 0.5208506944444444,
+      "two_opposite_orders": 0.577145138888889,
+      "paired_improvement": -0.056294444444444446,
+      "ci95": [
+        -0.10608871527777781,
+        -0.005090138888888986
+      ],
+      "same_order_probability_tv": 0.14652777777777778,
+      "reverse_order_probability_tv": 0.1551388888888889,
+      "leave_one_person_out_human_rate": 0.4318108195659216,
+      "focal_choice_shares": {
+        "SHOP6B_W13": {
+          "human": 0.3333333333333333,
+          "original": 0.4416666666666666,
+          "two_same_order": 0.4354166666666668,
+          "two_opposite_orders": 0.4652083333333332
+        },
+        "SHOP6D_W13": {
+          "human": 0.5416666666666666,
+          "original": 0.6020833333333332,
+          "two_same_order": 0.6135416666666667,
+          "two_opposite_orders": 0.6322916666666667
+        },
+        "SHOP6F_W13": {
+          "human": 0.16666666666666666,
+          "original": 0.46874999999999983,
+          "two_same_order": 0.46458333333333335,
+          "two_opposite_orders": 0.49687499999999996
+        }
+      }
+    }
+  },
+  "transferred_temperature": {
+    "pew": {
+      "fit_study": "swiss",
+      "temperature": 1.068494598424221,
+      "before": 0.5208506944444444,
+      "after": 0.516878764834371,
+      "paired_improvement": 0.003971929610073505,
+      "ci95_conditional_on_fit": [
+        0.0005312941363333791,
+        0.007512887896070708
+      ]
+    },
+    "swiss": {
+      "fit_study": "pew",
+      "temperature": 3.5714550638805207,
+      "before": 0.3529020833333334,
+      "after": 0.41195823032619,
+      "paired_improvement": -0.05905614699285668,
+      "ci95_conditional_on_fit": [
+        -0.11095019711391908,
+        0.0003012547786833382
+      ]
+    }
+  }
+}

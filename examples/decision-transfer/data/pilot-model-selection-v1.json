@@ -1,0 +1,1077 @@
+{
+  "seed": 20261109,
+  "splits": 100,
+  "new_calls": 0,
+  "studies": {
+    "beer": {
+      "10": {
+        "brier": {
+          "uniform": 0.6916828861214213,
+          "historical_price": 0.6813853132819664,
+          "local_price": 0.6916640085074759,
+          "all_attributes": 0.6961678175574751,
+          "qwen": 0.6982374668086042,
+          "equal_statistics": 0.6745030658951103,
+          "equal_with_qwen": 0.6760936529032203,
+          "select_statistics": 0.6918761411527347,
+          "select_with_qwen": 0.6930022447263711,
+          "qwen_direct": 0.7324238152812762
+        },
+        "comparisons": {
+          "selection_vs_fixed_mix": {
+            "improvement": -0.017373075257624132,
+            "win_rate": 0.16,
+            "p05_p95": [
+              -0.05558258045140117,
+              0.006865900031505919
+            ]
+          },
+          "qwen_increment_selection": {
+            "improvement": -0.0011261035736364721,
+            "win_rate": 0.01,
+            "p05_p95": [
+              -0.010135431323637789,
+              0.0
+            ]
+          },
+          "qwen_increment_fixed_mix": {
+            "improvement": -0.001590587008109986,
+            "win_rate": 0.29,
+            "p05_p95": [
+              -0.004834212615619504,
+              0.0027030602899095176
+            ]
+          }
+        },
+        "selected_without_qwen": {
+          "uniform": 9,
+          "historical_price": 36,
+          "local_price": 29,
+          "all_attributes": 26
+        },
+        "selected_with_qwen": {
+          "uniform": 8,
+          "historical_price": 29,
+          "local_price": 24,
+          "all_attributes": 26,
+          "qwen": 13
+        }
+      },
+      "25": {
+        "brier": {
+          "uniform": 0.678385793987534,
+          "historical_price": 0.6679833515125267,
+          "local_price": 0.6749412640708787,
+          "all_attributes": 0.6626683241620186,
+          "qwen": 0.6849081474319259,
+          "equal_statistics": 0.6594296765626262,
+          "equal_with_qwen": 0.6617433347880326,
+          "select_statistics": 0.6720649316708419,
+          "select_with_qwen": 0.6734133348597741,
+          "qwen_direct": 0.7324238152812762
+        },
+        "comparisons": {
+          "selection_vs_fixed_mix": {
+            "improvement": -0.012635255108215782,
+            "win_rate": 0.19,
+            "p05_p95": [
+              -0.045942851886384355,
+              0.01223087563635015
+            ]
+          },
+          "qwen_increment_selection": {
+            "improvement": -0.001348403188932048,
+            "win_rate": 0.0,
+            "p05_p95": [
+              -0.012835937330721687,
+              0.0
+            ]
+          },
+          "qwen_increment_fixed_mix": {
+            "improvement": -0.002313658225406232,
+            "win_rate": 0.11,
+            "p05_p95": [
+              -0.004823941192258064,
+              0.000941908464724677
+            ]
+          }
+        },
+        "selected_without_qwen": {
+          "uniform": 3,
+          "historical_price": 33,
+          "local_price": 24,
+          "all_attributes": 40
+        },
+        "selected_with_qwen": {
+          "uniform": 3,
+          "historical_price": 27,
+          "local_price": 22,
+          "all_attributes": 40,
+          "qwen": 8
+        }
+      },
+      "50": {
+        "brier": {
+          "uniform": 0.6717079131205884,
+          "historical_price": 0.6611965460828817,
+          "local_price": 0.6673974663790075,
+          "all_attributes": 0.6454796169417473,
+          "qwen": 0.678295377292307,
+          "equal_statistics": 0.6520839304783618,
+          "equal_with_qwen": 0.6545895496841025,
+          "select_statistics": 0.6570416752411997,
+          "select_with_qwen": 0.6575680341764276,
+          "qwen_direct": 0.7324238152812762
+        },
+        "comparisons": {
+          "selection_vs_fixed_mix": {
+            "improvement": -0.004957744762837771,
+            "win_rate": 0.39,
+            "p05_p95": [
+              -0.029625364088513028,
+              0.01794294623605661
+            ]
+          },
+          "qwen_increment_selection": {
+            "improvement": -0.0005263589352278175,
+            "win_rate": 0.0,
+            "p05_p95": [
+              0.0,
+              0.0
+            ]
+          },
+          "qwen_increment_fixed_mix": {
+            "improvement": -0.0025056192057406335,
+            "win_rate": 0.09,
+            "p05_p95": [
+              -0.004905470700160263,
+              9.670738077691131e-05
+            ]
+          }
+        },
+        "selected_without_qwen": {
+          "uniform": 5,
+          "historical_price": 25,
+          "local_price": 11,
+          "all_attributes": 59
+        },
+        "selected_with_qwen": {
+          "uniform": 5,
+          "historical_price": 23,
+          "local_price": 10,
+          "all_attributes": 59,
+          "qwen": 3
+        }
+      },
+      "100": {
+        "brier": {
+          "uniform": 0.6693959914004403,
+          "historical_price": 0.6588408124759911,
+          "local_price": 0.6642311317276262,
+          "all_attributes": 0.6367693188528306,
+          "qwen": 0.6762742512604903,
+          "equal_statistics": 0.6491485919616791,
+          "equal_with_qwen": 0.6518441793275862,
+          "select_statistics": 0.6456659201948379,
+          "select_with_qwen": 0.6456659201948379,
+          "qwen_direct": 0.7324238152812762
+        },
+        "comparisons": {
+          "selection_vs_fixed_mix": {
+            "improvement": 0.0034826717668412165,
+            "win_rate": 0.6,
+            "p05_p95": [
+              -0.02235940273577746,
+              0.022954084206628814
+            ]
+          },
+          "qwen_increment_selection": {
+            "improvement": 0.0,
+            "win_rate": 0.0,
+            "p05_p95": [
+              0.0,
+              0.0
+            ]
+          },
+          "qwen_increment_fixed_mix": {
+            "improvement": -0.002695587365907066,
+            "win_rate": 0.06,
+            "p05_p95": [
+              -0.004848366156702944,
+              8.388953517502436e-05
+            ]
+          }
+        },
+        "selected_without_qwen": {
+          "uniform": 2,
+          "historical_price": 20,
+          "local_price": 7,
+          "all_attributes": 71
+        },
+        "selected_with_qwen": {
+          "uniform": 2,
+          "historical_price": 20,
+          "local_price": 7,
+          "all_attributes": 71,
+          "qwen": 0
+        }
+      }
+    },
+    "german": {
+      "10": {
+        "brier": {
+          "uniform": 0.7051419898972132,
+          "historical_price": 0.681045438307116,
+          "local_price": 0.6998714185510329,
+          "all_attributes": 0.5525467652460586,
+          "qwen": 0.6233234515651537,
+          "equal_statistics": 0.6273463373944209,
+          "equal_with_qwen": 0.6210391249339725,
+          "select_statistics": 0.5733415650537743,
+          "select_with_qwen": 0.5834009931817841,
+          "qwen_direct": 0.6398546788482835
+        },
+        "comparisons": {
+          "selection_vs_fixed_mix": {
+            "improvement": 0.05400477234064658,
+            "win_rate": 0.81,
+            "p05_p95": [
+              -0.06102570190889086,
+              0.11352047390479414
+            ]
+          },
+          "qwen_increment_selection": {
+            "improvement": -0.010059428128009721,
+            "win_rate": 0.11,
+            "p05_p95": [
+              -0.12295395188999964,
+              0.06227000934232725
+            ]
+          },
+          "qwen_increment_fixed_mix": {
+            "improvement": 0.006307212460448411,
+            "win_rate": 0.87,
+            "p05_p95": [
+              -0.0026354545313370115,
+              0.015566609686138117
+            ]
+          }
+        },
+        "selected_without_qwen": {
+          "uniform": 3,
+          "historical_price": 11,
+          "local_price": 1,
+          "all_attributes": 85
+        },
+        "selected_with_qwen": {
+          "uniform": 0,
+          "historical_price": 3,
+          "local_price": 1,
+          "all_attributes": 68,
+          "qwen": 28
+        }
+      },
+      "25": {
+        "brier": {
+          "uniform": 0.7036820710573188,
+          "historical_price": 0.6796166723791385,
+          "local_price": 0.6974472707653581,
+          "all_attributes": 0.5373213978000506,
+          "qwen": 0.6215516476609207,
+          "equal_statistics": 0.6227866420755612,
+          "equal_with_qwen": 0.6172044755031275,
+          "select_statistics": 0.540208860543358,
+          "select_with_qwen": 0.5541772952796397,
+          "qwen_direct": 0.6398546788482835
+        },
+        "comparisons": {
+          "selection_vs_fixed_mix": {
+            "improvement": 0.0825777815322032,
+            "win_rate": 0.95,
+            "p05_p95": [
+              -0.0005111238642997373,
+              0.13031792302058964
+            ]
+          },
+          "qwen_increment_selection": {
+            "improvement": -0.013968434736281642,
+            "win_rate": 0.02,
+            "p05_p95": [
+              -0.11738135306671275,
+              0.0
+            ]
+          },
+          "qwen_increment_fixed_mix": {
+            "improvement": 0.005582166572433579,
+            "win_rate": 0.84,
+            "p05_p95": [
+              -0.0030103003690625406,
+              0.0143874534957039
+            ]
+          }
+        },
+        "selected_without_qwen": {
+          "uniform": 0,
+          "historical_price": 2,
+          "local_price": 0,
+          "all_attributes": 98
+        },
+        "selected_with_qwen": {
+          "uniform": 0,
+          "historical_price": 0,
+          "local_price": 0,
+          "all_attributes": 85,
+          "qwen": 15
+        }
+      },
+      "50": {
+        "brier": {
+          "uniform": 0.7030032903732973,
+          "historical_price": 0.6788913548647936,
+          "local_price": 0.695230321129316,
+          "all_attributes": 0.5354541503581887,
+          "qwen": 0.6207990044526934,
+          "equal_statistics": 0.6223458686083807,
+          "equal_with_qwen": 0.6166553001182236,
+          "select_statistics": 0.537181332612138,
+          "select_with_qwen": 0.5448621961767011,
+          "qwen_direct": 0.6398546788482835
+        },
+        "comparisons": {
+          "selection_vs_fixed_mix": {
+            "improvement": 0.0851645359962427,
+            "win_rate": 0.96,
+            "p05_p95": [
+              0.015572486256782139,
+              0.12932545675087787
+            ]
+          },
+          "qwen_increment_selection": {
+            "improvement": -0.007680863564563028,
+            "win_rate": 0.01,
+            "p05_p95": [
+              -0.10622669470910558,
+              0.0
+            ]
+          },
+          "qwen_increment_fixed_mix": {
+            "improvement": 0.005690568490157197,
+            "win_rate": 0.84,
+            "p05_p95": [
+              -0.00274469487704736,
+              0.014395468369609579
+            ]
+          }
+        },
+        "selected_without_qwen": {
+          "uniform": 0,
+          "historical_price": 1,
+          "local_price": 0,
+          "all_attributes": 99
+        },
+        "selected_with_qwen": {
+          "uniform": 0,
+          "historical_price": 0,
+          "local_price": 0,
+          "all_attributes": 92,
+          "qwen": 8
+        }
+      },
+      "100": {
+        "brier": {
+          "uniform": 0.7026606676958549,
+          "historical_price": 0.6784720405641452,
+          "local_price": 0.6952934602412694,
+          "all_attributes": 0.5324437811119807,
+          "qwen": 0.6203797527818207,
+          "equal_statistics": 0.621597867219337,
+          "equal_with_qwen": 0.6160266991217216,
+          "select_statistics": 0.5324437811119807,
+          "select_with_qwen": 0.5369333712977462,
+          "qwen_direct": 0.6398546788482835
+        },
+        "comparisons": {
+          "selection_vs_fixed_mix": {
+            "improvement": 0.0891540861073564,
+            "win_rate": 0.97,
+            "p05_p95": [
+              0.02525436508479259,
+              0.1297265196402915
+            ]
+          },
+          "qwen_increment_selection": {
+            "improvement": -0.004489590185765507,
+            "win_rate": 0.0,
+            "p05_p95": [
+              0.0,
+              0.0
+            ]
+          },
+          "qwen_increment_fixed_mix": {
+            "improvement": 0.005571168097615371,
+            "win_rate": 0.81,
+            "p05_p95": [
+              -0.0025904934328711935,
+              0.013342789615188519
+            ]
+          }
+        },
+        "selected_without_qwen": {
+          "uniform": 0,
+          "historical_price": 0,
+          "local_price": 0,
+          "all_attributes": 100
+        },
+        "selected_with_qwen": {
+          "uniform": 0,
+          "historical_price": 0,
+          "local_price": 0,
+          "all_attributes": 96,
+          "qwen": 4
+        }
+      }
+    },
+    "spain": {
+      "10": {
+        "brier": {
+          "uniform": 0.6377490114464099,
+          "historical_price": 0.5687916358203613,
+          "local_price": 0.5878176407980673,
+          "all_attributes": 0.6289779010895282,
+          "qwen": 0.5815816208799284,
+          "equal_statistics": 0.5728248897799296,
+          "equal_with_qwen": 0.5636805870211403,
+          "select_statistics": 0.6006471261509635,
+          "select_with_qwen": 0.5929253432991475,
+          "qwen_direct": 0.6192251111111111
+        },
+        "comparisons": {
+          "selection_vs_fixed_mix": {
+            "improvement": -0.02782223637103389,
+            "win_rate": 0.23,
+            "p05_p95": [
+              -0.09894394817441048,
+              0.017563293120776355
+            ]
+          },
+          "qwen_increment_selection": {
+            "improvement": 0.007721782851816158,
+            "win_rate": 0.18,
+            "p05_p95": [
+              -0.031597738768955,
+              0.09725030375556849
+            ]
+          },
+          "qwen_increment_fixed_mix": {
+            "improvement": 0.0091443027587894,
+            "win_rate": 0.9,
+            "p05_p95": [
+              -0.0013462404771492353,
+              0.02081198886914811
+            ]
+          }
+        },
+        "selected_without_qwen": {
+          "uniform": 20,
+          "historical_price": 52,
+          "local_price": 8,
+          "all_attributes": 20
+        },
+        "selected_with_qwen": {
+          "uniform": 9,
+          "historical_price": 36,
+          "local_price": 5,
+          "all_attributes": 15,
+          "qwen": 35
+        }
+      },
+      "25": {
+        "brier": {
+          "uniform": 0.6330097760849491,
+          "historical_price": 0.5637752699310568,
+          "local_price": 0.5760976620966405,
+          "all_attributes": 0.5730032313057264,
+          "qwen": 0.57673571216517,
+          "equal_statistics": 0.5606535436353647,
+          "equal_with_qwen": 0.5535680698727364,
+          "select_statistics": 0.5728365454951039,
+          "select_with_qwen": 0.5749168042448133,
+          "qwen_direct": 0.6192251111111111
+        },
+        "comparisons": {
+          "selection_vs_fixed_mix": {
+            "improvement": -0.01218300185973904,
+            "win_rate": 0.26,
+            "p05_p95": [
+              -0.049276029991480196,
+              0.022801900133471758
+            ]
+          },
+          "qwen_increment_selection": {
+            "improvement": -0.002080258749709362,
+            "win_rate": 0.16,
+            "p05_p95": [
+              -0.04689059160396368,
+              0.033527766532706144
+            ]
+          },
+          "qwen_increment_fixed_mix": {
+            "improvement": 0.007085473762628345,
+            "win_rate": 0.91,
+            "p05_p95": [
+              -0.0011654192759386892,
+              0.01644903944340434
+            ]
+          }
+        },
+        "selected_without_qwen": {
+          "uniform": 6,
+          "historical_price": 52,
+          "local_price": 12,
+          "all_attributes": 30
+        },
+        "selected_with_qwen": {
+          "uniform": 3,
+          "historical_price": 29,
+          "local_price": 8,
+          "all_attributes": 17,
+          "qwen": 43
+        }
+      },
+      "50": {
+        "brier": {
+          "uniform": 0.631245945353274,
+          "historical_price": 0.5616583190126646,
+          "local_price": 0.571381675252681,
+          "all_attributes": 0.5488010841622432,
+          "qwen": 0.5746312734894764,
+          "equal_statistics": 0.5561595160700853,
+          "equal_with_qwen": 0.5499300648245855,
+          "select_statistics": 0.5595888313168172,
+          "select_with_qwen": 0.5644874558704331,
+          "qwen_direct": 0.6192251111111111
+        },
+        "comparisons": {
+          "selection_vs_fixed_mix": {
+            "improvement": -0.003429315246731838,
+            "win_rate": 0.46,
+            "p05_p95": [
+              -0.032603988272068216,
+              0.027296668430621663
+            ]
+          },
+          "qwen_increment_selection": {
+            "improvement": -0.0048986245536159065,
+            "win_rate": 0.02,
+            "p05_p95": [
+              -0.051703185346722906,
+              0.0
+            ]
+          },
+          "qwen_increment_fixed_mix": {
+            "improvement": 0.00622945124549984,
+            "win_rate": 0.9,
+            "p05_p95": [
+              -0.0007879992628603949,
+              0.015090626450098942
+            ]
+          }
+        },
+        "selected_without_qwen": {
+          "uniform": 2,
+          "historical_price": 37,
+          "local_price": 5,
+          "all_attributes": 56
+        },
+        "selected_with_qwen": {
+          "uniform": 1,
+          "historical_price": 30,
+          "local_price": 4,
+          "all_attributes": 49,
+          "qwen": 16
+        }
+      },
+      "100": {
+        "brier": {
+          "uniform": 0.630942656262072,
+          "historical_price": 0.5612365619669757,
+          "local_price": 0.5705037738889867,
+          "all_attributes": 0.5375262359279017,
+          "qwen": 0.5741343820170289,
+          "equal_statistics": 0.5553044239729005,
+          "equal_with_qwen": 0.5491695874408792,
+          "select_statistics": 0.5459607178005598,
+          "select_with_qwen": 0.5491015309363638,
+          "qwen_direct": 0.6192251111111111
+        },
+        "comparisons": {
+          "selection_vs_fixed_mix": {
+            "improvement": 0.009343706172340711,
+            "win_rate": 0.71,
+            "p05_p95": [
+              -0.02418540556376341,
+              0.03743553320500399
+            ]
+          },
+          "qwen_increment_selection": {
+            "improvement": -0.0031408131358041168,
+            "win_rate": 0.01,
+            "p05_p95": [
+              -0.030616703726749583,
+              0.0
+            ]
+          },
+          "qwen_increment_fixed_mix": {
+            "improvement": 0.006134836532021296,
+            "win_rate": 0.91,
+            "p05_p95": [
+              -0.0010949885069086896,
+              0.01476896065390646
+            ]
+          }
+        },
+        "selected_without_qwen": {
+          "uniform": 0,
+          "historical_price": 21,
+          "local_price": 4,
+          "all_attributes": 75
+        },
+        "selected_with_qwen": {
+          "uniform": 0,
+          "historical_price": 17,
+          "local_price": 4,
+          "all_attributes": 71,
+          "qwen": 8
+        }
+      }
+    },
+    "italy": {
+      "10": {
+        "brier": {
+          "uniform": 0.5849958128933154,
+          "historical_price": 0.5958351275412334,
+          "local_price": 0.5904896721904853,
+          "all_attributes": 0.6616866690386023,
+          "qwen": 0.6202486941663604,
+          "equal_statistics": 0.5856311078595308,
+          "equal_with_qwen": 0.5832751743333935,
+          "select_statistics": 0.6040308828453429,
+          "select_with_qwen": 0.6092635224289423,
+          "qwen_direct": 0.6654000952380951
+        },
+        "comparisons": {
+          "selection_vs_fixed_mix": {
+            "improvement": -0.018399774985812176,
+            "win_rate": 0.31,
+            "p05_p95": [
+              -0.1282053391003956,
+              0.014673584023116103
+            ]
+          },
+          "qwen_increment_selection": {
+            "improvement": -0.005232639583599406,
+            "win_rate": 0.0,
+            "p05_p95": [
+              -0.03962066887219569,
+              0.0
+            ]
+          },
+          "qwen_increment_fixed_mix": {
+            "improvement": 0.002355933526137287,
+            "win_rate": 0.62,
+            "p05_p95": [
+              -0.005450806485175386,
+              0.011999218745342594
+            ]
+          }
+        },
+        "selected_without_qwen": {
+          "uniform": 46,
+          "historical_price": 29,
+          "local_price": 13,
+          "all_attributes": 12
+        },
+        "selected_with_qwen": {
+          "uniform": 37,
+          "historical_price": 27,
+          "local_price": 12,
+          "all_attributes": 12,
+          "qwen": 12
+        }
+      },
+      "25": {
+        "brier": {
+          "uniform": 0.5821339120828387,
+          "historical_price": 0.5929579769786746,
+          "local_price": 0.5833052510469156,
+          "all_attributes": 0.6069354325624302,
+          "qwen": 0.6175681331258523,
+          "equal_statistics": 0.5773529480529939,
+          "equal_with_qwen": 0.576612204370205,
+          "select_statistics": 0.5900542155792492,
+          "select_with_qwen": 0.5935998738677114,
+          "qwen_direct": 0.6654000952380951
+        },
+        "comparisons": {
+          "selection_vs_fixed_mix": {
+            "improvement": -0.012701267526255307,
+            "win_rate": 0.24,
+            "p05_p95": [
+              -0.038865055970121735,
+              0.006741326815145982
+            ]
+          },
+          "qwen_increment_selection": {
+            "improvement": -0.0035456582884623045,
+            "win_rate": 0.0,
+            "p05_p95": [
+              -0.03308352377170965,
+              0.0
+            ]
+          },
+          "qwen_increment_fixed_mix": {
+            "improvement": 0.0007407436827888713,
+            "win_rate": 0.61,
+            "p05_p95": [
+              -0.006746230023204941,
+              0.00805252147902719
+            ]
+          }
+        },
+        "selected_without_qwen": {
+          "uniform": 43,
+          "historical_price": 33,
+          "local_price": 16,
+          "all_attributes": 8
+        },
+        "selected_with_qwen": {
+          "uniform": 37,
+          "historical_price": 33,
+          "local_price": 15,
+          "all_attributes": 8,
+          "qwen": 7
+        }
+      },
+      "50": {
+        "brier": {
+          "uniform": 0.5807714062248731,
+          "historical_price": 0.5919521111842784,
+          "local_price": 0.5796120897700326,
+          "all_attributes": 0.5857737859381925,
+          "qwen": 0.6168871970134264,
+          "equal_statistics": 0.5742183356313677,
+          "equal_with_qwen": 0.5743109638659779,
+          "select_statistics": 0.5870226281547527,
+          "select_with_qwen": 0.5888587512187747,
+          "qwen_direct": 0.6654000952380951
+        },
+        "comparisons": {
+          "selection_vs_fixed_mix": {
+            "improvement": -0.01280429252338502,
+            "win_rate": 0.11,
+            "p05_p95": [
+              -0.035868688080509324,
+              0.003294256917090662
+            ]
+          },
+          "qwen_increment_selection": {
+            "improvement": -0.0018361230640221338,
+            "win_rate": 0.0,
+            "p05_p95": [
+              0.0,
+              0.0
+            ]
+          },
+          "qwen_increment_fixed_mix": {
+            "improvement": -9.26282346102858e-05,
+            "win_rate": 0.48,
+            "p05_p95": [
+              -0.007090548596310753,
+              0.0071386579978287715
+            ]
+          }
+        },
+        "selected_without_qwen": {
+          "uniform": 41,
+          "historical_price": 21,
+          "local_price": 18,
+          "all_attributes": 20
+        },
+        "selected_with_qwen": {
+          "uniform": 38,
+          "historical_price": 21,
+          "local_price": 18,
+          "all_attributes": 20,
+          "qwen": 3
+        }
+      },
+      "100": {
+        "brier": {
+          "uniform": 0.5802294106393234,
+          "historical_price": 0.5914762244812146,
+          "local_price": 0.5787191162255102,
+          "all_attributes": 0.5769204222201,
+          "qwen": 0.6165226865905565,
+          "equal_statistics": 0.573117488808494,
+          "equal_with_qwen": 0.5735623697856463,
+          "select_statistics": 0.5830130912549154,
+          "select_with_qwen": 0.5838583885052775,
+          "qwen_direct": 0.6654000952380951
+        },
+        "comparisons": {
+          "selection_vs_fixed_mix": {
+            "improvement": -0.009895602446421233,
+            "win_rate": 0.12,
+            "p05_p95": [
+              -0.03288826451621258,
+              0.006402329502890752
+            ]
+          },
+          "qwen_increment_selection": {
+            "improvement": -0.0008452972503621803,
+            "win_rate": 0.0,
+            "p05_p95": [
+              0.0,
+              0.0
+            ]
+          },
+          "qwen_increment_fixed_mix": {
+            "improvement": -0.0004448809771522666,
+            "win_rate": 0.46,
+            "p05_p95": [
+              -0.007303613888923577,
+              0.006821744812230246
+            ]
+          }
+        },
+        "selected_without_qwen": {
+          "uniform": 47,
+          "historical_price": 7,
+          "local_price": 21,
+          "all_attributes": 25
+        },
+        "selected_with_qwen": {
+          "uniform": 46,
+          "historical_price": 7,
+          "local_price": 21,
+          "all_attributes": 25,
+          "qwen": 1
+        }
+      }
+    },
+    "scotland": {
+      "10": {
+        "brier": {
+          "uniform": 0.6797876761603783,
+          "historical_price": 0.5457447256339139,
+          "local_price": 0.5441582967257513,
+          "all_attributes": 0.5662915825677911,
+          "qwen": 0.581378199128707,
+          "equal_statistics": 0.5541560184758473,
+          "equal_with_qwen": 0.5533844283524557,
+          "select_statistics": 0.5458475282201612,
+          "select_with_qwen": 0.5486502365498747,
+          "qwen_direct": 0.5928943086419753
+        },
+        "comparisons": {
+          "selection_vs_fixed_mix": {
+            "improvement": 0.008308490255686155,
+            "win_rate": 0.73,
+            "p05_p95": [
+              -0.02812631592971789,
+              0.04146011259640882
+            ]
+          },
+          "qwen_increment_selection": {
+            "improvement": -0.0028027083297133713,
+            "win_rate": 0.0,
+            "p05_p95": [
+              -0.015961234591638115,
+              0.0
+            ]
+          },
+          "qwen_increment_fixed_mix": {
+            "improvement": 0.000771590123391565,
+            "win_rate": 0.5,
+            "p05_p95": [
+              -0.00592921609756294,
+              0.009893491256736274
+            ]
+          }
+        },
+        "selected_without_qwen": {
+          "uniform": 1,
+          "historical_price": 46,
+          "local_price": 27,
+          "all_attributes": 26
+        },
+        "selected_with_qwen": {
+          "uniform": 1,
+          "historical_price": 41,
+          "local_price": 25,
+          "all_attributes": 25,
+          "qwen": 8
+        }
+      },
+      "25": {
+        "brier": {
+          "uniform": 0.669816599551999,
+          "historical_price": 0.534864709090648,
+          "local_price": 0.5299967448701282,
+          "all_attributes": 0.5423476332538736,
+          "qwen": 0.5706280105401562,
+          "equal_statistics": 0.5439483630563722,
+          "equal_with_qwen": 0.5436340978394949,
+          "select_statistics": 0.5315453146986377,
+          "select_with_qwen": 0.5338607126872135,
+          "qwen_direct": 0.5928943086419753
+        },
+        "comparisons": {
+          "selection_vs_fixed_mix": {
+            "improvement": 0.0124030483577346,
+            "win_rate": 0.87,
+            "p05_p95": [
+              -0.011884373226806489,
+              0.03547395349383693
+            ]
+          },
+          "qwen_increment_selection": {
+            "improvement": -0.002315397988575808,
+            "win_rate": 0.01,
+            "p05_p95": [
+              -0.0002039279486238103,
+              0.0
+            ]
+          },
+          "qwen_increment_fixed_mix": {
+            "improvement": 0.00031426521687730804,
+            "win_rate": 0.48,
+            "p05_p95": [
+              -0.0063657273325831544,
+              0.007487040637587985
+            ]
+          }
+        },
+        "selected_without_qwen": {
+          "uniform": 0,
+          "historical_price": 37,
+          "local_price": 35,
+          "all_attributes": 28
+        },
+        "selected_with_qwen": {
+          "uniform": 0,
+          "historical_price": 33,
+          "local_price": 34,
+          "all_attributes": 27,
+          "qwen": 6
+        }
+      },
+      "50": {
+        "brier": {
+          "uniform": 0.6677383234220288,
+          "historical_price": 0.5321110595146288,
+          "local_price": 0.5259937500312339,
+          "all_attributes": 0.5337112010451712,
+          "qwen": 0.5683218058330592,
+          "equal_statistics": 0.5415799197708125,
+          "equal_with_qwen": 0.5412842735230206,
+          "select_statistics": 0.5268688493377176,
+          "select_with_qwen": 0.5274467676930632,
+          "qwen_direct": 0.5928943086419753
+        },
+        "comparisons": {
+          "selection_vs_fixed_mix": {
+            "improvement": 0.014711070433094976,
+            "win_rate": 0.9,
+            "p05_p95": [
+              -0.005292059348461663,
+              0.03150527381110107
+            ]
+          },
+          "qwen_increment_selection": {
+            "improvement": -0.0005779183553456646,
+            "win_rate": 0.0,
+            "p05_p95": [
+              0.0,
+              0.0
+            ]
+          },
+          "qwen_increment_fixed_mix": {
+            "improvement": 0.0002956462477919153,
+            "win_rate": 0.52,
+            "p05_p95": [
+              -0.0062046996254274175,
+              0.008205862934415198
+            ]
+          }
+        },
+        "selected_without_qwen": {
+          "uniform": 0,
+          "historical_price": 27,
+          "local_price": 51,
+          "all_attributes": 22
+        },
+        "selected_with_qwen": {
+          "uniform": 0,
+          "historical_price": 27,
+          "local_price": 50,
+          "all_attributes": 22,
+          "qwen": 1
+        }
+      },
+      "100": {
+        "brier": {
+          "uniform": 0.6675015854347666,
+          "historical_price": 0.5320750499586904,
+          "local_price": 0.5258364125164645,
+          "all_attributes": 0.5300646352915879,
+          "qwen": 0.568080791105342,
+          "equal_statistics": 0.5415011027995549,
+          "equal_with_qwen": 0.5413247481642177,
+          "select_statistics": 0.5275261587475031,
+          "select_with_qwen": 0.5275261587475031,
+          "qwen_direct": 0.5928943086419753
+        },
+        "comparisons": {
+          "selection_vs_fixed_mix": {
+            "improvement": 0.013974944052051639,
+            "win_rate": 0.89,
+            "p05_p95": [
+              -0.004759881450689129,
+              0.029215066551851288
+            ]
+          },
+          "qwen_increment_selection": {
+            "improvement": 0.0,
+            "win_rate": 0.0,
+            "p05_p95": [
+              0.0,
+              0.0
+            ]
+          },
+          "qwen_increment_fixed_mix": {
+            "improvement": 0.0001763546353370482,
+            "win_rate": 0.47,
+            "p05_p95": [
+              -0.0058703487022731425,
+              0.007648760433679451
+            ]
+          }
+        },
+        "selected_without_qwen": {
+          "uniform": 0,
+          "historical_price": 22,
+          "local_price": 51,
+          "all_attributes": 27
+        },
+        "selected_with_qwen": {
+          "uniform": 0,
+          "historical_price": 22,
+          "local_price": 51,
+          "all_attributes": 27,
+          "qwen": 0
+        }
+      }
+    }
+  }
+}

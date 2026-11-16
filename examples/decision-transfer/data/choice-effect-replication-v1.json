@@ -1,0 +1,77 @@
+{
+  "seed": 20261109,
+  "planned_calls": 132,
+  "retry_calls": 3,
+  "recovered": 3,
+  "identity": {
+    "model": "Qwen/Qwen3.8-27B",
+    "system_fingerprint": "vllm-0.29.0-tp2-f806618a"
+  },
+  "studies": {
+    "beef": {
+      "planned_cards": 17,
+      "common_cards": 17,
+      "errors": {
+        "direct/ValueError": 2,
+        "joint/ValueError": 1
+      },
+      "unchanged_error": 0.2351517452483212,
+      "actual_no_purchase_change": 0.1721519588069193,
+      "joint": {
+        "average_single_error": 0.2670845692048502,
+        "two_draw_error": 0.246756994044088,
+        "repeat_gap": 0.1941176470588235,
+        "no_purchase_change": 0.04264705882352942,
+        "gain_over_unchanged_interval_95": [
+          -0.03229908288446479,
+          0.010211129369052949
+        ]
+      },
+      "direct": {
+        "average_single_error": 0.25418516716892486,
+        "two_draw_error": 0.25093121040267663,
+        "repeat_gap": 0.09923529411764707,
+        "no_purchase_change": -0.023676470588235292,
+        "gain_over_unchanged_interval_95": [
+          -0.03147132352941176,
+          -8.529411764708393e-05
+        ]
+      },
+      "direct_over_joint_interval_95": [
+        -0.026708997935600224,
+        0.016971199250172025
+      ]
+    },
+    "beer": {
+      "planned_cards": 16,
+      "common_cards": 16,
+      "errors": {},
+      "unchanged_error": 0.06234637631673276,
+      "actual_no_purchase_change": -0.027697194319662978,
+      "joint": {
+        "average_single_error": 0.12115623835866678,
+        "two_draw_error": 0.10850807994208891,
+        "repeat_gap": 0.12812500000000002,
+        "no_purchase_change": 0.044375,
+        "gain_over_unchanged_interval_95": [
+          -0.08355997540193469,
+          -0.00938167315401015
+        ]
+      },
+      "direct": {
+        "average_single_error": 0.08277247716191347,
+        "two_draw_error": 0.07593610864948236,
+        "repeat_gap": 0.06208125,
+        "no_purchase_change": -0.020624999999999998,
+        "gain_over_unchanged_interval_95": [
+          -0.030959769962045046,
+          0.0010753464985403006
+        ]
+      },
+      "direct_over_joint_interval_95": [
+        -0.007281125735483563,
+        0.07205321761843665
+      ]
+    }
+  }
+}

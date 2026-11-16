@@ -1,0 +1,38 @@
+{
+  "cards": 36,
+  "common_cards": 36,
+  "errors": {
+    "joint": {},
+    "direct": {}
+  },
+  "identity": {
+    "model": "Qwen/Qwen3.8-27B",
+    "system_fingerprint": "vllm-0.29.0-tp2-f806618a"
+  },
+  "new_calls": 144,
+  "unchanged_error": 0.09102053634230273,
+  "joint": {
+    "average_single_error": 0.14781103749128421,
+    "two_draw_error": 0.13277481759057372,
+    "repeat_gap": 0.13166666666666668,
+    "gain_over_unchanged_interval_95": [
+      -0.05285644591283123,
+      -0.014960424429378864
+    ],
+    "mean_no_purchase_effect": -0.015416666666666665
+  },
+  "direct": {
+    "average_single_error": 0.11445459344051827,
+    "two_draw_error": 0.10879266050734701,
+    "repeat_gap": 0.06877777777777777,
+    "gain_over_unchanged_interval_95": [
+      -0.02307035256230534,
+      -0.006832411586384484
+    ],
+    "mean_no_purchase_effect": -0.008208333333333333
+  },
+  "direct_over_joint_interval_95": [
+    0.0007713280958772837,
+    0.036046091538510225
+  ]
+}

@@ -1,0 +1,331 @@
+{
+  "seed": 20261109,
+  "replays": 100,
+  "valid_calls": 6,
+  "identity": {
+    "model": "Qwen/Qwen3.8-27B",
+    "system_fingerprint": "vllm-0.29.0-tp2-f806618a"
+  },
+  "requests_sha256": "473a9e17b10c714f1e1e9dfc743447ae1f71fdac39bf7a74720c58503f740884",
+  "base_penalty_multiplier": 10,
+  "feature_names": {
+    "electricity": [
+      "Contract length between no contract and five years, with guaranteed rate and an early-switching penalty",
+      "Current local utility versus unfamiliar supplier",
+      "Well-known non-local supplier versus unfamiliar supplier",
+      "Day/night tariff of 11 and 5 cents per kWh versus an 8-cent fixed tariff",
+      "Seasonal tariff of 6, 8 or 10 cents per kWh versus an 8-cent fixed tariff",
+      "Increase in fixed price by 1 cent per kWh"
+    ],
+    "streaming": [
+      "Usage information shared with third parties versus no sharing",
+      "Usage and personal information shared with third parties versus no sharing",
+      "Commercials versus no commercials",
+      "Earlier releases for TV episodes and movies",
+      "More TV episodes and fewer movies versus the standard library",
+      "More movies and more TV episodes versus the standard library",
+      "Increase in price by $2 per month"
+    ]
+  },
+  "studies": {
+    "electricity": {
+      "draws": [
+        [
+          5,
+          3,
+          4,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          0,
+          2,
+          4,
+          3,
+          5
+        ],
+        [
+          2,
+          1,
+          4,
+          3,
+          5,
+          0
+        ]
+      ],
+      "top_rank_counts": {
+        "5": 1,
+        "1": 1,
+        "2": 1
+      },
+      "penalty_multipliers": [
+        1.1486983549970349,
+        0.8705505632961241,
+        0.8705505632961241,
+        1.0472941228206267,
+        0.9548416039104166,
+        1.1486983549970349
+      ],
+      "budgets": {
+        "5": {
+          "brier": {
+            "plain": 0.7442390933452692,
+            "equal": 0.7248719788824257,
+            "ranked": 0.7237839858213119,
+            "shuffle_mean": 0.7246108484106508
+          },
+          "ranked_gain": {
+            "plain": {
+              "mean": 0.020455107523957294,
+              "wins": 79,
+              "p05_p95": [
+                -0.00896353341313722,
+                0.08474261180654856
+              ]
+            },
+            "equal": {
+              "mean": 0.0010879930611139054,
+              "wins": 77,
+              "p05_p95": [
+                -0.0014059147469869138,
+                0.004053253856949767
+              ]
+            },
+            "shuffle_mean": {
+              "mean": 0.0008268625893388736,
+              "wins": 86,
+              "p05_p95": [
+                -0.0005928609101337745,
+                0.002148046645383872
+              ]
+            }
+          },
+          "scrambles_beaten": 11
+        },
+        "10": {
+          "brier": {
+            "plain": 0.7124320404696709,
+            "equal": 0.7139579764716905,
+            "ranked": 0.7127905318672263,
+            "shuffle_mean": 0.7137832926414553
+          },
+          "ranked_gain": {
+            "plain": {
+              "mean": -0.00035849139755554703,
+              "wins": 41,
+              "p05_p95": [
+                -0.016020373973703105,
+                0.02067286553665742
+              ]
+            },
+            "equal": {
+              "mean": 0.001167444604464055,
+              "wins": 85,
+              "p05_p95": [
+                -0.00030739566784144243,
+                0.0030196726440903042
+              ]
+            },
+            "shuffle_mean": {
+              "mean": 0.0009927607742289612,
+              "wins": 98,
+              "p05_p95": [
+                0.0003316609390900338,
+                0.0016013659078057407
+              ]
+            }
+          },
+          "scrambles_beaten": 12
+        },
+        "25": {
+          "brier": {
+            "plain": 0.695547904618884,
+            "equal": 0.707181681166439,
+            "ranked": 0.705805908502708,
+            "shuffle_mean": 0.7069164275682889
+          },
+          "ranked_gain": {
+            "plain": {
+              "mean": -0.010258003883823981,
+              "wins": 6,
+              "p05_p95": [
+                -0.01845294110741481,
+                0.0005276736575459418
+              ]
+            },
+            "equal": {
+              "mean": 0.0013757726637312884,
+              "wins": 97,
+              "p05_p95": [
+                8.18071469834758e-05,
+                0.0027602700387529375
+              ]
+            },
+            "shuffle_mean": {
+              "mean": 0.0011105190655811338,
+              "wins": 100,
+              "p05_p95": [
+                0.0006721566686031744,
+                0.0015987978842946615
+              ]
+            }
+          },
+          "scrambles_beaten": 12
+        }
+      }
+    },
+    "streaming": {
+      "draws": [
+        [
+          2,
+          6,
+          1,
+          0,
+          5,
+          4,
+          3
+        ],
+        [
+          2,
+          6,
+          1,
+          0,
+          5,
+          4,
+          3
+        ],
+        [
+          4,
+          5,
+          2,
+          6,
+          3,
+          1,
+          0
+        ]
+      ],
+      "top_rank_counts": {
+        "2": 2,
+        "4": 1
+      },
+      "penalty_multipliers": [
+        1.2599210498948732,
+        1.0,
+        0.5832645197880583,
+        1.7144879657061456,
+        1.080059738892306,
+        1.0,
+        0.7348672461377994
+      ],
+      "budgets": {
+        "5": {
+          "brier": {
+            "plain": 0.8134651484610121,
+            "equal": 0.7898783345572846,
+            "ranked": 0.7931004437799125,
+            "shuffle_mean": 0.7906697271718816
+          },
+          "ranked_gain": {
+            "plain": {
+              "mean": 0.020364704681099813,
+              "wins": 92,
+              "p05_p95": [
+                -0.001151522592135029,
+                0.051482167209310134
+              ]
+            },
+            "equal": {
+              "mean": -0.0032221092226277937,
+              "wins": 16,
+              "p05_p95": [
+                -0.012002671211571553,
+                0.0024134923703115134
+              ]
+            },
+            "shuffle_mean": {
+              "mean": -0.002430716608030772,
+              "wins": 12,
+              "p05_p95": [
+                -0.010012982126887875,
+                0.0011306360657476243
+              ]
+            }
+          },
+          "scrambles_beaten": 0
+        },
+        "10": {
+          "brier": {
+            "plain": 0.7832281127701326,
+            "equal": 0.7745917750159402,
+            "ranked": 0.7770595406136797,
+            "shuffle_mean": 0.7748803689443884
+          },
+          "ranked_gain": {
+            "plain": {
+              "mean": 0.006168572156452968,
+              "wins": 70,
+              "p05_p95": [
+                -0.005657537350483294,
+                0.026161472509364667
+              ]
+            },
+            "equal": {
+              "mean": -0.00246776559773926,
+              "wins": 9,
+              "p05_p95": [
+                -0.0073678002207235695,
+                0.0009114457747105228
+              ]
+            },
+            "shuffle_mean": {
+              "mean": -0.0021791716692910446,
+              "wins": 9,
+              "p05_p95": [
+                -0.005621688863839053,
+                0.000291024754229596
+              ]
+            }
+          },
+          "scrambles_beaten": 0
+        },
+        "25": {
+          "brier": {
+            "plain": 0.7665024348468819,
+            "equal": 0.7661435912735157,
+            "ranked": 0.7683356158670582,
+            "shuffle_mean": 0.7663636598842035
+          },
+          "ranked_gain": {
+            "plain": {
+              "mean": -0.0018331810201764431,
+              "wins": 32,
+              "p05_p95": [
+                -0.008440938835997187,
+                0.00695680889747213
+              ]
+            },
+            "equal": {
+              "mean": -0.0021920245935424885,
+              "wins": 3,
+              "p05_p95": [
+                -0.004835710534583782,
+                -0.000534497525731409
+              ]
+            },
+            "shuffle_mean": {
+              "mean": -0.001971955982854748,
+              "wins": 0,
+              "p05_p95": [
+                -0.0037129937264284707,
+                -0.0007696361481017157
+              ]
+            }
+          },
+          "scrambles_beaten": 1
+        }
+      }
+    }
+  }
+}

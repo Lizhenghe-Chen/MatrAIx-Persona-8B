@@ -1,0 +1,95 @@
+{
+  "sources": {
+    "transactions.rds": "1fa0700033f1e5d9bb6b09e2be063d8d68474d346e95c50f2833e09d083e0007",
+    "products.rda": "a80c6df33623b4af296ae9f317a6647e369db7e8ce7e7baed0e1bf44b9d979e5"
+  },
+  "cutoff": "2017-10-01",
+  "seed": 20261109,
+  "rows": 1469307,
+  "retained_rows": 1455842,
+  "baskets": 155253,
+  "train_households": 1683,
+  "train_baskets": 78402,
+  "train_products": 51627,
+  "test_households": 763,
+  "coverage": {
+    "any_orders": 763,
+    "any_items": 9242,
+    "any_in_train_catalogue": 8797,
+    "new_items_orders": 666,
+    "new_items_items": 5573,
+    "new_items_in_train_catalogue": 5178,
+    "new_categories_orders": 425,
+    "new_categories_items": 1722,
+    "new_categories_in_train_catalogue": 1559
+  },
+  "recall_at_20": {
+    "popular": {
+      "any": 0.11403922875805285,
+      "new_items": 0.022275553026725535,
+      "new_categories": 0.024862485969752404
+    },
+    "own_repeat": {
+      "any": 0.13174941255912836,
+      "new_items": 0.013320507347541918,
+      "new_categories": 0.012097249156072683
+    },
+    "popular_new": {
+      "any": 0.01899065729833539,
+      "new_items": 0.028757436530295562,
+      "new_categories": 0.029921309499164165
+    },
+    "item_association": {
+      "any": 0.014420193531538134,
+      "new_items": 0.021857257861563808,
+      "new_categories": 0.021362019116344375
+    },
+    "category_association": {
+      "any": 0.015797163802216133,
+      "new_items": 0.02488707617314988,
+      "new_categories": 0.025043625092067996
+    },
+    "combined": {
+      "any": 0.016749444075029513,
+      "new_items": 0.026653376307881373,
+      "new_categories": 0.025350814634551657
+    }
+  },
+  "comparisons": {
+    "own_repeat_minus_popular_any": {
+      "delta": 0.01771018380107546,
+      "interval_95": [
+        0.0009032591364054059,
+        0.033584007954464104
+      ]
+    },
+    "item_association_minus_popular_new_new_items": {
+      "delta": -0.006900178668731749,
+      "interval_95": [
+        -0.01526837645152503,
+        0.0008278681176852381
+      ]
+    },
+    "category_association_minus_item_association_new_categories": {
+      "delta": 0.003681605975723624,
+      "interval_95": [
+        -0.005874159663865545,
+        0.013505625583566758
+      ]
+    },
+    "combined_minus_item_association_new_items": {
+      "delta": 0.004796118446317558,
+      "interval_95": [
+        0.00016234404691815936,
+        0.010400728862526255
+      ]
+    },
+    "combined_minus_item_association_new_categories": {
+      "delta": 0.003988795518207283,
+      "interval_95": [
+        -0.003579831932773109,
+        0.012747058823529403
+      ]
+    }
+  }
+}

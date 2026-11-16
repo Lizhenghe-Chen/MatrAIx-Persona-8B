@@ -1,0 +1,757 @@
+{
+  "seed": 20261109,
+  "splits": 100,
+  "new_calls": 0,
+  "ridge_penalty": 0.05,
+  "studies": {
+    "taiwan": {
+      "5": {
+        "brier": {
+          "local_rate": 0.08855993741683299,
+          "fixed_price": 0.09178711768062979,
+          "learn_price_from_zero": 0.08904763518269056,
+          "learn_price_from_fixed": 0.09080280436318777,
+          "learn_price_and_qwen": 0.0913145878010463
+        },
+        "paired": {
+          "learn_price_from_fixed_over_fixed_price": {
+            "mean_gain": 0.000984313317441989,
+            "win_rate": 0.78,
+            "p05_p95": [
+              -0.0038983418040886707,
+              0.0080535401465929
+            ]
+          },
+          "learn_price_from_zero_over_local_rate": {
+            "mean_gain": -0.00048769776585755624,
+            "win_rate": 0.03,
+            "p05_p95": [
+              -0.0024208765703792236,
+              1.908612157208722e-14
+            ]
+          },
+          "learn_price_and_qwen_over_learn_price_from_fixed": {
+            "mean_gain": -0.0005117834378585095,
+            "win_rate": 0.18,
+            "p05_p95": [
+              -0.00318958364496948,
+              0.00027762082123835663
+            ]
+          }
+        }
+      },
+      "10": {
+        "brier": {
+          "local_rate": 0.08486910327800866,
+          "fixed_price": 0.08741299247529043,
+          "learn_price_from_zero": 0.08514829520118354,
+          "learn_price_from_fixed": 0.08614846053822918,
+          "learn_price_and_qwen": 0.08635204994572719
+        },
+        "paired": {
+          "learn_price_from_fixed_over_fixed_price": {
+            "mean_gain": 0.0012645319370612317,
+            "win_rate": 0.8,
+            "p05_p95": [
+              -0.0011210496382109483,
+              0.007202373395728785
+            ]
+          },
+          "learn_price_from_zero_over_local_rate": {
+            "mean_gain": -0.00027919192317488834,
+            "win_rate": 0.02,
+            "p05_p95": [
+              -0.0010296745347866988,
+              0.0
+            ]
+          },
+          "learn_price_and_qwen_over_learn_price_from_fixed": {
+            "mean_gain": -0.0002035894074980138,
+            "win_rate": 0.13,
+            "p05_p95": [
+              -0.00047976119523979177,
+              0.00018070659689753464
+            ]
+          }
+        }
+      },
+      "25": {
+        "brier": {
+          "local_rate": 0.0831246383041857,
+          "fixed_price": 0.08579092663032593,
+          "learn_price_from_zero": 0.08336425912560377,
+          "learn_price_from_fixed": 0.0845163581070507,
+          "learn_price_and_qwen": 0.08466924045796642
+        },
+        "paired": {
+          "learn_price_from_fixed_over_fixed_price": {
+            "mean_gain": 0.0012745685232752105,
+            "win_rate": 0.9,
+            "p05_p95": [
+              -0.0010892257535766849,
+              0.004414393554381892
+            ]
+          },
+          "learn_price_from_zero_over_local_rate": {
+            "mean_gain": -0.00023962082141805625,
+            "win_rate": 0.0,
+            "p05_p95": [
+              -0.0015599022227661878,
+              1.3877787807814457e-17
+            ]
+          },
+          "learn_price_and_qwen_over_learn_price_from_fixed": {
+            "mean_gain": -0.00015288235091570526,
+            "win_rate": 0.11,
+            "p05_p95": [
+              -0.0006223427134890783,
+              3.652240169049293e-05
+            ]
+          }
+        }
+      }
+    },
+    "beer": {
+      "5": {
+        "brier": {
+          "local_rate": 0.2503696360060612,
+          "fixed_price": 0.2475708829874439,
+          "learn_price_from_zero": 0.2485364813687115,
+          "learn_price_from_fixed": 0.2491052951323856,
+          "learn_price_and_qwen": 0.25136721549636526
+        },
+        "paired": {
+          "learn_price_from_fixed_over_fixed_price": {
+            "mean_gain": -0.0015344121449418122,
+            "win_rate": 0.51,
+            "p05_p95": [
+              -0.01932828875757697,
+              0.01204645306785093
+            ]
+          },
+          "learn_price_from_zero_over_local_rate": {
+            "mean_gain": 0.0018331546373496336,
+            "win_rate": 0.47,
+            "p05_p95": [
+              -0.015587887962181008,
+              0.01499392667808947
+            ]
+          },
+          "learn_price_and_qwen_over_learn_price_from_fixed": {
+            "mean_gain": -0.0022619203639796023,
+            "win_rate": 0.23,
+            "p05_p95": [
+              -0.014165491804416466,
+              0.0037864449718790025
+            ]
+          }
+        }
+      },
+      "10": {
+        "brier": {
+          "local_rate": 0.23634713031906646,
+          "fixed_price": 0.23249166771004012,
+          "learn_price_from_zero": 0.2340555981977948,
+          "learn_price_from_fixed": 0.23302579879569352,
+          "learn_price_and_qwen": 0.23495708077947303
+        },
+        "paired": {
+          "learn_price_from_fixed_over_fixed_price": {
+            "mean_gain": -0.0005341310856534176,
+            "win_rate": 0.55,
+            "p05_p95": [
+              -0.011379115729365783,
+              0.00662144598839044
+            ]
+          },
+          "learn_price_from_zero_over_local_rate": {
+            "mean_gain": 0.002291532121271654,
+            "win_rate": 0.7,
+            "p05_p95": [
+              -0.0006545302168462453,
+              0.010864178934050839
+            ]
+          },
+          "learn_price_and_qwen_over_learn_price_from_fixed": {
+            "mean_gain": -0.0019312819837795396,
+            "win_rate": 0.23,
+            "p05_p95": [
+              -0.01130023498010929,
+              0.0006203260132026154
+            ]
+          }
+        }
+      },
+      "25": {
+        "brier": {
+          "local_rate": 0.22746707877817016,
+          "fixed_price": 0.22292379917054791,
+          "learn_price_from_zero": 0.22438778723959285,
+          "learn_price_from_fixed": 0.2227619334319794,
+          "learn_price_and_qwen": 0.22380605857541552
+        },
+        "paired": {
+          "learn_price_from_fixed_over_fixed_price": {
+            "mean_gain": 0.00016186573856847712,
+            "win_rate": 0.64,
+            "p05_p95": [
+              -0.006149303385460464,
+              0.004114813411185672
+            ]
+          },
+          "learn_price_from_zero_over_local_rate": {
+            "mean_gain": 0.0030792915385772736,
+            "win_rate": 0.83,
+            "p05_p95": [
+              -0.00014315171644661967,
+              0.008708353817685725
+            ]
+          },
+          "learn_price_and_qwen_over_learn_price_from_fixed": {
+            "mean_gain": -0.0010441251434362034,
+            "win_rate": 0.21,
+            "p05_p95": [
+              -0.004971263148636996,
+              0.00032916767993019066
+            ]
+          }
+        }
+      }
+    },
+    "spain": {
+      "5": {
+        "brier": {
+          "local_rate": 0.15196163194444445,
+          "fixed_price": 0.14469809319085047,
+          "learn_price_from_zero": 0.14825047540471617,
+          "learn_price_from_fixed": 0.14673085789303586,
+          "learn_price_and_qwen": 0.14844128703529966
+        },
+        "paired": {
+          "learn_price_from_fixed_over_fixed_price": {
+            "mean_gain": -0.0020327647021853856,
+            "win_rate": 0.36,
+            "p05_p95": [
+              -0.012277327623171066,
+              0.0017375052100843476
+            ]
+          },
+          "learn_price_from_zero_over_local_rate": {
+            "mean_gain": 0.003711156539728273,
+            "win_rate": 0.67,
+            "p05_p95": [
+              -1.3877787807814457e-16,
+              0.012294984700925876
+            ]
+          },
+          "learn_price_and_qwen_over_learn_price_from_fixed": {
+            "mean_gain": -0.0017104291422638163,
+            "win_rate": 0.12,
+            "p05_p95": [
+              -0.013386706925622535,
+              0.000535192177440311
+            ]
+          }
+        }
+      },
+      "10": {
+        "brier": {
+          "local_rate": 0.1498412764481443,
+          "fixed_price": 0.14118542965923653,
+          "learn_price_from_zero": 0.14501952057094034,
+          "learn_price_from_fixed": 0.1429051354605944,
+          "learn_price_and_qwen": 0.14371930463734695
+        },
+        "paired": {
+          "learn_price_from_fixed_over_fixed_price": {
+            "mean_gain": -0.0017197058013578943,
+            "win_rate": 0.37,
+            "p05_p95": [
+              -0.01008337075794625,
+              0.0032799584738381336
+            ]
+          },
+          "learn_price_from_zero_over_local_rate": {
+            "mean_gain": 0.004821755877203963,
+            "win_rate": 0.74,
+            "p05_p95": [
+              -2.9143354396410354e-17,
+              0.012242485181141505
+            ]
+          },
+          "learn_price_and_qwen_over_learn_price_from_fixed": {
+            "mean_gain": -0.0008141691767525172,
+            "win_rate": 0.14,
+            "p05_p95": [
+              -0.003445556262910507,
+              0.00032796559994295306
+            ]
+          }
+        }
+      },
+      "25": {
+        "brier": {
+          "local_rate": 0.1466764004309018,
+          "fixed_price": 0.13817343492211484,
+          "learn_price_from_zero": 0.1412068602259037,
+          "learn_price_from_fixed": 0.13872267940087604,
+          "learn_price_and_qwen": 0.13918746076263863
+        },
+        "paired": {
+          "learn_price_from_fixed_over_fixed_price": {
+            "mean_gain": -0.0005492444787611993,
+            "win_rate": 0.41,
+            "p05_p95": [
+              -0.003859597036331079,
+              0.002146063559479593
+            ]
+          },
+          "learn_price_from_zero_over_local_rate": {
+            "mean_gain": 0.0054695402049981315,
+            "win_rate": 0.94,
+            "p05_p95": [
+              5.842548667089887e-16,
+              0.010442236215455333
+            ]
+          },
+          "learn_price_and_qwen_over_learn_price_from_fixed": {
+            "mean_gain": -0.0004647813617625826,
+            "win_rate": 0.12,
+            "p05_p95": [
+              -0.00261005343824154,
+              0.00019900926397375382
+            ]
+          }
+        }
+      }
+    },
+    "italy": {
+      "5": {
+        "brier": {
+          "local_rate": 0.09305343031609198,
+          "fixed_price": 0.09025068764048896,
+          "learn_price_from_zero": 0.09203873083650857,
+          "learn_price_from_fixed": 0.09213569290559094,
+          "learn_price_and_qwen": 0.0922338512964518
+        },
+        "paired": {
+          "learn_price_from_fixed_over_fixed_price": {
+            "mean_gain": -0.0018850052651020008,
+            "win_rate": 0.23,
+            "p05_p95": [
+              -0.010467521690567527,
+              0.00222798873915911
+            ]
+          },
+          "learn_price_from_zero_over_local_rate": {
+            "mean_gain": 0.0010146994795834044,
+            "win_rate": 0.45,
+            "p05_p95": [
+              -0.0035999468002524963,
+              0.006976585824974082
+            ]
+          },
+          "learn_price_and_qwen_over_learn_price_from_fixed": {
+            "mean_gain": -9.81583908608391e-05,
+            "win_rate": 0.24,
+            "p05_p95": [
+              -0.003190469860995495,
+              0.0001280872220467264
+            ]
+          }
+        }
+      },
+      "10": {
+        "brier": {
+          "local_rate": 0.08904438623560228,
+          "fixed_price": 0.08514607588272889,
+          "learn_price_from_zero": 0.08696582898320152,
+          "learn_price_from_fixed": 0.08597279176917347,
+          "learn_price_and_qwen": 0.08607133398323225
+        },
+        "paired": {
+          "learn_price_from_fixed_over_fixed_price": {
+            "mean_gain": -0.0008267158864445978,
+            "win_rate": 0.31,
+            "p05_p95": [
+              -0.0052951360893535694,
+              0.0017362445452746734
+            ]
+          },
+          "learn_price_from_zero_over_local_rate": {
+            "mean_gain": 0.002078557252400768,
+            "win_rate": 0.65,
+            "p05_p95": [
+              -1.2698175844150216e-16,
+              0.007256160475600661
+            ]
+          },
+          "learn_price_and_qwen_over_learn_price_from_fixed": {
+            "mean_gain": -9.854221405877147e-05,
+            "win_rate": 0.22,
+            "p05_p95": [
+              -0.0015697755859431916,
+              0.00027095554828108055
+            ]
+          }
+        }
+      },
+      "25": {
+        "brier": {
+          "local_rate": 0.08714189909892699,
+          "fixed_price": 0.08325485417128876,
+          "learn_price_from_zero": 0.0852235647045498,
+          "learn_price_from_fixed": 0.08377487438339125,
+          "learn_price_and_qwen": 0.0838029766004599
+        },
+        "paired": {
+          "learn_price_from_fixed_over_fixed_price": {
+            "mean_gain": -0.000520020212102477,
+            "win_rate": 0.35,
+            "p05_p95": [
+              -0.0031439081317329873,
+              0.0010150336639127948
+            ]
+          },
+          "learn_price_from_zero_over_local_rate": {
+            "mean_gain": 0.001918334394377213,
+            "win_rate": 0.86,
+            "p05_p95": [
+              0.0,
+              0.004669990562114656
+            ]
+          },
+          "learn_price_and_qwen_over_learn_price_from_fixed": {
+            "mean_gain": -2.810221706866768e-05,
+            "win_rate": 0.23,
+            "p05_p95": [
+              -0.0004422281821169098,
+              0.0001712125609024367
+            ]
+          }
+        }
+      }
+    },
+    "scotland": {
+      "5": {
+        "brier": {
+          "local_rate": 0.22299610384366925,
+          "fixed_price": 0.1998086545545258,
+          "learn_price_from_zero": 0.20332379595731231,
+          "learn_price_from_fixed": 0.19866188280135266,
+          "learn_price_and_qwen": 0.19853170364737086
+        },
+        "paired": {
+          "learn_price_from_fixed_over_fixed_price": {
+            "mean_gain": 0.0011467717531732163,
+            "win_rate": 0.64,
+            "p05_p95": [
+              -0.016923073020600057,
+              0.01513279904986509
+            ]
+          },
+          "learn_price_from_zero_over_local_rate": {
+            "mean_gain": 0.019672307886356898,
+            "win_rate": 0.85,
+            "p05_p95": [
+              -2.220446049250313e-16,
+              0.04514484882653291
+            ]
+          },
+          "learn_price_and_qwen_over_learn_price_from_fixed": {
+            "mean_gain": 0.000130179153981827,
+            "win_rate": 0.29,
+            "p05_p95": [
+              -0.006202264887145589,
+              0.006057365561476633
+            ]
+          }
+        }
+      },
+      "10": {
+        "brier": {
+          "local_rate": 0.21319612161104795,
+          "fixed_price": 0.18988073765741084,
+          "learn_price_from_zero": 0.19245872786956472,
+          "learn_price_from_fixed": 0.187307275881766,
+          "learn_price_and_qwen": 0.18736642823558267
+        },
+        "paired": {
+          "learn_price_from_fixed_over_fixed_price": {
+            "mean_gain": 0.0025734617756448404,
+            "win_rate": 0.7,
+            "p05_p95": [
+              -0.009610212021051225,
+              0.012548365756407163
+            ]
+          },
+          "learn_price_from_zero_over_local_rate": {
+            "mean_gain": 0.0207373937414832,
+            "win_rate": 0.96,
+            "p05_p95": [
+              0.002266286785188958,
+              0.037874270710554304
+            ]
+          },
+          "learn_price_and_qwen_over_learn_price_from_fixed": {
+            "mean_gain": -5.915235381663275e-05,
+            "win_rate": 0.34,
+            "p05_p95": [
+              -0.004038025640764715,
+              0.0029608330181842
+            ]
+          }
+        }
+      },
+      "25": {
+        "brier": {
+          "local_rate": 0.2070248851167085,
+          "fixed_price": 0.1835215076944787,
+          "learn_price_from_zero": 0.1837473536194822,
+          "learn_price_from_fixed": 0.17917940879905775,
+          "learn_price_and_qwen": 0.17913746798561558
+        },
+        "paired": {
+          "learn_price_from_fixed_over_fixed_price": {
+            "mean_gain": 0.004342098895420904,
+            "win_rate": 0.87,
+            "p05_p95": [
+              -0.004903700452414668,
+              0.012379939310705714
+            ]
+          },
+          "learn_price_from_zero_over_local_rate": {
+            "mean_gain": 0.023277531497226344,
+            "win_rate": 0.99,
+            "p05_p95": [
+              0.01084430705278415,
+              0.038889995967264675
+            ]
+          },
+          "learn_price_and_qwen_over_learn_price_from_fixed": {
+            "mean_gain": 4.194081344219364e-05,
+            "win_rate": 0.39,
+            "p05_p95": [
+              -0.0026875434152274793,
+              0.0025048952686762033
+            ]
+          }
+        }
+      }
+    },
+    "USA": {
+      "5": {
+        "brier": {
+          "local_rate": 0.17952957139139808,
+          "fixed_price": 0.17300483440210715,
+          "learn_price_from_zero": 0.1767617155802897,
+          "learn_price_from_fixed": 0.17567338755187964,
+          "learn_price_and_qwen": 0.175551444315862
+        },
+        "paired": {
+          "learn_price_from_fixed_over_fixed_price": {
+            "mean_gain": -0.0026685531497724646,
+            "win_rate": 0.23,
+            "p05_p95": [
+              -0.011605151974108285,
+              0.0013377942201756633
+            ]
+          },
+          "learn_price_from_zero_over_local_rate": {
+            "mean_gain": 0.0027678558111084352,
+            "win_rate": 0.64,
+            "p05_p95": [
+              -0.000835303529216636,
+              0.011589571827361525
+            ]
+          },
+          "learn_price_and_qwen_over_learn_price_from_fixed": {
+            "mean_gain": 0.00012194323601768948,
+            "win_rate": 0.34,
+            "p05_p95": [
+              -0.004632975037990865,
+              0.0033833023894080535
+            ]
+          }
+        }
+      },
+      "10": {
+        "brier": {
+          "local_rate": 0.17405948189829754,
+          "fixed_price": 0.16784101416360125,
+          "learn_price_from_zero": 0.170578829116233,
+          "learn_price_from_fixed": 0.1696382304447204,
+          "learn_price_and_qwen": 0.1689048338971178
+        },
+        "paired": {
+          "learn_price_from_fixed_over_fixed_price": {
+            "mean_gain": -0.0017972162811191125,
+            "win_rate": 0.3,
+            "p05_p95": [
+              -0.008114367854919638,
+              0.001206704356704932
+            ]
+          },
+          "learn_price_from_zero_over_local_rate": {
+            "mean_gain": 0.0034806527820645462,
+            "win_rate": 0.8,
+            "p05_p95": [
+              -7.107879005088777e-06,
+              0.008583371595877992
+            ]
+          },
+          "learn_price_and_qwen_over_learn_price_from_fixed": {
+            "mean_gain": 0.0007333965476026338,
+            "win_rate": 0.47,
+            "p05_p95": [
+              -0.0011198417115506273,
+              0.004558251888091186
+            ]
+          }
+        }
+      },
+      "25": {
+        "brier": {
+          "local_rate": 0.16793129410327817,
+          "fixed_price": 0.16257765876445274,
+          "learn_price_from_zero": 0.1642036806000435,
+          "learn_price_from_fixed": 0.1635824468259749,
+          "learn_price_and_qwen": 0.1629635990786171
+        },
+        "paired": {
+          "learn_price_from_fixed_over_fixed_price": {
+            "mean_gain": -0.0010047880615221658,
+            "win_rate": 0.19,
+            "p05_p95": [
+              -0.004501269396508743,
+              0.0004003548502863614
+            ]
+          },
+          "learn_price_from_zero_over_local_rate": {
+            "mean_gain": 0.0037276135032347,
+            "win_rate": 0.91,
+            "p05_p95": [
+              -2.2948433275128606e-05,
+              0.00743841300056558
+            ]
+          },
+          "learn_price_and_qwen_over_learn_price_from_fixed": {
+            "mean_gain": 0.0006188477473577542,
+            "win_rate": 0.53,
+            "p05_p95": [
+              -0.0009843004242531261,
+              0.003002230447414649
+            ]
+          }
+        }
+      }
+    },
+    "CAN": {
+      "5": {
+        "brier": {
+          "local_rate": 0.18517132779037535,
+          "fixed_price": 0.18770065533059044,
+          "learn_price_from_zero": 0.18714165556699514,
+          "learn_price_from_fixed": 0.18856093393181625,
+          "learn_price_and_qwen": 0.18844176257329778
+        },
+        "paired": {
+          "learn_price_from_fixed_over_fixed_price": {
+            "mean_gain": -0.0008602786012258362,
+            "win_rate": 0.54,
+            "p05_p95": [
+              -0.01658076056871039,
+              0.00897963748463481
+            ]
+          },
+          "learn_price_from_zero_over_local_rate": {
+            "mean_gain": -0.0019703277766197156,
+            "win_rate": 0.3,
+            "p05_p95": [
+              -0.020626423447197232,
+              0.003080896814917779
+            ]
+          },
+          "learn_price_and_qwen_over_learn_price_from_fixed": {
+            "mean_gain": 0.00011917135851848976,
+            "win_rate": 0.62,
+            "p05_p95": [
+              -0.004522262960584453,
+              0.004050740537218882
+            ]
+          }
+        }
+      },
+      "10": {
+        "brier": {
+          "local_rate": 0.17320713294240955,
+          "fixed_price": 0.17402357572885807,
+          "learn_price_from_zero": 0.1734826117873731,
+          "learn_price_from_fixed": 0.1746553766855831,
+          "learn_price_and_qwen": 0.17432071963204407
+        },
+        "paired": {
+          "learn_price_from_fixed_over_fixed_price": {
+            "mean_gain": -0.0006318009567250016,
+            "win_rate": 0.51,
+            "p05_p95": [
+              -0.007801760730618277,
+              0.004233029978268177
+            ]
+          },
+          "learn_price_from_zero_over_local_rate": {
+            "mean_gain": -0.0002754788449635637,
+            "win_rate": 0.45,
+            "p05_p95": [
+              -0.008322614490582267,
+              0.004522356786930764
+            ]
+          },
+          "learn_price_and_qwen_over_learn_price_from_fixed": {
+            "mean_gain": 0.000334657053538972,
+            "win_rate": 0.7,
+            "p05_p95": [
+              -0.00015473443798371525,
+              0.0016944026009110369
+            ]
+          }
+        }
+      },
+      "25": {
+        "brier": {
+          "local_rate": 0.16702036941082132,
+          "fixed_price": 0.1673212378210162,
+          "learn_price_from_zero": 0.1665550706096446,
+          "learn_price_from_fixed": 0.1668850313341301,
+          "learn_price_and_qwen": 0.16646631778412804
+        },
+        "paired": {
+          "learn_price_from_fixed_over_fixed_price": {
+            "mean_gain": 0.00043620648688605656,
+            "win_rate": 0.59,
+            "p05_p95": [
+              -0.0028623632012803268,
+              0.0038002196821733205
+            ]
+          },
+          "learn_price_from_zero_over_local_rate": {
+            "mean_gain": 0.0004652988011767181,
+            "win_rate": 0.63,
+            "p05_p95": [
+              -0.0014244158853123452,
+              0.00269817136523009
+            ]
+          },
+          "learn_price_and_qwen_over_learn_price_from_fixed": {
+            "mean_gain": 0.0004187135500020972,
+            "win_rate": 0.73,
+            "p05_p95": [
+              -0.0002750093983825208,
+              0.0014900183455601771
+            ]
+          }
+        }
+      }
+    }
+  }
+}

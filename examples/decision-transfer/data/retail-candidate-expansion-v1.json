@@ -1,0 +1,62 @@
+{
+  "source_sha256": "c41dc0c7e3b6eef34ddd36a6813171dafda799ab4880476fc79a9db69248a53e",
+  "seed": 20261111,
+  "candidate_limit": 20,
+  "catalogue_size": 3371,
+  "expected": 120,
+  "valid": 120,
+  "failures": {},
+  "identity": {
+    "model": "Qwen/Qwen3.8-27B",
+    "system_fingerprint": "vllm-0.29.0-tp2-f806618a"
+  },
+  "target_items": 1938,
+  "target_items_in_catalogue": 1665,
+  "hits": {
+    "old_union": 48,
+    "title_search": 63,
+    "qwen_phrases": 29,
+    "title_with_qwen": 44,
+    "related_with_title": 75,
+    "related_with_title_and_qwen": 61
+  },
+  "orders_with_hit": {
+    "old_union": 37,
+    "title_search": 42,
+    "qwen_phrases": 23,
+    "title_with_qwen": 31,
+    "related_with_title": 50,
+    "related_with_title_and_qwen": 45
+  },
+  "hits_without_word_overlap": {
+    "old_union": 9,
+    "title_search": 0,
+    "qwen_phrases": 0,
+    "title_with_qwen": 0,
+    "related_with_title": 8,
+    "related_with_title_and_qwen": 8
+  },
+  "comparisons": {
+    "add_qwen_to_title": {
+      "hits_per_order": -0.15833333333333333,
+      "interval_95": [
+        -0.2916666666666667,
+        -0.03333333333333333
+      ]
+    },
+    "add_title_to_related_vs_old_union": {
+      "hits_per_order": 0.225,
+      "interval_95": [
+        0.11666666666666667,
+        0.3416666666666667
+      ]
+    },
+    "add_qwen_to_related_and_title": {
+      "hits_per_order": -0.11666666666666667,
+      "interval_95": [
+        -0.21666666666666667,
+        -0.025
+      ]
+    }
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "requests": 22,
+  "valid": 22,
+  "identity": {
+    "model": "Qwen/Qwen3.8-27B",
+    "system_fingerprint": "vllm-0.29.0-tp2-f806618a"
+  },
+  "studies": {
+    "incentivized": {
+      "people": 67,
+      "held_out_cards": 15,
+      "price_profiles": [
+        {
+          "product": "Generic",
+          "low_price": 338,
+          "high_price": 675,
+          "share_at_low": 0.25,
+          "share_at_high": 0.05,
+          "raw_log_odds_slope": -0.2718963596065742
+        },
+        {
+          "product": "Guaranteed Tender",
+          "low_price": 563,
+          "high_price": 900,
+          "share_at_low": 0.14,
+          "share_at_high": 0.05,
+          "raw_log_odds_slope": -0.7290017130033543
+        },
+        {
+          "product": "Natural",
+          "low_price": 563,
+          "high_price": 900,
+          "share_at_low": 0.12,
+          "share_at_high": 0.05,
+          "raw_log_odds_slope": 0.12031605581844647
+        },
+        {
+          "product": "USDA Choice",
+          "low_price": 563,
+          "high_price": 900,
+          "share_at_low": 0.14,
+          "share_at_high": 0.15,
+          "raw_log_odds_slope": 0.40057172609763075
+        },
+        {
+          "product": "Certified Angus Beef",
+          "low_price": 563,
+          "high_price": 900,
+          "share_at_low": 0.3,
+          "share_at_high": 0.1,
+          "raw_log_odds_slope": -0.3259977117709524
+        }
+      ],
+      "increases_after_price_rise": 1,
+      "observed_single_price_pair": {
+        "human": -0.1044776119402985,
+        "qwen": 0.09999999999999999,
+        "monotone_price_model": -0.08090248306858847
+      },
+      "tv": {
+        "direct": 0.3868258706467662,
+        "same_price_anchor": 0.46222885572139305,
+        "price_model": 0.4521686154150112,
+        "monotone_price_model": 0.3749934611081
+      },
+      "monotone_gain_interval_95": {
+        "direct": [
+          -0.03870607430949364,
+          0.06647212631933468
+        ],
+        "same_price_anchor": [
+          0.059172389159154695,
+          0.11516519511839862
+        ],
+        "price_model": [
+          0.041017840576597075,
+          0.11634393660239804
+        ]
+      }
+    },
+    "hypothetical": {
+      "people": 37,
+      "held_out_cards": 15,
+      "price_profiles": [
+        {
+          "product": "Generic",
+          "low_price": 338,
+          "high_price": 675,
+          "share_at_low": 0.05,
+          "share_at_high": 0.05,
+          "raw_log_odds_slope": -0.3259977117709525
+        },
+        {
+          "product": "Guaranteed Tender",
+          "low_price": 563,
+          "high_price": 900,
+          "share_at_low": 0.15,
+          "share_at_high": 0.1,
+          "raw_log_odds_slope": -0.3922124154250204
+        },
+        {
+          "product": "Natural",
+          "low_price": 563,
+          "high_price": 900,
+          "share_at_low": 0.15,
+          "share_at_high": 0.05,
+          "raw_log_odds_slope": -0.3259977117709525
+        },
+        {
+          "product": "USDA Choice",
+          "low_price": 563,
+          "high_price": 900,
+          "share_at_low": 0.15,
+          "share_at_high": 0.1,
+          "raw_log_odds_slope": -0.24063211163689266
+        },
+        {
+          "product": "Certified Angus Beef",
+          "low_price": 563,
+          "high_price": 900,
+          "share_at_low": 0.35,
+          "share_at_high": 0.05,
+          "raw_log_odds_slope": -0.6977374650336727
+        }
+      ],
+      "increases_after_price_rise": 0,
+      "observed_single_price_pair": {
+        "human": -0.32432432432432434,
+        "qwen": 0.030000000000000002,
+        "monotone_price_model": -0.08789753608636962
+      },
+      "tv": {
+        "direct": 0.4429729729729731,
+        "same_price_anchor": 0.5337837837837838,
+        "price_model": 0.3787876855606941,
+        "monotone_price_model": 0.3787876855606941
+      },
+      "monotone_gain_interval_95": {
+        "direct": [
+          0.00088402563320302,
+          0.1232894290569564
+        ],
+        "same_price_anchor": [
+          0.11718815712784807,
+          0.19526781440141572
+        ],
+        "price_model": [
+          0.0,
+          0.0
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,253 @@
+{
+  "identity": {
+    "model": "Qwen/Qwen3.8-27B",
+    "system_fingerprint": "vllm-0.29.0-tp2-f806618a"
+  },
+  "seed": 20261109,
+  "new_model_calls": 0,
+  "studies": {
+    "beer": {
+      "cards": 16,
+      "source_studies": [
+        "beef",
+        "tomato"
+      ],
+      "zero_error": 0.06234637631673276,
+      "human_focus_change": -0.027697194319662978,
+      "methods": {
+        "separate_raw": {
+          "weight": 1.0,
+          "error": 0.2020715607273077,
+          "focus_change": 0.05562500000000001,
+          "gain_over_zero": -0.13972518441057494,
+          "gain_interval_95": [
+            -0.19068587429603626,
+            -0.08831534976340515
+          ]
+        },
+        "separate_fixed": {
+          "weight": 0.25,
+          "error": 0.08226075316457149,
+          "focus_change": 0.013906250000000002,
+          "gain_over_zero": -0.019914376847838748,
+          "gain_interval_95": [
+            -0.034270582663629756,
+            -0.006016797878216839
+          ]
+        },
+        "separate_transferred": {
+          "weight": 0.03097668933080403,
+          "error": 0.06335311871998389,
+          "focus_change": 0.0017230783440259742,
+          "gain_over_zero": -0.0010067424032511288,
+          "gain_interval_95": [
+            -0.003524082422149751,
+            0.0014907531740449443
+          ]
+        },
+        "joint_raw": {
+          "weight": 1.0,
+          "error": 0.12743081579054433,
+          "focus_change": 0.05374999999999999,
+          "gain_over_zero": -0.06508443947381157,
+          "gain_interval_95": [
+            -0.09751781848237626,
+            -0.03412845148856597
+          ]
+        },
+        "joint_fixed": {
+          "weight": 0.25,
+          "error": 0.07393021545715617,
+          "focus_change": 0.013437499999999998,
+          "gain_over_zero": -0.011583839140423411,
+          "gain_interval_95": [
+            -0.018908882910574246,
+            -0.004001922424515157
+          ]
+        },
+        "joint_transferred": {
+          "weight": 0.0928234968135218,
+          "error": 0.06568450717475872,
+          "focus_change": 0.004989262953726797,
+          "gain_over_zero": -0.0033381308580259735,
+          "gain_interval_95": [
+            -0.005864056118933632,
+            -0.0006961762261014121
+          ]
+        }
+      },
+      "weight_if_using_only_one_source": {
+        "separate": {
+          "tomato": 0.044600038365624387,
+          "beef": -0.0
+        },
+        "joint": {
+          "tomato": 0.08920007673124877,
+          "beef": 0.09950248756218906
+        }
+      }
+    },
+    "tomato": {
+      "cards": 12,
+      "source_studies": [
+        "beef",
+        "beer"
+      ],
+      "zero_error": 0.03810186073278342,
+      "human_focus_change": 0.017710353745266468,
+      "methods": {
+        "separate_raw": {
+          "weight": 1.0,
+          "error": 0.16048988994749594,
+          "focus_change": -0.004166666666666667,
+          "gain_over_zero": -0.12238802921471252,
+          "gain_interval_95": [
+            -0.15559552418810524,
+            -0.091629368974288
+          ]
+        },
+        "separate_fixed": {
+          "weight": 0.25,
+          "error": 0.052173337134372035,
+          "focus_change": -0.0010416666666666667,
+          "gain_over_zero": -0.014071476401588616,
+          "gain_interval_95": [
+            -0.023114189686041297,
+            -0.006206049379755737
+          ]
+        },
+        "separate_transferred": {
+          "weight": -0.0,
+          "error": 0.03810186073278342,
+          "focus_change": 0.0,
+          "gain_over_zero": 0.0,
+          "gain_interval_95": [
+            0.0,
+            0.0
+          ]
+        },
+        "joint_raw": {
+          "weight": 1.0,
+          "error": 0.1519340892782289,
+          "focus_change": 0.16083333333333336,
+          "gain_over_zero": -0.1138322285454455,
+          "gain_interval_95": [
+            -0.14216768974998403,
+            -0.08240968536635619
+          ]
+        },
+        "joint_fixed": {
+          "weight": 0.25,
+          "error": 0.0428501174059154,
+          "focus_change": 0.04020833333333334,
+          "gain_over_zero": -0.004748256673131976,
+          "gain_interval_95": [
+            -0.0170100686451606,
+            0.008431494492046231
+          ]
+        },
+        "joint_transferred": {
+          "weight": -0.0,
+          "error": 0.03810186073278342,
+          "focus_change": 0.0,
+          "gain_over_zero": 0.0,
+          "gain_interval_95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "weight_if_using_only_one_source": {
+        "separate": {
+          "beer": 0.0,
+          "beef": -0.0
+        },
+        "joint": {
+          "beer": 0.0,
+          "beef": 0.09950248756218906
+        }
+      }
+    },
+    "beef": {
+      "cards": 17,
+      "source_studies": [
+        "beer",
+        "tomato"
+      ],
+      "zero_error": 0.2351517452483212,
+      "human_focus_change": 0.1721519588069193,
+      "methods": {
+        "separate_raw": {
+          "weight": 1.0,
+          "error": 0.32499798305768457,
+          "focus_change": -0.025882352941176464,
+          "gain_over_zero": -0.08984623780936336,
+          "gain_interval_95": [
+            -0.13422834159884203,
+            -0.04231454808627775
+          ]
+        },
+        "separate_fixed": {
+          "weight": 0.25,
+          "error": 0.24580879386849538,
+          "focus_change": -0.006470588235294116,
+          "gain_over_zero": -0.010657048620174178,
+          "gain_interval_95": [
+            -0.02465225541608334,
+            0.00429868394513913
+          ]
+        },
+        "separate_transferred": {
+          "weight": 0.0,
+          "error": 0.2351517452483212,
+          "focus_change": 0.0,
+          "gain_over_zero": 0.0,
+          "gain_interval_95": [
+            0.0,
+            0.0
+          ]
+        },
+        "joint_raw": {
+          "weight": 1.0,
+          "error": 0.28111703011176237,
+          "focus_change": -0.047058823529411764,
+          "gain_over_zero": -0.04596528486344114,
+          "gain_interval_95": [
+            -0.08335163016396553,
+            -0.009246055098118409
+          ]
+        },
+        "joint_fixed": {
+          "weight": 0.25,
+          "error": 0.23638121989416985,
+          "focus_change": -0.011764705882352941,
+          "gain_over_zero": -0.0012294746458486703,
+          "gain_interval_95": [
+            -0.012112340720878923,
+            0.010570906645231689
+          ]
+        },
+        "joint_transferred": {
+          "weight": 0.06159814139864023,
+          "error": 0.2345901151355689,
+          "focus_change": -0.0028987360658183636,
+          "gain_over_zero": 0.0005616301127522978,
+          "gain_interval_95": [
+            -0.0025907453588251694,
+            0.004329986998316172
+          ]
+        }
+      },
+      "weight_if_using_only_one_source": {
+        "separate": {
+          "beer": 0.0,
+          "tomato": 0.044600038365624387
+        },
+        "joint": {
+          "beer": 0.0,
+          "tomato": 0.08920007673124877
+        }
+      }
+    }
+  }
+}

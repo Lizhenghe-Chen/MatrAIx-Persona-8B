@@ -1,0 +1,144 @@
+{
+  "calls": 64,
+  "source_sha256": "fea68d227a2ea4069d49313f26650c3eb0dfd9b42fbdad94d70f6fe226f9fc9f",
+  "seed": 20261109,
+  "splits": 100,
+  "identity": {
+    "model": "Qwen/Qwen3.8-27B",
+    "system_fingerprint": "vllm-0.29.0-tp2-f806618a"
+  },
+  "studies": {
+    "USA": {
+      "people": 208,
+      "actual_refusal": 0.20432692307692307,
+      "budgets": {
+        "10": {
+          "qwen_direct": 0.6265325231481481,
+          "constant": 0.6018739863358522,
+          "price": 0.602655272919895,
+          "price_and_qwen": 0.6018646687999548,
+          "price_refusal_brier": 0.34355813128904267,
+          "price_and_qwen_refusal_brier": 0.3426094656800144,
+          "qwen_increment": {
+            "win_rate": 0.55,
+            "p05_p95": [
+              -0.0005797501289838912,
+              0.004753594004573763
+            ]
+          }
+        },
+        "25": {
+          "qwen_direct": 0.6265325231481481,
+          "constant": 0.5622431516499503,
+          "price": 0.5611666665289801,
+          "price_and_qwen": 0.560474111879915,
+          "price_refusal_brier": 0.330614858657678,
+          "price_and_qwen_refusal_brier": 0.329847135032204,
+          "qwen_increment": {
+            "win_rate": 0.58,
+            "p05_p95": [
+              -0.0003762702770217341,
+              0.0025382256733749485
+            ]
+          }
+        },
+        "50": {
+          "qwen_direct": 0.6265325231481481,
+          "constant": 0.5529828719120006,
+          "price": 0.5506704113416432,
+          "price_and_qwen": 0.5502051686684838,
+          "price_refusal_brier": 0.3240114049399035,
+          "price_and_qwen_refusal_brier": 0.3235090679419461,
+          "qwen_increment": {
+            "win_rate": 0.68,
+            "p05_p95": [
+              -0.0004311906433628276,
+              0.002533122481649358
+            ]
+          }
+        },
+        "100": {
+          "qwen_direct": 0.6265325231481481,
+          "constant": 0.5488300404133664,
+          "price": 0.5455026874368119,
+          "price_and_qwen": 0.5451308248088547,
+          "price_refusal_brier": 0.3219322293835137,
+          "price_and_qwen_refusal_brier": 0.32153547467850735,
+          "qwen_increment": {
+            "win_rate": 0.73,
+            "p05_p95": [
+              -0.00018961675111780484,
+              0.0012624869165829664
+            ]
+          }
+        }
+      }
+    },
+    "CAN": {
+      "people": 214,
+      "actual_refusal": 0.20093457943925233,
+      "budgets": {
+        "10": {
+          "qwen_direct": 0.6116811798245615,
+          "constant": 0.6200586694459254,
+          "price": 0.6262177910793075,
+          "price_and_qwen": 0.6260346321654913,
+          "price_refusal_brier": 0.3514735871767332,
+          "price_and_qwen_refusal_brier": 0.3513600182889774,
+          "qwen_increment": {
+            "win_rate": 0.34,
+            "p05_p95": [
+              -0.001280056899576265,
+              0.0018093754718324674
+            ]
+          }
+        },
+        "25": {
+          "qwen_direct": 0.6116811798245615,
+          "constant": 0.5807064213059132,
+          "price": 0.5832333848650421,
+          "price_and_qwen": 0.5832271671076075,
+          "price_refusal_brier": 0.3350476074335537,
+          "price_and_qwen_refusal_brier": 0.3351447610801778,
+          "qwen_increment": {
+            "win_rate": 0.41,
+            "p05_p95": [
+              -0.0013871630859533634,
+              0.0011131970444731242
+            ]
+          }
+        },
+        "50": {
+          "qwen_direct": 0.6116811798245615,
+          "constant": 0.5681541415917075,
+          "price": 0.5701322313723431,
+          "price_and_qwen": 0.5700854707351056,
+          "price_refusal_brier": 0.32999350855244886,
+          "price_and_qwen_refusal_brier": 0.3299952356059683,
+          "qwen_increment": {
+            "win_rate": 0.51,
+            "p05_p95": [
+              -0.0007485719198144502,
+              0.0008728177353608533
+            ]
+          }
+        },
+        "100": {
+          "qwen_direct": 0.6116811798245615,
+          "constant": 0.5633366347568778,
+          "price": 0.565118275610024,
+          "price_and_qwen": 0.5651168239703874,
+          "price_refusal_brier": 0.3281772577479432,
+          "price_and_qwen_refusal_brier": 0.3282049917022686,
+          "qwen_increment": {
+            "win_rate": 0.47,
+            "p05_p95": [
+              -0.000751757994480512,
+              0.0005991950427009616
+            ]
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,307 @@
+{
+  "seed": 20261109,
+  "splits": 100,
+  "new_calls": 0,
+  "studies": {
+    "beer": {
+      "people": 1291,
+      "pilot_cards_per_person": 2,
+      "qwen_uniform_card_overlap": 0.8324709527498064,
+      "budgets": {
+        "10": {
+          "brier": {
+            "random": 0.7245413014634948,
+            "uniform_information": 0.710127450652159,
+            "qwen_information": 0.707849118731116
+          },
+          "all_candidate_cards_brier": 0.7003579304567257,
+          "total_pilot_choices": 20,
+          "all_candidate_choices": 40,
+          "qwen_vs_uniform_win_rate": 0.21,
+          "qwen_vs_uniform_tie_rate": 0.54,
+          "qwen_vs_uniform_delta_p05_p95": [
+            -0.04058694403502304,
+            0.052056575490921166
+          ],
+          "uniform_vs_random_win_rate": 0.56
+        },
+        "24": {
+          "brier": {
+            "random": 0.6845243189124194,
+            "uniform_information": 0.672891936962975,
+            "qwen_information": 0.6736398917583282
+          },
+          "all_candidate_cards_brier": 0.6663454354338113,
+          "total_pilot_choices": 48,
+          "all_candidate_choices": 96,
+          "qwen_vs_uniform_win_rate": 0.19,
+          "qwen_vs_uniform_tie_rate": 0.54,
+          "qwen_vs_uniform_delta_p05_p95": [
+            -0.030098201457987583,
+            0.025180086415742403
+          ],
+          "uniform_vs_random_win_rate": 0.59
+        },
+        "25": {
+          "brier": {
+            "random": 0.6820296391046214,
+            "uniform_information": 0.6715526987300582,
+            "qwen_information": 0.672560643158824
+          },
+          "all_candidate_cards_brier": 0.6639755801659669,
+          "total_pilot_choices": 50,
+          "all_candidate_choices": 100,
+          "qwen_vs_uniform_win_rate": 0.19,
+          "qwen_vs_uniform_tie_rate": 0.54,
+          "qwen_vs_uniform_delta_p05_p95": [
+            -0.034218090443121664,
+            0.035185554523003516
+          ],
+          "uniform_vs_random_win_rate": 0.58
+        },
+        "36": {
+          "brier": {
+            "random": 0.6681499363810447,
+            "uniform_information": 0.6581750440969035,
+            "qwen_information": 0.658532666513482
+          },
+          "all_candidate_cards_brier": 0.6515476279742543,
+          "total_pilot_choices": 72,
+          "all_candidate_choices": 144,
+          "qwen_vs_uniform_win_rate": 0.22,
+          "qwen_vs_uniform_tie_rate": 0.54,
+          "qwen_vs_uniform_delta_p05_p95": [
+            -0.03161644875761868,
+            0.018792453617986576
+          ],
+          "uniform_vs_random_win_rate": 0.6
+        },
+        "50": {
+          "brier": {
+            "random": 0.6620836995067265,
+            "uniform_information": 0.6534022419005775,
+            "qwen_information": 0.6534510090705193
+          },
+          "all_candidate_cards_brier": 0.6457523054296481,
+          "total_pilot_choices": 100,
+          "all_candidate_choices": 200,
+          "qwen_vs_uniform_win_rate": 0.21,
+          "qwen_vs_uniform_tie_rate": 0.54,
+          "qwen_vs_uniform_delta_p05_p95": [
+            -0.027812098664134147,
+            0.036060279819677694
+          ],
+          "uniform_vs_random_win_rate": 0.63
+        }
+      },
+      "equal_answer_budget": {
+        "more_people": 50,
+        "more_cards": 25,
+        "total_answers": 100,
+        "more_people_brier": 0.6534022419005775,
+        "more_cards_brier": 0.6639755801659669,
+        "more_people_win_rate": 0.61
+      }
+    },
+    "german": {
+      "people": 401,
+      "pilot_cards_per_person": 3,
+      "qwen_uniform_card_overlap": 0.8366666666666667,
+      "budgets": {
+        "10": {
+          "brier": {
+            "random": 0.584144399234585,
+            "uniform_information": 0.5653001130923901,
+            "qwen_information": 0.5673351517141046
+          },
+          "all_candidate_cards_brier": 0.5501072680499113,
+          "total_pilot_choices": 30,
+          "all_candidate_choices": 60,
+          "qwen_vs_uniform_win_rate": 0.21,
+          "qwen_vs_uniform_tie_rate": 0.59,
+          "qwen_vs_uniform_delta_p05_p95": [
+            -0.0768787428312785,
+            0.033756130102043674
+          ],
+          "uniform_vs_random_win_rate": 0.54
+        },
+        "24": {
+          "brier": {
+            "random": 0.5601652404012065,
+            "uniform_information": 0.5460023396378905,
+            "qwen_information": 0.544264118678475
+          },
+          "all_candidate_cards_brier": 0.5360380470643089,
+          "total_pilot_choices": 72,
+          "all_candidate_choices": 144,
+          "qwen_vs_uniform_win_rate": 0.22,
+          "qwen_vs_uniform_tie_rate": 0.59,
+          "qwen_vs_uniform_delta_p05_p95": [
+            -0.02337488208199374,
+            0.031740432880780996
+          ],
+          "uniform_vs_random_win_rate": 0.58
+        },
+        "25": {
+          "brier": {
+            "random": 0.5597082290873842,
+            "uniform_information": 0.5453292184189698,
+            "qwen_information": 0.5435962050197471
+          },
+          "all_candidate_cards_brier": 0.53543280483208,
+          "total_pilot_choices": 75,
+          "all_candidate_choices": 150,
+          "qwen_vs_uniform_win_rate": 0.23,
+          "qwen_vs_uniform_tie_rate": 0.59,
+          "qwen_vs_uniform_delta_p05_p95": [
+            -0.023604887297080466,
+            0.029002573447693743
+          ],
+          "uniform_vs_random_win_rate": 0.61
+        },
+        "36": {
+          "brier": {
+            "random": 0.5573713319137744,
+            "uniform_information": 0.5418140836307385,
+            "qwen_information": 0.5395726269831154
+          },
+          "all_candidate_cards_brier": 0.5334188750082111,
+          "total_pilot_choices": 108,
+          "all_candidate_choices": 216,
+          "qwen_vs_uniform_win_rate": 0.22,
+          "qwen_vs_uniform_tie_rate": 0.59,
+          "qwen_vs_uniform_delta_p05_p95": [
+            -0.02159706033983582,
+            0.0423312540570938
+          ],
+          "uniform_vs_random_win_rate": 0.63
+        },
+        "50": {
+          "brier": {
+            "random": 0.5541503019329974,
+            "uniform_information": 0.5401014869179279,
+            "qwen_information": 0.5380711909959898
+          },
+          "all_candidate_cards_brier": 0.5329746946060615,
+          "total_pilot_choices": 150,
+          "all_candidate_choices": 300,
+          "qwen_vs_uniform_win_rate": 0.22,
+          "qwen_vs_uniform_tie_rate": 0.59,
+          "qwen_vs_uniform_delta_p05_p95": [
+            -0.025497094794209408,
+            0.048344997702464344
+          ],
+          "uniform_vs_random_win_rate": 0.65
+        }
+      },
+      "equal_answer_budget": {
+        "more_people": 50,
+        "more_cards": 25,
+        "total_answers": 150,
+        "more_people_brier": 0.5401014869179279,
+        "more_cards_brier": 0.53543280483208,
+        "more_people_win_rate": 0.45
+      }
+    },
+    "spain": {
+      "people": 175,
+      "pilot_cards_per_person": 2,
+      "qwen_uniform_card_overlap": 0.8103714285714286,
+      "budgets": {
+        "10": {
+          "brier": {
+            "random": 0.6559608333180926,
+            "uniform_information": 0.6601253462861943,
+            "qwen_information": 0.6658644638694967
+          },
+          "all_candidate_cards_brier": 0.6304225470923196,
+          "total_pilot_choices": 20,
+          "all_candidate_choices": 30,
+          "qwen_vs_uniform_win_rate": 0.42,
+          "qwen_vs_uniform_tie_rate": 0.06,
+          "qwen_vs_uniform_delta_p05_p95": [
+            -0.13698690804214192,
+            0.10704827971231311
+          ],
+          "uniform_vs_random_win_rate": 0.45
+        },
+        "24": {
+          "brier": {
+            "random": 0.5979720774803193,
+            "uniform_information": 0.5924343383355,
+            "qwen_information": 0.5949441238635698
+          },
+          "all_candidate_cards_brier": 0.5741181761150569,
+          "total_pilot_choices": 48,
+          "all_candidate_choices": 72,
+          "qwen_vs_uniform_win_rate": 0.56,
+          "qwen_vs_uniform_tie_rate": 0.03,
+          "qwen_vs_uniform_delta_p05_p95": [
+            -0.07995120135151818,
+            0.05309431257830073
+          ],
+          "uniform_vs_random_win_rate": 0.52
+        },
+        "25": {
+          "brier": {
+            "random": 0.595901297578759,
+            "uniform_information": 0.5895461776382056,
+            "qwen_information": 0.5923041818358008
+          },
+          "all_candidate_cards_brier": 0.5721042322119813,
+          "total_pilot_choices": 50,
+          "all_candidate_choices": 75,
+          "qwen_vs_uniform_win_rate": 0.51,
+          "qwen_vs_uniform_tie_rate": 0.03,
+          "qwen_vs_uniform_delta_p05_p95": [
+            -0.08008589855881496,
+            0.04839555840267312
+          ],
+          "uniform_vs_random_win_rate": 0.53
+        },
+        "36": {
+          "brier": {
+            "random": 0.5800477531284982,
+            "uniform_information": 0.571428187198775,
+            "qwen_information": 0.5754317608279014
+          },
+          "all_candidate_cards_brier": 0.5583588696801844,
+          "total_pilot_choices": 72,
+          "all_candidate_choices": 108,
+          "qwen_vs_uniform_win_rate": 0.47,
+          "qwen_vs_uniform_tie_rate": 0.03,
+          "qwen_vs_uniform_delta_p05_p95": [
+            -0.07559428426652771,
+            0.04200849546666527
+          ],
+          "uniform_vs_random_win_rate": 0.59
+        },
+        "50": {
+          "brier": {
+            "random": 0.565804685562621,
+            "uniform_information": 0.5585192753326234,
+            "qwen_information": 0.5647157142998572
+          },
+          "all_candidate_cards_brier": 0.5477544339703989,
+          "total_pilot_choices": 100,
+          "all_candidate_choices": 150,
+          "qwen_vs_uniform_win_rate": 0.43,
+          "qwen_vs_uniform_tie_rate": 0.03,
+          "qwen_vs_uniform_delta_p05_p95": [
+            -0.05517956914985152,
+            0.042417521698048355
+          ],
+          "uniform_vs_random_win_rate": 0.54
+        }
+      },
+      "equal_answer_budget": {
+        "more_people": 36,
+        "more_cards": 24,
+        "total_answers": 72,
+        "more_people_brier": 0.571428187198775,
+        "more_cards_brier": 0.5741181761150569,
+        "more_people_win_rate": 0.54
+      }
+    }
+  }
+}

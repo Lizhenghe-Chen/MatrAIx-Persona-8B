@@ -1,0 +1,151 @@
+{
+  "requests": 132,
+  "valid": 126,
+  "failures": {
+    "beer/group_probability/ValueError": 4,
+    "tomato/group_probability/ValueError": 1,
+    "tomato/individual/ValueError": 1
+  },
+  "identity": {
+    "model": "Qwen/Qwen3.8-27B",
+    "system_fingerprint": "vllm-0.29.0-tp2-f806618a"
+  },
+  "studies": {
+    "beer": {
+      "people_in_dataset": 1291,
+      "paired_cells": 28,
+      "paired_choices": 8968,
+      "card_clusters": 16,
+      "total_choices": 10328,
+      "all_cells_tv_uniform_on_failure": {
+        "individual": 0.22537083656080564,
+        "group_probability": 0.19719339013684478,
+        "group_count": 0.20457494190549955
+      },
+      "distribution_tv": {
+        "individual": 0.2323628456735058,
+        "group_probability": 0.1931623550401427,
+        "group_count": 0.21842662801070478
+      },
+      "brier": {
+        "individual": 0.7142057983942907,
+        "group_probability": 0.684815,
+        "group_count": 0.7171939785905445
+      },
+      "refusal": {
+        "individual": 0.2653980820695807,
+        "group_probability": 0.2580129348795718,
+        "group_count": 0.3037823371989295,
+        "human": 0.33028545941124
+      },
+      "distribution_gain_interval_95": {
+        "group_probability_vs_individual": [
+          0.011043011922148852,
+          0.06841773971013974
+        ],
+        "group_count_vs_group_probability": [
+          -0.06174547957116103,
+          0.008671860355807992
+        ],
+        "group_count_vs_individual": [
+          -0.031100495688542246,
+          0.05524537088390566
+        ]
+      },
+      "pairwise_available": {
+        "group_probability_vs_individual": {
+          "choices": 8968,
+          "gain": 0.03920049063336307,
+          "interval_95": [
+            0.011043011922148805,
+            0.06841773971013979
+          ]
+        },
+        "group_count_vs_group_probability": {
+          "choices": 8968,
+          "gain": -0.025264272970562003,
+          "interval_95": [
+            -0.06174547957116102,
+            0.00867186035580799
+          ]
+        },
+        "group_count_vs_individual": {
+          "choices": 10328,
+          "gain": 0.02079589465530596,
+          "interval_95": [
+            -0.023142190614129674,
+            0.05649555479776402
+          ]
+        }
+      }
+    },
+    "tomato": {
+      "people_in_dataset": 401,
+      "paired_cells": 11,
+      "paired_choices": 4411,
+      "card_clusters": 11,
+      "total_choices": 4812,
+      "all_cells_tv_uniform_on_failure": {
+        "individual": 0.32175394846217786,
+        "group_probability": 0.3209434746467166,
+        "group_count": 0.27860972568578557
+      },
+      "distribution_tv": {
+        "individual": 0.301639084107912,
+        "group_probability": 0.30075493085468147,
+        "group_count": 0.27275447744275677
+      },
+      "brier": {
+        "individual": 0.6604646565404672,
+        "group_probability": 0.664354296077987,
+        "group_count": 0.6250298345046474
+      },
+      "refusal": {
+        "individual": 0.14363636363636365,
+        "group_probability": 0.16363636363636364,
+        "group_count": 0.15000000000000002,
+        "human": 0.0641577873498073
+      },
+      "distribution_gain_interval_95": {
+        "group_probability_vs_individual": [
+          -0.08196979143051474,
+          0.09138653366583534
+        ],
+        "group_count_vs_group_probability": [
+          -0.06808660167762418,
+          0.13049994332350937
+        ],
+        "group_count_vs_individual": [
+          -0.027290070278848284,
+          0.08570012468827916
+        ]
+      },
+      "pairwise_available": {
+        "group_probability_vs_individual": {
+          "choices": 4411,
+          "gain": 0.0008841532532305548,
+          "interval_95": [
+            -0.08196979143051461,
+            0.09138653366583535
+          ]
+        },
+        "group_count_vs_group_probability": {
+          "choices": 4411,
+          "gain": 0.028000453411924725,
+          "interval_95": [
+            -0.06808660167762415,
+            0.1304999433235093
+          ]
+        },
+        "group_count_vs_individual": {
+          "choices": 4411,
+          "gain": 0.028884606665155275,
+          "interval_95": [
+            -0.027290070278848323,
+            0.08570012468827926
+          ]
+        }
+      }
+    }
+  }
+}

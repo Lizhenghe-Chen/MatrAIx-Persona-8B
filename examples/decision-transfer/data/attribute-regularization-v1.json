@@ -1,0 +1,620 @@
+{
+  "seed": 20261109,
+  "replays": 100,
+  "penalty_multiplier": 10,
+  "new_calls": 0,
+  "studies": {
+    "beer": {
+      "people": 1291,
+      "cards": 16,
+      "budgets": {
+        "5": {
+          "brier": {
+            "full": 0.7541056811180795,
+            "price": 0.7203535884267951,
+            "shrink_all": 0.7073507058736058,
+            "shrink_nonprice": 0.7163366601016198,
+            "price_qwen": 0.715936389729305,
+            "full_qwen": 0.7262376369454713,
+            "shrink_nonprice_qwen": 0.7095496211447115,
+            "shrink_nonprice_uniform": 0.7060635745886902
+          },
+          "comparisons": {
+            "shrink_nonprice_over_full": {
+              "wins": 79,
+              "p05_p95": [
+                -0.016613054690333594,
+                0.1270007979778027
+              ]
+            },
+            "shrink_nonprice_over_price": {
+              "wins": 57,
+              "p05_p95": [
+                -0.051335576404507643,
+                0.041466185681118116
+              ]
+            },
+            "shrink_nonprice_over_price_qwen": {
+              "wins": 53,
+              "p05_p95": [
+                -0.04847551530717731,
+                0.031244147003683234
+              ]
+            },
+            "shrink_nonprice_qwen_over_shrink_nonprice": {
+              "wins": 71,
+              "p05_p95": [
+                -0.004700542636281513,
+                0.027756342777109935
+              ]
+            },
+            "shrink_nonprice_qwen_over_shrink_nonprice_uniform": {
+              "wins": 43,
+              "p05_p95": [
+                -0.02243844060631713,
+                0.007838164560531994
+              ]
+            }
+          }
+        },
+        "10": {
+          "brier": {
+            "full": 0.6968973084687097,
+            "price": 0.6925547916628549,
+            "shrink_all": 0.6740424976996486,
+            "shrink_nonprice": 0.6780682962201792,
+            "price_qwen": 0.6906540350105682,
+            "full_qwen": 0.6821838632611257,
+            "shrink_nonprice_qwen": 0.6773264986481443,
+            "shrink_nonprice_uniform": 0.6749573289739342
+          },
+          "comparisons": {
+            "shrink_nonprice_over_full": {
+              "wins": 78,
+              "p05_p95": [
+                -0.01643751389524331,
+                0.05581699777442878
+              ]
+            },
+            "shrink_nonprice_over_price": {
+              "wins": 82,
+              "p05_p95": [
+                -0.012730931593464705,
+                0.04737413896020249
+              ]
+            },
+            "shrink_nonprice_over_price_qwen": {
+              "wins": 82,
+              "p05_p95": [
+                -0.015203208949891033,
+                0.04131337675062413
+              ]
+            },
+            "shrink_nonprice_qwen_over_shrink_nonprice": {
+              "wins": 48,
+              "p05_p95": [
+                -0.006526705699571667,
+                0.011091103341388348
+              ]
+            },
+            "shrink_nonprice_qwen_over_shrink_nonprice_uniform": {
+              "wins": 43,
+              "p05_p95": [
+                -0.014860724191520819,
+                0.007059693102891805
+              ]
+            }
+          }
+        },
+        "25": {
+          "brier": {
+            "full": 0.6631990462134449,
+            "price": 0.6755126339639458,
+            "shrink_all": 0.6554312568064402,
+            "shrink_nonprice": 0.6578814471855479,
+            "price_qwen": 0.6752105712688237,
+            "full_qwen": 0.6578691955405084,
+            "shrink_nonprice_qwen": 0.6601806061901762,
+            "shrink_nonprice_uniform": 0.6576953626687334
+          },
+          "comparisons": {
+            "shrink_nonprice_over_full": {
+              "wins": 56,
+              "p05_p95": [
+                -0.020465728520107092,
+                0.04027378430771741
+              ]
+            },
+            "shrink_nonprice_over_price": {
+              "wins": 95,
+              "p05_p95": [
+                0.0005448421256398607,
+                0.038780372150239724
+              ]
+            },
+            "shrink_nonprice_over_price_qwen": {
+              "wins": 97,
+              "p05_p95": [
+                0.0014564144810749746,
+                0.0334957296358901
+              ]
+            },
+            "shrink_nonprice_qwen_over_shrink_nonprice": {
+              "wins": 17,
+              "p05_p95": [
+                -0.00707259477871226,
+                0.004432993981054222
+              ]
+            },
+            "shrink_nonprice_qwen_over_shrink_nonprice_uniform": {
+              "wins": 33,
+              "p05_p95": [
+                -0.010599122153079354,
+                0.0052372940277615986
+              ]
+            }
+          }
+        }
+      }
+    },
+    "german": {
+      "people": 401,
+      "cards": 12,
+      "budgets": {
+        "5": {
+          "brier": {
+            "full": 0.5749500454191284,
+            "price": 0.7049013928874379,
+            "shrink_all": 0.5978357462350039,
+            "shrink_nonprice": 0.6058821186013064,
+            "price_qwen": 0.6726644572712608,
+            "full_qwen": 0.5686322088427305,
+            "shrink_nonprice_qwen": 0.6016015509791779,
+            "shrink_nonprice_uniform": 0.6178279661367493
+          },
+          "comparisons": {
+            "shrink_nonprice_over_full": {
+              "wins": 21,
+              "p05_p95": [
+                -0.07571833069185879,
+                0.03387433247402302
+              ]
+            },
+            "shrink_nonprice_over_price": {
+              "wins": 97,
+              "p05_p95": [
+                0.03298315420172808,
+                0.15472094937451314
+              ]
+            },
+            "shrink_nonprice_over_price_qwen": {
+              "wins": 96,
+              "p05_p95": [
+                0.008937733217025196,
+                0.12014198038751438
+              ]
+            },
+            "shrink_nonprice_qwen_over_shrink_nonprice": {
+              "wins": 59,
+              "p05_p95": [
+                -0.01196429116125986,
+                0.03735872075219554
+              ]
+            },
+            "shrink_nonprice_qwen_over_shrink_nonprice_uniform": {
+              "wins": 95,
+              "p05_p95": [
+                0.0003314067032787752,
+                0.03164150894510215
+              ]
+            }
+          }
+        },
+        "10": {
+          "brier": {
+            "full": 0.549752141144126,
+            "price": 0.698919115485878,
+            "shrink_all": 0.5864243347029343,
+            "shrink_nonprice": 0.5935716497568777,
+            "price_qwen": 0.6679806621277892,
+            "full_qwen": 0.5522684943682823,
+            "shrink_nonprice_qwen": 0.5928968928736409,
+            "shrink_nonprice_uniform": 0.6089007358502309
+          },
+          "comparisons": {
+            "shrink_nonprice_over_full": {
+              "wins": 6,
+              "p05_p95": [
+                -0.08275100852087788,
+                0.0012650722150982475
+              ]
+            },
+            "shrink_nonprice_over_price": {
+              "wins": 100,
+              "p05_p95": [
+                0.06294691568054332,
+                0.14767225809549103
+              ]
+            },
+            "shrink_nonprice_over_price_qwen": {
+              "wins": 98,
+              "p05_p95": [
+                0.019622374032441353,
+                0.1162264300567336
+              ]
+            },
+            "shrink_nonprice_qwen_over_shrink_nonprice": {
+              "wins": 40,
+              "p05_p95": [
+                -0.012546269857452974,
+                0.02373128468631923
+              ]
+            },
+            "shrink_nonprice_qwen_over_shrink_nonprice_uniform": {
+              "wins": 96,
+              "p05_p95": [
+                0.0009094388404422339,
+                0.029945512751605768
+              ]
+            }
+          }
+        },
+        "25": {
+          "brier": {
+            "full": 0.5351606990450002,
+            "price": 0.6966686548847422,
+            "shrink_all": 0.5786064922475068,
+            "shrink_nonprice": 0.5846796736933346,
+            "price_qwen": 0.6660861711740975,
+            "full_qwen": 0.5419777398912184,
+            "shrink_nonprice_qwen": 0.5865471104572247,
+            "shrink_nonprice_uniform": 0.602368645970028
+          },
+          "comparisons": {
+            "shrink_nonprice_over_full": {
+              "wins": 3,
+              "p05_p95": [
+                -0.08477820207470525,
+                -0.010002031373870564
+              ]
+            },
+            "shrink_nonprice_over_price": {
+              "wins": 100,
+              "p05_p95": [
+                0.07363892026375152,
+                0.14874206572448004
+              ]
+            },
+            "shrink_nonprice_over_price_qwen": {
+              "wins": 99,
+              "p05_p95": [
+                0.04331050001890006,
+                0.11411865584151219
+              ]
+            },
+            "shrink_nonprice_qwen_over_shrink_nonprice": {
+              "wins": 32,
+              "p05_p95": [
+                -0.01501246850681221,
+                0.01514184438518253
+              ]
+            },
+            "shrink_nonprice_qwen_over_shrink_nonprice_uniform": {
+              "wins": 98,
+              "p05_p95": [
+                0.0021747486203667846,
+                0.03006729480458739
+              ]
+            }
+          }
+        }
+      }
+    },
+    "scotland": {
+      "people": 154,
+      "cards": 36,
+      "budgets": {
+        "5": {
+          "brier": {
+            "full": 0.5838193598628986,
+            "price": 0.5680082225462716,
+            "shrink_all": 0.5682901418729963,
+            "shrink_nonprice": 0.5653573399271786,
+            "price_qwen": 0.5637489471081879,
+            "full_qwen": 0.5716776787770358,
+            "shrink_nonprice_qwen": 0.5613773375810723,
+            "shrink_nonprice_uniform": 0.5701529582129224
+          },
+          "comparisons": {
+            "shrink_nonprice_over_full": {
+              "wins": 69,
+              "p05_p95": [
+                -0.019914774209033603,
+                0.08515117936445642
+              ]
+            },
+            "shrink_nonprice_over_price": {
+              "wins": 68,
+              "p05_p95": [
+                -0.013658664326572905,
+                0.018976491062893407
+              ]
+            },
+            "shrink_nonprice_over_price_qwen": {
+              "wins": 50,
+              "p05_p95": [
+                -0.02409879536323964,
+                0.017527184724812704
+              ]
+            },
+            "shrink_nonprice_qwen_over_shrink_nonprice": {
+              "wins": 62,
+              "p05_p95": [
+                -0.0071912527220632325,
+                0.023674497193708195
+              ]
+            },
+            "shrink_nonprice_qwen_over_shrink_nonprice_uniform": {
+              "wins": 82,
+              "p05_p95": [
+                -0.011682279692457581,
+                0.027332400373474702
+              ]
+            }
+          }
+        },
+        "10": {
+          "brier": {
+            "full": 0.5602822778654228,
+            "price": 0.545452584864741,
+            "shrink_all": 0.5456910713758703,
+            "shrink_nonprice": 0.5412336737658419,
+            "price_qwen": 0.543712907122515,
+            "full_qwen": 0.5501332766585321,
+            "shrink_nonprice_qwen": 0.540220240071789,
+            "shrink_nonprice_uniform": 0.5499376519337709
+          },
+          "comparisons": {
+            "shrink_nonprice_over_full": {
+              "wins": 73,
+              "p05_p95": [
+                -0.013259856603808106,
+                0.08425764907695306
+              ]
+            },
+            "shrink_nonprice_over_price": {
+              "wins": 74,
+              "p05_p95": [
+                -0.010766333799100133,
+                0.02045344863570308
+              ]
+            },
+            "shrink_nonprice_over_price_qwen": {
+              "wins": 64,
+              "p05_p95": [
+                -0.020292394487517056,
+                0.01662912851324566
+              ]
+            },
+            "shrink_nonprice_qwen_over_shrink_nonprice": {
+              "wins": 50,
+              "p05_p95": [
+                -0.007813514361197366,
+                0.014750945686893183
+              ]
+            },
+            "shrink_nonprice_qwen_over_shrink_nonprice_uniform": {
+              "wins": 87,
+              "p05_p95": [
+                -0.006390269072108429,
+                0.025493507868840696
+              ]
+            }
+          }
+        },
+        "25": {
+          "brier": {
+            "full": 0.5379603324778203,
+            "price": 0.5326035767508817,
+            "shrink_all": 0.5328095794729651,
+            "shrink_nonprice": 0.5268454579983739,
+            "price_qwen": 0.5326585304011785,
+            "full_qwen": 0.5345218348140484,
+            "shrink_nonprice_qwen": 0.5285306275800253,
+            "shrink_nonprice_uniform": 0.5389360912674198
+          },
+          "comparisons": {
+            "shrink_nonprice_over_full": {
+              "wins": 72,
+              "p05_p95": [
+                -0.007198561312653778,
+                0.054962706280608765
+              ]
+            },
+            "shrink_nonprice_over_price": {
+              "wins": 86,
+              "p05_p95": [
+                -0.001903104840613484,
+                0.014834629139248625
+              ]
+            },
+            "shrink_nonprice_over_price_qwen": {
+              "wins": 83,
+              "p05_p95": [
+                -0.005556960329756677,
+                0.017417284371251684
+              ]
+            },
+            "shrink_nonprice_qwen_over_shrink_nonprice": {
+              "wins": 36,
+              "p05_p95": [
+                -0.008626231942291618,
+                0.005365760124215683
+              ]
+            },
+            "shrink_nonprice_qwen_over_shrink_nonprice_uniform": {
+              "wins": 93,
+              "p05_p95": [
+                -0.0015682776775613305,
+                0.02224612090217689
+              ]
+            }
+          }
+        }
+      }
+    },
+    "taiwan": {
+      "people": 526,
+      "cards": 36,
+      "budgets": {
+        "5": {
+          "brier": {
+            "full": 0.7758580026640008,
+            "price": 0.741620297828455,
+            "shrink_all": 0.732842769357918,
+            "shrink_nonprice": 0.7377335689793802,
+            "price_qwen": 0.7262772184675275,
+            "full_qwen": 0.7322590878009065,
+            "shrink_nonprice_qwen": 0.7195694268867345,
+            "shrink_nonprice_uniform": 0.7263967361470874
+          },
+          "comparisons": {
+            "shrink_nonprice_over_full": {
+              "wins": 78,
+              "p05_p95": [
+                -0.022227204112815094,
+                0.10299771897188585
+              ]
+            },
+            "shrink_nonprice_over_price": {
+              "wins": 65,
+              "p05_p95": [
+                -0.037202042267752256,
+                0.03461457595795614
+              ]
+            },
+            "shrink_nonprice_over_price_qwen": {
+              "wins": 38,
+              "p05_p95": [
+                -0.06095248534234622,
+                0.02048726027605434
+              ]
+            },
+            "shrink_nonprice_qwen_over_shrink_nonprice": {
+              "wins": 99,
+              "p05_p95": [
+                0.0034536325824904624,
+                0.04160298956626419
+              ]
+            },
+            "shrink_nonprice_qwen_over_shrink_nonprice_uniform": {
+              "wins": 87,
+              "p05_p95": [
+                -0.003575632730375122,
+                0.01654337837704385
+              ]
+            }
+          }
+        },
+        "10": {
+          "brier": {
+            "full": 0.7183285167125777,
+            "price": 0.7280156568632656,
+            "shrink_all": 0.7124210102565902,
+            "shrink_nonprice": 0.7147781177820863,
+            "price_qwen": 0.7154890979766231,
+            "full_qwen": 0.6982344070275132,
+            "shrink_nonprice_qwen": 0.704215284774319,
+            "shrink_nonprice_uniform": 0.711709983692781
+          },
+          "comparisons": {
+            "shrink_nonprice_over_full": {
+              "wins": 43,
+              "p05_p95": [
+                -0.02633703081966299,
+                0.04718018350658235
+              ]
+            },
+            "shrink_nonprice_over_price": {
+              "wins": 83,
+              "p05_p95": [
+                -0.01476435902946625,
+                0.03440989148461898
+              ]
+            },
+            "shrink_nonprice_over_price_qwen": {
+              "wins": 55,
+              "p05_p95": [
+                -0.028273211537734343,
+                0.023029268698926963
+              ]
+            },
+            "shrink_nonprice_qwen_over_shrink_nonprice": {
+              "wins": 97,
+              "p05_p95": [
+                0.0008240089868290501,
+                0.02307365890215653
+              ]
+            },
+            "shrink_nonprice_qwen_over_shrink_nonprice_uniform": {
+              "wins": 92,
+              "p05_p95": [
+                -0.000411745911932565,
+                0.01594164620758364
+              ]
+            }
+          }
+        },
+        "25": {
+          "brier": {
+            "full": 0.69090341772823,
+            "price": 0.7241921775370449,
+            "shrink_all": 0.7028231109932221,
+            "shrink_nonprice": 0.7042439126372402,
+            "price_qwen": 0.7119265089086245,
+            "full_qwen": 0.6815227274534954,
+            "shrink_nonprice_qwen": 0.6969318618239225,
+            "shrink_nonprice_uniform": 0.704945587866117
+          },
+          "comparisons": {
+            "shrink_nonprice_over_full": {
+              "wins": 13,
+              "p05_p95": [
+                -0.033537067770968765,
+                0.008425177404387281
+              ]
+            },
+            "shrink_nonprice_over_price": {
+              "wins": 95,
+              "p05_p95": [
+                0.00011825403459013787,
+                0.03561515032715637
+              ]
+            },
+            "shrink_nonprice_over_price_qwen": {
+              "wins": 84,
+              "p05_p95": [
+                -0.012192643209361614,
+                0.023926894548184332
+              ]
+            },
+            "shrink_nonprice_qwen_over_shrink_nonprice": {
+              "wins": 93,
+              "p05_p95": [
+                -0.0007484886099594966,
+                0.016451584105823248
+              ]
+            },
+            "shrink_nonprice_qwen_over_shrink_nonprice_uniform": {
+              "wins": 94,
+              "p05_p95": [
+                -0.0011411118781712692,
+                0.015545935925995957
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "requests": 36,
+  "model": {
+    "model": "Qwen/Qwen3.8-27B",
+    "system_fingerprint": "vllm-0.29.0-tp2-f806618a"
+  },
+  "2025_complete_cases": 12731,
+  "results": {
+    "2023": {
+      "actual_yes_pct": {
+        "INF3_a": 62,
+        "INF3_b": 61,
+        "INF3_c": 45,
+        "INF3_d": 15,
+        "INF3_e": 48,
+        "INF3_f": 18
+      },
+      "methods": {
+        "previous_rate": {
+          "estimate_yes_pct": {
+            "INF3_a": 64,
+            "INF3_b": 66,
+            "INF3_c": 51,
+            "INF3_d": 15,
+            "INF3_e": 49,
+            "INF3_f": 18
+          },
+          "mae_pp": 2.3333333333333335,
+          "max_error_pp": 6.0
+        },
+        "qwen_direct": {
+          "estimate_yes_pct": {
+            "INF3_a": 78.0,
+            "INF3_b": 38.0,
+            "INF3_c": 45.0,
+            "INF3_d": 25.0,
+            "INF3_e": 35.0,
+            "INF3_f": 25.0
+          },
+          "mae_pp": 11.5,
+          "max_error_pp": 23.0
+        },
+        "qwen_previous_rate": {
+          "estimate_yes_pct": {
+            "INF3_a": 66.0,
+            "INF3_b": 66.0,
+            "INF3_c": 51.0,
+            "INF3_d": 14.000000000000002,
+            "INF3_e": 47.0,
+            "INF3_f": 19.0
+          },
+          "mae_pp": 3.0,
+          "max_error_pp": 6.0
+        }
+      }
+    },
+    "2024": {
+      "actual_yes_pct": {
+        "INF3_a": 63,
+        "INF3_b": 61,
+        "INF3_c": 43,
+        "INF3_d": 16,
+        "INF3_e": 46,
+        "INF3_f": 18
+      },
+      "methods": {
+        "previous_rate": {
+          "estimate_yes_pct": {
+            "INF3_a": 62,
+            "INF3_b": 61,
+            "INF3_c": 45,
+            "INF3_d": 15,
+            "INF3_e": 48,
+            "INF3_f": 18
+          },
+          "mae_pp": 1.0,
+          "max_error_pp": 2.0
+        },
+        "linear_trend": {
+          "estimate_yes_pct": {
+            "INF3_a": 60,
+            "INF3_b": 56,
+            "INF3_c": 39,
+            "INF3_d": 15,
+            "INF3_e": 47,
+            "INF3_f": 18
+          },
+          "mae_pp": 2.3333333333333335,
+          "max_error_pp": 5.0
+        },
+        "qwen_direct": {
+          "estimate_yes_pct": {
+            "INF3_a": 65.0,
+            "INF3_b": 57.99999999999999,
+            "INF3_c": 35.0,
+            "INF3_d": 5.0,
+            "INF3_e": 62.0,
+            "INF3_f": 45.0
+          },
+          "mae_pp": 11.166666666666666,
+          "max_error_pp": 27.0
+        },
+        "qwen_previous_rate": {
+          "estimate_yes_pct": {
+            "INF3_a": 63.0,
+            "INF3_b": 61.0,
+            "INF3_c": 48.0,
+            "INF3_d": 16.0,
+            "INF3_e": 46.0,
+            "INF3_f": 19.0
+          },
+          "mae_pp": 1.0,
+          "max_error_pp": 5.0
+        }
+      }
+    },
+    "2025": {
+      "actual_yes_pct": {
+        "INF3_a": 62.064855345588846,
+        "INF3_b": 59.64550195849685,
+        "INF3_c": 41.07798409365414,
+        "INF3_d": 15.794044358890275,
+        "INF3_e": 45.498810451538716,
+        "INF3_f": 17.032446081588706
+      },
+      "methods": {
+        "previous_rate": {
+          "estimate_yes_pct": {
+            "INF3_a": 63,
+            "INF3_b": 61,
+            "INF3_c": 43,
+            "INF3_d": 16,
+            "INF3_e": 46,
+            "INF3_f": 18
+          },
+          "mae_pp": 0.9810596183737447,
+          "max_error_pp": 1.9220159063458624
+        },
+        "linear_trend": {
+          "estimate_yes_pct": {
+            "INF3_a": 64,
+            "INF3_b": 61,
+            "INF3_c": 41,
+            "INF3_d": 17,
+            "INF3_e": 44,
+            "INF3_f": 18
+          },
+          "mae_pp": 1.1733244667713627,
+          "max_error_pp": 1.935144654411154
+        },
+        "qwen_direct": {
+          "estimate_yes_pct": {
+            "INF3_a": 62.0,
+            "INF3_b": 65.0,
+            "INF3_c": 45.0,
+            "INF3_d": 18.0,
+            "INF3_e": 45.0,
+            "INF3_f": 28.000000000000004
+          },
+          "mae_pp": 3.8356148840829327,
+          "max_error_pp": 10.967553918411298
+        },
+        "qwen_previous_rate": {
+          "estimate_yes_pct": {
+            "INF3_a": 65.0,
+            "INF3_b": 57.99999999999999,
+            "INF3_c": 42.0,
+            "INF3_d": 16.0,
+            "INF3_e": 47.0,
+            "INF3_f": 19.0
+          },
+          "mae_pp": 1.5295602712060294,
+          "max_error_pp": 2.935144654411154
+        }
+      }
+    }
+  }
+}

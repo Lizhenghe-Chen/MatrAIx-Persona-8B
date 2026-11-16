@@ -1,0 +1,64 @@
+{
+  "seed": 20261109,
+  "replays": 100,
+  "new_calls": 0,
+  "qwen_weight": 0.25,
+  "studies": {
+    "orange": {
+      "paid_people": 104,
+      "hypothetical_people": 211,
+      "brier": {
+        "historical": 0.5363507533712479,
+        "qwen": 0.5845134058986649,
+        "historical_plus_qwen": 0.5364942494473105,
+        "historical_plus_uniform": 0.5486387424216886
+      },
+      "qwen_mix_over": {
+        "historical": {
+          "gain": -0.0001434960760625431,
+          "win_rate": 0.48,
+          "p05_p95": [
+            -0.006036341364887049,
+            0.0065614286640069235
+          ]
+        },
+        "historical_plus_uniform": {
+          "gain": 0.012144492974378175,
+          "win_rate": 0.97,
+          "p05_p95": [
+            0.0018258939036302436,
+            0.0218901182550763
+          ]
+        }
+      }
+    },
+    "beef": {
+      "paid_people": 67,
+      "hypothetical_people": 37,
+      "brier": {
+        "historical": 0.53359055260238,
+        "qwen": 0.6435449744832357,
+        "historical_plus_qwen": 0.5276987659397872,
+        "historical_plus_uniform": 0.554366500154073
+      },
+      "qwen_mix_over": {
+        "historical": {
+          "gain": 0.005891786662592915,
+          "win_rate": 0.55,
+          "p05_p95": [
+            -0.01694766410456975,
+            0.04122138925226292
+          ]
+        },
+        "historical_plus_uniform": {
+          "gain": 0.026667734214285775,
+          "win_rate": 1.0,
+          "p05_p95": [
+            0.018839020818729908,
+            0.0360876197240157
+          ]
+        }
+      }
+    }
+  }
+}

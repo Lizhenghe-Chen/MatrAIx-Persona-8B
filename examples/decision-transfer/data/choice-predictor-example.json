@@ -1,0 +1,13 @@
+{
+  "feature_names": ["relative_price", "eco_label"],
+  "pilot": [
+    {"card": "A", "products": [[0, 0], [1, 1]], "choice": 2},
+    {"card": "A", "products": [[0, 0], [1, 1]], "choice": 1},
+    {"card": "B", "products": [[0, 1], [1, 0]], "choice": 1},
+    {"card": "B", "products": [[0, 1], [1, 0]], "choice": 0}
+  ],
+  "target": [
+    {"card": "C", "products": [[0, 0], [0.5, 1]]},
+    {"card": "D", "products": [[0, 0], [0.5, 1], [1.5, 1]]}
+  ]
+}

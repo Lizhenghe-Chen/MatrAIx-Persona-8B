@@ -1,0 +1,1284 @@
+{
+  "seed": 20261109,
+  "splits": 100,
+  "new_calls": 0,
+  "extra_price_penalty": 0.25,
+  "studies": {
+    "beer": {
+      "people": 1291,
+      "sources": {
+        "spain": -0.1922792791053159,
+        "italy": -0.10511540246229654,
+        "scotland": -0.3277934890368371
+      },
+      "price_prior": -0.20839605686814985,
+      "budgets": {
+        "10": {
+          "local": 0.6961678175574751,
+          "zero_center": 0.7033013391963273,
+          "source_center": 0.6979075971442222,
+          "source_price_only": 0.6813853132819664,
+          "qwen_price_only": 0.6791039824238589,
+          "local_price_only": 0.6916640085074761,
+          "uniform_products": 0.6916828861214213,
+          "qwen": 0.7324238152812762,
+          "purchase_conditional": {
+            "local": 0.518288640616082,
+            "zero_center": 0.5316466075644349,
+            "source_center": 0.5202239004184787,
+            "source_price_only": 0.47724858348520355,
+            "qwen_price_only": 0.47293222196617923,
+            "local_price_only": 0.502716429634436,
+            "uniform_products": 0.5
+          },
+          "source_center_over_local": {
+            "win_rate": 0.44,
+            "p05_p95": [
+              -0.01981996968700762,
+              0.015600008404909143
+            ]
+          },
+          "source_center_over_zero_center": {
+            "win_rate": 0.82,
+            "p05_p95": [
+              -0.003255199773949374,
+              0.01587947620702106
+            ]
+          },
+          "source_center_over_uniform_products": {
+            "win_rate": 0.54,
+            "p05_p95": [
+              -0.07113925455835995,
+              0.04541860537749179
+            ]
+          },
+          "source_price_only_over_local_price_only": {
+            "win_rate": 0.61,
+            "p05_p95": [
+              -0.012439675526724996,
+              0.05976430728802614
+            ]
+          },
+          "source_price_only_over_qwen_price_only": {
+            "win_rate": 0.38,
+            "p05_p95": [
+              -0.01578876246072262,
+              0.009422798344397118
+            ]
+          },
+          "source_price_only_over_uniform_products": {
+            "win_rate": 0.96,
+            "p05_p95": [
+              0.0008794499840363236,
+              0.019852413560924247
+            ]
+          }
+        },
+        "25": {
+          "local": 0.6626683241620186,
+          "zero_center": 0.668954641803225,
+          "source_center": 0.6630111761291385,
+          "source_price_only": 0.6679833515125267,
+          "qwen_price_only": 0.6655011336418027,
+          "local_price_only": 0.6749412640708787,
+          "uniform_products": 0.678385793987534,
+          "qwen": 0.7324238152812762,
+          "purchase_conditional": {
+            "local": 0.4685794318718267,
+            "zero_center": 0.4821585272077744,
+            "source_center": 0.46930230878071555,
+            "source_price_only": 0.47724858348520355,
+            "qwen_price_only": 0.47293222196617923,
+            "local_price_only": 0.4941910029506439,
+            "uniform_products": 0.5
+          },
+          "source_center_over_local": {
+            "win_rate": 0.44,
+            "p05_p95": [
+              -0.012733817747683096,
+              0.011793905431801708
+            ]
+          },
+          "source_center_over_zero_center": {
+            "win_rate": 0.84,
+            "p05_p95": [
+              -0.0015592194315234454,
+              0.01761680385569515
+            ]
+          },
+          "source_center_over_uniform_products": {
+            "win_rate": 0.78,
+            "p05_p95": [
+              -0.031586532823104835,
+              0.054707630765835374
+            ]
+          },
+          "source_price_only_over_local_price_only": {
+            "win_rate": 0.62,
+            "p05_p95": [
+              -0.008544229214940907,
+              0.03367358816422487
+            ]
+          },
+          "source_price_only_over_qwen_price_only": {
+            "win_rate": 0.4,
+            "p05_p95": [
+              -0.016323262130113335,
+              0.008640340567014222
+            ]
+          },
+          "source_price_only_over_uniform_products": {
+            "win_rate": 0.97,
+            "p05_p95": [
+              0.000761661045084383,
+              0.019213965431868082
+            ]
+          }
+        },
+        "50": {
+          "local": 0.6454796169417475,
+          "zero_center": 0.6517495032561846,
+          "source_center": 0.645697049584014,
+          "source_price_only": 0.6611965460828817,
+          "qwen_price_only": 0.6585830577072567,
+          "local_price_only": 0.6673974663790075,
+          "uniform_products": 0.6717079131205882,
+          "qwen": 0.7324238152812762,
+          "purchase_conditional": {
+            "local": 0.44582278490609645,
+            "zero_center": 0.45910240083042275,
+            "source_center": 0.44600221974094384,
+            "source_price_only": 0.47724858348520355,
+            "qwen_price_only": 0.47293222196617923,
+            "local_price_only": 0.49248244914161604,
+            "uniform_products": 0.5
+          },
+          "source_center_over_local": {
+            "win_rate": 0.41,
+            "p05_p95": [
+              -0.010091665938312493,
+              0.011493953565964398
+            ]
+          },
+          "source_center_over_zero_center": {
+            "win_rate": 0.91,
+            "p05_p95": [
+              -0.000958182490407855,
+              0.013667238900888817
+            ]
+          },
+          "source_center_over_uniform_products": {
+            "win_rate": 0.92,
+            "p05_p95": [
+              -0.005291543519050945,
+              0.05612472642361501
+            ]
+          },
+          "source_price_only_over_local_price_only": {
+            "win_rate": 0.59,
+            "p05_p95": [
+              -0.006922409691135966,
+              0.02773368229509942
+            ]
+          },
+          "source_price_only_over_qwen_price_only": {
+            "win_rate": 0.39,
+            "p05_p95": [
+              -0.016239865461691805,
+              0.007405539659686293
+            ]
+          },
+          "source_price_only_over_uniform_products": {
+            "win_rate": 0.97,
+            "p05_p95": [
+              0.0005958522722248726,
+              0.019378098664055415
+            ]
+          }
+        },
+        "100": {
+          "local": 0.6367693188528306,
+          "zero_center": 0.6445079180176465,
+          "source_center": 0.6379314800817807,
+          "source_price_only": 0.6588408124759911,
+          "qwen_price_only": 0.6562796352570933,
+          "local_price_only": 0.6642311317276262,
+          "uniform_products": 0.6693959914004403,
+          "qwen": 0.7324238152812762,
+          "purchase_conditional": {
+            "local": 0.4319227994389657,
+            "zero_center": 0.44824867745138874,
+            "source_center": 0.4341788808647335,
+            "source_price_only": 0.47724858348520355,
+            "qwen_price_only": 0.47293222196617923,
+            "local_price_only": 0.49026610154078376,
+            "uniform_products": 0.5
+          },
+          "source_center_over_local": {
+            "win_rate": 0.24,
+            "p05_p95": [
+              -0.007694830452846063,
+              0.00913842644043229
+            ]
+          },
+          "source_center_over_zero_center": {
+            "win_rate": 0.94,
+            "p05_p95": [
+              -0.00010480794017648231,
+              0.014493602766100191
+            ]
+          },
+          "source_center_over_uniform_products": {
+            "win_rate": 0.99,
+            "p05_p95": [
+              0.005687513418783374,
+              0.052373117801621065
+            ]
+          },
+          "source_price_only_over_local_price_only": {
+            "win_rate": 0.55,
+            "p05_p95": [
+              -0.006020113267445937,
+              0.028107245910918528
+            ]
+          },
+          "source_price_only_over_qwen_price_only": {
+            "win_rate": 0.39,
+            "p05_p95": [
+              -0.016273479634444737,
+              0.006823710010143175
+            ]
+          },
+          "source_price_only_over_uniform_products": {
+            "win_rate": 0.97,
+            "p05_p95": [
+              0.000873295748637043,
+              0.019968014264943934
+            ]
+          }
+        }
+      }
+    },
+    "german": {
+      "people": 401,
+      "sources": {
+        "beer": -0.4438145118489352,
+        "spain": -0.1922792791053159,
+        "italy": -0.10511540246229654,
+        "scotland": -0.3277934890368371
+      },
+      "price_prior": -0.2672506706133462,
+      "budgets": {
+        "10": {
+          "local": 0.5525467652460585,
+          "zero_center": 0.5472406291168862,
+          "source_center": 0.545338641608976,
+          "source_price_only": 0.6810454383071161,
+          "qwen_price_only": 0.6884266909444764,
+          "local_price_only": 0.6998714185510329,
+          "uniform_products": 0.7051419898972132,
+          "qwen": 0.6398546788482835,
+          "purchase_conditional": {
+            "local": 0.496054051745894,
+            "zero_center": 0.48866694814205225,
+            "source_center": 0.48721366183310194,
+            "source_price_only": 0.6392227260516525,
+            "qwen_price_only": 0.6477551834739534,
+            "local_price_only": 0.6610103601919737,
+            "uniform_products": 0.6666666666666669
+          },
+          "source_center_over_local": {
+            "win_rate": 0.72,
+            "p05_p95": [
+              -0.00239858065846848,
+              0.03477705992364536
+            ]
+          },
+          "source_center_over_zero_center": {
+            "win_rate": 0.64,
+            "p05_p95": [
+              -0.02106407719110056,
+              0.01754892316600997
+            ]
+          },
+          "source_center_over_uniform_products": {
+            "win_rate": 1.0,
+            "p05_p95": [
+              0.08245067222989357,
+              0.22986419351233253
+            ]
+          },
+          "source_price_only_over_local_price_only": {
+            "win_rate": 0.84,
+            "p05_p95": [
+              -0.0023411783649940287,
+              0.06707140082446265
+            ]
+          },
+          "source_price_only_over_qwen_price_only": {
+            "win_rate": 0.64,
+            "p05_p95": [
+              -0.008736133451127753,
+              0.03135982572323359
+            ]
+          },
+          "source_price_only_over_uniform_products": {
+            "win_rate": 0.84,
+            "p05_p95": [
+              -0.011565253392282076,
+              0.05641762082964843
+            ]
+          }
+        },
+        "25": {
+          "local": 0.5373213978000506,
+          "zero_center": 0.5342847311109279,
+          "source_center": 0.53219526644951,
+          "source_price_only": 0.6796166723791386,
+          "qwen_price_only": 0.686996295016916,
+          "local_price_only": 0.6974472707653581,
+          "uniform_products": 0.7036820710573188,
+          "qwen": 0.6398546788482835,
+          "purchase_conditional": {
+            "local": 0.47986996893116646,
+            "zero_center": 0.47572342338271617,
+            "source_center": 0.4738655723172113,
+            "source_price_only": 0.6392227260516525,
+            "qwen_price_only": 0.6477551834739534,
+            "local_price_only": 0.659238992371082,
+            "uniform_products": 0.6666666666666669
+          },
+          "source_center_over_local": {
+            "win_rate": 0.75,
+            "p05_p95": [
+              -0.0009592683593604212,
+              0.024621428545226174
+            ]
+          },
+          "source_center_over_zero_center": {
+            "win_rate": 0.7,
+            "p05_p95": [
+              -0.011086798185764567,
+              0.01529126866560236
+            ]
+          },
+          "source_center_over_uniform_products": {
+            "win_rate": 1.0,
+            "p05_p95": [
+              0.09979705557491475,
+              0.24171135004192146
+            ]
+          },
+          "source_price_only_over_local_price_only": {
+            "win_rate": 0.89,
+            "p05_p95": [
+              -0.0016967773812717358,
+              0.0674221438484755
+            ]
+          },
+          "source_price_only_over_qwen_price_only": {
+            "win_rate": 0.65,
+            "p05_p95": [
+              -0.00888932496600251,
+              0.031113241202405433
+            ]
+          },
+          "source_price_only_over_uniform_products": {
+            "win_rate": 0.84,
+            "p05_p95": [
+              -0.013933861828843824,
+              0.05843477062872665
+            ]
+          }
+        },
+        "50": {
+          "local": 0.5354541503581887,
+          "zero_center": 0.531115474318967,
+          "source_center": 0.5299902425987308,
+          "source_price_only": 0.6788913548647936,
+          "qwen_price_only": 0.6863128996957707,
+          "local_price_only": 0.695230321129316,
+          "uniform_products": 0.7030032903732973,
+          "qwen": 0.6398546788482835,
+          "purchase_conditional": {
+            "local": 0.4784114634123455,
+            "zero_center": 0.4730881015027133,
+            "source_center": 0.47221445632833114,
+            "source_price_only": 0.6392227260516525,
+            "qwen_price_only": 0.6477551834739534,
+            "local_price_only": 0.6573883044849499,
+            "uniform_products": 0.6666666666666669
+          },
+          "source_center_over_local": {
+            "win_rate": 0.76,
+            "p05_p95": [
+              -0.0007111454825638464,
+              0.02181905358201081
+            ]
+          },
+          "source_center_over_zero_center": {
+            "win_rate": 0.59,
+            "p05_p95": [
+              -0.0139179203481552,
+              0.011955335948046618
+            ]
+          },
+          "source_center_over_uniform_products": {
+            "win_rate": 0.99,
+            "p05_p95": [
+              0.10338116497426074,
+              0.23221634472498792
+            ]
+          },
+          "source_price_only_over_local_price_only": {
+            "win_rate": 0.91,
+            "p05_p95": [
+              -0.00026393973173615695,
+              0.053033631768104814
+            ]
+          },
+          "source_price_only_over_qwen_price_only": {
+            "win_rate": 0.64,
+            "p05_p95": [
+              -0.009299944960376215,
+              0.031098034474890575
+            ]
+          },
+          "source_price_only_over_uniform_products": {
+            "win_rate": 0.85,
+            "p05_p95": [
+              -0.013607905608507859,
+              0.05828974647081032
+            ]
+          }
+        },
+        "100": {
+          "local": 0.5324437811119805,
+          "zero_center": 0.5284853552924499,
+          "source_center": 0.526842813443748,
+          "source_price_only": 0.6784720405641452,
+          "qwen_price_only": 0.6859301290471085,
+          "local_price_only": 0.6952934602412694,
+          "uniform_products": 0.7026606676958549,
+          "qwen": 0.6398546788482835,
+          "purchase_conditional": {
+            "local": 0.47539436933819096,
+            "zero_center": 0.47063721237527695,
+            "source_center": 0.46912472164646657,
+            "source_price_only": 0.6392227260516525,
+            "qwen_price_only": 0.6477551834739534,
+            "local_price_only": 0.6578692482819325,
+            "uniform_products": 0.6666666666666669
+          },
+          "source_center_over_local": {
+            "win_rate": 0.76,
+            "p05_p95": [
+              -0.0004013754791317048,
+              0.02027049606493131
+            ]
+          },
+          "source_center_over_zero_center": {
+            "win_rate": 0.63,
+            "p05_p95": [
+              -0.013256710088892527,
+              0.012589045613310857
+            ]
+          },
+          "source_center_over_uniform_products": {
+            "win_rate": 1.0,
+            "p05_p95": [
+              0.11682931315619799,
+              0.23633265826268066
+            ]
+          },
+          "source_price_only_over_local_price_only": {
+            "win_rate": 0.93,
+            "p05_p95": [
+              -1.5931523767132012e-05,
+              0.06259104087511938
+            ]
+          },
+          "source_price_only_over_qwen_price_only": {
+            "win_rate": 0.63,
+            "p05_p95": [
+              -0.009557627141785513,
+              0.031210063384840253
+            ]
+          },
+          "source_price_only_over_uniform_products": {
+            "win_rate": 0.85,
+            "p05_p95": [
+              -0.012785322639777464,
+              0.059533995262187736
+            ]
+          }
+        }
+      }
+    },
+    "spain": {
+      "people": 175,
+      "sources": {
+        "beer": -0.4438145118489352,
+        "italy": -0.10511540246229654,
+        "scotland": -0.3277934890368371
+      },
+      "price_prior": -0.2922411344493563,
+      "budgets": {
+        "10": {
+          "local": 0.6289779010895283,
+          "zero_center": 0.6297937564932382,
+          "source_center": 0.6197646005968898,
+          "source_price_only": 0.5687916358203614,
+          "qwen_price_only": 0.6053292746762394,
+          "local_price_only": 0.5878176407980673,
+          "uniform_products": 0.63774901144641,
+          "qwen": 0.6192251111111111,
+          "purchase_conditional": {
+            "local": 0.4917049987420835,
+            "zero_center": 0.4913626766071226,
+            "source_center": 0.47825347395336687,
+            "source_price_only": 0.4067310080477688,
+            "qwen_price_only": 0.4532960123467928,
+            "local_price_only": 0.43179159655903293,
+            "uniform_products": 0.5
+          },
+          "source_center_over_local": {
+            "win_rate": 0.79,
+            "p05_p95": [
+              -0.0038917776917863412,
+              0.03931842062551705
+            ]
+          },
+          "source_center_over_zero_center": {
+            "win_rate": 0.63,
+            "p05_p95": [
+              -0.017646481817266402,
+              0.04887365983551939
+            ]
+          },
+          "source_center_over_uniform_products": {
+            "win_rate": 0.64,
+            "p05_p95": [
+              -0.08427458824506244,
+              0.10967277697396212
+            ]
+          },
+          "source_price_only_over_local_price_only": {
+            "win_rate": 0.78,
+            "p05_p95": [
+              -0.005063913008354276,
+              0.07804268229485205
+            ]
+          },
+          "source_price_only_over_qwen_price_only": {
+            "win_rate": 0.88,
+            "p05_p95": [
+              -0.008623855775874711,
+              0.09905134639177914
+            ]
+          },
+          "source_price_only_over_uniform_products": {
+            "win_rate": 1.0,
+            "p05_p95": [
+              0.02248309872262757,
+              0.11927400304803601
+            ]
+          }
+        },
+        "25": {
+          "local": 0.5730032313057264,
+          "zero_center": 0.5752440945030741,
+          "source_center": 0.5678846410284458,
+          "source_price_only": 0.5637752699310568,
+          "qwen_price_only": 0.600239905570101,
+          "local_price_only": 0.5760976620966405,
+          "uniform_products": 0.6330097760849491,
+          "qwen": 0.6192251111111111,
+          "purchase_conditional": {
+            "local": 0.41793153855069515,
+            "zero_center": 0.4200095951531268,
+            "source_center": 0.4110049686932981,
+            "source_price_only": 0.4067310080477688,
+            "qwen_price_only": 0.4532960123467928,
+            "local_price_only": 0.4219928799520342,
+            "uniform_products": 0.5
+          },
+          "source_center_over_local": {
+            "win_rate": 0.76,
+            "p05_p95": [
+              -0.0021758572083492578,
+              0.017982201053415407
+            ]
+          },
+          "source_center_over_zero_center": {
+            "win_rate": 0.72,
+            "p05_p95": [
+              -0.011390471918771416,
+              0.031165368579113006
+            ]
+          },
+          "source_center_over_uniform_products": {
+            "win_rate": 0.92,
+            "p05_p95": [
+              -0.016632183984889467,
+              0.13077551355955935
+            ]
+          },
+          "source_price_only_over_local_price_only": {
+            "win_rate": 0.73,
+            "p05_p95": [
+              -0.006388432247311615,
+              0.052732475122379496
+            ]
+          },
+          "source_price_only_over_qwen_price_only": {
+            "win_rate": 0.86,
+            "p05_p95": [
+              -0.007261702112108292,
+              0.10010816814603006
+            ]
+          },
+          "source_price_only_over_uniform_products": {
+            "win_rate": 1.0,
+            "p05_p95": [
+              0.021744640175227585,
+              0.12185410656900172
+            ]
+          }
+        },
+        "50": {
+          "local": 0.5488010841622432,
+          "zero_center": 0.551973219421396,
+          "source_center": 0.546123265903004,
+          "source_price_only": 0.5616583190126647,
+          "qwen_price_only": 0.5983820356742158,
+          "local_price_only": 0.571381675252681,
+          "uniform_products": 0.631245945353274,
+          "qwen": 0.6192251111111111,
+          "purchase_conditional": {
+            "local": 0.3871362758454858,
+            "zero_center": 0.390431459266088,
+            "source_center": 0.3839193850067777,
+            "source_price_only": 0.4067310080477688,
+            "qwen_price_only": 0.4532960123467928,
+            "local_price_only": 0.4177826102371442,
+            "uniform_products": 0.5
+          },
+          "source_center_over_local": {
+            "win_rate": 0.72,
+            "p05_p95": [
+              -0.001996958331876425,
+              0.011589143586175127
+            ]
+          },
+          "source_center_over_zero_center": {
+            "win_rate": 0.75,
+            "p05_p95": [
+              -0.009286740731667275,
+              0.02389183809486989
+            ]
+          },
+          "source_center_over_uniform_products": {
+            "win_rate": 0.99,
+            "p05_p95": [
+              0.0213610482993447,
+              0.13906407488977676
+            ]
+          },
+          "source_price_only_over_local_price_only": {
+            "win_rate": 0.7,
+            "p05_p95": [
+              -0.005276911424798591,
+              0.046638842828303446
+            ]
+          },
+          "source_price_only_over_qwen_price_only": {
+            "win_rate": 0.86,
+            "p05_p95": [
+              -0.005788308368194694,
+              0.10069720126799336
+            ]
+          },
+          "source_price_only_over_uniform_products": {
+            "win_rate": 1.0,
+            "p05_p95": [
+              0.025381905979324982,
+              0.12330998311411788
+            ]
+          }
+        },
+        "100": {
+          "local": 0.5375262359279017,
+          "zero_center": 0.5405289033678568,
+          "source_center": 0.5358876904110496,
+          "source_price_only": 0.5612365619669757,
+          "qwen_price_only": 0.5982116067880557,
+          "local_price_only": 0.5705037738889867,
+          "uniform_products": 0.630942656262072,
+          "qwen": 0.6192251111111111,
+          "purchase_conditional": {
+            "local": 0.37207798905932576,
+            "zero_center": 0.37509169512338936,
+            "source_center": 0.37043624602781505,
+            "source_price_only": 0.4067310080477688,
+            "qwen_price_only": 0.4532960123467928,
+            "local_price_only": 0.41668880102656486,
+            "uniform_products": 0.5
+          },
+          "source_center_over_local": {
+            "win_rate": 0.65,
+            "p05_p95": [
+              -0.002037609209069391,
+              0.007619140599264495
+            ]
+          },
+          "source_center_over_zero_center": {
+            "win_rate": 0.77,
+            "p05_p95": [
+              -0.007444580027710712,
+              0.02244449503244611
+            ]
+          },
+          "source_center_over_uniform_products": {
+            "win_rate": 1.0,
+            "p05_p95": [
+              0.049182695309247605,
+              0.14382853881646163
+            ]
+          },
+          "source_price_only_over_local_price_only": {
+            "win_rate": 0.68,
+            "p05_p95": [
+              -0.005815615757185017,
+              0.036928969970810924
+            ]
+          },
+          "source_price_only_over_qwen_price_only": {
+            "win_rate": 0.85,
+            "p05_p95": [
+              -0.005958756552396571,
+              0.10088474511023741
+            ]
+          },
+          "source_price_only_over_uniform_products": {
+            "win_rate": 1.0,
+            "p05_p95": [
+              0.02275360133458056,
+              0.12183046383859128
+            ]
+          }
+        }
+      }
+    },
+    "italy": {
+      "people": 170,
+      "sources": {
+        "beer": -0.4438145118489352,
+        "spain": -0.1922792791053159,
+        "scotland": -0.3277934890368371
+      },
+      "price_prior": -0.3212957599970294,
+      "budgets": {
+        "10": {
+          "local": 0.6616866690386023,
+          "zero_center": 0.6577946101223299,
+          "source_center": 0.6574885691115072,
+          "source_price_only": 0.5958351275412335,
+          "qwen_price_only": 0.5831289174979455,
+          "local_price_only": 0.5904896721904853,
+          "uniform_products": 0.5849958128933155,
+          "qwen": 0.6654000952380951,
+          "purchase_conditional": {
+            "local": 0.6001271153262987,
+            "zero_center": 0.5945454734121647,
+            "source_center": 0.5946446952194444,
+            "source_price_only": 0.5150369919426511,
+            "qwen_price_only": 0.49778035963353623,
+            "local_price_only": 0.5081669331975274,
+            "uniform_products": 0.5
+          },
+          "source_center_over_local": {
+            "win_rate": 0.65,
+            "p05_p95": [
+              -0.011159438988563352,
+              0.0261718646939914
+            ]
+          },
+          "source_center_over_zero_center": {
+            "win_rate": 0.56,
+            "p05_p95": [
+              -0.019737080472662094,
+              0.019748883825159196
+            ]
+          },
+          "source_center_over_uniform_products": {
+            "win_rate": 0.08,
+            "p05_p95": [
+              -0.1795731761125928,
+              0.00481927632028436
+            ]
+          },
+          "source_price_only_over_local_price_only": {
+            "win_rate": 0.32,
+            "p05_p95": [
+              -0.03481060318010619,
+              0.029881587423989935
+            ]
+          },
+          "source_price_only_over_qwen_price_only": {
+            "win_rate": 0.18,
+            "p05_p95": [
+              -0.045796074995397854,
+              0.012760537748187993
+            ]
+          },
+          "source_price_only_over_uniform_products": {
+            "win_rate": 0.3,
+            "p05_p95": [
+              -0.04738167454355612,
+              0.014895823919660257
+            ]
+          }
+        },
+        "25": {
+          "local": 0.6069354325624303,
+          "zero_center": 0.6044784779884258,
+          "source_center": 0.6051641856637014,
+          "source_price_only": 0.5929579769786746,
+          "qwen_price_only": 0.5802716094352777,
+          "local_price_only": 0.5833052510469156,
+          "uniform_products": 0.5821339120828387,
+          "qwen": 0.6654000952380951,
+          "purchase_conditional": {
+            "local": 0.5328444513280268,
+            "zero_center": 0.5295155887757567,
+            "source_center": 0.530960382424717,
+            "source_price_only": 0.5150369919426511,
+            "qwen_price_only": 0.49778035963353623,
+            "local_price_only": 0.5022232032800114,
+            "uniform_products": 0.5
+          },
+          "source_center_over_local": {
+            "win_rate": 0.52,
+            "p05_p95": [
+              -0.005644220859250237,
+              0.014777803066407866
+            ]
+          },
+          "source_center_over_zero_center": {
+            "win_rate": 0.47,
+            "p05_p95": [
+              -0.013120216397035556,
+              0.01481237987869072
+            ]
+          },
+          "source_center_over_uniform_products": {
+            "win_rate": 0.3,
+            "p05_p95": [
+              -0.08857510577161483,
+              0.022560582036371887
+            ]
+          },
+          "source_price_only_over_local_price_only": {
+            "win_rate": 0.17,
+            "p05_p95": [
+              -0.029971710796447126,
+              0.01254274169431251
+            ]
+          },
+          "source_price_only_over_qwen_price_only": {
+            "win_rate": 0.21,
+            "p05_p95": [
+              -0.04346270120702454,
+              0.011681871415161445
+            ]
+          },
+          "source_price_only_over_uniform_products": {
+            "win_rate": 0.3,
+            "p05_p95": [
+              -0.04490252588953653,
+              0.014133902922469462
+            ]
+          }
+        },
+        "50": {
+          "local": 0.5857737859381925,
+          "zero_center": 0.5849334910966849,
+          "source_center": 0.5851631149733819,
+          "source_price_only": 0.5919521111842785,
+          "qwen_price_only": 0.5789091628430288,
+          "local_price_only": 0.5796120897700326,
+          "uniform_products": 0.5807714062248731,
+          "qwen": 0.6654000952380951,
+          "purchase_conditional": {
+            "local": 0.5073857215147022,
+            "zero_center": 0.5061884498775586,
+            "source_center": 0.5069120406857752,
+            "source_price_only": 0.5150369919426511,
+            "qwen_price_only": 0.49778035963353623,
+            "local_price_only": 0.498794546950246,
+            "uniform_products": 0.5
+          },
+          "source_center_over_local": {
+            "win_rate": 0.41,
+            "p05_p95": [
+              -0.006769276076250536,
+              0.010687385865461335
+            ]
+          },
+          "source_center_over_zero_center": {
+            "win_rate": 0.45,
+            "p05_p95": [
+              -0.014452989952307788,
+              0.01620292212916221
+            ]
+          },
+          "source_center_over_uniform_products": {
+            "win_rate": 0.47,
+            "p05_p95": [
+              -0.041759225110185615,
+              0.029766331643410714
+            ]
+          },
+          "source_price_only_over_local_price_only": {
+            "win_rate": 0.13,
+            "p05_p95": [
+              -0.031042843235221922,
+              0.010708473815537444
+            ]
+          },
+          "source_price_only_over_qwen_price_only": {
+            "win_rate": 0.21,
+            "p05_p95": [
+              -0.044899225024850456,
+              0.010970048475792799
+            ]
+          },
+          "source_price_only_over_uniform_products": {
+            "win_rate": 0.29,
+            "p05_p95": [
+              -0.04574602664144768,
+              0.013726864748661036
+            ]
+          }
+        },
+        "100": {
+          "local": 0.5769204222201,
+          "zero_center": 0.5765803895058019,
+          "source_center": 0.576552847717394,
+          "source_price_only": 0.5914762244812146,
+          "qwen_price_only": 0.5783572198486698,
+          "local_price_only": 0.5787191162255102,
+          "uniform_products": 0.5802294106393234,
+          "qwen": 0.6654000952380951,
+          "purchase_conditional": {
+            "local": 0.4968221433435073,
+            "zero_center": 0.4962574651849651,
+            "source_center": 0.49670724353544393,
+            "source_price_only": 0.5150369919426511,
+            "qwen_price_only": 0.49778035963353623,
+            "local_price_only": 0.4983401619188341,
+            "uniform_products": 0.5
+          },
+          "source_center_over_local": {
+            "win_rate": 0.42,
+            "p05_p95": [
+              -0.00685316585758039,
+              0.012938718000284698
+            ]
+          },
+          "source_center_over_zero_center": {
+            "win_rate": 0.47,
+            "p05_p95": [
+              -0.012105492273590224,
+              0.013369381409932756
+            ]
+          },
+          "source_center_over_uniform_products": {
+            "win_rate": 0.64,
+            "p05_p95": [
+              -0.022835855176197465,
+              0.025978234097234088
+            ]
+          },
+          "source_price_only_over_local_price_only": {
+            "win_rate": 0.16,
+            "p05_p95": [
+              -0.03146784121970686,
+              0.009316133177798704
+            ]
+          },
+          "source_price_only_over_qwen_price_only": {
+            "win_rate": 0.2,
+            "p05_p95": [
+              -0.04386287700839274,
+              0.011230142054665108
+            ]
+          },
+          "source_price_only_over_uniform_products": {
+            "win_rate": 0.27,
+            "p05_p95": [
+              -0.04594606176673707,
+              0.0140818855903733
+            ]
+          }
+        }
+      }
+    },
+    "scotland": {
+      "people": 154,
+      "sources": {
+        "beer": -0.4438145118489352,
+        "spain": -0.1922792791053159,
+        "italy": -0.10511540246229654
+      },
+      "price_prior": -0.24706973113884922,
+      "budgets": {
+        "10": {
+          "local": 0.5662915825677912,
+          "zero_center": 0.5857500360348543,
+          "source_center": 0.5699113908036169,
+          "source_price_only": 0.5457447256339139,
+          "qwen_price_only": 0.5773571329696335,
+          "local_price_only": 0.5441582967257513,
+          "uniform_products": 0.6797876761603783,
+          "qwen": 0.5928943086419753,
+          "purchase_conditional": {
+            "local": 0.29677190805954495,
+            "zero_center": 0.3301525613948668,
+            "source_center": 0.3020916717540474,
+            "source_price_only": 0.26296875318534646,
+            "qwen_price_only": 0.31459369552898253,
+            "local_price_only": 0.26250220585336115,
+            "uniform_products": 0.5
+          },
+          "source_center_over_local": {
+            "win_rate": 0.37,
+            "p05_p95": [
+              -0.03207015474693805,
+              0.02063144604505946
+            ]
+          },
+          "source_center_over_zero_center": {
+            "win_rate": 0.87,
+            "p05_p95": [
+              -0.0026517739721437722,
+              0.05073295438513063
+            ]
+          },
+          "source_center_over_uniform_products": {
+            "win_rate": 0.96,
+            "p05_p95": [
+              0.03097675920110217,
+              0.18193525278955
+            ]
+          },
+          "source_price_only_over_local_price_only": {
+            "win_rate": 0.32,
+            "p05_p95": [
+              -0.02874860075109516,
+              0.038455386268146714
+            ]
+          },
+          "source_price_only_over_qwen_price_only": {
+            "win_rate": 1.0,
+            "p05_p95": [
+              0.00816934298327413,
+              0.058030674367781206
+            ]
+          },
+          "source_price_only_over_uniform_products": {
+            "win_rate": 1.0,
+            "p05_p95": [
+              0.0995638003376802,
+              0.17784249917181683
+            ]
+          }
+        },
+        "25": {
+          "local": 0.5423476332538736,
+          "zero_center": 0.5539147098335868,
+          "source_center": 0.5440938922655928,
+          "source_price_only": 0.5348647090906481,
+          "qwen_price_only": 0.5670271148622182,
+          "local_price_only": 0.529996744870128,
+          "uniform_products": 0.669816599551999,
+          "qwen": 0.5928943086419753,
+          "purchase_conditional": {
+            "local": 0.2744232523989553,
+            "zero_center": 0.29403891892468537,
+            "source_center": 0.27691015803895747,
+            "source_price_only": 0.26296875318534646,
+            "qwen_price_only": 0.31459369552898253,
+            "local_price_only": 0.2573376600627104,
+            "uniform_products": 0.5
+          },
+          "source_center_over_local": {
+            "win_rate": 0.27,
+            "p05_p95": [
+              -0.016236715280325748,
+              0.007966181368605534
+            ]
+          },
+          "source_center_over_zero_center": {
+            "win_rate": 0.93,
+            "p05_p95": [
+              -0.0024381508594521427,
+              0.03111779234641642
+            ]
+          },
+          "source_center_over_uniform_products": {
+            "win_rate": 1.0,
+            "p05_p95": [
+              0.06433812435725689,
+              0.17527039585307164
+            ]
+          },
+          "source_price_only_over_local_price_only": {
+            "win_rate": 0.23,
+            "p05_p95": [
+              -0.02362680401947894,
+              0.020897350360088492
+            ]
+          },
+          "source_price_only_over_qwen_price_only": {
+            "win_rate": 1.0,
+            "p05_p95": [
+              0.0077431954089560604,
+              0.05834252344560182
+            ]
+          },
+          "source_price_only_over_uniform_products": {
+            "win_rate": 1.0,
+            "p05_p95": [
+              0.09925135717365596,
+              0.17338837131518733
+            ]
+          }
+        },
+        "50": {
+          "local": 0.5337112010451712,
+          "zero_center": 0.5438393818195241,
+          "source_center": 0.5351905962335622,
+          "source_price_only": 0.5321110595146288,
+          "qwen_price_only": 0.5643191692893335,
+          "local_price_only": 0.5259937500312339,
+          "uniform_products": 0.6677383234220288,
+          "qwen": 0.5928943086419753,
+          "purchase_conditional": {
+            "local": 0.2615779463451686,
+            "zero_center": 0.27925190498839564,
+            "source_center": 0.2641812338757672,
+            "source_price_only": 0.26296875318534646,
+            "qwen_price_only": 0.31459369552898253,
+            "local_price_only": 0.25453536146960065,
+            "uniform_products": 0.5
+          },
+          "source_center_over_local": {
+            "win_rate": 0.24,
+            "p05_p95": [
+              -0.0063033802840281065,
+              0.003768436001237024
+            ]
+          },
+          "source_center_over_zero_center": {
+            "win_rate": 0.89,
+            "p05_p95": [
+              -0.0023014510528018674,
+              0.021770125884671438
+            ]
+          },
+          "source_center_over_uniform_products": {
+            "win_rate": 1.0,
+            "p05_p95": [
+              0.08423745215318747,
+              0.18112639457549043
+            ]
+          },
+          "source_price_only_over_local_price_only": {
+            "win_rate": 0.14,
+            "p05_p95": [
+              -0.01752077290870998,
+              0.008615355447095898
+            ]
+          },
+          "source_price_only_over_qwen_price_only": {
+            "win_rate": 1.0,
+            "p05_p95": [
+              0.007835288026573257,
+              0.05799690696702105
+            ]
+          },
+          "source_price_only_over_uniform_products": {
+            "win_rate": 1.0,
+            "p05_p95": [
+              0.10124382097931392,
+              0.17037813916456063
+            ]
+          }
+        },
+        "100": {
+          "local": 0.5300646352915879,
+          "zero_center": 0.5396770889119505,
+          "source_center": 0.5314138603914824,
+          "source_price_only": 0.5320750499586905,
+          "qwen_price_only": 0.5643900122891385,
+          "local_price_only": 0.5258364125164645,
+          "uniform_products": 0.6675015854347666,
+          "qwen": 0.5928943086419753,
+          "purchase_conditional": {
+            "local": 0.2564290717917313,
+            "zero_center": 0.27306560712178585,
+            "source_center": 0.2586587407415926,
+            "source_price_only": 0.26296875318534646,
+            "qwen_price_only": 0.31459369552898253,
+            "local_price_only": 0.25523377342625686,
+            "uniform_products": 0.5
+          },
+          "source_center_over_local": {
+            "win_rate": 0.19,
+            "p05_p95": [
+              -0.004835741817487482,
+              0.0014748733404455752
+            ]
+          },
+          "source_center_over_zero_center": {
+            "win_rate": 0.91,
+            "p05_p95": [
+              -0.0003323712841124204,
+              0.020256002120422868
+            ]
+          },
+          "source_center_over_uniform_products": {
+            "win_rate": 1.0,
+            "p05_p95": [
+              0.0893932300572639,
+              0.18481144351216247
+            ]
+          },
+          "source_price_only_over_local_price_only": {
+            "win_rate": 0.1,
+            "p05_p95": [
+              -0.016497741151199865,
+              0.004880273449248806
+            ]
+          },
+          "source_price_only_over_qwen_price_only": {
+            "win_rate": 1.0,
+            "p05_p95": [
+              0.007866368892952785,
+              0.05843378737166131
+            ]
+          },
+          "source_price_only_over_uniform_products": {
+            "win_rate": 1.0,
+            "p05_p95": [
+              0.10103182233262689,
+              0.17040939278191308
+            ]
+          }
+        }
+      }
+    }
+  }
+}

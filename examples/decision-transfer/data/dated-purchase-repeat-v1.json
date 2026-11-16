@@ -1,0 +1,203 @@
+{
+  "sources": {
+    "transactions.rds": "1fa0700033f1e5d9bb6b09e2be063d8d68474d346e95c50f2833e09d083e0007",
+    "products.rda": "a80c6df33623b4af296ae9f317a6647e369db7e8ce7e7baed0e1bf44b9d979e5"
+  },
+  "cutoff": "2017-10-01",
+  "seed": 20261109,
+  "new_model_calls": 0,
+  "categories": {
+    "YOGURT": {
+      "test_households": 170,
+      "training_examples": 2636,
+      "repeat_targets": 136,
+      "out_of_catalogue_targets": 2,
+      "excluded": {
+        "missing_visits": 293,
+        "mixed_or_unknown_label": 34
+      },
+      "fixed_repeat_probability": 0.8519150549867274,
+      "predicted_repeat_probability": {
+        "market": 0.40812220662296017,
+        "fixed_mix": 0.7040611033114801,
+        "fixed_repeat_rate": 0.8519150549867304,
+        "learned_repeat_rate": 0.8508244955494194
+      },
+      "repeat_event_brier": {
+        "market": 0.31484687656821403,
+        "fixed_mix": 0.16471714167454368,
+        "fixed_repeat_rate": 0.16269517293427507,
+        "learned_repeat_rate": 0.16216453993893193
+      },
+      "brier": {
+        "market": 0.6751891548684616,
+        "fixed_mix": 0.4468605043690426,
+        "fixed_repeat_rate": 0.4410914480503501,
+        "learned_repeat_rate": 0.44035781090804693
+      },
+      "repeat_brier": {
+        "market": 0.6646094204566324,
+        "fixed_mix": 0.2633588573230994,
+        "fixed_repeat_rate": 0.1610610674591449,
+        "learned_repeat_rate": 0.16143318371356655
+      },
+      "novel_brier": {
+        "market": 0.7175080925157784,
+        "fixed_mix": 1.1808670925528169,
+        "fixed_repeat_rate": 1.5612129704151718,
+        "learned_repeat_rate": 1.5560563196859691
+      },
+      "learned_gain": {
+        "market": {
+          "mean": 0.23483134396041458,
+          "ci95": [
+            0.14621932293764794,
+            0.32200678535833904
+          ]
+        },
+        "fixed_mix": {
+          "mean": 0.006502693460995823,
+          "ci95": [
+            -0.024648863513920205,
+            0.03766006460303585
+          ]
+        },
+        "fixed_repeat_rate": {
+          "mean": 0.0007336371423033933,
+          "ci95": [
+            9.892195457369685e-05,
+            0.0013618847713323249
+          ]
+        }
+      }
+    },
+    "FLUID MILK PRODUCTS": {
+      "test_households": 499,
+      "training_examples": 14424,
+      "repeat_targets": 477,
+      "out_of_catalogue_targets": 0,
+      "excluded": {
+        "missing_visits": 181,
+        "mixed_or_unknown_label": 72
+      },
+      "fixed_repeat_probability": 0.9696707105719238,
+      "predicted_repeat_probability": {
+        "market": 0.9327719334944748,
+        "fixed_mix": 0.9663859667472385,
+        "fixed_repeat_rate": 0.9696707105719164,
+        "learned_repeat_rate": 0.9696407591260364
+      },
+      "repeat_event_brier": {
+        "market": 0.044707920021706385,
+        "fixed_mix": 0.04113154663162018,
+        "fixed_repeat_rate": 0.04233371602800263,
+        "learned_repeat_rate": 0.04230108906464138
+      },
+      "brier": {
+        "market": 0.10873469849215107,
+        "fixed_mix": 0.09777659561482559,
+        "fixed_repeat_rate": 0.11142178835917323,
+        "learned_repeat_rate": 0.11139693475344478
+      },
+      "repeat_brier": {
+        "market": 0.03520956847928555,
+        "fixed_mix": 0.02291450969953647,
+        "fixed_repeat_rate": 0.03353138681251771,
+        "learned_repeat_rate": 0.03352943235822674
+      },
+      "novel_brier": {
+        "market": 1.702893199225622,
+        "fixed_mix": 1.7209227311417712,
+        "fixed_repeat_rate": 1.8002273128025637,
+        "learned_repeat_rate": 1.799705963958857
+      },
+      "learned_gain": {
+        "market": {
+          "mean": -0.002662236261294515,
+          "ci95": [
+            -0.02639487709066858,
+            0.0201804991238672
+          ]
+        },
+        "fixed_mix": {
+          "mean": -0.01362033913861962,
+          "ci95": [
+            -0.025852486855629003,
+            -0.0026232271622522157
+          ]
+        },
+        "fixed_repeat_rate": {
+          "mean": 2.485360572786202e-05,
+          "ci95": [
+            4.5651477091048685e-06,
+            5.227463906159699e-05
+          ]
+        }
+      }
+    },
+    "PASTA SAUCE": {
+      "test_households": 160,
+      "training_examples": 1550,
+      "repeat_targets": 116,
+      "out_of_catalogue_targets": 0,
+      "excluded": {
+        "missing_visits": 312,
+        "mixed_or_unknown_label": 30
+      },
+      "fixed_repeat_probability": 0.7372662798194713,
+      "predicted_repeat_probability": {
+        "market": 0.27885801170580726,
+        "fixed_mix": 0.639429005852903,
+        "fixed_repeat_rate": 0.737266279819469,
+        "learned_repeat_rate": 0.7378970821320838
+      },
+      "repeat_event_brier": {
+        "market": 0.4048629047201488,
+        "fixed_mix": 0.20414999414572862,
+        "fixed_repeat_rate": 0.19952546162061002,
+        "learned_repeat_rate": 0.19757939501105815
+      },
+      "brier": {
+        "market": 0.784095564592002,
+        "fixed_mix": 0.5486534465952861,
+        "fixed_repeat_rate": 0.5402718074760998,
+        "learned_repeat_rate": 0.5386517595055655
+      },
+      "repeat_brier": {
+        "market": 0.743748510709199,
+        "fixed_mix": 0.31518054062134415,
+        "fixed_repeat_rate": 0.24890635604234185,
+        "learned_repeat_rate": 0.24612155721063622
+      },
+      "novel_brier": {
+        "market": 0.8904650702830267,
+        "fixed_mix": 1.164172925981132,
+        "fixed_repeat_rate": 1.3084170885287336,
+        "learned_repeat_rate": 1.3098677473740141
+      },
+      "learned_gain": {
+        "market": {
+          "mean": 0.24544380508643676,
+          "ci95": [
+            0.16842533079432395,
+            0.3257336761273448
+          ]
+        },
+        "fixed_mix": {
+          "mean": 0.01000168708972049,
+          "ci95": [
+            -0.011437779710817888,
+            0.03154933624057679
+          ]
+        },
+        "fixed_repeat_rate": {
+          "mean": 0.0016200479705343524,
+          "ci95": [
+            -0.00037228050801244576,
+            0.003796252978842025
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,441 @@
+{
+  "sources": {
+    "transactions.rds": "1fa0700033f1e5d9bb6b09e2be063d8d68474d346e95c50f2833e09d083e0007",
+    "products.rda": "a80c6df33623b4af296ae9f317a6647e369db7e8ce7e7baed0e1bf44b9d979e5"
+  },
+  "seed": 20261109,
+  "new_calls": 0,
+  "transition_prior_count": 20,
+  "by_cutoff": {
+    "2017-10-01": {
+      "YOGURT": {
+        "test_households": 170,
+        "observed_switches": 34,
+        "training_switches": 390,
+        "excluded": {
+          "missing_visits": 293,
+          "mixed_or_unknown_label": 34
+        },
+        "switches_with_matching_transition": 34,
+        "fixed_repeat_probability": 0.8519150549867274,
+        "full_prediction": {
+          "brier": {
+            "market": 0.4410914480503501,
+            "global_switch": 0.44083875173111625,
+            "last_label_switch": 0.440452246056952
+          },
+          "comparisons": {
+            "global_switch_over_market": {
+              "mean": 0.000252696319234766,
+              "ci95": [
+                -0.00025774543895945324,
+                0.0007136706258016937
+              ]
+            },
+            "last_label_switch_over_market": {
+              "mean": 0.0006392019933986624,
+              "ci95": [
+                -0.00020495019809894737,
+                0.0014904476130947776
+              ]
+            },
+            "last_label_switch_over_global_switch": {
+              "mean": 0.00038650567416389635,
+              "ci95": [
+                -0.00022218773261214257,
+                0.0010217481970192727
+              ]
+            }
+          }
+        },
+        "conditional_switch_destination": {
+          "brier": {
+            "market": 0.555602300339056,
+            "global_switch": 0.5469402476756646,
+            "last_label_switch": 0.5410874674711246
+          },
+          "comparisons": {
+            "global_switch_over_market": {
+              "mean": 0.00866205266339121,
+              "ci95": [
+                -0.004454596338618601,
+                0.02214351357479072
+              ]
+            },
+            "last_label_switch_over_market": {
+              "mean": 0.014514832867931404,
+              "ci95": [
+                -0.012401295458536464,
+                0.03989030147243696
+              ]
+            },
+            "last_label_switch_over_global_switch": {
+              "mean": 0.005852780204540194,
+              "ci95": [
+                -0.013848478978336146,
+                0.024741759673339754
+              ]
+            }
+          }
+        }
+      },
+      "FLUID MILK PRODUCTS": {
+        "test_households": 499,
+        "observed_switches": 22,
+        "training_switches": 437,
+        "excluded": {
+          "missing_visits": 181,
+          "mixed_or_unknown_label": 72
+        },
+        "switches_with_matching_transition": 22,
+        "fixed_repeat_probability": 0.9696707105719238,
+        "full_prediction": {
+          "brier": {
+            "market": 0.11142178835917323,
+            "global_switch": 0.11156268602594614,
+            "last_label_switch": 0.11149780262849183
+          },
+          "comparisons": {
+            "global_switch_over_market": {
+              "mean": -0.00014089766677279205,
+              "ci95": [
+                -0.0004092913029382758,
+                5.3727667463969216e-05
+              ]
+            },
+            "last_label_switch_over_market": {
+              "mean": -7.601426931862107e-05,
+              "ci95": [
+                -0.00023978707468331337,
+                4.6135178483549085e-05
+              ]
+            },
+            "last_label_switch_over_global_switch": {
+              "mean": 6.4883397454171e-05,
+              "ci95": [
+                -1.468563123876275e-05,
+                0.00017807324723327666
+              ]
+            }
+          }
+        },
+        "conditional_switch_destination": {
+          "brier": {
+            "market": 0.8293299506381205,
+            "global_switch": 0.8668216688054549,
+            "last_label_switch": 0.8340236075050016
+          },
+          "comparisons": {
+            "global_switch_over_market": {
+              "mean": -0.037491718167334584,
+              "ci95": [
+                -0.13919983936516933,
+                0.04410193046006278
+              ]
+            },
+            "last_label_switch_over_market": {
+              "mean": -0.004693656866881254,
+              "ci95": [
+                -0.05832398149509079,
+                0.04532832651885129
+              ]
+            },
+            "last_label_switch_over_global_switch": {
+              "mean": 0.032798061300453325,
+              "ci95": [
+                -0.008864585144531516,
+                0.09380303940364934
+              ]
+            }
+          }
+        }
+      },
+      "PASTA SAUCE": {
+        "test_households": 160,
+        "observed_switches": 44,
+        "training_switches": 407,
+        "excluded": {
+          "missing_visits": 312,
+          "mixed_or_unknown_label": 30
+        },
+        "switches_with_matching_transition": 43,
+        "fixed_repeat_probability": 0.7372662798194713,
+        "full_prediction": {
+          "brier": {
+            "market": 0.5402718074760998,
+            "global_switch": 0.5411105580502331,
+            "last_label_switch": 0.5392681595102071
+          },
+          "comparisons": {
+            "global_switch_over_market": {
+              "mean": -0.0008387505741331667,
+              "ci95": [
+                -0.0051813331846698,
+                0.0029270713857481967
+              ]
+            },
+            "last_label_switch_over_market": {
+              "mean": 0.0010036479658926886,
+              "ci95": [
+                -0.002681561155182324,
+                0.004399568689767615
+              ]
+            },
+            "last_label_switch_over_global_switch": {
+              "mean": 0.0018423985400258553,
+              "ci95": [
+                -0.00018942901175058894,
+                0.004218985238399116
+              ]
+            }
+          }
+        },
+        "conditional_switch_destination": {
+          "brier": {
+            "market": 0.8108129688936131,
+            "global_switch": 0.8190270062353137,
+            "last_label_switch": 0.7909054867797359
+          },
+          "comparisons": {
+            "global_switch_over_market": {
+              "mean": -0.008214037341700562,
+              "ci95": [
+                -0.05948537751691396,
+                0.040579444253085004
+              ]
+            },
+            "last_label_switch_over_market": {
+              "mean": 0.01990748211387743,
+              "ci95": [
+                -0.02633835459206858,
+                0.06612431329203183
+              ]
+            },
+            "last_label_switch_over_global_switch": {
+              "mean": 0.02812151945557799,
+              "ci95": [
+                0.003416465657462888,
+                0.05292266875650379
+              ]
+            }
+          }
+        }
+      }
+    },
+    "2017-07-01": {
+      "YOGURT": {
+        "test_households": 168,
+        "observed_switches": 37,
+        "training_switches": 208,
+        "excluded": {
+          "missing_visits": 281,
+          "mixed_or_unknown_label": 48
+        },
+        "switches_with_matching_transition": 37,
+        "fixed_repeat_probability": 0.8686200378071833,
+        "full_prediction": {
+          "brier": {
+            "market": 0.4769173771319841,
+            "global_switch": 0.47721928109793665,
+            "last_label_switch": 0.4764658338675391
+          },
+          "comparisons": {
+            "global_switch_over_market": {
+              "mean": -0.00030190396595195353,
+              "ci95": [
+                -0.0013407143823151908,
+                0.0006367901189819753
+              ]
+            },
+            "last_label_switch_over_market": {
+              "mean": 0.0004515432644451589,
+              "ci95": [
+                -0.0007507794651768707,
+                0.0016368141984503485
+              ]
+            },
+            "last_label_switch_over_global_switch": {
+              "mean": 0.0007534472303971125,
+              "ci95": [
+                0.00013392232140298704,
+                0.0014323194234512233
+              ]
+            }
+          }
+        },
+        "conditional_switch_destination": {
+          "brier": {
+            "market": 0.4205761559905872,
+            "global_switch": 0.41235941734242876,
+            "last_label_switch": 0.403914070688003
+          },
+          "comparisons": {
+            "global_switch_over_market": {
+              "mean": 0.00821673864815831,
+              "ci95": [
+                -0.016474396523262,
+                0.032411056660129854
+              ]
+            },
+            "last_label_switch_over_market": {
+              "mean": 0.01666208530258407,
+              "ci95": [
+                -0.022684832518319233,
+                0.055358487846764816
+              ]
+            },
+            "last_label_switch_over_global_switch": {
+              "mean": 0.00844534665442576,
+              "ci95": [
+                -0.008517801479904687,
+                0.024270549386275774
+              ]
+            }
+          }
+        }
+      },
+      "FLUID MILK PRODUCTS": {
+        "test_households": 498,
+        "observed_switches": 12,
+        "training_switches": 277,
+        "excluded": {
+          "missing_visits": 190,
+          "mixed_or_unknown_label": 64
+        },
+        "switches_with_matching_transition": 11,
+        "fixed_repeat_probability": 0.9684443939049352,
+        "full_prediction": {
+          "brier": {
+            "market": 0.07340385967123689,
+            "global_switch": 0.07376601295981307,
+            "last_label_switch": 0.07369705477049644
+          },
+          "comparisons": {
+            "global_switch_over_market": {
+              "mean": -0.00036215328857661355,
+              "ci95": [
+                -0.000738939310246402,
+                -6.161456283358007e-05
+              ]
+            },
+            "last_label_switch_over_market": {
+              "mean": -0.0002931950992590448,
+              "ci95": [
+                -0.0006088138717082524,
+                -4.2783040210673096e-05
+              ]
+            },
+            "last_label_switch_over_global_switch": {
+              "mean": 6.895818931756881e-05,
+              "ci95": [
+                9.974989128881154e-07,
+                0.0001591669306717298
+              ]
+            }
+          }
+        },
+        "conditional_switch_destination": {
+          "brier": {
+            "market": 0.569066394661839,
+            "global_switch": 0.8171929992694446,
+            "last_label_switch": 0.73675816943159
+          },
+          "comparisons": {
+            "global_switch_over_market": {
+              "mean": -0.24812660460760594,
+              "ci95": [
+                -0.44280885616787413,
+                -0.06568795528835145
+              ]
+            },
+            "last_label_switch_over_market": {
+              "mean": -0.16769177476975106,
+              "ci95": [
+                -0.3223983981969913,
+                -0.02209626354941687
+              ]
+            },
+            "last_label_switch_over_global_switch": {
+              "mean": 0.08043482983785492,
+              "ci95": [
+                0.018906453322761203,
+                0.15716898604260643
+              ]
+            }
+          }
+        }
+      },
+      "PASTA SAUCE": {
+        "test_households": 167,
+        "observed_switches": 49,
+        "training_switches": 207,
+        "excluded": {
+          "missing_visits": 316,
+          "mixed_or_unknown_label": 19
+        },
+        "switches_with_matching_transition": 47,
+        "fixed_repeat_probability": 0.745398773006135,
+        "full_prediction": {
+          "brier": {
+            "market": 0.5885014727736176,
+            "global_switch": 0.5928926073838008,
+            "last_label_switch": 0.5908824929840464
+          },
+          "comparisons": {
+            "global_switch_over_market": {
+              "mean": -0.004391134610183685,
+              "ci95": [
+                -0.009209307576266595,
+                5.028992245980901e-05
+              ]
+            },
+            "last_label_switch_over_market": {
+              "mean": -0.002381020210428859,
+              "ci95": [
+                -0.005902572406924263,
+                0.001066078270350089
+              ]
+            },
+            "last_label_switch_over_global_switch": {
+              "mean": 0.0020101143997548264,
+              "ci95": [
+                4.375520626787323e-05,
+                0.004031236064982914
+              ]
+            }
+          }
+        },
+        "conditional_switch_destination": {
+          "brier": {
+            "market": 0.7340056272994966,
+            "global_switch": 0.7806741723895535,
+            "last_label_switch": 0.7588143064074805
+          },
+          "comparisons": {
+            "global_switch_over_market": {
+              "mean": -0.04666854509005663,
+              "ci95": [
+                -0.09833491077105615,
+                0.0036557213668109365
+              ]
+            },
+            "last_label_switch_over_market": {
+              "mean": -0.02480867910798397,
+              "ci95": [
+                -0.06617011580342072,
+                0.0189194179039245
+              ]
+            },
+            "last_label_switch_over_global_switch": {
+              "mean": 0.021859865982072655,
+              "ci95": [
+                -0.0005464233625740639,
+                0.04429384012423313
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "seed": 20261109,
+  "calls": 0,
+  "price_elasticity": -3.0,
+  "relative_gap": {
+    "dryer": 0.2,
+    "food": 0.1
+  },
+  "studies": {
+    "USA": {
+      "cards": 3,
+      "undefined_qwen_product_choices": 0,
+      "actual_refusal": 0.2654320987654321,
+      "qwen_refusal": 0.06728395061728396,
+      "qwen_over_price_when_bought": {
+        "people": 81,
+        "choices": 119,
+        "improvement": -0.1160686908864475,
+        "interval_95": [
+          -0.15688904392231132,
+          -0.06936419875479098
+        ]
+      },
+      "qwen_over_uniform_when_bought": {
+        "people": 81,
+        "choices": 119,
+        "improvement": -0.028008406934116284,
+        "interval_95": [
+          -0.0597800220052936,
+          0.0046060310421566645
+        ]
+      },
+      "qwen_over_uniform_refusal": {
+        "people": 106,
+        "choices": 162,
+        "improvement": -0.05938155136268342,
+        "interval_95": [
+          -0.14849554507337523,
+          0.024967701781970646
+        ]
+      },
+      "qwen_over_price_full": {
+        "people": 106,
+        "choices": 162,
+        "improvement": -0.11219324077046566,
+        "interval_95": [
+          -0.17598045964124248,
+          -0.05112144050948082
+        ]
+      },
+      "half_qwen_products_over_price_full": {
+        "people": 106,
+        "choices": 162,
+        "improvement": -0.02443742604393605,
+        "interval_95": [
+          -0.034724016495929884,
+          -0.013236308183603024
+        ]
+      }
+    },
+    "CAN": {
+      "cards": 6,
+      "undefined_qwen_product_choices": 0,
+      "actual_refusal": 0.22324159021406728,
+      "qwen_refusal": 0.04825688073394495,
+      "qwen_over_price_when_bought": {
+        "people": 141,
+        "choices": 254,
+        "improvement": 0.04869658492798934,
+        "interval_95": [
+          0.012535261638828728,
+          0.08427986219668501
+        ]
+      },
+      "qwen_over_uniform_when_bought": {
+        "people": 141,
+        "choices": 254,
+        "improvement": 0.18502757390812424,
+        "interval_95": [
+          0.1433427888848749,
+          0.22649944081622958
+        ]
+      },
+      "qwen_over_uniform_refusal": {
+        "people": 163,
+        "choices": 327,
+        "improvement": -0.007354055896387149,
+        "interval_95": [
+          -0.06711635650988404,
+          0.05027200068166327
+        ]
+      },
+      "qwen_over_price_full": {
+        "people": 163,
+        "choices": 327,
+        "improvement": 0.061637366364861605,
+        "interval_95": [
+          -0.0002956576215598478,
+          0.1254988984637068
+        ]
+      },
+      "half_qwen_products_over_price_full": {
+        "people": 163,
+        "choices": 327,
+        "improvement": 0.03294016152657763,
+        "interval_95": [
+          0.021203202608953243,
+          0.04563764924206517
+        ]
+      }
+    },
+    "beer": {
+      "cards": 4,
+      "undefined_qwen_product_choices": 0,
+      "actual_refusal": 0.423360496701591,
+      "qwen_refusal": 0.1171129220023283,
+      "qwen_over_price_when_bought": {
+        "people": 830,
+        "choices": 1486,
+        "improvement": -0.03224849811337962,
+        "interval_95": [
+          -0.04017521084646373,
+          -0.024340238245138833
+        ]
+      },
+      "qwen_over_uniform_when_bought": {
+        "people": 830,
+        "choices": 1486,
+        "improvement": -0.03224849811337962,
+        "interval_95": [
+          -0.04017521084646373,
+          -0.024340238245138833
+        ]
+      },
+      "qwen_over_uniform_refusal": {
+        "people": 1291,
+        "choices": 2577,
+        "improvement": -0.17817109906188136,
+        "interval_95": [
+          -0.200140427317325,
+          -0.15674655736294002
+        ]
+      },
+      "qwen_over_price_full": {
+        "people": 1291,
+        "choices": 2577,
+        "improvement": -0.1528559256390395,
+        "interval_95": [
+          -0.1694534985799122,
+          -0.13623401239349342
+        ]
+      },
+      "half_qwen_products_over_price_full": {
+        "people": 1291,
+        "choices": 2577,
+        "improvement": -0.004669218430193176,
+        "interval_95": [
+          -0.006064491694278008,
+          -0.0032710542004231306
+        ]
+      }
+    },
+    "italy": {
+      "cards": 8,
+      "undefined_qwen_product_choices": 21,
+      "actual_refusal": 0.1703056768558952,
+      "qwen_refusal": 0.3155458515283842,
+      "qwen_over_price_when_bought": {
+        "people": 103,
+        "choices": 190,
+        "improvement": -0.04838045471025727,
+        "interval_95": [
+          -0.08422482005296907,
+          -0.014080545195110561
+        ]
+      },
+      "qwen_over_uniform_when_bought": {
+        "people": 103,
+        "choices": 190,
+        "improvement": -0.04838045471025727,
+        "interval_95": [
+          -0.08422482005296907,
+          -0.014080545195110561
+        ]
+      },
+      "qwen_over_uniform_refusal": {
+        "people": 114,
+        "choices": 229,
+        "improvement": -0.1138392787524366,
+        "interval_95": [
+          -0.18136452729044827,
+          -0.04513818469785574
+        ]
+      },
+      "qwen_over_price_full": {
+        "people": 114,
+        "choices": 229,
+        "improvement": -0.1162146198830409,
+        "interval_95": [
+          -0.1665764692982456,
+          -0.061883940058479525
+        ]
+      },
+      "half_qwen_products_over_price_full": {
+        "people": 114,
+        "choices": 229,
+        "improvement": -0.01015638427111946,
+        "interval_95": [
+          -0.01902324594756054,
+          -0.0005986744410884606
+        ]
+      }
+    }
+  }
+}

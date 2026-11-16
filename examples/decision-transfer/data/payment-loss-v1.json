@@ -1,0 +1,260 @@
+{
+  "seed": 20261109,
+  "replays": 100,
+  "new_calls": 0,
+  "cards": 17,
+  "people": {
+    "incentivized": 67,
+    "hypothetical": 37
+  },
+  "loss_order": [
+    "buy_or_not",
+    "which_product_contribution",
+    "total"
+  ],
+  "budgets": {
+    "5": {
+      "losses": {
+        "qwen": [
+          0.6275789367649369,
+          0.9634415965636061,
+          1.5910205333285432
+        ],
+        "hypothetical_only": [
+          0.7038839635418723,
+          0.7830955664278076,
+          1.4869795299696802
+        ],
+        "hypothetical_products_local_rate": [
+          0.6568211796885296,
+          0.7830955664278076,
+          1.439916746116337
+        ],
+        "qwen_products_local_rate": [
+          0.6568211796885296,
+          0.9634415965636061,
+          1.6202627762521353
+        ],
+        "local_only": [
+          0.6568211796885296,
+          0.8322662540529968,
+          1.4890874337415254
+        ],
+        "half_local_half_hypothetical_products": [
+          0.6568211796885296,
+          0.7809818809393595,
+          1.4378030606278889
+        ],
+        "uniform_products_local_rate": [
+          0.6568211796885296,
+          1.2099737194590543,
+          1.866794899147584
+        ]
+      },
+      "paired": {
+        "hypothetical_products_local_rate_over_hypothetical_only": {
+          "mean_gain": 0.04706278385334299,
+          "win_rate": 0.76,
+          "p05_p95": [
+            -0.26412377955520416,
+            0.24907610063353253
+          ]
+        },
+        "hypothetical_products_local_rate_over_qwen_products_local_rate": {
+          "mean_gain": 0.18034603013579836,
+          "win_rate": 0.95,
+          "p05_p95": [
+            0.034903937947381454,
+            0.28518342819265147
+          ]
+        },
+        "hypothetical_products_local_rate_over_local_only": {
+          "mean_gain": 0.04917068762518904,
+          "win_rate": 0.63,
+          "p05_p95": [
+            -0.08294039739077642,
+            0.26419518533268127
+          ]
+        },
+        "half_local_half_hypothetical_products_over_local_only": {
+          "mean_gain": 0.05128437311363748,
+          "win_rate": 0.84,
+          "p05_p95": [
+            -0.012198612197851509,
+            0.19835423854651205
+          ]
+        },
+        "half_local_half_hypothetical_products_over_hypothetical_products_local_rate": {
+          "mean_gain": 0.0021136854884484467,
+          "win_rate": 0.58,
+          "p05_p95": [
+            -0.06552126441397778,
+            0.05952775713306114
+          ]
+        }
+      }
+    },
+    "10": {
+      "losses": {
+        "qwen": [
+          0.6275789367649369,
+          0.9634415965636061,
+          1.5910205333285432
+        ],
+        "hypothetical_only": [
+          0.7038839635418723,
+          0.7830955664278076,
+          1.4869795299696802
+        ],
+        "hypothetical_products_local_rate": [
+          0.6077359163220631,
+          0.7830955664278076,
+          1.3908314827498702
+        ],
+        "qwen_products_local_rate": [
+          0.6077359163220631,
+          0.9634415965636061,
+          1.5711775128856693
+        ],
+        "local_only": [
+          0.6077359163220631,
+          0.7905637609481941,
+          1.398299677270258
+        ],
+        "half_local_half_hypothetical_products": [
+          0.6077359163220631,
+          0.7731921014911943,
+          1.3809280178132577
+        ],
+        "uniform_products_local_rate": [
+          0.6077359163220631,
+          1.2099737194590543,
+          1.8177096357811169
+        ]
+      },
+      "paired": {
+        "hypothetical_products_local_rate_over_hypothetical_only": {
+          "mean_gain": 0.09614804721980928,
+          "win_rate": 0.91,
+          "p05_p95": [
+            -0.03796953970058631,
+            0.24941670364035873
+          ]
+        },
+        "hypothetical_products_local_rate_over_qwen_products_local_rate": {
+          "mean_gain": 0.18034603013579845,
+          "win_rate": 0.95,
+          "p05_p95": [
+            0.034903937947382106,
+            0.28518342819265147
+          ]
+        },
+        "hypothetical_products_local_rate_over_local_only": {
+          "mean_gain": 0.007468194520387055,
+          "win_rate": 0.49,
+          "p05_p95": [
+            -0.09128766603188318,
+            0.11888368473827363
+          ]
+        },
+        "half_local_half_hypothetical_products_over_local_only": {
+          "mean_gain": 0.017371659457000355,
+          "win_rate": 0.69,
+          "p05_p95": [
+            -0.02297182405108251,
+            0.08120411830057699
+          ]
+        },
+        "half_local_half_hypothetical_products_over_hypothetical_products_local_rate": {
+          "mean_gain": 0.0099034649366133,
+          "win_rate": 0.68,
+          "p05_p95": [
+            -0.03915375700517829,
+            0.052984427725077395
+          ]
+        }
+      }
+    },
+    "25": {
+      "losses": {
+        "qwen": [
+          0.6275789367649369,
+          0.9634415965636061,
+          1.5910205333285432
+        ],
+        "hypothetical_only": [
+          0.7038839635418723,
+          0.7830955664278076,
+          1.4869795299696802
+        ],
+        "hypothetical_products_local_rate": [
+          0.582911731062385,
+          0.7830955664278076,
+          1.3660072974901922
+        ],
+        "qwen_products_local_rate": [
+          0.582911731062385,
+          0.9634415965636061,
+          1.546353327625991
+        ],
+        "local_only": [
+          0.582911731062385,
+          0.7679436279453624,
+          1.3508553590077477
+        ],
+        "half_local_half_hypothetical_products": [
+          0.582911731062385,
+          0.7675047806192796,
+          1.3504165116816644
+        ],
+        "uniform_products_local_rate": [
+          0.582911731062385,
+          1.2099737194590543,
+          1.7928854505214398
+        ]
+      },
+      "paired": {
+        "hypothetical_products_local_rate_over_hypothetical_only": {
+          "mean_gain": 0.12097223247948737,
+          "win_rate": 0.96,
+          "p05_p95": [
+            0.013577797829140915,
+            0.24955942913896265
+          ]
+        },
+        "hypothetical_products_local_rate_over_qwen_products_local_rate": {
+          "mean_gain": 0.18034603013579836,
+          "win_rate": 0.95,
+          "p05_p95": [
+            0.034903937947381454,
+            0.2851834281926511
+          ]
+        },
+        "hypothetical_products_local_rate_over_local_only": {
+          "mean_gain": -0.015151938482445006,
+          "win_rate": 0.33,
+          "p05_p95": [
+            -0.0931017318252014,
+            0.052360135404999286
+          ]
+        },
+        "half_local_half_hypothetical_products_over_local_only": {
+          "mean_gain": 0.00043884732608333364,
+          "win_rate": 0.49,
+          "p05_p95": [
+            -0.03413395094444168,
+            0.03795130530813926
+          ]
+        },
+        "half_local_half_hypothetical_products_over_hypothetical_products_local_rate": {
+          "mean_gain": 0.01559078580852834,
+          "win_rate": 0.8,
+          "p05_p95": [
+            -0.015785854432195455,
+            0.059744170785011826
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "source_sha256": "c41dc0c7e3b6eef34ddd36a6813171dafda799ab4880476fc79a9db69248a53e",
+  "output": "ranking",
+  "seed": 20261109,
+  "valid_requests": 60,
+  "top_k": 5,
+  "identity": {
+    "model": "Qwen/Qwen3.8-27B",
+    "system_fingerprint": "vllm-0.29.0-tp2-f806618a"
+  },
+  "orders_with_any_target_in_candidates": 24,
+  "hits": {
+    "popular": 8,
+    "related": 15,
+    "qwen": 19
+  },
+  "orders_with_hit": {
+    "popular": 8,
+    "related": 13,
+    "qwen": 15
+  },
+  "qwen_minus_related_hits_per_order_interval_95": [
+    -0.05,
+    0.18374999999999772
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "new_qwen_calls": 32,
+  "reused_german_calls": 12,
+  "identities": {
+    "beer": [
+      {
+        "model": "Qwen/Qwen3.8-27B",
+        "system_fingerprint": "vllm-0.29.0-tp2-f806618a"
+      }
+    ],
+    "german": [
+      {
+        "model": "Qwen/Qwen3.8-27B",
+        "system_fingerprint": "vllm-0.29.0-tp2-f806618a"
+      }
+    ]
+  },
+  "studies": {
+    "beer": {
+      "people": 1291,
+      "choices": 10328,
+      "actual_no_buy_rate": 0.32261812548412083,
+      "source": "german",
+      "source_logit_offset": -0.7567388528925714,
+      "methods": {
+        "qwen": {
+          "no_buy_rate": 0.17256971340046476,
+          "full_brier": 0.7288741285824942,
+          "no_buy_brier": 0.5046591789310613
+        },
+        "source_rate": {
+          "no_buy_rate": 0.06047381546134664,
+          "full_brier": 0.7917158039499469,
+          "no_buy_brier": 0.5745106197410984,
+          "full_improvement_ci95": [
+            -0.06986479685081996,
+            -0.055475171106181505
+          ]
+        },
+        "source_logit_offset": {
+          "no_buy_rate": 0.09304196357745327,
+          "full_brier": 0.7695688529401667,
+          "no_buy_brier": 0.5509196797650115,
+          "full_improvement_ci95": [
+            -0.045630599369296525,
+            -0.035507312656864964
+          ]
+        }
+      }
+    },
+    "german": {
+      "people": 401,
+      "choices": 4812,
+      "actual_no_buy_rate": 0.060473815461346635,
+      "source": "beer",
+      "source_logit_offset": 0.9116060998539182,
+      "methods": {
+        "qwen": {
+          "no_buy_rate": 0.11666666666666667,
+          "full_brier": 0.6386180382377391,
+          "no_buy_brier": 0.13459684123025767
+        },
+        "source_rate": {
+          "no_buy_rate": 0.3226181254841208,
+          "full_brier": 0.7211451925055024,
+          "no_buy_brier": 0.2510727447644199,
+          "full_improvement_ci95": [
+            -0.09017710660145589,
+            -0.07485894983120213
+          ]
+        },
+        "source_logit_offset": {
+          "no_buy_rate": 0.2347987412085636,
+          "full_brier": 0.6962747184076629,
+          "no_buy_brier": 0.2092092093228416,
+          "full_improvement_ci95": [
+            -0.061504184377461225,
+            -0.05351754340891147
+          ]
+        },
+        "swiss_products_qwen": {
+          "no_buy_rate": 0.11666666666666667,
+          "full_brier": 0.5862009934502099,
+          "no_buy_brier": 0.13459684123025767,
+          "full_improvement_ci95": [
+            0.044905887471612824,
+            0.06041514837233679
+          ]
+        },
+        "swiss_products_source_rate": {
+          "no_buy_rate": 0.3226181254841208,
+          "full_brier": 0.6795324470172817,
+          "no_buy_brier": 0.2510727447644199,
+          "full_improvement_ci95": [
+            -0.050913893905854525,
+            -0.031807405815503564
+          ]
+        },
+        "swiss_products_source_logit_offset": {
+          "no_buy_rate": 0.2347987412085636,
+          "full_brier": 0.6491992992915008,
+          "no_buy_brier": 0.2092092093228416,
+          "full_improvement_ci95": [
+            -0.018135648915275616,
+            -0.0033249921642338324
+          ]
+        }
+      }
+    }
+  }
+}

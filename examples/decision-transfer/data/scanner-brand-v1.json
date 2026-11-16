@@ -1,0 +1,102 @@
+{
+  "seed": 20261109,
+  "predictions": 48,
+  "identity": {
+    "model": "Qwen/Qwen3.8-27B",
+    "system_fingerprint": "vllm-0.29.0-tp2-f806618a"
+  },
+  "studies": {
+    "Yogurt": {
+      "brand_order": [
+        "Yoplait",
+        "Dannon",
+        "Hiland",
+        "Weight Watchers"
+      ],
+      "households_total": 100,
+      "transactions_total": 2412,
+      "brand_shares_all": [
+        0.33913764510779437,
+        0.4021558872305141,
+        0.02943615257048093,
+        0.22927031509121062
+      ],
+      "pilot_households": 10,
+      "pilot_transactions": 271,
+      "evaluation_households": 24,
+      "brier": {
+        "uniform": 0.75,
+        "brand_frequencies": 0.7043399213728884,
+        "price_only": 0.75,
+        "attributes_without_price": 0.6479874677963683,
+        "attributes": 0.5708753276374723,
+        "qwen": 0.8424083333333332,
+        "attributes_qwen_half": 0.6056174618914829
+      },
+      "statistics_over_qwen_bootstrap_95": [
+        0.05902298352606254,
+        0.47173837251226053
+      ],
+      "mix_improvement_bootstrap_95": [
+        -0.13105203607344693,
+        0.0696038282367767
+      ],
+      "statistics_pilot_resampling": {
+        "runs": 100,
+        "mean_brier": 0.6116754625979859,
+        "brier_p05_p95": [
+          0.5166880199677509,
+          0.7465768110856917
+        ],
+        "runs_better_than_qwen": 99
+      },
+      "source_sha256": "522552372b313d537a7c8b9d7acf28a3d9a6ba8950c69a0dd78d86f0e164cf0d"
+    },
+    "Ketchup": {
+      "brand_order": [
+        "Heinz",
+        "Hunt\u2019s",
+        "Del Monte",
+        "Store brand"
+      ],
+      "households_total": 1956,
+      "transactions_total": 4956,
+      "brand_shares_all": [
+        0.5096852300242131,
+        0.20560936238902341,
+        0.0516545601291364,
+        0.2330508474576271
+      ],
+      "pilot_households": 10,
+      "pilot_transactions": 36,
+      "evaluation_households": 24,
+      "brier": {
+        "uniform": 0.75,
+        "brand_frequencies": 0.7174515235457064,
+        "price_only": 0.6932649900447497,
+        "attributes_without_price": 0.7165102477740318,
+        "attributes": 0.5180802840914792,
+        "qwen": 0.6905000000000001,
+        "attributes_qwen_half": 0.550560019168107
+      },
+      "statistics_over_qwen_bootstrap_95": [
+        -0.038204720358272805,
+        0.39625610490854063
+      ],
+      "mix_improvement_bootstrap_95": [
+        -0.128729236053479,
+        0.066144783524999
+      ],
+      "statistics_pilot_resampling": {
+        "runs": 100,
+        "mean_brier": 0.5813555815066952,
+        "brier_p05_p95": [
+          0.502142225036411,
+          0.7303425807768709
+        ],
+        "runs_better_than_qwen": 91
+      },
+      "source_sha256": "85f068c8e455a56fe06aa9e75affebd8c65de00edffe55dcfebb737441d9702c"
+    }
+  }
+}

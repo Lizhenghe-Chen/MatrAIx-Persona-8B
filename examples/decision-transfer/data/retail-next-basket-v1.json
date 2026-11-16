@@ -1,0 +1,70 @@
+{
+  "sha256": "c41dc0c7e3b6eef34ddd36a6813171dafda799ab4880476fc79a9db69248a53e",
+  "cutoff": "2011-09-01",
+  "seed": 20261109,
+  "source_rows": 541909,
+  "eligible_lines": 353985,
+  "timestamped_baskets": 16490,
+  "eligible_customers": 1263,
+  "donor_customers": 1723,
+  "donor_baskets": 2725,
+  "mean_target_size": 26.225653206650833,
+  "targets_with_new_items": 1161,
+  "mean_share_of_new_items": 0.6040035800674823,
+  "metrics": {
+    "population": {
+      "recall_at_10": 0.032404105248001934,
+      "new_item_recall_at_10": 0.014522861639854853
+    },
+    "own_repeat": {
+      "recall_at_10": 0.1361931566794119,
+      "new_item_recall_at_10": 0.0017302528246440694
+    },
+    "other_repeat": {
+      "recall_at_10": 0.012177322804387188,
+      "new_item_recall_at_10": 0.006429212759237822
+    },
+    "own_repeat_and_associations": {
+      "recall_at_10": 0.11582161754677779,
+      "new_item_recall_at_10": 0.020215560361969948
+    },
+    "unseen_popularity": {
+      "recall_at_10": 0.012020277881563235,
+      "new_item_recall_at_10": 0.019748774021280262
+    },
+    "unseen_associations": {
+      "recall_at_10": 0.018848135988856703,
+      "new_item_recall_at_10": 0.03550610369365299
+    }
+  },
+  "improvements": {
+    "own_repeat_over_population": {
+      "mean": 0.10378905143140996,
+      "interval_95": [
+        0.09170262989290015,
+        0.11516172842864406
+      ]
+    },
+    "own_repeat_over_other_repeat": {
+      "mean": 0.12401583387502471,
+      "interval_95": [
+        0.11176979331001079,
+        0.13540692685339495
+      ]
+    },
+    "own_repeat_and_associations_over_own_repeat": {
+      "mean": -0.02037153913263409,
+      "interval_95": [
+        -0.025712318937889073,
+        -0.014574622795734262
+      ]
+    },
+    "unseen_associations_over_unseen_popularity": {
+      "mean": 0.015757329672372727,
+      "interval_95": [
+        0.010725316524750571,
+        0.021242110910718235
+      ]
+    }
+  }
+}

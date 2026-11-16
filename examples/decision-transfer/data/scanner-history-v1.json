@@ -1,0 +1,177 @@
+{
+  "seed": 20261109,
+  "conditions": [
+    "none",
+    "own",
+    "other"
+  ],
+  "logical_requests": 144,
+  "unique_requests": 120,
+  "history_weight": 0.5,
+  "identity": {
+    "model": "Qwen/Qwen3.8-27B",
+    "system_fingerprint": "vllm-0.29.0-tp2-f806618a"
+  },
+  "studies": {
+    "Yogurt": {
+      "total_households": 100,
+      "eligible_households": 100,
+      "evaluation_households": 24,
+      "training_transactions": 152,
+      "histories_changed": 14,
+      "brier": {
+        "population": 0.610965873952887,
+        "own_history": 0.3586397368864902,
+        "other_history": 0.6503064035531567,
+        "history_only": 0.3333333333333333,
+        "qwen_none": 0.7318666666666666,
+        "qwen_own": 0.3368875,
+        "qwen_other": 0.7369395833333333
+      },
+      "accuracy": {
+        "population": 0.7083333333333334,
+        "own_history": 0.875,
+        "other_history": 0.5,
+        "history_only": 0.7083333333333334,
+        "qwen_none": 0.16666666666666666,
+        "qwen_own": 0.7083333333333334,
+        "qwen_other": 0.5
+      },
+      "improvements": {
+        "own_history_over_population": {
+          "mean": 0.2523261370663968,
+          "interval_95": [
+            0.12245262516163494,
+            0.3685531392308989
+          ]
+        },
+        "own_history_over_other_history": {
+          "mean": 0.2916666666666667,
+          "interval_95": [
+            0.10520833333333333,
+            0.48651920995670966
+          ]
+        },
+        "qwen_own_over_qwen_none": {
+          "mean": 0.39497916666666666,
+          "interval_95": [
+            0.17596807291666672,
+            0.5737404166666666
+          ]
+        },
+        "qwen_own_over_qwen_other": {
+          "mean": 0.40005208333333325,
+          "interval_95": [
+            0.15078229166666662,
+            0.6676791666666665
+          ]
+        },
+        "own_history_over_qwen_own": {
+          "mean": -0.021752236886490153,
+          "interval_95": [
+            -0.07078055195683647,
+            0.049941117415457884
+          ]
+        },
+        "history_only_over_qwen_own": {
+          "mean": 0.0035541666666666478,
+          "interval_95": [
+            -0.06642234375000004,
+            0.05932526041666666
+          ]
+        }
+      },
+      "source_sha256": "522552372b313d537a7c8b9d7acf28a3d9a6ba8950c69a0dd78d86f0e164cf0d",
+      "broader_statistical_replay": {
+        "households": 100,
+        "folds": 5,
+        "brier": {
+          "population": 0.6809256593408831,
+          "own_history": 0.3501207687904785,
+          "other_history": 0.7301207687904783,
+          "history_only": 0.305
+        }
+      }
+    },
+    "Ketchup": {
+      "total_households": 1956,
+      "eligible_households": 605,
+      "evaluation_households": 24,
+      "training_transactions": 22,
+      "histories_changed": 10,
+      "brier": {
+        "population": 0.6545138888888888,
+        "own_history": 0.47265625,
+        "other_history": 0.5768229166666666,
+        "history_only": 0.4791666666666667,
+        "qwen_none": 0.5750000000000001,
+        "qwen_own": 0.4393916666666667,
+        "qwen_other": 0.594325
+      },
+      "accuracy": {
+        "population": 0.625,
+        "own_history": 0.6666666666666666,
+        "other_history": 0.625,
+        "history_only": 0.6666666666666666,
+        "qwen_none": 0.625,
+        "qwen_own": 0.6666666666666666,
+        "qwen_other": 0.625
+      },
+      "improvements": {
+        "own_history_over_population": {
+          "mean": 0.18185763888888884,
+          "interval_95": [
+            0.06680772569444442,
+            0.2916992187499998
+          ]
+        },
+        "own_history_over_other_history": {
+          "mean": 0.10416666666666669,
+          "interval_95": [
+            -0.01564670138888888,
+            0.24306640624999998
+          ]
+        },
+        "qwen_own_over_qwen_none": {
+          "mean": 0.13560833333333336,
+          "interval_95": [
+            -0.006240624999999948,
+            0.2648379166666665
+          ]
+        },
+        "qwen_own_over_qwen_other": {
+          "mean": 0.1549333333333333,
+          "interval_95": [
+            0.02020833333333331,
+            0.31030770833333327
+          ]
+        },
+        "own_history_over_qwen_own": {
+          "mean": -0.03326458333333332,
+          "interval_95": [
+            -0.077258125,
+            0.012492430555555569
+          ]
+        },
+        "history_only_over_qwen_own": {
+          "mean": -0.039775,
+          "interval_95": [
+            -0.129455625,
+            0.041462916666666634
+          ]
+        }
+      },
+      "source_sha256": "85f068c8e455a56fe06aa9e75affebd8c65de00edffe55dcfebb737441d9702c",
+      "broader_statistical_replay": {
+        "households": 605,
+        "folds": 5,
+        "brier": {
+          "population": 0.6641149786660404,
+          "own_history": 0.5585050488764437,
+          "other_history": 0.7899100075541279,
+          "history_only": 0.6371900826446281
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "source_green_rate": 0.8766379034835411,
+  "targets": {
+    "clothes": {
+      "people": 2126,
+      "cards": 12756,
+      "conflict_people": 2101,
+      "conflict_cards": 6439,
+      "brier": {
+        "uniform": 0.5,
+        "source_green_rate": 0.21231862486616312,
+        "source_logit": 0.20521202608489084
+      },
+      "conflict_brier": {
+        "uniform": 0.5,
+        "source_green_rate": 0.30104444317850565,
+        "source_logit": 0.2859371082551492
+      },
+      "over_source_rate": {
+        "improvement": 0.007106598781271512,
+        "ci95_conditional_on_source": [
+          0.0027383804039349587,
+          0.011782460585966638
+        ]
+      },
+      "conflict_over_source_rate": {
+        "improvement": 0.015107334923352698,
+        "ci95_conditional_on_source": [
+          0.006032895770668061,
+          0.023947041574003364
+        ]
+      }
+    },
+    "food": {
+      "people": 2123,
+      "cards": 12738,
+      "conflict_people": 2085,
+      "conflict_cards": 6356,
+      "brier": {
+        "uniform": 0.5,
+        "source_green_rate": 0.24107924810049042,
+        "source_logit": 0.23304684708292175
+      },
+      "conflict_brier": {
+        "uniform": 0.5,
+        "source_green_rate": 0.3284108868039904,
+        "source_logit": 0.3077466183669263
+      },
+      "over_source_rate": {
+        "improvement": 0.008032401017568908,
+        "ci95_conditional_on_source": [
+          0.0034998403786428126,
+          0.012566010186872536
+        ]
+      },
+      "conflict_over_source_rate": {
+        "improvement": 0.02066426843705777,
+        "ci95_conditional_on_source": [
+          0.011316416910560997,
+          0.029804627702766665
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "people": 526,
+  "cards": 36,
+  "choices": 3156,
+  "actual_refusal": 0.08523447401774398,
+  "qwen_refusal": 0.11985424588086185,
+  "prior": 0.2510985542962578,
+  "source_hashes": {
+    "mmc1.pdf": "d30e6a24b273def98b848e0e2c5a62ca52f79f9247288588abc1e7df50d78e2d",
+    "mmc2.pdf": "65a69c1c1b0d22270e7a03697d5a6ffae778bee0c9c3ab76614b74fd6284c0c3",
+    "mmc4.csv": "81e3b970320db444c8c9b0957e10a9400a31a28f421fc58316aafa7d2679e39a",
+    "mmc5.pdf": "90bc8d546ccc7913d4eda0c14ded37368fe3410b434ded96921a0890f3b8331d"
+  },
+  "identity": {
+    "model": "Qwen/Qwen3.8-27B",
+    "system_fingerprint": "vllm-0.29.0-tp2-f806618a"
+  },
+  "budget_comparison": {
+    "0": {
+      "qwen": 0.08812839188290088,
+      "half": 0.25,
+      "historical": 0.10721351626526221,
+      "local": 0.25,
+      "historical_plus_local": 0.10721351626526221,
+      "historical_with_qwen_variation": 0.10876081712661337,
+      "comparison": {
+        "against": "qwen",
+        "candidate": "historical",
+        "p05_p95": [
+          -0.031001820636435546,
+          -0.007904802735845878
+        ],
+        "win_rate": 0.0
+      }
+    },
+    "5": {
+      "qwen": 0.08812839188290088,
+      "half": 0.25,
+      "historical": 0.10721351626526221,
+      "local": 0.09025929622237004,
+      "historical_plus_local": 0.09272445357574885,
+      "historical_with_qwen_variation": 0.10876081712661337,
+      "comparison": {
+        "against": "local",
+        "candidate": "historical_plus_local",
+        "p05_p95": [
+          -0.01123397178153416,
+          0.03651648201286261
+        ],
+        "win_rate": 0.16
+      }
+    },
+    "10": {
+      "qwen": 0.08812839188290088,
+      "half": 0.25,
+      "historical": 0.10721351626526221,
+      "local": 0.08527604112252997,
+      "historical_plus_local": 0.08795808374763704,
+      "historical_with_qwen_variation": 0.10876081712661337,
+      "comparison": {
+        "against": "local",
+        "candidate": "historical_plus_local",
+        "p05_p95": [
+          -0.006983527775447168,
+          0.004645881036695997
+        ],
+        "win_rate": 0.2
+      }
+    },
+    "25": {
+      "qwen": 0.08812839188290088,
+      "half": 0.25,
+      "historical": 0.10721351626526221,
+      "local": 0.08310719455238111,
+      "historical_plus_local": 0.08387640701327241,
+      "historical_with_qwen_variation": 0.10876081712661337,
+      "comparison": {
+        "against": "local",
+        "candidate": "historical_plus_local",
+        "p05_p95": [
+          -0.0035833173637928747,
+          0.0033822141836561954
+        ],
+        "win_rate": 0.38
+      }
+    }
+  }
+}

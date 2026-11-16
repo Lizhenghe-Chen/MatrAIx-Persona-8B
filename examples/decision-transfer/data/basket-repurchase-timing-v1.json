@@ -1,0 +1,109 @@
+{
+  "half_life_days": 30,
+  "min_population_intervals": 20,
+  "prior_intervals": 3,
+  "model_calls": 0,
+  "grocery_source": {
+    "transactions.rds": "1fa0700033f1e5d9bb6b09e2be063d8d68474d346e95c50f2833e09d083e0007",
+    "products.rda": "a80c6df33623b4af296ae9f317a6647e369db7e8ce7e7baed0e1bf44b9d979e5"
+  },
+  "retail_source": "c41dc0c7e3b6eef34ddd36a6813171dafda799ab4880476fc79a9db69248a53e",
+  "studies": {
+    "grocery": {
+      "test": 763,
+      "limit": 20,
+      "with_cycle_estimate": 762,
+      "training_households": 1683,
+      "products_with_population_interval": 2663,
+      "recall": {
+        "recent_two": {
+          "all": 0.13174941255912836,
+          "repeat_only": 0.2970054158733929
+        },
+        "all_frequency": {
+          "all": 0.21324581717031055,
+          "repeat_only": 0.48199479326903927
+        },
+        "time_decay": {
+          "all": 0.20716747415253836,
+          "repeat_only": 0.443050534581023
+        },
+        "time_decay_with_cycle": {
+          "all": 0.21155545549222704,
+          "repeat_only": 0.455340761977152
+        }
+      },
+      "comparisons": {
+        "decay_over_recent_two": {
+          "delta": 0.07541806159341007,
+          "interval_95": [
+            0.05752873614897845,
+            0.09280515584681293
+          ]
+        },
+        "cycle_over_decay": {
+          "delta": 0.004387981339688704,
+          "interval_95": [
+            -0.0020536745669016716,
+            0.011262425112817312
+          ]
+        },
+        "frequency_over_recent_two": {
+          "delta": 0.08149640461118234,
+          "interval_95": [
+            0.0638849601389097,
+            0.0990819284861983
+          ]
+        }
+      }
+    },
+    "retail": {
+      "test": 1263,
+      "limit": 10,
+      "with_cycle_estimate": 1220,
+      "training_households": 1723,
+      "products_with_population_interval": 22,
+      "recall": {
+        "recent_two": {
+          "all": 0.1361931566794119,
+          "repeat_only": 0.3094092198790305
+        },
+        "all_frequency": {
+          "all": 0.15849620320993074,
+          "repeat_only": 0.3653162241138832
+        },
+        "time_decay": {
+          "all": 0.15340382625901958,
+          "repeat_only": 0.3473416249107485
+        },
+        "time_decay_with_cycle": {
+          "all": 0.15797045679689503,
+          "repeat_only": 0.3641156529836241
+        }
+      },
+      "comparisons": {
+        "decay_over_recent_two": {
+          "delta": 0.017210669579607558,
+          "interval_95": [
+            0.012067950868412733,
+            0.02290398999140653
+          ]
+        },
+        "cycle_over_decay": {
+          "delta": 0.004566630537875401,
+          "interval_95": [
+            0.0020078413020771565,
+            0.007194974031958911
+          ]
+        },
+        "frequency_over_recent_two": {
+          "delta": 0.02230304653051881,
+          "interval_95": [
+            0.016205948853392892,
+            0.028330274609551596
+          ]
+        }
+      }
+    }
+  }
+}

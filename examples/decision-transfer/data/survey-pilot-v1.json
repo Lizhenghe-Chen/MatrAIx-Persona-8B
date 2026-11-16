@@ -1,0 +1,281 @@
+{
+  "seed": 20261109,
+  "calls": 7,
+  "eligible_people": 12731,
+  "identity": {
+    "model": "Qwen/Qwen3.8-27B",
+    "system_fingerprint": "vllm-0.29.0-tp2-f806618a"
+  },
+  "items": {
+    "INF3_a": {
+      "actual_yes": 0.6206485534558884,
+      "qwen_yes": 0.58
+    },
+    "INF3_b": {
+      "actual_yes": 0.5964550195849685,
+      "qwen_yes": 0.45
+    },
+    "INF3_c": {
+      "actual_yes": 0.41077984093654135,
+      "qwen_yes": 0.15
+    },
+    "INF3_d": {
+      "actual_yes": 0.15794044358890275,
+      "qwen_yes": 0.15
+    },
+    "INF3_e": {
+      "actual_yes": 0.4549881045153872,
+      "qwen_yes": 0.28
+    },
+    "INF3_f": {
+      "actual_yes": 0.17032446081588706,
+      "qwen_yes": 0.25
+    },
+    "INF5": {
+      "actual_yes": 0.176281914508003,
+      "qwen_yes": 0.35
+    }
+  },
+  "budgets": {
+    "10": {
+      "same_questions": {
+        "qwen": {
+          "brier": 0.44114637324585604,
+          "distribution_error_pp": 12.632905494954883,
+          "relative_brier_improvement": 0.0,
+          "split_delta_p05_p95": [
+            0.0,
+            0.0
+          ]
+        },
+        "pilot": {
+          "brier": 0.43713667203034895,
+          "distribution_error_pp": 11.369313038717571,
+          "relative_brier_improvement": 0.009089276164744774,
+          "split_delta_p05_p95": [
+            -0.06545042927473078,
+            0.036427204372804965
+          ]
+        },
+        "pilot_with_qwen_prior": {
+          "brier": 0.4219453568739952,
+          "distribution_error_pp": 9.193407535956915,
+          "relative_brier_improvement": 0.04352527309832353,
+          "split_delta_p05_p95": [
+            -0.011693165817370232,
+            0.03810199015656954
+          ]
+        }
+      },
+      "heldout_questions": {
+        "qwen": {
+          "brier": 0.44114637324585604,
+          "distribution_error_pp": 12.632905494954883,
+          "relative_brier_improvement": 0.0,
+          "split_delta_p05_p95": [
+            0.0,
+            0.0
+          ]
+        },
+        "anchor_mean": {
+          "brier": 0.5182926845745138,
+          "distribution_error_pp": 21.228016078045037,
+          "relative_brier_improvement": -0.1748769025596482,
+          "split_delta_p05_p95": [
+            -0.22785033779559863,
+            0.012334016956300368
+          ]
+        },
+        "qwen_shared_shift": {
+          "brier": 0.4771415553514052,
+          "distribution_error_pp": 16.404847635085883,
+          "relative_brier_improvement": -0.08159464587842971,
+          "split_delta_p05_p95": [
+            -0.16292075647524312,
+            0.012273621536502669
+          ]
+        }
+      }
+    },
+    "25": {
+      "same_questions": {
+        "qwen": {
+          "brier": 0.4411338792759041,
+          "distribution_error_pp": 12.630836184313829,
+          "relative_brier_improvement": 0.0,
+          "split_delta_p05_p95": [
+            0.0,
+            0.0
+          ]
+        },
+        "pilot": {
+          "brier": 0.4132499418047743,
+          "distribution_error_pp": 7.322393988218442,
+          "relative_brier_improvement": 0.06320969388454058,
+          "split_delta_p05_p95": [
+            0.004542665256419495,
+            0.040999055459192656
+          ]
+        },
+        "pilot_with_qwen_prior": {
+          "brier": 0.4086930977996986,
+          "distribution_error_pp": 6.306868979960564,
+          "relative_brier_improvement": 0.07353953754233328,
+          "split_delta_p05_p95": [
+            0.014806406018549914,
+            0.04194023452458376
+          ]
+        }
+      },
+      "heldout_questions": {
+        "qwen": {
+          "brier": 0.44113387927590403,
+          "distribution_error_pp": 12.630836184313829,
+          "relative_brier_improvement": 0.0,
+          "split_delta_p05_p95": [
+            0.0,
+            0.0
+          ]
+        },
+        "anchor_mean": {
+          "brier": 0.5126768502239198,
+          "distribution_error_pp": 21.140602059808163,
+          "relative_brier_improvement": -0.16217972436270253,
+          "split_delta_p05_p95": [
+            -0.2159710554017702,
+            0.008718228729538396
+          ]
+        },
+        "qwen_shared_shift": {
+          "brier": 0.4699261466912603,
+          "distribution_error_pp": 15.820268396261824,
+          "relative_brier_improvement": -0.06526877387567027,
+          "split_delta_p05_p95": [
+            -0.1338447062078169,
+            0.011443122506072356
+          ]
+        }
+      }
+    },
+    "50": {
+      "same_questions": {
+        "qwen": {
+          "brier": 0.4411512189111231,
+          "distribution_error_pp": 12.63139063585056,
+          "relative_brier_improvement": 0.0,
+          "split_delta_p05_p95": [
+            0.0,
+            0.0
+          ]
+        },
+        "pilot": {
+          "brier": 0.4053783714897172,
+          "distribution_error_pp": 5.489601583993389,
+          "relative_brier_improvement": 0.0810897621675002,
+          "split_delta_p05_p95": [
+            0.02380129573996916,
+            0.042344456414405526
+          ]
+        },
+        "pilot_with_qwen_prior": {
+          "brier": 0.40404731149755035,
+          "distribution_error_pp": 5.041450700378933,
+          "relative_brier_improvement": 0.08410700418136621,
+          "split_delta_p05_p95": [
+            0.027379968990463178,
+            0.0429481236638349
+          ]
+        }
+      },
+      "heldout_questions": {
+        "qwen": {
+          "brier": 0.4411512189111231,
+          "distribution_error_pp": 12.631390635850556,
+          "relative_brier_improvement": 0.0,
+          "split_delta_p05_p95": [
+            0.0,
+            0.0
+          ]
+        },
+        "anchor_mean": {
+          "brier": 0.5100326014504027,
+          "distribution_error_pp": 21.0239604146028,
+          "relative_brier_improvement": -0.15614007076597683,
+          "split_delta_p05_p95": [
+            -0.20000003287278015,
+            0.006633578687130034
+          ]
+        },
+        "qwen_shared_shift": {
+          "brier": 0.46577880850600223,
+          "distribution_error_pp": 15.462989976076082,
+          "relative_brier_improvement": -0.05582573171999046,
+          "split_delta_p05_p95": [
+            -0.1115103384349503,
+            0.01020948771431894
+          ]
+        }
+      }
+    },
+    "100": {
+      "same_questions": {
+        "qwen": {
+          "brier": 0.4411294627385341,
+          "distribution_error_pp": 12.62851360246056,
+          "relative_brier_improvement": 0.0,
+          "split_delta_p05_p95": [
+            0.0,
+            0.0
+          ]
+        },
+        "pilot": {
+          "brier": 0.4006072985196317,
+          "distribution_error_pp": 3.8678540576193208,
+          "relative_brier_improvement": 0.09186002668545527,
+          "split_delta_p05_p95": [
+            0.03462303090233256,
+            0.04429987742945931
+          ]
+        },
+        "pilot_with_qwen_prior": {
+          "brier": 0.4000325291757408,
+          "distribution_error_pp": 3.5813847577387885,
+          "relative_brier_improvement": 0.09316297602899427,
+          "split_delta_p05_p95": [
+            0.035687844243303186,
+            0.04418935914244708
+          ]
+        }
+      },
+      "heldout_questions": {
+        "qwen": {
+          "brier": 0.441129462738534,
+          "distribution_error_pp": 12.62851360246056,
+          "relative_brier_improvement": 0.0,
+          "split_delta_p05_p95": [
+            0.0,
+            0.0
+          ]
+        },
+        "anchor_mean": {
+          "brier": 0.5077793093069997,
+          "distribution_error_pp": 20.948573597361335,
+          "relative_brier_improvement": -0.15108908426724216,
+          "split_delta_p05_p95": [
+            -0.1937340593720887,
+            0.003124189568253116
+          ]
+        },
+        "qwen_shared_shift": {
+          "brier": 0.46396178460318555,
+          "distribution_error_pp": 15.298338025259403,
+          "relative_brier_improvement": -0.051758777849269924,
+          "split_delta_p05_p95": [
+            -0.10249341111868007,
+            0.009322459041479717
+          ]
+        }
+      }
+    }
+  }
+}

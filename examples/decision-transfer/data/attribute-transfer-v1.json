@@ -1,0 +1,64 @@
+{
+  "source_people": 2086,
+  "target_pools": {
+    "clothes": 2126,
+    "food": 2123
+  },
+  "source_coefficients_cheaper_greener": [
+    0.27875765563780747,
+    1.0893611246242179
+  ],
+  "requests": 48,
+  "failed": 0,
+  "missing": 0,
+  "targets": {
+    "clothes": {
+      "complete_people": 24,
+      "brier": {
+        "uniform": 0.5,
+        "qwen": 0.29133749999999997,
+        "source_logit": 0.20388391576189127,
+        "equal_mix": 0.23405276654012988
+      },
+      "mix_improvement_over_logit": -0.030168850778238623,
+      "ci95": [
+        -0.043881726406113826,
+        -0.01541303763022249
+      ],
+      "conflict_people": 23,
+      "conflict_brier": {
+        "uniform": 0.5,
+        "qwen": 0.38224637681159424,
+        "source_logit": 0.2330415397619977,
+        "equal_mix": 0.28863247365257416
+      }
+    },
+    "food": {
+      "complete_people": 24,
+      "brier": {
+        "uniform": 0.5,
+        "qwen": 0.31090833333333334,
+        "source_logit": 0.27722251485323174,
+        "equal_mix": 0.2772772904491287
+      },
+      "mix_improvement_over_logit": -5.4775595896864225e-05,
+      "ci95": [
+        -0.02902286862919632,
+        0.03429748979561602
+      ],
+      "conflict_people": 23,
+      "conflict_brier": {
+        "uniform": 0.5,
+        "qwen": 0.45765217391304347,
+        "source_logit": 0.4528548568011696,
+        "equal_mix": 0.4325373513051722
+      }
+    }
+  },
+  "model_identity": [
+    {
+      "model": "Qwen/Qwen3.8-27B",
+      "system_fingerprint": "vllm-0.29.0-tp2-f806618a"
+    }
+  ]
+}

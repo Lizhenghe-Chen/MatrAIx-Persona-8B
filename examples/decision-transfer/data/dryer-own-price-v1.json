@@ -1,0 +1,96 @@
+{
+  "seed": 20261109,
+  "requests": 96,
+  "unique_requests": 96,
+  "valid": 96,
+  "identity": {
+    "model": "Qwen/Qwen3.8-27B",
+    "system_fingerprint": "vllm-0.29.0-tp2-f806618a"
+  },
+  "price_step": 200,
+  "fixed_slope": -0.6931471805599453,
+  "studies": {
+    "USA": {
+      "cards": 16,
+      "people": 208,
+      "source_cohort_people": 208,
+      "rise_in_own_share": 11,
+      "positive_odds_slope": 11,
+      "distribution_tv": {
+        "direct_qwen": 0.24240384615384614,
+        "anchor": 0.38204670329670326,
+        "learned": 0.417184613362378,
+        "constrained": 0.34768300001190294,
+        "fixed": 0.2358606812506459,
+        "price_only": 0.2172910411068306
+      },
+      "intervals_95": {
+        "constrained_over_direct_qwen": [
+          -0.21294954186019066,
+          0.012836605170848829
+        ],
+        "constrained_over_learned": [
+          0.014997375727429405,
+          0.14050748186466658
+        ],
+        "fixed_over_constrained": [
+          0.04675440196882477,
+          0.17261081415522195
+        ],
+        "fixed_over_direct_qwen": [
+          -0.08145740778307506,
+          0.10899019316348496
+        ],
+        "fixed_over_price_only": [
+          -0.08618376027310427,
+          0.05362438505194969
+        ],
+        "direct_qwen_over_price_only": [
+          -0.14379134640031022,
+          0.07892921689796689
+        ]
+      }
+    },
+    "CAN": {
+      "cards": 16,
+      "people": 214,
+      "source_cohort_people": 214,
+      "rise_in_own_share": 8,
+      "positive_odds_slope": 12,
+      "distribution_tv": {
+        "direct_qwen": 0.2249770994256288,
+        "anchor": 0.31326265102000395,
+        "learned": 0.42632329139400305,
+        "constrained": 0.2816647051651383,
+        "fixed": 0.21252532512721398,
+        "price_only": 0.2685773827608192
+      },
+      "intervals_95": {
+        "constrained_over_direct_qwen": [
+          -0.1509469288116541,
+          0.03894123380063713
+        ],
+        "constrained_over_learned": [
+          0.043430526786922705,
+          0.2696682682965062
+        ],
+        "fixed_over_constrained": [
+          0.013250687428341937,
+          0.123538474281772
+        ],
+        "fixed_over_direct_qwen": [
+          -0.06426977473793319,
+          0.08612390415352889
+        ],
+        "fixed_over_price_only": [
+          -0.021133709431763806,
+          0.14200346049116264
+        ],
+        "direct_qwen_over_price_only": [
+          -0.03706146934475109,
+          0.12568678184632126
+        ]
+      }
+    }
+  }
+}

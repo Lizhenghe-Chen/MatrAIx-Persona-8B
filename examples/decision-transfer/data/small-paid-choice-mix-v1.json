@@ -1,0 +1,242 @@
+{
+  "seed": 20261109,
+  "replays": 100,
+  "new_calls": 0,
+  "qwen_weight": 0.25,
+  "studies": {
+    "orange": {
+      "5": {
+        "paid_people": 104,
+        "hypothetical_people": 5,
+        "mean_training_choices": 28.43,
+        "brier": {
+          "historical": 0.5623611447954686,
+          "qwen": 0.5845134058986649,
+          "historical_plus_qwen": 0.5505882915069324,
+          "historical_plus_uniform": 0.561061627870264
+        },
+        "qwen_mix_over": {
+          "historical": {
+            "gain": 0.01177285328853609,
+            "win_rate": 0.7,
+            "p05_p95": [
+              -0.005840496666977635,
+              0.05009657189795764
+            ]
+          },
+          "historical_plus_uniform": {
+            "gain": 0.010473336363331516,
+            "win_rate": 0.83,
+            "p05_p95": [
+              -0.008701559142952158,
+              0.033254414588807776
+            ]
+          }
+        }
+      },
+      "10": {
+        "paid_people": 104,
+        "hypothetical_people": 10,
+        "mean_training_choices": 56.99,
+        "brier": {
+          "historical": 0.5523447386472577,
+          "qwen": 0.5845134058986649,
+          "historical_plus_qwen": 0.5449858061598539,
+          "historical_plus_uniform": 0.5565041095761089
+        },
+        "qwen_mix_over": {
+          "historical": {
+            "gain": 0.007358932487403789,
+            "win_rate": 0.65,
+            "p05_p95": [
+              -0.006215805855095513,
+              0.03708451019676504
+            ]
+          },
+          "historical_plus_uniform": {
+            "gain": 0.011518303416254889,
+            "win_rate": 0.87,
+            "p05_p95": [
+              -0.0031934037548429326,
+              0.029690923258670787
+            ]
+          }
+        }
+      },
+      "25": {
+        "paid_people": 104,
+        "hypothetical_people": 25,
+        "mean_training_choices": 142.3,
+        "brier": {
+          "historical": 0.5400402569546149,
+          "qwen": 0.5845134058986649,
+          "historical_plus_qwen": 0.5387137250314222,
+          "historical_plus_uniform": 0.5506086528320635
+        },
+        "qwen_mix_over": {
+          "historical": {
+            "gain": 0.001326531923192784,
+            "win_rate": 0.49,
+            "p05_p95": [
+              -0.005875789531800718,
+              0.013055150934503249
+            ]
+          },
+          "historical_plus_uniform": {
+            "gain": 0.011894927800641388,
+            "win_rate": 0.98,
+            "p05_p95": [
+              0.0013170571110366236,
+              0.025062907977738563
+            ]
+          }
+        }
+      },
+      "all": {
+        "paid_people": 104,
+        "hypothetical_people": 211,
+        "brier": {
+          "historical": 0.5363507533712479,
+          "qwen": 0.5845134058986649,
+          "historical_plus_qwen": 0.5364942494473105,
+          "historical_plus_uniform": 0.5486387424216886
+        },
+        "qwen_mix_over": {
+          "historical": {
+            "gain": -0.00014349607606254812,
+            "win_rate": 0.48,
+            "p05_p95": [
+              -0.006036341364887049,
+              0.0065614286640069235
+            ]
+          },
+          "historical_plus_uniform": {
+            "gain": 0.012144492974378173,
+            "win_rate": 0.97,
+            "p05_p95": [
+              0.0018258939036302436,
+              0.0218901182550763
+            ]
+          }
+        }
+      }
+    },
+    "beef": {
+      "5": {
+        "paid_people": 67,
+        "hypothetical_people": 5,
+        "mean_training_choices": 36.91,
+        "brier": {
+          "historical": 0.5613260997310262,
+          "qwen": 0.6435449744832357,
+          "historical_plus_qwen": 0.5437361450354103,
+          "historical_plus_uniform": 0.5700156564043446
+        },
+        "qwen_mix_over": {
+          "historical": {
+            "gain": 0.01758995469561591,
+            "win_rate": 0.71,
+            "p05_p95": [
+              -0.016723522041536276,
+              0.07882935383668849
+            ]
+          },
+          "historical_plus_uniform": {
+            "gain": 0.02627951136893423,
+            "win_rate": 1.0,
+            "p05_p95": [
+              0.016825683938579417,
+              0.038937028936685145
+            ]
+          }
+        }
+      },
+      "10": {
+        "paid_people": 67,
+        "hypothetical_people": 10,
+        "mean_training_choices": 73.93,
+        "brier": {
+          "historical": 0.5496564919402254,
+          "qwen": 0.6435449744832357,
+          "historical_plus_qwen": 0.537577582234722,
+          "historical_plus_uniform": 0.5644421195946494
+        },
+        "qwen_mix_over": {
+          "historical": {
+            "gain": 0.012078909705503276,
+            "win_rate": 0.65,
+            "p05_p95": [
+              -0.01403240322517684,
+              0.04576804863803534
+            ]
+          },
+          "historical_plus_uniform": {
+            "gain": 0.02686453735992738,
+            "win_rate": 1.0,
+            "p05_p95": [
+              0.017729320890574773,
+              0.037479879714907856
+            ]
+          }
+        }
+      },
+      "25": {
+        "paid_people": 67,
+        "hypothetical_people": 25,
+        "mean_training_choices": 184.88,
+        "brier": {
+          "historical": 0.5373259664994524,
+          "qwen": 0.6435449744832357,
+          "historical_plus_qwen": 0.5301362073308556,
+          "historical_plus_uniform": 0.556999962102045
+        },
+        "qwen_mix_over": {
+          "historical": {
+            "gain": 0.0071897591685968565,
+            "win_rate": 0.63,
+            "p05_p95": [
+              -0.017249251252570888,
+              0.0465971800406099
+            ]
+          },
+          "historical_plus_uniform": {
+            "gain": 0.02686375477118956,
+            "win_rate": 1.0,
+            "p05_p95": [
+              0.018863089730890507,
+              0.03610543876674281
+            ]
+          }
+        }
+      },
+      "all": {
+        "paid_people": 67,
+        "hypothetical_people": 37,
+        "brier": {
+          "historical": 0.53359055260238,
+          "qwen": 0.6435449744832357,
+          "historical_plus_qwen": 0.5276987659397872,
+          "historical_plus_uniform": 0.554366500154073
+        },
+        "qwen_mix_over": {
+          "historical": {
+            "gain": 0.005891786662592915,
+            "win_rate": 0.55,
+            "p05_p95": [
+              -0.01694766410456975,
+              0.04122138925226292
+            ]
+          },
+          "historical_plus_uniform": {
+            "gain": 0.026667734214285775,
+            "win_rate": 1.0,
+            "p05_p95": [
+              0.018839020818729908,
+              0.0360876197240157
+            ]
+          }
+        }
+      }
+    }
+  }
+}

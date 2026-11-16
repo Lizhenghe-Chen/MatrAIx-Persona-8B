@@ -1,0 +1,1010 @@
+{
+  "identity": {
+    "model": "Qwen/Qwen3.8-27B",
+    "system_fingerprint": "vllm-0.29.0-tp2-f806618a"
+  },
+  "seed": 20261109,
+  "new_model_calls": 0,
+  "bootstrap_draws": 2000,
+  "studies": {
+    "swiss": {
+      "people": 24,
+      "answers": 144,
+      "half_retention_by_question_position": {
+        "self_confidence": [
+          0.6083333333333334,
+          0.44166666666666665,
+          0.44166666666666665,
+          0.6583333333333333,
+          0.2833333333333333,
+          0.5666666666666667
+        ],
+        "repeat_agreement": [
+          0.5833333333333334,
+          0.4583333333333333,
+          0.3333333333333333,
+          0.7083333333333334,
+          0.3333333333333333,
+          0.5833333333333334
+        ],
+        "order_agreement": [
+          0.5208333333333334,
+          0.4444444444444444,
+          0.5902777777777778,
+          0.3819444444444444,
+          0.42361111111111116,
+          0.638888888888889
+        ]
+      },
+      "coverage": {
+        "0.25": {
+          "raw_brier": 0.35290208333333334,
+          "uniform_brier": 0.5,
+          "random_shrink_brier": 0.37965507812500005,
+          "signals": {
+            "self_confidence": {
+              "retained_brier": {
+                "mean": 0.12641794871794876,
+                "interval_95": [
+                  0.016685659722222225,
+                  0.279034913003663
+                ]
+              },
+              "retained_improvement_vs_random": {
+                "mean": 0.22648413461538458,
+                "interval_95": [
+                  0.10596259548611106,
+                  0.3258379774305555
+                ]
+              },
+              "full_brier_with_shrink": {
+                "mean": 0.36235623664529915,
+                "interval_95": [
+                  0.3131472687815657,
+                  0.4202214554398148
+                ]
+              },
+              "shrink_improvement_vs_raw": {
+                "mean": -0.009454153311965807,
+                "interval_95": [
+                  -0.04266765697337956,
+                  0.02565079633136922
+                ]
+              },
+              "shrink_improvement_vs_random_shrink": {
+                "mean": 0.0172988414797009,
+                "interval_95": [
+                  0.00336591742621528,
+                  0.028874557634320158
+                ]
+              }
+            },
+            "repeat_agreement": {
+              "retained_brier": {
+                "mean": 0.26011666666666666,
+                "interval_95": [
+                  0.14598904461279463,
+                  0.37949652777777776
+                ]
+              },
+              "retained_improvement_vs_random": {
+                "mean": 0.09278541666666668,
+                "interval_95": [
+                  -0.020016712549603202,
+                  0.2207853786599098
+                ]
+              },
+              "full_brier_with_shrink": {
+                "mean": 0.37102517361111115,
+                "interval_95": [
+                  0.3238603764356303,
+                  0.4217170666956019
+                ]
+              },
+              "shrink_improvement_vs_raw": {
+                "mean": -0.01812309027777781,
+                "interval_95": [
+                  -0.05335730162704764,
+                  0.024071697928924184
+                ]
+              },
+              "shrink_improvement_vs_random_shrink": {
+                "mean": 0.008629904513888897,
+                "interval_95": [
+                  -0.005279323459201332,
+                  0.023344874894425736
+                ]
+              }
+            },
+            "order_agreement": {
+              "retained_brier": {
+                "mean": 0.1695368055555556,
+                "interval_95": [
+                  0.07547469907407409,
+                  0.294780962752525
+                ]
+              },
+              "retained_improvement_vs_random": {
+                "mean": 0.18336527777777775,
+                "interval_95": [
+                  0.09082965555555551,
+                  0.2686210470043995
+                ]
+              },
+              "full_brier_with_shrink": {
+                "mean": 0.3616716579861111,
+                "interval_95": [
+                  0.31437673014322914,
+                  0.4170748946753541
+                ]
+              },
+              "shrink_improvement_vs_raw": {
+                "mean": -0.008769574652777778,
+                "interval_95": [
+                  -0.04315382783945534,
+                  0.027454784893925548
+                ]
+              },
+              "shrink_improvement_vs_random_shrink": {
+                "mean": 0.017983420138888928,
+                "interval_95": [
+                  0.007783468130606217,
+                  0.027670661475026736
+                ]
+              }
+            }
+          }
+        },
+        "0.5": {
+          "raw_brier": 0.35290208333333334,
+          "uniform_brier": 0.5,
+          "random_shrink_brier": 0.3707374131944445,
+          "signals": {
+            "self_confidence": {
+              "retained_brier": {
+                "mean": 0.22476458333333335,
+                "interval_95": [
+                  0.11544451388888888,
+                  0.3521397743055554
+                ]
+              },
+              "retained_improvement_vs_random": {
+                "mean": 0.1281375,
+                "interval_95": [
+                  0.06366959001068374,
+                  0.1881053616898148
+                ]
+              },
+              "full_brier_with_shrink": {
+                "mean": 0.3512796006944444,
+                "interval_95": [
+                  0.2860883218625992,
+                  0.42472176432291664
+                ]
+              },
+              "shrink_improvement_vs_raw": {
+                "mean": 0.0016224826388889224,
+                "interval_95": [
+                  -0.01960627208435457,
+                  0.021937643229166616
+                ]
+              },
+              "shrink_improvement_vs_random_shrink": {
+                "mean": 0.01945781250000006,
+                "interval_95": [
+                  0.003824143105158649,
+                  0.03388782552083333
+                ]
+              }
+            },
+            "repeat_agreement": {
+              "retained_brier": {
+                "mean": 0.31825763888888886,
+                "interval_95": [
+                  0.22105329545454544,
+                  0.4125376179108797
+                ]
+              },
+              "retained_improvement_vs_random": {
+                "mean": 0.03464444444444448,
+                "interval_95": [
+                  -0.022679345038082423,
+                  0.10225273771473664
+                ]
+              },
+              "full_brier_with_shrink": {
+                "mean": 0.36679088541666666,
+                "interval_95": [
+                  0.307203058995021,
+                  0.42998817500876446
+                ]
+              },
+              "shrink_improvement_vs_raw": {
+                "mean": -0.013888802083333318,
+                "interval_95": [
+                  -0.03871437002455953,
+                  0.017137036210317445
+                ]
+              },
+              "shrink_improvement_vs_random_shrink": {
+                "mean": 0.00394652777777782,
+                "interval_95": [
+                  -0.010049563990715826,
+                  0.020798538049768524
+                ]
+              }
+            },
+            "order_agreement": {
+              "retained_brier": {
+                "mean": 0.2543152199074074,
+                "interval_95": [
+                  0.16932892793042137,
+                  0.3565487228672289
+                ]
+              },
+              "retained_improvement_vs_random": {
+                "mean": 0.09858686342592593,
+                "interval_95": [
+                  0.03587465909090908,
+                  0.1602412026014109
+                ]
+              },
+              "full_brier_with_shrink": {
+                "mean": 0.35026762876157413,
+                "interval_95": [
+                  0.29407974339475373,
+                  0.4159028015880791
+                ]
+              },
+              "shrink_improvement_vs_raw": {
+                "mean": 0.002634454571759204,
+                "interval_95": [
+                  -0.02570205823122875,
+                  0.03251951838563432
+                ]
+              },
+              "shrink_improvement_vs_random_shrink": {
+                "mean": 0.02046978443287034,
+                "interval_95": [
+                  0.0049294303329914385,
+                  0.03579271327955897
+                ]
+              }
+            }
+          }
+        },
+        "0.75": {
+          "raw_brier": 0.35290208333333334,
+          "uniform_brier": 0.5,
+          "random_shrink_brier": 0.3618197482638889,
+          "signals": {
+            "self_confidence": {
+              "retained_brier": {
+                "mean": 0.31027546296296293,
+                "interval_95": [
+                  0.20809483024691358,
+                  0.42214533564814816
+                ]
+              },
+              "retained_improvement_vs_random": {
+                "mean": 0.042626620370370405,
+                "interval_95": [
+                  0.01354766808712129,
+                  0.07204010127314815
+                ]
+              },
+              "full_brier_with_shrink": {
+                "mean": 0.3541269965277778,
+                "interval_95": [
+                  0.27686053072578465,
+                  0.43986249131944444
+                ]
+              },
+              "shrink_improvement_vs_raw": {
+                "mean": -0.0012249131944444547,
+                "interval_95": [
+                  -0.008730777501578186,
+                  0.007370310949900836
+                ]
+              },
+              "shrink_improvement_vs_random_shrink": {
+                "mean": 0.007692751736111114,
+                "interval_95": [
+                  -0.0028571945529514003,
+                  0.017927269472064446
+                ]
+              }
+            },
+            "repeat_agreement": {
+              "retained_brier": {
+                "mean": 0.3382800925925926,
+                "interval_95": [
+                  0.2510702761243386,
+                  0.4376752269524958
+                ]
+              },
+              "retained_improvement_vs_random": {
+                "mean": 0.01462199074074072,
+                "interval_95": [
+                  -0.01924712673611118,
+                  0.045898520171957634
+                ]
+              },
+              "full_brier_with_shrink": {
+                "mean": 0.36116866319444446,
+                "interval_95": [
+                  0.2889654651331018,
+                  0.4407989409722222
+                ]
+              },
+              "shrink_improvement_vs_raw": {
+                "mean": -0.008266579861111123,
+                "interval_95": [
+                  -0.0220857356770833,
+                  0.006585011057374305
+                ]
+              },
+              "shrink_improvement_vs_random_shrink": {
+                "mean": 0.0006510850694444459,
+                "interval_95": [
+                  -0.01112119924834282,
+                  0.012295331901994003
+                ]
+              }
+            },
+            "order_agreement": {
+              "retained_brier": {
+                "mean": 0.3071273148148148,
+                "interval_95": [
+                  0.22697462974038632,
+                  0.39740524441721126
+                ]
+              },
+              "retained_improvement_vs_random": {
+                "mean": 0.04577476851851853,
+                "interval_95": [
+                  0.011736270128824458,
+                  0.0795003078703704
+                ]
+              },
+              "full_brier_with_shrink": {
+                "mean": 0.3479348668981481,
+                "interval_95": [
+                  0.2813574152612434,
+                  0.42308605414496525
+                ]
+              },
+              "shrink_improvement_vs_raw": {
+                "mean": 0.004967216435185218,
+                "interval_95": [
+                  -0.012401184501262588,
+                  0.023868662166483975
+                ]
+              },
+              "shrink_improvement_vs_random_shrink": {
+                "mean": 0.013884881365740787,
+                "interval_95": [
+                  0.001637623418429034,
+                  0.026461448496942964
+                ]
+              }
+            }
+          }
+        },
+        "1.0": {
+          "raw_brier": 0.35290208333333334,
+          "uniform_brier": 0.5,
+          "random_shrink_brier": 0.35290208333333334,
+          "signals": {
+            "self_confidence": {
+              "retained_brier": {
+                "mean": 0.35290208333333334,
+                "interval_95": [
+                  0.27459937500000003,
+                  0.44220781249999996
+                ]
+              },
+              "retained_improvement_vs_random": {
+                "mean": 0.0,
+                "interval_95": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "full_brier_with_shrink": {
+                "mean": 0.35290208333333334,
+                "interval_95": [
+                  0.27459937500000003,
+                  0.44220781249999996
+                ]
+              },
+              "shrink_improvement_vs_raw": {
+                "mean": 0.0,
+                "interval_95": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "shrink_improvement_vs_random_shrink": {
+                "mean": 0.0,
+                "interval_95": [
+                  0.0,
+                  0.0
+                ]
+              }
+            },
+            "repeat_agreement": {
+              "retained_brier": {
+                "mean": 0.35290208333333334,
+                "interval_95": [
+                  0.27459937500000003,
+                  0.44220781249999996
+                ]
+              },
+              "retained_improvement_vs_random": {
+                "mean": 0.0,
+                "interval_95": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "full_brier_with_shrink": {
+                "mean": 0.35290208333333334,
+                "interval_95": [
+                  0.27459937500000003,
+                  0.44220781249999996
+                ]
+              },
+              "shrink_improvement_vs_raw": {
+                "mean": 0.0,
+                "interval_95": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "shrink_improvement_vs_random_shrink": {
+                "mean": 0.0,
+                "interval_95": [
+                  0.0,
+                  0.0
+                ]
+              }
+            },
+            "order_agreement": {
+              "retained_brier": {
+                "mean": 0.35290208333333334,
+                "interval_95": [
+                  0.27459937500000003,
+                  0.44220781249999996
+                ]
+              },
+              "retained_improvement_vs_random": {
+                "mean": 0.0,
+                "interval_95": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "full_brier_with_shrink": {
+                "mean": 0.35290208333333334,
+                "interval_95": [
+                  0.27459937500000003,
+                  0.44220781249999996
+                ]
+              },
+              "shrink_improvement_vs_raw": {
+                "mean": 0.0,
+                "interval_95": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "shrink_improvement_vs_random_shrink": {
+                "mean": 0.0,
+                "interval_95": [
+                  0.0,
+                  0.0
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "pew": {
+      "people": 24,
+      "answers": 72,
+      "half_retention_by_question_position": {
+        "self_confidence": [
+          0.5555555555555556,
+          0.5277777777777778,
+          0.4166666666666667
+        ],
+        "repeat_agreement": [
+          0.5032051282051283,
+          0.4519230769230769,
+          0.5448717948717948
+        ],
+        "order_agreement": [
+          0.4791666666666667,
+          0.4875,
+          0.5333333333333333
+        ]
+      },
+      "coverage": {
+        "0.25": {
+          "raw_brier": 0.5208506944444444,
+          "uniform_brier": 0.5,
+          "random_shrink_brier": 0.5043044704861112,
+          "signals": {
+            "self_confidence": {
+              "retained_brier": {
+                "mean": 0.3625231481481481,
+                "interval_95": [
+                  0.1892355324074074,
+                  0.5812002314814814
+                ]
+              },
+              "retained_improvement_vs_random": {
+                "mean": 0.1583275462962963,
+                "interval_95": [
+                  -0.011803385416666727,
+                  0.28738237847222226
+                ]
+              },
+              "full_brier_with_shrink": {
+                "mean": 0.48857928240740733,
+                "interval_95": [
+                  0.43959309895833326,
+                  0.5431484375
+                ]
+              },
+              "shrink_improvement_vs_raw": {
+                "mean": 0.032271412037037095,
+                "interval_95": [
+                  0.012174262152777806,
+                  0.04875013261959865
+                ]
+              },
+              "shrink_improvement_vs_random_shrink": {
+                "mean": 0.015725188078703822,
+                "interval_95": [
+                  -0.0052409939236112285,
+                  0.031749356708829404
+                ]
+              }
+            },
+            "repeat_agreement": {
+              "retained_brier": {
+                "mean": 0.48694444444444446,
+                "interval_95": [
+                  0.3847641718106996,
+                  0.5859844756441223
+                ]
+              },
+              "retained_improvement_vs_random": {
+                "mean": 0.03390624999999997,
+                "interval_95": [
+                  -0.03859114583333328,
+                  0.11767361111111108
+                ]
+              },
+              "full_brier_with_shrink": {
+                "mean": 0.5008550347222223,
+                "interval_95": [
+                  0.4617770984299517,
+                  0.541126490162037
+                ]
+              },
+              "shrink_improvement_vs_raw": {
+                "mean": 0.01999565972222217,
+                "interval_95": [
+                  -0.005462782118055602,
+                  0.04508996938961965
+                ]
+              },
+              "shrink_improvement_vs_random_shrink": {
+                "mean": 0.0034494357638888973,
+                "interval_95": [
+                  -0.005437073080297364,
+                  0.0135345569957385
+                ]
+              }
+            },
+            "order_agreement": {
+              "retained_brier": {
+                "mean": 0.43783950617283945,
+                "interval_95": [
+                  0.3199613677536232,
+                  0.5693072916666667
+                ]
+              },
+              "retained_improvement_vs_random": {
+                "mean": 0.08301118827160497,
+                "interval_95": [
+                  -0.01819897073412704,
+                  0.17027554754273494
+                ]
+              },
+              "full_brier_with_shrink": {
+                "mean": 0.49483072916666665,
+                "interval_95": [
+                  0.4523119936342592,
+                  0.5399374382027117
+                ]
+              },
+              "shrink_improvement_vs_raw": {
+                "mean": 0.02601996527777778,
+                "interval_95": [
+                  0.002405978732638878,
+                  0.04783296440972219
+                ]
+              },
+              "shrink_improvement_vs_random_shrink": {
+                "mean": 0.009473741319444506,
+                "interval_95": [
+                  -0.0028520019531250605,
+                  0.019767384481837656
+                ]
+              }
+            }
+          }
+        },
+        "0.5": {
+          "raw_brier": 0.5208506944444444,
+          "uniform_brier": 0.5,
+          "random_shrink_brier": 0.5098198784722222,
+          "signals": {
+            "self_confidence": {
+              "retained_brier": {
+                "mean": 0.5215277777777777,
+                "interval_95": [
+                  0.3918029513888889,
+                  0.6435766782407407
+                ]
+              },
+              "retained_improvement_vs_random": {
+                "mean": -0.0006770833333332726,
+                "interval_95": [
+                  -0.06571064814814824,
+                  0.07437109374999998
+                ]
+              },
+              "full_brier_with_shrink": {
+                "mean": 0.5145008680555555,
+                "interval_95": [
+                  0.4532807074652778,
+                  0.5755601438492064
+                ]
+              },
+              "shrink_improvement_vs_raw": {
+                "mean": 0.006349826388888924,
+                "interval_95": [
+                  -0.0032240476919935257,
+                  0.019735460069444485
+                ]
+              },
+              "shrink_improvement_vs_random_shrink": {
+                "mean": -0.004680989583333295,
+                "interval_95": [
+                  -0.020430338541666593,
+                  0.013806904141865136
+                ]
+              }
+            },
+            "repeat_agreement": {
+              "retained_brier": {
+                "mean": 0.4916773504273504,
+                "interval_95": [
+                  0.4108466698232323,
+                  0.581361111111111
+                ]
+              },
+              "retained_improvement_vs_random": {
+                "mean": 0.02917334401709404,
+                "interval_95": [
+                  -0.03165697337962964,
+                  0.07988424084595959
+                ]
+              },
+              "full_brier_with_shrink": {
+                "mean": 0.5030665731837607,
+                "interval_95": [
+                  0.4561673275726011,
+                  0.5542432973710317
+                ]
+              },
+              "shrink_improvement_vs_raw": {
+                "mean": 0.01778412126068374,
+                "interval_95": [
+                  -0.0034894452335859443,
+                  0.03592033420138892
+                ]
+              },
+              "shrink_improvement_vs_random_shrink": {
+                "mean": 0.00675330528846152,
+                "interval_95": [
+                  -0.008331181278935326,
+                  0.01928024243551567
+                ]
+              }
+            },
+            "order_agreement": {
+              "retained_brier": {
+                "mean": 0.515263888888889,
+                "interval_95": [
+                  0.4223434895833333,
+                  0.6140069444444444
+                ]
+              },
+              "retained_improvement_vs_random": {
+                "mean": 0.005586805555555463,
+                "interval_95": [
+                  -0.060784563635149516,
+                  0.06677285879629634
+                ]
+              },
+              "full_brier_with_shrink": {
+                "mean": 0.5092699652777779,
+                "interval_95": [
+                  0.45781633572048613,
+                  0.5625907118055556
+                ]
+              },
+              "shrink_improvement_vs_raw": {
+                "mean": 0.011580729166666526,
+                "interval_95": [
+                  -0.007778971354166661,
+                  0.030705873842592556
+                ]
+              },
+              "shrink_improvement_vs_random_shrink": {
+                "mean": 0.000549913194444307,
+                "interval_95": [
+                  -0.016199788411458367,
+                  0.015503851996527755
+                ]
+              }
+            }
+          }
+        },
+        "0.75": {
+          "raw_brier": 0.5208506944444444,
+          "uniform_brier": 0.5,
+          "random_shrink_brier": 0.5153352864583334,
+          "signals": {
+            "self_confidence": {
+              "retained_brier": {
+                "mean": 0.5292592592592592,
+                "interval_95": [
+                  0.4435457175925926,
+                  0.6123266519360269
+                ]
+              },
+              "retained_improvement_vs_random": {
+                "mean": -0.008408564814814778,
+                "interval_95": [
+                  -0.029489631558641927,
+                  0.016397672784391564
+                ]
+              },
+              "full_brier_with_shrink": {
+                "mean": 0.5213237847222222,
+                "interval_95": [
+                  0.45905164930555553,
+                  0.5841353081597221
+                ]
+              },
+              "shrink_improvement_vs_raw": {
+                "mean": -0.0004730902777777546,
+                "interval_95": [
+                  -0.0025961009837963374,
+                  0.00350813802083332
+                ]
+              },
+              "shrink_improvement_vs_random_shrink": {
+                "mean": -0.0059884982638888085,
+                "interval_95": [
+                  -0.013747639973958267,
+                  0.003161747685185214
+                ]
+              }
+            },
+            "repeat_agreement": {
+              "retained_brier": {
+                "mean": 0.5193441358024691,
+                "interval_95": [
+                  0.4491085858585859,
+                  0.5884054783950616
+                ]
+              },
+              "retained_improvement_vs_random": {
+                "mean": 0.001506558641975353,
+                "interval_95": [
+                  -0.031053385416666652,
+                  0.03345630787037031
+                ]
+              },
+              "full_brier_with_shrink": {
+                "mean": 0.5153993055555556,
+                "interval_95": [
+                  0.4606095196759259,
+                  0.5714927300347222
+                ]
+              },
+              "shrink_improvement_vs_raw": {
+                "mean": 0.005451388888888853,
+                "interval_95": [
+                  -0.00851080729166663,
+                  0.01908125000000003
+                ]
+              },
+              "shrink_improvement_vs_random_shrink": {
+                "mean": -6.4019097222201e-05,
+                "interval_95": [
+                  -0.01187792193700388,
+                  0.011598361545138786
+                ]
+              }
+            },
+            "order_agreement": {
+              "retained_brier": {
+                "mean": 0.5164814814814814,
+                "interval_95": [
+                  0.4435112123842593,
+                  0.5851160300925925
+                ]
+              },
+              "retained_improvement_vs_random": {
+                "mean": 0.004369212962962998,
+                "interval_95": [
+                  -0.02708495370370361,
+                  0.0393618344907406
+                ]
+              },
+              "full_brier_with_shrink": {
+                "mean": 0.5146571180555556,
+                "interval_95": [
+                  0.45771278211805555,
+                  0.5703045789930554
+                ]
+              },
+              "shrink_improvement_vs_raw": {
+                "mean": 0.006193576388888844,
+                "interval_95": [
+                  -0.006892023533950605,
+                  0.021853937596450577
+                ]
+              },
+              "shrink_improvement_vs_random_shrink": {
+                "mean": 0.0006781684027777901,
+                "interval_95": [
+                  -0.010940907118055624,
+                  0.014368054698921716
+                ]
+              }
+            }
+          }
+        },
+        "1.0": {
+          "raw_brier": 0.5208506944444444,
+          "uniform_brier": 0.5,
+          "random_shrink_brier": 0.5208506944444444,
+          "signals": {
+            "self_confidence": {
+              "retained_brier": {
+                "mean": 0.5208506944444444,
+                "interval_95": [
+                  0.45975477430555556,
+                  0.5829027777777778
+                ]
+              },
+              "retained_improvement_vs_random": {
+                "mean": 0.0,
+                "interval_95": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "full_brier_with_shrink": {
+                "mean": 0.5208506944444444,
+                "interval_95": [
+                  0.45975477430555556,
+                  0.5829027777777778
+                ]
+              },
+              "shrink_improvement_vs_raw": {
+                "mean": 0.0,
+                "interval_95": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "shrink_improvement_vs_random_shrink": {
+                "mean": 0.0,
+                "interval_95": [
+                  0.0,
+                  0.0
+                ]
+              }
+            },
+            "repeat_agreement": {
+              "retained_brier": {
+                "mean": 0.5208506944444444,
+                "interval_95": [
+                  0.45975477430555556,
+                  0.5829027777777778
+                ]
+              },
+              "retained_improvement_vs_random": {
+                "mean": 0.0,
+                "interval_95": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "full_brier_with_shrink": {
+                "mean": 0.5208506944444444,
+                "interval_95": [
+                  0.45975477430555556,
+                  0.5829027777777778
+                ]
+              },
+              "shrink_improvement_vs_raw": {
+                "mean": 0.0,
+                "interval_95": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "shrink_improvement_vs_random_shrink": {
+                "mean": 0.0,
+                "interval_95": [
+                  0.0,
+                  0.0
+                ]
+              }
+            },
+            "order_agreement": {
+              "retained_brier": {
+                "mean": 0.5208506944444444,
+                "interval_95": [
+                  0.45975477430555556,
+                  0.5829027777777778
+                ]
+              },
+              "retained_improvement_vs_random": {
+                "mean": 0.0,
+                "interval_95": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "full_brier_with_shrink": {
+                "mean": 0.5208506944444444,
+                "interval_95": [
+                  0.45975477430555556,
+                  0.5829027777777778
+                ]
+              },
+              "shrink_improvement_vs_raw": {
+                "mean": 0.0,
+                "interval_95": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "shrink_improvement_vs_random_shrink": {
+                "mean": 0.0,
+                "interval_95": [
+                  0.0,
+                  0.0
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

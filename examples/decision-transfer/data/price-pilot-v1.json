@@ -1,0 +1,639 @@
+{
+  "seed": 20261109,
+  "splits": 100,
+  "new_calls": 0,
+  "studies": {
+    "beer": {
+      "10": {
+        "qwen": 0.7324238152812762,
+        "uniform": 0.6916828861214213,
+        "baseline": 0.7003579304567257,
+        "uniform_price_refusal": 0.6905023381245872,
+        "price_bound": 0.6967601578370788,
+        "price_refusal": 0.6998349638173502,
+        "both": 0.6961253506200323,
+        "constant_refusal_brier": 0.4728119981758889,
+        "price_refusal_brier": 0.47123793418010995,
+        "positive_unconstrained_price": 0.18,
+        "refusal_slope": 0.24483142692346724,
+        "vs_baseline": {
+          "price_bound": {
+            "win_rate": 0.16,
+            "tie_rate": 0.82,
+            "p05_p95": [
+              0.0,
+              0.025021599381847386
+            ]
+          },
+          "price_refusal": {
+            "win_rate": 0.56,
+            "tie_rate": 0.24,
+            "p05_p95": [
+              -0.035945857337368596,
+              0.01855546931380244
+            ]
+          },
+          "both": {
+            "win_rate": 0.6,
+            "tie_rate": 0.2,
+            "p05_p95": [
+              -0.03599139430051794,
+              0.04442967095646643
+            ]
+          }
+        }
+      },
+      "25": {
+        "qwen": 0.7324238152812762,
+        "uniform": 0.678385793987534,
+        "baseline": 0.6639755801659669,
+        "uniform_price_refusal": 0.6734473954784356,
+        "price_bound": 0.6631881181683811,
+        "price_refusal": 0.6593010166816076,
+        "both": 0.6584628919446964,
+        "constant_refusal_brier": 0.4550825419973725,
+        "price_refusal_brier": 0.4484980106519077,
+        "positive_unconstrained_price": 0.06,
+        "refusal_slope": 0.23413440360552518,
+        "vs_baseline": {
+          "price_bound": {
+            "win_rate": 0.05,
+            "tie_rate": 0.94,
+            "p05_p95": [
+              0.0,
+              1.7964756619691747e-06
+            ]
+          },
+          "price_refusal": {
+            "win_rate": 0.73,
+            "tie_rate": 0.12,
+            "p05_p95": [
+              -0.00963174208985318,
+              0.01935888982330707
+            ]
+          },
+          "both": {
+            "win_rate": 0.74,
+            "tie_rate": 0.12,
+            "p05_p95": [
+              -0.007049484870069716,
+              0.020916107757380505
+            ]
+          }
+        }
+      },
+      "50": {
+        "qwen": 0.7324238152812762,
+        "uniform": 0.6717079131205882,
+        "baseline": 0.6457523054296481,
+        "uniform_price_refusal": 0.6665930153699098,
+        "price_bound": 0.6456741545680984,
+        "price_refusal": 0.6407844390529354,
+        "both": 0.6407013452260479,
+        "constant_refusal_brier": 0.446178700841445,
+        "price_refusal_brier": 0.43935883717387375,
+        "positive_unconstrained_price": 0.02,
+        "refusal_slope": 0.23769575696978096,
+        "vs_baseline": {
+          "price_bound": {
+            "win_rate": 0.02,
+            "tie_rate": 0.98,
+            "p05_p95": [
+              0.0,
+              0.0
+            ]
+          },
+          "price_refusal": {
+            "win_rate": 0.81,
+            "tie_rate": 0.04,
+            "p05_p95": [
+              -0.005187189566577122,
+              0.014006135772735866
+            ]
+          },
+          "both": {
+            "win_rate": 0.81,
+            "tie_rate": 0.04,
+            "p05_p95": [
+              -0.005187189566577122,
+              0.014006135772735866
+            ]
+          }
+        }
+      },
+      "100": {
+        "qwen": 0.7324238152812762,
+        "uniform": 0.6693959914004403,
+        "baseline": 0.6368041346230835,
+        "uniform_price_refusal": 0.6626803585821276,
+        "price_bound": 0.6367780474964172,
+        "price_refusal": 0.6300615789759503,
+        "both": 0.6300347960009657,
+        "constant_refusal_brier": 0.44309613854791424,
+        "price_refusal_brier": 0.4341419614568304,
+        "positive_unconstrained_price": 0.02,
+        "refusal_slope": 0.23945195160958047,
+        "vs_baseline": {
+          "price_bound": {
+            "win_rate": 0.02,
+            "tie_rate": 0.98,
+            "p05_p95": [
+              0.0,
+              0.0
+            ]
+          },
+          "price_refusal": {
+            "win_rate": 0.96,
+            "tie_rate": 0.0,
+            "p05_p95": [
+              0.001218313656558745,
+              0.012378014571466731
+            ]
+          },
+          "both": {
+            "win_rate": 0.96,
+            "tie_rate": 0.0,
+            "p05_p95": [
+              0.001218313656558745,
+              0.012378014571466731
+            ]
+          }
+        }
+      }
+    },
+    "german": {
+      "10": {
+        "qwen": 0.6398546788482835,
+        "uniform": 0.7051419898972132,
+        "baseline": 0.5501072680499113,
+        "uniform_price_refusal": 0.7045245865536003,
+        "price_bound": 0.5500742651523413,
+        "price_refusal": 0.5500561375960272,
+        "both": 0.5500230582646597,
+        "constant_refusal_brier": 0.1178624865069494,
+        "price_refusal_brier": 0.11693638149153018,
+        "positive_unconstrained_price": 0.01,
+        "refusal_slope": 0.2626223752373537,
+        "vs_baseline": {
+          "price_bound": {
+            "win_rate": 0.01,
+            "tie_rate": 0.99,
+            "p05_p95": [
+              0.0,
+              0.0
+            ]
+          },
+          "price_refusal": {
+            "win_rate": 0.31,
+            "tie_rate": 0.46,
+            "p05_p95": [
+              -0.002045931587361055,
+              0.0024519643338543375
+            ]
+          },
+          "both": {
+            "win_rate": 0.31,
+            "tie_rate": 0.46,
+            "p05_p95": [
+              -0.002045931587361055,
+              0.0031609756211386773
+            ]
+          }
+        }
+      },
+      "25": {
+        "qwen": 0.6398546788482835,
+        "uniform": 0.7036820710573188,
+        "baseline": 0.53543280483208,
+        "uniform_price_refusal": 0.7034240267753599,
+        "price_bound": 0.53543280483208,
+        "price_refusal": 0.535409224337395,
+        "both": 0.535409224337395,
+        "constant_refusal_brier": 0.11567260824710772,
+        "price_refusal_brier": 0.11528554182416936,
+        "positive_unconstrained_price": 0.0,
+        "refusal_slope": 0.24469273273184278,
+        "vs_baseline": {
+          "price_bound": {
+            "win_rate": 0.0,
+            "tie_rate": 1.0,
+            "p05_p95": [
+              0.0,
+              0.0
+            ]
+          },
+          "price_refusal": {
+            "win_rate": 0.4,
+            "tie_rate": 0.34,
+            "p05_p95": [
+              -0.0022915961244487915,
+              0.0020196616566351376
+            ]
+          },
+          "both": {
+            "win_rate": 0.4,
+            "tie_rate": 0.34,
+            "p05_p95": [
+              -0.0022915961244487915,
+              0.0020196616566351376
+            ]
+          }
+        }
+      },
+      "50": {
+        "qwen": 0.6398546788482835,
+        "uniform": 0.7030032903732973,
+        "baseline": 0.5329746946060615,
+        "uniform_price_refusal": 0.7027702705394091,
+        "price_bound": 0.5329746946060615,
+        "price_refusal": 0.532855054013535,
+        "both": 0.532855054013535,
+        "constant_refusal_brier": 0.11465443722107556,
+        "price_refusal_brier": 0.11430490747024352,
+        "positive_unconstrained_price": 0.0,
+        "refusal_slope": 0.22258431099552825,
+        "vs_baseline": {
+          "price_bound": {
+            "win_rate": 0.0,
+            "tie_rate": 1.0,
+            "p05_p95": [
+              0.0,
+              0.0
+            ]
+          },
+          "price_refusal": {
+            "win_rate": 0.46,
+            "tie_rate": 0.27,
+            "p05_p95": [
+              -0.0009361191722135787,
+              0.0011592227409881629
+            ]
+          },
+          "both": {
+            "win_rate": 0.46,
+            "tie_rate": 0.27,
+            "p05_p95": [
+              -0.0009361191722135787,
+              0.0011592227409881629
+            ]
+          }
+        }
+      },
+      "100": {
+        "qwen": 0.6398546788482835,
+        "uniform": 0.7026606676958549,
+        "baseline": 0.5295387103737664,
+        "uniform_price_refusal": 0.7024857315627767,
+        "price_bound": 0.5295387103737664,
+        "price_refusal": 0.5294474654635617,
+        "both": 0.5294474654635617,
+        "constant_refusal_brier": 0.11414050320491193,
+        "price_refusal_brier": 0.11387809900529469,
+        "positive_unconstrained_price": 0.0,
+        "refusal_slope": 0.21048331419772634,
+        "vs_baseline": {
+          "price_bound": {
+            "win_rate": 0.0,
+            "tie_rate": 1.0,
+            "p05_p95": [
+              0.0,
+              0.0
+            ]
+          },
+          "price_refusal": {
+            "win_rate": 0.48,
+            "tie_rate": 0.25,
+            "p05_p95": [
+              -0.0007569037403704404,
+              0.0010152903712350525
+            ]
+          },
+          "both": {
+            "win_rate": 0.48,
+            "tie_rate": 0.25,
+            "p05_p95": [
+              -0.0007569037403704404,
+              0.0010152903712350525
+            ]
+          }
+        }
+      }
+    },
+    "spain": {
+      "10": {
+        "qwen": 0.6192251111111111,
+        "uniform": 0.63774901144641,
+        "baseline": 0.6304225470923196,
+        "uniform_price_refusal": 0.6317224756960361,
+        "price_bound": 0.6258509869562962,
+        "price_refusal": 0.623121396790819,
+        "both": 0.6184334204147942,
+        "constant_refusal_brier": 0.2977097930396577,
+        "price_refusal_brier": 0.2896744120391592,
+        "positive_unconstrained_price": 0.06,
+        "refusal_slope": 0.3514460477484881,
+        "vs_baseline": {
+          "price_bound": {
+            "win_rate": 0.06,
+            "tie_rate": 0.94,
+            "p05_p95": [
+              0.0,
+              0.0051833107747736255
+            ]
+          },
+          "price_refusal": {
+            "win_rate": 0.65,
+            "tie_rate": 0.21,
+            "p05_p95": [
+              -0.013565818937253593,
+              0.03551855658215607
+            ]
+          },
+          "both": {
+            "win_rate": 0.68,
+            "tie_rate": 0.2,
+            "p05_p95": [
+              -0.013565818937253593,
+              0.04547439367315859
+            ]
+          }
+        }
+      },
+      "25": {
+        "qwen": 0.6192251111111111,
+        "uniform": 0.6330097760849491,
+        "baseline": 0.5721042322119813,
+        "uniform_price_refusal": 0.6236005645643979,
+        "price_bound": 0.5721042322119813,
+        "price_refusal": 0.5613575403318922,
+        "both": 0.5613575403318922,
+        "constant_refusal_brier": 0.29139081255771004,
+        "price_refusal_brier": 0.27884519719697487,
+        "positive_unconstrained_price": 0.0,
+        "refusal_slope": 0.383750459171222,
+        "vs_baseline": {
+          "price_bound": {
+            "win_rate": 0.0,
+            "tie_rate": 1.0,
+            "p05_p95": [
+              0.0,
+              0.0
+            ]
+          },
+          "price_refusal": {
+            "win_rate": 0.83,
+            "tie_rate": 0.07,
+            "p05_p95": [
+              -0.0026772209456124513,
+              0.030159245391456303
+            ]
+          },
+          "both": {
+            "win_rate": 0.83,
+            "tie_rate": 0.07,
+            "p05_p95": [
+              -0.0026772209456124513,
+              0.030159245391456303
+            ]
+          }
+        }
+      },
+      "50": {
+        "qwen": 0.6192251111111111,
+        "uniform": 0.631245945353274,
+        "baseline": 0.5477544339703989,
+        "uniform_price_refusal": 0.6203159862015161,
+        "price_bound": 0.5477544339703989,
+        "price_refusal": 0.535213433431204,
+        "both": 0.535213433431204,
+        "constant_refusal_brier": 0.2890390382488097,
+        "price_refusal_brier": 0.2744657593797993,
+        "positive_unconstrained_price": 0.0,
+        "refusal_slope": 0.39606587125064185,
+        "vs_baseline": {
+          "price_bound": {
+            "win_rate": 0.0,
+            "tie_rate": 1.0,
+            "p05_p95": [
+              0.0,
+              0.0
+            ]
+          },
+          "price_refusal": {
+            "win_rate": 0.92,
+            "tie_rate": 0.01,
+            "p05_p95": [
+              -0.0009456806738546596,
+              0.02736750457196027
+            ]
+          },
+          "both": {
+            "win_rate": 0.92,
+            "tie_rate": 0.01,
+            "p05_p95": [
+              -0.0009456806738546596,
+              0.02736750457196027
+            ]
+          }
+        }
+      },
+      "100": {
+        "qwen": 0.6192251111111111,
+        "uniform": 0.630942656262072,
+        "baseline": 0.5369084370300161,
+        "uniform_price_refusal": 0.6191423989770951,
+        "price_bound": 0.5369084370300161,
+        "price_refusal": 0.5237761843578378,
+        "both": 0.5237761843578378,
+        "constant_refusal_brier": 0.28863465279387396,
+        "price_refusal_brier": 0.2729009764139045,
+        "positive_unconstrained_price": 0.0,
+        "refusal_slope": 0.4015565187825932,
+        "vs_baseline": {
+          "price_bound": {
+            "win_rate": 0.0,
+            "tie_rate": 1.0,
+            "p05_p95": [
+              0.0,
+              0.0
+            ]
+          },
+          "price_refusal": {
+            "win_rate": 0.93,
+            "tie_rate": 0.0,
+            "p05_p95": [
+              -0.0006236997594637693,
+              0.025966831989677003
+            ]
+          },
+          "both": {
+            "win_rate": 0.93,
+            "tie_rate": 0.0,
+            "p05_p95": [
+              -0.0006236997594637693,
+              0.025966831989677003
+            ]
+          }
+        }
+      }
+    },
+    "italy": {
+      "10": {
+        "qwen": 0.6654000952380951,
+        "uniform": 0.5849958128933155,
+        "baseline": 0.6667401176742174,
+        "uniform_price_refusal": 0.5847008092387106,
+        "price_bound": 0.6621219726105076,
+        "price_refusal": 0.668760208222318,
+        "both": 0.6640629827126976,
+        "constant_refusal_brier": 0.17431187750854765,
+        "price_refusal_brier": 0.17391853930240764,
+        "positive_unconstrained_price": 0.31,
+        "refusal_slope": 0.3006648724721561,
+        "vs_baseline": {
+          "price_bound": {
+            "win_rate": 0.29,
+            "tie_rate": 0.69,
+            "p05_p95": [
+              0.0,
+              0.029738330491060234
+            ]
+          },
+          "price_refusal": {
+            "win_rate": 0.35,
+            "tie_rate": 0.33,
+            "p05_p95": [
+              -0.02147320429462519,
+              0.011243982529712995
+            ]
+          },
+          "both": {
+            "win_rate": 0.51,
+            "tie_rate": 0.23,
+            "p05_p95": [
+              -0.01864103835411542,
+              0.031396148825400844
+            ]
+          }
+        }
+      },
+      "25": {
+        "qwen": 0.6654000952380951,
+        "uniform": 0.5821339120828387,
+        "baseline": 0.6079147312896148,
+        "uniform_price_refusal": 0.579630587922138,
+        "price_bound": 0.6067754048178816,
+        "price_refusal": 0.6066429251422263,
+        "both": 0.6054958847184331,
+        "constant_refusal_brier": 0.1704960097612452,
+        "price_refusal_brier": 0.16715824421364406,
+        "positive_unconstrained_price": 0.2,
+        "refusal_slope": 0.3019176351627566,
+        "vs_baseline": {
+          "price_bound": {
+            "win_rate": 0.17,
+            "tie_rate": 0.8,
+            "p05_p95": [
+              0.0,
+              0.00515145847385792
+            ]
+          },
+          "price_refusal": {
+            "win_rate": 0.62,
+            "tie_rate": 0.13,
+            "p05_p95": [
+              -0.013168557505816175,
+              0.011245177077915173
+            ]
+          },
+          "both": {
+            "win_rate": 0.68,
+            "tie_rate": 0.09,
+            "p05_p95": [
+              -0.013158960994442359,
+              0.015496194109293702
+            ]
+          }
+        }
+      },
+      "50": {
+        "qwen": 0.6654000952380951,
+        "uniform": 0.5807714062248731,
+        "baseline": 0.5859184641858469,
+        "uniform_price_refusal": 0.5772604856900636,
+        "price_bound": 0.5856537458414963,
+        "price_refusal": 0.5828404945075283,
+        "both": 0.5825781248581864,
+        "constant_refusal_brier": 0.16867933528395793,
+        "price_refusal_brier": 0.16399810790421188,
+        "positive_unconstrained_price": 0.12,
+        "refusal_slope": 0.299224948646249,
+        "vs_baseline": {
+          "price_bound": {
+            "win_rate": 0.12,
+            "tie_rate": 0.88,
+            "p05_p95": [
+              0.0,
+              0.0017163013907496413
+            ]
+          },
+          "price_refusal": {
+            "win_rate": 0.69,
+            "tie_rate": 0.09,
+            "p05_p95": [
+              -0.005000605678063879,
+              0.010007549493171912
+            ]
+          },
+          "both": {
+            "win_rate": 0.71,
+            "tie_rate": 0.07,
+            "p05_p95": [
+              -0.004999768383628266,
+              0.012945879525888198
+            ]
+          }
+        }
+      },
+      "100": {
+        "qwen": 0.6654000952380951,
+        "uniform": 0.5802294106393234,
+        "baseline": 0.576954600677101,
+        "uniform_price_refusal": 0.5759204096116979,
+        "price_bound": 0.5768688327992126,
+        "price_refusal": 0.5728488681648172,
+        "both": 0.57276438879441,
+        "constant_refusal_brier": 0.16795667450322477,
+        "price_refusal_brier": 0.16221133979972407,
+        "positive_unconstrained_price": 0.07,
+        "refusal_slope": 0.3154395742281386,
+        "vs_baseline": {
+          "price_bound": {
+            "win_rate": 0.07,
+            "tie_rate": 0.93,
+            "p05_p95": [
+              0.0,
+              0.00030229122272159556
+            ]
+          },
+          "price_refusal": {
+            "win_rate": 0.81,
+            "tie_rate": 0.03,
+            "p05_p95": [
+              -0.0030720424539604995,
+              0.01289451410556489
+            ]
+          },
+          "both": {
+            "win_rate": 0.81,
+            "tie_rate": 0.03,
+            "p05_p95": [
+              -0.003022298153348174,
+              0.01289451410556489
+            ]
+          }
+        }
+      }
+    }
+  }
+}

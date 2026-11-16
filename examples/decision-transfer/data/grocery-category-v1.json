@@ -1,0 +1,27 @@
+{
+  "sources": {
+    "transactions.rds": "1fa0700033f1e5d9bb6b09e2be063d8d68474d346e95c50f2833e09d083e0007",
+    "products.rda": "a80c6df33623b4af296ae9f317a6647e369db7e8ce7e7baed0e1bf44b9d979e5"
+  },
+  "requests": 48,
+  "valid": 48,
+  "failures": {},
+  "identity": {
+    "model": "Qwen/Qwen3.8-27B",
+    "system_fingerprint": "vllm-0.29.0-tp2-f806618a"
+  },
+  "orders_with_target_in_candidates": 13,
+  "hits": {
+    "popular": 8,
+    "qwen": 5
+  },
+  "orders_with_hits": {
+    "popular": 7,
+    "qwen": 4
+  },
+  "delta_hits_per_order": -0.0625,
+  "interval_95": [
+    -0.1875,
+    0.041666666666666664
+  ]
+}

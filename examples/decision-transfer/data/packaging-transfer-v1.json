@@ -1,0 +1,89 @@
+{
+  "people": 401,
+  "cards": 12,
+  "requests": 24,
+  "missing": 0,
+  "failed": 0,
+  "actual_no_buy_rate": 0.060473815461346635,
+  "methods": {
+    "direct": {
+      "full_brier": 0.6386180382377389,
+      "predicted_no_buy_rate": 0.11666666666666668,
+      "conditional_brier_person_mean": 0.5678925379010149
+    },
+    "source_hint": {
+      "full_brier": 0.631823912302577,
+      "predicted_no_buy_rate": 0.13416666666666668,
+      "conditional_brier_person_mean": 0.5689860473344439
+    },
+    "german_same_card_loo": {
+      "full_brier": 0.4976114583333333,
+      "conditional_brier_person_mean": 0.43655342773156475
+    },
+    "uniform_conditional": {
+      "conditional_brier_person_mean": 0.6666666666666667
+    },
+    "swiss_price_only": {
+      "conditional_brier_person_mean": 0.6396370788411818
+    },
+    "swiss_proxy_only": {
+      "conditional_brier_person_mean": 0.5293471834333984
+    },
+    "swiss_price_and_proxy": {
+      "conditional_brier_person_mean": 0.510357008805974
+    }
+  },
+  "conditional_differences": {
+    "hint_vs_direct": {
+      "baseline": "direct",
+      "candidate": "source_hint",
+      "improvement": -0.0010935094334289487,
+      "ci95_fixed_cards_and_predictions": [
+        -0.008004791916534432,
+        0.005829004543177479
+      ]
+    },
+    "price_vs_uniform": {
+      "baseline": "uniform_conditional",
+      "candidate": "swiss_price_only",
+      "improvement": 0.027029587825485032,
+      "ci95_fixed_cards_and_predictions": [
+        0.02166874581824667,
+        0.03248260772790415
+      ]
+    },
+    "joint_vs_price": {
+      "baseline": "swiss_price_only",
+      "candidate": "swiss_price_and_proxy",
+      "improvement": 0.1292800700352078,
+      "ci95_fixed_cards_and_predictions": [
+        0.1150419861065275,
+        0.14241708976029743
+      ]
+    },
+    "joint_vs_direct": {
+      "baseline": "direct",
+      "candidate": "swiss_price_and_proxy",
+      "improvement": 0.05753552909504095,
+      "ci95_fixed_cards_and_predictions": [
+        0.04854510040632745,
+        0.06632266806642742
+      ]
+    },
+    "joint_vs_proxy": {
+      "baseline": "swiss_proxy_only",
+      "candidate": "swiss_price_and_proxy",
+      "improvement": 0.018990174627424354,
+      "ci95_fixed_cards_and_predictions": [
+        0.014721600955509503,
+        0.02379994498244845
+      ]
+    }
+  },
+  "model_identity": [
+    {
+      "model": "Qwen/Qwen3.8-27B",
+      "system_fingerprint": "vllm-0.29.0-tp2-f806618a"
+    }
+  ]
+}

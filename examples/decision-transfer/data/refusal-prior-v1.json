@@ -1,0 +1,488 @@
+{
+  "seed": 20261109,
+  "splits": 100,
+  "new_calls": 0,
+  "prior_equivalent_people": 10,
+  "studies": {
+    "beer": {
+      "people": 1291,
+      "actual_rate": 0.32261812548412083,
+      "qwen_rate": 0.17256971340046476,
+      "prior_rate": 0.19110486718324127,
+      "source_rates": {
+        "food_archive": 0.17957898310839485,
+        "dryer": 0.20263075125808772
+      },
+      "budgets": {
+        "0": {
+          "qwen": 0.2542066498815166,
+          "half": 0.25,
+          "historical": 0.2376652361909376,
+          "local": 0.25,
+          "historical_plus_local": 0.2376652361909376,
+          "historical_with_qwen_variation": 0.24044611418108983,
+          "comparison": {
+            "against": "qwen",
+            "candidate": "historical",
+            "p05_p95": [
+              0.008113717094195514,
+              0.025232050660138176
+            ],
+            "win_rate": 1.0
+          }
+        },
+        "5": {
+          "qwen": 0.2542066498815166,
+          "half": 0.25,
+          "historical": 0.2376652361909376,
+          "local": 0.2440064672195893,
+          "historical_plus_local": 0.23151984396516434,
+          "historical_with_qwen_variation": 0.24044611418108983,
+          "comparison": {
+            "against": "local",
+            "candidate": "historical_plus_local",
+            "p05_p95": [
+              -0.013010924257523574,
+              0.08207496978264511
+            ],
+            "win_rate": 0.56
+          }
+        },
+        "10": {
+          "qwen": 0.2542066498815166,
+          "half": 0.25,
+          "historical": 0.2376652361909376,
+          "local": 0.23466978868826133,
+          "historical_plus_local": 0.227938215184346,
+          "historical_with_qwen_variation": 0.24044611418108983,
+          "comparison": {
+            "against": "local",
+            "candidate": "historical_plus_local",
+            "p05_p95": [
+              -0.008785685052715847,
+              0.05722962906213
+            ],
+            "win_rate": 0.41
+          }
+        },
+        "25": {
+          "qwen": 0.2542066498815166,
+          "half": 0.25,
+          "historical": 0.2376652361909376,
+          "local": 0.22714109253624615,
+          "historical_plus_local": 0.22506574173343666,
+          "historical_with_qwen_variation": 0.24044611418108983,
+          "comparison": {
+            "against": "local",
+            "candidate": "historical_plus_local",
+            "p05_p95": [
+              -0.005237294559681818,
+              0.020172534118815023
+            ],
+            "win_rate": 0.43
+          }
+        }
+      }
+    },
+    "spain": {
+      "people": 175,
+      "actual_rate": 0.16952380952380952,
+      "qwen_rate": 0.2335714285714286,
+      "prior_rate": 0.2626244383711043,
+      "source_rates": {
+        "beer": 0.32261812548412083,
+        "dryer": 0.20263075125808772
+      },
+      "budgets": {
+        "0": {
+          "qwen": 0.1808321111111111,
+          "half": 0.25,
+          "historical": 0.15082923930434247,
+          "local": 0.25,
+          "historical_plus_local": 0.15082923930434247,
+          "historical_with_qwen_variation": 0.15979459899570048,
+          "comparison": {
+            "against": "qwen",
+            "candidate": "historical",
+            "p05_p95": [
+              0.0030697848391066395,
+              0.060862220405597064
+            ],
+            "win_rate": 0.96
+          }
+        },
+        "5": {
+          "qwen": 0.1808321111111111,
+          "half": 0.25,
+          "historical": 0.15082923930434247,
+          "local": 0.15157777777777778,
+          "historical_plus_local": 0.14698758165909628,
+          "historical_with_qwen_variation": 0.15979459899570048,
+          "comparison": {
+            "against": "local",
+            "candidate": "historical_plus_local",
+            "p05_p95": [
+              -0.0029328989911331822,
+              0.01954854627158202
+            ],
+            "win_rate": 0.75
+          }
+        },
+        "10": {
+          "qwen": 0.1808321111111111,
+          "half": 0.25,
+          "historical": 0.15082923930434247,
+          "local": 0.14957245179063364,
+          "historical_plus_local": 0.1467327165450436,
+          "historical_with_qwen_variation": 0.15979459899570048,
+          "comparison": {
+            "against": "local",
+            "candidate": "historical_plus_local",
+            "p05_p95": [
+              -0.001697627329465088,
+              0.0169261969687824
+            ],
+            "win_rate": 0.53
+          }
+        },
+        "25": {
+          "qwen": 0.1808321111111111,
+          "half": 0.25,
+          "historical": 0.15082923930434247,
+          "local": 0.14645386806925267,
+          "historical_plus_local": 0.14534185420428997,
+          "historical_with_qwen_variation": 0.15979459899570048,
+          "comparison": {
+            "against": "local",
+            "candidate": "historical_plus_local",
+            "p05_p95": [
+              -0.0011768936949996458,
+              0.006385244999447124
+            ],
+            "win_rate": 0.56
+          }
+        }
+      }
+    },
+    "italy": {
+      "people": 170,
+      "actual_rate": 0.09215686274509804,
+      "qwen_rate": 0.19054901960784315,
+      "prior_rate": 0.2626244383711043,
+      "source_rates": {
+        "beer": 0.32261812548412083,
+        "dryer": 0.20263075125808772
+      },
+      "budgets": {
+        "0": {
+          "qwen": 0.11986211264367816,
+          "half": 0.25,
+          "historical": 0.1133908386563865,
+          "local": 0.25,
+          "historical_plus_local": 0.1133908386563865,
+          "historical_with_qwen_variation": 0.11722700513016107,
+          "comparison": {
+            "against": "qwen",
+            "candidate": "historical",
+            "p05_p95": [
+              -0.01952463744067878,
+              0.03121864553280954
+            ],
+            "win_rate": 0.56
+          }
+        },
+        "5": {
+          "qwen": 0.11986211264367816,
+          "half": 0.25,
+          "historical": 0.1133908386563865,
+          "local": 0.09567326521924223,
+          "historical_plus_local": 0.09884519034843915,
+          "historical_with_qwen_variation": 0.11722700513016107,
+          "comparison": {
+            "against": "local",
+            "candidate": "historical_plus_local",
+            "p05_p95": [
+              -0.01078947849677072,
+              0.014725834853716042
+            ],
+            "win_rate": 0.21
+          }
+        },
+        "10": {
+          "qwen": 0.11986211264367816,
+          "half": 0.25,
+          "historical": 0.1133908386563865,
+          "local": 0.08972021151958458,
+          "historical_plus_local": 0.09308937806066041,
+          "historical_with_qwen_variation": 0.11722700513016107,
+          "comparison": {
+            "against": "local",
+            "candidate": "historical_plus_local",
+            "p05_p95": [
+              -0.007461793170635261,
+              0.003790854600906347
+            ],
+            "win_rate": 0.16
+          }
+        },
+        "25": {
+          "qwen": 0.11986211264367816,
+          "half": 0.25,
+          "historical": 0.1133908386563865,
+          "local": 0.08734152893967219,
+          "historical_plus_local": 0.0887626286435705,
+          "historical_with_qwen_variation": 0.11722700513016107,
+          "comparison": {
+            "against": "local",
+            "candidate": "historical_plus_local",
+            "p05_p95": [
+              -0.004005985905343929,
+              0.003581071140749726
+            ],
+            "win_rate": 0.24
+          }
+        }
+      }
+    },
+    "scotland": {
+      "people": 154,
+      "actual_rate": 0.27705627705627706,
+      "qwen_rate": 0.21455627705627708,
+      "prior_rate": 0.2626244383711043,
+      "source_rates": {
+        "beer": 0.32261812548412083,
+        "dryer": 0.20263075125808772
+      },
+      "budgets": {
+        "0": {
+          "qwen": 0.2222640826873385,
+          "half": 0.25,
+          "historical": 0.2009082450002172,
+          "local": 0.25,
+          "historical_plus_local": 0.2009082450002172,
+          "historical_with_qwen_variation": 0.20412177082999505,
+          "comparison": {
+            "against": "qwen",
+            "candidate": "historical",
+            "p05_p95": [
+              0.0007535563878847685,
+              0.04184450700838754
+            ],
+            "win_rate": 0.96
+          }
+        },
+        "5": {
+          "qwen": 0.2222640826873385,
+          "half": 0.25,
+          "historical": 0.2009082450002172,
+          "local": 0.21957292563881708,
+          "historical_plus_local": 0.20444113366496494,
+          "historical_with_qwen_variation": 0.20412177082999505,
+          "comparison": {
+            "against": "local",
+            "candidate": "historical_plus_local",
+            "p05_p95": [
+              -0.0017085279080381432,
+              0.054331449978172665
+            ],
+            "win_rate": 0.77
+          }
+        },
+        "10": {
+          "qwen": 0.2222640826873385,
+          "half": 0.25,
+          "historical": 0.2009082450002172,
+          "local": 0.2120616311102569,
+          "historical_plus_local": 0.20489032897432355,
+          "historical_with_qwen_variation": 0.20412177082999505,
+          "comparison": {
+            "against": "local",
+            "candidate": "historical_plus_local",
+            "p05_p95": [
+              -0.0010502090571679612,
+              0.026310208053120263
+            ],
+            "win_rate": 0.86
+          }
+        },
+        "25": {
+          "qwen": 0.2222640826873385,
+          "half": 0.25,
+          "historical": 0.2009082450002172,
+          "local": 0.20680033790498908,
+          "historical_plus_local": 0.20454795272937754,
+          "historical_with_qwen_variation": 0.20412177082999505,
+          "comparison": {
+            "against": "local",
+            "candidate": "historical_plus_local",
+            "p05_p95": [
+              -0.0005932211788728659,
+              0.012281718430536092
+            ],
+            "win_rate": 0.62
+          }
+        }
+      }
+    },
+    "USA": {
+      "people": 208,
+      "actual_rate": 0.20432692307692307,
+      "qwen_rate": 0.07998798076923078,
+      "prior_rate": 0.2510985542962578,
+      "source_rates": {
+        "beer": 0.32261812548412083,
+        "food_archive": 0.17957898310839485
+      },
+      "budgets": {
+        "0": {
+          "qwen": 0.17717711748633883,
+          "half": 0.25,
+          "historical": 0.16462403569183173,
+          "local": 0.25,
+          "historical_plus_local": 0.16462403569183173,
+          "historical_with_qwen_variation": 0.1640897499702142,
+          "comparison": {
+            "against": "qwen",
+            "candidate": "historical",
+            "p05_p95": [
+              0.0008044611813588303,
+              0.022794797469818374
+            ],
+            "win_rate": 0.95
+          }
+        },
+        "5": {
+          "qwen": 0.17717711748633883,
+          "half": 0.25,
+          "historical": 0.16462403569183173,
+          "local": 0.1782838114754098,
+          "historical_plus_local": 0.16592870654608846,
+          "historical_with_qwen_variation": 0.1640897499702142,
+          "comparison": {
+            "against": "local",
+            "candidate": "historical_plus_local",
+            "p05_p95": [
+              -9.952574439118649e-05,
+              0.056630961393650404
+            ],
+            "win_rate": 0.94
+          }
+        },
+        "10": {
+          "qwen": 0.17717711748633883,
+          "half": 0.25,
+          "historical": 0.16462403569183173,
+          "local": 0.17383258817685046,
+          "historical_plus_local": 0.1667458127690581,
+          "historical_with_qwen_variation": 0.1640897499702142,
+          "comparison": {
+            "against": "local",
+            "candidate": "historical_plus_local",
+            "p05_p95": [
+              -5.326417833659415e-05,
+              0.033320399159081526
+            ],
+            "win_rate": 0.91
+          }
+        },
+        "25": {
+          "qwen": 0.17717711748633883,
+          "half": 0.25,
+          "historical": 0.16462403569183173,
+          "local": 0.16787606702880975,
+          "historical_plus_local": 0.16583932113416744,
+          "historical_with_qwen_variation": 0.1640897499702142,
+          "comparison": {
+            "against": "local",
+            "candidate": "historical_plus_local",
+            "p05_p95": [
+              -2.0343684916693248e-05,
+              0.006230845000894638
+            ],
+            "win_rate": 0.89
+          }
+        }
+      }
+    },
+    "CAN": {
+      "people": 214,
+      "actual_rate": 0.20093457943925233,
+      "qwen_rate": 0.08544392523364486,
+      "prior_rate": 0.2510985542962578,
+      "source_rates": {
+        "beer": 0.32261812548412083,
+        "food_archive": 0.17957898310839485
+      },
+      "budgets": {
+        "0": {
+          "qwen": 0.17643325132275134,
+          "half": 0.25,
+          "historical": 0.16321026943526923,
+          "local": 0.25,
+          "historical_plus_local": 0.16321026943526923,
+          "historical_with_qwen_variation": 0.16364721865281634,
+          "comparison": {
+            "against": "qwen",
+            "candidate": "historical",
+            "p05_p95": [
+              0.0007362390427508956,
+              0.026011199056020312
+            ],
+            "win_rate": 0.96
+          }
+        },
+        "5": {
+          "qwen": 0.17643325132275134,
+          "half": 0.25,
+          "historical": 0.16321026943526923,
+          "local": 0.18113701499118165,
+          "historical_plus_local": 0.16506118013934765,
+          "historical_with_qwen_variation": 0.16364721865281634,
+          "comparison": {
+            "against": "local",
+            "candidate": "historical_plus_local",
+            "p05_p95": [
+              -0.0005594554525405637,
+              0.058740689951345904
+            ],
+            "win_rate": 0.9
+          }
+        },
+        "10": {
+          "qwen": 0.17643325132275134,
+          "half": 0.25,
+          "historical": 0.16321026943526923,
+          "local": 0.1721630263675719,
+          "historical_plus_local": 0.16502224181672115,
+          "historical_with_qwen_variation": 0.16364721865281634,
+          "comparison": {
+            "against": "local",
+            "candidate": "historical_plus_local",
+            "p05_p95": [
+              -5.012050026656912e-05,
+              0.026800400478288647
+            ],
+            "win_rate": 0.91
+          }
+        },
+        "25": {
+          "qwen": 0.17643325132275134,
+          "half": 0.25,
+          "historical": 0.16321026943526923,
+          "local": 0.166725833372468,
+          "historical_plus_local": 0.16448826156064147,
+          "historical_with_qwen_variation": 0.16364721865281634,
+          "comparison": {
+            "against": "local",
+            "candidate": "historical_plus_local",
+            "p05_p95": [
+              -0.00016382837309693866,
+              0.007709978845309626
+            ],
+            "win_rate": 0.82
+          }
+        }
+      }
+    }
+  }
+}

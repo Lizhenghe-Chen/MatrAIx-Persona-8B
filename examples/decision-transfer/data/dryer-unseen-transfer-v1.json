@@ -1,0 +1,255 @@
+{
+  "seed": 20261109,
+  "splits": 100,
+  "new_calls": 0,
+  "studies": {
+    "USA": {
+      "source_choices_range": [
+        748,
+        856
+      ],
+      "budgets": {
+        "10": {
+          "local": 0.5999285881544258,
+          "source_only": 0.5539403992417273,
+          "source_local_refusal": 0.5713029279137192,
+          "source_updated": 0.5874764433674613,
+          "qwen_direct": 0.6265325231481481,
+          "pilot_choices": 37.21,
+          "source_only_over_local": {
+            "win_rate": 0.81,
+            "p05_p95": [
+              -0.015146740075224013,
+              0.16945495645284944
+            ]
+          },
+          "source_local_refusal_over_local": {
+            "win_rate": 0.75,
+            "p05_p95": [
+              -0.017785730831232954,
+              0.09307847507782212
+            ]
+          },
+          "source_updated_over_local": {
+            "win_rate": 0.97,
+            "p05_p95": [
+              0.000505175243904199,
+              0.03148005906779583
+            ]
+          }
+        },
+        "25": {
+          "local": 0.5621437145822812,
+          "source_only": 0.5539403992417273,
+          "source_local_refusal": 0.5613384633966281,
+          "source_updated": 0.5599613870589394,
+          "qwen_direct": 0.6265325231481481,
+          "pilot_choices": 92.87,
+          "source_only_over_local": {
+            "win_rate": 0.62,
+            "p05_p95": [
+              -0.02360497468297903,
+              0.046679011605340805
+            ]
+          },
+          "source_local_refusal_over_local": {
+            "win_rate": 0.56,
+            "p05_p95": [
+              -0.027360027001045856,
+              0.026381773490800682
+            ]
+          },
+          "source_updated_over_local": {
+            "win_rate": 0.88,
+            "p05_p95": [
+              -0.0003122061845540979,
+              0.005596805765160924
+            ]
+          }
+        },
+        "50": {
+          "local": 0.5528969691105096,
+          "source_only": 0.5539403992417273,
+          "source_local_refusal": 0.5570027108982787,
+          "source_updated": 0.5520728705856386,
+          "qwen_direct": 0.6265325231481481,
+          "pilot_choices": 185.95,
+          "source_only_over_local": {
+            "win_rate": 0.49,
+            "p05_p95": [
+              -0.030049090934689725,
+              0.023790186500364702
+            ]
+          },
+          "source_local_refusal_over_local": {
+            "win_rate": 0.37,
+            "p05_p95": [
+              -0.03197597156480108,
+              0.019752475028354113
+            ]
+          },
+          "source_updated_over_local": {
+            "win_rate": 0.83,
+            "p05_p95": [
+              -0.0004187177730676617,
+              0.0028402306323057664
+            ]
+          }
+        },
+        "100": {
+          "local": 0.5486163187267965,
+          "source_only": 0.5539403992417273,
+          "source_local_refusal": 0.5562395807324614,
+          "source_updated": 0.5483191047886772,
+          "qwen_direct": 0.6265325231481481,
+          "pilot_choices": 371.78,
+          "source_only_over_local": {
+            "win_rate": 0.38,
+            "p05_p95": [
+              -0.028705996616898138,
+              0.016171218714676843
+            ]
+          },
+          "source_local_refusal_over_local": {
+            "win_rate": 0.32,
+            "p05_p95": [
+              -0.028744270942727596,
+              0.009850053598094858
+            ]
+          },
+          "source_updated_over_local": {
+            "win_rate": 0.81,
+            "p05_p95": [
+              -0.00020716049358548427,
+              0.0010517028360139732
+            ]
+          }
+        }
+      }
+    },
+    "CAN": {
+      "source_choices_range": [
+        724,
+        832
+      ],
+      "budgets": {
+        "10": {
+          "local": 0.6246084094668567,
+          "source_only": 0.5653954033627896,
+          "source_local_refusal": 0.5845334453988036,
+          "source_updated": 0.6119140568211752,
+          "qwen_direct": 0.6116811798245615,
+          "pilot_choices": 37.61,
+          "source_only_over_local": {
+            "win_rate": 0.95,
+            "p05_p95": [
+              -0.00012522624555178944,
+              0.1553538153519531
+            ]
+          },
+          "source_local_refusal_over_local": {
+            "win_rate": 0.87,
+            "p05_p95": [
+              -0.012436894759785077,
+              0.12729943074005948
+            ]
+          },
+          "source_updated_over_local": {
+            "win_rate": 0.89,
+            "p05_p95": [
+              -0.0005961853883954148,
+              0.038694276012788985
+            ]
+          }
+        },
+        "25": {
+          "local": 0.5841709184519595,
+          "source_only": 0.5653954033627896,
+          "source_local_refusal": 0.5747268030163942,
+          "source_updated": 0.5823006251599128,
+          "qwen_direct": 0.6116811798245615,
+          "pilot_choices": 93.56,
+          "source_only_over_local": {
+            "win_rate": 0.73,
+            "p05_p95": [
+              -0.01492121666771125,
+              0.0740136592650651
+            ]
+          },
+          "source_local_refusal_over_local": {
+            "win_rate": 0.61,
+            "p05_p95": [
+              -0.019184406631932726,
+              0.05674113454786191
+            ]
+          },
+          "source_updated_over_local": {
+            "win_rate": 0.73,
+            "p05_p95": [
+              -0.0016167573677686397,
+              0.007851076980914695
+            ]
+          }
+        },
+        "50": {
+          "local": 0.5701073108682437,
+          "source_only": 0.5653954033627896,
+          "source_local_refusal": 0.5707148091340586,
+          "source_updated": 0.5698152612974835,
+          "qwen_direct": 0.6116811798245615,
+          "pilot_choices": 186.96,
+          "source_only_over_local": {
+            "win_rate": 0.53,
+            "p05_p95": [
+              -0.021362720636680516,
+              0.03321217100143924
+            ]
+          },
+          "source_local_refusal_over_local": {
+            "win_rate": 0.44,
+            "p05_p95": [
+              -0.0220055201200706,
+              0.02772474299851777
+            ]
+          },
+          "source_updated_over_local": {
+            "win_rate": 0.61,
+            "p05_p95": [
+              -0.0011257951430210245,
+              0.0020852035058343986
+            ]
+          }
+        },
+        "100": {
+          "local": 0.5639666030984148,
+          "source_only": 0.5653954033627896,
+          "source_local_refusal": 0.5690296996650579,
+          "source_updated": 0.5639738864732663,
+          "qwen_direct": 0.6116811798245615,
+          "pilot_choices": 373.63,
+          "source_only_over_local": {
+            "win_rate": 0.39,
+            "p05_p95": [
+              -0.021704558408775877,
+              0.022734728574055417
+            ]
+          },
+          "source_local_refusal_over_local": {
+            "win_rate": 0.27,
+            "p05_p95": [
+              -0.02083721440865143,
+              0.0158698496397461
+            ]
+          },
+          "source_updated_over_local": {
+            "win_rate": 0.45,
+            "p05_p95": [
+              -0.000448712611836477,
+              0.0006846107637620944
+            ]
+          }
+        }
+      }
+    }
+  }
+}

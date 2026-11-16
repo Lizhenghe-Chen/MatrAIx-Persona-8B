@@ -1,0 +1,136 @@
+{
+  "source": "https://raw.githubusercontent.com/cran/mlogit/master/data/Electricity.rda",
+  "source_sha256": "100ef289e7ba045457e29727091c45e5bc8b75cbbf61b833676a4b3faf59178d",
+  "people": 361,
+  "answers": 4308,
+  "unique_cards": 59,
+  "heldout_cards": 15,
+  "available_training_answers": 3150,
+  "evaluation_people_range": [
+    336,
+    336
+  ],
+  "evaluation_answers_range": [
+    1060,
+    1092
+  ],
+  "seed": 20261109,
+  "replays": 100,
+  "qwen_weight": 0.25,
+  "penalty_multiplier": 10,
+  "valid_calls": 15,
+  "identity": {
+    "model": "Qwen/Qwen3.8-27B",
+    "system_fingerprint": "vllm-0.29.0-tp2-f806618a"
+  },
+  "budgets": {
+    "5": {
+      "brier": {
+        "qwen": 0.7786918601190478,
+        "uniform": 0.75,
+        "full": 0.7442390933452692,
+        "shrink_all": 0.7248719788823995,
+        "shrink_all_qwen": 0.7197131499777291,
+        "shrink_all_uniform": 0.7211741929750533
+      },
+      "gains": {
+        "shrink_all_over_full": {
+          "mean": 0.019367114462869678,
+          "wins": 74,
+          "p05_p95": [
+            -0.010865446739608065,
+            0.08419637387789676
+          ]
+        },
+        "shrink_all_qwen_over_shrink_all": {
+          "mean": 0.0051588289046704035,
+          "wins": 54,
+          "p05_p95": [
+            -0.006921958820906676,
+            0.026561958581337117
+          ]
+        },
+        "shrink_all_qwen_over_shrink_all_uniform": {
+          "mean": 0.0014610429973240869,
+          "wins": 76,
+          "p05_p95": [
+            -0.0022085881821023888,
+            0.004918750162972257
+          ]
+        }
+      }
+    },
+    "10": {
+      "brier": {
+        "qwen": 0.7786918601190478,
+        "uniform": 0.75,
+        "full": 0.7124320404696709,
+        "shrink_all": 0.7139579764716706,
+        "shrink_all_qwen": 0.7137071208812621,
+        "shrink_all_uniform": 0.7152804429998213
+      },
+      "gains": {
+        "shrink_all_over_full": {
+          "mean": -0.0015259360019995282,
+          "wins": 40,
+          "p05_p95": [
+            -0.017255739844260563,
+            0.02107141997386511
+          ]
+        },
+        "shrink_all_qwen_over_shrink_all": {
+          "mean": 0.0002508555904084653,
+          "wins": 38,
+          "p05_p95": [
+            -0.00785665366995919,
+            0.012919014379858219
+          ]
+        },
+        "shrink_all_qwen_over_shrink_all_uniform": {
+          "mean": 0.0015733221185590574,
+          "wins": 88,
+          "p05_p95": [
+            -0.0005936389116153684,
+            0.003909815365728203
+          ]
+        }
+      }
+    },
+    "25": {
+      "brier": {
+        "qwen": 0.7786918601190478,
+        "uniform": 0.75,
+        "full": 0.695547904618884,
+        "shrink_all": 0.7071816811664385,
+        "shrink_all_qwen": 0.7093291893871192,
+        "shrink_all_uniform": 0.7110119226423879
+      },
+      "gains": {
+        "shrink_all_over_full": {
+          "mean": -0.011633776547554613,
+          "wins": 5,
+          "p05_p95": [
+            -0.019420118567257127,
+            -0.0014020843653399391
+          ]
+        },
+        "shrink_all_qwen_over_shrink_all": {
+          "mean": -0.0021475082206808614,
+          "wins": 30,
+          "p05_p95": [
+            -0.0077056380215792366,
+            0.007104991895551192
+          ]
+        },
+        "shrink_all_qwen_over_shrink_all_uniform": {
+          "mean": 0.0016827332552685537,
+          "wins": 93,
+          "p05_p95": [
+            -6.65918169829693e-05,
+            0.0033415958552014953
+          ]
+        }
+      }
+    }
+  }
+}

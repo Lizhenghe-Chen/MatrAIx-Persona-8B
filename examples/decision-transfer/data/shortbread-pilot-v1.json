@@ -1,0 +1,170 @@
+{
+  "source_sha256": "447cb59fab8500639d9f5478dad4aeeeb64bc09f1d0d0848ae0219e1c42c88a0",
+  "seed": 20261109,
+  "splits": 100,
+  "calls": 36,
+  "refusal_only_cards": 0,
+  "identity": {
+    "model": "Qwen/Qwen3.8-27B",
+    "system_fingerprint": "vllm-0.29.0-tp2-f806618a"
+  },
+  "eligible_people": 154,
+  "study": {
+    "10": {
+      "qwen": 0.5928943086419753,
+      "uniform": 0.6797876761603783,
+      "baseline": 0.5586093438078354,
+      "uniform_price_refusal": 0.6445236364201236,
+      "price_bound": 0.5586093438078354,
+      "price_refusal": 0.519858602001838,
+      "both": 0.519858602001838,
+      "constant_refusal_brier": 0.42313253940725326,
+      "price_refusal_brier": 0.37611381975358027,
+      "positive_unconstrained_price": 0.0,
+      "refusal_slope": 0.7839733490591156,
+      "vs_baseline": {
+        "price_bound": {
+          "win_rate": 0.0,
+          "tie_rate": 1.0,
+          "p05_p95": [
+            0.0,
+            0.0
+          ]
+        },
+        "price_refusal": {
+          "win_rate": 0.88,
+          "tie_rate": 0.02,
+          "p05_p95": [
+            -0.02056538949499024,
+            0.09265589343125062
+          ]
+        },
+        "both": {
+          "win_rate": 0.88,
+          "tie_rate": 0.02,
+          "p05_p95": [
+            -0.02056538949499024,
+            0.09265589343125062
+          ]
+        }
+      }
+    },
+    "25": {
+      "qwen": 0.5928943086419753,
+      "uniform": 0.669816599551999,
+      "baseline": 0.5346552075288055,
+      "uniform_price_refusal": 0.6291372858859996,
+      "price_bound": 0.5346552075288055,
+      "price_refusal": 0.4892830160341904,
+      "both": 0.4892830160341904,
+      "constant_refusal_brier": 0.4098377705960808,
+      "price_refusal_brier": 0.3555986857080816,
+      "positive_unconstrained_price": 0.0,
+      "refusal_slope": 0.7663785513972023,
+      "vs_baseline": {
+        "price_bound": {
+          "win_rate": 0.0,
+          "tie_rate": 1.0,
+          "p05_p95": [
+            0.0,
+            0.0
+          ]
+        },
+        "price_refusal": {
+          "win_rate": 0.96,
+          "tie_rate": 0.0,
+          "p05_p95": [
+            0.0030029927014069147,
+            0.09442836061649623
+          ]
+        },
+        "both": {
+          "win_rate": 0.96,
+          "tie_rate": 0.0,
+          "p05_p95": [
+            0.0030029927014069147,
+            0.09442836061649623
+          ]
+        }
+      }
+    },
+    "50": {
+      "qwen": 0.5928943086419753,
+      "uniform": 0.6677383234220288,
+      "baseline": 0.5253410132781351,
+      "uniform_price_refusal": 0.6225407067395822,
+      "price_bound": 0.5253410132781351,
+      "price_refusal": 0.4753162594188709,
+      "both": 0.4753162594188709,
+      "constant_refusal_brier": 0.40706673575612073,
+      "price_refusal_brier": 0.34680324684619185,
+      "positive_unconstrained_price": 0.0,
+      "refusal_slope": 0.7245915012456888,
+      "vs_baseline": {
+        "price_bound": {
+          "win_rate": 0.0,
+          "tie_rate": 1.0,
+          "p05_p95": [
+            0.0,
+            0.0
+          ]
+        },
+        "price_refusal": {
+          "win_rate": 0.98,
+          "tie_rate": 0.0,
+          "p05_p95": [
+            0.010821847834708687,
+            0.10216937267230959
+          ]
+        },
+        "both": {
+          "win_rate": 0.98,
+          "tie_rate": 0.0,
+          "p05_p95": [
+            0.010821847834708687,
+            0.10216937267230959
+          ]
+        }
+      }
+    },
+    "100": {
+      "qwen": 0.5928943086419753,
+      "uniform": 0.6675015854347666,
+      "baseline": 0.5205866968275404,
+      "uniform_price_refusal": 0.621155465911775,
+      "price_bound": 0.5205866968275404,
+      "price_refusal": 0.4698921993065589,
+      "both": 0.4698921993065589,
+      "constant_refusal_brier": 0.40675108510643804,
+      "price_refusal_brier": 0.34495625907578237,
+      "positive_unconstrained_price": 0.0,
+      "refusal_slope": 0.7333598858220405,
+      "vs_baseline": {
+        "price_bound": {
+          "win_rate": 0.0,
+          "tie_rate": 1.0,
+          "p05_p95": [
+            0.0,
+            0.0
+          ]
+        },
+        "price_refusal": {
+          "win_rate": 0.98,
+          "tie_rate": 0.0,
+          "p05_p95": [
+            0.012393726793784227,
+            0.10248962683183956
+          ]
+        },
+        "both": {
+          "win_rate": 0.98,
+          "tie_rate": 0.0,
+          "p05_p95": [
+            0.012393726793784227,
+            0.10248962683183956
+          ]
+        }
+      }
+    }
+  }
+}
