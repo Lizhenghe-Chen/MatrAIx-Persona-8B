@@ -1,0 +1,201 @@
+{
+  "seed": 20261109,
+  "new_model_calls": 0,
+  "record_order": "source_file_only",
+  "studies": {
+    "Yogurt": {
+      "source_sha256": "522552372b313d537a7c8b9d7acf28a3d9a6ba8950c69a0dd78d86f0e164cf0d",
+      "total_households": 100,
+      "eligible": 100,
+      "fold_sizes": [
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "repeat_brand_count": 88,
+      "brier": {
+        "attributes": 0.6181122258814379,
+        "brand_frequency": 0.6809256593408831,
+        "history_only": 0.305,
+        "frequency_half_history": 0.3501207687904785,
+        "attributes_half_history": 0.3256000636096303,
+        "preference_update": 0.4217997227156653,
+        "matched_attributes": 0.6213287719748456,
+        "learned_history": 0.29042630078322984,
+        "learned_other_history": 0.8354061542417905
+      },
+      "brier_brand_seen_in_history": {
+        "attributes": 0.6005192178166935,
+        "brand_frequency": 0.6528405114947365,
+        "history_only": 0.08522727272727272,
+        "frequency_half_history": 0.22640379014295975,
+        "attributes_half_history": 0.2121422523819966,
+        "preference_update": 0.3642933239154571,
+        "matched_attributes": 0.6021299496984984,
+        "learned_history": 0.1318539089317811,
+        "learned_other_history": 0.8063571468329762
+      },
+      "brier_brand_absent_from_history": {
+        "attributes": 0.7471276183562293,
+        "brand_frequency": 0.8868834102126248,
+        "history_only": 1.9166666666666667,
+        "frequency_half_history": 1.2573786122056159,
+        "attributes_half_history": 1.1576240126122772,
+        "preference_update": 0.843513313917192,
+        "matched_attributes": 0.7621201353347243,
+        "learned_history": 1.453290507693855,
+        "learned_other_history": 1.0484322085730948
+      },
+      "gains": {
+        "attributes_half_history_over_attributes": {
+          "mean": 0.29251216227180754,
+          "ci95": [
+            0.22721633817672277,
+            0.35421829198172106
+          ]
+        },
+        "preference_update_over_attributes": {
+          "mean": 0.19631250316577248,
+          "ci95": [
+            0.15999649020679307,
+            0.23104153680809672
+          ]
+        },
+        "learned_history_over_attributes": {
+          "mean": 0.32768592509820776,
+          "ci95": [
+            0.23528764661704804,
+            0.4132926770749794
+          ]
+        },
+        "learned_history_over_matched_attributes": {
+          "mean": 0.33090247119161575,
+          "ci95": [
+            0.23797552605959374,
+            0.4199760963822231
+          ]
+        },
+        "learned_history_over_frequency_half_history": {
+          "mean": 0.059694468007248445,
+          "ci95": [
+            0.024820492667985132,
+            0.0936829517905792
+          ]
+        },
+        "learned_history_over_attributes_half_history": {
+          "mean": 0.03517376282640027,
+          "ci95": [
+            0.0037908480376572236,
+            0.06359836671841533
+          ]
+        },
+        "learned_history_over_learned_other_history": {
+          "mean": 0.5449798534585608,
+          "ci95": [
+            0.38985805368472193,
+            0.6917554071504415
+          ]
+        }
+      }
+    },
+    "Ketchup": {
+      "source_sha256": "85f068c8e455a56fe06aa9e75affebd8c65de00edffe55dcfebb737441d9702c",
+      "total_households": 1956,
+      "eligible": 605,
+      "fold_sizes": [
+        121,
+        121,
+        121,
+        121,
+        121
+      ],
+      "repeat_brand_count": 422,
+      "brier": {
+        "attributes": 0.5748837444582915,
+        "brand_frequency": 0.6641149786660404,
+        "history_only": 0.6371900826446281,
+        "frequency_half_history": 0.5585050488764437,
+        "attributes_half_history": 0.4978999750715902,
+        "preference_update": 0.4883488167879222,
+        "matched_attributes": 0.5790669635141021,
+        "learned_history": 0.43581452130838666,
+        "learned_other_history": 0.6848043598572185
+      },
+      "brier_brand_seen_in_history": {
+        "attributes": 0.49718347839100585,
+        "brand_frequency": 0.5335309091734036,
+        "history_only": 0.1066350710900474,
+        "frequency_half_history": 0.22636960278512197,
+        "attributes_half_history": 0.20680158003784582,
+        "preference_update": 0.3269429219132876,
+        "matched_attributes": 0.5085504484669041,
+        "learned_history": 0.223372989922848,
+        "learned_other_history": 0.6103490350911049
+      },
+      "brier_brand_absent_from_history": {
+        "attributes": 0.7540614071926862,
+        "brand_frequency": 0.9652432700643726,
+        "history_only": 1.860655737704918,
+        "frequency_half_history": 1.3244130174586026,
+        "attributes_half_history": 1.1691760554226291,
+        "preference_update": 0.8605525743676805,
+        "matched_attributes": 0.7416788178852375,
+        "learned_history": 0.9257070144488112,
+        "learned_other_history": 0.856499152487268
+      },
+      "gains": {
+        "attributes_half_history_over_attributes": {
+          "mean": 0.07698376938670085,
+          "ci95": [
+            0.04478244900895561,
+            0.1072938559928847
+          ]
+        },
+        "preference_update_over_attributes": {
+          "mean": 0.08653492767036867,
+          "ci95": [
+            0.07138780050162181,
+            0.10222580037658864
+          ]
+        },
+        "learned_history_over_attributes": {
+          "mean": 0.13906922314990391,
+          "ci95": [
+            0.11403120865367845,
+            0.1641632092694827
+          ]
+        },
+        "learned_history_over_matched_attributes": {
+          "mean": 0.14325244220571534,
+          "ci95": [
+            0.11870627906115419,
+            0.16752076079789424
+          ]
+        },
+        "learned_history_over_frequency_half_history": {
+          "mean": 0.1226905275680527,
+          "ci95": [
+            0.09723219415153499,
+            0.15027349877868607
+          ]
+        },
+        "learned_history_over_attributes_half_history": {
+          "mean": 0.06208545376320304,
+          "ci95": [
+            0.04496217624088444,
+            0.07956906886508194
+          ]
+        },
+        "learned_history_over_learned_other_history": {
+          "mean": 0.24898983854883008,
+          "ci95": [
+            0.21270715178608446,
+            0.28596986595276574
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,197 @@
+{
+  "source_sha256": "c41dc0c7e3b6eef34ddd36a6813171dafda799ab4880476fc79a9db69248a53e",
+  "cutoff": "2011-09-01",
+  "seed": 20261109,
+  "prior_baskets": 10,
+  "new_model_calls": 0,
+  "rules": {
+    "mugs": "\\bMUGS?\\b",
+    "candle_holders": "\\b(?:T[ -]?LIGHT|TEA[ -]?LIGHT|CANDLE)\\s+HOLDERS?\\b",
+    "gift_bags": "\\bGIFT\\s+BAGS?\\b"
+  },
+  "categories": {
+    "mugs": {
+      "customers_with_later_order": 908,
+      "catalogue_products": 64,
+      "smoothed_over_market": {
+        "mean": 0.031479643805890675,
+        "ci95": [
+          -0.020088118865300562,
+          0.08725357022841067
+        ]
+      },
+      "test_households": 37,
+      "category_purchases": 10,
+      "training_visits": 393,
+      "constant_buy_probability": 0.22208121827411167,
+      "joint_brier": {
+        "market": 0.4436632938367795,
+        "history_label_only": 0.43396751982515147,
+        "history_incidence_only": 0.4299241014401426,
+        "smoothed_frequency_and_label": 0.41218365003088897,
+        "history_both": 0.4172489211122544
+      },
+      "incidence_brier": {
+        "market": 0.19954643601059388,
+        "history_label_only": 0.19954643601059388,
+        "history_incidence_only": 0.19296249409688188,
+        "smoothed_frequency_and_label": 0.18817860088330798,
+        "history_both": 0.19296249409688188
+      },
+      "choice_given_purchase_brier": {
+        "market": 0.5892857142857142,
+        "history_label_only": 0.45880102040816323,
+        "history_incidence_only": 0.5892857142857142,
+        "smoothed_frequency_and_label": 0.45880102040816323,
+        "history_both": 0.45880102040816323
+      },
+      "joint_gains": {
+        "market": {
+          "mean": 0.026414372724525133,
+          "ci95": [
+            -0.02193193714702245,
+            0.08022948868639172
+          ]
+        },
+        "history_label_only": {
+          "mean": 0.016718598712896986,
+          "ci95": [
+            -0.023104239363143434,
+            0.06076907135861801
+          ]
+        },
+        "history_incidence_only": {
+          "mean": 0.012675180327888112,
+          "ci95": [
+            -0.005255805366434936,
+            0.03358438046412225
+          ]
+        },
+        "smoothed_frequency_and_label": {
+          "mean": -0.005065271081365539,
+          "ci95": [
+            -0.03209944975857348,
+            0.021985506243970183
+          ]
+        }
+      }
+    },
+    "candle_holders": {
+      "customers_with_later_order": 908,
+      "catalogue_products": 75,
+      "smoothed_over_market": {
+        "mean": 0.008665653925378727,
+        "ci95": [
+          -0.03224181973315567,
+          0.055962361901788486
+        ]
+      },
+      "test_households": 69,
+      "category_purchases": 27,
+      "training_visits": 893,
+      "constant_buy_probability": 0.35961968680089484,
+      "joint_brier": {
+        "market": 0.5970356494933663,
+        "history_label_only": 0.6090013072900107,
+        "history_incidence_only": 0.5698266077885995,
+        "smoothed_frequency_and_label": 0.5883699955679875,
+        "history_both": 0.590598554664399
+      },
+      "incidence_brier": {
+        "market": 0.23918917294276898,
+        "history_label_only": 0.23918917294276898,
+        "history_incidence_only": 0.21821932829533985,
+        "smoothed_frequency_and_label": 0.2167862607776784,
+        "history_both": 0.21821932829533985
+      },
+      "choice_given_purchase_brier": {
+        "market": 0.7770108000627047,
+        "history_label_only": 0.8658806712705129,
+        "history_incidence_only": 0.7770108000627047,
+        "smoothed_frequency_and_label": 0.8658806712705129,
+        "history_both": 0.8658806712705129
+      },
+      "joint_gains": {
+        "market": {
+          "mean": 0.0064370948289670885,
+          "ci95": [
+            -0.031760491663582295,
+            0.0506549373096736
+          ]
+        },
+        "history_label_only": {
+          "mean": 0.018402752625611432,
+          "ci95": [
+            -0.012549690532782804,
+            0.05047223148444734
+          ]
+        },
+        "history_incidence_only": {
+          "mean": -0.02077194687579962,
+          "ci95": [
+            -0.050797328491017285,
+            0.013178587504552326
+          ]
+        },
+        "smoothed_frequency_and_label": {
+          "mean": -0.0022285590964116393,
+          "ci95": [
+            -0.01965686153139532,
+            0.014443870759074785
+          ]
+        }
+      }
+    },
+    "gift_bags": {
+      "customers_with_later_order": 908,
+      "catalogue_products": 12,
+      "smoothed_over_market": {
+        "mean": 0.25059902520827304,
+        "ci95": null
+      },
+      "test_households": 1,
+      "category_purchases": 1,
+      "training_visits": 47,
+      "constant_buy_probability": 0.11458333333333333,
+      "joint_brier": {
+        "market": 1.7348768446180556,
+        "history_label_only": 1.6477084689670136,
+        "history_incidence_only": 1.749756738250116,
+        "smoothed_frequency_and_label": 1.4842778194097825,
+        "history_both": 1.6679508634216305
+      },
+      "incidence_brier": {
+        "market": 0.783962673611111,
+        "history_label_only": 0.783962673611111,
+        "history_incidence_only": 0.7963303473466631,
+        "smoothed_frequency_and_label": 0.6843540521315586,
+        "history_both": 0.7963303473466631
+      },
+      "choice_given_purchase_brier": {
+        "market": 1.125,
+        "history_label_only": 0.28125,
+        "history_incidence_only": 1.125,
+        "smoothed_frequency_and_label": 0.28125,
+        "history_both": 0.28125
+      },
+      "joint_gains": {
+        "market": {
+          "mean": 0.06692598119642512,
+          "ci95": null
+        },
+        "history_label_only": {
+          "mean": -0.02024239445461684,
+          "ci95": null
+        },
+        "history_incidence_only": {
+          "mean": 0.08180587482848556,
+          "ci95": null
+        },
+        "smoothed_frequency_and_label": {
+          "mean": -0.18367304401184792,
+          "ci95": null
+        }
+      }
+    }
+  }
+}

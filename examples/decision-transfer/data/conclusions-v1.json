@@ -1,0 +1,252 @@
+{
+ "version": "v1",
+ "date": "2026-11-16",
+ "status": "frozen_conclusions_for_summary_report",
+ "headline": "Only the person's own recorded choices and purchases produce a repeatable gain; language models do not beat a same-information statistical update.",
+ "sources": {
+  "surveys": {
+   "file": "personal-choice-products-v1.json",
+   "sha256": "c465ff51f1a7938cb43595bf526a5eb5dded4819cdc57bc60c5c9cc9325fa961"
+  },
+  "scanner": {
+   "file": "scanner-personal-update-v1.json",
+   "sha256": "2c75860247ae3cd2f27e19e3536926b21930b56e81c713190f04a08babbef613"
+  },
+  "baskets": {
+   "file": "dated-basket-incidence-v1.json",
+   "sha256": "13b0262f8f73d91c11d99725c082d3712326ae3d0d9abadacf0755fbf2f8acbb"
+  },
+  "retail": {
+   "file": "online-retail-incidence-v1.json",
+   "sha256": "ab8326fc08b19bfd103dcd46b0e74557736b5484089305b90bf1189f6019eb99"
+  },
+  "qwen": {
+   "file": "personal-choice-qwen-v1.json",
+   "sha256": "9d2883d1e01389bff1cbfd96d1ca2d45b8fcddb010c4422036bb0b0ff3f6f024"
+  },
+  "swiss": {
+   "file": "stage2-results.json",
+   "sha256": "caa7f475e192c18b45dff87b2b596bbe641daebd5bfcfe5ed4a54b0fa5366af1"
+  },
+  "headroom": {
+   "file": "pew13-ceiling.json",
+   "sha256": "9a1881fdac23ce5da0499e1b1d74c0300c8166e4299c88ccb66a88a0637e94b9"
+  }
+ },
+ "gains": [
+  {
+   "group": "只给两次本人选择",
+   "label": "美国啤酒",
+   "people": 517,
+   "baseline": 0.63676,
+   "with_history": 0.52131,
+   "absolute": 0.11545,
+   "relative": 0.1813,
+   "ci95": [
+    0.10081,
+    0.12998
+   ],
+   "holds": true
+  },
+  {
+   "group": "只给两次本人选择",
+   "label": "德国番茄包装",
+   "people": 161,
+   "baseline": 0.51392,
+   "with_history": 0.49325,
+   "absolute": 0.02067,
+   "relative": 0.0402,
+   "ci95": [
+    0.00105,
+    0.04148
+   ],
+   "holds": true
+  },
+  {
+   "group": "只给两次本人选择",
+   "label": "西班牙番茄",
+   "people": 70,
+   "baseline": 0.52197,
+   "with_history": 0.49304,
+   "absolute": 0.02893,
+   "relative": 0.0554,
+   "ci95": [
+    -1e-05,
+    0.06139
+   ],
+   "holds": false
+  },
+  {
+   "group": "只给两次本人选择",
+   "label": "意大利奶酪",
+   "people": 68,
+   "baseline": 0.54886,
+   "with_history": 0.48905,
+   "absolute": 0.05981,
+   "relative": 0.109,
+   "ci95": [
+    0.01826,
+    0.10336
+   ],
+   "holds": true
+  },
+  {
+   "group": "只给两次本人选择",
+   "label": "苏格兰酥饼",
+   "people": 62,
+   "baseline": 0.45573,
+   "with_history": 0.4258,
+   "absolute": 0.02993,
+   "relative": 0.0657,
+   "ci95": [
+    -0.00386,
+    0.06544
+   ],
+   "holds": false
+  },
+  {
+   "group": "本人真实收银记录",
+   "label": "酸奶（收银两笔）",
+   "people": 100,
+   "baseline": 0.62133,
+   "with_history": 0.29043,
+   "absolute": 0.3309,
+   "relative": 0.5326,
+   "ci95": [
+    0.23798,
+    0.41998
+   ],
+   "holds": true
+  },
+  {
+   "group": "本人真实收银记录",
+   "label": "番茄酱（收银两笔）",
+   "people": 605,
+   "baseline": 0.57907,
+   "with_history": 0.43581,
+   "absolute": 0.14325,
+   "relative": 0.2474,
+   "ci95": [
+    0.11871,
+    0.16752
+   ],
+   "holds": true
+  },
+  {
+   "group": "分开预测买不买与买哪款",
+   "label": "酸奶（超市）",
+   "people": 299,
+   "baseline": 0.29067,
+   "with_history": 0.25505,
+   "absolute": 0.03562,
+   "relative": 0.1225,
+   "ci95": [
+    0.01685,
+    0.05841
+   ],
+   "holds": true
+  },
+  {
+   "group": "分开预测买不买与买哪款",
+   "label": "液态奶制品（超市）",
+   "people": 592,
+   "baseline": 0.46237,
+   "with_history": 0.41158,
+   "absolute": 0.05079,
+   "relative": 0.1098,
+   "ci95": [
+    0.03197,
+    0.06895
+   ],
+   "holds": true
+  },
+  {
+   "group": "分开预测买不买与买哪款",
+   "label": "意面酱（超市）",
+   "people": 257,
+   "baseline": 0.23581,
+   "with_history": 0.22823,
+   "absolute": 0.00757,
+   "relative": 0.0321,
+   "ci95": [
+    0.00048,
+    0.01516
+   ],
+   "holds": true
+  },
+  {
+   "group": "换平台（英国电商）",
+   "label": "英国·马克杯",
+   "people": 37,
+   "baseline": 0.44366,
+   "with_history": 0.41218,
+   "absolute": 0.03148,
+   "relative": 0.071,
+   "ci95": [
+    -0.02009,
+    0.08725
+   ],
+   "holds": false
+  },
+  {
+   "group": "换平台（英国电商）",
+   "label": "英国·烛台",
+   "people": 69,
+   "baseline": 0.59704,
+   "with_history": 0.58837,
+   "absolute": 0.00867,
+   "relative": 0.0145,
+   "ci95": [
+    -0.03224,
+    0.05596
+   ],
+   "holds": false
+  }
+ ],
+ "summary_counts": {
+  "comparisons": 12,
+  "interval_above_zero": 8
+ },
+ "negative": [
+  {
+   "study": "美国啤酒",
+   "model": 0.66044,
+   "statistics": 0.5349,
+   "gap": 0.12555,
+   "ci95": [
+    0.05611,
+    0.19468
+   ]
+  },
+  {
+   "study": "意大利奶酪",
+   "model": 0.59945,
+   "statistics": 0.49776,
+   "gap": 0.10168,
+   "ci95": [
+    0.04329,
+    0.16544
+   ]
+  }
+ ],
+ "degenerate_task": {
+  "note": "The Swiss four-arm screen could not separate arms because the task carried almost no individual variance.",
+  "reference_brier": 0.1786,
+  "best_arm_brier": 0.2719
+ },
+ "person_effect_ceiling": {
+  "swiss_icc": 0.24,
+  "pew_icc": 0.2137,
+  "within_battery_gain": [
+   0.0216,
+   0.0636
+  ],
+  "cross_construct_gain": 0.0055
+ },
+ "limits": [
+  "All numbers are held-out within the same datasets, not a new independent sample.",
+  "The scanner data carry no verifiable timestamp; those two rows measure another purchase of the same household, not a strictly later one.",
+  "Gains apply to people who already have recorded history; new customers are not covered.",
+  "Each study uses its own option set and grading; comparing percentages across studies shows magnitude, not a ranking of domains."
+ ]
+}

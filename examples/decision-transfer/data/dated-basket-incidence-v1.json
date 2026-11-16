@@ -1,0 +1,204 @@
+{
+  "sources": {
+    "transactions.rds": "1fa0700033f1e5d9bb6b09e2be063d8d68474d346e95c50f2833e09d083e0007",
+    "products.rda": "a80c6df33623b4af296ae9f317a6647e369db7e8ce7e7baed0e1bf44b9d979e5"
+  },
+  "cutoff": "2017-10-01",
+  "seed": 20261109,
+  "new_model_calls": 0,
+  "prior_baskets": 10,
+  "categories": {
+    "YOGURT": {
+      "smoothed_over_market": {
+        "mean": 0.035621846361799166,
+        "ci95": [
+          0.01684777298340944,
+          0.05840698066831125
+        ]
+      },
+      "test_households": 299,
+      "category_purchases": 48,
+      "training_visits": 26690,
+      "constant_buy_probability": 0.1106178112472369,
+      "joint_brier": {
+        "market": 0.29067469416437225,
+        "history_label_only": 0.2848617920497148,
+        "history_incidence_only": 0.27490762500878124,
+        "smoothed_frequency_and_label": 0.25505284780257165,
+        "history_both": 0.26609839150980313
+      },
+      "incidence_brier": {
+        "market": 0.13725533066768814,
+        "history_label_only": 0.13725533066768814,
+        "history_incidence_only": 0.1252707186060245,
+        "smoothed_frequency_and_label": 0.11871697405833728,
+        "history_both": 0.1252707186060245
+      },
+      "choice_given_purchase_brier": {
+        "market": 0.6902772123304732,
+        "history_label_only": 0.41956151261448493,
+        "history_incidence_only": 0.6902772123304732,
+        "smoothed_frequency_and_label": 0.41956151261448493,
+        "history_both": 0.41956151261448493
+      },
+      "joint_gains": {
+        "market": {
+          "mean": 0.024576302654568,
+          "ci95": [
+            0.014419385394695275,
+            0.03584343112816397
+          ]
+        },
+        "history_label_only": {
+          "mean": 0.018763400539911355,
+          "ci95": [
+            0.01024532949838478,
+            0.028121011827353826
+          ]
+        },
+        "history_incidence_only": {
+          "mean": 0.008809233498978079,
+          "ci95": [
+            0.004832080744096926,
+            0.013176394695169987
+          ]
+        },
+        "smoothed_frequency_and_label": {
+          "mean": -0.011045543707231164,
+          "ci95": [
+            -0.02715818678493805,
+            0.002398349221405535
+          ]
+        }
+      }
+    },
+    "FLUID MILK PRODUCTS": {
+      "smoothed_over_market": {
+        "mean": 0.05078951574907914,
+        "ci95": [
+          0.03197314881175452,
+          0.06895358146623204
+        ]
+      },
+      "test_households": 592,
+      "category_purchases": 190,
+      "training_visits": 57805,
+      "constant_buy_probability": 0.25911670068850984,
+      "joint_brier": {
+        "market": 0.46237178570106935,
+        "history_label_only": 0.45969773623284477,
+        "history_incidence_only": 0.4417546084071242,
+        "smoothed_frequency_and_label": 0.4115822699519888,
+        "history_both": 0.4385348489153187
+      },
+      "incidence_brier": {
+        "market": 0.22176250129591232,
+        "history_label_only": 0.22176250129591232,
+        "history_incidence_only": 0.21004021774619228,
+        "smoothed_frequency_and_label": 0.1956310093965946,
+        "history_both": 0.21004021774619228
+      },
+      "choice_given_purchase_brier": {
+        "market": 0.19680883465981874,
+        "history_label_only": 0.17821790156693443,
+        "history_incidence_only": 0.19680883465981874,
+        "smoothed_frequency_and_label": 0.17821790156693443,
+        "history_both": 0.17821790156693443
+      },
+      "joint_gains": {
+        "market": {
+          "mean": 0.02383693678574963,
+          "ci95": [
+            0.015572798005402167,
+            0.03166032633821105
+          ]
+        },
+        "history_label_only": {
+          "mean": 0.02116288731752395,
+          "ci95": [
+            0.013772394181630359,
+            0.02863268767549437
+          ]
+        },
+        "history_incidence_only": {
+          "mean": 0.0032197594918056444,
+          "ci95": [
+            0.0009134995346028391,
+            0.0059261049668241405
+          ]
+        },
+        "smoothed_frequency_and_label": {
+          "mean": -0.026952578963329508,
+          "ci95": [
+            -0.03936553836195603,
+            -0.014689441478937948
+          ]
+        }
+      }
+    },
+    "PASTA SAUCE": {
+      "smoothed_over_market": {
+        "mean": 0.007573432121281887,
+        "ci95": [
+          0.00047745803422807187,
+          0.01516260313550174
+        ]
+      },
+      "test_households": 257,
+      "category_purchases": 32,
+      "training_visits": 26980,
+      "constant_buy_probability": 0.06024609910677885,
+      "joint_brier": {
+        "market": 0.2358067008381802,
+        "history_label_only": 0.23342113446437657,
+        "history_incidence_only": 0.2345148397441968,
+        "smoothed_frequency_and_label": 0.22823326871689723,
+        "history_both": 0.23184075386524625
+      },
+      "incidence_brier": {
+        "market": 0.11314029151270583,
+        "history_label_only": 0.11314029151270583,
+        "history_incidence_only": 0.11197900085600436,
+        "smoothed_frequency_and_label": 0.10914524810515122,
+        "history_both": 0.11197900085600436
+      },
+      "choice_given_purchase_brier": {
+        "market": 0.8499560689803514,
+        "history_label_only": 0.6162351946151184,
+        "history_incidence_only": 0.8499560689803514,
+        "smoothed_frequency_and_label": 0.6162351946151184,
+        "history_both": 0.6162351946151184
+      },
+      "joint_gains": {
+        "market": {
+          "mean": 0.003965946972932889,
+          "ci95": [
+            0.0012236378993320904,
+            0.00693226777616423
+          ]
+        },
+        "history_label_only": {
+          "mean": 0.0015803805991298667,
+          "ci95": [
+            -0.00039644688808930604,
+            0.003647446285767277
+          ]
+        },
+        "history_incidence_only": {
+          "mean": 0.002674085878950686,
+          "ci95": [
+            0.0011447488966969603,
+            0.00429803538511948
+          ]
+        },
+        "smoothed_frequency_and_label": {
+          "mean": -0.0036074851483489977,
+          "ci95": [
+            -0.009679850526789527,
+            0.001619915206609749
+          ]
+        }
+      }
+    }
+  }
+}

@@ -38,12 +38,33 @@ def check_archive():
 
 
 def check_report():
-    report = (HERE / 'reports/index.html').read_text()
-    for link in re.findall(r'href="([^"]+)"', report):
-        if not link.startswith(('http:', 'https:', '#')) and not (HERE / 'reports' / link).is_file():
-            raise RuntimeError('Broken link: ' + link)
-    if re.search(r'<(?:script|link|img)[^>]+(?:src|href)="https?://', report):
-        raise RuntimeError('Offline report has network asset')
+    for name in ('index.html', 'results.html', 'summary.html'):
+        path = HERE / 'reports' / name
+        if not path.exists():
+            raise RuntimeError('Missing report: ' + name)
+        report = path.read_text()
+        for link in re.findall(r'href="([^"]+)"', report):
+            if not link.startswith(('http:', 'https:', '#')) and not (HERE / 'reports' / link).is_file():
+                raise RuntimeError(f'Broken link in {name}: {link}')
+        if re.search(r'<(?:script|link|img)[^>]+(?:src|href)="https?://', report):
+            raise RuntimeError('Offline report has network asset: ' + name)
+
+
+def check_summary():
+    """The frozen conclusions and the rendered summary must agree, number for number."""
+    frozen = json.loads((HERE / 'data/conclusions-v1.json').read_text())
+    for key, entry in frozen['sources'].items():
+        if sha(HERE / 'data' / entry['file']) != entry['sha256']:
+            raise RuntimeError('Conclusion source changed since freezing: ' + entry['file'])
+    holds = sum(1 for row in frozen['gains'] if row['holds'])
+    if holds != frozen['summary_counts']['interval_above_zero']:
+        raise RuntimeError('Frozen count disagrees with its own rows')
+    page = (HERE / 'reports/summary.html').read_text()
+    if f'{frozen["summary_counts"]["comparisons"]} 组比较中有' not in page:
+        raise RuntimeError('Summary page does not state the frozen comparison count')
+    for row in frozen['gains']:
+        if f'{row["relative"] * 100:+.1f}%' not in page:
+            raise RuntimeError('Summary page is missing a frozen relative gain: ' + row['label'])
 
 
 def check_admission():
@@ -115,6 +136,7 @@ def main():
     verify()
     check_archive()
     check_report()
+    check_summary()
     check_admission()
     check_stage2()
     check_state_files()
