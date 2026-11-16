@@ -201,7 +201,7 @@ Batch (`--sample-size N`), filters, and chat / web / os-app examples:
 
 **[MatrAIx Handbook](docs/README.md)** — guides, persona / application / environment docs.
 
-**[Human-survey comparison experiments](examples/sim-to-real/README.md)** — five rounds of survey and shopping evaluations, offline reports, public data, and reproducibility records (Chinese).
+**[Human-survey comparison reports](examples/reports/index.html)** — offline results, original-question comparisons, purchasing evidence, and the complete archive (Chinese). See the [experiment records](examples/sim-to-real/README.md) for data and reproducibility.
 
 <p align="center">
   <img src="docs/assets/matraix-architecture.png" alt="MatrAIx architecture" width="900">

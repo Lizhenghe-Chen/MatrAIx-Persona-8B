@@ -1,0 +1,111 @@
+{
+  "study": "瑞典豆腐商品选择实验",
+  "status": "exploratory_replay_on_frozen_evaluation_cohort",
+  "source_result_sha256": "167c12f16152ee717c840a7a7fbe30068fb2086900660dfe6abc7f613fb0c8b2",
+  "private_pro_log_sha256": "3754fe16250310fcea15262ae45dc935d14605f5072a1b9b9a866fbde65333ea",
+  "scoring_code_sha256": "52c7417931d25c37dd31ed0ac31e5ad3c630ae689bfc8a2b4372b94c46528172",
+  "people": 96,
+  "tasks": 671,
+  "cards": 20,
+  "extra_model_calls": 0,
+  "bootstrap_replicates": 2000,
+  "rule": "拒买概率来自仅按本人记录更新拒买倾向的统计模型，购买条件下的两款概率来自冻结的 AI 概率重新归一。两款概率均为零时平分。",
+  "zero_product_mass": 1,
+  "scores": {
+    "original": {
+      "label": "原版 MatrAIx 单选",
+      "brier": 0.9613095238095236,
+      "tv": 28.92414562117717,
+      "accuracy": 0.519345238095238,
+      "incidence": 0.2533532041728763,
+      "conditional": 0.6089866156787763
+    },
+    "output_only": {
+      "label": "MatrAIx 保留完整概率",
+      "brier": 0.6147952876984126,
+      "tv": 15.688322071718407,
+      "accuracy": 0.5290178571428571,
+      "incidence": 0.18808464977645303,
+      "conditional": 0.4001479422966517
+    },
+    "population": {
+      "label": "群体统计",
+      "brier": 0.5584801752862454,
+      "tv": 11.39678566380609,
+      "accuracy": 0.5334821428571428,
+      "incidence": 0.16943154837961402,
+      "conditional": 0.36437714988830966
+    },
+    "own": {
+      "label": "群体统计＋本人两次选择",
+      "brier": 0.4710391287582618,
+      "tv": 11.200906245953101,
+      "accuracy": 0.665922619047619,
+      "incidence": 0.11303195907710747,
+      "conditional": 0.36907388239886685
+    },
+    "refusal_only": {
+      "label": "统计按本人历史只更新拒买",
+      "brier": 0.4534006410174841,
+      "tv": 10.704273676485114,
+      "accuracy": 0.659970238095238,
+      "incidence": 0.1031146503168121,
+      "conditional": 0.36437714988830966
+    },
+    "combined": {
+      "label": "本人历史预测买不买，AI 预测买哪款",
+      "brier": 0.478481466638808,
+      "tv": 14.107713913175113,
+      "accuracy": 0.6361607142857142,
+      "incidence": 0.1031146503168121,
+      "conditional": 0.4001479422966517
+    }
+  },
+  "combined_vs_reference": {
+    "original": {
+      "improvement": 0.48282805717071564,
+      "ci95": [
+        0.366479327013516,
+        0.6126264861359493
+      ],
+      "passed": true,
+      "relative_improvement": 0.5022607653540573
+    },
+    "output_only": {
+      "improvement": 0.13631382105960466,
+      "ci95": [
+        0.07305839809220911,
+        0.20686089935403085
+      ],
+      "passed": true,
+      "relative_improvement": 0.2217222932366933
+    },
+    "population": {
+      "improvement": 0.07999870864743741,
+      "ci95": [
+        0.026694989966501225,
+        0.1385681723340317
+      ],
+      "passed": true,
+      "relative_improvement": 0.14324359608008394
+    },
+    "own": {
+      "improvement": -0.007442337880546157,
+      "ci95": [
+        -0.035413884500427054,
+        0.02062925828107357
+      ],
+      "passed": false,
+      "relative_improvement": -0.015799829411551027
+    },
+    "refusal_only": {
+      "improvement": -0.025080825621323855,
+      "ci95": [
+        -0.04835841259679361,
+        -0.000833344107494216
+      ],
+      "passed": false,
+      "relative_improvement": -0.05531713754316612
+    }
+  }
+}

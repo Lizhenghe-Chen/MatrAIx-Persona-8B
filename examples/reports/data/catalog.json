@@ -1,0 +1,2030 @@
+{
+  "scope": "examples 中可随项目分享的 HTML、Word、Markdown 和 PDF，另含论文在线正文。报告中心页面可从首页查阅。",
+  "counts": {
+    "综合与正式研究": 16,
+    "阶段报告及实验过程": 112,
+    "模拟示范": 4,
+    "方法、证据与目录": 52,
+    "文献与问卷原件": 24,
+    "模板、任务与运行说明": 78
+  },
+  "highlight_sources": {
+    "examples/decision-transfer/reports/final.html": "f1e9abd1dfbf5864865d72a09f36e4d582cf3c1d31ec2dcb5095204eabdbece8",
+    "examples/decision-transfer/reports/summary.html": "b64a8efde74431fea3bcd1e54f0d23bd84c07b0f33929165d5a4a9df82bbf9d9",
+    "examples/decision-transfer/data/conclusions-v1.json": "8714029a90e78a17435bc7576b1874a0460faa9179b00cabe026c73b1ac11f88",
+    "examples/虚拟消费者模拟研究报告/04-MatrAIx批判性评估/MatrAIx项目的证据与边界.html": "1c6aad7f65c08152211bc34e6718fc80f431e024acd3c954085e18e8e8dd24f8",
+    "examples/reports/data/question-cases-v1.json": "d6eb929f6412051d37d7e8bfc8e8efb8977241af7ae882d53eecf9e15aa684a0",
+    "examples/sim-to-real/reports/vendor/echarts.min.js": "b66b25aeb4df84e33199dc21694014d336d222cbd9deb0e5a7c14bd6aa0d0fd0",
+    "examples/decision-transfer/data/final-replication-v1.json": "167c12f16152ee717c840a7a7fbe30068fb2086900660dfe6abc7f613fb0c8b2",
+    "examples/decision-transfer/data/final-combined-v1.json": "7154b64cb6c6f029471c84d1918e4047abc22ca99d2ccb34ee7abe0bd9ef914b",
+    "examples/sim-to-real/study/10_匹配与商品复验/results.json": "a003d938d5d7042fcdda9e7efcb7a909f76b9e323bb81fd66f0b9afa75676d3c",
+    "examples/decision-transfer/data/personal-choice-qwen-v1.json": "9d2883d1e01389bff1cbfd96d1ca2d45b8fcddb010c4422036bb0b0ff3f6f024",
+    "examples/sim-to-real/decision_lab/reports/cross-study-v1/anchor-v1-results.json": "dcac1009dcda177230659f277a08ac1ae4185ff3b102b2433ee2c6bb8434a579"
+  },
+  "documents": [
+    {
+      "title": "MatrAI X 实验与报告",
+      "path": "README.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "本阶段协作边界",
+      "path": "decision-transfer/AGENTS.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "决策预测实验：真实记录能帮多少",
+      "path": "decision-transfer/README.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "归档：2026-11-13/14 探索批次",
+      "path": "decision-transfer/archive/2026-11-13-exploration/INDEX.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "下一次购物，能同时预测买不买、买哪一家吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/下一次购物买不买这个品类.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "方案入口",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/下一阶段方案.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "只知道某人两次选择，能更准地预测他的另外两次选择吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/两次本人选择怎样改善个人预测.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "知道同一户买过的两个品牌，能预测另一笔购买吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/两次真实购买与品牌预测.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "看过两次选择后，能更准地判断这个人买不买、买哪款吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/两次选择的商品问卷复验.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "只有五份答卷，AI 能帮忙选款吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/五类商品的少量答卷复验.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "交接：真实资料增量实验 v2（瑞士单套）",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/交接文档.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "换一种商品，过去的价格偏好还能用吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/价格偏好跨研究复验.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "价格相近时，AI 能挑得比简单规则好吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/价格相近时的商品选择.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "价格能否帮助判断买不买？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/价格约束与拒买.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "新问卷没有真人答案时，能借用以前的「都不买」比例吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/借用历史拒买率.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "假设购买问卷，能帮我们预测可能真付款时的选择吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/假设问卷能否帮助预测付款选择.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "准备记录 · 2026-11-13",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/准备记录.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "用少量真人记录预测实际出行，Qwen 还能帮多少？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/加拿大真实出行的模型混合复验.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "只问两题时，提前挑题能提高个人预测吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/只问两题时怎么挑题.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "换到台湾甜椒问卷，过去的拒买比例还能借用吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/台湾甜椒问卷外部复验.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "同样看两次本人选择，Qwen 和统计方法谁更准？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/同样两次选择Qwen能否超过统计.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "同样只有 20 次试答，应该多找几个人，还是给每人多问几题？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/同样答题量是多找人还是多问题.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "过去问过同一道题，能否直接预测下一年？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/同题跨年预测.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "同一款牛排涨价，AI 会不会反而预测更多人买？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/商品单项涨价方向检查.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "商品选择：用旧品类的真人取舍预测新商品",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/商品属性跨品类验证.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "把极端概率往均分拉，什么时候会更接近真人？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/商品选择概率收缩复验.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "只用五份答卷，价格统计加一点 AI 能跨商品用吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/固定比例混合的甜椒和烘干机复验.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "预测复购，应该多看几单，还是计算补货时间？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/复购历史长度与补货时间.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "每人仍答两题，候选题从三道加到六道有用吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/多备几道题能否让两题更准.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "调换商品选项顺序，平均后会更接近真人吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/多选项商品题换序复验.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "可能真要付钱时，AI 能预测有多少人会放弃购买吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/实际付款条件与拒买预测.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "小样本下，商品概率应往均分收多少？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/小样本商品概率收缩.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "只有几份旧答卷，AI 能不能帮忙选款？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/少量旧答卷与模型辅助选款.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "只收少量真人答案，能预测还没问过的商品卡吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/少量真人试调查的价值.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "试答很少，能保留商品属性，又避免把它们看得太重吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/少量答卷下保留商品属性.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "只有少量答卷时，能不能先挑出最靠谱的预测方法？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/少量答卷能否选对预测方法.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "只看几份真人试答，能判断该不该加 AI 吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/少量试答能否判断什么时候加AI.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "只有十份试答，要不要让它们决定价格有多重要？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/少量试答能否学到价格影响.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "试答只有几份，能不能先试出哪种方法最好？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/少量试答能否选对方法.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "把 Qwen 的选择压缩成属性取舍",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/属性先验筛查.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "有日期的真实结账数据里，两笔记录能预测下一次买什么吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/带日期的购买记录复验.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "瑞士商品取舍能否用于德国番茄包装？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/德国番茄跨研究筛查.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "把两个场景放在一起问，能预测真人会改选多少吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/成对预测条件变化.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "把「不订阅」放回去，预测还更准吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/把不订阅纳入整题评分.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "当将近三成人选择不买，价格加 Qwen 还有用吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/拒买常见时的整题复验.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "拒买率能否跨研究复用",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/拒买概率跨研究验证.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "顾客后来买的新商品，能不能先找进候选清单？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/新商品候选检索对照.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "Qwen 猜中了新商品，是因为看懂了这位顾客吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/新商品排序的本人历史对照.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "方向备忘：真正有优化空间的方向在哪（含反证）",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/方向备忘.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "日本柑橘实验里，假设问卷能预测真付款时买哪款吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/日本柑橘付款选择复验.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "最近两单，能帮我们猜中后来买了什么吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/有时间顺序的网购订单预测.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "加一句「有机标准相同」，AI 能预测顾客会怎么变吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/有机说明如何改变选择.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "真人试答已经定了拒买率，AI 还能帮多少？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/本地试答与逐题拒买预测.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "让 AI 排出重要属性，能否减少对真人答卷的依赖？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/模型给商品属性排序的复验.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "已有真人问卷，再加一点 AI 能选得更准吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/模型能否补上假设问卷的选款信息.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "统计基线更强以后，AI 还能让订阅预测更准吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/流媒体补测更强的统计基线.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "同样的订阅选择题，换成 DeepSeek Pro 有帮助吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/流媒体订阅的DeepSeek-Pro复验.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "换到流媒体订阅，价格加一点 AI 还有效吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/流媒体订阅的外部复验.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "消费行为题：少量真人答案能否校准其他题？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/消费行为问卷试调查.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "烘干机涨价后，AI 的预测更接近真人了吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/烘干机价格约束复验.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "烘干机：价格之外，Qwen 能帮忙判断拒买吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/烘干机拒买模型复验.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "两地都没见过的商品组合，能否借用已有真人取舍？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/烘干机留出属性组合迁移.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "换了地区，沿用商品偏好，只修正「都不买」有用吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/烘干机跨地区拒买修正.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "同一商品跨地区，能否直接沿用真人取舍？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/烘干机跨地区迁移.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "用少量真人答案预测新商品卡",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/独立商品选择工具.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "真人试答很少时，Qwen 能帮忙预测交通选择吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/瑞士交通问卷的模型混合复验.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "多找人、每人少问几题，换到交通问卷还管用吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/瑞士交通问卷的短试答复验.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "总体比例交给真人统计，AI 还能帮忙判断哪道题吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/用真人统计锁定总体比例.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "想知道一句说明能改变什么，直接问变化有没有用？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/直接问变化与重复取平均.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "直接问变化，能预判付款和购物提示的影响吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/直接预测变化的跨商品复验.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "直接问「100 人各选什么」，会比问一个人的概率更准吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/直接预测群体选择比例.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "两笔真实购买记录，什么时候能帮助预测买哪个品牌？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/真实结账中怎样使用两笔购买.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "真实结账记录里，AI 能猜中顾客买了哪个品牌吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/真实结账品牌预测.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "给模型通胀数据，能否预测经济变化较大的年份？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/经济指标辅助跨年预测.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "结果记录：瑞士电子产品组四臂筛查（v1）",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/结果记录.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "只有少量真人试答时，AI 能帮忙预测供电方案的选择吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/美国家庭供电方案外部复验.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "换到美国超市，最近两单还能帮多少？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/美国超市复购与跨品类预测.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "直接问一群人的选择，换到烘干机和牛排还有用吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/群体问法在烘干机和牛排上的复验.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "消费者换购时，能靠别人的换购记录猜到下一家吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/能否用别人的换购预测换到哪家.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "苏格兰酥饼：最低价能否帮助预测拒买？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/苏格兰酥饼拒买复验.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "真实历史能帮多少？英国电商复验与阶段结论",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/英国电商复验与阶段结论.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "第三项研究：西班牙番茄试调查",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/西班牙番茄试调查复验.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "让 Qwen 只判断哪种偏好更符合本人，能提高预测吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/让Qwen只判断偏好候选.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "能否用试调查自动决定混入多少 Qwen？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/试调查自动选择模型权重.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "同样预算，Qwen 能挑出更有信息量的商品卡吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/试调查选卡对照.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "低成本筛查：换序平均与跨任务概率校准",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/跨任务优化筛查.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "用别的研究校准，能把 AI 估计的变化修准吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/跨研究校准场景变化.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "模型说得很肯定，或重复回答一样，就能相信它吗？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/docs/问卷置信度与稳定性筛查.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "下一阶段｜不提前知道答案，能否预测新选择？",
+      "path": "decision-transfer/archive/2026-11-13-exploration/reports/index.html",
+      "type": "HTML",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "结果｜真实资料能不能帮 AI 预测这个人",
+      "path": "decision-transfer/archive/2026-11-13-exploration/reports/results.html",
+      "type": "HTML",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "旧实验冻结记录",
+      "path": "decision-transfer/archive/README.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "数据准入进度",
+      "path": "decision-transfer/docs/准入进度.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "执行规程 v2",
+      "path": "decision-transfer/docs/执行规程.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "冻结不是认可旧报告中每一句解释",
+      "path": "decision-transfer/docs/旧证据使用注意事项.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "最后一轮复验",
+      "path": "decision-transfer/docs/末轮复验规程.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "核心研究方案：真实资料能否帮助 AI 预测对应的人",
+      "path": "decision-transfer/docs/核心研究方案.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "MatrAI X 真人决策研究｜最终报告",
+      "path": "decision-transfer/reports/final.html",
+      "type": "HTML",
+      "category": "综合与正式研究",
+      "purpose": "综合、正式报告或相应逐题版"
+    },
+    {
+      "title": "真实记录能帮多少｜决策预测实验总报告",
+      "path": "decision-transfer/reports/summary.html",
+      "type": "HTML",
+      "category": "综合与正式研究",
+      "purpose": "综合、正式报告或相应逐题版"
+    },
+    {
+      "title": "MatrAIx 真人决策模拟实验",
+      "path": "sim-to-real/README.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "实验档案整理与待决策事项",
+      "path": "sim-to-real/archive/README.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "决策模拟通用框架",
+      "path": "sim-to-real/decision_lab/README.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "跨研究适用性验证：实现状态",
+      "path": "sim-to-real/decision_lab/cross_study/README.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "文档索引",
+      "path": "sim-to-real/decision_lab/docs/README.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "两次真实选择，能否让 AI 更懂本人？",
+      "path": "sim-to-real/decision_lab/docs/archive/两次选择快速验证.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "MatrAIx 决策模拟实验：当前状态（已完成后更新）",
+      "path": "sim-to-real/decision_lab/docs/archive/历史阶段交接.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "新一轮决策模拟实验",
+      "path": "sim-to-real/decision_lab/docs/archive/实施沿革.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "本轮结果：如何理解，怎样使用",
+      "path": "sim-to-real/decision_lab/docs/archive/结果解读与使用建议.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "为什么这样改，以及什么结果才算有用",
+      "path": "sim-to-real/decision_lab/docs/archive/证据与检验对照.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "今晚收尾与明日续跑",
+      "path": "sim-to-real/decision_lab/docs/archive/阶段交接_2026-11-10.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "复算与复用指南",
+      "path": "sim-to-real/decision_lab/docs/复算与复用指南.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "实验迭代日志（自主迭代轮次）",
+      "path": "sim-to-real/decision_lab/docs/实验迭代日志.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "推荐配置：问卷模拟怎么用才不自欺",
+      "path": "sim-to-real/decision_lab/docs/推荐配置.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "数据审查：会影响实验有效性的发现",
+      "path": "sim-to-real/decision_lab/docs/数据审查发现.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "结果与优化记录（正式测试）",
+      "path": "sim-to-real/decision_lab/docs/结果与优化记录.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "美国 T 恤补充材料核查",
+      "path": "sim-to-real/decision_lab/docs/美国T恤补充材料核查.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "进度与交付核对",
+      "path": "sim-to-real/decision_lab/docs/进度与交付核对.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "阶段记录 · 2026-11-12 · 从两套家电扩到十四套研究",
+      "path": "sim-to-real/decision_lab/docs/阶段记录-2026-11-12.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "anchor-v1 预注册协议：把分布交给模型，它还剩下什么",
+      "path": "sim-to-real/decision_lab/docs/预注册协议-anchor-v1.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "预注册协议：干净数据集验证（clean-v1）",
+      "path": "sim-to-real/decision_lab/docs/预注册协议-clean-v1.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "首批研究准入决定",
+      "path": "sim-to-real/decision_lab/docs/首批研究准入决定.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "生成结果",
+      "path": "sim-to-real/decision_lab/reports/README.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "决策模拟总报告",
+      "path": "sim-to-real/decision_lab/reports/aggregate.html",
+      "type": "HTML",
+      "category": "综合与正式研究",
+      "purpose": "综合、正式报告或相应逐题版"
+    },
+    {
+      "title": "两次真实选择，能否让 AI 更懂本人？",
+      "path": "sim-to-real/decision_lab/reports/choice-history.html",
+      "type": "HTML",
+      "category": "综合与正式研究",
+      "purpose": "综合、正式报告或相应逐题版"
+    },
+    {
+      "title": "配送和运动鞋｜补充复验",
+      "path": "sim-to-real/decision_lab/reports/cross-study-v1/clean-v1-report.html",
+      "type": "HTML",
+      "category": "综合与正式研究",
+      "purpose": "综合、正式报告或相应逐题版"
+    },
+    {
+      "title": "首批六套问卷｜四组正式对照",
+      "path": "sim-to-real/decision_lab/reports/cross-study-v1/formal-report.html",
+      "type": "HTML",
+      "category": "综合与正式研究",
+      "purpose": "综合、正式报告或相应逐题版"
+    },
+    {
+      "title": "十九套候选｜准入和画像覆盖审查",
+      "path": "sim-to-real/decision_lab/reports/cross-study-v1/index.html",
+      "type": "HTML",
+      "category": "方法、证据与目录",
+      "purpose": "研究准入、来源或索引"
+    },
+    {
+      "title": "扩展六套问卷｜跨研究复验",
+      "path": "sim-to-real/decision_lab/reports/cross-study-v1/wide-v1-report.html",
+      "type": "HTML",
+      "category": "综合与正式研究",
+      "purpose": "综合、正式报告或相应逐题版"
+    },
+    {
+      "title": "烘干机选择：正式测试",
+      "path": "sim-to-real/decision_lab/reports/individual-dryer.html",
+      "type": "HTML",
+      "category": "综合与正式研究",
+      "purpose": "综合、正式报告或相应逐题版"
+    },
+    {
+      "title": "瑞士家电选择：正式测试",
+      "path": "sim-to-real/decision_lab/reports/individual-swiss.html",
+      "type": "HTML",
+      "category": "综合与正式研究",
+      "purpose": "综合、正式报告或相应逐题版"
+    },
+    {
+      "title": "四国烘干机｜合成人群对照",
+      "path": "sim-to-real/decision_lab/reports/population-dryer.html",
+      "type": "HTML",
+      "category": "综合与正式研究",
+      "purpose": "综合、正式报告或相应逐题版"
+    },
+    {
+      "title": "瑞士家电｜合成人群对照",
+      "path": "sim-to-real/decision_lab/reports/population-swiss.html",
+      "type": "HTML",
+      "category": "综合与正式研究",
+      "purpose": "综合、正式报告或相应逐题版"
+    },
+    {
+      "title": "AI 真的会像人一样选商品吗？｜MatrAIx 实验解读",
+      "path": "sim-to-real/decision_lab/reports/reader.html",
+      "type": "HTML",
+      "category": "综合与正式研究",
+      "purpose": "综合、正式报告或相应逐题版"
+    },
+    {
+      "title": "当前交接状态 · 2026-11-13",
+      "path": "sim-to-real/decision_lab/交接先读.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "历史实验代码（冻结参照）",
+      "path": "sim-to-real/legacy/README.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "MatrAIx 真人问卷模拟优化实验",
+      "path": "sim-to-real/legacy/optimize_report.html",
+      "type": "HTML",
+      "category": "阶段报告及实验过程",
+      "purpose": "早期优化报告副本，原页部分链接沿用旧位置"
+    },
+    {
+      "title": "retail_history_template",
+      "path": "sim-to-real/legacy/retail_history_template.html",
+      "type": "HTML",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "retail_reader_conclusions",
+      "path": "sim-to-real/legacy/retail_reader_conclusions.html",
+      "type": "HTML",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "retail_reader_guidance",
+      "path": "sim-to-real/legacy/retail_reader_guidance.html",
+      "type": "HTML",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "打开 MatrAIx 实验报告",
+      "path": "sim-to-real/legacy/retail_reader_template.html",
+      "type": "HTML",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "新旧实验导航",
+      "path": "sim-to-real/legacy/首轮与历史运行说明.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "报告目录",
+      "path": "sim-to-real/reports/README.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "历轮问卷对照｜逐题分布版",
+      "path": "sim-to-real/reports/cards.html",
+      "type": "HTML",
+      "category": "综合与正式研究",
+      "purpose": "综合、正式报告或相应逐题版"
+    },
+    {
+      "title": "历轮问卷对照｜数据详版",
+      "path": "sim-to-real/reports/index.html",
+      "type": "HTML",
+      "category": "综合与正式研究",
+      "purpose": "综合、正式报告或相应逐题版"
+    },
+    {
+      "title": "历轮问卷对照｜故事版",
+      "path": "sim-to-real/reports/story.html",
+      "type": "HTML",
+      "category": "综合与正式研究",
+      "purpose": "综合、正式报告或相应逐题版"
+    },
+    {
+      "title": "MatrAIx 问卷对照实验",
+      "path": "sim-to-real/study/00_导航/从这里开始.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "实验文件怎样保存、怎样找回",
+      "path": "sim-to-real/study/00_导航/文件归档说明.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "MatrAIx 真人问卷对照实验报告",
+      "path": "sim-to-real/study/01_首轮归档/MatrAIx 真人问卷对照实验报告.docx",
+      "type": "DOCX",
+      "category": "阶段报告及实验过程",
+      "purpose": "阶段报告、候选数据或历史对照"
+    },
+    {
+      "title": "MatrAIx 真人问卷对照实验",
+      "path": "sim-to-real/study/01_首轮归档/README.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "MatrAIx 真人问卷对照结果",
+      "path": "sim-to-real/study/01_首轮归档/report.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "阶段报告、候选数据或历史对照"
+    },
+    {
+      "title": "MatrAIx 模型对比",
+      "path": "sim-to-real/study/02_模型对比/report.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "阶段报告、候选数据或历史对照"
+    },
+    {
+      "title": "实验一 模型对比",
+      "path": "sim-to-real/study/02_模型对比/固定方案.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "MatrAIx 提示词与背景对比",
+      "path": "sim-to-real/study/03_提示与背景/report.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "阶段报告、候选数据或历史对照"
+    },
+    {
+      "title": "实验二 提示与背景",
+      "path": "sim-to-real/study/03_提示与背景/固定方案.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "MatrAIx 真人问卷模拟优化实验",
+      "path": "sim-to-real/study/04_综合报告/MatrAIx 优化实验交互报告.html",
+      "type": "HTML",
+      "category": "阶段报告及实验过程",
+      "purpose": "阶段报告、候选数据或历史对照"
+    },
+    {
+      "title": "MatrAIx 真人问卷模拟优化结果",
+      "path": "sim-to-real/study/04_综合报告/优化实验综合报告.md",
+      "type": "MD",
+      "category": "阶段报告及实验过程",
+      "purpose": "阶段报告、候选数据或历史对照"
+    },
+    {
+      "title": "MatrAIx 问卷模拟优化文档",
+      "path": "sim-to-real/study/05_优化记录/优化文档.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "MatrAIx 北美电商选品对照实验",
+      "path": "sim-to-real/study/06_北美电商选品/report.html",
+      "type": "HTML",
+      "category": "阶段报告及实验过程",
+      "purpose": "阶段报告、候选数据或历史对照"
+    },
+    {
+      "title": "MatrAIx 北美电商选品对照实验",
+      "path": "sim-to-real/study/06_北美电商选品/固定方案.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "北美电商选品数据与复算",
+      "path": "sim-to-real/study/06_北美电商选品/数据索引.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "购物与选品：真实数据候选清单 · MatrAIx",
+      "path": "sim-to-real/study/07_购物数据候选/index.html",
+      "type": "HTML",
+      "category": "阶段报告及实验过程",
+      "purpose": "阶段报告、候选数据或历史对照"
+    },
+    {
+      "title": "CIUS2022_Codebook_PUMF",
+      "path": "sim-to-real/study/07_购物数据候选/本机数据/CIUS2022_Codebook_PUMF.pdf",
+      "type": "PDF",
+      "category": "文献与问卷原件",
+      "purpose": "一手文献、原问卷、代码本或复算附件"
+    },
+    {
+      "title": "CIUS2022_Quest_E",
+      "path": "sim-to-real/study/07_购物数据候选/本机数据/CIUS2022_Quest_E.pdf",
+      "type": "PDF",
+      "category": "文献与问卷原件",
+      "purpose": "一手文献、原问卷、代码本或复算附件"
+    },
+    {
+      "title": "README",
+      "path": "sim-to-real/study/07_购物数据候选/本机数据/Horiuchi2021_Conjoint_SDB/README.pdf",
+      "type": "PDF",
+      "category": "文献与问卷原件",
+      "purpose": "一手文献、原问卷、代码本或复算附件"
+    },
+    {
+      "title": "study1-wave1 survey instruments",
+      "path": "sim-to-real/study/07_购物数据候选/本机数据/Horiuchi2021_Conjoint_SDB/原问卷/study1-wave1 survey instruments.pdf",
+      "type": "PDF",
+      "category": "文献与问卷原件",
+      "purpose": "一手文献、原问卷、代码本或复算附件"
+    },
+    {
+      "title": "study1-wave2 survey instruments",
+      "path": "sim-to-real/study/07_购物数据候选/本机数据/Horiuchi2021_Conjoint_SDB/原问卷/study1-wave2 survey instruments.pdf",
+      "type": "PDF",
+      "category": "文献与问卷原件",
+      "purpose": "一手文献、原问卷、代码本或复算附件"
+    },
+    {
+      "title": "prescreen-survey-instrument",
+      "path": "sim-to-real/study/07_购物数据候选/本机数据/Open_eCommerce_1.0/prescreen-survey-instrument.pdf",
+      "type": "PDF",
+      "category": "文献与问卷原件",
+      "purpose": "一手文献、原问卷、代码本或复算附件"
+    },
+    {
+      "title": "survey-instrument",
+      "path": "sim-to-real/study/07_购物数据候选/本机数据/Open_eCommerce_1.0/survey-instrument.pdf",
+      "type": "PDF",
+      "category": "文献与问卷原件",
+      "purpose": "一手文献、原问卷、代码本或复算附件"
+    },
+    {
+      "title": "公开数据的来源与许可",
+      "path": "sim-to-real/study/07_购物数据候选/来源与许可/README.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "用户提供的调研线索",
+      "path": "sim-to-real/study/07_购物数据候选/调研线索/README.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "电商/网购 真实问卷调查数据集清单（用于 MatrAIx-Persona-8B 对比验证）",
+      "path": "sim-to-real/study/07_购物数据候选/调研线索/questionnaire_datasets.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "电商 / 网购真实问卷数据清单",
+      "path": "sim-to-real/study/07_购物数据候选/调研线索/电商问卷数据清单.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "购物预测实验",
+      "path": "sim-to-real/study/08_购物预测/README.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "购物预测阶段｜逐轮证据",
+      "path": "sim-to-real/study/08_购物预测/evidence.html",
+      "type": "HTML",
+      "category": "阶段报告及实验过程",
+      "purpose": "阶段报告、候选数据或历史对照"
+    },
+    {
+      "title": "购物预测阶段｜故事版",
+      "path": "sim-to-real/study/08_购物预测/index.html",
+      "type": "HTML",
+      "category": "阶段报告及实验过程",
+      "purpose": "阶段报告、候选数据或历史对照"
+    },
+    {
+      "title": "MatrAIx · 购物预测实验报告",
+      "path": "sim-to-real/study/08_购物预测/technical-details.html",
+      "type": "HTML",
+      "category": "阶段报告及实验过程",
+      "purpose": "阶段报告、候选数据或历史对照"
+    },
+    {
+      "title": "MatrAIx 画像匹配与方法审查",
+      "path": "sim-to-real/study/09_方法审查/index.html",
+      "type": "HTML",
+      "category": "阶段报告及实验过程",
+      "purpose": "阶段报告、候选数据或历史对照"
+    },
+    {
+      "title": "第六轮：人群匹配与商品选择内部复验",
+      "path": "sim-to-real/study/10_匹配与商品复验/README.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "MatrAIx 第六轮：匹配与商品复验",
+      "path": "sim-to-real/study/10_匹配与商品复验/index.html",
+      "type": "HTML",
+      "category": "阶段报告及实验过程",
+      "purpose": "阶段报告、候选数据或历史对照"
+    },
+    {
+      "title": "对应用户画像的决策与选择：文献综述",
+      "path": "sim-to-real/study/11_文献综述/README.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "文献综述｜新版入口说明",
+      "path": "sim-to-real/study/11_文献综述/index.html",
+      "type": "HTML",
+      "category": "方法、证据与目录",
+      "purpose": "研究准入、来源或索引"
+    },
+    {
+      "title": "R02_学习真人认知与行为的基础模型_正文",
+      "path": "sim-to-real/study/11_文献综述/全文资料/个体决策与画像匹配/R02_学习真人认知与行为的基础模型_正文.pdf",
+      "type": "PDF",
+      "category": "文献与问卷原件",
+      "purpose": "一手文献、原问卷、代码本或复算附件"
+    },
+    {
+      "title": "R04_由人口背景生成模拟调查样本_正文",
+      "path": "sim-to-real/study/11_文献综述/全文资料/个体决策与画像匹配/R04_由人口背景生成模拟调查样本_正文.pdf",
+      "type": "PDF",
+      "category": "文献与问卷原件",
+      "purpose": "一手文献、原问卷、代码本或复算附件"
+    },
+    {
+      "title": "R06_画像提示带来的偏差_正文",
+      "path": "sim-to-real/study/11_文献综述/全文资料/个体决策与画像匹配/R06_画像提示带来的偏差_正文.pdf",
+      "type": "PDF",
+      "category": "文献与问卷原件",
+      "purpose": "一手文献、原问卷、代码本或复算附件"
+    },
+    {
+      "title": "R12_同一画像的不同线索与个性化_正文",
+      "path": "sim-to-real/study/11_文献综述/全文资料/个体决策与画像匹配/R12_同一画像的不同线索与个性化_正文.pdf",
+      "type": "PDF",
+      "category": "文献与问卷原件",
+      "purpose": "一手文献、原问卷、代码本或复算附件"
+    },
+    {
+      "title": "本地全文资料库：从这里找论文",
+      "path": "sim-to-real/study/11_文献综述/全文资料/全文索引.md",
+      "type": "MD",
+      "category": "文献与问卷原件",
+      "purpose": "一手文献、原问卷、代码本或复算附件"
+    },
+    {
+      "title": "R08_心理测量中的真人模拟局限_正文",
+      "path": "sim-to-real/study/11_文献综述/全文资料/回答分布与评估/R08_心理测量中的真人模拟局限_正文.pdf",
+      "type": "PDF",
+      "category": "文献与问卷原件",
+      "purpose": "一手文献、原问卷、代码本或复算附件"
+    },
+    {
+      "title": "R18_能描述概率却不能按概率选择_正文",
+      "path": "sim-to-real/study/11_文献综述/全文资料/回答分布与评估/R18_能描述概率却不能按概率选择_正文.pdf",
+      "type": "PDF",
+      "category": "文献与问卷原件",
+      "purpose": "一手文献、原问卷、代码本或复算附件"
+    },
+    {
+      "title": "谨慎使用模型替代真人",
+      "type": "HTML",
+      "category": "文献与问卷原件",
+      "path": "sim-to-real/study/11_文献综述/全文资料/本机全文/回答分布与评估/R19_谨慎使用模型替代真人_正文网页.html",
+      "purpose": "外部论文正文，需联网",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12184514/"
+    },
+    {
+      "title": "图灵测试与聊天真人感",
+      "type": "HTML",
+      "category": "文献与问卷原件",
+      "path": "sim-to-real/study/11_文献综述/全文资料/本机全文/访谈与背景信息采集/R17_图灵测试与聊天真人感_正式版正文网页.html",
+      "purpose": "外部论文正文，需联网",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13214042/"
+    },
+    {
+      "title": "R13_还原消费者购买意愿分布_正文",
+      "path": "sim-to-real/study/11_文献综述/全文资料/消费与商品选择/R13_还原消费者购买意愿分布_正文.pdf",
+      "type": "PDF",
+      "category": "文献与问卷原件",
+      "purpose": "一手文献、原问卷、代码本或复算附件"
+    },
+    {
+      "title": "R20_消费者研究中的合成样本指南_正文",
+      "path": "sim-to-real/study/11_文献综述/全文资料/消费与商品选择/R20_消费者研究中的合成样本指南_正文.pdf",
+      "type": "PDF",
+      "category": "文献与问卷原件",
+      "purpose": "一手文献、原问卷、代码本或复算附件"
+    },
+    {
+      "title": "R14_AI自适应访谈与真人访谈_正文",
+      "path": "sim-to-real/study/11_文献综述/全文资料/访谈与背景信息采集/R14_AI自适应访谈与真人访谈_正文.pdf",
+      "type": "PDF",
+      "category": "文献与问卷原件",
+      "purpose": "一手文献、原问卷、代码本或复算附件"
+    },
+    {
+      "title": "R15_AI与真人聊天访谈对比_正文",
+      "path": "sim-to-real/study/11_文献综述/全文资料/访谈与背景信息采集/R15_AI与真人聊天访谈对比_正文.pdf",
+      "type": "PDF",
+      "category": "文献与问卷原件",
+      "purpose": "一手文献、原问卷、代码本或复算附件"
+    },
+    {
+      "title": "R16_AI访谈提问能力评估_正文",
+      "path": "sim-to-real/study/11_文献综述/全文资料/访谈与背景信息采集/R16_AI访谈提问能力评估_正文.pdf",
+      "type": "PDF",
+      "category": "文献与问卷原件",
+      "purpose": "一手文献、原问卷、代码本或复算附件"
+    },
+    {
+      "title": "R21_AI访谈与固定问卷随机对照_正文",
+      "path": "sim-to-real/study/11_文献综述/全文资料/访谈与背景信息采集/R21_AI访谈与固定问卷随机对照_正文.pdf",
+      "type": "PDF",
+      "category": "文献与问卷原件",
+      "purpose": "一手文献、原问卷、代码本或复算附件"
+    },
+    {
+      "title": "详细参数附录：论文配置与复现注意事项",
+      "path": "sim-to-real/study/11_文献综述/参数与实验建议.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "文献证据卡",
+      "path": "sim-to-real/study/11_文献综述/文献证据卡.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "检索、版本与待核验记录",
+      "path": "sim-to-real/study/11_文献综述/检索与更新记录.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "LLM能否像对应用户一样决策和选择：持续研究综述",
+      "path": "sim-to-real/study/11_文献综述/综述.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "MatrAIx 真人对照实验档案",
+      "path": "sim-to-real/study/README.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "早期真人对照｜逐轮证据",
+      "path": "sim-to-real/study/evidence.html",
+      "type": "HTML",
+      "category": "阶段报告及实验过程",
+      "purpose": "阶段报告、候选数据或历史对照"
+    },
+    {
+      "title": "MatrAIx 真人对照实验｜从平均分到每一道题",
+      "path": "sim-to-real/study/historical-details.html",
+      "type": "HTML",
+      "category": "阶段报告及实验过程",
+      "purpose": "归档分析、历史报告或交接"
+    },
+    {
+      "title": "早期真人对照｜故事版",
+      "path": "sim-to-real/study/index.html",
+      "type": "HTML",
+      "category": "阶段报告及实验过程",
+      "purpose": "阶段报告、候选数据或历史对照"
+    },
+    {
+      "title": "MatrAIx 真人对照实验｜从平均分到每一道题",
+      "path": "sim-to-real/study/报告模板.html",
+      "type": "HTML",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "shed-codebook",
+      "path": "sim-to-real/study/数据/shed-codebook.pdf",
+      "type": "PDF",
+      "category": "文献与问卷原件",
+      "purpose": "一手文献、原问卷、代码本或复算附件"
+    },
+    {
+      "title": "The Fed - Supplemental Appendixes to the Report on the Economic Well-Being of U.S. Households in 2025 - May 2026 - Appendix A",
+      "path": "sim-to-real/study/数据/shed-questionnaire.html",
+      "type": "HTML",
+      "category": "文献与问卷原件",
+      "purpose": "一手文献、原问卷、代码本或复算附件"
+    },
+    {
+      "title": "MatrAIx 实验数据索引",
+      "path": "sim-to-real/study/数据/实验数据索引.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "MatrAIx 调研与决策记录",
+      "path": "sim-to-real/study/调研与决策.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "方法、审查、来源或索引"
+    },
+    {
+      "title": "Example Tasks",
+      "path": "tasks/README.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "computer-1 Calibration Suite",
+      "path": "tasks/computer-1-click-calibration/environment/click_calibration.html",
+      "type": "HTML",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/computer-1-click-calibration/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/describe-image/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/hello-alpine/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/hello-computer-use/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/hello-cuda/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/hello-healthcheck/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "hello-mcp",
+      "path": "tasks/hello-mcp/README.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "Hello MCP Task",
+      "path": "tasks/hello-mcp/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/hello-multi-step-advanced/steps/document/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/hello-multi-step-advanced/steps/implement/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/hello-multi-step-advanced/steps/scaffold/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/hello-multi-step-bat/steps/append-content/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/hello-multi-step-bat/steps/create-file/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/hello-multi-step-simple/steps/append-content/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/hello-multi-step-simple/steps/create-file/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "generate-greeting",
+      "path": "tasks/hello-skills/environment/skills/generate-greeting/SKILL.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "Hello Skills Task",
+      "path": "tasks/hello-skills/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/hello-user/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/hello-workdir/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/hello-world-bat/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/hello-world/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "LLM-as-a-Judge Example Task",
+      "path": "tasks/llm-judge-example/README.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/llm-judge-example/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "Network Policy Matrix",
+      "path": "tasks/network-policy-matrix/README.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/network-policy-matrix/dynamic/e-a-diff-v-match/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/network-policy-matrix/dynamic/e-a-diff/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/network-policy-matrix/dynamic/e-v-diff/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/network-policy-matrix/dynamic/e-ve-sa-sv-diff/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/network-policy-matrix/dynamic/e-ve-sa-sv-diff/steps/all-differ/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/network-policy-matrix/dynamic/e-ve-sve-diff/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/network-policy-matrix/dynamic/e-ve-sve-diff/steps/separate-public/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/network-policy-matrix/dynamic/sa-sv-diff/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/network-policy-matrix/dynamic/sa-sv-diff/steps/both-offline/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "Shared Allowlist",
+      "path": "tasks/network-policy-matrix/dynamic/shared-allowlist/README.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/network-policy-matrix/dynamic/shared-allowlist/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/network-policy-matrix/dynamic/sv-sve-diff/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/network-policy-matrix/dynamic/sv-sve-diff/steps/phase-override/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/network-policy-matrix/dynamic/v-ve-diff/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/network-policy-matrix/static/e-a-v-same/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/network-policy-matrix/static/e-allowlist/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/network-policy-matrix/static/e-default/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/network-policy-matrix/static/e-sa-same/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/network-policy-matrix/static/e-sa-same/steps/offline-agent/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/network-policy-matrix/static/e-ve-no-network/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "Separate Verifier Public",
+      "path": "tasks/network-policy-matrix/static/e-ve/README.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/network-policy-matrix/static/e-ve/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "Environment Inherited",
+      "path": "tasks/network-policy-matrix/static/e/README.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/network-policy-matrix/static/e/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/network-policy-matrix/static/sv-sve-same/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/network-policy-matrix/static/sv-sve-same/steps/matching-verifier/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/reward-kit-example/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/separate-verifier-environment/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/separate-verifier-multi-step/steps/finish-artifacts/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/separate-verifier-multi-step/steps/prepare-artifacts/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/sidecar-artifacts/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "Verifier Mode Matrix",
+      "path": "tasks/verifier-mode-matrix/README.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/verifier-mode-matrix/multistep-all-separate/steps/separate-one/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/verifier-mode-matrix/multistep-all-separate/steps/separate-two/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/verifier-mode-matrix/multistep-all-shared/steps/shared-one/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/verifier-mode-matrix/multistep-all-shared/steps/shared-two/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/verifier-mode-matrix/multistep-top-separate-mixed/steps/separate-inherited/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/verifier-mode-matrix/multistep-top-separate-mixed/steps/separate-step-env/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/verifier-mode-matrix/multistep-top-separate-mixed/steps/shared-override/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/verifier-mode-matrix/multistep-top-shared-mixed/steps/separate-step-env/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/verifier-mode-matrix/multistep-top-shared-mixed/steps/shared-inherited/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/verifier-mode-matrix/separate-explicit/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/verifier-mode-matrix/separate-implicit/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/verifier-mode-matrix/separate-reuse-env/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "instruction",
+      "path": "tasks/verifier-mode-matrix/shared-default/instruction.md",
+      "type": "MD",
+      "category": "模板、任务与运行说明",
+      "purpose": "运行说明、展示模板或验证工具"
+    },
+    {
+      "title": "马桶刷购物式选择 · Persona 1M × DeepSeek 模拟",
+      "path": "虚拟消费者模拟研究报告/01-马桶刷品类/马桶刷品类数据看板.html",
+      "type": "HTML",
+      "category": "模拟示范",
+      "purpose": "模拟选购或看板，缺少同题真人对照"
+    },
+    {
+      "title": "马桶刷「购物式选择」模拟报告 · 北美 1000 人",
+      "path": "虚拟消费者模拟研究报告/01-马桶刷品类/马桶刷品类消费者选择模拟报告.html",
+      "type": "HTML",
+      "category": "模拟示范",
+      "purpose": "模拟选购或看板，缺少同题真人对照"
+    },
+    {
+      "title": "保温杯购物式选择 · Persona 1M × DeepSeek 模拟",
+      "path": "虚拟消费者模拟研究报告/02-保温杯品类/保温杯品类数据看板.html",
+      "type": "HTML",
+      "category": "模拟示范",
+      "purpose": "模拟选购或看板，缺少同题真人对照"
+    },
+    {
+      "title": "保温杯虚拟消费者模拟 · 领导汇报版",
+      "path": "虚拟消费者模拟研究报告/02-保温杯品类/保温杯品类消费者选择模拟报告.html",
+      "type": "HTML",
+      "category": "模拟示范",
+      "purpose": "模拟选购或看板，缺少同题真人对照"
+    },
+    {
+      "title": "MatrAIx Persona 1M 数据集 · 数据源分析报告",
+      "path": "虚拟消费者模拟研究报告/03-数据源分析/数据源与人格数据集分析.html",
+      "type": "HTML",
+      "category": "方法、证据与目录",
+      "purpose": "数据构成说明或目录"
+    },
+    {
+      "title": "MatrAIx，能信到哪一步？｜证据与边界",
+      "path": "虚拟消费者模拟研究报告/04-MatrAIx批判性评估/MatrAIx项目的证据与边界.html",
+      "type": "HTML",
+      "category": "综合与正式研究",
+      "purpose": "独立的项目证据评价"
+    },
+    {
+      "title": "虚拟消费者模拟研究报告集",
+      "path": "虚拟消费者模拟研究报告/README.md",
+      "type": "MD",
+      "category": "方法、证据与目录",
+      "purpose": "数据构成说明或目录"
+    }
+  ]
+}

@@ -168,3 +168,7 @@ markers = [
 
 [tool.ruff]
 target-version = "py312"
+
+[tool.ruff.lint.per-file-ignores]
+# Preserve the executed adapter byte for byte for the frozen replication hash.
+"examples/decision-transfer/src/final_inputs.py" = ["E402"]

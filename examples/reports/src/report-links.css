@@ -1,0 +1,23 @@
+.report-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
+.report-link {
+  display: inline-flex; align-items: center; gap: .45rem; max-width: 100%;
+  padding: .34rem .58rem; border: 1px solid #b8cae5; border-radius: 7px;
+  background: #eef4fd; color: #224886; font-weight: 690; font-size: .875rem;
+  text-decoration: none; line-height: 1.35; vertical-align: middle;
+}
+.report-link > span:first-child { min-width: 0; overflow-wrap: anywhere; }
+.report-link:hover { background: #dfeafc; border-color: #6c8fc7; }
+.report-link-type {
+  flex: none; padding: .12em .37em; border-radius: 3px; background: #d9e7fa;
+  color: #224886; font-size: .69rem; font-weight: 720; letter-spacing: .02em;
+}
+.report-link--primary { background: #234fa0; color: white; border-color: #234fa0; }
+.report-link--primary:hover { background: #173b7d; color: white; }
+.report-link--primary .report-link-type { background: #e0eaff; }
+.report-actions--hero { margin-bottom: 16px; }
+.report-links {
+  margin: 0; padding: 0; list-style: none; display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px 16px;
+}
+.report-links li { min-width: 0; }
+@media (max-width: 660px) { .report-links { grid-template-columns: 1fr; } }

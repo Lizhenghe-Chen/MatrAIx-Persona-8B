@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MatrAI X 真人决策研究｜最终报告</title>
+<style>
+:root {
+  color-scheme: light;
+  --page: #f5f7fa;
+  --paper: #fff;
+  --ink: #182943;
+  --muted: #4c5d73;
+  --line: #dbe3ee;
+  --blue: #234fa0;
+  --soft-blue: #eef3fd;
+  --green: #11694f;
+  --warm: #8a4628;
+  --neutral: #a2b0c5;
+  --radius: 16px;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font: 16px/1.65 "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+}
+main { max-width: 1160px; padding: 0 clamp(14px, 4vw, 52px) 40px; margin: auto; }
+a { color: var(--blue); text-underline-offset: .18em; }
+a:focus-visible, summary:focus-visible, .table-scroll:focus-visible {
+  outline: 2px solid var(--blue); outline-offset: 3px;
+}
+strong, b { font-weight: 720; }
+p { margin: .5em 0; }
+h1, h2, h3 { line-height: 1.3; }
+h1 { font-size: clamp(33px, 5.2vw, 57px); margin: 0; letter-spacing: -.035em; }
+h2 { font-size: clamp(22px, 3vw, 30px); margin: 0; }
+h3 { font-size: 1.13rem; margin: 1.1em 0 .35em; }
+[id] { scroll-margin-top: 16px; }
+.top {
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;
+  gap: 10px 24px; padding: 17px 0; border-bottom: 1px solid var(--line);
+}
+.brand { font-weight: 740; color: var(--ink); }
+nav { display: flex; flex-wrap: wrap; gap: 7px 20px; font-size: .875rem; }
+nav a { text-decoration-thickness: 1px; }
+.headline { padding: clamp(22px, 4vw, 42px) 0 clamp(17px, 3vw, 28px); }
+.lead { font-size: clamp(15px, 1.9vw, 19px); color: var(--muted); margin-top: .6em; }
+.finding-note { max-width: 76ch; }
+.panel {
+  margin: 0;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: clamp(14px, 2.55vw, 28px);
+  min-width: 0;
+}
+.primary { border-top: 4px solid var(--blue); }
+.panel figcaption { min-width: 0; }
+.meta, .source, footer { color: var(--muted); font-size: .875rem; }
+.meta { margin-top: .32em; }
+.source { margin: .65em 0 .1em; }
+.main-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(200px, .36fr); gap: 20px; margin-top: 12px; align-items: center; }
+.chart { width: 100%; height: 258px; min-width: 0; }
+#combined .chart { height: 302px; }
+.chart-note { margin: 0; padding-top: 78px; text-align: center; color: var(--muted); }
+.stats {
+  border-radius: 12px; background: var(--soft-blue); padding: 17px;
+  display: grid; gap: 13px; font-size: .875rem;
+}
+.stats p { margin: 0; }
+.stats p + p { margin-top: 4px; }
+.big-number {
+  display: block; font-size: clamp(28px, 4.4vw, 49px); color: var(--blue);
+  line-height: 1.09; letter-spacing: -.045em; font-weight: 760; font-variant-numeric: tabular-nums;
+}
+.stats .best { padding-top: 12px; border-top: 1px solid #d2def2; }
+.best strong { color: var(--green); }
+.secondary { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 16px; }
+#combined { margin-top: 16px; }
+.secondary .panel { display: flex; flex-direction: column; }
+.secondary figcaption { min-height: 100px; }
+.secondary .meta { margin-bottom: .35em; }
+.key { display: flex; flex-wrap: wrap; gap: 3px 15px; margin: 8px 0 0; padding: 0; color: var(--muted); font-size: .875rem; list-style: none; }
+.key li { display: inline-flex; align-items: center; gap: 6px; }
+.swatch { width: 10px; height: 10px; border-radius: 2px; background: var(--blue); }
+.swatch.old { background: var(--neutral); }
+.gains {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 12px;
+  padding: 9px 0; margin: 0; border-top: 1px solid var(--line);
+}
+.gains dt { font-size: .875rem; color: var(--muted); }
+.gains dd { margin: 0; font-weight: 660; color: var(--green); }
+.gains strong { font-size: 1.24rem; font-variant-numeric: tabular-nums; }
+.pilot-takeaway { border-top: 1px solid var(--line); padding-top: 9px; }
+.pilot-takeaway b { color: var(--warm); }
+.note { margin: .5em 0 .15em; font-size: .905rem; color: var(--muted); }
+.method-note { border-top: 1px solid var(--line); padding-top: 11px; }
+.usage, .appendix, .bottleneck-brief { margin-top: 28px; }
+.bottleneck-brief { background: #eef3fd; padding: 14px 16px; border-radius: 10px; }
+.bottleneck-brief h2 { font-size: clamp(20px, 2.6vw, 25px); }
+.bottleneck-factors {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 18px; margin: 12px 0;
+}
+.bottleneck-factors > div { border-top: 1px solid #d2def2; padding-top: 8px; }
+.bottleneck-factors dt { font-weight: 720; }
+.bottleneck-factors dd { margin: 0; font-size: .9rem; }
+.usage dl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 12px 0 0; }
+.usage dl > div { border: 1px solid var(--line); border-radius: 11px; background: var(--paper); padding: 12px 14px; }
+.usage dt { font-weight: 730; color: var(--blue); }
+.usage dd { margin: .2em 0 0; font-size: .94rem; }
+.appendix { border-top: 1px solid var(--line); padding-top: 20px; }
+.appendix > h2 { margin-bottom: 11px; }
+details {
+  background: var(--paper);
+  padding: 0 14px;
+  margin: 7px 0;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+}
+summary { cursor: pointer; padding: 9px 0; font-weight: 660; }
+details[open] { padding-bottom: 12px; }
+details p { max-width: 82ch; }
+.table-scroll { overflow: auto; margin: .7em 0; }
+table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+thead { background: #eff3f8; }
+th, td { text-align: left; padding: .5em .66em; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-weight: 650; }
+td:first-child, th { min-width: 7ch; }
+footer { padding: 14px 0 0; margin-top: 16px; border-top: 1px solid var(--line); }
+@media (max-width: 840px) {
+  .secondary { grid-template-columns: 1fr; gap: 13px; }
+  .secondary figcaption { min-height: auto; }
+}
+@media (max-width: 620px) {
+  .top { padding: 12px 0; }
+  .main-grid { grid-template-columns: 1fr; gap: 11px; }
+  .stats { order: -1; grid-template-columns: auto 1fr; align-items: center; gap: 10px; padding: 10px; font-size: .81rem; }
+  .stats .best { padding: 0 0 0 10px; border-top: 0; border-left: 1px solid #d2def2; }
+  .big-number { font-size: 38px; }
+  #combined .chart { height: 234px; }
+  .chart { height: 218px; }
+  .bottleneck-factors { grid-template-columns: 1fr; }
+  .usage dl { grid-template-columns: 1fr; gap: 6px; }
+  .usage, .appendix { margin-top: 21px; }
+}
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+@@LINK_STYLE@@
+@media print {
+  body { background: white; }
+  .top nav { display: none; }
+  .panel, details { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<main>
+<header class="top">
+  <span class="brand">MatrAI X 真人决策研究</span>
+  <nav class="report-actions" aria-label="报告导航">
+    @@HTML_NAV@@
+    <a href="#survey">改前改后</a>
+    <a href="#combined">合用结果</a>
+    <a href="#bottleneck">剩余瓶颈</a>
+    <a href="#adopt">采用建议</a>
+    <a href="#evidence">明细与来源</a>
+  </nav>
+</header>
+<div class="headline">
+  <h1>优化后，准了多少？</h1>
+@@ISSUE_SUMMARY@@
+</div>
+@@RESULTS@@
+<aside class="bottleneck-brief" id="bottleneck" aria-labelledby="bottleneck-title">
+  <h2 id="bottleneck-title">优化后，差距为什么还在？</h2>
+@@BOTTLENECK_SUMMARY@@
+</aside>
+<section class="usage" id="adopt" aria-labelledby="adopt-title">
+  <h2 id="adopt-title">实际怎么选方法</h2>
+  <dl>
+    <div><dt>只有模拟，没有真人答案</dt><dd>保留每个选项的概率，再汇总人群比例。</dd></div>
+    <div><dt>已经有真人试答</dt><dd>先直接统计。判断加 AI 是否能在这份问卷上再降误差。</dd></div>
+    <div><dt>有本人的同类选择记录</dt><dd>优先用统计更新买不买的概率，再单独检查买哪款。</dd></div>
+  </dl>
+</section>
+<section class="appendix" id="html-reports" aria-labelledby="html-reports-title">
+  <h2 id="html-reports-title">重点报告</h2>
+  <ul class="report-links">@@FEATURED_REPORTS@@</ul>
+</section>
+<section class="appendix" id="evidence" aria-labelledby="evidence-title">
+  <h2 id="evidence-title">实验明细与来源</h2>
+  @@APPENDIX@@
+</section>
+<footer class="report-actions"><span>2026 年 11 月 · 图表根据冻结的聚合结果生成</span> @@ARCHIVE_LINK@@</footer>
+</main>
+
+<script type="application/json" id="report-chart-data">@@CHART_DATA@@</script>
+<script>@@ECHARTS@@</script>
+<script>
+(() => {
+  if (typeof echarts === 'undefined') return;
+  const data = JSON.parse(document.getElementById('report-chart-data').textContent);
+  const ink = '#26384f';
+  const muted = '#4c5d73';
+  const line = '#e4ebf3';
+
+  function makeOptions(spec, compact) {
+    const format = (value) => Number(value).toFixed(spec.precision);
+    return {
+      animation: false,
+      textStyle: {fontFamily: getComputedStyle(document.body).fontFamily},
+      grid: {left: compact ? 32 : 42, right: 10, top: 23, bottom: compact ? 49 : 51},
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {type: 'shadow', shadowStyle: {color: 'rgba(35, 79, 160, .045)'}},
+        renderMode: 'richText',
+        confine: true,
+        textStyle: {color: ink, fontSize: 12},
+        valueFormatter: (value) => format(value) + spec.tooltipUnit
+      },
+      xAxis: {
+        type: 'category',
+        data: spec.categories,
+        axisTick: {show: false},
+        axisLine: {lineStyle: {color: '#bbc8da'}},
+        axisLabel: {color: ink, fontSize: compact ? 11 : 13, interval: 0, margin: 10, lineHeight: compact ? 14 : 17}
+      },
+      yAxis: {
+        type: 'value', min: 0, max: spec.maximum, interval: spec.interval,
+        axisLabel: {color: muted, fontSize: compact ? 10 : 12},
+        splitLine: {lineStyle: {color: line}}
+      },
+      series: spec.series.map(({name, color, values}) => ({
+        name,
+        type: 'bar',
+        barMaxWidth: compact && spec.series.length > 1 ? 36 : 60,
+        barGap: '18%',
+        data: values,
+        itemStyle: {color, borderRadius: [5, 5, 0, 0]},
+        label: {
+          show: true, position: 'top', color: ink, fontSize: compact ? 11 : 13,
+          fontWeight: 700, formatter: ({value}) => format(value)
+        }
+      }))
+    };
+  }
+
+  for (const element of document.querySelectorAll('[data-chart]')) {
+    const spec = data[element.dataset.chart];
+    const graph = echarts.init(element, null, {renderer: 'canvas'});
+    let compact;
+    const redraw = () => {
+      if (!element.clientWidth) return;
+      graph.resize();
+      const nextCompact = element.clientWidth < 440;
+      if (nextCompact !== compact) {
+        compact = nextCompact;
+        graph.setOption(makeOptions(spec, compact), {notMerge: true});
+      }
+    };
+    redraw();
+    if (typeof ResizeObserver === 'function') {
+      new ResizeObserver(redraw).observe(element);
+    } else {
+      window.addEventListener('resize', redraw);
+    }
+  }
+})();
+</script>
+</body>
+</html>

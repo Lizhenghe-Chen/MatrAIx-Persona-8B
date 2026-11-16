@@ -1,0 +1,103 @@
+{
+  "historical_git_commit": "70ef5134c7164cedb68baed83f1b8c8f135dc0fe",
+  "sources": {
+    "first": {
+      "path": "examples/sim-to-real/study/01_首轮归档/results.json",
+      "sha256": "04c12c76b7698b0567748b65504241fa7785f2f6a5afbb0625c4d368288360ce"
+    },
+    "model": {
+      "path": "examples/sim-to-real/study/02_模型对比/results.json",
+      "sha256": "3b7e9f23834cc2fccbfb092d4761dc223132fbaf15c376abd11d540a67ac40ec"
+    },
+    "background": {
+      "path": "examples/sim-to-real/study/03_提示与背景/results.json",
+      "sha256": "41b1766ba1f4bcd7ef2785c2049b5b83b6cc1eef873734a7361d4688dd13330d"
+    },
+    "commerce": {
+      "path": "examples/sim-to-real/study/06_北美电商选品/results.json",
+      "sha256": "967e367e8a765ac9b2e600d3775a5ab138f6ea9b57ddd3db547f8fbc5b10c406"
+    },
+    "pew": {
+      "path": "examples/sim-to-real/study/08_购物预测/pew-formal-score.json",
+      "sha256": "c9ce816553a28822195a48598bf894cea1fbac55e4695274ca64a159d8883bbd"
+    },
+    "amazon": {
+      "path": "examples/sim-to-real/study/08_购物预测/amazon-test-score.json",
+      "sha256": "30869b4328dd79907af7c0a62b989085409d9c1513a8e4d2367839701148b1e0"
+    },
+    "audit": {
+      "path": "examples/sim-to-real/study/09_方法审查/audit-results.json",
+      "sha256": "64440d52d29b6cfda5e0d6e8601994468e8a4e7f9f45f0bee2dc51e49a98e48e"
+    },
+    "repeat": {
+      "path": "examples/sim-to-real/study/10_匹配与商品复验/results.json",
+      "sha256": "a003d938d5d7042fcdda9e7efcb7a909f76b9e323bb81fd66f0b9afa75676d3c"
+    },
+    "formal": {
+      "path": "examples/sim-to-real/decision_lab/reports/cross-study-v1/formal-results.json",
+      "sha256": "e45c2da54155db3d1f76d3ffabdec9ab510863ba7bf621700ad5abf4c8c6eae8"
+    },
+    "wide": {
+      "path": "examples/sim-to-real/decision_lab/reports/cross-study-v1/wide-v1-results.json",
+      "sha256": "8ef2a68e0dd2bd833d9f14c25f435a4a5b24866fbf8db085be3c2cfda9d6aa6b"
+    },
+    "clean": {
+      "path": "examples/sim-to-real/decision_lab/reports/cross-study-v1/clean-v1-results.json",
+      "sha256": "94b0aaacaf2cdb299cae83efa529d9e902a067490bc8064d5a0849b7462fb589"
+    },
+    "external": {
+      "path": "examples/sim-to-real/decision_lab/reports/cross-study-v1/external-v2-results.json",
+      "sha256": "62a1f94bc3acd90b8f64ce20af9527bd311c0d423a832c424ae3acda7ef87b5b"
+    },
+    "cluster": {
+      "path": "examples/sim-to-real/decision_lab/reports/cross-study-v1/cluster-summary.json",
+      "sha256": "830ac89ea043ed97b706ea4c47bbfa19a699cd90cd0978273cf3ea1e741b9209"
+    },
+    "inventory": {
+      "path": "examples/sim-to-real/decision_lab/reports/cross-study-v1/source-inventory.json",
+      "sha256": "79baa5d0252d7342855d8065eba4e4e4c0ea6800688b1e08b41d979c5b505d28"
+    },
+    "pilot": {
+      "path": "examples/sim-to-real/decision_lab/reports/cross-study-v1/blend-pro.json",
+      "sha256": "68c77c91828a262ec56f084c2df6448f03ee5c29cfc03df987b47ccb6b6d7b5d"
+    },
+    "pilot_external": {
+      "path": "examples/sim-to-real/decision_lab/reports/cross-study-v1/blend-ext-pro.json",
+      "sha256": "815eec4ebbac1f08cfb414575ad93dd4ce01dc657cbac1fa9e88625d4017ecc8"
+    },
+    "conclusions": {
+      "path": "examples/decision-transfer/data/conclusions-v1.json",
+      "sha256": "8714029a90e78a17435bc7576b1874a0460faa9179b00cabe026c73b1ac11f88"
+    },
+    "products": {
+      "path": "examples/decision-transfer/data/personal-choice-products-v1.json",
+      "sha256": "c465ff51f1a7938cb43595bf526a5eb5dded4819cdc57bc60c5c9cc9325fa961"
+    },
+    "orders": {
+      "path": "examples/decision-transfer/data/online-retail-incidence-v1.json",
+      "sha256": "ab8326fc08b19bfd103dcd46b0e74557736b5484089305b90bf1189f6019eb99"
+    },
+    "swiss": {
+      "path": "examples/decision-transfer/data/stage2-results.json",
+      "sha256": "caa7f475e192c18b45dff87b2b596bbe641daebd5bfcfe5ed4a54b0fa5366af1"
+    },
+    "history": {
+      "path": "examples/sim-to-real/decision_lab/reports/choice-history-result.json",
+      "sha256": "9cd74f549d22bb538cd8e5a8beccef41a29473f7ce73868693dc81c7619a90f0"
+    },
+    "replication": {
+      "path": "examples/decision-transfer/data/final-replication-v1.json",
+      "sha256": "167c12f16152ee717c840a7a7fbe30068fb2086900660dfe6abc7f613fb0c8b2"
+    },
+    "combined": {
+      "path": "examples/decision-transfer/data/final-combined-v1.json",
+      "sha256": "7154b64cb6c6f029471c84d1918e4047abc22ca99d2ccb34ee7abe0bd9ef914b"
+    }
+  },
+  "embedded_assets": {
+    "echarts": {
+      "path": "examples/sim-to-real/reports/vendor/echarts.min.js",
+      "sha256": "b66b25aeb4df84e33199dc21694014d336d222cbd9deb0e5a7c14bd6aa0d0fd0"
+    }
+  }
+}
