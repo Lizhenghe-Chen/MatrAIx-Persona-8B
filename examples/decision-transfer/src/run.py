@@ -5,7 +5,6 @@ left for explicit inspection rather than retried automatically. Any change in th
 served model identity stops the run.
 """
 import argparse
-import hashlib
 import json
 import os
 import time

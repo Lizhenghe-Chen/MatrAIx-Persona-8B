@@ -67,7 +67,6 @@ BLOCKS['intention'] = ['w14_q29x7', 'w14_q29x8', 'w14_q29x9']  # excluded from m
 
 def _sanitize(values):
     import numpy as np
-    import pandas as pd
     array = np.asarray(values)
     if isinstance(array, np.ma.MaskedArray):
         array = np.asarray(array.filled(np.nan))

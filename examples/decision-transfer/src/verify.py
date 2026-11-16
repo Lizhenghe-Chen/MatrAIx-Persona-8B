@@ -1,4 +1,4 @@
-"""Verify isolation, provenance, admission state and the frozen stage-2 deck.
+"""Verify experiment provenance, privacy, and generated reports.
 
 Version 2 (2026-11-13): the preparation-era assertion "zero calls, nothing admitted"
 is replaced by the stage-2 state — Swiss admitted, origin rejected, and every sent
@@ -8,6 +8,7 @@ import hashlib
 import json
 import re
 import subprocess
+import sys
 from pathlib import Path
 
 from freeze import HERE, REPO, verify
@@ -24,14 +25,19 @@ def sha(path):
 
 def check_archive():
     frozen = json.loads((HERE / 'archive/frozen-history.json').read_text())
-    tag = subprocess.check_output(['git', 'rev-parse', frozen['git_tag'] + '^{}'], cwd=REPO, text=True).strip()
-    if tag != frozen['historical_commit']:
+    # Branch checkouts may omit the local tag. File hashes are checked even then.
+    tag = subprocess.run(['git', 'rev-parse', '--verify', '--quiet', f'refs/tags/{frozen["git_tag"]}^{{}}'],
+                         cwd=REPO, capture_output=True, text=True)
+    if tag.returncode not in (0, 1):
+        tag.check_returncode()
+    if tag.returncode == 0 and tag.stdout.strip() != frozen['historical_commit']:
         raise RuntimeError('Historical tag moved')
     refs = json.loads((HERE / 'data/reference/provenance.json').read_text())
     for row in refs['files']:
         if sha(HERE / row['copy']) != row['sha256'] or sha(REPO / row['source']) != row['sha256']:
             raise RuntimeError('Reference drift')
-    changed = subprocess.check_output(['git', 'status', '--porcelain', '--', 'examples/sim-to-real'],
+    changed = subprocess.check_output(['git', 'status', '--porcelain', '--', 'examples/sim-to-real',
+                                       'examples/decision-transfer/archive'],
                                       cwd=REPO, text=True).strip()
     if changed:
         raise RuntimeError('Historical directory modified')
@@ -48,6 +54,18 @@ def check_report():
                 raise RuntimeError(f'Broken link in {name}: {link}')
         if re.search(r'<(?:script|link|img)[^>]+(?:src|href)="https?://', report):
             raise RuntimeError('Offline report has network asset: ' + name)
+
+
+def check_final_release():
+    frozen = json.loads((HERE / 'data/final-replication-v1.json').read_text())
+    for name, expected in (
+        ('final_inputs.py', frozen['freeze']['adapter_sha256']),
+        ('final_score.py', frozen['scorer_sha256']),
+    ):
+        if sha(HERE / 'src' / name) != expected:
+            raise RuntimeError(f'Final replication source changed: {name}')
+    for builder in (HERE / 'src/build_final.py', HERE.parent / 'reports/src/build.py'):
+        subprocess.run([sys.executable, str(builder), '--check'], cwd=REPO, check=True)
 
 
 def check_summary():
@@ -136,11 +154,12 @@ def main():
     verify()
     check_archive()
     check_report()
+    check_final_release()
     check_summary()
     check_admission()
     check_stage2()
     check_state_files()
-    print('PASS: archive, references, report, admission, frozen deck, call ledger.')
+    print('PASS: archive, references, report builds, admission, frozen deck, call ledger.')
 
 
 if __name__ == '__main__':

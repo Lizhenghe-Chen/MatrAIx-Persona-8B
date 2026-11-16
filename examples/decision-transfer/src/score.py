@@ -97,6 +97,9 @@ def load(cells_source=PRIVATE / 'participants.json'):
 
 def technical_summary(requests, state):
     """Format, latency and run-to-run volatility only. Never a scientific score."""
+    def flatten(probabilities):
+        return [value for key in sorted(probabilities) for value in probabilities[key]]
+
     ok = [row for row in state if row.get('status') == 'ok']
     bases = {(row['sha256'], row['arm']): row for row in ok if row.get('role') != 'repeat'}
     pairs, flips = 0, 0
@@ -107,8 +110,7 @@ def technical_summary(requests, state):
         if base is None:
             continue
         pairs += 1
-        flat = lambda d: [x for q in sorted(d) for x in d[q]]
-        if max(abs(a - b) for a, b in zip(flat(base['probabilities']), flat(row['probabilities']))) > 1e-6:
+        if max(abs(a - b) for a, b in zip(flatten(base['probabilities']), flatten(row['probabilities']))) > 1e-6:
             flips += 1
     probs = [x for row in ok for values in row['probabilities'].values() for x in values]
     return {
